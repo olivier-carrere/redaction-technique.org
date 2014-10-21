@@ -1,3 +1,8 @@
+.. Copyright 2011-2014 Olivier Carrère
+.. Cette œuvre est mise à disposition selon les termes de la licence Creative
+.. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
+.. conditions 4.0 international.
+
 .. _migrer-de-framemaker-vers-dita-xml:
 
 Migrer de FrameMaker vers DITA XML

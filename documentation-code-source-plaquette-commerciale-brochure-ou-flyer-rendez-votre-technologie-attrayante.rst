@@ -1,3 +1,8 @@
+.. Copyright 2011-2014 Olivier Carrère
+.. Cette œuvre est mise à disposition selon les termes de la licence Creative
+.. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
+.. conditions 4.0 international.
+
 .. _plaquette-commerciale-brochure-ou-flyer-rendez-votre-technologie-attrayante:
 
 Plaquette commerciale, brochure ou flyer : rendez votre technologie attrayante

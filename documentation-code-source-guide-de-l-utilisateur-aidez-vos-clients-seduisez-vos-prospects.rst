@@ -1,3 +1,8 @@
+.. Copyright 2011-2014 Olivier Carrère
+.. Cette œuvre est mise à disposition selon les termes de la licence Creative
+.. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
+.. conditions 4.0 international.
+
 .. _guide-de-l-utilisateur-aidez-vos-clients-seduisez-vos-prospects:
 
 Guide de l'utilisateur : aidez vos clients, séduisez vos prospects

@@ -1,3 +1,8 @@
+.. Copyright 2011-2014 Olivier Carrère
+.. Cette œuvre est mise à disposition selon les termes de la licence Creative
+.. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
+.. conditions 4.0 international.
+
 .. _afficher-un-index-dans-un-pdf-mais-pas-sous-dita-open-toolkit:
 
 Afficher un index dans un PDF (mais pas sous DITA Open Toolkit)

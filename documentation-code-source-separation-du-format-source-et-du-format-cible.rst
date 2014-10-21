@@ -1,3 +1,8 @@
+.. Copyright 2011-2014 Olivier Carrère
+.. Cette œuvre est mise à disposition selon les termes de la licence Creative
+.. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
+.. conditions 4.0 international.
+
 .. _separation-du-format-source-et-du-format-cible:
 
 Séparation du format source et du format cible

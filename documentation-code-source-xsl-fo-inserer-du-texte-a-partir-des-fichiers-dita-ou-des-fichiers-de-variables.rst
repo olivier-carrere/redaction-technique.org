@@ -1,3 +1,8 @@
+.. Copyright 2011-2014 Olivier Carrère
+.. Cette œuvre est mise à disposition selon les termes de la licence Creative
+.. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
+.. conditions 4.0 international.
+
 .. _xsl-fo-inserer-du-texte-a-partir-des-fichiers-dita-ou-des-fichiers-de-variables:
 
 XSL-FO : insérer du texte à partir des fichiers DITA ou des fichiers de variables

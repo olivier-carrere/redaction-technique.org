@@ -1,3 +1,8 @@
+.. Copyright 2011-2014 Olivier Carrère
+.. Cette œuvre est mise à disposition selon les termes de la licence Creative
+.. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
+.. conditions 4.0 international.
+
 .. _exemple-documentations-version-libre-proprietaire-logiciel:
 
 Exemple : documentations d'une version libre et propriétaire d'un même logiciel
