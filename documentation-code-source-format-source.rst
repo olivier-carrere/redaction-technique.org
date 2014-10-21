@@ -140,3 +140,10 @@ FrameMaker et DocBook ne sont pas pleinement modulaires, car les plus petits
 éléments d'information manipulables ne sont pas génériques : ils contiennent des
 informations telles que la structure de table des matières ou les références
 croisées qui ne sont valables que dans un nombre limité de contextes.
+
+.. toctree::
+   :maxdepth: 2
+
+   documentation-code-source-documents-monolithiques-ou-modulaires
+   documentation-code-source-fichiers-binaires-ou-texte
+   documentation-code-source-sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers

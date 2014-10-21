@@ -42,3 +42,9 @@ auraient déjà beaucoup gagné, respectivement en :
 - cohérence et rapidité de publication des nouvelles versions,
 
 - facilité d'accès à l'information.
+
+.. toctree::
+   :maxdepth: 2
+
+   documentation-code-source-restructuration-du-contenu-framemaker
+   documentation-code-source-table-de-conversion-framemaker-vers-dita-xml

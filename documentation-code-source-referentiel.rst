@@ -12,3 +12,14 @@ Le **contenu** est le capital immatériel de la société et doit être protég�
 comme tel. Il peut être géré dans différents référentiels : répertoires, mais
 aussi **outils de gestion de contenu d'entreprise** et **logiciels de gestion de
 versions**.
+
+.. toctree::
+   :maxdepth: 2
+
+   documentation-code-source-git-du-fichier-au-contenu
+   documentation-code-source-quel-referentiel-pour-le-travail-de-groupe
+   documentation-code-source-les-repertoires-reseau-partages-peu-adaptes-au-travail-de-groupe
+   documentation-code-source-les-systemes-de-gestion-de-versions-rustiques-mais-fiables
+   documentation-code-source-les-cms-le-workflow-en-prime-mais-une-fiabilite-a-tester
+   documentation-code-source-base-de-donnees-sql
+   documentation-code-source-un-referentiel-unique

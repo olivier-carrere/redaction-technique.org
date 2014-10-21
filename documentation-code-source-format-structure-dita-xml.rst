@@ -54,3 +54,13 @@ l'on peut construire des automobiles de modèles différents à partir d'un
 ensemble de pièces identiques, de même, le **rédacteur technique** peut publier
 des documents différents à partir d'un ensemble de briques d'information
 standardisées.
+
+.. toctree::
+   :maxdepth: 2
+
+   documentation-code-source-cas-concrets-utilisation-de-dita-xml.rst
+   documentation-code-source-formats-structures-et-non-structures
+   documentation-code-source-une-architecture-documentaire-trop-complexe
+   documentation-code-source-du-document-a-la-base-documentaire-modulaire
+   documentation-code-source-cas-concret-documentation-de-nufirewall
+   documentation-code-source-didacticiels-dita-xml-xsl-fo

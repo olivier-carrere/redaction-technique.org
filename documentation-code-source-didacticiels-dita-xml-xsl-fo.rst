@@ -28,3 +28,17 @@ une mise en page totalement différente peu être appliquée à sa documentation
 spécifiant simplement un autre jeu de feuilles de style lors de la génération du
 livrable. Opération qui n'est pas envisageable en pratique avec des solutions
 traditionnelles de type FrameMaker.
+
+.. toctree::
+   :maxdepth: 2
+
+   documentation-code-source-xsl-fo-filtrer-du-contenu-selon-des-conditions-sauf-et-ou
+   documentation-code-source-xsl-fo-inserer-automatiquement-un-titre-pour-les-exemples
+   documentation-code-source-generer-un-pdf-avec-dita-open-toolkit-sous-gnu-linux
+   documentation-code-source-generer-un-pdf-avec-dita-open-toolkit-windows
+   documentation-code-source-gerer-les-projets-de-documentation-multilingues-dita-xml
+   documentation-code-source-creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-conditionnel
+   documentation-code-source-dita-open-toolkit-afficher-les-references-croisees-dans-les-pdf
+   documentation-code-source-afficher-un-index-dans-un-pdf-mais-pas-sous-dita-open-toolkit
+   documentation-code-source-utiliser-ide-nxml-pour-dita-xml
+   documentation-code-source-accelerer-sa-saisie-avec-le-mode-predictive-pour-emacs

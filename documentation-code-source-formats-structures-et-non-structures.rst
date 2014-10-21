@@ -155,3 +155,10 @@ l'aide à présenter des informations :
 
 - *cohérentes* : les informations de même type sont présentées dans le même
   ordre et avec la même mise en pages.
+
+.. toctree::
+   :maxdepth: 2
+
+   documentation-code-source-docbook-ou-dita-xml
+   documentation-code-source-migration-de-framemaker-vers-dita-xml
+   documentation-code-source-migrer-de-framemaker-vers-dita-xml

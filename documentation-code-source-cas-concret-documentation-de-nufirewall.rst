@@ -17,3 +17,9 @@ a été réalisée sous DITA.
 Si je n'avais pas utilisé un format qui favorise au maximum la réutilisation de
 l'information, je n'aurais pas autant pu me consacrer à l'essentiel : le
 contenu.
+
+.. toctree::
+   :maxdepth: 2
+
+   documentation-code-source-partager-des-blocs-information-atomiques-avec-les-conref
+   documentation-code-source-fournir-une-information-ciblee-avec-le-texte-conditionnel-ditaval

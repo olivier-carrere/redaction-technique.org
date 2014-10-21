@@ -34,3 +34,8 @@ place au niveau de toute l'entreprise, mais devrait être la norme pour une
 Certains traitements de texte proposent de gérer des documents modulaires, mais
 ils le font mal.  Inversement, un document DocBook ou DITA, par exemple, peut
 être monolithique, mais perd alors de sa souplesse.
+
+.. toctree::
+   :maxdepth: 2
+
+   documentation-code-source-qu-est-ce-qu-un-module-d-information

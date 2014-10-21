@@ -56,3 +56,8 @@ collaborateurs dont la **communication technique** n'est pas le métier ou sans
 mettre en place de processus de gestion du cycle de vie de la documentation
 technique, et vous courez à la catastrophe. Seule la présence conjointe de ces
 trois éléments fournira un résultat optimal.
+
+.. toctree::
+   :maxdepth: 2
+
+   documentation-code-source-un-index-est-il-utile-dans-un-pdf

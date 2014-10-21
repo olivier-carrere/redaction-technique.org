@@ -62,3 +62,9 @@ sauvegarder votre espace de travail, répertoire *.git* y compris, par exemple
 *via* rsync. Lorsque vous déciderez de partager votre travail, vous pourrez
 déplacer, fusionner ou supprimer vos commits avant de les envoyer sous forme de
 patchs ou de les déposer sur un dépôt central.
+
+.. toctree::
+   :maxdepth: 2
+
+   documentation-code-source-faire-sauter-les-goulets-etranglement-avec-les-branches
+   documentation-code-source-organiser-son-historique-avec-git-rebase

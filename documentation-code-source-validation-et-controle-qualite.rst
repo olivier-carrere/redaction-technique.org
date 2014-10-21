@@ -30,3 +30,9 @@ RTF, puis comparées sous un traitement de texte. Cela est bien moins fastidieux
 qu'une relecture comparée. Comparer les modules d'information directement sous
 le système de gestion de versions n'est pas suffisant, car ils ne sont que les «
 briques » du document final.
+
+.. toctree::
+   :maxdepth: 2
+
+   documentation-code-source-workflow-de-creation-et-validation
+   documentation-code-source-tests-de-non-regression

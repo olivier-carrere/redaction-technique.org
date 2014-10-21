@@ -35,3 +35,13 @@ Les fichiers DITA XML peuvent en outre être aisément centralisés sous un
 référentiel unique, tel qu'un ECM (système de gestion de contenu) ou un VCS
 (logiciel de gestion de versions). Le capital immatériel de la société est ainsi
 préservé.
+
+.. toctree::
+   :maxdepth: 2
+
+   documentation-code-source-un-langage-a-balises
+   documentation-code-source-typologie-de-haut-niveau-de-l-information
+   documentation-code-source-organisation-a-la-demande-du-contenu
+   documentation-code-source-le-single-sourcing-un-format-source-plusieurs-formats-cibles
+   documentation-code-source-les-topics-modules-d-information-de-base-dita
+   documentation-code-source-gerer-son-contenu-dita-xml-avec-ou-sans-cms
