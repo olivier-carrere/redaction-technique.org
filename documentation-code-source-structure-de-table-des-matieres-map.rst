@@ -1,3 +1,5 @@
+.. _structure-de-table-des-matieres-map:
+
 Structure de table des matières : map
 =====================================
 

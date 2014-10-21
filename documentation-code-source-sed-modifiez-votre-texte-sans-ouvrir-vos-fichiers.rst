@@ -1,3 +1,5 @@
+.. _sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers:
+
 sed : modifiez votre texte sans ouvrir vos fichiers
 ===================================================
 

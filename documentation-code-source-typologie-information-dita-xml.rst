@@ -1,3 +1,5 @@
+.. _typologie-information-dita-xml:
+
 Typologie de l'information DITA XML
 ===================================
 

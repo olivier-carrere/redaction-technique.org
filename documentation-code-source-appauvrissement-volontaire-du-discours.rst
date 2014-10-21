@@ -1,3 +1,5 @@
+.. _appauvrissement-volontaire-du-discours:
+
 Appauvrissement volontaire du discours
 ======================================
 

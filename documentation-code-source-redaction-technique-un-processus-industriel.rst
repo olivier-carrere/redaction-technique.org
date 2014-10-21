@@ -1,3 +1,5 @@
+.. _redaction-technique-un-processus-industriel:
+
 Rédaction technique : un processus industriel
 =============================================
 

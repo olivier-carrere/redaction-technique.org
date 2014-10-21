@@ -1,3 +1,5 @@
+.. _formats-structures-et-non-structures:
+
 Formats structurés et non structurés
 ====================================
 

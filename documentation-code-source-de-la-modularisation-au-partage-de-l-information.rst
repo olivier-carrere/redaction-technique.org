@@ -1,3 +1,5 @@
+.. _de-la-modularisation-au-partage-de-l-information:
+
 De la modularisation au partage de l'information
 ================================================
 

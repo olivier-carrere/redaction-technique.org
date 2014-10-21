@@ -1,3 +1,5 @@
+.. _organisation-a-la-demande-du-contenu:
+
 Organisation à la demande du contenu
 ====================================
 

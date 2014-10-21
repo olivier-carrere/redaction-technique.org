@@ -1,3 +1,5 @@
+.. _gerer-les-projets-de-documentation-multilingues-dita-xml:
+
 Gérer les projets de documentation multilingues DITA XML
 ========================================================
 

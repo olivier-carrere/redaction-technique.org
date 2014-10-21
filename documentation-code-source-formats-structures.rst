@@ -1,3 +1,5 @@
+.. _formats-structures:
+
 Formats structurés
 ==================
 

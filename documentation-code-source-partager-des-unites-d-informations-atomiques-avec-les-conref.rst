@@ -1,3 +1,5 @@
+.. _partager-des-unites-d-informations-atomiques-avec-les-conref:
+
 Partager des unités d'informations atomiques avec les conref
 ============================================================
 

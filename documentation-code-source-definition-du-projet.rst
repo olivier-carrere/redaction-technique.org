@@ -1,3 +1,5 @@
+.. _definition-du-projet:
+
 Définition du projet
 ====================
 

@@ -1,3 +1,5 @@
+.. _faire-sauter-les-goulets-etranglement-avec-les-branches:
+
 Faire sauter les goulets d'étranglement avec les branches
 =========================================================
 

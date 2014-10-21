@@ -1,3 +1,5 @@
+.. _xsl-fo-filtrer-du-contenu-selon-des-conditions-sauf-et-ou:
+
 XSL-FO : filtrer du contenu selon des conditions « sauf » et « ou »
 ===================================================================
 

@@ -1,3 +1,5 @@
+.. _qu-est-ce-qu-un-module-d-information:
+
 Qu'est-ce qu'un module d'information ?
 ======================================
 

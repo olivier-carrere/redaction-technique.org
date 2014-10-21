@@ -1,3 +1,5 @@
+.. _traduction:
+
 Traduction
 ==========
 

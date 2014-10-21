@@ -1,3 +1,5 @@
+.. _base-de-donnees-sql:
+
 Base de données SQL
 ===================
 

@@ -1,3 +1,5 @@
+.. _des-schemas-mais-pas-de-captures-d-ecran:
+
 Des schémas, mais pas de captures d'écran
 =========================================
 

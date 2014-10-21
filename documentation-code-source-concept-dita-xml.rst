@@ -1,3 +1,5 @@
+.. _concept-dita-xml:
+
 Concept DITA XML
 ================
 

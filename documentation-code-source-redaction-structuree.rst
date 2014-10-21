@@ -1,3 +1,5 @@
+.. _redaction-structuree:
+
 Rédaction structurée
 ====================
 

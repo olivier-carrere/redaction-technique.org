@@ -1,3 +1,5 @@
+.. _animation-flash-partez-a-l-assaut-du-grand-public:
+
 Animation Flash : partez à l'assaut du grand public
 ===================================================
 

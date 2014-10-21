@@ -1,3 +1,5 @@
+.. _workflow-de-creation-et-validation:
+
 Workflow de création et validation
 ==================================
 

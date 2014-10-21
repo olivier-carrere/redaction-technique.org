@@ -1,3 +1,5 @@
+.. _tests-de-non-regression:
+
 Tests de non-régression
 =======================
 

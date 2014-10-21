@@ -1,3 +1,5 @@
+.. _reference-dita-xml:
+
 Reference DITA XML
 ==================
 

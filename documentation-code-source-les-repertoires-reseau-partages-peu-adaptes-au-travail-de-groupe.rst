@@ -1,3 +1,5 @@
+.. _les-repertoires-reseau-partages-peu-adaptes-au-travail-de-groupe:
+
 Les répertoires réseau partagés - peu adaptés au travail de groupe
 ==================================================================
 

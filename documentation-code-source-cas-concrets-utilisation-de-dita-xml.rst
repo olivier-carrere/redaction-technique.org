@@ -1,3 +1,5 @@
+.. _cas-concrets-utilisation-de-dita-xml:
+
 Cas concrets d'utilisation de DITA XML
 ======================================
 

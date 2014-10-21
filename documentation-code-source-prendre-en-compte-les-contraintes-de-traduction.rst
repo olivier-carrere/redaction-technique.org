@@ -1,3 +1,5 @@
+.. _prendre-en-compte-les-contraintes-de-traduction:
+
 Prendre en compte les contraintes de traduction
 ===============================================
 

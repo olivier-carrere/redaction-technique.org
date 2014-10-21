@@ -1,3 +1,5 @@
+.. _un-referentiel-unique:
+
 Un référentiel unique ?
 =======================
 

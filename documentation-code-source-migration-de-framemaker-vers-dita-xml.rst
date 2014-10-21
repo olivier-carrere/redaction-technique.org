@@ -1,3 +1,5 @@
+.. _migration-de-framemaker-vers-dita-xml:
+
 Migration de FrameMaker vers DITA XML
 =====================================
 

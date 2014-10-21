@@ -1,3 +1,5 @@
+.. _les-cms-le-workflow-en-prime-mais-une-fiabilite-a-tester:
+
 Les CMS : le workflow en prime, mais une fiabilité à tester
 ===========================================================
 

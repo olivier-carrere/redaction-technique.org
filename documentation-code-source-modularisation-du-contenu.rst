@@ -1,3 +1,5 @@
+.. _modularisation-du-contenu:
+
 Modularisation du contenu
 =========================
 

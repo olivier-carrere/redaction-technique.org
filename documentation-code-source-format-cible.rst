@@ -1,3 +1,5 @@
+.. _format-cible:
+
 Format cible
 ============
 

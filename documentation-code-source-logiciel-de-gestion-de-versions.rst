@@ -1,3 +1,5 @@
+.. _logiciel-de-gestion-de-versions:
+
 Logiciel de gestion de versions
 ===============================
 

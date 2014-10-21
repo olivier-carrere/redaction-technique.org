@@ -1,3 +1,5 @@
+.. _plaquette-commerciale-brochure-ou-flyer-rendez-votre-technologie-attrayante:
+
 Plaquette commerciale, brochure ou flyer : rendez votre technologie attrayante
 ==============================================================================
 

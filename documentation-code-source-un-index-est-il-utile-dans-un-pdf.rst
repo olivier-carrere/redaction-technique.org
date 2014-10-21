@@ -1,3 +1,5 @@
+.. _un-index-est-il-utile-dans-un-pdf:
+
 Un index est-il utile dans un PDF ?
 ===================================
 

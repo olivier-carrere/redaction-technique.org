@@ -1,3 +1,5 @@
+.. _de-la-redaction-a-la-communication-technique:
+
 De la rédaction à la communication technique
 ============================================
 

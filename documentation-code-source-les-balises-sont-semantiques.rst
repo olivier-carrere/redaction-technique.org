@@ -1,3 +1,5 @@
+.. _les-balises-sont-semantiques:
+
 Les balises sont sémantiques
 ============================
 

@@ -1,3 +1,5 @@
+.. _generer-un-pdf-avec-dita-open-toolkit-windows:
+
 Générer un PDF avec DITA Open Toolkit (Windows)
 ===============================================
 

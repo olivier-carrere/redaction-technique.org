@@ -1,3 +1,5 @@
+.. _restructuration-du-contenu-framemaker:
+
 Restructuration du contenu FrameMaker
 =====================================
 

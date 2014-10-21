@@ -1,3 +1,5 @@
+.. _format-source:
+
 Format source
 =============
 

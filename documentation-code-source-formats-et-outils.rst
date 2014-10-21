@@ -1,3 +1,5 @@
+.. _formats-et-outils:
+
 Formats et outils
 =================
 

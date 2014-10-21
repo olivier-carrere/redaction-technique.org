@@ -1,3 +1,5 @@
+.. _exemple-documentations-version-libre-proprietaire-logiciel:
+
 Exemple : documentations d'une version libre et propriétaire d'un même logiciel
 ===============================================================================
 

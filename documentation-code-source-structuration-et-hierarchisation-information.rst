@@ -1,3 +1,5 @@
+.. _structuration-et-hierarchisation-information:
+
 Structuration et hiérarchisation de l'information
 =================================================
 

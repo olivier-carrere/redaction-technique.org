@@ -1,3 +1,5 @@
+.. _tester-les-produits-pour-les-documenter:
+
 Tester les produits pour les documenter
 =======================================
 

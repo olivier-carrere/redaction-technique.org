@@ -1,3 +1,5 @@
+.. _maximiser-utilisation-des-conref-pour-faire-baisser-les-couts:
+
 Maximiser l'utilisation des conref pour faire baisser les coûts
 ===============================================================
 

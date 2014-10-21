@@ -1,3 +1,5 @@
+.. _utiliser-ide-nxml-pour-dita-xml:
+
 Utiliser l'IDE nXML pour DITA XML
 =================================
 

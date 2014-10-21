@@ -1,3 +1,5 @@
+.. _typologie-de-haut-niveau-de-l-information:
+
 Typologie de haut niveau de l'information
 =========================================
 

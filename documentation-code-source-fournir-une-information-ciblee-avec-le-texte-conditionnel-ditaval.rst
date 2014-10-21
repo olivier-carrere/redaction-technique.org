@@ -1,3 +1,5 @@
+.. _fournir-une-information-ciblee-avec-le-texte-conditionnel-ditaval:
+
 Fournir une information ciblée avec le texte conditionnel ditaval
 =================================================================
 

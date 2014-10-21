@@ -1,3 +1,5 @@
+.. _du-document-a-la-base-documentaire-modulaire:
+
 Du document à la base documentaire modulaire
 ============================================
 

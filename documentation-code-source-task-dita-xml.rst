@@ -1,3 +1,5 @@
+.. _task-dita-xml:
+
 Task DITA XML
 =============
 

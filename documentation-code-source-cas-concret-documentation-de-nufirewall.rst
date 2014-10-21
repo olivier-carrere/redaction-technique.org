@@ -1,3 +1,5 @@
+.. _cas-concret-documentation-de-nufirewall:
+
 Cas concret : documentation de NuFirewall
 =========================================
 

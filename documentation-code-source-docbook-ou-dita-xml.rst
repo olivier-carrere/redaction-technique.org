@@ -1,3 +1,5 @@
+.. _docbook-ou-dita-xml:
+
 DocBook ou DITA XML ?
 =====================
 

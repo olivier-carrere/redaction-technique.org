@@ -1,3 +1,5 @@
+.. _documents-monolithiques-ou-modulaires:
+
 Documents monolithiques ou modulaires
 =====================================
 

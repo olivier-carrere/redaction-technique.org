@@ -1,3 +1,5 @@
+.. _fichiers-binaires-ou-texte:
+
 Fichiers binaires ou texte
 ==========================
 

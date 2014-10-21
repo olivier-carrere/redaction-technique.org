@@ -1,3 +1,5 @@
+.. _imbriquer-les-conref:
+
 Imbriquer les conref
 ====================
 

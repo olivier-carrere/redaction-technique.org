@@ -1,3 +1,5 @@
+.. _specialisation-dita-xml:
+
 Spécialisation DITA XML
 =======================
 

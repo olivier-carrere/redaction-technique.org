@@ -1,3 +1,5 @@
+.. _dita-open-toolkit:
+
 DITA Open Toolkit
 =================
 

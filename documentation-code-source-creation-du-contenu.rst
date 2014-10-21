@@ -1,3 +1,5 @@
+.. _creation-du-contenu:
+
 Création du contenu
 ===================
 

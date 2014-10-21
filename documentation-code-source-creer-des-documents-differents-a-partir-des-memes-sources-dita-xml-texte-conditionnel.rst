@@ -1,3 +1,5 @@
+.. _creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-conditionnel:
+
 Créer des documents différents à partir des mêmes sources DITA XML (texte conditionnel)
 =======================================================================================
 

@@ -1,3 +1,5 @@
+.. _utiliser-les-branches-des-systemes-de-gestion-de-sources:
+
 Utiliser les branches des systèmes de gestion de sources
 ========================================================
 

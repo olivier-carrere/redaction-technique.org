@@ -1,3 +1,5 @@
+.. _placer-le-maximum-d-information-dans-la-structure:
+
 Placer le maximum d'information dans la structure
 =================================================
 

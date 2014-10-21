@@ -1,3 +1,5 @@
+.. _table-de-conversion-framemaker-vers-dita-xml:
+
 Table de conversion FrameMaker vers DITA XML
 ============================================
 

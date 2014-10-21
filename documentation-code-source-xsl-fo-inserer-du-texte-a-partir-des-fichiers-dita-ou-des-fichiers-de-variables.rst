@@ -1,3 +1,5 @@
+.. _xsl-fo-inserer-du-texte-a-partir-des-fichiers-dita-ou-des-fichiers-de-variables:
+
 XSL-FO : insérer du texte à partir des fichiers DITA ou des fichiers de variables
 =================================================================================
 

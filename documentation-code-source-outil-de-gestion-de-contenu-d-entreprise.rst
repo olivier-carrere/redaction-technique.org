@@ -1,3 +1,5 @@
+.. _outil-de-gestion-de-contenu-d-entreprise:
+
 Outil de gestion de contenu d'entreprise
 ========================================
 

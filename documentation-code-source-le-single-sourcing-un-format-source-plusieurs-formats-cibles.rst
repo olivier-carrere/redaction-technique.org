@@ -1,3 +1,5 @@
+.. _le-single-sourcing-un-format-source-plusieurs-formats-cibles:
+
 Le single-sourcing : un format source, plusieurs formats cibles
 ===============================================================
 

@@ -1,3 +1,5 @@
+.. _dita-xml:
+
 DITA XML
 ========
 

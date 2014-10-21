@@ -1,3 +1,5 @@
+.. _didacticiels-dita-xml-xsl-fo:
+
 Didacticiels DITA XML et XSL-FO
 ===============================
 

@@ -1,3 +1,5 @@
+.. _les-trois-niveaux-de-la-documentation-technique:
+
 Les trois niveaux de la documentation technique
 ===============================================
 

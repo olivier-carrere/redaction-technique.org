@@ -1,3 +1,5 @@
+.. _un-format-adapte-aux-entreprises-de-toutes-tailles:
+
 Un format adapté aux entreprises de toutes tailles
 ==================================================
 

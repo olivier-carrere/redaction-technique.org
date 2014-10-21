@@ -1,3 +1,5 @@
+.. _magazine-d-entreprise-fidelisez-vos-clients-et-augmentez-votre-couverture-medias:
+
 Magazine d'entreprise : fidélisez vos clients et augmentez votre couverture médias
 ==================================================================================
 

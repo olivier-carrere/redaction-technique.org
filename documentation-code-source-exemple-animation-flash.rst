@@ -1,3 +1,5 @@
+.. _exemple-animation-flash:
+
 Exemple d'animation Flash
 =========================
 

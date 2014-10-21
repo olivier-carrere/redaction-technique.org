@@ -1,3 +1,5 @@
+.. _les-systemes-de-gestion-de-versions-rustiques-mais-fiables:
+
 Les systèmes de gestion de versions - rustiques mais fiables
 ============================================================
 

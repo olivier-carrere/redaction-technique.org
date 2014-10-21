@@ -1,3 +1,5 @@
+.. _organiser-son-historique-avec-git-rebase:
+
 Organiser son historique avec Git rebase
 ========================================
 

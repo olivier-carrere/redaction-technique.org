@@ -1,3 +1,5 @@
+.. _guide-de-l-utilisateur-aidez-vos-clients-seduisez-vos-prospects:
+
 Guide de l'utilisateur : aidez vos clients, séduisez vos prospects
 ==================================================================
 

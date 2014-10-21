@@ -1,3 +1,5 @@
+.. _quel-referentiel-pour-le-travail-de-groupe:
+
 Quel référentiel pour le travail de groupe ?
 ============================================
 

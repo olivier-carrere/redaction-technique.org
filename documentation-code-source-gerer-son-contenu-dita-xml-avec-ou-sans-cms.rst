@@ -1,3 +1,5 @@
+.. _gerer-son-contenu-dita-xml-avec-ou-sans-cms:
+
 Gérer son contenu DITA XML avec ou sans CMS ?
 =============================================
 

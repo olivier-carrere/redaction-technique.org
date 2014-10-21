@@ -1,3 +1,5 @@
+.. _principe-de-simplicite-kiss:
+
 Principe de simplicité KISS
 ===========================
 

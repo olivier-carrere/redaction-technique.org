@@ -1,3 +1,5 @@
+.. _un-langage-a-balises:
+
 Un langage à balises
 ====================
 

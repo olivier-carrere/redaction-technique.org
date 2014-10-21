@@ -1,3 +1,5 @@
+.. _livre-blanc-mettez-le-contenu-technique-au-service-de-votre-communication-marketing:
+
 Livre blanc : mettez le contenu technique au service de votre communication marketing
 =====================================================================================
 

@@ -1,3 +1,5 @@
+.. _referentiel:
+
 Référentiel
 ===========
 

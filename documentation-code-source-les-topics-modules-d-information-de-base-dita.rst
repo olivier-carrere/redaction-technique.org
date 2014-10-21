@@ -1,3 +1,5 @@
+.. _les-topics-modules-d-information-de-base-dita:
+
 Les topics, modules d'information de base DITA
 ==============================================
 

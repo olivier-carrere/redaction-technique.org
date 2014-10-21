@@ -1,3 +1,5 @@
+.. _partager-des-blocs-information-atomiques-avec-les-conref:
+
 Partager des blocs d'information atomiques avec les conref
 ==========================================================
 

@@ -1,3 +1,5 @@
+.. _une-architecture-documentaire-trop-complexe:
+
 Une architecture documentaire trop complexe ?
 =============================================
 

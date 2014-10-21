@@ -1,3 +1,5 @@
+.. _separation-du-format-source-et-du-format-cible:
+
 Séparation du format source et du format cible
 ==============================================
 

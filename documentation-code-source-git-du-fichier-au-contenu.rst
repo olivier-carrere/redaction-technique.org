@@ -1,3 +1,5 @@
+.. _git-du-fichier-au-contenu:
+
 Git : du fichier au contenu
 ===========================
 

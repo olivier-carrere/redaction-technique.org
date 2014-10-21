@@ -1,3 +1,5 @@
+.. _collecte-de-l-information:
+
 Collecte de l'information
 =========================
 

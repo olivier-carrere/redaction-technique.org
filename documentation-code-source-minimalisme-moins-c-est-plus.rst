@@ -1,3 +1,5 @@
+.. _minimalisme-moins-c-est-plus:
+
 Minimalisme - moins, c'est plus
 ===============================
 

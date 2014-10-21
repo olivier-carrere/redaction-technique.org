@@ -1,3 +1,5 @@
+.. _diminuer-les-couts-ameliorer-la-satisfaction-client:
+
 Documentation technique : diminuer les coûts, améliorer la satisfaction client
 ==============================================================================
 

@@ -1,3 +1,5 @@
+.. _validation-et-controle-qualite:
+
 Validation et contrôle qualité
 ==============================
 
