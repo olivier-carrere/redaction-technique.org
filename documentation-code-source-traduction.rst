@@ -33,31 +33,40 @@ En ce qui concerne le référentiel des fichiers sources, vaut-il mieux placer l
 répertoires de langue en amont ou en aval des répertoires de projets
 documentaires ? Autrement dit, vaut-il mieux adopter la structure suivante :
 
--             english
--                  produit 1
--                  produit 2
--             francais
--                  produit 1
--                  produit 2
+- english
+
+  -  produit 1
+  -  produit 2
+
+- francais
+
+  -  produit 1
+  -  produit 2
 
 ou la suivante :
 
--             produit 1
--                  english
--                  francais
--             produit 2
--                  english
--                  francais
+- produit 1
+
+  -  english
+  -  francais
+
+- produit 2
+
+  -  english
+  -  francais
 
 La structure suivante est à prohiber, car elle introduit une asymétrie entre les
 projets :
 
--             english
--                  produit 1
--                  produit 2
--             francais
--                  produit 1
--                  produit 2
+- english
+
+  -  produit 1
+  -  produit 2
+
+- francais
+
+  -  produit 1
+  -  produit 2
 
 Dans la plupart des cas, il est préférable de placer la distinction entre les
 langues le plus en amont possible. Pour reprendre une terminologie utilisée dans
