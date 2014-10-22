@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. review: text yes, no code
 
 .. _les-repertoires-reseau-partages-peu-adaptes-au-travail-de-groupe:
 
@@ -39,10 +39,10 @@ périlleuses :
 
 - les membres de l'équipe ne sont pas informés du fait qu'un autre membre
   modifie ou non le même fichier en même temps qu'eux ; l'un des **rédacteurs
-  techniques</> devra alors renoncer à toutes ses modifications ;
+  techniques** devra alors renoncer à toutes ses modifications ;
 
 - lors d'une copie manuelle des fichiers, que ce soit *via* un gestionnaire de
-  fichiers graphique ou en ligne de commande, le **rédacteur technique</> peut
+  fichiers graphique ou en ligne de commande, le **rédacteur technique** peut
   facilement écraser la version la plus récente par la plus ancienne (on
   préférera alors avoir recours à un logiciel de synchronisation de fichiers
   tels que `rsync <http://rsync.samba.org/>`_ ou `Unison
