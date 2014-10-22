@@ -78,7 +78,7 @@ une procédure pas à pas dans une section d'un autre type que *task*.  Le
 l'aide à présenter des informations :
 
 +--------------+---------------------------------------------------------------+
-|*minimalistes*|selon le principe de design `less is more`_, l'utilisateur ne  |
+|*minimalistes*|selon le principe de design *less is more*, l'utilisateur ne   |
 |              |dispose *que* de l'information dont il a besoin : une section  |
 |              |*task*, par exemple, ne contient que des prérequis, une        |
 |              |procédure et quelques autres éléments spécifiques ; toutes les |
