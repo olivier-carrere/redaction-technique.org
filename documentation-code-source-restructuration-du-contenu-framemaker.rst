@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. review: text yes, no code
 
 .. _restructuration-du-contenu-framemaker:
 
@@ -20,18 +20,18 @@ Un important travail de restructuration du document FrameMaker doit cependant
 être effectué en amont :
 
 - restructuration de l'information selon les trois catégories *concept*,
-*tâche* et *référence*,
+  *tâche* et *référence*,
 
 - suppression des *overrides* (propriétés de texte appliquées manuellement et
-  écrasant les styles) (à noter que ce genre d'hérésie est, sinon impossible, du
-  moins très limité sous un format structuré),
+  écrasant les styles ; ce genre d'hérésie est, sinon impossible, du moins très
+  limité sous un format structuré),
 
 - harmonisation et simplification des styles FrameMaker pour les limiter et les
   faire correspondre aux balises DITA XML qui seront utilisées (par exemple, un
   style *note_important* vers la balise <note type="important> ; il faut donc au
   préalable analyser le contenu existant et décider quel ensemble de balises
   sera utilisé parmi les centaines de balises proposées par DITA XML : il est
-  effet fortement déconseillé de les utiliser toutes.
+  en effet fortement déconseillé de les utiliser toutes).
 
 .. figure:: media/framemaker-restructure.png
 
@@ -39,7 +39,7 @@ Un important travail de restructuration du document FrameMaker doit cependant
 
 Ce travail d'harmonisation peut se faire en parallèle avec la mise à jour et la
 publication du document FrameMaker. La qualité de ce document n'en sera que
-meilleure.  En même temps que cette réorganisation du contenu, mettez en place
+meilleure.  En même temps que cette réorganisation du contenu, vous pouvez mettre en place
 la chaîne complète de création, gestion et publication DITA XML sur un
 échantillon de votre contenu :
 
@@ -51,11 +51,11 @@ la chaîne complète de création, gestion et publication DITA XML sur un
 
 - formation et sensibilisation des autres acteurs de l'entreprise.
 
-Ce n'est qu'une fois que sa chaîne est fiable et acceptée, voire attendue avec
-impatience par les autres acteurs de l'entreprise, que le **rédacteur
+Ce n'est qu'une fois que sa chaîne est fiable et acceptée, voire attendue
+par les autres acteurs de l'entreprise, que le **rédacteur
 technique** peut envisager la migration.
 
 Si vos documents sont disponibles en plusieurs langues, vous devez modifier les
 fichiers FrameMaker et effectuer la migration pour chaque langue. Si un projet
-de traduction dans une nouvelle langue se profile, effectuez la migration avant
+de traduction dans une nouvelle langue se profile, mieux vaut effectuer la migration avant
 !
