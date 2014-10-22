@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. review: text yes, no code
 
 .. _validation-et-controle-qualite:
 
@@ -17,7 +17,7 @@ Le contenu doit être validé avant livraison. Cela paraît évident, mais cela
 demande de bien impliquer en amont les personnes chargées de la
 validation. Idéalement, la phase de validation se déroule en parallèle de la
 phase de création : plus les modifications interviennent tôt, moins elles sont
-coûteuses. Un outil de gestion de contenu d'entreprise tel qu'`>Alfresco
+coûteuses. Un outil de gestion de contenu d'entreprise tel qu'`Alfresco
 <http://www.alfresco.com/fr/>`_ peut sembler intéressant afin de mettre en place
 des *workflows*, sur le papier du moins. Dans les faits, une telle solution peut
 s'avérer lourde. Elle est de plus peu compatible avec certains formats sources
