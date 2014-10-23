@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. review: text yes, code no
 
 .. _migrer-de-framemaker-vers-dita-xml:
 
@@ -13,8 +13,8 @@ Migrer De FrameMaker Vers DITA XML
 Le but de cette procédure est de :
 
 - **migrer** son contenu **FrameMaker** vers **DITA XML** sans se plonger dans
-  les arcanes des **EDD FrameMaker** (ce qui peut être justifié pour des petits
-  projets),
+  les arcanes des **EDD FrameMaker** (petits
+  projets uniquement !),
 
 - gérer la documentation technique au format DITA XML sans utiliser **FrameMaker
   structuré**.
@@ -69,7 +69,8 @@ Le but de cette procédure est de :
    contenu. Il vous faudra notamment placer à la main les références croisées,
    de préférence dans une *reltable*.
 
-Vous pouvez par exemple utiliser des scripts Perl de type :
+Pour générer les éléments permettant de construire un fichier ditamap, vous
+pouvez par exemple utiliser des scripts Perl du type :
 
 .. warning::
 
@@ -89,14 +90,12 @@ Vous pouvez par exemple utiliser des scripts Perl de type :
    print(OUTPUT $input_scalar);
    close(OUTPUT);
 
-pour générer les éléments permettant de construire un fichier ditamap.
 
-Vous pouvez également utiliser le module Perl `XML::Twig
-<http://www.xmltwig.org/xmltwig/>`_ ou modulariser facilement le contenu à
-l'aide des ciseaux XML `xml_split
-<http://search.cpan.org/dist/XML-Twig/tools/xml_split/xml_split>`_.
 
-Ou ce "one-liner" bash pour renommer les fichiers dita d'après leur titre :
+Vous pouvez également modulariser facilement le contenu à l'aide des ciseaux XML
+`xml_split <http://search.cpan.org/dist/XML-Twig/tools/xml_split/xml_split>`_,
+ou utiliser le module Perl `XML::Twig <http://www.xmltwig.org/xmltwig/>`_, ou
+encore ce *one-liner* Bash pour renommer les fichiers dita d'après leur titre :
 
 .. code-block:: console
 
