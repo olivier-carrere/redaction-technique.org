@@ -5,7 +5,7 @@
 
 .. _les-repertoires-reseau-partages-peu-adaptes-au-travail-de-groupe:
 
-Les répertoires réseau partagés - peu adaptés au travail de groupe
+Les Répertoires Réseau Partagés - Peu Adaptés Au Travail De Groupe
 ==================================================================
 
 Les fichiers partagés par une équipe de **rédaction technique** sont souvent

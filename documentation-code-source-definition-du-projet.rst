@@ -5,7 +5,7 @@
 
 .. _definition-du-projet:
 
-Définition du projet
+Définition Du Projet
 ====================
 
 Un projet de **rédaction technique** apporte une valeur ajoutée aux produits et

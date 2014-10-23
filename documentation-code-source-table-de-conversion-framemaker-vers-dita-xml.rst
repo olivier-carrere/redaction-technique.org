@@ -5,7 +5,7 @@
 
 .. _table-de-conversion-framemaker-vers-dita-xml:
 
-Table de conversion FrameMaker vers DITA XML
+Table De Conversion FrameMaker Vers DITA XML
 ============================================
 
 Lorsque les fichiers `FrameMaker

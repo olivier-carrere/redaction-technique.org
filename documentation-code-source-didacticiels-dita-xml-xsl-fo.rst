@@ -5,7 +5,7 @@
 
 .. _didacticiels-dita-xml-xsl-fo:
 
-Didacticiels DITA XML et XSL-FO
+Didacticiels DITA XML Et XSL-FO
 ===============================
 
 Les **didacticiels** suivants aideront le **rédacteur technique** à mettre en

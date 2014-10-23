@@ -5,7 +5,7 @@
 
 .. _faciliter-le-travail-de-groupe-avec-subversion-cron-et-emacs:
 
-Faciliter le travail de groupe avec Subversion, cron et Emacs
+Faciliter Le Travail De Groupe Avec Subversion, Cron Et Emacs
 =============================================================
 
 Les systèmes de gestion de code source tels que Subversion ou **Git** gèrent

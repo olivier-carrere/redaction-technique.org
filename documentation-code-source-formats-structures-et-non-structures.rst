@@ -5,7 +5,7 @@
 
 .. _formats-structures-et-non-structures:
 
-Formats structurés et non structurés
+Formats Structurés Et Non Structurés
 ====================================
 
 Les **formats structurés** favorisent la création de documents minimalistes,

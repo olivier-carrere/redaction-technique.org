@@ -5,7 +5,7 @@
 
 .. _centraliser-les-conref-dans-un-fichier-unique:
 
-Centraliser les conref dans un fichier unique
+Centraliser Les Conref Dans Un Fichier Unique
 =============================================
 
 Pour favoriser l'utilisation des `conref

@@ -5,7 +5,7 @@
 
 .. _fichiers-binaires-ou-texte:
 
-Fichiers binaires ou texte
+Fichiers Binaires Ou Texte
 ==========================
 
 Les formats sources sont des formats **binaires** ou** texte**.

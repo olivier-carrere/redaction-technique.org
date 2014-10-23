@@ -5,7 +5,7 @@
 
 .. _un-referentiel-unique:
 
-Un référentiel unique ?
+Un Référentiel Unique ?
 =======================
 
 Idéalement, tout le contenu peut être placé sous un référentiel unique, par

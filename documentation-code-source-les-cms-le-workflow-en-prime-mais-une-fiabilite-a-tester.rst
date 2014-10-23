@@ -5,7 +5,7 @@
 
 .. _les-cms-le-workflow-en-prime-mais-une-fiabilite-a-tester:
 
-Les CMS : le workflow en prime, mais une fiabilité à tester
+Les CMS : Le Workflow En Prime, Mais Une Fiabilité À Tester
 ===========================================================
 
 Les :abbr:`CMS (Content Management Systems)`, ainsi dénommés pour des raisons

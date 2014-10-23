@@ -5,7 +5,7 @@
 
 .. _typologie-de-haut-niveau-de-l-information:
 
-Typologie de haut niveau de l'information
+Typologie De Haut Niveau De L'Information
 =========================================
 
 `DITA XML <http://dita.xml.org/>`_ propose au **rédacteur technique** une

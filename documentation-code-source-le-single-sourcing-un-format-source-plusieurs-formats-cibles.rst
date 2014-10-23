@@ -5,7 +5,7 @@
 
 .. _le-single-sourcing-un-format-source-plusieurs-formats-cibles:
 
-Le single-sourcing : un format source, plusieurs formats cibles
+Le Single-Sourcing : Un Format Source, Plusieurs Formats Cibles
 ===============================================================
 
 Le **single-sourcing** est un sujet qui a longtemps divisé les **rédacteurs

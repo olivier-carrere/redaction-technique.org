@@ -5,7 +5,7 @@
 
 .. _formats-et-outils:
 
-Formats et outils
+Formats Et Outils
 =================
 
 Lorsqu'une entreprise décide d'industrialiser la **rédaction technique**, elle

@@ -5,7 +5,7 @@
 
 .. _documents-monolithiques-ou-modulaires:
 
-Documents monolithiques ou modulaires
+Documents Monolithiques Ou Modulaires
 =====================================
 
 Le format source peut reposer sur des **fichiers monolithiques** ou sur des

@@ -5,7 +5,7 @@
 
 .. _migrer-de-framemaker-vers-dita-xml:
 
-Migrer de FrameMaker vers DITA XML
+Migrer De FrameMaker Vers DITA XML
 ==================================
 
 Le but de cette procédure est de :

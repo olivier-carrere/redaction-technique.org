@@ -5,7 +5,7 @@
 
 .. _creation-du-contenu:
 
-Création du contenu
+Création Du Contenu
 ===================
 
 Le **rédacteur technique** crée le contenu du projet de **rédaction technique**

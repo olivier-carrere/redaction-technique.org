@@ -5,7 +5,7 @@
 
 .. _generer-un-pdf-avec-dita-open-toolkit-windows:
 
-Générer un PDF avec DITA Open Toolkit (Windows)
+Générer Un PDF Avec DITA Open Toolkit (Windows)
 ===============================================
 
 Ce **didacticiel `DITA XML <http://dita.xml.org/>` est destiné à vous guider

@@ -5,7 +5,7 @@
 
 .. _cas-concrets-utilisation-de-dita-xml:
 
-Cas concrets d'utilisation de DITA XML
+Cas Concrets D'Utilisation De DITA XML
 ======================================
 
 L'utilisation quotidienne du **format de rédaction structurée** DITA XML sur des

@@ -5,7 +5,7 @@
 
 .. _workflow-de-creation-et-validation:
 
-Workflow de création et validation
+Workflow De Création Et Validation
 ==================================
 
 Un processus de création et de mise à jour de la documentation technique qui

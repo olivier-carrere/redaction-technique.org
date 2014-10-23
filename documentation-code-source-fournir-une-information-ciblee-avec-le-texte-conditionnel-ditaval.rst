@@ -5,7 +5,7 @@
 
 .. _fournir-une-information-ciblee-avec-le-texte-conditionnel-ditaval:
 
-Fournir une information ciblée avec le texte conditionnel ditaval
+Fournir Une Information Ciblée Avec Le Texte Conditionnel Ditaval
 =================================================================
 
 Un fichier `ditaval

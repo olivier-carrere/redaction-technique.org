@@ -5,7 +5,7 @@
 
 .. _tests-de-non-regression:
 
-Tests de non-régression
+Tests De Non-Régression
 =======================
 
 Le simple fait de générer une documentation technique à deux instants différents

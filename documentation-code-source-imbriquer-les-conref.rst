@@ -5,7 +5,7 @@
 
 .. _imbriquer-les-conref:
 
-Imbriquer les conref
+Imbriquer Les Conref
 ====================
 
 Pour des raisons de facilité de mise à jour et de maintenance du contenu **DITA

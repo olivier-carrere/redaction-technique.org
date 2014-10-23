@@ -5,7 +5,7 @@
 
 .. _prendre-en-compte-les-contraintes-de-traduction:
 
-Prendre en compte les contraintes de traduction
+Prendre En Compte Les Contraintes De Traduction
 ===============================================
 
 L'unité d'information **DITA XML** la plus petite est le *nœud* que pour une

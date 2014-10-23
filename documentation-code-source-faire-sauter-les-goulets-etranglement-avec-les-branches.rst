@@ -5,7 +5,7 @@
 
 .. _faire-sauter-les-goulets-etranglement-avec-les-branches:
 
-Faire sauter les goulets d'étranglement avec les branches
+Faire Sauter Les Goulets D'Étranglement Avec Les Branches
 =========================================================
 
 Les branches permettent de facilement effectuer plusieurs tâches non liées en

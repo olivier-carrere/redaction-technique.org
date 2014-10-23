@@ -5,7 +5,7 @@
 
 .. _de-la-redaction-a-la-communication-technique:
 
-De la rédaction à la communication technique
+De La Rédaction À La Communication Technique
 ============================================
 
 Le but de la **communication technique** est de transformer les prospects en

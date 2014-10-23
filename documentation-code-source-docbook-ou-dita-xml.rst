@@ -5,7 +5,7 @@
 
 .. _docbook-ou-dita-xml:
 
-DocBook ou DITA XML ?
+DocBook Ou DITA XML ?
 =====================
 
 Certaines entreprises ont parfois un contenu existant au format `DocBook

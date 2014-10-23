@@ -5,7 +5,7 @@
 
 .. _tester-les-produits-pour-les-documenter:
 
-Tester les produits pour les documenter
+Tester Les Produits Pour Les Documenter
 =======================================
 
 Le **rédacteur technique** ne peut fournir une documentation utile aux clients

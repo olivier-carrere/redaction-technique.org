@@ -5,7 +5,7 @@
 
 .. _xsl-fo-filtrer-du-contenu-selon-des-conditions-sauf-et-ou:
 
-XSL-FO : filtrer du contenu selon des conditions « sauf » et « ou »
+XSL-FO : Filtrer Du Contenu Selon Des Conditions « Sauf » Et « Ou »
 ===================================================================
 
 Imaginons que vous vouliez filtrer les nœuds enfants de la balise DITA XML

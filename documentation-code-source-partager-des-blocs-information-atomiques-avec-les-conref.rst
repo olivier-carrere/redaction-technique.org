@@ -5,7 +5,7 @@
 
 .. _partager-des-blocs-information-atomiques-avec-les-conref:
 
-Partager des blocs d'information atomiques avec les conref
+Partager Des Blocs D'Information Atomiques Avec Les Conref
 ==========================================================
 
 Lorsque le **rédacteur technique** veut réutiliser des blocs d'information

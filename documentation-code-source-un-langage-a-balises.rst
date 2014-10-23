@@ -5,7 +5,7 @@
 
 .. _un-langage-a-balises:
 
-Un langage à balises
+Un Langage À Balises
 ====================
 
 `DITA XML <http://dita.xml.org/>`_ est un langage à balises : le **rédacteur

@@ -5,7 +5,7 @@
 
 .. _qu-est-ce-qu-un-module-d-information:
 
-Qu'est-ce qu'un module d'information ?
+Qu'Est-Ce Qu'Un Module D'Information ?
 ======================================
 
 Le système modulaire le plus connu au monde est certainement celui des briques

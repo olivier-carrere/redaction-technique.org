@@ -5,7 +5,7 @@
 
 .. _utiliser-le-noeud-xml-de-plus-bas-niveau:
 
-Utiliser le nœud XML de plus bas niveau
+Utiliser Le Nœud XML De Plus Bas Niveau
 =======================================
 
 Le **rédacteur technique** doit utiliser comme source du `conref

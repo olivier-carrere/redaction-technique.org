@@ -5,7 +5,7 @@
 
 .. _du-document-a-la-base-documentaire-modulaire:
 
-Du document à la base documentaire modulaire
+Du Document À La Base Documentaire Modulaire
 ============================================
 
 Le modèle du livre est encore prédominant pour créer et gérer

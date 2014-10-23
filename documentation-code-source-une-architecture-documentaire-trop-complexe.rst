@@ -5,7 +5,7 @@
 
 .. _une-architecture-documentaire-trop-complexe:
 
-Une architecture documentaire trop complexe ?
+Une Architecture Documentaire Trop Complexe ?
 =============================================
 
 DITA XML est une architecture documentaire plus complexe, mais moins compliquée

@@ -5,7 +5,7 @@
 
 .. _creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-conditionnel:
 
-Créer des documents différents à partir des mêmes sources DITA XML (texte conditionnel)
+Créer Des Documents Différents À Partir Des Mêmes Sources DITA XML (Texte Conditionnel)
 =======================================================================================
 
 DITA XML offre un mécanisme de **texte conditionnel**. Ce mécanisme favorise la
