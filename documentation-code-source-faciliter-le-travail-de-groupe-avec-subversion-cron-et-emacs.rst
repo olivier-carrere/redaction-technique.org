@@ -43,7 +43,7 @@ avec des messages du démon *cron*).
 
 #. Insérez la ligne suivante dans votre fichier *.emacs* :
 
-   .. code-block:: lisp
+   .. code-block:: cl
 
       (global-auto-revert-mode t)
 

@@ -48,7 +48,7 @@ un environnement GNU/Linux (en l'occurrence, Debian).
 
 #. Insérez le code suivant dans le fichier :file:`.emacs` :
 
-   .. code-block:: lisp
+   .. code-block:: cl
 
       ;; predictive install location
            (add-to-list 'load-path "~/.emacs.d/predictive/")
@@ -61,6 +61,6 @@ un environnement GNU/Linux (en l'occurrence, Debian).
 
 #. Lancez Emacs, puis appuyez sur Alt+X et entrez :
 
-   .. code-block:: lisp
+   .. code-block:: cl
 
       predictive-mode
