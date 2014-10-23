@@ -31,7 +31,10 @@ philosophie, dans le *Bourgeois gentilhomme* de Molière :
 
 Commençons par afficher la phrase d'origine dans un terminal :
 
-Belle marquise, vos beaux yeux me font mourir d'amour.
+.. code-block:: console
+
+   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour."
+   Belle marquise, vos beaux yeux me font mourir d'amour.
 
 Il s'agit maintenant d'intervertir les mots de la phrase, pour en créer une
 nouvelle. Pour une simple transposition, on pourrait juger plus facile
@@ -48,6 +51,7 @@ programme *awk* d'une ligne, grâce au symbole de redirection *pipeline* (|).
 
 .. code-block:: console
 
+   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." | \
    awk  '{print $9" "$8" "$6" "$7" "$1" "$2" "$3" "$4" "$5}'
    d'amour. mourir me font Belle marquise, vos beaux yeux
 
@@ -65,14 +69,21 @@ dans des *expressions rationnelles* (ou *expressions régulières*). Un
 méta-caractère connu des expressions rationnelles est le signe \*, indiquant, en
 ligne de commande, zéro ou un nombre indéfini de caractères, comme dans :
 
+.. code-block:: console
+
+   $ ls *.rst
+
 *sed* gère également des *références arrières*, qui affichent à l'endroit où on
 le souhaite la valeur correspondant à une expression littérale ou rationnelle
 trouvée auparavant. Heureusement pour nous, la déclaration d'amour
 de M. Jourdain contient exactement neuf mots, ce qui correspond au nombre
 maximal de références arrières possibles.
 
-sed "s#\(.*\) \(.*\), \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \(d'.*\)#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
-d'amour. mourir me font, Belle marquise, vos beaux yeux
+.. code-block:: console
+
+   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." | \
+   sed "s#\(.*\) \(.*\), \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \(d'.*\)#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
+   d'amour. mourir me font, Belle marquise, vos beaux yeux
 
 Nous buttons sur le même problème: l'expression régulière .* ne correspond pas à
 un mot, mais à une suite de caractères, ponctuation comprise. Il faut alors
@@ -82,17 +93,20 @@ sert pour faire de la prose. Nous allons utiliser les caractères d'échappement
 littéralement sous certaines consoles, mais comme des méta-caractères ayant une
 fonction spéciale :
 
-\)#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
-Belle marquise, vos beaux yeux me font mourir d'amour.
+.. code-block:: console
 
-\)#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
-d'amour mourir me font, Belle marquise, vos beaux yeux.
+   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." | \
+   sed "s#\(\<.*\>\) \(\<.*\>\), \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(d'\<.*\>\)#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
+   d'amour mourir me font, Belle marquise, vos beaux yeux.
 
 Nous pourrions également utiliser la forme [[:alpha:]]* qui fait gagner en
 lisibilité, mais perdre en concision :
 
-sed "s#\([[:alpha:]]*\) \([[:alpha:]]*\), \([[:alpha:]]*\) \([[:alpha:]]*\) \([[:alpha:]]*\) \([[:alpha:]]*\) \([[:alpha:]]*\) \([[:alpha:]]*\) \(d'[[:alpha:]]*\)#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
-d'amour mourir me font, Belle marquise, vos beaux yeux.
+.. code-block:: console
+
+   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." | \
+   sed "s#\([[:alpha:]]*\) \([[:alpha:]]*\), \([[:alpha:]]*\) \([[:alpha:]]*\) \([[:alpha:]]*\) \([[:alpha:]]*\) \([[:alpha:]]*\) \([[:alpha:]]*\) \(d'[[:alpha:]]*\)#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
+   d'amour mourir me font, Belle marquise, vos beaux yeux.
 
 C'est mieux, mais nous avons un problème de capitalisation. Nous allons donc
 utiliser les opérateurs /u et /l placés judicieusement.  Auparavant, nous allons
@@ -100,21 +114,34 @@ exporter des variables pour rendre le script plus concis et plus lisible :
 
 .. code-block:: console
 
-   $ export "$w $w, $w $w $w $w $w $w"
+   $ export w="\(\<.*\>\)"
+   $ export mots="$w $w, $w $w $w $w $w $w"
 
-   \)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#"
+.. code-block:: console
+
+   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." | \
+   sed "s#$mots \(d'\<.*\>\)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#"
    D'amour mourir me font, belle marquise, vos beaux yeux.
 
    Nous pouvons maintenant facilement redistribuer les références arrières pour
    obtenir toutes les variations du maître de philosophie :
 
-   \)#\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8#"
+.. code-block:: console
+
+   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." | \
+   sed "s#$mots \(d'\<.*\>\)#\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8#"
    Vos yeux beaux d'amour me font, belle marquise, mourir.
 
-   \)#\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#"
+.. code-block:: console
+
+   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." | \
+   sed "s#$mots \(d'\<.*\>\)#\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#"
    Mourir vos beaux yeux, belle marquise, d'amour me font.
 
-   \)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#"
+.. code-block:: console
+
+   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." | \
+   sed "s#$mots \(d'\<.*\>\)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#"
    Me font vos yeux beaux mourir, belle marquise, d'amour.
 
 Molière et GNU/Linux
@@ -125,41 +152,52 @@ Réécrivons le dialogue de M. Jourdain et de son maître de philosophie en styl
 
 MONSIEUR JOURDAIN : Je voudrais donc lui afficher sur la sortie standard :
 
-Mais je voudrais que cela fût mis d'une manière galante, que cela fût tourné
-gentiment.
+   .. code-block:: console
 
-MAÎTRE DE PHILOSOPHIE : On les peut mettre premièrement comme vous avez dit :
+      $ Belle marquise, vos beaux yeux me font mourir d'amour.
 
 Ou bien :
 
 .. code-block:: console
 
+   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour."
+
+Ou bien :
+
+.. code-block:: console
+
+   $ export declaration="Belle marquise, vos beaux yeux me font mourir d'amour."
    $ echo $declaration
 
 Ou bien :
 
 .. code-block:: console
 
-   $ export "$w $w, $w $w $w $w $w $w"
+   $ export w="\(\<.*\>\)"
+   $ export mots="$w $w, $w $w $w $w $w $w"
+   $ echo $declaration | \
+   sed "s#$mots \(d'\<.*\>\)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#"
 
 Ou bien :
 
 .. code-block:: console
 
-   $ echo \
-\)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#"
+   $ echo $declaration | \
+   sed "s#$mots \(d'\<.*\>\)#\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8#"
 
 Ou bien :
 
-\)#\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8#"
+.. code-block:: console
+
+   $ echo $declaration | \
+   sed "s#$mots \(d'\<.*\>\)#\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#"
 
 Ou bien :
 
-\)#\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#"
+.. code-block:: console
 
-Ou bien :
-
-\)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#"
+   $ echo $declaration | \
+   sed "s#$mots \(d'\<.*\>\)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#"
 
 Beaucoup d'efforts…
 -------------------
@@ -180,32 +218,27 @@ précédentes dans un fichier :
 
 .. code-block:: console
 
-   $ echo  variations.txt
-
-.. code-block:: console
-
-   $ echo  variations.txt
+   $ echo "Cher docteur, ces grands malheurs vous font pleurer d'amertume." > variations.txt
+   $ echo "Petit garçon, cette bonne glace te fait saliver d'envie." >> variations.txt
+   $ echo "Vaste océan, la forte houle te fait tanguer d'ivresse." >> variations.txt
 
 Plaçons les différentes commandes *sed* dans un script différent chacune :
 
- > moliere1.sed
-
 .. code-block:: console
 
-   $ echo  moliere2.sed
-
-.. code-block:: console
-
-   $ echo  moliere3.sed
+   $ echo "s#\(\<.*\>\) \(\<.*\>\), \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(d'\<.*\>\)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#" > moliere1.sed
+   $ echo "s#\(\<.*\>\) \(\<.*\>\), \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(d'\<.*\>\)#\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8#" > moliere2.sed
+   $ echo "s#\(\<.*\>\) \(\<.*\>\), \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(d'\<.*\>\)#\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#" > moliere3.sed
+   $ echo "s#\(\<.*\>\) \(\<.*\>\), \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(d'\<.*\>\)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#" > moliere4.sed
 
 Exécutons maintenant en boucle tous les
 scripts *sed* sur toutes les lignes du fichier :
 
 .. code-block:: console
 
+   $ for (( i=1; i<5; i++ )); do
    while read s; do echo "$s" | sed -f moliere$i.sed ; done < variations.txt
    done
-
    D'amertume pleurer vous font, cher docteur, ces grands malheurs.
    D'envie saliver te fait, petit garçon, cette bonne glace.
    D'ivresse tanguer te fait, vaste océan, la forte houle.
