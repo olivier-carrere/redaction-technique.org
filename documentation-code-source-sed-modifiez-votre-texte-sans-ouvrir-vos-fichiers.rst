@@ -123,8 +123,8 @@ exporter des variables pour rendre le script plus concis et plus lisible :
    sed "s#$mots \(d'\<.*\>\)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#"
    D'amour mourir me font, belle marquise, vos beaux yeux.
 
-   Nous pouvons maintenant facilement redistribuer les références arrières pour
-   obtenir toutes les variations du maître de philosophie :
+Nous pouvons maintenant facilement redistribuer les références arrières pour
+obtenir toutes les variations du maître de philosophie :
 
 .. code-block:: console
 
@@ -150,54 +150,59 @@ Molière et GNU/Linux
 Réécrivons le dialogue de M. Jourdain et de son maître de philosophie en style
 *geek* :
 
-MONSIEUR JOURDAIN : Je voudrais donc lui afficher sur la sortie standard :
+MONSIEUR JOURDAIN :
+   Je voudrais donc lui afficher sur la sortie standard :
 
    .. code-block:: console
 
       $ Belle marquise, vos beaux yeux me font mourir d'amour.
 
-Ou bien :
+   Mais je voudrais que cela fût mis d'une manière galante, que cela fût tourné
+   gentiment.
 
-.. code-block:: console
+MAÎTRE DE PHILOSOPHIE :
+   On les peut mettre premièrement comme vous avez dit :
 
-   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour."
+   .. code-block:: console
 
-Ou bien :
+      $ echo "Belle marquise, vos beaux yeux me font mourir d'amour."
 
-.. code-block:: console
+   Ou bien :
 
-   $ export declaration="Belle marquise, vos beaux yeux me font mourir d'amour."
-   $ echo $declaration
+   .. code-block:: console
 
-Ou bien :
+      $ export declaration="Belle marquise, vos beaux yeux me font mourir d'amour."
+      $ echo $declaration
 
-.. code-block:: console
+   Ou bien :
 
-   $ export w="\(\<.*\>\)"
-   $ export mots="$w $w, $w $w $w $w $w $w"
-   $ echo $declaration | \
-   sed "s#$mots \(d'\<.*\>\)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#"
+   .. code-block:: console
 
-Ou bien :
+      $ export w="\(\<.*\>\)"
+      $ export mots="$w $w, $w $w $w $w $w $w"
+      $ echo $declaration | \
+      sed "s#$mots \(d'\<.*\>\)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#"
 
-.. code-block:: console
+   Ou bien :
 
-   $ echo $declaration | \
-   sed "s#$mots \(d'\<.*\>\)#\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8#"
+   .. code-block:: console
 
-Ou bien :
+      $ echo $declaration | \
+      sed "s#$mots \(d'\<.*\>\)#\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8#"
 
-.. code-block:: console
+   Ou bien :
 
-   $ echo $declaration | \
-   sed "s#$mots \(d'\<.*\>\)#\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#"
+   .. code-block:: console
 
-Ou bien :
+      $ echo $declaration | \
+      sed "s#$mots \(d'\<.*\>\)#\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#"
 
-.. code-block:: console
+   Ou bien :
 
-   $ echo $declaration | \
-   sed "s#$mots \(d'\<.*\>\)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#"
+   .. code-block:: console
+
+      $ echo $declaration | \
+      sed "s#$mots \(d'\<.*\>\)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#"
 
 Beaucoup d'efforts…
 -------------------
