@@ -3,6 +3,8 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
+.. review: text no, code no
+
 .. _un-index-est-il-utile-dans-un-pdf:
 
 Un Index Est-Il Utile Dans Un PDF ?

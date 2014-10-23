@@ -3,6 +3,8 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
+.. review: text no, code no
+
 .. _diminuer-les-couts-ameliorer-la-satisfaction-client:
 
 Documentation Technique : Diminuer Les Coûts, Améliorer La Satisfaction Client

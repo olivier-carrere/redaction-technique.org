@@ -3,6 +3,8 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
+.. review: text no, code no
+
 .. _migration-de-framemaker-vers-dita-xml:
 
 Migration De FrameMaker Vers DITA XML

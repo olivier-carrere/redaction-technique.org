@@ -3,6 +3,8 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
+.. review: text no, code no
+
 .. _xsl-fo-inserer-automatiquement-un-titre-pour-les-exemples:
 
 XSL-FO : Insérer Automatiquement Un Titre Pour Les Exemples

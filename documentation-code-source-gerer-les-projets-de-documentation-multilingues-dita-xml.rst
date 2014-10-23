@@ -3,6 +3,8 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
+.. review: text no, code no
+
 .. _gerer-les-projets-de-documentation-multilingues-dita-xml:
 
 Gérer Les Projets De Documentation Multilingues DITA XML

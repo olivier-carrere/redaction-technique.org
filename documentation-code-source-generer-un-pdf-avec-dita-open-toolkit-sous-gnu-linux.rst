@@ -3,6 +3,8 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
+.. review: text no, code no
+
 .. _generer-un-pdf-avec-dita-open-toolkit-sous-gnu-linux:
 
 Générer Un PDF Avec DITA Open Toolkit Sous GNU/Linux

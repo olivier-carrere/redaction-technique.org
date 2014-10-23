@@ -3,6 +3,8 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
+.. review: text no, code no
+
 .. _creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-conditionnel:
 
 Créer Des Documents Différents À Partir Des Mêmes Sources DITA XML (Texte Conditionnel)

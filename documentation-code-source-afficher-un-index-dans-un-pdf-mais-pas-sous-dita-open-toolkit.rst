@@ -3,6 +3,8 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
+.. review: text no, code no
+
 .. _afficher-un-index-dans-un-pdf-mais-pas-sous-dita-open-toolkit:
 
 Afficher Un Index Dans Un PDF (Mais Pas Sous DITA Open Toolkit)

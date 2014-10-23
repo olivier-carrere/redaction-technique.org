@@ -3,6 +3,8 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
+.. review: text no, code no
+
 .. _utiliser-le-noeud-xml-de-plus-bas-niveau:
 
 Utiliser Le Nœud XML De Plus Bas Niveau

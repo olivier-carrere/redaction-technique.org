@@ -3,6 +3,8 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
+.. review: text no, code no
+
 .. _faciliter-le-travail-de-groupe-avec-subversion-cron-et-emacs:
 
 Faciliter Le Travail De Groupe Avec Subversion, Cron Et Emacs

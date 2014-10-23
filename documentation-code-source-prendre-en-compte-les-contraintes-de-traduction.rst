@@ -3,6 +3,8 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
+.. review: text no, code no
+
 .. _prendre-en-compte-les-contraintes-de-traduction:
 
 Prendre En Compte Les Contraintes De Traduction

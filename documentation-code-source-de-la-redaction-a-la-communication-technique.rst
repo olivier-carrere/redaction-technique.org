@@ -3,6 +3,8 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
+.. review: text no, code no
+
 .. _de-la-redaction-a-la-communication-technique:
 
 De La Rédaction À La Communication Technique

@@ -3,6 +3,8 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
+.. review: text no, code no
+
 .. _les-cms-le-workflow-en-prime-mais-une-fiabilite-a-tester:
 
 Les CMS : Le Workflow En Prime, Mais Une Fiabilité À Tester

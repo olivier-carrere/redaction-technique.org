@@ -3,6 +3,8 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
+.. review: text no, code no
+
 .. _organiser-son-historique-avec-git-rebase:
 
 Organiser Son Historique Avec Git Rebase

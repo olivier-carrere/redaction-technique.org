@@ -3,6 +3,8 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
+.. review: text no, code no
+
 .. _xsl-fo-filtrer-du-contenu-selon-des-conditions-sauf-et-ou:
 
 XSL-FO : Filtrer Du Contenu Selon Des Conditions « Sauf » Et « Ou »

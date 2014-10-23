@@ -3,6 +3,8 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
+.. review: text no, code no
+
 .. _gerer-son-contenu-dita-xml-avec-ou-sans-cms:
 
 Gérer Son Contenu DITA XML Avec Ou Sans CMS ?

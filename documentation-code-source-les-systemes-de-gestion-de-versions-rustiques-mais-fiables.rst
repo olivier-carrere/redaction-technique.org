@@ -3,6 +3,8 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
+.. review: text no, code no
+
 .. _les-systemes-de-gestion-de-versions-rustiques-mais-fiables:
 
 Les Systèmes De Gestion De Versions - Rustiques Mais Fiables

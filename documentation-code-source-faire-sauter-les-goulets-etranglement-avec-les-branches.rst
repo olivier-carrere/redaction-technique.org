@@ -3,6 +3,8 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
+.. review: text no, code no
+
 .. _faire-sauter-les-goulets-etranglement-avec-les-branches:
 
 Faire Sauter Les Goulets D'Étranglement Avec Les Branches

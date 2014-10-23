@@ -3,6 +3,8 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
+.. review: text no, code no
+
 .. _du-document-a-la-base-documentaire-modulaire:
 
 Du Document À La Base Documentaire Modulaire

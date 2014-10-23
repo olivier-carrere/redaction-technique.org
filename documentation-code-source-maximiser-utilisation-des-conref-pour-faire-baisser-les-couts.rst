@@ -3,6 +3,8 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
+.. review: text no, code no
+
 .. _maximiser-utilisation-des-conref-pour-faire-baisser-les-couts:
 
 Maximiser L'Utilisation Des Conref Pour Faire Baisser Les Coûts

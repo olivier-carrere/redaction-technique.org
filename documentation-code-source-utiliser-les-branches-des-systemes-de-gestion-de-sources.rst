@@ -3,6 +3,8 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
+.. review: text no, code no
+
 .. _utiliser-les-branches-des-systemes-de-gestion-de-sources:
 
 Utiliser Les Branches Des Systèmes De Gestion De Sources

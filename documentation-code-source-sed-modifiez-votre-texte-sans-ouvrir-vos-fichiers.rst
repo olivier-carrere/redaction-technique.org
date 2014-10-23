@@ -3,6 +3,8 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
+.. review: text yes, code yes
+
 .. _sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers:
 
 Sed : Modifiez Votre Texte Sans Ouvrir Vos Fichiers

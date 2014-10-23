@@ -3,6 +3,8 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
+.. review: text no, code no
+
 .. _les-topics-modules-d-information-de-base-dita:
 
 Les Topics, Modules D'Information De Base DITA

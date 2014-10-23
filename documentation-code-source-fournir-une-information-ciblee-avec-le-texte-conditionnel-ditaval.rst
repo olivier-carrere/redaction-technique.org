@@ -3,6 +3,8 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
+.. review: text no, code no
+
 .. _fournir-une-information-ciblee-avec-le-texte-conditionnel-ditaval:
 
 Fournir Une Information Ciblée Avec Le Texte Conditionnel Ditaval
