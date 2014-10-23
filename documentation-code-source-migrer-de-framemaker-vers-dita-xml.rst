@@ -37,7 +37,7 @@ Le but de cette procédure est de :
    qu'EDD** et sauvegardez la nouvelle EDD sous le nom
    :file:`DITA-topic-edd.fm`.
 
-#. Ouvrez le fichier *styles.fm*, puis choisissez **Fichier > Importer les
+#. Ouvrez le fichier :file:`styles.fm`, puis choisissez **Fichier > Importer les
    définitions d'éléments** et importez les définitions d'éléments à partir de
    :file:`DITA-topic-edd.fm`.
 
@@ -57,7 +57,7 @@ Le but de cette procédure est de :
    choisissez **StructureTools > Utilitaires > Structurer le document en
    cours**.
 
-#. Sélectionnez *DITA2FM-conversion-table.fm* et cliquez sur **Ajouter
+#. Sélectionnez :file:`DITA2FM-conversion-table.fm` et cliquez sur **Ajouter
    structure**.
 
 #. Enregistrez le fichier de contenu FrameMaker au format XML sans sélectionner
@@ -69,7 +69,7 @@ Le but de cette procédure est de :
    contenu. Il vous faudra notamment placer à la main les références croisées,
    de préférence dans une *reltable*.
 
-Pour générer les éléments permettant de construire un fichier ditamap, vous
+Pour générer les éléments permettant de construire un fichier :file:`.ditamap`, vous
 pouvez par exemple utiliser des scripts Perl du type :
 
 .. warning::
@@ -90,12 +90,10 @@ pouvez par exemple utiliser des scripts Perl du type :
    print(OUTPUT $input_scalar);
    close(OUTPUT);
 
-
-
 Vous pouvez également modulariser facilement le contenu à l'aide des ciseaux XML
 `xml_split <http://search.cpan.org/dist/XML-Twig/tools/xml_split/xml_split>`_,
 ou utiliser le module Perl `XML::Twig <http://www.xmltwig.org/xmltwig/>`_, ou
-encore ce *one-liner* Bash pour renommer les fichiers dita d'après leur titre :
+encore ce *one-liner* Bash pour renommer les fichiers :file:`.dita` d'après leur titre :
 
 .. code-block:: console
 
