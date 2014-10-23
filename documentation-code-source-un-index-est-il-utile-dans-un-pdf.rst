@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. review: text yes, no code
 
 .. _un-index-est-il-utile-dans-un-pdf:
 
@@ -27,7 +27,7 @@ source d'information qui peut l'intéresser. Les moteurs de recherche ont rendu
 l'index caduc.
 
 Si la documentation technique utilise une terminologie cohérente, l'efficacité
-de la recherche en plein texte est réduite : si le **rédacteur technique*
+de la recherche en plein texte est réduite : si le **rédacteur technique**
 a utilisé uniquement le terme *répertoire*, le lecteur qui recherche le mot
 *dossier* passera à côté de l'information qu'il recherche.
 
