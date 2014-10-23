@@ -8,25 +8,26 @@
 sed : modifiez votre texte sans ouvrir vos fichiers
 ===================================================
 
-Les clones d'Unix tels que GNU/Linux sont peu utilisés pour gérer la
-documentation technique. Ceci est étrange si l'on songe à la pléthore d'outils
-disponibles sous ces plateformes pour manipuler du texte dans tous les sens.
-Prenons l'exemple du dialogue entre M. Jourdain et son maître de philosophie,
-dans le *Bourgeois gentilhomme* de Molière :
+Les clones d'Unix sont peu utilisés pour gérer la documentation technique. Ceci
+est étrange si l'on songe à la pléthore d'outils disponibles sous ces
+plateformes pour manipuler du texte dans tous les sens.
 
-MONSIEUR JOURDAIN : […] Je voudrais donc lui mettre dans un billet :
- &#8220;Belle marquise, vos beaux yeux me font mourir d'amour&#8221; ; mais je
- voudrais que cela fût mis d'une manière galante, que cela fût tourné
- gentiment.
+Prenons l'exemple du dialogue entre entre M. Jourdain et son maître de
+philosophie, dans le *Bourgeois gentilhomme* de Molière :
 
-[…]
+*MONSIEUR JOURDAIN :*
+  *[...] Je voudrais donc lui mettre dans un billet : « Belle marquise, vos
+  beaux yeux me font mourir d'amour » ; mais je voudrais que cela fût mis d'une
+  manière galante, que cela fût tourné gentiment.*
 
-MAÎTRE DE PHILOSOPHIE : On les peut mettre premièrement comme vous avez dit :
- Belle marquise, vos beaux yeux me font mourir d'amour. Ou bien : D'amour mourir
- me font, belle marquise, vos beaux yeux. Ou bien : Vos yeux beaux d'amour me
- font, belle marquise, mourir. Ou bien : Mourir vos beaux yeux, belle marquise,
- d'amour me font. Ou bien : Me font vos yeux beaux mourir, belle marquise,
- d'amour.
+[...]
+
+*MAÎTRE DE PHILOSOPHIE :*
+   *On les peut mettre premièrement comme vous avez dit : Belle marquise, vos
+   beaux yeux me font mourir d'amour. Ou bien : D'amour mourir me font, belle
+   marquise, vos beaux yeux. Ou bien : Vos yeux beaux d'amour me font, belle
+   marquise, mourir. Ou bien : Mourir vos beaux yeux, belle marquise, d'amour me
+   font. Ou bien : Me font vos yeux beaux mourir, belle marquise, d'amour.*
 
 Commençons par afficher la phrase d'origine dans un terminal :
 
@@ -39,10 +40,11 @@ d'utiliser *awk*. *awk* ne gère en effet pas des lignes, mais des *champs* d'un
 dit, *awk* traite le texte comme une base de données. Il peut facilement
 afficher toute la ligne, ou seulement un ou plusieurs champs, dans l'ordre
 souhaité. Les champs sont indiqués sous la forme *$n*, où n indique la position
-du champ dans la ligne, à partir de la gauche. Ainsi, *$1* indique le premier
-champ, *$2* le dernier, etc. *$0* correspond à toute la ligne.  Nous allons donc
-donner la déclaration d'amour de M. Jourdain en entrée d'un programme *awk
-d'une ligne, grâce au symbole de redirection *pipeline* (|).
+du champ dans la ligne, à partir de la gauche. Ainsi *$1* indique le premier
+champ, *$2* le dernier, etc. *$0* correspond à toute la ligne.
+
+Nous allons donc donner la déclaration d'amour de M. Jourdain en entrée d'un
+programme *awk* d'une ligne, grâce au symbole de redirection *pipeline* (|).
 
 .. code-block:: console
 
@@ -60,8 +62,8 @@ raffiner la commande *awk*.
 Il est plus simple de se tourner vers *sed*. *sed* sélectionne dans des lignes
 des ensembles de caractères cités littéralement, ou *via* des méta-caractères
 dans des *expressions rationnelles* (ou *expressions régulières*). Un
-méta-caractère connu des expressions rationnelles est le signe *, indiquant :
-zéro ou un nombre indéfini de caractères.
+méta-caractère connu des expressions rationnelles est le signe \*, indiquant, en
+ligne de commande, zéro ou un nombre indéfini de caractères, comme dans :
 
 *sed* gère également des *références arrières*, qui affichent à l'endroit où on
 le souhaite la valeur correspondant à une expression littérale ou rationnelle
@@ -72,19 +74,16 @@ maximal de références arrières possibles.
 sed "s#\(.*\) \(.*\), \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \(d'.*\)#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
 d'amour. mourir me font, Belle marquise, vos beaux yeux
 
-Nous buttons sur le même problème : l'expression régulière .* ne correspond pas
-à un mot, mais à une suite de caractères, ponctuation comprise. Il faut alors
+Nous buttons sur le même problème: l'expression régulière .* ne correspond pas à
+un mot, mais à une suite de caractères, ponctuation comprise. Il faut alors
 utiliser la forme <.*>, qui correspond à un mot tel que ceux dont M. Jourdain se
-sert pour faire de la prose.
+sert pour faire de la prose. Nous allons utiliser les caractères d'échappement
+(barre oblique inverse \\) pour que les signes < et > ne soient pas interprétés
+littéralement sous certaines consoles, mais comme des méta-caractères ayant une
+fonction spéciale :
 
 \)#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
 Belle marquise, vos beaux yeux me font mourir d'amour.
-
-Mais nous retrouvons la phrase d'origine intacte. C'est que *sed* n'a trouvé
-aucun motif correspondant à l'expression régulière que nous lui avons indiquée,
-car nous avons oublié d'utiliser les caractères d'échappement (barre oblique
-inverse \) pour que les signes < et > ne soient pas interprétés
-littéralement, mais comme des méta-caractères ayant une fonction spéciale :
 
 \)#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
 d'amour mourir me font, Belle marquise, vos beaux yeux.
@@ -142,6 +141,9 @@ Ou bien :
 .. code-block:: console
 
    $ export "$w $w, $w $w $w $w $w $w"
+
+Ou bien :
+
 .. code-block:: console
 
    $ echo \
@@ -162,8 +164,8 @@ Ou bien :
 Beaucoup d'efforts…
 -------------------
 
-Certes, beaucoup d'efforts pour pas grand-chose, me direz-vous. Mais imaginons
-un fichier qui contienne 1000 phrases de la même structure :
+Certes, beaucoup d'efforts pour pas grand chose, me direz-vous. Mais imaginons
+un fichier qui contiennent 1000 phrases de la même structure :
 
 Cher docteur, ces grands malheurs vous font pleurer d'amertume.
 Petit garçon, cette bonne glace te fait saliver d'envie.
@@ -171,10 +173,10 @@ Vaste océan, la forte houle te fait tanguer d'ivresse.
 
 Ceci est en l'occurrence peu probable, mais il est en revanche monnaie courante
 de trouver dans la documentation technique des phrases de même structure, pour
-des raisons d'homogénéité stylistique.  Pour effectuer nos tests sur un
-échantillon, plaçons les trois phrases précédentes dans un fichier :
+des raisons d'homogénéité stylistique.
 
- > variations.txt
+Pour effectuer nos tests sur un échantillon, plaçons les trois phrases
+précédentes dans un fichier :
 
 .. code-block:: console
 
@@ -196,12 +198,7 @@ Plaçons les différentes commandes *sed* dans un script différent chacune :
 
    $ echo  moliere3.sed
 
-.. code-block:: console
-
-   $ echo  moliere4.sed
-
-*sed* se souvient des expressions régulières utilisées précédemment, il est donc
-inutile de les répéter dans le script.  Exécutons maintenant en boucle tous les
+Exécutons maintenant en boucle tous les
 scripts *sed* sur toutes les lignes du fichier :
 
 .. code-block:: console
