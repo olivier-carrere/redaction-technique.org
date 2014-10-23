@@ -7,7 +7,7 @@
 
 .. _git-du-fichier-au-contenu:
 
-Git : Du Fichier Au Contenu
+Git : du fichier au contenu
 ===========================
 
 Vous êtes habitué à manipuler des fichiers ? Git vous invite à penser

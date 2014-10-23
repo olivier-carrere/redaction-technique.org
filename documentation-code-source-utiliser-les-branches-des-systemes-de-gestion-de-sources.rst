@@ -7,7 +7,7 @@
 
 .. _utiliser-les-branches-des-systemes-de-gestion-de-sources:
 
-Utiliser Les Branches Des Systèmes De Gestion De Sources
+Utiliser les branches des systèmes de gestion de sources
 ========================================================
 
 Les CMS (ou systèmes de gestion de sources) proposent de créer des branches d'un

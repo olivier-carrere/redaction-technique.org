@@ -7,7 +7,7 @@
 
 .. _diminuer-les-couts-ameliorer-la-satisfaction-client:
 
-Documentation Technique : Diminuer Les Coûts, Améliorer La Satisfaction Client
+Documentation technique : diminuer les coûts, améliorer la satisfaction client
 ==============================================================================
 
 La **documentation technique**, c'est comme une ampoule: une ampoule basse

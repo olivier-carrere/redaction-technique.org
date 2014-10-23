@@ -7,7 +7,7 @@
 
 .. _principe-de-simplicite-kiss:
 
-Principe De Simplicité KISS
+Principe de simplicité KISS
 ===========================
 
 Le principe **KISS**, *Keep it simple stupid*, n'est pas spécifique à la

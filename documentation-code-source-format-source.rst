@@ -7,7 +7,7 @@
 
 .. _format-source:
 
-Format Source
+Format source
 =============
 
 Le contenu d'un projet de **rédaction technique** est créé dans un **format

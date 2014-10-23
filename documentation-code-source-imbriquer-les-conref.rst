@@ -7,7 +7,7 @@
 
 .. _imbriquer-les-conref:
 
-Imbriquer Les Conref
+Imbriquer les conref
 ====================
 
 Pour des raisons de facilité de mise à jour et de maintenance du contenu **DITA

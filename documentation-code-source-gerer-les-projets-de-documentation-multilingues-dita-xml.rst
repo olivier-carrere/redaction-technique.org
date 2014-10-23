@@ -7,7 +7,7 @@
 
 .. _gerer-les-projets-de-documentation-multilingues-dita-xml:
 
-Gérer Les Projets De Documentation Multilingues DITA XML
+Gérer les projets de documentation multilingues DITA XML
 ========================================================
 
 `http://dita.xml.org/>**DITA XML**` est un formidable format pour gérer les

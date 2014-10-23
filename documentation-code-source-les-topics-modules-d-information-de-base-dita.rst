@@ -7,7 +7,7 @@
 
 .. _les-topics-modules-d-information-de-base-dita:
 
-Les Topics, Modules D'Information De Base DITA
+Les topics, modules d'information de base DITA
 ==============================================
 
 Les `topics <http://docs.oasis-open.org/dita/v1.0/archspec/topicover.html>`_

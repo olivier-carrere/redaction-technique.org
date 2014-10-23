@@ -7,7 +7,7 @@
 
 .. _restructuration-du-contenu-framemaker:
 
-Restructuration Du Contenu FrameMaker
+Restructuration du contenu FrameMaker
 =====================================
 
 La partie automatisée d'une migration de `FrameMaker

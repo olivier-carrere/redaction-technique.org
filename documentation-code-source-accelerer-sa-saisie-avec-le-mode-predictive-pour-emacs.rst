@@ -7,7 +7,7 @@
 
 .. _accelerer-sa-saisie-avec-le-mode-predictive-pour-emacs:
 
-Accélérer Sa Saisie Avec Le Mode Predictive Pour Emacs
+Accélérer sa saisie avec le mode Predictive pour Emacs
 ======================================================
 
 Ce **didacticiel mode Predictive pour Emacs** est destiné à

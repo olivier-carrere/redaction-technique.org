@@ -7,7 +7,7 @@
 
 .. _gerer-son-contenu-dita-xml-avec-ou-sans-cms:
 
-Gérer Son Contenu DITA XML Avec Ou Sans CMS ?
+Gérer son contenu DITA XML avec ou sans CMS ?
 =============================================
 
 L'architecture `DITA XML <http://dita.xml.org/>`_ ne propose pas de

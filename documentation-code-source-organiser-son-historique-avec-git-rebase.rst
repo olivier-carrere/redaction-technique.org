@@ -7,7 +7,7 @@
 
 .. _organiser-son-historique-avec-git-rebase:
 
-Organiser Son Historique Avec Git Rebase
+Organiser son historique avec Git rebase
 ========================================
 
 Git est d'un abord déroutant. Ses *workflows* s'appliquent à du contenu plutôt

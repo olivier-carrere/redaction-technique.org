@@ -7,7 +7,7 @@
 
 .. _les-trois-niveaux-de-la-documentation-technique:
 
-Les Trois Niveaux De La Documentation Technique
+Les trois niveaux de la documentation technique
 ===============================================
 
 Si l'on compare la **documentation technique** à un jardin, on peut la

@@ -7,7 +7,7 @@
 
 .. _un-index-est-il-utile-dans-un-pdf:
 
-Un Index Est-Il Utile Dans Un PDF ?
+Un index est-il utile dans un PDF ?
 ===================================
 
 À l'heure des documents dématérialisés, un index est-il un élément indispensable

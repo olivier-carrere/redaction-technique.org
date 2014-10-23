@@ -7,7 +7,7 @@
 
 .. _xsl-fo-inserer-automatiquement-un-titre-pour-les-exemples:
 
-XSL-FO : Insérer Automatiquement Un Titre Pour Les Exemples
+XSL-FO : insérer automatiquement un titre pour les exemples
 ===========================================================
 
 Par défaut, **DITA Open Toolkit** n'insère pas automatiquement dans les fichiers

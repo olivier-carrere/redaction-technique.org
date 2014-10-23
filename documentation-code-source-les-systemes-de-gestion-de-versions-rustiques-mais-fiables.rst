@@ -7,7 +7,7 @@
 
 .. _les-systemes-de-gestion-de-versions-rustiques-mais-fiables:
 
-Les Systèmes De Gestion De Versions - Rustiques Mais Fiables
+Les systèmes de gestion de versions - rustiques mais fiables
 ============================================================
 
 Travailler sur des fichiers sources au format texte, et non binaire, est

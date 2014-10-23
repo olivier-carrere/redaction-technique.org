@@ -7,7 +7,7 @@
 
 .. _sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers:
 
-Sed : Modifiez Votre Texte Sans Ouvrir Vos Fichiers
+sed : modifiez votre texte sans ouvrir vos fichiers
 ===================================================
 
 Les clones d'Unix sont peu utilisés pour gérer la documentation technique. Ceci

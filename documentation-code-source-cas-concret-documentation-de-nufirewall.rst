@@ -7,7 +7,7 @@
 
 .. _cas-concret-documentation-de-nufirewall:
 
-Cas Concret : Documentation De NuFirewall
+Cas concret : documentation de NuFirewall
 =========================================
 
 La documentation de `NuFirewall

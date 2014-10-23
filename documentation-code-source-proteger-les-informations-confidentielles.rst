@@ -7,7 +7,7 @@
 
 .. _proteger-les-informations-confidentielles:
 
-Protéger Les Informations Confidentielles
+Protéger les informations confidentielles
 =========================================
 
 Le puissant mécanisme `conref

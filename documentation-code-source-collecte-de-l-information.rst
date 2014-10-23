@@ -7,7 +7,7 @@
 
 .. _collecte-de-l-information:
 
-Collecte De L'Information
+Collecte de l'information
 =========================
 
 Le **rédacteur technique** collecte l'information auprès de différentes sources,

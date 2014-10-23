@@ -7,7 +7,7 @@
 
 .. _base-de-donnees-sql:
 
-Base De Données SQL
+Base de données SQL
 ===================
 
 Dans le cas d'un CMS de type Drupal, Joomla ou WordPress, le référentiel est une

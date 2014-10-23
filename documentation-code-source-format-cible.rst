@@ -7,7 +7,7 @@
 
 .. _format-cible:
 
-Format Cible
+Format cible
 ============
 
 Le format cible (dans le cas d'une photo, le format cible est le format `JPEG

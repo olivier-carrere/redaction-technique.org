@@ -7,7 +7,7 @@
 
 .. _quel-referentiel-pour-le-travail-de-groupe:
 
-Quel Référentiel Pour Le Travail De Groupe ?
+Quel référentiel pour le travail de groupe ?
 ============================================
 
 Le référentiel le plus fréquemment utilisé pour stocker des fichiers

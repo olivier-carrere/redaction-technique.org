@@ -7,7 +7,7 @@
 
 .. _afficher-un-index-dans-un-pdf-mais-pas-sous-dita-open-toolkit:
 
-Afficher Un Index Dans Un PDF (Mais Pas Sous DITA Open Toolkit)
+Afficher un index dans un PDF (mais pas sous DITA Open Toolkit)
 ===============================================================
 
 Tout n'est pas parfait sous `http://dita-ot.sourceforge.net/1.6/>DITA

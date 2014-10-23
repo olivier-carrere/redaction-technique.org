@@ -7,7 +7,7 @@
 
 .. _redaction-technique-un-processus-industriel:
 
-Rédaction Technique : Un Processus Industriel
+Rédaction technique : un processus industriel
 =============================================
 
 La rédaction technique repose sur des processus rationnels. Trop souvent vue

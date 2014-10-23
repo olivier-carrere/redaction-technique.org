@@ -7,7 +7,7 @@
 
 .. _dita-open-toolkit-afficher-les-references-croisees-dans-les-pdf:
 
-DITA Open Toolkit : Afficher Les Références Croisées Dans Les PDF
+DITA Open Toolkit : afficher les références croisées dans les PDF
 =================================================================
 
 Les **références croisées** sont un élément important d'une **documentation

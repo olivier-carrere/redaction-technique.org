@@ -7,7 +7,7 @@
 
 .. _migration-de-framemaker-vers-dita-xml:
 
-Migration De FrameMaker Vers DITA XML
+Migration de FrameMaker vers DITA XML
 =====================================
 
 Migrer de FrameMaker vers `DITA XML <http://dita.xml.org/>`_, ce n'est pas comme

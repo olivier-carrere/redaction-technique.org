@@ -7,7 +7,7 @@
 
 .. _validation-et-controle-qualite:
 
-Validation Et Contrôle Qualité
+Validation et contrôle qualité
 ==============================
 
 Un support de **rédaction technique** doit être soumis à un **contrôle qualité**

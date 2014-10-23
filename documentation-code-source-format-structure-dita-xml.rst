@@ -7,7 +7,7 @@
 
 .. _format-structure-dita-xml:
 
-Format Structuré DITA XML
+Format structuré DITA XML
 =========================
 
 Diminuer les coûts de production et de traduction, réduire les délais de mise

@@ -7,7 +7,7 @@
 
 .. _utiliser-ide-nxml-pour-dita-xml:
 
-Utiliser L'IDE NXML Pour DITA XML
+Utiliser l'IDE nXML pour DITA XML
 =================================
 
 Le **mode nXML** propose de valider en temps réel les documents XML DocBook,
