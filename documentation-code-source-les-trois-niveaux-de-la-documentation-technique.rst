@@ -21,14 +21,14 @@ classifier selon les niveaux suivants :
 |                   |- Création de la documentation par des équipes non dédiées|
 |                   |                                                          |
 |                   |- Utilisation de formats non adaptés ou utilisation       |
-|                   |incohérente de formats adaptés                            |
+|                   |  incohérente de formats adaptés                          |
 +-------------------+----------------------------------------------------------+
 |Jardin à l'anglaise|- Utilisation de processus documentaires fiables          |
 |                   |                                                          |
 |                   |- Création de la documentation par des équipes dédiées    |
 |                   |                                                          |
 |                   |- Utilisation cohérente de formats adaptés, mais non      |
-|                   |structurés                                                |
+|                   |  structurés                                              |
 +-------------------+----------------------------------------------------------+
 |Jardin à la        |- Utilisation de processus documentaires fiables          |
 |française          |                                                          |
