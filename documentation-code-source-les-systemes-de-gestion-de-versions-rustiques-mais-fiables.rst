@@ -100,5 +100,4 @@ ou les branches.
 .. toctree::
    :maxdepth: 2
 
-   documentation-code-source-faciliter-le-travail-de-groupe-avec-subversion-cron-et-emacs
    documentation-code-source-utiliser-les-branches-des-systemes-de-gestion-de-sources
