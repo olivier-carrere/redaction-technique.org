@@ -31,7 +31,7 @@ technique** collecte toute l'information disponible :
 
 -  lecture de la presse spécialisée.
 
-.. figure:: media/collecte.png
+.. figure:: graphics/collecte.png
 
    Collecte de l'information
 

@@ -24,7 +24,7 @@ Il est facile de générer du **DocBook** à partir de DITA XML. DITA Open Toolk
 propose par défaut ce format cible, au même titre que le PDF ou le
 HTML. L'opération inverse ne peut pas être totalement automatisée. Pourquoi ?
 
-.. figure:: media/entropie.png
+.. figure:: graphics/entropie.png
 
    Il n'est pas possible de migrer automatiquement des données de formats
    pauvres vers des format riches en information
@@ -65,7 +65,7 @@ Si votre contenu était une photo, nous pourrions faire l'analogie suivante :
 Le passage de RAW en TIFF et de TIFF en JPEG est destructif et ne peut se faire
 en sens inverse.
 
-.. figure:: media/entropie-dita-docbook.png
+.. figure:: graphics/entropie-dita-docbook.png
 
    Le PDF est sémantiquement plus pauvre que DocBook, lui-même plus pauvre que
    DITA XML.

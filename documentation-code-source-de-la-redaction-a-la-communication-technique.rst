@@ -25,7 +25,7 @@ long de son cycle de vie. Destinée autant au grand public, aux journalistes et
 aux prospects qu'aux clients, elle dépasse et englobe la rédaction technique,
 destinée uniquement aux utilisateurs.
 
-.. figure:: media/marketing-technique.png
+.. figure:: graphics/marketing-technique.png
 
    Supports de rédaction marketing et technique
 

@@ -33,7 +33,7 @@ Un important travail de restructuration du document FrameMaker doit cependant
   sera utilisé parmi les centaines de balises proposées par DITA XML : il est
   en effet fortement déconseillé de les utiliser toutes).
 
-.. figure:: media/framemaker-restructure.png
+.. figure:: graphics/framemaker-restructure.png
 
    Restructuration du contenu  FrameMaker et mise en place de la chaîne DITA XML
 

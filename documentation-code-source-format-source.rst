@@ -65,7 +65,7 @@ mais autorise l'ajout manuel d'éléments de mise en page. La même maquette peu
 être dupliquée pour tout le document, ou une maquette différente peut être
 utilisée pour chaque fichier qui compose ce dernier.
 
-.. figure:: media/modulaire-texte-monolithique-binaire.png
+.. figure:: graphics/modulaire-texte-monolithique-binaire.png
 
    Formats sources : degré de modularité et format
 

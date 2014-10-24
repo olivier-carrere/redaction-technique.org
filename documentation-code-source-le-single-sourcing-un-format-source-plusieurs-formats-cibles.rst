@@ -20,7 +20,7 @@ tranché en faveur du *single-sourcing*. Le gain qualitatif, discutable, de
 créer, maintenir et traduire une version source différente pour chaque version
 cible est trop important.
 
-.. figure:: media/single-sourcing.png
+.. figure:: graphics/single-sourcing.png
 
    Un seul jeu d'informations, une multiplicité de formats de sortie
 

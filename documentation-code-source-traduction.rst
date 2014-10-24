@@ -25,7 +25,7 @@ faut également faire communiquer avec les traducteurs les différents acteurs :
 Si la documentation repose sur un ensemble de modules, la traduction peut se
 faire en parallèle de la rédaction, ce qui réduit les délais de livraison.
 
-.. figure:: media/parallelisation-traduction.png
+.. figure:: graphics/parallelisation-traduction.png
 
    Parallèlisation de la rédaction et de la traduction
 

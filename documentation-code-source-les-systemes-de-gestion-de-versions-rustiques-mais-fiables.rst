@@ -41,7 +41,7 @@ fonctionnalités supérieures :
   de gestion de version favorisent un dépôt fréquent de modifications
   atomiques).
 
-.. figure:: media/versioning-system.png
+.. figure:: graphics/versioning-system.png
 
    Le système de gestion de versions conserve l'historique des modifications.
 

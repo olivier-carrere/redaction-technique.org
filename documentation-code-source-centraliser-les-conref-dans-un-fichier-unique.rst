@@ -26,7 +26,7 @@ d'origine et de le placer dans un fichier ne contenant que des sources de
 sources dans un référentiel unique que de devoir chercher les différentes
 sources dans une multitude de fichiers.
 
-.. figure:: media/conref-non-centralises.png
+.. figure:: graphics/conref-non-centralises.png
 
    Gérer les *conref* de manière décentralisée est peu efficace
 
@@ -36,7 +36,7 @@ contenant les valeurs sources ne sont pas référencés dans le fichier
 que les fichiers contenant les valeurs sources des *conref* peuvent se trouver
 dans un répertoire de niveau supérieur à celui du *ditamap*).
 
-.. figure:: media/conref.png
+.. figure:: graphics/conref.png
 
    Bonne gestion des *conref
 

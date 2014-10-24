@@ -25,7 +25,7 @@ serpent, celui qui avait empoigné une défense l'identifiait à une lance, et
 celui qui s'agrippait à une de ses oreilles croyait qu'il s'agissait d'un
 éventail.
 
-.. figure:: media/hanabusa-itcho.jpg
+.. figure:: graphics/hanabusa-itcho.jpg
 
    Tester les produits pour les documenter
 

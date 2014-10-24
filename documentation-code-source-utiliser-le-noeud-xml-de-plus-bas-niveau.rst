@@ -20,7 +20,7 @@ structure XML encapsulant l'information, même si cette structure, pour être
 compatible avec le schéma XSD de la section **DITA XML** où elle intervient,
 doit elle-même être incluse dans des structures XML plus grandes.
 
-.. figure:: media/conref-bas-niveau.png
+.. figure:: graphics/conref-bas-niveau.png
 
    Placement du *conref* sur le nœud XML de plus bas niveau
 
@@ -78,7 +78,7 @@ plutôt que la suivante:
 En effet, dans le premier cas, vous pourrez utiliser le *conref* même si le nœud
 supérieur (<step>) contient d'autres nœuds que <step> (par exemple <info>).
 
-.. figure:: media/conref-haut-niveau.png
+.. figure:: graphics/conref-haut-niveau.png
 
    Placement du *conref* sur le nœud XML de plus haut niveau
 

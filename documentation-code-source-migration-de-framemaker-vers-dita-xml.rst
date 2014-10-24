@@ -31,7 +31,7 @@ agréable à vivre. Bonne nouvelle : si le **rédacteur technique** a utilisé d
 manière cohérente un jeu de styles limité et organisé rationnellement son
 contenu FrameMaker, il est déjà certainement très proche de ce stade.
 
-.. figure:: media/framemaker-to-dita-migration.png
+.. figure:: graphics/framemaker-to-dita-migration.png
 
    Migration de FrameMaker vers DITA XML
 

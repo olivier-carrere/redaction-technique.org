@@ -18,7 +18,7 @@ centralisent tout le contenu dans un seul fichier, facile à manier, mais qui
 limite le partage du contenu ; le risque de disposer d'informations incohérentes
 ou en doublon est alors important.
 
-.. figure:: media/monolithique.png
+.. figure:: graphics/monolithique.png
 
    Format source de rédaction technique monolithique
 
@@ -29,7 +29,7 @@ réutilisation de blocs de contenu. Un tel système est difficile à mettre en
 place au niveau de toute l'entreprise, mais devrait être la norme pour une
 équipe de **rédaction technique**.
 
-.. figure:: media/grappe.png
+.. figure:: graphics/grappe.png
 
    Format source de rédaction technique modulaire
 

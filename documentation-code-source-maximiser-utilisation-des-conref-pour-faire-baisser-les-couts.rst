@@ -20,7 +20,7 @@ De par la nature des informations qu'elles contiennent, les sections de type
 **task** ont un taux plus élevé de réutilisation du contenu que celles de type
 **concept** ou **reference**.
 
-.. figure:: media/maximiser-conref.png
+.. figure:: graphics/maximiser-conref.png
 
    Les *conref* modularisent de petits blocs d'information
 

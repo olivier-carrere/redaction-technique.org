@@ -24,7 +24,7 @@ nécessaires).
 Vous devriez maintenant être à même d'archiver les fichiers FrameMaker, puis de
 basculer totalement vers le format DITA XML.
 
-.. figure:: media/dita-migration.png
+.. figure:: graphics/dita-migration.png
 
    Application d'une table de conversion de FrameMaker vers DITA XML
 

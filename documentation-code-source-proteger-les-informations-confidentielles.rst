@@ -28,7 +28,7 @@ comportant les informations confidentielles, les autres non ? Adieu alors le
 *single-sourcing* et la réutilisation du contenu qui vous ont fait choisir
 **DITA XML** !
 
-.. figure:: media/confidentiel.png
+.. figure:: graphics/confidentiel.png
 
    Masquer des informations confidentielles aux traducteurs
 

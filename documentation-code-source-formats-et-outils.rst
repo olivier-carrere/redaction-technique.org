@@ -23,7 +23,7 @@ ultérieurs de l'entreprise et de se révéler coûteux : il faut une licence pa
 utilisateur, qu'il soit **rédacteur technique**, contributeur occasionnel ou
 traducteur.
 
-.. figure:: media/format-standard.png
+.. figure:: graphics/format-standard.png
 
    Un format standard laisse le choix de l'outil
 

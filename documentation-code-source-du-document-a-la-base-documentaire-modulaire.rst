@@ -23,7 +23,7 @@ contenu d'entreprise repose sur des briques uniques, qui peuvent être assemblé
 dynamiquement, à la demande, pour produire des documents sous différents formats
 cibles.
 
-.. figure:: media/documentation-modulaire.png
+.. figure:: graphics/documentation-modulaire.png
 
    Une documentation modulaire offre une souplesse inégalée
 

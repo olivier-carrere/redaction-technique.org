@@ -35,7 +35,7 @@ trois types de base :
 |                              |des options d'un programme.   |
 +------------------------------+------------------------------+
 
-.. figure:: media/structured.png
+.. figure:: graphics/structured.png
 
    Formats structurés et non structurés
 
