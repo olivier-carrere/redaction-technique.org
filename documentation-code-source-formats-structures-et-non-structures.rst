@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. review: text yes, no code
 
 .. _formats-structures-et-non-structures:
 
@@ -41,7 +41,7 @@ trois types de base :
 
 Sous un format non structuré tel que le format traditionnel de
 `FrameMaker <http://en.wikipedia.org/wiki/Adobe_FrameMaker>`_, rien ne
-contraint le **rédacteur technique** à organiser l'information son sens. Si des
+contraint le **rédacteur technique** à organiser l'information selon son sens. Si des
 règles de rédaction rigoureuses ne sont pas scrupuleusement suivies,
 l'information fournie à l'utilisateur risque d'être peu claire et difficile à
 parcourir rapidement.
