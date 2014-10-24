@@ -22,7 +22,7 @@ Le but de cette procédure est de :
 #. Restructurez le contenu et les styles de vos fichiers de contenu FrameMaker
    selon les concepts DITA XML.
 
-#. Créez un document FrameMaker vide et importez-y tous les styles existant dans
+#. Créez un document FrameMaker vide et importez-y tous les styles existants dans
    les fichiers à migrer.
 
 #. Appliquez tous les styles disponibles à des paragraphes vides du document
