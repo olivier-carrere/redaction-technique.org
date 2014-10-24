@@ -38,12 +38,6 @@ ressources de la communication (rédaction, illustrations, films, animations…)
 prend constamment en compte la dimension marketing. Pour augmenter les ventes,
 tout support de communication doit être un outil marketing.
 
-Valoriser un contenu signifie :
-
-- produire un contenu de qualité adapté à sa cible,
-- conserver tout le contenu existant, dans ses différentes versions,
-- réutiliser ou recycler à bon escient le contenu existant.
-
 Mais peut-on être à la fois logique et créatif ? C'est nécessaire dans les
 domaines de la composition musicale, de l'architecture et du développement
 informatique. C'est également le cas pour un rédacteur technique.
@@ -59,6 +53,12 @@ Ceci nécessite :
 Ce site présente quelques exemples de supports de communication technique, leur
 intérêt marketing, leur adéquation au public et les modalités de leur
 valorisation.
+
+Valoriser un contenu signifie :
+
+- produire un contenu de qualité adapté à sa cible,
+- conserver tout le contenu existant, dans ses différentes versions,
+- réutiliser ou recycler à bon escient le contenu existant.
 
 Laisser la place à la créativité
 
