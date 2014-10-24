@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. review: text yes, no code
 
 .. _de-la-redaction-a-la-communication-technique:
 
@@ -59,28 +59,3 @@ Valoriser un contenu signifie :
 - produire un contenu de qualité adapté à sa cible,
 - conserver tout le contenu existant, dans ses différentes versions,
 - réutiliser ou recycler à bon escient le contenu existant.
-
-Laisser la place à la créativité
-
-Je vais faire ici l'éloge du jeu. Si chacun *s'amuse* à faire ce qu'il fait, sa
-passion se transmet directement à son public. C'est une des grandes leçons du
-mouvement du logiciel libre et de l'esprit *hacker* : comme `dit Benjamin
-Bayart :
-<http://www.atlantico.fr/decryptage/anonymous-gamins-bricoleurs-etat-megaupload-hackers-attaque-cyberespace-benjamin-bayart-273658.html>`_
-
-*Un hacker, c'est avant tout un bricoleur, même pas forcément génial, qui
-utilise les choses pour ce qu'elles sont, et pas pour ce qu'elles paraissent.*
-
-De même en communication technique : on envisage de faire un livre blanc ? Je
-vais en faire un outil marketing de premier plan. On projette de réaliser un
-journal ? Je vais y placer une rubrique expert traitant des utilisations
-avancées des produits.
-
-Malgré tout l'intérêt que présente la planification, il est utile de lancer des
-projets non planifiés pour laisser place à la créativité. Tout dépend des
-ressources de l'entreprise, bien entendu, mais laisser une petite portion de
-temps et de budget à l'imprévu donne une chance supplémentaire de se démarquer
-de la concurrence. C'est d'ailleurs ce qu'a bien compris Google, chez qui les
-développeurs peuvent consacrer 20 % de leur temps à des projets personnels. Ce
-qui vaut pour l'ingénierie vaut également pour la communication. Ce site s'est
-d'ailleurs construit sans plan préétabli.
