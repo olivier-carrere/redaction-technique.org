@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. review: text yes, no code
 
 .. _format-structure-dita-xml:
 
@@ -44,7 +44,7 @@ manipulés par des applications.
 :abbr:`DITA (Darwin Information Typing Architecture)` est une architecture XML
 de **rédaction structurée** destinée à la création de documents modulaires et à
 la réutilisation du contenu. À partir d'une base commune de modules
-d'information atomiques (pas au sens XPath) DITA XML, le **rédacteur technique**
+d'information atomiques DITA XML, le **rédacteur technique**
 peut fournir en temps réel toute l'information dont chaque utilisateur a besoin,
 sur tout type de média, du support d'e-learning au document PDF ou papier, en
 passant par le site Web.
