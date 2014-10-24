@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. review: text yes, no code
 
 .. _les-trois-niveaux-de-la-documentation-technique:
 
@@ -56,7 +56,7 @@ et format adapté) ne peut garantir un résultat satisfaisant. Confiez par exemp
 des outils permettant de générer du contenu au format DITA XML à des
 collaborateurs dont la **communication technique** n'est pas le métier ou sans
 mettre en place de processus de gestion du cycle de vie de la documentation
-technique, et vous courez à la catastrophe. Seule la présence conjointe de ces
+technique, et vous obtiendrez des résultats décevants. Seule la présence conjointe de ces
 trois éléments fournira un résultat optimal.
 
 .. toctree::
