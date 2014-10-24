@@ -77,7 +77,7 @@ pouvez par exemple utiliser des scripts Perl du type :
    Ne lancez ce type de scripts que sur une copie de vos fichiers et non sur les
    fichiers originaux.
 
-.. code-block:: xml
+.. code-block:: perl
 
    #!/usr/bin/perl
    open(INPUT,"<$ARGV[0]") or die;
