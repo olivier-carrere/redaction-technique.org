@@ -41,8 +41,8 @@ tout support de communication doit être un outil marketing.
 Valoriser un contenu signifie :
 
 - produire un contenu de qualité adapté à sa cible,
-- conserver tout le contenu produit, dans ses différentes versions,
-- réutiliser ou recycler à bon escient le contenu produit.
+- conserver tout le contenu existant, dans ses différentes versions,
+- réutiliser ou recycler à bon escient le contenu existant.
 
 Mais peut-on être à la fois logique et créatif ? C'est nécessaire dans les
 domaines de la composition musicale, de l'architecture et du développement
