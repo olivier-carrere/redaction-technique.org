@@ -10,8 +10,9 @@
 Afficher un index dans un PDF (mais pas sous DITA Open Toolkit)
 ===============================================================
 
-Tout n'est pas parfait sous `http://dita-ot.sourceforge.net/1.6/>DITA
-Open Toolkit`, le moteur de publication libre DITA XML. Vous avez
+Tout n'est pas parfait sous `DITA Open Toolkit
+<http://dita-ot.sourceforge.net/1.6/>`_, le moteur de publication libre
+DITA XML. Vous avez
 méticuleusement inséré vos entrées d'index dans vos fichiers de contenu
 DITA XML. Vous générez une sortie PDF et l'index n'apparaît pas. Un message
 d'erreur de la compilation vous indique que, hélas, FOP ne supporte actuellement

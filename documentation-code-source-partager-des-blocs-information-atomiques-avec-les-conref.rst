@@ -14,7 +14,7 @@ Lorsque le **rédacteur technique** veut réutiliser des blocs d'information
 **DITA XML** plus petits qu'une section, il doit les partager au niveau des
 fichiers de contenu *dita* et non dans les structures de table des matières
 **ditamap**, grâce au mécanisme `conref
-<http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html>`.
+<http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html>`_.
 
 Le principe des **conref** est simple: lorsqu'un *conref* est mentionné au
 niveau d'un nœud XML donné, tout le contenu du nœud cible est remplacé par le

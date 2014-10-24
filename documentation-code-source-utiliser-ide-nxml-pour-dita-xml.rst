@@ -66,9 +66,9 @@ où <répertoire de langue> a la valeur en_US, ou fr_FR, etc.
     - crée une copie de sauvegarde du fichier .emacs (.emacs.bak),
     - écrit les variables d'environnement du mode nXML dans le fichier .emacs.
 
-#.  Téléchargez `http://www.redaction-technique.org/media/rnc.tar.gz>l'archive
-    des schémas RelaxNG pour DITA XML` dans le répertoire racine de votre
-          projet de documentation DITA XML.
+#.  Téléchargez `l'archive des schémas RelaxNG pour DITA XML
+    <http://www.redaction-technique.org/media/rnc.tar.gz>`_ dans le répertoire
+    racine de votre projet de documentation DITA XML.
 
 #.  Placez-vous dans le répertoire racine de votre projet de documentation DITA
     XML, puis collez la commande suivante:
@@ -81,7 +81,7 @@ où <répertoire de langue> a la valeur en_US, ou fr_FR, etc.
     langue>.
 
 #.  Téléchargez `l'archive des fichiers schemas.xml
-    <http://www.redaction-technique.org/media/schemas.redaction-technique.org.tar.gz>`
+    <http://www.redaction-technique.org/media/schemas.redaction-technique.org.tar.gz>`_
     dans le répertoire racine de votre projet de documentation DITA XML, puis
     collez la suite de commandes ci-dessous en remplaçant <répertoire de langue>
     par la valeur appropriée, en_US, ou fr_FR, par exemple. Répétez cette étape

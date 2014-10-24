@@ -10,7 +10,7 @@
 Gérer les projets de documentation multilingues DITA XML
 ========================================================
 
-`http://dita.xml.org/>**DITA XML**` est un formidable format pour gérer les
+`DITA XML <http://dita.xml.org/>`_ est un formidable format pour gérer les
 **projets de documentation**. Pour les projets multilingues, cependant, le
 **rédacteur technique** doit créer un fichier *.ditamap*, qui contient la
 structure de table des matières des documents, par version. Ceci entraîne un
@@ -102,10 +102,9 @@ nouveau script.
 
 Pour utiliser ce script :
 
-#.  Téléchargez le
-    `http://www.redaction-technique.org/media/dita2target.sh>script de
-    génération multilingue DITA XML` dans le répertoire contenant le fichier
-    :file:`.ditamap` du projet.
+#.  Téléchargez le `script de génération multilingue DITA XML
+    <http://www.redaction-technique.org/media/dita2target.sh>`_ dans le
+    répertoire contenant le fichier :file:`.ditamap` du projet.
 
 #.  Dans un terminal, placez-vous dans ce répertoire, puis entrez :
 

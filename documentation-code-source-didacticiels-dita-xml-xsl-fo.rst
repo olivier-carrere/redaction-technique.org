@@ -11,8 +11,8 @@ Didacticiels DITA XML et XSL-FO
 ===============================
 
 Les **didacticiels** suivants aideront le **rédacteur technique** à mettre en
-place et à utiliser une chaîne de création et de publication `DITA XML <
-href="http://dita.xml.org/>` libre.
+place et à utiliser une chaîne de création et de publication `DITA XML
+<http://dita.xml.org/>`_ libre.
 
 DITA XML est le langage de rédaction structurée qui permet de créer des
 documents sans se soucier de leur aspect final sur différents supports. XSL-FO

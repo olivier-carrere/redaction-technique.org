@@ -17,7 +17,7 @@ Une fois le projet de rédaction technique clairement défini, le **rédacteur
 technique** collecte toute l'information disponible :
 
 - spécifications du produit, Intranet, pages `Trac
-  <http://trac.edgewall.org/>`_…,
+  <http://trac.edgewall.org/>`_,
 
 -  interview du service R&D,
 

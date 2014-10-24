@@ -10,7 +10,7 @@
 Générer un PDF avec DITA Open Toolkit (Windows)
 ===============================================
 
-Ce **didacticiel `DITA XML <http://dita.xml.org/>` est destiné à vous guider
+Ce **didacticiel `DITA XML <http://dita.xml.org/>`_ est destiné à vous guider
 dans la mise en place et l'utilisation de la chaîne de publication **DITA Open
 Toolkit** dans un environnement Windows (testé sur Windows XP).
 
@@ -18,12 +18,12 @@ Toolkit** dans un environnement Windows (testé sur Windows XP).
 
 - Connexion Internet
 
-#.  Téléchargez `Java <href="http://java.com/fr/download/manual.jsp?locale=fr>`,
+#.  Téléchargez `Java <http://java.com/fr/download/manual.jsp?locale=fr>`_,
     puis lancez le programme d'installation.
 
 #.  Téléchargez `DITA Open Toolkit 1.5.4
     <http://sourceforge.net/projects/dita-ot/files/DITA-OT Stable Release/DITA
-    Open Toolkit 1.5.4/DITA-OT1.5.4_full_easy_install_bin.zip/download>` sur le
+    Open Toolkit 1.5.4/DITA-OT1.5.4_full_easy_install_bin.zip/download>`_ sur le
     bureau, puis décompressez DITA-OT1.5.4_full_easy_install_bin.zip.
 
 #.  Sélectionnez Exécuter dans le menu Démarrer, collez la commande suivante,

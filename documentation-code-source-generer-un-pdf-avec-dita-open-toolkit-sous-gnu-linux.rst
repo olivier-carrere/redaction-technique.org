@@ -10,7 +10,7 @@
 Générer un PDF avec DITA Open Toolkit sous GNU/Linux
 ====================================================
 
-Ce **didacticiel `DITA XML <http://dita.xml.org/>`_** est destiné à vous guider
+Ce **didacticiel `DITA XML <http://dita.xml.org/>`_ est destiné à vous guider
 dans la mise en place et l'utilisation de la chaîne de publication **DITA Open
 Toolkit** dans un environnement GNU/Linux (Ubuntu ou Debian).
 
