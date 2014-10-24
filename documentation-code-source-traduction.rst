@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. review: text yes, no code
 
 .. _traduction:
 
@@ -54,19 +54,6 @@ ou la suivante :
 
   -  english
   -  francais
-
-La structure suivante est à prohiber, car elle introduit une asymétrie entre les
-projets :
-
-- english
-
-  -  produit 1
-  -  produit 2
-
-- francais
-
-  -  produit 1
-  -  produit 2
 
 Dans la plupart des cas, il est préférable de placer la distinction entre les
 langues le plus en amont possible. Pour reprendre une terminologie utilisée dans
