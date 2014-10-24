@@ -101,62 +101,6 @@ l'aide à présenter des informations :
 |              |sont issus d'une seule et même source et sont donc strictement |
 |              |identiques.                                                    |
 +--------------+---------------------------------------------------------------+
-Formats structurés et non structurés
-====================================
-
-Les informations contenues dans un document technique peuvent être catégorisées
-selon un nombre limité de types. Par défaut, DITA XML en propose 3 de base :
-
-- *concept* : introduction ou présentation d'un concept,
-
-- *task* : procédure pas à pas pour effectuer une tâche,
-
-- *reference* : informations de référence sur une liste d'éléments telles que
-  des options d'un programme en ligne de commande.
-
-Dans un format non structuré tel que le format traditionnel de FrameMaker, rien
-ne contraint le **rédacteur technique** à organiser l'information selon leur
-type. Si des règles rigoureuses de rédaction ne sont pas scrupuleusement
-suivies, les modules d'information fournis à l'utilisateur risque de mélanger
-des informations de tous types.
-
-Avec des formats structurés tels que DITA XML, en revanche :
-
-- le **rédacteur technique** se concentre sur le contenu,
-
-- l'information est présentée à l'utilisateur selon une organisation cohérente,
-
-- l'accès séquentiel à l'information est favorisé,
-
-- l'information peut facilement être réorganisée selon les besoins,
-
-- l'utilisabilité du support d'information fourni est améliorée.
-
-Un type d'information de haut niveau tel que *task* est divisé en types de plus
-bas niveau tels que :
-
-- *prereq* : liste de prérequis à la réalisation d'une tâche,
-
-- *steps* : la liste des étapes de la procédure,
-
-- *stepxmp* : exemple de réalisation d'une étape.
-
-D'autre part, il est impossible de faire figurer une procédure pas à pas dans
-une section d'un autre type que *task*.
-
-Le **rédacteur technique** dispose donc d'un véritable modèle de rédaction qui
-l'aide à présenter des informations :
-
-- *minimalistes* : l'utilisateur ne dispose que de l'information dont il a
-  besoin toutes les informations contextuelles d'une tâche, par exemple, sont
-  placées dans une seule section, ce qui permet de les synthétiser ;
-
-- *complètes* : l'utilisateur dispose de toute l'information dont il a besoin,
-  le **rédacteur technique** prenant l'habitude de compléter toutes les
-  rubriques du modèle d'information qui lui est fourni ;
-
-- *cohérentes* : les informations de même type sont présentées dans le même
-  ordre et avec la même mise en pages.
 
 .. toctree::
    :maxdepth: 2
