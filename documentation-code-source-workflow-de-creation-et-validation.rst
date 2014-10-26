@@ -27,14 +27,14 @@ l'erreur humaine. Il faut donc soit :
 - utiliser le système de gestion de tickets utilisés pour la gestion des
   nouvelles fonctionnalités du produit documenté (par exemple, Trac) :
 
-- création d'un ticket par un développeur,
+  - création d'un ticket par un développeur,
 
-- mise en œuvre du ticket par un rédacteur technique,
+  - mise en œuvre du ticket par un rédacteur technique,
 
-- fermeture du ticket par le créateur du ticket,
+  - fermeture du ticket par le créateur du ticket,
 
-- publication de la documentation lorsque tous les tickets critiques sont
-  fermés.
+  - publication de la documentation lorsque tous les tickets critiques sont
+    fermés.
 
 Les fonctions principales d'un CMS sont les suivantes :
 
