@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. review: text yes, code yes
 
 .. _utiliser-le-noeud-xml-de-plus-bas-niveau:
 
@@ -76,13 +76,14 @@ plutôt que la suivante:
    </step>
 
 En effet, dans le premier cas, vous pourrez utiliser le *conref* même si le nœud
-supérieur (<step>) contient d'autres nœuds que <step> (par exemple <info>).
+supérieur (:samp:`<step>`) contient d'autres nœuds que :samp:`<step>` (par
+exemple :samp:`<info>`).
 
 .. figure:: graphics/conref-haut-niveau.png
 
    Placement du *conref* sur le nœud XML de plus haut niveau
 
-Dans le 2<sup>e</sup> cas, tout le contenu du nœud <step> sera remplacé par la
+Dans le 2e cas, tout le contenu du nœud :samp:`<step>` sera remplacé par la
 valeur du *conref* source. Par exemple, dans le cas suivant, tout le contenu du
 nœud sera absent des livrables:
 
