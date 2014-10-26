@@ -90,10 +90,10 @@ l'aide à présenter des informations :
 |              |section DITA XML valide et ne pourra pas être publiée ; il est |
 |              |même possible de mettre en œuvre un mécanisme vérifiant        |
 |              |automatiquement avant publication la présence de blocs         |
-|              |d'information facultatifs selon la `XSD                        |
-|              |<http://fr.wikipedia.org/wiki/Document_Type_Definition>`_ DITA,|
-|              |mais que le **rédacteur technique** juge obligatoires, tels que|
-|              |le résultat d'une procédure ;                                  |
+|              |d'information facultatifs selon le schéma `XSD                 |
+|              |<http://fr.wikipedia.org/wiki/XML_Schema>`_ DITA, mais que le  |
+|              |**rédacteur technique** juge obligatoires, tels que le résultat|
+|              |d'une procédure ;                                              |
 +--------------+---------------------------------------------------------------+
 |*cohérentes*  |les informations de même type sont présentées dans le même     |
 |              |ordre et avec la même mise en page ; les blocs d'information   |
