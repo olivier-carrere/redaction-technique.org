@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. review: text yes, no code
 
 .. _workflow-de-creation-et-validation:
 
@@ -46,10 +46,7 @@ Les fonctions principales d'un CMS sont les suivantes :
 
 Quel qu'il soit, le système de suivi doit offrir une visibilité et une
 traçabilité totales des modifications apportées à la documentation technique
-(quoi, qui, quand) (sur le plan de la traçabilité, un système de gestion des
-versions n'est pas suffisant, car il est très difficile d'obtenir une vue
-synthétique de l'évolution d'un document lorsque des modifications atomiques ont
-été apportées à un grand nombre de petits fichiers).
+(quoi, qui, quand).
 
 Ce système doit être unique et exhaustif : il doit centraliser toutes les
 demandes de modification de la documentation technique.
