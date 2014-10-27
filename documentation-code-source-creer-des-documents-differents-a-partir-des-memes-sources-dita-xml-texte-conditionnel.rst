@@ -28,36 +28,36 @@ quelques minutes.
       <?xml version="1.0" encoding="utf-8"?>
       <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN" "../../dtd/technicalContent/dtd/topic.dtd>
       <topic id="exemple-topic" xml:lang="fr-fr>
-      <title>Utilisation du texte conditionnel
-      <body>
-      <hazardstatement>
-      <messagepanel audience="electriciens>
-      <typeofhazard>
-      Danger pour les électriciens
-      </typeofhazard>
-      <consequence>
-      Risque d'électrocution
-      </consequence>
-      <howtoavoid>
-      Ne touchez pas les fils électriques.
-      </howtoavoid>
-      </messagepanel>
-      <messagepanel audience="plombiers>
-      <typeofhazard>
-      Danger pour les plombiers
-      </typeofhazard>
-      <consequence>
-      Risque de noyade
-      </consequence>
-      <howtoavoid>
-      Ne plongez pas dans la piscine.
-      </howtoavoid>
-      </messagepanel>
-      </hazardstatement>
-      <p> Tout contenu placé entre balises ne comportant pas de valeur
-      <i>audience</i> exclue dans un fichier <i>.ditaval</i> est publié dans les
-      documents destinés aux plombiers et aux électriciens.  </p>
-      </body>
+        <title>Utilisation du texte conditionnel
+        <body>
+          <hazardstatement>
+            <messagepanel audience="electriciens>
+              <typeofhazard>
+                Danger pour les électriciens
+              </typeofhazard>
+              <consequence>
+                Risque d'électrocution
+              </consequence>
+              <howtoavoid>
+                Ne touchez pas les fils électriques.
+              </howtoavoid>
+            </messagepanel>
+            <messagepanel audience="plombiers>
+              <typeofhazard>
+                Danger pour les plombiers
+              </typeofhazard>
+              <consequence>
+                Risque de noyade
+              </consequence>
+              <howtoavoid>
+                Ne plongez pas dans la piscine.
+              </howtoavoid>
+            </messagepanel>
+          </hazardstatement>
+          <p> Tout contenu placé entre balises ne comportant pas de valeur
+          <i>audience</i> exclue dans un fichier <i>.ditaval</i> est publié dans les
+          documents destinés aux plombiers et aux électriciens.  </p>
+        </body>
       </topic>
 
    .. note::
@@ -75,12 +75,12 @@ quelques minutes.
       <?xml version="1.0" encoding="utf-8"?>
       <!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "dtd/bookmap/dtd/bookmap.dtd>
       <bookmap id="texte-conditionnel>
-      <booktitle>
-      <mainbooktitle>
-      Exemple de texte conditionnel
-      </mainbooktitle>
-      </booktitle>
-      <chapter href="texte-conditionnel.dita"/>
+        <booktitle>
+          <mainbooktitle>
+            Exemple de texte conditionnel
+          </mainbooktitle>
+        </booktitle>
+        <chapter href="texte-conditionnel.dita"/>
       </bookmap>
 
 #. Collez le code suivant dans un fichier et enregistrez ce dernier sous le nom
@@ -90,8 +90,8 @@ quelques minutes.
 
       <?xml version="1.0" encoding="UTF-8"?>
       <val>
-      <prop att="audience" val="electriciens" action="include"/>
-      <prop att="audience" val="plombiers" action="exclude"/>
+        <prop att="audience" val="electriciens" action="include"/>
+        <prop att="audience" val="plombiers" action="exclude"/>
       </val>
 
 #. Collez le code suivant dans un fichier et enregistrez ce dernier sous le nom
@@ -101,8 +101,8 @@ quelques minutes.
 
       <?xml version="1.0" encoding="UTF-8"?>
       <val>
-      <prop att="audience" val="electriciens" action="exclude"/>
-      <prop att="audience" val="plombiers" action="include"/>
+        <prop att="audience" val="electriciens" action="exclude"/>
+        <prop att="audience" val="plombiers" action="include"/>
       </val>
 
 #. Ouvrez un terminal et entrez la commande suivante dans le répertoire
@@ -120,12 +120,12 @@ quelques minutes.
    - uniquement aux électriciens.
 
 #. Ouvrez un terminal et entrez la commande suivante dans le répertoire
-  :file:`DITA-OT1.5.4`:
+   :file:`DITA-OT1.5.4`:
 
-  .. code-block:: console
+   .. code-block:: console
 
-     $ java -jar lib/dost.jar /i:texte-conditionnel.ditamap \
-     /filter:plombiers.ditaval /outdir:. /transtype:pdf2
+      $ java -jar lib/dost.jar /i:texte-conditionnel.ditamap \
+      /filter:plombiers.ditaval /outdir:. /transtype:pdf2
 
    Ouvrez le fichier :file:`texte-conditionnel.pdf` ; il contient des
    informations destinées:

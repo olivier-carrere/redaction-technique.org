@@ -40,16 +40,16 @@ suit:
    <?xml version="1.0" encoding="utf-8"?>
    <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA 1.2 Task//EN" "../../dtd/technicalContent/dtd/task.dtd">
    <task id="shared" xml:lang="fr-fr">
-   <title>Conref source</title>
-   <taskbody>
-   <steps>
-   <step>
-   <cmd>
-   Cliquez sur OK.
-   </cmd>
-   </step>
-   </steps>
-   </taskbody>
+     <title>Conref source</title>
+     <taskbody>
+       <steps>
+         <step>
+           <cmd>
+             Cliquez sur OK.
+           </cmd>
+         </step>
+       </steps>
+     </taskbody>
 
 Il s'agit maintenant de placer un ID sur une structure XML afin de pouvoir
 réutiliser le contenu de cette structure. En l'occurrence, c'est une étape
@@ -60,9 +60,9 @@ Il est alors préférable d'utiliser la syntaxe suivante:
 .. code-block:: xml
 
    <step>
-   <cmd id="click-ok">
-   Cliquez sur OK.
-   </cmd>
+     <cmd id="click-ok">
+       Cliquez sur OK.
+     </cmd>
    </step>
 
 plutôt que la suivante:
@@ -70,9 +70,9 @@ plutôt que la suivante:
 .. code-block:: xml
 
    <step id="click-ok">
-   <cmd>
-   Cliquez sur OK.
-   </cmd>
+     <cmd>
+       Cliquez sur OK.
+     </cmd>
    </step>
 
 En effet, dans le premier cas, vous pourrez utiliser le *conref* même si le nœud
@@ -89,8 +89,8 @@ nœud sera absent des livrables:
 .. code-block:: xml
 
    <step id="click-ok">
-   <cmd/>
-   <info>
-   Si vous ne savez pas lire, c'est le bouton vert.
-   </info>
+     <cmd/>
+     <info>
+       Si vous ne savez pas lire, c'est le bouton vert.
+     </info>
    </step>
