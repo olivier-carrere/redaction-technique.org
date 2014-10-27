@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text yes, code no
+.. review: text yes, code yes
 
 .. _imbriquer-les-conref:
 
@@ -24,8 +24,10 @@ Dans l'exemple ci-dessous, le *conref* source *see-admin-guide* contient le
 
 .. code-block:: xml
 
-   <p id="see-admin-guide">Pour de plus amples informations, voir le <ph
-   conref="shared.dita/admin-guide-title"/>.</p>
+   <p id="see-admin-guide">
+     Pour de plus amples informations, voir le <ph
+     conref="shared.dita/admin-guide-title"/>.
+   </p>
 
 Ce niveau de complexité est gérable. Mais si le *conref* source
 *admin-guide-title* contient lui même un *conref* cible, le code **DITA XML**
