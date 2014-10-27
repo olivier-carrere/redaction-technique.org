@@ -19,15 +19,15 @@ Supposons que le code source d'un de vos fichiers DITA soit le suivant :
 
 .. code-block:: xml
 
-    <example>
-      <title>
-        XSL-FO
-      </title>
-      Voici mon exemple de chemin XPATH :
-      <codeblock>
-        ancestor-or-self
-      </codeblock>
-    </example>
+   <example>
+     <title>
+       XSL-FO
+     </title>
+     Voici mon exemple de chemin XPATH :
+     <codeblock>
+       ancestor-or-self
+     </codeblock>
+   </example>
 
 Vous souhaitez que le fichier PDF généré affiche l'exemple structuré comme
 suit :

@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text yes, code no
+.. review: text yes, code yes
 
 .. _prendre-en-compte-les-contraintes-de-traduction:
 
@@ -37,8 +37,11 @@ Vous pouvez maintenant utiliser le code suivant:
 
 .. code-block:: xml
 
-   <p><ph conref="shared.dita/click"/> <ph conref="shared.dita/blue"/>
-   <ph conref="shared.dita/arrow"/>.</p
+   <p>
+     <ph conref="shared.dita/click"/>
+     <ph conref="shared.dita/blue"/>
+     <ph conref="shared.dita/arrow"/>.
+   </p
 
 pour que soit générée la phrase *Click the blue arrow*.
 
