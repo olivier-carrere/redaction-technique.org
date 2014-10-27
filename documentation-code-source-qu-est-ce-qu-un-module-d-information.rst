@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text yes, code no
+.. review: text yes, code yes
 
 .. _qu-est-ce-qu-un-module-d-information:
 
@@ -44,7 +44,9 @@ fichiers de contenu proprement dit sous la forme :
 
 .. code-block:: xml
 
-   <related-links> <link href="content.dita#content"/> </related-links>
+   <related-links>
+     <link href="content.dita#content"/>
+   </related-links>
 
 mais dans une section *reltable* propre à chaque fichier *ditamap*.
 
