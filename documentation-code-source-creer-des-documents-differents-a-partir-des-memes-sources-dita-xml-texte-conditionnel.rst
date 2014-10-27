@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. review: text no, code yes
 
 .. _creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-conditionnel:
 
@@ -108,7 +108,7 @@ quelques minutes.
 #. Ouvrez un terminal et entrez la commande suivante dans le répertoire
    :file:`DITA-OT1.5.4`:
 
-   .. code-block:: xml
+   .. code-block:: console
 
       $ java -jar lib/dost.jar /i:texte-conditionnel.ditamap \
       /filter:electriciens.ditaval /outdir:. /transtype:pdf2
