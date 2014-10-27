@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. review: text no, code yes
 
 .. _xsl-fo-filtrer-du-contenu-selon-des-conditions-sauf-et-ou:
 
@@ -15,13 +15,14 @@ Imaginons que vous vouliez filtrer les nœuds enfants de la balise DITA XML
 balises <title>).
 
 Vous pouvez recourir alors à la syntaxe suivante :
+
 .. code-block:: xslt
 
    <xsl:template match="*[contains(@class,' topic/example ')]">
-       <fo:block>
-         <xsl:apply-templates select="*[not(name()='title')]" />
-       </fo:block>
-      </xsl:template>
+     <fo:block>
+       <xsl:apply-templates select="*[not(name()='title')]" />
+     </fo:block>
+   </xsl:template>
 
 Cette commande sélectionne tous les nœuds enfants du nœud <example>, à
 l'exception du nœud <title>. Cependant, le nœud <example> accepte le texte entré
@@ -32,16 +33,16 @@ Supposons que le code source d'un de vos fichiers DITA soit le suivant :
 
 .. code-block:: xml
 
-        <example>
-          <title>
-            XSL-FO
-
-          Voici mon exemple de chemin XPATH :
-          <codeblock>
-            ancestor-or-self
-          </codeblock>
-          Texte non encapsulé situé après un nœud enfant.
-        </example>
+   <example>
+     <title>
+       XSL-FO
+     </title>
+     Voici mon exemple de chemin XPATH :
+     <codeblock>
+       ancestor-or-self
+     </codeblock>
+     Texte non encapsulé situé après un nœud enfant.
+   </example>
 
 Le fichier PDF affichera l'exemple structuré comme suit :
 
@@ -58,10 +59,10 @@ syntaxe suivante :
 .. code-block:: xslt
 
    <xsl:template match="*[contains(@class,' topic/example ')]">
-   <fo:block>
-   <xsl:apply-templates select="text()" />
-   <xsl:apply-templates select="*[not(name()='title')]" />
-   </fo:block>
+     <fo:block>
+       <xsl:apply-templates select="text()" />
+       <xsl:apply-templates select="*[not(name()='title')]" />
+     </fo:block>
    </xsl:template>
 
 Cependant, tous les éléments texte non encapsulés dans des balises enfant de la
@@ -89,9 +90,9 @@ Le résultat final sera :
 .. code-block:: xslt
 
    <xsl:template match="*[contains(@class,' topic/example ')]">
-   <fo:block>
-   <xsl:apply-templates select="text()|*[not(name()='title')]" />
-   </fo:block>
+     <fo:block>
+       <xsl:apply-templates select="text()|*[not(name()='title')]" />
+     </fo:block>
    </xsl:template>
 
 Le fichier PDF affichera l'exemple structuré comme suit :
