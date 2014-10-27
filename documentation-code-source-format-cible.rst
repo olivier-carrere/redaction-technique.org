@@ -19,7 +19,7 @@ sous lequel le **rédacteur technique** crée le contenu. Le **single-sourcing**
 permet de générer plusieurs livrables à des formats différents à partir d'un
 même format source.
 
-À partir des fichiers sources validés, les livrables selon l'une des méthodes
+À partir des fichiers sources validés, les livrables sont générés selon l'une des méthodes
 suivantes :
 
 +------------------------------+-------------------------------------------+
@@ -39,13 +39,13 @@ suivantes :
 +------------------------------+-------------------------------------------+
 |Manuelle                      |Plaquette marketing au format traitement de|
 |                              |texte ou DITA mise en page sous Indesign,  |
-|                              |exportée en PDF, puis imprimée) ; selon la |
+|                              |exportée en PDF, puis imprimée ; selon la  |
 |                              |fréquence de publication du document final,|
 |                              |des filtres d'import XML peuvent également |
 |                              |être mis en place.                         |
 +------------------------------+-------------------------------------------+
 
-Plus le processus est automatisé, évidemment, plus le risque d'erreur est faible
+Plus le processus est automatisé, plus le risque d'erreur est faible
 et plus la publication et la mise à jour sont aisées.  L'automatisation facilite
 également le *single-sourcing*, qui consiste à générer plusieurs livrables à des
 formats cibles différents à partir d'un même format source. Un projet au format
