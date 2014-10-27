@@ -3,17 +3,14 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. review: text yes, no code
 
 .. _format-cible:
 
 Format cible
 ============
 
-Le format cible (dans le cas d'une photo, le format cible est le format `JPEG
-<http://fr.wikipedia.org/wiki/Jpeg>`_, qui est utilisé pour l'affichage Web ou
-l'impression et sur lequel les modifications ne peuvent être annulées une fois
-fermé le logiciel de retouches) d'un support de **rédaction technique** est
+Le format cible [#]_ d'un support de **rédaction technique** est
 celui sous lequel l'audience du message y accédera. Il est différent de celui
 sous lequel le **rédacteur technique** crée le contenu. Le **single-sourcing**
 permet de générer plusieurs livrables à des formats différents à partir d'un
@@ -32,10 +29,7 @@ suivantes :
 |                              |Open Toolkit.                              |
 +------------------------------+-------------------------------------------+
 |Semi-automatique              |Contenu au format DITA exporté en HTML puis|
-|                              |collé sous un CMS (ceci est automatisable  |
-|                              |par un script ; le CMS Drupal propose      |
-|                              |également un module `DITA integration for  |
-|                              |Drupal <http://drupal.org/project/dita>`_).|
+|                              |collé sous un CMS [#]_.                    |
 +------------------------------+-------------------------------------------+
 |Manuelle                      |Plaquette marketing au format traitement de|
 |                              |texte ou DITA mise en page sous Indesign,  |
@@ -52,3 +46,13 @@ formats cibles différents à partir d'un même format source. Un projet au form
 DITA XML peut ainsi être livré sous forme de fichier PDF, d'aide compilée
 Windows, d'aide JavaHelp, de site en HTML, etc. Le XML offre en ce domaine des
 possibilités quasi illimitées.
+
+.. rubric:: Notes
+
+.. [#] Dans le cas d'une photo, le format cible est le format `JPEG
+       <http://fr.wikipedia.org/wiki/Jpeg>`_, qui est utilisé pour l'affichage
+       Web ou l'impression et sur lequel les modifications ne peuvent être
+       annulées une fois fermé le logiciel de retouches.
+
+.. [#] Ceci est automatisable par un script ; le CMS Drupal propose également un
+       module `DITA integration for Drupal <http://drupal.org/project/dita>`_.
