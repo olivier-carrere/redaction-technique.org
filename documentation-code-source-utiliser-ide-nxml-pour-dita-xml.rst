@@ -23,14 +23,15 @@ permettra d'utiliser ce mode Emacs pour DITA XML.
 - La structure de répertoires de votre projet de documentation DITA XML doit
   être la suivante:
 
-  -               répertoire de langue
-  -                   concepts
-  -                   faq
-  -                   reference
-  -                   tasks
-  -                   topics
+  - répertoire de langue
 
-où <répertoire de langue> a la valeur en_US, ou fr_FR, etc.
+    - concepts
+    - faq
+    - reference
+    - tasks
+    - topics
+
+  où <répertoire de langue> a la valeur en_US, ou fr_FR, etc.
 
 - Les instructions de ligne de commande sont conçues pour GNU/Linux; elles
   doivent être adaptées pour être utilisées dans un autre environnement.
@@ -102,19 +103,31 @@ où <répertoire de langue> a la valeur en_US, ou fr_FR, etc.
     Vos répertoires de langue doivent maintenant comporter les fichiers
     :file:`schemas.xml` appropriés:
 
-    -               fr_FR
-    -                   concepts
-    -                       schemas.xml
-    -                   concepts
-    -                       schemas.xml
-    -                   faq
-    -                       schemas.xml
-    -                   reference
-    -                       schemas.xml
-    -                   tasks
-    -                       schemas.xml
-    -                   topics
-    -                       schemas.xml
+    - fr_FR
+
+      - concepts
+
+        - schemas.xml
+
+      - concepts
+
+       - schemas.xml
+
+      - faq
+
+       - schemas.xml
+
+      - reference
+
+       - schemas.xml
+
+      - tasks
+
+       - schemas.xml
+
+      - topics
+
+       - schemas.xml
 
 #.  Ouvrez un fichier de contenu DITA XML (:file:`.dita`) avec Emacs.  La
     syntaxe DITA XML apparaît en couleurs. Les endroits où le schéma n'est pas
