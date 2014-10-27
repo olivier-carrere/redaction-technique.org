@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. review: text yes, code no
 
 .. _qu-est-ce-qu-un-module-d-information:
 
@@ -46,7 +46,7 @@ fichiers de contenu proprement dit sous la forme :
 
    <related-links> <link href="content.dita#content"/> </related-links>
 
-mais dans une section *reltable* propre à chaque fichier :file:`ditamap`.
+mais dans une section *reltable* propre à chaque fichier *ditamap*.
 
 Les modules sont ainsi parfaitement décontextualisés, et les informations de
 structure telles que les références croisées sont placés dans des fichiers ne
