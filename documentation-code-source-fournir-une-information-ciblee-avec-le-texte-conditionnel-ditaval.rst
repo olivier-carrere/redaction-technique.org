@@ -17,13 +17,13 @@ reprend le principe des lunettes que vous chaussez pour visualiser un film en 3D
 moitié. Mais seul le **rédacteur technique** dispose de lunettes 3D et a une
 vision complète de l'information contenue dans le projet DITA XML.
 
-Les lunettes fournies aux destinataires de l'information disposent de lunettes
+Les destinataires de l'information disposent de lunettes
 avec deux verres gauches ou deux verres droits. Ils ne voient donc qu'une partie
 de l'information. Loin d'être lésés par cet état de fait, ils ont ainsi un
 meilleur accès à l'information. Le profilage réalisé masque à chaque public les
 informations dont ils n'ont *pas* besoin et qui ne seraient pour eux que du
 bruit. Chaque audience bénéficie donc d'un meilleur accès à l'information qui la
-concerne, selon le fameux concept minimaliste de " less is more ".
+concerne, selon le fameux concept minimaliste de *less is more*.
 
 .. figure:: graphics/ditaval.png
 
