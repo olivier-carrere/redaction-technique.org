@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. review: text no, code yes
 
 .. _maximiser-utilisation-des-conref-pour-faire-baisser-les-couts:
 
@@ -34,57 +34,57 @@ uniques), étant généré par des *conref* :
    <?xml version="1.0" encoding="utf-8"?>
    <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA 1.2 Task//EN" "../../dtd/technicalContent/dtd/task.dtd">
    <task id="display-trends" xml:lang="fr-fr">
-   <title>Afficher les tendances</title>
-   <taskbody>
-   <context audience="basic">
-   <note type="restriction" audience="advanced">
-   <ul>
-   <li>
-   <ph conref="shared.dita/ip-control"/>
-   </li>
-   </ul>
-   <ph conref="../../shared/shared.dita/see-user-guide" audience="no-user-guide"/>
-   </note>
-   </context>
-   <steps>
-   <step>
-   <cmd audience="basic">
-   <menucascade>
-   <uicontrol conref="shared.dita/logs"/>
-   </menucascade>
-   </cmd>
-   <choices audience="advanced">
-   <choice>
-   <ph conref="shared.dita/physical-appliance"/>
-   <menucascade>
-   <uicontrol conref="shared.dita/logs"/>
-   </menucascade>
-   </choice>
-   <choice>
-   <ph conref="shared.dita/virtual-appliance"/>
-   <menucascade>
-   <uicontrol conref="shared.dita/server"/>
-   <uicontrol conref="shared.dita/logs"/>
-   </menucascade>
-   </choice>
-   </choices>
-   </step>
-   <step>
-   <cmd>
-   <menucascade>
-   <uicontrol conref="shared.dita/all"/>
-   <uicontrol conref="shared.dita/editfile"/>
-   </menucascade>
-   </cmd>
-   <info>
-   <ul conref="shared.dita/drill-down">
-   <li/>
-   </ul>
-   <note conref="shared.dita/randomnames"/>
-   </info>
-   </step>
-   </steps>
-   </taskbody>
+     <title>Afficher les tendances</title>
+     <taskbody>
+       <context audience="basic">
+         <note type="restriction" audience="advanced">
+           <ul>
+             <li>
+               <ph conref="shared.dita/ip-control"/>
+             </li>
+           </ul>
+           <ph conref="../../shared/shared.dita/see-user-guide" audience="no-user-guide"/>
+         </note>
+       </context>
+       <steps>
+         <step>
+           <cmd audience="basic">
+             <menucascade>
+               <uicontrol conref="shared.dita/logs"/>
+             </menucascade>
+           </cmd>
+           <choices audience="advanced">
+             <choice>
+               <ph conref="shared.dita/physical-appliance"/>
+               <menucascade>
+                 <uicontrol conref="shared.dita/logs"/>
+               </menucascade>
+             </choice>
+             <choice>
+               <ph conref="shared.dita/virtual-appliance"/>
+               <menucascade>
+                 <uicontrol conref="shared.dita/server"/>
+                 <uicontrol conref="shared.dita/logs"/>
+               </menucascade>
+             </choice>
+           </choices>
+         </step>
+         <step>
+           <cmd>
+             <menucascade>
+               <uicontrol conref="shared.dita/all"/>
+               <uicontrol conref="shared.dita/editfile"/>
+             </menucascade>
+           </cmd>
+           <info>
+             <ul conref="shared.dita/drill-down">
+               <li/>
+             </ul>
+             <note conref="shared.dita/randomnames"/>
+           </info>
+         </step>
+       </steps>
+     </taskbody>
    </task>
 
 Seul le texte en noir doit être traduit. Traduire ce type de fichier de contenu
