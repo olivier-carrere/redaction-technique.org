@@ -27,7 +27,9 @@ De par la nature des informations qu'elles contiennent, les sections de type
 Comme dans l'exemple ci-dessous, il n'est pas rare d'obtenir rapidement des
 fichiers dont la seule valeur unique est le titre, le reste du contenu,
 *pourtant unique* (car il assemble de manière unique des blocs d'information non
-uniques), étant généré par des *conref* :
+uniques), étant généré par des *conref*.
+
+.. rubric:: Exemple
 
 .. code-block:: xml
 
@@ -99,10 +101,10 @@ du produit.
 
 Ne croyez pas qu'il s'agit là d'une contrainte spécifiquement induite par la
 modularisation poussée du contenu. Pour avoir fait une école de traduction
-reposant sur le principe simple mais efficace du " triangle du sens " (le
+reposant sur le principe simple mais efficace du *triangle du sens* (le
 traducteur doit comprendre le texte source pour le reformuler dans le texte
 cible et non transcrire une suite de mots d'une langue à l'autre) et avoir
-pratiqué la traduction technique durant plusieurs années, je peux vous affirmer
+pratiqué la traduction technique durant plusieurs années, je sais
 que tout projet de traduction réussi repose sur une collaboration efficace entre
 concepteurs, rédacteurs et traducteurs.
 
