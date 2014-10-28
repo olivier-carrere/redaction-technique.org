@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code yes
+.. review: text yes, code yes
 
 .. _creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-conditionnel:
 
@@ -17,11 +17,11 @@ quelques minutes.
 
 .. rubric:: Prérequis
 
-- Vous avez installé DITA Open Toolkit dans le répertoire DITA-OT1.5.4 sous
+- Vous avez installé DITA Open Toolkit dans le répertoire :file:`DITA-OT1.5.4` sous
   GNU/Linux ou Windows.
 
 #. Collez le code suivant dans un fichier et enregistrez ce dernier sous le nom
-   de :file:`texte-conditionnel.dita` dans le répertoire :file:`DITA-OT1.5.4`:
+   de :file:`texte-conditionnel.dita` dans le répertoire :file:`DITA-OT1.5.4` :
 
    .. code-block:: xml
 
@@ -60,15 +60,13 @@ quelques minutes.
         </body>
       </topic>
 
-   .. note::
-
-      Ce code contient des balises DITA contenant des valeurs *audience*
-      différentes: nous allons exclure le contenu d'une de ces deux balises lors
-      de la génération du fichier cible en utilisant la clé *audience*.
+   Ce code contient des balises DITA contenant des valeurs *audience*
+   différentes: nous allons exclure le contenu d'une de ces deux balises lors
+   de la génération du fichier cible en utilisant la clé *audience*.
 
 #. Collez le code suivant dans un fichier et enregistrez ce dernier sous le nom
    de :file:`texte-conditionnel.ditamap` dans le répertoire
-   :file:`DITA-OT1.5.4`:
+   :file:`DITA-OT1.5.4` :
 
    .. code-block:: xml
 
@@ -84,7 +82,7 @@ quelques minutes.
       </bookmap>
 
 #. Collez le code suivant dans un fichier et enregistrez ce dernier sous le nom
-   de :file:`electriciens.ditaval` dans le répertoire :file:`DITA-OT1.5.4`:
+   de :file:`electriciens.ditaval` dans le répertoire :file:`DITA-OT1.5.4` :
 
    .. code-block:: xml
 
@@ -95,7 +93,7 @@ quelques minutes.
       </val>
 
 #. Collez le code suivant dans un fichier et enregistrez ce dernier sous le nom
-   de :file:`plombiers.ditaval` dans le répertoire :file:`DITA-OT1.5.4`:
+   de :file:`plombiers.ditaval` dans le répertoire :file:`DITA-OT1.5.4` :
 
    .. code-block:: xml
 
@@ -106,7 +104,7 @@ quelques minutes.
       </val>
 
 #. Ouvrez un terminal et entrez la commande suivante dans le répertoire
-   :file:`DITA-OT1.5.4`:
+   :file:`DITA-OT1.5.4` :
 
    .. code-block:: console
 
@@ -120,7 +118,7 @@ quelques minutes.
    - uniquement aux électriciens.
 
 #. Ouvrez un terminal et entrez la commande suivante dans le répertoire
-   :file:`DITA-OT1.5.4`:
+   :file:`DITA-OT1.5.4` :
 
    .. code-block:: console
 
