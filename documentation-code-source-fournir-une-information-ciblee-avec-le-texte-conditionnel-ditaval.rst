@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code yes
+.. review: text yes, code yes
 
 .. _fournir-une-information-ciblee-avec-le-texte-conditionnel-ditaval:
 
@@ -63,33 +63,37 @@ Vous pouvez utiliser la structure suivante :
      <cmd> Ramenez l'intensité sous la dose létale de 150mA. </cmd>
    </step>
 
-Attention cependant : une clé de filtrage mal positionnée peut entraîner une
-erreur de compilation. En effet, si le code non filtré est conforme au schéma
-XSD DITA, le code filtré peut ne pas l'être.
+.. attention::
 
-Par exemple, le code suivant est correct avant filtrage :
+   Une clé de filtrage mal positionnée peut entraîner une erreur de
+   compilation. En effet, si le code non filtré est conforme au schéma XSD DITA,
+   le code filtré peut ne pas l'être.
 
-.. code-block:: xml
+   .. rubric:: Exemple
 
-   <thead>
-     <row product="a>
-       <entry>Commande</entry>
-       <entry>Description</entry>
-     </row>
-   </thead>
+   Le code suivant est correct avant filtrage :
 
-Après filtrage, en revanche, on obtient le code suivant :
+   .. code-block:: xml
 
-.. code-block:: xml
+      <thead>
+        <row product="a>
+          <entry>Commande</entry>
+          <entry>Description</entry>
+        </row>
+      </thead>
 
-   <thead>
-   </thead>
+   Après filtrage, en revanche, on obtient le code suivant :
 
-Or, selon le schéma XSD, les en-têtes de tableaux doivent contenir au moins une
-ligne:
+   .. code-block:: xml
 
-.. code-block:: xml
+      <thead>
+      </thead>
 
-   <!ENTITY % thead.content "((%row;)+)>
+   Or, selon le schéma XSD, les en-têtes de tableaux doivent contenir au moins
+   une ligne:
 
-Ce code est donc incorrect et entraîne l'échec de la compilation.
+   .. code-block:: xml
+
+      <!ENTITY % thead.content "((%row;)+)>
+
+   Ce code est donc incorrect et entraîne l'échec de la compilation.
