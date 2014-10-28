@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code yes
+.. review: text yes, code yes
 
 .. _maximiser-utilisation-des-conref-pour-faire-baisser-les-couts:
 
@@ -99,14 +99,16 @@ travailler le traducteur en régie. Avantage supplémentaire: il pourra ainsi
 interroger non seulement le rédacteur technique, mais également les concepteurs
 du produit.
 
-Ne croyez pas qu'il s'agit là d'une contrainte spécifiquement induite par la
-modularisation poussée du contenu. Pour avoir fait une école de traduction
-reposant sur le principe simple mais efficace du *triangle du sens* (le
-traducteur doit comprendre le texte source pour le reformuler dans le texte
-cible et non transcrire une suite de mots d'une langue à l'autre) et avoir
-pratiqué la traduction technique durant plusieurs années, je sais
-que tout projet de traduction réussi repose sur une collaboration efficace entre
-concepteurs, rédacteurs et traducteurs.
+.. note::
+
+   Ne croyez pas qu'il s'agit là d'une contrainte spécifiquement induite par la
+   modularisation poussée du contenu. Pour avoir fait une école de traduction
+   reposant sur le principe simple mais efficace du *triangle du sens* (le
+   traducteur doit comprendre le texte source pour le reformuler dans le texte
+   cible et non transcrire une suite de mots d'une langue à l'autre) et avoir
+   pratiqué la traduction technique durant plusieurs années, je sais
+   que tout projet de traduction réussi repose sur une collaboration efficace entre
+   concepteurs, rédacteurs et traducteurs.
 
 Il est également possible de factoriser ainsi des éléments de structure, et non
 de contenu, tels que des en-têtes de tableaux. Vous pouvez ainsi présenter des
