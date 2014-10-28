@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. review: text no, code yes
 
 .. _fournir-une-information-ciblee-avec-le-texte-conditionnel-ditaval:
 
@@ -60,7 +60,7 @@ Vous pouvez utiliser la structure suivante :
 .. code-block:: xml
 
    <step audience="electricians advanced">
-   <cmd> Ramenez l'intensité sous la dose létale de 150mA. </cmd>
+     <cmd> Ramenez l'intensité sous la dose létale de 150mA. </cmd>
    </step>
 
 Attention cependant : une clé de filtrage mal positionnée peut entraîner une
@@ -90,6 +90,6 @@ ligne:
 
 .. code-block:: xml
 
-   <!ENTITY % thead.content     "((%row;)+)>
+   <!ENTITY % thead.content "((%row;)+)>
 
 Ce code est donc incorrect et entraîne l'échec de la compilation.
