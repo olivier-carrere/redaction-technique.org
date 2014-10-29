@@ -26,8 +26,8 @@ Toolkit** dans un environnement Windows (testé sur Windows XP).
     Open Toolkit 1.5.4/DITA-OT1.5.4_full_easy_install_bin.zip/download>`_ sur le
     bureau, puis décompressez :file:`DITA-OT1.5.4_full_easy_install_bin.zip`.
 
-#.  Sélectionnez **Exécuter** dans le menu **Démarrer**, collez la commande suivante,
-    puis appuyez sur **Entrée** :
+#.  Sélectionnez :guilabel:`Exécuter` dans le menu :guilabel:`Démarrer`, collez
+    la commande suivante, puis appuyez sur **Entrée** :
 
     .. code-block:: console
 
