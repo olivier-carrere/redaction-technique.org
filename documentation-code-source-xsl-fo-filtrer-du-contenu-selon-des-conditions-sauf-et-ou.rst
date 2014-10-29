@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code yes
+.. review: text yes, code yes
 
 .. _xsl-fo-filtrer-du-contenu-selon-des-conditions-sauf-et-ou:
 
@@ -11,8 +11,8 @@ XSL-FO : filtrer du contenu selon des conditions « sauf » et « ou »
 ===================================================================
 
 Imaginons que vous vouliez filtrer les nœuds enfants de la balise DITA XML
-<example> et afficher tout son contenu à l'exception du titre (situé entre les
-balises <title>).
+:samp:`<example>` et afficher tout son contenu à l'exception du titre (situé entre les
+balises :samp:`<title>`).
 
 Vous pouvez recourir alors à la syntaxe suivante :
 
@@ -24,10 +24,10 @@ Vous pouvez recourir alors à la syntaxe suivante :
      </fo:block>
    </xsl:template>
 
-Cette commande sélectionne tous les nœuds enfants du nœud <example>, à
-l'exception du nœud <title>. Cependant, le nœud <example> accepte le texte entré
-directement, sans être encapsulé dans des balises. Cette commande ne fera alors
-pas apparaître ce contenu.
+Cette commande sélectionne tous les nœuds enfants du nœud :samp:`<example>`, à
+l'exception du nœud :samp:`<title>`. Cependant, le nœud :samp:`<example>`
+accepte le texte entré directement, sans être encapsulé dans des balises. Cette
+commande ne fera alors pas apparaître ce contenu.
 
 Supposons que le code source d'un de vos fichiers DITA soit le suivant :
 
@@ -53,8 +53,8 @@ Le fichier PDF affichera l'exemple structuré comme suit :
 Le titre de l'exemple n'est pas affiché, ce qui correspond au résultat souhaité,
 mais le contenu non encapsulé dans des balises n'apparaît pas, ce qui est un
 effet de bord indésirable. Pour sélectionner ce contenu, il faut sélectionner
-les nœuds textuels avec la syntaxe text(). Il est alors tentant d'utiliser la
-syntaxe suivante :
+les nœuds textuels avec la syntaxe :samp:`text()`. Il est alors tentant
+d'utiliser la syntaxe suivante :
 
 .. code-block:: xslt
 
@@ -66,17 +66,17 @@ syntaxe suivante :
    </xsl:template>
 
 Cependant, tous les éléments texte non encapsulés dans des balises enfant de la
-balise <example> seront placés en tête de l'exemple, avant les éléments
+balise :samp:`<example>` seront placés en tête de l'exemple, avant les éléments
 encapsulés, même s'ils sont placés après dans le fichier source DITA.
 
 Le fichier PDF affichera l'exemple structuré comme suit :
 
-Voici mon exemple de chemin XPATH :Texte non encapsulé situé après un nœud
-enfant.
+   Voici mon exemple de chemin XPATH :Texte non encapsulé situé après un nœud
+   enfant.
 
-.. code-block:: xslt
+   .. code-block:: xslt
 
-   ancestor-or-self
+      ancestor-or-self
 
 Il faut alors utiliser la syntaxe *pipe* (condition booléenne *ou*) pour
 modifier le chemin `XPATH <http://fr.wikipedia.org/wiki/XPath>`_ comme suit :
@@ -97,10 +97,10 @@ Le résultat final sera :
 
 Le fichier PDF affichera l'exemple structuré comme suit :
 
-Voici mon exemple de chemin XPATH :
+   Voici mon exemple de chemin XPATH :
 
-.. code-block:: xslt
+   .. code-block:: xslt
 
-   ancestor-or-self
+      ancestor-or-self
 
-Texte non encapsulé situé après un nœud enfant.
+   Texte non encapsulé situé après un nœud enfant.
