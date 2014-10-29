@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. review: text no, code yes
 
 .. _utiliser-ide-nxml-pour-dita-xml:
 
@@ -40,7 +40,7 @@ permettra d'utiliser ce mode Emacs pour DITA XML.
     DITA XML.
 #.  Ouvrez un terminal et collez la suite de commandes suivante:
 
-    .. code-block:: xml
+    .. code-block:: console
 
        cd && \
        wget http://www.thaiopensource.com/download/nxml-mode-20041004.tar.gz && \
@@ -88,7 +88,7 @@ permettra d'utiliser ce mode Emacs pour DITA XML.
     par la valeur appropriée, en_US, ou fr_FR, par exemple. Répétez cette étape
     pour tous vos répertoires de langue.
 
-    .. code-block:: xml
+    .. code-block:: console
 
        $ tar xzvf schemas.redaction-technique.org.tar.gz && \
        cd <répertoire de langue> && \
