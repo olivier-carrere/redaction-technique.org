@@ -15,7 +15,7 @@ vous guider dans la mise en place et l'utilisation du mode Emacs d'**aide à la
 rédaction** et d'**autocomplétion des mots** anglais et français Predictive dans
 un environnement GNU/Linux (en l'occurrence, Debian).
 
-#. En tant qu'utilisateur *root*, installez make et texinfo :
+#. Installez make et texinfo :
 
    .. code-block:: console
 
@@ -67,4 +67,4 @@ un environnement GNU/Linux (en l'occurrence, Debian).
 
       predictive-mode
 
-.. text review: no
+.. text review: yes
