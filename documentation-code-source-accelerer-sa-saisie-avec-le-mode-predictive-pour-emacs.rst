@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. code review: no
+.. code review: yes
 
 .. _accelerer-sa-saisie-avec-le-mode-predictive-pour-emacs:
 
@@ -19,7 +19,7 @@ un environnement GNU/Linux (en l'occurrence, Debian).
 
    .. code-block:: console
 
-      aptitude install make texinfo
+      $ sudo aptitude install make texinfo
 
 #. Téléchargez
    `Predictive <http://www.dr-qubit.org/emacs.php#predictive-download>`_.
@@ -34,19 +34,19 @@ un environnement GNU/Linux (en l'occurrence, Debian).
 
    .. code-block:: console
 
-      cd predictive
+      $ cd predictive
 
 #. Compilez *predictive* :
 
    .. code-block:: console
 
-      make
+      $ make
 
 #. Installez *predictive* :
 
    .. code-block:: console
 
-      make install
+      $ sudo make install
 
 #. Insérez le code suivant dans le fichier :file:`.emacs` :
 
