@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. review: text no, code yes
 
 .. _gerer-les-projets-de-documentation-multilingues-dita-xml:
 
@@ -110,13 +110,13 @@ Pour utiliser ce script :
 
     .. code-block:: console
 
-       $ sudo chmod +x dita2target.sh
+       $ chmod +x dita2target.sh
 
 #.  Dans le terminal, entrez :
 
     .. code-block:: console
 
-    $ mkdir out
+       $ mkdir out
 
     pour créer le répertoire qui contiendra les fichiers cibles.
 
@@ -124,7 +124,8 @@ Pour utiliser ce script :
 
     .. code-block:: console
 
-       $ ./dita2target.sh <fichier ditamap>  <nom du répertoire de langue> <format cible>
+       $ ./dita2target.sh <fichier ditamap>  \
+       <nom du répertoire de langue> <format cible>
 
     pour générer les fichiers cibles.
 
