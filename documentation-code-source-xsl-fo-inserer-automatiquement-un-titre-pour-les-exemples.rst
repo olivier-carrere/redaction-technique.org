@@ -12,7 +12,7 @@ XSL-FO : insérer automatiquement un titre pour les exemples
 
 Par défaut, **DITA Open Toolkit** n'insère pas automatiquement dans les fichiers
 PDF le texte *Exemple :* devant le titre d'un exemple contenu entre balises DITA
-XML <example>. La syntaxe `XSL-FO <http://fr.wikipedia.org/wiki/XSL-FO>`_
+XML :samp:`<example>`. La syntaxe `XSL-FO <http://fr.wikipedia.org/wiki/XSL-FO>`_
 offre cependant cette possibilité.
 
 Supposons que le code source d'un de vos fichiers DITA soit le suivant :
@@ -32,36 +32,36 @@ Supposons que le code source d'un de vos fichiers DITA soit le suivant :
 Vous souhaitez que le fichier PDF généré affiche l'exemple structuré comme
 suit :
 
-.. rubric:: Exemple : XSL-FO
+   .. rubric:: Exemple : XSL-FO
 
-Voici mon exemple de chemin XPATH :
+   Voici mon exemple de chemin XPATH :
 
-.. code-block:: xslt
+   .. code-block:: xslt
 
-   ancestor-or-self
+      ancestor-or-self
 
 Et que si l'exemple ne contient pas de titre, il soit structuré comme suit :
 
-.. rubric:: Exemple :
+   .. rubric:: Exemple :
 
-Voici mon exemple de chemin XPATH :
+   Voici mon exemple de chemin XPATH :
 
-.. code-block:: xslt
+   .. code-block:: xslt
 
-   ancestor-or-self
+      ancestor-or-self
 
 Par défaut, cependant, ce contenu sera structuré comme suit dans le PDF par DITA
 Open Toolkit :
 
-.. rubric:: XSL-FO
+   .. rubric:: XSL-FO
 
-Voici mon exemple de chemin XPATH :
+   Voici mon exemple de chemin XPATH :
 
-.. code-block:: xslt
+   .. code-block:: xslt
 
-   ancestor-or-self
+      ancestor-or-self
 
-Il est toujours possible d'entrer le texte entre les balises <example>, mais
+Il est toujours possible d'entrer le texte entre les balises :samp:`<example>`, mais
 XSL-FO offre une manière de procéder plus élégante et structurée.
 
 Insérer automatiquement une variable de texte avant le titre des exemples
@@ -104,6 +104,6 @@ Insérer automatiquement une variable de texte avant le titre des exemples
 
       <variable id="my-example-text>Exemple :</variable>
 
-Pour obtenir un comportement homogène, vous devez désactiver le traitement
-spécifique pour les exemples des types de *topics* spécifiques (*task*,
+Pour obtenir un comportement homogène, vous devez désactiver ce traitement
+pour les exemples des types de *topics* spécifiques (*task*,
 notamment).
