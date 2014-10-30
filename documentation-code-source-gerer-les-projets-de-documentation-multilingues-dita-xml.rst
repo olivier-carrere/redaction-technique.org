@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code yes
+.. review: text yes, code yes
 
 .. _gerer-les-projets-de-documentation-multilingues-dita-xml:
 
@@ -12,37 +12,42 @@ Gérer les projets de documentation multilingues DITA XML
 
 `DITA XML <http://dita.xml.org/>`_ est un formidable format pour gérer les
 **projets de documentation**. Pour les projets multilingues, cependant, le
-**rédacteur technique** doit créer un fichier *.ditamap*, qui contient la
+**rédacteur technique** doit créer un fichier *ditamap*, qui contient la
 structure de table des matières des documents, par version. Ceci entraîne un
 risque d'erreurs et d'incohérences. Heureusement, une méthodologie appropriée et
 un script d'automatisation destiné à la chaîne de publication **DITA Open
 Toolkit** remédient à ce problème.
 
 Méthodologie de gestion des projets de documentation multilingues DITA XML :
+----------------------------------------------------------------------------
 
-#.  Le fichier :file:`.ditamap` ne doit pas comporter de section *navtitle*, qui
+#.  Le fichier *ditamap* ne doit pas comporter de section *navtitle*, qui
     contient un titre en toutes lettres, au lieu d'extraire le titre de la
     section DITA correspondante, et est donc propre à chaque langue.
 
 #.  Dès le début de votre projet DITA, placez les fichiers de contenu
-    :file:`.dita` dans un sous-répertoire spécifique à la langue dans laquelle
+    *DITA* dans un sous-répertoire spécifique à la langue dans laquelle
     il est initialement rédigé.
 
     Par exemple :
 
-    -               product
-    -                   en_US
-    -                       images
-    -                       tasks
-    -                       topics
-              et non :
+    - product
 
-    -               product
-    -                   images
-    -                   tasks
-    -                   topics
+      - en_US
 
-#.  Remplacez dans le fichier *.ditamap* toutes les occurrences du nom du
+        - images
+        - tasks
+        - topics
+
+      et non :
+
+    - product
+
+      - images
+      - tasks
+      - topics
+
+#.  Remplacez dans le fichier *ditamap* toutes les occurrences du nom du
     répertoire propre à la langue par une chaîne unique provisoire.
 
     Par exemple, utilisez la chaîne *@language-code@* :
@@ -60,13 +65,13 @@ Méthodologie de gestion des projets de documentation multilingues DITA XML :
 #.  Pour générer les fichiers cibles, vous pouvez maintenant :
 
     a. modifier dans le fichier :file:`demo/fo/build.xml` le paramètre
-       default.locale,
+       :samp:`default.locale`,
 
-    #. remplacer dans le fichier :file:`.ditamap` la variable de langue par le
+    #. remplacer dans le fichier *DITAMAP* la variable de langue par le
        nom du répertoire de langue,
 
-    #.  modifier le paramètre de langue (xml:lang) dans le fichier
-        :file:`.ditamap` et dans les fichiers de contenu DITA,
+    #.  modifier le paramètre de langue :samp:`xml:lang` dans le fichier
+        *DITAMAP* et dans les fichiers de contenu DITA,
 
     #.  pour les fichiers cibles PDF, modifier les dimensions de page (A4 ou US
         letter, par exemple) selon la langue,
@@ -75,22 +80,23 @@ Méthodologie de gestion des projets de documentation multilingues DITA XML :
 
     #.  rétablir les valeurs initiales dans les fichiers sources.
 
-Heureusement, un script Bash (GNU/Linux) simple permet d'automatiser cela. Ce
-script suppose que :
+Heureusement, un script Bash (GNU/Linux) simple permet d'automatiser cela.
 
-- vous avez installé DITA Open Toolkit,
-- votre projet DITA XML ne comporte qu'un fichier :file:`.ditamap`,
-- vos fichiers de contenu DITA ont l'extension :file:`.dita`,
-- les noms des répertoires des versions linguistiques correspondent aux codes de
+.. rubric:: Prérequis
+
+- Vous avez installé DITA Open Toolkit.
+- Votre projet DITA XML ne comporte qu'un fichier *DITAMAP*.
+- Vos fichiers de contenu DITA ont l'extension :file:`.dita`.
+- Les noms des répertoires des versions linguistiques correspondent aux codes de
   langues supportés par Dita Open Toolkit (:file:`fr_FR` ou :file:`en_US`, par
-  exemple),
-- vos fichiers de contenu DITA se trouvent dans des sous-répertoires des
+  exemple).
+- Vos fichiers de contenu DITA se trouvent dans des sous-répertoires des
   répertoires des versions linguistiques (par exemple, dans :file:`fr_FR/tasks/`
   et :file:`fr_FR/topics/`).
 
-Les valeurs supportées pour la dimension des pages PDF sont fr_FR (A4) et en_US
-(US letter).  Ce script peut être bien entendu facilement adapté, ou inspirer un
-nouveau script.
+Les valeurs supportées pour la dimension des pages PDF sont :samp:`fr_FR` (A4)
+et :samp:`en_US` (US letter). Ce script peut être bien entendu facilement
+adapté, ou inspirer un nouveau script.
 
 .. warning::
 
@@ -104,7 +110,7 @@ Pour utiliser ce script :
 
 #.  Téléchargez le `script de génération multilingue DITA XML
     <http://www.redaction-technique.org/media/dita2target.sh>`_ dans le
-    répertoire contenant le fichier :file:`.ditamap` du projet.
+    répertoire contenant le fichier *DITAMAP* du projet.
 
 #.  Dans un terminal, placez-vous dans ce répertoire, puis entrez :
 
@@ -131,11 +137,11 @@ Pour utiliser ce script :
 
     L'argument *format cible* accepte les valeurs gérées par DITA Open Toolkit.
 
-.. rubric:: Exemple
+    .. rubric:: Exemple
 
-.. code-block:: console
+    .. code-block:: console
 
-   ./dita2target.sh firewall.ditamap  en_US pdf2
+       ./dita2target.sh firewall.ditamap  en_US pdf2
 
-Le fichier PDF :file:`firewall.pdf` est alors généré dans le répertoire
-:file:`out` (spécifié *en dur* dans le script).
+    Le fichier PDF :file:`firewall.pdf` est alors généré dans le répertoire
+    :file:`out` (spécifié *en dur* dans le script).
