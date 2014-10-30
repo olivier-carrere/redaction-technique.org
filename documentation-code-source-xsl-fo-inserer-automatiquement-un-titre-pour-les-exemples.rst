@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. review: text no, code yes
 
 .. _xsl-fo-inserer-automatiquement-un-titre-pour-les-exemples:
 
@@ -74,10 +74,10 @@ Insérer automatiquement une variable de texte avant le titre des exemples
    .. code-block:: xslt
 
       <xsl:template match="*[contains(@class,' topic/example ')]/*[contains(@class,' topic/title ')]>
-          <fo:block xsl:use-attribute-sets="example.title>
-              <xsl:call-template name="commonattributes"/>
-              <xsl:apply-templates/>
-          </fo:block>
+        <fo:block xsl:use-attribute-sets="example.title>
+          <xsl:call-template name="commonattributes"/>
+          <xsl:apply-templates/>
+        </fo:block>
       </xsl:template>
 
    par le code suivant :
@@ -85,16 +85,16 @@ Insérer automatiquement une variable de texte avant le titre des exemples
    .. code-block:: xslt
 
       <xsl:template match="*[contains(@class,' topic/example ')]>
-         <fo:block xsl:use-attribute-sets="example.title>
-                       <xsl:call-template name="insertVariable>
-             <xsl:with-param name="theVariableID" select="'my-example-text'"/>
-           </xsl:call-template>
-                 <xsl:apply-templates select="title"/>
-         </fo:block>
-         <fo:block>
-           <xsl:apply-templates select="*[not(contains(@class, ' topic/title '))]|text()|processing-instruction()"/>
-         </fo:block>
-       </xsl:template>
+        <fo:block xsl:use-attribute-sets="example.title>
+          <xsl:call-template name="insertVariable>
+            <xsl:with-param name="theVariableID" select="'my-example-text'"/>
+          </xsl:call-template>
+          <xsl:apply-templates select="title"/>
+        </fo:block>
+        <fo:block>
+          <xsl:apply-templates select="*[not(contains(@class, ' topic/title '))]|text()|processing-instruction()"/>
+        </fo:block>
+      </xsl:template>
 
 #. Définissez dans les fichiers contenant les variables de langue, tels que
    :file:`plugins/org.dita.pdf2/cfg/common/vars/fr.xml`, les variables de texte
