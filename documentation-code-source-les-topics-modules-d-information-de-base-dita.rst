@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _les-topics-modules-d-information-de-base-dita:
 
@@ -38,3 +38,5 @@ des paragraphes, voire des phrases ou des segments de phrase, qui ne peuvent pas
 être munis d'un titre, ne forment pas des *topics*. Elles peuvent être cependant
 partagées *via* le mécanisme *conref*, similaire au mécanisme *Xinclude* proposé
 par DocBook.
+
+.. text review: no

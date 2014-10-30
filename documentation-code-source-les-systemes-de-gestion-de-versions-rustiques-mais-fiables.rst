@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _les-systemes-de-gestion-de-versions-rustiques-mais-fiables:
 
@@ -101,3 +101,5 @@ ou les branches.
    :maxdepth: 2
 
    documentation-code-source-utiliser-les-branches-des-systemes-de-gestion-de-sources
+
+.. text review: no

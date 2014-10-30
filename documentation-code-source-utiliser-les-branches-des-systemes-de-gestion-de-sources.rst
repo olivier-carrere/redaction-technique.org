@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text yes, code yes
+.. code review: yes
 
 .. _utiliser-les-branches-des-systemes-de-gestion-de-sources:
 
@@ -67,3 +67,5 @@ différentes versions linguistiques.  En tout cas, la solution des branches
 autorise de telles opérations, non celle des répertoires. Elle est cependant
 plus difficile à appréhender et à utiliser par l'équipe de **rédaction
 technique**.
+
+.. text review: yes

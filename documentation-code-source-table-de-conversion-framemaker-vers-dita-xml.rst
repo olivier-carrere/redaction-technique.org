@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _table-de-conversion-framemaker-vers-dita-xml:
 
@@ -44,3 +44,5 @@ publication devrait d'ailleurs être beaucoup plus simple que sous FrameMaker…
 sauf si votre chaîne de création et de publication se base sur FrameMaker
 structuré (mais, certes, le choix de FrameMaker structuré peut être motivé, ne
 serait-ce que pour tirer parti de la qualité de son moteur d'impression).
+
+.. text review: no

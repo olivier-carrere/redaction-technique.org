@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _gerer-son-contenu-dita-xml-avec-ou-sans-cms:
 
@@ -46,3 +46,5 @@ stratégie, sans remettre en cause l'existant. L'architecture DITA XML n'est en
 effet liée à aucun référentiel particulier. Rien n'interdit donc de commencer à
 gérer ses projets sans CMS, puis d'avoir recours à une telle solution si les
 bénéfices de ce choix deviennent manifeste.
+
+.. text review: no

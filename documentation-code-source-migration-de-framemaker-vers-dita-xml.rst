@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _migration-de-framemaker-vers-dita-xml:
 
@@ -50,3 +50,5 @@ auraient déjà beaucoup gagné, respectivement en :
 
    documentation-code-source-restructuration-du-contenu-framemaker
    documentation-code-source-table-de-conversion-framemaker-vers-dita-xml
+
+.. text review: no

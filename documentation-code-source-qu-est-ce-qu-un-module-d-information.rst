@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text yes, code yes
+.. code review: yes
 
 .. _qu-est-ce-qu-un-module-d-information:
 
@@ -53,3 +53,5 @@ mais dans une section *reltable* propre à chaque fichier *ditamap*.
 Les modules sont ainsi parfaitement décontextualisés, et les informations de
 structure telles que les références croisées sont placés dans des fichiers ne
 comportant pas de contenu textuel.
+
+.. text review: yes

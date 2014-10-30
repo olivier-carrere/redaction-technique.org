@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _base-de-donnees-sql:
 
@@ -15,3 +15,5 @@ base de données SQL. Il conserve un historique, mais uniquement article par
 article et ne permet pas la recherche et le remplacement de texte à travers tout
 le contenu. Cela peut justifier le choix de gérer le contenu sous-jacent du CMS
 sous forme de fichiers texte.
+
+.. text review: no

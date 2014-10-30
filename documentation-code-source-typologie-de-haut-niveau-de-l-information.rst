@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _typologie-de-haut-niveau-de-l-information:
 
@@ -62,3 +62,5 @@ catégorie, il peut la créer *via* une spécialisation).  Cette division en typ
 d'information oblige donc d'entrée de jeu le **rédacteur technique** à
 structurer l'information. L'utilisateur y gagne en facilité et rapidité d'accès
 à l'information et en utilisabilité globale de la **documentation technique*
+
+.. text review: no

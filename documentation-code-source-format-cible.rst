@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text yes, no code
+.. code review: no code
 
 .. _format-cible:
 
@@ -56,3 +56,5 @@ possibilités quasi illimitées.
 
 .. [#] Ceci est automatisable par un script ; le CMS Drupal propose également un
        module `DITA integration for Drupal <http://drupal.org/project/dita>`_.
+
+.. text review: yes

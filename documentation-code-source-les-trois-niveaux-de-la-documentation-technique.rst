@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text yes, no code
+.. code review: no code
 
 .. _les-trois-niveaux-de-la-documentation-technique:
 
@@ -63,3 +63,5 @@ trois éléments fournira un résultat optimal.
    :maxdepth: 2
 
    documentation-code-source-un-index-est-il-utile-dans-un-pdf
+
+.. text review: yes

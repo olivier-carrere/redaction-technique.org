@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _afficher-un-index-dans-un-pdf-mais-pas-sous-dita-open-toolkit:
 
@@ -40,3 +40,5 @@ Le problème de l'index n'est donc pas un obstacle à l'adoption de DITA XML. Si
 votre support final est un document imprimé, les solutions existent. S'il s'agit
 d'un format électronique, l'absence d'un index est largement compensée par la
 fonction de recherche en plein texte.
+
+.. text review: no

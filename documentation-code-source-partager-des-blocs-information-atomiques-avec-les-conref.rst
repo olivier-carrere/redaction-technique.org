@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _partager-des-blocs-information-atomiques-avec-les-conref:
 
@@ -44,3 +44,5 @@ leur utilisation.
    documentation-code-source-imbriquer-les-conref
    documentation-code-source-maximiser-utilisation-des-conref-pour-faire-baisser-les-couts
    documentation-code-source-proteger-les-informations-confidentielles
+
+.. text review: no

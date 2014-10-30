@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _didacticiels-dita-xml-xsl-fo:
 
@@ -44,3 +44,5 @@ traditionnelles de type FrameMaker.
    documentation-code-source-afficher-un-index-dans-un-pdf-mais-pas-sous-dita-open-toolkit
    documentation-code-source-utiliser-ide-nxml-pour-dita-xml
    documentation-code-source-accelerer-sa-saisie-avec-le-mode-predictive-pour-emacs
+
+.. text review: no

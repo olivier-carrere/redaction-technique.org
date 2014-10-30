@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _documents-monolithiques-ou-modulaires:
 
@@ -41,3 +41,5 @@ ils le font mal.  Inversement, un document DocBook ou DITA, par exemple, peut
    :maxdepth: 2
 
    documentation-code-source-qu-est-ce-qu-un-module-d-information
+
+.. text review: no

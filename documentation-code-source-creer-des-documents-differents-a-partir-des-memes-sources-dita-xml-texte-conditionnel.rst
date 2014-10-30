@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text yes, code yes
+.. code review: yes
 
 .. _creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-conditionnel:
 
@@ -130,3 +130,5 @@ quelques minutes.
 
   - aux plombiers et aux électriciens,
   - uniquement aux plombiers.
+
+.. text review: yes

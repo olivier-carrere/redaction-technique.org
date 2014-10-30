@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code yes
+.. code review: yes
 
 .. _utiliser-ide-nxml-pour-dita-xml:
 
@@ -141,3 +141,5 @@ permettra d'utiliser ce mode Emacs pour DITA XML.
 
 #.  Pour insérer une balise fermante après du texte, entrez </, puis appuyez sur
     Ctrl+Entrée.
+
+.. text review: no

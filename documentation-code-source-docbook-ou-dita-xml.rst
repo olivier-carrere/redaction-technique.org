@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _docbook-ou-dita-xml:
 
@@ -94,3 +94,5 @@ une traduction de votre contenu dans une nouvelle langue est envisagée.
 De manière générale, un professionnel a toujours intérêt à travailler sur le
 format le plus riche, ne serait-ce que pour être pro-actif et anticiper sur les
 nouveaux besoins.
+
+.. text review: no

@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text yes, code yes
+.. code review: yes
 
 .. _utiliser-le-noeud-xml-de-plus-bas-niveau:
 
@@ -95,3 +95,5 @@ nœud sera absent des livrables:
        Si vous ne savez pas lire, c'est le bouton vert.
      </info>
    </step>
+
+.. text review: yes

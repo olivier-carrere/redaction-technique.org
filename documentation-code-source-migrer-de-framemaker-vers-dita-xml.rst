@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text yes, code yes
+.. code review: yes
 
 .. _migrer-de-framemaker-vers-dita-xml:
 
@@ -100,3 +100,5 @@ encore ce *one-liner* Bash pour renommer les fichiers :file:`.dita` d'après leu
    $ ack "<title>" *.dita| sed "s# #_#g;" | tr '[:upper:]' '[:lower:]' | \
    sed -E "s#(.*.dita)#mv \1#g;" | \
    sed -E "s#\.dita.*<title>(.*)</title>#.dita \1.dita#g;"
+
+.. text review: yes

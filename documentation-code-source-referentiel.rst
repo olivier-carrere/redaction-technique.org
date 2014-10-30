@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _referentiel:
 
@@ -25,3 +25,5 @@ versions**.
    documentation-code-source-les-cms-le-workflow-en-prime-mais-une-fiabilite-a-tester
    documentation-code-source-base-de-donnees-sql
    documentation-code-source-un-referentiel-unique
+
+.. text review: no

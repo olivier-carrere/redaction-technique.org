@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _principe-de-simplicite-kiss:
 
@@ -44,3 +44,5 @@ technique**. Le **rédacteur technique** apporte ainsi une véritable valeur
 ajoutée au produit qu'il documente. Si d'ailleurs ce produit n'est pas développé
 selon le principe KISS, rédiger une **documentation technique** claire relève de
 l'impossible !
+
+.. text review: no

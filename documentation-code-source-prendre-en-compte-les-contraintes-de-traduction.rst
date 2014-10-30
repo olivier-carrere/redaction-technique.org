@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text yes, code yes
+.. code review: yes
 
 .. _prendre-en-compte-les-contraintes-de-traduction:
 
@@ -64,3 +64,5 @@ l'intérêt du mécanisme. Sans compter que des problèmes pires que ce cas d'é
 peuvent conduire à complètement abandonner dans la langue cible les *conref*
 utilisés dans la langue source (je n'ai pas d'exemple concret à offrir, ayant
 toujours évité de tomber dans ce genre de travers.)
+
+.. text review: yes

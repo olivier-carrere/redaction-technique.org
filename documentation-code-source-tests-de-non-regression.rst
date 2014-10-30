@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _tests-de-non-regression:
 
@@ -29,3 +29,5 @@ faudra procéder à une comparaison section par section, plus fastidieuse.
 
 Si le document est disponible en plusieurs langues, les tests de non-régression
 doivent être reproduits indépendamment pour chaque langue.
+
+.. text review: no

@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _accelerer-sa-saisie-avec-le-mode-predictive-pour-emacs:
 
@@ -66,3 +66,5 @@ un environnement GNU/Linux (en l'occurrence, Debian).
    .. code-block:: cl
 
       predictive-mode
+
+.. text review: no

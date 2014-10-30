@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _cas-concrets-utilisation-de-dita-xml:
 
@@ -14,3 +14,5 @@ L'utilisation quotidienne du **format de rédaction structurée** DITA XML sur d
 projets multilingues en tant que **rédacteur technique** m'a amené à développer
 certaines solutions et astuces que je vous livre ici. Tout retour d'expérience
 est le bienvenu !
+
+.. text review: no

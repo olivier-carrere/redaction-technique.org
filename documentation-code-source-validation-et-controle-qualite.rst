@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text yes, no code
+.. code review: no code
 
 .. _validation-et-controle-qualite:
 
@@ -38,3 +38,5 @@ briques » du document final.
 
    documentation-code-source-workflow-de-creation-et-validation
    documentation-code-source-tests-de-non-regression
+
+.. text review: yes

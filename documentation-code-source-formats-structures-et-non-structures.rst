@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text yes, no code
+.. code review: no code
 
 .. _formats-structures-et-non-structures:
 
@@ -108,3 +108,5 @@ l'aide à présenter des informations :
    documentation-code-source-docbook-ou-dita-xml
    documentation-code-source-migration-de-framemaker-vers-dita-xml
    documentation-code-source-migrer-de-framemaker-vers-dita-xml
+
+.. text review: yes

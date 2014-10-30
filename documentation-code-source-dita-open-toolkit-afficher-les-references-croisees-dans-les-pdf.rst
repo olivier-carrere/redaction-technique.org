@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _dita-open-toolkit-afficher-les-references-croisees-dans-les-pdf:
 
@@ -44,3 +44,5 @@ afficher, attribuez la valeur *no* la variable *disableRelatedLinks* du fichier
 C'est ce genre de petits détails qui rebutent les novices et il est fort dommage
 que cette valeur ne soit pas la valeur par défaut. Note à moi-même :* faire un
 rapport de bug courtois auprès des développeurs de ce merveilleux outil.
+
+.. text review: no

@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _git-du-fichier-au-contenu:
 
@@ -70,3 +70,5 @@ patchs ou de les déposer sur un dépôt central.
 
    documentation-code-source-faire-sauter-les-goulets-etranglement-avec-les-branches
    documentation-code-source-organiser-son-historique-avec-git-rebase
+
+.. text review: no

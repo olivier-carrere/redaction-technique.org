@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _formats-et-outils:
 
@@ -38,3 +38,5 @@ DocBook et DITA XML liés à un schéma XSD normalisée peuvent notamment être
 facilement gérés, de la création à la publication, à l'aide de toute une
 panoplie d'outils, de l'éditeur de texte libre à la suite logicielle
 propriétaire et graphique.
+
+.. text review: no

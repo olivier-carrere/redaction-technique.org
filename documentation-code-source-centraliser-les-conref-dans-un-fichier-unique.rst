@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _centraliser-les-conref-dans-un-fichier-unique:
 
@@ -56,3 +56,5 @@ contenant des informations partagées entre différents types de *topics*.
 Tous les *conref* sources d'un fichier donné doivent avoir un ID unique dans ce
 fichier ; veillez à utiliser des noms explicites pour les humains, vos fichiers
 *dita* contenant des *conref* cibles deviendront sinon rapidement illisibles !
+
+.. text review: no

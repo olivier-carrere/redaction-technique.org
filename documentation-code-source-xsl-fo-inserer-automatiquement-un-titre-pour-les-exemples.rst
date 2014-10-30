@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code yes
+.. code review: yes
 
 .. _xsl-fo-inserer-automatiquement-un-titre-pour-les-exemples:
 
@@ -107,3 +107,5 @@ Insérer automatiquement une variable de texte avant le titre des exemples
 Pour obtenir un comportement homogène, vous devez désactiver ce traitement
 pour les exemples des types de *topics* spécifiques (*task*,
 notamment).
+
+.. text review: no

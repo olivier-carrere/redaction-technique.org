@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _les-cms-le-workflow-en-prime-mais-une-fiabilite-a-tester:
 
@@ -45,3 +45,5 @@ J'aurais quelques scrupules, et quelques inquiétudes, sur le fait de leur
 confier entièrement la gestion et l'archivage des fichiers sources de la
 documentation. Une sélection rigoureuse de la solution s'impose, associée à une
 procédure de sauvegarde et de restauration éprouvée.
+
+.. text review: no

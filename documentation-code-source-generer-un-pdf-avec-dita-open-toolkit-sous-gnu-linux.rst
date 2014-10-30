@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text yes, code no
+.. code review: no
 
 .. _generer-un-pdf-avec-dita-open-toolkit-sous-gnu-linux:
 
@@ -123,3 +123,5 @@ Vous pouvez indiquer pour l'option *transtype* une des valeurs suivantes:
 +------------------------------+------------------------------+
 |wordrtf                       |Microsoft RTF                 |
 +------------------------------+------------------------------+
+
+.. text review: yes

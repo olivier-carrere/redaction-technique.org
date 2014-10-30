@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _organisation-a-la-demande-du-contenu:
 
@@ -42,3 +42,5 @@ utilisé sans modification dans la *ditamap* 2 où le document B n'est pas inclu
 
 L'organisation des répertoires de travail doit également permettre l'utilisation
 de liens relatifs, notamment vers les images, qui ne seront jamais cassés.
+
+.. text review: no

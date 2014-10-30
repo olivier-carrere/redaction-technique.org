@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text yes, no code
+.. code review: no code
 
 .. _restructuration-du-contenu-framemaker:
 
@@ -59,3 +59,5 @@ Si vos documents sont disponibles en plusieurs langues, vous devez modifier les
 fichiers FrameMaker et effectuer la migration pour chaque langue. Si un projet
 de traduction dans une nouvelle langue se profile, mieux vaut effectuer la migration avant
 !
+
+.. text review: yes

@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text yes, no code
+.. code review: no code
 
 .. _de-la-redaction-a-la-communication-technique:
 
@@ -59,3 +59,5 @@ Valoriser un contenu signifie :
 - produire un contenu de qualité adapté à sa cible,
 - conserver tout le contenu existant, dans ses différentes versions,
 - réutiliser ou recycler à bon escient le contenu existant.
+
+.. text review: yes

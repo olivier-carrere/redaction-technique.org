@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text yes, code yes
+.. code review: yes
 
 .. _sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers:
 
@@ -263,3 +263,5 @@ Et voilà. En quelques instants, sans jamais ouvrir un seul fichier, nous
 appliquons une suite d'opérations complexes sur un nombre indéfini de phrases de
 même structure. Ce qui n'est pas possible sous un traitement de texte ou autre
 outil muni d'une interface graphique, ou sur des fichiers binaires.
+
+.. text review: yes

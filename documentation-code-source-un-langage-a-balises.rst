@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _un-langage-a-balises:
 
@@ -65,3 +65,5 @@ dans un jeu de balises ouvrantes de type <balise> et de balises fermantes de
 type </balise> selon le schéma <balise>texte</balise>. Tout texte entré hors
 d'une balise ouvrante et fermante est incorrect et produit un fichier non
 valide.
+
+.. text review: no

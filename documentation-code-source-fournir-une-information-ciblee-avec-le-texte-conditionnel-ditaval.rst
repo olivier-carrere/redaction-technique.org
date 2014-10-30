@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text yes, code yes
+.. code review: yes
 
 .. _fournir-une-information-ciblee-avec-le-texte-conditionnel-ditaval:
 
@@ -97,3 +97,5 @@ Vous pouvez utiliser la structure suivante :
       <!ENTITY % thead.content "((%row;)+)>
 
    Ce code est donc incorrect et entraîne l'échec de la compilation.
+
+.. text review: yes

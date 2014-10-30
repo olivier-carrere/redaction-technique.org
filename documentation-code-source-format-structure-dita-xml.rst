@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text yes, no code
+.. code review: no code
 
 .. _format-structure-dita-xml:
 
@@ -66,3 +66,5 @@ standardisées.
    documentation-code-source-du-document-a-la-base-documentaire-modulaire
    documentation-code-source-cas-concret-documentation-de-nufirewall
    documentation-code-source-didacticiels-dita-xml-xsl-fo
+
+.. text review: yes

@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _le-single-sourcing-un-format-source-plusieurs-formats-cibles:
 
@@ -37,3 +37,5 @@ DITA XML propose un modèle agnostique quant au format cible. Les fichiers
 sources, bien que basés sur un modèle modulaire proche de celui de l'aide en
 ligne, peuvent facilement être exportés sous forme de fichier PDF, d'aide en
 ligne, de pages HTML liées ou autre, sans aucune perte d'information.
+
+.. text review: no

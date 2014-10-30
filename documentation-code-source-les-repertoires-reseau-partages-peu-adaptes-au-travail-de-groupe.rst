@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text yes, no code
+.. code review: no code
 
 .. _les-repertoires-reseau-partages-peu-adaptes-au-travail-de-groupe:
 
@@ -54,3 +54,5 @@ périlleuses :
   fichiers. Lorsque l'on met à jour ou publie un livre FrameMaker, notamment,
   ceci peut créer des conflits entre fichiers, FrameMaker enregistrant dans ces
   cas tous les fichiers du livre, même si leur contenu n'a pas été modifié).
+
+.. text review: yes

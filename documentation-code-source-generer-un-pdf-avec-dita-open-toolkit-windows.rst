@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text yes, code yes
+.. code review: yes
 
 .. _generer-un-pdf-avec-dita-open-toolkit-windows:
 
@@ -61,3 +61,5 @@ Toolkit** dans un environnement Windows (testé sur Windows XP).
    trouverez le fichier cible :file:`taskbook.pdf` dans le répertoire
    :file:`Bureau\DITA-OT1.5.4_full_easy_install_bin\DITA-OT1.5.4`. Vous pouvez
    maintenant compiler d'autres projets en ignorant les étapes 1 et 2.
+
+.. text review: yes

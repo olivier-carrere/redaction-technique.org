@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _un-referentiel-unique:
 
@@ -28,3 +28,5 @@ En pratique, il semble que rares sont les entreprises qui ont franchi ce pas. Il
 est vrai que tant que les formats structurés ne seront pas enseignés dans le
 secondaire, il paraît utopique de vouloir y convertir tous les acteurs de la
 société, surtout si le turn-over y est important.
+
+.. text review: no

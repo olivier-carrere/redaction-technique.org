@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _cas-concret-documentation-de-nufirewall:
 
@@ -25,3 +25,5 @@ contenu.
 
    documentation-code-source-partager-des-blocs-information-atomiques-avec-les-conref
    documentation-code-source-fournir-une-information-ciblee-avec-le-texte-conditionnel-ditaval
+
+.. text review: no

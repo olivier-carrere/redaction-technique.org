@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text yes, code yes
+.. code review: yes
 
 .. _xsl-fo-filtrer-du-contenu-selon-des-conditions-sauf-et-ou:
 
@@ -104,3 +104,5 @@ Le fichier PDF affichera l'exemple structuré comme suit :
       ancestor-or-self
 
    Texte non encapsulé situé après un nœud enfant.
+
+.. text review: yes

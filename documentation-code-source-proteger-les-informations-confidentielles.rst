@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _proteger-les-informations-confidentielles:
 
@@ -39,3 +39,5 @@ traducteur ne traduira que le texte non confidentiel, et le livrable généré d
 la langue cible ne contiendra pas le texte confidentiel, noté comme conditionnel
 et exclu explicitement par le fichier :file:`ditaval` passé en argument lors de
 la compilation.
+
+.. text review: no

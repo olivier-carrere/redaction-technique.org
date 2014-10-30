@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text yes, code yes
+.. code review: yes
 
 .. _imbriquer-les-conref:
 
@@ -48,3 +48,5 @@ Pour résumer la situation :
   ingérable.
 - Il est impossible d'imbriquer des *conref* cibles : le contenu du *conref* du
   niveau supérieur écrasera les valeurs des *conref* du niveau inférieur.
+
+.. text review: yes

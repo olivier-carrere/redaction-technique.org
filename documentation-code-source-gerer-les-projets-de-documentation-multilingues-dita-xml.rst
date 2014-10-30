@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text yes, code yes
+.. code review: yes
 
 .. _gerer-les-projets-de-documentation-multilingues-dita-xml:
 
@@ -145,3 +145,5 @@ Pour utiliser ce script :
 
     Le fichier PDF :file:`firewall.pdf` est alors généré dans le répertoire
     :file:`out` (spécifié *en dur* dans le script).
+
+.. text review: yes

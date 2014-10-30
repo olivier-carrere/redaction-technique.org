@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _quel-referentiel-pour-le-travail-de-groupe:
 
@@ -47,3 +47,5 @@ images.
 
 Si le programme utilisé ne verrouille pas les fichiers ouverts, une coordination
 de tous les instants doit s'instaurer entre les membres de l'équipe.
+
+.. text review: no

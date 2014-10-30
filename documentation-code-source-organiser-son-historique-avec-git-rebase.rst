@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _organiser-son-historique-avec-git-rebase:
 
@@ -99,3 +99,5 @@ Attention, tout de même : moins vous réorganiserez vos commits (surtout
 chronologiquement), plus le risque de devoir corriger manuellement des conflits
 sera faible. Autrement dit, *git rebase* ne doit pas être une excuse pour ne pas
 planifier rationnellement son travail.
+
+.. text review: no

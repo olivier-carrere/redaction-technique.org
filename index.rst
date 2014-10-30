@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text yes, no code
+.. code review: no code
 
 Gérer la documentation comme le code source
 ===========================================
@@ -31,3 +31,5 @@ après l'avoir compilé en PDF, EPUB ou autre avec `Python Sphinx
    documentation-code-source-diminuer-les-couts-ameliorer-la-satisfaction-client
    documentation-code-source-redaction-technique-un-processus-industriel
    documentation-code-source-format-structure-dita-xml
+
+.. text review: yes

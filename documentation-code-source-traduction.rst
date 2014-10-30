@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text yes, no code
+.. code review: no code
 
 .. _traduction:
 
@@ -70,3 +70,5 @@ branche est un *fork* : il devient impossible d'appliquer automatiquement à
 l'une les modifications apportées à l'autre. Pour fournir les mêmes informations
 dans les différentes langues, il est donc crucial de suivre efficacement les
 mises à jour de la version d'origine.
+
+.. text review: yes

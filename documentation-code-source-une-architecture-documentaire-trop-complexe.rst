@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _une-architecture-documentaire-trop-complexe:
 
@@ -56,3 +56,5 @@ amener les **rédacteurs techniques** à envisager le contenu sous un autre
 angle. Ils doivent cesser de produire des récits narratifs pour concevoir des
 modules d'information autonomes. DITA est plus qu'un langage XML : c'est une
 méthode de rédaction.*
+
+.. text review: no

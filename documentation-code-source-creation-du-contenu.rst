@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _creation-du-contenu:
 
@@ -26,3 +26,5 @@ En particulier, le **rédacteur technique** a soin de :
 
 - prendre en compte dès le début du projet les contraintes
   d'internationalisation.
+
+.. text review: no

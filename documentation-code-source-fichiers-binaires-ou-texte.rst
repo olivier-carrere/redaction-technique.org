@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _fichiers-binaires-ou-texte:
 
@@ -26,3 +26,5 @@ Les formats sources sont des formats **binaires** ou** texte**.
 |transparents|d'utiliser de puissantes `expressions rationnelles               |
 |» :         |<http://fr.wikipedia.org/wiki/Expression_rationnelle>`_.         |
 +------------+-----------------------------------------------------------------+
+
+.. text review: no

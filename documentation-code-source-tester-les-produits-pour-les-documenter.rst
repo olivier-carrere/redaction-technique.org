@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _tester-les-produits-pour-les-documenter:
 
@@ -77,3 +77,5 @@ l'apport de cette démarche. C'est souvent seulement à partir de ce moment là 
 la rédaction technique gagne ses lettres de noblesse. Et que la documentation
 technique n'est plus seulement vue comme un mal nécessaire, mais comme une
 véritable valeur ajoutée.
+
+.. text review: no

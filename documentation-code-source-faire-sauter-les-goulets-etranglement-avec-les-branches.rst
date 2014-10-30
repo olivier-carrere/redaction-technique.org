@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. code review: no
 
 .. _faire-sauter-les-goulets-etranglement-avec-les-branches:
 
@@ -43,3 +43,5 @@ Si vous n'avez pas besoin d'effectuer deux lots de tâches en parallèle, vous
 pouvez sans problème travailler dans votre espace local. Si vous devez revenir
 sur vos modifications, appellez la commande git reset --hard HEAD pour écraser
 vos fichiers du répertoire local par ceux du dépôt distant.
+
+.. text review: no

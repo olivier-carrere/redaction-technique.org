@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text yes, code yes
+.. code review: yes
 
 .. _maximiser-utilisation-des-conref-pour-faire-baisser-les-couts:
 
@@ -115,3 +115,5 @@ de contenu, tels que des en-têtes de tableaux. Vous pouvez ainsi présenter des
 informations de même type de manière homogène à moindre coût, c'est à dire sans
 recourir à la `spécialisation
 <http://en.wikipedia.org/wiki/Darwin_Information_Typing_Architecture#Specialization>`_.
+
+.. text review: yes

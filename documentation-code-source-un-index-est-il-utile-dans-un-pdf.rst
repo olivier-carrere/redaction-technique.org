@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text yes, no code
+.. code review: no code
 
 .. _un-index-est-il-utile-dans-un-pdf:
 
@@ -42,3 +42,5 @@ cohérente). Mais son rapport coût/utilité est faible. C'est un luxe que
 l'entreprise peut rarement s'offrir, mais certainement pas le premier aspect
 qualitatif qu'il faut améliorer. Un index est la cerise sur le gâteau d'une
 documentation technique - le plus important reste le gâteau.
+
+.. text review: yes
