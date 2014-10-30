@@ -3,14 +3,14 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. review: text no, code no
+.. review: text yes, code yes
 
 .. _utiliser-les-branches-des-systemes-de-gestion-de-sources:
 
 Utiliser les branches des systèmes de gestion de sources
 ========================================================
 
-Les CMS (ou systèmes de gestion de sources) proposent de créer des branches d'un
+Les systèmes de gestion de sources proposent de créer des branches d'un
 projet : si à un moment donné, un projet se divise en deux projets
 incompatibles, une branche est créée à partir du projet principal. Le
 **rédacteur technique** peut ainsi gérer les différentes traductions de la
@@ -29,7 +29,7 @@ texte conditionnel des outils de documentation.
 D'autre part, le système de gestion des branches est plus ou moins adapté à la
 gestion des traductions selon le gestionnaire de sources que l'on utilise.
 
-La principale différence entre les CMS (ou systèmes de gestion de sources) Git
+La principale différence entre les systèmes de gestion de sources Git
 et Subversion, c'est leur manière de gérer les branches. Créer une branche sous
 Subversion revient à dupliquer un répertoire. Les fichiers des deux répertoires
 évoluent ensuite séparément. Sous Git, en revanche, la création de branche se
