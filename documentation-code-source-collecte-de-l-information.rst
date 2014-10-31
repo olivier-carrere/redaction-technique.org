@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. code review: no
+.. code review: no code
 
 .. _collecte-de-l-information:
 
@@ -53,4 +53,4 @@ commerciale de données techniques précises pour étayer le discours marketing.
 
    documentation-code-source-tester-les-produits-pour-les-documenter
 
-.. text review: no
+.. text review: yes
