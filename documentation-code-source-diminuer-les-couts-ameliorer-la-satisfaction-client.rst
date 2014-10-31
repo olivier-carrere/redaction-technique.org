@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. code review: no
+.. code review: no code
 
 .. _diminuer-les-couts-ameliorer-la-satisfaction-client:
 
@@ -23,7 +23,7 @@ initial légèrement supérieur ou égal, il améliore également la qualité.
 |                         |                                                |
 |                         |- suppression des mises à jour répétitives      |
 |                         |                                                |
-|                         |- moins de mots à traduire                      |
+|                         |- moins de volume à traduire                    |
 +-------------------------+------------------------------------------------+
 |*Time to market* réduit  |- réutilisation maximale du contenu             |
 |                         |                                                |
@@ -59,4 +59,4 @@ les solutions et les compétences existent.
    documentation-code-source-principe-de-simplicite-kiss
    documentation-code-source-formats-et-outils
 
-.. text review: no
+.. text review: yes
