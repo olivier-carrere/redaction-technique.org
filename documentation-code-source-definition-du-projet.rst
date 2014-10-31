@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. code review: no
+.. code review: no code
 
 .. _definition-du-projet:
 
@@ -45,4 +45,4 @@ notamment de déterminer :
 L'analyse des résultats du projet donne ensuite de précieux renseignements pour
 améliorer encore l'impact des projets suivants.
 
-.. text review: no
+.. text review: yes
