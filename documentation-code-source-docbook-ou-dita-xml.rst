@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. code review: no
+.. code review: no code
 
 .. _docbook-ou-dita-xml:
 
@@ -26,15 +26,8 @@ HTML. L'opération inverse ne peut pas être totalement automatisée. Pourquoi ?
 
 .. figure:: graphics/entropie.png
 
-   Il n'est pas possible de migrer automatiquement des données de formats
-   pauvres vers des format riches en information
-
 Il n'est pas possible de migrer automatiquement des données de formats pauvres
-vers des format riches en information (pour être aussi exact que possible, vous
-pouvez enregistrer une image JPEG au format TIFF ; mais cette image aura une
-qualité égale à celle de l'image JPEG, inférieure à la qualité habituelle des
-images TIFF. En revanche, on ne peut à ma connaissance pas enregistrer une image
-TIFF sous un format RAW).
+vers des format riches en information.
 
 Tout simplement parce que le contenu au format DITA XML contient plus
 d'informations. Passer d'un format plus riche à un format plus pauvre en
@@ -45,34 +38,28 @@ l'être humain peut aujourd'hui effectuer.
 
 Si votre contenu était une photo, nous pourrions faire l'analogie suivante :
 
-+--------------------+---------------------------------------------------------+
-|**Format de         |**Format de photo**                                      |
-|contenu**           |                                                         |
-+--------------------+---------------------------------------------------------+
-|DITA XML            |`RAW                                                     |
-|                    |<http://fr.wikipedia.org/wiki/RAW_(format_d%27image)>`_  |
-|                    |(ce n'est bien sûr qu'une analogie, DITA XML étant un    |
-|                    |standard, à la différence du format RAW).                |
-|                    |                                                         |
-+--------------------+---------------------------------------------------------+
-|DocBook             |`TIFF                                                    |
-|                    |<http://fr.wikipedia.org/wiki/Tagged_Image_File_Format>`_|
-|                    |                                                         |
-+--------------------+---------------------------------------------------------+
-|PDF                 |`JPEG <http://fr.wikipedia.org/wiki/Jpeg>`_              |
-+--------------------+---------------------------------------------------------+
++------------------+-----------------------------------------------------------+
+|**Format de       |**Format de photo**                                        |
+|contenu**         |                                                           |
++------------------+-----------------------------------------------------------+
+|DITA XML          |`RAW                                                       |
+|                  |<http://fr.wikipedia.org/wiki/RAW_(format_d%27image)>`_    |
+|                  |[#]_                                                       |
++------------------+-----------------------------------------------------------+
+|DocBook           |`TIFF                                                      |
+|                  |<http://fr.wikipedia.org/wiki/Tagged_Image_File_Format>`_  |
+|                  |                                                           |
++------------------+-----------------------------------------------------------+
+|PDF               |`JPEG <http://fr.wikipedia.org/wiki/Jpeg>`_                |
++------------------+-----------------------------------------------------------+
 
 Le passage de RAW en TIFF et de TIFF en JPEG est destructif et ne peut se faire
-en sens inverse.
+en sens inverse [#]_.
 
 .. figure:: graphics/entropie-dita-docbook.png
 
-   Le PDF est sémantiquement plus pauvre que DocBook, lui-même plus pauvre que
-   DITA XML.
-
 Le PDF est sémantiquement plus pauvre que DocBook, lui-même plus pauvre que DITA
-XML (le PDF est cependant plus riche en informations de mise en page,
-appliquées automatiquement à partir d'une feuille de style).
+XML [#]_.
 
 Si votre entreprise tient absolument à utiliser du **DocBook**, il est toujours
 loisible de générer le contenu **DocBook** à partir d'un contenu source au
@@ -95,4 +82,18 @@ De manière générale, un professionnel a toujours intérêt à travailler sur 
 format le plus riche, ne serait-ce que pour être pro-actif et anticiper sur les
 nouveaux besoins.
 
-.. text review: no
+.. rubric:: Notes
+
+.. [#] Ce n'est bien sûr qu'une analogie, DITA XML étant un standard, à la
+       différence du format RAW.
+
+.. [#] Pour être aussi exact que possible, vous pouvez enregistrer une image
+       JPEG au format TIFF ; mais cette image aura une qualité égale à celle de
+       l'image JPEG, inférieure à la qualité habituelle des images TIFF. En
+       revanche, on ne peut à ma connaissance pas enregistrer une image TIFF
+       sous un format RAW.
+
+.. [#] Le PDF est cependant plus riche en informations de mise en page,
+       appliquées automatiquement à partir d'une feuille de style.
+
+.. text review: yes
