@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. code review: no
+.. code review: no code
 
 .. _base-de-donnees-sql:
 
@@ -16,4 +16,4 @@ article et ne permet pas la recherche et le remplacement de texte à travers tou
 le contenu. Cela peut justifier le choix de gérer le contenu sous-jacent du CMS
 sous forme de fichiers texte.
 
-.. text review: no
+.. text review: yes
