@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. code review: no
+.. code review: no code
 
 .. _cas-concrets-utilisation-de-dita-xml:
 
@@ -15,4 +15,4 @@ projets multilingues en tant que **rédacteur technique** m'a amené à dévelop
 certaines solutions et astuces que je vous livre ici. Tout retour d'expérience
 est le bienvenu !
 
-.. text review: no
+.. text review: yes
