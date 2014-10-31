@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. code review: no
+.. code review: no code
 
 .. _didacticiels-dita-xml-xsl-fo:
 
@@ -14,12 +14,12 @@ Les **didacticiels** suivants aideront le **rédacteur technique** à mettre en
 place et à utiliser une chaîne de création et de publication `DITA XML
 <http://dita.xml.org/>`_ libre.
 
-DITA XML est le langage de rédaction structurée qui permet de créer des
+DITA XML est un langage de rédaction structurée qui permet de créer des
 documents sans se soucier de leur aspect final sur différents supports. XSL-FO
-est le langage qui permet de réorganiser et filtrer le contenu XML et de lui
+est un langage qui permet de réorganiser et filtrer le contenu XML et de lui
 appliquer une mise en page à l'aide d'une feuille de style.
 
-Un ensemble de fichiers DITA contient tout le contenu relatif par exemple à un
+Un ensemble de fichiers DITA contient tout le contenu, relatif par exemple à un
 produit. Différentes feuilles de style XSL-FO permettront de publier ce contenu
 en PDF, en HTML ou sous un autre format en appliquant des transformations
 complexes. Le résumé de chaque section du document final pourra par exemple
@@ -45,4 +45,4 @@ traditionnelles de type FrameMaker.
    documentation-code-source-utiliser-ide-nxml-pour-dita-xml
    documentation-code-source-accelerer-sa-saisie-avec-le-mode-predictive-pour-emacs
 
-.. text review: no
+.. text review: yes
