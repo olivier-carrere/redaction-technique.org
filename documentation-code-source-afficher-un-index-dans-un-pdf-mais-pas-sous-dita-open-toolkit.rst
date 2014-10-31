@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. code review: no
+.. code review: no code
 
 .. _afficher-un-index-dans-un-pdf-mais-pas-sous-dita-open-toolkit:
 
@@ -21,8 +21,7 @@ pas la génération des index.
 Face à cette situation, vous avez quatre solutions :
 
 - attendre que FOP supporte les index ; sans date de disponibilité, ce choix
-  sera difficile à faire accepter par votre direction (point à éclaircir :
-  FOP génère un index en PDF à partir d'un format source DocBook) ;
+  sera difficile à faire accepter par votre direction ;
 
 - abandonner DITA XML ; avouez que ce serait dommage de renoncer aux formidables
   gains de productivité que permet ce format ;
@@ -41,4 +40,4 @@ votre support final est un document imprimé, les solutions existent. S'il s'agi
 d'un format électronique, l'absence d'un index est largement compensée par la
 fonction de recherche en plein texte.
 
-.. text review: no
+.. text review: yes
