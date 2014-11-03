@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. code review: no
+.. code review: no code
 
 .. _livraison:
 
@@ -24,4 +24,4 @@ appropriée :
 
 -  document mis en ligne en PDF ou distribué sous forme de guide imprimé…
 
-.. text review: no
+.. text review: yes
