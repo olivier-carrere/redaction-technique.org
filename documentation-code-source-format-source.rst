@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. code review: no
+.. code review: no code
 
 .. _format-source:
 
@@ -34,8 +34,7 @@ intervenants différents :
 
 - le **rédacteur technique**,
 
-- le graphiste (si le **rédacteur technique** met lui-même en page ses
-  documents, il change de rôle lorsqu'il effectue cette opération).
+- le graphiste [#]_.
 
 Lorsque la mise en page a une importance équivalente à celle du contenu, ou
 lorsqu'elle doit être variée, comme dans le cas d'une brochure commerciale, la
@@ -49,14 +48,14 @@ Lorsque la mise en page a une importance moindre que celle du contenu, ou
 lorsqu'elle doit être homogène, comme dans le cas d'une **documentation
 technique**, la rédaction et la mise en page s'opèrent sur :
 
-+------------------------------+------------------------------+
-|les mêmes fichiers            |par exemple, des fichiers     |
-|                              |FrameMaker, ou,               |
-+------------------------------+------------------------------+
-|des fichiers différents       |par exemple, des fichiers de  |
-|                              |contenu XML et une feuille de |
-|                              |style XSL.                    |
-+------------------------------+------------------------------+
++-------------------------+----------------------------------------------------+
+|les mêmes fichiers :     |par exemple, des fichiers FrameMaker,               |
+|                         |                                                    |
++-------------------------+----------------------------------------------------+
+|des fichiers différents :|par exemple, des fichiers de contenu XML et une     |
+|                         |feuille de style XSLT.                              |
+|                         |                                                    |
++-------------------------+----------------------------------------------------+
 
 Dans un fichier FrameMaker, la séparation du fond et de la forme est élevée mais
 pas totale : le contenu et la mise en page sont placés dans le même
@@ -74,9 +73,7 @@ format de fichier.
 
 Les formats XML structurés DocBook et DITA appliquent une maquette de page
 homogène à tout un document, et n'autorisent pas l'ajout manuel d'éléments de
-mise en page (ou très peu : dans les fichiers de contenu, il est seulement
-possible de mettre du texte en gras ou en italique, pas d'en changer la police,
-le corps ou la couleur), ni l'application de maquettes différentes aux
+mise en page [#]_, ni l'application de maquettes différentes aux
 différents fichiers qui composent le document.
 
 +--------------------+--------------------+--------------------+
@@ -119,21 +116,21 @@ Enfin, ce format est :
 
 - monolithique.
 
-Ce dernier aspect détermine la manière dont le format gère le single-sourcing :
+Ce dernier aspect détermine la manière dont le format gère le *single-sourcing* :
 
 - selon une logique *livre vers aide en ligne* ou,
 
 - selon une logique *aide en ligne vers livre*.
 
-Les formats disponibles peuvent donc être classés selon une matrice
-tridimensionnelle.
+Les formats disponibles peuvent donc être classés selon le tableau suivant :
 
 +---------------+---------------+---------------+---------------+
 |**Format**     |**Texte**      |**Structuré**  |**Modulaire**  |
 +---------------+---------------+---------------+---------------+
-|FrameMaker     |Non            |Non            |Non            |
+|FrameMaker     |Non            |Non            |Limité         |
+|natif          |               |               |               |
 +---------------+---------------+---------------+---------------+
-|DocBook        |Oui            |Oui            |Non            |
+|DocBook        |Oui            |Oui            |Limité         |
 +---------------+---------------+---------------+---------------+
 |DITA XML       |Oui            |Oui            |Oui            |
 +---------------+---------------+---------------+---------------+
@@ -143,6 +140,13 @@ FrameMaker et DocBook ne sont pas pleinement modulaires, car les plus petits
 informations telles que la structure de table des matières ou les références
 croisées qui ne sont valables que dans un nombre limité de contextes.
 
+.. [#] Si le **rédacteur technique** met lui-même en page ses documents, il
+       change de rôle lorsqu'il effectue cette opération.
+
+.. [#] Ou très peu : dans les fichiers de contenu, il est seulement possible de
+       mettre du texte en gras ou en italique, pas d'en changer la police, le
+       corps ou la couleur.
+
 .. toctree::
    :maxdepth: 2
 
@@ -150,4 +154,4 @@ croisées qui ne sont valables que dans un nombre limité de contextes.
    documentation-code-source-fichiers-binaires-ou-texte
    documentation-code-source-sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers
 
-.. text review: no
+.. text review: yes
