@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. code review: no
+.. code review: no code
 
 .. _le-single-sourcing-un-format-source-plusieurs-formats-cibles:
 
@@ -16,9 +16,9 @@ aide en ligne et un manuel imprimé, doivent-ils proposer un contenu radicalemen
 différent ou peuvent-ils être générés à partir du même contenu source ?
 
 Les contraintes de productivité et la réduction des coûts aidant, le débat a été
-tranché en faveur du *single-sourcing*. Le gain qualitatif, discutable, de
-créer, maintenir et traduire une version source différente pour chaque version
-cible est trop important.
+tranché en faveur du *single-sourcing*. Le gain qualitatif, discutable, ne
+compense pas le coût de créer, maintenir et traduire une version source
+différente pour chaque version cible.
 
 .. figure:: graphics/single-sourcing.png
 
@@ -38,4 +38,4 @@ sources, bien que basés sur un modèle modulaire proche de celui de l'aide en
 ligne, peuvent facilement être exportés sous forme de fichier PDF, d'aide en
 ligne, de pages HTML liées ou autre, sans aucune perte d'information.
 
-.. text review: no
+.. text review: yes
