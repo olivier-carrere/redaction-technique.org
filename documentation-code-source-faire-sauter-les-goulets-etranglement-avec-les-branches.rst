@@ -3,15 +3,15 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. code review: no
+.. code review: no code
 
 .. _faire-sauter-les-goulets-etranglement-avec-les-branches:
 
 Faire sauter les goulets d'étranglement avec les branches
 =========================================================
 
-Les branches permettent de facilement effectuer plusieurs tâches non liées en
-parallèle :
+Les branches *Git* permettent de facilement effectuer en parallèle plusieurs
+tâches non liées :
 
 Imaginons le scénario de travail suivant :
 
@@ -23,10 +23,10 @@ Imaginons le scénario de travail suivant :
 Comment faire sauter ce goulot d'étranglement ? C'est (relativement) simple :
 
 #. Par défaut, vous travaillez sur la branche *master*. Votre espace de travail
-   contient des modifications que vous ne souhaitez pas committer avant
+   contient des modifications que vous ne souhaitez pas *committer* avant
    validation.
 #. Créez une nouvelle branche : *git checkout -b ma-branche*.
-#. Committez vos modifications sur la nouvelle branche : *git add mes-fichiers*,
+#. *Committez* vos modifications sur la nouvelle branche : *git add mes-fichiers*,
    *git commit -m "mon message de commit"*.
 #. Vous repassez sur la branche master *git checkout master* et passez à votre
    deuxième tâche.  5a. Si votre première tâche n'est pas validée, vous repassez
@@ -41,7 +41,7 @@ Comment faire sauter ce goulot d'étranglement ? C'est (relativement) simple :
 
 Si vous n'avez pas besoin d'effectuer deux lots de tâches en parallèle, vous
 pouvez sans problème travailler dans votre espace local. Si vous devez revenir
-sur vos modifications, appellez la commande git reset --hard HEAD pour écraser
-vos fichiers du répertoire local par ceux du dépôt distant.
+sur vos modifications, appellez la commande *git reset --hard HEAD* pour écraser
+vos fichiers non *commités* du répertoire local par ceux du dernier *commit*.
 
-.. text review: no
+.. text review: yes
