@@ -10,7 +10,7 @@
 Générer un PDF avec DITA Open Toolkit sous GNU/Linux
 ====================================================
 
-Ce **didacticiel `DITA XML <http://dita.xml.org/>`_ est destiné à vous guider
+Ce didacticiel `DITA XML <http://dita.xml.org/>`_ est destiné à vous guider
 dans la mise en place et l'utilisation de la chaîne de publication **DITA Open
 Toolkit** dans un environnement GNU/Linux (Ubuntu ou Debian).
 
@@ -48,9 +48,9 @@ Toolkit** dans un environnement GNU/Linux (Ubuntu ou Debian).
      Toolkit,
    - écrit le répertoire racine de votre compte utilisateur dans le fichier
      contenant les variables d'environnement de Dita Open Toolkit,
-   - crée une sauvegarde du fichier .bashrc (.bashrc.bak),
+   - crée une sauvegarde du fichier :file:`.bashrc` (:file:`.bashrc.bak`),
    - ajoute les les variables d'environnement de Dita Open Toolkit
-     personnalisées au fichier .bashrc,
+     personnalisées au fichier :file:`.bashrc`,
    - ferme le terminal en cours.
 
 #. Ouvrez un nouveau terminal pour prendre en compte les modifications du
@@ -87,7 +87,7 @@ Toolkit** dans un environnement GNU/Linux (Ubuntu ou Debian).
    Cette commande génère un fichier PDF à partir d'un projet DITA XML d'exemple.
 
 Félicitations, vous avez compilé votre premier projet DITA XML ! Vous trouverez
-le fichier cible taskbook.pdf dans le répertoire :file:`DITA-OT1.5.4`. Vous
+le fichier cible :file:`taskbook.pdf` dans le répertoire :file:`DITA-OT1.5.4`. Vous
 pouvez maintenant compiler d'autres projets en ignorant les étapes 1 et 2.  Si
 plusieurs versions de Java sont installées et qu'une erreur se produit, ouvrez
 un terminal administrateur et sélectionnez la version OpenJDK 6:
