@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. code review: no
+.. code review: no code
 
 .. _les-systemes-de-gestion-de-versions-rustiques-mais-fiables:
 
@@ -23,23 +23,17 @@ Ces systèmes :
 
 - réduisent le risque de perte de données à presque zéro.
 
-Sur des fichiers texte, un système de gestion de version offre des
+Sur des fichiers texte, et non binaires, un système de gestion de version offre des
 fonctionnalités supérieures :
 
-- pas de risque de pertes de données en cas de défaillance du réseau (en cas
-  d'incident réseau, l'utilisateur est averti que la transaction destinée à
-  placer le fichier modifié sur le dépôt a échoué ; il peut alors procéder à une
-  nouvelle transaction, sa copie locale du fichier étant intacte),
+- pas de risque de pertes de données en cas de défaillance du réseau [#]_,
 
-- possibilités de travail off-line (déconnecté) poussées (surtout sous Git,
-  conçu explicitement dans ce but),
+- possibilités de travail *off-line* (déconnecté) poussées  [#]_,
 
 - non-verrouillage des fichiers par les membres de l'équipe qui les ont ouverts.
 
 - possibilité de restauration très fine et dans le temps (depuis le dernier
-  dépôt du fichier sur le référentiel) et en quantité de travail (les systèmes
-  de gestion de version favorisent un dépôt fréquent de modifications
-  atomiques).
+  dépôt du fichier sur le référentiel) et en termes de quantité de travail [#]_.
 
 .. figure:: graphics/versioning-system.png
 
@@ -48,33 +42,21 @@ fonctionnalités supérieures :
 Des interfaces graphiques permettent d'utiliser directement sous les
 gestionnaires de fichiers ces outils originellement conçus pour être utilisés en
 ligne de commande. Cependant, le paradigme sur lequel ils reposent est parfois
-difficile à appréhender pour les publics les moins technophiles (même si Apple a
-contribué à en populariser certains aspects avec son application *Time
-machine*).
+difficile à appréhender pour les publics les moins technophiles [#]_.
+
+Les systèmes de gestion des sources utilisent les concepts suivants :
 
 +--------+---------------------------------------------------------------------+
 |Tronc   |Dépôt principal conservant toutes les versions des fichiers placées  |
 |        |au cours du temps par le **rédacteur technique** (ou plus            |
 |        |fréquemment, le développeur).                                        |
 +--------+---------------------------------------------------------------------+
-|Branche |Dépôt secondaire créé lors d'un *fork* de la version principale du   |
-|        |code source. Dans le cas de la **documentation technique**, il est   |
-|        |rare de créer un fork. Le **rédacteur technique** peut en effet      |
-|        |souvent créer plusieurs documents différents à partir du même code   |
-|        |source en appliquant des mécanismes de texte conditionnel. Une       |
-|        |branche provisoire peut cependant servir à la création d'un tag : en |
-|        |générant la documentation à partir de cette branche exclusivement, le|
-|        |**rédacteur technique** s'assure qu'il pourra regénérer totalement   |
-|        |une version archivée, si besoin est (la branche de publication       |
-|        |embarquera les fichiers de contenu, les images, les feuilles de style|
-|        |et les éventuels scripts de publication).                            |
+|Branche |Dépôt secondaire créé à partir de la version principale du code      |
+|        |source.                                                              |
 +--------+---------------------------------------------------------------------+
-|Tag     |Instantané du trunk ou d'une branche à un instant t. Permet de figer |
-|        |facilement une version, par exemple, la version publiée, et de créer |
-|        |une archive. Un tag ne peut pas être modifié ni supprimé             |
-|        |accidentellement. Ce n'est bien sûr pas une version gravée dans le   |
-|        |marbre, mais peut-être ce qui s'en rapproche le plus dans le monde   |
-|        |immatériel et évanescent de l'informatique.                          |
+|Tag     |Instantané du tronc ou d'une branche à un instant *t*. Permet de     |
+|        |figer facilement une version, par exemple, la version publiée, et de |
+|        |créer une archive.                                                   |
 +--------+---------------------------------------------------------------------+
 
 Si l'on s'en donne la peine, il est également possible de mal utiliser les
@@ -97,9 +79,22 @@ XML et effectuent des comparaisons ligne par ligne entre les fichiers, et non
 pas nœud par nœud, ce qui multiplie inutilement les conflits entre les *commits*
 ou les branches.
 
+.. [#] En cas d'incident réseau, l'utilisateur est averti que la transaction
+       destinée à placer le fichier modifié sur le dépôt a échoué ; il peut
+       alors procéder à une nouvelle transaction, sa copie locale du fichier
+       étant intacte.
+
+.. [#] Surtout sous Git, conçu explicitement dans ce but.
+
+.. [#] Les systèmes de gestion de version favorisent un dépôt fréquent de
+       modifications atomiques.
+
+.. [#] Même si Apple a contribué à en populariser certains aspects avec son
+       application *Time machine*.
+
 .. toctree::
    :maxdepth: 2
 
    documentation-code-source-utiliser-les-branches-des-systemes-de-gestion-de-sources
 
-.. text review: no
+.. text review: yes
