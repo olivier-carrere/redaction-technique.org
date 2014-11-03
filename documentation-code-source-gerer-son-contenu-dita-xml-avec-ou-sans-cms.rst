@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. code review: no
+.. code review: no code
 
 .. _gerer-son-contenu-dita-xml-avec-ou-sans-cms:
 
@@ -16,20 +16,16 @@ mécanisme de **workflow documentaire** natif. Les workflows sont pourtant un
 contenu**.
 
 Les CMS gèrent également les métadonnées, ce qui permet une recherche plus
-efficace de l'information existante et les rétroliens (le **rédacteur
-technique** peut ainsi voir où un élément d'information est inclus ; lors de la
-mise à jour de cet élément, il peut alors juger si l'élément modifié sera
-toujours valable dans les différents contextes).
+efficace de l'information existante, et les rétroliens [#]_.
 
-La plupart des entreprises sont réticentes à mettre en place un CMS, outils
+La plupart des entreprises sont réticentes à mettre en place des CMS, outils
 dédiés aux workflows. Elles ont d'ailleurs parfois connu des échecs de mise en
 place de telles solutions part le passé.
 
 De plus, l'un des grands avantages de DITA XML, c'est de s'intégrer directement
 dans le système d'information en place. Chez les éditeurs de logiciels,
 notamment, rien de plus facile que de venir se greffer sur le système de gestion
-des sources en place, qu'il s'agisse de Git (il est possible, quoiqu'un peu
-complexe, de mettre en place des workflows sous Git *via* des branches), de
+des sources en place, qu'il s'agisse de Git [#]_, de
 Subversion ou de SourceSafe. À budget quasi nul. Raison de plus pour ne pas
 investir du temps et de l'argent dans un CMS.  Les gains de productivité
 spectaculaires reportés par certaines entreprises suite à la mise en place d'un
@@ -45,6 +41,13 @@ Quel que soit le choix initial, il est possible à tout instant de changer de
 stratégie, sans remettre en cause l'existant. L'architecture DITA XML n'est en
 effet liée à aucun référentiel particulier. Rien n'interdit donc de commencer à
 gérer ses projets sans CMS, puis d'avoir recours à une telle solution si les
-bénéfices de ce choix deviennent manifeste.
+bénéfices de ce choix deviennent manifestes.
 
-.. text review: no
+.. [#] Le **rédacteur technique** peut ainsi voir où un élément d'information
+       est inclus ; lors de la mise à jour de cet élément, il peut alors juger
+       si l'élément modifié sera toujours valable dans les différents contextes.
+
+.. [#] Il est possible, quoiqu'un peu complexe, de mettre en place des workflows
+       sous Git *via* des branches.
+
+.. text review: yes
