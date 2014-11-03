@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. code review: no
+.. code review: no code
 
 .. _les-topics-modules-d-information-de-base-dita:
 
@@ -33,10 +33,12 @@ modules ne sont pas affectés d'un niveau de titre. La structure des modules
 donné, et un niveau 1 dans un autre document, sans qu'il y ait besoin de
 modifier en quoi que ce soit les *topics*.
 
-Les unités d'information atomiques (pas au sens XPath) telles que des remarques,
+Les unités d'information atomiques [#]_ telles que des remarques,
 des paragraphes, voire des phrases ou des segments de phrase, qui ne peuvent pas
 être munis d'un titre, ne forment pas des *topics*. Elles peuvent être cependant
 partagées *via* le mécanisme *conref*, similaire au mécanisme *Xinclude* proposé
 par DocBook.
 
-.. text review: no
+.. [#] Pas au sens XPath.
+
+.. text review: yes
