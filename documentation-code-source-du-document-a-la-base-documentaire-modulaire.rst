@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. code review: no
+.. code review: no code
 
 .. _du-document-a-la-base-documentaire-modulaire:
 
@@ -48,4 +48,4 @@ préservé.
    documentation-code-source-les-topics-modules-d-information-de-base-dita
    documentation-code-source-gerer-son-contenu-dita-xml-avec-ou-sans-cms
 
-.. text review: no
+.. text review: yes
