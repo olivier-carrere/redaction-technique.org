@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. code review: no
+.. code review: no code
 
 .. _migration-de-framemaker-vers-dita-xml:
 
@@ -11,18 +11,12 @@ Migration de FrameMaker vers DITA XML
 =====================================
 
 Migrer de FrameMaker vers `DITA XML <http://dita.xml.org/>`_, ce n'est pas comme
-enregistrer un document Word au format LibreOffice (LibreOffice propose une
-fonction d'enregistrement au format DocBook, mais il faut reconnaître à ses
-concepteurs une bonne dose d'humour ; disons que le XML qu'elle produit peut
-servir de base à la création d'une version DocBook, avec beaucoup d'efforts…
-sauf à maintenir deux versions du même contenu, le processus de migration de
-LibreOffice vers DocBook exige donc un arrêt temporaire des livraisons des
-nouvelles versions de la documentation ; il doit donc être soigneusement
-planifié). Aucun processus automatique ne permet de migrer un document non
-structuré vers un **format structuré**. Dans le pire des cas, selon la qualité
-de votre document de départ, cela peut s'apparenter à transformer une friche en
-jardin à la française. Mais une migration bien planifiée permet de passer au
-nouveau format sans perturber le rythme des livraisons.
+enregistrer un document Word au format LibreOffice [#]_. Aucun processus
+automatique ne permet de migrer un document non structuré vers un **format
+structuré**. Dans le pire des cas, selon la qualité de votre document de départ,
+cela peut s'apparenter à transformer une friche en jardin à la française. Mais
+une migration bien planifiée permet de passer au nouveau format sans perturber
+le rythme des livraisons.
 
 Pour filer la métaphore, si l'on se fixe pour but de convertir un marécage en
 parterre du château de Versailles, il convient de passer par l'étape du jardin à
@@ -45,10 +39,17 @@ auraient déjà beaucoup gagné, respectivement en :
 
 - facilité d'accès à l'information.
 
+.. [#] LibreOffice propose une fonction d'enregistrement au format DocBook, mais
+       très imparfaite ; le XML qu'elle produit peut servir de base à la
+       création d'une version DocBook, avec beaucoup d'efforts… Sauf à maintenir
+       deux versions du même contenu, le processus de migration de LibreOffice
+       vers DocBook exige donc un arrêt temporaire des livraisons des nouvelles
+       versions de la documentation ; il doit donc être soigneusement planifié.
+
 .. toctree::
    :maxdepth: 2
 
    documentation-code-source-restructuration-du-contenu-framemaker
    documentation-code-source-table-de-conversion-framemaker-vers-dita-xml
 
-.. text review: no
+.. text review: yes
