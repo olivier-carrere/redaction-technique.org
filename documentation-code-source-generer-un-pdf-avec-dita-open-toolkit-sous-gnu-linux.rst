@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. code review: no
+.. code review: yes
 
 .. _generer-un-pdf-avec-dita-open-toolkit-sous-gnu-linux:
 
@@ -26,7 +26,7 @@ Toolkit** dans un environnement GNU/Linux (Ubuntu ou Debian).
 
    .. code-block:: console
 
-      cd && \
+      $ cd && \
       wget http://downloads.sourceforge.net/project/dita-ot/DITA-OT%20Stable%20Release/DITA%20Open%20Toolkit%201.5.4/DITA-OT1.5.4_full_easy_install_bin.tar.gz && \
       tar xzvf DITA-OT1.5.4_full_easy_install_bin.tar.gz && \
       wget http://www.redaction-technique.org/media/dita-env.txt && \
@@ -58,7 +58,7 @@ Toolkit** dans un environnement GNU/Linux (Ubuntu ou Debian).
 
    .. code-block:: console
 
-      sudo apt-get install openjdk-6-jre ant
+      $ sudo apt-get install openjdk-6-jre ant
 
    et entrez le mot de passe administrateur. Appuyez sur entrée à l'invite
    *Voulez-vous continuer ? [O/n/?]*.
@@ -74,7 +74,7 @@ Toolkit** dans un environnement GNU/Linux (Ubuntu ou Debian).
 
    .. code-block:: console
 
-      cd DITA-OT1.5.4
+      $ cd DITA-OT1.5.4
 
    Cette commande se place dans le répertoire :file:`DITA-OT1.5.4`.
 
