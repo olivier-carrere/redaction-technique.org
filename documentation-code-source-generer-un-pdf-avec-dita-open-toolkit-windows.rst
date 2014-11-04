@@ -59,7 +59,7 @@ Toolkit** dans un environnement Windows (testé sur Windows XP).
 
    Félicitations, vous avez compilé votre premier projet DITA XML ! Vous
    trouverez le fichier cible :file:`taskbook.pdf` dans le répertoire
-   :file:`Bureau\DITA-OT1.5.4_full_easy_install_bin\DITA-OT1.5.4`. Vous pouvez
+   :file:`Bureau\\DITA-OT1.5.4_full_easy_install_bin\\DITA-OT1.5.4`. Vous pouvez
    maintenant compiler d'autres projets en ignorant les étapes 1 et 2.
 
 .. text review: yes
