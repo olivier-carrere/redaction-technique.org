@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. code review: no
+.. code review: no code
 
 .. _referentiel:
 
@@ -26,4 +26,4 @@ versions**.
    documentation-code-source-base-de-donnees-sql
    documentation-code-source-un-referentiel-unique
 
-.. text review: no
+.. text review: yes
