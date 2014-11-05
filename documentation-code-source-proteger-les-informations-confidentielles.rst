@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. code review: no
+.. code review: no code
 
 .. _proteger-les-informations-confidentielles:
 
@@ -15,7 +15,7 @@ Le puissant mécanisme `conref
 se prête à d'autres applications que la réduction des coûts. Par exemple, le
 **rédacteur technique** peut masquer des informations dans le code source.
 
-Voici un cas original d'utilisation des **conref** : imaginez que vous devez
+Voici un cas original d'utilisation des *conref* : imaginez que vous devez
 faire traduire un fichier contenant des informations confidentielles qui ne
 doivent pas figurer dans la version traduite et auxquelles le traducteur ne doit
 pas avoir accès (une clause de confidentialité interdit aux clients de diffuser
@@ -37,7 +37,7 @@ En plaçant le contenu confidentiel dans un fichier que vous appelez par exemple
 filtrage dans le fichier à traduire, vous avez résolu votre problème : le
 traducteur ne traduira que le texte non confidentiel, et le livrable généré dans
 la langue cible ne contiendra pas le texte confidentiel, noté comme conditionnel
-et exclu explicitement par le fichier :file:`ditaval` passé en argument lors de
+et exclu explicitement par le fichier *ditaval* passé en argument lors de
 la compilation.
 
-.. text review: no
+.. text review: yes
