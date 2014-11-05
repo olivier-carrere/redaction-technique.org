@@ -42,7 +42,7 @@ permettra d'utiliser ce mode Emacs pour DITA XML.
 
     .. code-block:: console
 
-       cd && \
+       $ cd && \
        wget http://www.thaiopensource.com/download/nxml-mode-20041004.tar.gz && \
        tar xzvf nxml-mode-20041004.tar.gz && \
        wget http://www.redaction-technique.org/media/nxml-mode-environmment.txt && \
