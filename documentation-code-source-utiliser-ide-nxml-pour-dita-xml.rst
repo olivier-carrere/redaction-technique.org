@@ -31,9 +31,9 @@ permettra d'utiliser ce mode Emacs pour DITA XML.
     - tasks
     - topics
 
-  où <répertoire de langue> a la valeur en_US, ou fr_FR, etc.
+  où *<répertoire de langue>* a la valeur *en_US*, ou *fr_FR*, etc.
 
-- Les instructions de ligne de commande sont conçues pour GNU/Linux; elles
+- Les instructions de ligne de commande sont conçues pour GNU/Linux ; elles
   doivent être adaptées pour être utilisées dans un autre environnement.
 
 #.  Effectuez une sauvegarde de l'ensemble de votre projet de documentation
@@ -54,18 +54,18 @@ permettra d'utiliser ce mode Emacs pour DITA XML.
 
     .. note::
 
-       Si un message vous avertit que le fichier .emacs n'existe pas, collez les
+       Si un message vous avertit que le fichier :file:`.emacs` n'existe pas, collez les
        commandes suivantes, puis recommencez l'opération:
 
-    .. code-block:: console
+       .. code-block:: console
 
-       $ cd && touch .emacs
+          $ cd && touch .emacs
 
     Cette suite de commandes:
 
     - télécharge et décompresse le mode nXML,
-    - crée une copie de sauvegarde du fichier .emacs (.emacs.bak),
-    - écrit les variables d'environnement du mode nXML dans le fichier .emacs.
+    - crée une copie de sauvegarde du fichier :file:`.emacs` (:file:`.emacs.bak`),
+    - écrit les variables d'environnement du mode nXML dans le fichier :file:`.emacs`.
 
 #.  Téléchargez `l'archive des schémas RelaxNG pour DITA XML
     <http://www.redaction-technique.org/media/rnc.tar.gz>`_ dans le répertoire
@@ -78,14 +78,14 @@ permettra d'utiliser ce mode Emacs pour DITA XML.
 
        $ tar xzvf rnc.tar.gz
 
-    Cette commande crée un répertoire *rnc* de même niveau que le <répertoire de
-    langue>.
+    Cette commande crée un répertoire :file:`rnc` de même niveau que le
+    *<répertoire de langue>*.
 
 #.  Téléchargez `l'archive des fichiers schemas.xml
     <http://www.redaction-technique.org/media/schemas.redaction-technique.org.tar.gz>`_
     dans le répertoire racine de votre projet de documentation DITA XML, puis
-    collez la suite de commandes ci-dessous en remplaçant <répertoire de langue>
-    par la valeur appropriée, en_US, ou fr_FR, par exemple. Répétez cette étape
+    collez la suite de commandes ci-dessous en remplaçant *<répertoire de langue>*
+    par la valeur appropriée, *en_US*, ou *fr_FR*, par exemple. Répétez cette étape
     pour tous vos répertoires de langue.
 
     .. code-block:: console
@@ -142,4 +142,4 @@ permettra d'utiliser ce mode Emacs pour DITA XML.
 #.  Pour insérer une balise fermante après du texte, entrez </, puis appuyez sur
     Ctrl+Entrée.
 
-.. text review: no
+.. text review: yes
