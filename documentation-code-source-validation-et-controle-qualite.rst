@@ -37,6 +37,5 @@ briques » du document final.
    :maxdepth: 2
 
    documentation-code-source-workflow-de-creation-et-validation
-   documentation-code-source-tests-de-non-regression
 
 .. text review: yes
