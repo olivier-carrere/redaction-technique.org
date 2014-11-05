@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. code review: no
+.. code review: no code
 
 .. _tester-les-produits-pour-les-documenter:
 
@@ -16,8 +16,8 @@ auprès des différents acteurs de la société. Jouant le rôle de Candide, il 
 le premier représentant des utilisateurs et se doit de tester les produits dans
 des conditions proches des leurs.
 
-Un conte chinois, mis en images par des artistes japonais tels qu'Hokusaï ou
-Itchō, narre comment des aveugles se sont retrouvés confrontés à un
+Un conte chinois
+narre comment des aveugles se sont retrouvés confrontés à un
 éléphant. Aucun d'entre eux, et pour cause, n'ayant une perception globale de
 l'animal, chacun en eut une image différente : celui qui en tenait une patte le
 prenait pour un arbre, celui qui en étreignait la trompe le confondait avec un
@@ -26,8 +26,6 @@ celui qui s'agrippait à une de ses oreilles croyait qu'il s'agissait d'un
 éventail.
 
 .. figure:: graphics/hanabusa-itcho.jpg
-
-   Tester les produits pour les documenter
 
 Le **rédacteur technique** qui demande aux différents intervenants de
 l'entreprise à quoi sert le produit dont il doit créer la documentation et
@@ -41,25 +39,25 @@ Pour avoir une vision réaliste de l'objet qu'il est censé décrire, le
 **rédacteur technique** doit donc l'appréhender par lui-même et se faire sa
 propre opinion, qu'il pourra ensuite confronter à celle des autres acteurs de
 l'entreprise.  Le **rédacteur technique** est un pragmatique qui s'intéresse à
-la pratique, non à la théorie. Comme saint Thomas, il ne doit croire que ce
-qu'il voit. S'il ne consulte que les développeurs, par exemple, il aura peu de
+la pratique, non à la théorie.
+S'il ne consulte que les développeurs, par exemple, il aura peu de
 chance de pouvoir créer une documentation satisfaisante pour l'utilisateur :
 
 - d'une part, les développeurs ont souvent une vision idéaliste du
-  fonctionnement de leur produit, bien différente du comportement de ce dernier
+  fonctionnement de leur produit, différente du comportement de ce dernier
   en conditions réelles d'utilisation,
 
 - d'autre part, une déperdition d'information se produit nécessairement entre :
 
-- ce que le développeur sait,
+  - ce que le développeur sait,
 
-- ce que le développeur exprime,
+  - ce que le développeur exprime,
 
-- ce que le **rédacteur technique** comprend,
+  - ce que le **rédacteur technique** comprend,
 
-- ce que le **rédacteur technique** rédige,
+  - ce que le **rédacteur technique** rédige,
 
-- ce que l'utilisateur comprend.
+  - ce que l'utilisateur comprend.
 
 Si le **rédacteur technique** teste réellement le comportement du produit dans
 des conditions aussi proches que possible de celles rencontrées par
@@ -78,4 +76,4 @@ la rédaction technique gagne ses lettres de noblesse. Et que la documentation
 technique n'est plus seulement vue comme un mal nécessaire, mais comme une
 véritable valeur ajoutée.
 
-.. text review: no
+.. text review: yes
