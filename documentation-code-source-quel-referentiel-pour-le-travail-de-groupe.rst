@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. code review: no
+.. code review: no code
 
 .. _quel-referentiel-pour-le-travail-de-groupe:
 
@@ -25,7 +25,7 @@ supprimée, sauf si le programme a créé une copie de sauvegarde ou si le
 *Enregistrer*, pour créer une nouvelle version du fichier. Dans le premier cas,
 il n'existe que deux versions du fichier à un instant donné : la version n et la
 version n-1. Dans le second cas, le **rédacteur technique** peut créer autant de
-versions qu'il le souhaite, par exemple en plaçant le suffixe  -1, -2, etc. au
+versions qu'il le souhaite, par exemple en ajoutant le suffixe  -1, -2, etc. au
 nom du fichier.
 
 Les programmes ne gèrent cependant pas la modification concurrente d'un même
@@ -48,4 +48,4 @@ images.
 Si le programme utilisé ne verrouille pas les fichiers ouverts, une coordination
 de tous les instants doit s'instaurer entre les membres de l'équipe.
 
-.. text review: no
+.. text review: yes
