@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. code review: no
+.. code review: no code
 
 .. _typologie-de-haut-niveau-de-l-information:
 
@@ -34,10 +34,9 @@ les deux pôles suivants :
 +------------------------------+------------------------------+
 
 Lorsqu'il crée un document DITA XML, en revanche, le **rédacteur technique**
-doit d'emblée choisir le modèle (dans la pratique, un schéma XSD) qui correspond
+doit d'emblée choisir le modèle [#]_ qui correspond
 au type d'information qu'il veut présenter. De base, DITA XML propose les types
-d'information suivants (DITA XML propose trois types d'information de base,
-tandis que, de mémoire, la méthode Information Mapping en propose sept) :
+d'information suivants  [#]_ :
 
 +------------------------------+------------------------------+
 |**Type d'information**        |**Description**               |
@@ -55,12 +54,19 @@ tandis que, de mémoire, la méthode Information Mapping en propose sept) :
 
 Chacune de ces catégories de haut niveau propose un jeu de balises de plus bas
 niveau qui lui est propre.  Si le **rédacteur technique** rédige un document
-technique, ce qui est assez probable, il y a toutes les chances pour que
-l'information qu'il a collectée et qu'il doit organiser fasse partie de l'un de
-ces trois catégories (s'il s'avère qu'il a réellement besoin d'une autre
-catégorie, il peut la créer *via* une spécialisation).  Cette division en types
+technique, il y a toutes les chances pour que
+l'information qu'il a collectée et qu'il doit organiser fasse partie de l'une de
+ces trois catégories [#]_. Cette division en types
 d'information oblige donc d'entrée de jeu le **rédacteur technique** à
 structurer l'information. L'utilisateur y gagne en facilité et rapidité d'accès
-à l'information et en utilisabilité globale de la **documentation technique*
+à l'information et en utilisabilité globale de la documentation technique.
 
-.. text review: no
+.. [#] Dans la pratique, un schéma XSD.
+
+.. [#] DITA XML propose trois types d'information de base, tandis que la méthode
+       Information Mapping en propose sept.
+
+.. [#] S'il s'avère qu'il a réellement besoin d'une autre catégorie, il peut la
+       créer *via* une spécialisation.
+
+.. text review: yes
