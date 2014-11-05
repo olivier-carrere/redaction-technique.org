@@ -3,21 +3,22 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. code review: no
+.. code review: no code
 
 .. _redaction-technique-un-processus-industriel:
 
 Rédaction technique : un processus industriel
 =============================================
 
-La rédaction technique repose sur des processus rationnels. Trop souvent vue
-sous sa forme **rédaction technique**, et par là associée à un fort aspect
-littéraire, elle est trop souvent laissée à l'improvisation et à l'inspiration
+La rédaction technique repose sur des processus rationnels. Trop souvent
+associée à un fort aspect
+littéraire, elle est fréquemment laissée à l'improvisation et à l'inspiration
 du **rédacteur technique**. Le **rédacteur technique**, comme les autres
 intervenants de l'entreprise, doit répondre à ses objectifs de manière
 prévisible et reproductible.
 
-Ce processus repose sur une méthodologie rigoureuse et une chaîne de production.
+Ce processus repose sur une méthodologie rigoureuse et une chaîne de production
+fiable.
 
 .. figure:: graphics/processus.png
 
@@ -47,4 +48,4 @@ niveau de qualité constant, adapté aux buts de l'entreprise.
    documentation-code-source-format-cible
    documentation-code-source-livraison
 
-.. text review: no
+.. text review: yes
