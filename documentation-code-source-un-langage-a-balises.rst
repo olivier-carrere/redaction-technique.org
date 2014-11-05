@@ -3,7 +3,7 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. code review: no
+.. code review: no code
 
 .. _un-langage-a-balises:
 
@@ -17,14 +17,14 @@ document cible, par exemple un fichier PDF, où les balises sont remplacées par
 une mise en forme typographique.
 
 Si votre entreprise fournit à ses clients une documentation technique au format
-Word (ce qui est une mauvaise idée, sauf si cela est expressément demandé par
-vos clients), le **rédacteur technique** et l'utilisateur disposent des mêmes
+Word,
+le **rédacteur technique** et l'utilisateur disposent des mêmes
 supports d'information (il n'y a pas de différenciation entre le fichier source
 et le fichier cible). Ce qui semble a priori la solution la plus simple s'avère
 cependant peu efficace en termes de productivité de l'équipe de **rédaction
 technique** et de structuration de l'information.
 
-Avec un format XML tel que DITA, le **rédacteur technique** et le lecteur
+Avec un format texte tel que DITA, le **rédacteur technique** et le lecteur
 disposent de supports largement différents :
 
 +--------------------+---------------------------------------------------------+
@@ -57,13 +57,11 @@ disposent de supports largement différents :
 +--------------------+---------------------------------------------------------+
 
 Un fichier source DITA XML mélange du texte et des balises, délimitées par les
-signes < et > (si vous voulez entrer ces signes en tant que tels, il faut les
-remplacer par &lt; et &gt;, respectivement ; pour entrer &, saisissez &amp;. Si
-ce genre d'exercice vous rebute, tournez-vous vers un éditeur `WYSIWYM
-<http://en.wikipedia.org/wiki/WYSIWYM>`_). Le texte proprement dit est encapsulé
+signes < et >.
+Le texte proprement dit est encapsulé
 dans un jeu de balises ouvrantes de type <balise> et de balises fermantes de
 type </balise> selon le schéma <balise>texte</balise>. Tout texte entré hors
 d'une balise ouvrante et fermante est incorrect et produit un fichier non
 valide.
 
-.. text review: no
+.. text review: yes
