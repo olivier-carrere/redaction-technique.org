@@ -40,7 +40,7 @@ suit :
 
       ancestor-or-self
 
-Et que si l'exemple ne contient pas de titre, il soit structuré comme suit :
+et que si l'exemple ne contient pas de titre, il soit structuré comme suit :
 
    .. rubric:: Exemple :
 
@@ -108,4 +108,4 @@ Pour obtenir un comportement homogène, vous devez désactiver ce traitement
 pour les exemples des types de *topics* spécifiques (*task*,
 notamment).
 
-.. text review: no
+.. text review: yes
