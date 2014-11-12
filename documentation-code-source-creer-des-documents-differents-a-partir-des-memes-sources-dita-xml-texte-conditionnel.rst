@@ -26,12 +26,12 @@ quelques minutes.
    .. code-block:: xml
 
       <?xml version="1.0" encoding="utf-8"?>
-      <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN" "../../dtd/technicalContent/dtd/topic.dtd>
-      <topic id="exemple-topic" xml:lang="fr-fr>
-        <title>Utilisation du texte conditionnel
+      <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN" "/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
+      <topic id="exemple-topic" xml:lang="fr-fr">
+        <title>Utilisation du texte conditionnel</title>
         <body>
           <hazardstatement>
-            <messagepanel audience="electriciens>
+            <messagepanel audience="electriciens">
               <typeofhazard>
                 Danger pour les électriciens
               </typeofhazard>
@@ -42,7 +42,7 @@ quelques minutes.
                 Ne touchez pas les fils électriques.
               </howtoavoid>
             </messagepanel>
-            <messagepanel audience="plombiers>
+            <messagepanel audience="plombiers">
               <typeofhazard>
                 Danger pour les plombiers
               </typeofhazard>
@@ -54,9 +54,11 @@ quelques minutes.
               </howtoavoid>
             </messagepanel>
           </hazardstatement>
-          <p> Tout contenu placé entre balises ne comportant pas de valeur
-          <i>audience</i> exclue dans un fichier <i>.ditaval</i> est publié dans les
-          documents destinés aux plombiers et aux électriciens.  </p>
+          <p>
+            Tout contenu placé entre balises ne comportant pas de valeur
+            <i>audience</i> exclue dans un fichier <i>.ditaval</i> est publié dans les
+            documents destinés aux plombiers et aux électriciens.
+          </p>
         </body>
       </topic>
 
@@ -71,8 +73,8 @@ quelques minutes.
    .. code-block:: xml
 
       <?xml version="1.0" encoding="utf-8"?>
-      <!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "dtd/bookmap/dtd/bookmap.dtd>
-      <bookmap id="texte-conditionnel>
+      <!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "/usr/share/dita-ot/dtd/bookmap/dtd/bookmap.dtd">
+      <bookmap id="texte-conditionnel">
         <booktitle>
           <mainbooktitle>
             Exemple de texte conditionnel

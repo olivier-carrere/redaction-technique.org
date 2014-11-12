@@ -34,7 +34,7 @@ uniques), étant généré par des *conref*.
 .. code-block:: xml
 
    <?xml version="1.0" encoding="utf-8"?>
-   <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA 1.2 Task//EN" "../../dtd/technicalContent/dtd/task.dtd">
+   <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA 1.2 Task//EN" "/usr/share/dita-ot/dtd/technicalContent/dtd/task.dtd">
    <task id="display-trends" xml:lang="fr-fr">
      <title>Afficher les tendances</title>
      <taskbody>

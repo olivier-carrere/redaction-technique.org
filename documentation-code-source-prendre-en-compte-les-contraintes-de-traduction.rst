@@ -41,7 +41,7 @@ Vous pouvez maintenant utiliser le code suivant:
      <ph conref="shared.dita/click"/>
      <ph conref="shared.dita/blue"/>
      <ph conref="shared.dita/arrow"/>.
-   </p
+   </p>
 
 pour que soit générée la phrase *Click the blue arrow*.
 
