@@ -22,7 +22,7 @@ Toolkit** dans un environnement GNU/Linux (Ubuntu ou Debian).
 - connexion Internet.
 
 #. Ouvrez un terminal, collez-y la suite de commandes suivante et appuyez sur
-   entrée:
+   entrée :
 
    .. code-block:: console
 
@@ -39,7 +39,7 @@ Toolkit** dans un environnement GNU/Linux (Ubuntu ou Debian).
       cat dita-env.txt >> .bashrc && \
       exit
 
-   Cette suite de commandes:
+   Cette suite de commandes :
 
    - se place dans le répertoire racine de votre compte utilisateur,
    - télécharge l'archive Dita Open Toolkit,
@@ -54,7 +54,7 @@ Toolkit** dans un environnement GNU/Linux (Ubuntu ou Debian).
    - ferme le terminal en cours.
 
 #. Ouvrez un nouveau terminal pour prendre en compte les modifications du
-   fichier :file:`.bashrc`, puis collez la commande suivante:
+   fichier :file:`.bashrc`, puis collez la commande suivante :
 
    .. code-block:: console
 
@@ -70,7 +70,7 @@ Toolkit** dans un environnement GNU/Linux (Ubuntu ou Debian).
 
    Cette suite de commandes installe Openjdk 6 et Apache Ant.
 
-#. Collez la commande suivante:
+#. Collez la commande suivante :
 
    .. code-block:: console
 
@@ -78,7 +78,7 @@ Toolkit** dans un environnement GNU/Linux (Ubuntu ou Debian).
 
    Cette commande se place dans le répertoire :file:`DITA-OT1.5.4`.
 
-#. Collez la commande suivante:
+#. Collez la commande suivante :
 
    .. code-block:: console
 
@@ -90,7 +90,7 @@ Félicitations, vous avez compilé votre premier projet DITA XML ! Vous trouvere
 le fichier cible :file:`taskbook.pdf` dans le répertoire :file:`DITA-OT1.5.4`. Vous
 pouvez maintenant compiler d'autres projets en ignorant les étapes 1 et 2.  Si
 plusieurs versions de Java sont installées et qu'une erreur se produit, ouvrez
-un terminal administrateur et sélectionnez la version OpenJDK 6:
+un terminal administrateur et sélectionnez la version OpenJDK 6 :
 
 .. code-block:: console
 
@@ -100,7 +100,7 @@ un terminal administrateur et sélectionnez la version OpenJDK 6:
    ------------------------------
    * 0 /usr/lib/jvm/java-6-openjdk-i386/jre/bin/java 1061 mode automatique
 
-Vous pouvez indiquer pour l'option *transtype* une des valeurs suivantes:
+Vous pouvez indiquer pour l'option *transtype* une des valeurs suivantes :
 
 +------------------------------+------------------------------+
 |**Valeur**                    |**Format cible**              |

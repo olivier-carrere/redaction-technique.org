@@ -14,7 +14,7 @@ Git est d'un abord déroutant. Ses *workflows* s'appliquent à du contenu plutô
 qu'à des fichiers. Résultat : le travail de groupe et la gestion de différentes
 versions concurrentes d'un même contenu deviennent beaucoup plus simples.
 
-Git effectue des *commits* atomiques: il applique des lots de modifications sur
+Git effectue des *commits* atomiques : il applique des lots de modifications sur
 un contenu souvent réparti sur plusieurs fichiers, au lieu de gérer
 des *fichiers* proprement dits. Il nous invite à raisonner par lots de tâches sur
 un contenu et non par fichier.
@@ -28,7 +28,7 @@ habitudes de travail à ce *workflow*, on s'aperçoit :
   contenu dans des branches de développement parallèles.
 
 Imaginons que vous ayez identifié deux types de modifications majeurs à apporter
-à votre contenu:
+à votre contenu :
 
 - les synopsis d'un programme en ligne de commande,
 - les corrections grammaticales du texte.
@@ -47,7 +47,7 @@ Les contraintes de production vous obligeront souvent à scinder ces deux lots d
 tâches en sous-lots, que vous serez obligé de faire alterner.
 
 Vous *committez* chaque sous-lot à chaque fois qu'il est achevé. Votre historique
-de *commit* ressemble alors au schéma suivant:
+de *commit* ressemble alors au schéma suivant :
 
 .. figure:: graphics/git-rebase-commits.png
 
@@ -71,7 +71,7 @@ les partager. Lancez la commande *git rebase -i HEAD~5* pour réorganiser les
    sauvegarde provisoire.
 
 Vous pouvez alors réécrire l'histoire pour proposer à vos collaborateurs un
-*commit* pour chaque tâche réalisée en son entier, comme sur le schéma suivant:
+*commit* pour chaque tâche réalisée en son entier, comme sur le schéma suivant :
 
 .. figure:: graphics/git-rebase-commits-2.png
 
@@ -83,7 +83,7 @@ de Git, puis fusionnés.
 .. note::
 
    Si vous avez effectué simultanément les deux tâches sur un ou plusieurs
-   fichiers, pas de panique: grâce à la commande *git add -p* vous pouvez répartir
+   fichiers, pas de panique : grâce à la commande *git add -p* vous pouvez répartir
    vos modifications imbriquées sur les *commits* idoines. Lorsque vous lancez *git
    status*, vous vous apercevez alors que vos fichiers sont à la fois prêts et non
    prêts à être *commités* : il y a deux états des fichiers, chaque état représentant
@@ -94,7 +94,7 @@ de Git, puis fusionnés.
 vous souhaitiez : chaque *commit* unique représente un état cohérent de votre
 contenu.
 
-Ce workflow facilite également le travail d'équipe: vous pouvez confier ces
+Ce workflow facilite également le travail d'équipe : vous pouvez confier ces
 tâches à deux membres différents de votre équipe, chacun travaillant dans son
 espace local. Les modifications du premier sont ensuite fusionnées avec celles
 du second dans son espace local *via* des *patches*. Enfin, les *commits* sont
