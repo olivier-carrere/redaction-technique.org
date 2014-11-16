@@ -27,8 +27,8 @@ solutions qui permettent au **rédacteur technique** de les maîtriser plus
 facilement :
 
 +------------------------------+------------------------------+
-|**Complexité**                |**Solution**                  |
-+------------------------------+------------------------------+
+|Complexité                    |Solution                      |
++==============================+==============================+
 |Syntaxe DITA XML              |IDE tel que XMetal ou nXML    |
 +------------------------------+------------------------------+
 |Gestion des relations entre   |CMS dédié tel que Componize ou|

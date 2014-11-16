@@ -14,8 +14,8 @@ Si l'on compare la **documentation technique** à un jardin, on peut la
 classifier selon les niveaux suivants :
 
 +-------------------+----------------------------------------------------------+
-|**Niveau**         |**Description**                                           |
-+-------------------+----------------------------------------------------------+
+|Niveau             |Description                                               |
++===================+==========================================================+
 |Friche             |- Pas d'utilisation de processus documentaire             |
 |                   |                                                          |
 |                   |- Création de la documentation par des équipes non dédiées|

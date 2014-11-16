@@ -21,8 +21,8 @@ selon leur sens. Par défaut, `DITA XML
 trois types de base :
 
 +------------------------------+------------------------------+
-|**Type sémantique**           |**Description**               |
-+------------------------------+------------------------------+
+|Type sémantique               |Description                   |
++==============================+==============================+
 |*concept*                     |Introduction ou présentation  |
 |                              |d'un concept.                 |
 +------------------------------+------------------------------+
@@ -59,8 +59,8 @@ Les types d'information de haut niveau tels que *task* sont divisés en types de
 plus bas niveau, par exemple :
 
 +------------------------------+------------------------------+
-|**Type**                      |**Description**               |
-+------------------------------+------------------------------+
+|Type                          |Description                   |
++==============================+==============================+
 |*prereq*                      |Liste de points obligatoires  |
 |                              |préalables à la réalisation   |
 |                              |d'une tâche.                  |

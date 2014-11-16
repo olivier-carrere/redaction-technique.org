@@ -39,8 +39,8 @@ au type d'information qu'il veut présenter. De base, DITA XML propose les types
 d'information suivants  [#]_ :
 
 +------------------------------+------------------------------+
-|**Type d'information**        |**Description**               |
-+------------------------------+------------------------------+
+|Type d'information            |Description                   |
++==============================+==============================+
 |Concept                       |Texte généraliste du type     |
 |                              |introduction ou présentation. |
 +------------------------------+------------------------------+

@@ -28,8 +28,8 @@ Avec un format texte tel que DITA, le **rédacteur technique** et le lecteur
 disposent de supports largement différents :
 
 +--------------------+---------------------------------------------------------+
-|**Public**          |**Description**                                          |
-+--------------------+---------------------------------------------------------+
+|Public              |Description                                              |
++====================+=========================================================+
 |Rédacteur technique |Le **rédacteur technique** manipule des fichiers sources |
 |                    |; il utilise les balises pour construire le document en  |
 |                    |marquant les éléments d'information qu'il crée ou        |

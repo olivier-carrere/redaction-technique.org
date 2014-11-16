@@ -50,11 +50,9 @@ technique**, la rédaction et la mise en page s'opèrent sur :
 
 +-------------------------+----------------------------------------------------+
 |les mêmes fichiers :     |par exemple, des fichiers FrameMaker,               |
-|                         |                                                    |
 +-------------------------+----------------------------------------------------+
 |des fichiers différents :|par exemple, des fichiers de contenu XML et une     |
 |                         |feuille de style XSLT.                              |
-|                         |                                                    |
 +-------------------------+----------------------------------------------------+
 
 Dans un fichier FrameMaker, la séparation du fond et de la forme est élevée mais
@@ -77,10 +75,10 @@ mise en page [#]_, ni l'application de maquettes différentes aux
 différents fichiers qui composent le document.
 
 +--------------------+--------------------+--------------------+
-|**Format**          |**Application d'une |**Possibilité de    |
-|                    |mise en page        |mise en page        |
-|                    |homogène**          |manuelle**          |
-+--------------------+--------------------+--------------------+
+|Format              |Application d'une   |Possibilité de mise |
+|                    |mise en page        |en page manuelle    |
+|                    |homogène            |                    |
++====================+====================+====================+
 |MS Word             |Non                 |Oui                 |
 +--------------------+--------------------+--------------------+
 |FrameMaker          |Oui                 |Oui                 |
@@ -125,8 +123,8 @@ Ce dernier aspect détermine la manière dont le format gère le *single-sourcin
 Les formats disponibles peuvent donc être classés selon le tableau suivant :
 
 +---------------+---------------+---------------+---------------+
-|**Format**     |**Texte**      |**Structuré**  |**Modulaire**  |
-+---------------+---------------+---------------+---------------+
+|Format         |Texte          |Structuré      |Modulaire      |
++===============+===============+===============+===============+
 |FrameMaker     |Non            |Non            |Limité         |
 |natif          |               |               |               |
 +---------------+---------------+---------------+---------------+

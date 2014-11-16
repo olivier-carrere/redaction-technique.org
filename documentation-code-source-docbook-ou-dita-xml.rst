@@ -39,16 +39,14 @@ l'être humain peut aujourd'hui effectuer.
 Si votre contenu était une photo, nous pourrions faire l'analogie suivante :
 
 +------------------+-----------------------------------------------------------+
-|**Format de       |**Format de photo**                                        |
-|contenu**         |                                                           |
-+------------------+-----------------------------------------------------------+
+|Format de contenu |Format de photo                                            |
++==================+===========================================================+
 |DITA XML          |`RAW                                                       |
 |                  |<http://fr.wikipedia.org/wiki/RAW_(format_d%27image)>`_    |
 |                  |[#]_                                                       |
 +------------------+-----------------------------------------------------------+
 |DocBook           |`TIFF                                                      |
 |                  |<http://fr.wikipedia.org/wiki/Tagged_Image_File_Format>`_  |
-|                  |                                                           |
 +------------------+-----------------------------------------------------------+
 |PDF               |`JPEG <http://fr.wikipedia.org/wiki/Jpeg>`_                |
 +------------------+-----------------------------------------------------------+

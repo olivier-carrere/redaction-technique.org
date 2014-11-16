@@ -22,8 +22,8 @@ modèles par assemblage d'éléments standardisés, proposer par exemple les
 documents suivants :
 
 +------------------------------+------------------------------+
-|**Type de document**          |**Contenu**                   |
-+------------------------------+------------------------------+
+|Type de document              |Contenu                       |
++==============================+==============================+
 |Guide de l'utilisateur        |Thèmes systématiquement       |
 |                              |organisés en concept et       |
 |                              |procédures pas à pas.         |
