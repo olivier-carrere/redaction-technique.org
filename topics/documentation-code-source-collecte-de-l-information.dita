@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN" "/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
+<topic id="collecte-information" xml:lang="fr-fr">
+  <title>Collecte de l'information</title>
+  <body>
+    <p>
+      Le <b>rédacteur technique</b> collecte l'information auprès de différentes
+      sources, internes et externes à l'entreprise.
+    </p>
+    <p>
+      Une fois le projet de rédaction technique clairement défini, le
+      <b>rédacteur technique</b> collecte toute l'information disponible :
+    </p>
+    <ul>
+      <li>
+        spécifications du produit, Intranet, pages <xref format="html"
+        scope="external" href="http://trac.edgewall.org/">Trac</xref>,
+      </li>
+      <li>
+        interview du service R&amp;D,
+      </li>
+      <li>
+        manipulation du produit,
+      </li>
+      <li>
+        interview du service marketing,
+      </li>
+      <li>
+        interview de clients,
+      </li>
+      <li>
+        analyse de la concurrence,
+      </li>
+      <li>
+        lecture de la presse spécialisée.
+      </li>
+    </ul>
+    <fig>
+      <title>Collecte de l'information</title>
+      <image href="../graphics/collecte.png" />
+    </fig>
+    <p>
+      Les informations doivent être recoupées pour minimiser le risque de
+      transmettre des informations erronées ou plus à jour. Le rédacteur
+      technique doit se livrer à un véritable travail d'enquête. En se mettant à
+      la place de l'utilisateur, il vérifie chaque information et fait le tri
+      entre les données pertinentes et celles qui ne seront que du bruit
+      perturbant le message.
+    </p>
+    <p>
+      Premier utilisateur des solutions développées par la société, le rédacteur
+      technique a le rôle du <b>candide</b> qui remet chaque aspect de
+      l'information à transmettre dans son contexte. Il peut par exemple
+      décider, contre l'avis de la direction technique, de passer sous silence
+      des informations très techniques dans le guide de
+      l'utilisateur. Inversement, il pourra étayer une brochure commerciale de
+      données techniques précises pour étayer le discours marketing.
+    </p>
+  </body>
+</topic>

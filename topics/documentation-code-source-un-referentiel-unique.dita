@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN" "/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
+<topic id="un-referentiel-unique" xml:lang="fr-fr">
+  <title>Un référentiel unique ?</title>
+  <body>
+    <p>
+      Idéalement, tout le contenu peut être placé sous un référentiel unique,
+      par exemple le logiciel de gestion de versions <xref format="html"
+      scope="external" href="http://fr.wikipedia.org/wiki/Git">Git</xref>. Ceci
+      en maximise la réutilisation, la cohérence et la qualité. Scanningi le
+      contenu est au format DITA XML ou DocBook, par exemple, on peut exploiter
+      au mieux les capacités de <b>single-sourcing</b> de ces formats pour le
+      publier sous la forme appropriée.
+    </p>
+    <p>
+      Le contenu devient un réseau de modules d'information ; il faut alors
+      gérer les relations au sein de ce réseau, notamment lors des mises à jour.
+    </p>
+    <fig>
+      <image href="../graphics/referentiel-unique.png" />
+    </fig>
+    <p>
+      En pratique, il semble que rares sont les entreprises qui ont franchi ce
+      pas. Il est vrai que tant que les formats structurés ne seront pas
+      enseignés dans le secondaire, il paraît utopique de vouloir y convertir
+      tous les acteurs de la société, surtout si le turn-over y est important.
+    </p>
+  </body>
+</topic>

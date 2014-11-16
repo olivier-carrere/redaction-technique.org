@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN" "/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
+<topic id="table-de-conversion-framemaker-vers-dita-xml" xml:lang="fr-fr">
+  <title>Table de conversion FrameMaker vers DITA XML</title>
+  <body>
+    <p>
+      Lorsque les fichiers <xref format="html" scope="external"
+      href="http://en.wikipedia.org/wiki/Adobe_FrameMaker">FrameMaker</xref>
+      sont prêts pour la migration et que la chaîne <xref format="html"
+      scope="external"
+      href="http://fr.wikipedia.org/wiki/Darwin_Information_Typing_Architecture">DITA
+      XML</xref> est parfaitement intégrée aux processus techniques et humains
+      de la société, le <b>rédacteur technique</b> peut appliquer la table de
+      conversion <fn>Bien que ce processus doive être rapide, je vous conseille
+      de le faire juste après une livraison d'une nouvelle version du document
+      pour avoir la marge de temps suffisante avant la livraison suivante, des
+      petits ajustements étant toujours nécessaires.</fn>.
+    </p>
+    <p>
+      Vous devriez maintenant être à même d'archiver les fichiers FrameMaker,
+      puis de basculer totalement vers le format DITA XML.
+    </p>
+    <fig>
+      <title>Application d'une table de conversion de FrameMaker vers DITA
+      XML</title>
+      <image href="../graphics/dita-migration.png" />
+    </fig>
+    <p>
+      Appliquez bien sûr ce processus à un petit jeu de documents <fn>J'appelle
+      <b>jeu de documents</b> tout ensemble d'informations liées qui ne partage
+      aucun contenu avec un autre ensemble ; si par exemple le document <b>A</b>
+      partage une section avec le document <b>B</b>, le jeu de documents est
+      <b>A+B</b> ; si vous dupliquez la section partagée afin qu'elle ne soit
+      plus commune à <b>A</b> et <b>B</b>, <b>A</b> et <b>B</b> deviennent des
+      jeux distincts.</fn>, qui ne soit pas, si possible, d'une importance
+      critique. Après ce premier succès, vous pourrez appliquer le processus aux
+      autres jeux de documents.
+    </p>
+    <p>
+      Vous pouvez maintenant progressivement modulariser et partager votre
+      contenu dans le nouveau format afin de tirer parti au maximum de DITA
+      XML. Vous pouvez pendant cette phase continuer à publier de nouvelles
+      versions du document ; la publication devrait d'ailleurs être beaucoup
+      plus simple que sous FrameMaker.
+    </p>
+  </body>
+</topic>

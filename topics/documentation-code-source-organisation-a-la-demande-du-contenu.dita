@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN" "/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
+<topic id="organisation-a-la-demande-du-contenu" xml:lang="fr-fr">
+  <title>Organisation à la demande du contenu</title>
+  <body>
+    <p>
+      Les briques d'information peuvent être assemblées à la demande dans des
+      structures de table des matières externes, les <b>ditamap</b>.
+    </p>
+    <p>
+      L'organisation de l'information sous <xref format="html" scope="external"
+      href="http://dita.xml.org/">DITA XML</xref> n'est pas figée.  Les briques
+      peuvent être organisées dans différentes structures hiérarchiques, selon
+      l'évolution des besoins. Si le <b>rédacteur technique</b> a pris soin de
+      construire des briques d'information atomiques et génériques, il peut, à
+      l'instar d'un constructeur automobile proposant sans cesse de nouveaux
+      modèles par assemblage d'éléments standardisés, proposer par exemple les
+      documents suivants :
+    </p>
+    <simpletable>
+      <strow>
+        <stentry>
+          <b>Type de document</b>
+        </stentry>
+        <stentry>
+          <b>Contenu</b>
+        </stentry>
+      </strow>
+      <strow>
+        <stentry>
+          Guide de l'utilisateur
+        </stentry>
+        <stentry>
+          Thèmes systématiquement organisés en concept et procédures pas à
+          pas.
+        </stentry>
+      </strow>
+      <strow>
+        <stentry>
+          Document de présentation
+        </stentry>
+        <stentry>
+          Concepts.
+        </stentry>
+      </strow>
+      <strow>
+        <stentry>
+          Quikstart
+        </stentry>
+        <stentry>
+          Procédures pas à pas.
+        </stentry>
+      </strow>
+      <strow>
+        <stentry>
+          Manuel de référence
+        </stentry>
+        <stentry>
+          Informations de référence.
+        </stentry>
+      </strow>
+    </simpletable>
+    <p>
+      Pour ce faire, le <b>rédacteur technique</b> prendra soin de placer les
+      éléments liés à un contexte particulier dans les structures <b>ditamap</b>
+      et non dans les fichiers de contenu DITA XML. En particulier, les
+      références croisées doivent être indiquées dans une <b>reltable</b> placée
+      dans la <b>ditamap</b> : si le document <b>A</b> doit renvoyer au document
+      <b>B</b> dans la <b>ditamap</b> <b>1</b>, il doit pouvoir être également
+      utilisé sans modification dans la <b>ditamap</b> <b>2</b>, où le document
+      <b>B</b> n'est pas inclus.
+    </p>
+    <p>
+      L'organisation des répertoires de travail doit également permettre
+      l'utilisation de liens relatifs, notamment vers les images, qui ne seront
+      jamais cassés.
+    </p>
+  </body>
+</topic>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN" "/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
+<topic id="un-langage-a-balises" xml:lang="fr-fr">
+  <title>Un langage à balises</title>
+  <body>
+    <p>
+      <xref format="html" scope="external" href="http://dita.xml.org/">DITA
+      XML</xref> est un langage à balises : le <b>rédacteur technique</b>
+      structure l'information dans des fichiers sources sans mise en page,
+      similaires aux fichiers sources de code informatique. L'utilisateur reçoit
+      un document cible, par exemple un fichier PDF, où les balises sont
+      remplacées par une mise en forme typographique.
+    </p>
+    <p>
+      Si votre entreprise fournit à ses clients une documentation technique au
+      format Word, le <b>rédacteur technique</b> et l'utilisateur disposent des
+      mêmes supports d'information (il n'y a pas de différenciation entre le
+      fichier source et le fichier cible). Ce qui semble a priori la solution la
+      plus simple s'avère cependant peu efficace en termes de productivité de
+      l'équipe de <b>rédaction technique</b> et de structuration de l'information.
+    </p>
+    <p>
+      Avec un format texte tel que DITA, le <b>rédacteur technique</b> et le
+      lecteur disposent de supports largement différents :
+    </p>
+    <simpletable>
+      <strow>
+        <stentry>
+          <b>Public</b>
+        </stentry>
+        <stentry>
+          <b>Description</b>
+        </stentry>
+      </strow>
+      <strow>
+        <stentry>
+          Rédacteur technique
+        </stentry>
+        <stentry>
+          Le <b>rédacteur technique</b> manipule des fichiers sources ; il
+          utilise les balises pour construire le document en marquant les
+          éléments d'information qu'il crée ou réutilise. Les balises sont
+          imbriquées comme des poupées russes organisées selon une syntaxe
+          rigoureuse. Le fichier source n'est pas au format WYSIWYG : la mise
+          en page sera appliquée lors de la transformation des fichiers
+          sources en fichiers cibles (autrement dit, lors de la génération des
+          livrables). Tout au plus, certains logiciels graphiques tels XMetal,
+          Oxygen ou FrameMaker structuré proposent-ils le format WYSIWYM (what
+          you see is what you mean), où les balises sont remplacées à l'écran
+          par une mise en forme générique, différente de l'aspect final du
+          document. Je trouve cependant que l'un des intérêts d'avoir recours
+          à un langage à balises est de voir exactement ce que l'on fait en
+          manipulant soi-même les balises sans en déléguer l'interprétation à
+          un logiciel graphique.
+        </stentry>
+      </strow>
+      <strow>
+        <stentry>
+          Utilisateur
+        </stentry>
+        <stentry>
+          Seul le contenu est présenté au lecteur dans le fichier cible ; le
+          texte marqué par des balises dans les fichiers sources a une mise en
+          valeur typographique dont le sens est explicité dans la section
+          <b>Conventions typographiques</b> du document final.
+        </stentry>
+      </strow>
+    </simpletable>
+    <p>
+      Un fichier source DITA XML mélange du texte et des balises, délimitées par
+      les signes &lt; et &gt;. Le texte proprement dit est encapsulé dans un jeu
+      de balises ouvrantes de type &lt;balise&gt; et de balises fermantes de type
+      &lt;/balise&gt; selon le schéma &lt;balise&gt;texte&lt;/balise&gt;. Tout
+      texte entré hors d'une balise ouvrante et fermante est incorrect et produit
+      un fichier non valide.
+    </p>
+  </body>
+</topic>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN" "/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
+<topic id="cas-concret-documentation-de-nufirewall" xml:lang="fr-fr">
+  <title>Cas concret : documentation de NuFirewall</title>
+  <body>
+    <p>
+      La documentation de <xref format="html" scope="external"
+      href="http://linuxfr.org/news/nufirewall-le-pare-feu-libre-sans-prise-de-t%C3%AAte">
+      NuFirewall</xref>, qui a été perçue par la presse comme <xref
+      format="html" scope="external"
+      href="http://www.linformaticien.com/tests/id/20068/categoryid/48/edenwall-nufirewall-le-pare-feu-nouvelle-generation.aspx">
+      un point fort du produit</xref>, a été réalisée sous DITA.
+    </p>
+    <p>
+      Si je n'avais pas utilisé un format qui favorise au maximum la
+      réutilisation de l'information, je n'aurais pas autant pu me consacrer à
+      l'essentiel : le contenu.
+    </p>
+  </body>
+</topic>

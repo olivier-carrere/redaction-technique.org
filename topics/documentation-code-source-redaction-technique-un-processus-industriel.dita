@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN" "/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
+<topic id="redaction-technique-un-processus-industriel" xml:lang="fr-fr">
+  <title>Rédaction technique : un processus industriel</title>
+  <body>
+    <p>
+      La rédaction technique repose sur des processus rationnels. Trop souvent
+      associée à un fort aspect littéraire, elle est fréquemment laissée à
+      l'improvisation et à l'inspiration du <b>rédacteur technique</b>. Le
+      <b>rédacteur technique</b>, comme les autres intervenants de l'entreprise,
+      doit répondre à ses objectifs de manière prévisible et reproductible.
+    </p>
+    <p>
+      Ce processus repose sur une méthodologie rigoureuse et une chaîne de
+      production fiable.
+    </p>
+    <fig>
+      <title>Processus de rédaction technique</title>
+      <image href="../graphics/processus.png" />
+    </fig>
+    <p>
+      Pour créer et valoriser un contenu à forte valeur ajoutée pour
+      l'entreprise, le <b>rédacteur technique</b> dialogue constamment non
+      seulement avec tous les acteurs internes de la société, mais aussi avec
+      son écosystème : partenaires, journalistes, utilisateurs, etc. Il fournit
+      ainsi aux différents publics l'information dont ils ont besoin. Ceci
+      renforce l'image de marque de la société, améliore la satisfaction client
+      et facilite la perception des avantages produit par les prospects. Le
+      rédacteur technique s'appuie sur une chaîne de production aussi
+      automatisée que possible. En mettant en place un processus industriel et
+      reproductible, il diminue les coûts de production et fournit un niveau de
+      qualité constant, adapté aux buts de l'entreprise.
+    </p>
+  </body>
+</topic>

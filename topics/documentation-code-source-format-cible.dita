@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN" "/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
+<topic id="format-cible" xml:lang="fr-fr">
+  <title>Format cible</title>
+  <body>
+    <p>
+      Le format cible <fn>Dans le cas d'une photo, le format cible est le format
+      <xref format="html" scope="external"
+      href="http://fr.wikipedia.org/wiki/Jpeg">JPEG</xref>, qui est utilisé pour
+      l'affichage Web ou l'impression et sur lequel les modifications ne peuvent
+      être annulées une fois fermé le logiciel de retouches.</fn> d'un support
+      de <b>rédaction technique</b> est celui sous lequel l'audience du message
+      y accédera. Il est différent de celui sous lequel le <b>rédacteur
+      technique</b> crée le contenu. Le <b>single-sourcing</b> permet de générer
+      plusieurs livrables à des formats différents à partir d'un même format
+      source.
+    </p>
+    <p>
+      À partir des fichiers sources validés, les livrables sont générés selon
+      l'une des méthodes suivantes :
+    </p>
+    <simpletable>
+      <strow>
+        <stentry>
+          <b>Méthode</b>
+        </stentry>
+        <stentry>
+          <b>Exemple</b>
+        </stentry>
+      </strow>
+      <strow>
+        <stentry>
+          Totalement automatique
+        </stentry>
+        <stentry>
+          Livre blanc du format structuré <xref format="html" scope="external"
+          href="http://dita.xml.org/">DITA</xref> au format cible PDF
+          <b>via</b> DITA Open Toolkit.
+        </stentry>
+      </strow>
+      <strow>
+        <stentry>
+          Semi-automatique
+        </stentry>
+        <stentry>
+          Contenu au format DITA exporté en HTML puis collé sous un CMS <fn>Ceci
+          est automatisable par un script ; le CMS Drupal propose également un
+          module <xref format="html" scope="external"
+          href="http://drupal.org/project/dita">DITA integration for
+          Drupal</xref>.</fn>.
+        </stentry>
+      </strow>
+      <strow>
+        <stentry>
+          Manuelle
+        </stentry>
+        <stentry>
+          Plaquette marketing au format traitement de texte ou DITA mise en page
+          sous Indesign, exportée en PDF, puis imprimée ; selon la fréquence de
+          publication du document final, des filtres d'import XML peuvent
+          également être mis en place.
+        </stentry>
+      </strow>
+    </simpletable>
+    <p>
+      Plus le processus est automatisé, plus le risque d'erreur est faible et
+      plus la publication et la mise à jour sont aisées.  L'automatisation
+      facilite également le <b>single-sourcing</b>, qui consiste à générer
+      plusieurs livrables à des formats cibles différents à partir d'un même
+      format source. Un projet au format DITA XML peut ainsi être livré sous
+      forme de fichier PDF, d'aide compilée Windows, d'aide JavaHelp, de site en
+      HTML, etc. Le XML offre en ce domaine des possibilités quasi illimitées.
+    </p>
+  </body>
+</topic>

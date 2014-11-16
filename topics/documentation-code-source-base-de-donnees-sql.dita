@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN" "/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
+<topic id="base-de-donnees-sql" xml:lang="fr-fr">
+  <title>Base de données SQL</title>
+  <body>
+    <p>
+      Dans le cas d'un CMS de type Drupal, Joomla ou WordPress, le référentiel
+      est une base de données SQL. Il conserve un historique, mais uniquement
+      article par article et ne permet pas la recherche et le remplacement de
+      texte à travers tout le contenu. Cela peut justifier le choix de gérer le
+      contenu sous-jacent du CMS sous forme de fichiers texte.
+    </p>
+  </body>
+</topic>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN" "/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
+<topic id="organiser-son-historique-avec-git-rebase" xml:lang="fr-fr">
+  <title>Organiser son historique avec Git rebase</title>
+  <body>
+    <p>
+      Git est d'un abord déroutant. Ses <i>workflows</i> s'appliquent à du
+      contenu plutôt qu'à des fichiers. Résultat : le travail de groupe et la
+      gestion de différentes versions concurrentes d'un même contenu deviennent
+      beaucoup plus simples.
+    </p>
+    <p>
+      Git effectue des <i>commits</i> atomiques : il applique des lots de
+      modifications sur un contenu souvent réparti sur plusieurs fichiers, au
+      lieu de gérer des <i>fichiers</i> proprement dits. Il nous invite à
+      raisonner par lots de tâches sur un contenu et non par fichier.
+    </p>
+    <p>
+      Ce fonctionnement peut sembler peu intuitif si l'on a l'habitude de
+      travailler fichier par fichier et non tâche par tâche. Mais une fois que
+      l'on a adapté ses habitudes de travail à ce <i>workflow</i>, on s'aperçoit
+      :
+    </p>
+    <ul>
+      <li>
+        que l'on dispose d'un historique beaucoup plus facilement exploitable,
+      </li>
+      <li>
+        qu'il est beaucoup plus facile de gérer des versions concurrentes d'un
+        même contenu dans des branches de développement parallèles.
+      </li>
+    </ul>
+    <p>
+      Imaginons que vous ayez identifié deux types de modifications majeurs à
+      apporter à votre contenu :
+    </p>
+    <ul>
+      <li>
+        les synopsis d'un programme en ligne de commande,
+      </li>
+      <li>
+        les corrections grammaticales du texte.
+      </li>
+    </ul>
+    <p>
+      Si votre contenu est réparti dans un ensemble de fichiers modulaires, vous
+      pourriez décider d'apporter en même temps les deux types de modifications
+      dans chaque fichier un à un. Pour répartir le travail sur un groupe de
+      rédacteurs techniques, il vous suffit d'allouer à chacun un lot de
+      fichiers.
+    </p>
+    <p>
+      Ce <i>workflow</i> n'est pas le plus adapté à Git. Si vous utilisez ce
+      système de gestion de versions, il est préférable de diviser le travail en
+      deux lots de tâches, que l'on appelera <i>synopsis</i> et <i>texte</i>,
+      appliqués concurremment sur tous les fichiers.
+    </p>
+    <p>
+      Les contraintes de production vous obligeront souvent à scinder ces deux
+      lots de tâches en sous-lots, que vous serez obligé de faire alterner.
+    </p>
+    <p>
+      Vous <i>committez</i> chaque sous-lot à chaque fois qu'il est
+      achevé. Votre historique de <i>commit</i> ressemble alors au schéma
+      suivant :
+    </p>
+    <fig>
+      <title>Historique Git</title>
+      <image href="../graphics/git-rebase-commits.png" />
+    </fig>
+    <p>
+      Lorsque vous placerez vos <i>commits</i> sur le dépôt central, certains
+      <i>commits</i> représenteront une étape intermédiaire de l'une des
+      tâches. Votre historique et vos branches seront donc plus difficiles à
+      exploiter. D'autant plus que les tâches inachevées alternent. Pour en
+      récupérer une seule, il faudra donc choisir soigneusement les
+      <i>commits</i> <i>via</i> la commande <i>git cherry-pick</i>.
+    </p>
+    <p>
+      Heureusement, Git vous permet de réorganiser facilement vos <i>commits</i>
+      avant de les partager. Lancez la commande <i>git rebase -i HEAD~5</i> pour
+      réorganiser les <i>commits</i>, de la version en cours aux cinq
+      précédentes, par exemple.
+    </p>
+    <note class="warning">
+      La commande <b>rebase</b> est potentiellement destructive ; veillez à
+      sauvegarder votre espace de travail, répertoire <b>.git</b> compris, avant
+      de l'exécuter, sous risque de perdre des données ; vous pouvez également
+      créer une branche de sauvegarde provisoire.
+    </note>
+    <p>
+      Vous pouvez alors réécrire l'histoire pour proposer à vos collaborateurs
+      un <b>commit</b> pour chaque tâche réalisée en son entier, comme sur le
+      schéma suivant :
+    </p>
+    <fig>
+      <title>Historique Git</title>
+      <image href="../graphics/git-rebase-commits-2.png" />
+    </fig>
+    <p>
+      Les <b>commits</b> ont tout d'abord été regroupés par type sur la
+      <b>flèche du temps</b> de Git, puis fusionnés.
+    </p>
+    <note>
+      Si vous avez effectué simultanément les deux tâches sur un ou plusieurs
+      fichiers, pas de panique : grâce à la commande <b>git add -p</b> vous
+      pouvez répartir vos modifications imbriquées sur les <b>commits</b>
+      idoines. Lorsque vous lancez <b>git status</b>, vous vous apercevez alors
+      que vos fichiers sont à la fois prêts et non prêts à être <b>commités</b>
+      : il y a deux états des fichiers, chaque état représentant un stade
+      partiel de votre travail et la somme des deux représentant la totalité des
+      modifications que vous avez apportées.
+    </note>
+    <p>
+      Évidemment, vous n'avez plus accès aux <b>commits</b> intermédiaires, mais
+      c'est ce que vous souhaitiez : chaque <b>commit</b> unique représente un
+      état cohérent de votre contenu.
+    </p>
+    <p>
+      Ce workflow facilite également le travail d'équipe : vous pouvez confier
+      ces tâches à deux membres différents de votre équipe, chacun travaillant
+      dans son espace local. Les modifications du premier sont ensuite
+      fusionnées avec celles du second dans son espace local <b>via</b> des
+      <b>patches</b>. Enfin, les <b>commits</b> sont refactorisés avant de les
+      placer sur le dépôt central.
+    </p>
+    <note class="important">
+      Moins vous réorganiserez vos <b>commits</b> (surtout chronologiquement),
+      plus le risque de devoir corriger manuellement des conflits sera
+      faible. Autrement dit, <b>git rebase</b> ne doit pas être une excuse pour
+      ne pas planifier rationnellement son travail.
+    </note>
+  </body>
+</topic>

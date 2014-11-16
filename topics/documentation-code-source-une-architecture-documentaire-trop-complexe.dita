@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN" "/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
+<topic id="une-architecture-documentaire-trop-complexe" xml:lang="fr-fr">
+  <title>Une architecture documentaire trop complexe ?</title>
+  <body>
+    <p>
+      DITA XML permet des gains de productivité importants par la réduction du
+      volume source que le <b>rédacteur technique</b> crée, traduit et
+      maintient. Ce gain de productivité se fait au prix d'une plus grande
+      complexité.
+    </p>
+    <p>
+      Si les projets DITA XML sont plus <b>complexes</b>, ils sont cependant
+      moins <b>compliqués</b> que des projets reposant sur des formats plus
+      traditionnels de type FrameMaker. En effet, DITA XML est une architecture
+      rationnelle. Le <b>rédacteur technique</b> se trouve donc face à un
+      comportement prédictible des outils qu'il utilise, loin des <b>trucs et
+      astuces</b> destinés à contourner les bugs ou les fonctionnements
+      erratiques des outils plus lourds.
+    </p>
+    <p>
+      Le tableau suivant présente les différents niveaux de complexité induits par
+      DITA XML et les solutions qui permettent au <b>rédacteur technique</b> de
+      les maîtriser plus facilement :
+    </p>
+    <simpletable>
+      <strow>
+        <stentry>
+          <b>Complexité</b>
+        </stentry>
+        <stentry>
+          <b>Solution</b>
+        </stentry>
+      </strow>
+      <strow>
+        <stentry>
+          Syntaxe DITA XML
+        </stentry>
+        <stentry>
+          IDE tel que XMetal ou nXML
+        </stentry>
+      </strow>
+      <strow>
+        <stentry>
+          Gestion des relations entre des briques d'information atomiques
+        </stentry>
+        <stentry>
+          CMS dédié tel que Componize ou DocZone
+        </stentry>
+      </strow>
+      <strow>
+        <stentry>
+          Syntaxe de la feuille de style XSLT
+        </stentry>
+        <stentry>
+          Logiciel graphique de création de feuilles de style
+        </stentry>
+      </strow>
+    </simpletable>
+    <p>
+      Pour une petite équipe de <b>rédaction technique</b>, l'écueil principal
+      sera la nécessité de mettre en œuvre la charte graphique de
+      l'entreprise. Les autres aspects peuvent être gérés sans outil spécialisé,
+      avec une bonne communication et une série de bonnes pratiques.
+    </p>
+  </body>
+</topic>

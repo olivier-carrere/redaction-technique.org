@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN" "/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
+<topic id="tester-les-produits-pour-les-documenter" xml:lang="fr-fr">
+  <title>Tester les produits pour les documenter</title>
+  <body>
+    <p>
+      Le <b>rédacteur technique</b> ne peut fournir une documentation utile aux
+      clients de l'entreprise s'il se contente de mettre en forme des
+      informations glanées auprès des différents acteurs de la société. Jouant
+      le rôle de Candide, il est le premier représentant des utilisateurs et se
+      doit de tester les produits dans des conditions proches des leurs.
+    </p>
+    <p>
+      Un conte chinois narre comment des aveugles se sont retrouvés confrontés à
+      un éléphant. Aucun d'entre eux, et pour cause, n'ayant une perception
+      globale de l'animal, chacun en eut une image différente : celui qui en
+      tenait une patte le prenait pour un arbre, celui qui en étreignait la
+      trompe le confondait avec un serpent, celui qui avait empoigné une défense
+      l'identifiait à une lance, et celui qui s'agrippait à une de ses oreilles
+      croyait qu'il s'agissait d'un éventail.
+    </p>
+    <fig>
+      <image href="../graphics/hanabusa-itcho.jpg" />
+    </fig>
+    <p>
+      Le <b>rédacteur technique</b> qui demande aux différents intervenants de
+      l'entreprise à quoi sert le produit dont il doit créer la documentation et
+      comment il fonctionne se retrouve comme celui qui demande aux aveugles à
+      quoi ressemble un éléphant : pour la R&amp;D, il s'agit de code élégamment
+      rédigé, pour le marketing, d'une offre à positionner face à la concurrence
+      sur son marché, pour le support technique, d'un exécutable dont il faut
+      corriger les bugs, etc.
+    </p>
+    <p>
+      Pour avoir une vision réaliste de l'objet qu'il est censé décrire, le
+      <b>rédacteur technique</b> doit donc l'appréhender par lui-même et se
+      faire sa propre opinion, qu'il pourra ensuite confronter à celle des
+      autres acteurs de l'entreprise. Le <b>rédacteur technique</b> est un
+      pragmatique qui s'intéresse à la pratique, non à la théorie. S'il ne
+      consulte que les développeurs, par exemple, il aura peu de chance de
+      pouvoir créer une documentation satisfaisante pour l'utilisateur :
+    </p>
+    <ul>
+      <li>
+        d'une part, les développeurs ont souvent une vision idéaliste du
+        fonctionnement de leur produit, différente du comportement de ce dernier
+        en conditions réelles d'utilisation,
+      </li>
+      <li>
+        d'autre part, une déperdition d'information se produit nécessairement
+        entre :
+        <ul>
+          <li>
+            ce que le développeur sait,
+          </li>
+          <li>
+            ce que le développeur exprime,
+          </li>
+          <li>
+            ce que le <b>rédacteur technique</b> comprend,
+          </li>
+          <li>
+            ce que le <b>rédacteur technique</b> rédige,
+          </li>
+          <li>
+            ce que l'utilisateur comprend.
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <p>
+      Si le <b>rédacteur technique</b> teste réellement le comportement du
+      produit dans des conditions aussi proches que possible de celles
+      rencontrées par l'utilisateur, les trois premières causes de déperdition
+      d'information sont quasiment inexistantes. Pour réduire les deux
+      dernières, il ne lui reste plus qu'à filtrer, organiser et exprimer
+      l'information qu'il a recueillie de manière adaptée au média qui la
+      véhiculera et aux connaissances techniques de son destinataire.
+    </p>
+    <p>
+      Dans les faits, une telle demande peut sembler de prime abord incongrue en
+      interne et se heurter à la lourdeur de la mise en place d'une plateforme
+      de test. Ce n'est généralement qu'après les premiers retours clients ou
+      les tests produits dans la presse que les différents interlocuteurs
+      comprennent pleinement l'apport de cette démarche. C'est souvent seulement
+      à partir de ce moment là que la rédaction technique gagne ses lettres de
+      noblesse. Et que la documentation technique n'est plus seulement vue comme
+      un mal nécessaire, mais comme une véritable valeur ajoutée.
+    </p>
+  </body>
+</topic>

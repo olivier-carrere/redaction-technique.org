@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN" "/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
+<topic id="documents-monolithiques-ou-modulaires" xml:lang="fr-fr">
+  <title>Documents monolithiques ou modulaires</title>
+  <body>
+    <p>
+      Le format source peut reposer sur des <b>fichiers monolithiques</b> ou sur
+      des <b>grappes de fichiers modulaires</b>.
+    </p>
+    <p>
+      Les <b>fichiers monolithiques</b> (par exemple Word, LibreOffice ou
+      Framemaker) centralisent tout le contenu dans un seul fichier, facile à
+      manier, mais qui limite le partage du contenu ; le risque de disposer
+      d'informations incohérentes ou en doublon est alors important.
+    </p>
+    <fig>
+      <title>Format source de rédaction technique monolithique</title>
+      <image href="../graphics/monolithique.png" />
+    </fig>
+    <p>
+      Les <b>grappes de fichiers modulaires</b> (par exemple <xref format="html"
+      scope="external" href="http://dita.xml.org/">DITA XML</xref> ou <xref
+      format="html" scope="external"
+      href="http://www.docbook.org/">DocBook</xref>) agrègent le contenu de
+      multiples fichiers, ce qui favorise le partage et la réutilisation de
+      blocs de contenu. Un tel système est difficile à mettre en place au niveau
+      de toute l'entreprise, mais devrait être la norme pour une équipe de
+      <b>rédaction technique</b>.
+    </p>
+    <fig>
+      <title>Format source de rédaction technique modulaire</title>
+      <image href="../graphics/grappe.png" />
+    </fig>
+    <p>
+      Certains traitements de texte proposent de gérer des documents modulaires,
+      mais ils le font mal. Inversement, un document DocBook ou DITA, par
+      exemple, peut être monolithique, mais perd alors de sa souplesse.
+    </p>
+  </body>
+</topic>

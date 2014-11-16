@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN" "/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
+<topic id="partager-des-blocs-information-atomiques-avec-les-conref" xml:lang="fr-fr">
+  <title>Partager des blocs d'information atomiques avec les
+  <b>conref</b></title>
+  <body>
+    <p>
+      Lorsque le <b>rédacteur technique</b> veut réutiliser des blocs
+      d'information <b>DITA XML</b> plus petits qu'une section, il doit les
+      partager au niveau des fichiers de contenu <b>dita</b> et non dans les
+      structures de table des matières <b>ditamap</b>, grâce au mécanisme <xref
+      format="html" scope="external"
+      href="http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html">
+      conref</xref>.
+    </p>
+    <p>
+      Le principe des <b>conref</b> est simple : lorsqu'un <b>conref</b> est
+      mentionné au niveau d'un nœud XML donné, tout le contenu du nœud cible est
+      remplacé par le contenu du nœud source.
+    </p>
+    <fig>
+      <title>Partage de blocs d'information de granulométrie large entre les
+      <b>ditamap</b></title>
+      <image href="../graphics/ditamap.png" />
+    </fig>
+    <p>
+      Une différence notable entre le mécanisme des <b>conref</b> et le
+      mécanisme XML des <xref format="html" scope="external"
+      href="http://en.wikipedia.org/wiki/XInclude">xinclude</xref>, c'est que le
+      nœud source doit être conforme au schéma XSD du fichier source <b>et</b>
+      du fichier cible. Ce formalisme rigoureux, s'il s'avère moins souple et
+      oblige parfois à quelques acrobaties, rend les <b>conref</b> beaucoup plus
+      lisibles que les <b>xinclude</b> et favorise leur utilisation.
+    </p>
+    <fig>
+      <title>Partage de blocs d'information de granulométrie fine entre les
+      sections DITA</title>
+      <image href="../graphics/conref.png" />
+    </fig>
+  </body>
+</topic>
+

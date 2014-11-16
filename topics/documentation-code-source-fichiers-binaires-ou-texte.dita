@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN" "/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
+<topic id="fichiers-binaires-ou-texte" xml:lang="fr-fr">
+  <title>Fichiers binaires ou texte</title>
+  <body>
+    <p>
+      Les formats sources sont des formats <b>binaires</b> ou <b>texte</b>.
+    </p>
+    <simpletable>
+      <strow>
+        <stentry>
+          Les <b>formats binaires</b> sont <b>opaques</b> :
+        </stentry>
+        <stentry>
+          si on les ouvre avec un éditeur de texte de type <b>notepad</b>, tout
+          ce que l'on voit est une suite de caractères hiéroglyphiques ; il
+          n'est donc la plupart du temps possible de les modifier qu'avec un
+          seul logiciel.
+        </stentry>
+      </strow>
+      <strow>
+        <stentry>
+          Les <b>formats texte</b> sont <b>transparents</b> :
+        </stentry>
+        <stentry>
+          si on les ouvre avec un éditeur de texte, on voit du texte et des
+          balises ; il est donc possible de les modifier avec différents
+          logiciels et de leur appliquer des opérations de traitement par lot en
+          ligne de commande, sans même les ouvrir, et d'utiliser de puissantes
+          <xref format="html" scope="external"
+          href="http://fr.wikipedia.org/wiki/Expression_rationnelle">expressions
+          rationnelles</xref>.
+        </stentry>
+      </strow>
+    </simpletable>
+  </body>
+</topic>
