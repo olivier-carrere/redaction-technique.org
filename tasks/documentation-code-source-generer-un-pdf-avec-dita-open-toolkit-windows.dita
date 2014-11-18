@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"/usr/share/dita-ot/dtd/technicalContent/dtd/task.dtd">
+<task id="generer-un-pdf-avec-dita-open-toolkit-windows">
+  <title>Générer un PDF avec DITA Open Toolkit (Windows)</title>
+  <taskbody>
+    <prereq>
+      <p>
+        <b>Prérequis</b>
+      </p>
+      <ul>
+        <li>
+          Connexion Internet
+        </li>
+      </ul>
+    </prereq>
+    <context>
+      <p>
+        Ce didacticiel <xref format="html" scope="external"
+        href="http://dita.xml.org/">DITA XML</xref> est destiné à vous guider
+        dans la mise en place et l'utilisation de la chaîne de publication
+        <b>DITA Open Toolkit</b> dans un environnement Windows (testé sur
+        Windows XP).
+      </p>
+    </context>
+    <steps>
+      <step>
+        <cmd>
+          Téléchargez <xref format="html" scope="external"
+          href="http://java.com/fr/download/manual.jsp?locale=fr">Java</xref>,
+          puis lancez le programme d'installation.
+        </cmd>
+      </step>
+      <step>
+        <cmd>
+          Téléchargez DITA Open Toolkit 1.5.4
+          &lt;http://sourceforge.net/projects/dita-ot/files/DITA-OT Stable
+          Release/DITA Open Toolkit
+          1.5.4/DITA-OT1.5.4_full_easy_install_bin.zip/download&gt;_ sur le
+          bureau, puis décompressez DITA-OT1.5.4_full_easy_install_bin.zip.
+        </cmd>
+      </step>
+      <step>
+        <cmd>
+          Sélectionnez Exécuter dans le menu Démarrer, collez la commande
+          suivante, puis appuyez sur <b>Entrée</b> :
+        </cmd>
+        <info>
+          <codeblock>
+            cmd
+          </codeblock>
+        </info>
+        <stepresult>
+          <p>
+            Un terminal apparaît.
+          </p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>
+          Collez la commande suivante dans le terminal :
+        </cmd>
+        <info>
+          <codeblock>
+            cd Bureau\DITA-OT1.5.4_full_easy_install_bin\DITA-OT1.5.4
+          </codeblock>
+        </info>
+      </step>
+      <step>
+        <cmd>
+          Collez la commande suivante :
+        </cmd>
+        <info>
+          <codeblock>
+            startcmd.bat
+          </codeblock>
+        </info>
+        <stepresult>
+          <p>
+            Un nouveau terminal apparaît.
+          </p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>
+          Collez la commande suivante dans le nouveau terminal :
+        </cmd>
+        <info>
+          <codeblock>
+            $ java -jar lib/dost.jar /i:samples/taskbook.ditamap /outdir:. /transtype:pdf2
+          </codeblock>
+          <p>
+            Cette commande génère un fichier PDF à partir d'un projet DITA XML
+            d'exemple.
+          </p>
+        </info>
+      </step>
+    </steps>
+    <result>
+      <p>
+        Félicitations, vous avez compilé votre premier projet DITA XML !  Vous
+        trouverez le fichier cible taskbook.pdf dans le répertoire
+        Bureau\\DITA-OT1.5.4_full_easy_install_bin\\DITA-OT1.5.4. Vous pouvez
+        maintenant compiler d'autres projets en ignorant les étapes 1 et 2.
+      </p>
+    </result>
+  </taskbody>
+</task>

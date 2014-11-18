@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"/usr/share/dita-ot/dtd/technicalContent/dtd/task.dtd">
+<task id="generer-un-pdf-avec-dita-open-toolkit-sous-gnu-linux">
+  <title>Générer un PDF avec DITA Open Toolkit sous GNU/Linux</title>
+  <taskbody>
+    <prereq>  <p>
+      <b>Prérequis</b>
+    </p>
+    <ul>
+      <li>
+        Ubuntu ou Debian sur une machine physique ou virtuelle avec le mot de
+        passe administrateur,
+      </li>
+      <li>
+        connexion Internet.
+      </li>
+    </ul>
+    </prereq>
+
+    <context>
+      <p>
+        Ce didacticiel <xref format="html" scope="external"
+        href="http://dita.xml.org/">DITA XML</xref> est destiné à vous guider
+        dans la mise en place et l'utilisation de la chaîne de publication
+        <b>DITA Open Toolkit</b> dans un environnement GNU/Linux (Ubuntu ou
+        Debian).
+      </p>
+    </context>
+    <steps>
+      <step>
+        <cmd>
+          Téléchargez et décompressez l'archive DITA Open Toolkit:
+        </cmd>
+        <info>
+          <codeblock>
+            $  wget http://sourceforge.net/projects/dita-ot/files/DITA-OT%20Stable%20Release/DITA%20Open%20Toolkit%201.8/DITA-OT1.8.5_full_easy_install_bin.tar.gz
+            $  tar -xzvf DITA-OT1.8.5_full_easy_install_bin.tar.gz
+          </codeblock>
+        </info>
+      </step>
+      <step>
+        <cmd>
+          Configurez l'environnement DITA Open Toolkit:
+        </cmd>
+        <info>
+          <codeblock>
+            $  cd DITA-OT1.8.5/
+            $  ./startcmd.sh
+            $  ant -f integrator.xml
+          </codeblock>
+        </info>
+      </step>
+      <step>
+        <cmd>
+          Générez votre premier PDF :
+        </cmd>
+        <info>
+          <codeblock>
+            $ java -jar lib/dost.jar /i:docsrc/userguide.ditamap /transtype:pdf
+          </codeblock>
+        </info>
+      </step>
+    </steps>
+    <result>
+      <p>
+        Félicitations, vous avez compilé votre premier projet DITA XML ! Le
+        fichier PDF généré est out/userguide.pdf. Vous pouvez maintenant
+        compiler d'autres projets en ignorant les étapes 1 et 2.
+      </p>
+    </result>
+  </taskbody>
+</task>

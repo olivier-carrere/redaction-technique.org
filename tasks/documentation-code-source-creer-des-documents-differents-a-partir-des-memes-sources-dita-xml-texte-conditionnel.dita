@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"/usr/share/dita-ot/dtd/technicalContent/dtd/task.dtd">
+<task id="creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-conditionnel">
+  <title>Créer des documents différents à partir des mêmes sources DITA XML
+  (texte conditionnel)</title>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>
+          Vous avez installé DITA Open Toolkit dans le répertoire DITA-OT1.5.4
+          sous GNU/Linux ou Windows.
+        </li>
+      </ul>
+    </prereq>
+    <context>
+      <p>
+        DITA XML offre un mécanisme de <b>texte conditionnel</b>. Ce mécanisme
+        favorise la réutilisation du contenu source et évite la redondance des
+        informations. Ce didacticiel aidera le <b>rédacteur technique</b> à
+        utiliser ce mécanisme en quelques minutes.
+      </p>
+    </context>
+    <steps>
+      <step>
+        <cmd>
+          Collez le code suivant dans un fichier et enregistrez ce dernier sous
+          le nom de texte-conditionnel.dita dans le répertoire DITA-OT1.5.4 :
+        </cmd>
+        <info>
+          <codeblock>
+            &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+            &lt;!DOCTYPE topic PUBLIC &quot;-//OASIS//DTD DITA 1.2 Topic//EN&quot; &quot;/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd&quot;&gt;
+            &lt;topic id=&quot;exemple-topic&quot; xml:lang=&quot;fr-fr&quot;&gt;
+            &lt;title&gt;Utilisation du texte conditionnel&lt;/title&gt;
+            &lt;body&gt;
+            &lt;hazardstatement&gt;
+            &lt;messagepanel audience=&quot;electriciens&quot;&gt;
+            &lt;typeofhazard&gt;
+            Danger pour les électriciens
+            &lt;/typeofhazard&gt;
+            &lt;consequence&gt;
+            Risque d'électrocution
+            &lt;/consequence&gt;
+            &lt;howtoavoid&gt;
+            Ne touchez pas les fils électriques.
+            &lt;/howtoavoid&gt;
+            &lt;/messagepanel&gt;
+            &lt;messagepanel audience=&quot;plombiers&quot;&gt;
+            &lt;typeofhazard&gt;
+            Danger pour les plombiers
+            &lt;/typeofhazard&gt;
+            &lt;consequence&gt;
+            Risque de noyade
+            &lt;/consequence&gt;
+            &lt;howtoavoid&gt;
+            Ne plongez pas dans la piscine.
+            &lt;/howtoavoid&gt;
+            &lt;/messagepanel&gt;
+            &lt;/hazardstatement&gt;
+            &lt;p&gt;
+            Tout contenu placé entre balises ne comportant pas de valeur
+            &lt;i&gt;audience&lt;/i&gt; exclue dans un fichier &lt;i&gt;.ditaval&lt;/i&gt; est publié dans les
+            documents destinés aux plombiers et aux électriciens.
+            &lt;/p&gt;
+            &lt;/body&gt;
+            &lt;/topic&gt;
+          </codeblock>
+          <p>
+            Ce code contient des balises DITA contenant des valeurs
+            <b>audience</b> différentes: nous allons exclure
+            le contenu d'une de ces deux balises lors de la génération du
+            fichier cible en utilisant la clé <b>audience</b>.
+          </p>
+        </info>
+      </step>
+      <step>
+        <cmd>
+          Collez le code suivant dans un fichier et enregistrez ce dernier sous
+          le nom de texte-conditionnel.ditamap dans le répertoire DITA-OT1.5.4 :
+        </cmd>
+        <info>
+          <codeblock>
+            &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+            &lt;!DOCTYPE bookmap PUBLIC &quot;-//OASIS//DTD DITA BookMap//EN&quot; &quot;/usr/share/dita-ot/dtd/bookmap/dtd/bookmap.dtd&quot;&gt;
+            &lt;bookmap id=&quot;texte-conditionnel&quot;&gt;
+            &lt;booktitle&gt;
+            &lt;mainbooktitle&gt;
+            Exemple de texte conditionnel
+            &lt;/mainbooktitle&gt;
+            &lt;/booktitle&gt;
+            &lt;chapter href=&quot;texte-conditionnel.dita&quot;/&gt;
+            &lt;/bookmap&gt;
+          </codeblock>
+        </info>
+      </step>
+      <step>
+        <cmd>
+          Collez le code suivant dans un fichier et enregistrez ce dernier
+          sous le nom de electriciens.ditaval dans le répertoire
+          DITA-OT1.5.4 :
+        </cmd>
+        <info>
+          <codeblock>
+            &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+            &lt;val&gt;
+            &lt;prop att=&quot;audience&quot; val=&quot;electriciens&quot; action=&quot;include&quot;/&gt;
+            &lt;prop att=&quot;audience&quot; val=&quot;plombiers&quot; action=&quot;exclude&quot;/&gt;
+            &lt;/val&gt;
+          </codeblock>
+        </info>
+      </step>
+      <step>
+        <cmd>
+          Collez le code suivant dans un fichier et enregistrez ce dernier sous
+          le nom de plombiers.ditaval dans le répertoire DITA-OT1.5.4 :
+        </cmd>
+        <info>
+          <codeblock>
+            &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+            &lt;val&gt;
+            &lt;prop att=&quot;audience&quot; val=&quot;electriciens&quot; action=&quot;exclude&quot;/&gt;
+            &lt;prop att=&quot;audience&quot; val=&quot;plombiers&quot; action=&quot;include&quot;/&gt;
+            &lt;/val&gt;
+          </codeblock>
+        </info>
+      </step>
+      <step>
+        <cmd>
+          Ouvrez un terminal et entrez la commande suivante dans le répertoire
+          DITA-OT1.5.4 :
+        </cmd>
+        <info>
+          <codeblock>
+            $ java -jar lib/dost.jar /i:texte-conditionnel.ditamap \
+            /filter:electriciens.ditaval /outdir:. /transtype:pdf2
+          </codeblock>
+        </info>
+        <stepresult>
+          <p>
+            Ouvrez le fichier texte-conditionnel.pdf ; il contient des
+            informations destinées:
+          </p>
+          <ul>
+            <li>
+              aux plombiers et aux électriciens,
+            </li>
+            <li>
+              uniquement aux électriciens.
+            </li>
+          </ul>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>
+          Ouvrez un terminal et entrez la commande suivante dans le répertoire
+          DITA-OT1.5.4 :
+        </cmd>
+        <info>
+          <codeblock>
+            $ java -jar lib/dost.jar /i:texte-conditionnel.ditamap \
+            /filter:plombiers.ditaval /outdir:. /transtype:pdf2
+          </codeblock>
+        </info>
+        <stepresult>
+          <p>
+            Ouvrez le fichier texte-conditionnel.pdf ; il contient des
+            informations destinées:
+          </p>
+          <ul>
+            <li>
+              aux plombiers et aux électriciens,
+            </li>
+            <li>
+              uniquement aux plombiers.
+            </li>
+          </ul>
+        </stepresult>
+      </step>
+    </steps>
+  </taskbody>
+</task>

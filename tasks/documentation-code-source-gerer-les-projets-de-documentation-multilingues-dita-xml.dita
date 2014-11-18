@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"/usr/share/dita-ot/dtd/technicalContent/dtd/task.dtd">
+<task id="gerer-les-projets-de-documentation-multilingues-dita-xml">
+  <title>Gérer les projets de documentation multilingues DITA
+  XML</title>
+  <taskbody>
+    <context>
+      <p>
+        <xref format="html" scope="external" href="http://dita.xml.org/">DITA
+        XML</xref> est un formidable format pour gérer les <b>projets de
+        documentation</b>. Pour les projets multilingues, cependant, le
+        <b>rédacteur technique</b> doit créer un fichier <b>ditamap</b>, qui
+        contient la structure de table des matières des documents, par
+        version. Ceci entraîne un risque d'erreurs et
+        d'incohérences. Heureusement, une méthodologie appropriée et un script
+        d'automatisation destiné à la chaîne de publication <b>DITA Open
+        Toolkit</b> remédient à ce problème.
+      </p>
+    </context>
+    <steps>
+      <step>
+        <cmd>
+          Le fichier <b>ditamap</b> ne doit pas comporter de section
+          <b>navtitle</b>, qui contient un titre en toutes lettres, au lieu
+          d'extraire le titre de la section DITA correspondante, et est donc
+          propre à chaque langue.
+        </cmd>
+      </step>
+      <step>
+        <cmd>
+          Dès le début de votre projet DITA, placez les fichiers de contenu
+          <b>DITA</b> dans un sous-répertoire spécifique à la langue dans
+          laquelle il est initialement rédigé.
+        </cmd>
+        <info>
+          Par exemple :
+          <ul>
+            <li>
+              product
+              <ul>
+                <li>
+                  en_US
+                  
+                  <ul>
+                    <li>
+                      
+                      images
+                      
+                    </li>
+                    <li>
+                      
+                      tasks
+                      
+                    </li>
+                    <li>
+                      
+                      topics
+                      
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <p>
+                et non :
+              </p>
+            </li>
+            <li>
+              product
+              <ul>
+                <li>
+                  images               
+                </li>
+                <li>
+                  tasks               
+                </li>
+                <li>
+                  topics               
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </info>
+      </step>
+      <step>
+        <cmd>
+          Remplacez dans le fichier <b>ditamap</b> toutes les occurrences du nom
+          du répertoire propre à la langue par une chaîne unique provisoire.
+        </cmd>
+        <info>
+          Par exemple, utilisez la chaîne <i>@language-code@</i> :
+          <codeblock>
+            &lt;topicref href=&quot;@language-code@/topics/managing-rights.dita&quot;/&gt;
+          </codeblock>
+          <p>
+            et non :
+          </p>
+          <codeblock>
+            &lt;topicref href=&quot;en_US/topics/managing-rights.dita&quot;/&gt;
+          </codeblock>
+        </info>
+      </step>
+      <step>
+        <cmd>
+          Pour générer les fichiers cibles, vous pouvez maintenant :
+        </cmd>
+        <substeps>
+          <substep>
+            <cmd>
+              modifier dans le fichier demo/fo/build.xml le paramètre
+              default.locale,
+            </cmd>
+          </substep>
+          <substep>
+            <cmd>
+              remplacer dans le fichier <b>DITAMAP</b> la variable de langue par
+              le nom du répertoire de langue,
+            </cmd>
+          </substep>
+          <substep>
+            <cmd>
+              modifier le paramètre de langue xml:lang dans le fichier
+              <b>DITAMAP</b> et dans les fichiers de contenu DITA,
+            </cmd>
+          </substep>
+          <substep>
+            <cmd>
+              pour les fichiers cibles PDF, modifier les dimensions de page (A4
+              ou US letter, par exemple) selon la langue,
+            </cmd>
+          </substep>
+          <substep>
+            <cmd>
+              générer les fichiers cibles,
+            </cmd>
+          </substep>
+          <substep>
+            <cmd>
+              rétablir les valeurs initiales dans les fichiers sources.
+            </cmd>
+          </substep>
+        </substeps>
+      </step>
+    </steps>
+    <result>
+      Heureusement, un script Bash (GNU/Linux) simple permet
+      d'automatiser cela.
+    </result>
+  </taskbody>
+  <task id="automatiser-la-generation-des-fichiers-cibles">
+    <title>Automatiser la génération des fichiers cibles</title>
+    <taskbody>
+      <prereq>
+        <ul>
+          <li>
+            Vous avez installé DITA Open Toolkit.
+          </li>
+          <li>
+            Votre projet DITA XML ne comporte qu'un fichier <b>DITAMAP</b>.
+          </li>
+          <li>
+            Vos fichiers de contenu DITA ont l'extension .dita.
+          </li>
+          <li>
+            Les noms des répertoires des versions linguistiques correspondent
+            aux codes de langues supportés par Dita Open Toolkit (fr_FR ou
+            en_US, par exemple).
+          </li>
+          <li>
+            Vos fichiers de contenu DITA se trouvent dans des sous-répertoires
+            des répertoires des versions linguistiques (par exemple, dans
+            fr_FR/tasks/ et fr_FR/topics/).
+          </li>
+        </ul>
+        <p>
+          Les valeurs supportées pour la dimension des pages PDF sont fr_FR (A4)
+          et en_US (US letter). Ce script peut être bien entendu facilement
+          adapté, ou inspirer un nouveau script.
+        </p>
+        <note type="warning">
+          Ce script est fourni sans garantie. Avant toute exécution de ce
+          script, effectuez une sauvegarde de l'ensemble de votre projet DITA,
+          fichiers de configuration inclus (par exemple sous un système de
+          gestion de versions). Assurez-vous de pouvoir restaurer facilement le
+          projet dans son intégralité en cas d'erreur ou de comportement
+          inattendu.
+        </note>
+      </prereq>
+      <steps>
+        <step>
+          <cmd>
+            Téléchargez le <xref format="html" scope="external"
+            href="http://www.redaction-technique.org/media/dita2target.sh">script
+            de génération multilingue DITA XML</xref> dans le répertoire
+            contenant le fichier <b>DITAMAP</b> du projet.
+          </cmd>
+        </step>
+        <step>
+          <cmd>
+            Dans un terminal, placez-vous dans ce répertoire, puis entrez :
+          </cmd>
+          <info>
+            <codeblock>
+              $ chmod +x dita2target.sh
+            </codeblock>
+          </info>
+        </step>
+        <step>
+          <cmd>
+            Dans le terminal, entrez :
+          </cmd>
+          <info>
+            <codeblock>
+              $ mkdir out
+            </codeblock>
+            <p>
+              pour créer le répertoire qui contiendra les fichiers cibles.
+            </p>
+          </info>
+        </step>
+        <step>
+          <cmd>
+            Entrez :
+          </cmd>
+          <info>
+            <codeblock>
+              $ ./dita2target.sh &lt;fichier ditamap&gt;  \
+              &lt;nom du répertoire de langue&gt; &lt;format cible&gt;
+            </codeblock>
+            <p>
+              pour générer les fichiers cibles.
+            </p>
+            <p>
+              L'argument <b>format cible</b> accepte les valeurs gérées par DITA
+              Open Toolkit.
+            </p>
+          </info>
+          <stepxmp>
+            <codeblock>
+              ./dita2target.sh firewall.ditamap  en_US pdf2
+            </codeblock>
+            <p>
+              Le fichier PDF firewall.pdf est alors généré dans le répertoire
+              out (spécifié <b>en dur</b> dans le script).
+            </p>
+          </stepxmp>
+        </step>
+      </steps>
+    </taskbody>
+  </task>
+</task>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"/usr/share/dita-ot/dtd/technicalContent/dtd/task.dtd">
+<task id="xsl-fo-inserer-automatiquement-un-titre-pour-les-exemples">
+  <title>XSL-FO : insérer automatiquement un titre pour les
+  exemples</title>
+  <taskbody>
+    <context>
+      <p>
+        Par défaut, <b>DITA Open Toolkit</b> n'insère pas automatiquement dans
+        les fichiers PDF le texte <b>Exemple :</b> devant le titre d'un exemple
+        contenu entre balises DITA XML &lt;example&gt;. La syntaxe <xref
+        format="html" scope="external"
+        href="http://fr.wikipedia.org/wiki/XSL-FO">XSL-FO</xref> offre cependant
+        cette possibilité.
+      </p>
+      <p>
+        Supposons que le code source d'un de vos fichiers DITA soit le suivant :
+      </p>
+      <codeblock>
+        &lt;example&gt;
+        &lt;title&gt;
+        XSL-FO
+        &lt;/title&gt;
+        Voici mon exemple de chemin XPATH :
+        &lt;codeblock&gt;
+        ancestor-or-self
+        &lt;/codeblock&gt;
+        &lt;/example&gt;
+      </codeblock>
+      <p>
+        Vous souhaitez que le fichier PDF généré affiche l'exemple structuré
+        comme suit :
+      </p>
+      <p>
+        <b>Exemple : XSL-FO</b>
+      </p>
+      <p>
+        Voici mon exemple de chemin XPATH :
+      </p>
+      <codeblock>
+        ancestor-or-self
+      </codeblock>
+
+      <p>
+        et que si l'exemple ne contient pas de titre, il soit structuré comme
+        suit :
+      </p>
+      <p>
+        <b>Exemple :</b>
+      </p>
+      <p>
+        Voici mon exemple de chemin XPATH :
+      </p>
+      ancestor-or-self
+      <p>
+        Par défaut, cependant, ce contenu sera structuré comme suit dans le PDF
+        par DITA Open Toolkit :
+      </p>
+      <p>
+        <b>XSL-FO</b>
+      </p>
+      <p>
+        Voici mon exemple de chemin XPATH :
+      </p>
+      <codeblock>
+        ancestor-or-self
+      </codeblock>
+      <p>
+        Il est toujours possible d'entrer le texte entre les balises
+        &lt;example&gt;, mais XSL-FO offre une manière de procéder plus élégante
+        et structurée.
+      </p>
+    </context>
+    <steps>
+      <step>
+        <cmd>
+          Remplacez dans la feuille de style
+          plugins/org.dita.pdf2/xsl/fo/commons.xsl (sous DITA Open Toolkit 1.7.)
+          le template suivant :
+        </cmd>
+        <info>
+          <codeblock>
+            &lt;xsl:template match=&quot;*[contains(@class,' topic/example ')]/*[contains(@class,' topic/title ')]&gt;
+            &lt;fo:block xsl:use-attribute-sets=&quot;example.title&gt;
+            &lt;xsl:call-template name=&quot;commonattributes&quot;/&gt;
+            &lt;xsl:apply-templates/&gt;
+            &lt;/fo:block&gt;
+            &lt;/xsl:template&gt;
+          </codeblock>
+          <p>
+            par le code suivant :
+          </p>
+          <codeblock>
+            &lt;xsl:template match=&quot;*[contains(@class,' topic/example ')]&gt;
+            &lt;fo:block xsl:use-attribute-sets=&quot;example.title&gt;
+            &lt;xsl:call-template name=&quot;insertVariable&gt;
+            &lt;xsl:with-param name=&quot;theVariableID&quot; select=&quot;'my-example-text'&quot;/&gt;
+            &lt;/xsl:call-template&gt;
+            &lt;xsl:apply-templates select=&quot;title&quot;/&gt;
+            &lt;/fo:block&gt;
+            &lt;fo:block&gt;
+            &lt;xsl:apply-templates select=&quot;*[not(contains(@class, ' topic/title '))]|text()|processing-instruction()&quot;/&gt;
+            &lt;/fo:block&gt;
+            &lt;/xsl:template&gt;
+          </codeblock>
+        </info>
+      </step>
+      <step>
+        <cmd>
+          Définissez dans les fichiers contenant les variables de langue, tels
+          que plugins/org.dita.pdf2/cfg/common/vars/fr.xml, les variables de
+          texte à insérer automatiquement, par exemple :
+        </cmd>
+        <info>
+          <codeblock>
+            &lt;variable id=&quot;my-example-text&gt;Exemple :&lt;/variable&gt;
+          </codeblock>
+        </info>
+      </step>
+    </steps>
+    <result>
+      Pour obtenir un comportement homogène, vous devez désactiver ce traitement
+      pour les exemples des types de <b>topics</b> spécifiques (<b>task</b>,
+      notamment).
+    </result>
+  </taskbody>
+</task>

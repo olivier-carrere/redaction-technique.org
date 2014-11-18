@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"/usr/share/dita-ot/dtd/technicalContent/dtd/task.dtd">
+<task id="accelerer-sa-saisie-avec-le-mode-predictive-pour-emacs">
+  <title>Accélérer sa saisie avec le mode Predictive pour Emacs</title>
+  <taskbody>
+    <context>
+      <p>
+        Ce <b>didacticiel mode Predictive pour Emacs</b> est destiné à vous
+        guider dans la mise en place et l'utilisation du mode Emacs d'<b>aide à
+        la rédaction</b> et d'<b>autocomplétion des mots</b> anglais et français
+        Predictive dans un environnement GNU/Linux (en l'occurrence, Debian).
+      </p>
+    </context>
+    <steps>
+      <step>
+        <cmd>
+          Installez make et texinfo :
+        </cmd>
+        <info>
+          <codeblock>
+            $ sudo aptitude install make texinfo
+          </codeblock>
+        </info>
+      </step>
+      <step>
+        <cmd>
+          Téléchargez <xref format="html" scope="external"
+          href="http://www.dr-qubit.org/emacs.php#predictive-download">Predictive</xref>.
+        </cmd>
+      </step>
+      <step>
+        <cmd>
+          Décompressez l'archive Predictive :
+        </cmd>
+        <info>
+          <codeblock>
+            $ tar xzvf predictive-0.23.13.tar.gz
+          </codeblock>
+        </info>
+      </step>
+      <step>
+        <cmd>
+          Placez-vous dans le répertoire predictive :
+        </cmd>
+        <info>
+          <codeblock>
+            $ cd predictive
+          </codeblock>
+        </info>
+      </step>
+      <step>
+        <cmd>
+          Compilez <b>predictive</b> :
+        </cmd>
+        <info>
+          <codeblock>
+            $ make
+          </codeblock>
+        </info>
+      </step>
+      <step>
+        <cmd>
+          Installez <b>predictive</b> :
+        </cmd>
+        <info>
+          <codeblock>
+            $ sudo make install
+          </codeblock>
+        </info>
+      </step>
+      <step>
+        <cmd>
+          Insérez le code suivant dans le fichier .emacs :
+        </cmd>
+        <info>
+          <codeblock>
+            ;; predictive install location
+            (add-to-list 'load-path &quot;~/.emacs.d/predictive/&quot;)
+            ;; dictionary locations
+            (add-to-list 'load-path &quot;~/.emacs.d/predictive/latex/&quot;)
+            (add-to-list 'load-path &quot;~/.emacs.d/predictive/texinfo/&quot;)
+            (add-to-list 'load-path &quot;~/.emacs.d/predictive/html/&quot;)
+            ;; load predictive package
+            (require 'predictive)
+          </codeblock>
+        </info>
+      </step>
+      <step>
+        <cmd>
+          Lancez Emacs, puis appuyez sur Alt+X et entrez :
+        </cmd>
+        <info>
+          <codeblock>
+            predictive-mode
+          </codeblock>
+        </info>
+      </step>
+    </steps>
+  </taskbody>
+</task>
