@@ -21,4 +21,4 @@ $ cp plugins/org.dita.pdf2/cfg/common/vars/fr-fr.xml \
 $ java -jar ../DITA-OT1.8.5/lib/dost.jar /i:no-code-topics.ditamap \
   /transtype:pdf /ditadir:../DITA-OT1.8.5
 
-The output is out/no-code-topics.pdf
+The output is out/no-code-topics.pdf.
