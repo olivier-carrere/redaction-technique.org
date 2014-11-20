@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN"
+"/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
+<topic id="maximiser-lutilisation-des-conref-pour-faire-baisser-les-coûts">
+  <title>Maximiser l'utilisation des conref pour faire baisser les
+  coûts</title>
+  <body>
+    <p>
+      Recourir aux <xref format="html" scope="external"
+      href="http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html">
+      conref</xref> est le meilleur moyen dont dispose le <b>rédacteur
+      technique</b> pour faire baisser spectaculairement les coûts et les délais
+      de publication de son contenu <b>DITA XML</b>, surtout pour les
+      <b>documents multilingues</b>.
+    </p>
+    <p>
+      De par la nature des informations qu'elles contiennent, les sections de
+      type <b>task</b> ont un taux plus élevé de réutilisation du contenu que
+      celles de type <b>concept</b> ou <b>reference</b>.
+    </p>
+    <fig>
+      <title>Les <b>conref</b> modularisent de petits blocs
+      d'information</title>
+      <image href="graphics/maximiser-conref.png" />
+    </fig>
+    <p>
+      Comme dans l'exemple ci-dessous, il n'est pas rare d'obtenir rapidement
+      des fichiers dont la seule valeur unique est le titre, le reste du
+      contenu, <b>pourtant unique</b> (car il assemble de manière unique des
+      blocs d'information non uniques), étant généré par des <b>conref</b>.
+    </p>
+    <p>
+      <b>Exemple</b>
+    </p>
+    <codeblock>
+      &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+      &lt;!DOCTYPE task PUBLIC &quot;-//OASIS//DTD DITA 1.2 Task//EN&quot; &quot;/usr/share/dita-ot/dtd/technicalContent/dtd/task.dtd&quot;&gt;
+      &lt;task id=&quot;display-trends&quot; xml:lang=&quot;fr-fr&quot;&gt;
+      &lt;title&gt;Afficher les tendances&lt;/title&gt;
+      &lt;taskbody&gt;
+      &lt;context audience=&quot;basic&quot;&gt;
+      &lt;note type=&quot;restriction&quot; audience=&quot;advanced&quot;&gt;
+      &lt;ul&gt;
+      &lt;li&gt;
+      &lt;ph conref=&quot;shared.dita/ip-control&quot;/&gt;
+      &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;ph conref=&quot;../../shared/shared.dita/see-user-guide&quot; audience=&quot;no-user-guide&quot;/&gt;
+      &lt;/note&gt;
+      &lt;/context&gt;
+      &lt;steps&gt;
+      &lt;step&gt;
+      &lt;cmd audience=&quot;basic&quot;&gt;
+      &lt;menucascade&gt;
+      &lt;uicontrol conref=&quot;shared.dita/logs&quot;/&gt;
+      &lt;/menucascade&gt;
+      &lt;/cmd&gt;
+      &lt;choices audience=&quot;advanced&quot;&gt;
+      &lt;choice&gt;
+      &lt;ph conref=&quot;shared.dita/physical-appliance&quot;/&gt;
+      &lt;menucascade&gt;
+      &lt;uicontrol conref=&quot;shared.dita/logs&quot;/&gt;
+      &lt;/menucascade&gt;
+      &lt;/choice&gt;
+      &lt;choice&gt;
+      &lt;ph conref=&quot;shared.dita/virtual-appliance&quot;/&gt;
+      &lt;menucascade&gt;
+      &lt;uicontrol conref=&quot;shared.dita/server&quot;/&gt;
+      &lt;uicontrol conref=&quot;shared.dita/logs&quot;/&gt;
+      &lt;/menucascade&gt;
+      &lt;/choice&gt;
+      &lt;/choices&gt;
+      &lt;/step&gt;
+      &lt;step&gt;
+      &lt;cmd&gt;
+      &lt;menucascade&gt;
+      &lt;uicontrol conref=&quot;shared.dita/all&quot;/&gt;
+      &lt;uicontrol conref=&quot;shared.dita/editfile&quot;/&gt;
+      &lt;/menucascade&gt;
+      &lt;/cmd&gt;
+      &lt;info&gt;
+      &lt;ul conref=&quot;shared.dita/drill-down&quot;&gt;
+      &lt;li/&gt;
+      &lt;/ul&gt;
+      &lt;note conref=&quot;shared.dita/randomnames&quot;/&gt;
+      &lt;/info&gt;
+      &lt;/step&gt;
+      &lt;/steps&gt;
+      &lt;/taskbody&gt;
+      &lt;/task&gt;
+    </codeblock>
+    <p>
+      Seul le texte en noir doit être traduit. Traduire ce type de fichier de
+      contenu <b>DITA XML</b> consiste donc à traduire uniquement le titre de la
+      section et l'intégralité des <b>conref</b> sources. Lorsqu'il traduit un
+      ensemble d'unités d'information placées en vrac dans un fichier, le
+      traducteur manque cependant cruellement de contexte. Le créateur du
+      contenu initial doit donc lui fournir une assistance constante. La méthode
+      la plus efficace consiste à faire travailler le traducteur en
+      régie. Avantage supplémentaire: il pourra ainsi interroger non seulement
+      le rédacteur technique, mais également les concepteurs du produit.
+    </p>
+    <note>
+      Ne croyez pas qu'il s'agit là d'une contrainte spécifiquement induite par
+      la modularisation poussée du contenu. Pour avoir fait une école de
+      traduction reposant sur le principe simple mais efficace du <b>triangle du
+      sens</b> (le traducteur doit comprendre le texte source pour le reformuler
+      dans le texte cible et non transcrire une suite de mots d'une langue à
+      l'autre) et avoir pratiqué la traduction technique durant plusieurs
+      années, je sais que tout projet de traduction réussi repose sur une
+      collaboration efficace entre concepteurs, rédacteurs et traducteurs.
+    </note>
+    <p>
+      Il est également possible de factoriser ainsi des éléments de structure,
+      et non de contenu, tels que des en-têtes de tableaux.  Vous pouvez ainsi
+      présenter des informations de même type de manière homogène à moindre
+      coût, c'est à dire sans recourir à la <xref format="html" scope="external"
+      href="http://en.wikipedia.org/wiki/Darwin_Information_Typing_Architecture#Specialization">spécialisation</xref>.
+    </p>
+  </body>
+</topic>

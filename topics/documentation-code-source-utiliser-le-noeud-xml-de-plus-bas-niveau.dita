@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN"
+"/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
+<topic id="utiliser-le-nœud-xml-de-plus-bas-niveau">
+  <title>Utiliser le nœud XML de plus bas niveau</title>
+  <body>
+    <p>
+      Le <b>rédacteur technique</b> doit utiliser comme source du <xref
+      format="html" scope="external"
+      href="http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html">
+      conref</xref> le nœud <b>DITA XML</b> de plus bas niveau contenant
+      l'information à partager.
+    </p>
+    <p>
+      Le but des <b>conref</b> étant de gérer des blocs d'information de faibles
+      dimensions, il est logique de les manipuler au niveau de la plus petite
+      structure XML encapsulant l'information, même si cette structure, pour
+      être compatible avec le schéma XSD de la section <b>DITA XML</b> où elle
+      intervient, doit elle-même être incluse dans des structures XML plus
+      grandes.
+    </p>
+    <fig>
+      <title>Placement du <b>conref</b> sur le nœud XML de plus bas
+      niveau</title>
+      <image href="graphics/conref-bas-niveau.png" />
+    </fig>
+    <p>
+      Vous voulez par exemple réutiliser la phrase <b>Cliquez sur OK.</b> Vous
+      ne pouvez cependant pas indiquer dans le fichier contenant les
+      <b>conref</b> sources uniquement le code suivant:
+    </p>
+    <codeblock>
+      &lt;cmd&gt;Cliquez sur OK.&lt;/cmd&gt;
+    </codeblock>
+    <p>
+      Pour être conforme au schéma XSD, votre code doit au moins être structuré
+      comme suit:
+    </p>
+    <codeblock>
+      &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+      &lt;!DOCTYPE task PUBLIC &quot;-//OASIS//DTD DITA 1.2 Task//EN&quot; /usr/share/dita-ot/dtd/technicalContent/dtd/task.dtd&quot;&quot;&gt;
+      &lt;task id=&quot;shared&quot; xml:lang=&quot;fr-fr&quot;&gt;
+      &lt;title&gt;Conref source&lt;/title&gt;
+      &lt;taskbody&gt;
+      &lt;steps&gt;
+      &lt;step&gt;
+      &lt;cmd&gt;
+      Cliquez sur OK.
+      &lt;/cmd&gt;
+      &lt;/step&gt;
+      &lt;/steps&gt;
+      &lt;/taskbody&gt;
+    </codeblock>
+    <p>
+      Il s'agit maintenant de placer un ID sur une structure XML afin de pouvoir
+      réutiliser le contenu de cette structure. En l'occurrence, c'est une étape
+      unique comprenant une commande unique que vous souhaitez réutiliser.
+    </p>
+    <p>
+      Il est alors préférable d'utiliser la syntaxe suivante :
+    </p>
+    <codeblock>
+      &lt;step&gt;
+      &lt;cmd id=&quot;click-ok&quot;&gt;
+      Cliquez sur OK.
+      &lt;/cmd&gt;
+      &lt;/step&gt;
+    </codeblock>
+    <p>
+      plutôt que la suivante:
+    </p>
+    <codeblock>
+      &lt;step id=&quot;click-ok&quot;&gt;
+      &lt;cmd&gt;
+      Cliquez sur OK.
+      &lt;/cmd&gt;
+      &lt;/step&gt;
+    </codeblock>
+    <p>
+      En effet, dans le premier cas, vous pourrez utiliser le <b>conref</b> même
+      si le nœud supérieur (&lt;step&gt;) contient d'autres nœuds que
+      &lt;step&gt; (par exemple &lt;info&gt;).
+    </p>
+    <fig>
+      <title>Placement du <b>conref</b> sur le nœud XML de plus haut
+      niveau</title>
+      <image href="graphics/conref-haut-niveau.png" />
+    </fig>
+    <p>
+      Dans le 2<sup>e</sup> cas, tout le contenu du nœud &lt;step&gt; sera
+      remplacé par la valeur du <b>conref</b> source. Par exemple, dans le cas
+      suivant, tout le contenu du nœud sera absent des livrables:
+    </p>
+    <codeblock>
+      &lt;step id=&quot;click-ok&quot;&gt;
+      &lt;cmd/&gt;
+      &lt;info&gt;
+      Si vous ne savez pas lire, c'est le bouton vert.
+      &lt;/info&gt;
+      &lt;/step&gt;
+    </codeblock>
+  </body>
+</topic>

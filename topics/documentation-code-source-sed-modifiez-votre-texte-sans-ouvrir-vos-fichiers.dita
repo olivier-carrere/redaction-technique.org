@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN"
+"/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
+<topic id="sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers">
+  <title>sed : modifiez votre texte sans ouvrir vos fichiers</title>
+  <body>
+    <p>
+      Les clones d'Unix sont peu utilisés pour gérer la documentation
+      technique. Ceci est étrange si l'on songe à la pléthore d'outils
+      disponibles sous ces plateformes pour manipuler du texte dans tous les
+      sens.
+    </p>
+    <p>
+      Prenons l'exemple du dialogue entre entre M. Jourdain et son maître de
+      philosophie, dans le <b>Bourgeois gentilhomme</b> de Molière :
+    </p>
+    <p>
+      MONSIEUR JOURDAIN :
+    </p>
+    <p>
+      [...] Je voudrais donc lui mettre dans un billet : « Belle marquise, vos
+      beaux yeux me font mourir d'amour » ; mais je voudrais que cela fût mis
+      d'une manière galante, que cela fût tourné gentiment.
+    </p>
+    <p>
+      [...]
+    </p>
+    <p>
+      MAÎTRE DE PHILOSOPHIE :
+    </p>
+    <p>
+      On les peut mettre premièrement comme vous avez dit : Belle marquise, vos
+      beaux yeux me font mourir d'amour. Ou bien : D'amour mourir me font, belle
+      marquise, vos beaux yeux.  Ou bien : Vos yeux beaux d'amour me font, belle
+      marquise, mourir. Ou bien : Mourir vos beaux yeux, belle marquise, d'amour
+      me font. Ou bien : Me font vos yeux beaux mourir, belle marquise, d'amour.
+    </p>
+    <p>
+      Commençons par afficher la phrase d'origine dans un terminal :
+    </p>
+    <codeblock>
+      $ echo &quot;Belle marquise, vos beaux yeux me font mourir d'amour.&quot;
+      Belle marquise, vos beaux yeux me font mourir d'amour.
+    </codeblock>
+    <p>
+      Il s'agit maintenant d'intervertir les mots de la phrase, pour en créer
+      une nouvelle. Pour une simple transposition, on pourrait juger plus facile
+      d'utiliser <b>awk</b>.  <b>awk</b> ne gère en effet pas des lignes, mais
+      des <b>champs</b> d'un <b>enregistrement</b> (d'une ligne), délimités par
+      défaut par des espaces. Autrement dit, <b>awk</b> traite le texte comme
+      une base de données.  Il peut facilement afficher toute la ligne, ou
+      seulement un ou plusieurs champs, dans l'ordre souhaité. Les champs sont
+      indiqués sous la forme <b>$n</b>, où n indique la position du champ dans
+      la ligne, à partir de la gauche. Ainsi <b>$1</b> indique le premier champ,
+      <b>$2</b> le dernier, etc. <b>$0</b> correspond à toute la ligne.
+    </p>
+    <p>
+      Nous allons donc donner la déclaration d'amour de M. Jourdain en entrée
+      d'un programme <b>awk</b> d'une ligne, grâce au symbole de redirection
+      <b>pipeline</b> (|).
+    </p>
+    <codeblock>
+      $ echo &quot;Belle marquise, vos beaux yeux me font mourir d'amour.&quot; | \
+      awk  '{print $9&quot; &quot;$8&quot; &quot;$6&quot; &quot;$7&quot; &quot;$1&quot; &quot;$2&quot; &quot;$3&quot; &quot;$4&quot; &quot;$5}'
+      d'amour. mourir me font Belle marquise, vos beaux yeux
+    </codeblock>
+    <p>
+      La sortie de la commande <b>echo</b> n'est pas affichée. Ce qui est
+      affiché, c'est la sortie du programme <b>awk</b>, dont la sortie de la
+      commande <b>echo</b>, soit la déclaration d'amour de M.  Jourdain, était
+      l'entrée.
+    </p>
+    <p>
+      La sortie finale ne correspond cependant pas à ce que l'on souhaitait. Les
+      <b>champs</b> ne correspondent pas trait pour trait à des mots. Il
+      faudrait donc raffiner la commande <b>awk</b>.
+    </p>
+    <p>
+      Il est plus simple de se tourner vers <b>sed</b>.  <b>sed</b> sélectionne
+      dans des lignes des ensembles de caractères cités littéralement, ou
+      <b>via</b> des méta-caractères dans des <b>expressions rationnelles</b>
+      (ou <b>expressions régulières</b>). Un méta-caractère connu des
+      expressions rationnelles est le signe *, indiquant, en ligne de commande,
+      zéro ou un nombre indéfini de caractères, comme dans :
+    </p>
+    <codeblock>
+      $ ls *.rst
+    </codeblock>
+    <p>
+      <b>sed</b> gère également des <b>références arrières</b>, qui affichent à
+      l'endroit où on le souhaite la valeur correspondant à une expression
+      littérale ou rationnelle trouvée auparavant. Heureusement pour nous, la
+      déclaration d'amour de M. Jourdain contient exactement neuf mots, ce qui
+      correspond au nombre maximal de références arrières possibles.
+    </p>
+    <codeblock>
+      $ echo &quot;Belle marquise, vos beaux yeux me font mourir d'amour.&quot; | \
+      sed &quot;s#\(.*\) \(.*\), \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \(d'.*\)#\9 \8 \6 \7, \1 \2, \3 \4 \5#&quot;
+      d'amour. mourir me font, Belle marquise, vos beaux yeux
+    </codeblock>
+    <p>
+      Nous buttons sur le même problème: l'expression régulière .* ne correspond
+      pas à un mot, mais à une suite de caractères, ponctuation comprise. Il
+      faut alors utiliser la forme &lt;.*&gt;, qui correspond à un mot tel que
+      ceux dont M. Jourdain se sert pour faire de la prose. Nous allons utiliser
+      les caractères d'échappement (barre oblique inverse \) pour que les signes
+      &lt; et &gt; ne soient pas interprétés littéralement sous certaines
+      consoles, mais comme des méta-caractères ayant une fonction spéciale :
+    </p>
+    <codeblock>
+      $ echo &quot;Belle marquise, vos beaux yeux me font mourir d'amour.&quot; | \
+      sed &quot;s#\(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\), \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(d'\&lt;.*\&gt;\)#\9 \8 \6 \7, \1 \2, \3 \4 \5#&quot;
+      d'amour mourir me font, Belle marquise, vos beaux yeux.
+    </codeblock>
+    <p>
+      Nous pourrions également utiliser la forme [[:alpha:]]* qui fait gagner en
+      lisibilité, mais perdre en concision :
+    </p>
+    <codeblock>
+      $ echo &quot;Belle marquise, vos beaux yeux me font mourir d'amour.&quot; | \
+      sed &quot;s#\([[:alpha:]]*\) \([[:alpha:]]*\), \([[:alpha:]]*\) \([[:alpha:]]*\) \([[:alpha:]]*\) \([[:alpha:]]*\) \([[:alpha:]]*\) \([[:alpha:]]*\) \(d'[[:alpha:]]*\)#\9 \8 \6 \7, \1 \2, \3 \4 \5#&quot;
+      d'amour mourir me font, Belle marquise, vos beaux yeux.
+    </codeblock>
+    <p>
+      C'est mieux, mais nous avons un problème de capitalisation. Nous allons
+      donc utiliser les opérateurs /u et /l placés judicieusement.  Auparavant,
+      nous allons exporter des variables pour rendre le script plus concis et
+      plus lisible :
+    </p>
+    <codeblock>
+      $ export w=&quot;\(\&lt;.*\&gt;\)&quot;
+      $ export mots=&quot;$w $w, $w $w $w $w $w $w&quot;
+    </codeblock>
+    <codeblock>
+      $ echo &quot;Belle marquise, vos beaux yeux me font mourir d'amour.&quot; | \
+      sed &quot;s#$mots \(d'\&lt;.*\&gt;\)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#&quot;
+      D'amour mourir me font, belle marquise, vos beaux yeux.
+    </codeblock>
+    <p>
+      Nous pouvons maintenant facilement redistribuer les références arrières
+      pour obtenir toutes les variations du maître de philosophie :
+    </p>
+    <codeblock>
+      $ echo &quot;Belle marquise, vos beaux yeux me font mourir d'amour.&quot; | \
+      sed &quot;s#$mots \(d'\&lt;.*\&gt;\)#\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8#&quot;
+      Vos yeux beaux d'amour me font, belle marquise, mourir.
+    </codeblock>
+    <codeblock>
+      $ echo &quot;Belle marquise, vos beaux yeux me font mourir d'amour.&quot; | \
+      sed &quot;s#$mots \(d'\&lt;.*\&gt;\)#\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#&quot;
+      Mourir vos beaux yeux, belle marquise, d'amour me font.
+    </codeblock>
+    <codeblock>
+      $ echo &quot;Belle marquise, vos beaux yeux me font mourir d'amour.&quot; | \
+      sed &quot;s#$mots \(d'\&lt;.*\&gt;\)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#&quot;
+      Me font vos yeux beaux mourir, belle marquise, d'amour.
+    </codeblock>
+    <section>
+      <title id="moliere-et-gnulinux">Molière et GNU/Linux</title>
+      <p>
+        Réécrivons le dialogue de M. Jourdain et de son maître de philosophie en
+        style <b>geek</b> :
+      </p>
+      <p>
+        MONSIEUR JOURDAIN :
+      </p>
+      <p>
+        Je voudrais donc lui afficher sur la sortie standard :
+      </p>
+      <codeblock>
+        $ Belle marquise, vos beaux yeux me font mourir d'amour.
+      </codeblock>
+      <p>
+        Mais je voudrais que cela fût mis d'une manière galante, que cela fût
+        tourné gentiment.
+      </p>
+      <p>
+        MAÎTRE DE PHILOSOPHIE :
+      </p>
+      <p>
+        On les peut mettre premièrement comme vous avez dit :
+      </p>
+      <codeblock>
+        $ echo &quot;Belle marquise, vos beaux yeux me font mourir d'amour.&quot;
+      </codeblock>
+      <p>
+        Ou bien :
+      </p>
+      <codeblock>
+        $ export declaration=&quot;Belle marquise, vos beaux yeux me font mourir d'amour.&quot;
+        $ echo $declaration
+      </codeblock>
+      <p>
+        Ou bien :
+      </p>
+      <codeblock>
+        $ export w=&quot;\(\&lt;.*\&gt;\)&quot;
+        $ export mots=&quot;$w $w, $w $w $w $w $w $w&quot;
+        $ echo $declaration | \
+        sed &quot;s#$mots \(d'\&lt;.*\&gt;\)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#&quot;
+      </codeblock>
+      <p>
+        Ou bien :
+      </p>
+      <codeblock>
+        $ echo $declaration | \
+        sed &quot;s#$mots \(d'\&lt;.*\&gt;\)#\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8#&quot;
+      </codeblock>
+      <p>
+        Ou bien :
+      </p>
+      <codeblock>
+        $ echo $declaration | \
+        sed &quot;s#$mots \(d'\&lt;.*\&gt;\)#\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#&quot;
+      </codeblock>
+      <p>
+        Ou bien :
+      </p>
+      <codeblock>
+        $ echo $declaration | \
+        sed &quot;s#$mots \(d'\&lt;.*\&gt;\)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#&quot;
+      </codeblock>
+    </section>
+    <section>
+      <title id="beaucoup-efforts">Beaucoup d'efforts…</title>
+      <p>
+        Certes, beaucoup d'efforts pour pas grand chose, me direz-vous.  Mais
+        imaginons un fichier qui contiennent 1000 phrases de la même structure :
+      </p>
+      <p>
+        Cher docteur, ces grands malheurs vous font pleurer d'amertume.  Petit
+        garçon, cette bonne glace te fait saliver d'envie. Vaste océan, la forte
+        houle te fait tanguer d'ivresse.
+      </p>
+      <p>
+        Ceci est en l'occurrence peu probable, mais il est en revanche monnaie
+        courante de trouver dans la documentation technique des phrases de même
+        structure, pour des raisons d'homogénéité stylistique.
+      </p>
+      <p>
+        Pour effectuer nos tests sur un échantillon, plaçons les trois phrases
+        précédentes dans un fichier :
+      </p>
+      <codeblock>
+        $ echo &quot;Cher docteur, ces grands malheurs vous font pleurer d'amertume.&quot; &gt; variations.txt
+        $ echo &quot;Petit garçon, cette bonne glace te fait saliver d'envie.&quot; &gt;&gt; variations.txt
+        $ echo &quot;Vaste océan, la forte houle te fait tanguer d'ivresse.&quot; &gt;&gt; variations.txt
+      </codeblock>
+      <p>
+        Plaçons les différentes commandes <b>sed</b> dans un script différent
+        chacune :
+      </p>
+      <codeblock>
+        $ echo &quot;s#\(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\), \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(d'\&lt;.*\&gt;\)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#&quot; &gt; moliere1.sed
+        $ echo &quot;s#\(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\), \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(d'\&lt;.*\&gt;\)#\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8#&quot; &gt; moliere2.sed
+        $ echo &quot;s#\(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\), \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(d'\&lt;.*\&gt;\)#\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#&quot; &gt; moliere3.sed
+        $ echo &quot;s#\(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\), \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(d'\&lt;.*\&gt;\)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#&quot; &gt; moliere4.sed
+      </codeblock>
+      <p>
+        Exécutons maintenant en boucle tous les scripts <b>sed</b> sur toutes
+        les lignes du fichier :
+      </p>
+      <codeblock>
+        $ for (( i=1; i&lt;5; i++ )); do
+        while read s; do echo &quot;$s&quot; | sed -f moliere$i.sed ; done &lt; variations.txt
+        done
+        D'amertume pleurer vous font, cher docteur, ces grands malheurs.
+        D'envie saliver te fait, petit garçon, cette bonne glace.
+        D'ivresse tanguer te fait, vaste océan, la forte houle.
+        Ces malheurs grands d'amertume vous font, cher docteur, pleurer.
+        Cette glace bonne d'envie te fait, petit garçon, saliver.
+        La houle forte d'ivresse te fait, vaste océan, tanguer.
+        Pleurer ces grands malheurs, cher docteur, d'amertume vous font.
+        Saliver cette bonne glace, petit garçon, d'envie te fait.
+        Tanguer la forte houle, vaste océan, d'ivresse te fait.
+        Vous font ces malheurs grands pleurer, cher docteur, d'amertume.
+        Te fait cette glace bonne saliver, petit garçon, d'envie.
+        Te fait la houle forte tanguer, vaste océan, d'ivresse.
+      </codeblock>
+      <p>
+        Et voilà. En quelques instants, sans jamais ouvrir un seul fichier, nous
+        appliquons une suite d'opérations complexes sur un nombre indéfini de
+        phrases de même structure. Ce qui n'est pas possible sous un traitement
+        de texte ou autre outil muni d'une interface graphique, ou sur des
+        fichiers binaires.
+      </p>
+    </section>
+  </body>
+</topic>

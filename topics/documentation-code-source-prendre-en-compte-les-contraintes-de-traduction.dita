@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN"
+"/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
+<topic id="prendre-en-compte-les-contraintes-de-traduction">
+  <title>Prendre en compte les contraintes de traduction</title>
+  <body>
+    <p>
+      L'unité d'information <b>DITA XML</b> la plus petite est le nœud
+      &lt;ph&gt;. Le rédacteur technique doit cependant veiller à ne lui
+      appliquer le mécanisme <b>conref</b> que pour une phrase complète ou un
+      terme qui ne sera jamais traduit (par exemple, le nom de la société ou
+      d'un produit). De gros problèmes apparaissent sinon lors de la traduction
+      dans d'autres langues.
+    </p>
+    <fig>
+      <title>Les phrases se découpent différemment selon les langues</title>
+      <image href="graphics/traduction-conref.png" />
+    </fig>
+    <p>
+      <b>Exemple</b>
+    </p>
+    <p>
+      Si vous décidez de pousser la granulométrie au niveau du segment de phrase
+      et que vous définissez les <b>conref</b> suivants:
+    </p>
+    <codeblock>
+      &lt;ph id=&quot;click&quot;&gt;Click the&lt;/ph&gt;
+
+      &lt;ph id=&quot;blue&quot;&gt;blue&lt;/ph&gt;
+
+      &lt;ph id=&quot;arrow&quot;&gt;arrow&lt;/ph&gt;
+    </codeblock>
+    <p>
+      Vous pouvez maintenant utiliser le code suivant:
+    </p>
+    <codeblock>
+      &lt;p&gt;
+      &lt;ph conref=&quot;shared.dita/click&quot;/&gt;
+      &lt;ph conref=&quot;shared.dita/blue&quot;/&gt;
+      &lt;ph conref=&quot;shared.dita/arrow&quot;/&gt;.
+      &lt;/p&gt;
+    </codeblock>
+    <p>
+      pour que soit générée la phrase <b>Click the blue arrow</b>.
+    </p>
+    <p>
+      Essayons maintenant de créer une version française de cette phrase.  Nous
+      traduisons donc les <b>conref</b> comme suit:
+    </p>
+    <codeblock>
+      &lt;ph id=&quot;click&quot;&gt;Cliquez sur la&lt;/ph&gt;
+
+      &lt;ph id=&quot;blue&quot;&gt;bleue&lt;/ph&gt;
+
+      &lt;ph id=&quot;arrow&quot;&gt;flèche&lt;/ph&gt;
+    </codeblock>
+    <p>
+      Nous obtenons alors la phrase <b>Cliquez sur la bleue flèche</b>.
+    </p>
+    <p>
+      Pour pallier ce problème, il faudrait réorganiser l'ordre des
+      <b>conref</b> dans le fichier DITA traduit, ce qui est difficilement
+      gérable et fait perdre tout l'intérêt du mécanisme.  Sans compter que des
+      problèmes pires que ce cas d'école peuvent conduire à complètement
+      abandonner dans la langue cible les <b>conref</b> utilisés dans la langue
+      source (je n'ai pas d'exemple concret à offrir, ayant toujours évité de
+      tomber dans ce genre de travers.)
+    </p>
+  </body>
+</topic>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN"
+"/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
+<topic id="xsl-fo-filtrer-du-contenu-selon-des-conditions-sauf-et-ou">
+  <title>XSL-FO : filtrer du contenu selon des conditions « sauf » et «
+  ou »</title>
+  <body>
+    <p>
+      Imaginons que vous vouliez filtrer les nœuds enfants de la balise DITA XML
+      &lt;example&gt; et afficher tout son contenu à l'exception du titre (situé
+      entre les balises &lt;title&gt;).
+    </p>
+    <p>
+      Vous pouvez recourir alors à la syntaxe suivante :
+    </p>
+    <codeblock>
+      &lt;xsl:template match=&quot;*[contains(@class,' topic/example ')]&quot;&gt;
+      &lt;fo:block&gt;
+      &lt;xsl:apply-templates select=&quot;*[not(name()='title')]&quot; /&gt;
+      &lt;/fo:block&gt;
+      &lt;/xsl:template&gt;
+    </codeblock>
+    <p>
+      Cette commande sélectionne tous les nœuds enfants du nœud &lt;example&gt;,
+      à l'exception du nœud &lt;title&gt;. Cependant, le nœud &lt;example&gt;
+      accepte le texte entré directement, sans être encapsulé dans des
+      balises. Cette commande ne fera alors pas apparaître ce contenu.
+    </p>
+    <p>
+      Supposons que le code source d'un de vos fichiers DITA soit le suivant :
+    </p>
+    <codeblock>
+      &lt;example&gt;
+      &lt;title&gt;
+      XSL-FO
+      &lt;/title&gt;
+      Voici mon exemple de chemin XPATH :
+      &lt;codeblock&gt;
+      ancestor-or-self
+      &lt;/codeblock&gt;
+      Texte non encapsulé situé après un nœud enfant.
+      &lt;/example&gt;
+    </codeblock>
+    <p>
+      Le fichier PDF affichera l'exemple structuré comme suit :
+    </p>
+    <codeblock>
+      ancestor-or-self
+    </codeblock>
+    <p>
+      Le titre de l'exemple n'est pas affiché, ce qui correspond au résultat
+      souhaité, mais le contenu non encapsulé dans des balises n'apparaît pas,
+      ce qui est un effet de bord indésirable. Pour sélectionner ce contenu, il
+      faut sélectionner les nœuds textuels avec la syntaxe text(). Il est alors
+      tentant d'utiliser la syntaxe suivante :
+    </p>
+    <codeblock>
+      &lt;xsl:template match=&quot;*[contains(@class,' topic/example ')]&quot;&gt;
+      &lt;fo:block&gt;
+      &lt;xsl:apply-templates select=&quot;text()&quot; /&gt;
+      &lt;xsl:apply-templates select=&quot;*[not(name()='title')]&quot; /&gt;
+      &lt;/fo:block&gt;
+      &lt;/xsl:template&gt;
+    </codeblock>
+    <p>
+      Cependant, tous les éléments texte non encapsulés dans des balises enfant
+      de la balise &lt;example&gt; seront placés en tête de l'exemple, avant les
+      éléments encapsulés, même s'ils sont placés après dans le fichier source
+      DITA.
+    </p>
+    <p>
+      Le fichier PDF affichera l'exemple structuré comme suit :
+    </p>
+    <p>
+      Voici mon exemple de chemin XPATH :Texte non encapsulé situé après un nœud
+      enfant.
+    </p>
+    <codeblock>
+      ancestor-or-self
+    </codeblock>
+    <p>
+      Il faut alors utiliser la syntaxe <b>pipe</b> (condition booléenne
+      <b>ou</b>) pour modifier le chemin <xref format="html" scope="external"
+      href="http://fr.wikipedia.org/wiki/XPath">XPATH</xref> comme suit :
+    </p>
+    <codeblock>
+      &lt;xsl:apply-templates select=&quot;text()|*[not(name()='title')]&quot; /&gt;
+    </codeblock>
+    <p>
+      Le résultat final sera :
+    </p>
+    <codeblock>
+      &lt;xsl:template match=&quot;*[contains(@class,' topic/example ')]&quot;&gt;
+      &lt;fo:block&gt;
+      &lt;xsl:apply-templates select=&quot;text()|*[not(name()='title')]&quot; /&gt;
+      &lt;/fo:block&gt;
+      &lt;/xsl:template&gt;
+    </codeblock>
+    <p>
+      Le fichier PDF affichera l'exemple structuré comme suit :
+    </p>
+    <p>
+      Voici mon exemple de chemin XPATH :
+    </p>
+    <codeblock>
+      ancestor-or-self
+    </codeblock>
+    <p>
+      Texte non encapsulé situé après un nœud enfant.
+    </p>
+  </body>
+</topic>
