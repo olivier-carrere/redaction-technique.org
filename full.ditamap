@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN"
+"/usr/share/dita-ot/dtd/technicalContent/dtd/map.dtd">
+<map title="rédaction-technique.org">
+  <topicref href="topics/documentation-code-source-diminuer-les-couts-ameliorer-la-satisfaction-client.dita">
+    <topicref href="topics/documentation-code-source-de-la-redaction-a-la-communication-technique.dita"/>
+    <topicref href="topics/documentation-code-source-les-trois-niveaux-de-la-documentation-technique.dita">
+      <topicref href="topics/documentation-code-source-un-index-est-il-utile-dans-un-pdf.dita"/>
+    </topicref>
+    <topicref href="topics/documentation-code-source-principe-de-simplicite-kiss.dita"/>
+    <topicref href="topics/documentation-code-source-formats-et-outils.dita"/>
+  </topicref>
+  <topicref href="topics/documentation-code-source-redaction-technique-un-processus-industriel.dita">
+    <topicref href="topics/documentation-code-source-definition-du-projet.dita"/>
+    <topicref href="topics/documentation-code-source-collecte-de-l-information.dita">
+      <topicref href="topics/documentation-code-source-tester-les-produits-pour-les-documenter.dita"/>
+    </topicref>
+    <topicref href="topics/documentation-code-source-creation-du-contenu.dita"/>
+    <topicref href="topics/documentation-code-source-format-source.dita">
+      <topicref href="topics/documentation-code-source-documents-monolithiques-ou-modulaires.dita">
+        <topicref href="topics/documentation-code-source-qu-est-ce-qu-un-module-d-information.dita"/>
+      </topicref>
+      <topicref href="topics/documentation-code-source-fichiers-binaires-ou-texte.dita"/>
+      <topicref href="topics/documentation-code-source-sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers.dita">
+        <topicref href="topics/documentation-code-source-sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers.dita"/>
+      </topicref>
+    </topicref>
+    <topicref href="topics/documentation-code-source-referentiel.dita">
+      <topicref href="topics/documentation-code-source-git-du-fichier-au-contenu.dita">
+        <topicref href="topics/documentation-code-source-faire-sauter-les-goulets-etranglement-avec-les-branches.dita"/>
+        <topicref href="topics/documentation-code-source-organiser-son-historique-avec-git-rebase.dita"/>
+      </topicref>
+      <topicref href="topics/documentation-code-source-quel-referentiel-pour-le-travail-de-groupe.dita"/>
+      <topicref href="topics/documentation-code-source-les-repertoires-reseau-partages-peu-adaptes-au-travail-de-groupe.dita"/>
+      <topicref href="topics/documentation-code-source-les-systemes-de-gestion-de-versions-rustiques-mais-fiables.dita">
+        <topicref href="topics/documentation-code-source-utiliser-les-branches-des-systemes-de-gestion-de-sources.dita"/>
+      </topicref>
+      <topicref href="tasks/documentation-code-source-les-cms-le-workflow-en-prime-mais-une-fiabilite-a-tester.dita"/>
+      <topicref href="topics/documentation-code-source-base-de-donnees-sql.dita"/>
+      <topicref href="topics/documentation-code-source-un-referentiel-unique.dita"/>
+    </topicref>
+    <topicref href="topics/documentation-code-source-validation-et-controle-qualite.dita">
+      <topicref
+          href="topics/documentation-code-source-workflow-de-creation-et-validation.dita"/>
+    </topicref>
+    <topicref href="topics/documentation-code-source-traduction.dita"/>
+    <topicref href="topics/documentation-code-source-format-cible.dita"/>
+    <topicref href="topics/documentation-code-source-livraison.dita"/>
+  </topicref>
+  <topicref href="topics/documentation-code-source-format-structure-dita-xml.dita">
+    <topicref href="topics/documentation-code-source-cas-concrets-utilisation-de-dita-xml.dita"/>
+    <topicref href="topics/documentation-code-source-formats-structures-et-non-structures.dita">
+      <topicref href="topics/documentation-code-source-docbook-ou-dita-xml.dita"/>
+      <topicref href="topics/documentation-code-source-migration-de-framemaker-vers-dita-xml.dita">
+        <topicref href="topics/documentation-code-source-restructuration-du-contenu-framemaker.dita"/>
+        <topicref href="topics/documentation-code-source-table-de-conversion-framemaker-vers-dita-xml.dita"/>
+      </topicref>
+      <topicref href="tasks/documentation-code-source-migrer-de-framemaker-vers-dita-xml.dita"/>
+    </topicref>
+    <topicref href="topics/documentation-code-source-une-architecture-documentaire-trop-complexe.dita"/>
+    <topicref href="topics/documentation-code-source-du-document-a-la-base-documentaire-modulaire.dita">
+      <topicref href="topics/documentation-code-source-un-langage-a-balises.dita"/>
+      <topicref href="topics/documentation-code-source-typologie-de-haut-niveau-de-l-information.dita"/>
+      <topicref href="topics/documentation-code-source-organisation-a-la-demande-du-contenu.dita"/>
+      <topicref href="topics/documentation-code-source-le-single-sourcing-un-format-source-plusieurs-formats-cibles.dita"/>
+      <topicref href="topics/documentation-code-source-les-topics-modules-d-information-de-base-dita.dita"/>
+      <topicref href="topics/documentation-code-source-gerer-son-contenu-dita-xml-avec-ou-sans-cms.dita"/>
+    </topicref>
+    <topicref href="topics/documentation-code-source-cas-concret-documentation-de-nufirewall.dita">
+      <topicref href="topics/documentation-code-source-partager-des-blocs-information-atomiques-avec-les-conref.dita">
+        <topicref href="topics/documentation-code-source-centraliser-les-conref-dans-un-fichier-unique.dita"/>
+        <topicref href="topics/documentation-code-source-utiliser-le-noeud-xml-de-plus-bas-niveau.dita"/>
+        <topicref href="topics/documentation-code-source-prendre-en-compte-les-contraintes-de-traduction.dita"/>
+        <topicref href="topics/documentation-code-source-imbriquer-les-conref.dita"/>
+        <topicref href="topics/documentation-code-source-maximiser-utilisation-des-conref-pour-faire-baisser-les-couts.dita"/>
+        <topicref href="topics/documentation-code-source-proteger-les-informations-confidentielles.dita"/>
+      </topicref>
+      <topicref href="topics/documentation-code-source-fournir-une-information-ciblee-avec-le-texte-conditionnel-ditaval.dita"/>
+    </topicref>
+    <topicref href="topics/documentation-code-source-didacticiels-dita-xml-xsl-fo.dita">
+      <topicref href="topics/documentation-code-source-xsl-fo-filtrer-du-contenu-selon-des-conditions-sauf-et-ou.dita"/>
+      <topicref href="tasks/documentation-code-source-xsl-fo-inserer-automatiquement-un-titre-pour-les-exemples.dita">
+      </topicref>
+      <topicref href="tasks/documentation-code-source-generer-un-pdf-avec-dita-open-toolkit-sous-gnu-linux.dita"/>
+      <topicref href="tasks/documentation-code-source-generer-un-pdf-avec-dita-open-toolkit-windows.dita"/>
+      <topicref href="tasks/documentation-code-source-gerer-les-projets-de-documentation-multilingues-dita-xml.dita">
+      </topicref>
+      <topicref href="tasks/documentation-code-source-creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-conditionnel.dita"/>
+      <topicref href="topics/documentation-code-source-dita-open-toolkit-afficher-les-references-croisees-dans-les-pdf.dita"/>
+      <topicref href="topics/documentation-code-source-afficher-un-index-dans-un-pdf-mais-pas-sous-dita-open-toolkit.dita"/>
+      <topicref href="tasks/documentation-code-source-utiliser-ide-nxml-pour-dita-xml.dita"/>
+      <topicref href="tasks/documentation-code-source-accelerer-sa-saisie-avec-le-mode-predictive-pour-emacs.dita"/>
+    </topicref>
+  </topicref>
+</map>
