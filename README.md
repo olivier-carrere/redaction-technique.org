@@ -7,7 +7,7 @@ Website powered by Python Sphinx about managing documentation as source code (in
 Generating a PDF deliverable
 ----------------------------
 
-$ wget http://downloads.sourceforge.net/project/dita-ot/DITA-OT%20Stable%20Release/DITA%20Open%20Toolkit%201.5.4/DITA-OT1.5.4_full_easy_install_bin.tar.gz
+$ wget http://downloads.sourceforge.net/project/dita-ot/DITA-OT%20Stable%20Release/DITA%20Open%20Toolkit%201.8/DITA-OT1.8.5_full_easy_install_bin.tar.gz
 
 $ tar -xzvf DITA-OT1.8.5_full_easy_install_bin.tar.gz
 
