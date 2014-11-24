@@ -21,9 +21,7 @@
         <topicref href="topics/documentation-code-source-qu-est-ce-qu-un-module-d-information.dita"/>
       </topicref>
       <topicref href="topics/documentation-code-source-fichiers-binaires-ou-texte.dita"/>
-      <topicref href="topics/documentation-code-source-sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers.dita">
-        <topicref href="topics/documentation-code-source-sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers.dita"/>
-      </topicref>
+      <topicref href="topics/documentation-code-source-sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers.dita"/>
     </topicref>
     <topicref href="topics/documentation-code-source-referentiel.dita">
       <topicref href="topics/documentation-code-source-git-du-fichier-au-contenu.dita">
