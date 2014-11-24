@@ -7,8 +7,8 @@
   <taskbody>
     <context>
       <p>
-        Par défaut, <b>DITA Open Toolkit</b> n'insère pas automatiquement dans
-        les fichiers PDF le texte <b>Exemple :</b> devant le titre d'un exemple
+        Par défaut, <i>DITA Open Toolkit</i> n'insère pas automatiquement dans
+        les fichiers PDF le texte <i>Exemple :</i> devant le titre d'un exemple
         contenu entre balises DITA XML &lt;example&gt;. La syntaxe <xref
         format="html" scope="external"
         href="http://fr.wikipedia.org/wiki/XSL-FO">XSL-FO</xref> offre cependant
@@ -33,7 +33,7 @@
         comme suit :
       </p>
       <p>
-        <b>Exemple : XSL-FO</b>
+        <i>Exemple : XSL-FO</i>
       </p>
       <p>
         Voici mon exemple de chemin XPATH :
@@ -47,7 +47,7 @@
         suit :
       </p>
       <p>
-        <b>Exemple :</b>
+        <i>Exemple :</i>
       </p>
       <p>
         Voici mon exemple de chemin XPATH :
@@ -58,7 +58,7 @@
         par DITA Open Toolkit :
       </p>
       <p>
-        <b>XSL-FO</b>
+        <i>XSL-FO</i>
       </p>
       <p>
         Voici mon exemple de chemin XPATH :
@@ -121,7 +121,7 @@
     </steps>
     <result>
       Pour obtenir un comportement homogène, vous devez désactiver ce traitement
-      pour les exemples des types de <b>topics</b> spécifiques (<b>task</b>,
+      pour les exemples des types de <i>topics</i> spécifiques (<i>task</i>,
       notamment).
     </result>
   </taskbody>

@@ -10,27 +10,27 @@
       href="http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html">
       conref</xref> est le meilleur moyen dont dispose le <b>rédacteur
       technique</b> pour faire baisser spectaculairement les coûts et les délais
-      de publication de son contenu <b>DITA XML</b>, surtout pour les
-      <b>documents multilingues</b>.
+      de publication de son contenu <i>DITA XML</i>, surtout pour les
+      <i>documents multilingues</i>.
     </p>
     <p>
       De par la nature des informations qu'elles contiennent, les sections de
-      type <b>task</b> ont un taux plus élevé de réutilisation du contenu que
-      celles de type <b>concept</b> ou <b>reference</b>.
+      type <i>task</i> ont un taux plus élevé de réutilisation du contenu que
+      celles de type <i>concept</i> ou <i>reference</i>.
     </p>
     <fig>
-      <title>Les <b>conref</b> modularisent de petits blocs
+      <title>Les <i>conref</i> modularisent de petits blocs
       d'information</title>
       <image href="graphics/maximiser-conref.png" />
     </fig>
     <p>
       Comme dans l'exemple ci-dessous, il n'est pas rare d'obtenir rapidement
       des fichiers dont la seule valeur unique est le titre, le reste du
-      contenu, <b>pourtant unique</b> (car il assemble de manière unique des
-      blocs d'information non uniques), étant généré par des <b>conref</b>.
+      contenu, <i>pourtant unique</i> (car il assemble de manière unique des
+      blocs d'information non uniques), étant généré par des <i>conref</i>.
     </p>
     <p>
-      <b>Exemple</b>
+      <i>Exemple</i>
     </p>
     <codeblock>
       &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
@@ -91,8 +91,8 @@
     </codeblock>
     <p>
       Seul le texte en noir doit être traduit. Traduire ce type de fichier de
-      contenu <b>DITA XML</b> consiste donc à traduire uniquement le titre de la
-      section et l'intégralité des <b>conref</b> sources. Lorsqu'il traduit un
+      contenu <i>DITA XML</i> consiste donc à traduire uniquement le titre de la
+      section et l'intégralité des <i>conref</i> sources. Lorsqu'il traduit un
       ensemble d'unités d'information placées en vrac dans un fichier, le
       traducteur manque cependant cruellement de contexte. Le créateur du
       contenu initial doit donc lui fournir une assistance constante. La méthode
@@ -103,8 +103,8 @@
     <note>
       Ne croyez pas qu'il s'agit là d'une contrainte spécifiquement induite par
       la modularisation poussée du contenu. Pour avoir fait une école de
-      traduction reposant sur le principe simple mais efficace du <b>triangle du
-      sens</b> (le traducteur doit comprendre le texte source pour le reformuler
+      traduction reposant sur le principe simple mais efficace du <i>triangle du
+      sens</i> (le traducteur doit comprendre le texte source pour le reformuler
       dans le texte cible et non transcrire une suite de mots d'une langue à
       l'autre) et avoir pratiqué la traduction technique durant plusieurs
       années, je sais que tout projet de traduction réussi repose sur une

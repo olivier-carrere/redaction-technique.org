@@ -17,7 +17,7 @@
       écrase sur le disque dur la version précédente du fichier. La version
       précédente est donc définitivement supprimée, sauf si le programme a créé
       une copie de sauvegarde ou si le <b>rédacteur technique</b> a utilisé la
-      fonction <b>Enregistrer sous</b>, et non <b>Enregistrer</b>, pour créer
+      fonction <i>Enregistrer sous</i>, et non <i>Enregistrer</i>, pour créer
       une nouvelle version du fichier. Dans le premier cas, il n'existe que deux
       versions du fichier à un instant donné : la version n et la version
       n-1. Dans le second cas, le <b>rédacteur technique</b> peut créer autant

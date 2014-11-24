@@ -9,7 +9,7 @@
       scope="external" href="http://fr.wikipedia.org/wiki/Git">Git</xref>. Ceci
       en maximise la réutilisation, la cohérence et la qualité. Scanningi le
       contenu est au format DITA XML ou DocBook, par exemple, on peut exploiter
-      au mieux les capacités de <b>single-sourcing</b> de ces formats pour le
+      au mieux les capacités de <i>single-sourcing</i> de ces formats pour le
       publier sous la forme appropriée.
     </p>
     <p>

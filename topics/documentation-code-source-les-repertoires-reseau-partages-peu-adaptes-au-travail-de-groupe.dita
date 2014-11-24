@@ -5,7 +5,7 @@
   groupe</title>
   <body>
     <p>
-      Les fichiers partagés par une équipe de <b>rédaction technique</b> sont
+      Les fichiers partagés par une équipe de <i>rédaction technique</i> sont
       souvent stockés dans un répertoire partagé sur le réseau.
     </p>
     <p>
@@ -50,7 +50,7 @@
         modifications ;
       </li>
       <li>
-        lors d'une copie manuelle des fichiers, que ce soit <b>via</b> un
+        lors d'une copie manuelle des fichiers, que ce soit <i>via</i> un
         gestionnaire de fichiers graphique ou en ligne de commande, le
         <b>rédacteur technique</b> peut facilement écraser la version la plus
         récente par la plus ancienne (on préférera alors avoir recours à un

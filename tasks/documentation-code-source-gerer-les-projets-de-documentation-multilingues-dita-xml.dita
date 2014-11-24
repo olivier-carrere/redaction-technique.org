@@ -8,21 +8,21 @@
     <context>
       <p>
         <xref format="html" scope="external" href="http://dita.xml.org/">DITA
-        XML</xref> est un formidable format pour gérer les <b>projets de
-        documentation</b>. Pour les projets multilingues, cependant, le
-        <b>rédacteur technique</b> doit créer un fichier <b>ditamap</b>, qui
+        XML</xref> est un formidable format pour gérer les <i>projets de
+        documentation</i>. Pour les projets multilingues, cependant, le
+        <b>rédacteur technique</b> doit créer un fichier <i>ditamap</i>, qui
         contient la structure de table des matières des documents, par
         version. Ceci entraîne un risque d'erreurs et
         d'incohérences. Heureusement, une méthodologie appropriée et un script
-        d'automatisation destiné à la chaîne de publication <b>DITA Open
-        Toolkit</b> remédient à ce problème.
+        d'automatisation destiné à la chaîne de publication <i>DITA Open
+        Toolkit</i> remédient à ce problème.
       </p>
     </context>
     <steps>
       <step>
         <cmd>
-          Le fichier <b>ditamap</b> ne doit pas comporter de section
-          <b>navtitle</b>, qui contient un titre en toutes lettres, au lieu
+          Le fichier <i>ditamap</i> ne doit pas comporter de section
+          <i>navtitle</i>, qui contient un titre en toutes lettres, au lieu
           d'extraire le titre de la section DITA correspondante, et est donc
           propre à chaque langue.
         </cmd>
@@ -30,7 +30,7 @@
       <step>
         <cmd>
           Dès le début de votre projet DITA, placez les fichiers de contenu
-          <b>DITA</b> dans un sous-répertoire spécifique à la langue dans
+          <i>DITA</i> dans un sous-répertoire spécifique à la langue dans
           laquelle il est initialement rédigé.
         </cmd>
         <info>
@@ -84,7 +84,7 @@
       </step>
       <step>
         <cmd>
-          Remplacez dans le fichier <b>ditamap</b> toutes les occurrences du nom
+          Remplacez dans le fichier <i>ditamap</i> toutes les occurrences du nom
           du répertoire propre à la langue par une chaîne unique provisoire.
         </cmd>
         <info>
@@ -113,14 +113,14 @@
           </substep>
           <substep>
             <cmd>
-              remplacer dans le fichier <b>DITAMAP</b> la variable de langue par
+              remplacer dans le fichier <i>DITAMAP</i> la variable de langue par
               le nom du répertoire de langue,
             </cmd>
           </substep>
           <substep>
             <cmd>
               modifier le paramètre de langue xml:lang dans le fichier
-              <b>DITAMAP</b> et dans les fichiers de contenu DITA,
+              <i>DITAMAP</i> et dans les fichiers de contenu DITA,
             </cmd>
           </substep>
           <substep>
@@ -156,7 +156,7 @@
             Vous avez installé DITA Open Toolkit.
           </li>
           <li>
-            Votre projet DITA XML ne comporte qu'un fichier <b>DITAMAP</b>.
+            Votre projet DITA XML ne comporte qu'un fichier <i>DITAMAP</i>.
           </li>
           <li>
             Vos fichiers de contenu DITA ont l'extension .dita.
@@ -192,7 +192,7 @@
             Téléchargez le <xref format="html" scope="external"
             href="http://www.redaction-technique.org/media/dita2target.sh">script
             de génération multilingue DITA XML</xref> dans le répertoire
-            contenant le fichier <b>DITAMAP</b> du projet.
+            contenant le fichier <i>DITAMAP</i> du projet.
           </cmd>
         </step>
         <step>
@@ -231,7 +231,7 @@
               pour générer les fichiers cibles.
             </p>
             <p>
-              L'argument <b>format cible</b> accepte les valeurs gérées par DITA
+              L'argument <i>format cible</i> accepte les valeurs gérées par DITA
               Open Toolkit.
             </p>
           </info>
@@ -241,7 +241,7 @@
             </codeblock>
             <p>
               Le fichier PDF firewall.pdf est alors généré dans le répertoire
-              out (spécifié <b>en dur</b> dans le script).
+              out (spécifié <i>en dur</i> dans le script).
             </p>
           </stepxmp>
         </step>

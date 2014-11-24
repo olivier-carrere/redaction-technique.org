@@ -10,13 +10,13 @@
       </p>
       <ul>
         <li>
-          <b>migrer</b> son contenu <b>FrameMaker</b> vers <b>DITA XML</b> sans
-          se plonger dans les arcanes des <b>EDD FrameMaker</b> (petits projets
+          <i>migrer</i> son contenu <i>FrameMaker</i> vers <i>DITA XML</i> sans
+          se plonger dans les arcanes des <i>EDD FrameMaker</i> (petits projets
           uniquement !),
         </li>
         <li>
           gérer la documentation technique au format DITA XML sans utiliser
-          <b>FrameMaker structuré</b>.
+          <i>FrameMaker structuré</i>.
         </li>
       </ul>
     </context>
@@ -46,21 +46,21 @@
       </step>
       <step>
         <cmd>
-          Ouvrez <b>FrameMaker structuré 11</b> et créez un nouveau fichier DITA
-          de type <b>topic</b>.
+          Ouvrez <i>FrameMaker structuré 11</i> et créez un nouveau fichier DITA
+          de type <i>topic</i>.
         </cmd>
       </step>
       <step>
         <cmd>
-          Choisissez <b>StructureTools &gt; Exporter le catalogue d'éléments en
-          tant qu'EDD</b> et sauvegardez la nouvelle EDD sous le nom
+          Choisissez <i>StructureTools &gt; Exporter le catalogue d'éléments en
+          tant qu'EDD</i> et sauvegardez la nouvelle EDD sous le nom
           DITA-topic-edd.fm.
         </cmd>
       </step>
       <step>
         <cmd>
-          Ouvrez le fichier styles.fm, puis choisissez <b>Fichier &gt; Importer
-          les définitions d'éléments</b> et importez les définitions d'éléments
+          Ouvrez le fichier styles.fm, puis choisissez <i>Fichier &gt; Importer
+          les définitions d'éléments</i> et importez les définitions d'éléments
           à partir de DITA-topic-edd.fm.
         </cmd>
       </step>
@@ -73,8 +73,8 @@
       </step>
       <step>
         <cmd>
-          Ouvrez le fichier styles.fm, puis choisissez <b>StructureTools &gt;
-          Générer le tableau de conversion</b>.
+          Ouvrez le fichier styles.fm, puis choisissez <i>StructureTools &gt;
+          Générer le tableau de conversion</i>.
         </cmd>
       </step>
       <step>
@@ -92,14 +92,14 @@
       <step>
         <cmd>
           Ouvrez un fichier de contenu FrameMaker sous FrameMaker structuré 11
-          et choisissez <b>StructureTools &gt; Utilitaires &gt; Structurer le
-          document en cours</b>.
+          et choisissez <i>StructureTools &gt; Utilitaires &gt; Structurer le
+          document en cours</i>.
         </cmd>
       </step>
       <step>
         <cmd>
-          Sélectionnez DITA2FM-conversion-table.fm et cliquez sur <b>Ajouter
-          structure</b>.
+          Sélectionnez DITA2FM-conversion-table.fm et cliquez sur <i>Ajouter
+          structure</i>.
         </cmd>
       </step>
       <step>
@@ -114,7 +114,7 @@
           syntaxe DITA. Certains aspects de cette étape sont scriptables, mais
           il faut également procéder à des opérations manuelles de
           restructuration du contenu. Il vous faudra notamment placer à la main
-          les références croisées, de préférence dans une <b>reltable</b>.
+          les références croisées, de préférence dans une <i>reltable</i>.
         </cmd>
       </step>
     </steps>
@@ -145,7 +145,7 @@
         href="http://search.cpan.org/dist/XML-Twig/tools/xml_split/xml_split">xml_split</xref>,
         ou utiliser le module Perl <xref format="html" scope="external"
         href="http://www.xmltwig.org/xmltwig/">XML::Twig</xref>, ou encore ce
-        <b>one-liner</b> Bash pour renommer les fichiers .dita d'après leur
+        <i>one-liner</i> Bash pour renommer les fichiers .dita d'après leur
         titre :
       </p>
       <codeblock>

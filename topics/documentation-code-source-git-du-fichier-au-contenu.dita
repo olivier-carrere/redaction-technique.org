@@ -24,7 +24,7 @@
     <ul>
       <li>
         <p>
-          un contenu (suite de bits, ou <b>blob</b>),
+          un contenu (suite de bits, ou <i>blob</i>),
         </p>
       </li>
       <li>
@@ -49,7 +49,7 @@
       </li>
     </ul>
     <p>
-      Lorsque vous ajoutez un fichier (<b>git add &lt;fichier&gt;</b>) :
+      Lorsque vous ajoutez un fichier (<i>git add &lt;fichier&gt;</i>) :
     </p>
     <ul>
       <li>
@@ -64,7 +64,7 @@
       </li>
     </ul>
     <p>
-      Lorsque vous <b>commitez</b> un fichier (<b>git commit</b>) :
+      Lorsque vous <i>commitez</i> un fichier (<i>git commit</i>) :
     </p>
     <ul>
       <li>
@@ -84,26 +84,26 @@
       lui faire suivre plusieurs routes parallèles, les branches.
     </p>
     <p>
-      Vous ne pouvez créer des branches qu'à partir d'un <b>commit</b>. Il faut
-      voir les <b>commits</b> comme des ronds-points (la route étant
+      Vous ne pouvez créer des branches qu'à partir d'un <i>commit</i>. Il faut
+      voir les <i>commits</i> comme des ronds-points (la route étant
       l'historique de votre projet) à partir desquels vous pouvez, si vous le
       souhaitez, prendre une autre direction dans votre projet.
     </p>
     <p>
-      Si vous créez une branche, disons <b>test</b>, alors que des modifications
-      de votre espace de travail ne sont pas <b>commitées</b> dans votre branche
-      <b>master</b>, les modifications que vous effectuerez s'appliqueront aux
-      fichiers non <b>commités</b> de votre espace de travail. Si vous faites
-      une erreur, vous ne pourrez pas retrouver le <b>statu quo ante</b> de vos
-      fichiers en revenant à la branche <b>master</b>.
+      Si vous créez une branche, disons <i>test</i>, alors que des modifications
+      de votre espace de travail ne sont pas <i>commitées</i> dans votre branche
+      <i>master</i>, les modifications que vous effectuerez s'appliqueront aux
+      fichiers non <i>commités</i> de votre espace de travail. Si vous faites
+      une erreur, vous ne pourrez pas retrouver le <i>statu quo ante</i> de vos
+      fichiers en revenant à la branche <i>master</i>.
     </p>
     <p>
       Si vous voulez enregistrer votre travail au fil de l'eau afin de pouvoir
       revenir à tout moment à un état antérieur, il vous faut donc
-      <b>committer</b> régulièrement et sauvegarder votre espace de travail,
-      répertoire <b>.git</b> y compris, par exemple <b>via</b> rsync. Lorsque
+      <i>committer</i> régulièrement et sauvegarder votre espace de travail,
+      répertoire <i>.git</i> y compris, par exemple <i>via</i> rsync. Lorsque
       vous déciderez de partager votre travail, vous pourrez déplacer, fusionner
-      ou supprimer vos <b>commits</b> avant de les envoyer sous forme de patchs
+      ou supprimer vos <i>commits</i> avant de les envoyer sous forme de patchs
       ou de les déposer sur un dépôt central.
     </p>
   </body>

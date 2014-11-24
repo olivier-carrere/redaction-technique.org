@@ -15,7 +15,7 @@
     </prereq>
     <context>
       <p>
-        DITA XML offre un mécanisme de <b>texte conditionnel</b>. Ce mécanisme
+        DITA XML offre un mécanisme de <i>texte conditionnel</i>. Ce mécanisme
         favorise la réutilisation du contenu source et évite la redondance des
         informations. Ce didacticiel aidera le <b>rédacteur technique</b> à
         utiliser ce mécanisme en quelques minutes.
@@ -68,9 +68,9 @@
           </codeblock>
           <p>
             Ce code contient des balises DITA contenant des valeurs
-            <b>audience</b> différentes : nous allons exclure
+            <i>audience</i> différentes : nous allons exclure
             le contenu d'une de ces deux balises lors de la génération du
-            fichier cible en utilisant la clé <b>audience</b>.
+            fichier cible en utilisant la clé <i>audience</i>.
           </p>
         </info>
       </step>

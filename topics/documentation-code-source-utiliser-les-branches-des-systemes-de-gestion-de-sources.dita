@@ -41,7 +41,7 @@
       répertoire local, une commande permet de changer de branche.
     </p>
     <p>
-      Créer une traduction d'une documentation consiste à <b>forker</b>, soit
+      Créer une traduction d'une documentation consiste à <i>forker</i>, soit
       créer une branche, le document initial. Si l'on utilise Git se pose alors
       le choix entre :
     </p>
@@ -58,8 +58,8 @@
       </li>
     </ul>
     <p>
-      La solution de la branche permet en théorie d'effectuer du <b>Cherry
-      picking</b> et d'appliquer facilement à toutes les langues cibles des
+      La solution de la branche permet en théorie d'effectuer du <i>Cherry
+      picking</i> et d'appliquer facilement à toutes les langues cibles des
       modifications affectant uniquement le code XML du projet.
     </p>
     <p>
@@ -77,12 +77,12 @@
     <p>
       de la version anglaise de la documentation peut facilement être appliquée
       aux versions chinoise, française, allemande ou autre si elle a fait
-      l'objet d'un <b>commit</b> distinct. En pratique, cependant, cette
+      l'objet d'un <i>commit</i> distinct. En pratique, cependant, cette
       opération peut s'avérer délicate et n'être réellement utile que si l'on
       doit gérer un grand nombre de différentes versions linguistiques. En tout
       cas, la solution des branches autorise de telles opérations, non celle des
       répertoires.  Elle est cependant plus difficile à appréhender et à
-      utiliser par l'équipe de <b>rédaction technique</b>.
+      utiliser par l'équipe de <i>rédaction technique</i>.
     </p>
   </body>
 </topic>

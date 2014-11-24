@@ -11,14 +11,14 @@
       du temps avec d'autres contenus au format FrameMaker ou traitement de
       texte. S'il est décidé de fédérer tout le contenu d'entreprise sous un
       seul format, il semble naturel de capitaliser les efforts fournis sur la
-      chaîne de création et de publication <b>DocBook</b> et de sélectionner ce
+      chaîne de création et de publication <i>DocBook</i> et de sélectionner ce
       format. C'est pourtant se priver des gains de productivité spectaculaires
       offerts par <xref format="html" scope="external"
       href="http://en.wikipedia.org/wiki/Darwin_Information_Typing_Architecture">
       DITA XML</xref>.
     </p>
     <p>
-      Il est facile de générer du <b>DocBook</b> à partir de DITA XML.  DITA
+      Il est facile de générer du <i>DocBook</i> à partir de DITA XML.  DITA
       Open Toolkit propose par défaut ce format cible, au même titre que le PDF
       ou le HTML. L'opération inverse ne peut pas être totalement
       automatisée. Pourquoi ?
@@ -45,10 +45,10 @@
     <simpletable>
       <sthead>
         <stentry>
-          <b>Format de contenu</b>
+          <i>Format de contenu</i>
         </stentry>
         <stentry>
-          <b>Format de photo</b>
+          <i>Format de photo</i>
         </stentry>
       </sthead>
       <strow>
@@ -100,20 +100,20 @@
       en page, appliquées automatiquement à partir d'une feuille de style.</fn>.
     </p>
     <p>
-      Si votre entreprise tient absolument à utiliser du <b>DocBook</b>, il est
-      toujours loisible de générer le contenu <b>DocBook</b> à partir d'un
+      Si votre entreprise tient absolument à utiliser du <i>DocBook</i>, il est
+      toujours loisible de générer le contenu <i>DocBook</i> à partir d'un
       contenu source au format DITA XML. À condition que le contenu source reste
       au format DITA XML (c'est à dire, à condition qu'aucune modification
-      apportée au contenu <b>DocBook</b> ne soit sauvegardée) et que le format
-      <b>DocBook</b> ne soit qu'une étape de la génération des livrables, au
+      apportée au contenu <i>DocBook</i> ne soit sauvegardée) et que le format
+      <i>DocBook</i> ne soit qu'une étape de la génération des livrables, au
       même titre que le format FO, vous bénéficiez ainsi des fonctionnalités
       avancées de réutilisation du contenu que propose DITA XML.
     </p>
     <p>
       L'effort de migration d'un format non structuré est certes un peu plus
-      important vers DITA XML que vers <b>DocBook</b>, puisque vous devez
+      important vers DITA XML que vers <i>DocBook</i>, puisque vous devez
       injecter plus d'informations sémantiques. Vous devez également migrer le
-      contenu <b>DocBook</b> vers DITA XML, ce qui représente également un
+      contenu <i>DocBook</i> vers DITA XML, ce qui représente également un
       effort, quoique plus faible. Mais votre contenu est immédiatement de
       meilleure qualité, car plus structuré. Et vous pourrez rapidement cueillir
       tous les fruits de votre labeur, notamment si une traduction de votre

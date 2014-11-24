@@ -36,7 +36,7 @@
         fichier étant intacte.</fn>,
       </li>
       <li>
-        possibilités de travail <b>off-line</b> (déconnecté) poussées
+        possibilités de travail <i>off-line</i> (déconnecté) poussées
         <fn>Surtout sous Git, conçu explicitement dans ce but.</fn>,
       </li>
       <li>
@@ -61,7 +61,7 @@
       utilisés en ligne de commande. Cependant, le paradigme sur lequel ils
       reposent est parfois difficile à appréhender pour les publics les moins
       technophiles <fn>Même si Apple a contribué à en populariser certains
-      aspects avec son application <b>Time machine</b>.</fn>.
+      aspects avec son application <i>Time machine</i>.</fn>.
     </p>
     <p>
       Les systèmes de gestion des sources utilisent les concepts suivants :
@@ -91,7 +91,7 @@
           Tag
         </stentry>
         <stentry>
-          Instantané du tronc ou d'une branche à un instant <b>t</b>. Permet de
+          Instantané du tronc ou d'une branche à un instant <i>t</i>. Permet de
           figer facilement une version, par exemple, la version publiée, et de
           créer une archive.
         </stentry>
@@ -112,13 +112,13 @@
       conservatrice, et ne sont proposés en production que lorsqu'ils ont été
       exhaustivement débogués. Si les plus grands projets de développement
       informatique, tel que GNU/Linux, par exemple, leur font confiance,
-      pourquoi ne pas également leur confier la <b>documentation technique</b> ?
+      pourquoi ne pas également leur confier la <i>documentation technique</i> ?
     </p>
     <p>
       Un bémol cependant : ces outils ne sont pas destinés spécifiquement au
       format XML et effectuent des comparaisons ligne par ligne entre les
       fichiers, et non pas nœud par nœud, ce qui multiplie inutilement les
-      conflits entre les <b>commits</b> ou les branches.
+      conflits entre les <i>commits</i> ou les branches.
     </p>
   </body>
 </topic>

@@ -5,15 +5,15 @@
   <body>
     <p>
       À l'heure des documents dématérialisés, un index est-il un élément
-      indispensable d'une bonne <b>documentation technique</b> ?
+      indispensable d'une bonne <i>documentation technique</i> ?
     </p>
     <p>
-      La recherche en plein texte semble avoir détrôné l'index. Les <b>notices
-      techniques</b> ne sont plus qu'exceptionnellement fournies aux clients
+      La recherche en plein texte semble avoir détrôné l'index. Les <i>notices
+      techniques</i> ne sont plus qu'exceptionnellement fournies aux clients
       sous forme papier. Ce drôle d'objet qu'est le PDF, format d'échange entre
       un format source non destiné aux clients et une version imprimée qui ne
       l'est que de manière marginale, est entré dans les mœurs. La séquence de
-      touches <b>Ctrl+F</b> est un réflexe plus naturel aujourd'hui pour qui
+      touches <i>Ctrl+F</i> est un réflexe plus naturel aujourd'hui pour qui
       recherche une information.
     </p>
     <p>
@@ -27,7 +27,7 @@
       Si la documentation technique utilise une terminologie cohérente,
       l'efficacité de la recherche en plein texte est réduite : si le
       <b>rédacteur technique</b> a utilisé uniquement le terme
-      <b>répertoire</b>, le lecteur qui recherche le mot <b>dossier</b> passera
+      <i>répertoire</i>, le lecteur qui recherche le mot <i>dossier</i> passera
       à côté de l'information qu'il recherche.
     </p>
     <p>

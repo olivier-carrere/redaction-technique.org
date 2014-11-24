@@ -6,9 +6,9 @@
     <p>
       L'architecture <xref format="html" scope="external"
       href="http://dita.xml.org/">DITA XML</xref> ne propose pas de mécanisme de
-      <b>workflow documentaire</b> natif. Les workflows sont pourtant un élément
-      important d'un processus efficace de gestion du <b>cycle de vie du
-      contenu</b>.
+      <i>workflow documentaire</i> natif. Les workflows sont pourtant un élément
+      important d'un processus efficace de gestion du <i>cycle de vie du
+      contenu</i>.
     </p>
     <p>
       Les CMS gèrent également les métadonnées, ce qui permet une recherche plus
@@ -28,7 +28,7 @@
       logiciels, notamment, rien de plus facile que de venir se greffer sur le
       système de gestion des sources en place, qu'il s'agisse de Git <fn>Il est
       possible, quoiqu'un peu complexe, de mettre en place des workflows sous
-      Git <b>via</b> des branches.</fn>, de Subversion ou de SourceSafe. À
+      Git <i>via</i> des branches.</fn>, de Subversion ou de SourceSafe. À
       budget quasi nul.  Raison de plus pour ne pas investir du temps et de
       l'argent dans un CMS. Les gains de productivité spectaculaires reportés
       par certaines entreprises suite à la mise en place d'un CMS DITA XML ont

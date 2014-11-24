@@ -46,10 +46,10 @@
     <simpletable>
       <sthead>
         <stentry>
-          <b>Type d'information</b>
+          <i>Type d'information</i>
         </stentry>
         <stentry>
-          <b>Description</b>
+          <i>Description</i>
         </stentry>
       </sthead>
       <strow>
@@ -84,7 +84,7 @@
       document technique, il y a toutes les chances pour que l'information qu'il
       a collectée et qu'il doit organiser fasse partie de l'une de ces trois
       catégories <fn>S'il s'avère qu'il a réellement besoin d'une autre
-      catégorie, il peut la créer <b>via</b> une spécialisation.</fn>. Cette
+      catégorie, il peut la créer <i>via</i> une spécialisation.</fn>. Cette
       division en types d'information oblige donc d'entrée de jeu le
       <b>rédacteur technique</b> à structurer l'information. L'utilisateur y
       gagne en facilité et rapidité d'accès à l'information et en utilisabilité

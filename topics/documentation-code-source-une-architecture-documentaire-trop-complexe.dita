@@ -10,12 +10,12 @@
       complexité.
     </p>
     <p>
-      Si les projets DITA XML sont plus <b>complexes</b>, ils sont cependant
-      moins <b>compliqués</b> que des projets reposant sur des formats plus
+      Si les projets DITA XML sont plus <i>complexes</i>, ils sont cependant
+      moins <i>compliqués</i> que des projets reposant sur des formats plus
       traditionnels de type FrameMaker. En effet, DITA XML est une architecture
       rationnelle. Le <b>rédacteur technique</b> se trouve donc face à un
-      comportement prédictible des outils qu'il utilise, loin des <b>trucs et
-      astuces</b> destinés à contourner les bugs ou les fonctionnements
+      comportement prédictible des outils qu'il utilise, loin des <i>trucs et
+      astuces</i> destinés à contourner les bugs ou les fonctionnements
       erratiques des outils plus lourds.
     </p>
     <p>
@@ -26,10 +26,10 @@
     <simpletable>
       <strow>
         <stentry>
-          <b>Complexité</b>
+          <i>Complexité</i>
         </stentry>
         <stentry>
-          <b>Solution</b>
+          <i>Solution</i>
         </stentry>
       </strow>
       <strow>
@@ -58,7 +58,7 @@
       </strow>
     </simpletable>
     <p>
-      Pour une petite équipe de <b>rédaction technique</b>, l'écueil principal
+      Pour une petite équipe de <i>rédaction technique</i>, l'écueil principal
       sera la nécessité de mettre en œuvre la charte graphique de
       l'entreprise. Les autres aspects peuvent être gérés sans outil spécialisé,
       avec une bonne communication et une série de bonnes pratiques.

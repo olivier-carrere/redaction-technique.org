@@ -43,8 +43,8 @@
             </li>
           </ul>
           <p>
-            où <b>&lt;répertoire de langue&gt;</b> a la valeur
-            <b>en_US</b>, ou <b>fr_FR</b>, etc.
+            où <i>&lt;répertoire de langue&gt;</i> a la valeur
+            <i>en_US</i>, ou <i>fr_FR</i>, etc.
           </p>
         </li>
         <li>
@@ -58,10 +58,10 @@
     </prereq>
     <context>
       <p>
-        Le <b>mode nXML</b> propose de valider en temps réel les documents XML
+        Le <i>mode nXML</i> propose de valider en temps réel les documents XML
         DocBook, XHTML ou autres. Plus la peine de connaître le schéma XML par
-        cœur : votre éditeur de texte vous propose l'<b>autocomplétion des
-        balises XML</b> selon le contexte. Il ne supporte cependant pas DITA XML
+        cœur : votre éditeur de texte vous propose l'<i>autocomplétion des
+        balises XML</i> selon le contexte. Il ne supporte cependant pas DITA XML
         par défaut. Ce didacticiel vous permettra d'utiliser ce mode Emacs pour
         DITA XML.
       </p>
@@ -133,7 +133,7 @@
             $ tar xzvf rnc.tar.gz
           </codeblock>
           Cette commande crée un répertoire rnc de même niveau que le
-          <b>&lt;répertoire de langue&gt;</b>.
+          <i>&lt;répertoire de langue&gt;</i>.
         </info>
       </step>
       <step>
@@ -142,8 +142,8 @@
           href="http://www.redaction-technique.org/media/schemas.redaction-technique.org.tar.gz">l'archive
           des fichiers schemas.xml</xref> dans le répertoire racine de votre
           projet de documentation DITA XML, puis collez la suite de commandes
-          ci-dessous en remplaçant <b>&lt;répertoire de langue&gt;</b> par la
-          valeur appropriée, <b>en_US</b>, ou <b>fr_FR</b>, par exemple. Répétez
+          ci-dessous en remplaçant <i>&lt;répertoire de langue&gt;</i> par la
+          valeur appropriée, <i>en_US</i>, ou <i>fr_FR</i>, par exemple. Répétez
           cette étape pour tous vos répertoires de langue.
         </cmd>
         <info>

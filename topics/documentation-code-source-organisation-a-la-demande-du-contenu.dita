@@ -5,7 +5,7 @@
   <body>
     <p>
       Les briques d'information peuvent être assemblées à la demande dans des
-      structures de table des matières externes, les <b>ditamap</b>.
+      structures de table des matières externes, les <i>ditamap</i>.
     </p>
     <p>
       L'organisation de l'information sous <xref format="html" scope="external"
@@ -20,10 +20,10 @@
     <simpletable>
       <strow>
         <stentry>
-          <b>Type de document</b>
+          <i>Type de document</i>
         </stentry>
         <stentry>
-          <b>Contenu</b>
+          <i>Contenu</i>
         </stentry>
       </strow>
       <strow>
@@ -62,13 +62,13 @@
     </simpletable>
     <p>
       Pour ce faire, le <b>rédacteur technique</b> prendra soin de placer les
-      éléments liés à un contexte particulier dans les structures <b>ditamap</b>
+      éléments liés à un contexte particulier dans les structures <i>ditamap</i>
       et non dans les fichiers de contenu DITA XML. En particulier, les
-      références croisées doivent être indiquées dans une <b>reltable</b> placée
-      dans la <b>ditamap</b> : si le document <b>A</b> doit renvoyer au document
-      <b>B</b> dans la <b>ditamap</b> <b>1</b>, il doit pouvoir être également
-      utilisé sans modification dans la <b>ditamap</b> <b>2</b>, où le document
-      <b>B</b> n'est pas inclus.
+      références croisées doivent être indiquées dans une <i>reltable</i> placée
+      dans la <i>ditamap</i> : si le document <i>A</i> doit renvoyer au document
+      <i>B</i> dans la <i>ditamap</i> <i>1</i>, il doit pouvoir être également
+      utilisé sans modification dans la <i>ditamap</i> <i>2</i>, où le document
+      <i>B</i> n'est pas inclus.
     </p>
     <p>
       L'organisation des répertoires de travail doit également permettre

@@ -4,15 +4,15 @@
   <title>Fichiers binaires ou texte</title>
   <body>
     <p>
-      Les formats sources sont des formats <b>binaires</b> ou <b>texte</b>.
+      Les formats sources sont des formats <i>binaires</i> ou <i>texte</i>.
     </p>
     <simpletable>
       <strow>
         <stentry>
-          Les <b>formats binaires</b> sont <b>opaques</b> :
+          Les <i>formats binaires</i> sont <i>opaques</i> :
         </stentry>
         <stentry>
-          si on les ouvre avec un éditeur de texte de type <b>notepad</b>, tout
+          si on les ouvre avec un éditeur de texte de type <i>notepad</i>, tout
           ce que l'on voit est une suite de caractères hiéroglyphiques ; il
           n'est donc la plupart du temps possible de les modifier qu'avec un
           seul logiciel.
@@ -20,7 +20,7 @@
       </strow>
       <strow>
         <stentry>
-          Les <b>formats texte</b> sont <b>transparents</b> :
+          Les <i>formats texte</i> sont <i>transparents</i> :
         </stentry>
         <stentry>
           si on les ouvre avec un éditeur de texte, on voit du texte et des

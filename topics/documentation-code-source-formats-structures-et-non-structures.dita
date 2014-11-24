@@ -4,7 +4,7 @@
   <title>Formats structurés et non structurés</title>
   <body>
     <p>
-      Les <b>formats structurés</b> favorisent la création de documents
+      Les <i>formats structurés</i> favorisent la création de documents
       minimalistes, complets et cohérents. Ils permettent au <b>rédacteur
       technique</b> de se concentrer sur le contenu et d'améliorer l'expérience
       utilisateur et l'utilisabilité de la documentation technique.
@@ -19,15 +19,15 @@
     <simpletable>
       <sthead>
         <stentry>
-          <b>Type sémantique</b>
+          <i>Type sémantique</i>
         </stentry>
         <stentry>
-          <b>Description</b>
+          <i>Description</i>
         </stentry>
       </sthead>
       <strow>
         <stentry>
-          <b>concept</b>
+          <i>concept</i>
         </stentry>
         <stentry>
           Introduction ou présentation d'un concept.
@@ -35,7 +35,7 @@
       </strow>
       <strow>
         <stentry>
-          <b>task</b>
+          <i>task</i>
         </stentry>
         <stentry>
           Procédure pas à pas, séquentielle et numérotée, destinée à réaliser
@@ -44,7 +44,7 @@
       </strow>
       <strow>
         <stentry>
-          <b>reference</b>
+          <i>reference</i>
         </stentry>
         <stentry>
           Informations de référence sur une liste d'éléments tels que des
@@ -87,21 +87,21 @@
       </li>
     </ul>
     <p>
-      Les types d'information de haut niveau tels que <b>task</b> sont divisés
+      Les types d'information de haut niveau tels que <i>task</i> sont divisés
       en types de plus bas niveau, par exemple :
     </p>
     <simpletable>
       <sthead>
         <stentry>
-          <b>Type</b>
+          <i>Type</i>
         </stentry>
         <stentry>
-          <b>Description</b>
+          <i>Description</i>
         </stentry>
       </sthead>
       <strow>
         <stentry>
-          <b>prereq</b>
+          <i>prereq</i>
         </stentry>
         <stentry>
           Liste de points obligatoires préalables à la réalisation d'une tâche.
@@ -109,7 +109,7 @@
       </strow>
       <strow>
         <stentry>
-          <b>steps</b>
+          <i>steps</i>
         </stentry>
         <stentry>
           Série d'étapes de la procédure.
@@ -117,7 +117,7 @@
       </strow>
       <strow>
         <stentry>
-          <b>stepxmp</b>
+          <i>stepxmp</i>
         </stentry>
         <stentry>
           Exemple de réalisation d'une étape.
@@ -127,29 +127,29 @@
     <p>
       Les règles syntaxiques interdisent au <b>rédacteur technique</b> de faire
       figurer une procédure pas à pas dans une section d'un autre type que
-      <b>task</b>. Le <b>rédacteur technique</b> dispose donc d'un véritable
+      <i>task</i>. Le <b>rédacteur technique</b> dispose donc d'un véritable
       modèle de rédaction qui l'aide à présenter des informations :
     </p>
     <simpletable>
       <strow>
         <stentry>
-          <b>minimalistes</b>
+          <i>minimalistes</i>
         </stentry>
         <stentry>
-          selon le principe de design <b>less is more</b>, l'utilisateur ne
-          dispose <b>que</b> de l'information dont il a besoin : une section
-          <b>task</b>, par exemple, ne contient que des prérequis, une procédure
+          selon le principe de design <i>less is more</i>, l'utilisateur ne
+          dispose <i>que</i> de l'information dont il a besoin : une section
+          <i>task</i>, par exemple, ne contient que des prérequis, une procédure
           et quelques autres éléments spécifiques ; toutes les informations
           conceptuelles ou de référence sont placées dans des sections à part ;
         </stentry>
       </strow>
       <strow>
         <stentry>
-          <b>complètes</b>
+          <i>complètes</i>
         </stentry>
         <stentry>
-          l'utilisateur dispose de <b>toute</b> l'information dont il a besoin ;
-          une section de type <b>task</b> sans procédure n'est pas une section
+          l'utilisateur dispose de <i>toute</i> l'information dont il a besoin ;
+          une section de type <i>task</i> sans procédure n'est pas une section
           DITA XML valide et ne pourra pas être publiée ; il est même possible
           de mettre en œuvre un mécanisme vérifiant automatiquement avant
           publication la présence de blocs d'information facultatifs selon le
@@ -161,7 +161,7 @@
       </strow>
       <strow>
         <stentry>
-          <b>cohérentes</b>
+          <i>cohérentes</i>
         </stentry>
         <stentry>
           les informations de même type sont présentées dans le même ordre et

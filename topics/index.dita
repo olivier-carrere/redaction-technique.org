@@ -4,9 +4,9 @@
   <title>Gérer la documentation comme le code source</title>
   <body>
     <p>
-      <b>Ne lisez pas ce site… <xref format="html" scope="external"
+      <i>Ne lisez pas ce site… <xref format="html" scope="external"
       href="https://github.com/olivier-carrere/redaction-technique.org/">
-      forkez-le sur GitHub !</xref></b>
+      forkez-le sur GitHub !</xref></i>
     </p>
     <p>
       Ce site présente comment gérer la documentation technique comme le code
@@ -17,11 +17,11 @@
       href="http://www.git-scm.com/">Git</xref>.
     </p>
     <p>
-      Il est conçu et réalisé par un rédacteur technique (carrereo <b>at</b>
+      Il est conçu et réalisé par un rédacteur technique (carrereo <i>at</i>
       gmail.com) spécialisé dans l'informatique.  Il est publié sous licence
       <xref format="html" scope="external" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
       Commons</xref>. Vous pouvez le cloner, le forker, proposer des
-      <b>patchs</b>, ou… le lire, dans le format que vous souhaitez, après
+      <i>patchs</i>, ou… le lire, dans le format que vous souhaitez, après
       l'avoir compilé en PDF, EPUB ou autre avec <xref format="html" scope="external"
       href="http://sphinx-doc.org/">Python Sphinx</xref>.
     </p>

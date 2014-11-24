@@ -6,9 +6,9 @@
   <taskbody>
     <context>
       <p>
-        Ce <b>didacticiel mode Predictive pour Emacs</b> est destiné à vous
-        guider dans la mise en place et l'utilisation du mode Emacs d'<b>aide à
-        la rédaction</b> et d'<b>autocomplétion des mots</b> anglais et français
+        Ce <i>didacticiel mode Predictive pour Emacs</i> est destiné à vous
+        guider dans la mise en place et l'utilisation du mode Emacs d'<i>aide à
+        la rédaction</i> et d'<i>autocomplétion des mots</i> anglais et français
         Predictive dans un environnement GNU/Linux (en l'occurrence, Debian).
       </p>
     </context>
@@ -51,7 +51,7 @@
       </step>
       <step>
         <cmd>
-          Compilez <b>predictive</b> :
+          Compilez <i>predictive</i> :
         </cmd>
         <info>
           <codeblock>
@@ -61,7 +61,7 @@
       </step>
       <step>
         <cmd>
-          Installez <b>predictive</b> :
+          Installez <i>predictive</i> :
         </cmd>
         <info>
           <codeblock>

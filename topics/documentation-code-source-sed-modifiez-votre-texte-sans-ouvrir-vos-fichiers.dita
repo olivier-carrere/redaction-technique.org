@@ -12,7 +12,7 @@
     </p>
     <p>
       Prenons l'exemple du dialogue entre entre M. Jourdain et son maître de
-      philosophie, dans le <b>Bourgeois gentilhomme</b> de Molière :
+      philosophie, dans le <i>Bourgeois gentilhomme</i> de Molière :
     </p>
     <p>
       MONSIEUR JOURDAIN :
@@ -45,19 +45,19 @@
     <p>
       Il s'agit maintenant d'intervertir les mots de la phrase, pour en créer
       une nouvelle. Pour une simple transposition, on pourrait juger plus facile
-      d'utiliser <b>awk</b>.  <b>awk</b> ne gère en effet pas des lignes, mais
-      des <b>champs</b> d'un <b>enregistrement</b> (d'une ligne), délimités par
-      défaut par des espaces. Autrement dit, <b>awk</b> traite le texte comme
+      d'utiliser <i>awk</i>.  <i>awk</i> ne gère en effet pas des lignes, mais
+      des <i>champs</i> d'un <i>enregistrement</i> (d'une ligne), délimités par
+      défaut par des espaces. Autrement dit, <i>awk</i> traite le texte comme
       une base de données.  Il peut facilement afficher toute la ligne, ou
       seulement un ou plusieurs champs, dans l'ordre souhaité. Les champs sont
-      indiqués sous la forme <b>$n</b>, où n indique la position du champ dans
-      la ligne, à partir de la gauche. Ainsi <b>$1</b> indique le premier champ,
-      <b>$2</b> le dernier, etc. <b>$0</b> correspond à toute la ligne.
+      indiqués sous la forme <i>$n</i>, où n indique la position du champ dans
+      la ligne, à partir de la gauche. Ainsi <i>$1</i> indique le premier champ,
+      <i>$2</i> le dernier, etc. <i>$0</i> correspond à toute la ligne.
     </p>
     <p>
       Nous allons donc donner la déclaration d'amour de M. Jourdain en entrée
-      d'un programme <b>awk</b> d'une ligne, grâce au symbole de redirection
-      <b>pipeline</b> (|).
+      d'un programme <i>awk</i> d'une ligne, grâce au symbole de redirection
+      <i>pipeline</i> (|).
     </p>
     <codeblock>
       $ echo &quot;Belle marquise, vos beaux yeux me font mourir d'amour.&quot; | \
@@ -65,21 +65,21 @@
       d'amour. mourir me font Belle marquise, vos beaux yeux
     </codeblock>
     <p>
-      La sortie de la commande <b>echo</b> n'est pas affichée. Ce qui est
-      affiché, c'est la sortie du programme <b>awk</b>, dont la sortie de la
-      commande <b>echo</b>, soit la déclaration d'amour de M.  Jourdain, était
+      La sortie de la commande <i>echo</i> n'est pas affichée. Ce qui est
+      affiché, c'est la sortie du programme <i>awk</i>, dont la sortie de la
+      commande <i>echo</i>, soit la déclaration d'amour de M.  Jourdain, était
       l'entrée.
     </p>
     <p>
       La sortie finale ne correspond cependant pas à ce que l'on souhaitait. Les
-      <b>champs</b> ne correspondent pas trait pour trait à des mots. Il
-      faudrait donc raffiner la commande <b>awk</b>.
+      <i>champs</i> ne correspondent pas trait pour trait à des mots. Il
+      faudrait donc raffiner la commande <i>awk</i>.
     </p>
     <p>
-      Il est plus simple de se tourner vers <b>sed</b>.  <b>sed</b> sélectionne
+      Il est plus simple de se tourner vers <i>sed</i>.  <i>sed</i> sélectionne
       dans des lignes des ensembles de caractères cités littéralement, ou
-      <b>via</b> des méta-caractères dans des <b>expressions rationnelles</b>
-      (ou <b>expressions régulières</b>). Un méta-caractère connu des
+      <i>via</i> des méta-caractères dans des <i>expressions rationnelles</i>
+      (ou <i>expressions régulières</i>). Un méta-caractère connu des
       expressions rationnelles est le signe *, indiquant, en ligne de commande,
       zéro ou un nombre indéfini de caractères, comme dans :
     </p>
@@ -87,7 +87,7 @@
       $ ls *.rst
     </codeblock>
     <p>
-      <b>sed</b> gère également des <b>références arrières</b>, qui affichent à
+      <i>sed</i> gère également des <i>références arrières</i>, qui affichent à
       l'endroit où on le souhaite la valeur correspondant à une expression
       littérale ou rationnelle trouvée auparavant. Heureusement pour nous, la
       déclaration d'amour de M. Jourdain contient exactement neuf mots, ce qui
@@ -159,7 +159,7 @@
       <title id="moliere-et-gnulinux">Molière et GNU/Linux</title>
       <p>
         Réécrivons le dialogue de M. Jourdain et de son maître de philosophie en
-        style <b>geek</b> :
+        style <i>geek</i> :
       </p>
       <p>
         MONSIEUR JOURDAIN :
@@ -247,7 +247,7 @@
         $ echo &quot;Vaste océan, la forte houle te fait tanguer d'ivresse.&quot; &gt;&gt; variations.txt
       </codeblock>
       <p>
-        Plaçons les différentes commandes <b>sed</b> dans un script différent
+        Plaçons les différentes commandes <i>sed</i> dans un script différent
         chacune :
       </p>
       <codeblock>
@@ -257,7 +257,7 @@
         $ echo &quot;s#\(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\), \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(d'\&lt;.*\&gt;\)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#&quot; &gt; moliere4.sed
       </codeblock>
       <p>
-        Exécutons maintenant en boucle tous les scripts <b>sed</b> sur toutes
+        Exécutons maintenant en boucle tous les scripts <i>sed</i> sur toutes
         les lignes du fichier :
       </p>
       <codeblock>

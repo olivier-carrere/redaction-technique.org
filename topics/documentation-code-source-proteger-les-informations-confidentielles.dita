@@ -6,24 +6,24 @@
     <p>
       Le puissant mécanisme <xref format="html" scope="external"
       href="http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html">
-      conref</xref> de <b>DITA XML</b> se prête à d'autres applications que la
+      conref</xref> de <i>DITA XML</i> se prête à d'autres applications que la
       réduction des coûts. Par exemple, le <b>rédacteur technique</b> peut
       masquer des informations dans le code source.
     </p>
     <p>
-      Voici un cas original d'utilisation des <b>conref</b> : imaginez que vous
+      Voici un cas original d'utilisation des <i>conref</i> : imaginez que vous
       devez faire traduire un fichier contenant des informations confidentielles
       qui ne doivent pas figurer dans la version traduite et auxquelles le
       traducteur ne doit pas avoir accès (une clause de confidentialité interdit
       aux clients de diffuser l'information dont ils disposent).
     </p>
     <p>
-      Comment faire ? Le filtrage à l'aide du mécanisme <b>ditaval</b> est conçu
+      Comment faire ? Le filtrage à l'aide du mécanisme <i>ditaval</i> est conçu
       pour exclure des informations des livrables, non pour les masquer dans les
       fichiers sources.  Allez-vous devoir créer deux jeux de fichiers sources,
       certains comportant les informations confidentielles, les autres non ?
-      Adieu alors le <b>single-sourcing</b> et la réutilisation du contenu qui
-      vous ont fait choisir <b>DITA XML</b> !
+      Adieu alors le <i>single-sourcing</i> et la réutilisation du contenu qui
+      vous ont fait choisir <i>DITA XML</i> !
     </p>
     <fig>
       <title>Masquer des informations confidentielles aux traducteurs</title>
@@ -31,12 +31,12 @@
     </fig>
     <p>
       En plaçant le contenu confidentiel dans un fichier que vous appelez par
-      exemple confidentiel.dita et en plaçant des <b>conref</b> assortis d'une
+      exemple confidentiel.dita et en plaçant des <i>conref</i> assortis d'une
       clé de filtrage dans le fichier à traduire, vous avez résolu votre
       problème : le traducteur ne traduira que le texte non confidentiel, et le
       livrable généré dans la langue cible ne contiendra pas le texte
       confidentiel, noté comme conditionnel et exclu explicitement par le
-      fichier <b>ditaval</b> passé en argument lors de la compilation.
+      fichier <i>ditaval</i> passé en argument lors de la compilation.
     </p>
   </body>
 </topic>

@@ -5,14 +5,14 @@
   client</title>
   <body>
     <p>
-      La <b>documentation technique</b>, c'est comme une ampoule : une ampoule
+      La <i>documentation technique</i>, c'est comme une ampoule : une ampoule
       basse consommation demande un investissement plus important en début de
       cycle de vie, mais a rapidement un coût plus faible.
     </p>
     <p>
-      Comme une ampoule basse consommation, un processus de <b>rédaction
-      technique</b> industriel diminue les coûts. Il réduit également le <b>time
-      to market</b>. À coût initial légèrement supérieur ou égal, il améliore
+      Comme une ampoule basse consommation, un processus de <i>rédaction
+      technique</i> industriel diminue les coûts. Il réduit également le <i>time
+      to market</i>. À coût initial légèrement supérieur ou égal, il améliore
       également la qualité.
     </p>
     <simpletable>
@@ -36,7 +36,7 @@
       </strow>
       <strow>
         <stentry>
-          <b>Time to market</b> réduit
+          <i>Time to market</i> réduit
         </stentry>
         <stentry>
           <ul>
@@ -70,18 +70,18 @@
     </p>
     <ul>
       <li>
-        un <b>format documentaire modulaire</b>,
+        un <i>format documentaire modulaire</i>,
       </li>
       <li>
-        un format de <b>rédaction structurée</b>,
+        un format de <i>rédaction structurée</i>,
       </li>
       <li>
-        une <b>chaîne de production et de publication documentaire</b> fiable.
+        une <i>chaîne de production et de publication documentaire</i> fiable.
       </li>
     </ul>
     <p>
       Si la chaîne de création et de publication choisie repose sur des
-      logiciels <b>open-source</b>, le coût de mise en place et d'apprentissage
+      logiciels <i>open-source</i>, le coût de mise en place et d'apprentissage
       peut même être compensé par l'économie sur les licences de logiciels. En
       tout état de cause, de trop nombreuses sociétés de haute technologie ont
       industrialisé leurs processus métier, mais laissent en friche la création,

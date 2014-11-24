@@ -6,7 +6,7 @@
   <taskbody>
     <prereq>
       <p>
-        <b>Prérequis</b>
+        <i>Prérequis</i>
       </p>
       <ul>
         <li>
@@ -19,7 +19,7 @@
         Ce didacticiel <xref format="html" scope="external"
         href="http://dita.xml.org/">DITA XML</xref> est destiné à vous guider
         dans la mise en place et l'utilisation de la chaîne de publication
-        <b>DITA Open Toolkit</b> dans un environnement Windows (testé sur
+        <i>DITA Open Toolkit</i> dans un environnement Windows (testé sur
         Windows XP).
       </p>
     </context>
@@ -43,7 +43,7 @@
       <step>
         <cmd>
           Sélectionnez Exécuter dans le menu Démarrer, collez la commande
-          suivante, puis appuyez sur <b>Entrée</b> :
+          suivante, puis appuyez sur <i>Entrée</i> :
         </cmd>
         <info>
           <codeblock>

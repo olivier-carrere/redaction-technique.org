@@ -4,11 +4,11 @@
   <title>Documents monolithiques ou modulaires</title>
   <body>
     <p>
-      Le format source peut reposer sur des <b>fichiers monolithiques</b> ou sur
-      des <b>grappes de fichiers modulaires</b>.
+      Le format source peut reposer sur des <i>fichiers monolithiques</i> ou sur
+      des <i>grappes de fichiers modulaires</i>.
     </p>
     <p>
-      Les <b>fichiers monolithiques</b> (par exemple Word, LibreOffice ou
+      Les <i>fichiers monolithiques</i> (par exemple Word, LibreOffice ou
       Framemaker) centralisent tout le contenu dans un seul fichier, facile à
       manier, mais qui limite le partage du contenu ; le risque de disposer
       d'informations incohérentes ou en doublon est alors important.
@@ -18,14 +18,14 @@
       <image href="../graphics/monolithique.png" />
     </fig>
     <p>
-      Les <b>grappes de fichiers modulaires</b> (par exemple <xref format="html"
+      Les <i>grappes de fichiers modulaires</i> (par exemple <xref format="html"
       scope="external" href="http://dita.xml.org/">DITA XML</xref> ou <xref
       format="html" scope="external"
       href="http://www.docbook.org/">DocBook</xref>) agrègent le contenu de
       multiples fichiers, ce qui favorise le partage et la réutilisation de
       blocs de contenu. Un tel système est difficile à mettre en place au niveau
       de toute l'entreprise, mais devrait être la norme pour une équipe de
-      <b>rédaction technique</b>.
+      <i>rédaction technique</i>.
     </p>
     <fig>
       <title>Format source de rédaction technique modulaire</title>

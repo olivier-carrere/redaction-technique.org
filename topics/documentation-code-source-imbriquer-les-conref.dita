@@ -6,22 +6,22 @@
   <body>
     <p>
       Pour des raisons de facilité de mise à jour et de maintenance du contenu
-      <b>DITA XML</b>, le <b>rédacteur technique</b> doit limiter l'effet
-      <b>poupée russe</b> et ne pas trop imbriquer les <xref format="html"
+      <i>DITA XML</i>, le <b>rédacteur technique</b> doit limiter l'effet
+      <i>poupée russe</i> et ne pas trop imbriquer les <xref format="html"
       scope="external"
       href="http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html">
-      conref</xref>.  Un seul niveau d'imbrication (un <b>conref</b> imbriqué
+      conref</xref>.  Un seul niveau d'imbrication (un <i>conref</i> imbriqué
       dans un autre) me semble le seuil au-delà duquel le contenu peut vite
       devenir ingérable.
     </p>
     <p>
-      Dans l'exemple ci-dessous, le <b>conref</b> source
-      <b>see-admin-guide</b> contient le
-      <b>conref</b> cible
-      <b>admin-guide-title</b> :
+      Dans l'exemple ci-dessous, le <i>conref</i> source
+      <i>see-admin-guide</i> contient le
+      <i>conref</i> cible
+      <i>admin-guide-title</i> :
     </p>
     <p>
-      <b>Exemple</b>
+      <i>Exemple</i>
     </p>
     <codeblock>
       &lt;p id=&quot;see-admin-guide&quot;&gt;
@@ -30,15 +30,15 @@
       &lt;/p&gt;
     </codeblock>
     <p>
-      Ce niveau de complexité est gérable. Mais si le <b>conref</b> source
-      <b>admin-guide-title</b> contient lui même un <b>conref</b> cible, le code
-      <b>DITA XML</b> devient un vrai plat de spaghettis (sans compter les
-      risques de référence circulaire). Les <b>conref</b> peuvent théoriquement
+      Ce niveau de complexité est gérable. Mais si le <i>conref</i> source
+      <i>admin-guide-title</i> contient lui même un <i>conref</i> cible, le code
+      <i>DITA XML</i> devient un vrai plat de spaghettis (sans compter les
+      risques de référence circulaire). Les <i>conref</i> peuvent théoriquement
       être combinés à l'infini, mais les problèmes pratiques que cela engendre
       peuvent également être infinis !
     </p>
     <fig>
-      <title>Imbriquer les <b>conref</b> sur plusieurs niveaux : puissant, mais
+      <title>Imbriquer les <i>conref</i> sur plusieurs niveaux : puissant, mais
       dangereux !</title>
       <image href="graphics/imbriquer-conref.png" />
     </fig>
@@ -47,17 +47,17 @@
     </p>
     <ul>
       <li>
-        Il est tout à fait possible d'imbriquer plusieurs <b>conref</b>
+        Il est tout à fait possible d'imbriquer plusieurs <i>conref</i>
         sources. Le seul effet de bord négatif porte sur la lisibilité du
-        fichier contenant les <b>conref</b>.
+        fichier contenant les <i>conref</i>.
       </li>
       <li>
-        L'imbrication de <b>conref</b> sources et cibles est possible mais
+        L'imbrication de <i>conref</i> sources et cibles est possible mais
         rapidement ingérable.
       </li>
       <li>
-        Il est impossible d'imbriquer des <b>conref</b> cibles : le contenu du
-        <b>conref</b> du niveau supérieur écrasera les valeurs des <b>conref</b>
+        Il est impossible d'imbriquer des <i>conref</i> cibles : le contenu du
+        <i>conref</i> du niveau supérieur écrasera les valeurs des <i>conref</i>
         du niveau inférieur.
       </li>
     </ul>

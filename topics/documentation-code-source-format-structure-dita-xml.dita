@@ -5,11 +5,11 @@
   <body>
     <p>
       Diminuer les coûts de production et de traduction, réduire les délais de
-      mise sur le marché (ou <b>time to market</b>) et améliorer la qualité de
+      mise sur le marché (ou <i>time to market</i>) et améliorer la qualité de
       la documentation.  Voilà les défis que doit relever aujourd'hui le
       <b>rédacteur technique</b>. L'un des meilleurs moyens d'y parvenir
       consiste à réduire le volume source de la documentation et à mieux gérer
-      le <b>contenu d'entreprise</b>.
+      le <i>contenu d'entreprise</i>.
     </p>
     <fig>
       <title>Formats de documentation technique : degrés de
@@ -18,7 +18,7 @@
     </fig>
     <p>
       L'information que le <b>rédacteur technique</b> fournit au public
-      <b>doit</b> être redondante : l'entreprise doit présenter à chacun de ses
+      <i>doit</i> être redondante : l'entreprise doit présenter à chacun de ses
       publics toute l'information dont il a besoin, sur le support qui lui est
       adapté. Pour prendre l'exemple le plus simple, chaque support
       d'information doit mentionner les coordonnées de la société. Mais jusqu'à
@@ -42,7 +42,7 @@
     </fig>
     <p>
       DITA (Darwin Information Typing Architecture) est une architecture XML de
-      <b>rédaction structurée</b> destinée à la création de documents modulaires
+      <i>rédaction structurée</i> destinée à la création de documents modulaires
       et à la réutilisation du contenu. À partir d'une base commune de modules
       d'information atomiques DITA XML, le <b>rédacteur technique</b> peut
       fournir en temps réel toute l'information dont chaque utilisateur a

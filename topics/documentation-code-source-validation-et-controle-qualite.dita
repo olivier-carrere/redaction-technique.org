@@ -4,8 +4,8 @@
   <title>Validation et contrôle qualité</title>
   <body>
     <p>
-      Un support de <b>rédaction technique</b> doit être soumis à un <b>contrôle
-      qualité</b> rigoureux avant d'être communiqué à ses différentes cibles.
+      Un support de <i>rédaction technique</i> doit être soumis à un <i>contrôle
+      qualité</i> rigoureux avant d'être communiqué à ses différentes cibles.
     </p>
     <p>
       Le contenu doit être validé avant livraison. Cela paraît évident, mais
@@ -15,7 +15,7 @@
       elles sont coûteuses. Un outil de gestion de contenu d'entreprise tel
       qu'<xref format="html" scope="external"
       href="http://www.alfresco.com/fr/">Alfresco</xref> peut sembler
-      intéressant afin de mettre en place des <b>workflows</b>, sur le papier du
+      intéressant afin de mettre en place des <i>workflows</i>, sur le papier du
       moins. Dans les faits, une telle solution peut s'avérer lourde. Elle est
       de plus peu compatible avec certains formats sources basés sur des
       documents modulaires et non monolithiques et avec les logiciels de gestion

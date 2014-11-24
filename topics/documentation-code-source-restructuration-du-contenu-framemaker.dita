@@ -10,7 +10,7 @@
       vers <xref format="html" scope="external"
       href="http://fr.wikipedia.org/wiki/Darwin_Information_Typing_Architecture">DITA
       XML</xref> consiste à appliquer une table de conversion entre les styles
-      <b>FrameMaker</b> et les structures <b>DITA XML</b>.
+      <i>FrameMaker</i> et les structures <i>DITA XML</i>.
     </p>
     <p>
       Un important travail de restructuration du document FrameMaker doit
@@ -19,17 +19,17 @@
     <ul>
       <li>
         restructuration de l'information selon les trois catégories
-        <b>concept</b>, <b>tâche</b> et <b>référence</b>,
+        <i>concept</i>, <i>tâche</i> et <i>référence</i>,
       </li>
       <li>
-        suppression des <b>overrides</b> (propriétés de texte appliquées
+        suppression des <i>overrides</i> (propriétés de texte appliquées
         manuellement et écrasant les styles ; ce genre d'hérésie est, sinon
         impossible, du moins très limité sous un format structuré),
       </li>
       <li>
         harmonisation et simplification des styles FrameMaker pour les limiter
         et les faire correspondre aux balises DITA XML qui seront utilisées (par
-        exemple, un style <b>note_important</b> vers la balise &lt;note
+        exemple, un style <i>note_important</i> vers la balise &lt;note
         type=&quot;important&gt; ; il faut donc au préalable analyser le contenu
         existant et décider quel ensemble de balises sera utilisé parmi les
         centaines de balises proposées par DITA XML : il est en effet fortement

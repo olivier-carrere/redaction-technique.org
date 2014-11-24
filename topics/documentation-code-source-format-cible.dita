@@ -9,9 +9,9 @@
       href="http://fr.wikipedia.org/wiki/Jpeg">JPEG</xref>, qui est utilisé pour
       l'affichage Web ou l'impression et sur lequel les modifications ne peuvent
       être annulées une fois fermé le logiciel de retouches.</fn> d'un support
-      de <b>rédaction technique</b> est celui sous lequel l'audience du message
+      de <i>rédaction technique</i> est celui sous lequel l'audience du message
       y accédera. Il est différent de celui sous lequel le <b>rédacteur
-      technique</b> crée le contenu. Le <b>single-sourcing</b> permet de générer
+      technique</b> crée le contenu. Le <i>single-sourcing</i> permet de générer
       plusieurs livrables à des formats différents à partir d'un même format
       source.
     </p>
@@ -22,10 +22,10 @@
     <simpletable>
       <strow>
         <stentry>
-          <b>Méthode</b>
+          <i>Méthode</i>
         </stentry>
         <stentry>
-          <b>Exemple</b>
+          <i>Exemple</i>
         </stentry>
       </strow>
       <strow>
@@ -35,7 +35,7 @@
         <stentry>
           Livre blanc du format structuré <xref format="html" scope="external"
           href="http://dita.xml.org/">DITA</xref> au format cible PDF
-          <b>via</b> DITA Open Toolkit.
+          <i>via</i> DITA Open Toolkit.
         </stentry>
       </strow>
       <strow>
@@ -65,7 +65,7 @@
     <p>
       Plus le processus est automatisé, plus le risque d'erreur est faible et
       plus la publication et la mise à jour sont aisées.  L'automatisation
-      facilite également le <b>single-sourcing</b>, qui consiste à générer
+      facilite également le <i>single-sourcing</i>, qui consiste à générer
       plusieurs livrables à des formats cibles différents à partir d'un même
       format source. Un projet au format DITA XML peut ainsi être livré sous
       forme de fichier PDF, d'aide compilée Windows, d'aide JavaHelp, de site en

@@ -7,39 +7,39 @@
       Les <xref format="html" scope="external"
       href="http://docs.oasis-open.org/dita/v1.0/archspec/topicover.html">
       topics</xref> sont les plus petites unités d'information autonomes gérées
-      par <b>DITA XML</b>. Chaque <b>topic</b> a un titre et un corps de
+      par <i>DITA XML</i>. Chaque <i>topic</i> a un titre et un corps de
       texte. Il ne traite que d'un seul sujet. Il appartient donc au
       <b>rédacteur technique</b> de se baser sur la modularité proposée par DITA
       XML pour bien structurer l'information.
     </p>
     <p>
-      Les <b>topics</b> sont sémantiquement typés. Il existe idéalement un type
-      de <b>topic</b> par type d'information. DITA XML propose par défaut des
-      <b>topics</b> adaptés à la documentation des logiciels (description de
+      Les <i>topics</i> sont sémantiquement typés. Il existe idéalement un type
+      de <i>topic</i> par type d'information. DITA XML propose par défaut des
+      <i>topics</i> adaptés à la documentation des logiciels (description de
       concepts et de tâches, liste de commandes, etc.), mais de nouveaux types
-      de <b>topics</b> peuvent être créés pour répondre à d'autres besoins.
+      de <i>topics</i> peuvent être créés pour répondre à d'autres besoins.
     </p>
     <p>
-      Les <b>topics</b> sont une des différences principales entre <b>DITA
-      XML</b> et <b>DocBook</b>, qui ne propose pas de typologie des briques
+      Les <i>topics</i> sont une des différences principales entre <i>DITA
+      XML</i> et <i>DocBook</i>, qui ne propose pas de typologie des briques
       d'information.
     </p>
     <p>
-      Les <b>topics</b> sont généralement stockés <b>à plat</b> dans des
-      répertoires divisés par type de <b>topic</b>. Ils sont organisés
-      hiérarchiquement dans des fichiers <b>.ditamap</b> et peuvent être
+      Les <i>topics</i> sont généralement stockés <i>à plat</i> dans des
+      répertoires divisés par type de <i>topic</i>. Ils sont organisés
+      hiérarchiquement dans des fichiers <i>.ditamap</i> et peuvent être
       partagés entre différents documents. Les titres des modules ne sont pas
       affectés d'un niveau de titre. La structure des modules étant parfaitement
       homogène, un module peut avoir un niveau 3 dans un document donné, et un
       niveau 1 dans un autre document, sans qu'il y ait besoin de modifier en
-      quoi que ce soit les <b>topics</b>.
+      quoi que ce soit les <i>topics</i>.
     </p>
     <p>
       Les unités d'information atomiques <fn>Pas au sens XPath.</fn> telles que
       des remarques, des paragraphes, voire des phrases ou des segments de
       phrase, qui ne peuvent pas être munis d'un titre, ne forment pas des
-      <b>topics</b>. Elles peuvent être cependant partagées <b>via</b> le
-      mécanisme <b>conref</b>, similaire au mécanisme <b>Xinclude</b> proposé
+      <i>topics</i>. Elles peuvent être cependant partagées <i>via</i> le
+      mécanisme <i>conref</i>, similaire au mécanisme <i>Xinclude</i> proposé
       par DocBook.
     </p>
   </body>

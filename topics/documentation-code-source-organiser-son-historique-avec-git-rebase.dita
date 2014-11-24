@@ -83,14 +83,14 @@
       précédentes, par exemple.
     </p>
     <note class="warning">
-      La commande <b>rebase</b> est potentiellement destructive ; veillez à
-      sauvegarder votre espace de travail, répertoire <b>.git</b> compris, avant
+      La commande <i>rebase</i> est potentiellement destructive ; veillez à
+      sauvegarder votre espace de travail, répertoire <i>.git</i> compris, avant
       de l'exécuter, sous risque de perdre des données ; vous pouvez également
       créer une branche de sauvegarde provisoire.
     </note>
     <p>
       Vous pouvez alors réécrire l'histoire pour proposer à vos collaborateurs
-      un <b>commit</b> pour chaque tâche réalisée en son entier, comme sur le
+      un <i>commit</i> pour chaque tâche réalisée en son entier, comme sur le
       schéma suivant :
     </p>
     <fig>
@@ -98,36 +98,36 @@
       <image href="../graphics/git-rebase-commits-2.png" />
     </fig>
     <p>
-      Les <b>commits</b> ont tout d'abord été regroupés par type sur la
-      <b>flèche du temps</b> de Git, puis fusionnés.
+      Les <i>commits</i> ont tout d'abord été regroupés par type sur la
+      <i>flèche du temps</i> de Git, puis fusionnés.
     </p>
     <note>
       Si vous avez effectué simultanément les deux tâches sur un ou plusieurs
-      fichiers, pas de panique : grâce à la commande <b>git add -p</b> vous
-      pouvez répartir vos modifications imbriquées sur les <b>commits</b>
-      idoines. Lorsque vous lancez <b>git status</b>, vous vous apercevez alors
-      que vos fichiers sont à la fois prêts et non prêts à être <b>commités</b>
+      fichiers, pas de panique : grâce à la commande <i>git add -p</i> vous
+      pouvez répartir vos modifications imbriquées sur les <i>commits</i>
+      idoines. Lorsque vous lancez <i>git status</i>, vous vous apercevez alors
+      que vos fichiers sont à la fois prêts et non prêts à être <i>commités</i>
       : il y a deux états des fichiers, chaque état représentant un stade
       partiel de votre travail et la somme des deux représentant la totalité des
       modifications que vous avez apportées.
     </note>
     <p>
-      Évidemment, vous n'avez plus accès aux <b>commits</b> intermédiaires, mais
-      c'est ce que vous souhaitiez : chaque <b>commit</b> unique représente un
+      Évidemment, vous n'avez plus accès aux <i>commits</i> intermédiaires, mais
+      c'est ce que vous souhaitiez : chaque <i>commit</i> unique représente un
       état cohérent de votre contenu.
     </p>
     <p>
       Ce workflow facilite également le travail d'équipe : vous pouvez confier
       ces tâches à deux membres différents de votre équipe, chacun travaillant
       dans son espace local. Les modifications du premier sont ensuite
-      fusionnées avec celles du second dans son espace local <b>via</b> des
-      <b>patches</b>. Enfin, les <b>commits</b> sont refactorisés avant de les
+      fusionnées avec celles du second dans son espace local <i>via</i> des
+      <i>patches</i>. Enfin, les <i>commits</i> sont refactorisés avant de les
       placer sur le dépôt central.
     </p>
     <note class="important">
-      Moins vous réorganiserez vos <b>commits</b> (surtout chronologiquement),
+      Moins vous réorganiserez vos <i>commits</i> (surtout chronologiquement),
       plus le risque de devoir corriger manuellement des conflits sera
-      faible. Autrement dit, <b>git rebase</b> ne doit pas être une excuse pour
+      faible. Autrement dit, <i>git rebase</i> ne doit pas être une excuse pour
       ne pas planifier rationnellement son travail.
     </note>
   </body>

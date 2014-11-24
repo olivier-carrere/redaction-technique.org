@@ -19,21 +19,21 @@
       gauches ou deux verres droits. Ils ne voient donc qu'une partie de
       l'information. Loin d'être lésés par cet état de fait, ils ont ainsi un
       meilleur accès à l'information. Le profilage réalisé masque à chaque
-      public les informations dont ils n'ont <b>pas</b> besoin et qui ne
+      public les informations dont ils n'ont <i>pas</i> besoin et qui ne
       seraient pour eux que du bruit. Chaque audience bénéficie donc d'un
       meilleur accès à l'information qui la concerne, selon le fameux concept
-      minimaliste de <b>less is more</b>.
+      minimaliste de <i>less is more</i>.
     </p>
     <fig>
       <title>Texte conditionnel avec DITA XML</title>
       <image href="graphics/ditaval.png" />
     </fig>
     <p>
-      Concrètement, le mécanisme <b>ditaval</b> est basé sur des opérateurs
+      Concrètement, le mécanisme <i>ditaval</i> est basé sur des opérateurs
       binaires : vous marquez un bloc d'information avec un attribut et une
       valeur, puis incluez ou excluez ce bloc dans le livrable en passant un
       opérande lors de la compilation (le bloc est inclus par défaut si aucun
-      opérande n'est spécifié). C'est le principe du <b>texte conditionnel</b>.
+      opérande n'est spécifié). C'est le principe du <i>texte conditionnel</i>.
     </p>
     <p>
       Gâce à ce mécanisme, il n'est pas nécessaire de créer deux fichiers
@@ -42,12 +42,12 @@
       contenu source.
     </p>
     <p>
-      Vous pouvez appliquer des clés de filtrage en série (condition <b>et</b>)
+      Vous pouvez appliquer des clés de filtrage en série (condition <i>et</i>)
       en indiquant plusieurs valeurs séparées par des espaces dans les attributs
-      <b>product</b>, <b>audience</b> ou autre.
+      <i>product</i>, <i>audience</i> ou autre.
     </p>
     <p>
-      <b>Exemple</b>
+      <i>Exemple</i>
     </p>
     <p>
       Pour indiquer qu'une remarque est destinée à la fois à des électriciens et
@@ -86,7 +86,7 @@
         DITA, le code filtré peut ne pas l'être.
       </p>
       <p>
-        <b>Exemple</b>
+        <i>Exemple</i>
       </p>
       <p>
         Le code suivant est correct avant filtrage :

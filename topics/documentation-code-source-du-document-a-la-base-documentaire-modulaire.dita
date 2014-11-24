@@ -5,17 +5,17 @@
   <body>
     <p>
       Le modèle du livre est encore prédominant pour créer et gérer
-      l'information. Mais le <b>contenu d'entreprise</b> est souvent disséminé
+      l'information. Mais le <i>contenu d'entreprise</i> est souvent disséminé
       dans de nombreux documents, sous des formats hétérogènes. Ceci se traduit
       par des doublons, des incohérences, un coût de mise à jour et de
       traduction élevé, et des retards de livraison. Le <b>rédacteur
       technique</b> dispose cependant d'autres modèles, plus efficaces.
     </p>
     <p>
-      Le format de <b>rédaction structurée</b> <xref format="html"
+      Le format de <i>rédaction structurée</i> <xref format="html"
       scope="external" href="http://dita.xml.org/">DITA XML</xref> propose de
-      passer du modèle du livre à celui du de la <b>base documentaire
-      modulaire</b>. Le contenu d'entreprise repose sur des briques uniques, qui
+      passer du modèle du livre à celui du de la <i>base documentaire
+      modulaire</i>. Le contenu d'entreprise repose sur des briques uniques, qui
       peuvent être assemblées dynamiquement, à la demande, pour produire des
       documents sous différents formats cibles.
     </p>
@@ -27,7 +27,7 @@
       Le volume de contenu source est minimisé, ce qui diminue les coûts de
       création, mise à jour et traduction du contenu d'entreprise. De plus, le
       <b>rédacteur technique</b> peut gérer les processus de rédaction,
-      validation et traduction module par module. Les <b>workflows</b> peuvent
+      validation et traduction module par module. Les <i>workflows</i> peuvent
       ainsi être parallélisés, ce qui réduit les délais de mise sur le marché.
     </p>
     <p>

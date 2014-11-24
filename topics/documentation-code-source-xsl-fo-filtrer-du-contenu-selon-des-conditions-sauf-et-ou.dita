@@ -79,8 +79,8 @@
       ancestor-or-self
     </codeblock>
     <p>
-      Il faut alors utiliser la syntaxe <b>pipe</b> (condition booléenne
-      <b>ou</b>) pour modifier le chemin <xref format="html" scope="external"
+      Il faut alors utiliser la syntaxe <i>pipe</i> (condition booléenne
+      <i>ou</i>) pour modifier le chemin <xref format="html" scope="external"
       href="http://fr.wikipedia.org/wiki/XPath">XPATH</xref> comme suit :
     </p>
     <codeblock>

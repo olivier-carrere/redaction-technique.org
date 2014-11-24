@@ -6,7 +6,7 @@
   <taskbody>
     <context>
       <p>
-        Les branches <b>Git</b> permettent de facilement effectuer en parallèle
+        Les branches <i>Git</i> permettent de facilement effectuer en parallèle
         plusieurs tâches non liées :
       </p>
       <p>
@@ -32,47 +32,47 @@
     <steps>
       <step>
         <cmd>
-          Par défaut, vous travaillez sur la branche <b>master</b>. Votre espace
+          Par défaut, vous travaillez sur la branche <i>master</i>. Votre espace
           de travail contient des modifications que vous ne souhaitez pas
-          <b>committer</b> avant validation.
+          <i>committer</i> avant validation.
         </cmd>
       </step>
       <step>
         <cmd>
-          Créez une nouvelle branche : <b>git checkout -b ma-branche</b>.
+          Créez une nouvelle branche : <i>git checkout -b ma-branche</i>.
         </cmd>
       </step>
       <step>
         <cmd>
-          <b>Committez</b> vos modifications sur la nouvelle branche : <b>git
-          add mes-fichiers</b>, <b>git commit -m &quot;mon message de
-          commit&quot;</b>.
+          <i>Committez</i> vos modifications sur la nouvelle branche : <i>git
+          add mes-fichiers</i>, <i>git commit -m &quot;mon message de
+          commit&quot;</i>.
         </cmd>
       </step>
       <step>
         <cmd>
-          Vous repassez sur la branche master <b>git checkout master</b> et
+          Vous repassez sur la branche master <i>git checkout master</i> et
           passez à votre deuxième tâche. 5a. Si votre première tâche n'est pas
-          validée, vous repassez sur la branche provisoire : <b>git checkout
-          ma-branche</b> et faites un nouveau commit (que vous pourrez fusionner
+          validée, vous repassez sur la branche provisoire : <i>git checkout
+          ma-branche</i> et faites un nouveau commit (que vous pourrez fusionner
           avec le ou les précédents après validation).
         </cmd>
       </step>
       <step>
         <cmd>
           Lorsque vous recevez la validation de la première tâche, vous mettez
-          votre travail en cours de côté : <b>git stash</b>.
+          votre travail en cours de côté : <i>git stash</i>.
         </cmd>
       </step>
       <step>
         <cmd>
-          Vous fusionnez la branche provisoire avec la branche master : <b>git
-          merge ma-branche</b>.
+          Vous fusionnez la branche provisoire avec la branche master : <i>git
+          merge ma-branche</i>.
         </cmd>
       </step>
       <step>
         <cmd>
-          Vous récupérez votre travail en cours : <b>git stash pop</b>.
+          Vous récupérez votre travail en cours : <i>git stash pop</i>.
         </cmd>
       </step>
     </steps>
@@ -80,9 +80,9 @@
       <p>
         Si vous n'avez pas besoin d'effectuer deux lots de tâches en parallèle,
         vous pouvez sans problème travailler dans votre espace local. Si vous
-        devez revenir sur vos modifications, appellez la commande <b>git reset
-        --hard HEAD</b> pour écraser vos fichiers non <b>commités</b> du
-        répertoire local par ceux du dernier <b>commit</b>.
+        devez revenir sur vos modifications, appellez la commande <i>git reset
+        --hard HEAD</i> pour écraser vos fichiers non <i>commités</i> du
+        répertoire local par ceux du dernier <i>commit</i>.
       </p>
     </result>
   </taskbody>
