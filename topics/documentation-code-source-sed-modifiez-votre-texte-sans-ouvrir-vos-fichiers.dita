@@ -99,7 +99,7 @@
       d'amour. mourir me font, Belle marquise, vos beaux yeux
     </codeblock>
     <p>
-      Nous buttons sur le même problème: l'expression régulière .* ne correspond
+      Nous buttons sur le même problème : l'expression régulière .* ne correspond
       pas à un mot, mais à une suite de caractères, ponctuation comprise. Il
       faut alors utiliser la forme &lt;.*&gt;, qui correspond à un mot tel que
       ceux dont M. Jourdain se sert pour faire de la prose. Nous allons utiliser

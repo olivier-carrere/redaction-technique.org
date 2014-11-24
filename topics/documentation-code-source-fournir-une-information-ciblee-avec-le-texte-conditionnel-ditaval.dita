@@ -108,7 +108,7 @@
       </codeblock>
       <p>
         Or, selon le schéma XSD, les en-têtes de tableaux doivent contenir au
-        moins une ligne:
+        moins une ligne :
       </p>
       <codeblock>
         &lt;!ENTITY % thead.content &quot;((%row;)+)&gt;

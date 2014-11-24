@@ -68,7 +68,7 @@
           </codeblock>
           <p>
             Ce code contient des balises DITA contenant des valeurs
-            <b>audience</b> différentes: nous allons exclure
+            <b>audience</b> différentes : nous allons exclure
             le contenu d'une de ces deux balises lors de la génération du
             fichier cible en utilisant la clé <b>audience</b>.
           </p>
@@ -139,7 +139,7 @@
         <stepresult>
           <p>
             Ouvrez le fichier texte-conditionnel.pdf ; il contient des
-            informations destinées:
+            informations destinées :
           </p>
           <ul>
             <li>
@@ -165,7 +165,7 @@
         <stepresult>
           <p>
             Ouvrez le fichier texte-conditionnel.pdf ; il contient des
-            informations destinées:
+            informations destinées :
           </p>
           <ul>
             <li>

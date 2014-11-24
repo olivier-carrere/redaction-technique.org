@@ -30,7 +30,7 @@
     <steps>
       <step>
         <cmd>
-          Téléchargez et décompressez l'archive DITA Open Toolkit:
+          Téléchargez et décompressez l'archive DITA Open Toolkit :
         </cmd>
         <info>
           <codeblock>
@@ -41,7 +41,7 @@
       </step>
       <step>
         <cmd>
-          Configurez l'environnement DITA Open Toolkit:
+          Configurez l'environnement DITA Open Toolkit :
         </cmd>
         <info>
           <codeblock>
