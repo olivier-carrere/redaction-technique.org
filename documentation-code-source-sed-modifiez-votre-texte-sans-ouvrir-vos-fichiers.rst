@@ -87,7 +87,7 @@ maximal de références arrières possibles.
    sed "s#\(.*\) \(.*\), \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \(d'.*\)#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
    d'amour. mourir me font, Belle marquise, vos beaux yeux
 
-Nous buttons sur le même problème: l'expression régulière .* ne correspond pas à
+Nous buttons sur le même problème : l'expression régulière .* ne correspond pas à
 un mot, mais à une suite de caractères, ponctuation comprise. Il faut alors
 utiliser la forme <.*>, qui correspond à un mot tel que ceux dont M. Jourdain se
 sert pour faire de la prose. Nous allons utiliser les caractères d'échappement

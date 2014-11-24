@@ -26,14 +26,14 @@ doit elle-même être incluse dans des structures XML plus grandes.
 
 Vous voulez par exemple réutiliser la phrase *Cliquez sur OK.* Vous ne pouvez
 cependant pas indiquer dans le fichier contenant les *conref* sources uniquement
-le code suivant:
+le code suivant :
 
 .. code-block:: xml
 
   <cmd>Cliquez sur OK.</cmd>
 
 Pour être conforme au schéma XSD, votre code doit au moins être structuré comme
-suit:
+suit :
 
 .. code-block:: xml
 
@@ -55,7 +55,7 @@ Il s'agit maintenant de placer un ID sur une structure XML afin de pouvoir
 réutiliser le contenu de cette structure. En l'occurrence, c'est une étape
 unique comprenant une commande unique que vous souhaitez réutiliser.
 
-Il est alors préférable d'utiliser la syntaxe suivante:
+Il est alors préférable d'utiliser la syntaxe suivante :
 
 .. code-block:: xml
 
@@ -65,7 +65,7 @@ Il est alors préférable d'utiliser la syntaxe suivante:
      </cmd>
    </step>
 
-plutôt que la suivante:
+plutôt que la suivante :
 
 .. code-block:: xml
 
@@ -85,7 +85,7 @@ exemple :samp:`<info>`).
 
 Dans le 2e cas, tout le contenu du nœud :samp:`<step>` sera remplacé par la
 valeur du *conref* source. Par exemple, dans le cas suivant, tout le contenu du
-nœud sera absent des livrables:
+nœud sera absent des livrables :
 
 .. code-block:: xml
 

@@ -21,7 +21,7 @@ permettra d'utiliser ce mode Emacs pour DITA XML.
 - Emacs
 
 - La structure de répertoires de votre projet de documentation DITA XML doit
-  être la suivante:
+  être la suivante :
 
   - répertoire de langue
 
@@ -38,7 +38,7 @@ permettra d'utiliser ce mode Emacs pour DITA XML.
 
 #.  Effectuez une sauvegarde de l'ensemble de votre projet de documentation
     DITA XML.
-#.  Ouvrez un terminal et collez la suite de commandes suivante:
+#.  Ouvrez un terminal et collez la suite de commandes suivante :
 
     .. code-block:: console
 
@@ -55,13 +55,13 @@ permettra d'utiliser ce mode Emacs pour DITA XML.
     .. note::
 
        Si un message vous avertit que le fichier :file:`.emacs` n'existe pas, collez les
-       commandes suivantes, puis recommencez l'opération:
+       commandes suivantes, puis recommencez l'opération :
 
        .. code-block:: console
 
           $ cd && touch .emacs
 
-    Cette suite de commandes:
+    Cette suite de commandes :
 
     - télécharge et décompresse le mode nXML,
     - crée une copie de sauvegarde du fichier :file:`.emacs` (:file:`.emacs.bak`),
@@ -72,7 +72,7 @@ permettra d'utiliser ce mode Emacs pour DITA XML.
     racine de votre projet de documentation DITA XML.
 
 #.  Placez-vous dans le répertoire racine de votre projet de documentation DITA
-    XML, puis collez la commande suivante:
+    XML, puis collez la commande suivante :
 
     .. code-block:: console
 
@@ -101,7 +101,7 @@ permettra d'utiliser ce mode Emacs pour DITA XML.
        rm -rf ../schemas.redaction-technique.org/
 
     Vos répertoires de langue doivent maintenant comporter les fichiers
-    :file:`schemas.xml` appropriés:
+    :file:`schemas.xml` appropriés :
 
     - fr_FR
 

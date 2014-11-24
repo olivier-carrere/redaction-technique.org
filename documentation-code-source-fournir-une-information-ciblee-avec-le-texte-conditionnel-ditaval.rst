@@ -90,7 +90,7 @@ Vous pouvez utiliser la structure suivante :
       </thead>
 
    Or, selon le schéma XSD, les en-têtes de tableaux doivent contenir au moins
-   une ligne:
+   une ligne :
 
    .. code-block:: xml
 

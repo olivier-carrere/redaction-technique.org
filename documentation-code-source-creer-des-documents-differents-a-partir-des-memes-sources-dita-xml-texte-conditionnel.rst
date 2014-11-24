@@ -63,7 +63,7 @@ quelques minutes.
       </topic>
 
    Ce code contient des balises DITA contenant des valeurs *audience*
-   différentes: nous allons exclure le contenu d'une de ces deux balises lors
+   différentes : nous allons exclure le contenu d'une de ces deux balises lors
    de la génération du fichier cible en utilisant la clé *audience*.
 
 #. Collez le code suivant dans un fichier et enregistrez ce dernier sous le nom
@@ -114,7 +114,7 @@ quelques minutes.
       /filter:electriciens.ditaval /outdir:. /transtype:pdf2
 
    Ouvrez le fichier :file:`texte-conditionnel.pdf` ; il contient des
-   informations destinées:
+   informations destinées :
 
    - aux plombiers et aux électriciens,
    - uniquement aux électriciens.
@@ -128,7 +128,7 @@ quelques minutes.
       /filter:plombiers.ditaval /outdir:. /transtype:pdf2
 
    Ouvrez le fichier :file:`texte-conditionnel.pdf` ; il contient des
-   informations destinées:
+   informations destinées :
 
   - aux plombiers et aux électriciens,
   - uniquement aux plombiers.

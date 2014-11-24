@@ -23,7 +23,7 @@ apparaissent sinon lors de la traduction dans d'autres langues.
 .. rubric:: Exemple
 
 Si vous décidez de pousser la granulométrie au niveau du segment de phrase et
-que vous définissez les **conref** suivants:
+que vous définissez les **conref** suivants :
 
 .. code-block:: xml
 
@@ -33,7 +33,7 @@ que vous définissez les **conref** suivants:
 
    <ph id="arrow">arrow</ph>
 
-Vous pouvez maintenant utiliser le code suivant:
+Vous pouvez maintenant utiliser le code suivant :
 
 .. code-block:: xml
 
@@ -46,7 +46,7 @@ Vous pouvez maintenant utiliser le code suivant:
 pour que soit générée la phrase *Click the blue arrow*.
 
 Essayons maintenant de créer une version française de cette phrase. Nous
-traduisons donc les *conref* comme suit:
+traduisons donc les *conref* comme suit :
 
 .. code-block:: xml
 

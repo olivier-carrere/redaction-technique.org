@@ -95,7 +95,7 @@ l'intégralité des *conref* sources. Lorsqu'il traduit un ensemble d'unités
 d'information placées en vrac dans un fichier, le traducteur manque cependant
 cruellement de contexte. Le créateur du contenu initial doit donc lui fournir
 une assistance constante. La méthode la plus efficace consiste à faire
-travailler le traducteur en régie. Avantage supplémentaire: il pourra ainsi
+travailler le traducteur en régie. Avantage supplémentaire : il pourra ainsi
 interroger non seulement le rédacteur technique, mais également les concepteurs
 du produit.
 
