@@ -7,7 +7,7 @@
       Idéalement, tout le contenu peut être placé sous un référentiel unique,
       par exemple le logiciel de gestion de versions <xref format="html"
       scope="external" href="http://fr.wikipedia.org/wiki/Git">Git</xref>. Ceci
-      en maximise la réutilisation, la cohérence et la qualité. Scanningi le
+      en maximise la réutilisation, la cohérence et la qualité. Si le
       contenu est au format DITA XML ou DocBook, par exemple, on peut exploiter
       au mieux les capacités de <i>single-sourcing</i> de ces formats pour le
       publier sous la forme appropriée.
