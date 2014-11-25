@@ -29,7 +29,7 @@
       <image href="../graphics/conref-non-centralises.png" />
     </fig>
     <p>
-      Les <i>conref</i> sont en effet résolus à la compilation même si les
+      Les <i>conref</i> sont en effet résolus à la compilation, même si les
       fichiers contenant les valeurs sources ne sont pas référencés dans le
       fichier <i>DITAMAP</i> permettant de générer le livrable (ce qui veut dire
       également que les fichiers contenant les valeurs sources des <i>conref</i>
