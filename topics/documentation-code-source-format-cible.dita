@@ -20,14 +20,14 @@
       l'une des méthodes suivantes&#160;:
     </p>
     <simpletable>
-      <strow>
+      <sthead>
         <stentry>
-          <i>Méthode</i>
+          Méthode
         </stentry>
         <stentry>
-          <i>Exemple</i>
+          Exemple
         </stentry>
-      </strow>
+      </sthead>
       <strow>
         <stentry>
           Totalement automatique

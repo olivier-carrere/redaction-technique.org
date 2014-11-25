@@ -24,14 +24,14 @@
       lecteur disposent de supports largement différents&#160;:
     </p>
     <simpletable>
-      <strow>
+      <sthead>
         <stentry>
-          <i>Public</i>
+          Public
         </stentry>
         <stentry>
-          <i>Description</i>
+          Description
         </stentry>
-      </strow>
+      </sthead>
       <strow>
         <stentry>
           Rédacteur technique

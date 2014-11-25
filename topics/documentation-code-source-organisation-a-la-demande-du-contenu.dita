@@ -18,14 +18,14 @@
       documents suivants&#160;:
     </p>
     <simpletable>
-      <strow>
+      <sthead>
         <stentry>
-          <i>Type de document</i>
+          Type de document
         </stentry>
         <stentry>
-          <i>Contenu</i>
+          Contenu
         </stentry>
-      </strow>
+      </sthead>
       <strow>
         <stentry>
           Guide de l'utilisateur

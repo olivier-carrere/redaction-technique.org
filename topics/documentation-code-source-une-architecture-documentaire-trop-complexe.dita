@@ -24,14 +24,14 @@
       les maîtriser plus facilement&#160;:
     </p>
     <simpletable>
-      <strow>
+      <sthead>
         <stentry>
-          <i>Complexité</i>
+          Complexité
         </stentry>
         <stentry>
-          <i>Solution</i>
+          Solution
         </stentry>
-      </strow>
+      </sthead>
       <strow>
         <stentry>
           Syntaxe DITA XML
