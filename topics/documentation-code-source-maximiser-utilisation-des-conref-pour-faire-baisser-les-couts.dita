@@ -29,9 +29,7 @@
       contenu, <i>pourtant unique</i> (car il assemble de manière unique des
       blocs d'information non uniques), étant généré par des <i>conref</i>.
     </p>
-    <p>
-      <i>Exemple</i>
-    </p>
+    <example>
     <codeblock>
       &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
       &lt;!DOCTYPE task PUBLIC &quot;-//OASIS//DTD DITA 1.2 Task//EN&quot; &quot;/usr/share/dita-ot/dtd/technicalContent/dtd/task.dtd&quot;&gt;
@@ -89,6 +87,7 @@
       &lt;/taskbody&gt;
       &lt;/task&gt;
     </codeblock>
+    </example>
     <p>
       Seul le texte en noir doit être traduit. Traduire ce type de fichier de
       contenu <i>DITA XML</i> consiste donc à traduire uniquement le titre de la

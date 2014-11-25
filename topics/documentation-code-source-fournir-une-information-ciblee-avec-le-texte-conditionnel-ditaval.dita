@@ -46,9 +46,7 @@
       en indiquant plusieurs valeurs séparées par des espaces dans les attributs
       <i>product</i>, <i>audience</i> ou autre.
     </p>
-    <p>
-      <i>Exemple</i>
-    </p>
+    <example>
     <p>
       Pour indiquer qu'une remarque est destinée à la fois à des électriciens et
       à des utilisateurs avancés en voulant profiler l'information selon les
@@ -71,6 +69,7 @@
         </p>
       </li>
     </ul>
+    </example>
     <p>
       Vous pouvez utiliser la structure suivante&#160;:
     </p>
@@ -85,9 +84,8 @@
         compilation. En effet, si le code non filtré est conforme au schéma XSD
         DITA, le code filtré peut ne pas l'être.
       </p>
-      <p>
-        <i>Exemple</i>
-      </p>
+    </note>
+      <example>
       <p>
         Le code suivant est correct avant filtrage&#160;:
       </p>
@@ -116,6 +114,6 @@
       <p>
         Ce code est donc incorrect et entraîne l'échec de la compilation.
       </p>
-    </note>
+    </example>
   </body>
 </topic>

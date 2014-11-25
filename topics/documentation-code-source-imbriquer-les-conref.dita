@@ -20,15 +20,14 @@
       <i>conref</i> cible
       <i>admin-guide-title</i>&#160;:
     </p>
-    <p>
-      <i>Exemple</i>
-    </p>
+    <example>
     <codeblock>
       &lt;p id=&quot;see-admin-guide&quot;&gt;
       Pour de plus amples informations, voir le &lt;ph
       conref=&quot;shared.dita/admin-guide-title&quot;/&gt;.
       &lt;/p&gt;
     </codeblock>
+    </example>
     <p>
       Ce niveau de complexité est gérable. Mais si le <i>conref</i> source
       <i>admin-guide-title</i> contient lui même un <i>conref</i> cible, le code
