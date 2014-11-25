@@ -15,7 +15,7 @@
     <p>
       Face à cet état de fait, il convient de mettre un système de gestion de
       l'information relative à l'évolution de la documentation qui soit tolérant
-      à l'erreur humaine. Il faut donc soit :
+      à l'erreur humaine. Il faut donc soit&#160;:
     </p>
     <ul>
       <li>
@@ -23,7 +23,7 @@
       </li>
       <li>
         utiliser le système de gestion de tickets utilisés pour la gestion des
-        nouvelles fonctionnalités du produit documenté (par exemple, Trac) :
+        nouvelles fonctionnalités du produit documenté (par exemple, Trac)&#160;:
       </li>
     </ul>
     <ul>
@@ -43,7 +43,7 @@
     </ul>
 
     <p>
-      Les fonctions principales d'un CMS sont les suivantes :
+      Les fonctions principales d'un CMS sont les suivantes&#160;:
     </p>
     <ul>
       <li>
@@ -62,7 +62,7 @@
       technique (quoi, qui, quand).
     </p>
     <p>
-      Ce système doit être unique et exhaustif : il doit centraliser toutes les
+      Ce système doit être unique et exhaustif&#160;: il doit centraliser toutes les
       demandes de modification de la documentation technique.
     </p>
     <p>

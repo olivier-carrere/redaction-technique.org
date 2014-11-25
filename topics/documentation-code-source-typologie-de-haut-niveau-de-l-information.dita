@@ -12,7 +12,7 @@
       S'il crée un nouveau document au format FrameMaker, DocBook ou traitement
       de texte, le <b>rédacteur technique</b> se trouve face à une page
       blanche. Selon sa rigueur professionnelle, l'information transmise à
-      l'utilisateur oscillera entre les deux pôles suivants :
+      l'utilisateur oscillera entre les deux pôles suivants&#160;:
     </p>
     <simpletable>
       <strow>
@@ -41,7 +41,7 @@
       schéma XSD.</fn> qui correspond au type d'information qu'il veut
       présenter. De base, DITA XML propose les types d'information suivants <fn>
       DITA XML propose trois types d'information de base, tandis que la méthode
-      Information Mapping en propose sept.</fn> :
+      Information Mapping en propose sept.</fn>&#160;:
     </p>
     <simpletable>
       <sthead>

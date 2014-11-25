@@ -2,15 +2,15 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN"
 "/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
 <topic id="git-du-fichier-au-contenu">
-  <title>Git : du fichier au contenu</title>
+  <title>Git&#160;: du fichier au contenu</title>
   <body>
     <p>
-      Vous êtes habitué à manipuler des fichiers ? Git vous invite à penser
-      autrement. Avantage : vous avez une maîtrise beaucoup plus grande de votre
+      Vous êtes habitué à manipuler des fichiers&#160;? Git vous invite à penser
+      autrement. Avantage&#160;: vous avez une maîtrise beaucoup plus grande de votre
       contenu.
     </p>
     <p>
-      Qu'est-ce qu'un fichier ? Pour vous, un contenu, image, texte, feuille de
+      Qu'est-ce qu'un fichier&#160;? Pour vous, un contenu, image, texte, feuille de
       calcul ou autre, identifié par un nom. Pour votre système d'exploitation,
       une suite de bits sur le disque dur à laquelle sont associés un nom de
       fichier et un chemin de répertoires. Si vous souhaitez gérer votre projet
@@ -19,7 +19,7 @@
       beaucoup plus simple.
     </p>
     <p>
-      Si vous donnez un fichier à Git, il le scinde directement en deux choses :
+      Si vous donnez un fichier à Git, il le scinde directement en deux choses&#160;:
     </p>
     <ul>
       <li>
@@ -34,7 +34,7 @@
       </li>
     </ul>
     <p>
-      Il le stocke ensuite dans l'une des deux zones suivantes :
+      Il le stocke ensuite dans l'une des deux zones suivantes&#160;:
     </p>
     <ul>
       <li>
@@ -49,7 +49,7 @@
       </li>
     </ul>
     <p>
-      Lorsque vous ajoutez un fichier (<i>git add &lt;fichier&gt;</i>) :
+      Lorsque vous ajoutez un fichier (<i>git add &lt;fichier&gt;</i>)&#160;:
     </p>
     <ul>
       <li>
@@ -64,7 +64,7 @@
       </li>
     </ul>
     <p>
-      Lorsque vous <i>commitez</i> un fichier (<i>git commit</i>) :
+      Lorsque vous <i>commitez</i> un fichier (<i>git commit</i>)&#160;:
     </p>
     <ul>
       <li>
@@ -80,7 +80,7 @@
       bit près).
     </p>
     <p>
-      L'historique de votre projet n'est pas forcément linéaire : vous pouvez
+      L'historique de votre projet n'est pas forcément linéaire&#160;: vous pouvez
       lui faire suivre plusieurs routes parallèles, les branches.
     </p>
     <p>

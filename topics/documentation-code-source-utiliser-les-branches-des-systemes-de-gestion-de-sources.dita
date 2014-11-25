@@ -6,13 +6,13 @@
   <body>
     <p>
       Les systèmes de gestion de sources proposent de créer des branches d'un
-      projet : si à un moment donné, un projet se divise en deux projets
+      projet&#160;: si à un moment donné, un projet se divise en deux projets
       incompatibles, une branche est créée à partir du projet principal. Le
       <b>rédacteur technique</b> peut ainsi gérer les différentes traductions de
       la documentation technique.
     </p>
     <p>
-      Le système des branches peut servir en théorie à gérer :
+      Le système des branches peut servir en théorie à gérer&#160;:
     </p>
     <ul>
       <li>
@@ -43,7 +43,7 @@
     <p>
       Créer une traduction d'une documentation consiste à <i>forker</i>, soit
       créer une branche, le document initial. Si l'on utilise Git se pose alors
-      le choix entre :
+      le choix entre&#160;:
     </p>
     <ul>
       <li>

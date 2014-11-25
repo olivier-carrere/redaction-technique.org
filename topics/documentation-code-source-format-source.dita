@@ -22,7 +22,7 @@
     </p>
     <p>
       En effet, le document présenté à l'utilisateur présente deux aspects
-      fondamentaux :
+      fondamentaux&#160;:
     </p>
     <ul>
       <li>
@@ -35,7 +35,7 @@
     <p>
       Au cours du développement d'une documentation technique, ces deux aspects
       doivent être clairement distincts. Ils peuvent être pris en charge par
-      deux intervenants différents :
+      deux intervenants différents&#160;:
     </p>
     <ul>
       <li>
@@ -51,7 +51,7 @@
       Lorsque la mise en page a une importance équivalente à celle du contenu,
       ou lorsqu'elle doit être variée, comme dans le cas d'une brochure
       commerciale, la rédaction et la mise en page s'opèrent sous des outils
-      différents :
+      différents&#160;:
     </p>
     <ul>
       <li>
@@ -64,12 +64,12 @@
     <p>
       Lorsque la mise en page a une importance moindre que celle du contenu, ou
       lorsqu'elle doit être homogène, comme dans le cas d'une <i>documentation
-      technique</i>, la rédaction et la mise en page s'opèrent sur :
+      technique</i>, la rédaction et la mise en page s'opèrent sur&#160;:
     </p>
     <simpletable>
       <strow>
         <stentry>
-          les mêmes fichiers :
+          les mêmes fichiers&#160;:
         </stentry>
         <stentry>
           par exemple, des fichiers FrameMaker,
@@ -77,7 +77,7 @@
       </strow>
       <strow>
         <stentry>
-          des fichiers différents :
+          des fichiers différents&#160;:
         </stentry>
         <stentry>
           par exemple, des fichiers de contenu XML et une feuille de style XSLT.
@@ -86,14 +86,14 @@
     </simpletable>
     <p>
       Dans un fichier FrameMaker, la séparation du fond et de la forme est
-      élevée mais pas totale : le contenu et la mise en page sont placés dans le
+      élevée mais pas totale&#160;: le contenu et la mise en page sont placés dans le
       même fichier. FrameMaker applique une maquette de page homogène à tout un
       fichier, mais autorise l'ajout manuel d'éléments de mise en page. La même
       maquette peut être dupliquée pour tout le document, ou une maquette
       différente peut être utilisée pour chaque fichier qui compose ce dernier.
     </p>
     <fig>
-      <title>Formats sources : degré de modularité et format</title>
+      <title>Formats sources&#160;: degré de modularité et format</title>
       <image href="../graphics/modulaire-texte-monolithique-binaire.png" />
     </fig>
     <p>
@@ -103,7 +103,7 @@
     <p>
       Les formats XML structurés DocBook et DITA appliquent une maquette de page
       homogène à tout un document, et n'autorisent pas l'ajout manuel d'éléments
-      de mise en page <fn>Ou très peu : dans les fichiers de contenu, il est
+      de mise en page <fn>Ou très peu&#160;: dans les fichiers de contenu, il est
       seulement possible de mettre du texte en gras ou en italique, pas d'en
       changer la police, le corps ou la couleur.</fn>, ni l'application de
       maquettes différentes aux différents fichiers qui composent le document.
@@ -159,17 +159,17 @@
     <p>
       Si contenu et mise en page sont intimement liés, comme sous un traitement
       de texte, il est difficile de modifier le contenu sans perturber la mise
-      en page. Résultat : à chaque publication d'une nouvelle version d'une
+      en page. Résultat&#160;: à chaque publication d'une nouvelle version d'une
       documentation technique, l'équipe de <i>rédaction technique</i> passe de
       longues heures à corriger les erreurs de mise en page générées par le
       logiciel. Le phénomène est moindre sous FrameMaker mais reste
       important. Il est nul avec les formats <i>XML DITA</i> et <i>DocBook</i>
       (les seules erreurs qui peuvent se produire sont des erreurs de
-      compilation dues à une syntaxe XML erronée ; ces erreurs sont facilement
+      compilation dues à une syntaxe XML erronée&#160;; ces erreurs sont facilement
       rectifiables).
     </p>
     <p>
-      Les fichiers sources d'une documentation technique sont au format :
+      Les fichiers sources d'une documentation technique sont au format&#160;:
     </p>
     <ul>
       <li>
@@ -180,7 +180,7 @@
       </li>
     </ul>
     <p>
-      Ce format est également :
+      Ce format est également&#160;:
     </p>
     <ul>
       <li>
@@ -191,7 +191,7 @@
       </li>
     </ul>
     <p>
-      Enfin, ce format est :
+      Enfin, ce format est&#160;:
     </p>
     <ul>
       <li>
@@ -203,7 +203,7 @@
     </ul>
     <p>
       Ce dernier aspect détermine la manière dont le format gère le
-      <i>single-sourcing</i> :
+      <i>single-sourcing</i>&#160;:
     </p>
     <ul>
       <li>
@@ -215,7 +215,7 @@
     </ul>
     <p>
       Les formats disponibles peuvent donc être classés selon le tableau
-      suivant :
+      suivant&#160;:
     </p>
     <simpletable>
       <sthead>
@@ -277,7 +277,7 @@
     </simpletable>
     <p>
       FrameMaker et DocBook ne sont pas pleinement modulaires, car les plus
-      petits éléments d'information manipulables ne sont pas génériques : ils
+      petits éléments d'information manipulables ne sont pas génériques&#160;: ils
       contiennent des informations telles que la structure de table des matières
       ou les références croisées qui ne sont valables que dans un nombre limité
       de contextes.

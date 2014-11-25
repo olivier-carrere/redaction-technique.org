@@ -17,7 +17,7 @@
     </p>
     <p>
       À partir des fichiers sources validés, les livrables sont générés selon
-      l'une des méthodes suivantes :
+      l'une des méthodes suivantes&#160;:
     </p>
     <simpletable>
       <strow>
@@ -44,7 +44,7 @@
         </stentry>
         <stentry>
           Contenu au format DITA exporté en HTML puis collé sous un CMS <fn>Ceci
-          est automatisable par un script ; le CMS Drupal propose également un
+          est automatisable par un script&#160;; le CMS Drupal propose également un
           module <xref format="html" scope="external"
           href="http://drupal.org/project/dita">DITA integration for
           Drupal</xref>.</fn>.
@@ -56,7 +56,7 @@
         </stentry>
         <stentry>
           Plaquette marketing au format traitement de texte ou DITA mise en page
-          sous Indesign, exportée en PDF, puis imprimée ; selon la fréquence de
+          sous Indesign, exportée en PDF, puis imprimée&#160;; selon la fréquence de
           publication du document final, des filtres d'import XML peuvent
           également être mis en place.
         </stentry>

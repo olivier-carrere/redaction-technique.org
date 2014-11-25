@@ -9,22 +9,22 @@
     <simpletable>
       <strow>
         <stentry>
-          Les <i>formats binaires</i> sont <i>opaques</i> :
+          Les <i>formats binaires</i> sont <i>opaques</i>&#160;:
         </stentry>
         <stentry>
           si on les ouvre avec un éditeur de texte de type <i>notepad</i>, tout
-          ce que l'on voit est une suite de caractères hiéroglyphiques ; il
+          ce que l'on voit est une suite de caractères hiéroglyphiques&#160;; il
           n'est donc la plupart du temps possible de les modifier qu'avec un
           seul logiciel.
         </stentry>
       </strow>
       <strow>
         <stentry>
-          Les <i>formats texte</i> sont <i>transparents</i> :
+          Les <i>formats texte</i> sont <i>transparents</i>&#160;:
         </stentry>
         <stentry>
           si on les ouvre avec un éditeur de texte, on voit du texte et des
-          balises ; il est donc possible de les modifier avec différents
+          balises&#160;; il est donc possible de les modifier avec différents
           logiciels et de leur appliquer des opérations de traitement par lot en
           ligne de commande, sans même les ouvrir, et d'utiliser de puissantes
           <xref format="html" scope="external"

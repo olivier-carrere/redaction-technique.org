@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN" "/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
 <topic id="cas-concret-documentation-de-nufirewall" xml:lang="fr-fr">
-  <title>Cas concret : documentation de NuFirewall</title>
+  <title>Cas concret&#160;: documentation de NuFirewall</title>
   <body>
     <p>
       La documentation de <xref format="html" scope="external"
@@ -14,7 +14,7 @@
     <p>
       Si je n'avais pas utilisé un format qui favorise au maximum la
       réutilisation de l'information, je n'aurais pas autant pu me consacrer à
-      l'essentiel : le contenu.
+      l'essentiel&#160;: le contenu.
     </p>
   </body>
 </topic>

@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN"
 "/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
 <topic id="xsl-fo-filtrer-du-contenu-selon-des-conditions-sauf-et-ou">
-  <title>XSL-FO : filtrer du contenu selon des conditions « sauf » et «
+  <title>XSL-FO&#160;: filtrer du contenu selon des conditions « sauf » et «
   ou »</title>
   <body>
     <p>
@@ -11,7 +11,7 @@
       entre les balises &lt;title&gt;).
     </p>
     <p>
-      Vous pouvez recourir alors à la syntaxe suivante :
+      Vous pouvez recourir alors à la syntaxe suivante&#160;:
     </p>
     <codeblock>
       &lt;xsl:template match=&quot;*[contains(@class,' topic/example ')]&quot;&gt;
@@ -27,14 +27,14 @@
       balises. Cette commande ne fera alors pas apparaître ce contenu.
     </p>
     <p>
-      Supposons que le code source d'un de vos fichiers DITA soit le suivant :
+      Supposons que le code source d'un de vos fichiers DITA soit le suivant&#160;:
     </p>
     <codeblock>
       &lt;example&gt;
       &lt;title&gt;
       XSL-FO
       &lt;/title&gt;
-      Voici mon exemple de chemin XPATH :
+      Voici mon exemple de chemin XPATH&#160;:
       &lt;codeblock&gt;
       ancestor-or-self
       &lt;/codeblock&gt;
@@ -42,7 +42,7 @@
       &lt;/example&gt;
     </codeblock>
     <p>
-      Le fichier PDF affichera l'exemple structuré comme suit :
+      Le fichier PDF affichera l'exemple structuré comme suit&#160;:
     </p>
     <codeblock>
       ancestor-or-self
@@ -52,7 +52,7 @@
       souhaité, mais le contenu non encapsulé dans des balises n'apparaît pas,
       ce qui est un effet de bord indésirable. Pour sélectionner ce contenu, il
       faut sélectionner les nœuds textuels avec la syntaxe text(). Il est alors
-      tentant d'utiliser la syntaxe suivante :
+      tentant d'utiliser la syntaxe suivante&#160;:
     </p>
     <codeblock>
       &lt;xsl:template match=&quot;*[contains(@class,' topic/example ')]&quot;&gt;
@@ -69,10 +69,10 @@
       DITA.
     </p>
     <p>
-      Le fichier PDF affichera l'exemple structuré comme suit :
+      Le fichier PDF affichera l'exemple structuré comme suit&#160;:
     </p>
     <p>
-      Voici mon exemple de chemin XPATH :Texte non encapsulé situé après un nœud
+      Voici mon exemple de chemin XPATH&#160;:Texte non encapsulé situé après un nœud
       enfant.
     </p>
     <codeblock>
@@ -81,13 +81,13 @@
     <p>
       Il faut alors utiliser la syntaxe <i>pipe</i> (condition booléenne
       <i>ou</i>) pour modifier le chemin <xref format="html" scope="external"
-      href="http://fr.wikipedia.org/wiki/XPath">XPATH</xref> comme suit :
+      href="http://fr.wikipedia.org/wiki/XPath">XPATH</xref> comme suit&#160;:
     </p>
     <codeblock>
       &lt;xsl:apply-templates select=&quot;text()|*[not(name()='title')]&quot; /&gt;
     </codeblock>
     <p>
-      Le résultat final sera :
+      Le résultat final sera&#160;:
     </p>
     <codeblock>
       &lt;xsl:template match=&quot;*[contains(@class,' topic/example ')]&quot;&gt;
@@ -97,10 +97,10 @@
       &lt;/xsl:template&gt;
     </codeblock>
     <p>
-      Le fichier PDF affichera l'exemple structuré comme suit :
+      Le fichier PDF affichera l'exemple structuré comme suit&#160;:
     </p>
     <p>
-      Voici mon exemple de chemin XPATH :
+      Voici mon exemple de chemin XPATH&#160;:
     </p>
     <codeblock>
       ancestor-or-self

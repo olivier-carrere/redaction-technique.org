@@ -15,7 +15,7 @@
     <steps>
       <step>
         <cmd>
-          Installez make et texinfo :
+          Installez make et texinfo&#160;:
         </cmd>
         <info>
           <codeblock>
@@ -31,7 +31,7 @@
       </step>
       <step>
         <cmd>
-          Décompressez l'archive Predictive :
+          Décompressez l'archive Predictive&#160;:
         </cmd>
         <info>
           <codeblock>
@@ -41,7 +41,7 @@
       </step>
       <step>
         <cmd>
-          Placez-vous dans le répertoire predictive :
+          Placez-vous dans le répertoire predictive&#160;:
         </cmd>
         <info>
           <codeblock>
@@ -51,7 +51,7 @@
       </step>
       <step>
         <cmd>
-          Compilez <i>predictive</i> :
+          Compilez <i>predictive</i>&#160;:
         </cmd>
         <info>
           <codeblock>
@@ -61,7 +61,7 @@
       </step>
       <step>
         <cmd>
-          Installez <i>predictive</i> :
+          Installez <i>predictive</i>&#160;:
         </cmd>
         <info>
           <codeblock>
@@ -71,7 +71,7 @@
       </step>
       <step>
         <cmd>
-          Insérez le code suivant dans le fichier .emacs :
+          Insérez le code suivant dans le fichier .emacs&#160;:
         </cmd>
         <info>
           <codeblock>
@@ -88,7 +88,7 @@
       </step>
       <step>
         <cmd>
-          Lancez Emacs, puis appuyez sur Alt+X et entrez :
+          Lancez Emacs, puis appuyez sur Alt+X et entrez&#160;:
         </cmd>
         <info>
           <codeblock>

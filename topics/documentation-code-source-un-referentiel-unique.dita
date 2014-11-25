@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN" "/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
 <topic id="un-referentiel-unique" xml:lang="fr-fr">
-  <title>Un référentiel unique ?</title>
+  <title>Un référentiel unique&#160;?</title>
   <body>
     <p>
       Idéalement, tout le contenu peut être placé sous un référentiel unique,
@@ -13,7 +13,7 @@
       publier sous la forme appropriée.
     </p>
     <p>
-      Le contenu devient un réseau de modules d'information ; il faut alors
+      Le contenu devient un réseau de modules d'information&#160;; il faut alors
       gérer les relations au sein de ce réseau, notamment lors des mises à jour.
     </p>
     <fig>

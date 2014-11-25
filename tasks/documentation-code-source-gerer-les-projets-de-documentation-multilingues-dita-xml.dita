@@ -34,7 +34,7 @@
           laquelle il est initialement rédigé.
         </cmd>
         <info>
-          Par exemple :
+          Par exemple&#160;:
           <ul>
             <li>
               product
@@ -62,7 +62,7 @@
                 </li>
               </ul>
               <p>
-                et non :
+                et non&#160;:
               </p>
             </li>
             <li>
@@ -88,12 +88,12 @@
           du répertoire propre à la langue par une chaîne unique provisoire.
         </cmd>
         <info>
-          Par exemple, utilisez la chaîne <i>@language-code@</i> :
+          Par exemple, utilisez la chaîne <i>@language-code@</i>&#160;:
           <codeblock>
             &lt;topicref href=&quot;@language-code@/topics/managing-rights.dita&quot;/&gt;
           </codeblock>
           <p>
-            et non :
+            et non&#160;:
           </p>
           <codeblock>
             &lt;topicref href=&quot;en_US/topics/managing-rights.dita&quot;/&gt;
@@ -102,7 +102,7 @@
       </step>
       <step>
         <cmd>
-          Pour générer les fichiers cibles, vous pouvez maintenant :
+          Pour générer les fichiers cibles, vous pouvez maintenant&#160;:
         </cmd>
         <substeps>
           <substep>
@@ -197,7 +197,7 @@
         </step>
         <step>
           <cmd>
-            Dans un terminal, placez-vous dans ce répertoire, puis entrez :
+            Dans un terminal, placez-vous dans ce répertoire, puis entrez&#160;:
           </cmd>
           <info>
             <codeblock>
@@ -207,7 +207,7 @@
         </step>
         <step>
           <cmd>
-            Dans le terminal, entrez :
+            Dans le terminal, entrez&#160;:
           </cmd>
           <info>
             <codeblock>
@@ -220,7 +220,7 @@
         </step>
         <step>
           <cmd>
-            Entrez :
+            Entrez&#160;:
           </cmd>
           <info>
             <codeblock>

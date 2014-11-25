@@ -27,14 +27,14 @@
     <p>
       Vous voulez par exemple réutiliser la phrase <i>Cliquez sur OK.</i> Vous
       ne pouvez cependant pas indiquer dans le fichier contenant les
-      <i>conref</i> sources uniquement le code suivant :
+      <i>conref</i> sources uniquement le code suivant&#160;:
     </p>
     <codeblock>
       &lt;cmd&gt;Cliquez sur OK.&lt;/cmd&gt;
     </codeblock>
     <p>
       Pour être conforme au schéma XSD, votre code doit au moins être structuré
-      comme suit :
+      comme suit&#160;:
     </p>
     <codeblock>
       &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
@@ -57,7 +57,7 @@
       unique comprenant une commande unique que vous souhaitez réutiliser.
     </p>
     <p>
-      Il est alors préférable d'utiliser la syntaxe suivante :
+      Il est alors préférable d'utiliser la syntaxe suivante&#160;:
     </p>
     <codeblock>
       &lt;step&gt;
@@ -67,7 +67,7 @@
       &lt;/step&gt;
     </codeblock>
     <p>
-      plutôt que la suivante :
+      plutôt que la suivante&#160;:
     </p>
     <codeblock>
       &lt;step id=&quot;click-ok&quot;&gt;
@@ -89,7 +89,7 @@
     <p>
       Dans le 2<sup>e</sup> cas, tout le contenu du nœud &lt;step&gt; sera
       remplacé par la valeur du <i>conref</i> source. Par exemple, dans le cas
-      suivant, tout le contenu du nœud sera absent des livrables :
+      suivant, tout le contenu du nœud sera absent des livrables&#160;:
     </p>
     <codeblock>
       &lt;step id=&quot;click-ok&quot;&gt;

@@ -18,7 +18,7 @@
       Dans l'exemple ci-dessous, le <i>conref</i> source
       <i>see-admin-guide</i> contient le
       <i>conref</i> cible
-      <i>admin-guide-title</i> :
+      <i>admin-guide-title</i>&#160;:
     </p>
     <p>
       <i>Exemple</i>
@@ -35,15 +35,15 @@
       <i>DITA XML</i> devient un vrai plat de spaghettis (sans compter les
       risques de référence circulaire). Les <i>conref</i> peuvent théoriquement
       être combinés à l'infini, mais les problèmes pratiques que cela engendre
-      peuvent également être infinis !
+      peuvent également être infinis&#160;!
     </p>
     <fig>
-      <title>Imbriquer les <i>conref</i> sur plusieurs niveaux : puissant, mais
-      dangereux !</title>
+      <title>Imbriquer les <i>conref</i> sur plusieurs niveaux&#160;: puissant, mais
+      dangereux&#160;!</title>
       <image href="graphics/imbriquer-conref.png" />
     </fig>
     <p>
-      Pour résumer la situation :
+      Pour résumer la situation&#160;:
     </p>
     <ul>
       <li>
@@ -56,7 +56,7 @@
         rapidement ingérable.
       </li>
       <li>
-        Il est impossible d'imbriquer des <i>conref</i> cibles : le contenu du
+        Il est impossible d'imbriquer des <i>conref</i> cibles&#160;: le contenu du
         <i>conref</i> du niveau supérieur écrasera les valeurs des <i>conref</i>
         du niveau inférieur.
       </li>

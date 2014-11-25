@@ -10,7 +10,7 @@
     </p>
     <p>
       Les <b>rédacteurs techniques</b> travaillent directement sur les fichiers
-      partagés, ce qui pose les problèmes suivants :
+      partagés, ce qui pose les problèmes suivants&#160;:
     </p>
     <ul>
       <li>
@@ -26,13 +26,13 @@
     </ul>
     <p>
       Même fréquemment sauvegardés, les répertoires ne sont pas un référentiel
-      sûr pour les données : la granulométrie de la sauvegarde est le
+      sûr pour les données&#160;: la granulométrie de la sauvegarde est le
       répertoire, sa fréquence n'est souvent que quotidienne. En cas de perte de
       données, la restauration se fait répertoire par répertoire, et non fichier
       par fichier et porte sur des versions dont l'ancienneté dépend de
       l'administrateur système, et non du <b>rédacteur technique</b>. Fouiller
       dans les archives est une opération fastidieuse qui peut elle-même être
-      source d'erreurs : en l'absence d'une comparaison fiable et aisée entre
+      source d'erreurs&#160;: en l'absence d'une comparaison fiable et aisée entre
       plusieurs versions des fichiers, le <b>rédacteur technique</b> peut
       facilement supprimer des modifications qu'il aurait souhaité conserver en
       voulant en restaurer d'autres.
@@ -40,14 +40,14 @@
     <p>
       Copier un fichier du réseau pour le modifier sur son disque dur personnel,
       puis écraser la version du réseau par la version locale est une opération
-      des plus périlleuses :
+      des plus périlleuses&#160;:
     </p>
     <ul>
       <li>
         les membres de l'équipe ne sont pas informés du fait qu'un autre membre
-        modifie ou non le même fichier en même temps qu'eux ; l'un des
+        modifie ou non le même fichier en même temps qu'eux&#160;; l'un des
         <b>rédacteurs techniques</b> devra alors renoncer à toutes ses
-        modifications ;
+        modifications&#160;;
       </li>
       <li>
         lors d'une copie manuelle des fichiers, que ce soit <i>via</i> un

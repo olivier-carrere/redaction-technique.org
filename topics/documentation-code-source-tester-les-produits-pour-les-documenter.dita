@@ -13,7 +13,7 @@
     <p>
       Un conte chinois narre comment des aveugles se sont retrouvés confrontés à
       un éléphant. Aucun d'entre eux, et pour cause, n'ayant une perception
-      globale de l'animal, chacun en eut une image différente : celui qui en
+      globale de l'animal, chacun en eut une image différente&#160;: celui qui en
       tenait une patte le prenait pour un arbre, celui qui en étreignait la
       trompe le confondait avec un serpent, celui qui avait empoigné une défense
       l'identifiait à une lance, et celui qui s'agrippait à une de ses oreilles
@@ -26,7 +26,7 @@
       Le <b>rédacteur technique</b> qui demande aux différents intervenants de
       l'entreprise à quoi sert le produit dont il doit créer la documentation et
       comment il fonctionne se retrouve comme celui qui demande aux aveugles à
-      quoi ressemble un éléphant : pour la R&amp;D, il s'agit de code élégamment
+      quoi ressemble un éléphant&#160;: pour la R&amp;D, il s'agit de code élégamment
       rédigé, pour le marketing, d'une offre à positionner face à la concurrence
       sur son marché, pour le support technique, d'un exécutable dont il faut
       corriger les bugs, etc.
@@ -38,7 +38,7 @@
       autres acteurs de l'entreprise. Le <b>rédacteur technique</b> est un
       pragmatique qui s'intéresse à la pratique, non à la théorie. S'il ne
       consulte que les développeurs, par exemple, il aura peu de chance de
-      pouvoir créer une documentation satisfaisante pour l'utilisateur :
+      pouvoir créer une documentation satisfaisante pour l'utilisateur&#160;:
     </p>
     <ul>
       <li>
@@ -48,7 +48,7 @@
       </li>
       <li>
         d'autre part, une déperdition d'information se produit nécessairement
-        entre :
+        entre&#160;:
         <ul>
           <li>
             ce que le développeur sait,

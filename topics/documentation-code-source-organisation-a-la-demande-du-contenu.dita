@@ -15,7 +15,7 @@
       construire des briques d'information atomiques et génériques, il peut, à
       l'instar d'un constructeur automobile proposant sans cesse de nouveaux
       modèles par assemblage d'éléments standardisés, proposer par exemple les
-      documents suivants :
+      documents suivants&#160;:
     </p>
     <simpletable>
       <strow>
@@ -65,7 +65,7 @@
       éléments liés à un contexte particulier dans les structures <i>ditamap</i>
       et non dans les fichiers de contenu DITA XML. En particulier, les
       références croisées doivent être indiquées dans une <i>reltable</i> placée
-      dans la <i>ditamap</i> : si le document <i>A</i> doit renvoyer au document
+      dans la <i>ditamap</i>&#160;: si le document <i>A</i> doit renvoyer au document
       <i>B</i> dans la <i>ditamap</i> <i>1</i>, il doit pouvoir être également
       utilisé sans modification dans la <i>ditamap</i> <i>2</i>, où le document
       <i>B</i> n'est pas inclus.

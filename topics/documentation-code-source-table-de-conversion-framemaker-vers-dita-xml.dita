@@ -28,9 +28,9 @@
     <p>
       Appliquez bien sûr ce processus à un petit jeu de documents <fn>J'appelle
       <i>jeu de documents</i> tout ensemble d'informations liées qui ne partage
-      aucun contenu avec un autre ensemble ; si par exemple le document <i>A</i>
+      aucun contenu avec un autre ensemble&#160;; si par exemple le document <i>A</i>
       partage une section avec le document <i>B</i>, le jeu de documents est
-      <i>A+B</i> ; si vous dupliquez la section partagée afin qu'elle ne soit
+      <i>A+B</i>&#160;; si vous dupliquez la section partagée afin qu'elle ne soit
       plus commune à <i>A</i> et <i>B</i>, <i>A</i> et <i>B</i> deviennent des
       jeux distincts.</fn>, qui ne soit pas, si possible, d'une importance
       critique. Après ce premier succès, vous pourrez appliquer le processus aux
@@ -40,7 +40,7 @@
       Vous pouvez maintenant progressivement modulariser et partager votre
       contenu dans le nouveau format afin de tirer parti au maximum de DITA
       XML. Vous pouvez pendant cette phase continuer à publier de nouvelles
-      versions du document ; la publication devrait d'ailleurs être beaucoup
+      versions du document&#160;; la publication devrait d'ailleurs être beaucoup
       plus simple que sous FrameMaker.
     </p>
   </body>

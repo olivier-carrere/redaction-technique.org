@@ -2,7 +2,7 @@
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
 "/usr/share/dita-ot/dtd/technicalContent/dtd/task.dtd">
 <task id="les-cms-le-workflow-en-prime-mais-une-fiabilite-a-tester">
-  <title>Les CMS : le workflow en prime, mais une fiabilité à tester</title>
+  <title>Les CMS&#160;: le workflow en prime, mais une fiabilité à tester</title>
   <taskbody>
     <context>
       <p>
@@ -15,7 +15,7 @@
       <p>
         S'ils utilisent des formats monolithiques tels que FrameMaker, les
         <b>rédacteurs techniques</b> peuvent utiliser des CMS tels que
-        SharePoint, Alfresco ou consorts pour :
+        SharePoint, Alfresco ou consorts pour&#160;:
       </p>
     </context>
     <steps>
@@ -59,7 +59,7 @@
       <p>
         Mais comment croire que ces solutions, qui sont fréquemment disponibles
         sous de nouvelles versions, marketing oblige, sont toutes d'une
-        fiabilité optimale ?
+        fiabilité optimale&#160;?
       </p>
       <p>
         J'aurais quelques scrupules, et quelques inquiétudes, sur le fait de

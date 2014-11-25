@@ -14,7 +14,7 @@
     </p>
     <p>
       Un important travail de restructuration du document FrameMaker doit
-      cependant être effectué en amont :
+      cependant être effectué en amont&#160;:
     </p>
     <ul>
       <li>
@@ -23,16 +23,16 @@
       </li>
       <li>
         suppression des <i>overrides</i> (propriétés de texte appliquées
-        manuellement et écrasant les styles ; ce genre d'hérésie est, sinon
+        manuellement et écrasant les styles&#160;; ce genre d'hérésie est, sinon
         impossible, du moins très limité sous un format structuré),
       </li>
       <li>
         harmonisation et simplification des styles FrameMaker pour les limiter
         et les faire correspondre aux balises DITA XML qui seront utilisées (par
         exemple, un style <i>note_important</i> vers la balise &lt;note
-        type=&quot;important&gt; ; il faut donc au préalable analyser le contenu
+        type=&quot;important&gt;&#160;; il faut donc au préalable analyser le contenu
         existant et décider quel ensemble de balises sera utilisé parmi les
-        centaines de balises proposées par DITA XML : il est en effet fortement
+        centaines de balises proposées par DITA XML&#160;: il est en effet fortement
         déconseillé de les utiliser toutes).
       </li>
     </ul>
@@ -46,7 +46,7 @@
       et la publication du document FrameMaker. La qualité de ce document n'en
       sera que meilleure. En même temps que cette réorganisation du contenu,
       vous pouvez mettre en place la chaîne complète de création, gestion et
-      publication DITA XML sur un échantillon de votre contenu :
+      publication DITA XML sur un échantillon de votre contenu&#160;:
     </p>
     <ul>
       <li>
@@ -71,7 +71,7 @@
       Si vos documents sont disponibles en plusieurs langues, vous devez
       modifier les fichiers FrameMaker et effectuer la migration pour chaque
       langue. Si un projet de traduction dans une nouvelle langue se profile,
-      mieux vaut effectuer la migration avant !
+      mieux vaut effectuer la migration avant&#160;!
     </p>
   </body>
 </topic>

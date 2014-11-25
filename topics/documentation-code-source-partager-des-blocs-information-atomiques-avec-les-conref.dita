@@ -14,7 +14,7 @@
       conref</xref>.
     </p>
     <p>
-      Le principe des <i>conref</i> est simple : lorsqu'un <i>conref</i> est
+      Le principe des <i>conref</i> est simple&#160;: lorsqu'un <i>conref</i> est
       mentionné au niveau d'un nœud XML donné, tout le contenu du nœud cible est
       remplacé par le contenu du nœud source.
     </p>

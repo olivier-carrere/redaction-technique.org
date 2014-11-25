@@ -2,27 +2,27 @@
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
 "/usr/share/dita-ot/dtd/technicalContent/dtd/task.dtd">
 <task id="xsl-fo-inserer-automatiquement-un-titre-pour-les-exemples">
-  <title>XSL-FO : insérer automatiquement un titre pour les
+  <title>XSL-FO&#160;: insérer automatiquement un titre pour les
   exemples</title>
   <taskbody>
     <context>
       <p>
         Par défaut, <i>DITA Open Toolkit</i> n'insère pas automatiquement dans
-        les fichiers PDF le texte <i>Exemple :</i> devant le titre d'un exemple
+        les fichiers PDF le texte <i>Exemple&#160;:</i> devant le titre d'un exemple
         contenu entre balises DITA XML &lt;example&gt;. La syntaxe <xref
         format="html" scope="external"
         href="http://fr.wikipedia.org/wiki/XSL-FO">XSL-FO</xref> offre cependant
         cette possibilité.
       </p>
       <p>
-        Supposons que le code source d'un de vos fichiers DITA soit le suivant :
+        Supposons que le code source d'un de vos fichiers DITA soit le suivant&#160;:
       </p>
       <codeblock>
         &lt;example&gt;
         &lt;title&gt;
         XSL-FO
         &lt;/title&gt;
-        Voici mon exemple de chemin XPATH :
+        Voici mon exemple de chemin XPATH&#160;:
         &lt;codeblock&gt;
         ancestor-or-self
         &lt;/codeblock&gt;
@@ -30,13 +30,13 @@
       </codeblock>
       <p>
         Vous souhaitez que le fichier PDF généré affiche l'exemple structuré
-        comme suit :
+        comme suit&#160;:
       </p>
       <p>
-        <i>Exemple : XSL-FO</i>
+        <i>Exemple&#160;: XSL-FO</i>
       </p>
       <p>
-        Voici mon exemple de chemin XPATH :
+        Voici mon exemple de chemin XPATH&#160;:
       </p>
       <codeblock>
         ancestor-or-self
@@ -44,24 +44,24 @@
 
       <p>
         et que si l'exemple ne contient pas de titre, il soit structuré comme
-        suit :
+        suit&#160;:
       </p>
       <p>
-        <i>Exemple :</i>
+        <i>Exemple&#160;:</i>
       </p>
       <p>
-        Voici mon exemple de chemin XPATH :
+        Voici mon exemple de chemin XPATH&#160;:
       </p>
       ancestor-or-self
       <p>
         Par défaut, cependant, ce contenu sera structuré comme suit dans le PDF
-        par DITA Open Toolkit :
+        par DITA Open Toolkit&#160;:
       </p>
       <p>
         <i>XSL-FO</i>
       </p>
       <p>
-        Voici mon exemple de chemin XPATH :
+        Voici mon exemple de chemin XPATH&#160;:
       </p>
       <codeblock>
         ancestor-or-self
@@ -77,7 +77,7 @@
         <cmd>
           Remplacez dans la feuille de style
           plugins/org.dita.pdf2/xsl/fo/commons.xsl (sous DITA Open Toolkit 1.7.)
-          le template suivant :
+          le template suivant&#160;:
         </cmd>
         <info>
           <codeblock>
@@ -89,7 +89,7 @@
             &lt;/xsl:template&gt;
           </codeblock>
           <p>
-            par le code suivant :
+            par le code suivant&#160;:
           </p>
           <codeblock>
             &lt;xsl:template match=&quot;*[contains(@class,' topic/example ')]&gt;
@@ -110,11 +110,11 @@
         <cmd>
           Définissez dans les fichiers contenant les variables de langue, tels
           que plugins/org.dita.pdf2/cfg/common/vars/fr.xml, les variables de
-          texte à insérer automatiquement, par exemple :
+          texte à insérer automatiquement, par exemple&#160;:
         </cmd>
         <info>
           <codeblock>
-            &lt;variable id=&quot;my-example-text&gt;Exemple :&lt;/variable&gt;
+            &lt;variable id=&quot;my-example-text&gt;Exemple&#160;:&lt;/variable&gt;
           </codeblock>
         </info>
       </step>

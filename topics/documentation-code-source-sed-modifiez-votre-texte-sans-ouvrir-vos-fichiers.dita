@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN"
 "/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
 <topic id="sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers">
-  <title>sed : modifiez votre texte sans ouvrir vos fichiers</title>
+  <title>sed&#160;: modifiez votre texte sans ouvrir vos fichiers</title>
   <body>
     <p>
       Les clones d'Unix sont peu utilisés pour gérer la documentation
@@ -12,31 +12,31 @@
     </p>
     <p>
       Prenons l'exemple du dialogue entre entre M. Jourdain et son maître de
-      philosophie, dans le <i>Bourgeois gentilhomme</i> de Molière :
+      philosophie, dans le <i>Bourgeois gentilhomme</i> de Molière&#160;:
     </p>
     <p>
-      MONSIEUR JOURDAIN :
+      MONSIEUR JOURDAIN&#160;:
     </p>
     <p>
-      [...] Je voudrais donc lui mettre dans un billet : « Belle marquise, vos
-      beaux yeux me font mourir d'amour » ; mais je voudrais que cela fût mis
+      [...] Je voudrais donc lui mettre dans un billet&#160;: « Belle marquise, vos
+      beaux yeux me font mourir d'amour »&#160;; mais je voudrais que cela fût mis
       d'une manière galante, que cela fût tourné gentiment.
     </p>
     <p>
       [...]
     </p>
     <p>
-      MAÎTRE DE PHILOSOPHIE :
+      MAÎTRE DE PHILOSOPHIE&#160;:
     </p>
     <p>
-      On les peut mettre premièrement comme vous avez dit : Belle marquise, vos
-      beaux yeux me font mourir d'amour. Ou bien : D'amour mourir me font, belle
-      marquise, vos beaux yeux.  Ou bien : Vos yeux beaux d'amour me font, belle
-      marquise, mourir. Ou bien : Mourir vos beaux yeux, belle marquise, d'amour
-      me font. Ou bien : Me font vos yeux beaux mourir, belle marquise, d'amour.
+      On les peut mettre premièrement comme vous avez dit&#160;: Belle marquise, vos
+      beaux yeux me font mourir d'amour. Ou bien&#160;: D'amour mourir me font, belle
+      marquise, vos beaux yeux.  Ou bien&#160;: Vos yeux beaux d'amour me font, belle
+      marquise, mourir. Ou bien&#160;: Mourir vos beaux yeux, belle marquise, d'amour
+      me font. Ou bien&#160;: Me font vos yeux beaux mourir, belle marquise, d'amour.
     </p>
     <p>
-      Commençons par afficher la phrase d'origine dans un terminal :
+      Commençons par afficher la phrase d'origine dans un terminal&#160;:
     </p>
     <codeblock>
       $ echo &quot;Belle marquise, vos beaux yeux me font mourir d'amour.&quot;
@@ -81,7 +81,7 @@
       <i>via</i> des méta-caractères dans des <i>expressions rationnelles</i>
       (ou <i>expressions régulières</i>). Un méta-caractère connu des
       expressions rationnelles est le signe *, indiquant, en ligne de commande,
-      zéro ou un nombre indéfini de caractères, comme dans :
+      zéro ou un nombre indéfini de caractères, comme dans&#160;:
     </p>
     <codeblock>
       $ ls *.rst
@@ -99,13 +99,13 @@
       d'amour. mourir me font, Belle marquise, vos beaux yeux
     </codeblock>
     <p>
-      Nous buttons sur le même problème : l'expression régulière .* ne correspond
+      Nous buttons sur le même problème&#160;: l'expression régulière .* ne correspond
       pas à un mot, mais à une suite de caractères, ponctuation comprise. Il
       faut alors utiliser la forme &lt;.*&gt;, qui correspond à un mot tel que
       ceux dont M. Jourdain se sert pour faire de la prose. Nous allons utiliser
       les caractères d'échappement (barre oblique inverse \) pour que les signes
       &lt; et &gt; ne soient pas interprétés littéralement sous certaines
-      consoles, mais comme des méta-caractères ayant une fonction spéciale :
+      consoles, mais comme des méta-caractères ayant une fonction spéciale&#160;:
     </p>
     <codeblock>
       $ echo &quot;Belle marquise, vos beaux yeux me font mourir d'amour.&quot; | \
@@ -114,7 +114,7 @@
     </codeblock>
     <p>
       Nous pourrions également utiliser la forme [[:alpha:]]* qui fait gagner en
-      lisibilité, mais perdre en concision :
+      lisibilité, mais perdre en concision&#160;:
     </p>
     <codeblock>
       $ echo &quot;Belle marquise, vos beaux yeux me font mourir d'amour.&quot; | \
@@ -125,7 +125,7 @@
       C'est mieux, mais nous avons un problème de capitalisation. Nous allons
       donc utiliser les opérateurs /u et /l placés judicieusement.  Auparavant,
       nous allons exporter des variables pour rendre le script plus concis et
-      plus lisible :
+      plus lisible&#160;:
     </p>
     <codeblock>
       $ export w=&quot;\(\&lt;.*\&gt;\)&quot;
@@ -138,7 +138,7 @@
     </codeblock>
     <p>
       Nous pouvons maintenant facilement redistribuer les références arrières
-      pour obtenir toutes les variations du maître de philosophie :
+      pour obtenir toutes les variations du maître de philosophie&#160;:
     </p>
     <codeblock>
       $ echo &quot;Belle marquise, vos beaux yeux me font mourir d'amour.&quot; | \
@@ -159,13 +159,13 @@
       <title id="moliere-et-gnulinux">Molière et GNU/Linux</title>
       <p>
         Réécrivons le dialogue de M. Jourdain et de son maître de philosophie en
-        style <i>geek</i> :
+        style <i>geek</i>&#160;:
       </p>
       <p>
-        MONSIEUR JOURDAIN :
+        MONSIEUR JOURDAIN&#160;:
       </p>
       <p>
-        Je voudrais donc lui afficher sur la sortie standard :
+        Je voudrais donc lui afficher sur la sortie standard&#160;:
       </p>
       <codeblock>
         $ Belle marquise, vos beaux yeux me font mourir d'amour.
@@ -175,23 +175,23 @@
         tourné gentiment.
       </p>
       <p>
-        MAÎTRE DE PHILOSOPHIE :
+        MAÎTRE DE PHILOSOPHIE&#160;:
       </p>
       <p>
-        On les peut mettre premièrement comme vous avez dit :
+        On les peut mettre premièrement comme vous avez dit&#160;:
       </p>
       <codeblock>
         $ echo &quot;Belle marquise, vos beaux yeux me font mourir d'amour.&quot;
       </codeblock>
       <p>
-        Ou bien :
+        Ou bien&#160;:
       </p>
       <codeblock>
         $ export declaration=&quot;Belle marquise, vos beaux yeux me font mourir d'amour.&quot;
         $ echo $declaration
       </codeblock>
       <p>
-        Ou bien :
+        Ou bien&#160;:
       </p>
       <codeblock>
         $ export w=&quot;\(\&lt;.*\&gt;\)&quot;
@@ -200,21 +200,21 @@
         sed &quot;s#$mots \(d'\&lt;.*\&gt;\)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#&quot;
       </codeblock>
       <p>
-        Ou bien :
+        Ou bien&#160;:
       </p>
       <codeblock>
         $ echo $declaration | \
         sed &quot;s#$mots \(d'\&lt;.*\&gt;\)#\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8#&quot;
       </codeblock>
       <p>
-        Ou bien :
+        Ou bien&#160;:
       </p>
       <codeblock>
         $ echo $declaration | \
         sed &quot;s#$mots \(d'\&lt;.*\&gt;\)#\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#&quot;
       </codeblock>
       <p>
-        Ou bien :
+        Ou bien&#160;:
       </p>
       <codeblock>
         $ echo $declaration | \
@@ -225,7 +225,7 @@
       <title id="beaucoup-efforts">Beaucoup d'efforts…</title>
       <p>
         Certes, beaucoup d'efforts pour pas grand chose, me direz-vous.  Mais
-        imaginons un fichier qui contiennent 1000 phrases de la même structure :
+        imaginons un fichier qui contiennent 1000 phrases de la même structure&#160;:
       </p>
       <p>
         Cher docteur, ces grands malheurs vous font pleurer d'amertume.  Petit
@@ -239,7 +239,7 @@
       </p>
       <p>
         Pour effectuer nos tests sur un échantillon, plaçons les trois phrases
-        précédentes dans un fichier :
+        précédentes dans un fichier&#160;:
       </p>
       <codeblock>
         $ echo &quot;Cher docteur, ces grands malheurs vous font pleurer d'amertume.&quot; &gt; variations.txt
@@ -248,7 +248,7 @@
       </codeblock>
       <p>
         Plaçons les différentes commandes <i>sed</i> dans un script différent
-        chacune :
+        chacune&#160;:
       </p>
       <codeblock>
         $ echo &quot;s#\(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\), \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(\&lt;.*\&gt;\) \(d'\&lt;.*\&gt;\)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#&quot; &gt; moliere1.sed
@@ -258,11 +258,11 @@
       </codeblock>
       <p>
         Exécutons maintenant en boucle tous les scripts <i>sed</i> sur toutes
-        les lignes du fichier :
+        les lignes du fichier&#160;:
       </p>
       <codeblock>
         $ for (( i=1; i&lt;5; i++ )); do
-        while read s; do echo &quot;$s&quot; | sed -f moliere$i.sed ; done &lt; variations.txt
+        while read s; do echo &quot;$s&quot; | sed -f moliere$i.sed&#160;; done &lt; variations.txt
         done
         D'amertume pleurer vous font, cher docteur, ces grands malheurs.
         D'envie saliver te fait, petit garçon, cette bonne glace.

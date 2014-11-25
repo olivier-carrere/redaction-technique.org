@@ -14,26 +14,26 @@
       génération des index.
     </p>
     <p>
-      Face à cette situation, vous avez quatre solutions :
+      Face à cette situation, vous avez quatre solutions&#160;:
     </p>
     <ul>
       <li>
-        attendre que FOP supporte les index ; sans date de disponibilité, ce
-        choix sera difficile à faire accepter par votre direction ;
+        attendre que FOP supporte les index&#160;; sans date de disponibilité, ce
+        choix sera difficile à faire accepter par votre direction&#160;;
       </li>
       <li>
-        abandonner DITA XML ; avouez que ce serait dommage de renoncer aux
-        formidables gains de productivité que permet ce format ;
+        abandonner DITA XML&#160;; avouez que ce serait dommage de renoncer aux
+        formidables gains de productivité que permet ce format&#160;;
       </li>
       <li>
-        renoncer à afficher l'index dans le PDF ; les arguments en faveur d'un
-        tel choix ont un certain poids : les index sont difficiles à maintenir
+        renoncer à afficher l'index dans le PDF&#160;; les arguments en faveur d'un
+        tel choix ont un certain poids&#160;: les index sont difficiles à maintenir
         et offre un surplus d'utilisabilité discutable dans un document qui ne
-        sera consulté que marginalement sous forme imprimée ;
+        sera consulté que marginalement sous forme imprimée&#160;;
       </li>
       <li>
         abandonner DITA Open Toolkit et se tourner vers une solution
-        propriétaire ; les logiciels non open-source, XMetal, par exemple, on
+        propriétaire&#160;; les logiciels non open-source, XMetal, par exemple, on
         souvent recours au moteur de publication XEP de RenderX qui lui,
         supporte parfaitement les index.
       </li>

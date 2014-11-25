@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN" "/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
 <topic id="une-architecture-documentaire-trop-complexe" xml:lang="fr-fr">
-  <title>Une architecture documentaire trop complexe ?</title>
+  <title>Une architecture documentaire trop complexe&#160;?</title>
   <body>
     <p>
       DITA XML permet des gains de productivité importants par la réduction du
@@ -21,7 +21,7 @@
     <p>
       Le tableau suivant présente les différents niveaux de complexité induits par
       DITA XML et les solutions qui permettent au <b>rédacteur technique</b> de
-      les maîtriser plus facilement :
+      les maîtriser plus facilement&#160;:
     </p>
     <simpletable>
       <strow>

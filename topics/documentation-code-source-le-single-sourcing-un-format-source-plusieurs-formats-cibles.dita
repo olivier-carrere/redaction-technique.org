@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN" "/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
 <topic id="single-sourcing-un-format-source-plusieurs-formats-cibles" xml:lang="fr-fr">
-  <title>Le single-sourcing : un format source, plusieurs formats cibles</title>
+  <title>Le single-sourcing&#160;: un format source, plusieurs formats cibles</title>
   <body>
     <p>
       Le <i>single-sourcing</i> est un sujet qui a longtemps divisé les
-      <b>rédacteurs techniques</b> : des supports de <i>rédaction technique</i>
+      <b>rédacteurs techniques</b>&#160;: des supports de <i>rédaction technique</i>
       différents, tels qu'une aide en ligne et un manuel imprimé, doivent-ils
       proposer un contenu radicalement différent ou peuvent-ils être générés à
-      partir du même contenu source ?
+      partir du même contenu source&#160;?
     </p>
     <p>
       Les contraintes de productivité et la réduction des coûts aidant, le débat
@@ -24,7 +24,7 @@
     <p>
       Si le <b>rédacteur technique</b> pratique le <i>single-sourcing</i>, il
       doit cependant sélectionner en début de projet le paradigme sur lequel il
-      se base : le livre ou l'aide en ligne. Pendant longtemps, les outils
+      se base&#160;: le livre ou l'aide en ligne. Pendant longtemps, les outils
       proposés reposaient soit sur un document de type livre (Word, ou
       FrameMaker, essentiellement) qui pouvait être exporté au format d'aide en
       ligne, soit sur un fichier source (RTF) d'aide Windows, pour générer un

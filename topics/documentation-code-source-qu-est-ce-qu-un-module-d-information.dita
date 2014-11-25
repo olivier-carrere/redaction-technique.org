@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN"
 "/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
 <topic id="quest-ce-quun-module-dinformation">
-  <title>Qu'est-ce qu'un module d'information ?</title>
+  <title>Qu'est-ce qu'un module d'information&#160;?</title>
   <body>
     <p>
       Le système modulaire le plus connu au monde est certainement celui des
@@ -12,7 +12,7 @@
     </p>
     <p>
       Mais suffit-il de convertir sa documentation de FrameMaker vers un format
-      structuré tel que DITA XML pour obtenir une documentation modulaire ?
+      structuré tel que DITA XML pour obtenir une documentation modulaire&#160;?
       Hélas, non. Si le contenu de départ mélange les informations de tout type
       (concepts, procédures pas à pas, référence), il sera toujours possible de
       le convertir au format DITA en ne respectant pas rigoureusement la
@@ -24,7 +24,7 @@
       correpondant chacun à un schéma XSD différent (<i>concept</i>,
       <i>task</i>, ou <i>reference</i>), on n'obtient pas forcément ainsi une
       véritable documentation modulaire. En effet, essayez de construire alors
-      un document ne regroupant que les fichiers d'un seul type : votre document
+      un document ne regroupant que les fichiers d'un seul type&#160;: votre document
       aura toutes les chances d'être incomplet et incohérent.
     </p>
     <p>
@@ -40,7 +40,7 @@
       documentaire</i> globale. De même, des mentions telles que <i>Voir la
       section suivante</i> devront être remplacées par des reférences
       croisées. Idéalement, ces références croisées ne se situent pas dans les
-      fichiers de contenu proprement dit sous la forme :
+      fichiers de contenu proprement dit sous la forme&#160;:
     </p>
     <codeblock>
       &lt;related-links&gt;

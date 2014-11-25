@@ -43,7 +43,7 @@
       <step>
         <cmd>
           Sélectionnez Exécuter dans le menu Démarrer, collez la commande
-          suivante, puis appuyez sur <i>Entrée</i> :
+          suivante, puis appuyez sur <i>Entrée</i>&#160;:
         </cmd>
         <info>
           <codeblock>
@@ -58,7 +58,7 @@
       </step>
       <step>
         <cmd>
-          Collez la commande suivante dans le terminal :
+          Collez la commande suivante dans le terminal&#160;:
         </cmd>
         <info>
           <codeblock>
@@ -68,7 +68,7 @@
       </step>
       <step>
         <cmd>
-          Collez la commande suivante :
+          Collez la commande suivante&#160;:
         </cmd>
         <info>
           <codeblock>
@@ -83,7 +83,7 @@
       </step>
       <step>
         <cmd>
-          Collez la commande suivante dans le nouveau terminal :
+          Collez la commande suivante dans le nouveau terminal&#160;:
         </cmd>
         <info>
           <codeblock>
@@ -98,7 +98,7 @@
     </steps>
     <result>
       <p>
-        Félicitations, vous avez compilé votre premier projet DITA XML !  Vous
+        Félicitations, vous avez compilé votre premier projet DITA XML&#160;!  Vous
         trouverez le fichier cible taskbook.pdf dans le répertoire
         Bureau\\DITA-OT1.5.4_full_easy_install_bin\\DITA-OT1.5.4. Vous pouvez
         maintenant compiler d'autres projets en ignorant les étapes 1 et 2.

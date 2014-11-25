@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN" "/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
 <topic id="docbook-ou-dita-xml" xml:lang="fr-fr">
-  <title>DocBook ou DITA XML ?</title>
+  <title>DocBook ou DITA XML&#160;?</title>
   <body>
     <p>
       Certaines entreprises ont parfois un contenu existant au format <xref
@@ -21,7 +21,7 @@
       Il est facile de générer du <i>DocBook</i> à partir de DITA XML.  DITA
       Open Toolkit propose par défaut ce format cible, au même titre que le PDF
       ou le HTML. L'opération inverse ne peut pas être totalement
-      automatisée. Pourquoi ?
+      automatisée. Pourquoi&#160;?
     </p>
     <fig>
       <image href="../graphics/entropie.png" />
@@ -40,7 +40,7 @@
     </p>
     <p>
       Si votre contenu était une photo, nous pourrions faire l'analogie
-      suivante :
+      suivante&#160;:
     </p>
     <simpletable>
       <sthead>
@@ -86,7 +86,7 @@
     <p>
       Le passage de RAW en TIFF et de TIFF en JPEG est destructif et ne peut se
       faire en sens inverse <fn>Pour être aussi exact que possible, vous pouvez
-      enregistrer une image JPEG au format TIFF ; mais cette image aura une
+      enregistrer une image JPEG au format TIFF&#160;; mais cette image aura une
       qualité égale à celle de l'image JPEG, inférieure à la qualité habituelle
       des images TIFF. En revanche, on ne peut à ma connaissance pas enregistrer
       une image TIFF sous un format RAW.</fn>.

@@ -21,7 +21,7 @@
     </p>
     <p>
       Si vous décidez de pousser la granulométrie au niveau du segment de phrase
-      et que vous définissez les <i>conref</i> suivants :
+      et que vous définissez les <i>conref</i> suivants&#160;:
     </p>
     <codeblock>
       &lt;ph id=&quot;click&quot;&gt;Click the&lt;/ph&gt;
@@ -31,7 +31,7 @@
       &lt;ph id=&quot;arrow&quot;&gt;arrow&lt;/ph&gt;
     </codeblock>
     <p>
-      Vous pouvez maintenant utiliser le code suivant :
+      Vous pouvez maintenant utiliser le code suivant&#160;:
     </p>
     <codeblock>
       &lt;p&gt;
@@ -45,7 +45,7 @@
     </p>
     <p>
       Essayons maintenant de créer une version française de cette phrase.  Nous
-      traduisons donc les <i>conref</i> comme suit :
+      traduisons donc les <i>conref</i> comme suit&#160;:
     </p>
     <codeblock>
       &lt;ph id=&quot;click&quot;&gt;Cliquez sur la&lt;/ph&gt;

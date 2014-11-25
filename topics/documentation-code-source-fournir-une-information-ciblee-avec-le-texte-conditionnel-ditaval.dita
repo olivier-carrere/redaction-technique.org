@@ -9,7 +9,7 @@
       Un fichier <xref format="html" scope="external"
       href="http://docs.oasis-open.org/dita/v1.2/os/spec/common/about-ditaval.html">
       ditaval</xref> reprend le principe des lunettes que vous chaussez pour
-      visualiser un film en 3D : le verre gauche masque une moitié de l'image,
+      visualiser un film en 3D&#160;: le verre gauche masque une moitié de l'image,
       le verre droit en masque l'autre moitié. Mais seul le <b>rédacteur
       technique</b> dispose de lunettes 3D et a une vision complète de
       l'information contenue dans le projet DITA XML.
@@ -30,7 +30,7 @@
     </fig>
     <p>
       Concrètement, le mécanisme <i>ditaval</i> est basé sur des opérateurs
-      binaires : vous marquez un bloc d'information avec un attribut et une
+      binaires&#160;: vous marquez un bloc d'information avec un attribut et une
       valeur, puis incluez ou excluez ce bloc dans le livrable en passant un
       opérande lors de la compilation (le bloc est inclus par défaut si aucun
       opérande n'est spécifié). C'est le principe du <i>texte conditionnel</i>.
@@ -52,7 +52,7 @@
     <p>
       Pour indiquer qu'une remarque est destinée à la fois à des électriciens et
       à des utilisateurs avancés en voulant profiler l'information selon les
-      publics suivants :
+      publics suivants&#160;:
     </p>
     <ul>
       <li>
@@ -72,7 +72,7 @@
       </li>
     </ul>
     <p>
-      Vous pouvez utiliser la structure suivante :
+      Vous pouvez utiliser la structure suivante&#160;:
     </p>
     <codeblock>
       &lt;step audience=&quot;electricians advanced&quot;&gt;
@@ -89,7 +89,7 @@
         <i>Exemple</i>
       </p>
       <p>
-        Le code suivant est correct avant filtrage :
+        Le code suivant est correct avant filtrage&#160;:
       </p>
       <codeblock>
         &lt;thead&gt;
@@ -100,7 +100,7 @@
         &lt;/thead&gt;
       </codeblock>
       <p>
-        Après filtrage, en revanche, on obtient le code suivant :
+        Après filtrage, en revanche, on obtient le code suivant&#160;:
       </p>
       <codeblock>
         &lt;thead&gt;
@@ -108,7 +108,7 @@
       </codeblock>
       <p>
         Or, selon le schéma XSD, les en-têtes de tableaux doivent contenir au
-        moins une ligne :
+        moins une ligne&#160;:
       </p>
       <codeblock>
         &lt;!ENTITY % thead.content &quot;((%row;)+)&gt;

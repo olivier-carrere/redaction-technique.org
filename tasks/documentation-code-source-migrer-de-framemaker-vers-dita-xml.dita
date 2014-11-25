@@ -6,13 +6,13 @@
   <taskbody>
     <context>
       <p>
-        Le but de cette procédure est de :
+        Le but de cette procédure est de&#160;:
       </p>
       <ul>
         <li>
           <i>migrer</i> son contenu <i>FrameMaker</i> vers <i>DITA XML</i> sans
           se plonger dans les arcanes des <i>EDD FrameMaker</i> (petits projets
-          uniquement !),
+          uniquement&#160;!),
         </li>
         <li>
           gérer la documentation technique au format DITA XML sans utiliser
@@ -121,7 +121,7 @@
     <result>
       <p>
         Pour générer les éléments permettant de construire un fichier .ditamap,
-        vous pouvez par exemple utiliser des scripts Perl du type :
+        vous pouvez par exemple utiliser des scripts Perl du type&#160;:
       </p>
       <note type="warning">
         Ne lancez ce type de scripts que sur une copie de vos fichiers et non
@@ -146,7 +146,7 @@
         ou utiliser le module Perl <xref format="html" scope="external"
         href="http://www.xmltwig.org/xmltwig/">XML::Twig</xref>, ou encore ce
         <i>one-liner</i> Bash pour renommer les fichiers .dita d'après leur
-        titre :
+        titre&#160;:
       </p>
       <codeblock>
         $ ack &quot;&lt;title&gt;&quot; *.dita| sed &quot;s# #_#g;&quot; | tr '[:upper:]' '[:lower:]' | \

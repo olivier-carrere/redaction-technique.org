@@ -14,7 +14,7 @@
       catégorisées selon leur sens. Par défaut, <xref format="html"
       scope="external"
       href="http://fr.wikipedia.org/wiki/Darwin_Information_Typing_Architecture">DITA
-      XML</xref> propose trois types de base :
+      XML</xref> propose trois types de base&#160;:
     </p>
     <simpletable>
       <sthead>
@@ -66,7 +66,7 @@
       d'être peu claire et difficile à parcourir rapidement.
     </p>
     <p>
-      Avec des formats structurés tels que DITA XML, en revanche :
+      Avec des formats structurés tels que DITA XML, en revanche&#160;:
     </p>
     <ul>
       <li>
@@ -88,7 +88,7 @@
     </ul>
     <p>
       Les types d'information de haut niveau tels que <i>task</i> sont divisés
-      en types de plus bas niveau, par exemple :
+      en types de plus bas niveau, par exemple&#160;:
     </p>
     <simpletable>
       <sthead>
@@ -128,7 +128,7 @@
       Les règles syntaxiques interdisent au <b>rédacteur technique</b> de faire
       figurer une procédure pas à pas dans une section d'un autre type que
       <i>task</i>. Le <b>rédacteur technique</b> dispose donc d'un véritable
-      modèle de rédaction qui l'aide à présenter des informations :
+      modèle de rédaction qui l'aide à présenter des informations&#160;:
     </p>
     <simpletable>
       <strow>
@@ -137,10 +137,10 @@
         </stentry>
         <stentry>
           selon le principe de design <i>less is more</i>, l'utilisateur ne
-          dispose <i>que</i> de l'information dont il a besoin : une section
+          dispose <i>que</i> de l'information dont il a besoin&#160;: une section
           <i>task</i>, par exemple, ne contient que des prérequis, une procédure
-          et quelques autres éléments spécifiques ; toutes les informations
-          conceptuelles ou de référence sont placées dans des sections à part ;
+          et quelques autres éléments spécifiques&#160;; toutes les informations
+          conceptuelles ou de référence sont placées dans des sections à part&#160;;
         </stentry>
       </strow>
       <strow>
@@ -148,15 +148,15 @@
           <i>complètes</i>
         </stentry>
         <stentry>
-          l'utilisateur dispose de <i>toute</i> l'information dont il a besoin ;
+          l'utilisateur dispose de <i>toute</i> l'information dont il a besoin&#160;;
           une section de type <i>task</i> sans procédure n'est pas une section
-          DITA XML valide et ne pourra pas être publiée ; il est même possible
+          DITA XML valide et ne pourra pas être publiée&#160;; il est même possible
           de mettre en œuvre un mécanisme vérifiant automatiquement avant
           publication la présence de blocs d'information facultatifs selon le
           schéma <xref format="html" scope="external"
           href="http://fr.wikipedia.org/wiki/XML_Schema">XSD</xref> DITA, mais
           que le <b>rédacteur technique</b> juge obligatoires, tels que le
-          résultat d'une procédure ;
+          résultat d'une procédure&#160;;
         </stentry>
       </strow>
       <strow>
@@ -165,7 +165,7 @@
         </stentry>
         <stentry>
           les informations de même type sont présentées dans le même ordre et
-          avec la même mise en page ; les blocs d'information identiques répétés
+          avec la même mise en page&#160;; les blocs d'information identiques répétés
           à différents endroits, tels qu'une remarque, sont issus d'une seule et
           même source et sont donc strictement identiques.
         </stentry>

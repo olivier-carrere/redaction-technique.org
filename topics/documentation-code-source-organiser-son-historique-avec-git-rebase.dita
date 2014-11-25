@@ -5,12 +5,12 @@
   <body>
     <p>
       Git est d'un abord déroutant. Ses <i>workflows</i> s'appliquent à du
-      contenu plutôt qu'à des fichiers. Résultat : le travail de groupe et la
+      contenu plutôt qu'à des fichiers. Résultat&#160;: le travail de groupe et la
       gestion de différentes versions concurrentes d'un même contenu deviennent
       beaucoup plus simples.
     </p>
     <p>
-      Git effectue des <i>commits</i> atomiques : il applique des lots de
+      Git effectue des <i>commits</i> atomiques&#160;: il applique des lots de
       modifications sur un contenu souvent réparti sur plusieurs fichiers, au
       lieu de gérer des <i>fichiers</i> proprement dits. Il nous invite à
       raisonner par lots de tâches sur un contenu et non par fichier.
@@ -19,7 +19,7 @@
       Ce fonctionnement peut sembler peu intuitif si l'on a l'habitude de
       travailler fichier par fichier et non tâche par tâche. Mais une fois que
       l'on a adapté ses habitudes de travail à ce <i>workflow</i>, on s'aperçoit
-      :
+     &#160;:
     </p>
     <ul>
       <li>
@@ -32,7 +32,7 @@
     </ul>
     <p>
       Imaginons que vous ayez identifié deux types de modifications majeurs à
-      apporter à votre contenu :
+      apporter à votre contenu&#160;:
     </p>
     <ul>
       <li>
@@ -62,7 +62,7 @@
     <p>
       Vous <i>committez</i> chaque sous-lot à chaque fois qu'il est
       achevé. Votre historique de <i>commit</i> ressemble alors au schéma
-      suivant :
+      suivant&#160;:
     </p>
     <fig>
       <title>Historique Git</title>
@@ -83,15 +83,15 @@
       précédentes, par exemple.
     </p>
     <note class="warning">
-      La commande <i>rebase</i> est potentiellement destructive ; veillez à
+      La commande <i>rebase</i> est potentiellement destructive&#160;; veillez à
       sauvegarder votre espace de travail, répertoire <i>.git</i> compris, avant
-      de l'exécuter, sous risque de perdre des données ; vous pouvez également
+      de l'exécuter, sous risque de perdre des données&#160;; vous pouvez également
       créer une branche de sauvegarde provisoire.
     </note>
     <p>
       Vous pouvez alors réécrire l'histoire pour proposer à vos collaborateurs
       un <i>commit</i> pour chaque tâche réalisée en son entier, comme sur le
-      schéma suivant :
+      schéma suivant&#160;:
     </p>
     <fig>
       <title>Historique Git</title>
@@ -103,21 +103,21 @@
     </p>
     <note>
       Si vous avez effectué simultanément les deux tâches sur un ou plusieurs
-      fichiers, pas de panique : grâce à la commande <i>git add -p</i> vous
+      fichiers, pas de panique&#160;: grâce à la commande <i>git add -p</i> vous
       pouvez répartir vos modifications imbriquées sur les <i>commits</i>
       idoines. Lorsque vous lancez <i>git status</i>, vous vous apercevez alors
       que vos fichiers sont à la fois prêts et non prêts à être <i>commités</i>
-      : il y a deux états des fichiers, chaque état représentant un stade
+     &#160;: il y a deux états des fichiers, chaque état représentant un stade
       partiel de votre travail et la somme des deux représentant la totalité des
       modifications que vous avez apportées.
     </note>
     <p>
       Évidemment, vous n'avez plus accès aux <i>commits</i> intermédiaires, mais
-      c'est ce que vous souhaitiez : chaque <i>commit</i> unique représente un
+      c'est ce que vous souhaitiez&#160;: chaque <i>commit</i> unique représente un
       état cohérent de votre contenu.
     </p>
     <p>
-      Ce workflow facilite également le travail d'équipe : vous pouvez confier
+      Ce workflow facilite également le travail d'équipe&#160;: vous pouvez confier
       ces tâches à deux membres différents de votre équipe, chacun travaillant
       dans son espace local. Les modifications du premier sont ensuite
       fusionnées avec celles du second dans son espace local <i>via</i> des

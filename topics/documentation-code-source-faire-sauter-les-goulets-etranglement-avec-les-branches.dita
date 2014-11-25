@@ -6,10 +6,10 @@
   <body>
     <p>
       Les branches <i>Git</i> permettent de facilement effectuer en parallèle
-      plusieurs tâches non liées :
+      plusieurs tâches non liées&#160;:
     </p>
     <p>
-      Imaginons le scénario de travail suivant :
+      Imaginons le scénario de travail suivant&#160;:
     </p>
     <ul>
       <li>
@@ -24,8 +24,8 @@
       </li>
     </ul>
     <p>
-      Comment faire sauter ce goulot d'étranglement ? C'est (relativement)
-      simple :
+      Comment faire sauter ce goulot d'étranglement&#160;? C'est (relativement)
+      simple&#160;:
     </p>
     <ol>
       <li>
@@ -34,30 +34,30 @@
         <i>committer</i> avant validation.
       </li>
       <li>
-        Créez une nouvelle branche : <i>git checkout -b ma-branche</i>.
+        Créez une nouvelle branche&#160;: <i>git checkout -b ma-branche</i>.
       </li>
       <li>
-        <i>Committez</i> vos modifications sur la nouvelle branche : <i>git add
+        <i>Committez</i> vos modifications sur la nouvelle branche&#160;: <i>git add
         mes-fichiers</i>, <i>git commit -m &quot;mon message de
         commit&quot;</i>.
       </li>
       <li>
         Vous repassez sur la branche master <i>git checkout master</i> et passez
         à votre deuxième tâche. 5a. Si votre première tâche n'est pas validée,
-        vous repassez sur la branche provisoire : <i>git checkout ma-branche</i>
+        vous repassez sur la branche provisoire&#160;: <i>git checkout ma-branche</i>
         et faites un nouveau commit (que vous pourrez fusionner avec le ou les
         précédents après validation).
       </li>
       <li>
         Lorsque vous recevez la validation de la première tâche, vous mettez
-        votre travail en cours de côté : <i>git stash</i>.
+        votre travail en cours de côté&#160;: <i>git stash</i>.
       </li>
       <li>
-        Vous fusionnez la branche provisoire avec la branche master : <i>git
+        Vous fusionnez la branche provisoire avec la branche master&#160;: <i>git
         merge ma-branche</i>.
       </li>
       <li>
-        Vous récupérez votre travail en cours : <i>git stash pop</i>.
+        Vous récupérez votre travail en cours&#160;: <i>git stash pop</i>.
       </li>
     </ol>
     <p>

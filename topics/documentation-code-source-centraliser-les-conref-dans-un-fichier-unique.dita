@@ -43,7 +43,7 @@
     <p>
       Les fichiers de contenu référencés dans des structures <i>DITAMAP</i> ne
       contiennent donc que des <i>conref</i> cibles, et un fichier central
-      fédère tous les <i>conref</i> sources ; il contient éventuellement
+      fédère tous les <i>conref</i> sources&#160;; il contient éventuellement
       également quelques références internes à des <i>conref</i> cibles.
     </p>
     <p>
@@ -58,9 +58,9 @@
     </p>
     <p>
       Tous les <i>conref</i> sources d'un fichier donné doivent avoir un ID
-      unique dans ce fichier ; veillez à utiliser des noms explicites pour les
+      unique dans ce fichier&#160;; veillez à utiliser des noms explicites pour les
       humains, vos fichiers <i>dita</i> contenant des <i>conref</i> cibles
-      deviendront sinon rapidement illisibles !
+      deviendront sinon rapidement illisibles&#160;!
     </p>
   </body>
 </topic>

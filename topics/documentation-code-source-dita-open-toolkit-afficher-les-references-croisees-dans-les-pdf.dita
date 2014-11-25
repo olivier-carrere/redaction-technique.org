@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN"
 "/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
 <topic id="dita-open-toolkit-afficher-les-références-croisées-dans-les-pdf">
-  <title>DITA Open Toolkit : afficher les références croisées dans les
+  <title>DITA Open Toolkit&#160;: afficher les références croisées dans les
   PDF</title>
   <body>
     <p>
@@ -28,10 +28,10 @@
         ne sont pas placées dans le corps du texte, mais en fin de section, dans
         une rubrique dédiée.
       </p>
-      </fn> n'apparaît dans le fichier cible ! Vous essayez alors de générer une
+      </fn> n'apparaît dans le fichier cible&#160;! Vous essayez alors de générer une
       version HTML de votre contenu et là, votre section <i>Voir aussi</i> est
       bien présente.  <i>DITA Open Toolkit</i> ne supporterait-il pas les
-      références croisées dans les PDF ?
+      références croisées dans les PDF&#160;?
     </p>
     <p>
       Fort heureusement, non. Par défaut (allez savoir pourquoi), les
@@ -40,7 +40,7 @@
       variable <i>disableRelatedLinks</i> du fichier
       demo/fo/build_template.xml. Si vous utilisez <i>ant</i>, il vous faudra
       également passer le paramètre <i>args.fo.include.rellinks=all</i> comme
-      suit :
+      suit&#160;:
     </p>
     <codeblock>
       $ ant -Dargs.input=samples/sequence.ditamap -Doutput.dir=out/ \

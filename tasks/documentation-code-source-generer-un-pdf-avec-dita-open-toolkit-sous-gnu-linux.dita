@@ -30,7 +30,7 @@
     <steps>
       <step>
         <cmd>
-          Téléchargez et décompressez l'archive DITA Open Toolkit :
+          Téléchargez et décompressez l'archive DITA Open Toolkit&#160;:
         </cmd>
         <info>
           <codeblock>
@@ -41,7 +41,7 @@
       </step>
       <step>
         <cmd>
-          Configurez l'environnement DITA Open Toolkit :
+          Configurez l'environnement DITA Open Toolkit&#160;:
         </cmd>
         <info>
           <codeblock>
@@ -53,7 +53,7 @@
       </step>
       <step>
         <cmd>
-          Générez votre premier PDF :
+          Générez votre premier PDF&#160;:
         </cmd>
         <info>
           <codeblock>
@@ -64,7 +64,7 @@
     </steps>
     <result>
       <p>
-        Félicitations, vous avez compilé votre premier projet DITA XML ! Le
+        Félicitations, vous avez compilé votre premier projet DITA XML&#160;! Le
         fichier PDF généré est out/userguide.pdf. Vous pouvez maintenant
         compiler d'autres projets en ignorant les étapes 1 et 2.
       </p>

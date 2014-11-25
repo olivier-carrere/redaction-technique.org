@@ -11,7 +11,7 @@
         </li>
         <li>
           La structure de répertoires de votre projet de documentation DITA XML
-          doit être la suivante :
+          doit être la suivante&#160;:
           <ul>
             <li>
               répertoire de langue
@@ -49,7 +49,7 @@
         </li>
         <li>
           <p>
-            Les instructions de ligne de commande sont conçues pour GNU/Linux ;
+            Les instructions de ligne de commande sont conçues pour GNU/Linux&#160;;
             elles doivent être adaptées pour être utilisées dans un autre
             environnement.
           </p>
@@ -60,7 +60,7 @@
       <p>
         Le <i>mode nXML</i> propose de valider en temps réel les documents XML
         DocBook, XHTML ou autres. Plus la peine de connaître le schéma XML par
-        cœur : votre éditeur de texte vous propose l'<i>autocomplétion des
+        cœur&#160;: votre éditeur de texte vous propose l'<i>autocomplétion des
         balises XML</i> selon le contexte. Il ne supporte cependant pas DITA XML
         par défaut. Ce didacticiel vous permettra d'utiliser ce mode Emacs pour
         DITA XML.
@@ -75,7 +75,7 @@
       </step>
       <step>
         <cmd>
-          Ouvrez un terminal et collez la suite de commandes suivante :
+          Ouvrez un terminal et collez la suite de commandes suivante&#160;:
         </cmd>
         <info>
           <codeblock>
@@ -92,14 +92,14 @@
           <note>
             <p>
               Si un message vous avertit que le fichier .emacs n'existe pas,
-              collez les commandes suivantes, puis recommencez l'opération :
+              collez les commandes suivantes, puis recommencez l'opération&#160;:
             </p>
             <codeblock>
               $ cd &amp;&amp; touch .emacs
             </codeblock>
           </note>
           <p>
-            Cette suite de commandes :
+            Cette suite de commandes&#160;:
           </p>
           <ul>
             <li>
@@ -126,7 +126,7 @@
       <step>
         <cmd>
           Placez-vous dans le répertoire racine de votre projet de documentation
-          DITA XML, puis collez la commande suivante :
+          DITA XML, puis collez la commande suivante&#160;:
         </cmd>
         <info>
           <codeblock>
@@ -160,7 +160,7 @@
           </codeblock>
           <p>
             Vos répertoires de langue doivent maintenant comporter les fichiers
-            schemas.xml appropriés :
+            schemas.xml appropriés&#160;:
           </p>
           <ul>
             <li>
