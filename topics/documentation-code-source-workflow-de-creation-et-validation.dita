@@ -24,8 +24,6 @@
       <li>
         utiliser le système de gestion de tickets utilisés pour la gestion des
         nouvelles fonctionnalités du produit documenté (par exemple, Trac)&#160;:
-      </li>
-    </ul>
     <ul>
       <li>
         création d'un ticket par un développeur,
@@ -39,6 +37,8 @@
       <li>
         publication de la documentation lorsque tous les tickets critiques sont
         fermés.
+      </li>
+    </ul>
       </li>
     </ul>
 
