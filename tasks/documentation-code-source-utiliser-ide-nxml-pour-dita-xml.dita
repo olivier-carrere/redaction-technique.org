@@ -58,10 +58,10 @@
     </prereq>
     <context>
       <p>
-        Le <i>mode nXML</i> propose de valider en temps réel les documents XML
+        Le mode <i>nXML</i> propose de valider en temps réel les documents XML
         DocBook, XHTML ou autres. Plus la peine de connaître le schéma XML par
-        cœur&#160;: votre éditeur de texte vous propose l'<i>autocomplétion des
-        balises XML</i> selon le contexte. Il ne supporte cependant pas DITA XML
+        cœur&#160;: votre éditeur de texte vous propose l'autocomplétion des
+        balises XML selon le contexte. Il ne supporte cependant pas DITA XML
         par défaut. Ce didacticiel vous permettra d'utiliser ce mode Emacs pour
         DITA XML.
       </p>

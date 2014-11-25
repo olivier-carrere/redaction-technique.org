@@ -6,7 +6,7 @@
   <body>
     <p>
       Le système modulaire le plus connu au monde est certainement celui des
-      briques Lego. Adapté à la <i>documentation technique</i>, le principe des
+      briques Lego. Adapté à la documentation technique, le principe des
       modules permet d'améliorer la qualité des manuels techniques et la
       productivité du <b>rédacteur technique</b>.
     </p>
@@ -36,8 +36,8 @@
       étape consiste à ré-écrire chaque fichier (selon par exemple l'approche
       minimaliste) pour le rendre plus générique et en faire un véritable
       module. Il faut évidemment adopter une approche structuraliste et décider
-      du contenu de chaque module dans la perspective de l'<i>architecture
-      documentaire</i> globale. De même, des mentions telles que <i>Voir la
+      du contenu de chaque module dans la perspective de l'architecture
+      documentaire globale. De même, des mentions telles que <i>Voir la
       section suivante</i> devront être remplacées par des reférences
       croisées. Idéalement, ces références croisées ne se situent pas dans les
       fichiers de contenu proprement dit sous la forme&#160;:

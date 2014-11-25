@@ -5,14 +5,14 @@
   <body>
     <p>
       Le modèle du livre est encore prédominant pour créer et gérer
-      l'information. Mais le <i>contenu d'entreprise</i> est souvent disséminé
+      l'information. Mais le contenu d'entreprise est souvent disséminé
       dans de nombreux documents, sous des formats hétérogènes. Ceci se traduit
       par des doublons, des incohérences, un coût de mise à jour et de
       traduction élevé, et des retards de livraison. Le <b>rédacteur
       technique</b> dispose cependant d'autres modèles, plus efficaces.
     </p>
     <p>
-      Le format de <i>rédaction structurée</i> <xref format="html"
+      Le format de rédaction structurée <xref format="html"
       scope="external" href="http://dita.xml.org/">DITA XML</xref> propose de
       passer du modèle du livre à celui du de la <i>base documentaire
       modulaire</i>. Le contenu d'entreprise repose sur des briques uniques, qui

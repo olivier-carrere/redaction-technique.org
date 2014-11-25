@@ -6,10 +6,10 @@
   <taskbody>
     <context>
       <p>
-        Ce <i>didacticiel mode Predictive pour Emacs</i> est destiné à vous
-        guider dans la mise en place et l'utilisation du mode Emacs d'<i>aide à
-        la rédaction</i> et d'<i>autocomplétion des mots</i> anglais et français
-        Predictive dans un environnement GNU/Linux (en l'occurrence, Debian).
+        Ce didacticiel mode <i>Predictive</i> pour Emacs est destiné à vous
+        guider dans la mise en place et l'utilisation du mode Emacs d'aide à
+        la rédaction et d'autocomplétion des mots anglais et français
+        <i>Predictive</i> dans un environnement GNU/Linux (en l'occurrence, Debian).
       </p>
     </context>
     <steps>
@@ -31,7 +31,7 @@
       </step>
       <step>
         <cmd>
-          Décompressez l'archive Predictive&#160;:
+          Décompressez l'archive <i>Predictive</i>&#160;:
         </cmd>
         <info>
           <codeblock>

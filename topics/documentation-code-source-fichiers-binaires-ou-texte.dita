@@ -9,7 +9,7 @@
     <simpletable>
       <strow>
         <stentry>
-          Les <i>formats binaires</i> sont <i>opaques</i>&#160;:
+          Les formats binaires sont <i>opaques</i>&#160;:
         </stentry>
         <stentry>
           si on les ouvre avec un éditeur de texte de type <i>notepad</i>, tout
@@ -20,7 +20,7 @@
       </strow>
       <strow>
         <stentry>
-          Les <i>formats texte</i> sont <i>transparents</i>&#160;:
+          Les formats texte sont <i>transparents</i>&#160;:
         </stentry>
         <stentry>
           si on les ouvre avec un éditeur de texte, on voit du texte et des

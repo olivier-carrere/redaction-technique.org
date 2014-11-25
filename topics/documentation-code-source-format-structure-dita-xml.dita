@@ -9,7 +9,7 @@
       la documentation.  Voilà les défis que doit relever aujourd'hui le
       <b>rédacteur technique</b>. L'un des meilleurs moyens d'y parvenir
       consiste à réduire le volume source de la documentation et à mieux gérer
-      le <i>contenu d'entreprise</i>.
+      le contenu d'entreprise.
     </p>
     <fig>
       <title>Formats de documentation technique&#160;: degrés de
@@ -42,7 +42,7 @@
     </fig>
     <p>
       DITA (Darwin Information Typing Architecture) est une architecture XML de
-      <i>rédaction structurée</i> destinée à la création de documents modulaires
+      rédaction structurée destinée à la création de documents modulaires
       et à la réutilisation du contenu. À partir d'une base commune de modules
       d'information atomiques DITA XML, le <b>rédacteur technique</b> peut
       fournir en temps réel toute l'information dont chaque utilisateur a

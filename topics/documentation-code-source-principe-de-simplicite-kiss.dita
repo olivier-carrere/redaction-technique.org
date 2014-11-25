@@ -5,7 +5,7 @@
   <body>
     <p>
       Le principe KISS (Keep it simple stupid), n'est pas spécifique à la
-      <i>rédaction technique</i>. Il s'agit d'un principe général d'ingénierie,
+      rédaction technique. Il s'agit d'un principe général d'ingénierie,
       qui postule que tout objet matériel ou virtuel construit par l'homme est
       plus fiable et plus facile à maintenir et à faire évoluer si sa complexité
       est volontairement réduite. C'est le principe mis en exergue par
@@ -20,7 +20,7 @@
     </p>
     <p>
       Ce qui a spectaculairement fonctionné pour des montres peut être appliqué
-      avec le même succès à la <i>documentation technique</i>. Quel que soit le
+      avec le même succès à la documentation technique. Quel que soit le
       format utilisé <fn>Même si les formats qui distinguent le contenu de la
       mise en page sont dans leur principe plus aptes à la mise en œuvre de la
       philosophie KISS.</fn>, le <b>rédacteur technique</b> peut tout aussi bien

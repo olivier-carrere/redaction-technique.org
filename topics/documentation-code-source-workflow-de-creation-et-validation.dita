@@ -19,7 +19,7 @@
     </p>
     <ul>
       <li>
-        mettre en œuvre des workflows sous un CMS,
+        mettre en œuvre des <i>workflows</i> sous un CMS,
       </li>
       <li>
         utiliser le système de gestion de tickets utilisés pour la gestion des
@@ -50,7 +50,7 @@
         gestion des métadonnées,
       </li>
       <li>
-        workflows,
+        <i>workflows</i>,
       </li>
       <li>
         traçabilité,
@@ -68,7 +68,7 @@
     <p>
       Si le document est disponible en plusieurs langues, chaque ticket doit
       être dupliqué pour chaque langue ou, dans le cas d'un CMS, à chaque langue
-      doit correspondre un workflow distinct.
+      doit correspondre un <i>workflow</i> distinct.
     </p>
   </body>
 </topic>

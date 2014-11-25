@@ -8,8 +8,8 @@
     <context>
       <p>
         <xref format="html" scope="external" href="http://dita.xml.org/">DITA
-        XML</xref> est un formidable format pour gérer les <i>projets de
-        documentation</i>. Pour les projets multilingues, cependant, le
+        XML</xref> est un formidable format pour gérer les projets de
+        documentation. Pour les projets multilingues, cependant, le
         <b>rédacteur technique</b> doit créer un fichier <i>ditamap</i>, qui
         contient la structure de table des matières des documents, par
         version. Ceci entraîne un risque d'erreurs et

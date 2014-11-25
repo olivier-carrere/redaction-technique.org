@@ -6,8 +6,8 @@
   PDF</title>
   <body>
     <p>
-      Les <i>références croisées</i> sont un élément important d'une
-      <i>documentation technique</i> bien structurée. Elles permettent à
+      Les références croisées sont un élément important d'une
+      documentation technique bien structurée. Elles permettent à
       l'utilisateur de naviguer facilement dans les briques d'information et
       sont un élément crucial de l'utilisabilité du document final.  <i>DITA
       Open Toolkit</i> les gère très bien, à condition d'effectuer quelques
@@ -35,7 +35,7 @@
     </p>
     <p>
       Fort heureusement, non. Par défaut (allez savoir pourquoi), les
-      <i>références croisées</i> ne sont pas générées dans les PDF par <i>DITA
+      références croisées ne sont pas générées dans les PDF par <i>DITA
       Open Toolkit</i>. Pour les afficher, attribuez la valeur <i>no</i> à la
       variable <i>disableRelatedLinks</i> du fichier
       demo/fo/build_template.xml. Si vous utilisez <i>ant</i>, il vous faudra

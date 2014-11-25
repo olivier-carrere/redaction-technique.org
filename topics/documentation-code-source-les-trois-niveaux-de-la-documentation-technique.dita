@@ -4,16 +4,16 @@
   <title>Les trois niveaux de la documentation technique</title>
   <body>
     <p>
-      Si l'on compare la <i>documentation technique</i> à un jardin, on peut la
+      Si l'on compare la documentation technique à un jardin, on peut la
       classifier selon les niveaux suivants&#160;:
     </p>
     <simpletable>
       <strow>
         <stentry>
-          <i>Niveau</i>
+          Niveau
         </stentry>
         <stentry>
-          <i>Description</i>
+          Description
         </stentry>
       </strow>
       <strow>
@@ -73,7 +73,7 @@
       </strow>
     </simpletable>
     <p>
-      Les formats non adaptés à la <i>rédaction technique</i> sont par exemple
+      Les formats non adaptés à la rédaction technique sont par exemple
       les formats de traitement de texte, qui ne dissocient pas suffisamment la
       mise en page du contenu.
     </p>
@@ -95,8 +95,8 @@
       À elle seule, la présence d'une des trois composantes (processus, équipe
       dédiée et format adapté) ne peut garantir un résultat
       satisfaisant. Confiez par exemple des outils permettant de générer du
-      contenu au format DITA XML à des collaborateurs dont la <i>communication
-      technique</i> n'est pas le métier ou sans mettre en place de processus de
+      contenu au format DITA XML à des collaborateurs dont la communication
+      technique n'est pas le métier ou sans mettre en place de processus de
       gestion du cycle de vie de la documentation technique, et vous obtiendrez
       des résultats décevants. Seule la présence conjointe de ces trois éléments
       fournira un résultat optimal.

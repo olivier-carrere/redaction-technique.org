@@ -4,7 +4,7 @@
   <title>Formats structurés et non structurés</title>
   <body>
     <p>
-      Les <i>formats structurés</i> favorisent la création de documents
+      Les formats structurés favorisent la création de documents
       minimalistes, complets et cohérents. Ils permettent au <b>rédacteur
       technique</b> de se concentrer sur le contenu et d'améliorer l'expérience
       utilisateur et l'utilisabilité de la documentation technique.
@@ -19,10 +19,10 @@
     <simpletable>
       <sthead>
         <stentry>
-          <i>Type sémantique</i>
+          Type sémantique
         </stentry>
         <stentry>
-          <i>Description</i>
+          Description
         </stentry>
       </sthead>
       <strow>
@@ -93,10 +93,10 @@
     <simpletable>
       <sthead>
         <stentry>
-          <i>Type</i>
+          Type
         </stentry>
         <stentry>
-          <i>Description</i>
+          Description
         </stentry>
       </sthead>
       <strow>
