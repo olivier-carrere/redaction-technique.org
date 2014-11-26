@@ -42,8 +42,9 @@
       </step>
       <step>
         <cmd>
-          Sélectionnez Exécuter dans le menu Démarrer, collez la commande
-          suivante, puis appuyez sur <i>Entrée</i>&#160;:
+          Sélectionnez <uicontrol>Exécuter</uicontrol> dans le menu
+          <uicontrol>Démarrer</uicontrol>, collez la commande suivante, puis
+          appuyez sur <i>Entrée</i>&#160;:
         </cmd>
         <info>
           <codeblock>

@@ -52,16 +52,22 @@
       </step>
       <step>
         <cmd>
-          Choisissez <i>StructureTools &gt; Exporter le catalogue d'éléments en
-          tant qu'EDD</i> et sauvegardez la nouvelle EDD sous le nom
-          DITA-topic-edd.fm.
+          Choisissez
+          <menucascade>
+            <uicontrol>StructureTools</uicontrol>
+            <uicontrol>Exporter le catalogue d'éléments en tant qu'EDD</uicontrol>
+          </menucascade>
+          et sauvegardez la nouvelle EDD sous le nom DITA-topic-edd.fm.
         </cmd>
       </step>
       <step>
         <cmd>
-          Ouvrez le fichier styles.fm, puis choisissez <i>Fichier &gt; Importer
-          les définitions d'éléments</i> et importez les définitions d'éléments
-          à partir de DITA-topic-edd.fm.
+          Ouvrez le fichier styles.fm, puis choisissez
+          <menucascade>
+            <uicontrol>Fichier</uicontrol>
+            <uicontrol>Importer les définitions d'éléments</uicontrol>
+          </menucascade>
+          et importez les définitions d'éléments à partir de DITA-topic-edd.fm.
         </cmd>
       </step>
       <step>
@@ -73,8 +79,12 @@
       </step>
       <step>
         <cmd>
-          Ouvrez le fichier styles.fm, puis choisissez <i>StructureTools &gt;
-          Générer le tableau de conversion</i>.
+          Ouvrez le fichier styles.fm, puis choisissez
+          <menucascade>
+            <uicontrol> StructureTools</uicontrol>
+            <uicontrol> Générer le tableau de conversion</uicontrol>
+          </menucascade>
+          .
         </cmd>
       </step>
       <step>
@@ -92,14 +102,19 @@
       <step>
         <cmd>
           Ouvrez un fichier de contenu FrameMaker sous FrameMaker structuré 11
-          et choisissez <i>StructureTools &gt; Utilitaires &gt; Structurer le
-          document en cours</i>.
+          et choisissez
+          <menucascade>
+            <uicontrol>StructureTools</uicontrol>
+            <uicontrol> Utilitaires</uicontrol>
+            <uicontrol>Structurer le document en cours</uicontrol>
+          </menucascade>
+          .
         </cmd>
       </step>
       <step>
         <cmd>
-          Sélectionnez DITA2FM-conversion-table.fm et cliquez sur <i>Ajouter
-          structure</i>.
+          Sélectionnez DITA2FM-conversion-table.fm et cliquez sur <uicontrol>Ajouter
+          structure</uicontrol>.
         </cmd>
       </step>
       <step>
