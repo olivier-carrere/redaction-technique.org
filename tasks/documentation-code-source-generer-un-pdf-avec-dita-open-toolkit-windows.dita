@@ -33,11 +33,10 @@
       </step>
       <step>
         <cmd>
-          Téléchargez DITA Open Toolkit 1.5.4
-          &lt;http://sourceforge.net/projects/dita-ot/files/DITA-OT Stable
-          Release/DITA Open Toolkit
-          1.5.4/DITA-OT1.5.4_full_easy_install_bin.zip/download&gt;_ sur le
-          bureau, puis décompressez DITA-OT1.5.4_full_easy_install_bin.zip.
+          Téléchargez <xref format="html" scope="external"
+          href="http://sourceforge.net/projects/dita-ot/files/DITA-OT%20Stable%20Release/DITA%20Open%20Toolkit%201.5.4/DITA-OT1.5.4_full_easy_install_bin.zip/download">
+          DITA Open Toolkit 1.5.4</xref> sur le bureau, puis décompressez
+          DITA-OT1.5.4_full_easy_install_bin.zip.
         </cmd>
       </step>
       <step>
