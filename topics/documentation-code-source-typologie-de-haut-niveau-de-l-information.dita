@@ -39,7 +39,7 @@
       Lorsqu'il crée un document DITA XML, en revanche, le <b>rédacteur
       technique</b> doit d'emblée choisir le modèle <fn>Dans la pratique, un
       schéma XSD.</fn> qui correspond au type d'information qu'il veut
-      présenter. De base, DITA XML propose les types d'information suivants <fn>
+      présenter. De base, DITA XML propose les types d'information suivants<fn>
       DITA XML propose trois types d'information de base, tandis que la méthode
       Information Mapping en propose sept.</fn>&#160;:
     </p>
