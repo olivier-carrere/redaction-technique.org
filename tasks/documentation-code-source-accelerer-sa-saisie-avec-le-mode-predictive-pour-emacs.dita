@@ -51,7 +51,7 @@
       </step>
       <step>
         <cmd>
-          Compilez <i>predictive</i>&#160;:
+          Compilez <i>Predictive</i>&#160;:
         </cmd>
         <info>
           <codeblock>
@@ -61,7 +61,7 @@
       </step>
       <step>
         <cmd>
-          Installez <i>predictive</i>&#160;:
+          Installez <i>Predictive</i>&#160;:
         </cmd>
         <info>
           <codeblock>
