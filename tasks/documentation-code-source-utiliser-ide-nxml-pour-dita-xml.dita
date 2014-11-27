@@ -177,49 +177,42 @@
               </ul>
               <ul>
                 <li>
-                  concepts
+                  faq
+                  <ul>
+                    <li>
+                      schemas.xml
+                    </li>
+                  </ul>
                 </li>
               </ul>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              schemas.xml
-            </li>
-          </ul>
-          <ul>
-            <li>
-              faq
-            </li>
-          </ul>
-          <ul>
-            <li>
-              schemas.xml
-            </li>
-          </ul>
-          <ul>
-            <li>
-              reference
-
               <ul>
                 <li>
-                  schemas.xml
+                  reference
+                  <ul>
+                    <li>
+                      schemas.xml
+                    </li>
+                  </ul>
                 </li>
               </ul>
               <ul>
                 <li>
                   tasks
-                </li>
-                <li>
-                  schemas.xml
+                  <ul>
+                    <li>
+                      schemas.xml
+                    </li>
+                  </ul>
                 </li>
               </ul>
               <ul>
                 <li>
                   topics
-                </li>
-                <li>
-                  schemas.xml
+                  <ul>
+                    <li>
+                      schemas.xml
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </li>
