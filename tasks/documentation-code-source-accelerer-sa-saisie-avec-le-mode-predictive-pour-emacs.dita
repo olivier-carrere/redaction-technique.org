@@ -41,7 +41,7 @@
       </step>
       <step>
         <cmd>
-          Placez-vous dans le répertoire predictive&#160;:
+          Placez-vous dans le répertoire <filepath>predictive</filepath>&#160;:
         </cmd>
         <info>
           <codeblock>
@@ -71,7 +71,7 @@
       </step>
       <step>
         <cmd>
-          Insérez le code suivant dans le fichier .emacs&#160;:
+          Insérez le code suivant dans le fichier <filepath>.emacs</filepath>&#160;:
         </cmd>
         <info>
           <codeblock>

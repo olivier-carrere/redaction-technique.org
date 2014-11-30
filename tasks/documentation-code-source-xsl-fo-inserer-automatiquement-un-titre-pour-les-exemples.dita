@@ -76,7 +76,7 @@
       <step>
         <cmd>
           Remplacez dans la feuille de style
-          plugins/org.dita.pdf2/xsl/fo/commons.xsl (sous DITA Open Toolkit 1.7.)
+          <filepath>plugins/org.dita.pdf2/xsl/fo/commons.xsl</filepath> (sous DITA Open Toolkit 1.7.)
           le template suivant&#160;:
         </cmd>
         <info>
@@ -109,7 +109,7 @@
       <step>
         <cmd>
           Définissez dans les fichiers contenant les variables de langue, tels
-          que plugins/org.dita.pdf2/cfg/common/vars/fr.xml, les variables de
+          que <filepath>plugins/org.dita.pdf2/cfg/common/vars/fr.xml</filepath>, les variables de
           texte à insérer automatiquement, par exemple&#160;:
         </cmd>
         <info>

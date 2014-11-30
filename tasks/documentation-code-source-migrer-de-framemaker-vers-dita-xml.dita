@@ -41,7 +41,7 @@
       </step>
       <step>
         <cmd>
-          Enregistrez le document FrameMaker vide sous le nom styles.fm.
+          Enregistrez le document FrameMaker vide sous le nom <filepath>styles.fm</filepath>.
         </cmd>
       </step>
       <step>
@@ -57,17 +57,17 @@
             <uicontrol>StructureTools</uicontrol>
             <uicontrol>Exporter le catalogue d'éléments en tant qu'EDD</uicontrol>
           </menucascade>
-          et sauvegardez la nouvelle EDD sous le nom DITA-topic-edd.fm.
+          et sauvegardez la nouvelle EDD sous le nom <filepath>DITA-topic-edd.fm</filepath>.
         </cmd>
       </step>
       <step>
         <cmd>
-          Ouvrez le fichier styles.fm, puis choisissez
+          Ouvrez le fichier <filepath>styles.fm</filepath>, puis choisissez
           <menucascade>
             <uicontrol>Fichier</uicontrol>
             <uicontrol>Importer les définitions d'éléments</uicontrol>
           </menucascade>
-          et importez les définitions d'éléments à partir de DITA-topic-edd.fm.
+          et importez les définitions d'éléments à partir de <filepath>DITA-topic-edd.fm</filepath>.
         </cmd>
       </step>
       <step>
@@ -79,7 +79,7 @@
       </step>
       <step>
         <cmd>
-          Ouvrez le fichier styles.fm, puis choisissez
+          Ouvrez le fichier <filepath>styles.fm</filepath>, puis choisissez
           <menucascade>
             <uicontrol> StructureTools</uicontrol>
             <uicontrol> Générer le tableau de conversion</uicontrol>
@@ -96,7 +96,7 @@
       <step>
         <cmd>
           Enregistrez le tableau de conversion sous le nom
-          DITA2FM-conversion-table.fm.
+          <filepath>DITA2FM-conversion-table.fm</filepath>.
         </cmd>
       </step>
       <step>
@@ -113,7 +113,7 @@
       </step>
       <step>
         <cmd>
-          Sélectionnez DITA2FM-conversion-table.fm et cliquez sur <uicontrol>Ajouter
+          Sélectionnez <filepath>DITA2FM-conversion-table.fm</filepath> et cliquez sur <uicontrol>Ajouter
           structure</uicontrol>.
         </cmd>
       </step>

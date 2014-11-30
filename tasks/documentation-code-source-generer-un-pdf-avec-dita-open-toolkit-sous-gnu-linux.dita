@@ -65,7 +65,7 @@
     <result>
       <p>
         Félicitations, vous avez compilé votre premier projet DITA XML&#160;! Le
-        fichier PDF généré est out/userguide.pdf. Vous pouvez maintenant
+        fichier PDF généré est <filepath>out/userguide.pdf</filepath>. Vous pouvez maintenant
         compiler d'autres projets en ignorant les étapes 1 et 2.
       </p>
     </result>

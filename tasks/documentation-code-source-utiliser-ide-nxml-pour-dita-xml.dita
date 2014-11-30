@@ -91,7 +91,7 @@
           </codeblock>
           <note>
             <p>
-              Si un message vous avertit que le fichier .emacs n'existe pas,
+              Si un message vous avertit que le fichier <filepath>.emacs</filepath> n'existe pas,
               collez les commandes suivantes, puis recommencez l'opération&#160;:
             </p>
             <codeblock>
@@ -106,11 +106,11 @@
               télécharge et décompresse le mode nXML,
             </li>
             <li>
-              crée une copie de sauvegarde du fichier .emacs (.emacs.bak),
+              crée une copie de sauvegarde du fichier <filepath>.emacs</filepath> (<filepath>.emacs.bak</filepath>),
             </li>
             <li>
               écrit les variables d'environnement du mode nXML dans le fichier
-              .emacs.
+              <filepath>.emacs</filepath>.
             </li>
           </ul>
         </info>
@@ -140,7 +140,7 @@
         <cmd>
           Téléchargez <xref format="html" scope="external"
           href="http://www.redaction-technique.org/media/schemas.redaction-technique.org.tar.gz">l'archive
-          des fichiers schemas.xml</xref> dans le répertoire racine de votre
+          des fichiers <filepath>schemas.xml</filepath></xref> dans le répertoire racine de votre
           projet de documentation DITA XML, puis collez la suite de commandes
           ci-dessous en remplaçant <i>&lt;répertoire de langue&gt;</i> par la
           valeur appropriée, <i>en_US</i>, ou <i>fr_FR</i>, par exemple. Répétez
@@ -160,7 +160,7 @@
           </codeblock>
           <p>
             Vos répertoires de langue doivent maintenant comporter les fichiers
-            schemas.xml appropriés&#160;:
+            <filepath>schemas.xml</filepath> appropriés&#160;:
           </p>
           <ul>
             <li>

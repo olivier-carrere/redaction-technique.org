@@ -38,7 +38,7 @@
       références croisées ne sont pas générées dans les PDF par <i>DITA
       Open Toolkit</i>. Pour les afficher, attribuez la valeur <i>no</i> à la
       variable <i>disableRelatedLinks</i> du fichier
-      demo/fo/build_template.xml. Si vous utilisez <i>ant</i>, il vous faudra
+      <filepath>demo/fo/build_template.xml</filepath>. Si vous utilisez <i>ant</i>, il vous faudra
       également passer le paramètre <i>args.fo.include.rellinks=all</i> comme
       suit&#160;:
     </p>

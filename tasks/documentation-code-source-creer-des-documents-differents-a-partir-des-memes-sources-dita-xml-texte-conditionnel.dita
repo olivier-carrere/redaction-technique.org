@@ -8,7 +8,7 @@
     <prereq>
       <ul>
         <li>
-          Vous avez installé DITA Open Toolkit dans le répertoire DITA-OT1.5.4
+          Vous avez installé DITA Open Toolkit dans le répertoire <filepath>DITA-OT1.5.4</filepath>
           sous GNU/Linux ou Windows.
         </li>
       </ul>
@@ -25,7 +25,7 @@
       <step>
         <cmd>
           Collez le code suivant dans un fichier et enregistrez ce dernier sous
-          le nom de texte-conditionnel.dita dans le répertoire DITA-OT1.5.4&#160;:
+          le nom de <filepath>texte-conditionnel.dita</filepath> dans le répertoire <filepath>DITA-OT1.5.4</filepath>&#160;:
         </cmd>
         <info>
           <codeblock>
@@ -77,7 +77,7 @@
       <step>
         <cmd>
           Collez le code suivant dans un fichier et enregistrez ce dernier sous
-          le nom de texte-conditionnel.ditamap dans le répertoire DITA-OT1.5.4&#160;:
+          le nom de <filepath>texte-conditionnel.ditamap</filepath> dans le répertoire <filepath>DITA-OT1.5.4</filepath>&#160;:
         </cmd>
         <info>
           <codeblock>
@@ -97,8 +97,8 @@
       <step>
         <cmd>
           Collez le code suivant dans un fichier et enregistrez ce dernier
-          sous le nom de electriciens.ditaval dans le répertoire
-          DITA-OT1.5.4&#160;:
+          sous le nom de <filepath>electriciens.ditaval</filepath> dans le répertoire
+          <filepath>DITA-OT1.5.4</filepath>&#160;:
         </cmd>
         <info>
           <codeblock>
@@ -113,7 +113,7 @@
       <step>
         <cmd>
           Collez le code suivant dans un fichier et enregistrez ce dernier sous
-          le nom de plombiers.ditaval dans le répertoire DITA-OT1.5.4&#160;:
+          le nom de <filepath>plombiers.ditaval</filepath> dans le répertoire <filepath>DITA-OT1.5.4</filepath>&#160;:
         </cmd>
         <info>
           <codeblock>
@@ -128,7 +128,7 @@
       <step>
         <cmd>
           Ouvrez un terminal et entrez la commande suivante dans le répertoire
-          DITA-OT1.5.4&#160;:
+          <filepath>DITA-OT1.5.4</filepath>&#160;:
         </cmd>
         <info>
           <codeblock>
@@ -138,7 +138,7 @@
         </info>
         <stepresult>
           <p>
-            Ouvrez le fichier texte-conditionnel.pdf&#160;; il contient des
+            Ouvrez le fichier <filepath>texte-conditionnel.pdf</filepath>&#160;; il contient des
             informations destinées&#160;:
           </p>
           <ul>
@@ -154,7 +154,7 @@
       <step>
         <cmd>
           Ouvrez un terminal et entrez la commande suivante dans le répertoire
-          DITA-OT1.5.4&#160;:
+          <filepath>DITA-OT1.5.4</filepath>&#160;:
         </cmd>
         <info>
           <codeblock>
@@ -164,7 +164,7 @@
         </info>
         <stepresult>
           <p>
-            Ouvrez le fichier texte-conditionnel.pdf&#160;; il contient des
+            Ouvrez le fichier <filepath>texte-conditionnel.pdf</filepath>&#160;; il contient des
             informations destinées&#160;:
           </p>
           <ul>

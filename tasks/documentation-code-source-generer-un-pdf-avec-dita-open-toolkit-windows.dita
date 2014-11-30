@@ -99,8 +99,8 @@
     <result>
       <p>
         Félicitations, vous avez compilé votre premier projet DITA XML&#160;!  Vous
-        trouverez le fichier cible taskbook.pdf dans le répertoire
-        Bureau\\DITA-OT1.5.4_full_easy_install_bin\\DITA-OT1.5.4. Vous pouvez
+        trouverez le fichier cible <filepath>taskbook.pdf</filepath> dans le répertoire
+        <filepath>Bureau\DITA-OT1.5.4_full_easy_install_bin\DITA-OT1.5.4</filepath>. Vous pouvez
         maintenant compiler d'autres projets en ignorant les étapes 1 et 2.
       </p>
     </result>

@@ -107,7 +107,7 @@
         <substeps>
           <substep>
             <cmd>
-              modifier dans le fichier demo/fo/build.xml le paramètre
+              modifier dans le fichier <filepath>demo/fo/build.xml</filepath> le paramètre
               default.locale,
             </cmd>
           </substep>
@@ -169,7 +169,7 @@
           <li>
             Vos fichiers de contenu DITA se trouvent dans des sous-répertoires
             des répertoires des versions linguistiques (par exemple, dans
-            fr_FR/tasks/ et fr_FR/topics/).
+            <filepath>fr_FR/tasks/</filepath> et <filepath>fr_FR/topics/</filepath>).
           </li>
         </ul>
         <p>
@@ -240,8 +240,8 @@
               ./dita2target.sh firewall.ditamap  en_US pdf2
             </codeblock>
             <p>
-              Le fichier PDF firewall.pdf est alors généré dans le répertoire
-              out (spécifié <i>en dur</i> dans le script).
+              Le fichier PDF <filepath>firewall.pdf</filepath> est alors généré dans le répertoire
+              <filepath>out</filepath> (spécifié <i>en dur</i> dans le script).
             </p>
           </stepxmp>
         </step>

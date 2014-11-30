@@ -84,7 +84,7 @@
     </p>
     <note class="warning">
       La commande <i>rebase</i> est potentiellement destructive&#160;; veillez à
-      sauvegarder votre espace de travail, répertoire <i>.git</i> compris, avant
+      sauvegarder votre espace de travail, répertoire <filepath>.git</filepath> compris, avant
       de l'exécuter, sous risque de perdre des données&#160;; vous pouvez également
       créer une branche de sauvegarde provisoire.
     </note>
