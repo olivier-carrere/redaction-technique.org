@@ -44,7 +44,7 @@ après l'avoir compilé en PDF, EPUB ou autre avec `Python Sphinx
        HTML est créée, est maintenue.
 
 .. toctree::
-   :maxdepth: 4
+   :hidden:
 
    documentation-code-source-diminuer-les-couts-ameliorer-la-satisfaction-client
    documentation-code-source-redaction-technique-un-processus-industriel

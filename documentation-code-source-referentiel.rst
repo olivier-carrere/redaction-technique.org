@@ -16,7 +16,7 @@ aussi **outils de gestion de contenu d'entreprise** et **logiciels de gestion de
 versions**.
 
 .. toctree::
-   :maxdepth: 2
+   :hidden:
 
    documentation-code-source-git-du-fichier-au-contenu
    documentation-code-source-quel-referentiel-pour-le-travail-de-groupe

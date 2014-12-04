@@ -38,7 +38,7 @@ ils le font mal.  Inversement, un document DocBook ou DITA, par exemple, peut
 être monolithique, mais perd alors de sa souplesse.
 
 .. toctree::
-   :maxdepth: 2
+   :hidden:
 
    documentation-code-source-qu-est-ce-qu-un-module-d-information
 

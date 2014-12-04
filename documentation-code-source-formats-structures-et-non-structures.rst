@@ -103,7 +103,7 @@ l'aide à présenter des informations :
 +--------------+---------------------------------------------------------------+
 
 .. toctree::
-   :maxdepth: 2
+   :hidden:
 
    documentation-code-source-docbook-ou-dita-xml
    documentation-code-source-migration-de-framemaker-vers-dita-xml

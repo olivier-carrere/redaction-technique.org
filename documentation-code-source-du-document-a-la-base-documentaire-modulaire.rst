@@ -39,7 +39,7 @@ référentiel unique, tel qu'un ECM (système de gestion de contenu) ou un VCS
 préservé.
 
 .. toctree::
-   :maxdepth: 2
+   :hidden:
 
    documentation-code-source-un-langage-a-balises
    documentation-code-source-typologie-de-haut-niveau-de-l-information

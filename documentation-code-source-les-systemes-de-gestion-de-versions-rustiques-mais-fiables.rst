@@ -93,7 +93,7 @@ ou les branches.
        application *Time machine*.
 
 .. toctree::
-   :maxdepth: 2
+   :hidden:
 
    documentation-code-source-utiliser-les-branches-des-systemes-de-gestion-de-sources
 

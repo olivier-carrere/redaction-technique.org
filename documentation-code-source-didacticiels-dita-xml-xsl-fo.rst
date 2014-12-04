@@ -32,7 +32,7 @@ livrable. Opération qui n'est pas envisageable en pratique avec des solutions
 traditionnelles de type FrameMaker.
 
 .. toctree::
-   :maxdepth: 2
+   :hidden:
 
    documentation-code-source-xsl-fo-filtrer-du-contenu-selon-des-conditions-sauf-et-ou
    documentation-code-source-xsl-fo-inserer-automatiquement-un-titre-pour-les-exemples

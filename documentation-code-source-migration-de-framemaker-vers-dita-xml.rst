@@ -47,7 +47,7 @@ auraient déjà beaucoup gagné, respectivement en :
        versions de la documentation ; il doit donc être soigneusement planifié.
 
 .. toctree::
-   :maxdepth: 2
+   :hidden:
 
    documentation-code-source-restructuration-du-contenu-framemaker
    documentation-code-source-table-de-conversion-framemaker-vers-dita-xml

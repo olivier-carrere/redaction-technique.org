@@ -49,7 +49,7 @@ dans le guide de l'utilisateur. Inversement, il pourra étayer une brochure
 commerciale de données techniques précises pour étayer le discours marketing.
 
 .. toctree::
-   :maxdepth: 2
+   :hidden:
 
    documentation-code-source-tester-les-produits-pour-les-documenter
 

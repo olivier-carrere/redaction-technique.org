@@ -52,7 +52,7 @@ augmentation des coûts de support, etc.) peuvent être considérables. Pourtant
 les solutions et les compétences existent.
 
 .. toctree::
-   :maxdepth: 2
+   :hidden:
 
    documentation-code-source-de-la-redaction-a-la-communication-technique
    documentation-code-source-les-trois-niveaux-de-la-documentation-technique
