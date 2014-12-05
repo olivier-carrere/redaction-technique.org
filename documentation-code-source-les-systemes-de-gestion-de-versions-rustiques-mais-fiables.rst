@@ -79,6 +79,8 @@ XML et effectuent des comparaisons ligne par ligne entre les fichiers, et non
 pas nœud par nœud, ce qui multiplie inutilement les conflits entre les *commits*
 ou les branches.
 
+.. rubric:: Notes
+
 .. [#] En cas d'incident réseau, l'utilisateur est averti que la transaction
        destinée à placer le fichier modifié sur le dépôt a échoué ; il peut
        alors procéder à une nouvelle transaction, sa copie locale du fichier

@@ -64,6 +64,8 @@ ses sources sous un logiciel de gestion de versions tel que *Git* ou
 - partagées entre différentes versions du projet de documentation,
 - annulées en une seule opération, etc.
 
+.. rubric:: Notes
+
 .. [#] Seule la version *reStructuredText*, à partir de laquelle cette version
        HTML est créée, est maintenue.
 

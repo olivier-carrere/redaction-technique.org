@@ -61,6 +61,8 @@ d'information oblige donc d'entrée de jeu le **rédacteur technique** à
 structurer l'information. L'utilisateur y gagne en facilité et rapidité d'accès
 à l'information et en utilisabilité globale de la documentation technique.
 
+.. rubric:: Notes
+
 .. [#] Dans la pratique, un schéma XSD.
 
 .. [#] |dita| propose trois types d'information de base, tandis que la méthode

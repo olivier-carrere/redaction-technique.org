@@ -39,6 +39,8 @@ auraient déjà beaucoup gagné, respectivement en :
 
 - facilité d'accès à l'information.
 
+.. rubric:: Notes
+
 .. [#] LibreOffice propose une fonction d'enregistrement au format DocBook, mais
        très imparfaite ; le XML qu'elle produit peut servir de base à la
        création d'une version DocBook, avec beaucoup d'efforts… Sauf à maintenir
