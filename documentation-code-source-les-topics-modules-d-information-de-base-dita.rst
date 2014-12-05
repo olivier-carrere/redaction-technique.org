@@ -7,8 +7,8 @@
 
 .. _les-topics-modules-d-information-de-base-dita:
 
-Les topics, modules d'information de base DITA
-==============================================
+Les topics, modules d'information de base DITA XML
+==================================================
 
 Les `topics <http://docs.oasis-open.org/dita/v1.0/archspec/topicover.html>`_
 sont les plus petites unités d'information autonomes gérées par |dita|.
