@@ -19,7 +19,7 @@ efforts fournis sur la chaîne de création et de publication **DocBook** et de
 sélectionner ce format. C'est pourtant se priver des gains de productivité
 spectaculaires offerts par |dita|.
 
-Il est facile de générer du **DocBook** à partir de |dita|. DITA Open Toolkit
+Il est facile de générer du **DocBook** à partir de |dita|. |dita-ot|
 propose par défaut ce format cible, au même titre que le PDF ou le
 HTML. L'opération inverse ne peut pas être totalement automatisée. Pourquoi ?
 

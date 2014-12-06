@@ -88,6 +88,7 @@ pygments_style = 'sphinx'
 
 rst_epilog = """
 .. |dita| replace:: :abbr:`DITA (Darwin Information Typing Architecture)` XML
+.. |dita-ot| replace:: :abbr:`DITA-OT (DITA Open Toolkit)`
 """
 
 # -- Options for HTML output ---------------------------------------------------

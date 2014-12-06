@@ -15,8 +15,8 @@ Gérer les projets de documentation multilingues DITA XML
 **rédacteur technique** doit créer un fichier *ditamap*, qui contient la
 structure de table des matières des documents, par version. Ceci entraîne un
 risque d'erreurs et d'incohérences. Heureusement, une méthodologie appropriée et
-un script d'automatisation destiné à la chaîne de publication **DITA Open
-Toolkit** remédient à ce problème.
+un script d'automatisation destiné à la chaîne de publication |dita-ot|
+remédient à ce problème.
 
 Méthodologie de gestion des projets de documentation multilingues DITA XML :
 ----------------------------------------------------------------------------
@@ -84,7 +84,7 @@ Heureusement, un script Bash (GNU/Linux) simple permet d'automatiser cela.
 
 .. rubric:: Prérequis
 
-- Vous avez installé DITA Open Toolkit.
+- Vous avez installé |dita-ot|.
 - Votre projet |dita| ne comporte qu'un fichier *DITAMAP*.
 - Vos fichiers de contenu |dita| ont l'extension :file:`.dita`.
 - Les noms des répertoires des versions linguistiques correspondent aux codes de
@@ -135,7 +135,7 @@ Pour utiliser ce script :
 
     pour générer les fichiers cibles.
 
-    L'argument *format cible* accepte les valeurs gérées par DITA Open Toolkit.
+    L'argument *format cible* accepte les valeurs gérées par |dita-ot|.
 
     .. rubric:: Exemple
 

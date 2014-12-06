@@ -23,7 +23,7 @@ suivantes :
 |Méthode                       |Exemple                                    |
 +==============================+===========================================+
 |Totalement automatique        |Livre blanc du format structuré |dita| au  |
-|                              |format cible PDF *via* DITA Open Toolkit.  |
+|                              |format cible PDF *via* |dita-ot|.          |
 +------------------------------+-------------------------------------------+
 |Semi-automatique              |Contenu au format |dita| exporté en HTML   |
 |                              |puis collé sous un CMS [#]_.               |

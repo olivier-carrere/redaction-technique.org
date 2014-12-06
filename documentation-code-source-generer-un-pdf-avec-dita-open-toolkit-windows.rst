@@ -11,8 +11,8 @@ Générer un PDF avec DITA Open Toolkit (Windows)
 ===============================================
 
 Ce didacticiel |dita| est destiné à vous guider
-dans la mise en place et l'utilisation de la chaîne de publication **DITA Open
-Toolkit** dans un environnement Windows (testé sur Windows XP).
+dans la mise en place et l'utilisation de la chaîne de publication |dita-ot|
+dans un environnement Windows (testé sur Windows XP).
 
 .. rubric:: Prérequis
 

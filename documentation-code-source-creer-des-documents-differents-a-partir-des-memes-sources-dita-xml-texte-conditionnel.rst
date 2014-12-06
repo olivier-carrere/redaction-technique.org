@@ -17,7 +17,7 @@ quelques minutes.
 
 .. rubric:: Prérequis
 
-- Vous avez installé DITA Open Toolkit dans le répertoire :file:`DITA-OT1.5.4` sous
+- Vous avez installé |dita-ot| dans le répertoire :file:`DITA-OT1.5.4` sous
   GNU/Linux ou Windows.
 
 #. Collez le code suivant dans un fichier et enregistrez ce dernier sous le nom

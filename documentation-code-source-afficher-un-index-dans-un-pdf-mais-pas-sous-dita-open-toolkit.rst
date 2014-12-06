@@ -10,13 +10,11 @@
 Afficher un index dans un PDF (mais pas sous DITA Open Toolkit)
 ===============================================================
 
-Tout n'est pas parfait sous `DITA Open Toolkit
-<http://dita-ot.sourceforge.net/1.6/>`_, le moteur de publication libre
-|dita|. Vous avez
-méticuleusement inséré vos entrées d'index dans vos fichiers de contenu
-|dita|. Vous générez une sortie PDF et l'index n'apparaît pas. Un message
-d'erreur de la compilation vous indique que, hélas, FOP ne supporte actuellement
-pas la génération des index.
+Tout n'est pas parfait sous |dita-ot|, le moteur de publication libre
+|dita|. Vous avez méticuleusement inséré vos entrées d'index dans vos fichiers
+de contenu |dita|. Vous générez une sortie PDF et l'index n'apparaît pas. Un
+message d'erreur de la compilation vous indique que, hélas, FOP ne supporte
+actuellement pas la génération des index.
 
 Face à cette situation, vous avez quatre solutions :
 
@@ -31,7 +29,7 @@ Face à cette situation, vous avez quatre solutions :
   surplus d'utilisabilité discutable dans un document qui ne sera consulté que
   marginalement sous forme imprimée ;
 
-- abandonner DITA Open Toolkit et se tourner vers une solution propriétaire ;
+- abandonner |dita-ot| et se tourner vers une solution propriétaire ;
   les logiciels non open-source, XMetal, par exemple, on souvent recours au
   moteur de publication XEP de RenderX qui lui, supporte parfaitement les index.
 

@@ -11,8 +11,8 @@ Générer un PDF avec DITA Open Toolkit sous GNU/Linux
 ====================================================
 
 Ce didacticiel |dita| est destiné à vous guider
-dans la mise en place et l'utilisation de la chaîne de publication **DITA Open
-Toolkit** dans un environnement GNU/Linux (Ubuntu ou Debian).
+dans la mise en place et l'utilisation de la chaîne de publication |dita-ot|
+dans un environnement GNU/Linux (Ubuntu ou Debian).
 
 .. rubric:: Prérequis
 
@@ -21,14 +21,14 @@ Toolkit** dans un environnement GNU/Linux (Ubuntu ou Debian).
 
 - connexion Internet.
 
-#. Téléchargez et décompressez l'archive DITA Open Toolkit :
+#. Téléchargez et décompressez l'archive |dita-ot| :
 
    .. code-block:: console
 
       $  wget http://sourceforge.net/projects/dita-ot/files/DITA-OT%20Stable%20Release/DITA%20Open%20Toolkit%201.8/DITA-OT1.8.5_full_easy_install_bin.tar.gz
       $  tar -xzvf DITA-OT1.8.5_full_easy_install_bin.tar.gz
 
-#. Configurez l'environnement DITA Open Toolkit :
+#. Configurez l'environnement |dita-ot| :
 
    .. code-block:: console
 
