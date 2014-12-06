@@ -16,11 +16,11 @@ d'améliorer la qualité des manuels techniques et la productivité du **rédact
 technique**.
 
 Mais suffit-il de convertir sa documentation de FrameMaker vers un format
-structuré tel que DITA XML pour obtenir une documentation modulaire ?
+structuré tel que |dita| pour obtenir une documentation modulaire ?
 Hélas, non. Si le contenu de départ mélange les informations de tout type
 (concepts, procédures pas à pas, référence), il sera toujours possible de le
-convertir au format DITA en ne respectant pas rigoureusement la sémantique
-DITA. Voire en modifiant les feuilles de style XSLT ou en spécialisant les XSD
+convertir au format |dita| en ne respectant pas rigoureusement la sémantique
+|dita|. Voire en modifiant les feuilles de style XSLT ou en spécialisant les XSD
 pour les rendre plus laxistes.
 
 Or, si l'on obtient au final un document se basant sur des fichiers correpondant

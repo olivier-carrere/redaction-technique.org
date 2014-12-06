@@ -22,17 +22,14 @@ suivantes :
 +------------------------------+-------------------------------------------+
 |Méthode                       |Exemple                                    |
 +==============================+===========================================+
-|Totalement automatique        |Livre blanc du format                      |
-|                              |structuré `DITA                            |
-|                              |<http://dita.xml.org/>`_ au                |
-|                              |format cible PDF *via* DITA                |
-|                              |Open Toolkit.                              |
+|Totalement automatique        |Livre blanc du format structuré |dita| au  |
+|                              |format cible PDF *via* DITA Open Toolkit.  |
 +------------------------------+-------------------------------------------+
-|Semi-automatique              |Contenu au format DITA exporté en HTML puis|
-|                              |collé sous un CMS [#]_.                    |
+|Semi-automatique              |Contenu au format |dita| exporté en HTML   |
+|                              |puis collé sous un CMS [#]_.               |
 +------------------------------+-------------------------------------------+
 |Manuelle                      |Plaquette marketing au format traitement de|
-|                              |texte ou DITA mise en page sous Indesign,  |
+|                              |texte ou |dita| mise en page sous Indesign,|
 |                              |exportée en PDF, puis imprimée ; selon la  |
 |                              |fréquence de publication du document final,|
 |                              |des filtres d'import XML peuvent également |
@@ -43,7 +40,7 @@ Plus le processus est automatisé, plus le risque d'erreur est faible
 et plus la publication et la mise à jour sont aisées.  L'automatisation facilite
 également le *single-sourcing*, qui consiste à générer plusieurs livrables à des
 formats cibles différents à partir d'un même format source. Un projet au format
-DITA XML peut ainsi être livré sous forme de fichier PDF, d'aide compilée
+|dita| peut ainsi être livré sous forme de fichier PDF, d'aide compilée
 Windows, d'aide JavaHelp, de site en HTML, etc. Le XML offre en ce domaine des
 possibilités quasi illimitées.
 

@@ -10,7 +10,7 @@
 Gérer les projets de documentation multilingues DITA XML
 ========================================================
 
-`DITA XML <http://dita.xml.org/>`_ est un formidable format pour gérer les
+|dita| est un formidable format pour gérer les
 **projets de documentation**. Pour les projets multilingues, cependant, le
 **rédacteur technique** doit créer un fichier *ditamap*, qui contient la
 structure de table des matières des documents, par version. Ceci entraîne un
@@ -23,10 +23,10 @@ Méthodologie de gestion des projets de documentation multilingues DITA XML :
 
 #.  Le fichier *ditamap* ne doit pas comporter de section *navtitle*, qui
     contient un titre en toutes lettres, au lieu d'extraire le titre de la
-    section DITA correspondante, et est donc propre à chaque langue.
+    section |dita| correspondante, et est donc propre à chaque langue.
 
-#.  Dès le début de votre projet DITA, placez les fichiers de contenu
-    *DITA* dans un sous-répertoire spécifique à la langue dans laquelle
+#.  Dès le début de votre projet |dita|, placez les fichiers de contenu
+    |dita| dans un sous-répertoire spécifique à la langue dans laquelle
     il est initialement rédigé.
 
     Par exemple :
@@ -71,7 +71,7 @@ Méthodologie de gestion des projets de documentation multilingues DITA XML :
        nom du répertoire de langue,
 
     #.  modifier le paramètre de langue :samp:`xml:lang` dans le fichier
-        *DITAMAP* et dans les fichiers de contenu DITA,
+        *DITAMAP* et dans les fichiers de contenu |dita|,
 
     #.  pour les fichiers cibles PDF, modifier les dimensions de page (A4 ou US
         letter, par exemple) selon la langue,
@@ -85,12 +85,12 @@ Heureusement, un script Bash (GNU/Linux) simple permet d'automatiser cela.
 .. rubric:: Prérequis
 
 - Vous avez installé DITA Open Toolkit.
-- Votre projet DITA XML ne comporte qu'un fichier *DITAMAP*.
-- Vos fichiers de contenu DITA ont l'extension :file:`.dita`.
+- Votre projet |dita| ne comporte qu'un fichier *DITAMAP*.
+- Vos fichiers de contenu |dita| ont l'extension :file:`.dita`.
 - Les noms des répertoires des versions linguistiques correspondent aux codes de
   langues supportés par Dita Open Toolkit (:file:`fr_FR` ou :file:`en_US`, par
   exemple).
-- Vos fichiers de contenu DITA se trouvent dans des sous-répertoires des
+- Vos fichiers de contenu |dita| se trouvent dans des sous-répertoires des
   répertoires des versions linguistiques (par exemple, dans :file:`fr_FR/tasks/`
   et :file:`fr_FR/topics/`).
 
@@ -101,14 +101,14 @@ adapté, ou inspirer un nouveau script.
 .. warning::
 
    Ce script est fourni sans garantie. Avant toute exécution de ce script,
-   effectuez une sauvegarde de l'ensemble de votre projet DITA, fichiers de
+   effectuez une sauvegarde de l'ensemble de votre projet |dita|, fichiers de
    configuration inclus (par exemple sous un système de gestion de
    versions). Assurez-vous de pouvoir restaurer facilement le projet dans son
    intégralité en cas d'erreur ou de comportement inattendu.
 
 Pour utiliser ce script :
 
-#.  Téléchargez le `script de génération multilingue DITA XML
+#.  Téléchargez le `script de génération multilingue |dita|
     <http://www.redaction-technique.org/media/dita2target.sh>`_ dans le
     répertoire contenant le fichier *DITAMAP* du projet.
 

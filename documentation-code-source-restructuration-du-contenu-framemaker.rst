@@ -11,10 +11,10 @@ Restructuration du contenu FrameMaker
 =====================================
 
 La partie automatisée d'une migration de `FrameMaker
-<http://en.wikipedia.org/wiki/Adobe_FrameMaker>`_ vers `DITA XML
-<http://fr.wikipedia.org/wiki/Darwin_Information_Typing_Architecture>`_ consiste
+<http://en.wikipedia.org/wiki/Adobe_FrameMaker>`_ vers |dita|
+consiste
 à appliquer une table de conversion entre les styles **FrameMaker** et les
-structures **DITA XML**.
+structures |dita|.
 
 Un important travail de restructuration du document FrameMaker doit cependant
 être effectué en amont :
@@ -27,20 +27,20 @@ Un important travail de restructuration du document FrameMaker doit cependant
   limité sous un format structuré),
 
 - harmonisation et simplification des styles FrameMaker pour les limiter et les
-  faire correspondre aux balises DITA XML qui seront utilisées (par exemple, un
+  faire correspondre aux balises |dita| qui seront utilisées (par exemple, un
   style *note_important* vers la balise <note type="important> ; il faut donc au
   préalable analyser le contenu existant et décider quel ensemble de balises
-  sera utilisé parmi les centaines de balises proposées par DITA XML : il est
+  sera utilisé parmi les centaines de balises proposées par |dita| : il est
   en effet fortement déconseillé de les utiliser toutes).
 
 .. figure:: graphics/framemaker-restructure.png
 
-   Restructuration du contenu  FrameMaker et mise en place de la chaîne DITA XML
+   Restructuration du contenu  FrameMaker et mise en place de la chaîne |dita|
 
 Ce travail d'harmonisation peut se faire en parallèle avec la mise à jour et la
 publication du document FrameMaker. La qualité de ce document n'en sera que
 meilleure.  En même temps que cette réorganisation du contenu, vous pouvez mettre en place
-la chaîne complète de création, gestion et publication DITA XML sur un
+la chaîne complète de création, gestion et publication |dita| sur un
 échantillon de votre contenu :
 
 - mise en place des outils,

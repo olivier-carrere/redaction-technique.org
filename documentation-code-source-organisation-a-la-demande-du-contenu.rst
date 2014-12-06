@@ -13,7 +13,7 @@ Organisation à la demande du contenu
 Les briques d'information peuvent être assemblées à la demande dans des
 structures de table des matières externes, les *ditamap*.
 
-L'organisation de l'information sous `DITA XML <http://dita.xml.org/>`_ n'est
+L'organisation de l'information sous |dita| n'est
 pas figée. Les briques peuvent être organisées dans différentes structures
 hiérarchiques, selon l'évolution des besoins. Si le **rédacteur technique** a
 pris soin de construire des briques d'information atomiques et génériques, il
@@ -37,7 +37,7 @@ documents suivants :
 
 Pour ce faire, le **rédacteur technique** prendra soin de placer les éléments
 liés à un contexte particulier dans les structures *ditamap* et non dans les
-fichiers de contenu DITA XML. En particulier, les références croisées doivent
+fichiers de contenu |dita|. En particulier, les références croisées doivent
 être indiquées dans une *reltable* placée dans la *ditamap* : si le document *A*
 doit renvoyer au document *B* dans la *ditamap* *1*, il doit pouvoir être également
 utilisé sans modification dans la *ditamap* *2*, où le document *B* n'est pas inclus.

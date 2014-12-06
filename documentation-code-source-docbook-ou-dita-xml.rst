@@ -17,10 +17,9 @@ au format FrameMaker ou traitement de texte. S'il est décidé de fédérer tout
 contenu d'entreprise sous un seul format, il semble naturel de capitaliser les
 efforts fournis sur la chaîne de création et de publication **DocBook** et de
 sélectionner ce format. C'est pourtant se priver des gains de productivité
-spectaculaires offerts par `DITA XML
-<http://en.wikipedia.org/wiki/Darwin_Information_Typing_Architecture>`_.
+spectaculaires offerts par |dita|.
 
-Il est facile de générer du **DocBook** à partir de DITA XML. DITA Open Toolkit
+Il est facile de générer du **DocBook** à partir de |dita|. DITA Open Toolkit
 propose par défaut ce format cible, au même titre que le PDF ou le
 HTML. L'opération inverse ne peut pas être totalement automatisée. Pourquoi ?
 
@@ -29,10 +28,10 @@ HTML. L'opération inverse ne peut pas être totalement automatisée. Pourquoi ?
 Il n'est pas possible de migrer automatiquement des données de formats pauvres
 vers des format riches en information.
 
-Tout simplement parce que le contenu au format DITA XML contient plus
+Tout simplement parce que le contenu au format |dita| contient plus
 d'informations. Passer d'un format plus riche à un format plus pauvre en
 information est une opération entropique qui peut facilement être
-automatisée. Par exemple, générer un PDF à partir de DITA XML. Effectuer
+automatisée. Par exemple, générer un PDF à partir de |dita|. Effectuer
 l'opération inverse exige d'injecter de l'intelligence, opération que seul
 l'être humain peut aujourd'hui effectuer.
 
@@ -41,7 +40,7 @@ Si votre contenu était une photo, nous pourrions faire l'analogie suivante :
 +------------------+-----------------------------------------------------------+
 |Format de contenu |Format de photo                                            |
 +==================+===========================================================+
-|DITA XML          |`RAW                                                       |
+||dita|            |`RAW                                                       |
 |                  |<http://fr.wikipedia.org/wiki/RAW_(format_d%27image)>`_    |
 |                  |[#]_                                                       |
 +------------------+-----------------------------------------------------------+
@@ -56,22 +55,22 @@ en sens inverse [#]_.
 
 .. figure:: graphics/entropie-dita-docbook.png
 
-Le PDF est sémantiquement plus pauvre que DocBook, lui-même plus pauvre que DITA
-XML [#]_.
+Le PDF est sémantiquement plus pauvre que DocBook, lui-même plus pauvre que
+|dita| [#]_.
 
 Si votre entreprise tient absolument à utiliser du **DocBook**, il est toujours
 loisible de générer le contenu **DocBook** à partir d'un contenu source au
-format DITA XML. À condition que le contenu source reste au format DITA XML
+format |dita|. À condition que le contenu source reste au format |dita|
 (c'est à dire, à condition qu'aucune modification apportée au contenu
 **DocBook** ne soit sauvegardée) et que le format **DocBook** ne soit qu'une
 étape de la génération des livrables, au même titre que le format FO, vous
 bénéficiez ainsi des fonctionnalités avancées de réutilisation du contenu que
-propose DITA XML.
+propose |dita|.
 
 L'effort de migration d'un format non structuré est certes un peu plus important
-vers DITA XML que vers **DocBook**, puisque vous devez injecter plus
+vers |dita| que vers **DocBook**, puisque vous devez injecter plus
 d'informations sémantiques. Vous devez également migrer le contenu **DocBook**
-vers DITA XML, ce qui représente également un effort, quoique plus faible. Mais
+vers |dita|, ce qui représente également un effort, quoique plus faible. Mais
 votre contenu est immédiatement de meilleure qualité, car plus structuré. Et
 vous pourrez rapidement cueillir tous les fruits de votre labeur, notamment si
 une traduction de votre contenu dans une nouvelle langue est envisagée.
@@ -82,7 +81,7 @@ nouveaux besoins.
 
 .. rubric:: Notes
 
-.. [#] Ce n'est bien sûr qu'une analogie, DITA XML étant un standard, à la
+.. [#] Ce n'est bien sûr qu'une analogie, |dita| étant un standard, à la
        différence du format RAW.
 
 .. [#] Pour être aussi exact que possible, vous pouvez enregistrer une image

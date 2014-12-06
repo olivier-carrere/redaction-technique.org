@@ -10,7 +10,7 @@
 Prendre en compte les contraintes de traduction
 ===============================================
 
-L'unité d'information **DITA XML** la plus petite est le nœud :samp:`<ph>`. Le
+L'unité d'information |dita| la plus petite est le nœud :samp:`<ph>`. Le
 rédacteur technique doit cependant veiller à ne lui appliquer le mécanisme
 *conref* que pour une phrase complète ou un terme qui ne sera jamais traduit
 (par exemple, le nom de la société ou d'un produit). De gros problèmes
@@ -59,7 +59,7 @@ traduisons donc les *conref* comme suit :
 Nous obtenons alors la phrase *Cliquez sur la bleue flèche*.
 
 Pour pallier ce problème, il faudrait réorganiser l'ordre des *conref* dans le
-fichier DITA traduit, ce qui est difficilement gérable et fait perdre tout
+fichier |dita| traduit, ce qui est difficilement gérable et fait perdre tout
 l'intérêt du mécanisme. Sans compter que des problèmes pires que ce cas d'école
 peuvent conduire à complètement abandonner dans la langue cible les *conref*
 utilisés dans la langue source (je n'ai pas d'exemple concret à offrir, ayant

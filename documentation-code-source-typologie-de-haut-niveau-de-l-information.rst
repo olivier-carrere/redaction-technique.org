@@ -10,7 +10,7 @@
 Typologie de haut niveau de l'information
 =========================================
 
-`DITA XML <http://dita.xml.org/>`_ propose au **rédacteur technique** une
+|dita| propose au **rédacteur technique** une
 typologie de haut niveau qui est une véritable aide à la structuration du
 contenu.
 
@@ -33,9 +33,9 @@ les deux pôles suivants :
 |                              |utiles.                       |
 +------------------------------+------------------------------+
 
-Lorsqu'il crée un document DITA XML, en revanche, le **rédacteur technique**
+Lorsqu'il crée un document |dita|, en revanche, le **rédacteur technique**
 doit d'emblée choisir le modèle [#]_ qui correspond
-au type d'information qu'il veut présenter. De base, DITA XML propose les types
+au type d'information qu'il veut présenter. De base, |dita| propose les types
 d'information suivants  [#]_ :
 
 +------------------------------+------------------------------+
@@ -63,7 +63,7 @@ structurer l'information. L'utilisateur y gagne en facilité et rapidité d'acc�
 
 .. [#] Dans la pratique, un schéma XSD.
 
-.. [#] DITA XML propose trois types d'information de base, tandis que la méthode
+.. [#] |dita| propose trois types d'information de base, tandis que la méthode
        Information Mapping en propose sept.
 
 .. [#] S'il s'avère qu'il a réellement besoin d'une autre catégorie, il peut la

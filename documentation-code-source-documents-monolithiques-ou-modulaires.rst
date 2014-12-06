@@ -22,8 +22,7 @@ ou en doublon est alors important.
 
    Format source de rédaction technique monolithique
 
-Les **grappes de fichiers modulaires** (par exemple `DITA XML
-<http://dita.xml.org/>`_ ou `DocBook <http://www.docbook.org/>`_)
+Les **grappes de fichiers modulaires** (par exemple |dita|)
 agrègent le contenu de multiples fichiers, ce qui favorise le partage et la
 réutilisation de blocs de contenu. Un tel système est difficile à mettre en
 place au niveau de toute l'entreprise, mais devrait être la norme pour une
@@ -34,7 +33,7 @@ place au niveau de toute l'entreprise, mais devrait être la norme pour une
    Format source de rédaction technique modulaire
 
 Certains traitements de texte proposent de gérer des documents modulaires, mais
-ils le font mal.  Inversement, un document DocBook ou DITA, par exemple, peut
+ils le font mal.  Inversement, un document DocBook ou |dita|, par exemple, peut
 être monolithique, mais perd alors de sa souplesse.
 
 .. toctree::

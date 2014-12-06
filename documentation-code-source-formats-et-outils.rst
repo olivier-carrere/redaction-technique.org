@@ -29,12 +29,11 @@ traducteur.
 
 Si l'on réfléchit en termes de formats, en revanche, il est possible de mettre
 en place des solutions évolutives. Un format ouvert tel que `OpenDocument
-<http://fr.wikipedia.org/wiki/OpenDocument>`_ ou `DITA XML
-<http://fr.wikipedia.org/wiki/Darwin_Information_Typing_Architecture>`_, par
+<http://fr.wikipedia.org/wiki/OpenDocument>`_ ou |dita|, par
 exemple (seul le second étant un format industriel de rédaction technique),
 n'est pas lié à un outil donné. Il est donc possible de le modifier et de le
 manipuler à l'aide de différents logiciels. Les formats structurés de type
-DocBook et DITA XML liés à un schéma XSD normalisée peuvent notamment être
+DocBook et |dita| liés à un schéma XSD normalisée peuvent notamment être
 facilement gérés, de la création à la publication, à l'aide de toute une
 panoplie d'outils, de l'éditeur de texte libre à la suite logicielle
 propriétaire et graphique.

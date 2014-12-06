@@ -41,15 +41,15 @@ manipulés par des applications.
    Les sources de la documentation doivent être moins volumineuses que les
    livrables.
 
-:abbr:`DITA (Darwin Information Typing Architecture)` est une architecture XML
+|dita| est une architecture XML
 de **rédaction structurée** destinée à la création de documents modulaires et à
 la réutilisation du contenu. À partir d'une base commune de modules
-d'information atomiques DITA XML, le **rédacteur technique**
+d'information atomiques |dita|, le **rédacteur technique**
 peut fournir en temps réel toute l'information dont chaque utilisateur a besoin,
 sur tout type de média, du support d'e-learning au document PDF ou papier, en
 passant par le site Web.
 
-DITA XML applique le principe de non-redondance des informations propre aux
+|dita| applique le principe de non-redondance des informations propre aux
 bases de données normalisées. Cette architecture transpose à la documentation
 technique la révolution introduite dans l'industrie par la standardisation : si
 l'on peut construire des automobiles de modèles différents à partir d'un

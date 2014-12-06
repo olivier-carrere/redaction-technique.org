@@ -10,7 +10,7 @@
 Un langage à balises
 ====================
 
-`DITA XML <http://dita.xml.org/>`_ est un langage à balises : le **rédacteur
+|dita| est un langage à balises : le **rédacteur
 technique** structure l'information dans des fichiers sources sans mise en page,
 similaires aux fichiers sources de code informatique. L'utilisateur reçoit un
 document cible, par exemple un fichier PDF, où les balises sont remplacées par
@@ -24,7 +24,7 @@ et le fichier cible). Ce qui semble a priori la solution la plus simple s'avère
 cependant peu efficace en termes de productivité de l'équipe de **rédaction
 technique** et de structuration de l'information.
 
-Avec un format texte tel que DITA, le **rédacteur technique** et le lecteur
+Avec un format texte tel que |dita|, le **rédacteur technique** et le lecteur
 disposent de supports largement différents :
 
 +--------------------+---------------------------------------------------------+
@@ -56,7 +56,7 @@ disposent de supports largement différents :
 |                    |typographiques* du document final.                       |
 +--------------------+---------------------------------------------------------+
 
-Un fichier source DITA XML mélange du texte et des balises, délimitées par les
+Un fichier source |dita| mélange du texte et des balises, délimitées par les
 signes < et >.
 Le texte proprement dit est encapsulé
 dans un jeu de balises ouvrantes de type <balise> et de balises fermantes de

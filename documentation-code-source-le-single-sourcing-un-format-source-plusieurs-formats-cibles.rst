@@ -33,7 +33,7 @@ Windows, pour générer un PDF. Une forte perte d'information de navigation
 (index, références croisées, liens, etc.) intervenait souvent lors de
 l'exportation.
 
-DITA XML propose un modèle agnostique quant au format cible. Les fichiers
+|dita| propose un modèle agnostique quant au format cible. Les fichiers
 sources, bien que basés sur un modèle modulaire proche de celui de l'aide en
 ligne, peuvent facilement être exportés sous forme de fichier PDF, d'aide en
 ligne, de pages HTML liées ou autre, sans aucune perte d'information.

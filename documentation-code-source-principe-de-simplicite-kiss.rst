@@ -26,7 +26,7 @@ Ce qui a spectaculairement fonctionné pour des montres peut être appliqué ave
 le même succès à la **documentation technique**. Quel que soit le format utilisé
 [#]_ , le
 **rédacteur technique** peut tout aussi bien construire un document élégamment
-architecturé, qu'une usine à gaz. Avec `DITA XML <http://dita.xml.org/>`_, il lui
+architecturé, qu'une usine à gaz. Avec |dita|, il lui
 suffit de ne pas centraliser les *conref* ou de les imbriquer exagérément. Sous
 FrameMaker, c'est encore plus simple, peu de garde-fous étant posés : la
 multiplication des styles et des *overrides* peut rapidement rendre ingérable

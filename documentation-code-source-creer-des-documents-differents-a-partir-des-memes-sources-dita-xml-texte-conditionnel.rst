@@ -10,7 +10,7 @@
 Créer des documents différents à partir des mêmes sources DITA XML (texte conditionnel)
 =======================================================================================
 
-DITA XML offre un mécanisme de **texte conditionnel**. Ce mécanisme favorise la
+|dita| offre un mécanisme de **texte conditionnel**. Ce mécanisme favorise la
 réutilisation du contenu source et évite la redondance des informations. Ce
 didacticiel aidera le **rédacteur technique** à utiliser ce mécanisme en
 quelques minutes.
@@ -62,7 +62,7 @@ quelques minutes.
         </body>
       </topic>
 
-   Ce code contient des balises DITA contenant des valeurs *audience*
+   Ce code contient des balises |dita| contenant des valeurs *audience*
    différentes : nous allons exclure le contenu d'une de ces deux balises lors
    de la génération du fichier cible en utilisant la clé *audience*.
 

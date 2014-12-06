@@ -11,11 +11,11 @@ XSL-FO : insérer automatiquement un titre pour les exemples
 ===========================================================
 
 Par défaut, **DITA Open Toolkit** n'insère pas automatiquement dans les fichiers
-PDF le texte *Exemple :* devant le titre d'un exemple contenu entre balises DITA
-XML :samp:`<example>`. La syntaxe `XSL-FO <http://fr.wikipedia.org/wiki/XSL-FO>`_
+PDF le texte *Exemple :* devant le titre d'un exemple contenu entre balises |dita|
+:samp:`<example>`. La syntaxe `XSL-FO <http://fr.wikipedia.org/wiki/XSL-FO>`_
 offre cependant cette possibilité.
 
-Supposons que le code source d'un de vos fichiers DITA soit le suivant :
+Supposons que le code source d'un de vos fichiers |dita| soit le suivant :
 
 .. code-block:: xml
 

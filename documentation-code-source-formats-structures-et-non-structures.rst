@@ -16,8 +16,7 @@ concentrer sur le contenu et d'améliorer l'expérience utilisateur et
 l'utilisabilité de la documentation technique.
 
 Les informations contenues dans un document technique peuvent être catégorisées
-selon leur sens. Par défaut, `DITA XML
-<http://fr.wikipedia.org/wiki/Darwin_Information_Typing_Architecture>`_ propose
+selon leur sens. Par défaut, |dita| propose
 trois types de base :
 
 +------------------------------+------------------------------+
@@ -46,7 +45,7 @@ règles de rédaction rigoureuses ne sont pas scrupuleusement suivies,
 l'information fournie à l'utilisateur risque d'être peu claire et difficile à
 parcourir rapidement.
 
-Avec des formats structurés tels que DITA XML, en revanche :
+Avec des formats structurés tels que |dita|, en revanche :
 
 - le **rédacteur technique** se concentre sur le contenu,
 - l'information est présentée à l'utilisateur selon une organisation cohérente
@@ -87,11 +86,11 @@ l'aide à présenter des informations :
 +--------------+---------------------------------------------------------------+
 |*complètes*   |l'utilisateur dispose de *toute* l'information dont il a besoin|
 |              |; une section de type *task* sans procédure n'est pas une      |
-|              |section DITA XML valide et ne pourra pas être publiée ; il est |
+|              |section |dita| valide et ne pourra pas être publiée ; il est   |
 |              |même possible de mettre en œuvre un mécanisme vérifiant        |
 |              |automatiquement avant publication la présence de blocs         |
 |              |d'information facultatifs selon le schéma `XSD                 |
-|              |<http://fr.wikipedia.org/wiki/XML_Schema>`_ DITA, mais que le  |
+|              |<http://fr.wikipedia.org/wiki/XML_Schema>`_ |dita|, mais que le|
 |              |**rédacteur technique** juge obligatoires, tels que le résultat|
 |              |d'une procédure ;                                              |
 +--------------+---------------------------------------------------------------+

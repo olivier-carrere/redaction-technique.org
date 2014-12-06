@@ -10,7 +10,7 @@
 Gérer son contenu DITA XML avec ou sans CMS ?
 =============================================
 
-L'architecture `DITA XML <http://dita.xml.org/>`_ ne propose pas de
+L'architecture |dita| ne propose pas de
 mécanisme de **workflow documentaire** natif. Les workflows sont pourtant un
 élément important d'un processus efficace de gestion du **cycle de vie du
 contenu**.
@@ -22,23 +22,23 @@ La plupart des entreprises sont réticentes à mettre en place des CMS, outils
 dédiés aux workflows. Elles ont d'ailleurs parfois connu des échecs de mise en
 place de telles solutions part le passé.
 
-De plus, l'un des grands avantages de DITA XML, c'est de s'intégrer directement
+De plus, l'un des grands avantages de |dita|, c'est de s'intégrer directement
 dans le système d'information en place. Chez les éditeurs de logiciels,
 notamment, rien de plus facile que de venir se greffer sur le système de gestion
 des sources en place, qu'il s'agisse de Git [#]_, de
 Subversion ou de SourceSafe. À budget quasi nul. Raison de plus pour ne pas
 investir du temps et de l'argent dans un CMS.  Les gains de productivité
 spectaculaires reportés par certaines entreprises suite à la mise en place d'un
-CMS DITA XML ont cependant de quoi faire réfléchir. Ainsi, Epson America a pu
+CMS |dita| ont cependant de quoi faire réfléchir. Ainsi, Epson America a pu
 réutiliser jusqu'à 90 % du contenu existant sur de nouveaux projets.
 
-Si l'on opte pour un CMS, celui-ci doit clairement supporter DITA : on ne gère
+Si l'on opte pour un CMS, celui-ci doit clairement supporter |dita| : on ne gère
 pas un jeu de briques d'information comme un document monolithique. Adieu donc
 SharePoint ou Alfresco, il faut se tourner vers des solutions dédiées telles que
 `Componize <http://www.componize.com/>`_ ou `DocZone <http://www.doczone.com>`_.
 
 Quel que soit le choix initial, il est possible à tout instant de changer de
-stratégie, sans remettre en cause l'existant. L'architecture DITA XML n'est en
+stratégie, sans remettre en cause l'existant. L'architecture |dita| n'est en
 effet liée à aucun référentiel particulier. Rien n'interdit donc de commencer à
 gérer ses projets sans CMS, puis d'avoir recours à une telle solution si les
 bénéfices de ce choix deviennent manifestes.

@@ -11,18 +11,18 @@ Les topics, modules d'information de base DITA
 ==============================================
 
 Les `topics <http://docs.oasis-open.org/dita/v1.0/archspec/topicover.html>`_
-sont les plus petites unités d'information autonomes gérées par **DITA
-XML**. Chaque **topic** a un titre et un corps de texte. Il ne traite que d'un
+sont les plus petites unités d'information autonomes gérées par |dita|.
+Chaque **topic** a un titre et un corps de texte. Il ne traite que d'un
 seul sujet. Il appartient donc au **rédacteur technique** de se baser sur la
-modularité proposée par DITA XML pour bien structurer l'information.
+modularité proposée par |dita| pour bien structurer l'information.
 
 Les **topics** sont sémantiquement typés. Il existe idéalement un type de
-*topic* par type d'information. DITA XML propose par défaut des *topics* adaptés
+*topic* par type d'information. |dita| propose par défaut des *topics* adaptés
 à la documentation des logiciels (description de concepts et de tâches, liste de
 commandes, etc.), mais de nouveaux types de *topics* peuvent être créés pour
 répondre à d'autres besoins.
 
-Les *topics* sont une des différences principales entre **DITA XML** et
+Les *topics* sont une des différences principales entre |dita| et
 **DocBook**, qui ne propose pas de typologie des briques d'information.
 
 Les *topics* sont généralement stockés *à plat* dans des répertoires divisés par

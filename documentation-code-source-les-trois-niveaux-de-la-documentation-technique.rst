@@ -44,7 +44,7 @@ page du contenu.
 Les formats adaptés sont les formats de type FrameMaker, qui dissocient
 (relativement) la mise en page du contenu, mais ne sont pas sémantiques.
 
-Les formats structurés sont les formats sémantiques de type DocBook ou DITA XML.
+Les formats structurés sont les formats sémantiques de type DocBook ou |dita|.
 
 Le stade du jardin à l'anglaise est déjà très satisfaisant et garantit qu'une
 information de qualité est fournie à l'utilisateur. Celui du jardin à la
@@ -53,7 +53,7 @@ réduire les coûts de production.
 
 À elle seule, la présence d'une des trois composantes (processus, équipe dédiée
 et format adapté) ne peut garantir un résultat satisfaisant. Confiez par exemple
-des outils permettant de générer du contenu au format DITA XML à des
+des outils permettant de générer du contenu au format |dita| à des
 collaborateurs dont la **communication technique** n'est pas le métier ou sans
 mettre en place de processus de gestion du cycle de vie de la documentation
 technique, et vous obtiendrez des résultats décevants. Seule la présence conjointe de ces

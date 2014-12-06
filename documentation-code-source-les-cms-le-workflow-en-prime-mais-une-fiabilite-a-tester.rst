@@ -36,7 +36,7 @@ Originellement destinés aux documents monolithiques, de nombreux CMS prennent
 aujourd'hui en compte la modularisation des documentations techniques. Des
 solutions telles que DocZone ou Componize, cette dernière bâtie sur Alfresco,
 sont par exemple explicitement destinées à gérer des documentations modulaires
-basées sur l'architecture XML DITA.
+basées sur l'architecture XML |dita|.
 
 Mais comment croire que ces solutions, qui sont fréquemment disponibles sous de
 nouvelles versions, marketing oblige, sont toutes d'une fiabilité optimale ?

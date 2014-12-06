@@ -13,8 +13,8 @@ Maximiser l'utilisation des conref pour faire baisser les coûts
 Recourir aux `conref
 <http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html>`_ est le meilleur
 moyen dont dispose le **rédacteur technique** pour faire baisser
-spectaculairement les coûts et les délais de publication de son contenu **DITA
-XML**, surtout pour les **documents multilingues**.
+spectaculairement les coûts et les délais de publication de son contenu |dita|,
+surtout pour les **documents multilingues**.
 
 De par la nature des informations qu'elles contiennent, les sections de type
 **task** ont un taux plus élevé de réutilisation du contenu que celles de type
@@ -90,7 +90,7 @@ uniques), étant généré par des *conref*.
    </task>
 
 Seul le texte en noir doit être traduit. Traduire ce type de fichier de contenu
-**DITA XML** consiste donc à traduire uniquement le titre de la section et
+|dita| consiste donc à traduire uniquement le titre de la section et
 l'intégralité des *conref* sources. Lorsqu'il traduit un ensemble d'unités
 d'information placées en vrac dans un fichier, le traducteur manque cependant
 cruellement de contexte. Le créateur du contenu initial doit donc lui fournir

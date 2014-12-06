@@ -17,7 +17,7 @@ doublons, des incohérences, un coût de mise à jour et de traduction élevé, 
 des retards de livraison. Le **rédacteur technique** dispose cependant d'autres
 modèles, plus efficaces.
 
-Le format de **rédaction structurée** `DITA XML <http://dita.xml.org/>`_ propose de
+Le format de **rédaction structurée** |dita| propose de
 passer du modèle du livre à celui du de la **base documentaire modulaire**. Le
 contenu d'entreprise repose sur des briques uniques, qui peuvent être assemblées
 dynamiquement, à la demande, pour produire des documents sous différents formats
@@ -33,7 +33,7 @@ technique** peut gérer les processus de rédaction, validation et traduction
 module par module. Les *workflows* peuvent ainsi être parallélisés, ce qui
 réduit les délais de mise sur le marché.
 
-Les fichiers DITA XML peuvent en outre être aisément centralisés sous un
+Les fichiers |dita| peuvent en outre être aisément centralisés sous un
 référentiel unique, tel qu'un ECM (système de gestion de contenu) ou un VCS
 (logiciel de gestion de versions). Le capital immatériel de la société est ainsi
 préservé.

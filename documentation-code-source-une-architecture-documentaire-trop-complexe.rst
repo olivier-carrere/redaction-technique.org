@@ -10,26 +10,26 @@
 Une architecture documentaire trop complexe ?
 =============================================
 
-DITA XML permet des gains de productivité importants par la réduction du volume
+|dita| permet des gains de productivité importants par la réduction du volume
 source que le **rédacteur technique** crée, traduit et maintient. Ce gain de
 productivité se fait au prix d'une plus grande complexité.
 
-Si les projets DITA XML sont plus *complexes*, ils sont cependant moins *compliqués*
+Si les projets |dita| sont plus *complexes*, ils sont cependant moins *compliqués*
 que des projets reposant sur des formats plus traditionnels de type
-FrameMaker. En effet, DITA XML est une architecture rationnelle. Le **rédacteur
+FrameMaker. En effet, |dita| est une architecture rationnelle. Le **rédacteur
 technique** se trouve donc face à un comportement prédictible des outils qu'il
 utilise, loin des *trucs et astuces* destinés à contourner les bugs ou les
 fonctionnements erratiques des outils plus lourds.
 
 Le tableau suivant présente les différents niveaux de complexité induits par
-DITA XML et les
+|dita| et les
 solutions qui permettent au **rédacteur technique** de les maîtriser plus
 facilement :
 
 +------------------------------+------------------------------+
 |Complexité                    |Solution                      |
 +==============================+==============================+
-|Syntaxe DITA XML              |IDE tel que XMetal ou nXML    |
+|Syntaxe |dita|                |IDE tel que XMetal ou nXML    |
 +------------------------------+------------------------------+
 |Gestion des relations entre   |CMS dédié tel que Componize ou|
 |des briques d'information     |DocZone                       |

@@ -11,7 +11,7 @@ Protéger les informations confidentielles
 =========================================
 
 Le puissant mécanisme `conref
-<http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html>`_ de **DITA XML**
+<http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html>`_ de |dita|
 se prête à d'autres applications que la réduction des coûts. Par exemple, le
 **rédacteur technique** peut masquer des informations dans le code source.
 
@@ -26,7 +26,7 @@ exclure des informations des livrables, non pour les masquer dans les fichiers
 sources. Allez-vous devoir créer deux jeux de fichiers sources, certains
 comportant les informations confidentielles, les autres non ? Adieu alors le
 *single-sourcing* et la réutilisation du contenu qui vous ont fait choisir
-**DITA XML** !
+|dita| !
 
 .. figure:: graphics/confidentiel.png
 

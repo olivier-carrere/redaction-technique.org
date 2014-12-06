@@ -12,15 +12,15 @@ Migrer de FrameMaker vers DITA XML
 
 Le but de cette procédure est de :
 
-- **migrer** son contenu **FrameMaker** vers **DITA XML** sans se plonger dans
+- **migrer** son contenu **FrameMaker** vers |dita| sans se plonger dans
   les arcanes des **EDD FrameMaker** (petits
   projets uniquement !),
 
-- gérer la documentation technique au format DITA XML sans utiliser **FrameMaker
+- gérer la documentation technique au format |dita| sans utiliser **FrameMaker
   structuré**.
 
 #. Restructurez le contenu et les styles de vos fichiers de contenu FrameMaker
-   selon les concepts DITA XML.
+   selon les concepts |dita|.
 
 #. Créez un document FrameMaker vide et importez-y tous les styles existants dans
    les fichiers à migrer.
@@ -30,7 +30,7 @@ Le but de cette procédure est de :
 
 #. Enregistrez le document FrameMaker vide sous le nom :file:`styles.fm`.
 
-#. Ouvrez **FrameMaker structuré 11** et créez un nouveau fichier DITA de type
+#. Ouvrez **FrameMaker structuré 11** et créez un nouveau fichier |dita| de type
    *topic*.
 
 #. Choisissez **StructureTools > Exporter le catalogue d'éléments en tant
@@ -41,14 +41,14 @@ Le but de cette procédure est de :
    définitions d'éléments** et importez les définitions d'éléments à partir de
    :file:`DITA-topic-edd.fm`.
 
-#. Répétez les trois étapes ci-dessus pour les autres types de topics DITA
+#. Répétez les trois étapes ci-dessus pour les autres types de topics |dita|
    (task, reference, etc.), en modifiant les noms de fichiers comme il se doit.
 
 #. Ouvrez le fichier :file:`styles.fm`, puis choisissez **StructureTools >
    Générer le tableau de conversion**.
 
 #. Modifiez le fichier de conversion et faites correspondre chaque style
-   FrameMaker à une balise DITA XML.
+   FrameMaker à une balise |dita|.
 
 #. Enregistrez le tableau de conversion sous le nom
    :file:`DITA2FM-conversion-table.fm`.
@@ -63,8 +63,8 @@ Le but de cette procédure est de :
 #. Enregistrez le fichier de contenu FrameMaker au format XML sans sélectionner
    d'application.
 
-#. Ouvrez le fichier XML généré sous un éditeur DITA XML et corrigez la syntaxe
-   DITA. Certains aspects de cette étape sont scriptables, mais il faut
+#. Ouvrez le fichier XML généré sous un éditeur |dita| et corrigez la syntaxe
+   |dita|. Certains aspects de cette étape sont scriptables, mais il faut
    également procéder à des opérations manuelles de restructuration du
    contenu. Il vous faudra notamment placer à la main les références croisées,
    de préférence dans une *reltable*.

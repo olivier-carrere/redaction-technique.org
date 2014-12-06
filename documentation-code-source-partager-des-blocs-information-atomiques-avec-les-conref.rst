@@ -11,7 +11,7 @@ Partager des blocs d'information atomiques avec les *conref*
 ============================================================
 
 Lorsque le **rédacteur technique** veut réutiliser des blocs d'information
-**DITA XML** plus petits qu'une section, il doit les partager au niveau des
+|dita| plus petits qu'une section, il doit les partager au niveau des
 fichiers de contenu *dita* et non dans les structures de table des matières
 *ditamap*, grâce au mécanisme `conref
 <http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html>`_.
@@ -33,7 +33,7 @@ leur utilisation.
 
 .. figure:: graphics/conref.png
 
-   Partage de blocs d'information de granulométrie fine entre les sections DITA
+   Partage de blocs d'information de granulométrie fine entre les sections |dita|
 
 .. toctree::
    :hidden:

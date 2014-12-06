@@ -15,7 +15,7 @@ Un fichier `ditaval
 reprend le principe des lunettes que vous chaussez pour visualiser un film en 3D
 : le verre gauche masque une moitié de l'image, le verre droit en masque l'autre
 moitié. Mais seul le **rédacteur technique** dispose de lunettes 3D et a une
-vision complète de l'information contenue dans le projet DITA XML.
+vision complète de l'information contenue dans le projet |dita|.
 
 Les destinataires de l'information disposent de lunettes
 avec deux verres gauches ou deux verres droits. Ils ne voient donc qu'une partie
@@ -27,7 +27,7 @@ concerne, selon le fameux concept minimaliste de *less is more*.
 
 .. figure:: graphics/ditaval.png
 
-   Texte conditionnel avec DITA XML
+   Texte conditionnel avec |dita|
 
 Concrètement, le mécanisme **ditaval** est basé sur des opérateurs binaires :
 vous marquez un bloc d'information avec un attribut et une valeur, puis incluez
@@ -66,7 +66,7 @@ Vous pouvez utiliser la structure suivante :
 .. attention::
 
    Une clé de filtrage mal positionnée peut entraîner une erreur de
-   compilation. En effet, si le code non filtré est conforme au schéma XSD DITA,
+   compilation. En effet, si le code non filtré est conforme au schéma XSD |dita|,
    le code filtré peut ne pas l'être.
 
    .. rubric:: Exemple
