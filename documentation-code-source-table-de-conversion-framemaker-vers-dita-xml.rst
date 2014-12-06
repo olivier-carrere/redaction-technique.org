@@ -14,7 +14,7 @@ Lorsque les fichiers `FrameMaker
 <http://en.wikipedia.org/wiki/Adobe_FrameMaker>`_ sont prêts pour la migration
 et que la chaîne |dita| est
 parfaitement intégrée aux processus techniques et humains de la société, le
-**rédacteur technique** peut appliquer la table de conversion [#]_.
+|techwriter| peut appliquer la table de conversion [#]_.
 
 Vous devriez maintenant être à même d'archiver les fichiers FrameMaker, puis de
 basculer totalement vers le format |dita|.

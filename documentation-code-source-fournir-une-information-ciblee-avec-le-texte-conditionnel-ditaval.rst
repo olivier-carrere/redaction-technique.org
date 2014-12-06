@@ -14,7 +14,7 @@ Un fichier `ditaval
 <http://docs.oasis-open.org/dita/v1.2/os/spec/common/about-ditaval.html>`_
 reprend le principe des lunettes que vous chaussez pour visualiser un film en 3D
 : le verre gauche masque une moitié de l'image, le verre droit en masque l'autre
-moitié. Mais seul le **rédacteur technique** dispose de lunettes 3D et a une
+moitié. Mais seul le |techwriter| dispose de lunettes 3D et a une
 vision complète de l'information contenue dans le projet |dita|.
 
 Les destinataires de l'information disposent de lunettes

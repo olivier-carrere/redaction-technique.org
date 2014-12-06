@@ -21,7 +21,7 @@ le rythme des livraisons.
 Pour filer la métaphore, si l'on se fixe pour but de convertir un marécage en
 parterre du château de Versailles, il convient de passer par l'étape du jardin à
 l'anglaise - soit un endroit certes non rigoureusement architecturé, mais très
-agréable à vivre. Bonne nouvelle : si le **rédacteur technique** a utilisé de
+agréable à vivre. Bonne nouvelle : si le |techwriter| a utilisé de
 manière cohérente un jeu de styles limité et organisé rationnellement son
 contenu FrameMaker, il est déjà certainement très proche de ce stade.
 

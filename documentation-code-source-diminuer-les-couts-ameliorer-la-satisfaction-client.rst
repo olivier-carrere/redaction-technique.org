@@ -46,7 +46,7 @@ compensé par l'économie sur les licences de logiciels.  En tout état de cause
 de trop nombreuses sociétés de haute technologie ont industrialisé leurs
 processus métier, mais laissent en friche la création, la gestion et la
 publication de leur contenu d'entreprise. Les coûts cachés (rédaction par des
-ingénieurs et non par un **rédacteur technique** compétent, mauvaise
+ingénieurs et non par un |techwriter| compétent, mauvaise
 exploitation du capital immatériel, diminution de la satisfaction client,
 augmentation des coûts de support, etc.) peuvent être considérables. Pourtant,
 les solutions et les compétences existent.

@@ -11,7 +11,7 @@ Formats structurés et non structurés
 ====================================
 
 Les **formats structurés** favorisent la création de documents minimalistes,
-complets et cohérents. Ils permettent au **rédacteur technique** de se
+complets et cohérents. Ils permettent au |techwriter| de se
 concentrer sur le contenu et d'améliorer l'expérience utilisateur et
 l'utilisabilité de la documentation technique.
 
@@ -40,14 +40,14 @@ trois types de base :
 
 Sous un format non structuré tel que le format traditionnel de
 `FrameMaker <http://en.wikipedia.org/wiki/Adobe_FrameMaker>`_, rien ne
-contraint le **rédacteur technique** à organiser l'information selon son sens. Si des
+contraint le |techwriter| à organiser l'information selon son sens. Si des
 règles de rédaction rigoureuses ne sont pas scrupuleusement suivies,
 l'information fournie à l'utilisateur risque d'être peu claire et difficile à
 parcourir rapidement.
 
 Avec des formats structurés tels que |dita|, en revanche :
 
-- le **rédacteur technique** se concentre sur le contenu,
+- le |techwriter| se concentre sur le contenu,
 - l'information est présentée à l'utilisateur selon une organisation cohérente
   et prévisible,
 - l'accès à l'information est séquentiel et rapide,
@@ -71,9 +71,9 @@ plus bas niveau, par exemple :
 |                              |étape.                        |
 +------------------------------+------------------------------+
 
-Les règles syntaxiques interdisent au **rédacteur technique** de faire figurer
+Les règles syntaxiques interdisent au |techwriter| de faire figurer
 une procédure pas à pas dans une section d'un autre type que *task*.  Le
-**rédacteur technique** dispose donc d'un véritable modèle de rédaction qui
+|techwriter| dispose donc d'un véritable modèle de rédaction qui
 l'aide à présenter des informations :
 
 +--------------+---------------------------------------------------------------+
@@ -91,7 +91,7 @@ l'aide à présenter des informations :
 |              |automatiquement avant publication la présence de blocs         |
 |              |d'information facultatifs selon le schéma `XSD                 |
 |              |<http://fr.wikipedia.org/wiki/XML_Schema>`_ |dita|, mais que le|
-|              |**rédacteur technique** juge obligatoires, tels que le résultat|
+|              ||techwriter| juge obligatoires, tels que le résultat           |
 |              |d'une procédure ;                                              |
 +--------------+---------------------------------------------------------------+
 |*cohérentes*  |les informations de même type sont présentées dans le même     |

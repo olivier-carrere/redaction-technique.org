@@ -20,7 +20,7 @@ Il est *a priori* plus simple, pour réutiliser un contenu d'un fichier |dita|
 existant, de pointer vers ce contenu sans l'extraire de son contexte
 d'origine. Cependant, un des grands principes de la réutilisation du contenu est
 de décontextualiser le contenu. Il est donc à terme beaucoup plus efficace pour
-le **rédacteur technique** d'extraire le contenu réutilisé de son fichier
+le |techwriter| d'extraire le contenu réutilisé de son fichier
 d'origine et de le placer dans un fichier ne contenant que des sources de
 **conref**. Il est en effet beaucoup plus facile de placer tous les éléments
 sources dans un référentiel unique que de devoir chercher les différentes

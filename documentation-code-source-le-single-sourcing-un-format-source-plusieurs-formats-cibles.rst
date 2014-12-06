@@ -24,7 +24,7 @@ différente pour chaque version cible.
 
    Un seul jeu d'informations, une multiplicité de formats de sortie
 
-Si le **rédacteur technique** pratique le *single-sourcing*, il doit cependant
+Si le |techwriter| pratique le *single-sourcing*, il doit cependant
 sélectionner en début de projet le paradigme sur lequel il se base : le livre ou
 l'aide en ligne. Pendant longtemps, les outils proposés reposaient soit sur un
 document de type livre (Word, ou FrameMaker, essentiellement) qui pouvait être

@@ -27,7 +27,7 @@ source d'information qui peut l'intéresser. Les moteurs de recherche ont rendu
 l'index caduc.
 
 Si la documentation technique utilise une terminologie cohérente, l'efficacité
-de la recherche en plein texte est réduite : si le **rédacteur technique**
+de la recherche en plein texte est réduite : si le |techwriter|
 a utilisé uniquement le terme *répertoire*, le lecteur qui recherche le mot
 *dossier* passera à côté de l'information qu'il recherche.
 

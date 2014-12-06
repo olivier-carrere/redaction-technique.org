@@ -86,9 +86,10 @@ pygments_style = 'sphinx'
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
 
-rst_epilog = """
+rst_epilog = u"""
 .. |dita| replace:: :abbr:`DITA (Darwin Information Typing Architecture)` XML
 .. |dita-ot| replace:: :abbr:`DITA-OT (DITA Open Toolkit)`
+.. |techwriter| replace:: rédacteur technique
 """
 
 # -- Options for HTML output ---------------------------------------------------

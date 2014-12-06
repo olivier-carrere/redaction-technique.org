@@ -11,7 +11,7 @@ Prendre en compte les contraintes de traduction
 ===============================================
 
 L'unité d'information |dita| la plus petite est le nœud :samp:`<ph>`. Le
-rédacteur technique doit cependant veiller à ne lui appliquer le mécanisme
+|techwriter| doit cependant veiller à ne lui appliquer le mécanisme
 *conref* que pour une phrase complète ou un terme qui ne sera jamais traduit
 (par exemple, le nom de la société ou d'un produit). De gros problèmes
 apparaissent sinon lors de la traduction dans d'autres langues.

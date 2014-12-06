@@ -35,7 +35,7 @@ complexité différents.
 .. _DITA XML: https://github.com/olivier-carrere/redaction-technique.org/tree/DITA_XML
 .. _DocBook: https://github.com/olivier-carrere/redaction-technique.org/tree/DocBook
 
-Ce site est conçu et réalisé par un rédacteur technique (carrereo *at*
+Ce site est conçu et réalisé par un |techwriter| (carrereo *at*
 gmail.com) spécialisé dans l'informatique. Il est publié sous licence Creative
 Commons.  Vous pouvez le cloner, le forker, proposer des *patchs*, ou… le lire,
 dans le format que vous souhaitez, après l'avoir compilé en PDF, EPUB ou autre

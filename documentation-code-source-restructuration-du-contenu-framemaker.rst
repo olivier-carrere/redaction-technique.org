@@ -52,8 +52,8 @@ la chaîne complète de création, gestion et publication |dita| sur un
 - formation et sensibilisation des autres acteurs de l'entreprise.
 
 Ce n'est qu'une fois que sa chaîne est fiable et acceptée, voire attendue
-par les autres acteurs de l'entreprise, que le **rédacteur
-technique** peut envisager la migration.
+par les autres acteurs de l'entreprise, que le |techwriter|
+peut envisager la migration.
 
 Si vos documents sont disponibles en plusieurs langues, vous devez modifier les
 fichiers FrameMaker et effectuer la migration pour chaque langue. Si un projet

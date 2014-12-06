@@ -45,7 +45,7 @@ bénéfices de ce choix deviennent manifestes.
 
 .. rubric:: Notes
 
-.. [#] Le **rédacteur technique** peut ainsi voir où un élément d'information
+.. [#] Le |techwriter| peut ainsi voir où un élément d'information
        est inclus ; lors de la mise à jour de cet élément, il peut alors juger
        si l'élément modifié sera toujours valable dans les différents contextes.
 

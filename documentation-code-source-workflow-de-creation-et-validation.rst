@@ -11,8 +11,8 @@ Workflow de création et validation
 ==================================
 
 Un processus de création et de mise à jour de la documentation technique qui
-repose sur la mémoire des acteurs humains est peu fiable. Un **rédacteur
-technique** peut être fatigué, souffrant, en congés, oublier des données
+repose sur la mémoire des acteurs humains est peu fiable. Un |techwriter|
+peut être fatigué, souffrant, en congés, oublier des données
 lorsqu'il est saturé d'informations ou avoir quitté la société. L'information
 entre deux personnes peut également mal circuler ou être mal comprise. C'est
 pour pallier ces faiblesses que l'homme a créé des outils. En revanche, il est
@@ -29,7 +29,7 @@ l'erreur humaine. Il faut donc soit :
 
   - création d'un ticket par un développeur,
 
-  - mise en œuvre du ticket par un rédacteur technique,
+  - mise en œuvre du ticket par un |techwriter|,
 
   - fermeture du ticket par le créateur du ticket,
 

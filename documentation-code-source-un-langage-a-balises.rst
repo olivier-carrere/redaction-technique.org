@@ -10,27 +10,27 @@
 Un langage à balises
 ====================
 
-|dita| est un langage à balises : le **rédacteur
-technique** structure l'information dans des fichiers sources sans mise en page,
+|dita| est un langage à balises : le |techwriter|
+structure l'information dans des fichiers sources sans mise en page,
 similaires aux fichiers sources de code informatique. L'utilisateur reçoit un
 document cible, par exemple un fichier PDF, où les balises sont remplacées par
 une mise en forme typographique.
 
 Si votre entreprise fournit à ses clients une documentation technique au format
 Word,
-le **rédacteur technique** et l'utilisateur disposent des mêmes
+le |techwriter| et l'utilisateur disposent des mêmes
 supports d'information (il n'y a pas de différenciation entre le fichier source
 et le fichier cible). Ce qui semble a priori la solution la plus simple s'avère
 cependant peu efficace en termes de productivité de l'équipe de **rédaction
 technique** et de structuration de l'information.
 
-Avec un format texte tel que |dita|, le **rédacteur technique** et le lecteur
+Avec un format texte tel que |dita|, le |techwriter| et le lecteur
 disposent de supports largement différents :
 
 +--------------------+---------------------------------------------------------+
 |Public              |Description                                              |
 +====================+=========================================================+
-|Rédacteur technique |Le **rédacteur technique** manipule des fichiers sources |
+|Rédacteur technique |Le |techwriter| manipule des fichiers sources            |
 |                    |; il utilise les balises pour construire le document en  |
 |                    |marquant les éléments d'information qu'il crée ou        |
 |                    |réutilise. Les balises sont imbriquées comme des poupées |

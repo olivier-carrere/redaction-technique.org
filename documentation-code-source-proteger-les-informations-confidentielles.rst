@@ -13,7 +13,7 @@ Protéger les informations confidentielles
 Le puissant mécanisme `conref
 <http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html>`_ de |dita|
 se prête à d'autres applications que la réduction des coûts. Par exemple, le
-**rédacteur technique** peut masquer des informations dans le code source.
+|techwriter| peut masquer des informations dans le code source.
 
 Voici un cas original d'utilisation des *conref* : imaginez que vous devez
 faire traduire un fichier contenant des informations confidentielles qui ne

@@ -11,19 +11,19 @@ Une architecture documentaire trop complexe ?
 =============================================
 
 |dita| permet des gains de productivité importants par la réduction du volume
-source que le **rédacteur technique** crée, traduit et maintient. Ce gain de
+source que le |techwriter| crée, traduit et maintient. Ce gain de
 productivité se fait au prix d'une plus grande complexité.
 
 Si les projets |dita| sont plus *complexes*, ils sont cependant moins *compliqués*
 que des projets reposant sur des formats plus traditionnels de type
-FrameMaker. En effet, |dita| est une architecture rationnelle. Le **rédacteur
-technique** se trouve donc face à un comportement prédictible des outils qu'il
+FrameMaker. En effet, |dita| est une architecture rationnelle. Le |techwriter|
+se trouve donc face à un comportement prédictible des outils qu'il
 utilise, loin des *trucs et astuces* destinés à contourner les bugs ou les
 fonctionnements erratiques des outils plus lourds.
 
 Le tableau suivant présente les différents niveaux de complexité induits par
 |dita| et les
-solutions qui permettent au **rédacteur technique** de les maîtriser plus
+solutions qui permettent au |techwriter| de les maîtriser plus
 facilement :
 
 +------------------------------+------------------------------+

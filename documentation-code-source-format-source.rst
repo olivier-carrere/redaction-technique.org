@@ -32,7 +32,7 @@ Au cours du développement d'une documentation technique, ces deux aspects
 doivent être clairement distincts. Ils peuvent être pris en charge par deux
 intervenants différents :
 
-- le **rédacteur technique**,
+- le |techwriter|,
 
 - le graphiste [#]_.
 
@@ -140,7 +140,7 @@ croisées qui ne sont valables que dans un nombre limité de contextes.
 
 .. rubric:: Notes
 
-.. [#] Si le **rédacteur technique** met lui-même en page ses documents, il
+.. [#] Si le |techwriter| met lui-même en page ses documents, il
        change de rôle lorsqu'il effectue cette opération.
 
 .. [#] Ou très peu : dans les fichiers de contenu, il est seulement possible de

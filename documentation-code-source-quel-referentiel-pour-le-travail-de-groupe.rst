@@ -15,16 +15,16 @@ informatiques est le dossier, ou répertoire. Si ce dépôt est parfaitement ada
 à la gestion de fichiers par un utilisateur unique sur son disque dur local, il
 montre rapidement ses limites pour le travail de groupe.
 
-Pour travailler sur un fichier, le **rédacteur technique** utilise un programme
+Pour travailler sur un fichier, le |techwriter| utilise un programme
 qui lit le fichier sur son disque dur et en charge une copie en mémoire
-vive. Les modifications s'effectuent sur cette copie. Lorsque le **rédacteur
-technique** enregistre ses modifications, le programme écrase sur le disque dur
+vive. Les modifications s'effectuent sur cette copie. Lorsque le |techwriter|
+enregistre ses modifications, le programme écrase sur le disque dur
 la version précédente du fichier. La version précédente est donc définitivement
 supprimée, sauf si le programme a créé une copie de sauvegarde ou si le
-**rédacteur technique** a utilisé la fonction *Enregistrer sous*, et non
+|techwriter| a utilisé la fonction *Enregistrer sous*, et non
 *Enregistrer*, pour créer une nouvelle version du fichier. Dans le premier cas,
 il n'existe que deux versions du fichier à un instant donné : la version n et la
-version n-1. Dans le second cas, le **rédacteur technique** peut créer autant de
+version n-1. Dans le second cas, le |techwriter| peut créer autant de
 versions qu'il le souhaite, par exemple en ajoutant le suffixe  -1, -2, etc. au
 nom du fichier.
 

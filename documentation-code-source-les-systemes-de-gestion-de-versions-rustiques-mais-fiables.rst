@@ -11,7 +11,7 @@ Les systèmes de gestion de versions - rustiques mais fiables
 ============================================================
 
 Travailler sur des fichiers sources au format texte, et non binaire, est
-l'occasion pour le **rédacteur technique** de gérer son contenu comme les
+l'occasion pour le |techwriter| de gérer son contenu comme les
 développeurs gèrent leur code : sous un système de gestion des sources tel que
 Git, Subversion ou SourceSafe.
 
@@ -48,7 +48,7 @@ Les systèmes de gestion des sources utilisent les concepts suivants :
 
 +--------+---------------------------------------------------------------------+
 |Tronc   |Dépôt principal conservant toutes les versions des fichiers placées  |
-|        |au cours du temps par le **rédacteur technique** (ou plus            |
+|        |au cours du temps par le |techwriter| (ou plus                       |
 |        |fréquemment, le développeur).                                        |
 +--------+---------------------------------------------------------------------+
 |Branche |Dépôt secondaire créé à partir de la version principale du code      |
@@ -62,7 +62,7 @@ Les systèmes de gestion des sources utilisent les concepts suivants :
 Si l'on s'en donne la peine, il est également possible de mal utiliser les
 systèmes de gestion de version et de perdre des données. Mais, en pratique, à
 même niveau d'effort et de compétence, le risque de perdre de données est
-nettement  moindre si le **rédacteur technique** manipule des fichiers texte
+nettement  moindre si le |techwriter| manipule des fichiers texte
 sous un gestionnaire de version plutôt que des fichiers binaires sur un
 répertoire partagé.
 

@@ -20,7 +20,7 @@ des formats propriétaires que seuls leurs logiciels sont à même de modifier. 
 fichier Word ou un fichier FrameMaker ne peuvent ainsi être modifiés que *via*
 les outils éponymes. Choisir un tel format risque donc de limiter les choix
 ultérieurs de l'entreprise et de se révéler coûteux : il faut une licence par
-utilisateur, qu'il soit **rédacteur technique**, contributeur occasionnel ou
+utilisateur, qu'il soit |techwriter|, contributeur occasionnel ou
 traducteur.
 
 .. figure:: graphics/format-standard.png

@@ -25,21 +25,21 @@ disponibles en versions sans cesse renouvelées.
 Ce qui a spectaculairement fonctionné pour des montres peut être appliqué avec
 le même succès à la **documentation technique**. Quel que soit le format utilisé
 [#]_ , le
-**rédacteur technique** peut tout aussi bien construire un document élégamment
+|techwriter| peut tout aussi bien construire un document élégamment
 architecturé, qu'une usine à gaz. Avec |dita|, il lui
 suffit de ne pas centraliser les *conref* ou de les imbriquer exagérément. Sous
 FrameMaker, c'est encore plus simple, peu de garde-fous étant posés : la
 multiplication des styles et des *overrides* peut rapidement rendre ingérable
 n'importe quel document.
 
-De même, dans la formulation de ses phrases, le **rédacteur technique** doit
+De même, dans la formulation de ses phrases, le |techwriter| doit
 toujours avoir le principe KISS à l'esprit. Il est facile de construire des
 phrases alambiquées qui dénotent plus une mécompréhension du sujet qu'un
 raffinement de l'écriture [#]_.
 Construire une phrase simple demande un effort de compréhension de
 son sujet. La rédaction du contenu et son appréhension par son destinataire
-deviennent alors aisées. C'est un aspect fondamental du métier de **rédacteur
-technique**. Le **rédacteur technique** apporte ainsi une véritable valeur
+deviennent alors aisées. C'est un aspect fondamental du métier de |techwriter|.
+Le |techwriter| apporte ainsi une véritable valeur
 ajoutée au produit qu'il documente.
 
 .. rubric:: Notes

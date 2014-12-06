@@ -27,10 +27,10 @@ pour les données : la granulométrie de la sauvegarde est le répertoire, sa
 fréquence n'est souvent que quotidienne. En cas de perte de données, la
 restauration se fait répertoire par répertoire, et non fichier par fichier et
 porte sur des versions dont l'ancienneté dépend de l'administrateur système, et
-non du **rédacteur technique**. Fouiller dans les archives est une opération
+non du |techwriter|. Fouiller dans les archives est une opération
 fastidieuse qui peut elle-même être source d'erreurs : en l'absence d'une
 comparaison fiable et aisée entre plusieurs versions des fichiers, le
-**rédacteur technique** peut facilement supprimer des modifications qu'il aurait
+|techwriter| peut facilement supprimer des modifications qu'il aurait
 souhaité conserver en voulant en restaurer d'autres.
 
 Copier un fichier du réseau pour le modifier sur son disque dur personnel, puis
@@ -42,7 +42,7 @@ périlleuses :
   techniques** devra alors renoncer à toutes ses modifications ;
 
 - lors d'une copie manuelle des fichiers, que ce soit *via* un gestionnaire de
-  fichiers graphique ou en ligne de commande, le **rédacteur technique** peut
+  fichiers graphique ou en ligne de commande, le |techwriter| peut
   facilement écraser la version la plus récente par la plus ancienne (on
   préférera alors avoir recours à un logiciel de synchronisation de fichiers
   tels que `rsync <http://rsync.samba.org/>`_ ou `Unison

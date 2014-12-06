@@ -49,6 +49,6 @@ procédure de sauvegarde et de restauration éprouvée.
 .. rubric:: Notes
 
 .. [#] À chaque dépôt du fichier sur le CMS, et non à chaque enregistrement de
-       son travail par le **rédacteur technique**.
+       son travail par le |techwriter|.
 
 .. text review: yes
