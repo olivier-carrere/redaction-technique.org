@@ -8,42 +8,32 @@
 Ne lisez pas ce site… `forkez-le sur GitHub ! <https://github.com/olivier-carrere/redaction-technique.org/>`_
 =============================================================================================================
 
-Ce site présente comment gérer la documentation technique comme le code
-source, à partir de fichiers sources en format texte.
+Ce site présente comment gérer la documentation technique comme le code source,
+à partir de fichiers sources en format texte. Toutes les versions de ce site
+sont gérées sous le logiciel de gestion de versions décentralisé `Git
+<http://www.git-scm.com/>`_. Il est disponible en trois formats, basés sur la
+version 1.1 [#]_. Ces formats présentent des niveaux de fonctionnalités et de
+complexité différents.
 
-Il est disponible en trois versions [#]_ :
+.. figure:: graphics/fonctionnalites_complexite.png
 
-+---------------------+----------------------------------------------------+
-|Version              |Description                                         |
-+=====================+====================================================+
-|`reStructuredText`_  |Langage de balisage léger de type Wiki ou Markdown. |
-+---------------------+----------------------------------------------------+
-|`DITA XML`_          |Architecture documentaire XML sémantique.           |
-+---------------------+----------------------------------------------------+
-|`DocBook`_           |Langage de balisage XML sémantique.                 |
-+---------------------+----------------------------------------------------+
+   *Niveau de fonctionnalités et de complexité des formats texte*
+
+`reStructuredText`_
+  Langage de balisage léger de type Wiki ou Markdown qui, combiné au générateur
+  de documentation Sphinx, offre un bon niveau de fonctionnalités.
+
+`DITA XML`_
+   Architecture documentaire XML sémantique et modulaire complexe qui offre des
+   gains de productivité importants grâce à une forte réutilisation du contenu.
+
+`DocBook`_
+   Langage de balisage XML sémantique qui offre un rapport
+   fonctionnalités/complexité aujourd'hui peu intéressant.
 
 .. _reStructuredText: https://github.com/olivier-carrere/redaction-technique.org/tree/master
 .. _DITA XML: https://github.com/olivier-carrere/redaction-technique.org/tree/DITA_XML
 .. _DocBook: https://github.com/olivier-carrere/redaction-technique.org/tree/DocBook
-
-Ces formats présentent des niveaux de fonctionnalités et de complexité
-différents.
-
-.. figure:: graphics/fonctionnalites_complexite.png
-
-   Niveau de fonctionnalités et de complexité des formats texte
-
-reStructuredText
-   Format simple qui offre un bon niveau de fonctionnalités.
-DITA XML
-   Format complexe qui offre des gains de productivité importants
-   grâce à une forte réutilisation du contenu.
-DocBook
-   Format qui offre un rapport fonctionnalités/complexité peu intéressant.
-
-Toutes les versions de ce site sont gérées sous le logiciel de gestion de
-versions décentralisé `Git <http://www.git-scm.com/>`_.
 
 Ce site est conçu et réalisé par un rédacteur technique (carrereo *at*
 gmail.com) spécialisé dans l'informatique. Il est publié sous licence Creative
