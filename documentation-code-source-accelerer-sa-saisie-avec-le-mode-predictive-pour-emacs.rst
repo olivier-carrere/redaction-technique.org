@@ -22,7 +22,7 @@ un environnement GNU/Linux (en l'occurrence, Debian).
       $ sudo aptitude install make texinfo
 
 #. Téléchargez
-   `Predictive <http://www.dr-qubit.org/emacs.php#predictive-download>`_.
+   `Predictive`_.
 
 #. Décompressez l'archive Predictive :
 

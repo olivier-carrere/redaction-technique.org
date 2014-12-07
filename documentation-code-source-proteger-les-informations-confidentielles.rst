@@ -10,8 +10,7 @@
 Protéger les informations confidentielles
 =========================================
 
-Le puissant mécanisme `conref
-<http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html>`_ de |dita|
+Le puissant mécanisme `conref`_ de |dita|
 se prête à d'autres applications que la réduction des coûts. Par exemple, le
 |techwriter| peut masquer des informations dans le code source.
 

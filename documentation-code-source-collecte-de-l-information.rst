@@ -16,8 +16,7 @@ internes et externes à l'entreprise.
 Une fois le projet de rédaction technique clairement défini, le |techwriter|
 collecte toute l'information disponible :
 
-- spécifications du produit, Intranet, pages `Trac
-  <http://trac.edgewall.org/>`_,
+- spécifications du produit, Intranet, pages `Trac`_,
 
 -  interview du service R&D,
 

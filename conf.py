@@ -87,9 +87,53 @@ pygments_style = 'sphinx'
 #modindex_common_prefix = []
 
 rst_epilog = u"""
+
+.. substitutions
+
 .. |dita| replace:: :abbr:`DITA (Darwin Information Typing Architecture)` XML
 .. |dita-ot| replace:: :abbr:`DITA-OT (DITA Open Toolkit)`
 .. |techwriter| replace:: **rédacteur technique**
+
+.. links
+
+.. _Alfresco: http://www.alfresco.com/fr
+.. _Componize: http://www.componize.com
+.. _DITA Open Toolkit 1.5.4: http://sourceforge.net/projects/dita-ot/files/DITA-OT Stable Release/DITA Open Toolkit 1.5.4/DITA-OT1.5.4_full_easy_install_bin.zip/download
+.. _DITA XML: https://github.com/olivier-carrere/redaction-technique.org/tree/DITA_XML
+.. _DITA integration for Drupal: http://drupal.org/project/dita
+.. _DocBook: https://github.com/olivier-carrere/redaction-technique.org/tree/DocBook
+.. _DocZone: http://www.doczone.com
+.. _FrameMaker: http://en.wikipedia.org/wiki/Adobe_FrameMaker
+.. _Git: http://www.git-scm.com
+.. _JPEG: http://fr.wikipedia.org/wiki/Jpeg
+.. _Java: http://java.com/fr/download/manual.jsp?locale=fr
+.. _NuFirewall: http://linuxfr.org/news/nufirewall-le-pare-feu-libre-sans-prise-de-t%C3%AAte
+.. _OpenDocument: http://fr.wikipedia.org/wiki/OpenDocument
+.. _Predictive: http://www.dr-qubit.org/emacs.php#predictive-download
+.. _RAW: http://fr.wikipedia.org/wiki/RAW_(format_d%27image)
+.. _SyncToy: http://www.microsoft.com/en-us/download/details.aspx?id=15155
+.. _TIFF: http://fr.wikipedia.org/wiki/Tagged_Image_File_Format
+.. _Trac: http://trac.edgewall.org
+.. _Unison: http://www.cis.upenn.edu/~bcpierce/unison
+.. _XML::Twig: http://www.xmltwig.org/xmltwig/
+.. _XPATH: http://fr.wikipedia.org/wiki/XPath
+.. _XSD: http://fr.wikipedia.org/wiki/XML_Schema
+.. _XSL-FO: http://fr.wikipedia.org/wiki/XSL-FO
+.. _conref: http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html
+.. _ditaval: http://docs.oasis-open.org/dita/v1.2/os/spec/common/about-ditaval.html
+.. _expressions rationnelles: http://fr.wikipedia.org/wiki/Expression_rationnelle
+.. _forkez-le sur GitHub !: https://github.com/olivier-carrere/redaction-technique.org
+.. _l'archive des fichiers schemas.xml: http://www.redaction-technique.org/media/schemas.redaction-technique.org.tar.gz
+.. _l'archive des schémas RelaxNG pour DITA XML: http://www.redaction-technique.org/media/rnc.tar.gz
+.. _reStructuredText: https://github.com/olivier-carrere/redaction-technique.org/tree/master
+.. _reltable: http://docs.oasis-open.org/dita/v1.0/langspec/reltable.html
+.. _rsync: http://rsync.samba.org
+.. _script de génération multilingue DITA XML: http://www.redaction-technique.org/media/dita2target.sh
+.. _spécialisation: http://en.wikipedia.org/wiki/Darwin_Information_Typing_Architecture#Specialization
+.. _topics: http://docs.oasis-open.org/dita/v1.0/archspec/topicover.html
+.. _un point fort du produit: http://www.linformaticien.com/tests/id/20068/categoryid/48/edenwall-nufirewall-le-pare-feu-nouvelle-generation.aspx
+.. _xinclude: http://en.wikipedia.org/wiki/XInclude
+.. _xml_split: http://search.cpan.org/dist/XML-Twig/tools/xml_split/xml_split
 """
 
 # -- Options for HTML output ---------------------------------------------------

@@ -17,8 +17,8 @@ l'utilisabilité du document final. |dita-ot| les gère très bien, à
 condition d'effectuer quelques réglages.
 
 Vous avez placé des balises *related-links* correctement formatées dans vos
-fichiers de contenu |dita|, ou mieux, une `reltable
-<http://docs.oasis-open.org/dita/v1.0/langspec/reltable.html>`_ dans votre
+fichiers de contenu |dita|, ou mieux, une `reltable`_
+dans votre
 structure de table des matières *DITAMAP* (la *reltable* permet de
 décontextualiser votre contenu et donc de mieux le réutiliser). Vous lancez
 votre commande de génération du PDF et, mauvaise surprise, aucune section *Voir

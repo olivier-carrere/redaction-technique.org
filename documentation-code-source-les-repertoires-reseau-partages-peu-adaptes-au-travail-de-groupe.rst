@@ -45,11 +45,11 @@ périlleuses :
   fichiers graphique ou en ligne de commande, le |techwriter| peut
   facilement écraser la version la plus récente par la plus ancienne (on
   préférera alors avoir recours à un logiciel de synchronisation de fichiers
-  tels que `rsync <http://rsync.samba.org/>`_ ou `Unison
-  <http://www.cis.upenn.edu/~bcpierce/unison/>`_ (ce dernier étant plus adapté à
+  tels que `rsync`_ ou `Unison`_
+  (ce dernier étant plus adapté à
   la synchronisation bidirectionnelle) en ligne de commande sous GNU/Linux ou
-  Windows, ou à un équivalent graphique, tel `SyncToy
-  <http://www.microsoft.com/en-us/download/details.aspx?id=15155>`_. Cependant,
+  Windows, ou à un équivalent graphique, tel `SyncToy`_.
+  Cependant,
   ce type de logiciels se base sur la date de dernière modification des
   fichiers. Lorsque l'on met à jour ou publie un livre FrameMaker, notamment,
   ceci peut créer des conflits entre fichiers, FrameMaker enregistrant dans ces

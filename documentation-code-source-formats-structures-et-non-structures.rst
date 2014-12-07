@@ -39,7 +39,7 @@ trois types de base :
    Formats structurés et non structurés
 
 Sous un format non structuré tel que le format traditionnel de
-`FrameMaker <http://en.wikipedia.org/wiki/Adobe_FrameMaker>`_, rien ne
+`FrameMaker`_, rien ne
 contraint le |techwriter| à organiser l'information selon son sens. Si des
 règles de rédaction rigoureuses ne sont pas scrupuleusement suivies,
 l'information fournie à l'utilisateur risque d'être peu claire et difficile à
@@ -89,8 +89,8 @@ l'aide à présenter des informations :
 |              |section |dita| valide et ne pourra pas être publiée ; il est   |
 |              |même possible de mettre en œuvre un mécanisme vérifiant        |
 |              |automatiquement avant publication la présence de blocs         |
-|              |d'information facultatifs selon le schéma `XSD                 |
-|              |<http://fr.wikipedia.org/wiki/XML_Schema>`_ |dita|, mais que le|
+|              |d'information facultatifs selon le schéma `XSD`_ |dita|,       |
+|              |mais que le                                                    |
 |              ||techwriter| juge obligatoires, tels que le résultat           |
 |              |d'une procédure ;                                              |
 +--------------+---------------------------------------------------------------+

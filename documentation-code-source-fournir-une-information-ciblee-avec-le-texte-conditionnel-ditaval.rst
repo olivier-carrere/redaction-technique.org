@@ -10,8 +10,7 @@
 Fournir une information ciblée avec le texte conditionnel ditaval
 =================================================================
 
-Un fichier `ditaval
-<http://docs.oasis-open.org/dita/v1.2/os/spec/common/about-ditaval.html>`_
+Un fichier `ditaval`_
 reprend le principe des lunettes que vous chaussez pour visualiser un film en 3D
 : le verre gauche masque une moitié de l'image, le verre droit en masque l'autre
 moitié. Mais seul le |techwriter| dispose de lunettes 3D et a une

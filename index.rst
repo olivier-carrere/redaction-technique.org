@@ -5,13 +5,13 @@
 
 .. code review: no code
 
-Ne lisez pas ce site… `forkez-le sur GitHub ! <https://github.com/olivier-carrere/redaction-technique.org/>`_
+Ne lisez pas ce site… `forkez-le sur GitHub !`_
 =============================================================================================================
 
 Ce site présente comment gérer la documentation technique comme le code source,
 à partir de fichiers sources en format texte. Toutes les versions de ce site
-sont gérées sous le logiciel de gestion de versions décentralisé `Git
-<http://www.git-scm.com/>`_. Il est disponible en trois formats, basés sur la
+sont gérées sous le logiciel de gestion de versions décentralisé `Git`_.
+Il est disponible en trois formats, basés sur la
 version 1.1 [#]_. Ces formats présentent des niveaux de fonctionnalités et de
 complexité différents.
 
@@ -30,10 +30,6 @@ complexité différents.
 `DocBook`_
    Langage de balisage XML sémantique qui offre un rapport
    fonctionnalités/complexité aujourd'hui peu intéressant.
-
-.. _reStructuredText: https://github.com/olivier-carrere/redaction-technique.org/tree/master
-.. _DITA XML: https://github.com/olivier-carrere/redaction-technique.org/tree/DITA_XML
-.. _DocBook: https://github.com/olivier-carrere/redaction-technique.org/tree/DocBook
 
 Ce site est conçu et réalisé par un |techwriter| (carrereo *at*
 gmail.com) spécialisé dans l'informatique. Il est publié sous licence Creative

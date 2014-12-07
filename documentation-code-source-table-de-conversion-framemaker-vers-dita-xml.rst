@@ -10,8 +10,8 @@
 Table de conversion FrameMaker vers DITA XML
 ============================================
 
-Lorsque les fichiers `FrameMaker
-<http://en.wikipedia.org/wiki/Adobe_FrameMaker>`_ sont prêts pour la migration
+Lorsque les fichiers `FrameMaker`_
+sont prêts pour la migration
 et que la chaîne |dita| est
 parfaitement intégrée aux processus techniques et humains de la société, le
 |techwriter| peut appliquer la table de conversion [#]_.

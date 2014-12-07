@@ -108,8 +108,8 @@ adapté, ou inspirer un nouveau script.
 
 Pour utiliser ce script :
 
-#.  Téléchargez le `script de génération multilingue |dita|
-    <http://www.redaction-technique.org/media/dita2target.sh>`_ dans le
+#.  Téléchargez le `script de génération multilingue DITA XML`_
+    dans le
     répertoire contenant le fichier *DITAMAP* du projet.
 
 #.  Dans un terminal, placez-vous dans ce répertoire, puis entrez :

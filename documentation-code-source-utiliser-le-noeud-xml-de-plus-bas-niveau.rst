@@ -10,8 +10,7 @@
 Utiliser le nœud XML de plus bas niveau
 =======================================
 
-Le |techwriter| doit utiliser comme source du `conref
-<http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html>`_ le nœud |dita|
+Le |techwriter| doit utiliser comme source du `conref`_ le nœud |dita|
 de plus bas niveau contenant l'information à partager.
 
 Le but des **conref** étant de gérer des blocs d'information de faibles

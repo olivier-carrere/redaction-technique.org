@@ -67,8 +67,8 @@ permettra d'utiliser ce mode Emacs pour |dita|.
     - crée une copie de sauvegarde du fichier :file:`.emacs` (:file:`.emacs.bak`),
     - écrit les variables d'environnement du mode nXML dans le fichier :file:`.emacs`.
 
-#.  Téléchargez `l'archive des schémas RelaxNG pour |dita|
-    <http://www.redaction-technique.org/media/rnc.tar.gz>`_ dans le répertoire
+#.  Téléchargez `l'archive des schémas RelaxNG pour DITA XML`_
+    dans le répertoire
     racine de votre projet de documentation |dita|.
 
 #.  Placez-vous dans le répertoire racine de votre projet de documentation |dita|,
@@ -81,8 +81,7 @@ permettra d'utiliser ce mode Emacs pour |dita|.
     Cette commande crée un répertoire :file:`rnc` de même niveau que le
     *<répertoire de langue>*.
 
-#.  Téléchargez `l'archive des fichiers schemas.xml
-    <http://www.redaction-technique.org/media/schemas.redaction-technique.org.tar.gz>`_
+#.  Téléchargez `l'archive des fichiers schemas.xml`_
     dans le répertoire racine de votre projet de documentation |dita|, puis
     collez la suite de commandes ci-dessous en remplaçant *<répertoire de langue>*
     par la valeur appropriée, *en_US*, ou *fr_FR*, par exemple. Répétez cette étape

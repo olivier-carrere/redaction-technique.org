@@ -10,8 +10,8 @@
 DocBook ou DITA XML ?
 =====================
 
-Certaines entreprises ont parfois un contenu existant au format `DocBook
-<http://www.oasis-open.org/docbook/>`_. Géré souvent par les acteurs les plus
+Certaines entreprises ont parfois un contenu existant au format `DocBook`_.
+Géré souvent par les acteurs les plus
 techniques de la société, il coexiste la plupart du temps avec d'autres contenus
 au format FrameMaker ou traitement de texte. S'il est décidé de fédérer tout le
 contenu d'entreprise sous un seul format, il semble naturel de capitaliser les
@@ -40,14 +40,12 @@ Si votre contenu était une photo, nous pourrions faire l'analogie suivante :
 +------------------+-----------------------------------------------------------+
 |Format de contenu |Format de photo                                            |
 +==================+===========================================================+
-||dita|            |`RAW                                                       |
-|                  |<http://fr.wikipedia.org/wiki/RAW_(format_d%27image)>`_    |
+||dita|            |`RAW`_                                                     |
 |                  |[#]_                                                       |
 +------------------+-----------------------------------------------------------+
-|DocBook           |`TIFF                                                      |
-|                  |<http://fr.wikipedia.org/wiki/Tagged_Image_File_Format>`_  |
+|DocBook           |`TIFF`_                                                    |
 +------------------+-----------------------------------------------------------+
-|PDF               |`JPEG <http://fr.wikipedia.org/wiki/Jpeg>`_                |
+|PDF               |`JPEG`_                                                    |
 +------------------+-----------------------------------------------------------+
 
 Le passage de RAW en TIFF et de TIFF en JPEG est destructif et ne peut se faire

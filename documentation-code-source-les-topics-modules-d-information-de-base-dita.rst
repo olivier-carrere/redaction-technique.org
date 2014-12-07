@@ -10,7 +10,7 @@
 Les topics, modules d'information de base DITA XML
 ==================================================
 
-Les `topics <http://docs.oasis-open.org/dita/v1.0/archspec/topicover.html>`_
+Les `topics`_
 sont les plus petites unités d'information autonomes gérées par |dita|.
 Chaque **topic** a un titre et un corps de texte. Il ne traite que d'un
 seul sujet. Il appartient donc au |techwriter| de se baser sur la

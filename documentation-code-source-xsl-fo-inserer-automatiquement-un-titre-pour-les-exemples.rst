@@ -12,7 +12,7 @@ XSL-FO : insérer automatiquement un titre pour les exemples
 
 Par défaut, |dita-ot| n'insère pas automatiquement dans les fichiers
 PDF le texte *Exemple :* devant le titre d'un exemple contenu entre balises |dita|
-:samp:`<example>`. La syntaxe `XSL-FO <http://fr.wikipedia.org/wiki/XSL-FO>`_
+:samp:`<example>`. La syntaxe `XSL-FO`_
 offre cependant cette possibilité.
 
 Supposons que le code source d'un de vos fichiers |dita| soit le suivant :

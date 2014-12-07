@@ -35,7 +35,7 @@ réutiliser jusqu'à 90 % du contenu existant sur de nouveaux projets.
 Si l'on opte pour un CMS, celui-ci doit clairement supporter |dita| : on ne gère
 pas un jeu de briques d'information comme un document monolithique. Adieu donc
 SharePoint ou Alfresco, il faut se tourner vers des solutions dédiées telles que
-`Componize <http://www.componize.com/>`_ ou `DocZone <http://www.doczone.com>`_.
+`Componize`_ ou `DocZone`_.
 
 Quel que soit le choix initial, il est possible à tout instant de changer de
 stratégie, sans remettre en cause l'existant. L'architecture |dita| n'est en

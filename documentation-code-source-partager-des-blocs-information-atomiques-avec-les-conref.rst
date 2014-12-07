@@ -13,8 +13,7 @@ Partager des blocs d'information atomiques avec les *conref*
 Lorsque le |techwriter| veut réutiliser des blocs d'information
 |dita| plus petits qu'une section, il doit les partager au niveau des
 fichiers de contenu *dita* et non dans les structures de table des matières
-*ditamap*, grâce au mécanisme `conref
-<http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html>`_.
+*ditamap*, grâce au mécanisme `conref`_.
 
 Le principe des *conref* est simple : lorsqu'un *conref* est mentionné au
 niveau d'un nœud XML donné, tout le contenu du nœud cible est remplacé par le
@@ -25,7 +24,7 @@ contenu du nœud source.
    Partage de blocs d'information de granulométrie large entre les *ditamap*
 
 Une différence notable entre le mécanisme des *conref* et le mécanisme XML des
-`xinclude <http://en.wikipedia.org/wiki/XInclude>`_, c'est que le nœud source
+`xinclude`_, c'est que le nœud source
 doit être conforme au schéma XSD du fichier source *et* du fichier cible. Ce
 formalisme rigoureux, s'il s'avère moins souple et oblige parfois à quelques
 acrobaties, rend les *conref* beaucoup plus lisibles que les *xinclude* et favorise

@@ -23,8 +23,7 @@ Les formats sources sont des formats **binaires** ou **texte**.
 |texte** sont  |balises ; il est donc possible de les modifier avec différents   |
 |*transparents*|logiciels et de leur appliquer des opérations de traitement par  |
 |:             |lot en ligne de commande, sans même les ouvrir, et d'utiliser de |
-|              |puissantes `expressions rationnelles                             |
-|              |<http://fr.wikipedia.org/wiki/Expression_rationnelle>`_.         |
+|              |puissantes `expressions rationnelles`_.                          |
 +--------------+-----------------------------------------------------------------+
 
 .. text review: yes
