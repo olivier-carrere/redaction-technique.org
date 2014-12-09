@@ -37,7 +37,8 @@ suit :
 .. code-block:: xml
 
    <?xml version="1.0" encoding="utf-8"?>
-   <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA 1.2 Task//EN" /usr/share/dita-ot/dtd/technicalContent/dtd/task.dtd"">
+   <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA 1.2 Task//EN"
+   /usr/share/dita-ot/dtd/technicalContent/dtd/task.dtd"">
    <task id="shared" xml:lang="fr-fr">
      <title>Conref source</title>
      <taskbody>

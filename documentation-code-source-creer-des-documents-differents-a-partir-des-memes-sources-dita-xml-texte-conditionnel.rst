@@ -26,7 +26,8 @@ quelques minutes.
    .. code-block:: xml
 
       <?xml version="1.0" encoding="utf-8"?>
-      <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN" "/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
+      <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN"
+      "/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
       <topic id="exemple-topic" xml:lang="fr-fr">
         <title>Utilisation du texte conditionnel</title>
         <body>
@@ -73,7 +74,8 @@ quelques minutes.
    .. code-block:: xml
 
       <?xml version="1.0" encoding="utf-8"?>
-      <!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "/usr/share/dita-ot/dtd/bookmap/dtd/bookmap.dtd">
+      <!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN"
+      "/usr/share/dita-ot/dtd/bookmap/dtd/bookmap.dtd">
       <bookmap id="texte-conditionnel">
         <booktitle>
           <mainbooktitle>

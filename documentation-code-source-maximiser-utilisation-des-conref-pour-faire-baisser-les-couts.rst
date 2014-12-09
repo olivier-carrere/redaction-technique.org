@@ -33,7 +33,8 @@ uniques), étant généré par des *conref*.
 .. code-block:: xml
 
    <?xml version="1.0" encoding="utf-8"?>
-   <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA 1.2 Task//EN" "/usr/share/dita-ot/dtd/technicalContent/dtd/task.dtd">
+   <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA 1.2 Task//EN"
+   "/usr/share/dita-ot/dtd/technicalContent/dtd/task.dtd">
    <task id="display-trends" xml:lang="fr-fr">
      <title>Afficher les tendances</title>
      <taskbody>
@@ -44,7 +45,8 @@ uniques), étant généré par des *conref*.
                <ph conref="shared.dita/ip-control"/>
              </li>
            </ul>
-           <ph conref="../../shared/shared.dita/see-user-guide" audience="no-user-guide"/>
+           <ph conref="../../shared/shared.dita/see-user-guide"
+           audience="no-user-guide"/>
          </note>
        </context>
        <steps>

@@ -73,7 +73,8 @@ Insérer automatiquement une variable de texte avant le titre des exemples
 
    .. code-block:: xslt
 
-      <xsl:template match="*[contains(@class,' topic/example ')]/*[contains(@class,' topic/title ')]>
+      <xsl:template match="*[contains(@class,' topic/example')]/*
+      [contains(@class,' topic/title ')]>
         <fo:block xsl:use-attribute-sets="example.title>
           <xsl:call-template name="commonattributes"/>
           <xsl:apply-templates/>
@@ -92,7 +93,8 @@ Insérer automatiquement une variable de texte avant le titre des exemples
           <xsl:apply-templates select="title"/>
         </fo:block>
         <fo:block>
-          <xsl:apply-templates select="*[not(contains(@class, ' topic/title '))]|text()|processing-instruction()"/>
+          <xsl:apply-templates select="*[not(contains(@class, ' topic/title'))]
+          |text()|processing-instruction()"/>
         </fo:block>
       </xsl:template>
 
