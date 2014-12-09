@@ -20,7 +20,7 @@ ou en doublon est alors important.
 
 .. figure:: graphics/monolithique.png
 
-   Format source de rédaction technique monolithique
+   *Format source de rédaction technique monolithique*
 
 Les **grappes de fichiers modulaires** (par exemple |dita|)
 agrègent le contenu de multiples fichiers, ce qui favorise le partage et la
@@ -30,7 +30,7 @@ place au niveau de toute l'entreprise, mais devrait être la norme pour une
 
 .. figure:: graphics/grappe.png
 
-   Format source de rédaction technique modulaire
+   *Format source de rédaction technique modulaire*
 
 Certains traitements de texte proposent de gérer des documents modulaires, mais
 ils le font mal.  Inversement, un document DocBook ou |dita|, par exemple, peut

@@ -21,7 +21,7 @@ doit elle-même être incluse dans des structures XML plus grandes.
 
 .. figure:: graphics/conref-bas-niveau.png
 
-   Placement du *conref* sur le nœud XML de plus bas niveau
+   *Placement du* conref *sur le nœud XML de plus bas niveau*
 
 Vous voulez par exemple réutiliser la phrase *Cliquez sur OK.* Vous ne pouvez
 cependant pas indiquer dans le fichier contenant les *conref* sources uniquement
@@ -81,7 +81,7 @@ exemple :samp:`<info>`).
 
 .. figure:: graphics/conref-haut-niveau.png
 
-   Placement du *conref* sur le nœud XML de plus haut niveau
+   *Placement du* conref *sur le nœud XML de plus haut niveau*
 
 Dans le 2e cas, tout le contenu du nœud :samp:`<step>` sera remplacé par la
 valeur du *conref* source. Par exemple, dans le cas suivant, tout le contenu du

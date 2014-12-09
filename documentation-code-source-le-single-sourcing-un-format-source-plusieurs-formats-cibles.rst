@@ -22,7 +22,7 @@ différente pour chaque version cible.
 
 .. figure:: graphics/single-sourcing.png
 
-   Un seul jeu d'informations, une multiplicité de formats de sortie
+   *Un seul jeu d'informations, une multiplicité de formats de sortie*
 
 Si le |techwriter| pratique le *single-sourcing*, il doit cependant
 sélectionner en début de projet le paradigme sur lequel il se base |_| : le livre ou

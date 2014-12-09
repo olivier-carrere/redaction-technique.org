@@ -37,7 +37,7 @@ fonctionnalités supérieures |_| :
 
 .. figure:: graphics/versioning-system.png
 
-   Le système de gestion de versions conserve l'historique des modifications.
+   *Le système de gestion de versions conserve l'historique des modifications.*
 
 Des interfaces graphiques permettent d'utiliser directement sous les
 gestionnaires de fichiers ces outils originellement conçus pour être utilisés en

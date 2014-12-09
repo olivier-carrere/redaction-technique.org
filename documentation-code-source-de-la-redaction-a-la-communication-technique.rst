@@ -27,7 +27,7 @@ destinée uniquement aux utilisateurs.
 
 .. figure:: graphics/marketing-technique.png
 
-   Supports de rédaction marketing et technique
+   *Supports de rédaction marketing et technique*
 
 La communication technique a pour but de montrer l'adéquation d'un produit aux
 besoins de sa cible. Elle recourt pour cela à différents supports, plus ou moins

@@ -28,7 +28,7 @@ sources dans une multitude de fichiers.
 
 .. figure:: graphics/conref-non-centralises.png
 
-   Gérer les *conref* de manière décentralisée est peu efficace
+   *Gérer les* conref *de manière décentralisée est peu efficace*
 
 Les *conref* sont en effet résolus à la compilation même si les fichiers
 contenant les valeurs sources ne sont pas référencés dans le fichier
@@ -38,7 +38,7 @@ dans un répertoire de niveau supérieur à celui du *DITAMAP*).
 
 .. figure:: graphics/conref.png
 
-   Bonne gestion des *conref*
+   *Bonne gestion des* conref
 
 Les fichiers de contenu référencés dans des structures *DITAMAP* ne contiennent
 donc que des *conref* cibles, et un fichier central fédère tous les *conref*

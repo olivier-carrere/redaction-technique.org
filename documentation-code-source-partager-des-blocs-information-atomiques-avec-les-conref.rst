@@ -21,7 +21,7 @@ contenu du nœud source.
 
 .. figure:: graphics/ditamap.png
 
-   Partage de blocs d'information de granulométrie large entre les *ditamap*
+   *Partage de blocs d'information de granulométrie large entre les* ditamap
 
 Une différence notable entre le mécanisme des *conref* et le mécanisme XML des
 `xinclude`_, c'est que le nœud source
@@ -32,7 +32,7 @@ leur utilisation.
 
 .. figure:: graphics/conref.png
 
-   Partage de blocs d'information de granulométrie fine entre les sections |dita|
+   *Partage de blocs d'information de granulométrie fine entre les sections DITA XML*
 
 .. toctree::
    :hidden:

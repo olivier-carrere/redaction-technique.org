@@ -27,7 +27,7 @@ contenu FrameMaker, il est déjà certainement très proche de ce stade.
 
 .. figure:: graphics/framemaker-to-dita-migration.png
 
-   Migration de FrameMaker vers |dita|
+   *Migration de FrameMaker vers DITA XML*
 
 D'ailleurs, si, pour une raison quelconque, votre projet de migration devait
 s'arrêter là, les **rédacteurs techniques**, l'entreprise et les utilisateurs y

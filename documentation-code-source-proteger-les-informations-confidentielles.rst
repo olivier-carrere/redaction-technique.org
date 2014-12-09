@@ -29,7 +29,7 @@ comportant les informations confidentielles, les autres non |_| ? Adieu alors le
 
 .. figure:: graphics/confidentiel.png
 
-   Masquer des informations confidentielles aux traducteurs
+   *Masquer des informations confidentielles aux traducteurs*
 
 En plaçant le contenu confidentiel dans un fichier que vous appelez par exemple
 :file:`confidentiel.dita` et en plaçant des *conref* assortis d'une clé de

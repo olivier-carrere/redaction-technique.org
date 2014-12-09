@@ -27,6 +27,8 @@ celui qui s'agrippait à une de ses oreilles croyait qu'il s'agissait d'un
 
 .. figure:: graphics/hanabusa-itcho.jpg
 
+   *Conte des aveugles et de l'éléphant*
+
 Le |techwriter| qui demande aux différents intervenants de
 l'entreprise à quoi sert le produit dont il doit créer la documentation et
 comment il fonctionne se retrouve comme celui qui demande aux aveugles à quoi

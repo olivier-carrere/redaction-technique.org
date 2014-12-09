@@ -51,7 +51,7 @@ de *commit* ressemble alors au schéma suivant |_| :
 
 .. figure:: graphics/git-rebase-commits.png
 
-   Historique Git
+   *Historique Git*
 
 Lorsque vous placerez vos *commits* sur le dépôt central, certains *commits*
 représenteront une étape intermédiaire de l'une des tâches. Votre historique et
@@ -75,7 +75,7 @@ Vous pouvez alors réécrire l'histoire pour proposer à vos collaborateurs un
 
 .. figure:: graphics/git-rebase-commits-2.png
 
-   Historique Git
+   *Historique Git*
 
 Les *commits* ont tout d'abord été regroupés par type sur la *flèche du temps*
 de Git, puis fusionnés.

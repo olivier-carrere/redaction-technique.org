@@ -22,7 +22,7 @@ fiable.
 
 .. figure:: graphics/processus.png
 
-   Processus de rédaction technique
+   *Processus de rédaction technique*
 
 Pour créer et valoriser un contenu à forte valeur ajoutée pour l'entreprise, le
 |techwriter| dialogue constamment non seulement avec tous les acteurs

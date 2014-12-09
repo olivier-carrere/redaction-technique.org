@@ -26,7 +26,7 @@ concerne, selon le fameux concept minimaliste de *less is more*.
 
 .. figure:: graphics/ditaval.png
 
-   Texte conditionnel avec |dita|
+   *Texte conditionnel avec DITA XML*
 
 Concrètement, le mécanisme **ditaval** est basé sur des opérateurs binaires |_| :
 vous marquez un bloc d'information avec un attribut et une valeur, puis incluez

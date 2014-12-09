@@ -36,7 +36,7 @@ trois types de base |_| :
 
 .. figure:: graphics/structured.png
 
-   Formats structurés et non structurés
+   *Formats structurés et non structurés*
 
 Sous un format non structuré tel que le format traditionnel de
 `FrameMaker`_, rien ne

@@ -35,7 +35,7 @@ Un important travail de restructuration du document FrameMaker doit cependant
 
 .. figure:: graphics/framemaker-restructure.png
 
-   Restructuration du contenu  FrameMaker et mise en place de la chaîne |dita|
+   *Restructuration du contenu  FrameMaker et mise en place de la chaîne DITA XML*
 
 Ce travail d'harmonisation peut se faire en parallèle avec la mise à jour et la
 publication du document FrameMaker. La qualité de ce document n'en sera que

@@ -25,7 +25,7 @@ cibles.
 
 .. figure:: graphics/documentation-modulaire.png
 
-   Une documentation modulaire offre une souplesse inégalée
+   *Une documentation modulaire offre une souplesse inégalée.*
 
 Le volume de contenu source est minimisé, ce qui diminue les coûts de création,
 mise à jour et traduction du contenu d'entreprise. De plus, le |techwriter|

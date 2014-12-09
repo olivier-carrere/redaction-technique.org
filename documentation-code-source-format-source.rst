@@ -64,7 +64,7 @@ utilisée pour chaque fichier qui compose ce dernier.
 
 .. figure:: graphics/modulaire-texte-monolithique-binaire.png
 
-   Formats sources |_| : degré de modularité et format
+   *Formats sources : degré de modularité et format*
 
 Les formats sources peuvent être classés selon leur degré de modularité et leur
 format de fichier.

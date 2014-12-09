@@ -18,7 +18,7 @@ apparaissent sinon lors de la traduction dans d'autres langues.
 
 .. figure:: graphics/traduction-conref.png
 
-   Les phrases se découpent différemment selon les langues
+   *Les phrases se découpent différemment selon les langues.*
 
 .. rubric:: Exemple
 

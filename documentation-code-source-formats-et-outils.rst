@@ -25,7 +25,7 @@ traducteur.
 
 .. figure:: graphics/format-standard.png
 
-   Un format standard laisse le choix de l'outil
+   *Un format standard laisse le choix de l'outil.*
 
 Si l'on réfléchit en termes de formats, en revanche, il est possible de mettre
 en place des solutions évolutives. Un format ouvert tel que `OpenDocument`_

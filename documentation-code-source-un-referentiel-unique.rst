@@ -22,6 +22,8 @@ relations au sein de ce réseau, notamment lors des mises à jour.
 
 .. figure:: graphics/referentiel-unique.png
 
+   *Référentiel unique*
+
 En pratique, il semble que rares sont les entreprises qui ont franchi ce pas. Il
 est vrai que tant que les formats structurés ne seront pas enseignés dans le
 secondaire, il paraît utopique de vouloir y convertir tous les acteurs de la

@@ -37,7 +37,7 @@ les problèmes pratiques que cela engendre peuvent également être infinis |_| 
 
 .. figure:: graphics/imbriquer-conref.png
 
-   Imbriquer les *conref* sur plusieurs niveaux |_| : puissant, mais dangereux |_| !
+   *Imbriquer les* conref *sur plusieurs niveaux : puissant, mais dangereux !*
 
 Pour résumer la situation |_| :
 

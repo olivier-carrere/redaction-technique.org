@@ -18,7 +18,7 @@ source de la documentation et à mieux gérer le **contenu d'entreprise**.
 
 .. figure:: graphics/degre-structuration.png
 
-   Formats de documentation technique |_| : degrés de structuration
+   *Formats de documentation technique : degrés de structuration*
 
 L'information que le |techwriter| fournit au public *doit* être
 redondante |_| : l'entreprise doit présenter à chacun de ses publics toute
@@ -38,8 +38,8 @@ manipulés par des applications.
 
 .. figure:: graphics/non-redondance.png
 
-   Les sources de la documentation doivent être moins volumineuses que les
-   livrables.
+   *Les sources de la documentation doivent être moins volumineuses que les
+   livrables.*
 
 |dita| est une architecture XML
 de **rédaction structurée** destinée à la création de documents modulaires et à

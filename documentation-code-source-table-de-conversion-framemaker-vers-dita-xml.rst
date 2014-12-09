@@ -21,7 +21,7 @@ basculer totalement vers le format |dita|.
 
 .. figure:: graphics/dita-migration.png
 
-   Application d'une table de conversion de FrameMaker vers |dita|
+   *Application d'une table de conversion de FrameMaker vers DITA XML*
 
 Appliquez bien sûr ce processus à un petit jeu de documents [#]_, qui ne soit
 pas, si possible, d'une importance critique. Après ce premier succès, vous

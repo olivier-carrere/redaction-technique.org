@@ -21,7 +21,7 @@ De par la nature des informations qu'elles contiennent, les sections de type
 
 .. figure:: graphics/maximiser-conref.png
 
-   Les *conref* modularisent de petits blocs d'information
+   *Les* conref *modularisent de petits blocs d'information*
 
 Comme dans l'exemple ci-dessous, il n'est pas rare d'obtenir rapidement des
 fichiers dont la seule valeur unique est le titre, le reste du contenu,

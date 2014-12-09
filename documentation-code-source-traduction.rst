@@ -27,7 +27,7 @@ faire en parallèle de la rédaction, ce qui réduit les délais de livraison.
 
 .. figure:: graphics/parallelisation-traduction.png
 
-   Parallèlisation de la rédaction et de la traduction
+   *Parallèlisation de la rédaction et de la traduction*
 
 En ce qui concerne le référentiel des fichiers sources, vaut-il mieux placer les
 répertoires de langue en amont ou en aval des répertoires de projets

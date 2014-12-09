@@ -32,7 +32,7 @@ collecte toute l'information disponible |_| :
 
 .. figure:: graphics/collecte.png
 
-   Collecte de l'information
+   *Collecte de l'information*
 
 Les informations doivent être recoupées pour minimiser le risque de transmettre
 des informations erronées ou plus à jour. Le |techwriter| doit se livrer

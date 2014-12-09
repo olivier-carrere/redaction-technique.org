@@ -25,6 +25,8 @@ HTML. L'opération inverse ne peut pas être totalement automatisée. Pourquoi |
 
 .. figure:: graphics/entropie.png
 
+   *Un processus non réversible*
+
 Il n'est pas possible de migrer automatiquement des données de formats pauvres
 vers des format riches en information.
 
@@ -52,6 +54,8 @@ Le passage de RAW en TIFF et de TIFF en JPEG est destructif et ne peut se faire
 en sens inverse [#]_.
 
 .. figure:: graphics/entropie-dita-docbook.png
+
+   *Un processus non réversible*
 
 Le PDF est sémantiquement plus pauvre que DocBook, lui-même plus pauvre que
 |dita| [#]_.
