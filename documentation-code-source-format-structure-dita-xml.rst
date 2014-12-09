@@ -24,7 +24,7 @@ L'information que le |techwriter| fournit au public *doit* être
 redondante : l'entreprise doit présenter à chacun de ses publics toute
 l'information dont il a besoin, sur le support qui lui est adapté. Pour prendre
 l'exemple le plus simple, chaque support d'information doit mentionner les
-coordonnées de la société. Mais jusqu'à 50 % de l'information disséminée par
+coordonnées de la société. Mais jusqu'à 50 % de l'information disséminée par
 l'entreprise est répétée.
 
 En revanche, la redondance de l'information en interne engendre des coûts

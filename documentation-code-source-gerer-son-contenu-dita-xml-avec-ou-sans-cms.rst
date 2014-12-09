@@ -30,7 +30,7 @@ Subversion ou de SourceSafe. À budget quasi nul. Raison de plus pour ne pas
 investir du temps et de l'argent dans un CMS.  Les gains de productivité
 spectaculaires reportés par certaines entreprises suite à la mise en place d'un
 CMS |dita| ont cependant de quoi faire réfléchir. Ainsi, Epson America a pu
-réutiliser jusqu'à 90 % du contenu existant sur de nouveaux projets.
+réutiliser jusqu'à 90 % du contenu existant sur de nouveaux projets.
 
 Si l'on opte pour un CMS, celui-ci doit clairement supporter |dita| : on ne gère
 pas un jeu de briques d'information comme un document monolithique. Adieu donc
