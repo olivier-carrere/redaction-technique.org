@@ -52,7 +52,7 @@ ses sources sous un logiciel de gestion de versions tel que *Git* ou
 
 .. rubric:: Notes
 
-.. [#] Seule la version *reStructuredText*, à partir de laquelle cette version
+.. [#] Seule la version |rst|, à partir de laquelle cette version
        HTML est créée, est maintenue.
 
 .. toctree::
