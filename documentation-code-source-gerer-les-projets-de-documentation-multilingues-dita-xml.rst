@@ -67,11 +67,11 @@ Méthodologie de gestion des projets de documentation multilingues DITA XML
     a. modifier dans le fichier :file:`demo/fo/build.xml` le paramètre
        :samp:`default.locale`,
 
-    #. remplacer dans le fichier *DITAMAP* la variable de langue par le
+    #. remplacer dans le fichier *ditamap* la variable de langue par le
        nom du répertoire de langue,
 
     #.  modifier le paramètre de langue :samp:`xml:lang` dans le fichier
-        *DITAMAP* et dans les fichiers de contenu |dita|,
+        *ditamap* et dans les fichiers de contenu |dita|,
 
     #.  pour les fichiers cibles PDF, modifier les dimensions de page (A4 ou US
         letter, par exemple) selon la langue,
@@ -85,7 +85,7 @@ Heureusement, un script Bash (GNU/Linux) simple permet d'automatiser cela.
 .. rubric:: Prérequis
 
 - Vous avez installé |dita-ot|.
-- Votre projet |dita| ne comporte qu'un fichier *DITAMAP*.
+- Votre projet |dita| ne comporte qu'un fichier *ditamap*.
 - Vos fichiers de contenu |dita| ont l'extension :file:`.dita`.
 - Les noms des répertoires des versions linguistiques correspondent aux codes de
   langues supportés par Dita Open Toolkit (:file:`fr_FR` ou :file:`en_US`, par
@@ -110,7 +110,7 @@ Pour utiliser ce script |_| :
 
 #.  Téléchargez le `script de génération multilingue DITA XML`_
     dans le
-    répertoire contenant le fichier *DITAMAP* du projet.
+    répertoire contenant le fichier *ditamap* du projet.
 
 #.  Dans un terminal, placez-vous dans ce répertoire, puis entrez |_| :
 

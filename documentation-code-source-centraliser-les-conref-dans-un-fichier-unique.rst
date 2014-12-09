@@ -32,15 +32,15 @@ sources dans une multitude de fichiers.
 
 Les *conref* sont en effet résolus à la compilation même si les fichiers
 contenant les valeurs sources ne sont pas référencés dans le fichier
-*DITAMAP* permettant de générer le livrable (ce qui veut dire également
+*ditamap* permettant de générer le livrable (ce qui veut dire également
 que les fichiers contenant les valeurs sources des *conref* peuvent se trouver
-dans un répertoire de niveau supérieur à celui du *DITAMAP*).
+dans un répertoire de niveau supérieur à celui du *ditamap*).
 
 .. figure:: graphics/conref.png
 
    *Bonne gestion des* conref
 
-Les fichiers de contenu référencés dans des structures *DITAMAP* ne contiennent
+Les fichiers de contenu référencés dans des structures *ditamap* ne contiennent
 donc que des *conref* cibles, et un fichier central fédère tous les *conref*
 sources |_| ; il contient éventuellement également quelques références internes à
 des *conref* cibles.

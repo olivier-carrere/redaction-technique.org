@@ -69,7 +69,7 @@ Le but de cette procédure est de |_| :
    contenu. Il vous faudra notamment placer à la main les références croisées,
    de préférence dans une *reltable*.
 
-Pour générer les éléments permettant de construire un fichier :file:`.ditamap`, vous
+Pour générer les éléments permettant de construire un fichier *ditamap*, vous
 pouvez par exemple utiliser des scripts Perl du type |_| :
 
 .. warning::

@@ -27,7 +27,7 @@ Les *topics* sont une des différences principales entre |dita| et
 
 Les *topics* sont généralement stockés *à plat* dans des répertoires divisés par
 type de *topic*. Ils sont organisés hiérarchiquement dans des fichiers
-*.ditamap* et peuvent être partagés entre différents documents. Les titres des
+*ditamap* et peuvent être partagés entre différents documents. Les titres des
 modules ne sont pas affectés d'un niveau de titre. La structure des modules
 étant parfaitement homogène, un module peut avoir un niveau 3 dans un document
 donné, et un niveau 1 dans un autre document, sans qu'il y ait besoin de

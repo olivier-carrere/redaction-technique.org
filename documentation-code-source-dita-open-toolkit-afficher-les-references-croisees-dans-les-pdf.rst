@@ -19,7 +19,7 @@ condition d'effectuer quelques réglages.
 Vous avez placé des balises *related-links* correctement formatées dans vos
 fichiers de contenu |dita|, ou mieux, une `reltable`_
 dans votre
-structure de table des matières *DITAMAP* (la *reltable* permet de
+structure de table des matières *ditamap* (la *reltable* permet de
 décontextualiser votre contenu et donc de mieux le réutiliser). Vous lancez
 votre commande de génération du PDF et, mauvaise surprise, aucune section *Voir
 aussi* [#]_ n'apparaît dans le fichier cible |_| ! Vous essayez alors de générer une
