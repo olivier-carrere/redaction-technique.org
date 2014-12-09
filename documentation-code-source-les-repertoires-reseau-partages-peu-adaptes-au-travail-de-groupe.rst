@@ -14,7 +14,7 @@ Les fichiers partagés par une équipe de **rédaction technique** sont souvent
 stockés dans un répertoire partagé sur le réseau.
 
 Les **rédacteurs techniques** travaillent directement sur les fichiers partagés,
-ce qui pose les problèmes suivants :
+ce qui pose les problèmes suivants |_| :
 
 - risque de pertes de données en cas de défaillance du réseau,
 
@@ -23,23 +23,23 @@ ce qui pose les problèmes suivants :
 - verrouillage des fichiers par les membres de l'équipe qui les ont ouverts.
 
 Même fréquemment sauvegardés, les répertoires ne sont pas un référentiel sûr
-pour les données : la granulométrie de la sauvegarde est le répertoire, sa
+pour les données |_| : la granulométrie de la sauvegarde est le répertoire, sa
 fréquence n'est souvent que quotidienne. En cas de perte de données, la
 restauration se fait répertoire par répertoire, et non fichier par fichier et
 porte sur des versions dont l'ancienneté dépend de l'administrateur système, et
 non du |techwriter|. Fouiller dans les archives est une opération
-fastidieuse qui peut elle-même être source d'erreurs : en l'absence d'une
+fastidieuse qui peut elle-même être source d'erreurs |_| : en l'absence d'une
 comparaison fiable et aisée entre plusieurs versions des fichiers, le
 |techwriter| peut facilement supprimer des modifications qu'il aurait
 souhaité conserver en voulant en restaurer d'autres.
 
 Copier un fichier du réseau pour le modifier sur son disque dur personnel, puis
 écraser la version du réseau par la version locale est une opération des plus
-périlleuses :
+périlleuses |_| :
 
 - les membres de l'équipe ne sont pas informés du fait qu'un autre membre
-  modifie ou non le même fichier en même temps qu'eux ; l'un des **rédacteurs
-  techniques** devra alors renoncer à toutes ses modifications ;
+  modifie ou non le même fichier en même temps qu'eux |_| ; l'un des **rédacteurs
+  techniques** devra alors renoncer à toutes ses modifications |_| ;
 
 - lors d'une copie manuelle des fichiers, que ce soit *via* un gestionnaire de
   fichiers graphique ou en ligne de commande, le |techwriter| peut

@@ -18,8 +18,8 @@ risque d'erreurs et d'incohérences. Heureusement, une méthodologie appropriée
 un script d'automatisation destiné à la chaîne de publication |dita-ot|
 remédient à ce problème.
 
-Méthodologie de gestion des projets de documentation multilingues DITA XML :
-----------------------------------------------------------------------------
+Méthodologie de gestion des projets de documentation multilingues DITA XML
+--------------------------------------------------------------------------
 
 #.  Le fichier *ditamap* ne doit pas comporter de section *navtitle*, qui
     contient un titre en toutes lettres, au lieu d'extraire le titre de la
@@ -29,7 +29,7 @@ Méthodologie de gestion des projets de documentation multilingues DITA XML :
     |dita| dans un sous-répertoire spécifique à la langue dans laquelle
     il est initialement rédigé.
 
-    Par exemple :
+    Par exemple |_| :
 
     - product
 
@@ -39,7 +39,7 @@ Méthodologie de gestion des projets de documentation multilingues DITA XML :
         - tasks
         - topics
 
-      et non :
+      et non |_| :
 
     - product
 
@@ -50,19 +50,19 @@ Méthodologie de gestion des projets de documentation multilingues DITA XML :
 #.  Remplacez dans le fichier *ditamap* toutes les occurrences du nom du
     répertoire propre à la langue par une chaîne unique provisoire.
 
-    Par exemple, utilisez la chaîne *@language-code@* :
+    Par exemple, utilisez la chaîne *@language-code@* |_| :
 
     .. code-block:: xml
 
        <topicref href="@language-code@/topics/managing-rights.dita"/>
 
-    et non :
+    et non |_| :
 
     .. code-block:: xml
 
        <topicref href="en_US/topics/managing-rights.dita"/>
 
-#.  Pour générer les fichiers cibles, vous pouvez maintenant :
+#.  Pour générer les fichiers cibles, vous pouvez maintenant |_| :
 
     a. modifier dans le fichier :file:`demo/fo/build.xml` le paramètre
        :samp:`default.locale`,
@@ -106,19 +106,19 @@ adapté, ou inspirer un nouveau script.
    versions). Assurez-vous de pouvoir restaurer facilement le projet dans son
    intégralité en cas d'erreur ou de comportement inattendu.
 
-Pour utiliser ce script :
+Pour utiliser ce script |_| :
 
 #.  Téléchargez le `script de génération multilingue DITA XML`_
     dans le
     répertoire contenant le fichier *DITAMAP* du projet.
 
-#.  Dans un terminal, placez-vous dans ce répertoire, puis entrez :
+#.  Dans un terminal, placez-vous dans ce répertoire, puis entrez |_| :
 
     .. code-block:: console
 
        $ chmod +x dita2target.sh
 
-#.  Dans le terminal, entrez :
+#.  Dans le terminal, entrez |_| :
 
     .. code-block:: console
 
@@ -126,7 +126,7 @@ Pour utiliser ce script :
 
     pour créer le répertoire qui contiendra les fichiers cibles.
 
-#.  Entrez :
+#.  Entrez |_| :
 
     .. code-block:: console
 

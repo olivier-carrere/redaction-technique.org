@@ -42,7 +42,7 @@ dans un répertoire de niveau supérieur à celui du *DITAMAP*).
 
 Les fichiers de contenu référencés dans des structures *DITAMAP* ne contiennent
 donc que des *conref* cibles, et un fichier central fédère tous les *conref*
-sources ; il contient éventuellement également quelques références internes à
+sources |_| ; il contient éventuellement également quelques références internes à
 des *conref* cibles.
 
 Ce fichier central doit être de même type (*task*, *concept*, *reference*, etc.)
@@ -54,7 +54,7 @@ type. Je réserve le type *composite* à un fichier central *fourre-tout*
 contenant des informations partagées entre différents types de *topics*.
 
 Tous les *conref* sources d'un fichier donné doivent avoir un ID unique dans ce
-fichier ; veillez à utiliser des noms explicites pour les humains, vos fichiers
-*dita* contenant des *conref* cibles deviendront sinon rapidement illisibles !
+fichier |_| ; veillez à utiliser des noms explicites pour les humains, vos fichiers
+*dita* contenant des *conref* cibles deviendront sinon rapidement illisibles |_| !
 
 .. text review: yes

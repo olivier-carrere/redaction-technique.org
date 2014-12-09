@@ -19,7 +19,7 @@ hiérarchiques, selon l'évolution des besoins. Si le |techwriter| a
 pris soin de construire des briques d'information atomiques et génériques, il
 peut, à l'instar d'un constructeur automobile proposant sans cesse de nouveaux
 modèles par assemblage d'éléments standardisés, proposer par exemple les
-documents suivants :
+documents suivants |_| :
 
 +------------------------------+------------------------------+
 |Type de document              |Contenu                       |
@@ -38,7 +38,7 @@ documents suivants :
 Pour ce faire, le |techwriter| prendra soin de placer les éléments
 liés à un contexte particulier dans les structures *ditamap* et non dans les
 fichiers de contenu |dita|. En particulier, les références croisées doivent
-être indiquées dans une *reltable* placée dans la *ditamap* : si le document *A*
+être indiquées dans une *reltable* placée dans la *ditamap* |_| : si le document *A*
 doit renvoyer au document *B* dans la *ditamap* *1*, il doit pouvoir être également
 utilisé sans modification dans la *ditamap* *2*, où le document *B* n'est pas inclus.
 

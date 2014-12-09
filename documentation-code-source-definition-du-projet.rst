@@ -18,7 +18,7 @@ pour les projets de R&D ou de marketing, la définition du projet permet d'en
 Communiquer des informations techniques sans savoir à qui ni dans quel but est
 un effort vain. Avant d'initier un projet de **rédaction technique et
 marketing**, il est indispensable de clairement le définir. Il convient
-notamment de déterminer :
+notamment de déterminer |_| :
 
 +------------------------------+------------------------------+
 |son objectif                  |augmenter la notoriété de     |

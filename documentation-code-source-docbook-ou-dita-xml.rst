@@ -7,8 +7,8 @@
 
 .. _docbook-ou-dita-xml:
 
-DocBook ou DITA XML ?
-=====================
+DocBook ou DITA XML |_| ?
+=========================
 
 Certaines entreprises ont parfois un contenu existant au format `DocBook`_.
 Géré souvent par les acteurs les plus
@@ -21,7 +21,7 @@ spectaculaires offerts par |dita|.
 
 Il est facile de générer du **DocBook** à partir de |dita|. |dita-ot|
 propose par défaut ce format cible, au même titre que le PDF ou le
-HTML. L'opération inverse ne peut pas être totalement automatisée. Pourquoi ?
+HTML. L'opération inverse ne peut pas être totalement automatisée. Pourquoi |_| ?
 
 .. figure:: graphics/entropie.png
 
@@ -35,7 +35,7 @@ automatisée. Par exemple, générer un PDF à partir de |dita|. Effectuer
 l'opération inverse exige d'injecter de l'intelligence, opération que seul
 l'être humain peut aujourd'hui effectuer.
 
-Si votre contenu était une photo, nous pourrions faire l'analogie suivante :
+Si votre contenu était une photo, nous pourrions faire l'analogie suivante |_| :
 
 +------------------+-----------------------------------------------------------+
 |Format de contenu |Format de photo                                            |
@@ -83,7 +83,7 @@ nouveaux besoins.
        différence du format RAW.
 
 .. [#] Pour être aussi exact que possible, vous pouvez enregistrer une image
-       JPEG au format TIFF ; mais cette image aura une qualité égale à celle de
+       JPEG au format TIFF |_| ; mais cette image aura une qualité égale à celle de
        l'image JPEG, inférieure à la qualité habituelle des images TIFF. En
        revanche, on ne peut à ma connaissance pas enregistrer une image TIFF
        sous un format RAW.

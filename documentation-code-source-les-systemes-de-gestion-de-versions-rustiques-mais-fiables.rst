@@ -12,10 +12,10 @@ Les systèmes de gestion de versions - rustiques mais fiables
 
 Travailler sur des fichiers sources au format texte, et non binaire, est
 l'occasion pour le |techwriter| de gérer son contenu comme les
-développeurs gèrent leur code : sous un système de gestion des sources tel que
+développeurs gèrent leur code |_| : sous un système de gestion des sources tel que
 Git, Subversion ou SourceSafe.
 
-Ces systèmes :
+Ces systèmes |_| :
 
 - favorisent le travail de groupe,
 
@@ -24,7 +24,7 @@ Ces systèmes :
 - réduisent le risque de perte de données à presque zéro.
 
 Sur des fichiers texte, et non binaires, un système de gestion de version offre des
-fonctionnalités supérieures :
+fonctionnalités supérieures |_| :
 
 - pas de risque de pertes de données en cas de défaillance du réseau [#]_,
 
@@ -44,7 +44,7 @@ gestionnaires de fichiers ces outils originellement conçus pour être utilisés
 ligne de commande. Cependant, le paradigme sur lequel ils reposent est parfois
 difficile à appréhender pour les publics les moins technophiles [#]_.
 
-Les systèmes de gestion des sources utilisent les concepts suivants :
+Les systèmes de gestion des sources utilisent les concepts suivants |_| :
 
 +--------+---------------------------------------------------------------------+
 |Tronc   |Dépôt principal conservant toutes les versions des fichiers placées  |
@@ -72,9 +72,9 @@ etc.) ils évoluent lentement, selon une politique conservatrice, et ne sont
 proposés en production que lorsqu'ils ont été exhaustivement débogués. Si les
 plus grands projets de développement informatique, tel que GNU/Linux, par
 exemple, leur font confiance, pourquoi ne pas également leur confier la
-**documentation technique** ?
+**documentation technique** |_| ?
 
-Un bémol cependant : ces outils ne sont pas destinés spécifiquement au format
+Un bémol cependant |_| : ces outils ne sont pas destinés spécifiquement au format
 XML et effectuent des comparaisons ligne par ligne entre les fichiers, et non
 pas nœud par nœud, ce qui multiplie inutilement les conflits entre les *commits*
 ou les branches.
@@ -82,7 +82,7 @@ ou les branches.
 .. rubric:: Notes
 
 .. [#] En cas d'incident réseau, l'utilisateur est averti que la transaction
-       destinée à placer le fichier modifié sur le dépôt a échoué ; il peut
+       destinée à placer le fichier modifié sur le dépôt a échoué |_| ; il peut
        alors procéder à une nouvelle transaction, sa copie locale du fichier
        étant intacte.
 

@@ -10,7 +10,7 @@
 Un langage à balises
 ====================
 
-|dita| est un langage à balises : le |techwriter|
+|dita| est un langage à balises |_| : le |techwriter|
 structure l'information dans des fichiers sources sans mise en page,
 similaires aux fichiers sources de code informatique. L'utilisateur reçoit un
 document cible, par exemple un fichier PDF, où les balises sont remplacées par
@@ -25,18 +25,18 @@ cependant peu efficace en termes de productivité de l'équipe de **rédaction
 technique** et de structuration de l'information.
 
 Avec un format texte tel que |dita|, le |techwriter| et le lecteur
-disposent de supports largement différents :
+disposent de supports largement différents |_| :
 
 +--------------------+---------------------------------------------------------+
 |Public              |Description                                              |
 +====================+=========================================================+
-|Rédacteur technique |Le |techwriter| manipule des fichiers sources            |
-|                    |; il utilise les balises pour construire le document en  |
+|Rédacteur technique |Le |techwriter| manipule des fichiers sources ; il       |
+|                    |utilise les balises pour construire le document en       |
 |                    |marquant les éléments d'information qu'il crée ou        |
 |                    |réutilise. Les balises sont imbriquées comme des poupées |
 |                    |russes organisées selon une syntaxe rigoureuse. Le       |
-|                    |fichier source n'est pas au format WYSIWYG : la mise en  |
-|                    |page sera appliquée lors de la transformation des        |
+|                    |fichier source n'est pas au format WYSIWYG |_| : la mise |
+|                    |en page sera appliquée lors de la transformation des     |
 |                    |fichiers sources en fichiers cibles (autrement dit, lors |
 |                    |de la génération des livrables). Tout au plus, certains  |
 |                    |logiciels graphiques tels XMetal, Oxygen ou FrameMaker   |
@@ -50,9 +50,9 @@ disposent de supports largement différents :
 |                    |un logiciel graphique.                                   |
 +--------------------+---------------------------------------------------------+
 |Utilisateur         |Seul le contenu est présenté au lecteur dans le fichier  |
-|                    |cible ; le texte marqué par des balises dans les fichiers|
-|                    |sources a une mise en valeur typographique dont le sens  |
-|                    |est explicité dans la section *Conventions               |
+|                    |cible |_| ; le texte marqué par des balises dans les     |
+|                    |fichiers sources a une mise en valeur typographique dont |
+|                    |le sens est explicité dans la section *Conventions       |
 |                    |typographiques* du document final.                       |
 +--------------------+---------------------------------------------------------+
 

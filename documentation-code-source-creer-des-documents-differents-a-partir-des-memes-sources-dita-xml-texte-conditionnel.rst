@@ -21,7 +21,7 @@ quelques minutes.
   GNU/Linux ou Windows.
 
 #. Collez le code suivant dans un fichier et enregistrez ce dernier sous le nom
-   de :file:`texte-conditionnel.dita` dans le répertoire :file:`DITA-OT1.5.4` :
+   de :file:`texte-conditionnel.dita` dans le répertoire :file:`DITA-OT1.5.4` |_| :
 
    .. code-block:: xml
 
@@ -64,12 +64,12 @@ quelques minutes.
       </topic>
 
    Ce code contient des balises |dita| contenant des valeurs *audience*
-   différentes : nous allons exclure le contenu d'une de ces deux balises lors
+   différentes |_| : nous allons exclure le contenu d'une de ces deux balises lors
    de la génération du fichier cible en utilisant la clé *audience*.
 
 #. Collez le code suivant dans un fichier et enregistrez ce dernier sous le nom
    de :file:`texte-conditionnel.ditamap` dans le répertoire
-   :file:`DITA-OT1.5.4` :
+   :file:`DITA-OT1.5.4` |_| :
 
    .. code-block:: xml
 
@@ -86,7 +86,7 @@ quelques minutes.
       </bookmap>
 
 #. Collez le code suivant dans un fichier et enregistrez ce dernier sous le nom
-   de :file:`electriciens.ditaval` dans le répertoire :file:`DITA-OT1.5.4` :
+   de :file:`electriciens.ditaval` dans le répertoire :file:`DITA-OT1.5.4` |_| :
 
    .. code-block:: xml
 
@@ -97,7 +97,7 @@ quelques minutes.
       </val>
 
 #. Collez le code suivant dans un fichier et enregistrez ce dernier sous le nom
-   de :file:`plombiers.ditaval` dans le répertoire :file:`DITA-OT1.5.4` :
+   de :file:`plombiers.ditaval` dans le répertoire :file:`DITA-OT1.5.4` |_| :
 
    .. code-block:: xml
 
@@ -108,29 +108,29 @@ quelques minutes.
       </val>
 
 #. Ouvrez un terminal et entrez la commande suivante dans le répertoire
-   :file:`DITA-OT1.5.4` :
+   :file:`DITA-OT1.5.4` |_| :
 
    .. code-block:: console
 
       $ java -jar lib/dost.jar /i:texte-conditionnel.ditamap \
       /filter:electriciens.ditaval /outdir:. /transtype:pdf2
 
-   Ouvrez le fichier :file:`texte-conditionnel.pdf` ; il contient des
-   informations destinées :
+   Ouvrez le fichier :file:`texte-conditionnel.pdf` |_| ; il contient des
+   informations destinées |_| :
 
    - aux plombiers et aux électriciens,
    - uniquement aux électriciens.
 
 #. Ouvrez un terminal et entrez la commande suivante dans le répertoire
-   :file:`DITA-OT1.5.4` :
+   :file:`DITA-OT1.5.4` |_| :
 
    .. code-block:: console
 
       $ java -jar lib/dost.jar /i:texte-conditionnel.ditamap \
       /filter:plombiers.ditaval /outdir:. /transtype:pdf2
 
-   Ouvrez le fichier :file:`texte-conditionnel.pdf` ; il contient des
-   informations destinées :
+   Ouvrez le fichier :file:`texte-conditionnel.pdf` |_| ; il contient des
+   informations destinées |_| :
 
   - aux plombiers et aux électriciens,
   - uniquement aux plombiers.

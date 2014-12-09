@@ -18,7 +18,7 @@ d'imbrication (un *conref* imbriqué dans un autre) me semble le seuil au-delà
 duquel le contenu peut vite devenir ingérable.
 
 Dans l'exemple ci-dessous, le *conref* source *see-admin-guide* contient le
-**conref** cible *admin-guide-title* :
+**conref** cible *admin-guide-title* |_| :
 
 .. rubric:: Exemple
 
@@ -33,20 +33,20 @@ Ce niveau de complexité est gérable. Mais si le *conref* source
 *admin-guide-title* contient lui même un *conref* cible, le code |dita|
 devient un vrai plat de spaghettis (sans compter les risques de référence
 circulaire). Les *conref* peuvent théoriquement être combinés à l'infini, mais
-les problèmes pratiques que cela engendre peuvent également être infinis !
+les problèmes pratiques que cela engendre peuvent également être infinis |_| !
 
 .. figure:: graphics/imbriquer-conref.png
 
-   Imbriquer les *conref* sur plusieurs niveaux : puissant, mais dangereux !
+   Imbriquer les *conref* sur plusieurs niveaux |_| : puissant, mais dangereux |_| !
 
-Pour résumer la situation :
+Pour résumer la situation |_| :
 
 - Il est tout à fait possible d'imbriquer plusieurs *conref* sources. Le seul
   effet de bord négatif porte sur la lisibilité du fichier contenant les
   *conref*.
 - L'imbrication de *conref* sources et cibles est possible mais rapidement
   ingérable.
-- Il est impossible d'imbriquer des *conref* cibles : le contenu du *conref* du
+- Il est impossible d'imbriquer des *conref* cibles |_| : le contenu du *conref* du
   niveau supérieur écrasera les valeurs des *conref* du niveau inférieur.
 
 .. text review: yes

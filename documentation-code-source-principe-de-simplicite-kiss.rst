@@ -15,11 +15,11 @@ Le principe :abbr:`KISS (Keep it simple stupid)`, n'est pas spécifique à la
 postule que tout objet matériel ou virtuel construit par l'homme est plus fiable
 et plus facile à maintenir et à faire évoluer si sa complexité est
 volontairement réduite. C'est le principe mis en exergue par antiphrase par les
-Shadocks : *Pourquoi faire simple quand on peut faire compliqué* ?
+Shadocks |_| : *Pourquoi faire simple quand on peut faire compliqué* |_| ?
 
 C'est ce principe qui a prévalu à la conception des montres *Swatch*, dont le
 cahier des charges stipulait qu'elles devaient embarquer deux fois moins de
-pièces que leurs consœurs. Résultat : des montres moins chères, plus fiables et
+pièces que leurs consœurs. Résultat |_| : des montres moins chères, plus fiables et
 disponibles en versions sans cesse renouvelées.
 
 Ce qui a spectaculairement fonctionné pour des montres peut être appliqué avec
@@ -28,7 +28,7 @@ le même succès à la **documentation technique**. Quel que soit le format util
 |techwriter| peut tout aussi bien construire un document élégamment
 architecturé, qu'une usine à gaz. Avec |dita|, il lui
 suffit de ne pas centraliser les *conref* ou de les imbriquer exagérément. Sous
-FrameMaker, c'est encore plus simple, peu de garde-fous étant posés : la
+FrameMaker, c'est encore plus simple, peu de garde-fous étant posés |_| : la
 multiplication des styles et des *overrides* peut rapidement rendre ingérable
 n'importe quel document.
 

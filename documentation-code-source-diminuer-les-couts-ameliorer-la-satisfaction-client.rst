@@ -7,10 +7,10 @@
 
 .. _diminuer-les-couts-ameliorer-la-satisfaction-client:
 
-Documentation technique : diminuer les coûts, améliorer la satisfaction client
-==============================================================================
+Documentation technique |_| : diminuer les coûts, améliorer la satisfaction client
+==================================================================================
 
-La **documentation technique**, c'est comme une ampoule : une ampoule basse
+La **documentation technique**, c'est comme une ampoule |_| : une ampoule basse
 consommation demande un investissement plus important en début de cycle de vie,
 mais a rapidement un coût plus faible.
 
@@ -34,7 +34,7 @@ initial légèrement supérieur ou égal, il améliore également la qualité.
 |                         |- cohérence parfaite du contenu d'entreprise    |
 +-------------------------+------------------------------------------------+
 
-Une documentation industrielle repose sur :
+Une documentation industrielle repose sur |_| :
 
 - un **format documentaire modulaire**,
 - un format de **rédaction structurée**,

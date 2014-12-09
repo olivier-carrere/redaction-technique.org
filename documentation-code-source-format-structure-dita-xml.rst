@@ -18,10 +18,10 @@ source de la documentation et à mieux gérer le **contenu d'entreprise**.
 
 .. figure:: graphics/degre-structuration.png
 
-   Formats de documentation technique : degrés de structuration
+   Formats de documentation technique |_| : degrés de structuration
 
 L'information que le |techwriter| fournit au public *doit* être
-redondante : l'entreprise doit présenter à chacun de ses publics toute
+redondante |_| : l'entreprise doit présenter à chacun de ses publics toute
 l'information dont il a besoin, sur le support qui lui est adapté. Pour prendre
 l'exemple le plus simple, chaque support d'information doit mentionner les
 coordonnées de la société. Mais jusqu'à 50 % de l'information disséminée par
@@ -51,7 +51,7 @@ passant par le site Web.
 
 |dita| applique le principe de non-redondance des informations propre aux
 bases de données normalisées. Cette architecture transpose à la documentation
-technique la révolution introduite dans l'industrie par la standardisation : si
+technique la révolution introduite dans l'industrie par la standardisation |_| : si
 l'on peut construire des automobiles de modèles différents à partir d'un
 ensemble de pièces identiques, de même, le |techwriter| peut publier
 des documents différents à partir d'un ensemble de briques d'information

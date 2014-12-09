@@ -29,7 +29,7 @@ pourrez appliquer le processus aux autres jeux de documents.
 
 Vous pouvez maintenant progressivement modulariser et partager votre contenu
 dans le nouveau format afin de tirer parti au maximum de |dita|. Vous pouvez
-pendant cette phase continuer à publier de nouvelles versions du document ; la
+pendant cette phase continuer à publier de nouvelles versions du document |_| ; la
 publication devrait d'ailleurs être beaucoup plus simple que sous FrameMaker.
 
 .. rubric:: Notes
@@ -40,9 +40,9 @@ publication devrait d'ailleurs être beaucoup plus simple que sous FrameMaker.
        ajustements étant toujours nécessaires.
 
 .. [#] J'appelle *jeu de documents* tout ensemble d'informations liées qui ne
-       partage aucun contenu avec un autre ensemble ; si par exemple le document
+       partage aucun contenu avec un autre ensemble |_| ; si par exemple le document
        *A* partage une section avec le document *B*, le jeu de documents est
-       *A+B* ; si vous dupliquez la section partagée afin qu'elle ne soit plus
+       *A+B* |_| ; si vous dupliquez la section partagée afin qu'elle ne soit plus
        commune à *A* et *B*, *A* et *B* deviennent des jeux distincts.
 
 .. text review: yes

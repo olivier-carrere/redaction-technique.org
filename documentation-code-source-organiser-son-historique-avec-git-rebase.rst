@@ -11,24 +11,24 @@ Organiser son historique avec Git rebase
 ========================================
 
 Git est d'un abord déroutant. Ses *workflows* s'appliquent à du contenu plutôt
-qu'à des fichiers. Résultat : le travail de groupe et la gestion de différentes
+qu'à des fichiers. Résultat |_| : le travail de groupe et la gestion de différentes
 versions concurrentes d'un même contenu deviennent beaucoup plus simples.
 
-Git effectue des *commits* atomiques : il applique des lots de modifications sur
+Git effectue des *commits* atomiques |_| : il applique des lots de modifications sur
 un contenu souvent réparti sur plusieurs fichiers, au lieu de gérer
 des *fichiers* proprement dits. Il nous invite à raisonner par lots de tâches sur
 un contenu et non par fichier.
 
 Ce fonctionnement peut sembler peu intuitif si l'on a l'habitude de travailler
 fichier par fichier et non tâche par tâche. Mais une fois que l'on a adapté ses
-habitudes de travail à ce *workflow*, on s'aperçoit :
+habitudes de travail à ce *workflow*, on s'aperçoit |_| :
 
 - que l'on dispose d'un historique beaucoup plus facilement exploitable,
 - qu'il est beaucoup plus facile de gérer des versions concurrentes d'un même
   contenu dans des branches de développement parallèles.
 
 Imaginons que vous ayez identifié deux types de modifications majeurs à apporter
-à votre contenu :
+à votre contenu |_| :
 
 - les synopsis d'un programme en ligne de commande,
 - les corrections grammaticales du texte.
@@ -47,7 +47,7 @@ Les contraintes de production vous obligeront souvent à scinder ces deux lots d
 tâches en sous-lots, que vous serez obligé de faire alterner.
 
 Vous *committez* chaque sous-lot à chaque fois qu'il est achevé. Votre historique
-de *commit* ressemble alors au schéma suivant :
+de *commit* ressemble alors au schéma suivant |_| :
 
 .. figure:: graphics/git-rebase-commits.png
 
@@ -65,13 +65,13 @@ les partager. Lancez la commande *git rebase -i HEAD~5* pour réorganiser les
 
 .. attention::
 
-   La commande *rebase* est potentiellement destructive ; veillez à sauvegarder
+   La commande *rebase* est potentiellement destructive |_| ; veillez à sauvegarder
    votre espace de travail, répertoire *.git* compris, avant de l'exécuter, sous
-   risque de perdre des données ; vous pouvez également créer une branche de
+   risque de perdre des données |_| ; vous pouvez également créer une branche de
    sauvegarde provisoire.
 
 Vous pouvez alors réécrire l'histoire pour proposer à vos collaborateurs un
-*commit* pour chaque tâche réalisée en son entier, comme sur le schéma suivant :
+*commit* pour chaque tâche réalisée en son entier, comme sur le schéma suivant |_| :
 
 .. figure:: graphics/git-rebase-commits-2.png
 
@@ -83,18 +83,18 @@ de Git, puis fusionnés.
 .. note::
 
    Si vous avez effectué simultanément les deux tâches sur un ou plusieurs
-   fichiers, pas de panique : grâce à la commande *git add -p* vous pouvez répartir
+   fichiers, pas de panique |_| : grâce à la commande *git add -p* vous pouvez répartir
    vos modifications imbriquées sur les *commits* idoines. Lorsque vous lancez *git
    status*, vous vous apercevez alors que vos fichiers sont à la fois prêts et non
-   prêts à être *commités* : il y a deux états des fichiers, chaque état représentant
+   prêts à être *commités* |_| : il y a deux états des fichiers, chaque état représentant
    un stade partiel de votre travail et la somme des deux représentant la totalité
    des modifications que vous avez apportées.
 
 Évidemment, vous n'avez plus accès aux *commits* intermédiaires, mais c'est ce que
-vous souhaitiez : chaque *commit* unique représente un état cohérent de votre
+vous souhaitiez |_| : chaque *commit* unique représente un état cohérent de votre
 contenu.
 
-Ce workflow facilite également le travail d'équipe : vous pouvez confier ces
+Ce workflow facilite également le travail d'équipe |_| : vous pouvez confier ces
 tâches à deux membres différents de votre équipe, chacun travaillant dans son
 espace local. Les modifications du premier sont ensuite fusionnées avec celles
 du second dans son espace local *via* des *patches*. Enfin, les *commits* sont

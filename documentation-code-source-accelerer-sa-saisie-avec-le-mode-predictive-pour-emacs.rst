@@ -15,7 +15,7 @@ vous guider dans la mise en place et l'utilisation du mode Emacs d'**aide à la
 rédaction** et d'**autocomplétion des mots** anglais et français Predictive dans
 un environnement GNU/Linux (en l'occurrence, Debian).
 
-#. Installez make et texinfo :
+#. Installez make et texinfo |_| :
 
    .. code-block:: console
 
@@ -24,31 +24,31 @@ un environnement GNU/Linux (en l'occurrence, Debian).
 #. Téléchargez
    `Predictive`_.
 
-#. Décompressez l'archive Predictive :
+#. Décompressez l'archive Predictive |_| :
 
    .. code-block:: console
 
       $ tar xzvf predictive-0.23.13.tar.gz
 
-#. Placez-vous dans le répertoire :file:`predictive` :
+#. Placez-vous dans le répertoire :file:`predictive` |_| :
 
    .. code-block:: console
 
       $ cd predictive
 
-#. Compilez *predictive* :
+#. Compilez *predictive* |_| :
 
    .. code-block:: console
 
       $ make
 
-#. Installez *predictive* :
+#. Installez *predictive* |_| :
 
    .. code-block:: console
 
       $ sudo make install
 
-#. Insérez le code suivant dans le fichier :file:`.emacs` :
+#. Insérez le code suivant dans le fichier :file:`.emacs` |_| :
 
    .. code-block:: cl
 
@@ -61,7 +61,7 @@ un environnement GNU/Linux (en l'occurrence, Debian).
            ;; load predictive package
            (require 'predictive)
 
-#. Lancez Emacs, puis appuyez sur Alt+X et entrez :
+#. Lancez Emacs, puis appuyez sur Alt+X et entrez |_| :
 
    .. code-block:: cl
 

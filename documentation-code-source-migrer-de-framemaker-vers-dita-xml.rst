@@ -10,11 +10,11 @@
 Migrer de FrameMaker vers DITA XML
 ==================================
 
-Le but de cette procédure est de :
+Le but de cette procédure est de |_| :
 
 - **migrer** son contenu **FrameMaker** vers |dita| sans se plonger dans
   les arcanes des **EDD FrameMaker** (petits
-  projets uniquement !),
+  projets uniquement |_| !),
 
 - gérer la documentation technique au format |dita| sans utiliser **FrameMaker
   structuré**.
@@ -70,7 +70,7 @@ Le but de cette procédure est de :
    de préférence dans une *reltable*.
 
 Pour générer les éléments permettant de construire un fichier :file:`.ditamap`, vous
-pouvez par exemple utiliser des scripts Perl du type :
+pouvez par exemple utiliser des scripts Perl du type |_| :
 
 .. warning::
 
@@ -93,7 +93,7 @@ pouvez par exemple utiliser des scripts Perl du type :
 Vous pouvez également modulariser facilement le contenu à l'aide des ciseaux XML
 `xml_split`_,
 ou utiliser le module Perl `XML::Twig`_, ou
-encore ce *one-liner* Bash pour renommer les fichiers :file:`.dita` d'après leur titre :
+encore ce *one-liner* Bash pour renommer les fichiers :file:`.dita` d'après leur titre |_| :
 
 .. code-block:: console
 

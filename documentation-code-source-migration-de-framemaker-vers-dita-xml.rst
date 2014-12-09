@@ -21,7 +21,7 @@ le rythme des livraisons.
 Pour filer la métaphore, si l'on se fixe pour but de convertir un marécage en
 parterre du château de Versailles, il convient de passer par l'étape du jardin à
 l'anglaise - soit un endroit certes non rigoureusement architecturé, mais très
-agréable à vivre. Bonne nouvelle : si le |techwriter| a utilisé de
+agréable à vivre. Bonne nouvelle |_| : si le |techwriter| a utilisé de
 manière cohérente un jeu de styles limité et organisé rationnellement son
 contenu FrameMaker, il est déjà certainement très proche de ce stade.
 
@@ -31,7 +31,7 @@ contenu FrameMaker, il est déjà certainement très proche de ce stade.
 
 D'ailleurs, si, pour une raison quelconque, votre projet de migration devait
 s'arrêter là, les **rédacteurs techniques**, l'entreprise et les utilisateurs y
-auraient déjà beaucoup gagné, respectivement en :
+auraient déjà beaucoup gagné, respectivement en |_| :
 
 - facilité de mise à jour,
 
@@ -42,11 +42,11 @@ auraient déjà beaucoup gagné, respectivement en :
 .. rubric:: Notes
 
 .. [#] LibreOffice propose une fonction d'enregistrement au format DocBook, mais
-       très imparfaite ; le XML qu'elle produit peut servir de base à la
+       très imparfaite |_| ; le XML qu'elle produit peut servir de base à la
        création d'une version DocBook, avec beaucoup d'efforts… Sauf à maintenir
        deux versions du même contenu, le processus de migration de LibreOffice
        vers DocBook exige donc un arrêt temporaire des livraisons des nouvelles
-       versions de la documentation ; il doit donc être soigneusement planifié.
+       versions de la documentation |_| ; il doit donc être soigneusement planifié.
 
 .. toctree::
    :hidden:

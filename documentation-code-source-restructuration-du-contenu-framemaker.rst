@@ -17,20 +17,20 @@ consiste
 structures |dita|.
 
 Un important travail de restructuration du document FrameMaker doit cependant
-être effectué en amont :
+être effectué en amont |_| :
 
 - restructuration de l'information selon les trois catégories *concept*,
   *tâche* et *référence*,
 
 - suppression des *overrides* (propriétés de texte appliquées manuellement et
-  écrasant les styles ; ce genre d'hérésie est, sinon impossible, du moins très
+  écrasant les styles |_| ; ce genre d'hérésie est, sinon impossible, du moins très
   limité sous un format structuré),
 
 - harmonisation et simplification des styles FrameMaker pour les limiter et les
   faire correspondre aux balises |dita| qui seront utilisées (par exemple, un
-  style *note_important* vers la balise <note type="important> ; il faut donc au
+  style *note_important* vers la balise <note type="important> |_| ; il faut donc au
   préalable analyser le contenu existant et décider quel ensemble de balises
-  sera utilisé parmi les centaines de balises proposées par |dita| : il est
+  sera utilisé parmi les centaines de balises proposées par |dita| |_| : il est
   en effet fortement déconseillé de les utiliser toutes).
 
 .. figure:: graphics/framemaker-restructure.png
@@ -41,7 +41,7 @@ Ce travail d'harmonisation peut se faire en parallèle avec la mise à jour et l
 publication du document FrameMaker. La qualité de ce document n'en sera que
 meilleure.  En même temps que cette réorganisation du contenu, vous pouvez mettre en place
 la chaîne complète de création, gestion et publication |dita| sur un
-échantillon de votre contenu :
+échantillon de votre contenu |_| :
 
 - mise en place des outils,
 

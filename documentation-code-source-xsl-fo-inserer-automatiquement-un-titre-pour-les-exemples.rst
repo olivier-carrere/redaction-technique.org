@@ -7,15 +7,15 @@
 
 .. _xsl-fo-inserer-automatiquement-un-titre-pour-les-exemples:
 
-XSL-FO : insérer automatiquement un titre pour les exemples
-===========================================================
+XSL-FO |_| : insérer automatiquement un titre pour les exemples
+===============================================================
 
 Par défaut, |dita-ot| n'insère pas automatiquement dans les fichiers
 PDF le texte *Exemple :* devant le titre d'un exemple contenu entre balises |dita|
 :samp:`<example>`. La syntaxe `XSL-FO`_
 offre cependant cette possibilité.
 
-Supposons que le code source d'un de vos fichiers |dita| soit le suivant :
+Supposons que le code source d'un de vos fichiers |dita| soit le suivant |_| :
 
 .. code-block:: xml
 
@@ -30,32 +30,32 @@ Supposons que le code source d'un de vos fichiers |dita| soit le suivant :
    </example>
 
 Vous souhaitez que le fichier PDF généré affiche l'exemple structuré comme
-suit :
+suit |_| :
 
-   .. rubric:: Exemple : XSL-FO
+   .. rubric:: Exemple |_| : XSL-FO
 
-   Voici mon exemple de chemin XPATH :
+   Voici mon exemple de chemin XPATH |_| :
 
    .. code-block:: xslt
 
       ancestor-or-self
 
-et que si l'exemple ne contient pas de titre, il soit structuré comme suit :
+et que si l'exemple ne contient pas de titre, il soit structuré comme suit |_| :
 
-   .. rubric:: Exemple :
+   .. rubric:: Exemple |_| :
 
-   Voici mon exemple de chemin XPATH :
+   Voici mon exemple de chemin XPATH |_| :
 
    .. code-block:: xslt
 
       ancestor-or-self
 
 Par défaut, cependant, ce contenu sera structuré comme suit dans le PDF par
-|dita-ot| :
+|dita-ot| |_| :
 
    .. rubric:: XSL-FO
 
-   Voici mon exemple de chemin XPATH :
+   Voici mon exemple de chemin XPATH |_| :
 
    .. code-block:: xslt
 
@@ -69,7 +69,7 @@ Insérer automatiquement une variable de texte avant le titre des exemples
 
 #. Remplacez dans la feuille de style
    :file:`plugins/org.dita.pdf2/xsl/fo/commons.xsl` (sous |dita-ot|
-   1.7.)  le template suivant :
+   1.7.)  le template suivant |_| :
 
    .. code-block:: xslt
 
@@ -81,7 +81,7 @@ Insérer automatiquement une variable de texte avant le titre des exemples
         </fo:block>
       </xsl:template>
 
-   par le code suivant :
+   par le code suivant |_| :
 
    .. code-block:: xslt
 
@@ -100,7 +100,7 @@ Insérer automatiquement une variable de texte avant le titre des exemples
 
 #. Définissez dans les fichiers contenant les variables de langue, tels que
    :file:`plugins/org.dita.pdf2/cfg/common/vars/fr.xml`, les variables de texte
-   à insérer automatiquement, par exemple :
+   à insérer automatiquement, par exemple |_| :
 
    .. code-block:: xslt
 

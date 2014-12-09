@@ -6,7 +6,7 @@
 .. code review: no code
 
 Ne lisez pas ce site… `forkez-le sur GitHub !`_
-=============================================================================================================
+===============================================
 
 Ce site présente comment gérer la documentation technique comme le code source,
 à partir de fichiers sources en format texte. Toutes les versions de ce site
@@ -41,7 +41,7 @@ Puisqu'il traite des processus et des formats de rédaction technique, son
 contenu est cependant moins pertinent que son historique et que ses branches
 *Git*. Pour tirer le meilleur parti des formats texte, il faut en effet gérer
 ses sources sous un logiciel de gestion de versions tel que *Git* ou
-*Subversion*. Les modifications de contenu peuvent alors être :
+*Subversion*. Les modifications de contenu peuvent alors être |_| :
 
 - regroupées par lots cohérents,
 - liées à un ticket de logiciel de suivi de problèmes tel que *Bugzilla* ou

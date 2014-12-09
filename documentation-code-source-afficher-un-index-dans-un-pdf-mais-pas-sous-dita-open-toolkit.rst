@@ -16,20 +16,20 @@ de contenu |dita|. Vous générez une sortie PDF et l'index n'apparaît pas. Un
 message d'erreur de la compilation vous indique que, hélas, FOP ne supporte
 actuellement pas la génération des index.
 
-Face à cette situation, vous avez quatre solutions :
+Face à cette situation, vous avez quatre solutions |_| :
 
-- attendre que FOP supporte les index ; sans date de disponibilité, ce choix
-  sera difficile à faire accepter par votre direction ;
+- attendre que FOP supporte les index |_| ; sans date de disponibilité, ce choix
+  sera difficile à faire accepter par votre direction |_| ;
 
-- abandonner |dita| ; avouez que ce serait dommage de renoncer aux formidables
-  gains de productivité que permet ce format ;
+- abandonner |dita| |_| ; avouez que ce serait dommage de renoncer aux formidables
+  gains de productivité que permet ce format |_| ;
 
-- renoncer à afficher l'index dans le PDF ; les arguments en faveur d'un tel
-  choix ont un certain poids : les index sont difficiles à maintenir et offre un
+- renoncer à afficher l'index dans le PDF |_| ; les arguments en faveur d'un tel
+  choix ont un certain poids |_| : les index sont difficiles à maintenir et offre un
   surplus d'utilisabilité discutable dans un document qui ne sera consulté que
-  marginalement sous forme imprimée ;
+  marginalement sous forme imprimée |_| ;
 
-- abandonner |dita-ot| et se tourner vers une solution propriétaire ;
+- abandonner |dita-ot| et se tourner vers une solution propriétaire |_| ;
   les logiciels non open-source, XMetal, par exemple, on souvent recours au
   moteur de publication XEP de RenderX qui lui, supporte parfaitement les index.
 

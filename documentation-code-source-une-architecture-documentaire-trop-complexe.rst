@@ -7,8 +7,8 @@
 
 .. _une-architecture-documentaire-trop-complexe:
 
-Une architecture documentaire trop complexe ?
-=============================================
+Une architecture documentaire trop complexe |_| ?
+=================================================
 
 |dita| permet des gains de productivité importants par la réduction du volume
 source que le |techwriter| crée, traduit et maintient. Ce gain de
@@ -24,7 +24,7 @@ fonctionnements erratiques des outils plus lourds.
 Le tableau suivant présente les différents niveaux de complexité induits par
 |dita| et les
 solutions qui permettent au |techwriter| de les maîtriser plus
-facilement :
+facilement |_| :
 
 +------------------------------+------------------------------+
 |Complexité                    |Solution                      |

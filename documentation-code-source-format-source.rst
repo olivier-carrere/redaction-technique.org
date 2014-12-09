@@ -22,7 +22,7 @@ Les traitements de texte nous ont déshabitués à distinguer le fond de la
 forme. Mais confondre les deux entraîne beaucoup d'erreurs et de perte de temps.
 
 En effet, le document présenté à l'utilisateur présente deux aspects
-fondamentaux :
+fondamentaux |_| :
 
 - le contenu,
 
@@ -30,7 +30,7 @@ fondamentaux :
 
 Au cours du développement d'une documentation technique, ces deux aspects
 doivent être clairement distincts. Ils peuvent être pris en charge par deux
-intervenants différents :
+intervenants différents |_| :
 
 - le |techwriter|,
 
@@ -38,7 +38,7 @@ intervenants différents :
 
 Lorsque la mise en page a une importance équivalente à celle du contenu, ou
 lorsqu'elle doit être variée, comme dans le cas d'une brochure commerciale, la
-rédaction et la mise en page s'opèrent sous des outils différents :
+rédaction et la mise en page s'opèrent sous des outils différents |_| :
 
 - éditeur de texte,
 
@@ -46,17 +46,17 @@ rédaction et la mise en page s'opèrent sous des outils différents :
 
 Lorsque la mise en page a une importance moindre que celle du contenu, ou
 lorsqu'elle doit être homogène, comme dans le cas d'une **documentation
-technique**, la rédaction et la mise en page s'opèrent sur :
+technique**, la rédaction et la mise en page s'opèrent sur |_| :
 
 +-------------------------+----------------------------------------------------+
-|les mêmes fichiers :     |par exemple, des fichiers FrameMaker,               |
+|les mêmes fichiers |_| : |par exemple, des fichiers FrameMaker,               |
 +-------------------------+----------------------------------------------------+
-|des fichiers différents :|par exemple, des fichiers de contenu XML et une     |
-|                         |feuille de style XSLT.                              |
+|des fichiers différents  |par exemple, des fichiers de contenu XML et une     |
+||_| :                    |feuille de style XSLT.                              |
 +-------------------------+----------------------------------------------------+
 
 Dans un fichier FrameMaker, la séparation du fond et de la forme est élevée mais
-pas totale : le contenu et la mise en page sont placés dans le même
+pas totale |_| : le contenu et la mise en page sont placés dans le même
 fichier. FrameMaker applique une maquette de page homogène à tout un fichier,
 mais autorise l'ajout manuel d'éléments de mise en page. La même maquette peut
 être dupliquée pour tout le document, ou une maquette différente peut être
@@ -64,7 +64,7 @@ utilisée pour chaque fichier qui compose ce dernier.
 
 .. figure:: graphics/modulaire-texte-monolithique-binaire.png
 
-   Formats sources : degré de modularité et format
+   Formats sources |_| : degré de modularité et format
 
 Les formats sources peuvent être classés selon leur degré de modularité et leur
 format de fichier.
@@ -88,39 +88,39 @@ différents fichiers qui composent le document.
 
 Si contenu et mise en page sont intimement liés, comme sous un traitement de
 texte, il est difficile de modifier le contenu sans perturber la mise en
-page. Résultat : à chaque publication d'une nouvelle version d'une documentation
+page. Résultat |_| : à chaque publication d'une nouvelle version d'une documentation
 technique, l'équipe de **rédaction technique** passe de longues heures à
 corriger les erreurs de mise en page générées par le logiciel. Le phénomène est
 moindre sous FrameMaker mais reste important. Il est nul avec les formats
 |dita| et **DocBook** (les seules erreurs qui peuvent se produire sont des
-erreurs de compilation dues à une syntaxe XML erronée ; ces erreurs sont
+erreurs de compilation dues à une syntaxe XML erronée |_| ; ces erreurs sont
 facilement rectifiables).
 
-Les fichiers sources d'une documentation technique sont au format :
+Les fichiers sources d'une documentation technique sont au format |_| :
 
 - binaire ou,
 
 - texte.
 
-Ce format est également :
+Ce format est également |_| :
 
 - WYSIWYG ou,
 
 - structuré.
 
-Enfin, ce format est :
+Enfin, ce format est |_| :
 
 - modulaire ou,
 
 - monolithique.
 
-Ce dernier aspect détermine la manière dont le format gère le *single-sourcing* :
+Ce dernier aspect détermine la manière dont le format gère le *single-sourcing* |_| :
 
 - selon une logique *livre vers aide en ligne* ou,
 
 - selon une logique *aide en ligne vers livre*.
 
-Les formats disponibles peuvent donc être classés selon le tableau suivant :
+Les formats disponibles peuvent donc être classés selon le tableau suivant |_| :
 
 +---------------+---------------+---------------+---------------+
 |Format         |Texte          |Structuré      |Modulaire      |
@@ -134,7 +134,7 @@ Les formats disponibles peuvent donc être classés selon le tableau suivant :
 +---------------+---------------+---------------+---------------+
 
 FrameMaker et DocBook ne sont pas pleinement modulaires, car les plus petits
-éléments d'information manipulables ne sont pas génériques : ils contiennent des
+éléments d'information manipulables ne sont pas génériques |_| : ils contiennent des
 informations telles que la structure de table des matières ou les références
 croisées qui ne sont valables que dans un nombre limité de contextes.
 
@@ -143,7 +143,7 @@ croisées qui ne sont valables que dans un nombre limité de contextes.
 .. [#] Si le |techwriter| met lui-même en page ses documents, il
        change de rôle lorsqu'il effectue cette opération.
 
-.. [#] Ou très peu : dans les fichiers de contenu, il est seulement possible de
+.. [#] Ou très peu |_| : dans les fichiers de contenu, il est seulement possible de
        mettre du texte en gras ou en italique, pas d'en changer la police, le
        corps ou la couleur.
 

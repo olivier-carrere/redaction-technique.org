@@ -7,8 +7,8 @@
 
 .. _les-cms-le-workflow-en-prime-mais-une-fiabilite-a-tester:
 
-Les CMS : le workflow en prime, mais une fiabilité à tester
-===========================================================
+Les CMS |_| : le workflow en prime, mais une fiabilité à tester
+===============================================================
 
 Les :abbr:`CMS (Content Management Systems)`, ainsi dénommés pour des raisons
 purement marketing, mais dont la fonction se comprend mieux avec l'acronyme
@@ -18,7 +18,7 @@ l'on gère des documents modulaires.
 
 S'ils utilisent des formats monolithiques tels que FrameMaker, les **rédacteurs
 techniques** peuvent utiliser des CMS tels que SharePoint, Alfresco ou
-consorts pour :
+consorts pour |_| :
 
 #. télécharger sur leur disque dur une copie locale des fichiers partagés,
 
@@ -39,7 +39,7 @@ sont par exemple explicitement destinées à gérer des documentations modulaire
 basées sur l'architecture XML |dita|.
 
 Mais comment croire que ces solutions, qui sont fréquemment disponibles sous de
-nouvelles versions, marketing oblige, sont toutes d'une fiabilité optimale ?
+nouvelles versions, marketing oblige, sont toutes d'une fiabilité optimale |_| ?
 
 J'aurais quelques scrupules, et quelques inquiétudes, sur le fait de leur
 confier entièrement la gestion et l'archivage des fichiers sources de la

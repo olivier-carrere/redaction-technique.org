@@ -11,14 +11,14 @@ Création du contenu
 ===================
 
 Le |techwriter| crée le contenu du projet de **rédaction technique**
-dans un dialogue constant avec les différents acteurs de la société : services
+dans un dialogue constant avec les différents acteurs de la société |_| : services
 R&D, marketing. Il prend en compte en amont les différentes contraintes liées au
 cycle de vie des supports de rédaction technique.
 
-En particulier, le |techwriter| a soin de :
+En particulier, le |techwriter| a soin de |_| :
 
 - faire valider le contenu à ses interlocuteurs afin d'apporter les
-  modifications nécessaires aussi tôt que possible ; ceci garantit que le
+  modifications nécessaires aussi tôt que possible |_| ; ceci garantit que le
   résultat sera conforme au projet initialement défini,
 
 - minimiser le volume de texte et d'images sources afin de réduire les coûts de
