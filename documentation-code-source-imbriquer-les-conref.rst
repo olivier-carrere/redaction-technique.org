@@ -7,8 +7,8 @@
 
 .. _imbriquer-les-conref:
 
-Imbriquer les conref
-====================
+Imbriquer les *conref*
+======================
 
 Pour des raisons de facilité de mise à jour et de maintenance du contenu |dita|,
 le |techwriter| doit limiter l'effet *poupée russe* et ne pas
@@ -18,7 +18,7 @@ d'imbrication (un *conref* imbriqué dans un autre) me semble le seuil au-delà
 duquel le contenu peut vite devenir ingérable.
 
 Dans l'exemple ci-dessous, le *conref* source *see-admin-guide* contient le
-**conref** cible *admin-guide-title* |_| :
+*conref* cible *admin-guide-title* |_| :
 
 .. rubric:: Exemple
 

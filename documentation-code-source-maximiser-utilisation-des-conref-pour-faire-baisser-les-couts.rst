@@ -7,8 +7,8 @@
 
 .. _maximiser-utilisation-des-conref-pour-faire-baisser-les-couts:
 
-Maximiser l'utilisation des conref pour faire baisser les coûts
-===============================================================
+Maximiser l'utilisation des *conref* pour faire baisser les coûts
+=================================================================
 
 Recourir aux `conref`_ est le meilleur
 moyen dont dispose le |techwriter| pour faire baisser

@@ -23,7 +23,7 @@ apparaissent sinon lors de la traduction dans d'autres langues.
 .. rubric:: Exemple
 
 Si vous décidez de pousser la granulométrie au niveau du segment de phrase et
-que vous définissez les **conref** suivants |_| :
+que vous définissez les *conref* suivants |_| :
 
 .. code-block:: xml
 

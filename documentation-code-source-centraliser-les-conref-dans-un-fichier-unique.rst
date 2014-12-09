@@ -7,8 +7,8 @@
 
 .. _centraliser-les-conref-dans-un-fichier-unique:
 
-Centraliser les conref dans un fichier unique
-=============================================
+Centraliser les *conref* dans un fichier unique
+===============================================
 
 Pour favoriser l'utilisation des `conref`_
 au sein d'une
@@ -22,7 +22,7 @@ d'origine. Cependant, un des grands principes de la réutilisation du contenu es
 de décontextualiser le contenu. Il est donc à terme beaucoup plus efficace pour
 le |techwriter| d'extraire le contenu réutilisé de son fichier
 d'origine et de le placer dans un fichier ne contenant que des sources de
-**conref**. Il est en effet beaucoup plus facile de placer tous les éléments
+*conref*. Il est en effet beaucoup plus facile de placer tous les éléments
 sources dans un référentiel unique que de devoir chercher les différentes
 sources dans une multitude de fichiers.
 

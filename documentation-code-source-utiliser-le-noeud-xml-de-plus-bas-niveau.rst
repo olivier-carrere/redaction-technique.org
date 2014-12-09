@@ -13,7 +13,7 @@ Utiliser le nœud XML de plus bas niveau
 Le |techwriter| doit utiliser comme source du `conref`_ le nœud |dita|
 de plus bas niveau contenant l'information à partager.
 
-Le but des **conref** étant de gérer des blocs d'information de faibles
+Le but des *conref* étant de gérer des blocs d'information de faibles
 dimensions, il est logique de les manipuler au niveau de la plus petite
 structure XML encapsulant l'information, même si cette structure, pour être
 compatible avec le schéma XSD de la section |dita| où elle intervient,
