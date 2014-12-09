@@ -7,8 +7,8 @@
 
 .. _gerer-son-contenu-dita-xml-avec-ou-sans-cms:
 
-Gérer son contenu DITA XML avec ou sans CMS |_| ?
-=================================================
+Gérer son contenu DITA XML avec ou sans CMS ?
+=============================================
 
 L'architecture |dita| ne propose pas de
 mécanisme de **workflow documentaire** natif. Les workflows sont pourtant un
@@ -32,7 +32,7 @@ spectaculaires reportés par certaines entreprises suite à la mise en place d'u
 CMS |dita| ont cependant de quoi faire réfléchir. Ainsi, Epson America a pu
 réutiliser jusqu'à 90 % du contenu existant sur de nouveaux projets.
 
-Si l'on opte pour un CMS, celui-ci doit clairement supporter |dita| |_| : on ne gère
+Si l'on opte pour un CMS, celui-ci doit clairement supporter |dita| : on ne gère
 pas un jeu de briques d'information comme un document monolithique. Adieu donc
 SharePoint ou Alfresco, il faut se tourner vers des solutions dédiées telles que
 `Componize`_ ou `DocZone`_.
@@ -46,7 +46,7 @@ bénéfices de ce choix deviennent manifestes.
 .. rubric:: Notes
 
 .. [#] Le |techwriter| peut ainsi voir où un élément d'information
-       est inclus |_| ; lors de la mise à jour de cet élément, il peut alors juger
+       est inclus ; lors de la mise à jour de cet élément, il peut alors juger
        si l'élément modifié sera toujours valable dans les différents contextes.
 
 .. [#] Il est possible, quoiqu'un peu complexe, de mettre en place des workflows

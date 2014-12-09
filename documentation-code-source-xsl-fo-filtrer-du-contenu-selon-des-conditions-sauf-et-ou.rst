@@ -7,14 +7,14 @@
 
 .. _xsl-fo-filtrer-du-contenu-selon-des-conditions-sauf-et-ou:
 
-XSL-FO |_| : filtrer du contenu selon des conditions « |_| sauf |_| » et « |_| ou |_| »
-=======================================================================================
+XSL-FO : filtrer du contenu selon des conditions « sauf » et « ou »
+===================================================================
 
 Imaginons que vous vouliez filtrer les nœuds enfants de la balise |dita|
 :samp:`<example>` et afficher tout son contenu à l'exception du titre (situé entre les
 balises :samp:`<title>`).
 
-Vous pouvez recourir alors à la syntaxe suivante |_| :
+Vous pouvez recourir alors à la syntaxe suivante :
 
 .. code-block:: xslt
 
@@ -29,7 +29,7 @@ l'exception du nœud :samp:`<title>`. Cependant, le nœud :samp:`<example>`
 accepte le texte entré directement, sans être encapsulé dans des balises. Cette
 commande ne fera alors pas apparaître ce contenu.
 
-Supposons que le code source d'un de vos fichiers |dita| soit le suivant |_| :
+Supposons que le code source d'un de vos fichiers |dita| soit le suivant :
 
 .. code-block:: xml
 
@@ -44,7 +44,7 @@ Supposons que le code source d'un de vos fichiers |dita| soit le suivant |_| :
      Texte non encapsulé situé après un nœud enfant.
    </example>
 
-Le fichier PDF affichera l'exemple structuré comme suit |_| :
+Le fichier PDF affichera l'exemple structuré comme suit :
 
 .. code-block:: xslt
 
@@ -54,7 +54,7 @@ Le titre de l'exemple n'est pas affiché, ce qui correspond au résultat souhait
 mais le contenu non encapsulé dans des balises n'apparaît pas, ce qui est un
 effet de bord indésirable. Pour sélectionner ce contenu, il faut sélectionner
 les nœuds textuels avec la syntaxe :samp:`text()`. Il est alors tentant
-d'utiliser la syntaxe suivante |_| :
+d'utiliser la syntaxe suivante :
 
 .. code-block:: xslt
 
@@ -69,9 +69,9 @@ Cependant, tous les éléments texte non encapsulés dans des balises enfant de 
 balise :samp:`<example>` seront placés en tête de l'exemple, avant les éléments
 encapsulés, même s'ils sont placés après dans le fichier source |dita|.
 
-Le fichier PDF affichera l'exemple structuré comme suit |_| :
+Le fichier PDF affichera l'exemple structuré comme suit :
 
-   Voici mon exemple de chemin XPATH |_| :Texte non encapsulé situé après un nœud
+   Voici mon exemple de chemin XPATH :Texte non encapsulé situé après un nœud
    enfant.
 
    .. code-block:: xslt
@@ -79,13 +79,13 @@ Le fichier PDF affichera l'exemple structuré comme suit |_| :
       ancestor-or-self
 
 Il faut alors utiliser la syntaxe *pipe* (condition booléenne *ou*) pour
-modifier le chemin `XPATH`_ comme suit |_| :
+modifier le chemin `XPATH`_ comme suit :
 
 .. code-block:: xslt
 
    <xsl:apply-templates select="text()|*[not(name()='title')]" />
 
-Le résultat final sera |_| :
+Le résultat final sera :
 
 .. code-block:: xslt
 
@@ -95,9 +95,9 @@ Le résultat final sera |_| :
      </fo:block>
    </xsl:template>
 
-Le fichier PDF affichera l'exemple structuré comme suit |_| :
+Le fichier PDF affichera l'exemple structuré comme suit :
 
-   Voici mon exemple de chemin XPATH |_| :
+   Voici mon exemple de chemin XPATH :
 
    .. code-block:: xslt
 

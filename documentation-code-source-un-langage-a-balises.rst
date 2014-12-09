@@ -10,7 +10,7 @@
 Un langage à balises
 ====================
 
-|dita| est un langage à balises |_| : le |techwriter|
+|dita| est un langage à balises : le |techwriter|
 structure l'information dans des fichiers sources sans mise en page,
 similaires aux fichiers sources de code informatique. L'utilisateur reçoit un
 document cible, par exemple un fichier PDF, où les balises sont remplacées par
@@ -25,7 +25,7 @@ cependant peu efficace en termes de productivité de l'équipe de **rédaction
 technique** et de structuration de l'information.
 
 Avec un format texte tel que |dita|, le |techwriter| et le lecteur
-disposent de supports largement différents |_| :
+disposent de supports largement différents :
 
 +--------------------+---------------------------------------------------------+
 |Public              |Description                                              |
@@ -35,7 +35,7 @@ disposent de supports largement différents |_| :
 |                    |marquant les éléments d'information qu'il crée ou        |
 |                    |réutilise. Les balises sont imbriquées comme des poupées |
 |                    |russes organisées selon une syntaxe rigoureuse. Le       |
-|                    |fichier source n'est pas au format WYSIWYG |_| : la mise |
+|                    |fichier source n'est pas au format WYSIWYG : la mise     |
 |                    |en page sera appliquée lors de la transformation des     |
 |                    |fichiers sources en fichiers cibles (autrement dit, lors |
 |                    |de la génération des livrables). Tout au plus, certains  |
@@ -50,7 +50,7 @@ disposent de supports largement différents |_| :
 |                    |un logiciel graphique.                                   |
 +--------------------+---------------------------------------------------------+
 |Utilisateur         |Seul le contenu est présenté au lecteur dans le fichier  |
-|                    |cible |_| ; le texte marqué par des balises dans les     |
+|                    |cible ; le texte marqué par des balises dans les         |
 |                    |fichiers sources a une mise en valeur typographique dont |
 |                    |le sens est explicité dans la section *Conventions       |
 |                    |typographiques* du document final.                       |

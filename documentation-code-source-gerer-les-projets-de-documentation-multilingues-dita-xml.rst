@@ -29,7 +29,7 @@ Méthodologie de gestion des projets de documentation multilingues DITA XML
     |dita| dans un sous-répertoire spécifique à la langue dans laquelle
     il est initialement rédigé.
 
-    Par exemple |_| :
+    Par exemple :
 
     - product
 
@@ -39,7 +39,7 @@ Méthodologie de gestion des projets de documentation multilingues DITA XML
         - tasks
         - topics
 
-      et non |_| :
+      et non :
 
     - product
 
@@ -50,19 +50,19 @@ Méthodologie de gestion des projets de documentation multilingues DITA XML
 #.  Remplacez dans le fichier *ditamap* toutes les occurrences du nom du
     répertoire propre à la langue par une chaîne unique provisoire.
 
-    Par exemple, utilisez la chaîne *@language-code@* |_| :
+    Par exemple, utilisez la chaîne *@language-code@* :
 
     .. code-block:: xml
 
        <topicref href="@language-code@/topics/managing-rights.dita"/>
 
-    et non |_| :
+    et non :
 
     .. code-block:: xml
 
        <topicref href="en_US/topics/managing-rights.dita"/>
 
-#.  Pour générer les fichiers cibles, vous pouvez maintenant |_| :
+#.  Pour générer les fichiers cibles, vous pouvez maintenant :
 
     a. modifier dans le fichier :file:`demo/fo/build.xml` le paramètre
        :samp:`default.locale`,
@@ -106,19 +106,19 @@ adapté, ou inspirer un nouveau script.
    versions). Assurez-vous de pouvoir restaurer facilement le projet dans son
    intégralité en cas d'erreur ou de comportement inattendu.
 
-Pour utiliser ce script |_| :
+Pour utiliser ce script :
 
 #.  Téléchargez le `script de génération multilingue DITA XML`_
     dans le
     répertoire contenant le fichier *ditamap* du projet.
 
-#.  Dans un terminal, placez-vous dans ce répertoire, puis entrez |_| :
+#.  Dans un terminal, placez-vous dans ce répertoire, puis entrez :
 
     .. code-block:: console
 
        $ chmod +x dita2target.sh
 
-#.  Dans le terminal, entrez |_| :
+#.  Dans le terminal, entrez :
 
     .. code-block:: console
 
@@ -126,7 +126,7 @@ Pour utiliser ce script |_| :
 
     pour créer le répertoire qui contiendra les fichiers cibles.
 
-#.  Entrez |_| :
+#.  Entrez :
 
     .. code-block:: console
 

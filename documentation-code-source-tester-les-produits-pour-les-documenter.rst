@@ -19,7 +19,7 @@ des conditions proches des leurs.
 Un conte chinois
 narre comment des aveugles se sont retrouvés confrontés à un
 éléphant. Aucun d'entre eux, et pour cause, n'ayant une perception globale de
-l'animal, chacun en eut une image différente |_| : celui qui en tenait une patte le
+l'animal, chacun en eut une image différente : celui qui en tenait une patte le
 prenait pour un arbre, celui qui en étreignait la trompe le confondait avec un
 serpent, celui qui avait empoigné une défense l'identifiait à une lance, et
 celui qui s'agrippait à une de ses oreilles croyait qu'il s'agissait d'un
@@ -32,7 +32,7 @@ celui qui s'agrippait à une de ses oreilles croyait qu'il s'agissait d'un
 Le |techwriter| qui demande aux différents intervenants de
 l'entreprise à quoi sert le produit dont il doit créer la documentation et
 comment il fonctionne se retrouve comme celui qui demande aux aveugles à quoi
-ressemble un éléphant |_| : pour la R&D, il s'agit de code élégamment rédigé,
+ressemble un éléphant : pour la R&D, il s'agit de code élégamment rédigé,
 pour le marketing, d'une offre à positionner face à la concurrence sur son
 marché, pour le support technique, d'un exécutable dont il faut corriger les
 bugs, etc.
@@ -43,13 +43,13 @@ propre opinion, qu'il pourra ensuite confronter à celle des autres acteurs de
 l'entreprise.  Le |techwriter| est un pragmatique qui s'intéresse à
 la pratique, non à la théorie.
 S'il ne consulte que les développeurs, par exemple, il aura peu de
-chance de pouvoir créer une documentation satisfaisante pour l'utilisateur |_| :
+chance de pouvoir créer une documentation satisfaisante pour l'utilisateur :
 
 - d'une part, les développeurs ont souvent une vision idéaliste du
   fonctionnement de leur produit, différente du comportement de ce dernier
   en conditions réelles d'utilisation,
 
-- d'autre part, une déperdition d'information se produit nécessairement entre |_| :
+- d'autre part, une déperdition d'information se produit nécessairement entre :
 
   - ce que le développeur sait,
 

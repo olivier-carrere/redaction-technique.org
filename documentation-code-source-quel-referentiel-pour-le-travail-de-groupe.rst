@@ -7,8 +7,8 @@
 
 .. _quel-referentiel-pour-le-travail-de-groupe:
 
-Quel référentiel pour le travail de groupe |_| ?
-================================================
+Quel référentiel pour le travail de groupe ?
+============================================
 
 Le référentiel le plus fréquemment utilisé pour stocker des fichiers
 informatiques est le dossier, ou répertoire. Si ce dépôt est parfaitement adapté
@@ -23,7 +23,7 @@ la version précédente du fichier. La version précédente est donc définitive
 supprimée, sauf si le programme a créé une copie de sauvegarde ou si le
 |techwriter| a utilisé la fonction *Enregistrer sous*, et non
 *Enregistrer*, pour créer une nouvelle version du fichier. Dans le premier cas,
-il n'existe que deux versions du fichier à un instant donné |_| : la version n et la
+il n'existe que deux versions du fichier à un instant donné : la version n et la
 version n-1. Dans le second cas, le |techwriter| peut créer autant de
 versions qu'il le souhaite, par exemple en ajoutant le suffixe  -1, -2, etc. au
 nom du fichier.

@@ -7,8 +7,8 @@
 
 .. _un-referentiel-unique:
 
-Un référentiel unique |_| ?
-===========================
+Un référentiel unique ?
+=======================
 
 Idéalement, tout le contenu peut être placé sous un référentiel unique, par
 exemple le logiciel de gestion de versions `Git`_.
@@ -17,7 +17,7 @@ la cohérence et la qualité. Si le contenu est au format |dita| ou DocBook, par
 peut exploiter au mieux les capacités de *single-sourcing* de ces formats pour
 le publier sous la forme appropriée.
 
-Le contenu devient un réseau de modules d'information |_| ; il faut alors gérer les
+Le contenu devient un réseau de modules d'information ; il faut alors gérer les
 relations au sein de ce réseau, notamment lors des mises à jour.
 
 .. figure:: graphics/referentiel-unique.png

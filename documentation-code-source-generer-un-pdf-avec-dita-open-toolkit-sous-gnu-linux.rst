@@ -21,14 +21,14 @@ dans un environnement GNU/Linux (Ubuntu ou Debian).
 
 - connexion Internet.
 
-#. Téléchargez et décompressez l'archive |dita-ot| |_| :
+#. Téléchargez et décompressez l'archive |dita-ot| :
 
    .. code-block:: console
 
       $  wget http://sourceforge.net/projects/dita-ot/files/DITA-OT%20Stable%20Release/DITA%20Open%20Toolkit%201.8/DITA-OT1.8.5_full_easy_install_bin.tar.gz
       $  tar -xzvf DITA-OT1.8.5_full_easy_install_bin.tar.gz
 
-#. Configurez l'environnement |dita-ot| |_| :
+#. Configurez l'environnement |dita-ot| :
 
    .. code-block:: console
 
@@ -36,13 +36,13 @@ dans un environnement GNU/Linux (Ubuntu ou Debian).
       $  ./startcmd.sh
       $  ant -f integrator.xml
 
-#. Générez votre premier PDF |_| :
+#. Générez votre premier PDF :
 
    .. code-block:: console
 
       $ java -jar lib/dost.jar /i:docsrc/userguide.ditamap /transtype:pdf
 
-Félicitations, vous avez compilé votre premier projet |dita| |_| ! Le fichier PDF
+Félicitations, vous avez compilé votre premier projet |dita| ! Le fichier PDF
 généré est :file:`out/userguide.pdf`. Vous pouvez maintenant compiler d'autres
 projets en ignorant les étapes 1 et 2.
 

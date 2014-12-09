@@ -19,7 +19,7 @@ régulièrement payer des mises à jour de leurs produits, ont en effet dévelop
 des formats propriétaires que seuls leurs logiciels sont à même de modifier. Un
 fichier Word ou un fichier FrameMaker ne peuvent ainsi être modifiés que *via*
 les outils éponymes. Choisir un tel format risque donc de limiter les choix
-ultérieurs de l'entreprise et de se révéler coûteux |_| : il faut une licence par
+ultérieurs de l'entreprise et de se révéler coûteux : il faut une licence par
 utilisateur, qu'il soit |techwriter|, contributeur occasionnel ou
 traducteur.
 

@@ -14,12 +14,12 @@ Les contraintes de traduction doivent être prises en compte en amont du
 processus rédactionnel. Elles ont des implications autant sur le style
 rédactionnel que sur l'organisation du référentiel.
 
-Il n'y a pas de recette miracle |_| : la livraison d'informations dans plusieurs
+Il n'y a pas de recette miracle : la livraison d'informations dans plusieurs
 langues demande un suivi constant. Mais la prise en compte des contraintes en
 amont et l'utilisation d'une méthodologie appropriée permettent d'améliorer la
 qualité et de diminuer les coûts et les délais de livraison des versions
 multilingues. La traduction doit être intégrée au *workflow* documentaire. Il
-faut également faire communiquer avec les traducteurs les différents acteurs |_| :
+faut également faire communiquer avec les traducteurs les différents acteurs :
 **rédacteurs techniques**, mais également ingénieurs, experts et concepteurs.
 
 Si la documentation repose sur un ensemble de modules, la traduction peut se
@@ -31,7 +31,7 @@ faire en parallèle de la rédaction, ce qui réduit les délais de livraison.
 
 En ce qui concerne le référentiel des fichiers sources, vaut-il mieux placer les
 répertoires de langue en amont ou en aval des répertoires de projets
-documentaires |_| ? Autrement dit, vaut-il mieux adopter la structure suivante |_| :
+documentaires ? Autrement dit, vaut-il mieux adopter la structure suivante :
 
 - english
 
@@ -43,7 +43,7 @@ documentaires |_| ? Autrement dit, vaut-il mieux adopter la structure suivante |
   -  produit 1
   -  produit 2
 
-ou la suivante |_| :
+ou la suivante :
 
 - produit 1
 
@@ -66,7 +66,7 @@ pour les fournir aux traducteurs, qu'un ensemble de sous-répertoires.
 Une fois la traduction réalisée, les modifications apportées à la version source
 ou à la version traduite ne peuvent être appliquées automatiquement à l'autre
 version. Pour continuer dans la terminologie du monde logiciel, la nouvelle
-branche est un *fork* |_| : il devient impossible d'appliquer automatiquement à
+branche est un *fork* : il devient impossible d'appliquer automatiquement à
 l'une les modifications apportées à l'autre. Pour fournir les mêmes informations
 dans les différentes langues, il est donc crucial de suivre efficacement les
 mises à jour de la version d'origine.

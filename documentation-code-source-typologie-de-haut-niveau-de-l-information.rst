@@ -17,7 +17,7 @@ contenu.
 S'il crée un nouveau document au format FrameMaker, DocBook ou traitement de
 texte, le |techwriter| se trouve face à une page blanche. Selon sa
 rigueur professionnelle, l'information transmise à l'utilisateur oscillera entre
-les deux pôles suivants |_| :
+les deux pôles suivants :
 
 +------------------------------+------------------------------+
 |Organisation rationnelle      |L'utilisateur dispose d'un    |
@@ -36,7 +36,7 @@ les deux pôles suivants |_| :
 Lorsqu'il crée un document |dita|, en revanche, le |techwriter|
 doit d'emblée choisir le modèle [#]_ qui correspond
 au type d'information qu'il veut présenter. De base, |dita| propose les types
-d'information suivants  [#]_ |_| :
+d'information suivants  [#]_ :
 
 +------------------------------+------------------------------+
 |Type d'information            |Description                   |

@@ -28,7 +28,7 @@ concerne, selon le fameux concept minimaliste de *less is more*.
 
    *Texte conditionnel avec DITA XML*
 
-Concrètement, le mécanisme **ditaval** est basé sur des opérateurs binaires |_| :
+Concrètement, le mécanisme **ditaval** est basé sur des opérateurs binaires :
 vous marquez un bloc d'information avec un attribut et une valeur, puis incluez
 ou excluez ce bloc dans le livrable en passant un opérande lors de la
 compilation (le bloc est inclus par défaut si aucun opérande n'est
@@ -46,7 +46,7 @@ indiquant plusieurs valeurs séparées par des espaces dans les attributs
 
 Pour indiquer qu'une remarque est destinée à la fois à des électriciens et à des
 utilisateurs avancés en voulant profiler l'information selon les publics
-suivants |_| :
+suivants :
 
 - non électriciens,
 
@@ -54,7 +54,7 @@ suivants |_| :
 
 - électriciens experts.
 
-Vous pouvez utiliser la structure suivante |_| :
+Vous pouvez utiliser la structure suivante :
 
 .. code-block:: xml
 
@@ -70,7 +70,7 @@ Vous pouvez utiliser la structure suivante |_| :
 
    .. rubric:: Exemple
 
-   Le code suivant est correct avant filtrage |_| :
+   Le code suivant est correct avant filtrage :
 
    .. code-block:: xml
 
@@ -81,7 +81,7 @@ Vous pouvez utiliser la structure suivante |_| :
         </row>
       </thead>
 
-   Après filtrage, en revanche, on obtient le code suivant |_| :
+   Après filtrage, en revanche, on obtient le code suivant :
 
    .. code-block:: xml
 
@@ -89,7 +89,7 @@ Vous pouvez utiliser la structure suivante |_| :
       </thead>
 
    Or, selon le schéma XSD, les en-têtes de tableaux doivent contenir au moins
-   une ligne |_| :
+   une ligne :
 
    .. code-block:: xml
 

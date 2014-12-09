@@ -11,7 +11,7 @@ Livraison
 =========
 
 Le |techwriter| livre le document à son destinataire de la manière
-appropriée |_| :
+appropriée :
 
 -  animation publiée sur un site de streaming,
 

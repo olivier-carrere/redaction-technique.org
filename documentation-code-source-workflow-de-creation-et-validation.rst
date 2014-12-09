@@ -20,12 +20,12 @@ créatif, à l'inverse des machines.
 
 Face à cet état de fait, il convient de mettre un système de gestion de
 l'information relative à l'évolution de la documentation qui soit tolérant à
-l'erreur humaine. Il faut donc soit |_| :
+l'erreur humaine. Il faut donc soit :
 
 - mettre en œuvre des workflows sous un CMS,
 
 - utiliser le système de gestion de tickets utilisés pour la gestion des
-  nouvelles fonctionnalités du produit documenté (par exemple, Trac) |_| :
+  nouvelles fonctionnalités du produit documenté (par exemple, Trac) :
 
   - création d'un ticket par un développeur,
 
@@ -36,7 +36,7 @@ l'erreur humaine. Il faut donc soit |_| :
   - publication de la documentation lorsque tous les tickets critiques sont
     fermés.
 
-Les fonctions principales d'un CMS sont les suivantes |_| :
+Les fonctions principales d'un CMS sont les suivantes :
 
 - gestion des métadonnées,
 
@@ -48,7 +48,7 @@ Quel qu'il soit, le système de suivi doit offrir une visibilité et une
 traçabilité totales des modifications apportées à la documentation technique
 (quoi, qui, quand).
 
-Ce système doit être unique et exhaustif |_| : il doit centraliser toutes les
+Ce système doit être unique et exhaustif : il doit centraliser toutes les
 demandes de modification de la documentation technique.
 
 Si le document est disponible en plusieurs langues, chaque ticket doit être

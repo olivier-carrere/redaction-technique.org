@@ -7,15 +7,15 @@
 
 .. _qu-est-ce-qu-un-module-d-information:
 
-Qu'est-ce qu'un module d'information |_| ?
-==========================================
+Qu'est-ce qu'un module d'information ?
+======================================
 
 Le système modulaire le plus connu au monde est certainement celui des briques
 Lego. Adapté à la **documentation technique**, le principe des modules permet
 d'améliorer la qualité des manuels techniques et la productivité du |techwriter|.
 
 Mais suffit-il de convertir sa documentation de FrameMaker vers un format
-structuré tel que |dita| pour obtenir une documentation modulaire |_| ?
+structuré tel que |dita| pour obtenir une documentation modulaire ?
 Hélas, non. Si le contenu de départ mélange les informations de tout type
 (concepts, procédures pas à pas, référence), il sera toujours possible de le
 convertir au format |dita| en ne respectant pas rigoureusement la sémantique
@@ -26,7 +26,7 @@ Or, si l'on obtient au final un document se basant sur des fichiers correpondant
 chacun à un schéma XSD différent (*concept*, *task*, ou *reference*), on
 n'obtient pas forcément ainsi une véritable documentation modulaire. En effet,
 essayez de construire alors un document ne regroupant que les fichiers d'un seul
-type |_| : votre document aura toutes les chances d'être incomplet et incohérent.
+type : votre document aura toutes les chances d'être incomplet et incohérent.
 
 Cette documentation n'est pas modulaire, car elle ne repose pas sur de
 véritables modules d'information. Un module est un élément atomique complet et
@@ -39,7 +39,7 @@ approche structuraliste et décider du contenu de chaque module dans la
 perspective de l'**architecture documentaire** globale.  De même, des mentions
 telles que *Voir la section suivante* devront être remplacées par des reférences
 croisées. Idéalement, ces références croisées ne se situent pas dans les
-fichiers de contenu proprement dit sous la forme |_| :
+fichiers de contenu proprement dit sous la forme :
 
 .. code-block:: xml
 

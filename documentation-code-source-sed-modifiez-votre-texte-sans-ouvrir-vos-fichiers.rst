@@ -7,31 +7,31 @@
 
 .. _sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers:
 
-sed |_| : modifiez votre texte sans ouvrir vos fichiers
-=======================================================
+sed : modifiez votre texte sans ouvrir vos fichiers
+===================================================
 
 Les clones d'Unix sont peu utilisés pour gérer la documentation technique. Ceci
 est étrange si l'on songe à la pléthore d'outils disponibles sous ces
 plateformes pour manipuler du texte dans tous les sens.
 
 Prenons l'exemple du dialogue entre entre M. Jourdain et son maître de
-philosophie, dans le *Bourgeois gentilhomme* de Molière |_| :
+philosophie, dans le *Bourgeois gentilhomme* de Molière :
 
-*MONSIEUR JOURDAIN :*
-  *[...] Je voudrais donc lui mettre dans un billet : « Belle marquise, vos
-  beaux yeux me font mourir d'amour » ; mais je voudrais que cela fût mis d'une
+*MONSIEUR JOURDAIN :*
+  *[...] Je voudrais donc lui mettre dans un billet : « Belle marquise, vos
+  beaux yeux me font mourir d'amour » ; mais je voudrais que cela fût mis d'une
   manière galante, que cela fût tourné gentiment.*
 
 [...]
 
-*MAÎTRE DE PHILOSOPHIE :*
-   *On les peut mettre premièrement comme vous avez dit : Belle marquise, vos
-   beaux yeux me font mourir d'amour. Ou bien : D'amour mourir me font, belle
-   marquise, vos beaux yeux. Ou bien : Vos yeux beaux d'amour me font, belle
-   marquise, mourir. Ou bien : Mourir vos beaux yeux, belle marquise, d'amour me
-   font. Ou bien : Me font vos yeux beaux mourir, belle marquise, d'amour.*
+*MAÎTRE DE PHILOSOPHIE :*
+   *On les peut mettre premièrement comme vous avez dit : Belle marquise, vos
+   beaux yeux me font mourir d'amour. Ou bien : D'amour mourir me font, belle
+   marquise, vos beaux yeux. Ou bien : Vos yeux beaux d'amour me font, belle
+   marquise, mourir. Ou bien : Mourir vos beaux yeux, belle marquise, d'amour me
+   font. Ou bien : Me font vos yeux beaux mourir, belle marquise, d'amour.*
 
-Commençons par afficher la phrase d'origine dans un terminal |_| :
+Commençons par afficher la phrase d'origine dans un terminal :
 
 .. code-block:: console
 
@@ -69,7 +69,7 @@ Il est plus simple de se tourner vers *sed*. *sed* sélectionne dans des lignes
 des ensembles de caractères cités littéralement, ou *via* des méta-caractères
 dans des *expressions rationnelles* (ou *expressions régulières*). Un
 méta-caractère connu des expressions rationnelles est le signe \*, indiquant, en
-ligne de commande, zéro ou un nombre indéfini de caractères, comme dans |_| :
+ligne de commande, zéro ou un nombre indéfini de caractères, comme dans :
 
 .. code-block:: console
 
@@ -87,13 +87,13 @@ maximal de références arrières possibles.
    sed "s#\(.*\) \(.*\), \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \(d'.*\)#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
    d'amour. mourir me font, Belle marquise, vos beaux yeux
 
-Nous buttons sur le même problème |_| : l'expression régulière .* ne correspond pas à
+Nous buttons sur le même problème : l'expression régulière .* ne correspond pas à
 un mot, mais à une suite de caractères, ponctuation comprise. Il faut alors
 utiliser la forme <.*>, qui correspond à un mot tel que ceux dont M. Jourdain se
 sert pour faire de la prose. Nous allons utiliser les caractères d'échappement
 (barre oblique inverse \\) pour que les signes < et > ne soient pas interprétés
 littéralement sous certaines consoles, mais comme des méta-caractères ayant une
-fonction spéciale |_| :
+fonction spéciale :
 
 .. code-block:: console
 
@@ -102,7 +102,7 @@ fonction spéciale |_| :
    d'amour mourir me font, Belle marquise, vos beaux yeux.
 
 Nous pourrions également utiliser la forme [[:alpha:]]* qui fait gagner en
-lisibilité, mais perdre en concision |_| :
+lisibilité, mais perdre en concision :
 
 .. code-block:: console
 
@@ -112,7 +112,7 @@ lisibilité, mais perdre en concision |_| :
 
 C'est mieux, mais nous avons un problème de capitalisation. Nous allons donc
 utiliser les opérateurs /u et /l placés judicieusement.  Auparavant, nous allons
-exporter des variables pour rendre le script plus concis et plus lisible |_| :
+exporter des variables pour rendre le script plus concis et plus lisible :
 
 .. code-block:: console
 
@@ -126,7 +126,7 @@ exporter des variables pour rendre le script plus concis et plus lisible |_| :
    D'amour mourir me font, belle marquise, vos beaux yeux.
 
 Nous pouvons maintenant facilement redistribuer les références arrières pour
-obtenir toutes les variations du maître de philosophie |_| :
+obtenir toutes les variations du maître de philosophie :
 
 .. code-block:: console
 
@@ -150,10 +150,10 @@ Molière et GNU/Linux
 --------------------
 
 Réécrivons le dialogue de M. Jourdain et de son maître de philosophie en style
-*geek* |_| :
+*geek* :
 
-MONSIEUR JOURDAIN |_| :
-   Je voudrais donc lui afficher sur la sortie standard |_| :
+MONSIEUR JOURDAIN :
+   Je voudrais donc lui afficher sur la sortie standard :
 
    .. code-block:: console
 
@@ -162,21 +162,21 @@ MONSIEUR JOURDAIN |_| :
    Mais je voudrais que cela fût mis d'une manière galante, que cela fût tourné
    gentiment.
 
-MAÎTRE DE PHILOSOPHIE |_| :
-   On les peut mettre premièrement comme vous avez dit |_| :
+MAÎTRE DE PHILOSOPHIE :
+   On les peut mettre premièrement comme vous avez dit :
 
    .. code-block:: console
 
       $ echo "Belle marquise, vos beaux yeux me font mourir d'amour."
 
-   Ou bien |_| :
+   Ou bien :
 
    .. code-block:: console
 
       $ export declaration="Belle marquise, vos beaux yeux me font mourir d'amour."
       $ echo $declaration
 
-   Ou bien |_| :
+   Ou bien :
 
    .. code-block:: console
 
@@ -185,21 +185,21 @@ MAÎTRE DE PHILOSOPHIE |_| :
       $ echo $declaration | \
       sed "s#$mots \(d'\<.*\>\)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#"
 
-   Ou bien |_| :
+   Ou bien :
 
    .. code-block:: console
 
       $ echo $declaration | \
       sed "s#$mots \(d'\<.*\>\)#\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8#"
 
-   Ou bien |_| :
+   Ou bien :
 
    .. code-block:: console
 
       $ echo $declaration | \
       sed "s#$mots \(d'\<.*\>\)#\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#"
 
-   Ou bien |_| :
+   Ou bien :
 
    .. code-block:: console
 
@@ -210,7 +210,7 @@ Beaucoup d'efforts…
 -------------------
 
 Certes, beaucoup d'efforts pour pas grand chose, me direz-vous. Mais imaginons
-un fichier qui contiennent 1000 phrases de la même structure |_| :
+un fichier qui contiennent 1000 phrases de la même structure :
 
 Cher docteur, ces grands malheurs vous font pleurer d'amertume.
 Petit garçon, cette bonne glace te fait saliver d'envie.
@@ -221,7 +221,7 @@ de trouver dans la documentation technique des phrases de même structure, pour
 des raisons d'homogénéité stylistique.
 
 Pour effectuer nos tests sur un échantillon, plaçons les trois phrases
-précédentes dans un fichier |_| :
+précédentes dans un fichier :
 
 .. code-block:: console
 
@@ -229,7 +229,7 @@ précédentes dans un fichier |_| :
    $ echo "Petit garçon, cette bonne glace te fait saliver d'envie." >> variations.txt
    $ echo "Vaste océan, la forte houle te fait tanguer d'ivresse." >> variations.txt
 
-Plaçons les différentes commandes *sed* dans un script différent chacune |_| :
+Plaçons les différentes commandes *sed* dans un script différent chacune :
 
 .. code-block:: console
 
@@ -239,7 +239,7 @@ Plaçons les différentes commandes *sed* dans un script différent chacune |_| 
    $ echo "s#\(\<.*\>\) \(\<.*\>\), \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(d'\<.*\>\)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#" > moliere4.sed
 
 Exécutons maintenant en boucle tous les
-scripts *sed* sur toutes les lignes du fichier |_| :
+scripts *sed* sur toutes les lignes du fichier :
 
 .. code-block:: console
 

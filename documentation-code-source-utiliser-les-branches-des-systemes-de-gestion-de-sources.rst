@@ -11,12 +11,12 @@ Utiliser les branches des systèmes de gestion de sources
 ========================================================
 
 Les systèmes de gestion de sources proposent de créer des branches d'un
-projet |_| : si à un moment donné, un projet se divise en deux projets
+projet : si à un moment donné, un projet se divise en deux projets
 incompatibles, une branche est créée à partir du projet principal. Le
 |techwriter| peut ainsi gérer les différentes traductions de la
 documentation technique.
 
-Le système des branches peut servir en théorie à gérer |_| :
+Le système des branches peut servir en théorie à gérer :
 
 - les différentes traductions d'une documentation technique,
 
@@ -37,7 +37,7 @@ fait sans duplication de données. Sur un même répertoire local, une commande
 permet de changer de branche.
 
 Créer une traduction d'une documentation consiste à *forker*, soit créer une
-branche, le document initial. Si l'on utilise Git se pose alors le choix entre |_| :
+branche, le document initial. Si l'on utilise Git se pose alors le choix entre :
 
 - copier le répertoire de la langue source,
 

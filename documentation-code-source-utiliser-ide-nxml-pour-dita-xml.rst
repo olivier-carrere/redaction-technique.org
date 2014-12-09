@@ -21,7 +21,7 @@ permettra d'utiliser ce mode Emacs pour |dita|.
 - Emacs
 
 - La structure de répertoires de votre projet de documentation |dita| doit
-  être la suivante |_| :
+  être la suivante :
 
   - répertoire de langue
 
@@ -33,12 +33,12 @@ permettra d'utiliser ce mode Emacs pour |dita|.
 
   où *<répertoire de langue>* a la valeur *en_US*, ou *fr_FR*, etc.
 
-- Les instructions de ligne de commande sont conçues pour GNU/Linux |_| ; elles
+- Les instructions de ligne de commande sont conçues pour GNU/Linux ; elles
   doivent être adaptées pour être utilisées dans un autre environnement.
 
 #.  Effectuez une sauvegarde de l'ensemble de votre projet de documentation
     |dita|.
-#.  Ouvrez un terminal et collez la suite de commandes suivante |_| :
+#.  Ouvrez un terminal et collez la suite de commandes suivante :
 
     .. code-block:: console
 
@@ -55,13 +55,13 @@ permettra d'utiliser ce mode Emacs pour |dita|.
     .. note::
 
        Si un message vous avertit que le fichier :file:`.emacs` n'existe pas, collez les
-       commandes suivantes, puis recommencez l'opération |_| :
+       commandes suivantes, puis recommencez l'opération :
 
        .. code-block:: console
 
           $ cd && touch .emacs
 
-    Cette suite de commandes |_| :
+    Cette suite de commandes :
 
     - télécharge et décompresse le mode nXML,
     - crée une copie de sauvegarde du fichier :file:`.emacs` (:file:`.emacs.bak`),
@@ -72,7 +72,7 @@ permettra d'utiliser ce mode Emacs pour |dita|.
     racine de votre projet de documentation |dita|.
 
 #.  Placez-vous dans le répertoire racine de votre projet de documentation |dita|,
-    puis collez la commande suivante |_| :
+    puis collez la commande suivante :
 
     .. code-block:: console
 
@@ -100,7 +100,7 @@ permettra d'utiliser ce mode Emacs pour |dita|.
        rm -rf ../schemas.redaction-technique.org/
 
     Vos répertoires de langue doivent maintenant comporter les fichiers
-    :file:`schemas.xml` appropriés |_| :
+    :file:`schemas.xml` appropriés :
 
     - fr_FR
 

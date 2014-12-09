@@ -7,13 +7,13 @@
 
 .. _le-single-sourcing-un-format-source-plusieurs-formats-cibles:
 
-Le single-sourcing |_| : un format source, plusieurs formats cibles
-===================================================================
+Le single-sourcing : un format source, plusieurs formats cibles
+===============================================================
 
 Le **single-sourcing** est un sujet qui a longtemps divisé les **rédacteurs
-techniques** |_| : des supports de **rédaction technique** différents, tels qu'une
+techniques** : des supports de **rédaction technique** différents, tels qu'une
 aide en ligne et un manuel imprimé, doivent-ils proposer un contenu radicalement
-différent ou peuvent-ils être générés à partir du même contenu source |_| ?
+différent ou peuvent-ils être générés à partir du même contenu source ?
 
 Les contraintes de productivité et la réduction des coûts aidant, le débat a été
 tranché en faveur du *single-sourcing*. Le gain qualitatif, discutable, ne
@@ -25,7 +25,7 @@ différente pour chaque version cible.
    *Un seul jeu d'informations, une multiplicité de formats de sortie*
 
 Si le |techwriter| pratique le *single-sourcing*, il doit cependant
-sélectionner en début de projet le paradigme sur lequel il se base |_| : le livre ou
+sélectionner en début de projet le paradigme sur lequel il se base : le livre ou
 l'aide en ligne. Pendant longtemps, les outils proposés reposaient soit sur un
 document de type livre (Word, ou FrameMaker, essentiellement) qui pouvait être
 exporté au format d'aide en ligne, soit sur un fichier source (RTF) d'aide

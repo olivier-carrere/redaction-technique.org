@@ -14,7 +14,7 @@ Le |techwriter| collecte l'information auprès de différentes sources,
 internes et externes à l'entreprise.
 
 Une fois le projet de rédaction technique clairement défini, le |techwriter|
-collecte toute l'information disponible |_| :
+collecte toute l'information disponible :
 
 - spécifications du produit, Intranet, pages `Trac`_,
 

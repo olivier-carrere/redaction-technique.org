@@ -7,8 +7,8 @@
 
 .. _dita-open-toolkit-afficher-les-references-croisees-dans-les-pdf:
 
-DITA Open Toolkit |_| : afficher les références croisées dans les PDF
-=====================================================================
+DITA Open Toolkit : afficher les références croisées dans les PDF
+=================================================================
 
 Les **références croisées** sont un élément important d'une **documentation
 technique** bien structurée. Elles permettent à l'utilisateur de naviguer
@@ -22,16 +22,16 @@ dans votre
 structure de table des matières *ditamap* (la *reltable* permet de
 décontextualiser votre contenu et donc de mieux le réutiliser). Vous lancez
 votre commande de génération du PDF et, mauvaise surprise, aucune section *Voir
-aussi* [#]_ n'apparaît dans le fichier cible |_| ! Vous essayez alors de générer une
+aussi* [#]_ n'apparaît dans le fichier cible ! Vous essayez alors de générer une
 version HTML de votre contenu et là, votre section *Voir aussi* est bien
 présente. |dita-ot| ne supporterait-il pas les références croisées
-dans les PDF |_| ?
+dans les PDF ?
 
 Fort heureusement, non. Par défaut (allez savoir pourquoi), les **références
 croisées** ne sont pas générées dans les PDF par |dita-ot|. Pour les
 afficher, attribuez la valeur *no* à la variable *disableRelatedLinks* du fichier
 :file:`demo/fo/build_template.xml`. Si vous utilisez *ant*, il vous faudra
-également passer le paramètre *args.fo.include.rellinks=all* comme suit |_| :
+également passer le paramètre *args.fo.include.rellinks=all* comme suit :
 
 .. code-block:: console
 
@@ -40,7 +40,7 @@ afficher, attribuez la valeur *no* à la variable *disableRelatedLinks* du fichi
 
 .. rubric:: Notes
 
-.. [#] Pour des raisons de « |_| décontextualisation |_| », et pour se donner la
+.. [#] Pour des raisons de « décontextualisation », et pour se donner la
        possibilité de réutiliser le contenu ailleurs, les références croisées ne
        sont pas placées dans le corps du texte, mais en fin de section, dans une
        rubrique dédiée.

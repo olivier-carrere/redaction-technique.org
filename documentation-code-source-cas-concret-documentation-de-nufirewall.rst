@@ -7,15 +7,15 @@
 
 .. _cas-concret-documentation-de-nufirewall:
 
-Cas concret |_| : documentation de NuFirewall
-=============================================
+Cas concret : documentation de NuFirewall
+=========================================
 
 La documentation de `NuFirewall`_,
 qui a été perçue par la presse comme `un point fort du produit`_,
 a été réalisée sous |dita|.
 
 Si je n'avais pas utilisé un format qui favorise au maximum la réutilisation de
-l'information, je n'aurais pas autant pu me consacrer à l'essentiel |_| : le
+l'information, je n'aurais pas autant pu me consacrer à l'essentiel : le
 contenu.
 
 .. toctree::

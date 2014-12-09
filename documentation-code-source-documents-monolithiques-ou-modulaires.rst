@@ -15,7 +15,7 @@ Le format source peut reposer sur des **fichiers monolithiques** ou sur des
 
 Les **fichiers monolithiques** (par exemple Word, LibreOffice ou Framemaker)
 centralisent tout le contenu dans un seul fichier, facile à manier, mais qui
-limite le partage du contenu |_| ; le risque de disposer d'informations incohérentes
+limite le partage du contenu ; le risque de disposer d'informations incohérentes
 ou en doublon est alors important.
 
 .. figure:: graphics/monolithique.png

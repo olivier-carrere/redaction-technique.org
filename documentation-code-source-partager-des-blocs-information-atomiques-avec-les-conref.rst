@@ -15,7 +15,7 @@ Lorsque le |techwriter| veut réutiliser des blocs d'information
 fichiers de contenu *dita* et non dans les structures de table des matières
 *ditamap*, grâce au mécanisme `conref`_.
 
-Le principe des *conref* est simple |_| : lorsqu'un *conref* est mentionné au
+Le principe des *conref* est simple : lorsqu'un *conref* est mentionné au
 niveau d'un nœud XML donné, tout le contenu du nœud cible est remplacé par le
 contenu du nœud source.
 
