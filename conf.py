@@ -235,7 +235,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'redaction-techniqueorg.tex', u'redaction-technique.org Documentation',
+  ('index', 'redaction-techniqueorg.tex', u'www.redaction-technique.org',
    u'Olivier Carrère', 'manual'),
 ]
 
