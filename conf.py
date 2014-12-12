@@ -238,7 +238,7 @@ latex_elements = {
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index', 'redaction-techniqueorg.tex', u'www.redaction-technique.org',
-   u'Olivier Carrère', 'manual'),
+   u'Olivier Carrère', 'manual', 'toctree_only'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
