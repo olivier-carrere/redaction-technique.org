@@ -46,7 +46,9 @@ confier entièrement la gestion et l'archivage des fichiers sources de la
 documentation. Une sélection rigoureuse de la solution s'impose, associée à une
 procédure de sauvegarde et de restauration éprouvée.
 
-.. rubric:: Notes
+.. only:: html
+
+   .. rubric:: Notes
 
 .. [#] À chaque dépôt du fichier sur le CMS, et non à chaque enregistrement de
        son travail par le |techwriter|.

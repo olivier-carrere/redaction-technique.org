@@ -61,7 +61,9 @@ d'information oblige donc d'entrée de jeu le |techwriter| à
 structurer l'information. L'utilisateur y gagne en facilité et rapidité d'accès
 à l'information et en utilisabilité globale de la documentation technique.
 
-.. rubric:: Notes
+.. only:: html
+
+   .. rubric:: Notes
 
 .. [#] Dans la pratique, un schéma XSD.
 

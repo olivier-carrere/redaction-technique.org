@@ -138,7 +138,9 @@ FrameMaker et DocBook ne sont pas pleinement modulaires, car les plus petits
 informations telles que la structure de table des matières ou les références
 croisées qui ne sont valables que dans un nombre limité de contextes.
 
-.. rubric:: Notes
+.. only:: html
+
+   .. rubric:: Notes
 
 .. [#] Si le |techwriter| met lui-même en page ses documents, il
        change de rôle lorsqu'il effectue cette opération.

@@ -44,7 +44,9 @@ formats cibles différents à partir d'un même format source. Un projet au form
 Windows, d'aide JavaHelp, de site en HTML, etc. Le XML offre en ce domaine des
 possibilités quasi illimitées.
 
-.. rubric:: Notes
+.. only:: html
+
+   .. rubric:: Notes
 
 .. [#] Dans le cas d'une photo, le format cible est le format `JPEG`_
        qui est utilisé pour l'affichage

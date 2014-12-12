@@ -38,7 +38,9 @@ afficher, attribuez la valeur *no* à la variable *disableRelatedLinks* du fichi
    $ ant -Dargs.input=samples/sequence.ditamap -Doutput.dir=out/ \
    -Dtranstype=pdf2 -Dargs.fo.include.rellinks=all
 
-.. rubric:: Notes
+.. only:: html
+
+   .. rubric:: Notes
 
 .. [#] Pour des raisons de « décontextualisation », et pour se donner la
        possibilité de réutiliser le contenu ailleurs, les références croisées ne

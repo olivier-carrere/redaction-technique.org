@@ -39,7 +39,9 @@ des paragraphes, voire des phrases ou des segments de phrase, qui ne peuvent pas
 partagées *via* le mécanisme *conref*, similaire au mécanisme *Xinclude* proposé
 par DocBook.
 
-.. rubric:: Notes
+.. only:: html
+
+   .. rubric:: Notes
 
 .. [#] Pas au sens XPath.
 

@@ -42,7 +42,9 @@ deviennent alors aisées. C'est un aspect fondamental du métier de |techwriter|
 Le |techwriter| apporte ainsi une véritable valeur
 ajoutée au produit qu'il documente.
 
-.. rubric:: Notes
+.. only:: html
+
+   .. rubric:: Notes
 
 .. [#] Même si les formats qui distinguent le contenu de la mise en page sont
        dans leur principe plus aptes à la mise en œuvre de la philosophie KISS.

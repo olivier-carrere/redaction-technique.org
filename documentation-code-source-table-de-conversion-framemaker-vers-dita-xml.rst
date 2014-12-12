@@ -32,7 +32,9 @@ dans le nouveau format afin de tirer parti au maximum de |dita|. Vous pouvez
 pendant cette phase continuer à publier de nouvelles versions du document ; la
 publication devrait d'ailleurs être beaucoup plus simple que sous FrameMaker.
 
-.. rubric:: Notes
+.. only:: html
+
+   .. rubric:: Notes
 
 .. [#] Bien que ce processus doive être rapide, je vous conseille de le faire
        juste après une livraison d'une nouvelle version du document pour avoir

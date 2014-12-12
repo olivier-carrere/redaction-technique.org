@@ -81,7 +81,9 @@ De manière générale, un professionnel a toujours intérêt à travailler sur 
 format le plus riche, ne serait-ce que pour être pro-actif et anticiper sur les
 nouveaux besoins.
 
-.. rubric:: Notes
+.. only:: html
+
+   .. rubric:: Notes
 
 .. [#] Ce n'est bien sûr qu'une analogie, |dita| étant un standard, à la
        différence du format RAW.

@@ -43,7 +43,9 @@ effet liée à aucun référentiel particulier. Rien n'interdit donc de commence
 gérer ses projets sans CMS, puis d'avoir recours à une telle solution si les
 bénéfices de ce choix deviennent manifestes.
 
-.. rubric:: Notes
+.. only:: html
+
+   .. rubric:: Notes
 
 .. [#] Le |techwriter| peut ainsi voir où un élément d'information
        est inclus ; lors de la mise à jour de cet élément, il peut alors juger
