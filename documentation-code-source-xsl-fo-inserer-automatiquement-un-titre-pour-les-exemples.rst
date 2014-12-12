@@ -32,7 +32,7 @@ Supposons que le code source d'un de vos fichiers |dita| soit le suivant :
 Vous souhaitez que le fichier PDF généré affiche l'exemple structuré comme
 suit :
 
-   .. rubric:: Exemple : XSL-FO
+   **Exemple : XSL-FO**
 
    Voici mon exemple de chemin XPATH :
 
@@ -42,7 +42,7 @@ suit :
 
 et que si l'exemple ne contient pas de titre, il soit structuré comme suit :
 
-   .. rubric:: Exemple :
+   **Exemple :**
 
    Voici mon exemple de chemin XPATH :
 
@@ -53,7 +53,7 @@ et que si l'exemple ne contient pas de titre, il soit structuré comme suit :
 Par défaut, cependant, ce contenu sera structuré comme suit dans le PDF par
 |dita-ot| :
 
-   .. rubric:: XSL-FO
+   **XSL-FO**
 
    Voici mon exemple de chemin XPATH :
 
