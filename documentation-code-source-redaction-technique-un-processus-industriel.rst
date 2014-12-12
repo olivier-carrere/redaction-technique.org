@@ -26,7 +26,7 @@ fiable.
 
 Pour créer et valoriser un contenu à forte valeur ajoutée pour l'entreprise, le
 |techwriter| dialogue constamment non seulement avec tous les acteurs
-internes de la société, mais aussi avec son écosystème : partenaires,
+internes de la société, mais aussi avec son écosystème : partenaires,
 journalistes, utilisateurs, etc. Il fournit ainsi aux différents publics
 l'information dont ils ont besoin. Ceci renforce l'image de marque de la
 société, améliore la satisfaction client et facilite la perception des avantages
