@@ -3,6 +3,18 @@ redaction-technique.org
 
 Website powered by Python Sphinx about managing documentation as source code (in French)
 
+
+Prerequisites
+-------------
+
+Sphinx is not quite mature yet, and you may not be able to build on all
+platforms. The procedures below have been successfully tested on Debian 7.
+
+Installing Sphinx
+-----------------
+
+$ sudo apt-get install python-sphinx
+
 Building the HTML output
 ------------------------
 
