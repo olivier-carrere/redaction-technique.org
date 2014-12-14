@@ -46,12 +46,8 @@ $ git clone https://github.com/olivier-carrere/redaction-technique.org.git
 
 $ cd redaction-technique.org
 
-$ git checkout -b build
-
-$ git cherry-pick 4da22c8d2799133c70db73f4a3dbb0e0f7391e6f
+$ sed -i '/:hidden:/d' *.rst
 
 $ make epub
 
-$ git checkout master
-
-$ git branch -D build
+$ git reset --hard HEAD
