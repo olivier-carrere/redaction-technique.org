@@ -91,7 +91,11 @@ devhelp:
 	@echo "# devhelp"
 
 epub:
+	$ git stash
+	$ sed -i '/:hidden:/d' *.rst
 	$(SPHINXBUILD) -b epub $(ALLSPHINXOPTS) $(BUILDDIR)/epub
+	$ git reset --hard HEAD
+	$ if git stash list | grep stash; then git stash pop; fi
 	@echo
 	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
 

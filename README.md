@@ -39,15 +39,8 @@ $ make latexpdf
 Building the EPUB output
 ------------------------
 
-This procedure is a bit kludgy, as we have to implement a workaround for a
-Sphinx bug.
-
 $ git clone https://github.com/olivier-carrere/redaction-technique.org.git
 
 $ cd redaction-technique.org
 
-$ sed -i '/:hidden:/d' *.rst
-
 $ make epub
-
-$ git reset --hard HEAD
