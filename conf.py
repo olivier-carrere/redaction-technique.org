@@ -97,7 +97,9 @@ rst_epilog = u"""
 
 .. links
 
+.. _sed: http://redaction-technique.org/documentation-code-source-sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers.html
 .. _Alfresco: http://www.alfresco.com/fr
+.. _CSS: https://github.com/olivier-carrere/redaction-technique.org/tree/master/_static
 .. _Componize: http://www.componize.com
 .. _DITA Open Toolkit 1.5.4: http://sourceforge.net/projects/dita-ot/files/DITA-OT Stable Release/DITA Open Toolkit 1.5.4/DITA-OT1.5.4_full_easy_install_bin.zip/download
 .. _DITA XML: https://github.com/olivier-carrere/redaction-technique.org/tree/DITA_XML
@@ -108,6 +110,7 @@ rst_epilog = u"""
 .. _Git: http://www.git-scm.com
 .. _JPEG: http://fr.wikipedia.org/wiki/Jpeg
 .. _Java: http://java.com/fr/download/manual.jsp?locale=fr
+.. _Makefile: https://github.com/olivier-carrere/redaction-technique.org/commits/master/Makefile
 .. _NuFirewall: http://linuxfr.org/news/nufirewall-le-pare-feu-libre-sans-prise-de-t%C3%AAte
 .. _OpenDocument: http://fr.wikipedia.org/wiki/OpenDocument
 .. _Predictive: http://www.dr-qubit.org/emacs.php#predictive-download
@@ -130,6 +133,7 @@ rst_epilog = u"""
 .. _reltable: http://docs.oasis-open.org/dita/v1.0/langspec/reltable.html
 .. _rsync: http://rsync.samba.org
 .. _script de génération multilingue DITA XML: http://www.redaction-technique.org/media/dita2target.sh
+.. _scripts Bash: https://github.com/olivier-carrere/redaction-technique.org/tree/master/scripts
 .. _spécialisation: http://en.wikipedia.org/wiki/Darwin_Information_Typing_Architecture#Specialization
 .. _topics: http://docs.oasis-open.org/dita/v1.0/archspec/topicover.html
 .. _un point fort du produit: http://www.linformaticien.com/tests/id/20068/categoryid/48/edenwall-nufirewall-le-pare-feu-nouvelle-generation.aspx

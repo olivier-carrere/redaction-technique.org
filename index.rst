@@ -50,6 +50,31 @@ ses sources sous un logiciel de gestion de versions tel que *Git* ou
 - partagées entre différentes versions du projet de documentation,
 - annulées en une seule opération, etc.
 
+Ce site a parlé, parle ou parlera également un peu, beaucoup ou pas du tout de :
+
++-----------------------------------+-------------------------+----------------+
+|                                   ||rst|                    ||dita|          |
++===================================+=========================+================+
+|Modification                       |`scripts Bash`_                           |
+|                                   +------------------------------------------+
+|                                   |awk                                       |
+|                                   +------------------------------------------+
+|                                   |`sed`_                                    |
+|                                   +------------------------------------------+
+|                                   |expressions rationnelles (ou *expressions |
+|                                   |régulières*)                              |
++-----------------------------------+------------------------------------------+
+|Gestion de versions                |Git                                       |
++-----------------------------------+-------------------------+----------------+
+|Compilation                        |`Makefile`_              |Ant             |
+|                                   |                         +----------------+
+|                                   |                         |XSLT            |
++---------------------+-------------+-------------------------+----------------+
+|Mise en page         |HTML         |`CSS`_                                    |
+|                     +-------------+-------------------------+----------------+
+|                     |PDF          |LaTeX                    |XSL-FO          |
++---------------------+-------------+-------------------------+----------------+
+
 .. only:: html
 
    .. rubric:: Notes
