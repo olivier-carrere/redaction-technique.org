@@ -64,7 +64,7 @@ Ce site a parlé, parle ou parlera également un peu, beaucoup ou pas du tout de
 |                                   |expressions rationnelles (ou *expressions |
 |                                   |régulières*)                              |
 +-----------------------------------+------------------------------------------+
-|Gestion de versions                |Git                                       |
+|Gestion de versions                |`Git`_                                    |
 +-----------------------------------+-------------------------+----------------+
 |Compilation                        |`Makefile`_              |Ant             |
 |                                   |                         +----------------+
