@@ -44,3 +44,9 @@ $ git clone https://github.com/olivier-carrere/redaction-technique.org.git
 $ cd redaction-technique.org
 
 $ make epub
+
+Troubleshooting
+---------------
+
+If compilation fails, you can get a compiled version on
+https://readthedocs.org/projects/redaction-techniqueorg.
