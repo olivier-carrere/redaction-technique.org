@@ -107,7 +107,7 @@ rst_epilog = u"""
 .. _DocBook: https://github.com/olivier-carrere/redaction-technique.org/tree/DocBook
 .. _DocZone: http://www.doczone.com
 .. _FrameMaker: http://en.wikipedia.org/wiki/Adobe_FrameMaker
-.. _Git: http://www.git-scm.com
+.. _Git: http://redaction-technique.org/documentation-code-source-git-du-fichier-au-contenu.html
 .. _JPEG: http://fr.wikipedia.org/wiki/Jpeg
 .. _Java: http://java.com/fr/download/manual.jsp?locale=fr
 .. _Makefile: https://github.com/olivier-carrere/redaction-technique.org/commits/master/Makefile
