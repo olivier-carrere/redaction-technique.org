@@ -236,6 +236,7 @@ latex_elements = {
 #'preamble': '',
 
 'babel': '\\usepackage[francais]{babel}',
+    'date': '\\date{}',
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
