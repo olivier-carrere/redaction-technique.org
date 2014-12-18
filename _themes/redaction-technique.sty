@@ -1,0 +1,155 @@
+\usepackage{fncychap}
+\usepackage{wallpaper}
+\usepackage{lastpage}
+\usepackage{datetime}
+\usepackage{chngpage}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage[export]{adjustbox}
+\usepackage{float}
+
+% Page layout
+
+\usepackage[hmargin=2cm,%
+            top=2cm,%
+            bottom=3cm,%
+            footskip=-1cm,%
+            headsep=1cm,%
+            heightrounded]{geometry}
+
+% Do not float figures
+
+\let\origfigure=\figure
+                 \renewenvironment{figure}[6]
+                 {\origfigure[H]}{\endlist}
+
+% Resize images if size is not specified
+
+\renewcommand\includegraphics[2][\@empty]{%
+      \py@Oldincludegraphics[max width=\textwidth, max height=\textheight]{#2}%
+}
+
+% Colors %
+
+\definecolor{titlecolor}{HTML}{3a5e61}
+\definecolor{InternalLinkColor}{HTML}{3a5e61}
+\definecolor{ExternalLinkColor}{HTML}{3a5e61}
+
+% Chapters %
+
+\ChRuleWidth{0pt}
+\renewcommand{\DOCH}{%
+  \vspace*{5\p@}%
+  \raggedright\Huge\sffamily\bfseries\textcolor{titlecolor}{\thechapter{}.}
+}
+\renewcommand{\DOTI}[1]{%
+  \vspace*{6\p@}%
+  \raggedright\Huge\sffamily\bfseries\textcolor{titlecolor}{#1}\par\nobreak%
+  \vskip 30\p@
+}
+\renewcommand{\DOTIS}[1]{%
+  \vspace*{5\p@}%
+  \raggedright\Huge\sffamily\bfseries\textcolor{titlecolor}{#1}\par\nobreak%
+  \vskip 30\p@
+}
+
+% Headers and footers %
+
+\newcommand{\headerImg}{%
+  \ThisFreeWallPaper{-6cm}{11cm}{0.25}{../../graphics/redaction-technique.png}%
+}
+
+% Code snippets
+
+\renewcommand{\Verbatim}[1][1]{%
+  % list starts new par, but we don't want it to be set apart vertically
+  \bgroup\parskip=0pt%
+  \smallskip%
+  % The list environement is needed to control perfectly the vertical
+  % space.
+  \list{}{%
+  \setlength\parskip{0pt}%
+  \setlength\itemsep{0ex}%
+  \setlength\topsep{0ex}%
+  \setlength\partopsep{0pt}%
+  \setlength\leftmargin{10pt}%
+  }%
+  \item\MakeFramed {\FrameRestore}%
+  \footnotesize
+  \OriginalVerbatim[#1]%
+}
+% New page style 'firstpage'
+\newcommand{\ps@firstpage}{}
+
+% Normal page header and footer
+\fancypagestyle{normal}{
+ \fancyhf{} % clear headers
+  \fancyhead[RE,RO]{
+    \small\sffamily\textcolor{titlecolor}{\nouppercase{\leftmark}}
+  }
+  \fancyfoot[CE,CO]{
+    \small\sffamily\textcolor{titlecolor}{\@title}
+    \small\sffamily\textcolor{titlecolor}{ -- }
+    \small\sffamily\textcolor{titlecolor}{carrereo@gmail.com}
+  }
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+% Plain page header and footer
+\pagestyle{fancyplain}
+\fancyhf{}
+\lhead{ \fancyplain{}{\@author} }
+\rhead{ \fancyplain{}{\today} }
+\rfoot{ \fancyplain{}{\thepage} }
+
+% first page header and footer
+\fancypagestyle{firstpage}{
+ \fancyhf{} % clear the headers
+  \fancyhead[CE,CO]{
+    \headerImg{}
+  }
+
+  \fancyfoot[LE,LO]{\small\sffamily\textcolor{titlecolor}{carrereo@gmail.com}}
+
+  }
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+
+% Title page %
+
+\newgeometry{bottom=4cm,left=2cm}
+\renewcommand{\maketitle}{%
+  \begin{titlepage}%
+    \thispagestyle{firstpage}
+    \let\footnotesize\small
+    \let\footnoterule\relax
+    \ifsphinxpdfoutput
+      \begingroup
+      \def\\{, }
+      \def\and{and }
+      \pdfinfo{
+        /Author (\@author)
+        /Title (\@title)
+        /CreationDate (D:\pdfdate)
+      }
+      \endgroup
+    \fi
+
+    \vspace*{\stretch{1}}% Center vertically
+
+    \begin{adjustwidth}[]{0cm}{0cm}%
+      \begin{flushright}%
+        \huge\sffamily\bfseries\textcolor{titlecolor}{\@title}\par%
+        \Large\sffamily\bfseries\textcolor{titlecolor}{\py@release}\par%
+      \end{flushright}%\par
+    \end{adjustwidth}%
+
+    \vspace*{\stretch{1}}% Center vertically
+
+  \end{titlepage}%
+  \newgeometry{hmargin=2cm,top=2cm,bottom=2cm,footskip=-1cm,headsep=1cm,heightrounded}
+  \fancyhf{} % clear headers
+  \setcounter{footnote}{0}%
+  \let\thanks\relax\let\maketitle\relax
+}

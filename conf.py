@@ -238,8 +238,14 @@ latex_elements = {
 #'preamble': '',
 
     'babel': '\\usepackage[francais]{babel}',
-    'date': '\\date{}',
+    'preamble': '\\usepackage{redaction-technique}',
+    'classoptions': ',openany',
 }
+
+latex_additional_files = [
+    '_themes/redaction-technique.sty',
+    '_themes/wallpaper.sty',
+ ]
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
