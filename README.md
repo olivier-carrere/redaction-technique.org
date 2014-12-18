@@ -27,9 +27,6 @@ $ make html
 Building the PDF output
 ------------------------
 
-The PDF output is not quite satisfactory yet, as I still have to implement
-custom LaTeX stylesheets.
-
 $ git clone https://github.com/olivier-carrere/redaction-technique.org.git
 
 $ cd redaction-technique.org
