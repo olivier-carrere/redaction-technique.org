@@ -97,8 +97,10 @@ fonction spéciale :
 
 .. code-block:: console
 
+   $ export \
+   p="\(\<.*\>\) \(\<.*\>\), \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(d'\<.*\>\)"
    $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." | \
-   sed "s#\(\<.*\>\) \(\<.*\>\), \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(d'\<.*\>\)#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
+   sed "s#$p#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
    d'amour mourir me font, Belle marquise, vos beaux yeux.
 
 Nous pourrions également utiliser la forme [[:alpha:]]* qui fait gagner en
@@ -106,8 +108,10 @@ lisibilité, mais perdre en concision :
 
 .. code-block:: console
 
+   $ export a="[[:alpha:]]"
+   $ export n="\($a*\) \($a*\), \($a*\) \($a*\) \($a*\) \($a*\) \($a*\) \($a*\) \(d'$a*\)"
    $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." | \
-   sed "s#\([[:alpha:]]*\) \([[:alpha:]]*\), \([[:alpha:]]*\) \([[:alpha:]]*\) \([[:alpha:]]*\) \([[:alpha:]]*\) \([[:alpha:]]*\) \([[:alpha:]]*\) \(d'[[:alpha:]]*\)#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
+   sed "s#$n#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
    d'amour mourir me font, Belle marquise, vos beaux yeux.
 
 C'est mieux, mais nous avons un problème de capitalisation. Nous allons donc
@@ -233,10 +237,10 @@ Plaçons les différentes commandes *sed* dans un script différent chacune :
 
 .. code-block:: console
 
-   $ echo "s#\(\<.*\>\) \(\<.*\>\), \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(d'\<.*\>\)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#" > moliere1.sed
-   $ echo "s#\(\<.*\>\) \(\<.*\>\), \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(d'\<.*\>\)#\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8#" > moliere2.sed
-   $ echo "s#\(\<.*\>\) \(\<.*\>\), \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(d'\<.*\>\)#\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#" > moliere3.sed
-   $ echo "s#\(\<.*\>\) \(\<.*\>\), \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(d'\<.*\>\)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#" > moliere4.sed
+   $ echo "s#$p#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#" > moliere1.sed
+   $ echo "s#$p#\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8#" > moliere2.sed
+   $ echo "s#$p#\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#" > moliere3.sed
+   $ echo "s#$p#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#" > moliere4.sed
 
 Exécutons maintenant en boucle tous les
 scripts *sed* sur toutes les lignes du fichier :
