@@ -109,6 +109,7 @@ rst_epilog = u"""
 .. _FrameMaker: http://en.wikipedia.org/wiki/Adobe_FrameMaker
 .. _Git: http://redaction-technique.org/documentation-code-source-git-du-fichier-au-contenu.html
 .. _JPEG: http://fr.wikipedia.org/wiki/Jpeg
+.. _LinkedIn: http://fr.linkedin.com/in/carrereolivier
 .. _Java: http://java.com/fr/download/manual.jsp?locale=fr
 .. _Makefile: https://github.com/olivier-carrere/redaction-technique.org/commits/master/Makefile
 .. _NuFirewall: http://linuxfr.org/news/nufirewall-le-pare-feu-libre-sans-prise-de-t%C3%AAte
@@ -119,6 +120,7 @@ rst_epilog = u"""
 .. _TIFF: http://fr.wikipedia.org/wiki/Tagged_Image_File_Format
 .. _Trac: http://trac.edgewall.org
 .. _Unison: http://www.cis.upenn.edu/~bcpierce/unison
+.. _Viadeo: http://fr.viadeo.com/fr/profile/olivier.carrere
 .. _XML::Twig: http://www.xmltwig.org/xmltwig/
 .. _XPATH: http://fr.wikipedia.org/wiki/XPath
 .. _XSD: http://fr.wikipedia.org/wiki/XML_Schema

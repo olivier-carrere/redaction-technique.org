@@ -31,8 +31,8 @@ complexité différents.
    Langage de balisage XML sémantique qui offre un rapport
    fonctionnalités/complexité aujourd'hui peu intéressant.
 
-Ce site est conçu et réalisé par un |techwriter| (carrereo *at*
-gmail.com) spécialisé dans l'informatique. Il est publié sous licence Creative
+Ce site est conçu et réalisé par un |techwriter|
+spécialisé dans l'informatique. Il est publié sous licence Creative
 Commons.  Vous pouvez le cloner, le forker, proposer des *patchs*, ou… le lire,
 dans le format que vous souhaitez, après l'avoir compilé en PDF, EPUB ou autre
 avec *Python Sphinx*.
@@ -88,6 +88,6 @@ Ce site a parlé, parle ou parlera également un peu, beaucoup ou pas du tout de
    documentation-code-source-diminuer-les-couts-ameliorer-la-satisfaction-client
    documentation-code-source-redaction-technique-un-processus-industriel
    documentation-code-source-format-structure-dita-xml
-
+   documentation-code-source-contact
 
 .. text review: yes
