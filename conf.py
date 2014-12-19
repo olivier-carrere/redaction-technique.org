@@ -116,6 +116,7 @@ rst_epilog = u"""
 .. _OpenDocument: http://fr.wikipedia.org/wiki/OpenDocument
 .. _Predictive: http://www.dr-qubit.org/emacs.php#predictive-download
 .. _RAW: http://fr.wikipedia.org/wiki/RAW_(format_d%27image)
+.. _Read the Docs: https://readthedocs.org/projects/redaction-techniqueorg
 .. _SyncToy: http://www.microsoft.com/en-us/download/details.aspx?id=15155
 .. _TIFF: http://fr.wikipedia.org/wiki/Tagged_Image_File_Format
 .. _Trac: http://trac.edgewall.org

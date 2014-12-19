@@ -35,7 +35,8 @@ Ce site est conçu et réalisé par un |techwriter|
 spécialisé dans l'informatique. Il est publié sous licence Creative
 Commons.  Vous pouvez le cloner, le forker, proposer des *patchs*, ou… le lire,
 dans le format que vous souhaitez, après l'avoir compilé en PDF, EPUB ou autre
-avec *Python Sphinx*.
+avec *Python Sphinx*. Vous pouvez également obtenir une version compilée sur
+`Read the Docs`_.
 
 Puisqu'il traite des processus et des formats de rédaction technique, son
 contenu est cependant moins pertinent que son historique et que ses branches
