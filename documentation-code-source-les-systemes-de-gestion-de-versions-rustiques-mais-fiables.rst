@@ -13,7 +13,7 @@ Les systèmes de gestion de versions - rustiques mais fiables
 Travailler sur des fichiers sources au format texte, et non binaire, est
 l'occasion pour le |techwriter| de gérer son contenu comme les
 développeurs gèrent leur code : sous un système de gestion des sources tel que
-Git, Subversion ou SourceSafe.
+|git|, Subversion ou SourceSafe.
 
 Ces systèmes :
 
@@ -88,7 +88,7 @@ ou les branches.
        alors procéder à une nouvelle transaction, sa copie locale du fichier
        étant intacte.
 
-.. [#] Surtout sous Git, conçu explicitement dans ce but.
+.. [#] Surtout sous |git|, conçu explicitement dans ce but.
 
 .. [#] Les systèmes de gestion de version favorisent un dépôt fréquent de
        modifications atomiques.
