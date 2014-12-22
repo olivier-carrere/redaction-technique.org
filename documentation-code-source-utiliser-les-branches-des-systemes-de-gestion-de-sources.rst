@@ -29,15 +29,15 @@ texte conditionnel des outils de documentation.
 D'autre part, le système de gestion des branches est plus ou moins adapté à la
 gestion des traductions selon le gestionnaire de sources que l'on utilise.
 
-La principale différence entre les systèmes de gestion de sources |git|
+La principale différence entre les systèmes de gestion de sources `Git`_
 et Subversion, c'est leur manière de gérer les branches. Créer une branche sous
 Subversion revient à dupliquer un répertoire. Les fichiers des deux répertoires
-évoluent ensuite séparément. Sous |git|, en revanche, la création de branche se
+évoluent ensuite séparément. Sous Git, en revanche, la création de branche se
 fait sans duplication de données. Sur un même répertoire local, une commande
 permet de changer de branche.
 
 Créer une traduction d'une documentation consiste à *forker*, soit créer une
-branche, le document initial. Si l'on utilise |git| se pose alors le choix entre :
+branche, le document initial. Si l'on utilise Git se pose alors le choix entre :
 
 - copier le répertoire de la langue source,
 
@@ -67,5 +67,9 @@ différentes versions linguistiques.  En tout cas, la solution des branches
 autorise de telles opérations, non celle des répertoires. Elle est cependant
 plus difficile à appréhender et à utiliser par l'équipe de **rédaction
 technique**.
+
+.. seealso::
+
+   - :ref:`git-du-fichier-au-contenu`
 
 .. text review: yes

@@ -11,7 +11,7 @@ Un référentiel unique ?
 =======================
 
 Idéalement, tout le contenu peut être placé sous un référentiel unique, par
-exemple le logiciel de gestion de versions |git|.
+exemple le logiciel de gestion de versions `Git`_.
 Ceci en maximise la réutilisation,
 la cohérence et la qualité. Si le contenu est au format |dita| ou DocBook, par exemple, on
 peut exploiter au mieux les capacités de *single-sourcing* de ces formats pour
@@ -28,5 +28,9 @@ En pratique, il semble que rares sont les entreprises qui ont franchi ce pas. Il
 est vrai que tant que les formats structurés ne seront pas enseignés dans le
 secondaire, il paraît utopique de vouloir y convertir tous les acteurs de la
 société, surtout si le turn-over y est important.
+
+.. seealso::
+
+   - :ref:`git-du-fichier-au-contenu`
 
 .. text review: yes

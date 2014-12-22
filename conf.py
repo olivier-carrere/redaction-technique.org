@@ -92,7 +92,6 @@ rst_epilog = u"""
 
 .. |dita| replace:: :abbr:`DITA (Darwin Information Typing Architecture)` XML
 .. |dita-ot| replace:: :abbr:`DITA-OT (DITA Open Toolkit)`
-.. |git| replace:: :ref:`Git <git-du-fichier-au-contenu>`
 .. |rst| replace:: *reStructuredText*
 .. |sed| replace:: :ref:`sed <sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers>`
 .. |techwriter| replace:: **rédacteur technique**
@@ -109,6 +108,7 @@ rst_epilog = u"""
 .. _DocBook: https://github.com/olivier-carrere/redaction-technique.org/tree/DocBook
 .. _DocZone: http://www.doczone.com
 .. _FrameMaker: http://en.wikipedia.org/wiki/Adobe_FrameMaker
+.. _Git: http://www.git-scm.com
 .. _JPEG: http://fr.wikipedia.org/wiki/Jpeg
 .. _LinkedIn: http://fr.linkedin.com/in/carrereolivier
 .. _Java: http://java.com/fr/download/manual.jsp?locale=fr

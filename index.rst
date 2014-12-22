@@ -10,7 +10,7 @@ Ne lisez pas ce site… `forkez-le sur GitHub !`_
 
 Ce site présente comment gérer la documentation technique comme le code source,
 à partir de fichiers sources en format texte. Toutes les versions de ce site
-sont gérées sous le logiciel de gestion de versions décentralisé |git|.
+sont gérées sous le logiciel de gestion de versions décentralisé `Git`_.
 Il est disponible en trois formats, basés sur la
 version 1.1 [#]_. Ces formats présentent des niveaux de fonctionnalités et de
 complexité différents.
@@ -65,7 +65,7 @@ Ce site a parlé, parle ou parlera également un peu, beaucoup ou pas du tout de
 |                                   |expressions rationnelles (ou *expressions |
 |                                   |régulières*)                              |
 +-----------------------------------+------------------------------------------+
-|Gestion de versions                ||git|                                     |
+|Gestion de versions                |Git                                       |
 +-----------------------------------+-------------------------+----------------+
 |Compilation                        |`Makefile`_              |Ant             |
 |                                   |                         +----------------+
@@ -75,6 +75,10 @@ Ce site a parlé, parle ou parlera également un peu, beaucoup ou pas du tout de
 |                     +-------------+-------------------------+----------------+
 |                     |PDF          |LaTeX                    |XSL-FO          |
 +---------------------+-------------+-------------------------+----------------+
+
+.. seealso::
+
+   - :ref:`git-du-fichier-au-contenu`
 
 .. only:: html
 

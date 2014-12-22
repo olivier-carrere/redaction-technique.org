@@ -25,7 +25,7 @@ place de telles solutions part le passé.
 De plus, l'un des grands avantages de |dita|, c'est de s'intégrer directement
 dans le système d'information en place. Chez les éditeurs de logiciels,
 notamment, rien de plus facile que de venir se greffer sur le système de gestion
-des sources en place, qu'il s'agisse de |git| [#]_, de
+des sources en place, qu'il s'agisse de `Git`_ [#]_, de
 Subversion ou de SourceSafe. À budget quasi nul. Raison de plus pour ne pas
 investir du temps et de l'argent dans un CMS.  Les gains de productivité
 spectaculaires reportés par certaines entreprises suite à la mise en place d'un
@@ -52,6 +52,10 @@ bénéfices de ce choix deviennent manifestes.
        si l'élément modifié sera toujours valable dans les différents contextes.
 
 .. [#] Il est possible, quoiqu'un peu complexe, de mettre en place des workflows
-       sous |git| *via* des branches.
+       sous Git *via* des branches.
+
+.. seealso::
+
+   - :ref:`git-du-fichier-au-contenu`
 
 .. text review: yes
