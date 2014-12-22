@@ -60,7 +60,7 @@ Ce site a parlé, parle ou parlera également un peu, beaucoup ou pas du tout de
 |                                   +------------------------------------------+
 |                                   |awk                                       |
 |                                   +------------------------------------------+
-|                                   ||sed|                                     |
+|                                   |sed                                       |
 |                                   +------------------------------------------+
 |                                   |expressions rationnelles (ou *expressions |
 |                                   |régulières*)                              |
@@ -79,6 +79,7 @@ Ce site a parlé, parle ou parlera également un peu, beaucoup ou pas du tout de
 .. seealso::
 
    - :ref:`git-du-fichier-au-contenu`
+   - :ref:`sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers`
 
 .. only:: html
 
