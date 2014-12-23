@@ -76,17 +76,17 @@ Ce site a parlé, parle ou parlera également un peu, beaucoup ou pas du tout de
 |                     |PDF          |LaTeX                    |XSL-FO          |
 +---------------------+-------------+-------------------------+----------------+
 
-.. seealso::
-
-   - :ref:`git-du-fichier-au-contenu`
-   - :ref:`sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers`
-
 .. only:: html
 
    .. rubric:: Notes
 
 .. [#] Seule la version |rst|, à partir de laquelle cette version
        HTML est créée, est maintenue.
+
+.. seealso::
+
+   - :ref:`git-du-fichier-au-contenu`
+   - :ref:`sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers`
 
 .. toctree::
    :hidden:

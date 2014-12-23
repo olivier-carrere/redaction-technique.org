@@ -79,6 +79,10 @@ XML et effectuent des comparaisons ligne par ligne entre les fichiers, et non
 pas nœud par nœud, ce qui multiplie inutilement les conflits entre les *commits*
 ou les branches.
 
+.. seealso::
+
+   - :ref:`git-du-fichier-au-contenu`
+
 .. only:: html
 
    .. rubric:: Notes
@@ -95,10 +99,6 @@ ou les branches.
 
 .. [#] Même si Apple a contribué à en populariser certains aspects avec son
        application *Time machine*.
-
-.. seealso::
-
-   - :ref:`git-du-fichier-au-contenu`
 
 .. toctree::
    :hidden:
