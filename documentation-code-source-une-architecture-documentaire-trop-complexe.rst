@@ -29,7 +29,7 @@ facilement :
 +------------------------------+------------------------------+
 |Complexité                    |Solution                      |
 +==============================+==============================+
-|Syntaxe |dita|                |IDE tel que XMetal ou nXML    |
+|Syntaxe |dita|                ||ide| tel que XMetal ou nXML  |
 +------------------------------+------------------------------+
 |Gestion des relations entre   |CMS dédié tel que Componize ou|
 |des briques d'information     |DocZone                       |
