@@ -33,7 +33,7 @@ place au niveau de toute l'entreprise, mais devrait être la norme pour une
    *Format source de rédaction technique modulaire*
 
 Certains traitements de texte proposent de gérer des documents modulaires, mais
-ils le font mal.  Inversement, un document DocBook ou |dita|, par exemple, peut
+ils le font mal.  Inversement, un document |db| ou |dita|, par exemple, peut
 être monolithique, mais perd alors de sa souplesse.
 
 .. toctree::

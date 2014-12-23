@@ -15,11 +15,11 @@ Géré souvent par les acteurs les plus
 techniques de la société, il coexiste la plupart du temps avec d'autres contenus
 au format FrameMaker ou traitement de texte. S'il est décidé de fédérer tout le
 contenu d'entreprise sous un seul format, il semble naturel de capitaliser les
-efforts fournis sur la chaîne de création et de publication **DocBook** et de
+efforts fournis sur la chaîne de création et de publication |db| et de
 sélectionner ce format. C'est pourtant se priver des gains de productivité
 spectaculaires offerts par |dita|.
 
-Il est facile de générer du **DocBook** à partir de |dita|. |dita-ot|
+Il est facile de générer du |db| à partir de |dita|. |dita-ot|
 propose par défaut ce format cible, au même titre que le PDF ou le
 HTML. L'opération inverse ne peut pas être totalement automatisée. Pourquoi ?
 
@@ -45,7 +45,7 @@ Si votre contenu était une photo, nous pourrions faire l'analogie suivante :
 ||dita|            |`RAW`_                                                     |
 |                  |[#]_                                                       |
 +------------------+-----------------------------------------------------------+
-|DocBook           |`TIFF`_                                                    |
+||db|              |`TIFF`_                                                    |
 +------------------+-----------------------------------------------------------+
 |PDF               |`JPEG`_                                                    |
 +------------------+-----------------------------------------------------------+
@@ -57,21 +57,21 @@ en sens inverse [#]_.
 
    *Un processus non réversible*
 
-Le PDF est sémantiquement plus pauvre que DocBook, lui-même plus pauvre que
+Le PDF est sémantiquement plus pauvre que |db|, lui-même plus pauvre que
 |dita| [#]_.
 
-Si votre entreprise tient absolument à utiliser du **DocBook**, il est toujours
-loisible de générer le contenu **DocBook** à partir d'un contenu source au
+Si votre entreprise tient absolument à utiliser du |db|, il est toujours
+loisible de générer le contenu |db| à partir d'un contenu source au
 format |dita|. À condition que le contenu source reste au format |dita|
 (c'est à dire, à condition qu'aucune modification apportée au contenu
-**DocBook** ne soit sauvegardée) et que le format **DocBook** ne soit qu'une
+|db| ne soit sauvegardée) et que le format |db| ne soit qu'une
 étape de la génération des livrables, au même titre que le format FO, vous
 bénéficiez ainsi des fonctionnalités avancées de réutilisation du contenu que
 propose |dita|.
 
 L'effort de migration d'un format non structuré est certes un peu plus important
-vers |dita| que vers **DocBook**, puisque vous devez injecter plus
-d'informations sémantiques. Vous devez également migrer le contenu **DocBook**
+vers |dita| que vers |db|, puisque vous devez injecter plus
+d'informations sémantiques. Vous devez également migrer le contenu |db|
 vers |dita|, ce qui représente également un effort, quoique plus faible. Mais
 votre contenu est immédiatement de meilleure qualité, car plus structuré. Et
 vous pourrez rapidement cueillir tous les fruits de votre labeur, notamment si

@@ -69,7 +69,7 @@ utilisée pour chaque fichier qui compose ce dernier.
 Les formats sources peuvent être classés selon leur degré de modularité et leur
 format de fichier.
 
-Les formats XML structurés DocBook et |dita| appliquent une maquette de page
+Les formats XML structurés |db| et |dita| appliquent une maquette de page
 homogène à tout un document, et n'autorisent pas l'ajout manuel d'éléments de
 mise en page [#]_, ni l'application de maquettes différentes aux
 différents fichiers qui composent le document.
@@ -92,7 +92,7 @@ page. Résultat : à chaque publication d'une nouvelle version d'une documentat
 technique, l'équipe de **rédaction technique** passe de longues heures à
 corriger les erreurs de mise en page générées par le logiciel. Le phénomène est
 moindre sous FrameMaker mais reste important. Il est nul avec les formats
-|dita| et **DocBook** (les seules erreurs qui peuvent se produire sont des
+|dita| et |db| (les seules erreurs qui peuvent se produire sont des
 erreurs de compilation dues à une syntaxe XML erronée ; ces erreurs sont
 facilement rectifiables).
 
@@ -128,12 +128,12 @@ Les formats disponibles peuvent donc être classés selon le tableau suivant :
 |FrameMaker     |Non            |Non            |Limité         |
 |natif          |               |               |               |
 +---------------+---------------+---------------+---------------+
-|DocBook        |Oui            |Oui            |Limité         |
+||db|           |Oui            |Oui            |Limité         |
 +---------------+---------------+---------------+---------------+
 ||dita|         |Oui            |Oui            |Oui            |
 +---------------+---------------+---------------+---------------+
 
-FrameMaker et DocBook ne sont pas pleinement modulaires, car les plus petits
+FrameMaker et |db| ne sont pas pleinement modulaires, car les plus petits
 éléments d'information manipulables ne sont pas génériques : ils contiennent des
 informations telles que la structure de table des matières ou les références
 croisées qui ne sont valables que dans un nombre limité de contextes.

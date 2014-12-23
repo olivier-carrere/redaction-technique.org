@@ -92,6 +92,7 @@ rst_epilog = u"""
 
 .. |dita| replace:: :abbr:`DITA (Darwin Information Typing Architecture)` XML
 .. |dita-ot| replace:: :abbr:`DITA-OT (DITA Open Toolkit)`
+.. |db| replace:: DocBook
 .. |rst| replace:: *reStructuredText*
 .. |techwriter| replace:: **rédacteur technique**
 

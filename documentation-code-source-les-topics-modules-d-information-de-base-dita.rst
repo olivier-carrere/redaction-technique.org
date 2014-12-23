@@ -23,7 +23,7 @@ commandes, etc.), mais de nouveaux types de *topics* peuvent être créés pour
 répondre à d'autres besoins.
 
 Les *topics* sont une des différences principales entre |dita| et
-**DocBook**, qui ne propose pas de typologie des briques d'information.
+|db|, qui ne propose pas de typologie des briques d'information.
 
 Les *topics* sont généralement stockés *à plat* dans des répertoires divisés par
 type de *topic*. Ils sont organisés hiérarchiquement dans des fichiers
@@ -37,7 +37,7 @@ Les unités d'information atomiques [#]_ telles que des remarques,
 des paragraphes, voire des phrases ou des segments de phrase, qui ne peuvent pas
 être munis d'un titre, ne forment pas des *topics*. Elles peuvent être cependant
 partagées *via* le mécanisme *conref*, similaire au mécanisme *Xinclude* proposé
-par DocBook.
+par |db|.
 
 .. only:: html
 

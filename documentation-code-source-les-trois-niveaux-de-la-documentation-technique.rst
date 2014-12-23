@@ -44,7 +44,7 @@ page du contenu.
 Les formats adaptés sont les formats de type FrameMaker, qui dissocient
 (relativement) la mise en page du contenu, mais ne sont pas sémantiques.
 
-Les formats structurés sont les formats sémantiques de type DocBook ou |dita|.
+Les formats structurés sont les formats sémantiques de type |db| ou |dita|.
 
 Le stade du jardin à l'anglaise est déjà très satisfaisant et garantit qu'une
 information de qualité est fournie à l'utilisateur. Celui du jardin à la

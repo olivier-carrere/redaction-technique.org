@@ -43,11 +43,11 @@ auraient déjà beaucoup gagné, respectivement en :
 
    .. rubric:: Notes
 
-.. [#] LibreOffice propose une fonction d'enregistrement au format DocBook, mais
+.. [#] LibreOffice propose une fonction d'enregistrement au format |db|, mais
        très imparfaite ; le XML qu'elle produit peut servir de base à la
-       création d'une version DocBook, avec beaucoup d'efforts… Sauf à maintenir
+       création d'une version |db|, avec beaucoup d'efforts… Sauf à maintenir
        deux versions du même contenu, le processus de migration de LibreOffice
-       vers DocBook exige donc un arrêt temporaire des livraisons des nouvelles
+       vers |db| exige donc un arrêt temporaire des livraisons des nouvelles
        versions de la documentation ; il doit donc être soigneusement planifié.
 
 .. toctree::

@@ -14,7 +14,7 @@ Typologie de haut niveau de l'information
 typologie de haut niveau qui est une véritable aide à la structuration du
 contenu.
 
-S'il crée un nouveau document au format FrameMaker, DocBook ou traitement de
+S'il crée un nouveau document au format FrameMaker, |db| ou traitement de
 texte, le |techwriter| se trouve face à une page blanche. Selon sa
 rigueur professionnelle, l'information transmise à l'utilisateur oscillera entre
 les deux pôles suivants :

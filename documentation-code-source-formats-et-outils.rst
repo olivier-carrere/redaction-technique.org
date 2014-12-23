@@ -33,7 +33,7 @@ ou |dita|, par
 exemple (seul le second étant un format industriel de rédaction technique),
 n'est pas lié à un outil donné. Il est donc possible de le modifier et de le
 manipuler à l'aide de différents logiciels. Les formats structurés de type
-DocBook et |dita| liés à un schéma XSD normalisée peuvent notamment être
+|db| et |dita| liés à un schéma XSD normalisée peuvent notamment être
 facilement gérés, de la création à la publication, à l'aide de toute une
 panoplie d'outils, de l'éditeur de texte libre à la suite logicielle
 propriétaire et graphique.
