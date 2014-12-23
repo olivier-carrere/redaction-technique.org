@@ -26,7 +26,7 @@ suivantes :
 |                              |format cible PDF *via* |dita-ot|.          |
 +------------------------------+-------------------------------------------+
 |Semi-automatique              |Contenu au format |dita| exporté en HTML   |
-|                              |puis collé sous un CMS [#]_.               |
+|                              |puis collé sous un |cms| [#]_.             |
 +------------------------------+-------------------------------------------+
 |Manuelle                      |Plaquette marketing au format traitement de|
 |                              |texte ou |dita| mise en page sous Indesign,|
@@ -53,7 +53,7 @@ possibilités quasi illimitées.
        Web ou l'impression et sur lequel les modifications ne peuvent être
        annulées une fois fermé le logiciel de retouches.
 
-.. [#] Ceci est automatisable par un script ; le CMS Drupal propose également un
+.. [#] Ceci est automatisable par un script ; le |cms| Drupal propose également un
        module `DITA integration for Drupal`_.
 
 .. text review: yes

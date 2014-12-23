@@ -15,10 +15,10 @@ mécanisme de **workflow documentaire** natif. Les workflows sont pourtant un
 élément important d'un processus efficace de gestion du **cycle de vie du
 contenu**.
 
-Les CMS gèrent également les métadonnées, ce qui permet une recherche plus
+Les |cms| gèrent également les métadonnées, ce qui permet une recherche plus
 efficace de l'information existante, et les rétroliens [#]_.
 
-La plupart des entreprises sont réticentes à mettre en place des CMS, outils
+La plupart des entreprises sont réticentes à mettre en place des |cms|, outils
 dédiés aux workflows. Elles ont d'ailleurs parfois connu des échecs de mise en
 place de telles solutions part le passé.
 
@@ -27,12 +27,12 @@ dans le système d'information en place. Chez les éditeurs de logiciels,
 notamment, rien de plus facile que de venir se greffer sur le système de gestion
 des sources en place, qu'il s'agisse de `Git`_ [#]_, de
 Subversion ou de SourceSafe. À budget quasi nul. Raison de plus pour ne pas
-investir du temps et de l'argent dans un CMS.  Les gains de productivité
+investir du temps et de l'argent dans un |cms|.  Les gains de productivité
 spectaculaires reportés par certaines entreprises suite à la mise en place d'un
-CMS |dita| ont cependant de quoi faire réfléchir. Ainsi, Epson America a pu
+|cms| |dita| ont cependant de quoi faire réfléchir. Ainsi, Epson America a pu
 réutiliser jusqu'à 90 % du contenu existant sur de nouveaux projets.
 
-Si l'on opte pour un CMS, celui-ci doit clairement supporter |dita| : on ne gère
+Si l'on opte pour un |cms|, celui-ci doit clairement supporter |dita| : on ne gère
 pas un jeu de briques d'information comme un document monolithique. Adieu donc
 SharePoint ou Alfresco, il faut se tourner vers des solutions dédiées telles que
 `Componize`_ ou `DocZone`_.
@@ -40,7 +40,7 @@ SharePoint ou Alfresco, il faut se tourner vers des solutions dédiées telles q
 Quel que soit le choix initial, il est possible à tout instant de changer de
 stratégie, sans remettre en cause l'existant. L'architecture |dita| n'est en
 effet liée à aucun référentiel particulier. Rien n'interdit donc de commencer à
-gérer ses projets sans CMS, puis d'avoir recours à une telle solution si les
+gérer ses projets sans |cms|, puis d'avoir recours à une telle solution si les
 bénéfices de ce choix deviennent manifestes.
 
 .. only:: html

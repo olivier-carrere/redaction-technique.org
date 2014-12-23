@@ -90,6 +90,7 @@ rst_epilog = u"""
 
 .. substitutions
 
+.. |cms| replace:: :abbr:`CMS (Content Management System)`
 .. |dita| replace:: :abbr:`DITA (Darwin Information Typing Architecture)` XML
 .. |dita-ot| replace:: :abbr:`DITA-OT (DITA Open Toolkit)`
 .. |db| replace:: DocBook

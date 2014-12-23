@@ -22,7 +22,7 @@ Face à cet état de fait, il convient de mettre un système de gestion de
 l'information relative à l'évolution de la documentation qui soit tolérant à
 l'erreur humaine. Il faut donc soit :
 
-- mettre en œuvre des workflows sous un CMS,
+- mettre en œuvre des workflows sous un |cms|,
 
 - utiliser le système de gestion de tickets utilisés pour la gestion des
   nouvelles fonctionnalités du produit documenté (par exemple, Trac) :
@@ -36,7 +36,7 @@ l'erreur humaine. Il faut donc soit :
   - publication de la documentation lorsque tous les tickets critiques sont
     fermés.
 
-Les fonctions principales d'un CMS sont les suivantes :
+Les fonctions principales d'un |cms| sont les suivantes :
 
 - gestion des métadonnées,
 
@@ -52,7 +52,7 @@ Ce système doit être unique et exhaustif : il doit centraliser toutes les
 demandes de modification de la documentation technique.
 
 Si le document est disponible en plusieurs langues, chaque ticket doit être
-dupliqué pour chaque langue ou, dans le cas d'un CMS, à chaque langue doit
+dupliqué pour chaque langue ou, dans le cas d'un |cms|, à chaque langue doit
 correspondre un workflow distinct.
 
 .. text review: yes

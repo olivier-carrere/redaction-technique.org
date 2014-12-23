@@ -10,14 +10,14 @@
 Les CMS : le workflow en prime, mais une fiabilité à tester
 ===========================================================
 
-Les :abbr:`CMS (Content Management Systems)`, ainsi dénommés pour des raisons
+Les |cms|, ainsi dénommés pour des raisons
 purement marketing, mais dont la fonction se comprend mieux avec l'acronyme
 :abbr:`GED (système de gestion électronique de documents)`, apportent des
 notions de **workflow** et de gestion des liens qui s'avèrent précieuses lorsque
 l'on gère des documents modulaires.
 
 S'ils utilisent des formats monolithiques tels que FrameMaker, les **rédacteurs
-techniques** peuvent utiliser des CMS tels que SharePoint, Alfresco ou
+techniques** peuvent utiliser des |cms| tels que SharePoint, Alfresco ou
 consorts pour :
 
 #. télécharger sur leur disque dur une copie locale des fichiers partagés,
@@ -30,9 +30,9 @@ Cette solution est plus satisfaisante que le partage sur un simple serveur de
 fichiers, ne serait-ce que parce que la fréquence à laquelle les fichiers
 transitent sur le réseau est bien moindre [#]_. Il est cependant toujours
 nécessaire de verrouiller les fichiers en cours de modification, ce dont se
-charge le CMS.
+charge le |cms|.
 
-Originellement destinés aux documents monolithiques, de nombreux CMS prennent
+Originellement destinés aux documents monolithiques, de nombreux |cms| prennent
 aujourd'hui en compte la modularisation des documentations techniques. Des
 solutions telles que DocZone ou Componize, cette dernière bâtie sur Alfresco,
 sont par exemple explicitement destinées à gérer des documentations modulaires
@@ -50,7 +50,7 @@ procédure de sauvegarde et de restauration éprouvée.
 
    .. rubric:: Notes
 
-.. [#] À chaque dépôt du fichier sur le CMS, et non à chaque enregistrement de
+.. [#] À chaque dépôt du fichier sur le |cms|, et non à chaque enregistrement de
        son travail par le |techwriter|.
 
 .. text review: yes

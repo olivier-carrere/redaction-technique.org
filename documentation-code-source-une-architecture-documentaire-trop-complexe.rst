@@ -31,8 +31,8 @@ facilement :
 +==============================+==============================+
 |Syntaxe |dita|                ||ide| tel que XMetal ou nXML  |
 +------------------------------+------------------------------+
-|Gestion des relations entre   |CMS dédié tel que Componize ou|
-|des briques d'information     |DocZone                       |
+|Gestion des relations entre   ||cms| dédié tel que Componize |
+|des briques d'information     |ou DocZone                    |
 |atomiques                     |                              |
 +------------------------------+------------------------------+
 |Syntaxe de la feuille de style|Logiciel graphique de création|
