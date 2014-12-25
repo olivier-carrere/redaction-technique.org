@@ -55,6 +55,16 @@
 
 % Headers and footers %
 
+\newcommand{\customnotice}{
+
+{
+  \copyright\,2011- 2014 Olivier Carrère\newline\newline
+  www.redaction-technique.org\newline\newline
+  Publié sous licence Creative Commons BY-NC-SA 4.0\newline
+  www.creativecommons.org/licenses/by-nc-sa/4.0/
+}
+}
+
 \newcommand{\headerImg}{%
   \ThisFreeWallPaper{-6cm}{11cm}{0.25}{../../graphics/redaction-technique.png}%
 }
@@ -150,6 +160,7 @@
   \end{titlepage}%
   \newgeometry{hmargin=2cm,top=2cm,bottom=2cm,footskip=-1cm,headsep=1cm,heightrounded}
   \fancyhf{} % clear headers
+  \customnotice{}
   \setcounter{footnote}{0}%
   \let\thanks\relax\let\maketitle\relax
 }
