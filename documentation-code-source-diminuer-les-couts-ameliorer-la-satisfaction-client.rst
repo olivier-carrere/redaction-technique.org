@@ -14,7 +14,7 @@ La **documentation technique**, c'est comme une ampoule : une ampoule basse
 consommation demande un investissement plus important en début de cycle de vie,
 mais a rapidement un coût plus faible.
 
-Comme une ampoule basse consommation, un processus de **rédaction technique**
+Comme une ampoule basse consommation, un processus de |techwriting|
 industriel diminue les coûts. Il réduit également le *time to market*. À coût
 initial légèrement supérieur ou égal, il améliore également la qualité.
 

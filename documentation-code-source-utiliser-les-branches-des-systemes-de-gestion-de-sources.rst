@@ -65,8 +65,7 @@ versions chinoise, française, allemande ou autre si elle a fait l'objet d'un
 délicate et n'être réellement utile que si l'on doit gérer un grand nombre de
 différentes versions linguistiques.  En tout cas, la solution des branches
 autorise de telles opérations, non celle des répertoires. Elle est cependant
-plus difficile à appréhender et à utiliser par l'équipe de **rédaction
-technique**.
+plus difficile à appréhender et à utiliser par l'équipe de |techwriting|.
 
 .. seealso::
 

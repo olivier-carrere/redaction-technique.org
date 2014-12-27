@@ -37,7 +37,7 @@ classifier selon les niveaux suivants :
 |                   |- Utilisation cohérente de formats structurés             |
 +-------------------+----------------------------------------------------------+
 
-Les formats non adaptés à la **rédaction technique** sont par exemple les
+Les formats non adaptés à la |techwriting| sont par exemple les
 formats de traitement de texte, qui ne dissocient pas suffisamment la mise en
 page du contenu.
 

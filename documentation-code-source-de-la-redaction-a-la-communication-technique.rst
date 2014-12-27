@@ -17,8 +17,8 @@ technologie. Au sein de l'entreprise, il est l'interface entre les services R&D
 et marketing. À l'extérieur, il crée le dialogue entre l'entreprise et ses
 différents publics.
 
-La **communication technique** est souvent réduite à la **rédaction
-technique**. La rédaction technique est destinée à fournir la documentation des
+La **communication technique** est souvent réduite à la |techwriting|.
+La rédaction technique est destinée à fournir la documentation des
 produits, et intervient en aval de la vente. La communication technique
 intervient dès l'amont du processus de vente et accompagne le produit tout au
 long de son cycle de vie. Destinée autant au grand public, aux journalistes et

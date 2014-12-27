@@ -21,8 +21,8 @@ Word,
 le |techwriter| et l'utilisateur disposent des mêmes
 supports d'information (il n'y a pas de différenciation entre le fichier source
 et le fichier cible). Ce qui semble a priori la solution la plus simple s'avère
-cependant peu efficace en termes de productivité de l'équipe de **rédaction
-technique** et de structuration de l'information.
+cependant peu efficace en termes de productivité de l'équipe de |techwriting|
+et de structuration de l'information.
 
 Avec un format texte tel que |dita|, le |techwriter| et le lecteur
 disposent de supports largement différents :

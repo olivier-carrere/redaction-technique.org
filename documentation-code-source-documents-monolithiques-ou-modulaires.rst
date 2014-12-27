@@ -26,7 +26,7 @@ Les **grappes de fichiers modulaires** (par exemple |dita|)
 agrègent le contenu de multiples fichiers, ce qui favorise le partage et la
 réutilisation de blocs de contenu. Un tel système est difficile à mettre en
 place au niveau de toute l'entreprise, mais devrait être la norme pour une
-équipe de **rédaction technique**.
+équipe de |techwriting|.
 
 .. figure:: graphics/grappe.png
 

@@ -10,7 +10,7 @@
 Les répertoires réseau partagés - peu adaptés au travail de groupe
 ==================================================================
 
-Les fichiers partagés par une équipe de **rédaction technique** sont souvent
+Les fichiers partagés par une équipe de |techwriting| sont souvent
 stockés dans un répertoire partagé sur le réseau.
 
 Les **rédacteurs techniques** travaillent directement sur les fichiers partagés,

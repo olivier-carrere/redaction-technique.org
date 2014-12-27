@@ -39,7 +39,7 @@ facilement :
 |XSLT                          |de feuilles de style          |
 +------------------------------+------------------------------+
 
-Pour une petite équipe de **rédaction technique**, l'écueil principal sera la
+Pour une petite équipe de |techwriting|, l'écueil principal sera la
 nécessité de mettre en œuvre la charte graphique de l'entreprise.
 Les autres aspects peuvent être gérés sans outil
 spécialisé, avec une bonne communication et une série de bonnes pratiques.

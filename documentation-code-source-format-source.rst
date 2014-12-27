@@ -10,7 +10,7 @@
 Format source
 =============
 
-Le contenu d'un projet de **rédaction technique** est créé dans un **format
+Le contenu d'un projet de |techwriting| est créé dans un **format
 source**, différent du format des livrables, le format cible. Pour reprendre une
 image fréquemment utilisée en développement logiciel, le format source est la
 recette de cuisine, le format cible, le plat. En photographie, le format source
@@ -89,7 +89,7 @@ différents fichiers qui composent le document.
 Si contenu et mise en page sont intimement liés, comme sous un traitement de
 texte, il est difficile de modifier le contenu sans perturber la mise en
 page. Résultat : à chaque publication d'une nouvelle version d'une documentation
-technique, l'équipe de **rédaction technique** passe de longues heures à
+technique, l'équipe de |techwriting| passe de longues heures à
 corriger les erreurs de mise en page générées par le logiciel. Le phénomène est
 moindre sous FrameMaker mais reste important. Il est nul avec les formats
 |dita| et |db| (les seules erreurs qui peuvent se produire sont des

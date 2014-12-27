@@ -10,14 +10,14 @@
 Définition du projet
 ====================
 
-Un projet de **rédaction technique** apporte une valeur ajoutée aux produits et
+Un projet de |techwriting| apporte une valeur ajoutée aux produits et
 aide l'entreprise à mieux commercialiser son offre sur son marché. Mais, comme
 pour les projets de R&D ou de marketing, la définition du projet permet d'en
 **estimer le budget** et les retombées.
 
 Communiquer des informations techniques sans savoir à qui ni dans quel but est
-un effort vain. Avant d'initier un projet de **rédaction technique et
-marketing**, il est indispensable de clairement le définir. Il convient
+un effort vain. Avant d'initier un projet de |techwriting|,
+il est indispensable de clairement le définir. Il convient
 notamment de déterminer :
 
 +------------------------------+------------------------------+

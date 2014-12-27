@@ -11,7 +11,7 @@ Principe de simplicité KISS
 ===========================
 
 Le principe :abbr:`KISS (Keep it simple stupid)`, n'est pas spécifique à la
-**rédaction technique**. Il s'agit d'un principe général d'ingénierie, qui
+|techwriting|. Il s'agit d'un principe général d'ingénierie, qui
 postule que tout objet matériel ou virtuel construit par l'homme est plus fiable
 et plus facile à maintenir et à faire évoluer si sa complexité est
 volontairement réduite. C'est le principe mis en exergue par antiphrase par les
