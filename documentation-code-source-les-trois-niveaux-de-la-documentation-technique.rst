@@ -54,7 +54,7 @@ réduire les coûts de production.
 À elle seule, la présence d'une des trois composantes (processus, équipe dédiée
 et format adapté) ne peut garantir un résultat satisfaisant. Confiez par exemple
 des outils permettant de générer du contenu au format |dita| à des
-collaborateurs dont la **communication technique** n'est pas le métier ou sans
+collaborateurs dont la |comtech| n'est pas le métier ou sans
 mettre en place de processus de gestion du cycle de vie de la documentation
 technique, et vous obtiendrez des résultats décevants. Seule la présence conjointe de ces
 trois éléments fournira un résultat optimal.

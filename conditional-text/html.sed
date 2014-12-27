@@ -1,3 +1,4 @@
+/^\.\. substitutions/a .. |comtech| replace:: **communication technique**
 /^\.\. substitutions/a .. |db| replace:: **DocBook**
 /^\.\. substitutions/a .. |dita| replace:: **DITA XML**
 /^\.\. substitutions/a .. |doc| replace:: **documentation technique**

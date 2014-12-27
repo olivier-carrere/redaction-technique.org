@@ -1,3 +1,4 @@
+/^\.\. substitutions/a .. |comtech| replace:: communication technique
 /^\.\. substitutions/a .. |db| replace:: DocBook
 /^\.\. substitutions/a .. |dita| replace:: :abbr:`DITA (Darwin Information Typing Architecture)` XML
 /^\.\. substitutions/a .. |doc| replace:: documentation technique
