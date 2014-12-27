@@ -23,7 +23,7 @@ pièces que leurs consœurs. Résultat : des montres moins chères, plus fiable
 disponibles en versions sans cesse renouvelées.
 
 Ce qui a spectaculairement fonctionné pour des montres peut être appliqué avec
-le même succès à la **documentation technique**. Quel que soit le format utilisé
+le même succès à la |doc|. Quel que soit le format utilisé
 [#]_ , le
 |techwriter| peut tout aussi bien construire un document élégamment
 architecturé, qu'une usine à gaz. Avec |dita|, il lui

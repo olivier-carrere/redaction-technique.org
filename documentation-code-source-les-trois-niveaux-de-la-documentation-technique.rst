@@ -10,7 +10,7 @@
 Les trois niveaux de la documentation technique
 ===============================================
 
-Si l'on compare la **documentation technique** à un jardin, on peut la
+Si l'on compare la |doc| à un jardin, on peut la
 classifier selon les niveaux suivants :
 
 +-------------------+----------------------------------------------------------+

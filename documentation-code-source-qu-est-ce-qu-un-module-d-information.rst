@@ -11,7 +11,7 @@ Qu'est-ce qu'un module d'information ?
 ======================================
 
 Le système modulaire le plus connu au monde est certainement celui des briques
-Lego. Adapté à la **documentation technique**, le principe des modules permet
+Lego. Adapté à la |doc|, le principe des modules permet
 d'améliorer la qualité des manuels techniques et la productivité du |techwriter|.
 
 Mais suffit-il de convertir sa documentation de FrameMaker vers un format

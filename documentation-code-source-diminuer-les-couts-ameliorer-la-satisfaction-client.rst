@@ -10,7 +10,7 @@
 Documentation technique : diminuer les coûts, améliorer la satisfaction client
 ==============================================================================
 
-La **documentation technique**, c'est comme une ampoule : une ampoule basse
+La |doc|, c'est comme une ampoule : une ampoule basse
 consommation demande un investissement plus important en début de cycle de vie,
 mais a rapidement un coût plus faible.
 

@@ -72,7 +72,7 @@ etc.) ils évoluent lentement, selon une politique conservatrice, et ne sont
 proposés en production que lorsqu'ils ont été exhaustivement débogués. Si les
 plus grands projets de développement informatique, tel que GNU/Linux, par
 exemple, leur font confiance, pourquoi ne pas également leur confier la
-**documentation technique** ?
+|doc| ?
 
 Un bémol cependant : ces outils ne sont pas destinés spécifiquement au format
 XML et effectuent des comparaisons ligne par ligne entre les fichiers, et non

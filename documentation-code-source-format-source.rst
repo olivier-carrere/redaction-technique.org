@@ -45,8 +45,8 @@ rédaction et la mise en page s'opèrent sous des outils différents :
 - logiciel de PAO, par exemple InDesign ou Scribus.
 
 Lorsque la mise en page a une importance moindre que celle du contenu, ou
-lorsqu'elle doit être homogène, comme dans le cas d'une **documentation
-technique**, la rédaction et la mise en page s'opèrent sur :
+lorsqu'elle doit être homogène, comme dans le cas d'une |doc|,
+la rédaction et la mise en page s'opèrent sur :
 
 +-------------------------+----------------------------------------------------+
 |les mêmes fichiers :     |par exemple, des fichiers FrameMaker,               |
