@@ -13,7 +13,7 @@ Les répertoires réseau partagés - peu adaptés au travail de groupe
 Les fichiers partagés par une équipe de |techwriting| sont souvent
 stockés dans un répertoire partagé sur le réseau.
 
-Les **rédacteurs techniques** travaillent directement sur les fichiers partagés,
+Les rédacteurs techniques travaillent directement sur les fichiers partagés,
 ce qui pose les problèmes suivants :
 
 - risque de pertes de données en cas de défaillance du réseau,
@@ -38,8 +38,8 @@ Copier un fichier du réseau pour le modifier sur son disque dur personnel, puis
 périlleuses :
 
 - les membres de l'équipe ne sont pas informés du fait qu'un autre membre
-  modifie ou non le même fichier en même temps qu'eux ; l'un des **rédacteurs
-  techniques** devra alors renoncer à toutes ses modifications ;
+  modifie ou non le même fichier en même temps qu'eux ; l'un des rédacteurs
+  techniques devra alors renoncer à toutes ses modifications ;
 
 - lors d'une copie manuelle des fichiers, que ce soit *via* un gestionnaire de
   fichiers graphique ou en ligne de commande, le |techwriter| peut

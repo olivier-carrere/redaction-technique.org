@@ -29,7 +29,7 @@ versions qu'il le souhaite, par exemple en ajoutant le suffixe  -1, -2, etc. au
 nom du fichier.
 
 Les programmes ne gèrent cependant pas la modification concurrente d'un même
-fichier par plusieurs **rédacteurs techniques**. Dans le cas d'un fichier
+fichier par plusieurs rédacteurs techniques. Dans le cas d'un fichier
 disponible sur un disque réseau, imaginons qu'Arsène et Louise ouvrent la même
 version de ce fichier sous un éditeur de texte. Chacun apporte des modifications
 différentes dans sa copie chargée en mémoire vive, puis enregistre son

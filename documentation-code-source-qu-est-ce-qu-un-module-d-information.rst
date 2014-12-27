@@ -36,7 +36,7 @@ pas encore créé de modules d'information. La seconde étape consiste à ré-é
 chaque fichier (selon par exemple l'approche minimaliste) pour le rendre plus
 générique et en faire un véritable module. Il faut évidemment adopter une
 approche structuraliste et décider du contenu de chaque module dans la
-perspective de l'**architecture documentaire** globale.  De même, des mentions
+perspective de l'architecture documentaire globale.  De même, des mentions
 telles que *Voir la section suivante* devront être remplacées par des reférences
 croisées. Idéalement, ces références croisées ne se situent pas dans les
 fichiers de contenu proprement dit sous la forme :

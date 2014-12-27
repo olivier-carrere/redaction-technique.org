@@ -10,9 +10,9 @@
 Accélérer sa saisie avec le mode Predictive pour Emacs
 ======================================================
 
-Ce **didacticiel mode Predictive pour Emacs** est destiné à
-vous guider dans la mise en place et l'utilisation du mode Emacs d'**aide à la
-rédaction** et d'**autocomplétion des mots** anglais et français Predictive dans
+Ce didacticiel mode Predictive pour Emacs est destiné à
+vous guider dans la mise en place et l'utilisation du mode Emacs d'aide à la
+rédaction et d'autocomplétion des mots anglais et français Predictive dans
 un environnement GNU/Linux (en l'occurrence, Debian).
 
 #. Installez make et texinfo :

@@ -10,9 +10,9 @@
 Utiliser l'IDE nXML pour DITA XML
 =================================
 
-Le **mode nXML** propose de valider en temps réel les documents XML |db|,
+Le mode nXML propose de valider en temps réel les documents XML |db|,
 XHTML ou autres. Plus la peine de connaître le schéma XML par cœur: votre
-éditeur de texte vous propose l'**autocomplétion des balises XML** selon le
+éditeur de texte vous propose l'autocomplétion des balises XML selon le
 contexte. Il ne supporte cependant pas |dita| par défaut. Ce didacticiel vous
 permettra d'utiliser ce mode Emacs pour |dita|.
 

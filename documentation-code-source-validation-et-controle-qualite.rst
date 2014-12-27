@@ -10,7 +10,7 @@
 Validation et contrôle qualité
 ==============================
 
-Un support de |techwriting| doit être soumis à un **contrôle qualité**
+Un support de |techwriting| doit être soumis à un contrôle qualité
 rigoureux avant d'être communiqué à ses différentes cibles.
 
 Le contenu doit être validé avant livraison. Cela paraît évident, mais cela

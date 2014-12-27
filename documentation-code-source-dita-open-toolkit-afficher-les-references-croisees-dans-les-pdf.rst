@@ -10,7 +10,7 @@
 DITA Open Toolkit : afficher les références croisées dans les PDF
 =================================================================
 
-Les **références croisées** sont un élément important d'une |doc|
+Les références croisées sont un élément important d'une |doc|
 bien structurée. Elles permettent à l'utilisateur de naviguer
 facilement dans les briques d'information et sont un élément crucial de
 l'utilisabilité du document final. |dita-ot| les gère très bien, à
@@ -27,8 +27,8 @@ version HTML de votre contenu et là, votre section *Voir aussi* est bien
 présente. |dita-ot| ne supporterait-il pas les références croisées
 dans les PDF ?
 
-Fort heureusement, non. Par défaut (allez savoir pourquoi), les **références
-croisées** ne sont pas générées dans les PDF par |dita-ot|. Pour les
+Fort heureusement, non. Par défaut (allez savoir pourquoi), les références
+croisées ne sont pas générées dans les PDF par |dita-ot|. Pour les
 afficher, attribuez la valeur *no* à la variable *disableRelatedLinks* du fichier
 :file:`demo/fo/build_template.xml`. Si vous utilisez *ant*, il vous faudra
 également passer le paramètre *args.fo.include.rellinks=all* comme suit :

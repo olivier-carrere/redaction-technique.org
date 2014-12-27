@@ -36,9 +36,9 @@ initial légèrement supérieur ou égal, il améliore également la qualité.
 
 Une documentation industrielle repose sur :
 
-- un **format documentaire modulaire**,
-- un format de **rédaction structurée**,
-- une **chaîne de production et de publication documentaire** fiable.
+- un format documentaire modulaire,
+- un format de rédaction structurée,
+- une chaîne de production et de publication documentaire fiable.
 
 Si la chaîne de création et de publication choisie repose sur des logiciels
 *open-source*, le coût de mise en place et d'apprentissage peut même être

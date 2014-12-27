@@ -13,8 +13,8 @@ Un index est-il utile dans un PDF ?
 À l'heure des documents dématérialisés, un index est-il un élément indispensable
 d'une bonne |doc| ?
 
-La recherche en plein texte semble avoir détrôné l'index. Les **notices
-techniques** ne sont plus qu'exceptionnellement fournies aux clients sous forme
+La recherche en plein texte semble avoir détrôné l'index. Les notices
+techniques ne sont plus qu'exceptionnellement fournies aux clients sous forme
 papier. Ce drôle d'objet qu'est le PDF, format d'échange entre un format source
 non destiné aux clients et une version imprimée qui ne l'est que de manière
 marginale, est entré dans les mœurs. La séquence de touches *Ctrl+F* est un

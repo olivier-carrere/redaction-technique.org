@@ -47,7 +47,7 @@ la chaîne complète de création, gestion et publication |dita| sur un
 
 - réalisation des feuilles de style des différents formats de sortie,
 
-- formation des **rédacteurs techniques**, graphistes et traducteurs,
+- formation des rédacteurs techniques, graphistes et traducteurs,
 
 - formation et sensibilisation des autres acteurs de l'entreprise.
 

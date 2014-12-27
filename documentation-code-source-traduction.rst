@@ -20,7 +20,7 @@ amont et l'utilisation d'une méthodologie appropriée permettent d'améliorer l
 qualité et de diminuer les coûts et les délais de livraison des versions
 multilingues. La traduction doit être intégrée au *workflow* documentaire. Il
 faut également faire communiquer avec les traducteurs les différents acteurs :
-**rédacteurs techniques**, mais également ingénieurs, experts et concepteurs.
+rédacteurs techniques, mais également ingénieurs, experts et concepteurs.
 
 Si la documentation repose sur un ensemble de modules, la traduction peut se
 faire en parallèle de la rédaction, ce qui réduit les délais de livraison.

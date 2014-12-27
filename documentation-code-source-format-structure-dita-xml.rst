@@ -14,7 +14,7 @@ Diminuer les coûts de production et de traduction, réduire les délais de mise
 sur le marché (ou *time to market*) et améliorer la qualité de la
 documentation. Voilà les défis que doit relever aujourd'hui le |techwriter|.
 L'un des meilleurs moyens d'y parvenir consiste à réduire le volume
-source de la documentation et à mieux gérer le **contenu d'entreprise**.
+source de la documentation et à mieux gérer le contenu d'entreprise.
 
 .. figure:: graphics/degre-structuration.png
 
@@ -42,7 +42,7 @@ manipulés par des applications.
    livrables.*
 
 |dita| est une architecture XML
-de **rédaction structurée** destinée à la création de documents modulaires et à
+de rédaction structurée destinée à la création de documents modulaires et à
 la réutilisation du contenu. À partir d'une base commune de modules
 d'information atomiques |dita|, le |techwriter|
 peut fournir en temps réel toute l'information dont chaque utilisateur a besoin,

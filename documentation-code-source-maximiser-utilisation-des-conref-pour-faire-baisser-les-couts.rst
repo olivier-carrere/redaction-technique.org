@@ -13,7 +13,7 @@ Maximiser l'utilisation des *conref* pour faire baisser les coûts
 Recourir aux `conref`_ est le meilleur
 moyen dont dispose le |techwriter| pour faire baisser
 spectaculairement les coûts et les délais de publication de son contenu |dita|,
-surtout pour les **documents multilingues**.
+surtout pour les documents multilingues.
 
 De par la nature des informations qu'elles contiennent, les sections de type
 **task** ont un taux plus élevé de réutilisation du contenu que celles de type

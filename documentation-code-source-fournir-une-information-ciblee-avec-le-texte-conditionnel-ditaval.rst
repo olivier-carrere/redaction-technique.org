@@ -32,7 +32,7 @@ Concrètement, le mécanisme **ditaval** est basé sur des opérateurs binaires�
 vous marquez un bloc d'information avec un attribut et une valeur, puis incluez
 ou excluez ce bloc dans le livrable en passant un opérande lors de la
 compilation (le bloc est inclus par défaut si aucun opérande n'est
-spécifié). C'est le principe du **texte conditionnel**.
+spécifié). C'est le principe du texte conditionnel.
 
 Gâce à ce mécanisme, il n'est pas nécessaire de créer deux fichiers différents
 lorsque leur contenu ne comporte que des variations mineures. C'est un outil de

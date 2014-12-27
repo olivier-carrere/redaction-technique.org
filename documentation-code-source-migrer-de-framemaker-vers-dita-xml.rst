@@ -12,7 +12,7 @@ Migrer de FrameMaker vers DITA XML
 
 Le but de cette procédure est de :
 
-- **migrer** son contenu **FrameMaker** vers |dita| sans se plonger dans
+- migrer son contenu **FrameMaker** vers |dita| sans se plonger dans
   les arcanes des **EDD FrameMaker** (petits
   projets uniquement !),
 

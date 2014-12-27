@@ -11,7 +11,7 @@ Gérer les projets de documentation multilingues DITA XML
 ========================================================
 
 |dita| est un formidable format pour gérer les
-**projets de documentation**. Pour les projets multilingues, cependant, le
+projets de documentation. Pour les projets multilingues, cependant, le
 |techwriter| doit créer un fichier *ditamap*, qui contient la
 structure de table des matières des documents, par version. Ceci entraîne un
 risque d'erreurs et d'incohérences. Heureusement, une méthodologie appropriée et
