@@ -94,7 +94,7 @@ de Git, puis fusionnés.
 vous souhaitiez : chaque *commit* unique représente un état cohérent de votre
 contenu.
 
-Ce workflow facilite également le travail d'équipe : vous pouvez confier ces
+Ce *workflow* facilite également le travail d'équipe : vous pouvez confier ces
 tâches à deux membres différents de votre équipe, chacun travaillant dans son
 espace local. Les modifications du premier sont ensuite fusionnées avec celles
 du second dans son espace local *via* des *patches*. Enfin, les *commits* sont

@@ -22,7 +22,7 @@ Face à cet état de fait, il convient de mettre un système de gestion de
 l'information relative à l'évolution de la documentation qui soit tolérant à
 l'erreur humaine. Il faut donc soit :
 
-- mettre en œuvre des workflows sous un |cms|,
+- mettre en œuvre des *workflows* sous un |cms|,
 
 - utiliser le système de gestion de tickets utilisés pour la gestion des
   nouvelles fonctionnalités du produit documenté (par exemple, Trac) :
@@ -40,7 +40,7 @@ Les fonctions principales d'un |cms| sont les suivantes :
 
 - gestion des métadonnées,
 
-- workflows,
+- *workflows*,
 
 - traçabilité,
 
@@ -53,6 +53,6 @@ demandes de modification de la documentation technique.
 
 Si le document est disponible en plusieurs langues, chaque ticket doit être
 dupliqué pour chaque langue ou, dans le cas d'un |cms|, à chaque langue doit
-correspondre un workflow distinct.
+correspondre un *workflow* distinct.
 
 .. text review: yes

@@ -7,13 +7,13 @@
 
 .. _les-cms-le-workflow-en-prime-mais-une-fiabilite-a-tester:
 
-Les CMS : le workflow en prime, mais une fiabilité à tester
-===========================================================
+Les CMS : le *workflow* en prime, mais une fiabilité à tester
+=============================================================
 
 Les |cms|, ainsi dénommés pour des raisons
 purement marketing, mais dont la fonction se comprend mieux avec l'acronyme
 :abbr:`GED (système de gestion électronique de documents)`, apportent des
-notions de workflow et de gestion des liens qui s'avèrent précieuses lorsque
+notions de *workflow* et de gestion des liens qui s'avèrent précieuses lorsque
 l'on gère des documents modulaires.
 
 S'ils utilisent des formats monolithiques tels que FrameMaker, les rédacteurs

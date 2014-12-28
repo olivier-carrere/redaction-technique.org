@@ -11,7 +11,7 @@ Gérer son contenu DITA XML avec ou sans CMS ?
 =============================================
 
 L'architecture |dita| ne propose pas de
-mécanisme de workflow documentaire natif. Les workflows sont pourtant un
+mécanisme de *workflow* documentaire natif. Les *workflows* sont pourtant un
 élément important d'un processus efficace de gestion du cycle de vie du
 contenu.
 
@@ -19,7 +19,7 @@ Les |cms| gèrent également les métadonnées, ce qui permet une recherche plus
 efficace de l'information existante, et les rétroliens [#]_.
 
 La plupart des entreprises sont réticentes à mettre en place des |cms|, outils
-dédiés aux workflows. Elles ont d'ailleurs parfois connu des échecs de mise en
+dédiés aux *workflows*. Elles ont d'ailleurs parfois connu des échecs de mise en
 place de telles solutions part le passé.
 
 De plus, l'un des grands avantages de |dita|, c'est de s'intégrer directement
@@ -51,7 +51,7 @@ bénéfices de ce choix deviennent manifestes.
        est inclus ; lors de la mise à jour de cet élément, il peut alors juger
        si l'élément modifié sera toujours valable dans les différents contextes.
 
-.. [#] Il est possible, quoiqu'un peu complexe, de mettre en place des workflows
+.. [#] Il est possible, quoiqu'un peu complexe, de mettre en place des *workflows*
        sous Git *via* des branches.
 
 .. seealso::
