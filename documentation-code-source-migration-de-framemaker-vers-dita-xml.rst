@@ -11,7 +11,7 @@ Migration de FrameMaker vers DITA XML
 =====================================
 
 Migrer de |fm| vers |dita|, ce n'est pas comme
-enregistrer un document Word au format LibreOffice [#]_. Aucun processus
+enregistrer un document Word au format |libreoffice| [#]_. Aucun processus
 automatique ne permet de migrer un document non structuré vers un format
 structuré. Dans le pire des cas, selon la qualité de votre document de départ,
 cela peut s'apparenter à transformer une friche en jardin à la française. Mais
@@ -43,10 +43,10 @@ auraient déjà beaucoup gagné, respectivement en :
 
    .. rubric:: Notes
 
-.. [#] LibreOffice propose une fonction d'enregistrement au format |db|, mais
+.. [#] |libreoffice| propose une fonction d'enregistrement au format |db|, mais
        très imparfaite ; le XML qu'elle produit peut servir de base à la
        création d'une version |db|, avec beaucoup d'efforts… Sauf à maintenir
-       deux versions du même contenu, le processus de migration de LibreOffice
+       deux versions du même contenu, le processus de migration de |libreoffice|
        vers |db| exige donc un arrêt temporaire des livraisons des nouvelles
        versions de la documentation ; il doit donc être soigneusement planifié.
 

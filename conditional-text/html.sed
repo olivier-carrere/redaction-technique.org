@@ -3,6 +3,7 @@
 /^\.\. substitutions/a .. |dita| replace:: **DITA XML**
 /^\.\. substitutions/a .. |doc| replace:: **documentation technique**
 /^\.\. substitutions/a .. |fm| replace:: **FrameMaker**
+/^\.\. substitutions/a .. |libreoffice| replace:: **LibreOffice**
 /^\.\. substitutions/a .. |rst| replace:: **reStructuredText**
 /^\.\. substitutions/a .. |site| replace:: site
 /^\.\. substitutions/a .. |techwriter| replace:: **rédacteur technique**
