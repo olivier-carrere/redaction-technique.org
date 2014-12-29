@@ -12,8 +12,7 @@ Vous pouvez compiler ce blog avec *Python Sphinx* aux formats :
 
 - PDF,
 - HTML,
-- EPUB,
-- ou autre.
+- EPUB.
 
 Vous pouvez également obtenir une version compilée sur `Read the Docs`_.
 
