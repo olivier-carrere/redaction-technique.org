@@ -8,7 +8,7 @@
 Formats cibles
 --------------
 
-Vous pouvez compiler ce blog avec *Python Sphinx* aux formats :
+Vous pouvez compiler ce |site| avec *Python Sphinx* aux formats :
 
 - PDF,
 - HTML,

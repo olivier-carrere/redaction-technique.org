@@ -5,15 +5,15 @@
 
 .. code review: no code
 
-Les sources de ce blog sont gérées sous Git
--------------------------------------------
+Les sources de ce |site| sont gérées sous Git
+---------------------------------------------
 
-Ce blog a été initialement développé sous WordPress. L'impossibilité
+Ce |site| a été initialement développé sous WordPress. L'impossibilité
 d'effectuer sous ce |cms| des modifications transverses ou d'avoir un suivi
 précis du cycle de vie du contenu a entraîné une migration vers le format de
 balisage léger |rst|.
 
-Toutes les versions de ce blog sont gérées sous le logiciel de gestion de
+Toutes les versions de ce |site| sont gérées sous le logiciel de gestion de
 versions décentralisé `Git`_. Les modifications de contenu, de structure ou de
 mise en page peuvent désormais être :
 

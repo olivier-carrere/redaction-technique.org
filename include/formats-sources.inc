@@ -8,7 +8,7 @@
 Formats sources
 ---------------
 
-Ce blog est disponible en trois formats, basés sur la
+Ce |site| est disponible en trois formats, basés sur la
 version 1.1 [#]_. Ces formats présentent des niveaux de fonctionnalités et de
 complexité différents.
 

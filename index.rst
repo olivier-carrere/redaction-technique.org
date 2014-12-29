@@ -5,8 +5,8 @@
 
 .. code review: no code
 
-Ne lisez pas ce blog… `forkez-le sur GitHub !`_
-===============================================
+Ne lisez pas ce |site|, `forkez-le sur GitHub !`_
+=================================================
 
 .. include:: include/integrer-la-documentation-aux-processus-de-developpement.inc
 .. include:: include/les-sources-de-ce-document-sont-gerees-sous-git.inc

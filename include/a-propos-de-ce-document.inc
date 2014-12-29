@@ -5,10 +5,10 @@
 
 .. code review: no code
 
-À propos de ce blog
--------------------
+À propos de ce |site|
+---------------------
 
-Ce blog est conçu et réalisé par un |techwriter| spécialisé dans
+Ce |site| est conçu et réalisé par un |techwriter| spécialisé dans
 l'informatique.
 
 Il a parlé, parle ou parlera un peu, beaucoup ou pas du tout des formats, des

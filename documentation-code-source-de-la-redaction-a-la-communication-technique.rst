@@ -50,7 +50,7 @@ Ceci nécessite :
 - une gestion de projet rigoureuse,
 - un processus industriel de production et de valorisation du contenu.
 
-Ce site présente quelques exemples de supports de communication technique, leur
+Ce |site| présente quelques exemples de supports de communication technique, leur
 intérêt marketing, leur adéquation au public et les modalités de leur
 valorisation.
 
