@@ -12,7 +12,7 @@ Format cible
 
 Le format cible [#]_ d'un support de |techwriting| est
 celui sous lequel l'audience du message y accédera. Il est différent de celui
-sous lequel le |techwriter| crée le contenu. Le **single-sourcing**
+sous lequel le |techwriter| crée le contenu. Le *single-sourcing*
 permet de générer plusieurs livrables à des formats différents à partir d'un
 même format source.
 

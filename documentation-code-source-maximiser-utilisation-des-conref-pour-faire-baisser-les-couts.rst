@@ -16,8 +16,8 @@ spectaculairement les coûts et les délais de publication de son contenu |dita|
 surtout pour les documents multilingues.
 
 De par la nature des informations qu'elles contiennent, les sections de type
-**task** ont un taux plus élevé de réutilisation du contenu que celles de type
-**concept** ou **reference**.
+*task* ont un taux plus élevé de réutilisation du contenu que celles de type
+*concept* ou *reference*.
 
 .. figure:: graphics/maximiser-conref.png
 

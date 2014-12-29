@@ -28,7 +28,7 @@ concerne, selon le fameux concept minimaliste de *less is more*.
 
    *Texte conditionnel avec DITA XML*
 
-Concrètement, le mécanisme **ditaval** est basé sur des opérateurs binaires :
+Concrètement, le mécanisme *ditaval* est basé sur des opérateurs binaires :
 vous marquez un bloc d'information avec un attribut et une valeur, puis incluez
 ou excluez ce bloc dans le livrable en passant un opérande lors de la
 compilation (le bloc est inclus par défaut si aucun opérande n'est
