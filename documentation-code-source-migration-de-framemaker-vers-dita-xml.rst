@@ -10,7 +10,7 @@
 Migration de FrameMaker vers DITA XML
 =====================================
 
-Migrer de FrameMaker vers |dita|, ce n'est pas comme
+Migrer de |fm| vers |dita|, ce n'est pas comme
 enregistrer un document Word au format LibreOffice [#]_. Aucun processus
 automatique ne permet de migrer un document non structuré vers un format
 structuré. Dans le pire des cas, selon la qualité de votre document de départ,
@@ -23,7 +23,7 @@ parterre du château de Versailles, il convient de passer par l'étape du jardin
 l'anglaise - soit un endroit certes non rigoureusement architecturé, mais très
 agréable à vivre. Bonne nouvelle : si le |techwriter| a utilisé de
 manière cohérente un jeu de styles limité et organisé rationnellement son
-contenu FrameMaker, il est déjà certainement très proche de ce stade.
+contenu |fm|, il est déjà certainement très proche de ce stade.
 
 .. figure:: graphics/framemaker-to-dita-migration.png
 

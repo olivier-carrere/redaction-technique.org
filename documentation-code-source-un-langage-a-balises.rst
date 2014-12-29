@@ -39,7 +39,7 @@ disposent de supports largement différents :
 |                    |en page sera appliquée lors de la transformation des     |
 |                    |fichiers sources en fichiers cibles (autrement dit, lors |
 |                    |de la génération des livrables). Tout au plus, certains  |
-|                    |logiciels graphiques tels XMetal, Oxygen ou FrameMaker   |
+|                    |logiciels graphiques tels XMetal, Oxygen ou |fm|         |
 |                    |structuré proposent-ils le format WYSIWYM (what you see  |
 |                    |is what you mean), où les balises sont remplacées à      |
 |                    |l'écran par une mise en forme générique, différente de   |

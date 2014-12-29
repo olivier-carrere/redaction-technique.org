@@ -51,8 +51,8 @@ périlleuses :
   Windows, ou à un équivalent graphique, tel `SyncToy`_.
   Cependant,
   ce type de logiciels se base sur la date de dernière modification des
-  fichiers. Lorsque l'on met à jour ou publie un livre FrameMaker, notamment,
-  ceci peut créer des conflits entre fichiers, FrameMaker enregistrant dans ces
+  fichiers. Lorsque l'on met à jour ou publie un livre |fm|, notamment,
+  ceci peut créer des conflits entre fichiers, |fm| enregistrant dans ces
   cas tous les fichiers du livre, même si leur contenu n'a pas été modifié).
 
 .. text review: yes

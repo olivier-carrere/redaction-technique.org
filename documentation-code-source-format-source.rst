@@ -49,15 +49,15 @@ lorsqu'elle doit être homogène, comme dans le cas d'une |doc|,
 la rédaction et la mise en page s'opèrent sur :
 
 +-------------------------+----------------------------------------------------+
-|les mêmes fichiers :     |par exemple, des fichiers FrameMaker,               |
+|les mêmes fichiers :     |par exemple, des fichiers |fm|,                     |
 +-------------------------+----------------------------------------------------+
 |des fichiers différents :|par exemple, des fichiers de contenu XML et une     |
 |                         |feuille de style XSLT.                              |
 +-------------------------+----------------------------------------------------+
 
-Dans un fichier FrameMaker, la séparation du fond et de la forme est élevée mais
+Dans un fichier |fm|, la séparation du fond et de la forme est élevée mais
 pas totale : le contenu et la mise en page sont placés dans le même
-fichier. FrameMaker applique une maquette de page homogène à tout un fichier,
+fichier. |fm| applique une maquette de page homogène à tout un fichier,
 mais autorise l'ajout manuel d'éléments de mise en page. La même maquette peut
 être dupliquée pour tout le document, ou une maquette différente peut être
 utilisée pour chaque fichier qui compose ce dernier.
@@ -81,7 +81,7 @@ différents fichiers qui composent le document.
 +====================+====================+====================+
 |MS Word             |Non                 |Oui                 |
 +--------------------+--------------------+--------------------+
-|FrameMaker          |Oui                 |Oui                 |
+||fm|                |Oui                 |Oui                 |
 +--------------------+--------------------+--------------------+
 ||dita|              |Oui                 |Non                 |
 +--------------------+--------------------+--------------------+
@@ -91,7 +91,7 @@ texte, il est difficile de modifier le contenu sans perturber la mise en
 page. Résultat : à chaque publication d'une nouvelle version d'une documentation
 technique, l'équipe de |techwriting| passe de longues heures à
 corriger les erreurs de mise en page générées par le logiciel. Le phénomène est
-moindre sous FrameMaker mais reste important. Il est nul avec les formats
+moindre sous |fm| mais reste important. Il est nul avec les formats
 |dita| et |db| (les seules erreurs qui peuvent se produire sont des
 erreurs de compilation dues à une syntaxe XML erronée ; ces erreurs sont
 facilement rectifiables).
@@ -125,7 +125,7 @@ Les formats disponibles peuvent donc être classés selon le tableau suivant :
 +---------------+---------------+---------------+---------------+
 |Format         |Texte          |Structuré      |Modulaire      |
 +===============+===============+===============+===============+
-|FrameMaker     |Non            |Non            |Limité         |
+||fm|           |Non            |Non            |Limité         |
 |natif          |               |               |               |
 +---------------+---------------+---------------+---------------+
 ||db|           |Oui            |Oui            |Limité         |
@@ -133,7 +133,7 @@ Les formats disponibles peuvent donc être classés selon le tableau suivant :
 ||dita|         |Oui            |Oui            |Oui            |
 +---------------+---------------+---------------+---------------+
 
-FrameMaker et |db| ne sont pas pleinement modulaires, car les plus petits
+|fm| et |db| ne sont pas pleinement modulaires, car les plus petits
 éléments d'information manipulables ne sont pas génériques : ils contiennent des
 informations telles que la structure de table des matières ou les références
 croisées qui ne sont valables que dans un nombre limité de contextes.

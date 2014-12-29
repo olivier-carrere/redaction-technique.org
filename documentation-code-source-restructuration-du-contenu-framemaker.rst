@@ -13,10 +13,10 @@ Restructuration du contenu FrameMaker
 La partie automatisée d'une migration de `FrameMaker`_
 vers |dita|
 consiste
-à appliquer une table de conversion entre les styles **FrameMaker** et les
+à appliquer une table de conversion entre les styles |fm| et les
 structures |dita|.
 
-Un important travail de restructuration du document FrameMaker doit cependant
+Un important travail de restructuration du document |fm| doit cependant
 être effectué en amont :
 
 - restructuration de l'information selon les trois catégories *concept*,
@@ -26,7 +26,7 @@ Un important travail de restructuration du document FrameMaker doit cependant
   écrasant les styles ; ce genre d'hérésie est, sinon impossible, du moins très
   limité sous un format structuré),
 
-- harmonisation et simplification des styles FrameMaker pour les limiter et les
+- harmonisation et simplification des styles |fm| pour les limiter et les
   faire correspondre aux balises |dita| qui seront utilisées (par exemple, un
   style *note_important* vers la balise <note type="important> ; il faut donc au
   préalable analyser le contenu existant et décider quel ensemble de balises
@@ -38,7 +38,7 @@ Un important travail de restructuration du document FrameMaker doit cependant
    *Restructuration du contenu  FrameMaker et mise en place de la chaîne DITA XML*
 
 Ce travail d'harmonisation peut se faire en parallèle avec la mise à jour et la
-publication du document FrameMaker. La qualité de ce document n'en sera que
+publication du document |fm|. La qualité de ce document n'en sera que
 meilleure.  En même temps que cette réorganisation du contenu, vous pouvez mettre en place
 la chaîne complète de création, gestion et publication |dita| sur un
 échantillon de votre contenu :
@@ -56,7 +56,7 @@ par les autres acteurs de l'entreprise, que le |techwriter|
 peut envisager la migration.
 
 Si vos documents sont disponibles en plusieurs langues, vous devez modifier les
-fichiers FrameMaker et effectuer la migration pour chaque langue. Si un projet
+fichiers |fm| et effectuer la migration pour chaque langue. Si un projet
 de traduction dans une nouvelle langue se profile, mieux vaut effectuer la
 migration avant  !
 

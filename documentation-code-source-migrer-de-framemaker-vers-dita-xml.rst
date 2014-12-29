@@ -12,25 +12,25 @@ Migrer de FrameMaker vers DITA XML
 
 Le but de cette procédure est de :
 
-- migrer son contenu **FrameMaker** vers |dita| sans se plonger dans
-  les arcanes des **EDD FrameMaker** (petits
+- migrer son contenu |fm| vers |dita| sans se plonger dans
+  les arcanes des *EDD* |fm| (petits
   projets uniquement !),
 
-- gérer la documentation technique au format |dita| sans utiliser **FrameMaker
-  structuré**.
+- gérer la documentation technique au format |dita| sans utiliser |fm|
+  **structuré**.
 
-#. Restructurez le contenu et les styles de vos fichiers de contenu FrameMaker
+#. Restructurez le contenu et les styles de vos fichiers de contenu |fm|
    selon les concepts |dita|.
 
-#. Créez un document FrameMaker vide et importez-y tous les styles existants dans
+#. Créez un document |fm| vide et importez-y tous les styles existants dans
    les fichiers à migrer.
 
 #. Appliquez tous les styles disponibles à des paragraphes vides du document
-   FrameMaker vide.
+   |fm| vide.
 
-#. Enregistrez le document FrameMaker vide sous le nom :file:`styles.fm`.
+#. Enregistrez le document |fm| vide sous le nom :file:`styles.fm`.
 
-#. Ouvrez **FrameMaker structuré 11** et créez un nouveau fichier |dita| de type
+#. Ouvrez |fm| **structuré 11** et créez un nouveau fichier |dita| de type
    *topic*.
 
 #. Choisissez **StructureTools > Exporter le catalogue d'éléments en tant
@@ -48,19 +48,19 @@ Le but de cette procédure est de :
    Générer le tableau de conversion**.
 
 #. Modifiez le fichier de conversion et faites correspondre chaque style
-   FrameMaker à une balise |dita|.
+   |fm| à une balise |dita|.
 
 #. Enregistrez le tableau de conversion sous le nom
    :file:`DITA2FM-conversion-table.fm`.
 
-#. Ouvrez un fichier de contenu FrameMaker sous FrameMaker structuré 11 et
+#. Ouvrez un fichier de contenu |fm| sous |fm| structuré 11 et
    choisissez **StructureTools > Utilitaires > Structurer le document en
    cours**.
 
 #. Sélectionnez :file:`DITA2FM-conversion-table.fm` et cliquez sur **Ajouter
    structure**.
 
-#. Enregistrez le fichier de contenu FrameMaker au format XML sans sélectionner
+#. Enregistrez le fichier de contenu |fm| au format XML sans sélectionner
    d'application.
 
 #. Ouvrez le fichier XML généré sous un éditeur |dita| et corrigez la syntaxe

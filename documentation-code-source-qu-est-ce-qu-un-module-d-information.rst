@@ -14,7 +14,7 @@ Le système modulaire le plus connu au monde est certainement celui des briques
 Lego. Adapté à la |doc|, le principe des modules permet
 d'améliorer la qualité des manuels techniques et la productivité du |techwriter|.
 
-Mais suffit-il de convertir sa documentation de FrameMaker vers un format
+Mais suffit-il de convertir sa documentation de |fm| vers un format
 structuré tel que |dita| pour obtenir une documentation modulaire ?
 Hélas, non. Si le contenu de départ mélange les informations de tout type
 (concepts, procédures pas à pas, référence), il sera toujours possible de le

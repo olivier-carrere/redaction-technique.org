@@ -16,7 +16,7 @@ et que la chaîne |dita| est
 parfaitement intégrée aux processus techniques et humains de la société, le
 |techwriter| peut appliquer la table de conversion [#]_.
 
-Vous devriez maintenant être à même d'archiver les fichiers FrameMaker, puis de
+Vous devriez maintenant être à même d'archiver les fichiers |fm|, puis de
 basculer totalement vers le format |dita|.
 
 .. figure:: graphics/dita-migration.png
@@ -30,7 +30,7 @@ pourrez appliquer le processus aux autres jeux de documents.
 Vous pouvez maintenant progressivement modulariser et partager votre contenu
 dans le nouveau format afin de tirer parti au maximum de |dita|. Vous pouvez
 pendant cette phase continuer à publier de nouvelles versions du document ; la
-publication devrait d'ailleurs être beaucoup plus simple que sous FrameMaker.
+publication devrait d'ailleurs être beaucoup plus simple que sous |fm|.
 
 .. only:: html
 

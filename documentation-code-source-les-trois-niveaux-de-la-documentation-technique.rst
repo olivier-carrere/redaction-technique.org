@@ -41,7 +41,7 @@ Les formats non adaptés à la |techwriting| sont par exemple les
 formats de traitement de texte, qui ne dissocient pas suffisamment la mise en
 page du contenu.
 
-Les formats adaptés sont les formats de type FrameMaker, qui dissocient
+Les formats adaptés sont les formats de type |fm|, qui dissocient
 (relativement) la mise en page du contenu, mais ne sont pas sémantiques.
 
 Les formats structurés sont les formats sémantiques de type |db| ou |dita|.

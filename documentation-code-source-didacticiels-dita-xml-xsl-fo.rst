@@ -28,7 +28,7 @@ De même, si un produit doit être fourni en marque blanche à différents clien
 une mise en page totalement différente peu être appliquée à sa documentation en
 spécifiant simplement un autre jeu de feuilles de style lors de la génération du
 livrable. Opération qui n'est pas envisageable en pratique avec des solutions
-traditionnelles de type FrameMaker.
+traditionnelles de type |fm|.
 
 .. toctree::
    :hidden:

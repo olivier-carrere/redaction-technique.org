@@ -16,7 +16,7 @@ purement marketing, mais dont la fonction se comprend mieux avec l'acronyme
 notions de *workflow* et de gestion des liens qui s'avèrent précieuses lorsque
 l'on gère des documents modulaires.
 
-S'ils utilisent des formats monolithiques tels que FrameMaker, les rédacteurs
+S'ils utilisent des formats monolithiques tels que |fm|, les rédacteurs
 techniques peuvent utiliser des |cms| tels que SharePoint, Alfresco ou
 consorts pour :
 

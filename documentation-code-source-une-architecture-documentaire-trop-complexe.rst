@@ -16,7 +16,7 @@ productivité se fait au prix d'une plus grande complexité.
 
 Si les projets |dita| sont plus *complexes*, ils sont cependant moins *compliqués*
 que des projets reposant sur des formats plus traditionnels de type
-FrameMaker. En effet, |dita| est une architecture rationnelle. Le |techwriter|
+|fm|. En effet, |dita| est une architecture rationnelle. Le |techwriter|
 se trouve donc face à un comportement prédictible des outils qu'il
 utilise, loin des *trucs et astuces* destinés à contourner les bugs ou les
 fonctionnements erratiques des outils plus lourds.
