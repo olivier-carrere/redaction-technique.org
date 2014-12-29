@@ -14,6 +14,4 @@ Vous pouvez compiler ce |site| avec *Python Sphinx* aux formats :
 - HTML,
 - EPUB.
 
-Vous pouvez également obtenir une version compilée sur `Read the Docs`_.
-
 .. text review: yes
