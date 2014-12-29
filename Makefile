@@ -26,21 +26,29 @@ clean:
 	-rm -rf $(BUILDDIR)/*
 
 html:
+	$ cp conf.py /tmp/conf.py
+	$ sed -i conf.py -f conditional-text/html.sed
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	$ cp /tmp/conf.py conf.py
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
 epub:
-	$ git stash
+	$ cp conf.py /tmp/conf.py
+	$ cp *.rst /tmp/
+	$ sed -i conf.py -f conditional-text/epub.sed
 	$ sed -i '/:hidden:/d' *.rst
 	$(SPHINXBUILD) -b epub $(ALLSPHINXOPTS) $(BUILDDIR)/epub
-	$ git reset --hard HEAD
-	$ if git stash list | grep stash; then git stash pop; fi
+	$ cp /tmp/conf.py conf.py
+	$ cp /tmp/*.rst .
 	@echo
 	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
 
 latexpdf:
+	$ cp conf.py /tmp/conf.py
+	$ sed -i conf.py -f conditional-text/latexpdf.sed
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
 	@echo "Running LaTeX files through pdflatex..."
 	$(MAKE) -C $(BUILDDIR)/latex all-pdf
+	$ cp /tmp/conf.py conf.py
 	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."

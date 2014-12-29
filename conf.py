@@ -91,13 +91,8 @@ rst_epilog = u"""
 .. substitutions
 
 .. |cms| replace:: :abbr:`CMS (Content Management System)`
-.. |dita| replace:: **DITA XML**
 .. |dita-ot| replace:: :abbr:`DITA-OT (DITA Open Toolkit)`
-.. |db| replace:: **DocBook**
 .. |ide| replace:: :abbr:`IDE (Integrated Development Environment)`
-.. |rst| replace:: **reStructuredText**
-.. |techwriter| replace:: **rédacteur technique**
-
 
 .. links
 
