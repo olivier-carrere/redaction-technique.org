@@ -29,6 +29,7 @@ html:
 	$ cp conf.py /tmp/conf.py
 	$ sed -i conf.py -f conditional-text/html.sed
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	$ cp graphics/cc-by-nc-sa.png $(BUILDDIR)/html/_images/
 	$ cp /tmp/conf.py conf.py
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
@@ -38,6 +39,8 @@ epub:
 	$ cp *.rst /tmp/
 	$ sed -i conf.py -f conditional-text/epub.sed
 	$ sed -i '/:hidden:/d' *.rst
+	$ mkdir -p $(BUILDDIR)/epub/_images/
+	$ cp graphics/cc-by-nc-sa.png $(BUILDDIR)/epub/_images/
 	$(SPHINXBUILD) -b epub $(ALLSPHINXOPTS) $(BUILDDIR)/epub
 	$ cp /tmp/conf.py conf.py
 	$ cp /tmp/*.rst .
