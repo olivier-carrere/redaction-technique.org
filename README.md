@@ -7,7 +7,15 @@ Prerequisites
 -------------
 
 - GNU/Linux Debian 7
+- Git
 - Sphinx 1.1.3 or higher
+
+For PDF output
+~~~~~~~~~~~~~~
+
+- texlive
+- texlive-fonts-recommended
+- texlive-latex-extra
 
 Installing Sphinx
 -----------------
