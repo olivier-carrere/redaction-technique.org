@@ -21,9 +21,15 @@ help:
 	@echo "  html       to make standalone HTML files"
 	@echo "  epub       to make an epub"
 	@echo "  latexpdf   to make LaTeX files and run them through pdflatex"
+	@echo "  all        to build all supported outputs"
 
 clean:
 	-rm -rf $(BUILDDIR)/*
+
+all: html epub latexpdf
+	$ mkdir -p $(BUILDDIR)/html/download
+	$ cp $(BUILDDIR)/latex/redaction-techniqueorg.pdf $(BUILDDIR)/html/download
+	$ cp $(BUILDDIR)/epub/redaction-techniqueorg.epub $(BUILDDIR)/html/download
 
 html:
 	$ cp conf.py /tmp/conf.py
