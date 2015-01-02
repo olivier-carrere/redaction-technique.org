@@ -49,6 +49,15 @@ $ cd redaction-technique.org
 
 $ make epub
 
+Building all available outputs
+------------------------------
+
+$ git clone https://github.com/olivier-carrere/redaction-technique.org.git
+
+$ cd redaction-technique.org
+
+$ make all
+
 Troubleshooting
 ---------------
 
