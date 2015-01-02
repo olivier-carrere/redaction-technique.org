@@ -10,8 +10,11 @@ Formats cibles
 
 Vous pouvez compiler ce |site| avec *Python Sphinx* aux formats :
 
-- PDF,
-- HTML,
-- EPUB.
+- `PDF`_,
+- `EPUB`_,
+- HTML.
+
+.. _PDF: download/redaction-techniqueorg.pdf
+.. _EPUB: download/redaction-techniqueorg.epub
 
 .. text review: yes
