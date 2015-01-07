@@ -10,9 +10,17 @@ Formats cibles
 
 Vous pouvez compiler ce |site| avec *Python Sphinx* aux formats :
 
-- `PDF`_,
+- PDF,
 - `EPUB`_,
 - HTML.
+
+.. raw:: html
+
+   <iframe id="pdf" style="border:1px solid #6a6a6a" title="Version PDF"
+   src="download/redaction-techniqueorg.pdf" frameborder="1" scrolling="auto"
+   width="100%" height="1050"></iframe>
+
+*Version* |release| *de ce site au format PDF*
 
 Ces différentes versions sont générées à partir des mêmes sources
 exactement. Elles présentent cependant de légères variations, mises en œuvre par
