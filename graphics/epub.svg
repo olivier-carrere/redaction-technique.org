@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    version="1.1"
+    width="90.000008"
+    height="90.00029"
+    viewBox="0 0 90.00001 90.000291"
+    id="svg5617"
+    inkscape:version="0.48.5 r10040"
+    sodipodi:docname="epub.svg"
+    inkscape:export-filename="/home/carrere/Downloads/redaction-technique.org/graphics/epub.png"
+    inkscape:export-xdpi="119"
+    inkscape:export-ydpi="119">
+  <defs
+      id="defs5629" />
+  <sodipodi:namedview
+      pagecolor="#ffffff"
+      bordercolor="#666666"
+      borderopacity="1"
+      objecttolerance="10"
+      gridtolerance="10"
+      guidetolerance="10"
+      inkscape:pageopacity="0"
+      inkscape:pageshadow="2"
+      inkscape:window-width="712"
+      inkscape:window-height="480"
+      id="namedview5627"
+      showgrid="false"
+      fit-margin-top="0"
+      fit-margin-left="0"
+      fit-margin-right="0"
+      fit-margin-bottom="0"
+      inkscape:zoom="1.0727273"
+      inkscape:cx="45.000503"
+      inkscape:cy="16.089641"
+      inkscape:window-x="452"
+      inkscape:window-y="229"
+      inkscape:window-maximized="0"
+      inkscape:current-layer="svg5617" />
+  <path
+      d="M 44.999142,73.281734 16.717834,44.998137 44.999142,16.71855 54.427009,26.144696 35.571275,44.998137 44.998568,54.426004 73.279872,26.146417 48.643552,1.5100921 c -2.011738,-2.013457 -5.274789,-2.013457 -7.288246,0 L 1.5088027,41.356594 c -2.01173694,2.011738 -2.01173694,5.274789 0,7.288246 L 41.355879,88.490194 c 2.013458,2.01346 5.276509,2.01346 7.288246,0 L 88.491202,48.64484 c 2.01174,-2.013457 2.01174,-5.276508 0,-7.288246 l -5.78461,-5.782883 -37.70745,37.708023 z"
+      id="path5625"
+      inkscape:connector-curvature="0"
+      style="fill:#85b916" />
+</svg>

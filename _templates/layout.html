@@ -12,6 +12,18 @@
 {%- block sidebartoc %}
 <h3>{{ _('Table Of Contents') }}</h3>
 {{ toctree() }}
+<div class="left">
+  <a href="download/redaction-techniqueorg.pdf">
+    <img src="_images/pdf.png" alt="Version PDF"/>
+    <p>Version PDF</p>
+  </a>
+</div>
+<div>
+  <a href="download/redaction-techniqueorg.epub">
+    <img src="_images/epub.png" alt="Version EPUB"/>
+    <p>Version EPUB&nbsp;</p>
+  </a>
+</div>
 {%- endblock %}
 {%- block sidebarsearch %}
 <h3 style="margin-top: 1.5em;">{{ _('Search') }}</h3>
