@@ -127,7 +127,6 @@ rst_epilog = u"""
 .. _conref: http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html
 .. _ditaval: http://docs.oasis-open.org/dita/v1.2/os/spec/common/about-ditaval.html
 .. _expressions rationnelles: http://fr.wikipedia.org/wiki/Expression_rationnelle
-.. _forkez-le sur GitHub !: https://github.com/olivier-carrere/redaction-technique.org
 .. _l'archive des fichiers schemas.xml: http://www.redaction-technique.org/media/schemas.redaction-technique.org.tar.gz
 .. _l'archive des schémas RelaxNG pour DITA XML: http://www.redaction-technique.org/media/rnc.tar.gz
 .. _reStructuredText: https://github.com/olivier-carrere/redaction-technique.org/tree/master
