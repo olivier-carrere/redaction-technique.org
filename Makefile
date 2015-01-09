@@ -43,6 +43,8 @@ html:
 epub:
 	$ cp conf.py /tmp/conf.py
 	$ cp *.rst /tmp/
+	$ cp _templates/layout.html /tmp/
+	$ cp /usr/share/sphinx/themes/epub/layout.html _templates/
 	$ sed -i conf.py -f conditional-text/epub.sed
 	$ sed -i '/:hidden:/d' *.rst
 	$ mkdir -p $(BUILDDIR)/epub/_images/
@@ -50,6 +52,7 @@ epub:
 	$(SPHINXBUILD) -b epub $(ALLSPHINXOPTS) $(BUILDDIR)/epub
 	$ cp /tmp/conf.py conf.py
 	$ cp /tmp/*.rst .
+	$ cp /tmp/layout.html _templates/
 	@echo
 	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
 
