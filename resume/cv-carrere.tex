@@ -1,0 +1,320 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% "ModernCV" CV and Cover Letter
+% LaTeX Template
+% Version 1.11 (19/6/14)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Xavier Danaux (xdanaux@gmail.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template requires the moderncv.cls and .sty files to be in the same
+% directory as this .tex file. These files provide the resume style and themes
+% used for structuring the document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%-------------------------------------------------------------------------------
+
+\documentclass[11pt,a4paper,roman]{moderncv}
+% Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper,
+% legalpaper, executivepaper or landscape; font families: sans or roman
+
+\moderncvstyle{casual}
+% CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and
+% 'banking'
+
+\moderncvcolor{blue}
+% CV color - options include: 'blue' (default), 'orange', 'green', 'red',
+% 'purple', 'grey' and 'black'
+
+\usepackage[width=45em,height=60em]{geometry}
+
+% Reduce document margins \setlength{\hintscolumnwidth}{3cm} Uncomment to change
+% the width of the dates column \setlength{\makecvtitlenamewidth}{10cm} For the
+% 'classic' style, uncomment to adjust the width of the space allocated to your
+% name
+
+\usepackage[francais]{babel}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{00A0}{\nobreakspace}
+
+%-------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%-------------------------------------------------------------------------------
+
+\firstname{Olivier} % Your first name
+\familyname{Carrère} % Your last name
+
+% All information in this block is optional, comment out any lines you don't
+% need
+\title{Rédacteur technique anglais français}
+\address{}{93100 Montreuil}
+\mobile{}
+\email{carrereo@gmail.com}
+
+\homepage{www.redaction-technique.org}
+         {www.redaction-technique.org}
+
+\extrainfo{github.com/olivier-carrere}
+% The first argument is the url for the clickable link, the second argument is
+% the url displayed in the template - this allows special characters to be
+% displayed such as the tilde in this example
+
+         \quote{Gérer la documentation comme le code source.}
+
+%-------------------------------------------------------------------------------
+
+\begin{document}
+
+\makecvtitle % Print the CV title
+
+%-------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%-------------------------------------------------------------------------------
+
+\section{Expérience}
+
+\subsection{Responsable de la communication technique}
+
+\cventry{Depuis octobre 2012}
+        {Arealti}
+        {SSII}
+        {}
+        {}
+        {Industrialisation de la documentation de l'éditeur de solutions réseau
+          6WIND.
+          \begin{itemize}
+          \item Développement d'une plateforme de documentation multi-formats
+            basée sur le langage de balisage léger (de type \textbf{Wiki} ou
+            \textbf{Markdown}) \textbf{ReStructuredText.}
+          \item Augmentation de la productivité par la modularisation et la
+            factorisation du contenu et la mise en place de mécanismes de texte
+            conditionnel
+          \item Suivi des modifications \textit{via} le système de gestion de
+            bugs \textbf{Bugzilla}
+          \item Gestion fine des versions \textit{via} le logiciel de gestion de
+            versions \textbf{Git}
+          \item \textit{Backport} des modifications dans les branches de
+            maintenance
+          \item Création de feuilles de style \textbf{CSS} (HTML) et
+            \textbf{\LaTeX} (PDF)
+          \item Modification du contenu en mode interactif ou \textit{batch}
+        \end{itemize}
+    }
+
+%------------------------------------------------
+
+\cventry
+    {2011 - 2012}
+    {Rédacteur technique freelance}
+    {\textsc{}}
+    {}
+    {}
+    {Missions de conseil et de formation \textbf{DITA XML.}}
+
+%------------------------------------------------
+
+\cventry
+    {2009 – 2011}
+    {Edenwall}
+    {Pare-feu identifiant}
+    {}
+    {}
+    {Mise en place des process de création et mise à jour de la documentation
+      basés sur l'architecture modulaire DITA XML.
+      \begin{itemize}
+      \item Mise en place d'une base documentaire modulaire DITA XML
+      \item Gestion des versions sous \textbf{Subversion}
+      \item Gestion des tickets sous \textbf{Trac}
+      \item Création de feuilles de style \textbf{XSLT}
+      \item Manuels d'installation, guides de l'utilisateur et livres blancs en
+        anglais
+    \end{itemize}}
+
+%------------------------------------------------
+
+\cventry
+    {2006 – 2009}
+    {OpenTrust}
+    {Logiciels de sécurité}
+    {}
+    {}
+    {Documentation de logiciels de PKI, de signature électronique et
+      de gestion de carte à puces.
+      \begin{itemize}
+      \item Mise en place d'une chaîne de publication en \textbf{DocBook}
+      \item Mise en place de \textit{workflows} de validation
+      \item Gestion des versions sous Subversion
+      \item Gestion des tickets sous Trac
+      \item Rédaction de la documentation en anglais
+      \item Encadrement de trois stagiaires en alternance et de deux traducteurs
+    \end{itemize}}
+
+%------------------------------------------------
+
+\cventry
+    {2004 – 2006}
+    {Dolphian}
+    {Solution antispam}
+    {}
+    {}
+    {Guides d'installation, d'utilisation et de référence en anglais.
+      \begin{itemize}
+      \item Analyse des cahiers des charges et des spécifications et interviews
+        des développeurs
+    \end{itemize}}
+
+%------------------------------------------------
+
+\subsection{Rédacteur technique et marketing}
+
+\cventry
+    {2000 – 2004}
+    {Ring}
+    {Logiciels de téléphonie}
+    {}
+    {}
+    {
+      \begin{itemize}
+      \item Guides de référence et d'utilisation en anglais.
+      \item Réalisation d'une animation en Flash (scénario, dialogue,
+        \textit{storyboard}, suivi de projet)
+    \end{itemize}}
+
+%------------------------------------------------
+
+\cventry
+    {1996 – 1999}
+    {Loan System-Sysload}
+    {Logiciels système et financiers}
+    {}
+    {}
+    {
+      \begin{itemize}
+      \item Guides d'installation et d'utilisation et aide en ligne en anglais
+        et en français
+      \item Création et rédaction d'un magazine d'entreprise en 3 langues
+        (anglais, français, allemand)
+      \item Conception, rédaction et intégration HTML d'un site
+        \textit{corporate}
+      \item Rédaction de brochures marketing et de \textit{flyers}
+      \end{itemize}
+    }
+
+%------------------------------------------------
+
+\subsection{Chef de projet en traduction}
+
+\cventry
+    {1993 – 1996}
+    {WordPerfect}
+    {Suite bureautique}
+    {}
+    {}
+    {
+      \begin{itemize}
+      \item Localisation d'interfaces de logiciels
+      \item Traduction d'aides en ligne, de manuels, de brochures et de flyers
+      \end{itemize}
+    }
+
+%-------------------------------------------------------------------------------
+
+\cventry
+    {1991 – 1993}
+    {Gecap}
+    {}
+    {}
+    {}
+    {
+      \begin{itemize}
+      \item Traduction d'aides en ligne et de manuels
+      \end{itemize}
+    }
+
+%-------------------------------------------------------------------------------
+%	AWARDS SECTION
+%-------------------------------------------------------------------------------
+
+\section{Récompenses}
+
+\cvitem{1999}{Obtention de 3 prix de la \textit{Society for Technical
+    Communication}}
+
+%-------------------------------------------------------------------------------
+%	COMPUTER SKILLS SECTION
+%-------------------------------------------------------------------------------
+
+\section{Informatique}
+
+\cvitem
+    {Formats}
+    {DITA XML, ReStructuredText, DocBook}
+
+\cvitem
+    {Frameworks}
+    {DITA Open-Toolkit, Python Sphinx, FrameMaker, MS Office}
+
+\cvitem
+    {Gestion de bugs}
+    {Bugzilla, Trac}
+
+\cvitem {Languages} {Scripts Shell, XSLT, CSS, \LaTeX (LaTeX), HTML, notions de
+  C}
+
+\cvitem
+    {Utilitaires}
+    {gmake, awk, sed, expressions rationnelles (expressions
+      régulières)}
+
+%-------------------------------------------------------------------------------
+%	LANGUAGES SECTION
+%-------------------------------------------------------------------------------
+
+\section{Langues}
+
+\cvitem
+    {Anglais}
+    {Bilingue}
+
+\cvitem
+    {Espagnol}
+    {Bonne maîtrise}
+
+%-------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%-------------------------------------------------------------------------------
+
+\section{Formation}
+
+\cventry{1990}{ESIT}{École supérieure d'interprètes et de traducteurs}{}{}{}
+\cventry{1987}{Licence d'anglais}{ Paris IV Sorbonne}{}{}{}
+
+%-------------------------------------------------------------------------------
+%	INTERESTS SECTION
+%-------------------------------------------------------------------------------
+
+\section{Activités}
+
+\cvitem
+    {Aïkido}
+    {4\textsuperscript{e} dan}
+
+\cvitem
+    {Photographie}
+    {Photos illustratives pour le site \textit{www.communication-technique.com}}
+
+\cvitem
+    {Web}
+    {Création d'un site de méthodologie de rédaction technique (sources sous
+      \textbf{GitHub}).}
+
+\end{document}
