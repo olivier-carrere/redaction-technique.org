@@ -17,7 +17,7 @@ La documentation fait partie du logiciel. Fournie avec le produit, elle doit :
 
 .. figure:: graphics/integration-doc-dev.png
 
-   *Sources de documentation au format texte*
+   *Sources de documentation modulaires au format texte*
 
 Elle doit répondre idéalement aux critères suivants :
 
