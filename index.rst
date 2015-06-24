@@ -5,6 +5,7 @@
 
 .. code review: no code
 
+.. include:: include/silo.inc
 .. include:: include/integrer-la-documentation-aux-processus-de-developpement.inc
 .. include:: include/les-sources-de-ce-document-sont-gerees-sous-git.inc
 .. include:: include/formats-sources.inc
