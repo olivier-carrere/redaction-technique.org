@@ -41,7 +41,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'redaction-technique.org'
-copyright = u'2014, Olivier Carrère'
+copyright = u'2015, Olivier Carrère'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -291,7 +291,7 @@ man_pages = [
 epub_title = u'redaction-technique.org'
 epub_author = u'Olivier Carrère'
 epub_publisher = u'Olivier Carrère'
-epub_copyright = u'2014, Olivier Carrère'
+epub_copyright = u'2015, Olivier Carrère'
 
 # The language of the text. It defaults to the language option
 # or en if the language is not set.
