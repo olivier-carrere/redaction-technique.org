@@ -14,28 +14,24 @@ l'informatique.
 Il a parlé, parle ou parlera un peu, beaucoup ou pas du tout des formats, des
 outils et des tâches suivants :
 
-+-----------------------------------+-------------------------+----------------+
-|Tâche                              ||rst|                    ||dita|          |
-+===================================+=========================+================+
-|Modification                       |`scripts Bash`_                           |
-|                                   +------------------------------------------+
-|                                   |awk                                       |
-|                                   +------------------------------------------+
-|                                   |sed                                       |
-|                                   +------------------------------------------+
-|                                   |expressions rationnelles (ou *expressions |
-|                                   |régulières*)                              |
-+-----------------------------------+------------------------------------------+
-|Gestion de versions                |Git                                       |
-+-----------------------------------+-------------------------+----------------+
-|Compilation                        |`Makefile`_              |Ant             |
-|                                   |                         +----------------+
-|                                   |                         |XSLT            |
-+---------------------+-------------+-------------------------+----------------+
-|Mise en page         |HTML         |`CSS`_                                    |
-|                     +-------------+-------------------------+----------------+
-|                     |PDF          |LaTeX                    |XSL-FO          |
-+---------------------+-------------+-------------------------+----------------+
+- |rst|
+- |dita|
+- `scripts Bash`_
+- awk
+- sed
+- expressions rationnelles (ou *expressions régulières*)
+- gestion de versions
+- Git
+- Compilation
+- `Makefile`_
+- Ant
+- XSLT
+- Mise en page
+- HTML
+- `CSS`_
+- PDF
+- LaTeX
+- XSL-FO
 
 Puisqu'il traite des processus et des formats de rédaction technique, son
 contenu est cependant moins pertinent que son historique et que ses branches
