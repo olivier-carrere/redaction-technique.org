@@ -21,9 +21,9 @@ La documentation fait partie du logiciel. Fournie avec le produit, elle doit :
 
 Elle doit répondre idéalement aux critères suivants :
 
-- pas de *vendor lock-in* (indépendance du format et de l'éditeur de contenu)
-- chaînes de publication libres et gratuites
-- mise en page totalement automatisée
+- pas de *vendor lock-in* (indépendance du format et de l'éditeur de contenu),
+- chaînes de publication libres et gratuites,
+- mise en page totalement automatisée.
 
 Il y a quelques années encore, les seuls outils permettant de fournir des
 livrables de qualité au format PDF ou HTML reposaient sur des formats binaires
