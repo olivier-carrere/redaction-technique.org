@@ -15,7 +15,7 @@
    id="svg4030"
    version="1.1"
    inkscape:version="0.48.5 r10040"
-   sodipodi:docname="open-source-publishing-chain.svg"
+   sodipodi:docname="non-open-source-publishing-chain.svg"
    inkscape:export-filename="/home/carrere/Downloads/redaction-technique.org/graphics/open-source-publishing-chain.png"
    inkscape:export-xdpi="112.90476"
    inkscape:export-ydpi="112.90476">
@@ -2636,7 +2636,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.1777075"
-     inkscape:cx="40.80963"
+     inkscape:cx="38.003881"
      inkscape:cy="268.09261"
      inkscape:document-units="px"
      inkscape:current-layer="g3457"
@@ -2658,7 +2658,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -2712,10 +2712,10 @@
          width="353.99362"
          height="83.224945"
          ry="2.3368878"
-         style="color:#000000;fill:#22666f;fill-opacity:0.94117647;stroke:url(#radialGradient3494);stroke-width:2.54746532;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;display:block"
+         style="color:#000000;fill:#ff7400;fill-opacity:1;stroke:url(#radialGradient3494);stroke-width:2.54746532000000014;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;display:block"
          id="rect15391-04-8-6" />
       <flowRoot
-         transform="translate(126.06673,568.77273)"
+         transform="translate(114.25081,568.77273)"
          xml:space="preserve"
          id="flowRoot4221-8"
          style="font-size:4px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"><flowRegion
@@ -2726,9 +2726,9 @@
              x="-340.32703"
              y="-25.423574" /></flowRegion><flowPara
            id="flowPara4227-1"
-           style="font-size:14px;fill:#ffffff;fill-opacity:1">Linux</flowPara></flowRoot>      <rect
+           style="font-size:14px;fill:#ffffff;fill-opacity:1">Windows</flowPara></flowRoot>      <rect
          id="rect15391-04-8-6-2"
-         style="opacity:0.9;color:#000000;fill:#22666f;fill-opacity:0.94117647;stroke:url(#radialGradient3496);stroke-width:2.54746532;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;display:block"
+         style="opacity:0.90000000000000002;color:#000000;fill:#ff7400;fill-opacity:1;stroke:url(#radialGradient3496);stroke-width:2.54746532000000014;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;display:block"
          ry="2.3368878"
          height="83.224945"
          width="353.99362"
@@ -2738,7 +2738,7 @@
          style="font-size:4px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"
          id="flowRoot4221-8-7"
          xml:space="preserve"
-         transform="translate(101.05403,472.4241)"><flowRegion
+         transform="translate(72.56868,472.4241)"><flowRegion
            id="flowRegion4223-4-0"><rect
              y="-25.423574"
              x="-340.32703"
@@ -2746,9 +2746,9 @@
              width="156.9109"
              id="rect4225-5-0" /></flowRegion><flowPara
            style="font-size:14px;fill:#ffffff;fill-opacity:1"
-           id="flowPara4227-1-3">Git - Bugzilla</flowPara></flowRoot>      <rect
+           id="flowPara4227-1-3">Componize/DocZone</flowPara></flowRoot>      <rect
          id="rect15391-04-8-6-2-8"
-         style="opacity:0.8;color:#000000;fill:#22666f;fill-opacity:0.94117647;stroke:url(#radialGradient3498);stroke-width:2.54746532;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;display:block"
+         style="opacity:0.80000000000000004;color:#000000;fill:#ff7400;fill-opacity:1;stroke:url(#radialGradient3498);stroke-width:2.54746532000000014;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;display:block"
          ry="2.3368878"
          height="83.224945"
          width="353.99362"
@@ -2758,7 +2758,7 @@
          style="font-size:4px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"
          id="flowRoot4221-8-7-2"
          xml:space="preserve"
-         transform="translate(85.078449,376.07548)"><flowRegion
+         transform="translate(111.80354,376.07548)"><flowRegion
            id="flowRegion4223-4-0-7"><rect
              y="-25.423574"
              x="-340.32703"
@@ -2766,9 +2766,9 @@
              width="156.9109"
              id="rect4225-5-0-1" /></flowRegion><flowPara
            style="font-size:14px;fill:#ffffff;fill-opacity:1"
-           id="flowPara4227-1-3-4"> reStructuredText</flowPara></flowRoot>      <rect
+           id="flowPara4227-1-3-4">DITA XML</flowPara></flowRoot>      <rect
          id="rect15391-04-8-6-2-8-7"
-         style="opacity:0.7;color:#000000;fill:#22666f;fill-opacity:0.94117647;stroke:url(#radialGradient3500);stroke-width:2.54746532;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;display:block"
+         style="opacity:0.69999999999999996;color:#000000;fill:#ff7400;fill-opacity:1;stroke:url(#radialGradient3500);stroke-width:2.54746532000000014;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;display:block"
          ry="2.3368878"
          height="83.224945"
          width="353.99362"
@@ -2778,7 +2778,7 @@
          style="font-size:4px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"
          id="flowRoot4221-8-7-2-3"
          xml:space="preserve"
-         transform="translate(92.365558,278.36992)"><flowRegion
+         transform="translate(83.407059,278.36992)"><flowRegion
            id="flowRegion4223-4-0-7-9"><rect
              y="-25.423574"
              x="-340.32703"
@@ -2786,9 +2786,9 @@
              width="156.9109"
              id="rect4225-5-0-1-2" /></flowRegion><flowPara
            style="font-size:14px;fill:#ffffff;fill-opacity:1"
-           id="flowPara4227-1-3-4-6">Python Sphynx</flowPara></flowRoot>      <rect
+           id="flowPara4227-1-3-4-6">DITA Open Toolkit</flowPara></flowRoot>      <rect
          id="rect15391-04-8-6-2-8-7-7"
-         style="opacity:0.6;color:#000000;fill:#22666f;fill-opacity:0.94117647;stroke:url(#radialGradient3502);stroke-width:2.54746532;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;display:block"
+         style="opacity:0.59999999999999998;color:#000000;fill:#ff7400;fill-opacity:1;stroke:url(#radialGradient3502);stroke-width:2.54746532000000014;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;display:block"
          ry="2.3368878"
          height="83.224945"
          width="353.99362"
@@ -2798,7 +2798,7 @@
          style="font-size:4px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"
          id="flowRoot4221-8-7-2-3-0"
          xml:space="preserve"
-         transform="translate(83.325031,183.37823)"><flowRegion
+         transform="translate(83.325027,183.37823)"><flowRegion
            id="flowRegion4223-4-0-7-9-2"><rect
              y="-25.423574"
              x="-340.32703"
@@ -2808,7 +2808,7 @@
            style="font-size:14px;fill:#ffffff;fill-opacity:1"
            id="flowPara4227-1-3-4-6-8">Make - Bash - sed</flowPara></flowRoot>      <rect
          id="rect15391-04-8-6-2-8-7-7-0"
-         style="opacity:0.5;color:#000000;fill:#22666f;fill-opacity:0.94117647;stroke:url(#radialGradient3504);stroke-width:2.54746532;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;display:block"
+         style="opacity:0.50000000000000000;color:#000000;fill:#ff7400;fill-opacity:1;stroke:url(#radialGradient3504);stroke-width:2.54746532000000014;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;display:block"
          ry="2.3368878"
          height="83.224945"
          width="353.99362"
@@ -2818,7 +2818,7 @@
          style="font-size:4px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"
          id="flowRoot4221-8-7-2-3-0-6"
          xml:space="preserve"
-         transform="translate(36.051105,87.029483)"><flowRegion
+         transform="translate(42.350418,87.029483)"><flowRegion
            id="flowRegion4223-4-0-7-9-2-4"><rect
              y="-25.423574"
              x="-340.32703"
@@ -2826,9 +2826,9 @@
              width="243.84802"
              id="rect4225-5-0-1-2-4-1" /></flowRegion><flowPara
            style="font-size:14px;fill:#fff8f8;fill-opacity:1"
-           id="flowPara4227-1-3-4-6-8-5">CSS - LaTeX - Inkscape - Emacs</flowPara></flowRoot>      <rect
+           id="flowPara4227-1-3-4-6-8-5">CSS - XSLT - XSL-FO Inkscape Emacs</flowPara></flowRoot>      <rect
          id="rect15391-04-8-6-2-8-7-7-0-5"
-         style="opacity:0.4;color:#000000;fill:#22666f;fill-opacity:0.94117647;stroke:url(#radialGradient3506);stroke-width:2.54746532;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;display:block"
+         style="opacity:0.40000000000000002;color:#000000;fill:#ff7400;fill-opacity:1;stroke:url(#radialGradient3506);stroke-width:2.54746532000000014;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;display:block"
          ry="2.3368878"
          height="83.224945"
          width="353.99362"
@@ -2838,7 +2838,7 @@
          style="font-size:4px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"
          id="flowRoot4221-8-7-2-3-0-6-3"
          xml:space="preserve"
-         transform="translate(79.64046,-9.318983)"><flowRegion
+         transform="translate(104.62581,-9.318983)"><flowRegion
            id="flowRegion4223-4-0-7-9-2-4-4"><rect
              y="-25.423574"
              x="-340.32703"
@@ -2846,6 +2846,6 @@
              width="243.84802"
              id="rect4225-5-0-1-2-4-1-3" /></flowRegion><flowPara
            style="font-size:14px;fill:#fff8f8;fill-opacity:1"
-           id="flowPara4227-1-3-4-6-8-5-3">PDF - HTML - ePUB</flowPara></flowRoot>    </g>
+           id="flowPara4227-1-3-4-6-8-5-3">PDF - HTML</flowPara></flowRoot>    </g>
   </g>
 </svg>
