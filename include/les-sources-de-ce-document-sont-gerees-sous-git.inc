@@ -13,6 +13,10 @@ d'effectuer sous ce |cms| des modifications transverses ou d'avoir un suivi
 précis du cycle de vie du contenu a entraîné une migration vers le format de
 balisage léger |rst|.
 
+.. figure:: graphics/open-source-publishing-chain.png
+
+   *Plate-forme* open-source *de gestion du cycle de vie de la documentation*
+
 Toutes les versions de ce |site| sont gérées sous le logiciel de gestion de
 versions décentralisé `Git`_. Les modifications de contenu, de structure ou de
 mise en page peuvent désormais être :
