@@ -159,7 +159,7 @@ html_theme_options = {
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-html_title = u'Gérer la documentation comme le code source'
+html_title = u'Processus de rédaction technique - une approche pragmatique basée sur des solutions open-source'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #html_short_title = None
