@@ -36,6 +36,7 @@ html:
 	$ sed -i conf.py -f conditional-text/html.sed
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	$ cp -n graphics/*.png $(BUILDDIR)/html/_images/
+	$ cp -n graphics/*.gif $(BUILDDIR)/html/_images/
 	$ cp /tmp/conf.py conf.py
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
