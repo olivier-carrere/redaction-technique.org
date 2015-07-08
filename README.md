@@ -9,6 +9,7 @@ Prerequisites
 - GNU/Linux Debian 7
 - Git
 - Sphinx 1.1.3 or higher
+- Inkscape
 
 For PDF output
 ~~~~~~~~~~~~~~

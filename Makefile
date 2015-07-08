@@ -14,6 +14,10 @@ ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 # the i18n builder cannot share the environment and doctrees with the others
 I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
+# Build PNG version of SVG image files
+PNG = for i in graphics/*.svg; do inkscape -w 600 -f $$i -e graphics/$$(basename $$i svg)png; done
+GIT_CLEAN = git reset --hard HEAD && git clean -fd
+
 .PHONY: help clean html latexpdf
 
 help:
@@ -32,36 +36,38 @@ all: html epub latexpdf
 	$ cp $(BUILDDIR)/epub/redaction-techniqueorg.epub $(BUILDDIR)/html/download
 
 html:
-	$ cp conf.py /tmp/conf.py
 	$ sed -i conf.py -f conditional-text/html.sed
+	$ $(PNG)
+	$ inkscape -w 60 -f graphics/pdf.svg -e graphics/pdf.png
+	$ inkscape -w 60 -f graphics/epub.svg -e graphics/epub.png
+	$ inkscape -w 120 -f graphics/git.svg -e graphics/git.png
+	$ inkscape -w 180 -f graphics/redaction-technique.svg -e graphics/redaction-technique.png
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	$ cp -n graphics/*.png $(BUILDDIR)/html/_images/
 	$ cp -n graphics/*.gif $(BUILDDIR)/html/_images/
-	$ cp /tmp/conf.py conf.py
+	$ $(GIT_CLEAN)
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
 epub:
-	$ cp conf.py /tmp/conf.py
-	$ cp *.rst /tmp/
-	$ cp _templates/layout.html /tmp/
 	$ cp /usr/share/sphinx/themes/epub/layout.html _templates/
 	$ sed -i conf.py -f conditional-text/epub.sed
 	$ sed -i '/:hidden:/d' *.rst
 	$ mkdir -p $(BUILDDIR)/epub/_images/
 	$ cp -n graphics/*.png $(BUILDDIR)/epub/_images/
+	$ $(PNG)
 	$(SPHINXBUILD) -b epub $(ALLSPHINXOPTS) $(BUILDDIR)/epub
-	$ cp /tmp/conf.py conf.py
-	$ cp /tmp/*.rst .
-	$ cp /tmp/layout.html _templates/
+	$ $(GIT_CLEAN)
 	@echo
 	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
 
 latexpdf:
-	$ cp conf.py /tmp/conf.py
 	$ sed -i conf.py -f conditional-text/latexpdf.sed
+	$ for i in graphics/*.svg; do inkscape -f $$i -A graphics/$$(basename $$i svg)pdf; done
+	$ sed -i 's,\.png,\.pdf,' *.rst
+	$ sed -i 's,\.png,\.pdf,' include/*.inc
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
 	@echo "Running LaTeX files through pdflatex..."
 	$(MAKE) -C $(BUILDDIR)/latex all-pdf
-	$ cp /tmp/conf.py conf.py
+	$ $(GIT_CLEAN)
 	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."
