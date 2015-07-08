@@ -97,8 +97,8 @@ encore ce *one-liner* Bash pour renommer les fichiers :file:`.dita` d'après leu
 
 .. code-block:: console
 
-   $ ack "<title>" *.dita| sed "s# #_#g;" | tr '[:upper:]' '[:lower:]' | \
-   sed -E "s#(.*.dita)#mv \1#g;" | \
+   $ ack "<title>" *.dita| sed "s# #_#g;" | tr '[:upper:]' '[:lower:]' |
+   sed -E "s#(.*.dita)#mv \1#g;" |
    sed -E "s#\.dita.*<title>(.*)</title>#.dita \1.dita#g;"
 
 .. text review: yes

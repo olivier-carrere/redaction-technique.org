@@ -53,7 +53,7 @@ programme *awk* d'une ligne, grâce au symbole de redirection *pipeline* (|).
 
 .. code-block:: console
 
-   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." | \
+   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." |
    awk  '{print $9" "$8" "$6" "$7" "$1" "$2" "$3" "$4" "$5}'
    d'amour. mourir me font Belle marquise, vos beaux yeux
 
@@ -83,7 +83,7 @@ maximal de références arrières possibles.
 
 .. code-block:: console
 
-   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." | \
+   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." |
    sed "s#\(.*\) \(.*\), \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \(d'.*\)#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
    d'amour. mourir me font, Belle marquise, vos beaux yeux
 
@@ -99,7 +99,7 @@ fonction spéciale :
 
    $ export \
    p="\(\<.*\>\) \(\<.*\>\), \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(d'\<.*\>\)"
-   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." | \
+   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." |
    sed "s#$p#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
    d'amour mourir me font, Belle marquise, vos beaux yeux.
 
@@ -110,7 +110,7 @@ lisibilité, mais perdre en concision :
 
    $ export a="[[:alpha:]]"
    $ export n="\($a*\) \($a*\), \($a*\) \($a*\) \($a*\) \($a*\) \($a*\) \($a*\) \(d'$a*\)"
-   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." | \
+   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." |
    sed "s#$n#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
    d'amour mourir me font, Belle marquise, vos beaux yeux.
 
@@ -125,7 +125,7 @@ exporter des variables pour rendre le script plus concis et plus lisible :
 
 .. code-block:: console
 
-   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." | \
+   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." |
    sed "s#$mots \(d'\<.*\>\)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#"
    D'amour mourir me font, belle marquise, vos beaux yeux.
 
@@ -134,19 +134,19 @@ obtenir toutes les variations du maître de philosophie :
 
 .. code-block:: console
 
-   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." | \
+   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." |
    sed "s#$mots \(d'\<.*\>\)#\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8#"
    Vos yeux beaux d'amour me font, belle marquise, mourir.
 
 .. code-block:: console
 
-   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." | \
+   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." |
    sed "s#$mots \(d'\<.*\>\)#\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#"
    Mourir vos beaux yeux, belle marquise, d'amour me font.
 
 .. code-block:: console
 
-   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." | \
+   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." |
    sed "s#$mots \(d'\<.*\>\)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#"
    Me font vos yeux beaux mourir, belle marquise, d'amour.
 
@@ -186,28 +186,28 @@ MAÎTRE DE PHILOSOPHIE :
 
       $ export w="\(\<.*\>\)"
       $ export mots="$w $w, $w $w $w $w $w $w"
-      $ echo $declaration | \
+      $ echo $declaration |
       sed "s#$mots \(d'\<.*\>\)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#"
 
    Ou bien :
 
    .. code-block:: console
 
-      $ echo $declaration | \
+      $ echo $declaration |
       sed "s#$mots \(d'\<.*\>\)#\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8#"
 
    Ou bien :
 
    .. code-block:: console
 
-      $ echo $declaration | \
+      $ echo $declaration |
       sed "s#$mots \(d'\<.*\>\)#\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#"
 
    Ou bien :
 
    .. code-block:: console
 
-      $ echo $declaration | \
+      $ echo $declaration |
       sed "s#$mots \(d'\<.*\>\)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#"
 
 Beaucoup d'efforts…
