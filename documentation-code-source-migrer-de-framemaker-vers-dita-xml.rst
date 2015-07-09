@@ -72,7 +72,7 @@ Le but de cette procédure est de :
 Pour générer les éléments permettant de construire un fichier *ditamap*, vous
 pouvez par exemple utiliser des scripts Perl du type :
 
-.. warning::
+.. attention::
 
    Ne lancez ce type de scripts que sur une copie de vos fichiers et non sur les
    fichiers originaux.

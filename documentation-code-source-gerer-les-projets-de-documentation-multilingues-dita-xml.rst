@@ -98,7 +98,7 @@ Les valeurs supportées pour la dimension des pages PDF sont :samp:`fr_FR` (A4)
 et :samp:`en_US` (US letter). Ce script peut être bien entendu facilement
 adapté, ou inspirer un nouveau script.
 
-.. warning::
+.. attention::
 
    Ce script est fourni sans garantie. Avant toute exécution de ce script,
    effectuez une sauvegarde de l'ensemble de votre projet |dita|, fichiers de
