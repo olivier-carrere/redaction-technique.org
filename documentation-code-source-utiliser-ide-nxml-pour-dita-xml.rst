@@ -89,15 +89,16 @@ permettra d'utiliser ce mode Emacs pour |dita|.
 
     .. code-block:: console
 
-       $ tar xzvf schemas.redaction-technique.org.tar.gz && \
+       $ export DIR="schemas.redaction-technique.org"
+       $ tar xzvf $DIR.tar.gz && \
        cd <répertoire de langue> && \
-       cp ../schemas.redaction-technique.org/concepts/schemas.xml concepts/ && \
-       cp ../schemas.redaction-technique.org/faq/schemas.xml faq/ && \
-       cp ../schemas.redaction-technique.org/reference/schemas.xml reference/ && \
-       cp ../schemas.redaction-technique.org/tasks/schemas.xml tasks/ && \
-       cp ../schemas.redaction-technique.org/tasks/schemas.xml tasks/ && \
-       cp ../schemas.redaction-technique.org/topics/schemas.xml topics/ && \
-       rm -rf ../schemas.redaction-technique.org/
+       cp ../$DIR/concepts/schemas.xml concepts/ && \
+       cp ../$DIR/faq/schemas.xml faq/ && \
+       cp ../$DIR/reference/schemas.xml reference/ && \
+       cp ../$DIR/tasks/schemas.xml tasks/ && \
+       cp ../$DIR/tasks/schemas.xml tasks/ && \
+       cp ../$DIR/topics/schemas.xml topics/ && \
+       rm -rf ../$DIR/
 
     Vos répertoires de langue doivent maintenant comporter les fichiers
     :file:`schemas.xml` appropriés :

@@ -51,13 +51,13 @@ Par exemple, une modification de
 
 .. code-block:: xml
 
-   <image href="../images/filter.png" placement="break"/>
+   <image href="filter.png" placement="break"/>
 
 en
 
 .. code-block:: xml
 
-   <image href="../images/filter.png" placement="break" scalefit="yes"/>
+   <image href="filter.png" placement="break" scalefit="yes"/>
 
 de la version anglaise de la documentation peut facilement être appliquée aux
 versions chinoise, française, allemande ou autre si elle a fait l'objet d'un

@@ -52,7 +52,8 @@ dans un environnement Windows (testé sur Windows XP).
 
    .. code-block:: console
 
-      $ java -jar lib/dost.jar /i:samples/taskbook.ditamap /outdir:. /transtype:pdf2
+      $ java -jar lib/dost.jar /i:samples/taskbook.ditamap \
+      /outdir:. /transtype:pdf2
 
    Cette commande génère un fichier PDF à partir d'un projet |dita| d'exemple.
 

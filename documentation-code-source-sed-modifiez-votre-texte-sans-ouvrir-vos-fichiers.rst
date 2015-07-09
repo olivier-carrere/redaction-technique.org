@@ -35,7 +35,8 @@ Commençons par afficher la phrase d'origine dans un terminal :
 
 .. code-block:: console
 
-   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour."
+   $ echo "Belle marquise, vos beaux \\
+   yeux me font mourir d'amour."
    Belle marquise, vos beaux yeux me font mourir d'amour.
 
 Il s'agit maintenant d'intervertir les mots de la phrase, pour en créer une
@@ -53,7 +54,8 @@ programme *awk* d'une ligne, grâce au symbole de redirection *pipeline* (|).
 
 .. code-block:: console
 
-   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." |
+   $ echo "Belle marquise, vos beaux \\
+   yeux me font mourir d'amour." |
    awk  '{print $9" "$8" "$6" "$7" "$1" "$2" "$3" "$4" "$5}'
    d'amour. mourir me font Belle marquise, vos beaux yeux
 
@@ -83,8 +85,10 @@ maximal de références arrières possibles.
 
 .. code-block:: console
 
-   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." |
-   sed "s#\(.*\) \(.*\), \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \(d'.*\)#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
+   $ echo "Belle marquise, vos beaux \\
+   yeux me font mourir d'amour." |
+   sed "s#\(.*\) \(.*\), \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \\
+   \(.*\)\(d'.*\)#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
    d'amour. mourir me font, Belle marquise, vos beaux yeux
 
 Nous buttons sur le même problème : l'expression régulière .* ne correspond pas à
@@ -98,8 +102,10 @@ fonction spéciale :
 .. code-block:: console
 
    $ export \
-   p="\(\<.*\>\) \(\<.*\>\), \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(d'\<.*\>\)"
-   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." |
+   p="\(\<.*\>\) \(\<.*\>\), \(\<.*\>\) \(\<.*\>\) \\
+   \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(d'\<.*\>\)"
+   $ echo "Belle marquise, vos beaux \\
+   yeux me font mourir d'amour." |
    sed "s#$p#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
    d'amour mourir me font, Belle marquise, vos beaux yeux.
 
@@ -109,8 +115,10 @@ lisibilité, mais perdre en concision :
 .. code-block:: console
 
    $ export a="[[:alpha:]]"
-   $ export n="\($a*\) \($a*\), \($a*\) \($a*\) \($a*\) \($a*\) \($a*\) \($a*\) \(d'$a*\)"
-   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." |
+   $ export n="\($a*\) \($a*\), \($a*\) \($a*\) \($a*\) \\
+   \($a*\) \($a*\) \($a*\) \(d'$a*\)"
+   $ echo "Belle marquise, vos beaux \\
+   yeux me font mourir d'amour." |
    sed "s#$n#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
    d'amour mourir me font, Belle marquise, vos beaux yeux.
 
@@ -121,12 +129,13 @@ exporter des variables pour rendre le script plus concis et plus lisible :
 .. code-block:: console
 
    $ export w="\(\<.*\>\)"
-   $ export mots="$w $w, $w $w $w $w $w $w"
+   $ export m="$w $w, $w $w $w $w $w $w"
 
 .. code-block:: console
 
-   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." |
-   sed "s#$mots \(d'\<.*\>\)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#"
+   $ echo "Belle marquise, vos beaux \\
+   yeux me font mourir d'amour." |
+   sed "s#$m \(d'\<.*\>\)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#"
    D'amour mourir me font, belle marquise, vos beaux yeux.
 
 Nous pouvons maintenant facilement redistribuer les références arrières pour
@@ -134,20 +143,23 @@ obtenir toutes les variations du maître de philosophie :
 
 .. code-block:: console
 
-   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." |
-   sed "s#$mots \(d'\<.*\>\)#\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8#"
+   $ echo "Belle marquise, vos beaux \\
+   yeux me font mourir d'amour." |
+   sed "s#$m \(d'\<.*\>\)#\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8#"
    Vos yeux beaux d'amour me font, belle marquise, mourir.
 
 .. code-block:: console
 
-   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." |
-   sed "s#$mots \(d'\<.*\>\)#\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#"
+   $ echo "Belle marquise, vos beaux \\
+   yeux me font mourir d'amour." |
+   sed "s#$m \(d'\<.*\>\)#\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#"
    Mourir vos beaux yeux, belle marquise, d'amour me font.
 
 .. code-block:: console
 
-   $ echo "Belle marquise, vos beaux yeux me font mourir d'amour." |
-   sed "s#$mots \(d'\<.*\>\)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#"
+   $ echo "Belle marquise, vos beaux \\
+   yeux me font mourir d'amour." |
+   sed "s#$m \(d'\<.*\>\)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#"
    Me font vos yeux beaux mourir, belle marquise, d'amour.
 
 Molière et GNU/Linux
@@ -171,13 +183,15 @@ MAÎTRE DE PHILOSOPHIE :
 
    .. code-block:: console
 
-      $ echo "Belle marquise, vos beaux yeux me font mourir d'amour."
+      $ echo "Belle marquise, vos beaux \\
+      yeux me font mourir d'amour."
 
    Ou bien :
 
    .. code-block:: console
 
-      $ export declaration="Belle marquise, vos beaux yeux me font mourir d'amour."
+      $ export declaration="Belle marquise, vos \\
+      beaux yeux me font mourir d'amour."
       $ echo $declaration
 
    Ou bien :
@@ -185,30 +199,30 @@ MAÎTRE DE PHILOSOPHIE :
    .. code-block:: console
 
       $ export w="\(\<.*\>\)"
-      $ export mots="$w $w, $w $w $w $w $w $w"
+      $ export m="$w $w, $w $w $w $w $w $w"
       $ echo $declaration |
-      sed "s#$mots \(d'\<.*\>\)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#"
+      sed "s#$m \(d'\<.*\>\)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#"
 
    Ou bien :
 
    .. code-block:: console
 
       $ echo $declaration |
-      sed "s#$mots \(d'\<.*\>\)#\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8#"
+      sed "s#$m \(d'\<.*\>\)#\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8#"
 
    Ou bien :
 
    .. code-block:: console
 
       $ echo $declaration |
-      sed "s#$mots \(d'\<.*\>\)#\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#"
+      sed "s#$m \(d'\<.*\>\)#\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#"
 
    Ou bien :
 
    .. code-block:: console
 
       $ echo $declaration |
-      sed "s#$mots \(d'\<.*\>\)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#"
+      sed "s#$m \(d'\<.*\>\)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#"
 
 Beaucoup d'efforts…
 -------------------
@@ -229,9 +243,14 @@ précédentes dans un fichier :
 
 .. code-block:: console
 
-   $ echo "Cher docteur, ces grands malheurs vous font pleurer d'amertume." > variations.txt
-   $ echo "Petit garçon, cette bonne glace te fait saliver d'envie." >> variations.txt
-   $ echo "Vaste océan, la forte houle te fait tanguer d'ivresse." >> variations.txt
+   $ echo "Cher docteur, ces grands malheurs \\
+   vous font pleurer d'amertume." > variations.txt
+
+   $ echo "Petit garçon, cette bonne glace te \\
+   fait saliver d'envie." >> variations.txt
+
+   $ echo "Vaste océan, la forte houle te \\
+   fait tanguer d'ivresse." >> variations.txt
 
 Plaçons les différentes commandes *sed* dans un script différent chacune :
 
@@ -248,8 +267,11 @@ scripts *sed* sur toutes les lignes du fichier :
 .. code-block:: console
 
    $ for (( i=1; i<5; i++ )); do
-   while read s; do echo "$s" | sed -f moliere$i.sed ; done < variations.txt
-   done
+      while read s;
+       do echo "$s" |
+        sed -f moliere$i.sed ;
+       done < variations.txt
+      done
    D'amertume pleurer vous font, cher docteur, ces grands malheurs.
    D'envie saliver te fait, petit garçon, cette bonne glace.
    D'ivresse tanguer te fait, vaste océan, la forte houle.

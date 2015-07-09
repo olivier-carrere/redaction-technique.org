@@ -56,10 +56,11 @@ quelques minutes.
             </messagepanel>
           </hazardstatement>
           <p>
-            Tout contenu placé entre balises ne comportant pas de valeur
-            <i>audience</i> exclue dans un fichier <i>.ditaval</i> est publié dans les
-            documents destinés aux plombiers et aux électriciens.
-          </p>
+           Tout contenu placé entre balises ne comportant pas de
+           valeur <i>audience</i> exclue dans un fichier
+           <i>.ditaval</i> est publié dans les documents
+           destinés aux plombiers et aux électriciens.
+        </p>
         </body>
       </topic>
 

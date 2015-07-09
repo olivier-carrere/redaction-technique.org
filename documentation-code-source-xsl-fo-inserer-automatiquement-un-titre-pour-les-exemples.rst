@@ -88,12 +88,14 @@ Insérer automatiquement une variable de texte avant le titre des exemples
       <xsl:template match="*[contains(@class,' topic/example ')]>
         <fo:block xsl:use-attribute-sets="example.title>
           <xsl:call-template name="insertVariable>
-            <xsl:with-param name="theVariableID" select="'my-example-text'"/>
+          <xsl:with-param name="theVariableID"
+          select="'my-example-text'"/>
           </xsl:call-template>
           <xsl:apply-templates select="title"/>
         </fo:block>
         <fo:block>
-          <xsl:apply-templates select="*[not(contains(@class, ' topic/title'))]
+        <xsl:apply-templates
+        select="*[not(contains(@class, ' topic/title'))]
           |text()|processing-instruction()"/>
         </fo:block>
       </xsl:template>
