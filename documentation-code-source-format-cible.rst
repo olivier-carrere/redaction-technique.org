@@ -19,22 +19,19 @@ même format source.
 À partir des fichiers sources validés, les livrables sont générés selon l'une des méthodes
 suivantes :
 
-+------------------------------+-------------------------------------------+
-|Méthode                       |Exemple                                    |
-+==============================+===========================================+
-|Totalement automatique        |Livre blanc du format structuré |dita| au  |
-|                              |format cible PDF *via* |dita-ot|.          |
-+------------------------------+-------------------------------------------+
-|Semi-automatique              |Contenu au format |dita| exporté en HTML   |
-|                              |puis collé sous un |cms| [#]_.             |
-+------------------------------+-------------------------------------------+
-|Manuelle                      |Plaquette marketing au format traitement de|
-|                              |texte ou |dita| mise en page sous Indesign,|
-|                              |exportée en PDF, puis imprimée ; selon     |
-|                              |la fréquence de publication du document    |
-|                              |final, des filtres d'import XML peuvent    |
-|                              |également être mis en place.               |
-+------------------------------+-------------------------------------------+
+Totalement automatique
+   Par exemple, livre blanc du format structuré |dita| au format cible PDF *via*
+   |dita-ot|.
+
+Semi automatique
+   Par exemple, contenu au format |dita| exporté en HTML puis collé sous un
+   |cms| [#]_.
+
+Manuelle
+   Par exemple, plaquette marketing au format traitement de texte ou |dita| mise
+   en page sous Indesign, exportée en PDF, puis imprimée ; selon la fréquence de
+   publication du document final, des filtres d'import XML peuvent également
+   être mis en place.
 
 Plus le processus est automatisé, plus le risque d'erreur est faible
 et plus la publication et la mise à jour sont aisées.  L'automatisation facilite

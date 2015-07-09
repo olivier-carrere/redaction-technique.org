@@ -46,18 +46,17 @@ difficile à appréhender pour les publics les moins technophiles [#]_.
 
 Les systèmes de gestion des sources utilisent les concepts suivants :
 
-+--------+---------------------------------------------------------------------+
-|Tronc   |Dépôt principal conservant toutes les versions des fichiers placées  |
-|        |au cours du temps par le |techwriter| (ou plus                       |
-|        |fréquemment, le développeur).                                        |
-+--------+---------------------------------------------------------------------+
-|Branche |Dépôt secondaire créé à partir de la version principale du code      |
-|        |source.                                                              |
-+--------+---------------------------------------------------------------------+
-|Tag     |Instantané du tronc ou d'une branche à un instant *t*. Permet de     |
-|        |figer facilement une version, par exemple, la version publiée, et de |
-|        |créer une archive.                                                   |
-+--------+---------------------------------------------------------------------+
+Tronc
+   Dépôt principal conservant toutes les versions des fichiers placées au cours
+   du temps par le |techwriter| (ou plus fréquemment, le développeur).
+
+Branche
+   Dépôt secondaire créé à partir de la version principale du code source.
+
+Tag
+   Instantané du tronc ou d'une branche à un instant *t*. Permet de figer
+   facilement une version, par exemple, la version publiée, et de créer une
+   archive.
 
 Si l'on s'en donne la peine, il est également possible de mal utiliser les
 systèmes de gestion de version et de perdre des données. Mais, en pratique, à

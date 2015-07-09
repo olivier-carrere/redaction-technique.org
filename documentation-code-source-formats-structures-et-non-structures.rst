@@ -19,20 +19,18 @@ Les informations contenues dans un document technique peuvent être catégorisé
 selon leur sens. Par défaut, |dita| propose
 trois types de base :
 
-+------------------------------+------------------------------+
-|Type sémantique               |Description                   |
-+==============================+==============================+
-|*concept*                     |Introduction ou présentation  |
-|                              |d'un concept.                 |
-+------------------------------+------------------------------+
-|*task*                        |Procédure pas à pas,          |
-|                              |séquentielle et numérotée,    |
-|                              |destinée à réaliser une tâche.|
-+------------------------------+------------------------------+
-|*reference*                   |Informations de référence sur |
-|                              |une liste d'éléments tels que |
-|                              |des options d'un programme.   |
-+------------------------------+------------------------------+
+concept
+   Introduction ou présentation d'un concept.
+
+
+task
+   Procédure pas à pas, séquentielle et numérotée, destinée à réaliser une
+   tâche.
+
+
+reference
+   Informations de référence sur une liste d'éléments tels que des options d'un
+   programme.
 
 .. figure:: graphics/structured.png
 
@@ -57,49 +55,43 @@ Avec des formats structurés tels que |dita|, en revanche :
 Les types d'information de haut niveau tels que *task* sont divisés en types de
 plus bas niveau, par exemple :
 
-+------------------------------+------------------------------+
-|Type                          |Description                   |
-+==============================+==============================+
-|*prereq*                      |Liste de points obligatoires  |
-|                              |préalables à la réalisation   |
-|                              |d'une tâche.                  |
-+------------------------------+------------------------------+
-|*steps*                       |Série d'étapes de la          |
-|                              |procédure.                    |
-+------------------------------+------------------------------+
-|*stepxmp*                     |Exemple de réalisation d'une  |
-|                              |étape.                        |
-+------------------------------+------------------------------+
+
+prereq
+   Liste de points obligatoires préalables à la réalisation d'une tâche.
+
+steps
+   Série d'étapes de la procédure.
+
+stepxmp
+   Exemple de réalisation d'une étape.
 
 Les règles syntaxiques interdisent au |techwriter| de faire figurer
 une procédure pas à pas dans une section d'un autre type que *task*.  Le
 |techwriter| dispose donc d'un véritable modèle de rédaction qui
 l'aide à présenter des informations :
 
-+--------------+---------------------------------------------------------------+
-|*minimalistes*|selon le principe de design *less is more*, l'utilisateur ne   |
-|              |dispose *que* de l'information dont il a besoin : une          |
-|              |section *task*, par exemple, ne contient que des prérequis, une|
-|              |procédure et quelques autres éléments spécifiques ; toutes     |
-|              |les informations conceptuelles ou de référence sont placées    |
-|              |dans des sections à part ;                                     |
-+--------------+---------------------------------------------------------------+
-|*complètes*   |l'utilisateur dispose de *toute* l'information dont il a besoin|
-|              |; une section de type *task* sans procédure n'est pas une      |
-|              |section |dita| valide et ne pourra pas être publiée ; il       |
-|              |est même possible de mettre en œuvre un mécanisme vérifiant    |
-|              |automatiquement avant publication la présence de blocs         |
-|              |d'information facultatifs selon le schéma `XSD`_ |dita|, mais  |
-|              |que le |techwriter| juge obligatoires, tels que le résultat    |
-|              |d'une procédure ;                                              |
-|              |                                                               |
-+--------------+---------------------------------------------------------------+
-|*cohérentes*  |les informations de même type sont présentées dans le même     |
-|              |ordre et avec la même mise en page ; les blocs                 |
-|              |d'information identiques répétés à différents endroits, tels   |
-|              |qu'une remarque, sont issus d'une seule et même source et sont |
-|              |donc strictement identiques.                                   |
-+--------------+---------------------------------------------------------------+
+Minimalistes
+   Selon le principe de design *less is more*, l'utilisateur ne dispose *que* de
+   l'information dont il a besoin : une section *task*, par exemple, ne contient
+   que des prérequis, une procédure et quelques autres éléments spécifiques ;
+   toutes les informations conceptuelles ou de référence sont placées dans des
+   sections à part.
+
+
+Complètes
+   L'utilisateur dispose de *toute* l'information dont il a besoin ; une section
+   de type *task* sans procédure n'est pas une section |dita| valide et ne
+   pourra pas être publiée ; il est même possible de mettre en œuvre un
+   mécanisme vérifiant automatiquement avant publication la présence de blocs
+   d'information facultatifs selon le schéma `XSD`_ |dita|, mais que le
+   |techwriter| juge obligatoires, tels que le résultat d'une procédure.
+
+
+Cohérentes
+   Les informations de même type sont présentées dans le même ordre et avec la
+   même mise en page ; les blocs d'information identiques répétés à différents
+   endroits, tels qu'une remarque, sont issus d'une seule et même source et sont
+   donc strictement identiques.
 
 .. toctree::
    :hidden:

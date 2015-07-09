@@ -13,29 +13,29 @@ Les trois niveaux de la documentation technique
 Si l'on compare la |doc| à un jardin, on peut la
 classifier selon les niveaux suivants :
 
-+-------------------+----------------------------------------------------------+
-|Niveau             |Description                                               |
-+===================+==========================================================+
-|Friche             |- Pas d'utilisation de processus documentaire             |
-|                   |                                                          |
-|                   |- Création de la documentation par des équipes non dédiées|
-|                   |                                                          |
-|                   |- Utilisation de formats non adaptés ou utilisation       |
-|                   |  incohérente de formats adaptés                          |
-+-------------------+----------------------------------------------------------+
-|Jardin à l'anglaise|- Utilisation de processus documentaires fiables          |
-|                   |                                                          |
-|                   |- Création de la documentation par des équipes dédiées    |
-|                   |                                                          |
-|                   |- Utilisation cohérente de formats adaptés, mais non      |
-|                   |  structurés                                              |
-+-------------------+----------------------------------------------------------+
-|Jardin à la        |- Utilisation de processus documentaires fiables          |
-|française          |                                                          |
-|                   |- Création de la documentation par des équipes dédiées    |
-|                   |                                                          |
-|                   |- Utilisation cohérente de formats structurés             |
-+-------------------+----------------------------------------------------------+
+Friche
+   - Pas d'utilisation de processus documentaire.
+
+   - Création de la documentation par des équipes non dédiées.
+
+   - Utilisation de formats non adaptés ou utilisation incohérente de formats
+     adaptés.
+
+
+Jardin à l'anglaise
+   - Utilisation de processus documentaires fiables.
+
+   - Création de la documentation par des équipes dédiées.
+
+   - Utilisation cohérente de formats adaptés, mais non structurés.
+
+
+Jardin à la française
+   - Utilisation de processus documentaires fiables.
+
+   - Création de la documentation par des équipes dédiées.
+
+   - Utilisation cohérente de formats structurés.
 
 Les formats non adaptés à la |techwriting| sont par exemple les
 formats de traitement de texte, qui ne dissocient pas suffisamment la mise en

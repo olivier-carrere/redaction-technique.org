@@ -19,38 +19,28 @@ texte, le |techwriter| se trouve face à une page blanche. Selon sa
 rigueur professionnelle, l'information transmise à l'utilisateur oscillera entre
 les deux pôles suivants :
 
-+------------------------------+------------------------------+
-|Organisation rationnelle      |L'utilisateur dispose d'un    |
-|                              |accès séquentiel rapide et    |
-|                              |aisé à l'information dont il a|
-|                              |besoin.                       |
-+------------------------------+------------------------------+
-|Magma informatif              |L'utilisateur doit lire       |
-|                              |intégralement toute une       |
-|                              |section, voire le document en |
-|                              |sa totalité pour espérer      |
-|                              |trouver des renseignements    |
-|                              |utiles.                       |
-+------------------------------+------------------------------+
+Organisation rationnelle
+   L'utilisateur dispose d'un accès séquentiel rapide et aisé à l'information
+   dont il a besoin.
+
+
+Magma informatif
+   L'utilisateur doit lire intégralement toute une section, voire le document en
+   sa totalité pour espérer trouver des renseignements utiles.
 
 Lorsqu'il crée un document |dita|, en revanche, le |techwriter|
 doit d'emblée choisir le modèle [#]_ qui correspond
 au type d'information qu'il veut présenter. De base, |dita| propose les types
 d'information suivants  [#]_ :
 
-+------------------------------+------------------------------+
-|Type d'information            |Description                   |
-+==============================+==============================+
-|Concept                       |Texte généraliste du type     |
-|                              |introduction ou présentation. |
-+------------------------------+------------------------------+
-|Task                          |Procédure pas à pas destinée à|
-|                              |réaliser une tâche.           |
-+------------------------------+------------------------------+
-|Reference                     |Information de référence du   |
-|                              |type explication de paramètres|
-|                              |de commandes.                 |
-+------------------------------+------------------------------+
+Concept
+   Texte généraliste du type introduction ou présentation.
+
+Task
+   Procédure pas à pas destinée à réaliser une tâche.
+
+Reference
+   Information de référence du type explication de paramètres de commandes.
 
 Chacune de ces catégories de haut niveau propose un jeu de balises de plus bas
 niveau qui lui est propre.  Si le |techwriter| rédige un document

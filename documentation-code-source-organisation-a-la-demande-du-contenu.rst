@@ -21,19 +21,17 @@ peut, à l'instar d'un constructeur automobile proposant sans cesse de nouveaux
 modèles par assemblage d'éléments standardisés, proposer par exemple les
 documents suivants :
 
-+------------------------------+------------------------------+
-|Type de document              |Contenu                       |
-+==============================+==============================+
-|Guide de l'utilisateur        |Thèmes systématiquement       |
-|                              |organisés en concept et       |
-|                              |procédures pas à pas.         |
-+------------------------------+------------------------------+
-|Document de présentation      |Concepts.                     |
-+------------------------------+------------------------------+
-|Quikstart                     |Procédures pas à pas.         |
-+------------------------------+------------------------------+
-|Manuel de référence           |Informations de référence.    |
-+------------------------------+------------------------------+
+Guide de l'utilisateur
+   Thèmes systématiquement organisés en concept et procédures pas à pas.
+
+Document de présentation
+   Concepts.
+
+Quikstart
+   Procédures pas à pas.
+
+Manuel de référence
+   Informations de référence.
 
 Pour ce faire, le |techwriter| prendra soin de placer les éléments
 liés à un contexte particulier dans les structures *ditamap* et non dans les

@@ -48,12 +48,11 @@ Lorsque la mise en page a une importance moindre que celle du contenu, ou
 lorsqu'elle doit être homogène, comme dans le cas d'une |doc|,
 la rédaction et la mise en page s'opèrent sur :
 
-+-------------------------+----------------------------------------------------+
-|les mêmes fichiers :     |par exemple, des fichiers |fm|,                     |
-+-------------------------+----------------------------------------------------+
-|des fichiers différents :|par exemple, des fichiers de contenu XML et une     |
-|                         |feuille de style XSLT.                              |
-+-------------------------+----------------------------------------------------+
+les mêmes fichiers
+   par exemple, des fichiers |fm|,
+
+des fichiers différents
+   par exemple, des fichiers de contenu XML et une feuille de style XSLT.
 
 Dans un fichier |fm|, la séparation du fond et de la forme est élevée mais
 pas totale : le contenu et la mise en page sont placés dans le même

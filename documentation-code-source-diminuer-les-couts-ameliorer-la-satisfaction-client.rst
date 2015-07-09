@@ -18,21 +18,18 @@ Comme une ampoule basse consommation, un processus de |techwriting|
 industriel diminue les coûts. Il réduit également le *time to market*. À coût
 initial légèrement supérieur ou égal, il améliore également la qualité.
 
-+-------------------------+------------------------------------------------+
-|Coût moindre             |- moins de volume à créer                       |
-|                         |                                                |
-|                         |- suppression des mises à jour répétitives      |
-|                         |                                                |
-|                         |- moins de volume à traduire                    |
-+-------------------------+------------------------------------------------+
-|*Time to market* réduit  |- réutilisation maximale du contenu             |
-|                         |                                                |
-|                         |- risque zéro de perte de données               |
-+-------------------------+------------------------------------------------+
-|Qualité améliorée        |- briques d'information facilement optimisables |
-|                         |                                                |
-|                         |- cohérence parfaite du contenu d'entreprise    |
-+-------------------------+------------------------------------------------+
+Coût moindre
+  - moins de volume à créer
+  - suppression des mises à jour répétitives
+  - moins de volume à traduire
+
+*Time to market* réduit
+  - réutilisation maximale du contenu
+  - risque zéro de perte de données
+
+Qualité améliorée
+   - briques d'information facilement optimisables
+   - cohérence parfaite du contenu d'entreprise
 
 Une documentation industrielle repose sur :
 
