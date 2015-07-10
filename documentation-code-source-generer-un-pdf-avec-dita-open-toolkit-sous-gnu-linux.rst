@@ -25,17 +25,17 @@ dans un environnement GNU/Linux (Ubuntu ou Debian).
 
    .. code-block:: console
 
-      $  wget \
+      $ wget \
       http://sourceforge.net/projects/dita-ot/files/DITA-OT%20Stable%20Release/DITA%20Open%20Toolkit%201.8/DITA-OT1.8.5_full_easy_install_bin.tar.gz
-      $  tar -xzvf DITA-OT1.8.5_full_easy_install_bin.tar.gz
+      $ tar -xzvf DITA-OT1.8.5_full_easy_install_bin.tar.gz
 
 #. Configurez l'environnement |dita-ot| :
 
    .. code-block:: console
 
-      $  cd DITA-OT1.8.5/
-      $  ./startcmd.sh
-      $  ant -f integrator.xml
+      $ cd DITA-OT1.8.5/
+      $ ./startcmd.sh
+      $ ant -f integrator.xml
 
 #. Générez votre premier PDF :
 
