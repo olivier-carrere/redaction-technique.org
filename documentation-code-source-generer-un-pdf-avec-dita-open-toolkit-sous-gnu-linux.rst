@@ -26,25 +26,18 @@ dans un environnement GNU/Linux (Ubuntu ou Debian).
    .. code-block:: console
 
       $ wget \
-      http://sourceforge.net/projects/dita-ot/files/DITA-OT%20Stable%20Release/DITA%20Open%20Toolkit%201.8/DITA-OT1.8.5_full_easy_install_bin.tar.gz
-      $ tar -xzvf DITA-OT1.8.5_full_easy_install_bin.tar.gz
-
-#. Configurez l'environnement |dita-ot| :
-
-   .. code-block:: console
-
-      $ cd DITA-OT1.8.5/
-      $ ./startcmd.sh
-      $ ant -f integrator.xml
+      https://github.com/dita-ot/dita-ot/releases/download/2.1/dita-ot-2.1.0.tar.gz
+      $ tar -xzvf dita-ot-2.1.0.tar.gz
 
 #. Générez votre premier PDF :
 
    .. code-block:: console
 
-      $ java -jar lib/dost.jar /i:docsrc/userguide.ditamap /transtype:pdf
+      $ cd dita-ot-2.1.0
+      $ dita -f pdf -i samples/taskbook.ditamap
 
 Félicitations, vous avez compilé votre premier projet |dita| ! Le fichier PDF
-généré est :file:`out/userguide.pdf`. Vous pouvez maintenant compiler d'autres
+généré est :file:`out/taskbook.pdf`. Vous pouvez maintenant compiler d'autres
 projets en ignorant les étapes 1 et 2.
 
 .. text review: yes
