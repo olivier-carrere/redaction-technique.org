@@ -33,8 +33,13 @@ Sa forme
    site *web*, magazine d'entreprise, *print* ou *online*…
 
 Sa langue
+   Suivant votre domaine d'activité, le projet sera décliné en une ou plusieurs
+   langues (principalement l'anglais dans le secteur informatique).
 
 Son mode de diffusion
+   Le document final peut être publié sur un site Internet ou Extranet, envoyé
+   sous forme de fichier joint par *mail*, remis en mains propres au format
+   papier, etc.
 
 L'analyse des résultats du projet donne ensuite de précieux renseignements pour
 améliorer encore l'impact des projets suivants.
