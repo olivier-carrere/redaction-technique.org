@@ -29,7 +29,7 @@ le code suivant :
 
 .. code-block:: xml
 
-  <cmd>Cliquez sur OK.</cmd>
+   <cmd>Cliquez sur OK.</cmd>
 
 Pour être conforme au schéma XSD, votre code doit au moins être structuré comme
 suit :
