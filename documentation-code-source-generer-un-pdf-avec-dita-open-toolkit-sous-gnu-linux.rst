@@ -25,8 +25,8 @@ dans un environnement GNU/Linux (Ubuntu ou Debian).
 
    .. code-block:: console
 
-      $ wget \
-      https://github.com/dita-ot/dita-ot/releases/download/2.1/dita-ot-2.1.0.tar.gz
+      $ export REPO="https://github.com/dita-ot/dita-ot"
+      $ wget $REPO/releases/download/2.1/dita-ot-2.1.0.tar.gz
       $ tar -xzvf dita-ot-2.1.0.tar.gz
 
 #. Générez votre premier PDF :
