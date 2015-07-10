@@ -20,23 +20,23 @@ un effort vain. Avant d'initier un projet de |techwriting|,
 il est indispensable de clairement le définir. Il convient
 notamment de déterminer :
 
-Son objectif
+son objectif
    Augmenter la notoriété de l'entreprise, accroître sa couverture médias,
    amener les prospects à prendre contact avec la société, réduire les coûts de
    support technique…
 
-Sa cible
+sa cible
    Grand public, journalistes, prospects, clients…
 
-Sa forme
+sa forme
    Livre blanc, mode d'emploi ou guide de l'utilisateur, brochure et *flyer*,
    site *web*, magazine d'entreprise, *print* ou *online*…
 
-Sa langue
+sa langue
    Suivant votre domaine d'activité, le projet sera décliné en une ou plusieurs
    langues (principalement l'anglais dans le secteur informatique).
 
-Son mode de diffusion
+son mode de diffusion
    Le document final peut être publié sur un site Internet ou Extranet, envoyé
    sous forme de fichier joint par *mail*, remis en mains propres au format
    papier, etc.
