@@ -42,7 +42,7 @@ Le but de cette procédure est de :
    :file:`DITA-topic-edd.fm`.
 
 #. Répétez les trois étapes ci-dessus pour les autres types de topics |dita|
-   (task, reference, etc.), en modifiant les noms de fichiers comme il se doit.
+   (*task*, *reference*, etc.), en modifiant les noms de fichiers comme il se doit.
 
 #. Ouvrez le fichier :file:`styles.fm`, puis choisissez **StructureTools >
    Générer le tableau de conversion**.
