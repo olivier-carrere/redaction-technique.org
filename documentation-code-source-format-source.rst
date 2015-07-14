@@ -78,7 +78,7 @@ différents fichiers qui composent le document.
 |                    |mise en page        |en page manuelle    |
 |                    |homogène            |                    |
 +====================+====================+====================+
-|MS Word             |Non                 |Oui                 |
+||ms-word|           |Non                 |Oui                 |
 +--------------------+--------------------+--------------------+
 ||fm|                |Oui                 |Oui                 |
 +--------------------+--------------------+--------------------+

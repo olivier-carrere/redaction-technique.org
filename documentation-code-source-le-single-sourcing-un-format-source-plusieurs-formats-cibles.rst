@@ -27,7 +27,7 @@ différente pour chaque version cible.
 Si le |techwriter| pratique le *single-sourcing*, il doit cependant
 sélectionner en début de projet le paradigme sur lequel il se base : le livre ou
 l'aide en ligne. Pendant longtemps, les outils proposés reposaient soit sur un
-document de type livre (Word, ou |fm|, essentiellement) qui pouvait être
+document de type livre (|ms-word|, ou |fm|, essentiellement) qui pouvait être
 exporté au format d'aide en ligne, soit sur un fichier source (RTF) d'aide
 Windows, pour générer un PDF. Une forte perte d'information de navigation
 (index, références croisées, liens, etc.) intervenait souvent lors de

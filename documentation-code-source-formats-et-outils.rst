@@ -17,7 +17,7 @@ formats sous-jacents qui sont le point essentiel.
 La plupart des éditeurs, afin de disposer d'un marché captif obligé de
 régulièrement payer des mises à jour de leurs produits, ont en effet développé
 des formats propriétaires que seuls leurs logiciels sont à même de modifier. Un
-fichier Word ou un fichier |fm| ne peuvent ainsi être modifiés que *via*
+fichier |ms-word| ou un fichier |fm| ne peuvent ainsi être modifiés que *via*
 les outils éponymes. Choisir un tel format risque donc de limiter les choix
 ultérieurs de l'entreprise et de se révéler coûteux : il faut une licence par
 utilisateur, qu'il soit |techwriter|, contributeur occasionnel ou

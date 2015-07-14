@@ -17,7 +17,7 @@ document cible, par exemple un fichier PDF, où les balises sont remplacées par
 une mise en forme typographique.
 
 Si votre entreprise fournit à ses clients une documentation technique au format
-Word,
+|ms-word|,
 le |techwriter| et l'utilisateur disposent des mêmes
 supports d'information (il n'y a pas de différenciation entre le fichier source
 et le fichier cible). Ce qui semble a priori la solution la plus simple s'avère
