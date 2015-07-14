@@ -33,13 +33,13 @@ doit d'emblée choisir le modèle [#]_ qui correspond
 au type d'information qu'il veut présenter. De base, |dita| propose les types
 d'information suivants  [#]_ :
 
-Concept
+concept
    Texte généraliste du type introduction ou présentation.
 
-Task
+task
    Procédure pas à pas destinée à réaliser une tâche.
 
-Reference
+reference
    Information de référence du type explication de paramètres de commandes.
 
 Chacune de ces catégories de haut niveau propose un jeu de balises de plus bas
