@@ -248,7 +248,7 @@ latex_additional_files = [
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'redaction-techniqueorg.tex', u'Gérer la documentation comme le code source',
+  ('index', 'redaction-techniqueorg.tex', u'Processus de rédaction technique',
    u'Olivier Carrère', 'manual', 'toctree_only'),
 ]
 
