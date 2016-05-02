@@ -290,4 +290,9 @@ appliquons une suite d'opérations complexes sur un nombre indéfini de phrases 
 même structure. Ce qui n'est pas possible sous un traitement de texte ou autre
 outil muni d'une interface graphique, ou sur des fichiers binaires.
 
+
+.. seealso::
+
+   - :ref:`expressions-regulieres-python`
+
 .. text review: yes

@@ -152,6 +152,7 @@ croisées qui ne sont valables que dans un nombre limité de contextes.
 
    documentation-code-source-documents-monolithiques-ou-modulaires
    documentation-code-source-fichiers-binaires-ou-texte
+   documentation-code-source-expressions-regulieres-python
    documentation-code-source-sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers
 
 .. text review: yes
