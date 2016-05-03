@@ -36,7 +36,6 @@ industriel et reproductible, il diminue les coûts de production et fournit un
 niveau de qualité constant, adapté aux buts de l'entreprise.
 
 .. toctree::
-   :hidden:
 
    documentation-code-source-definition-du-projet
    documentation-code-source-collecte-de-l-information

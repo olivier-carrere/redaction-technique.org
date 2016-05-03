@@ -18,7 +18,6 @@
    - :ref:`sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers`
 
 .. toctree::
-   :hidden:
 
    documentation-code-source-diminuer-les-couts-ameliorer-la-satisfaction-client
    documentation-code-source-redaction-technique-un-processus-industriel

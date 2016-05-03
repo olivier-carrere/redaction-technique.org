@@ -37,7 +37,6 @@ ils le font mal.  Inversement, un document |db| ou |dita|, par exemple, peut
 être monolithique, mais perd alors de sa souplesse.
 
 .. toctree::
-   :hidden:
 
    documentation-code-source-qu-est-ce-qu-un-module-d-information
 

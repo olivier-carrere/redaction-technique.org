@@ -58,7 +58,6 @@ des documents différents à partir d'un ensemble de briques d'information
 standardisées.
 
 .. toctree::
-   :hidden:
 
    documentation-code-source-cas-concrets-utilisation-de-dita-xml.rst
    documentation-code-source-formats-structures-et-non-structures

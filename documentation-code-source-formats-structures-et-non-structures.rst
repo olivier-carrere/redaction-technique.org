@@ -94,7 +94,6 @@ Cohérentes
    donc strictement identiques.
 
 .. toctree::
-   :hidden:
 
    documentation-code-source-docbook-ou-dita-xml
    documentation-code-source-migration-de-framemaker-vers-dita-xml

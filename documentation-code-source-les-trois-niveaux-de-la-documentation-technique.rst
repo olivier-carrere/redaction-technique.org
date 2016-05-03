@@ -60,7 +60,6 @@ technique, et vous obtiendrez des résultats décevants. Seule la présence conj
 trois éléments fournira un résultat optimal.
 
 .. toctree::
-   :hidden:
 
    documentation-code-source-un-index-est-il-utile-dans-un-pdf
 

@@ -66,7 +66,6 @@ déplacer, fusionner ou supprimer vos *commits* avant de les envoyer sous forme 
 patchs ou de les déposer sur un dépôt central.
 
 .. toctree::
-   :hidden:
 
    documentation-code-source-faire-sauter-les-goulets-etranglement-avec-les-branches
    documentation-code-source-organiser-son-historique-avec-git-rebase
