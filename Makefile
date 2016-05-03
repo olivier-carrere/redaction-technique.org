@@ -52,7 +52,6 @@ html:
 epub:
 	$ cp /usr/share/sphinx/themes/epub/layout.html _templates/
 	$ sed -i conf.py -f conditional-text/epub.sed
-	$ sed -i '/:hidden:/d' *.rst
 	$ mkdir -p $(BUILDDIR)/epub/_images/
 	$ cp -n graphics/*.png $(BUILDDIR)/epub/_images/
 	$ $(PNG)
