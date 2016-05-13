@@ -106,11 +106,15 @@ rst_epilog = u"""
 .. _DocZone: http://www.doczone.com
 .. _FrameMaker: http://en.wikipedia.org/wiki/Adobe_FrameMaker
 .. _Git: http://www.git-scm.com
+.. _GitHub: https://github.com/
+.. _Jinja: http://jinja.pocoo.org/
 .. _JPEG: http://fr.wikipedia.org/wiki/Jpeg
 .. _LinkedIn: http://fr.linkedin.com/in/carrereolivier
+.. _Linux sur Android: https://korben.info/comment-installer-linux-sur-android.html
 .. _Java: http://java.com/fr/download/manual.jsp?locale=fr
 .. _Makefile: https://github.com/olivier-carrere/redaction-technique.org/commits/master/Makefile
 .. _NuFirewall: http://linuxfr.org/news/nufirewall-le-pare-feu-libre-sans-prise-de-t%C3%AAte
+.. _NOOBS: https://www.raspberrypi.org/downloads/noobs/
 .. _OpenDocument: http://fr.wikipedia.org/wiki/OpenDocument
 .. _Predictive: http://www.dr-qubit.org/emacs.php#predictive-download
 .. _RAW: http://fr.wikipedia.org/wiki/RAW_(format_d%27image)
@@ -126,6 +130,7 @@ rst_epilog = u"""
 .. _XSL-FO: http://fr.wikipedia.org/wiki/XSL-FO
 .. _conref: http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html
 .. _ditaval: http://docs.oasis-open.org/dita/v1.2/os/spec/common/about-ditaval.html
+.. _Being a Techie Writer: http://techwhirl.com/techie-writer-series-part-i-being-a-techie-writer/
 .. _expressions rationnelles: http://fr.wikipedia.org/wiki/Expression_rationnelle
 .. _l'archive des fichiers schemas.xml: http://www.redaction-technique.org/media/schemas.redaction-technique.org.tar.gz
 .. _l'archive des schémas RelaxNG pour DITA XML: http://www.redaction-technique.org/media/rnc.tar.gz
