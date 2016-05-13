@@ -1,0 +1,59 @@
+.. Copyright 2011-2015 Olivier Carrère
+.. Cette œuvre est mise à disposition selon les termes de la licence Creative
+.. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
+.. conditions 4.0 international.
+
+.. code review: no code
+
+.. _configurez-le-raspberry-pi:
+
+Configurez le |raspi3|
+----------------------
+
+.. rubric:: Prérequis
+
+- Carte micro-SD de 16 Go classe 10 (de préférence).
+- Connexion Internet filaire ou Wi-Fi.
+
+#. Installez la distribution Linux Raspbian sur votre |raspi3| *via* `NOOBS`_.
+
+#. Sélectionnez **Menu > Preferences > Raspberry Pi Configuration**.
+
+   La boîte de dialogue *Raspberry Pi Configuration* apparaît.
+
+#. Sélectionnez l'onglet *Localisation*.
+
+#. Cliquez sur **Set Locale**, sélectionnez les options suivantes, puis
+   cliquez sur **OK** :
+
+   +--------------------+--------------------+
+   |Option              |Valeur              |
+   +====================+====================+
+   |Language            |fr (French)         |
+   +--------------------+--------------------+
+   |Country             |FR (France)         |
+   +--------------------+--------------------+
+   |Character Set       |UTF-8               |
+   +--------------------+--------------------+
+
+#. Cliquez sur **Set Keyboard**, sélectionnez les valeurs correspondant à
+   votre clavier, puis cliquez sur **OK**.
+
+#. Cliquez sur **OK** dans la boîte de dialogue *Raspberry Pi Configuration*.
+
+#. Sélectionnez **Menu > Accessories > Terminal**.
+
+#. Mettez à jour le système :
+
+   .. code-block:: console
+
+      $  sudo aptitude update && sudo aptitude safe-upgrade -y
+
+   Le temps de lire un épisode du *Surfer d'argent*, et le système est mis à
+   jour.
+
+#. Sélectionnez **Menu > Shutdown > Reboot**.
+
+   Le |raspi3| redémarre.
+
+.. text review: yes

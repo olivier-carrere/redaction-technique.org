@@ -56,6 +56,7 @@ c'est par ici !
 
 .. toctree::
 
+   documentation-code-source-raspberry-pi-plateforme-documentation
    documentation-code-source-sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers
    documentation-code-source-expressions-regulieres-python
    documentation-code-source-didacticiels-dita-xml-xsl-fo
