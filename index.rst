@@ -22,6 +22,7 @@
    documentation-code-source-diminuer-les-couts-ameliorer-la-satisfaction-client
    documentation-code-source-redaction-technique-un-processus-industriel
    documentation-code-source-format-structure-dita-xml
+   documentation-code-source-le-coin-du-geek
    documentation-code-source-contact
 
 .. text review: yes
