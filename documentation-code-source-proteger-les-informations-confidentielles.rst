@@ -27,7 +27,7 @@ comportant les informations confidentielles, les autres non ? Adieu alors le
 *single-sourcing* et la réutilisation du contenu qui vous ont fait choisir
 |dita| !
 
-.. figure:: graphics/confidentiel.png
+.. figure:: graphics/confidentiel.svg
 
    *Masquer des informations confidentielles aux traducteurs*
 

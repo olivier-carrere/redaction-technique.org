@@ -49,7 +49,7 @@ tâches en sous-lots, que vous serez obligé de faire alterner.
 Vous *committez* chaque sous-lot à chaque fois qu'il est achevé. Votre historique
 de *commit* ressemble alors au schéma suivant :
 
-.. figure:: graphics/git-rebase-commits.png
+.. figure:: graphics/git-rebase-commits.svg
 
    *Historique Git*
 
@@ -73,7 +73,7 @@ les partager. Lancez la commande *git rebase -i HEAD~5* pour réorganiser les
 Vous pouvez alors réécrire l'histoire pour proposer à vos collaborateurs un
 *commit* pour chaque tâche réalisée en son entier, comme sur le schéma suivant :
 
-.. figure:: graphics/git-rebase-commits-2.png
+.. figure:: graphics/git-rebase-commits-2.svg
 
    *Historique Git*
 

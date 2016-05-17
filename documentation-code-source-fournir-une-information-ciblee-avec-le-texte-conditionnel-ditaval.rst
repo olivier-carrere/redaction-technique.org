@@ -24,7 +24,7 @@ informations dont ils n'ont *pas* besoin et qui ne seraient pour eux que du
 bruit. Chaque audience bénéficie donc d'un meilleur accès à l'information qui la
 concerne, selon le fameux concept minimaliste de *less is more*.
 
-.. figure:: graphics/ditaval.png
+.. figure:: graphics/ditaval.svg
 
    *Texte conditionnel avec DITA XML*
 

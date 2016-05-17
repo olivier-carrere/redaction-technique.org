@@ -30,7 +30,7 @@ collecte toute l'information disponible :
 
 -  lecture de la presse spécialisée.
 
-.. figure:: graphics/collecte.png
+.. figure:: graphics/collecte.svg
 
    *Collecte de l'information*
 

@@ -35,7 +35,7 @@ fonctionnalités supérieures :
 - possibilité de restauration très fine et dans le temps (depuis le dernier
   dépôt du fichier sur le référentiel) et en termes de quantité de travail [#]_.
 
-.. figure:: graphics/versioning-system.png
+.. figure:: graphics/versioning-system.svg
 
    *Le système de gestion de versions conserve l'historique des modifications.*
 

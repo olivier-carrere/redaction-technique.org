@@ -19,7 +19,7 @@ Le principe des *conref* est simple : lorsqu'un *conref* est mentionné au
 niveau d'un nœud XML donné, tout le contenu du nœud cible est remplacé par le
 contenu du nœud source.
 
-.. figure:: graphics/ditamap.png
+.. figure:: graphics/ditamap.svg
 
    *Partage de blocs d'information de granulométrie large entre les* ditamap
 
@@ -30,7 +30,7 @@ formalisme rigoureux, s'il s'avère moins souple et oblige parfois à quelques
 acrobaties, rend les *conref* beaucoup plus lisibles que les *xinclude* et favorise
 leur utilisation.
 
-.. figure:: graphics/conref.png
+.. figure:: graphics/conref.svg
 
    *Partage de blocs d'information de granulométrie fine entre les sections DITA XML*
 

@@ -35,7 +35,7 @@ devient un vrai plat de spaghettis (sans compter les risques de référence
 circulaire). Les *conref* peuvent théoriquement être combinés à l'infini, mais
 les problèmes pratiques que cela engendre peuvent également être infinis !
 
-.. figure:: graphics/imbriquer-conref.png
+.. figure:: graphics/imbriquer-conref.svg
 
    *Imbriquer les* conref *sur plusieurs niveaux : puissant, mais dangereux !*
 

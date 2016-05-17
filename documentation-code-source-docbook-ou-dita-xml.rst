@@ -23,7 +23,7 @@ Il est facile de générer du |db| à partir de |dita|. |dita-ot|
 propose par défaut ce format cible, au même titre que le PDF ou le
 HTML. L'opération inverse ne peut pas être totalement automatisée. Pourquoi ?
 
-.. figure:: graphics/entropie.png
+.. figure:: graphics/entropie.svg
 
    *Un processus non réversible*
 
@@ -53,7 +53,7 @@ Si votre contenu était une photo, nous pourrions faire l'analogie suivante :
 Le passage de RAW en TIFF et de TIFF en JPEG est destructif et ne peut se faire
 en sens inverse [#]_.
 
-.. figure:: graphics/entropie-dita-docbook.png
+.. figure:: graphics/entropie-dita-docbook.svg
 
    *Un processus non réversible*
 

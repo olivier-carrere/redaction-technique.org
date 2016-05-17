@@ -12,7 +12,7 @@ Ce |site| est disponible en trois formats, basés sur la
 version 1.1 [#]_. Ces formats présentent des niveaux de fonctionnalités et de
 complexité différents.
 
-.. figure:: graphics/fonctionnalites_complexite.png
+.. figure:: graphics/fonctionnalites_complexite.svg
 
    *Niveau de fonctionnalités et de complexité des formats texte*
 

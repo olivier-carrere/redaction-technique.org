@@ -20,7 +20,7 @@ prévisible et reproductible.
 Ce processus repose sur une méthodologie rigoureuse et une chaîne de production
 fiable.
 
-.. figure:: graphics/processus.png
+.. figure:: graphics/processus.svg
 
    *Processus de rédaction technique*
 

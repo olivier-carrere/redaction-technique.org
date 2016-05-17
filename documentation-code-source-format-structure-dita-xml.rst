@@ -16,7 +16,7 @@ documentation. Voilà les défis que doit relever aujourd'hui le |techwriter|.
 L'un des meilleurs moyens d'y parvenir consiste à réduire le volume
 source de la documentation et à mieux gérer le contenu d'entreprise.
 
-.. figure:: graphics/degre-structuration.png
+.. figure:: graphics/degre-structuration.svg
 
    *Formats de documentation technique : degrés de structuration*
 
@@ -36,7 +36,7 @@ standardisées et génériques, pour pouvoir l'assembler à la demande. Il doit 
 utiliser des modules structurés de manière homogène qui peuvent être facilement
 manipulés par des applications.
 
-.. figure:: graphics/non-redondance.png
+.. figure:: graphics/non-redondance.svg
 
    *Les sources de la documentation doivent être moins volumineuses que les
    livrables.*

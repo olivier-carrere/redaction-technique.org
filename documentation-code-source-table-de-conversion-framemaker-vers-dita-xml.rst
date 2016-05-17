@@ -19,7 +19,7 @@ parfaitement intégrée aux processus techniques et humains de la société, le
 Vous devriez maintenant être à même d'archiver les fichiers |fm|, puis de
 basculer totalement vers le format |dita|.
 
-.. figure:: graphics/dita-migration.png
+.. figure:: graphics/dita-migration.svg
 
    *Application d'une table de conversion de FrameMaker vers DITA XML*
 

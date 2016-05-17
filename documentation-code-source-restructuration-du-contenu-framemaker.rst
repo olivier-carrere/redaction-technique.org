@@ -33,7 +33,7 @@ Un important travail de restructuration du document |fm| doit cependant
   sera utilisé parmi les centaines de balises proposées par |dita| : il est
   en effet fortement déconseillé de les utiliser toutes).
 
-.. figure:: graphics/framemaker-restructure.png
+.. figure:: graphics/framemaker-restructure.svg
 
    *Restructuration du contenu  FrameMaker et mise en place de la chaîne DITA XML*
 

@@ -19,7 +19,7 @@ structure XML encapsulant l'information, même si cette structure, pour être
 compatible avec le schéma XSD de la section |dita| où elle intervient,
 doit elle-même être incluse dans des structures XML plus grandes.
 
-.. figure:: graphics/conref-bas-niveau.png
+.. figure:: graphics/conref-bas-niveau.svg
 
    *Placement du* conref *sur le nœud XML de plus bas niveau*
 
@@ -79,7 +79,7 @@ En effet, dans le premier cas, vous pourrez utiliser le *conref* même si le nœ
 supérieur (:samp:`<step>`) contient d'autres nœuds que :samp:`<step>` (par
 exemple :samp:`<info>`).
 
-.. figure:: graphics/conref-haut-niveau.png
+.. figure:: graphics/conref-haut-niveau.svg
 
    *Placement du* conref *sur le nœud XML de plus haut niveau*
 

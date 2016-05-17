@@ -25,7 +25,7 @@ agréable à vivre. Bonne nouvelle : si le |techwriter| a utilisé de
 manière cohérente un jeu de styles limité et organisé rationnellement son
 contenu |fm|, il est déjà certainement très proche de ce stade.
 
-.. figure:: graphics/framemaker-to-dita-migration.png
+.. figure:: graphics/framemaker-to-dita-migration.svg
 
    *Migration de FrameMaker vers DITA XML*
 

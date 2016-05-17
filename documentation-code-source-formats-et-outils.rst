@@ -23,7 +23,7 @@ ultérieurs de l'entreprise et de se révéler coûteux : il faut une licence p
 utilisateur, qu'il soit |techwriter|, contributeur occasionnel ou
 traducteur.
 
-.. figure:: graphics/format-standard.png
+.. figure:: graphics/format-standard.svg
 
    *Un format standard laisse le choix de l'outil.*
 

@@ -20,7 +20,7 @@ tranché en faveur du *single-sourcing*. Le gain qualitatif, discutable, ne
 compense pas le coût de créer, maintenir et traduire une version source
 différente pour chaque version cible.
 
-.. figure:: graphics/single-sourcing.png
+.. figure:: graphics/single-sourcing.svg
 
    *Un seul jeu d'informations, une multiplicité de formats de sortie*
 

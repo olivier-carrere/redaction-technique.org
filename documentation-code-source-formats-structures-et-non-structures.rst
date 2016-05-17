@@ -32,7 +32,7 @@ reference
    Informations de référence sur une liste d'éléments tels que des options d'un
    programme.
 
-.. figure:: graphics/structured.png
+.. figure:: graphics/structured.svg
 
    *Formats structurés et non structurés*
 

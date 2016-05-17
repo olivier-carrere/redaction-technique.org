@@ -20,7 +20,7 @@ le publier sous la forme appropriée.
 Le contenu devient un réseau de modules d'information ; il faut alors gérer les
 relations au sein de ce réseau, notamment lors des mises à jour.
 
-.. figure:: graphics/referentiel-unique.png
+.. figure:: graphics/referentiel-unique.svg
 
    *Référentiel unique*
 

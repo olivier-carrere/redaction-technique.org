@@ -15,7 +15,7 @@ La documentation fait partie du logiciel. Fournie avec le produit, elle doit :
 - faire l'objet des mêmes processus de
   production et de contrôle qualité.
 
-.. figure:: graphics/integration-doc-dev.png
+.. figure:: graphics/integration-doc-dev.svg
 
    *Sources de documentation modulaires au format texte*
 

@@ -16,7 +16,7 @@ L'unité d'information |dita| la plus petite est le nœud :samp:`<ph>`. Le
 (par exemple, le nom de la société ou d'un produit). De gros problèmes
 apparaissent sinon lors de la traduction dans d'autres langues.
 
-.. figure:: graphics/traduction-conref.png
+.. figure:: graphics/traduction-conref.svg
 
    *Les phrases se découpent différemment selon les langues.*
 
