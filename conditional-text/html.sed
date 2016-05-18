@@ -8,6 +8,6 @@
 /^\.\. substitutions/a .. |ms-word| replace:: **MS Word**
 /^\.\. substitutions/a .. |raspi3| replace:: **Raspberry Pi 3**
 /^\.\. substitutions/a .. |rst| replace:: **reStructuredText**
-/^\.\. substitutions/a .. |site| replace:: site
+/^\.\. substitutions/a .. |site| replace:: blog
 /^\.\. substitutions/a .. |techwriter| replace:: **rédacteur technique**
 /^\.\. substitutions/a .. |techwriting| replace:: **rédaction technique**
