@@ -43,7 +43,6 @@ html:
 	$ inkscape -w 120 -f graphics/git.svg -e graphics/git.png
 	$ inkscape -w 180 -f graphics/redaction-technique.svg -e graphics/redaction-technique.png
 	$ sed -i "s,\(\.\. figure::.*\)\.svg,\1\.png," *.rst
-	$ sed -i "s,\(\.\. figure::.*\)\.svg,\1\.png," include/*.inc
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	$ cp -n graphics/*.png $(BUILDDIR)/html/_images/
 	$ cp -n graphics/*.gif $(BUILDDIR)/html/_images/
@@ -58,7 +57,6 @@ epub:
 	$ cp -n graphics/*.png $(BUILDDIR)/epub/_images/
 	$ $(PNG)
 	$ sed -i "s,\(\.\. figure::.*\)\.svg,\1\.png," *.rst
-	$ sed -i "s,\(\.\. figure::.*\)\.svg,\1\.png," include/*.inc
 	$(SPHINXBUILD) -b epub $(ALLSPHINXOPTS) $(BUILDDIR)/epub
 	$ $(GIT_CLEAN)
 	@echo
@@ -68,7 +66,6 @@ latexpdf:
 	$ sed -i conf.py -f conditional-text/latexpdf.sed
 	$ for i in graphics/*.svg; do inkscape -f $$i -A graphics/$$(basename $$i svg)pdf; done
 	$ sed -i "s,\(\.\. figure::.*\)\.svg,\1\.pdf," *.rst
-	$ sed -i "s,\(\.\. figure::.*\)\.svg,\1\.pdf," include/*.inc
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
 	@echo "Running LaTeX files through pdflatex..."
 	$(MAKE) -C $(BUILDDIR)/latex all-pdf

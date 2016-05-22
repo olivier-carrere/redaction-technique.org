@@ -5,12 +5,12 @@
 
 .. code review: no code
 
-.. include:: include/silo.inc
-.. include:: include/integrer-la-documentation-aux-processus-de-developpement.inc
-.. include:: include/les-sources-de-ce-document-sont-gerees-sous-git.inc
-.. include:: include/formats-sources.inc
-.. include:: include/formats-cibles.inc
-.. include:: include/a-propos-de-ce-document.inc
+.. include:: silo.rst
+.. include:: integrer-la-documentation-aux-processus-de-developpement.rst
+.. include:: les-sources-de-ce-document-sont-gerees-sous-git.rst
+.. include:: formats-sources.rst
+.. include:: formats-cibles.rst
+.. include:: a-propos-de-ce-document.rst
 
 .. seealso::
 

@@ -30,12 +30,12 @@ générer une documentation aux formats PDF, HTML, ou autre.
    - Présenter un scénario d'utilisation aussi simple que possible, parfois au
      détriment de l'élégance technique.
 
-.. include:: include/configurez-le-raspberry-pi.inc
-.. include:: include/installez-les-logiciels-necessaires-a-la-generation-de-ce-site.inc
-.. include:: include/recuperez-les-sources-de-ce-site.inc
-.. include:: include/creez-et-modifiez-le-texte.inc
-.. include:: include/creez-et-modifiez-les-schemas.inc
-.. include:: include/gerez-les-versions-de-votre-documentation.inc
-.. include:: include/generez-votre-documentation.inc
+.. include:: configurez-le-raspberry-pi.rst
+.. include:: installez-les-logiciels-necessaires-a-la-generation-de-ce-site.rst
+.. include:: recuperez-les-sources-de-ce-site.rst
+.. include:: creez-et-modifiez-le-texte.rst
+.. include:: creez-et-modifiez-les-schemas.rst
+.. include:: gerez-les-versions-de-votre-documentation.rst
+.. include:: generez-votre-documentation.rst
 
 .. text review: yes
