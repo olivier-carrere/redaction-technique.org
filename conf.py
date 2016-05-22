@@ -92,7 +92,14 @@ rst_epilog = u"""
 
 .. |cms| replace:: :abbr:`CMS (Content Management System)`
 .. |dita-ot| replace:: :abbr:`DITA-OT (DITA Open Toolkit)`
+.. |github| replace:: *GitHub*
+.. |git| replace:: *Git*
+.. |gui| replace:: :abbr:`GUI (Graphical User Interface)`
 .. |ide| replace:: :abbr:`IDE (Integrated Development Environment)`
+.. |latex| replace:: *LaTeX*
+.. |poc| replace:: :abbr:`POC (Proof of Concept, démonstration de faisabilité)`
+.. |sphinx| replace:: Python Sphinx
+.. |ssh| replace:: :abbr:`SSH (Secure Shell)`
 
 .. links
 
