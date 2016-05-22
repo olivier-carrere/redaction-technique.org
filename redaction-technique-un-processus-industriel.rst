@@ -37,14 +37,14 @@ niveau de qualité constant, adapté aux buts de l'entreprise.
 
 .. toctree::
 
-   documentation-code-source-definition-du-projet
-   documentation-code-source-collecte-de-l-information
-   documentation-code-source-creation-du-contenu
-   documentation-code-source-format-source
-   documentation-code-source-referentiel
-   documentation-code-source-validation-et-controle-qualite
-   documentation-code-source-traduction
-   documentation-code-source-format-cible
-   documentation-code-source-livraison
+   definition-du-projet
+   collecte-de-l-information
+   creation-du-contenu
+   format-source
+   referentiel
+   validation-et-controle-qualite
+   traduction
+   format-cible
+   livraison
 
 .. text review: yes

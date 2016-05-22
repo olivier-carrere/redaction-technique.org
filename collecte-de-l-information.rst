@@ -49,6 +49,6 @@ commerciale de données techniques précises pour étayer le discours marketing.
 
 .. toctree::
 
-   documentation-code-source-tester-les-produits-pour-les-documenter
+   tester-les-produits-pour-les-documenter
 
 .. text review: yes

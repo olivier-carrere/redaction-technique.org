@@ -52,7 +52,7 @@ auraient déjà beaucoup gagné, respectivement en :
 
 .. toctree::
 
-   documentation-code-source-restructuration-du-contenu-framemaker
-   documentation-code-source-table-de-conversion-framemaker-vers-dita-xml
+   restructuration-du-contenu-framemaker
+   table-de-conversion-framemaker-vers-dita-xml
 
 .. text review: yes

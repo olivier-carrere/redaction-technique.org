@@ -40,11 +40,11 @@ préservé.
 
 .. toctree::
 
-   documentation-code-source-un-langage-a-balises
-   documentation-code-source-typologie-de-haut-niveau-de-l-information
-   documentation-code-source-organisation-a-la-demande-du-contenu
-   documentation-code-source-le-single-sourcing-un-format-source-plusieurs-formats-cibles
-   documentation-code-source-les-topics-modules-d-information-de-base-dita
-   documentation-code-source-gerer-son-contenu-dita-xml-avec-ou-sans-cms
+   un-langage-a-balises
+   typologie-de-haut-niveau-de-l-information
+   organisation-a-la-demande-du-contenu
+   le-single-sourcing-un-format-source-plusieurs-formats-cibles
+   les-topics-modules-d-information-de-base-dita
+   gerer-son-contenu-dita-xml-avec-ou-sans-cms
 
 .. text review: yes

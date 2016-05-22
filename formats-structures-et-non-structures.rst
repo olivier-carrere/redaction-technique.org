@@ -95,8 +95,8 @@ Cohérentes
 
 .. toctree::
 
-   documentation-code-source-docbook-ou-dita-xml
-   documentation-code-source-migration-de-framemaker-vers-dita-xml
-   documentation-code-source-migrer-de-framemaker-vers-dita-xml
+   docbook-ou-dita-xml
+   migration-de-framemaker-vers-dita-xml
+   migrer-de-framemaker-vers-dita-xml
 
 .. text review: yes

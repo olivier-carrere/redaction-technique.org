@@ -35,6 +35,6 @@ le système de gestion de versions n'est pas suffisant, car ils ne sont que les
 
 .. toctree::
 
-   documentation-code-source-workflow-de-creation-et-validation
+   workflow-de-creation-et-validation
 
 .. text review: yes

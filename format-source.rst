@@ -150,7 +150,7 @@ croisées qui ne sont valables que dans un nombre limité de contextes.
 
 .. toctree::
 
-   documentation-code-source-documents-monolithiques-ou-modulaires
-   documentation-code-source-fichiers-binaires-ou-texte
+   documents-monolithiques-ou-modulaires
+   fichiers-binaires-ou-texte
 
 .. text review: yes

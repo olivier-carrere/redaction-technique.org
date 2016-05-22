@@ -67,7 +67,7 @@ patchs ou de les déposer sur un dépôt central.
 
 .. toctree::
 
-   documentation-code-source-faire-sauter-les-goulets-etranglement-avec-les-branches
-   documentation-code-source-organiser-son-historique-avec-git-rebase
+   faire-sauter-les-goulets-etranglement-avec-les-branches
+   organiser-son-historique-avec-git-rebase
 
 .. text review: yes

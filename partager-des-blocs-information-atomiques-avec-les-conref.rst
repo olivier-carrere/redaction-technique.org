@@ -36,11 +36,11 @@ leur utilisation.
 
 .. toctree::
 
-   documentation-code-source-centraliser-les-conref-dans-un-fichier-unique
-   documentation-code-source-utiliser-le-noeud-xml-de-plus-bas-niveau
-   documentation-code-source-prendre-en-compte-les-contraintes-de-traduction
-   documentation-code-source-imbriquer-les-conref
-   documentation-code-source-maximiser-utilisation-des-conref-pour-faire-baisser-les-couts
-   documentation-code-source-proteger-les-informations-confidentielles
+   centraliser-les-conref-dans-un-fichier-unique
+   utiliser-le-noeud-xml-de-plus-bas-niveau
+   prendre-en-compte-les-contraintes-de-traduction
+   imbriquer-les-conref
+   maximiser-utilisation-des-conref-pour-faire-baisser-les-couts
+   proteger-les-informations-confidentielles
 
 .. text review: yes

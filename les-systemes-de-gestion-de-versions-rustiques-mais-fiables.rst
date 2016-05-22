@@ -101,6 +101,6 @@ ou les branches.
 
 .. toctree::
 
-   documentation-code-source-utiliser-les-branches-des-systemes-de-gestion-de-sources
+   utiliser-les-branches-des-systemes-de-gestion-de-sources
 
 .. text review: yes

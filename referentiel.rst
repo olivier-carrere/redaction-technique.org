@@ -17,12 +17,12 @@ versions.
 
 .. toctree::
 
-   documentation-code-source-git-du-fichier-au-contenu
-   documentation-code-source-quel-referentiel-pour-le-travail-de-groupe
-   documentation-code-source-les-repertoires-reseau-partages-peu-adaptes-au-travail-de-groupe
-   documentation-code-source-les-systemes-de-gestion-de-versions-rustiques-mais-fiables
-   documentation-code-source-les-cms-le-workflow-en-prime-mais-une-fiabilite-a-tester
-   documentation-code-source-base-de-donnees-sql
-   documentation-code-source-un-referentiel-unique
+   git-du-fichier-au-contenu
+   quel-referentiel-pour-le-travail-de-groupe
+   les-repertoires-reseau-partages-peu-adaptes-au-travail-de-groupe
+   les-systemes-de-gestion-de-versions-rustiques-mais-fiables
+   les-cms-le-workflow-en-prime-mais-une-fiabilite-a-tester
+   base-de-donnees-sql
+   un-referentiel-unique
 
 .. text review: yes

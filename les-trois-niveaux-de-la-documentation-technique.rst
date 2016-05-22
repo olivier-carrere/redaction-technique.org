@@ -61,6 +61,6 @@ trois éléments fournira un résultat optimal.
 
 .. toctree::
 
-   documentation-code-source-un-index-est-il-utile-dans-un-pdf
+   un-index-est-il-utile-dans-un-pdf
 
 .. text review: yes

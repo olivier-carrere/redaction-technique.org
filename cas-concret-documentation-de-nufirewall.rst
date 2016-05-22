@@ -20,7 +20,7 @@ contenu.
 
 .. toctree::
 
-   documentation-code-source-partager-des-blocs-information-atomiques-avec-les-conref
-   documentation-code-source-fournir-une-information-ciblee-avec-le-texte-conditionnel-ditaval
+   partager-des-blocs-information-atomiques-avec-les-conref
+   fournir-une-information-ciblee-avec-le-texte-conditionnel-ditaval
 
 .. text review: yes

@@ -19,10 +19,10 @@
 
 .. toctree::
 
-   documentation-code-source-diminuer-les-couts-ameliorer-la-satisfaction-client
-   documentation-code-source-redaction-technique-un-processus-industriel
-   documentation-code-source-format-structure-dita-xml
-   documentation-code-source-le-coin-du-geek
-   documentation-code-source-contact
+   diminuer-les-couts-ameliorer-la-satisfaction-client
+   redaction-technique-un-processus-industriel
+   format-structure-dita-xml
+   le-coin-du-geek
+   contact
 
 .. text review: yes

@@ -38,6 +38,6 @@ ils le font mal.  Inversement, un document |db| ou |dita|, par exemple, peut
 
 .. toctree::
 
-   documentation-code-source-qu-est-ce-qu-un-module-d-information
+   qu-est-ce-qu-un-module-d-information
 
 .. text review: yes

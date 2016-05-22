@@ -50,9 +50,9 @@ les solutions et les compétences existent.
 
 .. toctree::
 
-   documentation-code-source-de-la-redaction-a-la-communication-technique
-   documentation-code-source-les-trois-niveaux-de-la-documentation-technique
-   documentation-code-source-principe-de-simplicite-kiss
-   documentation-code-source-formats-et-outils
+   de-la-redaction-a-la-communication-technique
+   les-trois-niveaux-de-la-documentation-technique
+   principe-de-simplicite-kiss
+   formats-et-outils
 
 .. text review: yes

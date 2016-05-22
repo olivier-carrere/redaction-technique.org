@@ -59,10 +59,10 @@ standardisées.
 
 .. toctree::
 
-   documentation-code-source-cas-concrets-utilisation-de-dita-xml.rst
-   documentation-code-source-formats-structures-et-non-structures
-   documentation-code-source-une-architecture-documentaire-trop-complexe
-   documentation-code-source-du-document-a-la-base-documentaire-modulaire
-   documentation-code-source-cas-concret-documentation-de-nufirewall
+   cas-concrets-utilisation-de-dita-xml.rst
+   formats-structures-et-non-structures
+   une-architecture-documentaire-trop-complexe
+   du-document-a-la-base-documentaire-modulaire
+   cas-concret-documentation-de-nufirewall
 
 .. text review: yes
