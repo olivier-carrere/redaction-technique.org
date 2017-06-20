@@ -1,4 +1,4 @@
-.. Copyright 2011-2015 Olivier Carrère
+.. Copyright 2011-2017 Olivier Carrère
 .. Cette œuvre est mise à disposition selon les termes de la licence Creative
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.

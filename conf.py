@@ -41,7 +41,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'redaction-technique.org'
-copyright = u'2015, Olivier Carrère'
+copyright = u'CC BY-NC 4.0 - 2011 - 2017, Olivier Carrère'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
