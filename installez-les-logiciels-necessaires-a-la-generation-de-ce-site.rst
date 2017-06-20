@@ -10,7 +10,7 @@
 Installez les logiciels nécessaires à la gestion de ce |site|
 -------------------------------------------------------------
 
-#. Sélectionnez **Menu > Accessoires > LXTerminal**.
+#. Sélectionnez :guilabel:`Menu` > :guilabel:`Accessoires` > :guilabel:`LXTerminal`.
 
 #. Installez les paquets logiciels suivants :
 

@@ -17,14 +17,14 @@ Configurez le |raspi3|
 
 #. Installez la distribution Linux Raspbian sur votre |raspi3| *via* `NOOBS`_.
 
-#. Sélectionnez **Menu > Preferences > Raspberry Pi Configuration**.
+#. Sélectionnez :guilabel:`Menu` ‣ :guilabel:`Preferences` ‣ :guilabel:`Raspberry Pi Configuration`.
 
-   La boîte de dialogue *Raspberry Pi Configuration* apparaît.
+   La boîte de dialogue :guilabel:`Raspberry Pi Configuration` apparaît.
 
-#. Sélectionnez l'onglet *Localisation*.
+#. Sélectionnez l'onglet :guilabel:`Localisation`.
 
-#. Cliquez sur **Set Locale**, sélectionnez les options suivantes, puis
-   cliquez sur **OK** :
+#. Cliquez sur :guilabel:`Set Locale`, sélectionnez les options suivantes, puis
+   cliquez sur :guilabel:`OK` :
 
    +--------------------+--------------------+
    |Option              |Valeur              |
@@ -36,12 +36,12 @@ Configurez le |raspi3|
    |Character Set       |UTF-8               |
    +--------------------+--------------------+
 
-#. Cliquez sur **Set Keyboard**, sélectionnez les valeurs correspondant à
-   votre clavier, puis cliquez sur **OK**.
+#. Cliquez sur :guilabel:`Set Keyboard`, sélectionnez les valeurs correspondant à
+   votre clavier, puis cliquez sur :guilabel:`OK`.
 
-#. Cliquez sur **OK** dans la boîte de dialogue *Raspberry Pi Configuration*.
+#. Cliquez sur :guilabel:`OK` dans la boîte de dialogue :guilabel:`Raspberry Pi Configuration`.
 
-#. Sélectionnez **Menu > Accessories > Terminal**.
+#. Sélectionnez :guilabel:`Menu` ‣ :guilabel:`Accessories` ‣ :guilabel:`Terminal`.
 
 #. Mettez à jour le système :
 
@@ -52,7 +52,7 @@ Configurez le |raspi3|
    Le temps de lire un épisode du *Surfer d'argent*, et le système est mis à
    jour.
 
-#. Sélectionnez **Menu > Shutdown > Reboot**.
+#. Sélectionnez :guilabel:`Menu` ‣ :guilabel:`Shutdown` ‣ :guilabel:`Reboot`.
 
    Le |raspi3| redémarre.
 

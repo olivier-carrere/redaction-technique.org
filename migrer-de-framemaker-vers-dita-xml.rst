@@ -17,7 +17,7 @@ Le but de cette procédure est de :
   projets uniquement !),
 
 - gérer la documentation technique au format |dita| sans utiliser |fm|
-  **structuré**.
+  :guilabel:`structuré`.
 
 #. Restructurez le contenu et les styles de vos fichiers de contenu |fm|
    selon les concepts |dita|.
@@ -30,22 +30,22 @@ Le but de cette procédure est de :
 
 #. Enregistrez le document |fm| vide sous le nom :file:`styles.fm`.
 
-#. Ouvrez |fm| **structuré 11** et créez un nouveau fichier |dita| de type
+#. Ouvrez |fm| :guilabel:`structuré 11` et créez un nouveau fichier |dita| de type
    *topic*.
 
-#. Choisissez **StructureTools > Exporter le catalogue d'éléments en tant
-   qu'EDD** et sauvegardez la nouvelle EDD sous le nom
+#. Choisissez :guilabel:`StructureTools` ‣ :guilabel:`Exporter le catalogue d'éléments en tant
+   qu'EDD` et sauvegardez la nouvelle EDD sous le nom
    :file:`DITA-topic-edd.fm`.
 
-#. Ouvrez le fichier :file:`styles.fm`, puis choisissez **Fichier > Importer les
-   définitions d'éléments** et importez les définitions d'éléments à partir de
+#. Ouvrez le fichier :file:`styles.fm`, puis choisissez :guilabel:`Fichier` ‣ :guilabel:`Importer les
+   définitions d'éléments` et importez les définitions d'éléments à partir de
    :file:`DITA-topic-edd.fm`.
 
 #. Répétez les trois étapes ci-dessus pour les autres types de topics |dita|
    (*task*, *reference*, etc.), en modifiant les noms de fichiers comme il se doit.
 
-#. Ouvrez le fichier :file:`styles.fm`, puis choisissez **StructureTools >
-   Générer le tableau de conversion**.
+#. Ouvrez le fichier :file:`styles.fm`, puis choisissez :guilabel:`StructureTools` ‣
+   :guilabel:`Générer le tableau de conversion`.
 
 #. Modifiez le fichier de conversion et faites correspondre chaque style
    |fm| à une balise |dita|.
@@ -54,11 +54,11 @@ Le but de cette procédure est de :
    :file:`DITA2FM-conversion-table.fm`.
 
 #. Ouvrez un fichier de contenu |fm| sous |fm| structuré 11 et
-   choisissez **StructureTools > Utilitaires > Structurer le document en
-   cours**.
+   choisissez :guilabel:`StructureTools` ‣ :guilabel:`Utilitaires` ‣ :guilabel:`Structurer le document en
+   cours`.
 
-#. Sélectionnez :file:`DITA2FM-conversion-table.fm` et cliquez sur **Ajouter
-   structure**.
+#. Sélectionnez :file:`DITA2FM-conversion-table.fm` et cliquez sur :guilabel:`Ajouter
+   structure`.
 
 #. Enregistrez le fichier de contenu |fm| au format XML sans sélectionner
    d'application.
@@ -81,12 +81,12 @@ pouvez par exemple utiliser des scripts Perl du type :
 
    #!/usr/bin/perl
    open(INPUT,"<$ARGV[0]") or die;
-   @input_array=<INPUT>;
+   @input_array=<INPUT‣;
    close(INPUT);
    $input_scalar=join("",@input_array);
    # substitution
-   $input_scalar =~ s#\<body>(.|\n)*?</body>##ig;
-   open(OUTPUT,>$ARGV[0]") or die;
+   $input_scalar =~ s#\<body‣(.|\n)*?</body‣##ig;
+   open(OUTPUT,‣$ARGV[0]") or die;
    print(OUTPUT $input_scalar);
    close(OUTPUT);
 
@@ -97,9 +97,9 @@ encore ce *one-liner* Bash pour renommer les fichiers :file:`.dita` d'après leu
 
 .. code-block:: console
 
-   $ ack "<title>" *.dita| sed "s# #_#g;" |
+   $ ack "<title‣" *.dita| sed "s# #_#g;" |
    tr '[:upper:]' '[:lower:]' |
    sed -E "s#(.*.dita)#mv \1#g;" |
-   sed -E "s#\.dita.*<title>(.*)</title>#.dita \1.dita#g;"
+   sed -E "s#\.dita.*<title‣(.*)</title‣#.dita \1.dita#g;"
 
 .. text review: yes
