@@ -26,7 +26,7 @@ dans un environnement Windows (testé sur Windows XP).
     bureau, puis décompressez :file:`DITA-OT1.5.4_full_easy_install_bin.zip`.
 
 #.  Sélectionnez :guilabel:`Exécuter` dans le menu :guilabel:`Démarrer`, collez
-    la commande suivante, puis appuyez sur **Entrée** :
+    la commande suivante, puis appuyez sur :kbd:`Entrée` :
 
     .. code-block:: console
 
