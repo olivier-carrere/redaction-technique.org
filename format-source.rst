@@ -151,6 +151,7 @@ croisées qui ne sont valables que dans un nombre limité de contextes.
        corps ou la couleur.
 
 .. toctree::
+   :hidden:
 
    documents-monolithiques-ou-modulaires
    fichiers-binaires-ou-texte

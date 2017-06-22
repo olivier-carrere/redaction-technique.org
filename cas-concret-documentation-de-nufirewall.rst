@@ -19,6 +19,7 @@ l'information, je n'aurais pas autant pu me consacrer à l'essentiel : le
 contenu.
 
 .. toctree::
+   :hidden:
 
    partager-des-blocs-information-atomiques-avec-les-conref
    fournir-une-information-ciblee-avec-le-texte-conditionnel-ditaval

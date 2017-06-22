@@ -55,6 +55,7 @@ c'est par ici !
    `Being a Techie Writer`_
 
 .. toctree::
+   :hidden:
 
    raspberry-pi-plateforme-documentation
    sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers

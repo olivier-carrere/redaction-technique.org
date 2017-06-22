@@ -41,6 +41,7 @@ référentiel unique, tel qu'un ECM (système de gestion de contenu) ou un VCS
 préservé.
 
 .. toctree::
+   :hidden:
 
    un-langage-a-balises
    typologie-de-haut-niveau-de-l-information

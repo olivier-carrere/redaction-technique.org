@@ -36,6 +36,7 @@ le système de gestion de versions n'est pas suffisant, car ils ne sont que les
 « briques » du document final.
 
 .. toctree::
+   :hidden:
 
    workflow-de-creation-et-validation
 

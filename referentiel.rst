@@ -16,6 +16,7 @@ aussi outils de gestion de contenu d'entreprise et logiciels de gestion de
 versions.
 
 .. toctree::
+   :hidden:
 
    git-du-fichier-au-contenu
    quel-referentiel-pour-le-travail-de-groupe

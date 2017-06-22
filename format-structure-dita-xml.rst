@@ -58,6 +58,7 @@ des documents différents à partir d'un ensemble de briques d'information
 standardisées.
 
 .. toctree::
+   :hidden:
 
    cas-concrets-utilisation-de-dita-xml.rst
    formats-structures-et-non-structures

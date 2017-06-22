@@ -51,6 +51,7 @@ auraient déjà beaucoup gagné, respectivement en :
        versions de la documentation ; il doit donc être soigneusement planifié.
 
 .. toctree::
+   :hidden:
 
    restructuration-du-contenu-framemaker
    table-de-conversion-framemaker-vers-dita-xml

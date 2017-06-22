@@ -31,6 +31,7 @@
    - :ref:`sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers`
 
 .. toctree::
+   :hidden:
 
    diminuer-les-couts-ameliorer-la-satisfaction-client
    redaction-technique-un-processus-industriel

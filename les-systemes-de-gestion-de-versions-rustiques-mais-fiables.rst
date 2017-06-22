@@ -100,6 +100,7 @@ ou les branches.
        application *Time machine*.
 
 .. toctree::
+   :hidden:
 
    utiliser-les-branches-des-systemes-de-gestion-de-sources
 

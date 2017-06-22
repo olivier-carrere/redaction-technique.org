@@ -33,6 +33,7 @@ livrable. Opération qui n'est pas envisageable en pratique avec des solutions
 traditionnelles de type |fm|.
 
 .. toctree::
+   :hidden:
 
    xsl-fo-filtrer-du-contenu-selon-des-conditions-sauf-et-ou
    xsl-fo-inserer-automatiquement-un-titre-pour-les-exemples

@@ -51,6 +51,7 @@ augmentation des coûts de support, etc.) peuvent être considérables. Pourtant
 les solutions et les compétences existent.
 
 .. toctree::
+   :hidden:
 
    de-la-redaction-a-la-communication-technique
    les-trois-niveaux-de-la-documentation-technique

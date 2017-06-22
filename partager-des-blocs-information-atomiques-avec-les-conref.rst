@@ -37,6 +37,7 @@ leur utilisation.
    *Partage de blocs d'information de granulométrie fine entre les sections DITA XML*
 
 .. toctree::
+   :hidden:
 
    centraliser-les-conref-dans-un-fichier-unique
    utiliser-le-noeud-xml-de-plus-bas-niveau
