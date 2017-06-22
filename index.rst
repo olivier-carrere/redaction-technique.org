@@ -12,7 +12,7 @@
 
    Il a parlé, parle ou parlera un peu, beaucoup ou pas du tout des formats,
    des outils et des tâches suivants : |rst|, |dita|, `scripts Bash`_, awk,
-   sed, expressions rationnelles (ou *expressions régulières*), gestion de
+   sed, expressions rationnelles, Python, gestion de
    versions, Git, compilation, `Makefile`_, Ant, XSLT, mise en page, HTML,
    `CSS`_, PDF, LaTeX, XSL-FO.
 
