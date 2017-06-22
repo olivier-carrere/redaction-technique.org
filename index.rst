@@ -18,7 +18,7 @@
 
    Puisqu'il traite des processus et des formats de rédaction technique, son
    contenu est cependant moins pertinent que son historique et que ses
-   branches Git.
+   branches `Git <https://github.com/olivier-carrere/redaction-technique.org/>`_.
 
 .. include:: silo.rst
 .. include:: integrer-la-documentation-aux-processus-de-developpement.rst
