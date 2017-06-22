@@ -14,9 +14,8 @@
    contenu est cependant moins pertinent que son historique et que ses
    branches `Git <https://github.com/olivier-carrere/redaction-technique.org/>`_.
 
-   Il a parlé, parle ou parlera un peu, beaucoup ou pas du tout des formats,
-   des outils et des tâches suivants : |rst|, |dita|, `scripts Bash`_, awk,
-   sed, expressions rationnelles, Python, gestion de
+   Il traite des formats, des outils et des tâches suivants : |rst|, |dita|,
+   `scripts Bash`_, awk, sed, expressions rationnelles, Python, gestion de
    versions, Git, compilation, `Makefile`_, Ant, XSLT, mise en page, HTML,
    `CSS`_, PDF, LaTeX, XSL-FO.
 
