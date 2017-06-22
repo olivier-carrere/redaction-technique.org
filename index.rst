@@ -29,6 +29,8 @@
 
    - :ref:`git-du-fichier-au-contenu`
    - :ref:`sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers`
+   - :ref:`creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-conditionnel`
+
 
 .. toctree::
    :hidden:

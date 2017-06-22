@@ -32,8 +32,4 @@ format cible :
 .. _PDF: download/redaction-techniqueorg.pdf
 .. _EPUB: download/redaction-techniqueorg.epub
 
-.. seealso::
-
-   - :ref:`creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-conditionnel`
-
 .. text review: yes
