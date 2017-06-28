@@ -10,11 +10,13 @@
 Un langage à balises
 ====================
 
-|dita| est un langage à balises : le |techwriter|
-structure l'information dans des fichiers sources sans mise en page,
-similaires aux fichiers sources de code informatique. L'utilisateur reçoit un
-document cible, par exemple un fichier PDF, où les balises sont remplacées par
-une mise en forme typographique.
+.. sidebar:: :awesome:`fa-bullhorn`
+
+   |dita| est un langage à balises : le |techwriter| structure l'information
+   dans des fichiers sources sans mise en page, similaires aux fichiers
+   sources de code informatique. L'utilisateur reçoit un document cible, par
+   exemple un fichier PDF, où les balises sont remplacées par une mise en
+   forme typographique.
 
 Si votre entreprise fournit à ses clients une documentation technique au format
 |ms-word|,

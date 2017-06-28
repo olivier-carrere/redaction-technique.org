@@ -10,11 +10,13 @@
 Les CMS : le *workflow* en prime, mais une fiabilité à tester
 =============================================================
 
-Les |cms|, ainsi dénommés pour des raisons
-purement marketing, mais dont la fonction se comprend mieux avec l'acronyme
-:abbr:`GED (système de gestion électronique de documents)`, apportent des
-notions de *workflow* et de gestion des liens qui s'avèrent précieuses lorsque
-l'on gère des documents modulaires.
+.. sidebar:: :awesome:`fa-bullhorn`
+
+   Les |cms|, ainsi dénommés pour des raisons purement marketing, mais dont la
+   fonction se comprend mieux avec l'acronyme :abbr:`GED (système de gestion
+   électronique de documents)`, apportent des notions de *workflow* et de
+   gestion des liens qui s'avèrent précieuses lorsque l'on gère des documents
+   modulaires.
 
 S'ils utilisent des formats monolithiques tels que |fm|, les rédacteurs
 techniques peuvent utiliser des |cms| tels que SharePoint, Alfresco ou

@@ -10,10 +10,12 @@
 Formats structurés et non structurés
 ====================================
 
-Les formats structurés favorisent la création de documents minimalistes,
-complets et cohérents. Ils permettent au |techwriter| de se
-concentrer sur le contenu et d'améliorer l'expérience utilisateur et
-l'utilisabilité de la documentation technique.
+.. sidebar:: :awesome:`fa-bullhorn`
+
+   Les formats structurés favorisent la création de documents minimalistes,
+   complets et cohérents. Ils permettent au |techwriter| de se concentrer sur
+   le contenu et d'améliorer l'expérience utilisateur et l'utilisabilité de la
+   documentation technique.
 
 Les informations contenues dans un document technique peuvent être catégorisées
 selon leur sens. Par défaut, |dita| propose

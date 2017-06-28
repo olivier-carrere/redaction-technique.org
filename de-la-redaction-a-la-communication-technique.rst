@@ -10,12 +10,14 @@
 De la rédaction à la communication technique
 ============================================
 
-Le but de la |comtech| est de transformer les prospects en
-clients satisfaits. Le |techwriter| fournit au marché l'information
-dont il a besoin pour sélectionner, évaluer et utiliser une solution de haute
-technologie. Au sein de l'entreprise, il est l'interface entre les services R&D
-et marketing. À l'extérieur, il crée le dialogue entre l'entreprise et ses
-différents publics.
+.. sidebar:: :awesome:`fa-bullhorn`
+
+   Le but de la |comtech| est de transformer les prospects en clients
+   satisfaits. Le |techwriter| fournit au marché l'information dont il a
+   besoin pour sélectionner, évaluer et utiliser une solution de haute
+   technologie. Au sein de l'entreprise, il est l'interface entre les services
+   R&D et marketing. À l'extérieur, il crée le dialogue entre l'entreprise et
+   ses différents publics.
 
 La |comtech| est souvent réduite à la |techwriting|.
 La rédaction technique est destinée à fournir la documentation des

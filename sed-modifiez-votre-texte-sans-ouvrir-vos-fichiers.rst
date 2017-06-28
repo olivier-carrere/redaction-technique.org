@@ -10,9 +10,12 @@
 sed : modifiez votre texte sans ouvrir vos fichiers
 ===================================================
 
-Les clones d'Unix sont peu utilisés pour gérer la documentation technique. Ceci
-est étrange si l'on songe à la pléthore d'outils disponibles sous ces
-plateformes pour manipuler du texte dans tous les sens.
+.. sidebar:: :awesome:`fa-bullhorn`
+
+   Les clones d'Unix sont peu utilisés pour gérer la documentation
+   technique. Ceci est étrange si l'on songe à la pléthore d'outils
+   disponibles sous ces plateformes pour manipuler du texte dans tous les
+   sens.
 
 Prenons l'exemple du dialogue entre entre M. Jourdain et son maître de
 philosophie, dans le *Bourgeois gentilhomme* de Molière :

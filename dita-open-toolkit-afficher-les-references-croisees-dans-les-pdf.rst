@@ -10,11 +10,13 @@
 DITA Open Toolkit : afficher les références croisées dans les PDF
 =================================================================
 
-Les références croisées sont un élément important d'une |doc|
-bien structurée. Elles permettent à l'utilisateur de naviguer
-facilement dans les briques d'information et sont un élément crucial de
-l'utilisabilité du document final. |dita-ot| les gère très bien, à
-condition d'effectuer quelques réglages.
+.. sidebar:: :awesome:`fa-bullhorn`
+
+   Les références croisées sont un élément important d'une |doc| bien
+   structurée. Elles permettent à l'utilisateur de naviguer facilement dans
+   les briques d'information et sont un élément crucial de l'utilisabilité du
+   document final. |dita-ot| les gère très bien, à condition d'effectuer
+   quelques réglages.
 
 Vous avez placé des balises *related-links* correctement formatées dans vos
 fichiers de contenu |dita|, ou mieux, une `reltable`_

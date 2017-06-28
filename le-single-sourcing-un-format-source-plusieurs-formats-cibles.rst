@@ -10,10 +10,12 @@
 Le single-sourcing : un format source, plusieurs formats cibles
 ===============================================================
 
-Le *single-sourcing* est un sujet qui a longtemps divisé les rédacteurs
-techniques : des supports de |techwriting| différents, tels qu'une
-aide en ligne et un manuel imprimé, doivent-ils proposer un contenu radicalement
-différent ou peuvent-ils être générés à partir du même contenu source ?
+.. sidebar:: :awesome:`fa-bullhorn`
+
+   Le *single-sourcing* est un sujet qui a longtemps divisé les rédacteurs
+   techniques : des supports de |techwriting| différents, tels qu'une aide en
+   ligne et un manuel imprimé, doivent-ils proposer un contenu radicalement
+   différent ou peuvent-ils être générés à partir du même contenu source ?
 
 Les contraintes de productivité et la réduction des coûts aidant, le débat a été
 tranché en faveur du *single-sourcing*. Le gain qualitatif, discutable, ne

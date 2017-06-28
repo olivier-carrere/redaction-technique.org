@@ -10,8 +10,10 @@
 Documents monolithiques ou modulaires
 =====================================
 
-Le format source peut reposer sur des fichiers monolithiques ou sur des
-grappes de fichiers modulaires.
+.. sidebar:: :awesome:`fa-bullhorn`
+
+   Le format source peut reposer sur des fichiers monolithiques ou sur des
+   grappes de fichiers modulaires.
 
 Les fichiers monolithiques (par exemple |ms-word|, |libreoffice| ou |fm|)
 centralisent tout le contenu dans un seul fichier, facile à manier, mais qui

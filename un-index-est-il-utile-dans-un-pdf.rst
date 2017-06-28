@@ -10,8 +10,10 @@
 Un index est-il utile dans un PDF ?
 ===================================
 
-À l'heure des documents dématérialisés, un index est-il un élément indispensable
-d'une bonne |doc| ?
+.. sidebar:: :awesome:`fa-bullhorn`
+
+   À l'heure des documents dématérialisés, un index est-il un élément
+   indispensable d'une bonne |doc| ?
 
 La recherche en plein texte semble avoir détrôné l'index. Les notices
 techniques ne sont plus qu'exceptionnellement fournies aux clients sous forme

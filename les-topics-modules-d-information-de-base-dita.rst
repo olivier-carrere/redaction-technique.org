@@ -10,11 +10,12 @@
 Les topics, modules d'information de base DITA XML
 ==================================================
 
-Les `topics`_
-sont les plus petites unités d'information autonomes gérées par |dita|.
-Chaque *topic* a un titre et un corps de texte. Il ne traite que d'un
-seul sujet. Il appartient donc au |techwriter| de se baser sur la
-modularité proposée par |dita| pour bien structurer l'information.
+.. sidebar:: :awesome:`fa-bullhorn`
+
+   Les `topics`_ sont les plus petites unités d'information autonomes gérées
+   par |dita|.  Chaque *topic* a un titre et un corps de texte. Il ne traite
+   que d'un seul sujet. Il appartient donc au |techwriter| de se baser sur la
+   modularité proposée par |dita| pour bien structurer l'information.
 
 Les *topics* sont sémantiquement typés. Il existe idéalement un type de
 *topic* par type d'information. |dita| propose par défaut des *topics* adaptés

@@ -10,14 +10,16 @@
 DocBook ou DITA XML ?
 =====================
 
-Certaines entreprises ont parfois un contenu existant au format `DocBook`_.
-Géré souvent par les acteurs les plus
-techniques de la société, il coexiste la plupart du temps avec d'autres contenus
-au format |fm| ou traitement de texte. S'il est décidé de fédérer tout le
-contenu d'entreprise sous un seul format, il semble naturel de capitaliser les
-efforts fournis sur la chaîne de création et de publication |db| et de
-sélectionner ce format. C'est pourtant se priver des gains de productivité
-spectaculaires offerts par |dita|.
+.. sidebar:: :awesome:`fa-bullhorn`
+
+   Certaines entreprises ont parfois un contenu existant au format `DocBook`_.
+   Géré souvent par les acteurs les plus techniques de la société, il coexiste
+   la plupart du temps avec d'autres contenus au format |fm| ou traitement de
+   texte. S'il est décidé de fédérer tout le contenu d'entreprise sous un seul
+   format, il semble naturel de capitaliser les efforts fournis sur la chaîne
+   de création et de publication |db| et de sélectionner ce format. C'est
+   pourtant se priver des gains de productivité spectaculaires offerts par
+   |dita|.
 
 Il est facile de générer du |db| à partir de |dita|. |dita-ot|
 propose par défaut ce format cible, au même titre que le PDF ou le

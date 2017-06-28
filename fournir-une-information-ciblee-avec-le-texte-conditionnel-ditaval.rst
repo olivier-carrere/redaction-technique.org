@@ -10,11 +10,13 @@
 Fournir une information ciblée avec le texte conditionnel ditaval
 =================================================================
 
-Un fichier `ditaval`_
-reprend le principe des lunettes que vous chaussez pour visualiser un film en 3D :
-le verre gauche masque une moitié de l'image, le verre droit en masque l'autre
-moitié. Mais seul le |techwriter| dispose de lunettes 3D et a une
-vision complète de l'information contenue dans le projet |dita|.
+.. sidebar:: :awesome:`fa-bullhorn`
+
+   Un fichier `ditaval`_ reprend le principe des lunettes que vous chaussez
+   pour visualiser un film en 3D : le verre gauche masque une moitié de
+   l'image, le verre droit en masque l'autre moitié. Mais seul le |techwriter|
+   dispose de lunettes 3D et a une vision complète de l'information contenue
+   dans le projet |dita|.
 
 Les destinataires de l'information disposent de lunettes
 avec deux verres gauches ou deux verres droits. Ils ne voient donc qu'une partie

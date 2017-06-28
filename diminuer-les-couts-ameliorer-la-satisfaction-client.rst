@@ -10,9 +10,11 @@
 Documentation technique : diminuer les coûts, améliorer la satisfaction client
 ==============================================================================
 
-La |doc|, c'est comme une ampoule : une ampoule basse
-consommation demande un investissement plus important en début de cycle de vie,
-mais a rapidement un coût plus faible.
+.. sidebar:: :awesome:`fa-bullhorn`
+
+   La |doc|, c'est comme une ampoule : une ampoule basse consommation demande
+   un investissement plus important en début de cycle de vie, mais a
+   rapidement un coût plus faible.
 
 Comme une ampoule basse consommation, un processus de |techwriting|
 industriel diminue les coûts. Il réduit également le *time to market*. À coût

@@ -10,11 +10,12 @@
 Centraliser les *conref* dans un fichier unique
 ===============================================
 
-Pour favoriser l'utilisation des `conref`_
-au sein d'une
-équipe de rédacteurs techniques, et également pour simplifier la maintenance
-des *conref*, il s'avère très efficace de centraliser tous les *conref* dans un
-fichier |dita| dédié.
+.. sidebar:: :awesome:`fa-bullhorn`
+
+   Pour favoriser l'utilisation des `conref`_ au sein d'une équipe de
+   rédacteurs techniques, et également pour simplifier la maintenance des
+   *conref*, il s'avère très efficace de centraliser tous les *conref* dans un
+   fichier |dita| dédié.
 
 Il est *a priori* plus simple, pour réutiliser un contenu d'un fichier |dita|
 existant, de pointer vers ce contenu sans l'extraire de son contexte

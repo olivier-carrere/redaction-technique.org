@@ -10,13 +10,15 @@
 Format source
 =============
 
-Le contenu d'un projet de |techwriting| est créé dans un format
-source, différent du format des livrables, le format cible. Pour reprendre une
-image fréquemment utilisée en développement logiciel, le format source est la
-recette de cuisine, le format cible, le plat. En photographie, le format source
-est le format `RAW`_, qui
-est généré par l'appareil photo, et sur lequel les photographes professionnels
-préféreront apporter les retouches, et le format cible, le format JPEG.
+.. sidebar:: :awesome:`fa-bullhorn`
+
+   Le contenu d'un projet de |techwriting| est créé dans un format source,
+   différent du format des livrables, le format cible. Pour reprendre une
+   image fréquemment utilisée en développement logiciel, le format source est
+   la recette de cuisine, le format cible, le plat. En photographie, le format
+   source est le format `RAW`_, qui est généré par l'appareil photo, et sur
+   lequel les photographes professionnels préféreront apporter les retouches,
+   et le format cible, le format JPEG.
 
 Les traitements de texte nous ont déshabitués à distinguer le fond de la
 forme. Mais confondre les deux entraîne beaucoup d'erreurs et de perte de temps.

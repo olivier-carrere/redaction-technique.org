@@ -10,12 +10,13 @@
 Imbriquer les *conref*
 ======================
 
-Pour des raisons de facilité de mise à jour et de maintenance du contenu |dita|,
-le |techwriter| doit limiter l'effet *poupée russe* et ne pas
-trop imbriquer les `conref`_.
-Un seul niveau
-d'imbrication (un *conref* imbriqué dans un autre) me semble le seuil au-delà
-duquel le contenu peut vite devenir ingérable.
+.. sidebar:: :awesome:`fa-bullhorn`
+
+   Pour des raisons de facilité de mise à jour et de maintenance du contenu
+   |dita|, le |techwriter| doit limiter l'effet *poupée russe* et ne pas trop
+   imbriquer les `conref`_.  Un seul niveau d'imbrication (un *conref*
+   imbriqué dans un autre) me semble le seuil au-delà duquel le contenu peut
+   vite devenir ingérable.
 
 Dans l'exemple ci-dessous, le *conref* source *see-admin-guide* contient le
 *conref* cible *admin-guide-title* :

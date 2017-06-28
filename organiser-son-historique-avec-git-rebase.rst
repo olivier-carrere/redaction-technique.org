@@ -10,9 +10,12 @@
 Organiser son historique avec Git rebase
 ========================================
 
-Git est d'un abord déroutant. Ses *workflows* s'appliquent à du contenu plutôt
-qu'à des fichiers. Résultat : le travail de groupe et la gestion de différentes
-versions concurrentes d'un même contenu deviennent beaucoup plus simples.
+.. sidebar:: :awesome:`fa-bullhorn`
+
+   Git est d'un abord déroutant. Ses *workflows* s'appliquent à du contenu
+   plutôt qu'à des fichiers. Résultat : le travail de groupe et la gestion de
+   différentes versions concurrentes d'un même contenu deviennent beaucoup
+   plus simples.
 
 Git effectue des *commits* atomiques : il applique des lots de modifications sur
 un contenu souvent réparti sur plusieurs fichiers, au lieu de gérer

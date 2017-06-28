@@ -10,9 +10,11 @@
 Git : du fichier au contenu
 ===========================
 
-Vous êtes habitué à manipuler des fichiers ? Git vous invite à penser
-autrement. Avantage : vous avez une maîtrise beaucoup plus grande de votre
-contenu.
+.. sidebar:: :awesome:`fa-bullhorn`
+
+   Vous êtes habitué à manipuler des fichiers ? Git vous invite à penser
+   autrement. Avantage : vous avez une maîtrise beaucoup plus grande de votre
+   contenu.
 
 Qu'est-ce qu'un fichier ? Pour vous, un contenu, image, texte, feuille de calcul
 ou autre, identifié par un nom. Pour votre système d'exploitation, une suite de

@@ -10,9 +10,11 @@
 Protéger les informations confidentielles
 =========================================
 
-Le puissant mécanisme `conref`_ de |dita|
-se prête à d'autres applications que la réduction des coûts. Par exemple, le
-|techwriter| peut masquer des informations dans le code source.
+.. sidebar:: :awesome:`fa-bullhorn`
+
+   Le puissant mécanisme `conref`_ de |dita| se prête à d'autres applications
+   que la réduction des coûts. Par exemple, le |techwriter| peut masquer des
+   informations dans le code source.
 
 Voici un cas original d'utilisation des *conref* : imaginez que vous devez
 faire traduire un fichier contenant des informations confidentielles qui ne

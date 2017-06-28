@@ -10,10 +10,12 @@
 Partager des blocs d'information atomiques avec les *conref*
 ============================================================
 
-Lorsque le |techwriter| veut réutiliser des blocs d'information
-|dita| plus petits qu'une section, il doit les partager au niveau des
-fichiers de contenu *dita* et non dans les structures de table des matières
-*ditamap*, grâce au mécanisme `conref`_.
+.. sidebar:: :awesome:`fa-bullhorn`
+
+   Lorsque le |techwriter| veut réutiliser des blocs d'information |dita| plus
+   petits qu'une section, il doit les partager au niveau des fichiers de
+   contenu *dita* et non dans les structures de table des matières *ditamap*,
+   grâce au mécanisme `conref`_.
 
 Le principe des *conref* est simple : lorsqu'un *conref* est mentionné au
 niveau d'un nœud XML donné, tout le contenu du nœud cible est remplacé par le

@@ -10,9 +10,11 @@
 Formats et outils
 =================
 
-Lorsqu'une entreprise décide d'industrialiser la |techwriting|, elle
-se pose d'emblée la question des outils. Or, plutôt que les outils, ce sont les
-formats sous-jacents qui sont le point essentiel.
+.. sidebar:: :awesome:`fa-bullhorn`
+
+   Lorsqu'une entreprise décide d'industrialiser la |techwriting|, elle se
+   pose d'emblée la question des outils. Or, plutôt que les outils, ce sont
+   les formats sous-jacents qui sont le point essentiel.
 
 La plupart des éditeurs, afin de disposer d'un marché captif obligé de
 régulièrement payer des mises à jour de leurs produits, ont en effet développé

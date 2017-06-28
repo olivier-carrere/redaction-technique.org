@@ -10,8 +10,10 @@
 Didacticiels DITA XML et XSL-FO
 ===============================
 
-Les didacticiels suivants aideront le |techwriter| à mettre en
-place et à utiliser une chaîne de création et de publication |dita| libre.
+.. sidebar:: :awesome:`fa-bullhorn`
+
+   Les didacticiels suivants aideront le |techwriter| à mettre en place et à
+   utiliser une chaîne de création et de publication |dita| libre.
 
 |dita| est un langage de rédaction structurée qui permet de créer des
 documents sans se soucier de leur aspect final sur différents supports. XSL-FO

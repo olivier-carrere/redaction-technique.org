@@ -10,10 +10,12 @@
 Définition du projet
 ====================
 
-Un projet de |techwriting| apporte une valeur ajoutée aux produits et
-aide l'entreprise à mieux commercialiser son offre sur son marché. Mais, comme
-pour les projets de R&D ou de marketing, la définition du projet permet d'en
-estimer le budget et les retombées.
+.. sidebar:: :awesome:`fa-bullhorn`
+
+   Un projet de |techwriting| apporte une valeur ajoutée aux produits et aide
+   l'entreprise à mieux commercialiser son offre sur son marché. Mais, comme
+   pour les projets de R&D ou de marketing, la définition du projet permet
+   d'en estimer le budget et les retombées.
 
 Communiquer des informations techniques sans savoir à qui ni dans quel but est
 un effort vain. Avant d'initier un projet de |techwriting|,

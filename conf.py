@@ -16,8 +16,7 @@ import sys, os
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-#sys.path.insert(0, os.path.abspath('.'))
-
+sys.path.insert(0, '.')
 # -- General configuration -----------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
@@ -25,8 +24,7 @@ import sys, os
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.todo', 'sphinx.ext.viewcode']
-
+extensions = ['sphinx.ext.todo', 'sphinx.ext.viewcode', 'sphinxcontrib_awesome']
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -89,6 +87,19 @@ pygments_style = 'sphinx'
 rst_epilog = u"""
 
 .. substitutions
+.. |comtech| replace:: **communication technique**
+.. |db| replace:: **DocBook**
+.. |dita| replace:: **DITA XML**
+.. |doc| replace:: **documentation technique**
+.. |flare| replace:: **Flare**
+.. |fm| replace:: **FrameMaker**
+.. |libreoffice| replace:: **LibreOffice**
+.. |ms-word| replace:: **MS Word**
+.. |raspi3| replace:: **Raspberry Pi 3**
+.. |rst| replace:: **reStructuredText**
+.. |site| replace:: blog
+.. |techwriter| replace:: **rédacteur technique**
+.. |techwriting| replace:: **rédaction technique**
 
 .. |cms| replace:: :abbr:`CMS (Content Management System)`
 .. |dita-ot| replace:: :abbr:`DITA-OT (DITA Open Toolkit)`
