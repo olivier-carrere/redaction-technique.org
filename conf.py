@@ -39,7 +39,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'redaction-technique.org'
-copyright = u'CC BY-NC 4.0 - 2011 - 2017, Olivier Carrère'
+#copyright = u'CC BY-NC 4.0 - 2011 - 2017, Olivier Carrère'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -204,7 +204,7 @@ html_static_path = ['_static']
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
-#html_last_updated_fmt = '%b %d, %Y'
+html_last_updated_fmt = '%Y'
 
 # If true, SmartyPants will be used to convert quotes and dashes to
 # typographically correct entities.
