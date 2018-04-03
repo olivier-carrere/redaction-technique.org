@@ -138,6 +138,7 @@ quelques minutes.
 
 .. seealso::
 
-   :ref:`creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-rest-texte-conditionnel`
+   - :ref:`creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-rest-texte-conditionnel`
+   - :ref:`creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-texte-conditionnel`
 
 .. text review: yes

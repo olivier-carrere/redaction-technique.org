@@ -62,5 +62,6 @@ c'est par ici !
    expressions-regulieres-python
    didacticiels-dita-xml-xsl-fo
    creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-rest-texte-conditionnel
+   creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-texte-conditionnel
 
 .. text review: yes
