@@ -61,5 +61,6 @@ c'est par ici !
    sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers
    expressions-regulieres-python
    didacticiels-dita-xml-xsl-fo
+   creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-rest-texte-conditionnel
 
 .. text review: yes

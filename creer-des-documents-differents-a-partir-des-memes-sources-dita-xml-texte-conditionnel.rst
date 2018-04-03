@@ -136,4 +136,8 @@ quelques minutes.
   - aux plombiers et aux électriciens,
   - uniquement aux plombiers.
 
+.. seealso::
+
+   :ref:`creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-rest-texte-conditionnel`
+
 .. text review: yes
