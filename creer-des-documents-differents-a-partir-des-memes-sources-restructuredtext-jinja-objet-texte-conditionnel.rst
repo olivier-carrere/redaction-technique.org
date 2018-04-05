@@ -319,7 +319,39 @@ inclure ou exclure des blocs de texte selon leurs attributs.
    .. code-block:: console
    
       $ ./profiling.py plumber autumn
-	  
+
+   Les plus attentifs auront remarqué que ce script rend inutile la
+   condition *else* du fichier de contenu, puisque l'on teste la
+   valeur des paramètres avant son exécution.
+
+   Pour permettre le passage de valeurs non prévues et afficher le
+   contenu du bloc *else*, il faut modifier le code comme suit :
+
+   .. code-block:: python
+
+      #!/usr/bin/python
+      # coding: utf8
+      class Audience:
+          def __init__(self,pers,seas):
+              self.personae=pers
+              self.season=seas
+
+      import jinja2
+      import sys
+      reload(sys)
+      sys.setdefaultencoding('utf8')
+
+      if len(sys.argv) == 3:
+          pubparam=str(sys.argv[1])
+	  seasparam=str(sys.argv[2])
+	  user=Audience(pubparam,seasparam)
+	  env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'))
+	  template = env.get_template('texte-conditionnel.rst')
+	  string=template.render(public=user)
+	  print(string)
+      else:
+          print('Veuillez indiquer le public et la saison')
+
 .. seealso::
 
    - :ref:`creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-conditionnel`
