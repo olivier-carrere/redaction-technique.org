@@ -212,51 +212,8 @@ inclure ou exclure des blocs de texte selon leurs attributs.
    programmation orientée objet, le test d'égalité `==` étant plus
    parlant pour la plupart des gens.
    
-   .. code-block:: rest
-		
-      Utilisation du texte conditionnel
-      =================================
-
-      {% if public.personae == "electrician" %}
-
-      .. admonition:: Danger pour les électriciens
-
-	 Risque d'électrocution
-
-	 Ne touchez pas les fils électriques.
-
-      {% elif public.personae == "plumber" and public.season == "winter" %}
-
-      .. admonition:: Danger pour les plombiers
-
-	 Risque de fracture
-
-	 Ne plongez pas dans la piscine gelée.
-
-      {% elif public.personae == "plumber" and public.season == "summer" %}
-
-      .. admonition:: Danger pour les plombiers
-
-	 Risque d'hydrocution
-
-	 Ne plongez pas dans l'eau froide lorsqu'il fait chaud.
-
-      {% elif public.personae == "plumber" and public.season == "spring" or public.season == "autumn" %}
-
-      .. admonition:: Danger pour les plombiers
-
-	 Risque de quelque chose
-
-	 Ne plongez pas dans la piscine, on ne sait jamais.
-
-      {% else %}
-
-      .. admonition:: Aucun danger
-
-	 Si vous n'êtes ni plombier, ni électricien, vous ne courez
-	 aucun danger.
-
-      {% endif %}
+   .. literalinclude:: code/texte-conditionnel.rst
+      :language: rest
       
    Il est plus économique d'utiliser une seule classe d'objets, même
    si elle mélange un peu les choux et les carottes (autant dans cet
@@ -286,33 +243,8 @@ inclure ou exclure des blocs de texte selon leurs attributs.
 #. Modifiez votre script pour indiquer le public et la saison en
    paramètres :
 
-   .. code-block:: python
-
-      #!/usr/bin/python
-      # coding: utf8
-      class Audience:
-          def __init__(self,pers,seas):
-              self.personae=pers
-              self.season=seas
-        
-      import jinja2
-      import sys
-      reload(sys)
-      sys.setdefaultencoding('utf8')
-
-      if len(sys.argv) == 3:
-          pubparam=str(sys.argv[1])
-	  seasparam=str(sys.argv[2])
-	  if pubparam in ('electrician','plumber') and seasparam in ('winter','spring', 'summer', 'autumn'):
-              user=Audience(pubparam,seasparam)
-              env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'))
-              template = env.get_template('texte-conditionnel.rst')
-              string=template.render(public=user)
-              print(string)
-	  else:
-	      print('Valeurs admises :\nelectrician ou plumber en 1er paramètre\nwinter,spring, summer, autumn en 2nd paramètre')
-      else:
-          print('Veuillez indiquer le public et la saison')
+   .. literalinclude:: code/profiling.py
+      :language: python3
 
    Utilisation :
 
