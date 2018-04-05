@@ -208,7 +208,90 @@ attributs.
       file = open('texte-conditionnel.rst','w') 
       file.write(string) 
       file.close() 
-	 
+
+#. Utilisez une variante plus lisible au niveau du fichier de contenu :
+
+   Il est peut-être plus intuitif d'indiquer dans le fichier de
+   contenu une valeur conviviale sous forme de chaîne de caractères.
+   Surtout si les rédacteurs ne sont pas familiarisés avec la
+   programmation orientée objet, le test d'égalité `==` étant plus
+   parlant pour la plupart des gens.
+   
+   .. code-block:: rest
+		
+      Utilisation du texte conditionnel
+      =================================
+
+      {% if public.personae == "electrician" %}
+
+      .. admonition:: Danger pour les électriciens
+
+	 Risque d'électrocution
+
+	 Ne touchez pas les fils électriques.
+
+      {% elif public.personae == "plumber" and public.season == "winter" %}
+
+      .. admonition:: Danger pour les plombiers
+
+	 Risque de fracture
+
+	 Ne plongez pas dans la piscine gelée.
+
+      {% elif public.personae == "plumber" and public.season == "summer" %}
+
+      .. admonition:: Danger pour les plombiers
+
+	 Risque d'hydrocution
+
+	 Ne plongez pas dans l'eau froide lorsqu'il fait chaud.
+
+      {% elif public.personae == "plumber" and public.season == "spring" or public.season == "autumn" %}
+
+      .. admonition:: Danger pour les plombiers
+
+	 Risque de quelque chose
+
+	 Ne plongez pas dans la piscine, on ne sait jamais.
+
+      {% else %}
+
+      .. admonition:: Aucun danger
+
+	 Si vous n'êtes ni plombier, ni électricien, vous ne courez
+	 aucun danger.
+
+      {% endif %}
+      
+   Il est plus économique d'utiliser une seule classe d'objets, même
+   si elle mélange un peu les choux et les carottes (autant dans cet
+   exemple tiré par les cheveux que dans la vraie vie, où l'on
+   mélangerait des publics, des versions, des plateformes, etc.).
+
+   .. code-block:: python
+
+      #!/usr/bin/python
+      class Audience:
+          def __init__(self,pers,seas):
+              self.personae=pers
+              self.season=seas
+
+      import jinja2
+      import sys
+      reload(sys)
+      sys.setdefaultencoding('utf8')
+
+      user=Audience("plumber","winter")
+      env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'))
+      template = env.get_template('texte-conditionnel.rst')
+      string=template.render(public=user)
+
+      file = open('texte-conditionnel.rst','w') 
+      file.write(string) 
+      file.close() 
+
+
+
 .. seealso::
 
    - :ref:`creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-conditionnel`
