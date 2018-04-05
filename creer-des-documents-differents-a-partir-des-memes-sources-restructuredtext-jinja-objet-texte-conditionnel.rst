@@ -9,10 +9,9 @@ Créer des documents différents à partir des mêmes sources *via* Jinja (méth
 =====================================================================================
 
 Le script Python :file:`profiling.py` ci-dessous permet de profiler du
-contenu en *preprocessing* à l'aide du puissant moteur de modèle Avec
-`Jinja`_, vous pouvez définir des objets (audience, plateforme,
-version, etc.) et inclure ou exclure des blocs de texte selon leurs
-attributs.
+contenu à l'aide du puissant moteur de modèle Avec `Jinja`_, vous
+pouvez définir des objets (audience, plateforme, version, etc.) et
+inclure ou exclure des blocs de texte selon leurs attributs.
 
 #. Créez le fichier :file:`texte-conditionnel.rst` suivant :
 
@@ -76,9 +75,7 @@ attributs.
       template = env.get_template('texte-conditionnel.rst')
       string=template.render(public=user)
 
-      file = open('texte-conditionnel.rst','w') 
-      file.write(string) 
-      file.close() 
+      print(string)
 
 #. Le contenu du fichier :file:`texte-conditionnel.rst` est écrasé et
    ne contient plus que les informations destinées aux électriciens.
@@ -205,9 +202,7 @@ attributs.
       template = env.get_template('texte-conditionnel.rst')
       string=template.render(public=user,seas=when)
 
-      file = open('texte-conditionnel.rst','w') 
-      file.write(string) 
-      file.close() 
+      print(string)
 
 #. Utilisez une variante plus lisible au niveau du fichier de contenu :
 
@@ -286,11 +281,7 @@ attributs.
       template = env.get_template('texte-conditionnel.rst')
       string=template.render(public=user)
 
-      file = open('texte-conditionnel.rst','w') 
-      file.write(string) 
-      file.close() 
-
-
+      print(string)
 
 .. seealso::
 
