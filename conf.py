@@ -141,7 +141,6 @@ rst_epilog = u"""
 .. _TIFF: http://fr.wikipedia.org/wiki/Tagged_Image_File_Format
 .. _Trac: http://trac.edgewall.org
 .. _Unison: http://www.cis.upenn.edu/~bcpierce/unison
-.. _Viadeo: http://fr.viadeo.com/fr/profile/olivier.carrere
 .. _XML::Twig: http://www.xmltwig.org/xmltwig/
 .. _XPATH: http://fr.wikipedia.org/wiki/XPath
 .. _XSD: http://fr.wikipedia.org/wiki/XML_Schema

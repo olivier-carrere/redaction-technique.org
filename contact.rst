@@ -10,7 +10,7 @@
 Contact
 =======
 
-Vous pouvez me contacter *via* mes profils `LinkedIn`_ et `Viadeo`_.
+Vous pouvez me contacter *via* mon profil `LinkedIn`_.
 
 .. figure:: graphics/olivier-carrere.jpg
 
