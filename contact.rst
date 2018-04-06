@@ -12,4 +12,6 @@ Contact
 
 Vous pouvez me contacter *via* mes profils `LinkedIn`_ et `Viadeo`_.
 
+.. figure:: graphics/olivier-carrere.jpg
+
 .. text review: yes
