@@ -39,7 +39,6 @@ html:
 	$ sed -i conf.py -f conditional-text/html.sed
 	$ $(PNG)
 	$ inkscape -w 60 -f graphics/pdf.svg -e graphics/pdf.png
-	$ inkscape -w 60 -f graphics/epub.svg -e graphics/epub.png
 	$ inkscape -w 120 -f graphics/git.svg -e graphics/git.png
 	$ inkscape -w 180 -f graphics/redaction-technique.svg -e graphics/redaction-technique.png
 	$ sed -i "s,\(\.\. figure::.*\)\.svg,\1\.png," *.rst
