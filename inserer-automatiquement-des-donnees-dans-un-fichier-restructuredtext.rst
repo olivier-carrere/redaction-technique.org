@@ -71,4 +71,5 @@ Vous minimisez ainsi le risque d'erreurs et l'effort de mise à jour.
 
 .. seealso::
 
-   :ref:`inserer-automatiquement-des-donnees-dans-un-fichier-dita-xml`
+   - :ref:`inserer-automatiquement-des-donnees-dans-un-fichier-dita-xml`
+   - :ref:`lire-des-informations-base-de-donnees`
