@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2 Topic//EN" "/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
+<topic id="produits-et-versions">
+  <title>Produits et versions</title>
+  <body>
+    <p>Dianthus</p>
+    <ul>
+      <li>1.0</li>
+      <li>1.5</li>
+      <li>2.3</li>
+    </ul>
+    <p>Geum</p>
+    <ul>
+      <li>1.0</li>
+      <li>1.5</li>
+      <li>2.3</li>
+    </ul>
+    <p>Prunus</p>
+    <ul>
+      <li>1.0</li>
+      <li>1.5</li>
+      <li>2.3</li>
+    </ul>
+  </body>
+</topic>

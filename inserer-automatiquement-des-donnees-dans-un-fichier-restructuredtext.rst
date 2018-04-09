@@ -3,10 +3,10 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. _inserer-automatiquement-des-donnees-dans-un-fichier:
+.. _inserer-automatiquement-des-donnees-dans-un-fichier-restructuredtext:
 
-Insérer automatiquement des données dans un fichier
-===================================================
+Insérer automatiquement des données dans un fichier reStructuredText
+====================================================================
 
 Supposons que vous deviez présenter 3 produits, *Dianthus*, *Geum* et
 *Prunus*, chacun déclinés dans trois versions *1.0*, *1.5* et *2.3*.
@@ -69,3 +69,6 @@ vous pouvez les insérer automatiquement grâce à `Jinja`_ et Python.
 
 Vous minimisez ainsi le risque d'erreurs et l'effort de mise à jour.
 
+.. seealso::
+
+   :ref:`inserer-automatiquement-des-donnees-dans-un-fichier-dita-xml`

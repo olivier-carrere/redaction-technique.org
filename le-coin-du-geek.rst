@@ -64,6 +64,7 @@ c'est par ici !
    creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-rest-texte-conditionnel
    creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-texte-conditionnel
    creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-objet-texte-conditionnel
-   inserer-automatiquement-des-donnees-dans-un-fichier
-   
+   inserer-automatiquement-des-donnees-dans-un-fichier-restructuredtext
+   inserer-automatiquement-des-donnees-dans-un-fichier-dita-xml
+
 .. text review: yes
