@@ -66,6 +66,6 @@ c'est par ici !
    creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-objet-texte-conditionnel
    inserer-automatiquement-des-donnees-dans-un-fichier-restructuredtext
    inserer-automatiquement-des-donnees-dans-un-fichier-dita-xml
-   lire-des-informations-base-de-donnees
+   inserer-automatiquement-des-donnees-sql-dans-un-fichier-restructuredtext
 
 .. text review: yes

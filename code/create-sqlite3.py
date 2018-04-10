@@ -7,8 +7,7 @@ try:
 
     cursor=db.cursor()
 
-    cursor.execute('''create table products (
-        id integer primary key,
+    cursor.execute('''CREATE TABLE products (
         product text,
         version text)''')
 

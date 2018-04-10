@@ -36,4 +36,4 @@ Nous voulons automatiser la génération du fichier DITA suivant :
 .. seealso::
 
    - :ref:`inserer-automatiquement-des-donnees-dans-un-fichier-restructuredtext`
-   - :ref:`lire-des-informations-base-de-donnees`
+   - :ref:`inserer-automatiquement-des-donnees-sql-dans-un-fichier-restructuredtext`
