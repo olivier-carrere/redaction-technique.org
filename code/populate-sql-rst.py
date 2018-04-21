@@ -9,29 +9,27 @@ template = env.get_template('modele-sql.rst')
 print('Produits et versions\n====================')
 
 try:
-    db=sqlite3.connect('productdb.db')
+    db = sqlite3.connect('productdb.db')
 
-    cursor=db.cursor()
+    cursor = db.cursor()
 
-    for myprod in ("dianthus","geum","prunus"):
+    for myprod in ("dianthus", "geum", "prunus"):
         t = (myprod,)
         cursor.execute('SELECT version FROM products WHERE product = ?', t)
-        mylist=[]
+        mylist = []
         for row in cursor:
             mylist.append('{}'.format(*row))
-        
+
         data = {
             'product': [myprod],
             'version': mylist
         }
 
         print(template.render(data))
-    
+
     cursor.close()
     db.close()
 
 except:
     print('Erreur lors de la lecture de la base.')
     exit(1)
-
-
