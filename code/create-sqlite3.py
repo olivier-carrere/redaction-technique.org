@@ -3,9 +3,9 @@
 import sqlite3
 
 try:
-    db=sqlite3.connect('productdb.db')
+    db = sqlite3.connect('productdb.db')
 
-    cursor=db.cursor()
+    cursor = db.cursor()
 
     cursor.execute('''CREATE TABLE products (
         product text,
