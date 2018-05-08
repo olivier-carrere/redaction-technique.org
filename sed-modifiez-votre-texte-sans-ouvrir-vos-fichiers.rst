@@ -296,6 +296,7 @@ outil muni d'une interface graphique, ou sur des fichiers binaires.
 
 .. seealso::
 
+   - :ref:`jourdainisation-en-ligne-python`
    - :ref:`expressions-regulieres-python`
 
 .. text review: yes

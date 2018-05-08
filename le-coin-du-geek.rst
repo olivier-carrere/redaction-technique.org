@@ -57,6 +57,7 @@ c'est par ici !
 .. toctree::
    :hidden:
 
+   jourdainisation-en-ligne-python
    raspberry-pi-plateforme-documentation
    sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers
    expressions-regulieres-python

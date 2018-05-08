@@ -1,0 +1,51 @@
+body {
+  font-family:      Verdana, Geneva, Arial, sans-serif;
+  font-size:        medium;
+  background-color: white;
+  margin-top:       5%;
+  margin-bottom:    5%;
+  margin-left:      5%;
+  margin-right:     5%;
+  border:           1px dotted gray;
+  padding:          1px 1px 1px 1px;
+}
+a {
+  text-decoration:  none; 
+  font-weight:      400; 
+}
+a:hover {
+  text-decoration:  underline;
+}
+a img {
+  border:           0;
+}
+h2 {
+  font-size:        100%;
+}
+
+/*** Tables ***/
+
+table {
+font-size:          1em;
+background-color:   white;
+border:             1px solid #909090;
+color:              white;
+padding:            1px 1px 1px;
+border-collapse:    collapse;
+}
+
+td, th {
+border:             thin dotted gray;
+}
+
+/*** Inputs ***/
+input[type=text] {
+  font-size:        100%;
+  width:            15em;
+}
+input[type=submit] {
+  font-size:        105%;
+}
+select {
+  font-size:        105%;
+}

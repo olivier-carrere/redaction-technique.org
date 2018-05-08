@@ -22,6 +22,7 @@ le fameux exemple du *Bourgeois gentilhomme* :
 
 .. seealso::
 
+   - :ref:`jourdainisation-en-ligne-python`
    - :ref:`sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers`
 
 .. text review: yes
