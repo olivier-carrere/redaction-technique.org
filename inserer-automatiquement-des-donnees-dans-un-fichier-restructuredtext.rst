@@ -73,3 +73,4 @@ Vous minimisez ainsi le risque d'erreurs et l'effort de mise à jour.
 
    - :ref:`inserer-automatiquement-des-donnees-dans-un-fichier-dita-xml`
    - :ref:`inserer-automatiquement-des-donnees-sql-dans-un-fichier-restructuredtext`
+   - :ref:`inserer-automatiquement-des-donnees-excel-dans-un-fichier-restructuredtext`
