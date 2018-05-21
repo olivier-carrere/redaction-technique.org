@@ -2,39 +2,34 @@
 # coding: utf8
 from openpyxl import load_workbook
 
+
+def titre(title, ornament):
+    print(title)
+    for i in title:
+        print(ornament, end='')
+    print('\n')
+
+
+def contenu(mincol, maxcol, minrow, maxrow):
+    for row in ws.iter_rows(min_col=mincol, max_col=maxcol,
+                            min_row=minrow, max_row=maxrow):
+        for cell in row:
+            print('- ' + cell.value)
+    print()
+
+# Charger le fichier Excel en lecture seule
 wb = load_workbook(filename='produits.xlsx', read_only=True)
 # Extraire le classeur actif
 ws = wb.active
 
-title = 'Produits et versions'
-print(title)
-for i in title:
-    print('=', end='')
-print('\n')
+# Afficher le contenu ReST à l'écran
+titre('Produits et versions', '=')
 
-dianthus = ws['A1'].value
-print(dianthus)
-for i in dianthus:
-    print('-', end='')
-print('\n')
-for row in ws.iter_rows(min_col=1, max_col=1, min_row=2, max_row=4):
-    for cell in row:
-        print('- ' + cell.value)
+titre(ws['A1'].value, '-')
+contenu(1, 1, 2, 4)
 
-geum = ws['B1'].value
-print('\n' + geum)
-for i in geum:
-    print('-', end='')
-print('\n')
-for row in ws.iter_rows(min_col=2, max_col=2, min_row=2, max_row=4):
-    for cell in row:
-        print('- ' + cell.value)
+titre(ws['B1'].value, '-')
+contenu(2, 2, 2, 4)
 
-prunus = ws['C1'].value
-print('\n' + prunus)
-for i in prunus:
-    print('-', end='')
-print('\n')
-for row in ws.iter_rows(min_col=3, max_col=3, min_row=2, max_row=4):
-    for cell in row:
-        print('- ' + cell.value)
+titre(ws['C1'].value, '-')
+contenu(3, 3, 2, 4)
