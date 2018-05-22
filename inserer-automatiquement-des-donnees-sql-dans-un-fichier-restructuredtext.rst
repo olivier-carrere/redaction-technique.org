@@ -72,4 +72,3 @@ publiées au format PDF, HTML ou autre.
 
    - :ref:`inserer-automatiquement-des-donnees-dans-un-fichier-dita-xml`
    - :ref:`inserer-automatiquement-des-donnees-dans-un-fichier-restructuredtext`
-   - :ref:`inserer-automatiquement-des-donnees-excel-dans-un-fichier-restructuredtext`

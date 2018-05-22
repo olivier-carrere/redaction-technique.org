@@ -1,9 +1,12 @@
-.. Copyright 2011-2017 Olivier Carrère
+.. Copyright 2018 Olivier Carrère
 .. Cette œuvre est mise à disposition selon les termes de la licence Creative
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-.. code review: no code
+.. _inserer-automatiquement-des-donnees-excel-dans-un-fichier-restructuredtext:
+
+Insérer automatiquement des données Excel dans un fichier reStructuredText
+==========================================================================
 
 .. sidebar:: :awesome:`fa-history` Modifications récentes
 
@@ -11,30 +14,92 @@
       :detailed-message-pre: True
       :revisions: 3
 
-Ce |site| est conçu et réalisé par un |techwriter| spécialisé dans
-l'informatique.
+Il est fréquent que les données d'entreprise se trouvent dispersées
+dans différents référentiels, bases de données, fichiers de traitement
+de texte ou feuilles de calcul.
 
-Puisqu'il traite des processus et des formats de rédaction technique, son
-contenu est cependant moins pertinent que son historique et que ses
-branches `Git <https://github.com/olivier-carrere/redaction-technique.org/>`_.
+Plutôt que de dupliquer l'information pour générer la documentation
+utilisateur, il est largement préférable de puiser à la source et de
+l'extraire directement des divers référentiels.
 
-Il traite des formats, des outils et des tâches suivants : |rst|, |dita|,
-`scripts Bash`_, awk, sed, expressions rationnelles, Python, gestion de
-versions, Git, compilation, `Makefile`_, Ant, XSLT, mise en page, HTML,
-`CSS`_, PDF, LaTeX, XSL-FO.
+Supposons que nous disposions d'un fichier Excel contenant des noms de
+produits avec leurs versions :
 
-.. include:: silo.rst
-.. include:: integrer-la-documentation-aux-processus-de-developpement.rst
-.. include:: les-sources-de-ce-document-sont-gerees-sous-git.rst
-.. include:: formats-sources.rst
-.. include:: formats-cibles.rst
+.. exceltable::
+   :file: code/produits.xls
+   :header: 1
+   :selection: A1:C4
+
+Le contenu ci-dessus est directement extrait d’un fichier Excel, mais
+nous souhaitons le présenter sous forme de sous-sections et de listes
+à puces.
+	       
+Nous pouvons générer le fichier source de la documentation via le
+script Python suivant :
+
+.. literalinclude:: code/populate-xlsx.py
+   :language: python3
+
+À l'exécution, le contenu suivant s'affiche :
+
+.. code-block:: rest
+
+   Produits et versions
+   ====================
+
+   Dianthus
+   --------
+
+   - 1.0
+   - 1.1
+   - 1.2
+
+   Geum
+   ----
+
+   - 1.5
+   - 1.7
+   - 3.5
+
+   Prunus
+   ------
+
+   - 2.3
+   - 2.5
+   - 2.7
+
+Une fois compilé via Sphinx, ce code source produit un affichage HTML
+similaire à celui-ci :
+
+Produits et versions
+--------------------
+
+Dianthus
+~~~~~~~~
+
+- 1.0
+- 1.1
+- 1.2
+
+Geum
+~~~~
+
+- 1.5
+- 1.7
+- 3.5
+
+Prunus
+~~~~~~
+
+- 2.3
+- 2.5
+- 2.7
 
 .. seealso::
 
-   - :ref:`git-du-fichier-au-contenu`
-   - :ref:`sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers`
-   - :ref:`creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-conditionnel`
-
+   - :ref:`inserer-automatiquement-des-donnees-dans-un-fichier-dita-xml`
+   - :ref:`inserer-automatiquement-des-donnees-dans-un-fichier-restructuredtext`
+   - :ref:`inserer-automatiquement-des-donnees-sql-dans-un-fichier-restructuredtext`
 
 .. toctree::
    :hidden:
@@ -43,6 +108,5 @@ versions, Git, compilation, `Makefile`_, Ant, XSLT, mise en page, HTML,
    redaction-technique-un-processus-industriel
    format-structure-dita-xml
    le-coin-du-geek
+   a-propos-de-ce-blog
    contact
-
-.. text review: yes
