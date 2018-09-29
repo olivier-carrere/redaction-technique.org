@@ -68,5 +68,6 @@ c'est par ici !
    inserer-automatiquement-des-donnees-dans-un-fichier-restructuredtext
    inserer-automatiquement-des-donnees-dans-un-fichier-dita-xml
    inserer-automatiquement-des-donnees-sql-dans-un-fichier-restructuredtext
+   inserer-automatiquement-des-donnees-excel-dans-un-fichier-restructuredtext
 
 .. text review: yes

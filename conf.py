@@ -127,21 +127,27 @@ rst_epilog = u"""
 .. _DocZone: http://www.doczone.com
 .. _Flask: http://flask.pocoo.org/
 .. _FrameMaker: http://en.wikipedia.org/wiki/Adobe_FrameMaker
+.. _Git for windows: https://github.com/git-for-windows/git/releases/download/v2.18.0.windows.1/Git-2.18.0-64-bit.exe
 .. _Git: http://www.git-scm.com
+.. _GitHub Desktop: https://desktop.github.com/
 .. _GitHub: https://github.com/
 .. _JPEG: http://fr.wikipedia.org/wiki/Jpeg
 .. _Java: http://java.com/fr/download/manual.jsp?locale=fr
 .. _Jinja: http://jinja.pocoo.org/
 .. _Jourdainisez votre tirade: https://oliviercarrere.pythonanywhere.com/
+.. _LFTP: https://lftp.yar.ru/
+.. _LaTeX: https://www.latex-project.org/
 .. _LinkedIn: http://fr.linkedin.com/in/carrereolivier
 .. _Linux sur Android: https://korben.info/comment-installer-linux-sur-android.html
 .. _Makefile: https://github.com/olivier-carrere/redaction-technique.org/commits/master/Makefile
 .. _NOOBS: https://www.raspberrypi.org/downloads/noobs/
 .. _NuFirewall: http://linuxfr.org/news/nufirewall-le-pare-feu-libre-sans-prise-de-t%C3%AAte
 .. _OpenDocument: http://fr.wikipedia.org/wiki/OpenDocument
+.. _Piwigo: http://piwigo.org/
 .. _Predictive: http://www.dr-qubit.org/emacs.php#predictive-download
 .. _RAW: http://fr.wikipedia.org/wiki/RAW_(format_d%27image)
 .. _Read the Docs: https://readthedocs.org/projects/redaction-techniqueorg
+.. _SimpleScreenRecorder: http://www.maartenbaert.be/simplescreenrecorder/
 .. _SyncToy: http://www.microsoft.com/en-us/download/details.aspx?id=15155
 .. _TIFF: http://fr.wikipedia.org/wiki/Tagged_Image_File_Format
 .. _Trac: http://trac.edgewall.org
@@ -153,8 +159,11 @@ rst_epilog = u"""
 .. _conref: http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html
 .. _ditaval: http://docs.oasis-open.org/dita/v1.2/os/spec/common/about-ditaval.html
 .. _expressions rationnelles: http://fr.wikipedia.org/wiki/Expression_rationnelle
+.. _fdupes: https://github.com/adrianlopezroche/fdupes
+.. _file: https://www.computerhope.com/unix/ufile.htm
 .. _l'archive des fichiers schemas.xml: http://www.redaction-technique.org/media/schemas.redaction-technique.org.tar.gz
 .. _l'archive des schémas RelaxNG pour DITA XML: http://www.redaction-technique.org/media/rnc.tar.gz
+.. _modèle LaTeX du dépliant: https://www.overleaf.com/latex/templates/leaflet/ysdkbbhctfpc
 .. _reStructuredText: https://github.com/olivier-carrere/redaction-technique.org/tree/master
 .. _reltable: http://docs.oasis-open.org/dita/v1.0/langspec/reltable.html
 .. _rsync: http://rsync.samba.org
