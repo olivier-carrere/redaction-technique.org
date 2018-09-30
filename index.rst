@@ -46,7 +46,7 @@ bonne vision des tâches impliquées. Le budget alloué s'élevait à strictemen
    Curieusement, le PDF généré sur *Overleaf* présente des défauts que je ne
    constate pas lorsque je le publie en local.
 
-   .. figure:: graphics/piwigo.png
+   .. figure:: graphics/leaflet-pliage.png
 
 L'un des buts que je me suis fixés était de donner un maximum d'autonomie aux
 utilisateurs. Notamment, je souhaitais que les photographes téléchargent
