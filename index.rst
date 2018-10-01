@@ -100,7 +100,7 @@ utilisé la commande suivante sous Bash :
 
 .. code-block:: console
 
-   $ find . -size +1M -exec mv ./repertiore-plus-de-1mo/ {} \;
+   $ find . -size +1M -exec mv ./repertoire-plus-de-1mo/ {} \;
 
 Ensuite, j'ai consulté les quelque 3 000 photos de plus de 1 Mo sous la
 visionneuse *gThumb* et effacé les photos dont la qualité ou le sujet ne
