@@ -48,6 +48,10 @@ bonne vision des tâches impliquées. Le budget alloué s'élevait à strictemen
 
    .. figure:: graphics/leaflet-pliage.png
 
+   Pour les plus curieux, il existe `6 manières`_ de plier cette brochure. Je
+   me suis épargné des essais fastidieux en utilisant la `classe de documents
+   LaTeX leaflet`_.
+
 L'un des buts que je me suis fixés était de donner un maximum d'autonomie aux
 utilisateurs. Notamment, je souhaitais que les photographes téléchargent
 eux-mêmes les photos au lieu de me les envoyer. Selon le bon vieux principe :

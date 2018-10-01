@@ -116,6 +116,7 @@ rst_epilog = u"""
 
 .. links
 
+.. _6 manières: https://www.robertdickau.com/stampfolding.html
 .. _Alfresco: http://www.alfresco.com/fr
 .. _Being a Techie Writer: http://techwhirl.com/techie-writer-series-part-i-being-a-techie-writer/
 .. _CSS: https://github.com/olivier-carrere/redaction-technique.org/tree/master/_static
@@ -156,6 +157,7 @@ rst_epilog = u"""
 .. _XPATH: http://fr.wikipedia.org/wiki/XPath
 .. _XSD: http://fr.wikipedia.org/wiki/XML_Schema
 .. _XSL-FO: http://fr.wikipedia.org/wiki/XSL-FO
+.. _classe de documents LaTeX leaflet: https://ctan.org/pkg/leaflet
 .. _conref: http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html
 .. _ditaval: http://docs.oasis-open.org/dita/v1.2/os/spec/common/about-ditaval.html
 .. _expressions rationnelles: http://fr.wikipedia.org/wiki/Expression_rationnelle
