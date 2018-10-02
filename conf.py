@@ -144,6 +144,7 @@ rst_epilog = u"""
 .. _NOOBS: https://www.raspberrypi.org/downloads/noobs/
 .. _NuFirewall: http://linuxfr.org/news/nufirewall-le-pare-feu-libre-sans-prise-de-t%C3%AAte
 .. _OpenDocument: http://fr.wikipedia.org/wiki/OpenDocument
+.. _Photo Kevin Harber:  https://www.flickr.com/photos/kevharb/5391858379
 .. _Piwigo: http://piwigo.org/
 .. _Predictive: http://www.dr-qubit.org/emacs.php#predictive-download
 .. _RAW: http://fr.wikipedia.org/wiki/RAW_(format_d%27image)

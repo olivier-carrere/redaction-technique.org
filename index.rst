@@ -25,6 +25,8 @@ Une association de quelques centaines de personnes originaires de différents
 pays disposait de plusieurs milliers de photos, dispersées sur différents
 ordinateurs personnels.
 
+.. figure:: graphics/pile-photos.jpg
+
 Les membres de l'association chargés de la communication en *print* ou en
 *web* se plaignaient de ne pas y avoir accès.
 
@@ -122,6 +124,10 @@ disque et de bases de données libres sur un hébergement personnel.
 J'ai donc installé une instance de `Piwigo`_, logiciel que je connaissais déjà
 (je l'utilise pour des photos de famille).
 
+.. figure:: graphics/galerie-photo.jpg
+
+   `Photo Kevin Harber`_
+   
 J'ai protégé l'accès à la galerie initialement par un fichier `.htaccess`
 commun à tous les utilisateurs, puis par la création de comptes personnels
 sous la galerie.
