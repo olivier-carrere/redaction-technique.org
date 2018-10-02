@@ -40,20 +40,6 @@ mis en place un forum de discussion pour l'association. J'avais donc une assez
 bonne vision des tâches impliquées. Le budget alloué s'élevait à strictement
 0,00 euros.
 
-.. admonition:: Modèle LaTeX du dépliant
-
-   Le `modèle LaTeX du dépliant`_, partie émergée de l'iceberg, est publié sur
-   *Overleaf*.
-
-   Curieusement, le PDF généré sur *Overleaf* présente des défauts que je ne
-   constate pas lorsque je le publie en local.
-
-   .. figure:: graphics/leaflet-pliage.png
-
-   Pour les plus curieux, il existe `6 manières`_ de plier cette brochure. Je
-   me suis épargné des essais fastidieux en utilisant la `classe de documents
-   LaTeX leaflet`_.
-
 L'un des buts que je me suis fixés était de donner un maximum d'autonomie aux
 utilisateurs. Notamment, je souhaitais que les photographes téléchargent
 eux-mêmes les photos au lieu de me les envoyer. Selon le bon vieux principe :
@@ -284,6 +270,20 @@ J'ai créé un dépliant expliquant :
   peu connu, mais crucial - des iconographes) ;
 - l'utilisation de la galerie par chaque type d'utilisateurs ;
 - le workflow dans lequel s'inscrivent les utilisateurs.
+
+.. admonition:: Modèle LaTeX du dépliant
+
+   Le `modèle LaTeX du dépliant`_, partie émergée de l'iceberg, est publié sur
+   *Overleaf*.
+
+   Curieusement, le PDF généré sur *Overleaf* présente des défauts que je ne
+   constate pas lorsque je le publie en local.
+
+   .. figure:: graphics/leaflet-pliage.png
+
+   Pour les plus curieux, il existe `6 manières`_ de plier cette brochure. Je
+   me suis épargné des essais fastidieux en utilisant la `classe de documents
+   LaTeX leaflet`_.
 
 LaTeX
 ~~~~~
