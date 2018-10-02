@@ -207,8 +207,6 @@ Définition d'un workflow de gestion des photos
 Une solution technique ne se suffit jamais à elle-même. J'ai donc défini
 un workflow dans lequel s'insérait la solution.
 
-.. figure:: graphics/workflow-photo-piwigo.svg
-
 Définition des rôles des membres du worfklow photo
 --------------------------------------------------
 
@@ -226,6 +224,8 @@ Si les deux premiers sont familiers aux membres de l'association, celui
 d'iconographe est nouveau pour beaucoup. Je me suis tout d'abord demandé si je
 devais utiliser ce mot peu usité. J'ai conclu que oui : il me fallait même
 insister sur ce sujet qui est la clé de la réussite à long terme du projet.
+
+.. figure:: graphics/workflow-photo-piwigo.svg
 
 En effet, l'association a vécu des années sans galerie photo et pourra continuer
 à le faire, même si ce n'est pas de manière optimale. Les membres continueront
