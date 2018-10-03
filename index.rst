@@ -25,8 +25,6 @@ Une association de quelques centaines de personnes originaires de différents
 pays disposait de plusieurs milliers de photos, dispersées sur différents
 ordinateurs personnels.
 
-.. figure:: graphics/pile-photos.jpg
-
 Les membres de l'association chargés de la communication en *print* ou en
 *web* se plaignaient de ne pas y avoir accès.
 
@@ -39,6 +37,8 @@ graphistes. Il est vrai que j'avais déjà pris des photos, créé des affiches 
 mis en place un forum de discussion pour l'association. J'avais donc une assez
 bonne vision des tâches impliquées. Le budget alloué s'élevait à strictement
 0,00 euros.
+
+.. figure:: graphics/pile-photos.jpg
 
 L'un des buts que je me suis fixés était de donner un maximum d'autonomie aux
 utilisateurs. Notamment, je souhaitais que les photographes téléchargent
