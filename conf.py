@@ -132,6 +132,7 @@ rst_epilog = u"""
 .. _Git: http://www.git-scm.com
 .. _GitHub Desktop: https://desktop.github.com/
 .. _GitHub: https://github.com/
+.. _Gummi: https://github.com/alexandervdm/gummi
 .. _JPEG: http://fr.wikipedia.org/wiki/Jpeg
 .. _Java: http://java.com/fr/download/manual.jsp?locale=fr
 .. _Jinja: http://jinja.pocoo.org/

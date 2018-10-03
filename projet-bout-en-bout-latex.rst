@@ -42,7 +42,13 @@ Voici un exemple de code LaTeX :
      \setlength{\fboxrule}{0pt}%
      \fbox{\includegraphics[angle=5,width=\linewidth]{iconographes}}%
    \end{center}
-   
+
+.. note::
+
+   Les fervents du *wysiwyg* se tourneront avec profit vers `Gummi`_.
+
+   .. figure:: graphics/latex-wysiwyg-gummi.png
+
 Le rendu PDF est illustré ci-dessous. Remarquez le calcul automatique des
 césures (qui a fait l'objet d'une `thèse de doctorat`_). C'est l'un des
 `nombreux avantages de LaTeX`_\ …
