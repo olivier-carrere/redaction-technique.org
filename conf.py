@@ -167,12 +167,14 @@ rst_epilog = u"""
 .. _l'archive des fichiers schemas.xml: http://www.redaction-technique.org/media/schemas.redaction-technique.org.tar.gz
 .. _l'archive des schémas RelaxNG pour DITA XML: http://www.redaction-technique.org/media/rnc.tar.gz
 .. _modèle LaTeX du dépliant: https://www.overleaf.com/latex/templates/leaflet/ysdkbbhctfpc
+.. _nombreux avantages de LaTeX: https://www.plpeeters.com/blog/fr/post/110-introduction-a-latex#comparaison-word-et-consorts-vs-latex
 .. _reStructuredText: https://github.com/olivier-carrere/redaction-technique.org/tree/master
 .. _reltable: http://docs.oasis-open.org/dita/v1.0/langspec/reltable.html
 .. _rsync: http://rsync.samba.org
 .. _script de génération multilingue DITA XML: http://www.redaction-technique.org/media/dita2target.sh
 .. _scripts Bash: https://github.com/olivier-carrere/redaction-technique.org/tree/master/scripts
 .. _spécialisation: http://en.wikipedia.org/wiki/Darwin_Information_Typing_Architecture#Specialization
+.. _thèse de doctorat: https://texfaq.org/FAQ-hyphen
 .. _topics: http://docs.oasis-open.org/dita/v1.0/archspec/topicover.html
 .. _un point fort du produit: http://www.linformaticien.com/tests/id/20068/categoryid/48/edenwall-nufirewall-le-pare-feu-nouvelle-generation.aspx
 .. _xinclude: http://en.wikipedia.org/wiki/XInclude

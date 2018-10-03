@@ -297,27 +297,35 @@ Voici un exemple de code LaTeX :
 
 .. code-block:: tex
 
-    \begin{minipage}[t]{1.0\textwidth}
-  
-      \section{\faEye Soyez sélectifs}
-  
-        Nous avons déjà plus de 6 000 photos, dont beaucoup se ressemblent (les
-        fêtes, ça fait de chouettes photos, mais difficilement utilisables sur
-        une affiche\ldots). Privilégiez donc :
-  
+   \section{\faTag  Iconographes}
+   
+   \vspace*{\fill}
+   
+   \begin{enumerate}[itemsep=0mm,leftmargin=*]
+   
+      \item Contactez-nous pour rejoindre l'équipe d'iconographes.
+      \item Affichez une photo de l'album \emph{Community}.
+      \item Cliquez sur \faPencil  \textbf{Mots-clés}.
+      \item Ajoutez des mots-clés aux photos :
+   
         \begin{itemize}
-        \item les sujets ou les traitements originaux ;
-        \item les gros plans ;
-        \item le temps couvert ;
-        \item le flou d'arrière-plan ;
-        \item les fichiers de plus de 2 Mo ;
-        \item les  scans d'argentique ou d'illustrations ;
-        \item les boîtiers \emph{reflex}.
+          \item Indiquez \emph{Print} si la photo convient à l'impression, \emph{Web}
+            dans le cas contraire.
+          \item Pour que la photo soit supprimée, indiquez \emph{Delete}.  Elle sera
+            effacée plus tard\footnote{Elle sera conservée dans la sauvegarde.}.
         \end{itemize}
-        
-    \end{minipage}
 
-Et voici le rendu PDF :
+   \end{enumerate}
+     
+   \begin{center}
+     \setlength{\fboxsep}{0pt}%
+     \setlength{\fboxrule}{0pt}%
+     \fbox{\includegraphics[angle=5,width=\linewidth]{iconographes}}%
+   \end{center}
+   
+Le rendu PDF est illustré ci-dessous. Remarquez le calcul automatique des
+césures (qui a fait l'objet d'une `thèse de doctorat`_). C'est l'un des
+`nombreux avantages de LaTeX`_\ …
 
 .. figure:: graphics/latex-rendu.png
 
