@@ -22,7 +22,11 @@ avoir reçu le mot de passe, cloner la copie de sauvegarde.
 
 .. admonition:: Clonage du dépôt Gitlab
 
-   Voici la procédure de clonage du dépôt.
+   *La procédure suivante était incluse dans une première version du dépliant
+   LaTeX. Elle est donc minimaliste, ne serait-ce que pour des raisons
+   d'espace disponible sur la version imprimée. Je l'ai par la suite supprimée
+   du dépliant, car elle risquait plutôt d'effrayer son lectorat,
+   majoritairement technophobe.*
    
    Sous Windows, vous pouvez installer `Git for windows`_ et `GitHub Desktop`_.
    
