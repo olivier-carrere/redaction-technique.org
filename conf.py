@@ -144,6 +144,7 @@ rst_epilog = u"""
 .. _Makefile: https://github.com/olivier-carrere/redaction-technique.org/commits/master/Makefile
 .. _NOOBS: https://www.raspberrypi.org/downloads/noobs/
 .. _NuFirewall: http://linuxfr.org/news/nufirewall-le-pare-feu-libre-sans-prise-de-t%C3%AAte
+.. _Obambu: https://obambu.com/fr/hebergement/
 .. _OpenDocument: http://fr.wikipedia.org/wiki/OpenDocument
 .. _Photo Kevin Harber:  https://www.flickr.com/photos/kevharb/5391858379
 .. _Piwigo: http://piwigo.org/
@@ -169,6 +170,7 @@ rst_epilog = u"""
 .. _l'archive des schémas RelaxNG pour DITA XML: http://www.redaction-technique.org/media/rnc.tar.gz
 .. _modèle LaTeX du dépliant: https://www.overleaf.com/latex/templates/leaflet/ysdkbbhctfpc
 .. _nombreux avantages de LaTeX: https://www.plpeeters.com/blog/fr/post/110-introduction-a-latex#comparaison-word-et-consorts-vs-latex
+.. _piwigo.com: https://piwigo.com/plan
 .. _reStructuredText: https://github.com/olivier-carrere/redaction-technique.org/tree/master
 .. _reltable: http://docs.oasis-open.org/dita/v1.0/langspec/reltable.html
 .. _rsync: http://rsync.samba.org

@@ -24,3 +24,27 @@ J'ai donc installé une instance de `Piwigo`_, logiciel que je connaissais déj�
 J'ai protégé l'accès à la galerie initialement par un fichier `.htaccess`
 commun à tous les utilisateurs, puis par la création de comptes personnels
 sous la galerie.
+
+L'hébergement sur mon espace personnel peut durer quelques mois sans
+problème. Il serait cependant plus sain que l'association soit propriétaire de
+l'hébergement et du nom de domaine.
+
+Une rapide étude (en septembre 2018) m'a conduit à proposer les solutions
+suivantes :
+
++----------------+--------------+--------------------+----------------+
+|                |`piwigo.com`_ |`Obambu`_           |`Obambu`_       |
+|                |              |Performance         |Evolution       |
++================+==============+====================+================+
+|Prix            |39 €          |23 €                |15 €            |
+|annuel          |              |                    |                |
++----------------+--------------+--------------------+----------------+
+|Stockage        |Illimité      |250 Go              |100 Go          |
++----------------+--------------+--------------------+----------------+
+|Sauvegarde      |Gérée par     |Gérée par l'association.             |
+|                |l'hébergeur.  |                                     |
++----------------+--------------+-------------------------------------+
+|Avantage        |Moins         |L'association dispose de tous les    |
+|                |d'efforts pour|fichiers.                            |
+|                |l'association.|                                     |
++----------------+--------------+--------------------+----------------+
