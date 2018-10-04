@@ -51,7 +51,16 @@ césures (qui a fait l'objet d'une `thèse de doctorat`_). C'est l'un des
 
 .. note::
 
-   Les fervents du *wysiwyg* se tourneront avec profit vers `Gummi`_.
+   Les fervents du *WYSIWYG* se tourneront avec profit vers `Gummi`_.
+   Il s'agit de *What you see is what you get* au sens strict (et plutôt de
+   *tel écran, tel imprimé* que de *tel écran, tel écrit*). On ne peut en
+   effet pas modifier le texte dans la fenêtre de visualisation, uniquement
+   dans la fenêtre de code LaTeX. Vous savez donc exactement ce qui se passe
+   « sous le capot » et avez une plus grande maîtrise qu'en déléguant la
+   création du code de mise en page à une interface graphique. Si vous
+   manipulez souvent des listes numérotées et que vous avez été confronté à
+   des numérotations, disons… aléatoires, vous en comprendrez tout de suite
+   l'avantage.
 
    .. figure:: graphics/latex-wysiwyg-gummi.png
 
