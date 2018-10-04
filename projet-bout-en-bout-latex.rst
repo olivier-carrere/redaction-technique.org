@@ -43,17 +43,17 @@ Voici un exemple de code LaTeX :
      \fbox{\includegraphics[angle=5,width=\linewidth]{iconographes}}%
    \end{center}
 
-.. note::
-
-   Les fervents du *wysiwyg* se tourneront avec profit vers `Gummi`_.
-
-   .. figure:: graphics/latex-wysiwyg-gummi.png
-
 Le rendu PDF est illustré ci-dessous. Remarquez le calcul automatique des
 césures (qui a fait l'objet d'une `thèse de doctorat`_). C'est l'un des
 `nombreux avantages de LaTeX`_\ …
 
 .. figure:: graphics/latex-rendu.png
+
+.. note::
+
+   Les fervents du *wysiwyg* se tourneront avec profit vers `Gummi`_.
+
+   .. figure:: graphics/latex-wysiwyg-gummi.png
 
 D'autre part, une fois la structure du dépliant créée, il est facile de
 l'utiliser pour produire rapidement d'autres documents. De plus, le document
