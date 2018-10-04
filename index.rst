@@ -29,6 +29,7 @@ même vidéo. C'est plus souvent possible dans le cadre associatif.
 .. include:: projet-bout-en-bout-didacticiels-video.rst
 .. include:: projet-bout-en-bout-support-papier.rst
 .. include:: projet-bout-en-bout-latex.rst
+.. include:: projet-bout-en-bout-suivi-des-modifications-sous-git.rst
 .. include:: projet-bout-en-bout-style-redactionnel.rst
 .. include:: projet-bout-en-bout-iconographie.rst
 .. include:: projet-bout-en-bout-patience.rst

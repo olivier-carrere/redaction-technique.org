@@ -68,23 +68,3 @@ D'autre part, une fois la structure du dépliant créée, il est facile de
 l'utiliser pour produire rapidement d'autres documents. De plus, le document
 peut être remanié par d'autres personnes sans problème de licence ou de
 plateforme logicielle.
-
-Enfin, le suivi des modifications, que se soit sous Overleaf ou Git, prévient
-efficacement les erreurs : il est très facile de visualiser les modifications
-de fond ou de forme entre deux versions, de revenir à tout moment à une
-version précédente, de maintenir en parallèle plusieurs versions, etc.
-
-.. figure:: graphics/latex-historique-fond-github.png
-
-   *Visualisation de modifications de fond sous GitHub*
-
-.. figure:: graphics/latex-historique-forme-github.png
-
-   *Visualisation de modifications de forme sous GitHub*
-
-Voici l'évolution d'un extrait du PDF compilé :
-
-.. figure:: graphics/latex-diff-pdf.png
-
-On peut même envisager un travail collaboratif, synchrone ou asynchrone, sur
-le même projet.
