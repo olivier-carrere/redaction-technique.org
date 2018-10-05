@@ -17,7 +17,7 @@ en avant dans le texte de la plaquette.
 J'ai voulu faire passer les messages suivants via le choix iconographique :
 
 Une tâche concrète
-   Bien que de premier abord très abstraite, la gestion des photos s'assimile à
+   Bien qu'au premier abord très abstraite, la gestion des photos s'assimile à
    un travail bien concret : la culture d'un potager ; j'ai découvert à cette
    occasion que je n'avais rien inventé, et que la notion de *désherbage*
    était familière aux iconographes.
