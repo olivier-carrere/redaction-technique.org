@@ -76,4 +76,14 @@ vers `LFTP`_ :
      "set ftp:ssl-allow no; mirror -e repertoire-distant \
      repertoire-local; quit"
 
+.. note::
+
+   Pour ignorer les différences de permissions sur les fichiers, j'ai au
+   préalable lancé la commande suivante sur mon dépôt local :
+
+   .. code-block:: console
+
+      $ git config core.filemode false
+
+   
 L'hébergement des photos est donc centralisé, la sauvegarde, décentralisée.
