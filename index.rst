@@ -18,7 +18,15 @@ l'aspect rédactionnel de leur métier.
 
 Non que ce soit une mauvaise chose en soi, loin de là, mais il
 faudrait réserver cet aspect aux domaines où il apporte le plus de
-valeur ajoutée.
+valeur ajoutée, par exemple en :
+
+- sélectionnant des informations à communiquer à l'audience cible,
+  dans une approche `minimaliste`_ ;
+
+- présentant le produit selon la `perspective de l'utilisateur`_ ;
+
+- concevoir et tester des procédures aussi simples et didactiques
+  que possible.
 
 Hors les parties purement conceptuelles d'une documentation, je pense
 qu'un certain idéal consisterait à construire un document structuré à
@@ -26,11 +34,38 @@ partir de diverses sources externes à la documentation proprement
 dite.
 
 Par exemple, une liste de plateformes supportées peut être maintenue
-par un ingénieur qualité dans un fichier YAML ou une base de données,
-puis être interrogée au moment où la documentation est compilée.
+par un ingénieur qualité dans une source unique, telle qu'un fichier
+CSV, YAML, une base de données, ou une application de gestion de
+projets telle que Redmine, puis être interrogée au moment où la
+documentation est compilée.
 
-Cela permet à chacun de se consacrer à son domaine d'expertise, et
-garantit la meilleure fiabilité possible aux utilisateurs.
+Cela permet à chacun de se consacrer à son domaine d'expertise,
+diminue nettement les efforts de mise à jour, améliore l'exactitude
+des informations fournies, et garantit la meilleure fiabilité possible
+aux utilisateurs.
+
+Noyer des informations factuelles dans une masse de texte peut
+transformer en cauchemar la maintenance de la documentation. Le
+principe :abbr:`DRY (Don't Repeat Yourself)` qui prévaut en
+programmation s'applique également en rédaction technique.
+
+Apporter de la valeur ajoutée
+-----------------------------
+
+Ce genre de processus peut s'opposer à des résistances de la part des
+rédacteurs techniques, qui préfèrent parfois se positionner en tant
+que seuls détenteurs de l'information. On peut cependant penser que
+leur rôle n'est pas de conserver, mais de diffuser l'information, sous
+la forme la plus appropriée.
+
+Il faut faire une nette différence entre *rédaction* et
+*littérature*. La dimension technique de la rédaction technique est
+primordiale. Tout d'abord dans le sens où il faut comprendre le
+fonctionnement de ce que l'on décrit.  Et ensuite, dans celui où ce
+métier a sa propre technicité, basée sur des études empiriques menées
+sérieusement et facilement disponibles et utilisables. Se priver d'une
+telle approche ne sert ni les utilisateurs, ni le rédacteur technique,
+ni l'équipe à laquelle il appartient.
 
 .. note::
 

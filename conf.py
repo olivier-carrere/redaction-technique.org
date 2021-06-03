@@ -104,6 +104,7 @@ rst_epilog = u"""
 
 .. |cms| replace:: :abbr:`CMS (Content Management System)`
 .. |dita-ot| replace:: :abbr:`DITA-OT (DITA Open Toolkit)`
+.. |dry| replace:: :abbr:`DRY (Don't Repeat Yourself)`
 .. |github| replace:: *GitHub*
 .. |git| replace:: *Git*
 .. |gui| replace:: :abbr:`GUI (Graphical User Interface)`
@@ -167,8 +168,10 @@ rst_epilog = u"""
 .. _file: https://www.computerhope.com/unix/ufile.htm
 .. _l'archive des fichiers schemas.xml: http://www.redaction-technique.org/media/schemas.redaction-technique.org.tar.gz
 .. _l'archive des schémas RelaxNG pour DITA XML: http://www.redaction-technique.org/media/rnc.tar.gz
+.. _minimaliste: https://www.instructionaldesign.org/theories/minimalism/
 .. _modèle LaTeX du dépliant: https://www.overleaf.com/latex/templates/leaflet/ysdkbbhctfpc
 .. _nombreux avantages de LaTeX: https://www.plpeeters.com/blog/fr/post/110-introduction-a-latex#comparaison-word-et-consorts-vs-latex
+.. _perspective de l'utilisateur: https://www.utwente.nl/en/bms/ist/minimalism/principle2/
 .. _piwigo.com: https://piwigo.com/plan
 .. _reStructuredText: https://github.com/olivier-carrere/redaction-technique.org/tree/master
 .. _reltable: http://docs.oasis-open.org/dita/v1.0/langspec/reltable.html
