@@ -27,7 +27,7 @@ valeur ajoutée, par exemple en :
 
    .. git_changelog::
       :detailed-message-pre: True
-      :revisions: 3
+      :revisions: 1
 
 - sélectionnant des informations à communiquer à l'audience cible,
   dans une approche `minimaliste`_ ;
