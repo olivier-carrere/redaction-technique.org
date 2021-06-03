@@ -39,6 +39,19 @@ CSV, YAML, une base de données, ou une application de gestion de
 projets telle que Redmine, puis être interrogée au moment où la
 documentation est compilée.
 
+.. tip::
+
+   De plus, il est souvent plus pertinent de masquer les informations
+   inutiles que de laisser l'utilisateur chercher l'information dont
+   il a besoin dans une masse de données qui ne seront pour lui que du
+   bruit. Il est facile de croiser l'extraction de données de
+   multiples sources avec l'application de conditions. La syntaxe des
+   moteurs de *templates* tels que Liquid ou Jinja est très lisible et
+   efficace, par exemple, :code:`{% if model == "3xr" and version >=
+   "11.0" %}` débute une partie de texte destinée uniquement aux
+   utilisateurs utilisant un produit du modèle *3xr* en version *11.0*
+   ou ultérieure.
+
 Cela permet à chacun de se consacrer à son domaine d'expertise,
 diminue nettement les efforts de mise à jour, améliore l'exactitude
 des informations fournies, et garantit la meilleure fiabilité possible
