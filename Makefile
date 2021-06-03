@@ -15,7 +15,7 @@ ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
 # Build PNG version of SVG image files
-PNG = for i in graphics/*.svg; do inkscape -w 600 -f $$i -e graphics/$$(basename $$i svg)png; done
+PNG = for i in graphics/*.svg; do inkscape -w 600 $$i --export-filename=graphics/$$(basename $$i svg)png; done
 GIT_CLEAN = git reset --hard HEAD && git clean -fd
 
 .PHONY: help clean html latexpdf
@@ -38,9 +38,9 @@ all: html epub latexpdf
 html:
 	$ sed -i conf.py -f conditional-text/html.sed
 	$ $(PNG)
-	$ inkscape -w 60 -f graphics/pdf.svg -e graphics/pdf.png
-	$ inkscape -w 120 -f graphics/git.svg -e graphics/git.png
-	$ inkscape -w 180 -f graphics/redaction-technique.svg -e graphics/redaction-technique.png
+	$ inkscape -w 60 graphics/pdf.svg --export-filename=graphics/pdf.png
+	$ inkscape -w 120 graphics/git.svg --export-filename=graphics/git.png
+	$ inkscape -w 180 graphics/redaction-technique.svg --export-filename=graphics/redaction-technique.png
 	$ sed -i "s,\(\.\. figure::.*\)\.svg,\1\.png," *.rst
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	$ cp -n graphics/*.png $(BUILDDIR)/html/_images/
@@ -63,7 +63,7 @@ epub:
 
 latexpdf:
 	$ sed -i conf.py -f conditional-text/latexpdf.sed
-	$ for i in graphics/*.svg; do inkscape -f $$i -A graphics/$$(basename $$i svg)pdf; done
+	$ for i in graphics/*.svg; do inkscape $$i -A graphics/$$(basename $$i svg)pdf; done
 	$ sed -i "s,\(\.\. figure::.*\)\.svg,\1\.pdf," *.rst
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
 	@echo "Running LaTeX files through pdflatex..."
