@@ -3,14 +3,17 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-L'idéal d'une documentation sans rédaction - ou presque
-=======================================================
+Une documentation en microservices
+==================================
 
-.. sidebar:: :awesome:`fa-history` Modifications récentes
+L'heure est aux microservices, dans le secteur du logiciel, mais la
+documentation est toujours très monolithique. Stocker l'information de
+base dans différents référentiels, et générer à la demande une
+documentation selon le profil unique de chaque utilisateur
+faciliterait pourtant grandement l'accès rapide aux informations
+utiles.
 
-   .. git_changelog::
-      :detailed-message-pre: True
-      :revisions: 3
+.. figure:: graphics/microservices.png
 
 Après une maintenant longue expérience en rédaction technique, j'en
 arrive à penser que beaucoup de rédacteurs sont trop attachés à
@@ -19,6 +22,12 @@ l'aspect rédactionnel de leur métier.
 Non que ce soit une mauvaise chose en soi, loin de là, mais il
 faudrait réserver cet aspect aux domaines où il apporte le plus de
 valeur ajoutée, par exemple en :
+
+.. sidebar:: :awesome:`fa-history` Modifications récentes
+
+   .. git_changelog::
+      :detailed-message-pre: True
+      :revisions: 3
 
 - sélectionnant des informations à communiquer à l'audience cible,
   dans une approche `minimaliste`_ ;
