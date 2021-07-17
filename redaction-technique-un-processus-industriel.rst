@@ -38,6 +38,7 @@ niveau de qualité constant, adapté aux buts de l'entreprise.
 .. toctree::
    :hidden:
 
+   documentation microservices
    definition-du-projet
    collecte-de-l-information
    creation-du-contenu

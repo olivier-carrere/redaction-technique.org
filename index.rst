@@ -3,25 +3,12 @@
 .. Commons Attribution - Pas d'utilisation commerciale - Partage dans les mêmes
 .. conditions 4.0 international.
 
-Une documentation en microservices
-==================================
+Persona : à quoi ressemblent vos utilisateurs ?
+===============================================
 
-L'heure est aux microservices, dans le secteur du logiciel, mais la
-documentation est toujours très monolithique. Stocker l'information de
-base dans différents référentiels, et générer à la demande une
-documentation selon le profil unique de chaque utilisateur
-faciliterait pourtant grandement l'accès rapide aux informations
-utiles.
-
-.. figure:: graphics/microservices.png
-
-Après une maintenant longue expérience en rédaction technique, j'en
-arrive à penser que beaucoup de rédacteurs sont trop attachés à
-l'aspect rédactionnel de leur métier.
-
-Non que ce soit une mauvaise chose en soi, loin de là, mais il
-faudrait réserver cet aspect aux domaines où il apporte le plus de
-valeur ajoutée, par exemple en :
+Lorsqu'un formateur entre dans une salle de formation, rien qu'au
+*look* des participants, il a déjà une idée de comment orienter son
+discours.
 
 .. sidebar:: :awesome:`fa-history` Modifications récentes
 
@@ -29,72 +16,134 @@ valeur ajoutée, par exemple en :
       :detailed-message-pre: True
       :revisions: 1
 
-- sélectionnant des informations à communiquer à l'audience cible,
-  dans une approche `minimaliste`_ ;
+Nous, rédacteurs techniques, sommes comme des intervenants dispensant
+une formation dans une salle plongée dans le noir. N'ayant qu'une idée
+préconçue de notre audience, nous visons large. En croyant ne pas
+rater la cible, nous offrons des documentations exhaustives. Notre
+management est content. Nous nous sentons fiers du travail bien
+fait. Mais les utilisateurs ne trouvent pas les informations
+réellement pertinentes pour eux, perdues qu'elles sont dans une mer de
+détails superflus.
 
-- présentant le produit selon la `perspective de l'utilisateur`_ ;
+Minimalisme et persona
+======================
 
-- concevoir et tester des procédures aussi simples et didactiques
-  que possible.
+Carroll et Van der Meij ont prouvé empiriquement que l'exhaustivité
+est le pire écueil de la rédaction technique et que le `minimalisme`_
+bien pensé était nettement plus efficace.
 
-Hors les parties purement conceptuelles d'une documentation, je pense
-qu'un certain idéal consisterait à construire un document structuré à
-partir de diverses sources externes à la documentation proprement
-dite.
+Lorsqu'il utilise un nouveau produit, l'utilisateur a un socle de
+connaissance qu'il faut exploiter. On lui fournit ainsi idéalement
+uniquement l'information dont il a besoin pour être efficace dans ses
+tâches.
 
-Par exemple, une liste de plateformes supportées peut être maintenue
-par un ingénieur qualité dans une source unique, telle qu'un fichier
-CSV, YAML, une base de données, ou une application de gestion de
-projets telle que Redmine, puis être interrogée au moment où la
-documentation est compilée.
+Pour cela, le rédacteur technique doit dresser une cartographie des
+connaissances de son public, et remplir uniquement les lacunes, sortes
+de Terra incognita pour les utilisateurs.
 
-.. tip::
+Comme il est impossible d'établir le champ des connaissances de chaque
+individu, la première tâche est de créer des *persona*,
+représentatives des 2 ou 3 principales catégories d'utilisateur.
 
-   De plus, il est souvent plus pertinent de masquer les informations
-   inutiles que de laisser l'utilisateur chercher l'information dont
-   il a besoin dans une masse de données qui ne seront pour lui que du
-   bruit. Il est facile de croiser l'extraction de données de
-   multiples sources avec l'application de conditions. La syntaxe des
-   moteurs de *templates* tels que Liquid ou Jinja est très lisible et
-   efficace, par exemple, :code:`{% if model == "3xr" and version >=
-   "11.0" %}` débute une partie de texte destinée uniquement aux
-   utilisateurs utilisant un produit du modèle *3xr* en version *11.0*
-   ou ultérieure.
+Imaginons que l'on dresse le portrait-robot (totalement fictif) des 2
+types d'utilisateurs du produit A : les *Gourous Linux* et les
+*Windowsiens*.
 
-Cela permet à chacun de se consacrer à son domaine d'expertise,
-diminue nettement les efforts de mise à jour, améliore l'exactitude
-des informations fournies, et garantit la meilleure fiabilité possible
-aux utilisateurs.
++------------------+-----------------+-----------------+
+|                  |Gourou Linux     |Windowsien       |
++==================+=================+=================+
+|                  ||guru|           ||windowsien|     |
++------------------+-----------------+-----------------+
+|Trait de          |Aime savoir      |Aime que les     |
+|personnalité      |comment          |choses           |
+|                  |                 |                 |
+|principal         |fonctionnent les |fonctionnent.    |
+|                  |choses.          |                 |
++------------------+-----------------+-----------------+
+|Sexe              |90 % hommes      |50/50            |
+|                  |                 |hommes/femmes    |
+|                  |                 |                 |
++------------------+-----------------+-----------------+
+|Titre             |Ingénieur réseau |Administrateur   |
+|                  |                 |système          |
+|                  |                 |                 |
++------------------+-----------------+-----------------+
+|Âge               | >=25            |>= 45            |
++------------------+-----------------+-----------------+
+|Niveau d'études   |Bac + 5          |Variable         |
++------------------+-----------------+-----------------+
+|Secteur           |Industrie        |Services         |
++------------------+-----------------+-----------------+
+|Taille de         |Grande           |Moyenne          |
+|l'entreprise      |                 |                 |
++------------------+-----------------+-----------------+
+|Moyen de          |Email            |Téléphone        |
+|                  |                 |                 |
+|communication     |                 |                 |
+|                  |                 |                 |
+|favori            |                 |                 |
++------------------+-----------------+-----------------+
+|OS                |Linux            |Windows          |
+|                  +-----------------+-----------------+
+|                  |macOS            |                 |
+|                  +-----------------+-----------------+
+|                  |FreeBSD          |                 |
++------------------+-----------------+-----------------+
+|Type d'interface  |Ligne de         |Interfaces       |
+|préféré           |commande         |graphiques       |
++------------------+-----------------+-----------------+
+|Couche logicielle |IHM              |IHM              |
+|ciblée            |                 |                 |
+|                  +-----------------+-----------------+
+|                  |Middleware       |                 |
++------------------+-----------------+-----------------+
+|                  |Firmware         |                 |
++------------------+-----------------+-----------------+
+|Outils quotidiens |OpenSSL          |PuTTY            |
++------------------+-----------------+-----------------+
+|                  |Vim/Emacs        |Notepad++        |
++------------------+-----------------+-----------------+
+|                  |ip               |SolarWinds       |
++------------------+-----------------+-----------------+
+|                  |netstat          |Nagios           |
++------------------+-----------------+-----------------+
+|                  |tcpdump          |                 |
++------------------+-----------------+-----------------+
+|Responsabilités   |Conception et    |Fonctionnement   |
+|                  |                 |du               |
+|                  |gestion réseau   |                 |
+|                  |                 |système          |
+|                  |                 |informatique     |
++------------------+-----------------+-----------------+
+|PKIs              |Performance et   |Disponibilité du |
+|                  |                 |SI               |
+|                  |disponibilité    |                 |
+|                  |                 |                 |
+|                  |des sites web    |                 |
++------------------+-----------------+-----------------+
+|N+1               |Responsable de   |CEO              |
+|                  |                 |                 |
+|                  |l'exploitation   |                 |
++------------------+-----------------+-----------------+
+|Défis principaux  |Gestion de       |Gestion de       |
+|                  |projet           |projets          |
++------------------+-----------------+-----------------+
+|                  |Résolution       |Résolution       |
+|                  |d'incidents      |d'incidents      |
++------------------+-----------------+-----------------+
+|                  |Prise de         |                 |
+|                  |décision         |                 |
++------------------+-----------------+-----------------+
 
-Noyer des informations factuelles dans une masse de texte peut
-transformer en cauchemar la maintenance de la documentation. Le
-principe :abbr:`DRY (Don't Repeat Yourself)` qui prévaut en
-programmation s'applique également en rédaction technique.
+D'après ces *persona*, dont il faut vérifier la véracité sur le
+terrain, on peut imaginer fournir plus d'informations conceptuelles au
+*gourou Linux* qu'au *Windowsien*. Et fournir ainsi à chacun une
+documentation qui répond le mieux à ses attentes.
 
-Apporter de la valeur ajoutée
------------------------------
-
-Ce genre de processus peut s'opposer à des résistances de la part des
-rédacteurs techniques, qui préfèrent parfois se positionner en tant
-que seuls détenteurs de l'information. On peut cependant penser que
-leur rôle n'est pas de conserver, mais de diffuser l'information, sous
-la forme la plus appropriée.
-
-Il faut faire une nette différence entre *rédaction* et
-*littérature*. La dimension technique de la rédaction technique est
-primordiale. Tout d'abord dans le sens où il faut comprendre le
-fonctionnement de ce que l'on décrit.  Et ensuite, dans celui où ce
-métier a sa propre technicité, basée sur des études empiriques menées
-sérieusement et facilement disponibles et utilisables. Se priver d'une
-telle approche ne sert ni les utilisateurs, ni le rédacteur technique,
-ni l'équipe à laquelle il appartient.
-
-.. note::
-
-   Ce site n'est décidément pas très cohérent (notamment, parlant
-   beaucoup de DITA XML, mais créé en reStructuredText). Je jette ici
-   quelques notes sous forme de billet de blog, que je développerai au
-   fur et à mesure.
+Même si l'on n'identifie qu'un seul type d'utilisateur, il est
+toujours utile d'en dresser le portrait type, afin de faciliter la
+communication en interne? Expliciter les présupposés de chacun est
+toujours une bonne idée.
 
 .. toctree::
    :hidden:

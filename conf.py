@@ -114,6 +114,11 @@ rst_epilog = u"""
 .. |sphinx| replace:: Python Sphinx
 .. |ssh| replace:: :abbr:`SSH (Secure Shell)`
 
+.. |guru| image:: graphics/guru.png
+   :alt: Persona : gourou Linux
+.. |windowsien| image:: graphics/windowsien.png
+   :alt: Persona : windowsien
+
 .. links
 
 .. _6 manières: https://www.robertdickau.com/stampfolding.html
@@ -168,6 +173,7 @@ rst_epilog = u"""
 .. _file: https://www.computerhope.com/unix/ufile.htm
 .. _l'archive des fichiers schemas.xml: http://www.redaction-technique.org/media/schemas.redaction-technique.org.tar.gz
 .. _l'archive des schémas RelaxNG pour DITA XML: http://www.redaction-technique.org/media/rnc.tar.gz
+.. _minimalisme: https://www.utwente.nl/en/bms/ist/minimalism/
 .. _minimaliste: https://www.instructionaldesign.org/theories/minimalism/
 .. _modèle LaTeX du dépliant: https://www.overleaf.com/latex/templates/leaflet/ysdkbbhctfpc
 .. _nombreux avantages de LaTeX: https://www.plpeeters.com/blog/fr/post/110-introduction-a-latex#comparaison-word-et-consorts-vs-latex
