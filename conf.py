@@ -88,36 +88,32 @@ pygments_style = 'sphinx'
 rst_epilog = u"""
 
 .. substitutions
-.. |comtech| replace:: **communication technique**
-.. |db| replace:: **DocBook**
-.. |dita| replace:: **DITA XML**
-.. |doc| replace:: **documentation technique**
-.. |flare| replace:: **Flare**
-.. |fm| replace:: **FrameMaker**
-.. |libreoffice| replace:: **LibreOffice**
-.. |ms-word| replace:: **MS Word**
-.. |raspi3| replace:: **Raspberry Pi 3**
-.. |rst| replace:: **reStructuredText**
+.. |comtech| replace:: communication technique
+.. |db| replace:: DocBook
+.. |dita| replace:: DITA XML
+.. |doc| replace:: documentation technique
+.. |flare| replace:: Flare
+.. |fm| replace:: FrameMaker
+.. |libreoffice| replace:: LibreOffice
+.. |ms-word| replace:: MS Word
+.. |raspi3| replace:: Raspberry Pi 3
+.. |rst| replace:: reStructuredText
 .. |site| replace:: blog
-.. |techwriter| replace:: **rédacteur technique**
-.. |techwriting| replace:: **rédaction technique**
-
-.. |cms| replace:: :abbr:`CMS (Content Management System)`
-.. |dita-ot| replace:: :abbr:`DITA-OT (DITA Open Toolkit)`
-.. |dry| replace:: :abbr:`DRY (Don't Repeat Yourself)`
-.. |github| replace:: *GitHub*
-.. |git| replace:: *Git*
-.. |gui| replace:: :abbr:`GUI (Graphical User Interface)`
-.. |ide| replace:: :abbr:`IDE (Integrated Development Environment)`
-.. |latex| replace:: *LaTeX*
-.. |poc| replace:: :abbr:`POC (Proof of Concept, démonstration de faisabilité)`
+.. |techwriter| replace:: rédacteur technique
+.. |techwriting| replace:: rédaction technique
+.. |cms| replace:: Content Management System
+.. |dita-ot| replace:: DITA Open Toolkit
+.. |dry| replace:: Don't Repeat Yourself
+.. |github| replace:: GitHub
+.. |git| replace:: Git
+.. |gui| replace:: Graphical User Interface
+.. |ide| replace:: Integrated Development Environment
+.. |latex| replace:: LaTeX
+.. |poc| replace:: Proof of Concept (démonstration de faisabilité)
 .. |sphinx| replace:: Python Sphinx
-.. |ssh| replace:: :abbr:`SSH (Secure Shell)`
-
+.. |ssh| replace:: SSH
 .. |guru| image:: graphics/guru.png
-   :alt: Persona : gourou Linux
 .. |windowsien| image:: graphics/windowsien.png
-   :alt: Persona : windowsien
 
 .. links
 
