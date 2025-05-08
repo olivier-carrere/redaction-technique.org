@@ -1,5 +1,5 @@
 ---
-title: Les CMS : le *workflow* en prime, mais une fiabilité à tester
+title: Les CMS - le *workflow* en prime, mais une fiabilité à tester
 description: A guide in my new Starlight docs site.
 ---
 # Les CMS : le *workflow* en prime, mais une fiabilité à tester

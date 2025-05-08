@@ -1,5 +1,5 @@
 ---
-title: Rédaction technique : un processus industriel
+title: Rédaction technique - un processus industriel
 description: A guide in my new Starlight docs site.
 ---
 # Rédaction technique : un processus industriel

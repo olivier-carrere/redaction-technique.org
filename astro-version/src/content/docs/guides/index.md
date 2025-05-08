@@ -1,5 +1,5 @@
 ---
-title: Persona : à quoi ressemblent vos utilisateurs ?
+title: Persona - à quoi ressemblent vos utilisateurs ?
 description: A guide in my new Starlight docs site.
 ---
 # Persona : à quoi ressemblent vos utilisateurs ?

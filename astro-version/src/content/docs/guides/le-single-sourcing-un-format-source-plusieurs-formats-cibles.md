@@ -1,5 +1,5 @@
 ---
-title: Le single-sourcing : un format source, plusieurs formats cibles
+title: Le single-sourcing - un format source, plusieurs formats cibles
 description: A guide in my new Starlight docs site.
 ---
 # Le single-sourcing : un format source, plusieurs formats cibles

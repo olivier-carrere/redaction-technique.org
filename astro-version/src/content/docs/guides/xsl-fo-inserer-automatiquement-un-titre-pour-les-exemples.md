@@ -1,5 +1,5 @@
 ---
-title: XSL-FO : insérer automatiquement un titre pour les exemples
+title: XSL-FO - insérer automatiquement un titre pour les exemples
 description: A guide in my new Starlight docs site.
 ---
 ---

@@ -1,5 +1,5 @@
 ---
-title: XSL-FO : filtrer du contenu selon des conditions « sauf » et « ou »
+title: XSL-FO - filtrer du contenu selon des conditions « sauf » et « ou »
 description: A guide in my new Starlight docs site.
 ---
 # XSL-FO : filtrer du contenu selon des conditions « sauf » et « ou »
