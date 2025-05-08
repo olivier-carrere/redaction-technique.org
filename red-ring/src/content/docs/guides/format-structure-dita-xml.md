@@ -1,3 +1,4 @@
+---
 title: Format structuré DITA XML
 
 Diminuer les coûts de production et de traduction, réduire les délais de

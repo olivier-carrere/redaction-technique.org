@@ -1,3 +1,4 @@
+---
 title: Qu\'est-ce qu\'un module d\'information ?
 
 Le système modulaire le plus connu au monde est certainement celui des

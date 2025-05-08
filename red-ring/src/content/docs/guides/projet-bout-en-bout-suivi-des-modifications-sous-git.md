@@ -1,3 +1,4 @@
+---
 title: Suivi des modifications sous Git
 
 Le suivi des modifications, que se soit sous Overleaf ou Git, prévient

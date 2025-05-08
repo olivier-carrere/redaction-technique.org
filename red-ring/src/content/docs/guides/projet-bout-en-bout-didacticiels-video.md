@@ -1,3 +1,4 @@
+---
 title: Didacticiels vidéo
 
 J\'ai publié sur *YouTube* différents didacticiels, en français, anglais

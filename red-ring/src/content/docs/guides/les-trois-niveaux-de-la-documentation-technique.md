@@ -1,3 +1,4 @@
+---
 title: Les trois niveaux de la documentation technique
 
 Si l\'on compare la documentation technique à un jardin, on peut la

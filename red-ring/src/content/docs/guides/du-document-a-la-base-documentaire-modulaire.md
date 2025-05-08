@@ -1,3 +1,4 @@
+---
 title: Du document à la base documentaire modulaire
 
 ::: sidebar

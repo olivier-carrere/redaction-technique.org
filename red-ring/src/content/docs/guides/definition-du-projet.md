@@ -1,3 +1,4 @@
+---
 title: Définition du projet
 
 ::: sidebar

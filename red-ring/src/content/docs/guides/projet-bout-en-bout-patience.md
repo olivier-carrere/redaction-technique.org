@@ -1,3 +1,4 @@
+---
 title: Patience...
 
 Évidemment, toute structure étant toujours plus ou moins rétive au

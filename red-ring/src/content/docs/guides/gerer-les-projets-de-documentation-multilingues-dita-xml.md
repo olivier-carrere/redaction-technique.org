@@ -1,3 +1,4 @@
+---
 title: Gérer les projets de documentation multilingues DITA XML
 
 DITA XML est un formidable format pour gérer les projets de

@@ -1,3 +1,4 @@
+---
 title: Les systèmes de gestion de versions - rustiques mais fiables
 
 Travailler sur des fichiers sources au format texte, et non binaire, est

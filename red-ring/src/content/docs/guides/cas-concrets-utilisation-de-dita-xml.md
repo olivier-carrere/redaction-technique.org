@@ -1,3 +1,4 @@
+---
 title: Cas concrets d\'utilisation de DITA XML
 
 L\'utilisation quotidienne du format de rédaction structurée DITA XML

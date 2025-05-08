@@ -1,3 +1,4 @@
+---
 title: Imbriquer les *conref*
 
 ::: sidebar

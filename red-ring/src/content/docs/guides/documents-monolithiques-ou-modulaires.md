@@ -1,3 +1,4 @@
+---
 title: Documents monolithiques ou modulaires
 
 ::: sidebar

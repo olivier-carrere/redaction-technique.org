@@ -1,3 +1,4 @@
+---
 title: Organisation à la demande du contenu
 
 ::: sidebar

@@ -1,3 +1,4 @@
+---
 title: Le single-sourcing - un format source, plusieurs formats cibles
 
 ::: sidebar

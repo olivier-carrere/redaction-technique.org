@@ -1,3 +1,4 @@
+---
 title: De la rédaction à la communication technique
 
 ::: sidebar

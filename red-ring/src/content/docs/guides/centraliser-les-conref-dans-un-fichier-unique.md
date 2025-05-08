@@ -1,3 +1,4 @@
+---
 title: Centraliser les *conref* dans un fichier unique
 
 ::: sidebar

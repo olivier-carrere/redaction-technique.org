@@ -1,3 +1,4 @@
+---
 title: Indexation des photos
 
 Une fois les 500 photos retenues pour les projets d\'impression

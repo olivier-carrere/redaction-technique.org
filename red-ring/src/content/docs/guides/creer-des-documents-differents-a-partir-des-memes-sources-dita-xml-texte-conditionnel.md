@@ -1,3 +1,4 @@
+---
 title: Créer des documents différents à partir des mêmes sources DITA XML (texte conditionnel)
 
 DITA XML offre un mécanisme de texte conditionnel. Ce mécanisme favorise

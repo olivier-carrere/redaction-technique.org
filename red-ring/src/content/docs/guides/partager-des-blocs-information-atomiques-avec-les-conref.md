@@ -1,3 +1,4 @@
+---
 title: Partager des blocs d\'information atomiques avec les *conref*
 
 ::: sidebar

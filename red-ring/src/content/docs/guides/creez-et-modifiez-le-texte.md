@@ -1,3 +1,4 @@
+---
 title: Créez et modifiez le texte
 
 1.  Modifiez un fichier source modulaire de ce blog :

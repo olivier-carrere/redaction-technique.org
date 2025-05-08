@@ -1,3 +1,4 @@
+---
 title: Les topics, modules d\'information de base DITA XML
 
 ::: sidebar

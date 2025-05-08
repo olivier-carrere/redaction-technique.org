@@ -1,3 +1,4 @@
+---
 title: Organiser son historique avec Git rebase
 
 ::: sidebar

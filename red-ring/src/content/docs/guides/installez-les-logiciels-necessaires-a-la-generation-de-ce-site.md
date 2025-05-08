@@ -1,3 +1,4 @@
+---
 title: Installez les logiciels nécessaires à la gestion de ce blog
 
 1.  Sélectionnez `Menu`{.interpreted-text role="guilabel"} \>

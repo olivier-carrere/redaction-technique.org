@@ -1,3 +1,4 @@
+---
 title: Contact
 
 Vous pouvez me contacter *via* mon profil

@@ -1,3 +1,4 @@
+---
 title: Restructuration du contenu FrameMaker
 
 La partie automatisée d\'une migration de

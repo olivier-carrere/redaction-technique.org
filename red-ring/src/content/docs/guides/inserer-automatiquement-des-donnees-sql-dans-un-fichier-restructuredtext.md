@@ -1,3 +1,4 @@
+---
 title: Insérer automatiquement des données SQL dans un fichier reStructuredText
 
 Nous allons créer une base de données de produits avec leurs versions,

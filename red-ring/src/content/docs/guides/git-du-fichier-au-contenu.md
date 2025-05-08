@@ -1,3 +1,4 @@
+---
 title: Git - du fichier au contenu
 
 ::: sidebar

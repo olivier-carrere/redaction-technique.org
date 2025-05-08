@@ -1,3 +1,4 @@
+---
 title: LaTeX
 
 Pourquoi avoir choisi \[LaTeX\](<https://www.latex-project.org/> pour

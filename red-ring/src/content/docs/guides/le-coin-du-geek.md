@@ -1,3 +1,4 @@
+---
 title: Le coin du *geek*
 
 Je suis un rédacteur technique à tendance *geek*. Après une grande

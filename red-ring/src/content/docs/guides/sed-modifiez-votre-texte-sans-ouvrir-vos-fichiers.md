@@ -1,3 +1,4 @@
+---
 title: sed - modifiez votre texte sans ouvrir vos fichiers
 
 ::: sidebar

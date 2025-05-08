@@ -1,3 +1,4 @@
+---
 title: XSL-FO - insérer automatiquement un titre pour les exemples
 
 ::: sidebar

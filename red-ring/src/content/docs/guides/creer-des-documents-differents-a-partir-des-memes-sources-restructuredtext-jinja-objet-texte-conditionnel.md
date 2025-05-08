@@ -1,3 +1,4 @@
+---
 title: Créer des documents différents à partir des mêmes sources *via* Jinja (méthode objet)
 
 Le script Python `profiling.py`{.interpreted-text role="file"}

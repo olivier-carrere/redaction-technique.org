@@ -1,3 +1,4 @@
+---
 title: Style rédactionnel
 
 Puisqu\'il s\'agissait d\'un projet de communication interne, j\'ai pu

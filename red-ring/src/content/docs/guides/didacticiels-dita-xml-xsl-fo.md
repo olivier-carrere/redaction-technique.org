@@ -1,3 +1,4 @@
+---
 title: Didacticiels DITA XML et XSL-FO
 
 ::: sidebar

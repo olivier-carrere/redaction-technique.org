@@ -1,3 +1,4 @@
+---
 title: Iconographie
 
 Le choix iconographique s\'est avéré être un exercice de style très

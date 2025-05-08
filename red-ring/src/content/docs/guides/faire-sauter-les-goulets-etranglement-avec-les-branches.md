@@ -1,3 +1,4 @@
+---
 title: Faire sauter les goulets d\'étranglement avec les branches
 
 Les branches *Git* permettent de facilement effectuer en parallèle

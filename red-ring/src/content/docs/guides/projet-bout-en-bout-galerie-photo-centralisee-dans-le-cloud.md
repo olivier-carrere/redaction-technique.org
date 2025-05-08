@@ -1,3 +1,4 @@
+---
 title: Galerie photo centralisée dans le *cloud*
 
 Les membres de l\'association étant géographiquement dispersés, il était

@@ -1,3 +1,4 @@
+---
 title: Collecte de l\'information
 
 Le rédacteur technique collecte l\'information auprès de différentes

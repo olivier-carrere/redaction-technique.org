@@ -1,3 +1,4 @@
+---
 title: Gestion des photos d\'une association
 
 Une association de quelques centaines de personnes originaires de

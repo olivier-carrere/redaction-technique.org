@@ -1,3 +1,4 @@
+---
 title: Gérer son contenu DITA XML avec ou sans CMS ?
 
 L\'architecture DITA XML ne propose pas de mécanisme de *workflow*

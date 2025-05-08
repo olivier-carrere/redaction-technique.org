@@ -1,3 +1,4 @@
+---
 title: Formats sources
 
 Ce blog est disponible en trois formats, basés sur la version 1.1[^1].

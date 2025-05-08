@@ -1,3 +1,4 @@
+---
 title: Mener un projet de bout en bout
 
 ::: sidebar

@@ -1,3 +1,4 @@
+---
 title: Création du contenu
 
 Le rédacteur technique crée le contenu du projet de rédaction technique

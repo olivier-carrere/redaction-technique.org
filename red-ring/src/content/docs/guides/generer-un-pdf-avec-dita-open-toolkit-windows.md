@@ -1,3 +1,4 @@
+---
 title: Générer un PDF avec DITA Open Toolkit (Windows)
 
 Ce didacticiel DITA XML est destiné à vous guider dans la mise en place

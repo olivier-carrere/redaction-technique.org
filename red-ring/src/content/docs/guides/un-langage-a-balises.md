@@ -1,3 +1,4 @@
+---
 title: Un langage à balises
 
 ::: sidebar

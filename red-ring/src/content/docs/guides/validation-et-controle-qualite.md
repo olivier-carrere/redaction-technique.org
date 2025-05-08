@@ -1,3 +1,4 @@
+---
 title: Validation et contrôle qualité
 
 ::: sidebar

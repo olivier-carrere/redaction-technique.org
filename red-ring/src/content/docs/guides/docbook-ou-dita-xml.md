@@ -1,3 +1,4 @@
+---
 title: DocBook ou DITA XML ?
 
 ::: sidebar

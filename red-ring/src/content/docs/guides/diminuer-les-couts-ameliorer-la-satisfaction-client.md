@@ -1,3 +1,4 @@
+---
 title: Documentation technique - diminuer les coûts, améliorer la satisfaction client
 
 ::: sidebar

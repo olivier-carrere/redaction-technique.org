@@ -1,3 +1,4 @@
+---
 title: Protéger les informations confidentielles
 
 ::: sidebar

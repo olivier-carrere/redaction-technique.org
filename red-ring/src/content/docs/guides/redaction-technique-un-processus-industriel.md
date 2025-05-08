@@ -1,3 +1,4 @@
+---
 title: Rédaction technique - un processus industriel
 
 La rédaction technique repose sur des processus rationnels. Trop souvent

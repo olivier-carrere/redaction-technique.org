@@ -1,3 +1,4 @@
+---
 title: Un index est-il utile dans un PDF ?
 
 ::: sidebar

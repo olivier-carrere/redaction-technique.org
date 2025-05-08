@@ -1,3 +1,4 @@
+---
 title: Sauvegarde incrémentale et décentralisée
 
 Comment sauvegarder le patrimoine photo de l\'association, soit les

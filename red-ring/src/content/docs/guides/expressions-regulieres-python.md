@@ -1,3 +1,4 @@
+---
 title: Expressions régulières en Python
 
 Le langage Python offre de nombreuses bibliothèques de fonctions. Celle

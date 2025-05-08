@@ -1,3 +1,4 @@
+---
 title: Jourdainisation en ligne d\'une tirade
 
 À l\'instar du maître de philosophie du *Bourgeois gentilhomme* de

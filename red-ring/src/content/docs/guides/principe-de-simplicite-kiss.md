@@ -1,3 +1,4 @@
+---
 title: Principe de simplicité KISS
 
 Le principe `KISS (Keep it simple stupid)`{.interpreted-text

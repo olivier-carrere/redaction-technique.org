@@ -1,3 +1,4 @@
+---
 title: Formats cibles
 
 Vous pouvez compiler ce blog avec *Python Sphinx* aux formats :

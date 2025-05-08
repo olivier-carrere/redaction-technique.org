@@ -1,3 +1,4 @@
+---
 title: Formats structurés et non structurés
 
 ::: sidebar
