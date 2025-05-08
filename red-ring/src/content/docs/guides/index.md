@@ -1,4 +1,4 @@
-# Persona : à quoi ressemblent vos utilisateurs ?
+# Persona - à quoi ressemblent vos utilisateurs ?
 
 Lorsqu\'un formateur entre dans une salle de formation, rien qu\'au
 *look* des participants, il a déjà une idée de comment orienter son

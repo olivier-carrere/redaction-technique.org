@@ -1,4 +1,4 @@
-::: {#configurez-le-raspberry-pi}
+--- {#configurez-le-raspberry-pi}
 Configurez le Raspberry Pi 3 \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
 :::
 

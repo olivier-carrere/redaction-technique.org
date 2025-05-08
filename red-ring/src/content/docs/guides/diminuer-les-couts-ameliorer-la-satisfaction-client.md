@@ -1,4 +1,4 @@
-# Documentation technique : diminuer les coûts, améliorer la satisfaction client {#diminuer-les-couts-ameliorer-la-satisfaction-client}
+# Documentation technique - diminuer les coûts, améliorer la satisfaction client {#diminuer-les-couts-ameliorer-la-satisfaction-client}
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
