@@ -1,10 +1,6 @@
 ---
 title: Documentation technique - diminuer les coûts, améliorer la satisfaction client
-description: A guide in my new Starlight docs site.
 ---
-
-::: sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 La , c\'est comme une ampoule : une ampoule basse consommation demande
 un investissement plus important en début de cycle de vie, mais a

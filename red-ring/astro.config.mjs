@@ -6,21 +6,20 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
+			title: 'Rédaction technique',
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
 			sidebar: [
 				{
 					label: 'Guides',
 					items: [
 						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
-						{ label: 'Example aGuide', slug: 'guides/diminuer-les-couts-ameliorer-la-satisfaction-client' },
-						{ label: 'Example Gcuide', slug: 'guides/redaction-technique-un-processus-industriel' },
-						{ label: 'Example Guide', slug: 'guides/format-structure-dita-xml' },
-						{ label: 'Example Guide', slug: 'guides/mener-un-projet-de-bout-en-bout' },
-						{ label: 'Example Guide', slug: 'guides/le-coin-du-geek' },
-						{ label: 'Example Guide', slug: 'guides/a-propos-de-ce-blog' },
-						{ label: 'Example Guidsse', slug: 'guides/contact' },
+						{ slug: 'guides/diminuer-les-couts-ameliorer-la-satisfaction-client' },
+						{ slug: 'guides/redaction-technique-un-processus-industriel' },
+						{ slug: 'guides/format-structure-dita-xml' },
+						{ slug: 'guides/mener-un-projet-de-bout-en-bout' },
+						{ slug: 'guides/le-coin-du-geek' },
+						{ slug: 'guides/a-propos-de-ce-blog' },
+						{ slug: 'guides/contact' },
 					],
 				},
 				{
