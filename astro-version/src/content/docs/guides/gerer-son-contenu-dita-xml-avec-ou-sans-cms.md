@@ -1,8 +1,8 @@
 ---
-title: Gérer son contenu DITA XML avec ou sans CMS ? {#gerer-son-contenu-dita-xml-avec-ou-sans-cms}
+title: Gérer son contenu DITA XML avec ou sans CMS ?
 description: A guide in my new Starlight docs site.
 ---
-# Gérer son contenu DITA XML avec ou sans CMS ? {#gerer-son-contenu-dita-xml-avec-ou-sans-cms}
+# Gérer son contenu DITA XML avec ou sans CMS ?
 
 L\'architecture ne propose pas de mécanisme de *workflow* documentaire
 natif. Les *workflows* sont pourtant un élément important d\'un

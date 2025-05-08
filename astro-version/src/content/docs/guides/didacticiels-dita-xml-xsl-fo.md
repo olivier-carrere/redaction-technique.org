@@ -1,8 +1,8 @@
 ---
-title: Didacticiels DITA XML et XSL-FO {#didacticiels-dita-xml-xsl-fo}
+title: Didacticiels DITA XML et XSL-FO
 description: A guide in my new Starlight docs site.
 ---
-# Didacticiels DITA XML et XSL-FO {#didacticiels-dita-xml-xsl-fo}
+# Didacticiels DITA XML et XSL-FO
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

@@ -1,8 +1,8 @@
 ---
-title: Générer un PDF avec DITA Open Toolkit sous GNU/Linux {#generer-un-pdf-avec-dita-open-toolkit-sous-gnu-linux}
+title: Générer un PDF avec DITA Open Toolkit sous GNU/Linux
 description: A guide in my new Starlight docs site.
 ---
-# Générer un PDF avec DITA Open Toolkit sous GNU/Linux {#generer-un-pdf-avec-dita-open-toolkit-sous-gnu-linux}
+# Générer un PDF avec DITA Open Toolkit sous GNU/Linux
 
 Ce didacticiel est destiné à vous guider dans la mise en place et
 l\'utilisation de la chaîne de publication dans un environnement

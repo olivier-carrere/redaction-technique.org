@@ -1,8 +1,8 @@
 ---
-title: Jourdainisation en ligne d\'une tirade {#jourdainisation-en-ligne-python}
+title: Jourdainisation en ligne d\'une tirade
 description: A guide in my new Starlight docs site.
 ---
-# Jourdainisation en ligne d\'une tirade {#jourdainisation-en-ligne-python}
+# Jourdainisation en ligne d\'une tirade
 
 À l\'instar du maître de philosophie du *Bourgeois gentilhomme* de
 Molière, un script Python peut facilement intervertir les mots d\'une

@@ -1,8 +1,8 @@
 ---
-title: Style rédactionnel {# projet-bout-en-bout-style-redactionnel}
+title: Style rédactionnel
 description: A guide in my new Starlight docs site.
 ---
-# Style rédactionnel {# projet-bout-en-bout-style-redactionnel}
+# Style rédactionnel
 
 Puisqu\'il s\'agissait d\'un projet de communication interne, j\'ai pu
 adopter un style rédactionnel décontracté. J\'ai cependant veillé à ne

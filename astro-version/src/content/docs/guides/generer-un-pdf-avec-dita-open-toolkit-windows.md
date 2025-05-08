@@ -1,8 +1,8 @@
 ---
-title: Générer un PDF avec DITA Open Toolkit (Windows) {#generer-un-pdf-avec-dita-open-toolkit-windows}
+title: Générer un PDF avec DITA Open Toolkit (Windows)
 description: A guide in my new Starlight docs site.
 ---
-# Générer un PDF avec DITA Open Toolkit (Windows) {#generer-un-pdf-avec-dita-open-toolkit-windows}
+# Générer un PDF avec DITA Open Toolkit (Windows)
 
 Ce didacticiel est destiné à vous guider dans la mise en place et
 l\'utilisation de la chaîne de publication dans un environnement Windows

@@ -1,8 +1,8 @@
 ---
-title: Un langage à balises {#un-langage-a-balises}
+title: Un langage à balises
 description: A guide in my new Starlight docs site.
 ---
-# Un langage à balises {#un-langage-a-balises}
+# Un langage à balises
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

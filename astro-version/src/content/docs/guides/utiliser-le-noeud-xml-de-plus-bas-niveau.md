@@ -1,8 +1,8 @@
 ---
-title: Utiliser le nœud XML de plus bas niveau {#utiliser-le-noeud-xml-de-plus-bas-niveau}
+title: Utiliser le nœud XML de plus bas niveau
 description: A guide in my new Starlight docs site.
 ---
-# Utiliser le nœud XML de plus bas niveau {#utiliser-le-noeud-xml-de-plus-bas-niveau}
+# Utiliser le nœud XML de plus bas niveau
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

@@ -1,8 +1,8 @@
 ---
-title: Base de données SQL {#base-de-donnees-sql}
+title: Base de données SQL
 description: A guide in my new Starlight docs site.
 ---
-# Base de données SQL {#base-de-donnees-sql}
+# Base de données SQL
 
 Dans le cas d\'un de type Drupal, Joomla ou WordPress, le référentiel
 est une base de données SQL. Il conserve un historique, mais uniquement

@@ -1,8 +1,8 @@
 ---
-title: Référentiel {#referentiel}
+title: Référentiel
 description: A guide in my new Starlight docs site.
 ---
-# Référentiel {#referentiel}
+# Référentiel
 
 Le contenu est le capital immatériel de la société et doit être protégé
 comme tel. Il peut être géré dans différents référentiels : répertoires,

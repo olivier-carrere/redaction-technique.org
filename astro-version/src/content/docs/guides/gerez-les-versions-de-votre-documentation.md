@@ -1,8 +1,8 @@
 ---
-title: Gérez les versions de votre documentation {#gerez-les-versions-de-votre-documentation}
+title: Gérez les versions de votre documentation
 description: A guide in my new Starlight docs site.
 ---
-# Gérez les versions de votre documentation {#gerez-les-versions-de-votre-documentation}
+# Gérez les versions de votre documentation
 
 1.  *Commitez* votre lot de modifications sous  :
 

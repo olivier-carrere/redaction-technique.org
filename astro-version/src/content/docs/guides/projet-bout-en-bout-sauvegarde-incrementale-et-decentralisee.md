@@ -1,8 +1,8 @@
 ---
-title: Sauvegarde incrémentale et décentralisée {# projet-bout-en-bout-sauvegarde-incrementale-et-decentralisee}
+title: Sauvegarde incrémentale et décentralisée
 description: A guide in my new Starlight docs site.
 ---
-# Sauvegarde incrémentale et décentralisée {# projet-bout-en-bout-sauvegarde-incrementale-et-decentralisee}
+# Sauvegarde incrémentale et décentralisée
 
 Comment sauvegarder le patrimoine photo de l\'association, soit les
 photos et la base de données Piwigo, de manière incrémentale et

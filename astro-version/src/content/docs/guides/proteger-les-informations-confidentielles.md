@@ -1,8 +1,8 @@
 ---
-title: Protéger les informations confidentielles {#proteger-les-informations-confidentielles}
+title: Protéger les informations confidentielles
 description: A guide in my new Starlight docs site.
 ---
-# Protéger les informations confidentielles {#proteger-les-informations-confidentielles}
+# Protéger les informations confidentielles
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

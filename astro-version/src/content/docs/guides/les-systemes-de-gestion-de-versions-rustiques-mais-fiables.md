@@ -1,8 +1,8 @@
 ---
-title: Les systèmes de gestion de versions - rustiques mais fiables {#les-systemes-de-gestion-de-versions-rustiques-mais-fiables}
+title: Les systèmes de gestion de versions - rustiques mais fiables
 description: A guide in my new Starlight docs site.
 ---
-# Les systèmes de gestion de versions - rustiques mais fiables {#les-systemes-de-gestion-de-versions-rustiques-mais-fiables}
+# Les systèmes de gestion de versions - rustiques mais fiables
 
 Travailler sur des fichiers sources au format texte, et non binaire, est
 l\'occasion pour le de gérer son contenu comme les développeurs gèrent

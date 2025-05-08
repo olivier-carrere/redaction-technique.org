@@ -1,8 +1,8 @@
 ---
-title: LaTeX {# projet-bout-en-bout-latex}
+title: LaTeX
 description: A guide in my new Starlight docs site.
 ---
-# LaTeX {# projet-bout-en-bout-latex}
+# LaTeX
 
 Pourquoi avoir choisi [LaTeX](#latex) pour réaliser le support *print*
 et non pas un logiciel de PAO classique ? Je souhaitais pouvoir remanier

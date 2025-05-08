@@ -1,8 +1,8 @@
 ---
-title: Le en tant que plateforme de documentation {#raspberry-pi-plateforme-documentation}
+title: Le en tant que plateforme de documentation
 description: A guide in my new Starlight docs site.
 ---
-# Le en tant que plateforme de documentation {#raspberry-pi-plateforme-documentation}
+# Le en tant que plateforme de documentation
 
 Faut-il une débauche de puissance pour générer une documentation
 professionnelle ? Avec son unique giga-octet de mémoire vive et son
@@ -29,7 +29,7 @@ Les buts de ce billet sont de :
     parfois au détriment de l\'élégance technique.
 ::::
 
-## Configurez le {#configurez-le-raspberry-pi}
+## Configurez le
 
 **Prérequis**
 
@@ -89,7 +89,7 @@ Les buts de ce billet sont de :
 
     Le redémarre.
 
-## Installez les logiciels nécessaires à la gestion de ce {#installez-les-logiciels-necessaires-a-la-generation-de-ce-site}
+## Installez les logiciels nécessaires à la gestion de ce
 
 1.  Sélectionnez `Menu`{.interpreted-text role="guilabel"} \>
     `Accessoires`{.interpreted-text role="guilabel"} \>
@@ -129,7 +129,7 @@ Les buts de ce billet sont de :
     $ sudo aptitude clean
     ```
 
-## Récupérez les sources de ce {#recuperez-les-sources-de-ce-site}
+## Récupérez les sources de ce
 
 1.  Clonez le dépôt des sources de ce  :
 
@@ -143,7 +143,7 @@ Les buts de ce billet sont de :
     $ cd redaction-technique.org
     ```
 
-## Créez et modifiez le texte {#creez-et-modifiez-le-texte}
+## Créez et modifiez le texte
 
 1.  Modifiez un fichier source modulaire de ce  :
     -   à l\'aide d\'un éditeur de texte :
@@ -164,7 +164,7 @@ Les buts de ce billet sont de :
         $ sed -i "s/répertoire/dossier/g;" *.rst
         ```
 
-## Créez et modifiez les schémas {#creez-et-modifiez-les-schemas}
+## Créez et modifiez les schémas
 
 1.  Modifiez un fichier source des images de ce  :
     -   à l\'aide d\'un logiciel de dessin vectoriel :
@@ -179,7 +179,7 @@ Les buts de ce billet sont de :
         $ sed -i "s/docbook/XML/g;" graphics/*.svg
         ```
 
-## Gérez les versions de votre documentation {#gerez-les-versions-de-votre-documentation}
+## Gérez les versions de votre documentation
 
 1.  *Commitez* votre lot de modifications sous  :
 
@@ -221,7 +221,7 @@ Note
     d\'y accéder par connexion sécurisée .
 ::::
 
-## Générez votre documentation {#generez-votre-documentation}
+## Générez votre documentation
 
 1.  Revenez dans le terminal, puis récupérez la dernière version
     *taguée* de ce  :

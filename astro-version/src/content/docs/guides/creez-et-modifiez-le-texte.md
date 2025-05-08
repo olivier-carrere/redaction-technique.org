@@ -1,8 +1,8 @@
 ---
-title: Créez et modifiez le texte {#creez-et-modifiez-le-texte}
+title: Créez et modifiez le texte
 description: A guide in my new Starlight docs site.
 ---
-# Créez et modifiez le texte {#creez-et-modifiez-le-texte}
+# Créez et modifiez le texte
 
 1.  Modifiez un fichier source modulaire de ce  :
     -   à l\'aide d\'un éditeur de texte :

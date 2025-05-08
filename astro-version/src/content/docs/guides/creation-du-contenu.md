@@ -1,8 +1,8 @@
 ---
-title: Création du contenu {#creation-du-contenu}
+title: Création du contenu
 description: A guide in my new Starlight docs site.
 ---
-# Création du contenu {#creation-du-contenu}
+# Création du contenu
 
 Le crée le contenu du projet de dans un dialogue constant avec les
 différents acteurs de la société : services R&D, marketing. Il prend en
