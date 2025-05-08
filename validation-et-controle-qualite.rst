@@ -19,12 +19,12 @@ Le contenu doit être validé avant livraison. Cela paraît évident, mais cela
 demande de bien impliquer en amont les personnes chargées de la
 validation. Idéalement, la phase de validation se déroule en parallèle de la
 phase de création : plus les modifications interviennent tôt, moins elles sont
-coûteuses. Un outil de gestion de contenu d'entreprise tel qu'`Alfresco`_
+coûteuses. Un outil de gestion de contenu d'entreprise tel qu'[Alfresco](http://www.alfresco.com/fr
 peut sembler intéressant afin de mettre en place
 des *workflows*, sur le papier du moins. Dans les faits, une telle solution peut
 s'avérer lourde. Elle est de plus peu compatible avec certains formats sources
 basés sur des documents modulaires et non monolithiques et avec les logiciels de
-gestion de versions (le projet `Componize`_ se
+gestion de versions (le projet [Componize](http://www.componize.com se
 propose cependant de gérer des projets DITA XML sous Alfresco). Il reste cependant
 impératif de mettre en place des étapes de validation tout au long du projet.
 Associés à un système de gestion de versions, les outils de comparaison sont

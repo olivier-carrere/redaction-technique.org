@@ -24,9 +24,9 @@ faudrait réserver cet aspect aux domaines où il apporte le plus de
 valeur ajoutée, par exemple en :
 
 - sélectionnant des informations à communiquer à l'audience cible,
-  dans une approche `minimaliste`_ ;
+  dans une approche [minimaliste](https://www.instructionaldesign.org/theories/minimalism/ ;
 
-- présentant le produit selon la `perspective de l'utilisateur`_ ;
+- présentant le produit selon la [perspective de l'utilisateur](https://www.utwente.nl/en/bms/ist/minimalism/principle2/ ;
 
 - concevoir et tester des procédures aussi simples et didactiques
   que possible.

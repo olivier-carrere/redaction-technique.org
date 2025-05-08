@@ -17,9 +17,9 @@ contenu est cependant moins pertinent que son historique et que ses
 branches [Git](https://github.com/olivier-carrere/redaction-technique.org/>`_.
 
 Il traite des formats, des outils et des tâches suivants : reStructuredText, DITA XML,
-`scripts Bash`_, awk, sed, expressions rationnelles, Python, gestion de
-versions, Git, compilation, `Makefile`_, Ant, XSLT, mise en page, HTML,
-`CSS`_, PDF, LaTeX, XSL-FO.
+[scripts Bash](https://github.com/olivier-carrere/redaction-technique.org/tree/master/scripts, awk, sed, expressions rationnelles, Python, gestion de
+versions, Git, compilation, [Makefile](https://github.com/olivier-carrere/redaction-technique.org/commits/master/Makefile, Ant, XSLT, mise en page, HTML,
+[CSS](https://github.com/olivier-carrere/redaction-technique.org/tree/master/_static, PDF, LaTeX, XSL-FO.
 
 .. include:: silo.rst
 .. include:: integrer-la-documentation-aux-processus-de-developpement.rst

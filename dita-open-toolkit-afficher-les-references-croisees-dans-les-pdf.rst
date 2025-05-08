@@ -19,7 +19,7 @@ DITA Open Toolkit : afficher les références croisées dans les PDF
    quelques réglages.
 
 Vous avez placé des balises *related-links* correctement formatées dans vos
-fichiers de contenu DITA XML, ou mieux, une `reltable`_
+fichiers de contenu DITA XML, ou mieux, une [reltable](http://docs.oasis-open.org/dita/v1.0/langspec/reltable.html
 dans votre
 structure de table des matières *ditamap* (la *reltable* permet de
 décontextualiser votre contenu et donc de mieux le réutiliser). Vous lancez

@@ -64,7 +64,7 @@ Et voilà. En quelques minutes, vous avez :
 
      - Nous pourrions mettre en place une solution complète de texte
        conditionnel avec opérateurs booléens et tout et tout grâce au moteur
-       de *templating* `Jinja`_.
+       de *templating* [Jinja](http://jinja.pocoo.org/.
 
      - Les observateurs remarqueront que la version HTML du blog version 1.5
        ne comporte pas de table des matières dans la colonne de droite. C'est
@@ -78,6 +78,6 @@ condition de se passer, ou presque, d'interface graphique !
 Le prochain test consistera à générer la version DITA XML de ce blog.
 
 Le prochain prochain test consistera à générer ce blog sur un *smartphone*
-en installant une distribution `Linux sur Android`_.
+en installant une distribution [Linux sur Android](https://korben.info/comment-installer-linux-sur-android.html.
 
 .. text review: yes

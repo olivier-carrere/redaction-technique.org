@@ -16,7 +16,7 @@ Format source
    différent du format des livrables, le format cible. Pour reprendre une
    image fréquemment utilisée en développement logiciel, le format source est
    la recette de cuisine, le format cible, le plat. En photographie, le format
-   source est le format `RAW`_, qui est généré par l'appareil photo, et sur
+   source est le format [RAW](http://fr.wikipedia.org/wiki/RAW_(format_d%27image), qui est généré par l'appareil photo, et sur
    lequel les photographes professionnels préféreront apporter les retouches,
    et le format cible, le format JPEG.
 

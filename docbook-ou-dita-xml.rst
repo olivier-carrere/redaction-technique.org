@@ -12,7 +12,7 @@ DocBook ou DITA XML ?
 
 .. sidebar:: :awesome:`fa-bullhorn`
 
-   Certaines entreprises ont parfois un contenu existant au format `DocBook`_.
+   Certaines entreprises ont parfois un contenu existant au format [DocBook](https://github.com/olivier-carrere/redaction-technique.org/tree/DocBook.
    Géré souvent par les acteurs les plus techniques de la société, il coexiste
    la plupart du temps avec d'autres contenus au format FrameMaker ou traitement de
    texte. S'il est décidé de fédérer tout le contenu d'entreprise sous un seul
@@ -44,12 +44,12 @@ Si votre contenu était une photo, nous pourrions faire l'analogie suivante :
 +------------------+-----------------------------------------------------------+
 |Format de contenu |Format de photo                                            |
 +==================+===========================================================+
-|DITA XML            |`RAW`_                                                     |
+|DITA XML            |[RAW](http://fr.wikipedia.org/wiki/RAW_(format_d%27image)                                                     |
 |                  |[#]_                                                       |
 +------------------+-----------------------------------------------------------+
-|DocBook              |`TIFF`_                                                    |
+|DocBook              |[TIFF](http://fr.wikipedia.org/wiki/Tagged_Image_File_Format                                                    |
 +------------------+-----------------------------------------------------------+
-|PDF               |`JPEG`_                                                    |
+|PDF               |[JPEG](http://fr.wikipedia.org/wiki/Jpeg                                                    |
 +------------------+-----------------------------------------------------------+
 
 Le passage de RAW en TIFF et de TIFF en JPEG est destructif et ne peut se faire

@@ -13,7 +13,7 @@ Les systèmes de gestion de versions - rustiques mais fiables
 Travailler sur des fichiers sources au format texte, et non binaire, est
 l'occasion pour le rédacteur technique de gérer son contenu comme les
 développeurs gèrent leur code : sous un système de gestion des sources tel que
-`Git`_, Subversion ou SourceSafe.
+[Git](http://www.git-scm.com, Subversion ou SourceSafe.
 
 Ces systèmes :
 

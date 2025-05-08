@@ -14,7 +14,7 @@ Imbriquer les *conref*
 
    Pour des raisons de facilité de mise à jour et de maintenance du contenu
    DITA XML, le rédacteur technique doit limiter l'effet *poupée russe* et ne pas trop
-   imbriquer les `conref`_.  Un seul niveau d'imbrication (un *conref*
+   imbriquer les [conref](http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html.  Un seul niveau d'imbrication (un *conref*
    imbriqué dans un autre) me semble le seuil au-delà duquel le contenu peut
    vite devenir ingérable.
 

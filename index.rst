@@ -29,7 +29,7 @@ Minimalisme et persona
 ======================
 
 Carroll et Van der Meij ont prouvé empiriquement que l'exhaustivité
-est le pire écueil de la rédaction technique et que le `minimalisme`_
+est le pire écueil de la rédaction technique et que le [minimalisme](https://www.utwente.nl/en/bms/ist/minimalism/
 bien pensé était nettement plus efficace.
 
 Lorsqu'il utilise un nouveau produit, l'utilisateur a un socle de

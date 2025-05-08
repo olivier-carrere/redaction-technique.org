@@ -79,7 +79,7 @@ Le fichier PDF affichera l'exemple structuré comme suit :
       ancestor-or-self
 
 Il faut alors utiliser la syntaxe *pipe* (condition booléenne *ou*) pour
-modifier le chemin `XPATH`_ comme suit :
+modifier le chemin [XPATH](http://fr.wikipedia.org/wiki/XPath comme suit :
 
 .. code-block:: xslt
 

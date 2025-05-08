@@ -10,7 +10,7 @@
 Restructuration du contenu FrameMaker
 =====================================
 
-La partie automatisée d'une migration de `FrameMaker`_
+La partie automatisée d'une migration de [FrameMaker](http://en.wikipedia.org/wiki/Adobe_FrameMaker
 vers DITA XML
 consiste
 à appliquer une table de conversion entre les styles FrameMaker et les

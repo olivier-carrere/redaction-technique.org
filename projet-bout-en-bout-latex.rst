@@ -8,7 +8,7 @@
 LaTeX
 -----
 
-Pourquoi avoir choisi `LaTeX`_ pour réaliser le support *print* et non pas un
+Pourquoi avoir choisi [LaTeX](https://www.latex-project.org/ pour réaliser le support *print* et non pas un
 logiciel de PAO classique ? Je souhaitais pouvoir remanier le texte sans
 refaire à chaque fois la mise en page. De même, je voulais pouvoir traduire le
 dépliant sans effectuer de tâche de PAO manuelle.
@@ -44,14 +44,14 @@ Voici un exemple de code LaTeX :
    \end{center}
 
 Le rendu PDF est illustré ci-dessous. Remarquez le calcul automatique des
-césures (qui a fait l'objet d'une `thèse de doctorat`_). C'est l'un des
-`nombreux avantages de LaTeX`_\ …
+césures (qui a fait l'objet d'une [thèse de doctorat](https://texfaq.org/FAQ-hyphen). C'est l'un des
+`nombreux avantages de[LaTeX](https://www.latex-project.org/\ …
 
 .. figure:: graphics/latex-rendu.png
 
 .. note::
 
-   Les fervents du *WYSIWYG* se tourneront avec profit vers `Gummi`_.
+   Les fervents du *WYSIWYG* se tourneront avec profit vers [Gummi](https://github.com/alexandervdm/gummi.
    Il s'agit de *What you see is what you get* au sens strict (et plutôt de
    *tel écran, tel imprimé* que de *tel écran, tel écrit*). On ne peut en
    effet pas modifier le texte dans la fenêtre de visualisation, uniquement

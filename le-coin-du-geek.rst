@@ -52,7 +52,7 @@ c'est par ici !
 
 .. seealso::
 
-   `Being a Techie Writer`_
+   [Being a Techie Writer](http://techwhirl.com/techie-writer-series-part-i-being-a-techie-writer/
 
 .. toctree::
    :hidden:

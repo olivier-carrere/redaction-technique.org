@@ -45,10 +45,10 @@ périlleuses :
   fichiers graphique ou en ligne de commande, le rédacteur technique peut
   facilement écraser la version la plus récente par la plus ancienne (on
   préférera alors avoir recours à un logiciel de synchronisation de fichiers
-  tels que `rsync`_ ou `Unison`_
+  tels que [rsync](http://rsync.samba.org ou [Unison](http://www.cis.upenn.edu/~bcpierce/unison
   (ce dernier étant plus adapté à
   la synchronisation bidirectionnelle) en ligne de commande sous GNU/Linux ou
-  Windows, ou à un équivalent graphique, tel `SyncToy`_.
+  Windows, ou à un équivalent graphique, tel [SyncToy](http://www.microsoft.com/en-us/download/details.aspx?id=15155.
   Cependant,
   ce type de logiciels se base sur la date de dernière modification des
   fichiers. Lorsque l'on met à jour ou publie un livre FrameMaker, notamment,

@@ -91,8 +91,8 @@ pouvez par exemple utiliser des scripts Perl du type :
    close(OUTPUT);
 
 Vous pouvez également modulariser facilement le contenu à l'aide des ciseaux XML
-`xml_split`_,
-ou utiliser le module Perl `XML::Twig`_, ou
+[xml_split](http://search.cpan.org/dist/XML-Twig/tools/xml_split/xml_split,
+ou utiliser le module Perl [XML::Twig](http://www.xmltwig.org/xmltwig/, ou
 encore ce *one-liner* Bash pour renommer les fichiers :file:`.dita` d'après leur titre :
 
 .. code-block:: console

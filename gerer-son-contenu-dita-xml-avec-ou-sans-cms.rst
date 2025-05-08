@@ -25,7 +25,7 @@ place de telles solutions part le passé.
 De plus, l'un des grands avantages de DITA XML, c'est de s'intégrer directement
 dans le système d'information en place. Chez les éditeurs de logiciels,
 notamment, rien de plus facile que de venir se greffer sur le système de gestion
-des sources en place, qu'il s'agisse de `Git`_ [#]_, de
+des sources en place, qu'il s'agisse de [Git](http://www.git-scm.com [#]_, de
 Subversion ou de SourceSafe. À budget quasi nul. Raison de plus pour ne pas
 investir du temps et de l'argent dans un Content Management System.  Les gains de productivité
 spectaculaires reportés par certaines entreprises suite à la mise en place d'un
@@ -35,7 +35,7 @@ réutiliser jusqu'à 90 % du contenu existant sur de nouveaux projets.
 Si l'on opte pour un Content Management System, celui-ci doit clairement supporter DITA XML : on ne gère
 pas un jeu de briques d'information comme un document monolithique. Adieu donc
 SharePoint ou Alfresco, il faut se tourner vers des solutions dédiées telles que
-`Componize`_ ou `DocZone`_.
+[Componize](http://www.componize.com ou [DocZone](http://www.doczone.com.
 
 Quel que soit le choix initial, il est possible à tout instant de changer de
 stratégie, sans remettre en cause l'existant. L'architecture DITA XML n'est en

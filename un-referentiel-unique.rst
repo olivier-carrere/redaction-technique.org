@@ -11,7 +11,7 @@ Un référentiel unique ?
 =======================
 
 Idéalement, tout le contenu peut être placé sous un référentiel unique, par
-exemple le logiciel de gestion de versions `Git`_.
+exemple le logiciel de gestion de versions [Git](http://www.git-scm.com.
 Ceci en maximise la réutilisation,
 la cohérence et la qualité. Si le contenu est au format DITA XML ou DocBook, par exemple, on
 peut exploiter au mieux les capacités de *single-sourcing* de ces formats pour

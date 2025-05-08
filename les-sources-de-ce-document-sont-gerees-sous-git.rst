@@ -16,7 +16,7 @@ balisage léger reStructuredText.
 .. figure:: graphics/documentation-life-cycle-framework.svg
 
 Toutes les versions de ce blog sont gérées sous le logiciel de gestion de
-versions décentralisé `Git`_. Les modifications de contenu, de structure ou de
+versions décentralisé [Git](http://www.git-scm.com. Les modifications de contenu, de structure ou de
 mise en page peuvent désormais être :
 
 - regroupées par lots cohérents,

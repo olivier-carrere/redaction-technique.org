@@ -12,7 +12,7 @@ Protéger les informations confidentielles
 
 .. sidebar:: :awesome:`fa-bullhorn`
 
-   Le puissant mécanisme `conref`_ de DITA XML se prête à d'autres applications
+   Le puissant mécanisme [conref](http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html de DITA XML se prête à d'autres applications
    que la réduction des coûts. Par exemple, le rédacteur technique peut masquer des
    informations dans le code source.
 

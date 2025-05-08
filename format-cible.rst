@@ -45,12 +45,12 @@ possibilités quasi illimitées.
 
    .. rubric:: Notes
 
-.. [#] Dans le cas d'une photo, le format cible est le format `JPEG`_
+.. [#] Dans le cas d'une photo, le format cible est le format [JPEG](http://fr.wikipedia.org/wiki/Jpeg
        qui est utilisé pour l'affichage
        Web ou l'impression et sur lequel les modifications ne peuvent être
        annulées une fois fermé le logiciel de retouches.
 
 .. [#] Ceci est automatisable par un script ; le Content Management System Drupal propose également un
-       module `DITA integration for Drupal`_.
+       module [DITA integration for Drupal](http://drupal.org/project/dita.
 
 .. text review: yes

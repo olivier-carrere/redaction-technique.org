@@ -29,7 +29,7 @@ texte conditionnel des outils de documentation.
 D'autre part, le système de gestion des branches est plus ou moins adapté à la
 gestion des traductions selon le gestionnaire de sources que l'on utilise.
 
-La principale différence entre les systèmes de gestion de sources `Git`_
+La principale différence entre les systèmes de gestion de sources [Git](http://www.git-scm.com
 et Subversion, c'est leur manière de gérer les branches. Créer une branche sous
 Subversion revient à dupliquer un répertoire. Les fichiers des deux répertoires
 évoluent ensuite séparément. Sous Git, en revanche, la création de branche se

@@ -18,10 +18,10 @@ dans un environnement Windows (testé sur Windows XP).
 
 - Connexion Internet
 
-#.  Téléchargez `Java`_,
+#.  Téléchargez [Java](http://java.com/fr/download/manual.jsp?locale=fr,
     puis lancez le programme d'installation.
 
-#.  Téléchargez `DITA Open Toolkit 1.5.4`_
+#.  Téléchargez [DITA Open Toolkit 1.5.4](http://sourceforge.net/projects/dita-ot/files/DITA-OT Stable Release/DITA Open Toolkit 1.5.4/DITA-OT1.5.4_full_easy_install_bin.zip/download
     sur le
     bureau, puis décompressez :file:`DITA-OT1.5.4_full_easy_install_bin.zip`.
 

@@ -14,7 +14,7 @@ essentiel de proposer un hébergement centralisé dans le *cloud*.
 Je disposais d'un nom de domaine non utilisé et de suffisamment d'espace
 disque et de bases de données libres sur un hébergement personnel.
 
-J'ai donc installé une instance de `Piwigo`_, logiciel que je connaissais déjà
+J'ai donc installé une instance de [Piwigo](http://piwigo.org/, logiciel que je connaissais déjà
 (je l'utilise pour des photos de famille).
 
 .. figure:: graphics/galerie-photo.jpg
@@ -33,7 +33,7 @@ Une rapide étude (en septembre 2018) m'a conduit à proposer les solutions
 suivantes :
 
 +----------------+--------------+--------------------+----------------+
-|                |`piwigo.com`_ |`Obambu`_           |`Obambu`_       |
+|                |[piwigo.com](https://piwigo.com/plan |[Obambu](https://obambu.com/fr/hebergement/           |[Obambu](https://obambu.com/fr/hebergement/       |
 |                |              |Performance         |Evolution       |
 +================+==============+====================+================+
 |Prix            |39 €          |23 €                |15 €            |

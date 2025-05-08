@@ -15,7 +15,7 @@ Configurez le Raspberry Pi 3
 - Carte micro-SD de 16 Go classe 10 (de préférence).
 - Connexion Internet filaire ou Wi-Fi.
 
-#. Installez la distribution Linux Raspbian sur votre Raspberry Pi 3 *via* `NOOBS`_.
+#. Installez la distribution Linux Raspbian sur votre Raspberry Pi 3 *via* [NOOBS](https://www.raspberrypi.org/downloads/noobs/.
 
 #. Sélectionnez :guilabel:`Menu` ‣ :guilabel:`Preferences` ‣ :guilabel:`Raspberry Pi Configuration`.
 

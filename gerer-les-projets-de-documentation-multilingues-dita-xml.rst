@@ -108,7 +108,7 @@ adapté, ou inspirer un nouveau script.
 
 Pour utiliser ce script :
 
-#.  Téléchargez le `script de génération multilingue DITA XML`_
+#.  Téléchargez le `script de génération multilingue[DITA XML](https://github.com/olivier-carrere/redaction-technique.org/tree/DITA_XML
     dans le
     répertoire contenant le fichier *ditamap* du projet.
 

@@ -12,7 +12,7 @@ Maximiser l'utilisation des *conref* pour faire baisser les coûts
 
 .. sidebar:: :awesome:`fa-bullhorn`
 
-   Recourir aux `conref`_ est le meilleur moyen dont dispose le rédacteur technique
+   Recourir aux [conref](http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html est le meilleur moyen dont dispose le rédacteur technique
    pour faire baisser spectaculairement les coûts et les délais de publication
    de son contenu DITA XML, surtout pour les documents multilingues.
 
@@ -115,6 +115,6 @@ du produit.
 Il est également possible de factoriser ainsi des éléments de structure, et non
 de contenu, tels que des en-têtes de tableaux. Vous pouvez ainsi présenter des
 informations de même type de manière homogène à moindre coût, c'est à dire sans
-recourir à la `spécialisation`_.
+recourir à la [spécialisation](http://en.wikipedia.org/wiki/Darwin_Information_Typing_Architecture#Specialization.
 
 .. text review: yes

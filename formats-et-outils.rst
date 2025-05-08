@@ -30,7 +30,7 @@ traducteur.
    *Un format standard laisse le choix de l'outil.*
 
 Si l'on réfléchit en termes de formats, en revanche, il est possible de mettre
-en place des solutions évolutives. Un format ouvert tel que `OpenDocument`_
+en place des solutions évolutives. Un format ouvert tel que [OpenDocument](http://fr.wikipedia.org/wiki/OpenDocument
 ou DITA XML, par
 exemple (seul le second étant un format industriel de rédaction technique),
 n'est pas lié à un outil donné. Il est donc possible de le modifier et de le

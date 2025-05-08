@@ -12,7 +12,7 @@ Utiliser le nœud XML de plus bas niveau
 
 .. sidebar:: :awesome:`fa-bullhorn`
 
-   Le rédacteur technique doit utiliser comme source du `conref`_ le nœud DITA XML de
+   Le rédacteur technique doit utiliser comme source du [conref](http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html le nœud DITA XML de
    plus bas niveau contenant l'information à partager.
 
 Le but des *conref* étant de gérer des blocs d'information de faibles
