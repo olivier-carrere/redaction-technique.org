@@ -10,8 +10,8 @@
 Générer un PDF avec DITA Open Toolkit sous GNU/Linux
 ====================================================
 
-Ce didacticiel |dita| est destiné à vous guider
-dans la mise en place et l'utilisation de la chaîne de publication |dita-ot|
+Ce didacticiel DITA XML est destiné à vous guider
+dans la mise en place et l'utilisation de la chaîne de publication DITA Open Toolkit
 dans un environnement GNU/Linux (Ubuntu ou Debian).
 
 .. rubric:: Prérequis
@@ -21,7 +21,7 @@ dans un environnement GNU/Linux (Ubuntu ou Debian).
 
 - connexion Internet.
 
-#. Téléchargez et décompressez l'archive |dita-ot| :
+#. Téléchargez et décompressez l'archive DITA Open Toolkit :
 
    .. code-block:: console
 
@@ -36,7 +36,7 @@ dans un environnement GNU/Linux (Ubuntu ou Debian).
       $ cd dita-ot-2.1.0
       $ dita -f pdf -i samples/taskbook.ditamap
 
-Félicitations, vous avez compilé votre premier projet |dita| ! Le fichier PDF
+Félicitations, vous avez compilé votre premier projet DITA XML ! Le fichier PDF
 généré est :file:`out/taskbook.pdf`. Vous pouvez maintenant compiler d'autres
 projets en ignorant les étapes 1 et 2.
 

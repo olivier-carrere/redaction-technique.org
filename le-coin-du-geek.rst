@@ -10,8 +10,8 @@
 Le coin du *geek*
 =================
 
-Je suis un |techwriter| à tendance *geek*. Après une grande frustration
-ressentie lors de l'utilisation d'outils tels que |fm| ou |flare|, j'ai
+Je suis un rédacteur technique à tendance *geek*. Après une grande frustration
+ressentie lors de l'utilisation d'outils tels que FrameMaker ou Flare, j'ai
 progressivement eu envie de voir ce qui se passait « sous le capot » et de
 comprendre ce qui se cachait derrière les interfaces graphiques.
 

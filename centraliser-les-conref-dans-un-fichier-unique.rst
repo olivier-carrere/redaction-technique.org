@@ -15,13 +15,13 @@ Centraliser les *conref* dans un fichier unique
    Pour favoriser l'utilisation des `conref`_ au sein d'une équipe de
    rédacteurs techniques, et également pour simplifier la maintenance des
    *conref*, il s'avère très efficace de centraliser tous les *conref* dans un
-   fichier |dita| dédié.
+   fichier DITA XML dédié.
 
-Il est *a priori* plus simple, pour réutiliser un contenu d'un fichier |dita|
+Il est *a priori* plus simple, pour réutiliser un contenu d'un fichier DITA XML
 existant, de pointer vers ce contenu sans l'extraire de son contexte
 d'origine. Cependant, un des grands principes de la réutilisation du contenu est
 de décontextualiser le contenu. Il est donc à terme beaucoup plus efficace pour
-le |techwriter| d'extraire le contenu réutilisé de son fichier
+le rédacteur technique d'extraire le contenu réutilisé de son fichier
 d'origine et de le placer dans un fichier ne contenant que des sources de
 *conref*. Il est en effet beaucoup plus facile de placer tous les éléments
 sources dans un référentiel unique que de devoir chercher les différentes
@@ -48,8 +48,8 @@ des *conref* cibles.
 
 Ce fichier central doit être de même type (*task*, *concept*, *reference*, etc.)
 que les fichiers de contenu, ou du moins du type *composite*, qui accepte tous
-types de structures |dita|. Pour des raisons d'organisation, je trouve
-personnellement efficace de créer un fichier central par type de *topic* |dita|,
+types de structures DITA XML. Pour des raisons d'organisation, je trouve
+personnellement efficace de créer un fichier central par type de *topic* DITA XML,
 et donc de même type, pour partager les informations propres à chaque
 type. Je réserve le type *composite* à un fichier central *fourre-tout*
 contenant des informations partagées entre différents types de *topics*.

@@ -12,7 +12,7 @@ Cas concret : documentation de NuFirewall
 
 La documentation de `NuFirewall`_,
 qui a été perçue par la presse comme `un point fort du produit`_,
-a été réalisée sous |dita|.
+a été réalisée sous DITA XML.
 
 Si je n'avais pas utilisé un format qui favorise au maximum la réutilisation de
 l'information, je n'aurais pas autant pu me consacrer à l'essentiel : le

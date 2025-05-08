@@ -7,12 +7,12 @@
 
 .. _raspberry-pi-plateforme-documentation:
 
-Le |raspi3| en tant que plateforme de documentation
+Le Raspberry Pi 3 en tant que plateforme de documentation
 ===================================================
 
 Faut-il une débauche de puissance pour générer une documentation
 professionnelle ? Avec son unique giga-octet de mémoire vive et son processeur
-de *smartphone*, le |raspi3| semble se positionner comme une bonne station
+de *smartphone*, le Raspberry Pi 3 semble se positionner comme une bonne station
 bureautique des années 2000… À l'usage, il s'avère pourtant qu'une unité
 centrale d'une quarantaine d'euros suffit largement pour créer, gérer et
 générer une documentation aux formats PDF, HTML, ou autre.
@@ -21,11 +21,11 @@ générer une documentation aux formats PDF, HTML, ou autre.
 
    Les buts de ce billet sont de :
 
-   - Présenter un |poc| et utiliser des ressources minimales pour créer, gérer
+   - Présenter un Proof of Concept (démonstration de faisabilité) et utiliser des ressources minimales pour créer, gérer
      et publier une documentation professionnelle. La plupart des opérations
      se déroulent donc en mode texte, sous Linux. Si les solutions présentées
      ici fonctionnent également en mode graphique sous Windows, elles ne sont
-     peut-être pas disponibles sous *Windows 10 IoT*, destiné au |raspi3|.
+     peut-être pas disponibles sous *Windows 10 IoT*, destiné au Raspberry Pi 3.
 
    - Présenter un scénario d'utilisation aussi simple que possible, parfois au
      détriment de l'élégance technique.

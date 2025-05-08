@@ -10,7 +10,7 @@
 Les répertoires réseau partagés - peu adaptés au travail de groupe
 ==================================================================
 
-Les fichiers partagés par une équipe de |techwriting| sont souvent
+Les fichiers partagés par une équipe de rédaction technique sont souvent
 stockés dans un répertoire partagé sur le réseau.
 
 Les rédacteurs techniques travaillent directement sur les fichiers partagés,
@@ -27,10 +27,10 @@ pour les données : la granulométrie de la sauvegarde est le répertoire, sa
 fréquence n'est souvent que quotidienne. En cas de perte de données, la
 restauration se fait répertoire par répertoire, et non fichier par fichier et
 porte sur des versions dont l'ancienneté dépend de l'administrateur système, et
-non du |techwriter|. Fouiller dans les archives est une opération
+non du rédacteur technique. Fouiller dans les archives est une opération
 fastidieuse qui peut elle-même être source d'erreurs : en l'absence d'une
 comparaison fiable et aisée entre plusieurs versions des fichiers, le
-|techwriter| peut facilement supprimer des modifications qu'il aurait
+rédacteur technique peut facilement supprimer des modifications qu'il aurait
 souhaité conserver en voulant en restaurer d'autres.
 
 Copier un fichier du réseau pour le modifier sur son disque dur personnel, puis
@@ -42,7 +42,7 @@ périlleuses :
   techniques devra alors renoncer à toutes ses modifications ;
 
 - lors d'une copie manuelle des fichiers, que ce soit *via* un gestionnaire de
-  fichiers graphique ou en ligne de commande, le |techwriter| peut
+  fichiers graphique ou en ligne de commande, le rédacteur technique peut
   facilement écraser la version la plus récente par la plus ancienne (on
   préférera alors avoir recours à un logiciel de synchronisation de fichiers
   tels que `rsync`_ ou `Unison`_
@@ -51,8 +51,8 @@ périlleuses :
   Windows, ou à un équivalent graphique, tel `SyncToy`_.
   Cependant,
   ce type de logiciels se base sur la date de dernière modification des
-  fichiers. Lorsque l'on met à jour ou publie un livre |fm|, notamment,
-  ceci peut créer des conflits entre fichiers, |fm| enregistrant dans ces
+  fichiers. Lorsque l'on met à jour ou publie un livre FrameMaker, notamment,
+  ceci peut créer des conflits entre fichiers, FrameMaker enregistrant dans ces
   cas tous les fichiers du livre, même si leur contenu n'a pas été modifié).
 
 .. text review: yes

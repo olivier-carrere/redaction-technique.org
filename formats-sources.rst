@@ -8,7 +8,7 @@
 Formats sources
 ---------------
 
-Ce |site| est disponible en trois formats, basés sur la
+Ce blog est disponible en trois formats, basés sur la
 version 1.1 [#]_. Ces formats présentent des niveaux de fonctionnalités et de
 complexité différents.
 
@@ -30,7 +30,7 @@ DocBook
    `DocBook`_ est un langage de balisage XML sémantique qui offre un rapport
    fonctionnalités/complexité aujourd'hui peu intéressant.
 
-.. [#] Seule la version |rst|, à partir de laquelle cette version
+.. [#] Seule la version reStructuredText, à partir de laquelle cette version
        HTML est créée, est maintenue.
 
 .. text review: yes

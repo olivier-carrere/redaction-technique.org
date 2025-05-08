@@ -12,7 +12,7 @@ Partager des blocs d'information atomiques avec les *conref*
 
 .. sidebar:: :awesome:`fa-bullhorn`
 
-   Lorsque le |techwriter| veut réutiliser des blocs d'information |dita| plus
+   Lorsque le rédacteur technique veut réutiliser des blocs d'information DITA XML plus
    petits qu'une section, il doit les partager au niveau des fichiers de
    contenu *dita* et non dans les structures de table des matières *ditamap*,
    grâce au mécanisme `conref`_.

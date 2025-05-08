@@ -12,25 +12,25 @@ Migrer de FrameMaker vers DITA XML
 
 Le but de cette procédure est de :
 
-- migrer son contenu |fm| vers |dita| sans se plonger dans
-  les arcanes des *EDD* |fm| (petits
+- migrer son contenu FrameMaker vers DITA XML sans se plonger dans
+  les arcanes des *EDD* FrameMaker (petits
   projets uniquement !),
 
-- gérer la documentation technique au format |dita| sans utiliser |fm|
+- gérer la documentation technique au format DITA XML sans utiliser FrameMaker
   :guilabel:`structuré`.
 
-#. Restructurez le contenu et les styles de vos fichiers de contenu |fm|
-   selon les concepts |dita|.
+#. Restructurez le contenu et les styles de vos fichiers de contenu FrameMaker
+   selon les concepts DITA XML.
 
-#. Créez un document |fm| vide et importez-y tous les styles existants dans
+#. Créez un document FrameMaker vide et importez-y tous les styles existants dans
    les fichiers à migrer.
 
 #. Appliquez tous les styles disponibles à des paragraphes vides du document
-   |fm| vide.
+   FrameMaker vide.
 
-#. Enregistrez le document |fm| vide sous le nom :file:`styles.fm`.
+#. Enregistrez le document FrameMaker vide sous le nom :file:`styles.fm`.
 
-#. Ouvrez |fm| :guilabel:`structuré 11` et créez un nouveau fichier |dita| de type
+#. Ouvrez FrameMaker :guilabel:`structuré 11` et créez un nouveau fichier DITA XML de type
    *topic*.
 
 #. Choisissez :guilabel:`StructureTools` ‣ :guilabel:`Exporter le catalogue d'éléments en tant
@@ -41,30 +41,30 @@ Le but de cette procédure est de :
    définitions d'éléments` et importez les définitions d'éléments à partir de
    :file:`DITA-topic-edd.fm`.
 
-#. Répétez les trois étapes ci-dessus pour les autres types de topics |dita|
+#. Répétez les trois étapes ci-dessus pour les autres types de topics DITA XML
    (*task*, *reference*, etc.), en modifiant les noms de fichiers comme il se doit.
 
 #. Ouvrez le fichier :file:`styles.fm`, puis choisissez :guilabel:`StructureTools` ‣
    :guilabel:`Générer le tableau de conversion`.
 
 #. Modifiez le fichier de conversion et faites correspondre chaque style
-   |fm| à une balise |dita|.
+   FrameMaker à une balise DITA XML.
 
 #. Enregistrez le tableau de conversion sous le nom
    :file:`DITA2FM-conversion-table.fm`.
 
-#. Ouvrez un fichier de contenu |fm| sous |fm| structuré 11 et
+#. Ouvrez un fichier de contenu FrameMaker sous FrameMaker structuré 11 et
    choisissez :guilabel:`StructureTools` ‣ :guilabel:`Utilitaires` ‣ :guilabel:`Structurer le document en
    cours`.
 
 #. Sélectionnez :file:`DITA2FM-conversion-table.fm` et cliquez sur :guilabel:`Ajouter
    structure`.
 
-#. Enregistrez le fichier de contenu |fm| au format XML sans sélectionner
+#. Enregistrez le fichier de contenu FrameMaker au format XML sans sélectionner
    d'application.
 
-#. Ouvrez le fichier XML généré sous un éditeur |dita| et corrigez la syntaxe
-   |dita|. Certains aspects de cette étape sont scriptables, mais il faut
+#. Ouvrez le fichier XML généré sous un éditeur DITA XML et corrigez la syntaxe
+   DITA XML. Certains aspects de cette étape sont scriptables, mais il faut
    également procéder à des opérations manuelles de restructuration du
    contenu. Il vous faudra notamment placer à la main les références croisées,
    de préférence dans une *reltable*.

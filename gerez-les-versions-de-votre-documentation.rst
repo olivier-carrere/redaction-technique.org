@@ -10,7 +10,7 @@
 Gérez les versions de votre documentation
 -----------------------------------------
 
-#. *Commitez* votre lot de modifications sous |git| :
+#. *Commitez* votre lot de modifications sous Git :
 
    .. code-block:: console
                    
@@ -21,13 +21,13 @@ Gérez les versions de votre documentation
       $ git add graphics/*.svg
       $ git commit -m "Mon lot de modifications sur les images"
 
-#. Affichez l'historique des modifications des sources de ce |site| :
+#. Affichez l'historique des modifications des sources de ce blog :
 
    .. code-block:: console
 
       $ gitk &
 
-   Ô surprise, vous avez sous les yeux, mais oui, une |gui| ! C'est tellement
+   Ô surprise, vous avez sous les yeux, mais oui, une Graphical User Interface ! C'est tellement
    beau, qu'on va faire une photo :
 
    .. figure:: graphics/historique-git-redaction-technique.png
@@ -38,14 +38,14 @@ Gérez les versions de votre documentation
 .. note::
 
    - Vos modifications sont purement locales et ne sont pas appliquées sur le
-     dépot distant |github|.
+     dépot distant GitHub.
 
-   - Si vos modifications apportent une réelle valeur ajoutée à ce |site|
+   - Si vos modifications apportent une réelle valeur ajoutée à ce blog
      (correction de coquille, ajout d'information ou autre), n'hésitez pas à
-     me la soumettre sous forme de patch |git| ou *via* votre compte |github|.
+     me la soumettre sous forme de patch Git ou *via* votre compte GitHub.
 
-   - |github| n'est probablement pas hébergé sur un cluster de |raspi3|. Rien
-     n'empêche cependant d'héberger un dépôt distant |git| sur un |raspi3|
-     connecté au réseau et d'y accéder par connexion sécurisée |ssh|.
+   - GitHub n'est probablement pas hébergé sur un cluster de Raspberry Pi 3. Rien
+     n'empêche cependant d'héberger un dépôt distant Git sur un Raspberry Pi 3
+     connecté au réseau et d'y accéder par connexion sécurisée SSH.
 
 .. text review: yes

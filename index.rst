@@ -52,7 +52,7 @@ types d'utilisateurs du produit A : les *Gourous Linux* et les
 +------------------+-----------------+-----------------+
 |                  |Gourou Linux     |Windowsien       |
 +==================+=================+=================+
-|                  ||guru|           ||windowsien|     |
+|                  |graphics/guru.png           |graphics/windowsien.png     |
 +------------------+-----------------+-----------------+
 |Trait de          |Aime savoir      |Aime que les     |
 |personnalité      |comment          |choses           |

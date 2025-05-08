@@ -11,7 +11,7 @@ Générez votre documentation
 ---------------------------
 
 #. Revenez dans le terminal, puis récupérez la dernière version *taguée* de ce
-   |site| :
+   blog :
 
    .. code-block:: console
 
@@ -22,26 +22,26 @@ Générez votre documentation
       Oui, je sais, cette commande ne correspond pas exactement à la
       définition de *simple* donnée par le Larousse…
 
-#. Générez la dernière version *taguée* de ce |site| aux format PDF, HTML et
+#. Générez la dernière version *taguée* de ce blog aux format PDF, HTML et
    EPUB :
 
    .. code-block:: console
 
       $ make all
 
-#. Affichez le |site| au format PDF :
+#. Affichez le blog au format PDF :
 
    .. code-block:: console
 
       $ xpdf _build/latex/redaction-techniqueorg.pdf &
 
-#. Affichez le |site| au format HTML :
+#. Affichez le blog au format HTML :
 
    .. code-block:: console
 
       $ epiphany _build/html/index.html &
 
-#. Affichez le |site| au format EPUB :
+#. Affichez le blog au format EPUB :
 
    .. code-block:: console
 
@@ -66,18 +66,18 @@ Et voilà. En quelques minutes, vous avez :
        conditionnel avec opérateurs booléens et tout et tout grâce au moteur
        de *templating* `Jinja`_.
 
-     - Les observateurs remarqueront que la version HTML du |site| version 1.5
+     - Les observateurs remarqueront que la version HTML du blog version 1.5
        ne comporte pas de table des matières dans la colonne de droite. C'est
        qu'en effet, cette version n'embarque pas le patch *1032292*. Je vous
-       laisse chercher dans l'historique |git|… voire créer une branche et le
+       laisse chercher dans l'historique Git… voire créer une branche et le
        *cherry-picker* !
 
-Le |raspi3| est donc une plateforme de documentation tout à fait crédible… à
+Le Raspberry Pi 3 est donc une plateforme de documentation tout à fait crédible… à
 condition de se passer, ou presque, d'interface graphique !
 
-Le prochain test consistera à générer la version |dita| de ce |site|.
+Le prochain test consistera à générer la version DITA XML de ce blog.
 
-Le prochain prochain test consistera à générer ce |site| sur un *smartphone*
+Le prochain prochain test consistera à générer ce blog sur un *smartphone*
 en installant une distribution `Linux sur Android`_.
 
 .. text review: yes

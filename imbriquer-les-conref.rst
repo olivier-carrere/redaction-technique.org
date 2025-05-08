@@ -13,7 +13,7 @@ Imbriquer les *conref*
 .. sidebar:: :awesome:`fa-bullhorn`
 
    Pour des raisons de facilité de mise à jour et de maintenance du contenu
-   |dita|, le |techwriter| doit limiter l'effet *poupée russe* et ne pas trop
+   DITA XML, le rédacteur technique doit limiter l'effet *poupée russe* et ne pas trop
    imbriquer les `conref`_.  Un seul niveau d'imbrication (un *conref*
    imbriqué dans un autre) me semble le seuil au-delà duquel le contenu peut
    vite devenir ingérable.
@@ -31,7 +31,7 @@ Dans l'exemple ci-dessous, le *conref* source *see-admin-guide* contient le
    </p>
 
 Ce niveau de complexité est gérable. Mais si le *conref* source
-*admin-guide-title* contient lui même un *conref* cible, le code |dita|
+*admin-guide-title* contient lui même un *conref* cible, le code DITA XML
 devient un vrai plat de spaghettis (sans compter les risques de référence
 circulaire). Les *conref* peuvent théoriquement être combinés à l'infini, mais
 les problèmes pratiques que cela engendre peuvent également être infinis !

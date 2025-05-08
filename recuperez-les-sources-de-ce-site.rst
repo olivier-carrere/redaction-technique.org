@@ -7,16 +7,16 @@
 
 .. _recuperez-les-sources-de-ce-site:
 
-Récupérez les sources de ce |site|
+Récupérez les sources de ce blog
 ----------------------------------
 
-#. Clonez le dépôt |git| des sources de ce |site| :
+#. Clonez le dépôt Git des sources de ce blog :
 
    .. code-block:: console
 
       $ git clone https://github.com/olivier-carrere/redaction-technique.org.git
 
-#. Placez-vous dans le répertoire des sources de ce |site| :
+#. Placez-vous dans le répertoire des sources de ce blog :
 
    .. code-block:: console
 

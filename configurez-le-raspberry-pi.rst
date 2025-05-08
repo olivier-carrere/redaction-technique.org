@@ -7,7 +7,7 @@
 
 .. _configurez-le-raspberry-pi:
 
-Configurez le |raspi3|
+Configurez le Raspberry Pi 3
 ----------------------
 
 .. rubric:: Prérequis
@@ -15,7 +15,7 @@ Configurez le |raspi3|
 - Carte micro-SD de 16 Go classe 10 (de préférence).
 - Connexion Internet filaire ou Wi-Fi.
 
-#. Installez la distribution Linux Raspbian sur votre |raspi3| *via* `NOOBS`_.
+#. Installez la distribution Linux Raspbian sur votre Raspberry Pi 3 *via* `NOOBS`_.
 
 #. Sélectionnez :guilabel:`Menu` ‣ :guilabel:`Preferences` ‣ :guilabel:`Raspberry Pi Configuration`.
 
@@ -54,6 +54,6 @@ Configurez le |raspi3|
 
 #. Sélectionnez :guilabel:`Menu` ‣ :guilabel:`Shutdown` ‣ :guilabel:`Reboot`.
 
-   Le |raspi3| redémarre.
+   Le Raspberry Pi 3 redémarre.
 
 .. text review: yes
