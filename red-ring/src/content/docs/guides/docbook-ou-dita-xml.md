@@ -1,5 +1,6 @@
 ---
 title: DocBook ou DITA XML ?
+---
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

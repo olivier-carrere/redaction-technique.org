@@ -1,5 +1,6 @@
 ---
 title: Qu\'est-ce qu\'un module d\'information ?
+---
 
 Le système modulaire le plus connu au monde est certainement celui des
 briques Lego. Adapté à la documentation technique, le principe des

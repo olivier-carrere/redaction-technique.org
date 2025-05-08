@@ -1,5 +1,6 @@
 ---
 title: Fournir une information ciblée avec le texte conditionnel ditaval
+---
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

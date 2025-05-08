@@ -1,5 +1,6 @@
 ---
 title: Récupérez les sources de ce blog
+---
 
 1.  Clonez le dépôt Git des sources de ce blog :
 

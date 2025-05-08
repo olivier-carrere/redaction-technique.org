@@ -1,5 +1,6 @@
 ---
 title: Organisation à la demande du contenu
+---
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

@@ -1,5 +1,6 @@
 ---
 title: Du document à la base documentaire modulaire
+---
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

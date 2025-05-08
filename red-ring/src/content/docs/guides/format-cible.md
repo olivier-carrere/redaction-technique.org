@@ -1,5 +1,6 @@
 ---
 title: Format cible
+---
 
 Le format cible[^1] d\'un support de rédaction technique est celui sous
 lequel l\'audience du message y accédera. Il est différent de celui sous

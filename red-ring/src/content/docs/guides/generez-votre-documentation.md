@@ -1,5 +1,6 @@
 ---
 title: Générez votre documentation
+---
 
 1.  Revenez dans le terminal, puis récupérez la dernière version
     *taguée* de ce blog :

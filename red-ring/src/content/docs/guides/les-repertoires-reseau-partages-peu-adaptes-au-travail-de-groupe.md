@@ -1,5 +1,6 @@
 ---
 title: Les répertoires réseau partagés - peu adaptés au travail de groupe
+---
 
 Les fichiers partagés par une équipe de rédaction technique sont souvent
 stockés dans un répertoire partagé sur le réseau.

@@ -1,5 +1,6 @@
 ---
 title: Gérez les versions de votre documentation
+---
 
 1.  *Commitez* votre lot de modifications sous Git :
 

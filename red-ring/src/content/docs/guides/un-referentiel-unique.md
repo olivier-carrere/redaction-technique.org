@@ -1,5 +1,6 @@
 ---
 title: Un référentiel unique ?
+---
 
 Idéalement, tout le contenu peut être placé sous un référentiel unique,
 par exemple le logiciel de gestion de versions

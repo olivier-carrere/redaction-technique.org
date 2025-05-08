@@ -1,5 +1,6 @@
 ---
 title: Validation et contrôle qualité
+---
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

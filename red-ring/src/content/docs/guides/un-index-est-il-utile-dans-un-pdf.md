@@ -1,5 +1,6 @@
 ---
 title: Un index est-il utile dans un PDF ?
+---
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

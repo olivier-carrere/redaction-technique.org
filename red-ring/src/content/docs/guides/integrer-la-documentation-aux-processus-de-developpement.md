@@ -1,5 +1,6 @@
 ---
 title: Intégrer la documentation aux processus de développement
+---
 
 La documentation fait partie du logiciel. Fournie avec le produit, elle
 doit :

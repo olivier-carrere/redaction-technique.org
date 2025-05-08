@@ -1,5 +1,6 @@
 ---
 title: Organiser son historique avec Git rebase
+---
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

@@ -1,5 +1,6 @@
 ---
 title: DITA Open Toolkit - afficher les références croisées dans les PDF
+---
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

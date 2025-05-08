@@ -1,5 +1,6 @@
 ---
 title: Mener un projet de bout en bout
+---
 
 ::: sidebar
 **`fa-history`{.interpreted-text role="awesome"} Modifications

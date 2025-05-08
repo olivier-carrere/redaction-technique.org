@@ -1,5 +1,6 @@
 ---
 title: De la rédaction à la communication technique
+---
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

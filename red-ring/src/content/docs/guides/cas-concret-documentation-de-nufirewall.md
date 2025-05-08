@@ -1,5 +1,6 @@
 ---
 title: Cas concret - documentation de NuFirewall
+---
 
 La documentation de
 \[NuFirewall\](<http://linuxfr.org/news/nufirewall-le-pare-feu-libre-sans-prise-de-t%C3%AAte>,

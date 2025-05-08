@@ -1,5 +1,6 @@
 ---
 title: Git - du fichier au contenu
+---
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

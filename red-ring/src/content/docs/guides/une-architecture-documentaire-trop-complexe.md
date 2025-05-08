@@ -1,5 +1,6 @@
 ---
 title: Une architecture documentaire trop complexe ?
+---
 
 DITA XML permet des gains de productivité importants par la réduction du
 volume source que le rédacteur technique crée, traduit et maintient. Ce

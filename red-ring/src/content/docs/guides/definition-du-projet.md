@@ -1,5 +1,6 @@
 ---
 title: Définition du projet
+---
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

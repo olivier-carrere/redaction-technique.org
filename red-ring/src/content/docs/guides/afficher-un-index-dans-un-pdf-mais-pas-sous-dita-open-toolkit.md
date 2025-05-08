@@ -1,5 +1,6 @@
 ---
 title: Afficher un index dans un PDF (mais pas sous DITA Open Toolkit)
+---
 
 Tout n\'est pas parfait sous DITA Open Toolkit, le moteur de publication
 libre DITA XML. Vous avez méticuleusement inséré vos entrées d\'index

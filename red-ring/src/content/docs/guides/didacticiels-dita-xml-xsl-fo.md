@@ -1,5 +1,6 @@
 ---
 title: Didacticiels DITA XML et XSL-FO
+---
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

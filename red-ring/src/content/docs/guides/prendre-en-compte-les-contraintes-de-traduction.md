@@ -1,5 +1,6 @@
 ---
 title: Prendre en compte les contraintes de traduction
+---
 
 L\'unité d\'information DITA XML la plus petite est le nœud
 `<ph>`{.interpreted-text role="samp"}. Le rédacteur technique doit

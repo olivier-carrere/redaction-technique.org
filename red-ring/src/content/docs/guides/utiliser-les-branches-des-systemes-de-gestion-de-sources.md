@@ -1,5 +1,6 @@
 ---
 title: Utiliser les branches des systèmes de gestion de sources
+---
 
 Les systèmes de gestion de sources proposent de créer des branches d\'un
 projet : si à un moment donné, un projet se divise en deux projets

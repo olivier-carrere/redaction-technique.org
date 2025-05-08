@@ -1,5 +1,6 @@
 ---
 title: Les topics, modules d\'information de base DITA XML
+---
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

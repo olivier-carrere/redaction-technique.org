@@ -1,5 +1,6 @@
 ---
 title: Partager des blocs d\'information atomiques avec les *conref*
+---
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

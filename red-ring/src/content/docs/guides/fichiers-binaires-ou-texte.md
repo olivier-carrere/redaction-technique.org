@@ -1,5 +1,6 @@
 ---
 title: Fichiers binaires ou texte
+---
 
 Les formats sources sont des formats binaires ou texte.
 

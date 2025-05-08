@@ -1,5 +1,6 @@
 ---
 title: Documents monolithiques ou modulaires
+---
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

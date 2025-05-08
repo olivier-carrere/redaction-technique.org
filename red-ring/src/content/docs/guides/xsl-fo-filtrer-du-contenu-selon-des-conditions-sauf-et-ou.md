@@ -1,5 +1,6 @@
 ---
 title: XSL-FO - filtrer du contenu selon des conditions « sauf » et « ou »
+---
 
 Imaginons que vous vouliez filtrer les nœuds enfants de la balise DITA
 XML `<example>`{.interpreted-text role="samp"} et afficher tout son

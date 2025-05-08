@@ -1,5 +1,6 @@
 ---
 title: Protéger les informations confidentielles
+---
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

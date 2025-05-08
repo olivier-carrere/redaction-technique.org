@@ -1,5 +1,6 @@
 ---
 title: Typologie de haut niveau de l\'information
+---
 
 DITA XML propose au rédacteur technique une typologie de haut niveau qui
 est une véritable aide à la structuration du contenu.

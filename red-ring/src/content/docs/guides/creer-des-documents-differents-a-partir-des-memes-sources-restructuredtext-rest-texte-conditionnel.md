@@ -1,5 +1,6 @@
 ---
 title: Créer des documents différents à partir des mêmes sources ReST (texte conditionnel)
+---
 
 1.  Installez *Sphinx*, et *make* :
 

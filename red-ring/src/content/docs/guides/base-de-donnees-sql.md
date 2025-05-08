@@ -1,5 +1,6 @@
 ---
 title: Base de données SQL
+---
 
 Dans le cas d\'un Content Management System de type Drupal, Joomla ou
 WordPress, le référentiel est une base de données SQL. Il conserve un
