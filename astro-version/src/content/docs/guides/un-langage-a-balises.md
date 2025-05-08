@@ -1,3 +1,7 @@
+---
+title: Un langage à balises {#un-langage-a-balises}
+description: A guide in my new Starlight docs site.
+---
 # Un langage à balises {#un-langage-a-balises}
 
 ::: sidebar

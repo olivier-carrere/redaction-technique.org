@@ -1,3 +1,7 @@
+---
+title: Les systèmes de gestion de versions - rustiques mais fiables {#les-systemes-de-gestion-de-versions-rustiques-mais-fiables}
+description: A guide in my new Starlight docs site.
+---
 # Les systèmes de gestion de versions - rustiques mais fiables {#les-systemes-de-gestion-de-versions-rustiques-mais-fiables}
 
 Travailler sur des fichiers sources au format texte, et non binaire, est

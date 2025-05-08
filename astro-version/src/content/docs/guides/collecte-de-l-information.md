@@ -1,3 +1,7 @@
+---
+title: Collecte de l\'information {#collecte-de-l-information}
+description: A guide in my new Starlight docs site.
+---
 # Collecte de l\'information {#collecte-de-l-information}
 
 Le collecte l\'information auprès de différentes sources, internes et

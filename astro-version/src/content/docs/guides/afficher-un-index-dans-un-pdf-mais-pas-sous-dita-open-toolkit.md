@@ -1,3 +1,7 @@
+---
+title: Afficher un index dans un PDF (mais pas sous DITA Open Toolkit)
+description: A guide in my new Starlight docs site.
+---
 # Afficher un index dans un PDF (mais pas sous DITA Open Toolkit)
 
 Tout n\'est pas parfait sous , le moteur de publication libre . Vous

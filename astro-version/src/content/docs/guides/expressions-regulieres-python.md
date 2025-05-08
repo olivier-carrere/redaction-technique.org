@@ -1,3 +1,7 @@
+---
+title: Expressions régulières en Python {#expressions-regulieres-python}
+description: A guide in my new Starlight docs site.
+---
 # Expressions régulières en Python {#expressions-regulieres-python}
 
 Le langage Python offre de nombreuses bibliothèques de fonctions. Celle

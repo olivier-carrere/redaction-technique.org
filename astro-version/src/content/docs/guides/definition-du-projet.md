@@ -1,3 +1,7 @@
+---
+title: Définition du projet {#definition-du-projet}
+description: A guide in my new Starlight docs site.
+---
 # Définition du projet {#definition-du-projet}
 
 ::: sidebar

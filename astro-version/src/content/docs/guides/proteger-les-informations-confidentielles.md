@@ -1,3 +1,7 @@
+---
+title: Protéger les informations confidentielles {#proteger-les-informations-confidentielles}
+description: A guide in my new Starlight docs site.
+---
 # Protéger les informations confidentielles {#proteger-les-informations-confidentielles}
 
 ::: sidebar

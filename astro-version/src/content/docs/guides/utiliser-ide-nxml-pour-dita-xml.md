@@ -1,3 +1,7 @@
+---
+title: Utiliser l\'IDE nXML pour DITA XML {#utiliser-ide-nxml-pour-dita-xml}
+description: A guide in my new Starlight docs site.
+---
 # Utiliser l\'IDE nXML pour DITA XML {#utiliser-ide-nxml-pour-dita-xml}
 
 Le mode nXML propose de valider en temps réel les documents XML , XHTML

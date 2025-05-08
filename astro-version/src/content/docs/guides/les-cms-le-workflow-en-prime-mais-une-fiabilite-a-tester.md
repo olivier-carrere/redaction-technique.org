@@ -1,3 +1,7 @@
+---
+title: Les CMS : le *workflow* en prime, mais une fiabilité à tester {#les-cms-le-workflow-en-prime-mais-une-fiabilite-a-tester}
+description: A guide in my new Starlight docs site.
+---
 # Les CMS : le *workflow* en prime, mais une fiabilité à tester {#les-cms-le-workflow-en-prime-mais-une-fiabilite-a-tester}
 
 ::: sidebar

@@ -1,3 +1,7 @@
+---
+title: Générer un PDF avec DITA Open Toolkit (Windows) {#generer-un-pdf-avec-dita-open-toolkit-windows}
+description: A guide in my new Starlight docs site.
+---
 # Générer un PDF avec DITA Open Toolkit (Windows) {#generer-un-pdf-avec-dita-open-toolkit-windows}
 
 Ce didacticiel est destiné à vous guider dans la mise en place et
@@ -54,6 +58,6 @@ l\'utilisation de la chaîne de publication dans un environnement Windows
     Félicitations, vous avez compilé votre premier projet  ! Vous
     trouverez le fichier cible `taskbook.pdf`{.interpreted-text
     role="file"} dans le répertoire
-    `Bureau\\%full%\\DITA-OT1.5.4`{.interpreted-text role="file"}. Vous
+    `Bureau\%full%\DITA-OT1.5.4`{.interpreted-text role="file"}. Vous
     pouvez maintenant compiler d\'autres projets en ignorant les étapes
     1 et 2.

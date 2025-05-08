@@ -1,3 +1,7 @@
+---
+title: Un référentiel unique ? {#un-referentiel-unique}
+description: A guide in my new Starlight docs site.
+---
 # Un référentiel unique ? {#un-referentiel-unique}
 
 Idéalement, tout le contenu peut être placé sous un référentiel unique,

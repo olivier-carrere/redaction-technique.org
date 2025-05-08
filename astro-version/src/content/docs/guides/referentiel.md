@@ -1,3 +1,7 @@
+---
+title: Référentiel {#referentiel}
+description: A guide in my new Starlight docs site.
+---
 # Référentiel {#referentiel}
 
 Le contenu est le capital immatériel de la société et doit être protégé

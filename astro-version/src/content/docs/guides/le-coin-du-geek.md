@@ -1,3 +1,7 @@
+---
+title: Le coin du *geek*
+description: A guide in my new Starlight docs site.
+---
 # Le coin du *geek*
 
 Je suis un à tendance *geek*. Après une grande frustration ressentie

@@ -1,3 +1,7 @@
+---
+title: Faire sauter les goulets d\'étranglement avec les branches {#faire-sauter-les-goulets-etranglement-avec-les-branches}
+description: A guide in my new Starlight docs site.
+---
 # Faire sauter les goulets d\'étranglement avec les branches {#faire-sauter-les-goulets-etranglement-avec-les-branches}
 
 Les branches *Git* permettent de facilement effectuer en parallèle

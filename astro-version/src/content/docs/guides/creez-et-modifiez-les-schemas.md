@@ -1,3 +1,7 @@
+---
+title: Créez et modifiez les schémas {#creez-et-modifiez-les-schemas}
+description: A guide in my new Starlight docs site.
+---
 # Créez et modifiez les schémas {#creez-et-modifiez-les-schemas}
 
 1.  Modifiez un fichier source des images de ce  :

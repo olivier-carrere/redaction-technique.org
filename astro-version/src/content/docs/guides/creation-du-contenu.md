@@ -1,3 +1,7 @@
+---
+title: Création du contenu {#creation-du-contenu}
+description: A guide in my new Starlight docs site.
+---
 # Création du contenu {#creation-du-contenu}
 
 Le crée le contenu du projet de dans un dialogue constant avec les

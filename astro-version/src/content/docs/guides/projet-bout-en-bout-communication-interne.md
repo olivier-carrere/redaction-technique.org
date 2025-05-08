@@ -1,3 +1,7 @@
+---
+title: Communication interne {# projet-bout-en-bout-communication-interne}
+description: A guide in my new Starlight docs site.
+---
 # Communication interne {# projet-bout-en-bout-communication-interne}
 
 Les outils et les process étant en place, restait à y faire adhérer les

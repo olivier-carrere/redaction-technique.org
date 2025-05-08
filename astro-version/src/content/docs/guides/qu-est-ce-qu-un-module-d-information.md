@@ -1,3 +1,7 @@
+---
+title: Qu\'est-ce qu\'un module d\'information ? {#qu-est-ce-qu-un-module-d-information}
+description: A guide in my new Starlight docs site.
+---
 # Qu\'est-ce qu\'un module d\'information ? {#qu-est-ce-qu-un-module-d-information}
 
 Le système modulaire le plus connu au monde est certainement celui des

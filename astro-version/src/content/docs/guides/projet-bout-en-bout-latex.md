@@ -1,3 +1,7 @@
+---
+title: LaTeX {# projet-bout-en-bout-latex}
+description: A guide in my new Starlight docs site.
+---
 # LaTeX {# projet-bout-en-bout-latex}
 
 Pourquoi avoir choisi [LaTeX](#latex) pour réaliser le support *print*
@@ -8,31 +12,31 @@ pouvoir traduire le dépliant sans effectuer de tâche de PAO manuelle.
 Voici un exemple de code LaTeX :
 
 ``` tex
-\section{\faTag  Iconographes}
+\section{aTag  Iconographes}
 
-\vspace*{\fill}
+space*{ill}
 
-\begin{enumerate}[itemsep=0mm,leftmargin=*]
+egin{enumerate}[itemsep=0mm,leftmargin=*]
 
    \item Contactez-nous pour rejoindre l'équipe d'iconographes.
-   \item Affichez une photo de l'album \emph{Community}.
-   \item Cliquez sur \faPencil  \textbf{Mots-clés}.
+   \item Affichez une photo de l'album mph{Community}.
+   \item Cliquez sur aPencil  	extbf{Mots-clés}.
    \item Ajoutez des mots-clés aux photos :
 
-     \begin{itemize}
-       \item Indiquez \emph{Print} si la photo convient à l'impression, \emph{Web}
+     egin{itemize}
+       \item Indiquez mph{Print} si la photo convient à l'impression, mph{Web}
          dans le cas contraire.
-       \item Pour que la photo soit supprimée, indiquez \emph{Delete}.  Elle sera
-         effacée plus tard\footnote{Elle sera conservée dans la sauvegarde.}.
-     \end{itemize}
+       \item Pour que la photo soit supprimée, indiquez mph{Delete}.  Elle sera
+         effacée plus tardootnote{Elle sera conservée dans la sauvegarde.}.
+     nd{itemize}
 
-\end{enumerate}
+nd{enumerate}
 
-\begin{center}
-  \setlength{\fboxsep}{0pt}%
-  \setlength{\fboxrule}{0pt}%
-  \fbox{\includegraphics[angle=5,width=\linewidth]{iconographes}}%
-\end{center}
+egin{center}
+  \setlength{boxsep}{0pt}%
+  \setlength{boxrule}{0pt}%
+  box{\includegraphics[angle=5,width=\linewidth]{iconographes}}%
+nd{center}
 ```
 
 Le rendu PDF est illustré ci-dessous. Remarquez le calcul automatique

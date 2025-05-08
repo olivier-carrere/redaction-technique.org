@@ -1,3 +1,7 @@
+---
+title: Les trois niveaux de la documentation technique
+description: A guide in my new Starlight docs site.
+---
 # Les trois niveaux de la documentation technique
 
 Si l\'on compare la à un jardin, on peut la classifier selon les niveaux

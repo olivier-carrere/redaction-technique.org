@@ -1,3 +1,7 @@
+---
+title: XSL-FO : filtrer du contenu selon des conditions « sauf » et « ou »
+description: A guide in my new Starlight docs site.
+---
 # XSL-FO : filtrer du contenu selon des conditions « sauf » et « ou »
 
 Imaginons que vous vouliez filtrer les nœuds enfants de la balise

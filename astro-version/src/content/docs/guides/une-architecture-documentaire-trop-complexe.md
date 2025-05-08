@@ -1,3 +1,7 @@
+---
+title: Une architecture documentaire trop complexe ?
+description: A guide in my new Starlight docs site.
+---
 # Une architecture documentaire trop complexe ?
 
 permet des gains de productivité importants par la réduction du volume

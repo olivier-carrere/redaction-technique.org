@@ -1,3 +1,7 @@
+---
+title: Migration de FrameMaker vers DITA XML
+description: A guide in my new Starlight docs site.
+---
 # Migration de FrameMaker vers DITA XML
 
 Migrer de vers , ce n\'est pas comme enregistrer un document au format

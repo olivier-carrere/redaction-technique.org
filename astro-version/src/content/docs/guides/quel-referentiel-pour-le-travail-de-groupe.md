@@ -1,3 +1,7 @@
+---
+title: Quel référentiel pour le travail de groupe ? {#quel-referentiel-pour-le-travail-de-groupe}
+description: A guide in my new Starlight docs site.
+---
 # Quel référentiel pour le travail de groupe ? {#quel-referentiel-pour-le-travail-de-groupe}
 
 ::: sidebar

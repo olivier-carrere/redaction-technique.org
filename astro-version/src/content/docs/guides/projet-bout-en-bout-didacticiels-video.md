@@ -1,3 +1,7 @@
+---
+title: Didacticiels vidéo {# projet-bout-en-bout-didacticiels-video}
+description: A guide in my new Starlight docs site.
+---
 # Didacticiels vidéo {# projet-bout-en-bout-didacticiels-video}
 
 J\'ai publié sur *YouTube* différents didacticiels, en français, anglais

@@ -1,3 +1,7 @@
+---
+title: Récupérez les sources de ce {#recuperez-les-sources-de-ce-site}
+description: A guide in my new Starlight docs site.
+---
 # Récupérez les sources de ce {#recuperez-les-sources-de-ce-site}
 
 1.  Clonez le dépôt des sources de ce  :

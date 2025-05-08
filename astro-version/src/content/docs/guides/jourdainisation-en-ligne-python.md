@@ -1,3 +1,7 @@
+---
+title: Jourdainisation en ligne d\'une tirade {#jourdainisation-en-ligne-python}
+description: A guide in my new Starlight docs site.
+---
 # Jourdainisation en ligne d\'une tirade {#jourdainisation-en-ligne-python}
 
 À l\'instar du maître de philosophie du *Bourgeois gentilhomme* de

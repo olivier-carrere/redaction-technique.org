@@ -1,3 +1,7 @@
+---
+title: Gestion des photos d\'une association {# projet-bout-en-bout-gestion-des-photos-association}
+description: A guide in my new Starlight docs site.
+---
 # Gestion des photos d\'une association {# projet-bout-en-bout-gestion-des-photos-association}
 
 Une association de quelques centaines de personnes originaires de

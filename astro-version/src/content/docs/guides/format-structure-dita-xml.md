@@ -1,3 +1,7 @@
+---
+title: Format structuré DITA XML {#format-structure-dita-xml}
+description: A guide in my new Starlight docs site.
+---
 # Format structuré DITA XML {#format-structure-dita-xml}
 
 Diminuer les coûts de production et de traduction, réduire les délais de

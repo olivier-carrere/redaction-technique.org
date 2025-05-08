@@ -1,3 +1,7 @@
+---
+title: Galerie photo centralisée dans le *cloud* {# projet-bout-en-bout-galerie-photo-centralisee-dans-le-cloud}
+description: A guide in my new Starlight docs site.
+---
 # Galerie photo centralisée dans le *cloud* {# projet-bout-en-bout-galerie-photo-centralisee-dans-le-cloud}
 
 Les membres de l\'association étant géographiquement dispersés, il était

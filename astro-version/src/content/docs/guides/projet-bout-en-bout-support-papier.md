@@ -1,3 +1,7 @@
+---
+title: Support papier {# projet-bout-en-bout-support-papier}
+description: A guide in my new Starlight docs site.
+---
 # Support papier {# projet-bout-en-bout-support-papier}
 
 J\'ai créé un dépliant expliquant :

@@ -1,3 +1,7 @@
+---
+title: Configurez le {#configurez-le-raspberry-pi}
+description: A guide in my new Starlight docs site.
+---
 # Configurez le {#configurez-le-raspberry-pi}
 
 **Prérequis**

@@ -1,4 +1,8 @@
 ---
+title: XSL-FO : insérer automatiquement un titre pour les exemples
+description: A guide in my new Starlight docs site.
+---
+---
 title: 'The greatest post of all time'
 author: 'Ben'
 ---

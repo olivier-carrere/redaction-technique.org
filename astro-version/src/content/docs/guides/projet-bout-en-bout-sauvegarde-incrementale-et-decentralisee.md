@@ -1,3 +1,7 @@
+---
+title: Sauvegarde incrémentale et décentralisée {# projet-bout-en-bout-sauvegarde-incrementale-et-decentralisee}
+description: A guide in my new Starlight docs site.
+---
 # Sauvegarde incrémentale et décentralisée {# projet-bout-en-bout-sauvegarde-incrementale-et-decentralisee}
 
 Comment sauvegarder le patrimoine photo de l\'association, soit les

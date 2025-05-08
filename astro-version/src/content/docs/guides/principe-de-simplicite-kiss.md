@@ -1,3 +1,7 @@
+---
+title: Principe de simplicité KISS {#principe-de-simplicite-kiss}
+description: A guide in my new Starlight docs site.
+---
 # Principe de simplicité KISS {#principe-de-simplicite-kiss}
 
 Le principe `KISS (Keep it simple stupid)`{.interpreted-text

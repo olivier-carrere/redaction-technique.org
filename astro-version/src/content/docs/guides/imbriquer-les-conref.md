@@ -1,3 +1,7 @@
+---
+title: Imbriquer les *conref*
+description: A guide in my new Starlight docs site.
+---
 # Imbriquer les *conref*
 
 ::: sidebar

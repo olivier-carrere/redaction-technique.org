@@ -1,3 +1,7 @@
+---
+title: Gérer les projets de documentation multilingues DITA XML {#gerer-les-projets-de-documentation-multilingues-dita-xml}
+description: A guide in my new Starlight docs site.
+---
 # Gérer les projets de documentation multilingues DITA XML {#gerer-les-projets-de-documentation-multilingues-dita-xml}
 
 est un formidable format pour gérer les projets de documentation. Pour

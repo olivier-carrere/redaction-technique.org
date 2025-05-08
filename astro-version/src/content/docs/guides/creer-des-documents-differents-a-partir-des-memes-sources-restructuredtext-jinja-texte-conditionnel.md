@@ -1,3 +1,7 @@
+---
+title: Créer des documents différents à partir des mêmes sources *via* Jinja {#creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-texte-conditionnel}
+description: A guide in my new Starlight docs site.
+---
 # Créer des documents différents à partir des mêmes sources *via* Jinja {#creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-texte-conditionnel}
 
 Le script Python `profiling.py`{.interpreted-text role="file"}

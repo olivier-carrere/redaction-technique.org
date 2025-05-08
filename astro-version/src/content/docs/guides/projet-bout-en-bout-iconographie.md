@@ -1,3 +1,7 @@
+---
+title: Iconographie {# projet-bout-en-bout-iconographie}
+description: A guide in my new Starlight docs site.
+---
 # Iconographie {# projet-bout-en-bout-iconographie}
 
 Le choix iconographique s\'est avéré être un exercice de style très

@@ -1,3 +1,7 @@
+---
+title: Intégrer la documentation aux processus de développement
+description: A guide in my new Starlight docs site.
+---
 # Intégrer la documentation aux processus de développement
 
 La documentation fait partie du logiciel. Fournie avec le produit, elle

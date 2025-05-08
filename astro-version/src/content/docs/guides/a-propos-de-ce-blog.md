@@ -1,3 +1,7 @@
+---
+title: À propos de ce blog
+description: A guide in my new Starlight docs site.
+---
 # À propos de ce blog
 
 Ce est conçu et réalisé par un spécialisé dans l\'informatique.

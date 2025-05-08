@@ -1,3 +1,7 @@
+---
+title: Table de conversion FrameMaker vers DITA XML
+description: A guide in my new Starlight docs site.
+---
 # Table de conversion FrameMaker vers DITA XML
 
 Lorsque les fichiers [FrameMaker]() sont prêts pour la migration et que

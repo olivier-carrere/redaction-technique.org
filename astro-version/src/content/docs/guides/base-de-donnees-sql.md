@@ -1,3 +1,7 @@
+---
+title: Base de données SQL {#base-de-donnees-sql}
+description: A guide in my new Starlight docs site.
+---
 # Base de données SQL {#base-de-donnees-sql}
 
 Dans le cas d\'un de type Drupal, Joomla ou WordPress, le référentiel

@@ -1,3 +1,7 @@
+---
+title: Format cible
+description: A guide in my new Starlight docs site.
+---
 # Format cible
 
 Le format cible[^1] d\'un support de est celui sous lequel l\'audience

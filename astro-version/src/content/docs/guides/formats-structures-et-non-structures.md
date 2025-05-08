@@ -1,3 +1,7 @@
+---
+title: Formats structurés et non structurés {#formats-structures-et-non-structures}
+description: A guide in my new Starlight docs site.
+---
 # Formats structurés et non structurés {#formats-structures-et-non-structures}
 
 ::: sidebar

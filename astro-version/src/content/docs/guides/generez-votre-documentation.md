@@ -1,3 +1,7 @@
+---
+title: Générez votre documentation {#generez-votre-documentation}
+description: A guide in my new Starlight docs site.
+---
 # Générez votre documentation {#generez-votre-documentation}
 
 1.  Revenez dans le terminal, puis récupérez la dernière version

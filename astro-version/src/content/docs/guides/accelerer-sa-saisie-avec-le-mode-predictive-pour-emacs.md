@@ -1,3 +1,7 @@
+---
+title: Accélérer sa saisie avec le mode Predictive pour Emacs {#accelerer-sa-saisie-avec-le-mode-predictive-pour-emacs}
+description: A guide in my new Starlight docs site.
+---
 # Accélérer sa saisie avec le mode Predictive pour Emacs {#accelerer-sa-saisie-avec-le-mode-predictive-pour-emacs}
 
 Ce didacticiel mode Predictive pour Emacs est destiné à vous guider dans

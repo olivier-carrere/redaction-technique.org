@@ -1,3 +1,7 @@
+---
+title: Cas concrets d\'utilisation de DITA XML {#cas-concrets-utilisation-de-dita-xml}
+description: A guide in my new Starlight docs site.
+---
 # Cas concrets d\'utilisation de DITA XML {#cas-concrets-utilisation-de-dita-xml}
 
 L\'utilisation quotidienne du format de rédaction structurée sur des

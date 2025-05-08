@@ -1,3 +1,7 @@
+---
+title: De la rédaction à la communication technique {#de-la-redaction-a-la-communication-technique}
+description: A guide in my new Starlight docs site.
+---
 # De la rédaction à la communication technique {#de-la-redaction-a-la-communication-technique}
 
 ::: sidebar

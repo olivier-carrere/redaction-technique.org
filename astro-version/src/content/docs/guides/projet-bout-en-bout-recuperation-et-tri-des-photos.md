@@ -1,3 +1,7 @@
+---
+title: Récupération et tri des photos {# projet-bout-en-bout-recuperation-et-tri-des-photos}
+description: A guide in my new Starlight docs site.
+---
 # Récupération et tri des photos {# projet-bout-en-bout-recuperation-et-tri-des-photos}
 
 Après avoir collecté le maximum de photos, je me suis retrouvé avec plus

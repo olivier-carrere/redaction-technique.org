@@ -1,3 +1,7 @@
+---
+title: Créer des documents différents à partir des mêmes sources DITA XML (texte conditionnel) {#creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-conditionnel}
+description: A guide in my new Starlight docs site.
+---
 # Créer des documents différents à partir des mêmes sources DITA XML (texte conditionnel) {#creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-conditionnel}
 
 offre un mécanisme de texte conditionnel. Ce mécanisme favorise la

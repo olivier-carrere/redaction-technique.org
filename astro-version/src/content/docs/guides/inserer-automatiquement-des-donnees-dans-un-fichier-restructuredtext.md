@@ -1,3 +1,7 @@
+---
+title: Insérer automatiquement des données dans un fichier reStructuredText {#inserer-automatiquement-des-donnees-dans-un-fichier-restructuredtext}
+description: A guide in my new Starlight docs site.
+---
 # Insérer automatiquement des données dans un fichier reStructuredText {#inserer-automatiquement-des-donnees-dans-un-fichier-restructuredtext}
 
 Supposons que vous deviez présenter 3 produits, *Dianthus*, *Geum* et

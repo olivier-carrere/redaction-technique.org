@@ -1,3 +1,7 @@
+---
+title: Les topics, modules d\'information de base DITA XML {#les-topics-modules-d-information-de-base-dita}
+description: A guide in my new Starlight docs site.
+---
 # Les topics, modules d\'information de base DITA XML {#les-topics-modules-d-information-de-base-dita}
 
 ::: sidebar

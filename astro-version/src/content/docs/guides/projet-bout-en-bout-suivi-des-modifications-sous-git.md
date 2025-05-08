@@ -1,3 +1,7 @@
+---
+title: Suivi des modifications sous Git {# projet-bout-en-bout-suivi-des-modifications-sous-git}
+description: A guide in my new Starlight docs site.
+---
 # Suivi des modifications sous Git {# projet-bout-en-bout-suivi-des-modifications-sous-git}
 
 Le suivi des modifications, que se soit sous Overleaf ou Git, prévient

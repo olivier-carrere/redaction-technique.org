@@ -1,3 +1,7 @@
+---
+title: Workflow de création et validation {#workflow-de-creation-et-validation}
+description: A guide in my new Starlight docs site.
+---
 # Workflow de création et validation {#workflow-de-creation-et-validation}
 
 Un processus de création et de mise à jour de la documentation technique

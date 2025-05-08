@@ -1,3 +1,7 @@
+---
+title: Le en tant que plateforme de documentation {#raspberry-pi-plateforme-documentation}
+description: A guide in my new Starlight docs site.
+---
 # Le en tant que plateforme de documentation {#raspberry-pi-plateforme-documentation}
 
 Faut-il une débauche de puissance pour générer une documentation

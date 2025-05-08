@@ -1,3 +1,7 @@
+---
+title: Installez les logiciels nécessaires à la gestion de ce {#installez-les-logiciels-necessaires-a-la-generation-de-ce-site}
+description: A guide in my new Starlight docs site.
+---
 # Installez les logiciels nécessaires à la gestion de ce {#installez-les-logiciels-necessaires-a-la-generation-de-ce-site}
 
 1.  Sélectionnez `Menu`{.interpreted-text role="guilabel"} \>

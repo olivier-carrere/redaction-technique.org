@@ -1,3 +1,7 @@
+---
+title: Du document à la base documentaire modulaire {#du-document-a-la-base-documentaire-modulaire}
+description: A guide in my new Starlight docs site.
+---
 # Du document à la base documentaire modulaire {#du-document-a-la-base-documentaire-modulaire}
 
 ::: sidebar

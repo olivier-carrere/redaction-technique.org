@@ -1,3 +1,7 @@
+---
+title: Validation et contrôle qualité {#validation-et-controle-qualite}
+description: A guide in my new Starlight docs site.
+---
 # Validation et contrôle qualité {#validation-et-controle-qualite}
 
 ::: sidebar

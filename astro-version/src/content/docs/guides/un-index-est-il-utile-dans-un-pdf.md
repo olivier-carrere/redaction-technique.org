@@ -1,3 +1,7 @@
+---
+title: Un index est-il utile dans un PDF ?
+description: A guide in my new Starlight docs site.
+---
 # Un index est-il utile dans un PDF ?
 
 ::: sidebar
