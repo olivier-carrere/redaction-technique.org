@@ -1,4 +1,9 @@
-# XSL-FO : insérer automatiquement un titre pour les exemples {#xsl-fo-inserer-automatiquement-un-titre-pour-les-exemples}
+---
+title: 'The greatest post of all time'
+author: 'Ben'
+---
+
+# XSL-FO : insérer automatiquement un titre pour les exemples
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
