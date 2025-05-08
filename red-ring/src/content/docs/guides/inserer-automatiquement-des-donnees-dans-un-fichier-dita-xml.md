@@ -1,4 +1,4 @@
-# Insérer automatiquement des données dans un fichier DITA XML {#inserer-automatiquement-des-donnees-dans-un-fichier-dita-xml}
+title: Insérer automatiquement des données dans un fichier DITA XML
 
 Nous voulons automatiser la génération du fichier DITA suivant :
 

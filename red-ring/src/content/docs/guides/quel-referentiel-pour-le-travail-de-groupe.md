@@ -1,4 +1,4 @@
-# Quel référentiel pour le travail de groupe ? {#quel-referentiel-pour-le-travail-de-groupe}
+title: Quel référentiel pour le travail de groupe ?
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

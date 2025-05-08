@@ -1,4 +1,4 @@
-# Définition du projet {#definition-du-projet}
+title: Définition du projet
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

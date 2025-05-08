@@ -1,4 +1,4 @@
-# Insérer automatiquement des données dans un fichier reStructuredText {#inserer-automatiquement-des-donnees-dans-un-fichier-restructuredtext}
+title: Insérer automatiquement des données dans un fichier reStructuredText
 
 Supposons que vous deviez présenter 3 produits, *Dianthus*, *Geum* et
 *Prunus*, chacun déclinés dans trois versions *1.0*, *1.5* et *2.3*.

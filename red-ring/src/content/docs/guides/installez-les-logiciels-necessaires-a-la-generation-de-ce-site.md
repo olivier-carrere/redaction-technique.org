@@ -1,4 +1,4 @@
-# Installez les logiciels nécessaires à la gestion de ce blog {#installez-les-logiciels-necessaires-a-la-generation-de-ce-site}
+title: Installez les logiciels nécessaires à la gestion de ce blog
 
 1.  Sélectionnez `Menu`{.interpreted-text role="guilabel"} \>
     `Accessoires`{.interpreted-text role="guilabel"} \>

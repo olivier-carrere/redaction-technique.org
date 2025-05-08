@@ -1,4 +1,4 @@
-# Format structuré DITA XML {#format-structure-dita-xml}
+title: Format structuré DITA XML
 
 Diminuer les coûts de production et de traduction, réduire les délais de
 mise sur le marché (ou *time to market*) et améliorer la qualité de la

@@ -1,4 +1,4 @@
-# Libérez vos informations de leurs silos
+title: Libérez vos informations de leurs silos
 
 Des solutions souples et fiables libèrent vos informations des silos
 d\'information cloisonnés où elles sont emprisonnées et sous-exploitées.

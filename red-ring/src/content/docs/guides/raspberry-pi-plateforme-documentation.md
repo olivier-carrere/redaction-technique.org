@@ -1,4 +1,4 @@
---- {#raspberry-pi-plateforme-documentation}
+---
 Le Raspberry Pi 3 en tant que plateforme de documentation
 ===================================================
 :::
@@ -29,7 +29,7 @@ Les buts de ce billet sont de :
     parfois au détriment de l\'élégance technique.
 ::::
 
-::: {#configurez-le-raspberry-pi}
+:::
 Configurez le Raspberry Pi 3 \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
 :::
 
@@ -92,7 +92,7 @@ Configurez le Raspberry Pi 3 \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
 
     Le Raspberry Pi 3 redémarre.
 
-# Installez les logiciels nécessaires à la gestion de ce blog {#installez-les-logiciels-necessaires-a-la-generation-de-ce-site}
+title: Installez les logiciels nécessaires à la gestion de ce blog
 
 1.  Sélectionnez `Menu`{.interpreted-text role="guilabel"} \>
     `Accessoires`{.interpreted-text role="guilabel"} \>
@@ -132,7 +132,7 @@ Configurez le Raspberry Pi 3 \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
     $ sudo aptitude clean
     ```
 
-# Récupérez les sources de ce blog {#recuperez-les-sources-de-ce-site}
+title: Récupérez les sources de ce blog
 
 1.  Clonez le dépôt Git des sources de ce blog :
 
@@ -146,7 +146,7 @@ Configurez le Raspberry Pi 3 \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
     $ cd redaction-technique.org
     ```
 
-# Créez et modifiez le texte {#creez-et-modifiez-le-texte}
+title: Créez et modifiez le texte
 
 1.  Modifiez un fichier source modulaire de ce blog :
     -   à l\'aide d\'un éditeur de texte :
@@ -167,7 +167,7 @@ Configurez le Raspberry Pi 3 \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
         $ sed -i "s/répertoire/dossier/g;" *.rst
         ```
 
-# Créez et modifiez les schémas {#creez-et-modifiez-les-schemas}
+title: Créez et modifiez les schémas
 
 1.  Modifiez un fichier source des images de ce blog :
     -   à l\'aide d\'un logiciel de dessin vectoriel :
@@ -182,7 +182,7 @@ Configurez le Raspberry Pi 3 \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
         $ sed -i "s/docbook/XML/g;" graphics/*.svg
         ```
 
-# Gérez les versions de votre documentation {#gerez-les-versions-de-votre-documentation}
+title: Gérez les versions de votre documentation
 
 1.  *Commitez* votre lot de modifications sous Git :
 
@@ -226,7 +226,7 @@ Note
     par connexion sécurisée SSH.
 ::::
 
-# Générez votre documentation {#generez-votre-documentation}
+title: Générez votre documentation
 
 1.  Revenez dans le terminal, puis récupérez la dernière version
     *taguée* de ce blog :

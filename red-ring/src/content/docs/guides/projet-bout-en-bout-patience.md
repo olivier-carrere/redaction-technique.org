@@ -1,4 +1,4 @@
-# Patience... {# projet-bout-en-bout-patience}
+title: Patience...
 
 Évidemment, toute structure étant toujours plus ou moins rétive au
 changement, les choses ne se passeront pas comme je l\'imagine.

@@ -1,4 +1,4 @@
-# De la rédaction à la communication technique {#de-la-redaction-a-la-communication-technique}
+title: De la rédaction à la communication technique
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

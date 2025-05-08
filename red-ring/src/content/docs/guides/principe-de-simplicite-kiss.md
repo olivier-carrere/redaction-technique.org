@@ -1,4 +1,4 @@
-# Principe de simplicité KISS {#principe-de-simplicite-kiss}
+title: Principe de simplicité KISS
 
 Le principe `KISS (Keep it simple stupid)`{.interpreted-text
 role="abbr"}, n\'est pas spécifique à la rédaction technique. Il s\'agit

@@ -1,4 +1,4 @@
-# Créez et modifiez le texte {#creez-et-modifiez-le-texte}
+title: Créez et modifiez le texte
 
 1.  Modifiez un fichier source modulaire de ce blog :
     -   à l\'aide d\'un éditeur de texte :

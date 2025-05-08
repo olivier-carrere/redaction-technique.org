@@ -1,4 +1,4 @@
-# Les topics, modules d\'information de base DITA XML {#les-topics-modules-d-information-de-base-dita}
+title: Les topics, modules d\'information de base DITA XML
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

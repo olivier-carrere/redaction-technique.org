@@ -1,4 +1,4 @@
-# Expressions régulières en Python {#expressions-regulieres-python}
+title: Expressions régulières en Python
 
 Le langage Python offre de nombreuses bibliothèques de fonctions. Celle
 dédiée aux expressions régulières peut vous aider à manipuler du texte,

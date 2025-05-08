@@ -1,4 +1,4 @@
-# Suivi des modifications sous Git {# projet-bout-en-bout-suivi-des-modifications-sous-git}
+title: Suivi des modifications sous Git
 
 Le suivi des modifications, que se soit sous Overleaf ou Git, prévient
 efficacement les erreurs : il est très facile de visualiser les

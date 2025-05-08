@@ -1,4 +1,4 @@
-# Mener un projet de bout en bout
+title: Mener un projet de bout en bout
 
 ::: sidebar
 **`fa-history`{.interpreted-text role="awesome"} Modifications
@@ -12,7 +12,7 @@ organisationnels que les aspects techniques, ainsi que toute la
 communication: graphisme, rédactionnel, et même vidéo. C\'est plus
 souvent possible dans le cadre associatif.
 
-## Gestion des photos d\'une association {# projet-bout-en-bout-gestion-des-photos-association}
+## Gestion des photos d\'une association
 
 Une association de quelques centaines de personnes originaires de
 différents pays disposait de plusieurs milliers de photos, dispersées
@@ -54,7 +54,7 @@ Voici le schéma global de la solution :
 
 Tout a été réalisé sous *Linux*.
 
-## Récupération et tri des photos {# projet-bout-en-bout-recuperation-et-tri-des-photos}
+## Récupération et tri des photos
 
 Après avoir collecté le maximum de photos, je me suis retrouvé avec plus
 de 10 000 photos et 30 Go de données. Ouf.
@@ -94,7 +94,7 @@ répertoire à partir de la copie de sauvegarde les fichiers de plus de
 1 Mo éliminés, afin de les mettre à disposition pour une utilisation sur
 Instagram, par exemple.
 
-## Galerie photo centralisée dans le *cloud* {# projet-bout-en-bout-galerie-photo-centralisee-dans-le-cloud}
+## Galerie photo centralisée dans le *cloud*
 
 Les membres de l\'association étant géographiquement dispersés, il était
 essentiel de proposer un hébergement centralisé dans le *cloud*.
@@ -224,7 +224,7 @@ solutions suivantes :
 |      | on. |        |      |                                      |
 +------+-----+--------+------+--------------------------------------+
 
-## Indexation des photos {# projet-bout-en-bout-indexation-des-photos}
+## Indexation des photos
 
 Une fois les 500 photos retenues pour les projets d\'impression
 téléchargées sur le site, restait à les indexer.
@@ -237,7 +237,7 @@ chaque mot-clé d\'un pictogramme.
 Par exemple, Vélo `fa-bicycle`{.interpreted-text role="awesome"},
 Intérieur `fa-lightbulb`{.interpreted-text role="awesome"}, etc.
 
-## Sauvegarde incrémentale et décentralisée {# projet-bout-en-bout-sauvegarde-incrementale-et-decentralisee}
+## Sauvegarde incrémentale et décentralisée
 
 Comment sauvegarder le patrimoine photo de l\'association, soit les
 photos et la base de données Piwigo, de manière incrémentale et
@@ -328,12 +328,12 @@ $ git config core.filemode false
 L\'hébergement des photos est donc centralisé, la sauvegarde,
 décentralisée.
 
-## Définition d\'un workflow de gestion des photos {# projet-bout-en-bout-definition-workflow-de-gestion-des-photos}
+## Définition d\'un workflow de gestion des photos
 
 Une solution technique ne se suffit jamais à elle-même. J\'ai donc
 défini un workflow dans lequel s\'insérait la solution.
 
-## Définition des rôles des membres du worfklow photo {# projet-bout-en-bout-definition-des-roles-des-membres-du-worfklow-photo}
+## Définition des rôles des membres du worfklow photo
 
 La chaîne de production graphique s\'appuie sur 3 rôles :
 
@@ -360,7 +360,7 @@ revanche, l\'intérêt de la galerie est de centraliser le maximum de
 photos et d\'y donner un accès rapide. Elle ne sera utilisée que si son
 indexation est de qualité.
 
-## Communication interne {# projet-bout-en-bout-communication-interne}
+## Communication interne
 
 Les outils et les process étant en place, restait à y faire adhérer les
 parties prenantes !
@@ -371,7 +371,7 @@ J\'ai opté pour les supports de communication suivants :
 -   un dépliant à distribuer lors des différents événements de
     l\'association.
 
-## Didacticiels vidéo {# projet-bout-en-bout-didacticiels-video}
+## Didacticiels vidéo
 
 J\'ai publié sur *YouTube* différents didacticiels, en français, anglais
 et espagnol, sur l\'utilisation de la galerie par les différents types
@@ -385,7 +385,7 @@ qualité, nommément, un *Bird UM1*. Pressé par le temps, et parce que ces
 didacticiels s\'adressent à un public restreint (et indulgent), je n\'ai
 pas fait de montage, comme par exemple sous *Kdenlive*.
 
-## Support papier {# projet-bout-en-bout-support-papier}
+## Support papier
 
 J\'ai créé un dépliant expliquant :
 
@@ -413,7 +413,7 @@ cette brochure. Je me suis épargné des essais fastidieux en utilisant la
 [classe de documents LaTeX leaflet]().
 :::
 
-## LaTeX {# projet-bout-en-bout-latex}
+## LaTeX
 
 Pourquoi avoir choisi \[LaTeX\](<https://www.latex-project.org/> pour
 réaliser le support *print* et non pas un logiciel de PAO classique ? Je
@@ -485,7 +485,7 @@ l\'utiliser pour produire rapidement d\'autres documents. De plus, le
 document peut être remanié par d\'autres personnes sans problème de
 licence ou de plateforme logicielle.
 
-## Suivi des modifications sous Git {# projet-bout-en-bout-suivi-des-modifications-sous-git}
+## Suivi des modifications sous Git
 
 Le suivi des modifications, que se soit sous Overleaf ou Git, prévient
 efficacement les erreurs : il est très facile de visualiser les
@@ -514,14 +514,14 @@ Voici l\'évolution d\'un extrait du PDF compilé :
 On peut même envisager un travail collaboratif, synchrone ou asynchrone,
 sur le même projet.
 
-## Style rédactionnel {# projet-bout-en-bout-style-redactionnel}
+## Style rédactionnel
 
 Puisqu\'il s\'agissait d\'un projet de communication interne, j\'ai pu
 adopter un style rédactionnel décontracté. J\'ai cependant veillé à ne
 pas pousser trop loin l\'aspect humoristique. Le but était avant tout
 d\'être compris, dans les 3 langues (français, anglais et espagnol).
 
-## Iconographie {# projet-bout-en-bout-iconographie}
+## Iconographie
 
 Le choix iconographique s\'est avéré être un exercice de style très
 intéressant.
@@ -560,7 +560,7 @@ de la section *Didacticiels* :
 
 ![](graphics/Frances_Densmore_recording_Mountain_Chief2.jpg)
 
-## Patience... {# projet-bout-en-bout-patience}
+## Patience...
 
 Évidemment, toute structure étant toujours plus ou moins rétive au
 changement, les choses ne se passeront pas comme je l\'imagine.

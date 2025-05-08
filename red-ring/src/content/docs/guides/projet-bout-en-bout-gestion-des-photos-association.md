@@ -1,4 +1,4 @@
-# Gestion des photos d\'une association {# projet-bout-en-bout-gestion-des-photos-association}
+title: Gestion des photos d\'une association
 
 Une association de quelques centaines de personnes originaires de
 différents pays disposait de plusieurs milliers de photos, dispersées

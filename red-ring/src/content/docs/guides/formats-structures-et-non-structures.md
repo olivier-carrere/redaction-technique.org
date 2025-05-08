@@ -1,4 +1,4 @@
-# Formats structurés et non structurés {#formats-structures-et-non-structures}
+title: Formats structurés et non structurés
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

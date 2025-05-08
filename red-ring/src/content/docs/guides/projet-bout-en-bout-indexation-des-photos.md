@@ -1,4 +1,4 @@
-# Indexation des photos {# projet-bout-en-bout-indexation-des-photos}
+title: Indexation des photos
 
 Une fois les 500 photos retenues pour les projets d\'impression
 téléchargées sur le site, restait à les indexer.

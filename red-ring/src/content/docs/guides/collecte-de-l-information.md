@@ -1,4 +1,4 @@
-# Collecte de l\'information {#collecte-de-l-information}
+title: Collecte de l\'information
 
 Le rédacteur technique collecte l\'information auprès de différentes
 sources, internes et externes à l\'entreprise.

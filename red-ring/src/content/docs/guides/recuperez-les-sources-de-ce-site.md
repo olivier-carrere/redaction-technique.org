@@ -1,4 +1,4 @@
-# Récupérez les sources de ce blog {#recuperez-les-sources-de-ce-site}
+title: Récupérez les sources de ce blog
 
 1.  Clonez le dépôt Git des sources de ce blog :
 

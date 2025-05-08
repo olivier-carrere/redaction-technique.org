@@ -1,4 +1,4 @@
-# Formats sources
+title: Formats sources
 
 Ce blog est disponible en trois formats, basés sur la version 1.1[^1].
 Ces formats présentent des niveaux de fonctionnalités et de complexité

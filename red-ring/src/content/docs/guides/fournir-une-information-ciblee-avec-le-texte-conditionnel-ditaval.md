@@ -1,4 +1,4 @@
-# Fournir une information ciblée avec le texte conditionnel ditaval {#fournir-une-information-ciblee-avec-le-texte-conditionnel-ditaval}
+title: Fournir une information ciblée avec le texte conditionnel ditaval
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

@@ -1,4 +1,4 @@
-# Migration de FrameMaker vers DITA XML
+title: Migration de FrameMaker vers DITA XML
 
 Migrer de FrameMaker vers DITA XML, ce n\'est pas comme enregistrer un
 document MS Word au format LibreOffice[^1]. Aucun processus automatique

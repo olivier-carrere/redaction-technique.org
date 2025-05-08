@@ -1,4 +1,4 @@
-# Support papier {# projet-bout-en-bout-support-papier}
+title: Support papier
 
 J\'ai créé un dépliant expliquant :
 

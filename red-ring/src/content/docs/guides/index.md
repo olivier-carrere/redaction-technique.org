@@ -1,4 +1,4 @@
-# Persona - à quoi ressemblent vos utilisateurs ?
+title: Persona - à quoi ressemblent vos utilisateurs ?
 
 Lorsqu\'un formateur entre dans une salle de formation, rien qu\'au
 *look* des participants, il a déjà une idée de comment orienter son
@@ -17,7 +17,7 @@ est content. Nous nous sentons fiers du travail bien fait. Mais les
 utilisateurs ne trouvent pas les informations réellement pertinentes
 pour eux, perdues qu\'elles sont dans une mer de détails superflus.
 
-# Minimalisme et persona
+title: Minimalisme et persona
 
 Carroll et Van der Meij ont prouvé empiriquement que l\'exhaustivité est
 le pire écueil de la rédaction technique et que le

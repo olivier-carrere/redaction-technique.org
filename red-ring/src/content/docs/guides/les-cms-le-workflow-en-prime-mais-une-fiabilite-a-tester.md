@@ -1,4 +1,4 @@
-# Les CMS - le *workflow* en prime, mais une fiabilité à tester {#les-cms-le-workflow-en-prime-mais-une-fiabilite-a-tester}
+title: Les CMS - le *workflow* en prime, mais une fiabilité à tester
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

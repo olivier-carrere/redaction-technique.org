@@ -1,4 +1,4 @@
-# Centraliser les *conref* dans un fichier unique
+title: Centraliser les *conref* dans un fichier unique
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

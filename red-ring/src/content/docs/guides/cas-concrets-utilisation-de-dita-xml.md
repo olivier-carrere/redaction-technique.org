@@ -1,4 +1,4 @@
-# Cas concrets d\'utilisation de DITA XML {#cas-concrets-utilisation-de-dita-xml}
+title: Cas concrets d\'utilisation de DITA XML
 
 L\'utilisation quotidienne du format de rédaction structurée DITA XML
 sur des projets multilingues en tant que rédacteur technique m\'a amené

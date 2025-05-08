@@ -1,4 +1,4 @@
-# Organisation à la demande du contenu {#organisation-a-la-demande-du-contenu}
+title: Organisation à la demande du contenu
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

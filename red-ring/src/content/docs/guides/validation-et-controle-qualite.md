@@ -1,4 +1,4 @@
-# Validation et contrôle qualité {#validation-et-controle-qualite}
+title: Validation et contrôle qualité
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

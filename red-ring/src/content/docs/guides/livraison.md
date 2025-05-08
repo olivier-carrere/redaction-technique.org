@@ -1,4 +1,4 @@
-# Livraison
+title: Livraison
 
 Le rédacteur technique livre le document à son destinataire de la
 manière appropriée :

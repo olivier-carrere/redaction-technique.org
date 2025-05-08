@@ -1,4 +1,4 @@
-# Créer des documents différents à partir des mêmes sources ReST (texte conditionnel) {#creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-rest-texte-conditionnel}
+title: Créer des documents différents à partir des mêmes sources ReST (texte conditionnel)
 
 1.  Installez *Sphinx*, et *make* :
 

@@ -1,4 +1,4 @@
-# Maximiser l\'utilisation des *conref* pour faire baisser les coûts {#maximiser-utilisation-des-conref-pour-faire-baisser-les-couts}
+title: Maximiser l\'utilisation des *conref* pour faire baisser les coûts
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

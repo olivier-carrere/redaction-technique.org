@@ -1,4 +1,4 @@
-# Créer des documents différents à partir des mêmes sources *via* Jinja (méthode objet) {#creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-objet-texte-conditionnel}
+title: Créer des documents différents à partir des mêmes sources *via* Jinja (méthode objet)
 
 Le script Python `profiling.py`{.interpreted-text role="file"}
 ci-dessous permet de profiler du contenu à l\'aide du puissant moteur de

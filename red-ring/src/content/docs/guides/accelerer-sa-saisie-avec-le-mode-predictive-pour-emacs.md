@@ -1,4 +1,4 @@
-# Accélérer sa saisie avec le mode Predictive pour Emacs {#accelerer-sa-saisie-avec-le-mode-predictive-pour-emacs}
+title: Accélérer sa saisie avec le mode Predictive pour Emacs
 
 Ce didacticiel mode Predictive pour Emacs est destiné à vous guider dans
 la mise en place et l\'utilisation du mode Emacs d\'aide à la rédaction

@@ -1,4 +1,4 @@
-# Un langage à balises {#un-langage-a-balises}
+title: Un langage à balises
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

@@ -1,4 +1,4 @@
-# Iconographie {# projet-bout-en-bout-iconographie}
+title: Iconographie
 
 Le choix iconographique s\'est avéré être un exercice de style très
 intéressant.

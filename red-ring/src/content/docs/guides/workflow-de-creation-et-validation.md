@@ -1,4 +1,4 @@
-# Workflow de création et validation {#workflow-de-creation-et-validation}
+title: Workflow de création et validation
 
 Un processus de création et de mise à jour de la documentation technique
 qui repose sur la mémoire des acteurs humains est peu fiable. Un

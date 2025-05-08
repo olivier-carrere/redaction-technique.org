@@ -1,4 +1,4 @@
-# Création du contenu {#creation-du-contenu}
+title: Création du contenu
 
 Le rédacteur technique crée le contenu du projet de rédaction technique
 dans un dialogue constant avec les différents acteurs de la société :

@@ -1,4 +1,4 @@
-# Protéger les informations confidentielles {#proteger-les-informations-confidentielles}
+title: Protéger les informations confidentielles
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

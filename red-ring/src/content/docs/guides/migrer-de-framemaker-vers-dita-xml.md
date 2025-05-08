@@ -1,4 +1,4 @@
-# Migrer de FrameMaker vers DITA XML
+title: Migrer de FrameMaker vers DITA XML
 
 Le but de cette procédure est de :
 
@@ -73,7 +73,7 @@ open(INPUT,"<$ARGV[0]") or die;
 @input_array=<INPUT‣;
 close(INPUT);
 $input_scalar=join("",@input_array);
-# substitution
+title: substitution
 $input_scalar =~ s#\<body‣(.|\n)*?</body‣##ig;
 open(OUTPUT,‣$ARGV[0]") or die;
 print(OUTPUT $input_scalar);

@@ -1,4 +1,4 @@
-# Restructuration du contenu FrameMaker
+title: Restructuration du contenu FrameMaker
 
 La partie automatisée d\'une migration de
 \[FrameMaker\](<http://en.wikipedia.org/wiki/Adobe_FrameMaker> vers DITA

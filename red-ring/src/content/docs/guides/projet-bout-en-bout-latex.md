@@ -1,4 +1,4 @@
-# LaTeX {# projet-bout-en-bout-latex}
+title: LaTeX
 
 Pourquoi avoir choisi \[LaTeX\](<https://www.latex-project.org/> pour
 réaliser le support *print* et non pas un logiciel de PAO classique ? Je

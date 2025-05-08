@@ -1,4 +1,4 @@
-# Les sources de ce blog sont gérées sous Git
+title: Les sources de ce blog sont gérées sous Git
 
 Ce blog a été initialement développé sous WordPress. L\'impossibilité
 d\'effectuer sous ce Content Management System des modifications

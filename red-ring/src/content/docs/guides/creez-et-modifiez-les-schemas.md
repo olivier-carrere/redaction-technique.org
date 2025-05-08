@@ -1,4 +1,4 @@
-# Créez et modifiez les schémas {#creez-et-modifiez-les-schemas}
+title: Créez et modifiez les schémas
 
 1.  Modifiez un fichier source des images de ce blog :
     -   à l\'aide d\'un logiciel de dessin vectoriel :

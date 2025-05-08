@@ -1,4 +1,4 @@
-# DITA Open Toolkit - afficher les références croisées dans les PDF {#dita-open-toolkit-afficher-les-references-croisees-dans-les-pdf}
+title: DITA Open Toolkit - afficher les références croisées dans les PDF
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
