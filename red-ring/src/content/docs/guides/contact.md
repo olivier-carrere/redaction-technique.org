@@ -1,8 +1,6 @@
----
-title: Contact
-description: A guide in my new Starlight docs site.
----
+# Contact
 
-Vous pouvez me contacter *via* mon profil [LinkedIn]().
+Vous pouvez me contacter *via* mon profil
+\[LinkedIn\](<http://fr.linkedin.com/in/carrereolivier>.
 
 ![](graphics/olivier-carrere.jpg)

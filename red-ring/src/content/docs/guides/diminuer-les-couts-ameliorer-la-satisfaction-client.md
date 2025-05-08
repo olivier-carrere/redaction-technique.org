@@ -1,15 +1,17 @@
----
-title: Documentation technique - diminuer les coûts, améliorer la satisfaction client
----
+# Documentation technique : diminuer les coûts, améliorer la satisfaction client {#diminuer-les-couts-ameliorer-la-satisfaction-client}
 
-La , c\'est comme une ampoule : une ampoule basse consommation demande
-un investissement plus important en début de cycle de vie, mais a
-rapidement un coût plus faible.
+::: sidebar
+**`fa-bullhorn`{.interpreted-text role="awesome"}**
+
+La documentation technique, c\'est comme une ampoule : une ampoule basse
+consommation demande un investissement plus important en début de cycle
+de vie, mais a rapidement un coût plus faible.
 :::
 
-Comme une ampoule basse consommation, un processus de industriel diminue
-les coûts. Il réduit également le *time to market*. À coût initial
-légèrement supérieur ou égal, il améliore également la qualité.
+Comme une ampoule basse consommation, un processus de rédaction
+technique industriel diminue les coûts. Il réduit également le *time to
+market*. À coût initial légèrement supérieur ou égal, il améliore
+également la qualité.
 
 Coût moindre
 
@@ -39,10 +41,11 @@ peut même être compensé par l\'économie sur les licences de logiciels.
 En tout état de cause, de trop nombreuses sociétés de haute technologie
 ont industrialisé leurs processus métier, mais laissent en friche la
 création, la gestion et la publication de leur contenu d\'entreprise.
-Les coûts cachés (rédaction par des ingénieurs et non par un compétent,
-mauvaise exploitation du capital immatériel, diminution de la
-satisfaction client, augmentation des coûts de support, etc.) peuvent
-être considérables. Pourtant, les solutions et les compétences existent.
+Les coûts cachés (rédaction par des ingénieurs et non par un rédacteur
+technique compétent, mauvaise exploitation du capital immatériel,
+diminution de la satisfaction client, augmentation des coûts de support,
+etc.) peuvent être considérables. Pourtant, les solutions et les
+compétences existent.
 
 ::: {.toctree hidden=""}
 de-la-redaction-a-la-communication-technique

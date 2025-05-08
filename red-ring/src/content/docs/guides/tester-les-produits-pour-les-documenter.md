@@ -1,16 +1,13 @@
----
-title: Tester les produits pour les documenter
-description: A guide in my new Starlight docs site.
----
+# Tester les produits pour les documenter
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
-Le ne peut fournir une documentation utile aux clients de l\'entreprise
-s\'il se contente de mettre en forme des informations glanées auprès des
-différents acteurs de la société. Jouant le rôle de Candide, il est le
-premier représentant des utilisateurs et se doit de tester les produits
-dans des conditions proches des leurs.
+Le rédacteur technique ne peut fournir une documentation utile aux
+clients de l\'entreprise s\'il se contente de mettre en forme des
+informations glanées auprès des différents acteurs de la société. Jouant
+le rôle de Candide, il est le premier représentant des utilisateurs et
+se doit de tester les produits dans des conditions proches des leurs.
 :::
 
 Un conte chinois narre comment des aveugles se sont retrouvés confrontés
@@ -28,21 +25,21 @@ alt="graphics/hanabusa-itcho.jpg" />
 <figcaption><em>Conte des aveugles et de l'éléphant</em></figcaption>
 </figure>
 
-Le qui demande aux différents intervenants de l\'entreprise à quoi sert
-le produit dont il doit créer la documentation et comment il fonctionne
-se retrouve comme celui qui demande aux aveugles à quoi ressemble un
-éléphant : pour la R&D, il s\'agit de code élégamment rédigé, pour le
-marketing, d\'une offre à positionner face à la concurrence sur son
-marché, pour le support technique, d\'un exécutable dont il faut
-corriger les bugs, etc.
+Le rédacteur technique qui demande aux différents intervenants de
+l\'entreprise à quoi sert le produit dont il doit créer la documentation
+et comment il fonctionne se retrouve comme celui qui demande aux
+aveugles à quoi ressemble un éléphant : pour la R&D, il s\'agit de code
+élégamment rédigé, pour le marketing, d\'une offre à positionner face à
+la concurrence sur son marché, pour le support technique, d\'un
+exécutable dont il faut corriger les bugs, etc.
 
 Pour avoir une vision réaliste de l\'objet qu\'il est censé décrire, le
-doit donc l\'appréhender par lui-même et se faire sa propre opinion,
-qu\'il pourra ensuite confronter à celle des autres acteurs de
-l\'entreprise. Le est un pragmatique qui s\'intéresse à la pratique, non
-à la théorie. S\'il ne consulte que les développeurs, par exemple, il
-aura peu de chance de pouvoir créer une documentation satisfaisante pour
-l\'utilisateur :
+rédacteur technique doit donc l\'appréhender par lui-même et se faire sa
+propre opinion, qu\'il pourra ensuite confronter à celle des autres
+acteurs de l\'entreprise. Le rédacteur technique est un pragmatique qui
+s\'intéresse à la pratique, non à la théorie. S\'il ne consulte que les
+développeurs, par exemple, il aura peu de chance de pouvoir créer une
+documentation satisfaisante pour l\'utilisateur :
 
 -   d\'une part, les développeurs ont souvent une vision idéaliste du
     fonctionnement de leur produit, différente du comportement de ce
@@ -51,17 +48,17 @@ l\'utilisateur :
     nécessairement entre :
     -   ce que le développeur sait,
     -   ce que le développeur exprime,
-    -   ce que le comprend,
-    -   ce que le rédige,
+    -   ce que le rédacteur technique comprend,
+    -   ce que le rédacteur technique rédige,
     -   ce que l\'utilisateur comprend.
 
-Si le teste réellement le comportement du produit dans des conditions
-aussi proches que possible de celles rencontrées par l\'utilisateur, les
-trois premières causes de déperdition d\'information sont quasiment
-inexistantes. Pour réduire les deux dernières, il ne lui reste plus
-qu\'à filtrer, organiser et exprimer l\'information qu\'il a recueillie
-de manière adaptée au média qui la véhiculera et aux connaissances
-techniques de son destinataire.
+Si le rédacteur technique teste réellement le comportement du produit
+dans des conditions aussi proches que possible de celles rencontrées par
+l\'utilisateur, les trois premières causes de déperdition d\'information
+sont quasiment inexistantes. Pour réduire les deux dernières, il ne lui
+reste plus qu\'à filtrer, organiser et exprimer l\'information qu\'il a
+recueillie de manière adaptée au média qui la véhiculera et aux
+connaissances techniques de son destinataire.
 
 Dans les faits, une telle demande peut sembler de prime abord incongrue
 en interne et se heurter à la lourdeur de la mise en place d\'une

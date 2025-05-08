@@ -1,23 +1,17 @@
----
-title: XSL-FO - insérer automatiquement un titre pour les exemples
-description: A guide in my new Starlight docs site.
----
----
-title: 'The greatest post of all time'
-author: 'Ben'
----
-
+# XSL-FO : insérer automatiquement un titre pour les exemples {#xsl-fo-inserer-automatiquement-un-titre-pour-les-exemples}
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
-Par défaut, n\'insère pas automatiquement dans les fichiers PDF le texte
-*Exemple :* devant le titre d\'un exemple contenu entre balises
-`<example>`{.interpreted-text role="samp"}. La syntaxe [XSL-FO]() offre
-cependant cette possibilité.
+Par défaut, DITA Open Toolkit n\'insère pas automatiquement dans les
+fichiers PDF le texte *Exemple :* devant le titre d\'un exemple contenu
+entre balises DITA XML `<example>`{.interpreted-text role="samp"}. La
+syntaxe \[XSL-FO\](<http://fr.wikipedia.org/wiki/XSL-FO> offre cependant
+cette possibilité.
 :::
 
-Supposons que le code source d\'un de vos fichiers soit le suivant :
+Supposons que le code source d\'un de vos fichiers DITA XML soit le
+suivant :
 
 ``` xml
 <example>
@@ -54,7 +48,7 @@ suit :
 > ```
 
 Par défaut, cependant, ce contenu sera structuré comme suit dans le PDF
-par  :
+par DITA Open Toolkit :
 
 > **XSL-FO**
 >
@@ -72,7 +66,7 @@ manière de procéder plus élégante et structurée.
 
 1.  Remplacez dans la feuille de style
     `plugins/org.dita.pdf2/xsl/fo/commons.xsl`{.interpreted-text
-    role="file"} (sous 1.7.) le template suivant :
+    role="file"} (sous DITA Open Toolkit 1.7.) le template suivant :
 
     ``` xslt
     <xsl:template match="*[contains(@class,' topic/example')]/*

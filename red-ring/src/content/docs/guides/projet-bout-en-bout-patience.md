@@ -1,7 +1,4 @@
----
-title: Patience...
-description: A guide in my new Starlight docs site.
----
+# Patience... {# projet-bout-en-bout-patience}
 
 Évidemment, toute structure étant toujours plus ou moins rétive au
 changement, les choses ne se passeront pas comme je l\'imagine.

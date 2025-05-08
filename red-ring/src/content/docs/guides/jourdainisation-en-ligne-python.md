@@ -1,7 +1,4 @@
----
-title: Jourdainisation en ligne d\'une tirade
-description: A guide in my new Starlight docs site.
----
+# Jourdainisation en ligne d\'une tirade {#jourdainisation-en-ligne-python}
 
 À l\'instar du maître de philosophie du *Bourgeois gentilhomme* de
 Molière, un script Python peut facilement intervertir les mots d\'une
@@ -12,7 +9,7 @@ phrase pour dire la même chose de manière plus alambiquée  :
 <iframe src="https://oliviercarrere.pythonanywhere.com/" height="600px" width="100%"></iframe>
 
 Voici le code du script, qui repose sur le *microframework* web
-[Flask]() :
+\[Flask\](<http://flask.pocoo.org/> :
 
 ::: {.literalinclude language="python3" caption=""}
 code/word_switch_web.py
@@ -24,6 +21,7 @@ espaces avant les virgules que nous aurions insérées dans la liste :
 
 ``` python
 #! /usr/bin/python3
+# coding: utf-8
 
 phrase = "Belle Marquise vos beaux yeux me font mourir d’amour"
 liste = phrase.split()
@@ -34,7 +32,7 @@ print(texte_final)
 ```
 
 Voici maintenant les modèles générant les pages HTML de base, d\'entrée
-et de sortie, basés sur [Jinja]() :
+et de sortie, basés sur \[Jinja\](<http://jinja.pocoo.org/> :
 
 ::: {.literalinclude language="html" caption=""}
 code/templates/base.html

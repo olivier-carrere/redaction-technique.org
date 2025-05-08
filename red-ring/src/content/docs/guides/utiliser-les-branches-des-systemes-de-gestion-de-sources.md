@@ -1,13 +1,10 @@
----
-title: Utiliser les branches des systèmes de gestion de sources
-description: A guide in my new Starlight docs site.
----
+# Utiliser les branches des systèmes de gestion de sources {#utiliser-les-branches-des-systemes-de-gestion-de-sources}
 
 Les systèmes de gestion de sources proposent de créer des branches d\'un
 projet : si à un moment donné, un projet se divise en deux projets
 incompatibles, une branche est créée à partir du projet principal. Le
-peut ainsi gérer les différentes traductions de la documentation
-technique.
+rédacteur technique peut ainsi gérer les différentes traductions de la
+documentation technique.
 
 Le système des branches peut servir en théorie à gérer :
 
@@ -23,11 +20,12 @@ adapté à la gestion des traductions selon le gestionnaire de sources que
 l\'on utilise.
 
 La principale différence entre les systèmes de gestion de sources
-[Git]() et Subversion, c\'est leur manière de gérer les branches. Créer
-une branche sous Subversion revient à dupliquer un répertoire. Les
-fichiers des deux répertoires évoluent ensuite séparément. Sous Git, en
-revanche, la création de branche se fait sans duplication de données.
-Sur un même répertoire local, une commande permet de changer de branche.
+\[Git\](<http://www.git-scm.com> et Subversion, c\'est leur manière de
+gérer les branches. Créer une branche sous Subversion revient à
+dupliquer un répertoire. Les fichiers des deux répertoires évoluent
+ensuite séparément. Sous Git, en revanche, la création de branche se
+fait sans duplication de données. Sur un même répertoire local, une
+commande permet de changer de branche.
 
 Créer une traduction d\'une documentation consiste à *forker*, soit
 créer une branche, le document initial. Si l\'on utilise Git se pose
@@ -59,7 +57,7 @@ opération peut s\'avérer délicate et n\'être réellement utile que si
 l\'on doit gérer un grand nombre de différentes versions linguistiques.
 En tout cas, la solution des branches autorise de telles opérations, non
 celle des répertoires. Elle est cependant plus difficile à appréhender
-et à utiliser par l\'équipe de .
+et à utiliser par l\'équipe de rédaction technique.
 
 ::: seealso
 -   `git-du-fichier-au-contenu`{.interpreted-text role="ref"}

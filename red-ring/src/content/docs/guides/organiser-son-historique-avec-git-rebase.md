@@ -1,7 +1,4 @@
----
-title: Organiser son historique avec Git rebase
-description: A guide in my new Starlight docs site.
----
+# Organiser son historique avec Git rebase
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

@@ -1,7 +1,4 @@
----
-title: Sauvegarde incrémentale et décentralisée
-description: A guide in my new Starlight docs site.
----
+# Sauvegarde incrémentale et décentralisée {# projet-bout-en-bout-sauvegarde-incrementale-et-decentralisee}
 
 Comment sauvegarder le patrimoine photo de l\'association, soit les
 photos et la base de données Piwigo, de manière incrémentale et
@@ -24,8 +21,9 @@ raisons d\'espace disponible sur la version imprimée. Je l\'ai par la
 suite supprimée du dépliant, car elle risquait plutôt d\'effrayer son
 lectorat, majoritairement technophobe.*
 
-Sous Windows, vous pouvez installer [Git for windows]() et [GitHub
-Desktop]().
+Sous Windows, vous pouvez installer \[Git for
+windows\](<https://github.com/git-for-windows/git/releases/download/v2.18.0.windows.1/Git-2.18.0-64-bit.exe>
+et \[GitHub Desktop\](<https://desktop.github.com/>.
 
 Pour cloner le dépôt Gitlab sous une distribution Linux Debian ou
 dérivée (dont Ubuntu) :
@@ -67,7 +65,7 @@ Pour mettre à jour votre dépôt Gitlab :
 :::
 
 Pour la synchronisation entre le serveur et ma copie locale, je me suis
-tourné vers [LFTP]() :
+tourné vers \[LFTP\](<https://lftp.yar.ru/> :
 
 ``` console
 $ lftp ftp://user:password@ftpaccount -e \

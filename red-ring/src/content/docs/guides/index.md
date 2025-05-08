@@ -1,7 +1,4 @@
----
-title: Persona - à quoi ressemblent vos utilisateurs ?
-description: A guide in my new Starlight docs site.
----
+# Persona : à quoi ressemblent vos utilisateurs ?
 
 Lorsqu\'un formateur entre dans une salle de formation, rien qu\'au
 *look* des participants, il a déjà une idée de comment orienter son
@@ -20,9 +17,11 @@ est content. Nous nous sentons fiers du travail bien fait. Mais les
 utilisateurs ne trouvent pas les informations réellement pertinentes
 pour eux, perdues qu\'elles sont dans une mer de détails superflus.
 
+# Minimalisme et persona
 
 Carroll et Van der Meij ont prouvé empiriquement que l\'exhaustivité est
-le pire écueil de la rédaction technique et que le [minimalisme]() bien
+le pire écueil de la rédaction technique et que le
+\[minimalisme\](<https://www.utwente.nl/en/bms/ist/minimalism/> bien
 pensé était nettement plus efficace.
 
 Lorsqu\'il utilise un nouveau produit, l\'utilisateur a un socle de
@@ -42,92 +41,105 @@ Imaginons que l\'on dresse le portrait-robot (totalement fictif) des 2
 types d\'utilisateurs du produit A : les *Gourous Linux* et les
 *Windowsiens*.
 
-+------------------+-----------------+-----------------+
-|                  | Gourou Linux    | Windowsien      |
-+==================+=================+=================+
-|                  |                 |                 |
-+------------------+-----------------+-----------------+
-| Trait de         | Aime savoir     | Aime que les    |
-| personnalité     | comment         | choses          |
-|                  |                 |                 |
-| principal        | fonctionnent    | fonctionnent.   |
-|                  | les choses.     |                 |
-+------------------+-----------------+-----------------+
-| Sexe             | 90 % hommes     | 50/50           |
-|                  |                 | hommes/femmes   |
-+------------------+-----------------+-----------------+
-| Titre            | Ingénieur       | Administrateur  |
-|                  | réseau          | système         |
-+------------------+-----------------+-----------------+
-| Âge              | \>=25           | \>= 45          |
-+------------------+-----------------+-----------------+
-| Niveau d\'études | Bac + 5         | Variable        |
-+------------------+-----------------+-----------------+
-| Secteur          | Industrie       | Services        |
-+------------------+-----------------+-----------------+
-| Taille de        | Grande          | Moyenne         |
-| l\'entreprise    |                 |                 |
-+------------------+-----------------+-----------------+
-| Moyen de         | Email           | Téléphone       |
-|                  |                 |                 |
-| communication    |                 |                 |
-|                  |                 |                 |
-| favori           |                 |                 |
-+------------------+-----------------+-----------------+
-| OS               | Linux           | Windows         |
-+------------------+-----------------+-----------------+
-|                  | macOS           |                 |
-+------------------+-----------------+-----------------+
-|                  | FreeBSD         |                 |
-+------------------+-----------------+-----------------+
-| Type             | Ligne de        | Interfaces      |
-| d\'interface     | commande        | graphiques      |
-| préféré          |                 |                 |
-+------------------+-----------------+-----------------+
-| Couche           | IHM             | IHM             |
-| logicielle       |                 |                 |
-| ciblée           |                 |                 |
-+------------------+-----------------+-----------------+
-|                  | Middleware      |                 |
-+------------------+-----------------+-----------------+
-|                  | Firmware        |                 |
-+------------------+-----------------+-----------------+
-| Outils           | OpenSSL         | PuTTY           |
-| quotidiens       |                 |                 |
-+------------------+-----------------+-----------------+
-|                  | Vim/Emacs       | Notepad++       |
-+------------------+-----------------+-----------------+
-|                  | ip              | SolarWinds      |
-+------------------+-----------------+-----------------+
-|                  | netstat         | Nagios          |
-+------------------+-----------------+-----------------+
-|                  | tcpdump         |                 |
-+------------------+-----------------+-----------------+
-| Responsabilités  | Conception et   | Fonctionnement  |
-|                  |                 | du              |
-|                  | gestion réseau  |                 |
-|                  |                 | système         |
-|                  |                 | informatique    |
-+------------------+-----------------+-----------------+
-| PKIs             | Performance et  | Disponibilité   |
-|                  |                 | du SI           |
-|                  | disponibilité   |                 |
-|                  |                 |                 |
-|                  | des sites web   |                 |
-+------------------+-----------------+-----------------+
-| N+1              | Responsable de  | CEO             |
-|                  |                 |                 |
-|                  | l\'exploitation |                 |
-+------------------+-----------------+-----------------+
-| Défis principaux | Gestion de      | Gestion de      |
-|                  | projet          | projets         |
-+------------------+-----------------+-----------------+
-|                  | Résolution      | Résolution      |
-|                  | d\'incidents    | d\'incidents    |
-+------------------+-----------------+-----------------+
-|                  | Prise de        |                 |
-|                  | décision        |                 |
-+------------------+-----------------+-----------------+
++----------------+---------------+---------------+-------------------+
+| ====           | Gourou Linux  |               |                   |
+| ============== | ==========    |               |                   |
+|                | =======+===== |               |                   |
+|                | ============+ |               |                   |
+|                | grap          |               |                   |
+|                | hics/guru.png |               |                   |
+|                | \|graphics/w  |               |                   |
+|                | indowsien.png |               |                   |
++----------------+---------------+---------------+-------------------+
+|                |               |               |                   |
++----------------+---------------+---------------+-------------------+
+| Trait de       | Aime savoir   | Aime que les  |                   |
+| personnalité   | comment       | choses        |                   |
+|                |               |               |                   |
+| principal      | fonctionnent  | fonctionnent. |                   |
+|                | les choses.   |               |                   |
++----------------+---------------+---------------+-------------------+
+| Sexe           | 90 % hommes   | 50/50         |                   |
+|                |               | hommes/femmes |                   |
++----------------+---------------+---------------+-------------------+
+| Titre          | Ingénieur     | A             |                   |
+|                | réseau        | dministrateur |                   |
+|                |               | système       |                   |
++----------------+---------------+---------------+-------------------+
+| Âge            | \>=25         | \>= 45        |                   |
++----------------+---------------+---------------+-------------------+
+| Niveau         | Bac + 5       | Variable      |                   |
+| d\'études      |               |               |                   |
++----------------+---------------+---------------+-------------------+
+| Secteur        | Industrie     | Services      |                   |
++----------------+---------------+---------------+-------------------+
+| Taille de      | Grande        | Moyenne       |                   |
+| l\'entreprise  |               |               |                   |
++----------------+---------------+---------------+-------------------+
+| Moyen de       | Email         | Téléphone     |                   |
+|                |               |               |                   |
+| communication  |               |               |                   |
+|                |               |               |                   |
+| favori         |               |               |                   |
++----------------+---------------+---------------+-------------------+
+| OS             | Linux         | Windows       |                   |
++----------------+---------------+---------------+-------------------+
+|                | macOS         |               |                   |
++----------------+---------------+---------------+-------------------+
+|                | FreeBSD       |               |                   |
++----------------+---------------+---------------+-------------------+
+| Type           | Ligne de      | Interfaces    |                   |
+| d\'interface   | commande      | graphiques    |                   |
+| préféré        |               |               |                   |
++----------------+---------------+---------------+-------------------+
+| Couche         | IHM           | IHM           |                   |
+| logicielle     |               |               |                   |
+| ciblée         |               |               |                   |
++----------------+---------------+---------------+-------------------+
+|                | Middleware    |               |                   |
++----------------+---------------+---------------+-------------------+
+|                | Firmware      |               |                   |
++----------------+---------------+---------------+-------------------+
+| Outils         | OpenSSL       | PuTTY         |                   |
+| quotidiens     |               |               |                   |
++----------------+---------------+---------------+-------------------+
+|                | Vim/Emacs     | Notepad++     |                   |
++----------------+---------------+---------------+-------------------+
+|                | ip            | SolarWinds    |                   |
++----------------+---------------+---------------+-------------------+
+|                | netstat       | Nagios        |                   |
++----------------+---------------+---------------+-------------------+
+|                | tcpdump       |               |                   |
++----------------+---------------+---------------+-------------------+
+| R              | Conception et | F             |                   |
+| esponsabilités |               | onctionnement |                   |
+|                | gestion       | du            |                   |
+|                | réseau        |               |                   |
+|                |               | système       |                   |
+|                |               | informatique  |                   |
++----------------+---------------+---------------+-------------------+
+| PKIs           | Performance   | Disponibilité |                   |
+|                | et            | du SI         |                   |
+|                |               |               |                   |
+|                | disponibilité |               |                   |
+|                |               |               |                   |
+|                | des sites web |               |                   |
++----------------+---------------+---------------+-------------------+
+| N+1            | Responsable   | CEO           |                   |
+|                | de            |               |                   |
+|                |               |               |                   |
+|                | l\            |               |                   |
+|                | 'exploitation |               |                   |
++----------------+---------------+---------------+-------------------+
+| Défis          | Gestion de    | Gestion de    |                   |
+| principaux     | projet        | projets       |                   |
++----------------+---------------+---------------+-------------------+
+|                | Résolution    | Résolution    |                   |
+|                | d\'incidents  | d\'incidents  |                   |
++----------------+---------------+---------------+-------------------+
+|                | Prise de      |               |                   |
+|                | décision      |               |                   |
++----------------+---------------+---------------+-------------------+
 
 D\'après ces *persona*, dont il faut vérifier la véracité sur le
 terrain, on peut imaginer fournir plus d\'informations conceptuelles au

@@ -1,15 +1,13 @@
----
-title: Créer des documents différents à partir des mêmes sources DITA XML (texte conditionnel)
-description: A guide in my new Starlight docs site.
----
+# Créer des documents différents à partir des mêmes sources DITA XML (texte conditionnel) {#creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-conditionnel}
 
-offre un mécanisme de texte conditionnel. Ce mécanisme favorise la
-réutilisation du contenu source et évite la redondance des informations.
-Ce didacticiel aidera le à utiliser ce mécanisme en quelques minutes.
+DITA XML offre un mécanisme de texte conditionnel. Ce mécanisme favorise
+la réutilisation du contenu source et évite la redondance des
+informations. Ce didacticiel aidera le rédacteur technique à utiliser ce
+mécanisme en quelques minutes.
 
 **Prérequis**
 
--   Vous avez installé dans le répertoire
+-   Vous avez installé DITA Open Toolkit dans le répertoire
     `DITA-OT1.5.4`{.interpreted-text role="file"} sous GNU/Linux ou
     Windows.
 
@@ -59,10 +57,10 @@ Ce didacticiel aidera le à utiliser ce mécanisme en quelques minutes.
     </topic>
     ```
 
-    Ce code contient des balises contenant des valeurs *audience*
-    différentes : nous allons exclure le contenu d\'une de ces deux
-    balises lors de la génération du fichier cible en utilisant la clé
-    *audience*.
+    Ce code contient des balises DITA XML contenant des valeurs
+    *audience* différentes : nous allons exclure le contenu d\'une de
+    ces deux balises lors de la génération du fichier cible en utilisant
+    la clé *audience*.
 
 2.  Collez le code suivant dans un fichier et enregistrez ce dernier
     sous le nom de `texte-conditionnel.ditamap`{.interpreted-text

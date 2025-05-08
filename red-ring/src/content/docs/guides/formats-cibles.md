@@ -1,9 +1,6 @@
----
-title: Formats cibles
-description: A guide in my new Starlight docs site.
----
+# Formats cibles
 
-Vous pouvez compiler ce avec *Python Sphinx* aux formats :
+Vous pouvez compiler ce blog avec *Python Sphinx* aux formats :
 
 -   [PDF](download/redaction-techniqueorg.pdf),
 -   [EPUB](download/redaction-techniqueorg.epub),

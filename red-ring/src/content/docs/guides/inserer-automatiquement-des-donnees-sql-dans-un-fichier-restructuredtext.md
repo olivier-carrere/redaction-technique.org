@@ -1,7 +1,4 @@
----
-title: Insérer automatiquement des données SQL dans un fichier reStructuredText
-description: A guide in my new Starlight docs site.
----
+# Insérer automatiquement des données SQL dans un fichier reStructuredText {#inserer-automatiquement-des-donnees-sql-dans-un-fichier-restructuredtext}
 
 Nous allons créer une base de données de produits avec leurs versions,
 puis mettre en forme ces informations dans un fichier reStructuredText.

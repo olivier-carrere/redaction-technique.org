@@ -1,7 +1,4 @@
----
-title: Installez les logiciels nécessaires à la gestion de ce
-description: A guide in my new Starlight docs site.
----
+# Installez les logiciels nécessaires à la gestion de ce blog {#installez-les-logiciels-necessaires-a-la-generation-de-ce-site}
 
 1.  Sélectionnez `Menu`{.interpreted-text role="guilabel"} \>
     `Accessoires`{.interpreted-text role="guilabel"} \>
@@ -31,8 +28,8 @@ description: A guide in my new Starlight docs site.
       Python Sphinx Générateur de documentation basé sur le format
                     reStructuredText.
 
-      Texlive       Environnement LaTeX complet pour la génération du au
-                    format PDF.
+      Texlive       Environnement LaTeX complet pour la génération du blog au
+                    \| format PDF.
       -----------------------------------------------------------------------
 
 3.  Libérez de l\'espace disque :

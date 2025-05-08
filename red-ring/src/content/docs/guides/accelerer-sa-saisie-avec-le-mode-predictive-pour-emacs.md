@@ -1,7 +1,4 @@
----
-title: Accélérer sa saisie avec le mode Predictive pour Emacs
-description: A guide in my new Starlight docs site.
----
+# Accélérer sa saisie avec le mode Predictive pour Emacs {#accelerer-sa-saisie-avec-le-mode-predictive-pour-emacs}
 
 Ce didacticiel mode Predictive pour Emacs est destiné à vous guider dans
 la mise en place et l\'utilisation du mode Emacs d\'aide à la rédaction
@@ -14,7 +11,8 @@ environnement GNU/Linux (en l\'occurrence, Debian).
     $ sudo aptitude install make texinfo
     ```
 
-2.  Téléchargez [Predictive]().
+2.  Téléchargez
+    \[Predictive\](<http://www.dr-qubit.org/emacs.php#predictive-download>.
 
 3.  Décompressez l\'archive Predictive :
 

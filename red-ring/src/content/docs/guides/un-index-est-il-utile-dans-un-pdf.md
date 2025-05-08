@@ -1,13 +1,10 @@
----
-title: Un index est-il utile dans un PDF ?
-description: A guide in my new Starlight docs site.
----
+# Un index est-il utile dans un PDF ?
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 À l\'heure des documents dématérialisés, un index est-il un élément
-indispensable d\'une bonne  ?
+indispensable d\'une bonne documentation technique ?
 :::
 
 La recherche en plein texte semble avoir détrôné l\'index. Les notices
@@ -25,9 +22,10 @@ chemins d\'accès à la source d\'information qui peut l\'intéresser. Les
 moteurs de recherche ont rendu l\'index caduc.
 
 Si la documentation technique utilise une terminologie cohérente,
-l\'efficacité de la recherche en plein texte est réduite : si le a
-utilisé uniquement le terme *répertoire*, le lecteur qui recherche le
-mot *dossier* passera à côté de l\'information qu\'il recherche.
+l\'efficacité de la recherche en plein texte est réduite : si le
+rédacteur technique a utilisé uniquement le terme *répertoire*, le
+lecteur qui recherche le mot *dossier* passera à côté de l\'information
+qu\'il recherche.
 
 L\'index, s\'il est bien réalisé, a alors toute son utilité. Seul
 problème : créer un bon index demande un effort important en toute fin

@@ -1,20 +1,19 @@
----
-title: Utiliser le nœud XML de plus bas niveau
-description: A guide in my new Starlight docs site.
----
+# Utiliser le nœud XML de plus bas niveau {#utiliser-le-noeud-xml-de-plus-bas-niveau}
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
-Le doit utiliser comme source du [conref]() le nœud de plus bas niveau
-contenant l\'information à partager.
+Le rédacteur technique doit utiliser comme source du
+\[conref\](<http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html>
+le nœud DITA XML de plus bas niveau contenant l\'information à partager.
 :::
 
 Le but des *conref* étant de gérer des blocs d\'information de faibles
 dimensions, il est logique de les manipuler au niveau de la plus petite
 structure XML encapsulant l\'information, même si cette structure, pour
-être compatible avec le schéma XSD de la section où elle intervient,
-doit elle-même être incluse dans des structures XML plus grandes.
+être compatible avec le schéma XSD de la section DITA XML où elle
+intervient, doit elle-même être incluse dans des structures XML plus
+grandes.
 
 <figure>
 <img src="graphics/conref-bas-niveau.svg"

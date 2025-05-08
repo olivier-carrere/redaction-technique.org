@@ -1,11 +1,8 @@
----
-title: XSL-FO - filtrer du contenu selon des conditions « sauf » et « ou »
-description: A guide in my new Starlight docs site.
----
+# XSL-FO : filtrer du contenu selon des conditions « sauf » et « ou »
 
-Imaginons que vous vouliez filtrer les nœuds enfants de la balise
-`<example>`{.interpreted-text role="samp"} et afficher tout son contenu
-à l\'exception du titre (situé entre les balises
+Imaginons que vous vouliez filtrer les nœuds enfants de la balise DITA
+XML `<example>`{.interpreted-text role="samp"} et afficher tout son
+contenu à l\'exception du titre (situé entre les balises
 `<title>`{.interpreted-text role="samp"}).
 
 Vous pouvez recourir alors à la syntaxe suivante :
@@ -25,7 +22,8 @@ Cette commande sélectionne tous les nœuds enfants du nœud
 directement, sans être encapsulé dans des balises. Cette commande ne
 fera alors pas apparaître ce contenu.
 
-Supposons que le code source d\'un de vos fichiers soit le suivant :
+Supposons que le code source d\'un de vos fichiers DITA XML soit le
+suivant :
 
 ``` xml
 <example>
@@ -65,7 +63,7 @@ d\'utiliser la syntaxe suivante :
 Cependant, tous les éléments texte non encapsulés dans des balises
 enfant de la balise `<example>`{.interpreted-text role="samp"} seront
 placés en tête de l\'exemple, avant les éléments encapsulés, même s\'ils
-sont placés après dans le fichier source .
+sont placés après dans le fichier source DITA XML.
 
 Le fichier PDF affichera l\'exemple structuré comme suit :
 
@@ -77,7 +75,8 @@ Le fichier PDF affichera l\'exemple structuré comme suit :
 > ```
 
 Il faut alors utiliser la syntaxe *pipe* (condition booléenne *ou*) pour
-modifier le chemin [XPATH]() comme suit :
+modifier le chemin \[XPATH\](<http://fr.wikipedia.org/wiki/XPath> comme
+suit :
 
 ``` xslt
 <xsl:apply-templates select="text()|*[not(name()='title')]" />

@@ -1,16 +1,15 @@
----
-title: Fournir une information ciblée avec le texte conditionnel ditaval
-description: A guide in my new Starlight docs site.
----
+# Fournir une information ciblée avec le texte conditionnel ditaval {#fournir-une-information-ciblee-avec-le-texte-conditionnel-ditaval}
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
-Un fichier [ditaval]() reprend le principe des lunettes que vous
-chaussez pour visualiser un film en 3D : le verre gauche masque une
-moitié de l\'image, le verre droit en masque l\'autre moitié. Mais seul
-le dispose de lunettes 3D et a une vision complète de l\'information
-contenue dans le projet .
+Un fichier
+\[ditaval\](<http://docs.oasis-open.org/dita/v1.2/os/spec/common/about-ditaval.html>
+reprend le principe des lunettes que vous chaussez pour visualiser un
+film en 3D : le verre gauche masque une moitié de l\'image, le verre
+droit en masque l\'autre moitié. Mais seul le rédacteur technique
+dispose de lunettes 3D et a une vision complète de l\'information
+contenue dans le projet DITA XML.
 :::
 
 Les destinataires de l\'information disposent de lunettes avec deux
@@ -67,7 +66,7 @@ Attention
 
 Une clé de filtrage mal positionnée peut entraîner une erreur de
 compilation. En effet, si le code non filtré est conforme au schéma XSD
-, le code filtré peut ne pas l\'être.
+DITA XML, le code filtré peut ne pas l\'être.
 
 **Exemple**
 

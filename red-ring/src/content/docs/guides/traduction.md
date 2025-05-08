@@ -1,7 +1,4 @@
----
-title: Traduction
-description: A guide in my new Starlight docs site.
----
+# Traduction
 
 Les contraintes de traduction doivent être prises en compte en amont du
 processus rédactionnel. Elles ont des implications autant sur le style

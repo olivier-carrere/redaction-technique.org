@@ -1,7 +1,4 @@
----
-title: Intégrer la documentation aux processus de développement
-description: A guide in my new Starlight docs site.
----
+# Intégrer la documentation aux processus de développement
 
 La documentation fait partie du logiciel. Fournie avec le produit, elle
 doit :
@@ -34,7 +31,8 @@ Résultat : réalisée à part, la documentation technique répondait
 difficilement aux mêmes exigences de qualité et de délai de mise sur le
 marché que les produits.
 
-, puis et ont changé la donne : ces formats texte peuvent être modifiés
-avec tout type de programme, du simple éditeur de texte à l\' graphique,
-et s\'intègrent parfaitement sous Subversion, Git ou tout autre système
-de gestion de versions.
+DocBook, puis DITA XML et reStructuredText ont changé la donne : ces
+formats texte peuvent être modifiés avec tout type de programme, du
+simple éditeur de texte à l\'Integrated Development Environment
+graphique, et s\'intègrent parfaitement sous Subversion, Git ou tout
+autre système de gestion de versions.

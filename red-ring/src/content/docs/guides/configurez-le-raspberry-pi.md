@@ -1,14 +1,14 @@
----
-title: Configurez le
-description: A guide in my new Starlight docs site.
----
+::: {#configurez-le-raspberry-pi}
+Configurez le Raspberry Pi 3 \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
+:::
 
 **Prérequis**
 
 -   Carte micro-SD de 16 Go classe 10 (de préférence).
 -   Connexion Internet filaire ou Wi-Fi.
 
-1.  Installez la distribution Linux Raspbian sur votre *via* [NOOBS]().
+1.  Installez la distribution Linux Raspbian sur votre Raspberry Pi 3
+    *via* \[NOOBS\](<https://www.raspberrypi.org/downloads/noobs/>.
 
 2.  Sélectionnez `Menu`{.interpreted-text role="guilabel"} ‣
     `Preferences`{.interpreted-text role="guilabel"} ‣
@@ -59,4 +59,4 @@ description: A guide in my new Starlight docs site.
     `Shutdown`{.interpreted-text role="guilabel"} ‣
     `Reboot`{.interpreted-text role="guilabel"}.
 
-    Le redémarre.
+    Le Raspberry Pi 3 redémarre.

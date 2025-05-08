@@ -1,15 +1,15 @@
----
-title: Le en tant que plateforme de documentation
-description: A guide in my new Starlight docs site.
----
+::: {#raspberry-pi-plateforme-documentation}
+Le Raspberry Pi 3 en tant que plateforme de documentation
+===================================================
+:::
 
 Faut-il une débauche de puissance pour générer une documentation
 professionnelle ? Avec son unique giga-octet de mémoire vive et son
-processeur de *smartphone*, le semble se positionner comme une bonne
-station bureautique des années 2000... À l\'usage, il s\'avère pourtant
-qu\'une unité centrale d\'une quarantaine d\'euros suffit largement pour
-créer, gérer et générer une documentation aux formats PDF, HTML, ou
-autre.
+processeur de *smartphone*, le Raspberry Pi 3 semble se positionner
+comme une bonne station bureautique des années 2000... À l\'usage, il
+s\'avère pourtant qu\'une unité centrale d\'une quarantaine d\'euros
+suffit largement pour créer, gérer et générer une documentation aux
+formats PDF, HTML, ou autre.
 
 :::: note
 ::: title
@@ -18,24 +18,28 @@ Note
 
 Les buts de ce billet sont de :
 
--   Présenter un et utiliser des ressources minimales pour créer, gérer
-    et publier une documentation professionnelle. La plupart des
-    opérations se déroulent donc en mode texte, sous Linux. Si les
-    solutions présentées ici fonctionnent également en mode graphique
-    sous Windows, elles ne sont peut-être pas disponibles sous *Windows
-    10 IoT*, destiné au .
+-   Présenter un Proof of Concept (démonstration de faisabilité) et
+    utiliser des ressources minimales pour créer, gérer et publier une
+    documentation professionnelle. La plupart des opérations se
+    déroulent donc en mode texte, sous Linux. Si les solutions
+    présentées ici fonctionnent également en mode graphique sous
+    Windows, elles ne sont peut-être pas disponibles sous *Windows 10
+    IoT*, destiné au Raspberry Pi 3.
 -   Présenter un scénario d\'utilisation aussi simple que possible,
     parfois au détriment de l\'élégance technique.
 ::::
 
-## Configurez le
+::: {#configurez-le-raspberry-pi}
+Configurez le Raspberry Pi 3 \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
+:::
 
 **Prérequis**
 
 -   Carte micro-SD de 16 Go classe 10 (de préférence).
 -   Connexion Internet filaire ou Wi-Fi.
 
-1.  Installez la distribution Linux Raspbian sur votre *via* [NOOBS]().
+1.  Installez la distribution Linux Raspbian sur votre Raspberry Pi 3
+    *via* \[NOOBS\](<https://www.raspberrypi.org/downloads/noobs/>.
 
 2.  Sélectionnez `Menu`{.interpreted-text role="guilabel"} ‣
     `Preferences`{.interpreted-text role="guilabel"} ‣
@@ -86,9 +90,9 @@ Les buts de ce billet sont de :
     `Shutdown`{.interpreted-text role="guilabel"} ‣
     `Reboot`{.interpreted-text role="guilabel"}.
 
-    Le redémarre.
+    Le Raspberry Pi 3 redémarre.
 
-## Installez les logiciels nécessaires à la gestion de ce
+# Installez les logiciels nécessaires à la gestion de ce blog {#installez-les-logiciels-necessaires-a-la-generation-de-ce-site}
 
 1.  Sélectionnez `Menu`{.interpreted-text role="guilabel"} \>
     `Accessoires`{.interpreted-text role="guilabel"} \>
@@ -118,8 +122,8 @@ Les buts de ce billet sont de :
       Python Sphinx Générateur de documentation basé sur le format
                     reStructuredText.
 
-      Texlive       Environnement LaTeX complet pour la génération du au
-                    format PDF.
+      Texlive       Environnement LaTeX complet pour la génération du blog au
+                    \| format PDF.
       -----------------------------------------------------------------------
 
 3.  Libérez de l\'espace disque :
@@ -128,23 +132,23 @@ Les buts de ce billet sont de :
     $ sudo aptitude clean
     ```
 
-## Récupérez les sources de ce
+# Récupérez les sources de ce blog {#recuperez-les-sources-de-ce-site}
 
-1.  Clonez le dépôt des sources de ce  :
+1.  Clonez le dépôt Git des sources de ce blog :
 
     ``` console
     $ git clone https://github.com/olivier-carrere/redaction-technique.org.git
     ```
 
-2.  Placez-vous dans le répertoire des sources de ce  :
+2.  Placez-vous dans le répertoire des sources de ce blog :
 
     ``` console
     $ cd redaction-technique.org
     ```
 
-## Créez et modifiez le texte
+# Créez et modifiez le texte {#creez-et-modifiez-le-texte}
 
-1.  Modifiez un fichier source modulaire de ce  :
+1.  Modifiez un fichier source modulaire de ce blog :
     -   à l\'aide d\'un éditeur de texte :
 
         ``` console
@@ -163,9 +167,9 @@ Les buts de ce billet sont de :
         $ sed -i "s/répertoire/dossier/g;" *.rst
         ```
 
-## Créez et modifiez les schémas
+# Créez et modifiez les schémas {#creez-et-modifiez-les-schemas}
 
-1.  Modifiez un fichier source des images de ce  :
+1.  Modifiez un fichier source des images de ce blog :
     -   à l\'aide d\'un logiciel de dessin vectoriel :
 
         ``` console
@@ -178,9 +182,9 @@ Les buts de ce billet sont de :
         $ sed -i "s/docbook/XML/g;" graphics/*.svg
         ```
 
-## Gérez les versions de votre documentation
+# Gérez les versions de votre documentation {#gerez-les-versions-de-votre-documentation}
 
-1.  *Commitez* votre lot de modifications sous  :
+1.  *Commitez* votre lot de modifications sous Git :
 
     ``` console
     $ git config --global user.email "votre email"
@@ -191,14 +195,14 @@ Les buts de ce billet sont de :
     $ git commit -m "Mon lot de modifications sur les images"
     ```
 
-2.  Affichez l\'historique des modifications des sources de ce  :
+2.  Affichez l\'historique des modifications des sources de ce blog :
 
     ``` console
     $ gitk &
     ```
 
-    Ô surprise, vous avez sous les yeux, mais oui, une  ! C\'est
-    tellement beau, qu\'on va faire une photo :
+    Ô surprise, vous avez sous les yeux, mais oui, une Graphical User
+    Interface ! C\'est tellement beau, qu\'on va faire une photo :
 
     ![](graphics/historique-git-redaction-technique.png)
 
@@ -211,19 +215,21 @@ Note
 :::
 
 -   Vos modifications sont purement locales et ne sont pas appliquées
-    sur le dépot distant .
--   Si vos modifications apportent une réelle valeur ajoutée à ce
+    sur le dépot distant GitHub.
+-   Si vos modifications apportent une réelle valeur ajoutée à ce blog
     (correction de coquille, ajout d\'information ou autre), n\'hésitez
-    pas à me la soumettre sous forme de patch ou *via* votre compte .
--   n\'est probablement pas hébergé sur un cluster de . Rien n\'empêche
-    cependant d\'héberger un dépôt distant sur un connecté au réseau et
-    d\'y accéder par connexion sécurisée .
+    pas à me la soumettre sous forme de patch Git ou *via* votre compte
+    GitHub.
+-   GitHub n\'est probablement pas hébergé sur un cluster de
+    Raspberry Pi 3. Rien n\'empêche cependant d\'héberger un dépôt
+    distant Git sur un Raspberry Pi 3 connecté au réseau et d\'y accéder
+    par connexion sécurisée SSH.
 ::::
 
-## Générez votre documentation
+# Générez votre documentation {#generez-votre-documentation}
 
 1.  Revenez dans le terminal, puis récupérez la dernière version
-    *taguée* de ce  :
+    *taguée* de ce blog :
 
     ``` console
     $ git checkout $(git describe --tags $(git rev-list --tags --max-count=1))
@@ -238,26 +244,26 @@ Note
     définition de *simple* donnée par le Larousse...
     ::::
 
-2.  Générez la dernière version *taguée* de ce aux format PDF, HTML et
-    EPUB :
+2.  Générez la dernière version *taguée* de ce blog aux format PDF, HTML
+    et EPUB :
 
     ``` console
     $ make all
     ```
 
-3.  Affichez le au format PDF :
+3.  Affichez le blog au format PDF :
 
     ``` console
     $ xpdf _build/latex/redaction-techniqueorg.pdf &
     ```
 
-4.  Affichez le au format HTML :
+4.  Affichez le blog au format HTML :
 
     ``` console
     $ epiphany _build/html/index.html &
     ```
 
-5.  Affichez le au format EPUB :
+5.  Affichez le blog au format EPUB :
 
     ``` console
     $  ebook-viewer _build/epub/redaction-techniqueorg.epub &
@@ -283,18 +289,21 @@ Et voilà. En quelques minutes, vous avez :
         être optimisé.
     -   Nous pourrions mettre en place une solution complète de texte
         conditionnel avec opérateurs booléens et tout et tout grâce au
-        moteur de *templating* [Jinja]().
-    -   Les observateurs remarqueront que la version HTML du version 1.5
-        ne comporte pas de table des matières dans la colonne de droite.
-        C\'est qu\'en effet, cette version n\'embarque pas le patch
-        *1032292*. Je vous laisse chercher dans l\'historique ... voire
-        créer une branche et le *cherry-picker* !
+        moteur de *templating* \[Jinja\](<http://jinja.pocoo.org/>.
+    -   Les observateurs remarqueront que la version HTML du blog
+        version 1.5 ne comporte pas de table des matières dans la
+        colonne de droite. C\'est qu\'en effet, cette version
+        n\'embarque pas le patch *1032292*. Je vous laisse chercher dans
+        l\'historique Git... voire créer une branche et le
+        *cherry-picker* !
     ::::
 
-Le est donc une plateforme de documentation tout à fait crédible... à
-condition de se passer, ou presque, d\'interface graphique !
+Le Raspberry Pi 3 est donc une plateforme de documentation tout à fait
+crédible... à condition de se passer, ou presque, d\'interface
+graphique !
 
-Le prochain test consistera à générer la version de ce .
+Le prochain test consistera à générer la version DITA XML de ce blog.
 
-Le prochain prochain test consistera à générer ce sur un *smartphone* en
-installant une distribution [Linux sur Android]().
+Le prochain prochain test consistera à générer ce blog sur un
+*smartphone* en installant une distribution \[Linux sur
+Android\](<https://korben.info/comment-installer-linux-sur-android.html>.

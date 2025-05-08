@@ -1,13 +1,10 @@
----
-title: Créer des documents différents à partir des mêmes sources *via* Jinja (méthode objet)
-description: A guide in my new Starlight docs site.
----
+# Créer des documents différents à partir des mêmes sources *via* Jinja (méthode objet) {#creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-objet-texte-conditionnel}
 
 Le script Python `profiling.py`{.interpreted-text role="file"}
 ci-dessous permet de profiler du contenu à l\'aide du puissant moteur de
-modèle Avec [Jinja](), vous pouvez définir des objets (audience,
-plateforme, version, etc.) et inclure ou exclure des blocs de texte
-selon leurs attributs.
+modèle Avec \[Jinja\](<http://jinja.pocoo.org/>, vous pouvez définir des
+objets (audience, plateforme, version, etc.) et inclure ou exclure des
+blocs de texte selon leurs attributs.
 
 1.  Créez le fichier `texte-conditionnel.rst`{.interpreted-text
     role="file"} suivant :

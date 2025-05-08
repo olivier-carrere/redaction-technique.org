@@ -1,9 +1,7 @@
----
-title: Livraison
-description: A guide in my new Starlight docs site.
----
+# Livraison
 
-Le livre le document à son destinataire de la manière appropriée :
+Le rédacteur technique livre le document à son destinataire de la
+manière appropriée :
 
 -   animation publiée sur un site de streaming,
 -   plaquette distribuée dans les salons ou laissée en clientèle par les

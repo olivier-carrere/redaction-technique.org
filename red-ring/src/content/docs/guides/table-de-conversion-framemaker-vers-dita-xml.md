@@ -1,14 +1,13 @@
----
-title: Table de conversion FrameMaker vers DITA XML
-description: A guide in my new Starlight docs site.
----
+# Table de conversion FrameMaker vers DITA XML
 
-Lorsque les fichiers [FrameMaker]() sont prêts pour la migration et que
-la chaîne est parfaitement intégrée aux processus techniques et humains
-de la société, le peut appliquer la table de conversion[^1].
+Lorsque les fichiers
+\[FrameMaker\](<http://en.wikipedia.org/wiki/Adobe_FrameMaker> sont
+prêts pour la migration et que la chaîne DITA XML est parfaitement
+intégrée aux processus techniques et humains de la société, le rédacteur
+technique peut appliquer la table de conversion[^1].
 
-Vous devriez maintenant être à même d\'archiver les fichiers , puis de
-basculer totalement vers le format .
+Vous devriez maintenant être à même d\'archiver les fichiers FrameMaker,
+puis de basculer totalement vers le format DITA XML.
 
 <figure>
 <img src="graphics/dita-migration.svg"
@@ -23,10 +22,10 @@ succès, vous pourrez appliquer le processus aux autres jeux de
 documents.
 
 Vous pouvez maintenant progressivement modulariser et partager votre
-contenu dans le nouveau format afin de tirer parti au maximum de . Vous
-pouvez pendant cette phase continuer à publier de nouvelles versions du
-document ; la publication devrait d\'ailleurs être beaucoup plus simple
-que sous .
+contenu dans le nouveau format afin de tirer parti au maximum de DITA
+XML. Vous pouvez pendant cette phase continuer à publier de nouvelles
+versions du document ; la publication devrait d\'ailleurs être beaucoup
+plus simple que sous FrameMaker.
 
 ::: only
 html

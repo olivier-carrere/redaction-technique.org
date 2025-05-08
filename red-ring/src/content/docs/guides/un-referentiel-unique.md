@@ -1,12 +1,10 @@
----
-title: Un référentiel unique ?
-description: A guide in my new Starlight docs site.
----
+# Un référentiel unique ? {#un-referentiel-unique}
 
 Idéalement, tout le contenu peut être placé sous un référentiel unique,
-par exemple le logiciel de gestion de versions [Git](). Ceci en maximise
-la réutilisation, la cohérence et la qualité. Si le contenu est au
-format ou , par exemple, on peut exploiter au mieux les capacités de
+par exemple le logiciel de gestion de versions
+\[Git\](<http://www.git-scm.com>. Ceci en maximise la réutilisation, la
+cohérence et la qualité. Si le contenu est au format DITA XML ou
+DocBook, par exemple, on peut exploiter au mieux les capacités de
 *single-sourcing* de ces formats pour le publier sous la forme
 appropriée.
 

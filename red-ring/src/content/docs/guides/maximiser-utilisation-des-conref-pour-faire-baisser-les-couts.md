@@ -1,14 +1,13 @@
----
-title: Maximiser l\'utilisation des *conref* pour faire baisser les coûts
-description: A guide in my new Starlight docs site.
----
+# Maximiser l\'utilisation des *conref* pour faire baisser les coûts {#maximiser-utilisation-des-conref-pour-faire-baisser-les-couts}
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
-Recourir aux [conref]() est le meilleur moyen dont dispose le pour faire
+Recourir aux
+\[conref\](<http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html>
+est le meilleur moyen dont dispose le rédacteur technique pour faire
 baisser spectaculairement les coûts et les délais de publication de son
-contenu , surtout pour les documents multilingues.
+contenu DITA XML, surtout pour les documents multilingues.
 :::
 
 De par la nature des informations qu\'elles contiennent, les sections de
@@ -90,14 +89,15 @@ des blocs d\'information non uniques), étant généré par des *conref*.
 ```
 
 Seul le texte en noir doit être traduit. Traduire ce type de fichier de
-contenu consiste donc à traduire uniquement le titre de la section et
-l\'intégralité des *conref* sources. Lorsqu\'il traduit un ensemble
-d\'unités d\'information placées en vrac dans un fichier, le traducteur
-manque cependant cruellement de contexte. Le créateur du contenu initial
-doit donc lui fournir une assistance constante. La méthode la plus
-efficace consiste à faire travailler le traducteur en régie. Avantage
-supplémentaire : il pourra ainsi interroger non seulement le , mais
-également les concepteurs du produit.
+contenu DITA XML consiste donc à traduire uniquement le titre de la
+section et l\'intégralité des *conref* sources. Lorsqu\'il traduit un
+ensemble d\'unités d\'information placées en vrac dans un fichier, le
+traducteur manque cependant cruellement de contexte. Le créateur du
+contenu initial doit donc lui fournir une assistance constante. La
+méthode la plus efficace consiste à faire travailler le traducteur en
+régie. Avantage supplémentaire : il pourra ainsi interroger non
+seulement le rédacteur technique, mais également les concepteurs du
+produit.
 
 :::: note
 ::: title
@@ -117,4 +117,5 @@ collaboration efficace entre concepteurs, rédacteurs et traducteurs.
 Il est également possible de factoriser ainsi des éléments de structure,
 et non de contenu, tels que des en-têtes de tableaux. Vous pouvez ainsi
 présenter des informations de même type de manière homogène à moindre
-coût, c\'est à dire sans recourir à la [spécialisation]().
+coût, c\'est à dire sans recourir à la
+\[spécialisation\](<http://en.wikipedia.org/wiki/Darwin_Information_Typing_Architecture#Specialization>.

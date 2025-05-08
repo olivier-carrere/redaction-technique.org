@@ -1,14 +1,13 @@
----
-title: Protéger les informations confidentielles
-description: A guide in my new Starlight docs site.
----
+# Protéger les informations confidentielles {#proteger-les-informations-confidentielles}
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
-Le puissant mécanisme [conref]() de se prête à d\'autres applications
-que la réduction des coûts. Par exemple, le peut masquer des
-informations dans le code source.
+Le puissant mécanisme
+\[conref\](<http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html>
+de DITA XML se prête à d\'autres applications que la réduction des
+coûts. Par exemple, le rédacteur technique peut masquer des informations
+dans le code source.
 :::
 
 Voici un cas original d\'utilisation des *conref* : imaginez que vous
@@ -23,7 +22,7 @@ pour exclure des informations des livrables, non pour les masquer dans
 les fichiers sources. Allez-vous devoir créer deux jeux de fichiers
 sources, certains comportant les informations confidentielles, les
 autres non ? Adieu alors le *single-sourcing* et la réutilisation du
-contenu qui vous ont fait choisir  !
+contenu qui vous ont fait choisir DITA XML !
 
 <figure>
 <img src="graphics/confidentiel.svg" alt="graphics/confidentiel.svg" />

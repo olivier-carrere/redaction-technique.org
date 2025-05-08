@@ -1,15 +1,13 @@
----
-title: Principe de simplicité KISS
-description: A guide in my new Starlight docs site.
----
+# Principe de simplicité KISS {#principe-de-simplicite-kiss}
 
 Le principe `KISS (Keep it simple stupid)`{.interpreted-text
-role="abbr"}, n\'est pas spécifique à la . Il s\'agit d\'un principe
-général d\'ingénierie, qui postule que tout objet matériel ou virtuel
-construit par l\'homme est plus fiable et plus facile à maintenir et à
-faire évoluer si sa complexité est volontairement réduite. C\'est le
-principe mis en exergue par antiphrase par les Shadocks : *Pourquoi
-faire simple quand on peut faire compliqué* ?
+role="abbr"}, n\'est pas spécifique à la rédaction technique. Il s\'agit
+d\'un principe général d\'ingénierie, qui postule que tout objet
+matériel ou virtuel construit par l\'homme est plus fiable et plus
+facile à maintenir et à faire évoluer si sa complexité est
+volontairement réduite. C\'est le principe mis en exergue par antiphrase
+par les Shadocks : *Pourquoi faire simple quand on peut faire
+compliqué* ?
 
 C\'est ce principe qui a prévalu à la conception des montres *Swatch*,
 dont le cahier des charges stipulait qu\'elles devaient embarquer deux
@@ -17,22 +15,23 @@ fois moins de pièces que leurs consœurs. Résultat : des montres moins
 chères, plus fiables et disponibles en versions sans cesse renouvelées.
 
 Ce qui a spectaculairement fonctionné pour des montres peut être
-appliqué avec le même succès à la . Quel que soit le format utilisé [^1]
-, le peut tout aussi bien construire un document élégamment
-architecturé, qu\'une usine à gaz. Avec , il lui suffit de ne pas
-centraliser les *conref* ou de les imbriquer exagérément. Sous , c\'est
-encore plus simple, peu de garde-fous étant posés : la multiplication
-des styles et des *overrides* peut rapidement rendre ingérable
-n\'importe quel document.
+appliqué avec le même succès à la documentation technique. Quel que soit
+le format utilisé [^1] , le rédacteur technique peut tout aussi bien
+construire un document élégamment architecturé, qu\'une usine à gaz.
+Avec DITA XML, il lui suffit de ne pas centraliser les *conref* ou de
+les imbriquer exagérément. Sous FrameMaker, c\'est encore plus simple,
+peu de garde-fous étant posés : la multiplication des styles et des
+*overrides* peut rapidement rendre ingérable n\'importe quel document.
 
-De même, dans la formulation de ses phrases, le doit toujours avoir le
-principe KISS à l\'esprit. Il est facile de construire des phrases
-alambiquées qui dénotent plus une mécompréhension du sujet qu\'un
-raffinement de l\'écriture[^2]. Construire une phrase simple demande un
-effort de compréhension de son sujet. La rédaction du contenu et son
-appréhension par son destinataire deviennent alors aisées. C\'est un
-aspect fondamental du métier de . Le apporte ainsi une véritable valeur
-ajoutée au produit qu\'il documente.
+De même, dans la formulation de ses phrases, le rédacteur technique doit
+toujours avoir le principe KISS à l\'esprit. Il est facile de construire
+des phrases alambiquées qui dénotent plus une mécompréhension du sujet
+qu\'un raffinement de l\'écriture[^2]. Construire une phrase simple
+demande un effort de compréhension de son sujet. La rédaction du contenu
+et son appréhension par son destinataire deviennent alors aisées. C\'est
+un aspect fondamental du métier de rédacteur technique. Le rédacteur
+technique apporte ainsi une véritable valeur ajoutée au produit qu\'il
+documente.
 
 ::: only
 html

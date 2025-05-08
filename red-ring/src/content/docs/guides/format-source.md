@@ -1,18 +1,17 @@
----
-title: Format source
-description: A guide in my new Starlight docs site.
----
+# Format source
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
-Le contenu d\'un projet de est créé dans un format source, différent du
-format des livrables, le format cible. Pour reprendre une image
-fréquemment utilisée en développement logiciel, le format source est la
-recette de cuisine, le format cible, le plat. En photographie, le format
-source est le format [RAW](), qui est généré par l\'appareil photo, et
-sur lequel les photographes professionnels préféreront apporter les
-retouches, et le format cible, le format JPEG.
+Le contenu d\'un projet de rédaction technique est créé dans un format
+source, différent du format des livrables, le format cible. Pour
+reprendre une image fréquemment utilisée en développement logiciel, le
+format source est la recette de cuisine, le format cible, le plat. En
+photographie, le format source est le format
+\[RAW\](<http://fr.wikipedia.org/wiki/RAW_(format_d%27image)>, qui est
+généré par l\'appareil photo, et sur lequel les photographes
+professionnels préféreront apporter les retouches, et le format cible,
+le format JPEG.
 :::
 
 Les traitements de texte nous ont déshabitués à distinguer le fond de la
@@ -29,7 +28,7 @@ Au cours du développement d\'une documentation technique, ces deux
 aspects doivent être clairement distincts. Ils peuvent être pris en
 charge par deux intervenants différents :
 
--   le ,
+-   le rédacteur technique,
 -   le graphiste[^1].
 
 Lorsque la mise en page a une importance équivalente à celle du contenu,
@@ -41,24 +40,26 @@ différents :
 -   logiciel de PAO, par exemple InDesign ou Scribus.
 
 Lorsque la mise en page a une importance moindre que celle du contenu,
-ou lorsqu\'elle doit être homogène, comme dans le cas d\'une , la
-rédaction et la mise en page s\'opèrent sur :
+ou lorsqu\'elle doit être homogène, comme dans le cas d\'une
+documentation technique, la rédaction et la mise en page s\'opèrent
+sur :
 
 les mêmes fichiers
 
-:   par exemple, des fichiers ,
+:   par exemple, des fichiers FrameMaker,
 
 des fichiers différents
 
 :   par exemple, des fichiers de contenu XML et une feuille de style
     XSLT.
 
-Dans un fichier , la séparation du fond et de la forme est élevée mais
-pas totale : le contenu et la mise en page sont placés dans le même
-fichier. applique une maquette de page homogène à tout un fichier, mais
-autorise l\'ajout manuel d\'éléments de mise en page. La même maquette
-peut être dupliquée pour tout le document, ou une maquette différente
-peut être utilisée pour chaque fichier qui compose ce dernier.
+Dans un fichier FrameMaker, la séparation du fond et de la forme est
+élevée mais pas totale : le contenu et la mise en page sont placés dans
+le même fichier. FrameMaker applique une maquette de page homogène à
+tout un fichier, mais autorise l\'ajout manuel d\'éléments de mise en
+page. La même maquette peut être dupliquée pour tout le document, ou une
+maquette différente peut être utilisée pour chaque fichier qui compose
+ce dernier.
 
 <figure>
 <img src="graphics/modulaire-texte-monolithique-binaire.svg"
@@ -70,32 +71,34 @@ format</em></figcaption>
 Les formats sources peuvent être classés selon leur degré de modularité
 et leur format de fichier.
 
-Les formats XML structurés et appliquent une maquette de page homogène à
-tout un document, et n\'autorisent pas l\'ajout manuel d\'éléments de
-mise en page[^2], ni l\'application de maquettes différentes aux
-différents fichiers qui composent le document.
+Les formats XML structurés DocBook et DITA XML appliquent une maquette
+de page homogène à tout un document, et n\'autorisent pas l\'ajout
+manuel d\'éléments de mise en page[^2], ni l\'application de maquettes
+différentes aux différents fichiers qui composent le document.
 
-  --------------------------------------------------------------
-  Format               Application d\'une   Possibilité de mise
-                       mise en page         en page manuelle
-                       homogène             
-  -------------------- -------------------- --------------------
-                       Non                  Oui
-
-                       Oui                  Oui
-
-                       Oui                  Non
-  --------------------------------------------------------------
++--------------------------------------------------------------------+
+| Format Possibilité de mise \|                                      |
+|                                                                    |
+| :   en page manuelle \| \|                                         |
+|                                                                    |
+| ====================+====================+====================+    |
+| MS Word Oui \|                                                     |
++--------------------------------------------------------------------+
+| FrameMaker Oui                                                     |
++--------------------------------------------------------------------+
+| DITA XML Non \|                                                    |
++--------------------------------------------------------------------+
 
 Si contenu et mise en page sont intimement liés, comme sous un
 traitement de texte, il est difficile de modifier le contenu sans
 perturber la mise en page. Résultat : à chaque publication d\'une
-nouvelle version d\'une documentation technique, l\'équipe de passe de
-longues heures à corriger les erreurs de mise en page générées par le
-logiciel. Le phénomène est moindre sous mais reste important. Il est nul
-avec les formats et (les seules erreurs qui peuvent se produire sont des
-erreurs de compilation dues à une syntaxe XML erronée ; ces erreurs sont
-facilement rectifiables).
+nouvelle version d\'une documentation technique, l\'équipe de rédaction
+technique passe de longues heures à corriger les erreurs de mise en page
+générées par le logiciel. Le phénomène est moindre sous FrameMaker mais
+reste important. Il est nul avec les formats DITA XML et DocBook (les
+seules erreurs qui peuvent se produire sont des erreurs de compilation
+dues à une syntaxe XML erronée ; ces erreurs sont facilement
+rectifiables).
 
 Les fichiers sources d\'une documentation technique sont au format :
 
@@ -121,21 +124,21 @@ Ce dernier aspect détermine la manière dont le format gère le
 Les formats disponibles peuvent donc être classés selon le tableau
 suivant :
 
-  ---------------------------------------------------------------
-  Format          Texte           Structuré       Modulaire
-  --------------- --------------- --------------- ---------------
-  natif           Non             Non             Limité
+  ---------------------------------------------------------------------
+  Format Structuré
+  ===============+===============+===============+===============+
+  FrameMaker Non \| \| \|
 
-                  Oui             Oui             Limité
+  DocBook Oui
 
-                  Oui             Oui             Oui
-  ---------------------------------------------------------------
+  DITA XML Oui
+  ---------------------------------------------------------------------
 
-et ne sont pas pleinement modulaires, car les plus petits éléments
-d\'information manipulables ne sont pas génériques : ils contiennent des
-informations telles que la structure de table des matières ou les
-références croisées qui ne sont valables que dans un nombre limité de
-contextes.
+FrameMaker et DocBook ne sont pas pleinement modulaires, car les plus
+petits éléments d\'information manipulables ne sont pas génériques : ils
+contiennent des informations telles que la structure de table des
+matières ou les références croisées qui ne sont valables que dans un
+nombre limité de contextes.
 
 ::: only
 html
@@ -147,8 +150,8 @@ html
 documents-monolithiques-ou-modulaires fichiers-binaires-ou-texte
 :::
 
-[^1]: Si le met lui-même en page ses documents, il change de rôle
-    lorsqu\'il effectue cette opération.
+[^1]: Si le rédacteur technique met lui-même en page ses documents, il
+    change de rôle lorsqu\'il effectue cette opération.
 
 [^2]: Ou très peu : dans les fichiers de contenu, il est seulement
     possible de mettre du texte en gras ou en italique, pas d\'en

@@ -1,26 +1,30 @@
----
-title: À propos de ce blog
-description: A guide in my new Starlight docs site.
----
+# À propos de ce blog
 
-Ce est conçu et réalisé par un spécialisé dans l\'informatique.
+Ce blog est conçu et réalisé par un rédacteur technique spécialisé dans
+l\'informatique.
 
 Puisqu\'il traite des processus et des formats de rédaction technique,
 son contenu est cependant moins pertinent que son historique et que ses
 branches
-[Git](https://github.com/olivier-carrere/redaction-technique.org/).
+\[Git\](<https://github.com/olivier-carrere/redaction-technique.org/>\>\`\_.
 
-Il traite des formats, des outils et des tâches suivants : , , [scripts
-Bash](), awk, sed, expressions rationnelles, Python, gestion de
-versions, Git, compilation, [Makefile](), Ant, XSLT, mise en page, HTML,
-[CSS](), PDF, LaTeX, XSL-FO.
+Il traite des formats, des outils et des tâches suivants :
+reStructuredText, DITA XML, \[scripts
+Bash\](<https://github.com/olivier-carrere/redaction-technique.org/tree/master/scripts>,
+awk, sed, expressions rationnelles, Python, gestion de versions, Git,
+compilation,
+\[Makefile\](<https://github.com/olivier-carrere/redaction-technique.org/commits/master/Makefile>,
+Ant, XSLT, mise en page, HTML,
+\[CSS\](<https://github.com/olivier-carrere/redaction-technique.org/tree/master/_static>,
+PDF, LaTeX, XSL-FO.
 
 ## Libérez vos informations de leurs silos
 
 Des solutions souples et fiables libèrent vos informations des silos
 d\'information cloisonnés où elles sont emprisonnées et sous-exploitées.
-Oubliez ou pour passer de la maintenance de la documentation à la
-gestion du cycle de vie des projets documentaires modulaires !
+Oubliez MS Word ou FrameMaker pour passer de la maintenance de la
+documentation à la gestion du cycle de vie des projets documentaires
+modulaires !
 
 ### Intégrer la documentation aux processus de développement
 
@@ -55,23 +59,26 @@ Résultat : réalisée à part, la documentation technique répondait
 difficilement aux mêmes exigences de qualité et de délai de mise sur le
 marché que les produits.
 
-, puis et ont changé la donne : ces formats texte peuvent être modifiés
-avec tout type de programme, du simple éditeur de texte à l\' graphique,
-et s\'intègrent parfaitement sous Subversion, Git ou tout autre système
-de gestion de versions.
+DocBook, puis DITA XML et reStructuredText ont changé la donne : ces
+formats texte peuvent être modifiés avec tout type de programme, du
+simple éditeur de texte à l\'Integrated Development Environment
+graphique, et s\'intègrent parfaitement sous Subversion, Git ou tout
+autre système de gestion de versions.
 
-### Les sources de ce sont gérées sous Git
+### Les sources de ce blog sont gérées sous Git
 
-Ce a été initialement développé sous WordPress. L\'impossibilité
-d\'effectuer sous ce des modifications transverses ou d\'avoir un suivi
-précis du cycle de vie du contenu a entraîné une migration vers le
-format de balisage léger .
+Ce blog a été initialement développé sous WordPress. L\'impossibilité
+d\'effectuer sous ce Content Management System des modifications
+transverses ou d\'avoir un suivi précis du cycle de vie du contenu a
+entraîné une migration vers le format de balisage léger
+reStructuredText.
 
 ![](graphics/documentation-life-cycle-framework.svg)
 
-Toutes les versions de ce sont gérées sous le logiciel de gestion de
-versions décentralisé [Git](). Les modifications de contenu, de
-structure ou de mise en page peuvent désormais être :
+Toutes les versions de ce blog sont gérées sous le logiciel de gestion
+de versions décentralisé \[Git\](<http://www.git-scm.com>. Les
+modifications de contenu, de structure ou de mise en page peuvent
+désormais être :
 
 -   regroupées par lots cohérents,
 -   liées à un ticket de logiciel de suivi de problèmes tel que
@@ -82,7 +89,7 @@ structure ou de mise en page peuvent désormais être :
 
 ### Formats sources
 
-Ce est disponible en trois formats, basés sur la version 1.1. Ces
+Ce blog est disponible en trois formats, basés sur la version 1.1. Ces
 formats présentent des niveaux de fonctionnalités et de complexité
 différents.
 
@@ -95,24 +102,28 @@ texte</em></figcaption>
 
 reStructuredText
 
-:   [reStructuredText]() est un langage de balisage léger de type Wiki
-    ou Markdown qui, combiné au générateur de documentation Sphinx,
-    offre un bon niveau de fonctionnalités.
+:   \[reStructuredText\](<https://github.com/olivier-carrere/redaction-technique.org/tree/master>
+    est un langage de balisage léger de type Wiki ou Markdown qui,
+    combiné au générateur de documentation Sphinx, offre un bon niveau
+    de fonctionnalités.
 
 DITA XML
 
-:   [DITA XML]() est une architecture documentaire XML sémantique et
-    modulaire complexe qui offre des gains de productivité importants
-    grâce à une forte réutilisation du contenu.
+:   \[DITA
+    XML\](<https://github.com/olivier-carrere/redaction-technique.org/tree/DITA_XML>
+    est une architecture documentaire XML sémantique et modulaire
+    complexe qui offre des gains de productivité importants grâce à une
+    forte réutilisation du contenu.
 
 DocBook
 
-:   [DocBook]() est un langage de balisage XML sémantique qui offre un
-    rapport fonctionnalités/complexité aujourd\'hui peu intéressant.
+:   \[DocBook\](<https://github.com/olivier-carrere/redaction-technique.org/tree/DocBook>
+    est un langage de balisage XML sémantique qui offre un rapport
+    fonctionnalités/complexité aujourd\'hui peu intéressant.
 
 ### Formats cibles
 
-Vous pouvez compiler ce avec *Python Sphinx* aux formats :
+Vous pouvez compiler ce blog avec *Python Sphinx* aux formats :
 
 -   [PDF](),
 -   [EPUB](),

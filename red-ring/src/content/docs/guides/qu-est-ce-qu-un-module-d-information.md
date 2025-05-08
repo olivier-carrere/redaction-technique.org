@@ -1,19 +1,18 @@
----
-title: Qu\'est-ce qu\'un module d\'information ?
-description: A guide in my new Starlight docs site.
----
+# Qu\'est-ce qu\'un module d\'information ? {#qu-est-ce-qu-un-module-d-information}
 
 Le système modulaire le plus connu au monde est certainement celui des
-briques Lego. Adapté à la , le principe des modules permet d\'améliorer
-la qualité des manuels techniques et la productivité du .
+briques Lego. Adapté à la documentation technique, le principe des
+modules permet d\'améliorer la qualité des manuels techniques et la
+productivité du rédacteur technique.
 
-Mais suffit-il de convertir sa documentation de vers un format structuré
-tel que pour obtenir une documentation modulaire ? Hélas, non. Si le
-contenu de départ mélange les informations de tout type (concepts,
-procédures pas à pas, référence), il sera toujours possible de le
-convertir au format en ne respectant pas rigoureusement la sémantique .
-Voire en modifiant les feuilles de style XSLT ou en spécialisant les XSD
-pour les rendre plus laxistes.
+Mais suffit-il de convertir sa documentation de FrameMaker vers un
+format structuré tel que DITA XML pour obtenir une documentation
+modulaire ? Hélas, non. Si le contenu de départ mélange les informations
+de tout type (concepts, procédures pas à pas, référence), il sera
+toujours possible de le convertir au format DITA XML en ne respectant
+pas rigoureusement la sémantique DITA XML. Voire en modifiant les
+feuilles de style XSLT ou en spécialisant les XSD pour les rendre plus
+laxistes.
 
 Or, si l\'on obtient au final un document se basant sur des fichiers
 correpondant chacun à un schéma XSD différent (*concept*, *task*, ou

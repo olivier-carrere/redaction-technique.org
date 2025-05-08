@@ -1,7 +1,4 @@
----
-title: Galerie photo centralisée dans le *cloud*
-description: A guide in my new Starlight docs site.
----
+# Galerie photo centralisée dans le *cloud* {# projet-bout-en-bout-galerie-photo-centralisee-dans-le-cloud}
 
 Les membres de l\'association étant géographiquement dispersés, il était
 essentiel de proposer un hébergement centralisé dans le *cloud*.
@@ -10,8 +7,9 @@ Je disposais d\'un nom de domaine non utilisé et de suffisamment
 d\'espace disque et de bases de données libres sur un hébergement
 personnel.
 
-J\'ai donc installé une instance de [Piwigo](), logiciel que je
-connaissais déjà (je l\'utilise pour des photos de famille).
+J\'ai donc installé une instance de \[Piwigo\](<http://piwigo.org/>,
+logiciel que je connaissais déjà (je l\'utilise pour des photos de
+famille).
 
 <figure>
 <img src="graphics/galerie-photo.jpg"
@@ -30,18 +28,102 @@ propriétaire de l\'hébergement et du nom de domaine.
 Une rapide étude (en septembre 2018) m\'a conduit à proposer les
 solutions suivantes :
 
-  ------------------------------------------------------------------------
-                   [piwigo.com]()    [Obambu]()           [Obambu]()
-                                     Performance          Evolution
-  ---------------- ----------------- -------------------- ----------------
-  Prix annuel      39 €              23 €                 15 €
-
-  Stockage         Illimité          250 Go               100 Go
-
-  Sauvegarde       Gérée par         Gérée par            
-                   l\'hébergeur.     l\'association.      
-
-  Avantage         Moins d\'efforts  L\'association       
-                   pour              dispose de tous les  
-                   l\'association.   fichiers.            
-  ------------------------------------------------------------------------
++------+-----+--------+------+--------------------------------------+
+| ==== | \   |        |      |                                      |
+| ==== | [pi |        |      |                                      |
+| ==== | wig |        |      |                                      |
+| ==== | o.c |        |      |                                      |
+| Prix | om\ |        |      |                                      |
+| an   | ](< |        |      |                                      |
+| nuel | htt |        |      |                                      |
+|      | ps: |        |      |                                      |
+|      | //p |        |      |                                      |
+|      | iwi |        |      |                                      |
+|      | go. |        |      |                                      |
+|      | com |        |      |                                      |
+|      | /pl |        |      |                                      |
+|      | an> |        |      |                                      |
+|      |  \[ |        |      |                                      |
+|      | Oba |        |      |                                      |
+|      | mbu |        |      |                                      |
+|      | \]( |        |      |                                      |
+|      | <ht |        |      |                                      |
+|      | tps |        |      |                                      |
+|      | :// |        |      |                                      |
+|      | oba |        |      |                                      |
+|      | mbu |        |      |                                      |
+|      | .co |        |      |                                      |
+|      | m/f |        |      |                                      |
+|      | r/h |        |      |                                      |
+|      | ebe |        |      |                                      |
+|      | rge |        |      |                                      |
+|      | men |        |      |                                      |
+|      | t/> |        |      |                                      |
+|      |     |        |      |                                      |
+|      | :   |        |      |                                      |
+|      |     |        |      |                                      |
+|      | Evo |        |      |                                      |
+|      | lut |        |      |                                      |
+|      | ion |        |      |                                      |
+|      |     |        |      |                                      |
+|      |  \| |        |      |                                      |
+|      |     |        |      |                                      |
+|      | ==  |        |      |                                      |
+|      | === |        |      |                                      |
+|      | === |        |      |                                      |
+|      | === |        |      |                                      |
+|      | === |        |      |                                      |
+|      | +== |        |      |                                      |
+|      | === |        |      |                                      |
+|      | === |        |      |                                      |
+|      | === |        |      |                                      |
+|      | === |        |      |                                      |
+|      | === |        |      |                                      |
+|      | === |        |      |                                      |
+|      | +== |        |      |                                      |
+|      | === |        |      |                                      |
+|      | === |        |      |                                      |
+|      | === |        |      |                                      |
+|      | === |        |      |                                      |
+|      | ==+ |        |      |                                      |
+|      | 39  |        |      |                                      |
+|      | €   |        |      |                                      |
+|      | 15  |        |      |                                      |
+|      | €   |        |      |                                      |
+|      | \|  |        |      |                                      |
+|      | \|  |        |      |                                      |
+|      | \|  |        |      |                                      |
+|      | \|  |        |      |                                      |
++------+-----+--------+------+--------------------------------------+
+|      |     |        |      |                                      |
++------+-----+--------+------+--------------------------------------+
+| Stoc | Il  | 250 Go | 100  |                                      |
+| kage | lim |        | Go   |                                      |
+|      | ité |        |      |                                      |
++------+-----+--------+------+--------------------------------------+
+| Sa   | Gé  | Gérée  |      | on. \|                               |
+| uveg | rée | par    |      |                                      |
+| arde | par | l\'    |      | :   |                                |
+|      | l   | associ |      |                                      |
+|      | \'h | ation. |      | \-\-\-\-\-\-\-\-\-\-\-\-\-\-\--+     |
+|      | ébe |        |      |                                      |
+|      | rge |        |      | :                                    |
+|      | ur. |        |      |                                      |
+|      |     |        |      |     de tous les \|                   |
+|      |     |        |      |                                      |
+|      |     |        |      |     :   ## \|                        |
++------+-----+--------+------+--------------------------------------+
+| Avan | Mo  | L\     |      |                                      |
+| tage | ins | 'assoc |      |                                      |
+|      | d   | iation |      |                                      |
+|      | \'e | d      |      |                                      |
+|      | ffo | ispose |      |                                      |
+|      | rts | de     |      |                                      |
+|      | p   | tous   |      |                                      |
+|      | our | les    |      |                                      |
+|      | l\' | fic    |      |                                      |
+|      | ass | hiers. |      |                                      |
+|      | oci |        |      |                                      |
+|      | ati |        |      |                                      |
+|      | on. |        |      |                                      |
++------+-----+--------+------+--------------------------------------+

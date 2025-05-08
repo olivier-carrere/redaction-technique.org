@@ -1,19 +1,17 @@
----
-title: Formats structurés et non structurés
-description: A guide in my new Starlight docs site.
----
+# Formats structurés et non structurés {#formats-structures-et-non-structures}
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Les formats structurés favorisent la création de documents minimalistes,
-complets et cohérents. Ils permettent au de se concentrer sur le contenu
-et d\'améliorer l\'expérience utilisateur et l\'utilisabilité de la
-documentation technique.
+complets et cohérents. Ils permettent au rédacteur technique de se
+concentrer sur le contenu et d\'améliorer l\'expérience utilisateur et
+l\'utilisabilité de la documentation technique.
 :::
 
 Les informations contenues dans un document technique peuvent être
-catégorisées selon leur sens. Par défaut, propose trois types de base :
+catégorisées selon leur sens. Par défaut, DITA XML propose trois types
+de base :
 
 concept
 
@@ -35,14 +33,15 @@ reference
 </figure>
 
 Sous un format non structuré tel que le format traditionnel de
-[FrameMaker](), rien ne contraint le à organiser l\'information selon
-son sens. Si des règles de rédaction rigoureuses ne sont pas
-scrupuleusement suivies, l\'information fournie à l\'utilisateur risque
-d\'être peu claire et difficile à parcourir rapidement.
+\[FrameMaker\](<http://en.wikipedia.org/wiki/Adobe_FrameMaker>, rien ne
+contraint le rédacteur technique à organiser l\'information selon son
+sens. Si des règles de rédaction rigoureuses ne sont pas scrupuleusement
+suivies, l\'information fournie à l\'utilisateur risque d\'être peu
+claire et difficile à parcourir rapidement.
 
-Avec des formats structurés tels que , en revanche :
+Avec des formats structurés tels que DITA XML, en revanche :
 
--   le se concentre sur le contenu,
+-   le rédacteur technique se concentre sur le contenu,
 -   l\'information est présentée à l\'utilisateur selon une organisation
     cohérente et prévisible,
 -   l\'accès à l\'information est séquentiel et rapide,
@@ -65,10 +64,10 @@ stepxmp
 
 :   Exemple de réalisation d\'une étape.
 
-Les règles syntaxiques interdisent au de faire figurer une procédure pas
-à pas dans une section d\'un autre type que *task*. Le dispose donc
-d\'un véritable modèle de rédaction qui l\'aide à présenter des
-informations :
+Les règles syntaxiques interdisent au rédacteur technique de faire
+figurer une procédure pas à pas dans une section d\'un autre type que
+*task*. Le rédacteur technique dispose donc d\'un véritable modèle de
+rédaction qui l\'aide à présenter des informations :
 
 Minimalistes
 
@@ -82,11 +81,12 @@ Complètes
 
 :   L\'utilisateur dispose de *toute* l\'information dont il a besoin ;
     une section de type *task* sans procédure n\'est pas une section
-    valide et ne pourra pas être publiée ; il est même possible de
-    mettre en œuvre un mécanisme vérifiant automatiquement avant
+    DITA XML valide et ne pourra pas être publiée ; il est même possible
+    de mettre en œuvre un mécanisme vérifiant automatiquement avant
     publication la présence de blocs d\'information facultatifs selon le
-    schéma [XSD]() , mais que le juge obligatoires, tels que le résultat
-    d\'une procédure.
+    schéma \[XSD\](<http://fr.wikipedia.org/wiki/XML_Schema> DITA XML,
+    mais que le rédacteur technique juge obligatoires, tels que le
+    résultat d\'une procédure.
 
 Cohérentes
 

@@ -1,12 +1,10 @@
----
-title: Le coin du *geek*
-description: A guide in my new Starlight docs site.
----
+# Le coin du *geek*
 
-Je suis un à tendance *geek*. Après une grande frustration ressentie
-lors de l\'utilisation d\'outils tels que ou , j\'ai progressivement eu
-envie de voir ce qui se passait « sous le capot » et de comprendre ce
-qui se cachait derrière les interfaces graphiques.
+Je suis un rédacteur technique à tendance *geek*. Après une grande
+frustration ressentie lors de l\'utilisation d\'outils tels que
+FrameMaker ou Flare, j\'ai progressivement eu envie de voir ce qui se
+passait « sous le capot » et de comprendre ce qui se cachait derrière
+les interfaces graphiques.
 
 Cette approche facilite le dialogue avec les développeurs et donne une
 plus grande maîtrise des données. Elle se traduit par un certain nombre
@@ -46,7 +44,8 @@ Si vous vous reconnaissez dans ce portrait et n\'avez pas peur du mode
 console, c\'est par ici !
 
 ::: seealso
-[Being a Techie Writer]()
+\[Being a Techie
+Writer\](<http://techwhirl.com/techie-writer-series-part-i-being-a-techie-writer/>
 :::
 
 ::: {.toctree hidden=""}

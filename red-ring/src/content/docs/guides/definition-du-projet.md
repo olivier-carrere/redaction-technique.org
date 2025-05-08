@@ -1,21 +1,18 @@
----
-title: Définition du projet
-description: A guide in my new Starlight docs site.
----
+# Définition du projet {#definition-du-projet}
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
-Un projet de apporte une valeur ajoutée aux produits et aide
-l\'entreprise à mieux commercialiser son offre sur son marché. Mais,
-comme pour les projets de R&D ou de marketing, la définition du projet
-permet d\'en estimer le budget et les retombées.
+Un projet de rédaction technique apporte une valeur ajoutée aux produits
+et aide l\'entreprise à mieux commercialiser son offre sur son marché.
+Mais, comme pour les projets de R&D ou de marketing, la définition du
+projet permet d\'en estimer le budget et les retombées.
 :::
 
 Communiquer des informations techniques sans savoir à qui ni dans quel
-but est un effort vain. Avant d\'initier un projet de , il est
-indispensable de clairement le définir. Il convient notamment de
-déterminer :
+but est un effort vain. Avant d\'initier un projet de rédaction
+technique, il est indispensable de clairement le définir. Il convient
+notamment de déterminer :
 
 son objectif
 

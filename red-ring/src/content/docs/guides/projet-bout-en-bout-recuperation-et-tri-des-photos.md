@@ -1,7 +1,4 @@
----
-title: Récupération et tri des photos
-description: A guide in my new Starlight docs site.
----
+# Récupération et tri des photos {# projet-bout-en-bout-recuperation-et-tri-des-photos}
 
 Après avoir collecté le maximum de photos, je me suis retrouvé avec plus
 de 10 000 photos et 30 Go de données. Ouf.
@@ -11,12 +8,14 @@ de sauvegarde à l\'identique de l\'ensemble des photos sur un disque dur
 externe.
 
 Ma première tâche fut de repérer, puis d\'éliminer les doublons grâce à
-la commande [fdupes]().
+la commande \[fdupes\](<https://github.com/adrianlopezroche/fdupes>.
 
 Il me fallait aussi ne pas passer à côté de perles et chercher les
 aiguilles intéressantes dans cette meule de foin. Certaines photos,
 notamment, se cachaient dans des répertoires zippés. D\'autres
-n\'avaient pas d\'extension, et la commande [file]() me fut très utile.
+n\'avaient pas d\'extension, et la commande
+\[file\](<https://www.computerhope.com/unix/ufile.htm> me fut très
+utile.
 
 Le but étant avant tout de mettre à disposition des photos pour des
 supports imprimés, j\'ai procédé à un premier tri automatisé, selon le

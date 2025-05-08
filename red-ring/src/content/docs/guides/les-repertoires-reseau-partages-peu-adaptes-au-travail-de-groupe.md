@@ -1,10 +1,7 @@
----
-title: Les répertoires réseau partagés - peu adaptés au travail de groupe
-description: A guide in my new Starlight docs site.
----
+# Les répertoires réseau partagés - peu adaptés au travail de groupe {#les-repertoires-reseau-partages-peu-adaptes-au-travail-de-groupe}
 
-Les fichiers partagés par une équipe de sont souvent stockés dans un
-répertoire partagé sur le réseau.
+Les fichiers partagés par une équipe de rédaction technique sont souvent
+stockés dans un répertoire partagé sur le réseau.
 
 Les rédacteurs techniques travaillent directement sur les fichiers
 partagés, ce qui pose les problèmes suivants :
@@ -19,11 +16,12 @@ sûr pour les données : la granulométrie de la sauvegarde est le
 répertoire, sa fréquence n\'est souvent que quotidienne. En cas de perte
 de données, la restauration se fait répertoire par répertoire, et non
 fichier par fichier et porte sur des versions dont l\'ancienneté dépend
-de l\'administrateur système, et non du . Fouiller dans les archives est
-une opération fastidieuse qui peut elle-même être source d\'erreurs : en
-l\'absence d\'une comparaison fiable et aisée entre plusieurs versions
-des fichiers, le peut facilement supprimer des modifications qu\'il
-aurait souhaité conserver en voulant en restaurer d\'autres.
+de l\'administrateur système, et non du rédacteur technique. Fouiller
+dans les archives est une opération fastidieuse qui peut elle-même être
+source d\'erreurs : en l\'absence d\'une comparaison fiable et aisée
+entre plusieurs versions des fichiers, le rédacteur technique peut
+facilement supprimer des modifications qu\'il aurait souhaité conserver
+en voulant en restaurer d\'autres.
 
 Copier un fichier du réseau pour le modifier sur son disque dur
 personnel, puis écraser la version du réseau par la version locale est
@@ -34,14 +32,18 @@ une opération des plus périlleuses :
     des rédacteurs techniques devra alors renoncer à toutes ses
     modifications ;
 -   lors d\'une copie manuelle des fichiers, que ce soit *via* un
-    gestionnaire de fichiers graphique ou en ligne de commande, le peut
-    facilement écraser la version la plus récente par la plus ancienne
-    (on préférera alors avoir recours à un logiciel de synchronisation
-    de fichiers tels que [rsync]() ou [Unison]() (ce dernier étant plus
-    adapté à la synchronisation bidirectionnelle) en ligne de commande
-    sous GNU/Linux ou Windows, ou à un équivalent graphique, tel
-    [SyncToy](). Cependant, ce type de logiciels se base sur la date de
-    dernière modification des fichiers. Lorsque l\'on met à jour ou
-    publie un livre , notamment, ceci peut créer des conflits entre
-    fichiers, enregistrant dans ces cas tous les fichiers du livre, même
-    si leur contenu n\'a pas été modifié).
+    gestionnaire de fichiers graphique ou en ligne de commande, le
+    rédacteur technique peut facilement écraser la version la plus
+    récente par la plus ancienne (on préférera alors avoir recours à un
+    logiciel de synchronisation de fichiers tels que
+    \[rsync\](<http://rsync.samba.org> ou
+    \[Unison\](<http://www.cis.upenn.edu/~bcpierce/unison> (ce dernier
+    étant plus adapté à la synchronisation bidirectionnelle) en ligne de
+    commande sous GNU/Linux ou Windows, ou à un équivalent graphique,
+    tel
+    \[SyncToy\](<http://www.microsoft.com/en-us/download/details.aspx?id=15155>.
+    Cependant, ce type de logiciels se base sur la date de dernière
+    modification des fichiers. Lorsque l\'on met à jour ou publie un
+    livre FrameMaker, notamment, ceci peut créer des conflits entre
+    fichiers, FrameMaker enregistrant dans ces cas tous les fichiers du
+    livre, même si leur contenu n\'a pas été modifié).

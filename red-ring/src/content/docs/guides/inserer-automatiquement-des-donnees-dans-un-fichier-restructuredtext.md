@@ -1,13 +1,11 @@
----
-title: Insérer automatiquement des données dans un fichier reStructuredText
-description: A guide in my new Starlight docs site.
----
+# Insérer automatiquement des données dans un fichier reStructuredText {#inserer-automatiquement-des-donnees-dans-un-fichier-restructuredtext}
 
 Supposons que vous deviez présenter 3 produits, *Dianthus*, *Geum* et
 *Prunus*, chacun déclinés dans trois versions *1.0*, *1.5* et *2.3*.
 
 Plutôt que d\'écrire les données à la main dans le fichier de contenu,
-vous pouvez les insérer automatiquement grâce à [Jinja]() et Python.
+vous pouvez les insérer automatiquement grâce à
+\[Jinja\](<http://jinja.pocoo.org/> et Python.
 
 1.  Créez le fichier `modele.rst`{.interpreted-text role="file"}
     suivant :

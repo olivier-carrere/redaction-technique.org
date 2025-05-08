@@ -1,7 +1,4 @@
----
-title: Mener un projet de bout en bout
-description: A guide in my new Starlight docs site.
----
+# Mener un projet de bout en bout
 
 ::: sidebar
 **`fa-history`{.interpreted-text role="awesome"} Modifications
@@ -15,7 +12,7 @@ organisationnels que les aspects techniques, ainsi que toute la
 communication: graphisme, rédactionnel, et même vidéo. C\'est plus
 souvent possible dans le cadre associatif.
 
-## Gestion des photos d\'une association
+## Gestion des photos d\'une association {# projet-bout-en-bout-gestion-des-photos-association}
 
 Une association de quelques centaines de personnes originaires de
 différents pays disposait de plusieurs milliers de photos, dispersées
@@ -57,7 +54,7 @@ Voici le schéma global de la solution :
 
 Tout a été réalisé sous *Linux*.
 
-## Récupération et tri des photos
+## Récupération et tri des photos {# projet-bout-en-bout-recuperation-et-tri-des-photos}
 
 Après avoir collecté le maximum de photos, je me suis retrouvé avec plus
 de 10 000 photos et 30 Go de données. Ouf.
@@ -67,12 +64,14 @@ de sauvegarde à l\'identique de l\'ensemble des photos sur un disque dur
 externe.
 
 Ma première tâche fut de repérer, puis d\'éliminer les doublons grâce à
-la commande [fdupes]().
+la commande \[fdupes\](<https://github.com/adrianlopezroche/fdupes>.
 
 Il me fallait aussi ne pas passer à côté de perles et chercher les
 aiguilles intéressantes dans cette meule de foin. Certaines photos,
 notamment, se cachaient dans des répertoires zippés. D\'autres
-n\'avaient pas d\'extension, et la commande [file]() me fut très utile.
+n\'avaient pas d\'extension, et la commande
+\[file\](<https://www.computerhope.com/unix/ufile.htm> me fut très
+utile.
 
 Le but étant avant tout de mettre à disposition des photos pour des
 supports imprimés, j\'ai procédé à un premier tri automatisé, selon le
@@ -95,7 +94,7 @@ répertoire à partir de la copie de sauvegarde les fichiers de plus de
 1 Mo éliminés, afin de les mettre à disposition pour une utilisation sur
 Instagram, par exemple.
 
-## Galerie photo centralisée dans le *cloud*
+## Galerie photo centralisée dans le *cloud* {# projet-bout-en-bout-galerie-photo-centralisee-dans-le-cloud}
 
 Les membres de l\'association étant géographiquement dispersés, il était
 essentiel de proposer un hébergement centralisé dans le *cloud*.
@@ -104,8 +103,9 @@ Je disposais d\'un nom de domaine non utilisé et de suffisamment
 d\'espace disque et de bases de données libres sur un hébergement
 personnel.
 
-J\'ai donc installé une instance de [Piwigo](), logiciel que je
-connaissais déjà (je l\'utilise pour des photos de famille).
+J\'ai donc installé une instance de \[Piwigo\](<http://piwigo.org/>,
+logiciel que je connaissais déjà (je l\'utilise pour des photos de
+famille).
 
 <figure>
 <img src="graphics/galerie-photo.jpg"
@@ -124,23 +124,107 @@ propriétaire de l\'hébergement et du nom de domaine.
 Une rapide étude (en septembre 2018) m\'a conduit à proposer les
 solutions suivantes :
 
-  ------------------------------------------------------------------------
-                   [piwigo.com]()    [Obambu]()           [Obambu]()
-                                     Performance          Evolution
-  ---------------- ----------------- -------------------- ----------------
-  Prix annuel      39 €              23 €                 15 €
++------+-----+--------+------+--------------------------------------+
+| ==== | \   |        |      |                                      |
+| ==== | [pi |        |      |                                      |
+| ==== | wig |        |      |                                      |
+| ==== | o.c |        |      |                                      |
+| Prix | om\ |        |      |                                      |
+| an   | ](< |        |      |                                      |
+| nuel | htt |        |      |                                      |
+|      | ps: |        |      |                                      |
+|      | //p |        |      |                                      |
+|      | iwi |        |      |                                      |
+|      | go. |        |      |                                      |
+|      | com |        |      |                                      |
+|      | /pl |        |      |                                      |
+|      | an> |        |      |                                      |
+|      |  \[ |        |      |                                      |
+|      | Oba |        |      |                                      |
+|      | mbu |        |      |                                      |
+|      | \]( |        |      |                                      |
+|      | <ht |        |      |                                      |
+|      | tps |        |      |                                      |
+|      | :// |        |      |                                      |
+|      | oba |        |      |                                      |
+|      | mbu |        |      |                                      |
+|      | .co |        |      |                                      |
+|      | m/f |        |      |                                      |
+|      | r/h |        |      |                                      |
+|      | ebe |        |      |                                      |
+|      | rge |        |      |                                      |
+|      | men |        |      |                                      |
+|      | t/> |        |      |                                      |
+|      |     |        |      |                                      |
+|      | :   |        |      |                                      |
+|      |     |        |      |                                      |
+|      | Evo |        |      |                                      |
+|      | lut |        |      |                                      |
+|      | ion |        |      |                                      |
+|      |     |        |      |                                      |
+|      |  \| |        |      |                                      |
+|      |     |        |      |                                      |
+|      | ==  |        |      |                                      |
+|      | === |        |      |                                      |
+|      | === |        |      |                                      |
+|      | === |        |      |                                      |
+|      | === |        |      |                                      |
+|      | +== |        |      |                                      |
+|      | === |        |      |                                      |
+|      | === |        |      |                                      |
+|      | === |        |      |                                      |
+|      | === |        |      |                                      |
+|      | === |        |      |                                      |
+|      | === |        |      |                                      |
+|      | +== |        |      |                                      |
+|      | === |        |      |                                      |
+|      | === |        |      |                                      |
+|      | === |        |      |                                      |
+|      | === |        |      |                                      |
+|      | ==+ |        |      |                                      |
+|      | 39  |        |      |                                      |
+|      | €   |        |      |                                      |
+|      | 15  |        |      |                                      |
+|      | €   |        |      |                                      |
+|      | \|  |        |      |                                      |
+|      | \|  |        |      |                                      |
+|      | \|  |        |      |                                      |
+|      | \|  |        |      |                                      |
++------+-----+--------+------+--------------------------------------+
+|      |     |        |      |                                      |
++------+-----+--------+------+--------------------------------------+
+| Stoc | Il  | 250 Go | 100  |                                      |
+| kage | lim |        | Go   |                                      |
+|      | ité |        |      |                                      |
++------+-----+--------+------+--------------------------------------+
+| Sa   | Gé  | Gérée  |      | on. \|                               |
+| uveg | rée | par    |      |                                      |
+| arde | par | l\'    |      | :   |                                |
+|      | l   | associ |      |                                      |
+|      | \'h | ation. |      | \-\-\-\-\-\-\-\-\-\-\-\-\-\-\--+     |
+|      | ébe |        |      |                                      |
+|      | rge |        |      | :                                    |
+|      | ur. |        |      |                                      |
+|      |     |        |      |     de tous les \|                   |
+|      |     |        |      |                                      |
+|      |     |        |      |     :   ### \|                       |
++------+-----+--------+------+--------------------------------------+
+| Avan | Mo  | L\     |      |                                      |
+| tage | ins | 'assoc |      |                                      |
+|      | d   | iation |      |                                      |
+|      | \'e | d      |      |                                      |
+|      | ffo | ispose |      |                                      |
+|      | rts | de     |      |                                      |
+|      | p   | tous   |      |                                      |
+|      | our | les    |      |                                      |
+|      | l\' | fic    |      |                                      |
+|      | ass | hiers. |      |                                      |
+|      | oci |        |      |                                      |
+|      | ati |        |      |                                      |
+|      | on. |        |      |                                      |
++------+-----+--------+------+--------------------------------------+
 
-  Stockage         Illimité          250 Go               100 Go
-
-  Sauvegarde       Gérée par         Gérée par            
-                   l\'hébergeur.     l\'association.      
-
-  Avantage         Moins d\'efforts  L\'association       
-                   pour              dispose de tous les  
-                   l\'association.   fichiers.            
-  ------------------------------------------------------------------------
-
-## Indexation des photos
+## Indexation des photos {# projet-bout-en-bout-indexation-des-photos}
 
 Une fois les 500 photos retenues pour les projets d\'impression
 téléchargées sur le site, restait à les indexer.
@@ -153,7 +237,7 @@ chaque mot-clé d\'un pictogramme.
 Par exemple, Vélo `fa-bicycle`{.interpreted-text role="awesome"},
 Intérieur `fa-lightbulb`{.interpreted-text role="awesome"}, etc.
 
-## Sauvegarde incrémentale et décentralisée
+## Sauvegarde incrémentale et décentralisée {# projet-bout-en-bout-sauvegarde-incrementale-et-decentralisee}
 
 Comment sauvegarder le patrimoine photo de l\'association, soit les
 photos et la base de données Piwigo, de manière incrémentale et
@@ -176,8 +260,9 @@ raisons d\'espace disponible sur la version imprimée. Je l\'ai par la
 suite supprimée du dépliant, car elle risquait plutôt d\'effrayer son
 lectorat, majoritairement technophobe.*
 
-Sous Windows, vous pouvez installer [Git for windows]() et [GitHub
-Desktop]().
+Sous Windows, vous pouvez installer \[Git for
+windows\](<https://github.com/git-for-windows/git/releases/download/v2.18.0.windows.1/Git-2.18.0-64-bit.exe>
+et \[GitHub Desktop\](<https://desktop.github.com/>.
 
 Pour cloner le dépôt Gitlab sous une distribution Linux Debian ou
 dérivée (dont Ubuntu) :
@@ -219,7 +304,7 @@ Pour mettre à jour votre dépôt Gitlab :
 :::
 
 Pour la synchronisation entre le serveur et ma copie locale, je me suis
-tourné vers [LFTP]() :
+tourné vers \[LFTP\](<https://lftp.yar.ru/> :
 
 ``` console
 $ lftp ftp://user:password@ftpaccount -e \
@@ -243,12 +328,12 @@ $ git config core.filemode false
 L\'hébergement des photos est donc centralisé, la sauvegarde,
 décentralisée.
 
-## Définition d\'un workflow de gestion des photos
+## Définition d\'un workflow de gestion des photos {# projet-bout-en-bout-definition-workflow-de-gestion-des-photos}
 
 Une solution technique ne se suffit jamais à elle-même. J\'ai donc
 défini un workflow dans lequel s\'insérait la solution.
 
-## Définition des rôles des membres du worfklow photo
+## Définition des rôles des membres du worfklow photo {# projet-bout-en-bout-definition-des-roles-des-membres-du-worfklow-photo}
 
 La chaîne de production graphique s\'appuie sur 3 rôles :
 
@@ -275,7 +360,7 @@ revanche, l\'intérêt de la galerie est de centraliser le maximum de
 photos et d\'y donner un accès rapide. Elle ne sera utilisée que si son
 indexation est de qualité.
 
-## Communication interne
+## Communication interne {# projet-bout-en-bout-communication-interne}
 
 Les outils et les process étant en place, restait à y faire adhérer les
 parties prenantes !
@@ -286,20 +371,21 @@ J\'ai opté pour les supports de communication suivants :
 -   un dépliant à distribuer lors des différents événements de
     l\'association.
 
-## Didacticiels vidéo
+## Didacticiels vidéo {# projet-bout-en-bout-didacticiels-video}
 
 J\'ai publié sur *YouTube* différents didacticiels, en français, anglais
 et espagnol, sur l\'utilisation de la galerie par les différents types
 d\'utilisateurs.
 
-J\'ai utilisé pour cela [SimpleScreenRecorder](). Un premier essai avec
-le microphone intégré de mon portable s\'étant révélé peu convaincant,
-j\'ai enregistré ma voix avec un micro de bonne qualité, nommément, un
-*Bird UM1*. Pressé par le temps, et parce que ces didacticiels
-s\'adressent à un public restreint (et indulgent), je n\'ai pas fait de
-montage, comme par exemple sous *Kdenlive*.
+J\'ai utilisé pour cela
+\[SimpleScreenRecorder\](<http://www.maartenbaert.be/simplescreenrecorder/>.
+Un premier essai avec le microphone intégré de mon portable s\'étant
+révélé peu convaincant, j\'ai enregistré ma voix avec un micro de bonne
+qualité, nommément, un *Bird UM1*. Pressé par le temps, et parce que ces
+didacticiels s\'adressent à un public restreint (et indulgent), je n\'ai
+pas fait de montage, comme par exemple sous *Kdenlive*.
 
-## Support papier
+## Support papier {# projet-bout-en-bout-support-papier}
 
 J\'ai créé un dépliant expliquant :
 
@@ -312,59 +398,65 @@ J\'ai créé un dépliant expliquant :
 ::: admonition
 Modèle LaTeX du dépliant
 
-Le [modèle LaTeX du dépliant](), partie émergée de l\'iceberg, est
-publié sur *Overleaf*.
+Le \[modèle LaTeX du
+dépliant\](<https://www.overleaf.com/latex/templates/leaflet/ysdkbbhctfpc>,
+partie émergée de l\'iceberg, est publié sur *Overleaf*.
 
 Curieusement, le PDF généré sur *Overleaf* présente des défauts que je
 ne constate pas lorsque je le publie en local.
 
 ![](graphics/leaflet-pliage.png)
 
-Pour les plus curieux, il existe [6 manières]() de plier cette brochure.
-Je me suis épargné des essais fastidieux en utilisant la [classe de
-documents LaTeX leaflet]().
+Pour les plus curieux, il existe \[6
+manières\](<https://www.robertdickau.com/stampfolding.html> de plier
+cette brochure. Je me suis épargné des essais fastidieux en utilisant la
+[classe de documents LaTeX leaflet]().
 :::
 
-## LaTeX
+## LaTeX {# projet-bout-en-bout-latex}
 
-Pourquoi avoir choisi [LaTeX]() pour réaliser le support *print* et non
-pas un logiciel de PAO classique ? Je souhaitais pouvoir remanier le
-texte sans refaire à chaque fois la mise en page. De même, je voulais
-pouvoir traduire le dépliant sans effectuer de tâche de PAO manuelle.
+Pourquoi avoir choisi \[LaTeX\](<https://www.latex-project.org/> pour
+réaliser le support *print* et non pas un logiciel de PAO classique ? Je
+souhaitais pouvoir remanier le texte sans refaire à chaque fois la mise
+en page. De même, je voulais pouvoir traduire le dépliant sans effectuer
+de tâche de PAO manuelle.
 
 Voici un exemple de code LaTeX :
 
 ``` tex
-\section{aTag  Iconographes}
+\section{\faTag  Iconographes}
 
-space*{ill}
+\vspace*{\fill}
 
-egin{enumerate}[itemsep=0mm,leftmargin=*]
+\begin{enumerate}[itemsep=0mm,leftmargin=*]
 
    \item Contactez-nous pour rejoindre l'équipe d'iconographes.
-   \item Affichez une photo de l'album mph{Community}.
-   \item Cliquez sur aPencil  	extbf{Mots-clés}.
+   \item Affichez une photo de l'album \emph{Community}.
+   \item Cliquez sur \faPencil  \textbf{Mots-clés}.
    \item Ajoutez des mots-clés aux photos :
 
-     egin{itemize}
-       \item Indiquez mph{Print} si la photo convient à l'impression, mph{Web}
+     \begin{itemize}
+       \item Indiquez \emph{Print} si la photo convient à l'impression, \emph{Web}
          dans le cas contraire.
-       \item Pour que la photo soit supprimée, indiquez mph{Delete}.  Elle sera
-         effacée plus tardootnote{Elle sera conservée dans la sauvegarde.}.
-     nd{itemize}
+       \item Pour que la photo soit supprimée, indiquez \emph{Delete}.  Elle sera
+         effacée plus tard\footnote{Elle sera conservée dans la sauvegarde.}.
+     \end{itemize}
 
-nd{enumerate}
+\end{enumerate}
 
-egin{center}
-  \setlength{boxsep}{0pt}%
-  \setlength{boxrule}{0pt}%
-  box{\includegraphics[angle=5,width=\linewidth]{iconographes}}%
-nd{center}
+\begin{center}
+  \setlength{\fboxsep}{0pt}%
+  \setlength{\fboxrule}{0pt}%
+  \fbox{\includegraphics[angle=5,width=\linewidth]{iconographes}}%
+\end{center}
 ```
 
 Le rendu PDF est illustré ci-dessous. Remarquez le calcul automatique
-des césures (qui a fait l\'objet d\'une [thèse de doctorat]()). C\'est
-l\'un des [nombreux avantages de LaTeX]()...
+des césures (qui a fait l\'objet d\'une \[thèse de
+doctorat\](<https://texfaq.org/FAQ-hyphen>). C\'est l\'un des \`nombreux
+avantages
+de\[LaTeX\]([https://www.latex-project.org/\\](https://www.latex-project.org/\)
+...
 
 ![](graphics/latex-rendu.png)
 
@@ -373,16 +465,17 @@ l\'un des [nombreux avantages de LaTeX]()...
 Note
 :::
 
-Les fervents du *WYSIWYG* se tourneront avec profit vers [Gummi](). Il
-s\'agit de *What you see is what you get* au sens strict (et plutôt de
-*tel écran, tel imprimé* que de *tel écran, tel écrit*). On ne peut en
-effet pas modifier le texte dans la fenêtre de visualisation, uniquement
-dans la fenêtre de code LaTeX. Vous savez donc exactement ce qui se
-passe « sous le capot » et avez une plus grande maîtrise qu\'en
-déléguant la création du code de mise en page à une interface graphique.
-Si vous manipulez souvent des listes numérotées et que vous avez été
-confronté à des numérotations, disons... aléatoires, vous en comprendrez
-tout de suite l\'avantage.
+Les fervents du *WYSIWYG* se tourneront avec profit vers
+\[Gummi\](<https://github.com/alexandervdm/gummi>. Il s\'agit de *What
+you see is what you get* au sens strict (et plutôt de *tel écran, tel
+imprimé* que de *tel écran, tel écrit*). On ne peut en effet pas
+modifier le texte dans la fenêtre de visualisation, uniquement dans la
+fenêtre de code LaTeX. Vous savez donc exactement ce qui se passe « sous
+le capot » et avez une plus grande maîtrise qu\'en déléguant la création
+du code de mise en page à une interface graphique. Si vous manipulez
+souvent des listes numérotées et que vous avez été confronté à des
+numérotations, disons... aléatoires, vous en comprendrez tout de suite
+l\'avantage.
 
 ![](graphics/latex-wysiwyg-gummi.png)
 ::::
@@ -392,7 +485,7 @@ l\'utiliser pour produire rapidement d\'autres documents. De plus, le
 document peut être remanié par d\'autres personnes sans problème de
 licence ou de plateforme logicielle.
 
-## Suivi des modifications sous Git
+## Suivi des modifications sous Git {# projet-bout-en-bout-suivi-des-modifications-sous-git}
 
 Le suivi des modifications, que se soit sous Overleaf ou Git, prévient
 efficacement les erreurs : il est très facile de visualiser les
@@ -421,14 +514,14 @@ Voici l\'évolution d\'un extrait du PDF compilé :
 On peut même envisager un travail collaboratif, synchrone ou asynchrone,
 sur le même projet.
 
-## Style rédactionnel
+## Style rédactionnel {# projet-bout-en-bout-style-redactionnel}
 
 Puisqu\'il s\'agissait d\'un projet de communication interne, j\'ai pu
 adopter un style rédactionnel décontracté. J\'ai cependant veillé à ne
 pas pousser trop loin l\'aspect humoristique. Le but était avant tout
 d\'être compris, dans les 3 langues (français, anglais et espagnol).
 
-## Iconographie
+## Iconographie {# projet-bout-en-bout-iconographie}
 
 Le choix iconographique s\'est avéré être un exercice de style très
 intéressant.
@@ -467,7 +560,7 @@ de la section *Didacticiels* :
 
 ![](graphics/Frances_Densmore_recording_Mountain_Chief2.jpg)
 
-## Patience...
+## Patience... {# projet-bout-en-bout-patience}
 
 Évidemment, toute structure étant toujours plus ou moins rétive au
 changement, les choses ne se passeront pas comme je l\'imagine.
