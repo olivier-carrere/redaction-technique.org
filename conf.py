@@ -117,260 +117,260 @@ rst_epilog = u"""
 
 .. links
 
-.. _6 manières: https://www.robertdickau.com/stampfolding.html
-.. _Alfresco: http://www.alfresco.com/fr
-.. _Being a Techie Writer: http://techwhirl.com/techie-writer-series-part-i-being-a-techie-writer/
-.. _CSS: https://github.com/olivier-carrere/redaction-technique.org/tree/master/_static
-.. _Componize: http://www.componize.com
-.. _DITA Open Toolkit 1.5.4: http://sourceforge.net/projects/dita-ot/files/DITA-OT Stable Release/DITA Open Toolkit 1.5.4/DITA-OT1.5.4_full_easy_install_bin.zip/download
-.. _DITA XML: https://github.com/olivier-carrere/redaction-technique.org/tree/DITA_XML
-.. _DITA integration for Drupal: http://drupal.org/project/dita
-.. _DocBook: https://github.com/olivier-carrere/redaction-technique.org/tree/DocBook
-.. _DocZone: http://www.doczone.com
-.. _Flask: http://flask.pocoo.org/
-.. _FrameMaker: http://en.wikipedia.org/wiki/Adobe_FrameMaker
-.. _Git for windows: https://github.com/git-for-windows/git/releases/download/v2.18.0.windows.1/Git-2.18.0-64-bit.exe
-.. _Git: http://www.git-scm.com
-.. _GitHub Desktop: https://desktop.github.com/
-.. _GitHub: https://github.com/
-.. _Gummi: https://github.com/alexandervdm/gummi
-.. _JPEG: http://fr.wikipedia.org/wiki/Jpeg
-.. _Java: http://java.com/fr/download/manual.jsp?locale=fr
-.. _Jinja: http://jinja.pocoo.org/
-.. _Jourdainisez votre tirade: https://oliviercarrere.pythonanywhere.com/
-.. _LFTP: https://lftp.yar.ru/
-.. _LaTeX: https://www.latex-project.org/
-.. _LinkedIn: http://fr.linkedin.com/in/carrereolivier
-.. _Linux sur Android: https://korben.info/comment-installer-linux-sur-android.html
-.. _Makefile: https://github.com/olivier-carrere/redaction-technique.org/commits/master/Makefile
-.. _NOOBS: https://www.raspberrypi.org/downloads/noobs/
-.. _NuFirewall: http://linuxfr.org/news/nufirewall-le-pare-feu-libre-sans-prise-de-t%C3%AAte
-.. _Obambu: https://obambu.com/fr/hebergement/
-.. _OpenDocument: http://fr.wikipedia.org/wiki/OpenDocument
-.. _Photo Kevin Harber:  https://www.flickr.com/photos/kevharb/5391858379
-.. _Piwigo: http://piwigo.org/
-.. _Predictive: http://www.dr-qubit.org/emacs.php#predictive-download
-.. _RAW: http://fr.wikipedia.org/wiki/RAW_(format_d%27image)
-.. _Read the Docs: https://readthedocs.org/projects/redaction-techniqueorg
-.. _SimpleScreenRecorder: http://www.maartenbaert.be/simplescreenrecorder/
-.. _SyncToy: http://www.microsoft.com/en-us/download/details.aspx?id=15155
-.. _TIFF: http://fr.wikipedia.org/wiki/Tagged_Image_File_Format
-.. _Trac: http://trac.edgewall.org
-.. _Unison: http://www.cis.upenn.edu/~bcpierce/unison
-.. _XML::Twig: http://www.xmltwig.org/xmltwig/
-.. _XPATH: http://fr.wikipedia.org/wiki/XPath
-.. _XSD: http://fr.wikipedia.org/wiki/XML_Schema
-.. _XSL-FO: http://fr.wikipedia.org/wiki/XSL-FO
-.. _classe de documents LaTeX leaflet: https://ctan.org/pkg/leaflet
-.. _conref: http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html
-.. _ditaval: http://docs.oasis-open.org/dita/v1.2/os/spec/common/about-ditaval.html
-.. _expressions rationnelles: http://fr.wikipedia.org/wiki/Expression_rationnelle
-.. _fdupes: https://github.com/adrianlopezroche/fdupes
-.. _file: https://www.computerhope.com/unix/ufile.htm
-.. _l'archive des fichiers schemas.xml: http://www.redaction-technique.org/media/schemas.redaction-technique.org.tar.gz
-.. _l'archive des schémas RelaxNG pour DITA XML: http://www.redaction-technique.org/media/rnc.tar.gz
-.. _minimalisme: https://www.utwente.nl/en/bms/ist/minimalism/
-.. _minimaliste: https://www.instructionaldesign.org/theories/minimalism/
-.. _modèle LaTeX du dépliant: https://www.overleaf.com/latex/templates/leaflet/ysdkbbhctfpc
-.. _nombreux avantages de LaTeX: https://www.plpeeters.com/blog/fr/post/110-introduction-a-latex#comparaison-word-et-consorts-vs-latex
-.. _perspective de l'utilisateur: https://www.utwente.nl/en/bms/ist/minimalism/principle2/
-.. _piwigo.com: https://piwigo.com/plan
-.. _reStructuredText: https://github.com/olivier-carrere/redaction-technique.org/tree/master
-.. _reltable: http://docs.oasis-open.org/dita/v1.0/langspec/reltable.html
-.. _rsync: http://rsync.samba.org
-.. _script de génération multilingue DITA XML: http://www.redaction-technique.org/media/dita2target.sh
-.. _scripts Bash: https://github.com/olivier-carrere/redaction-technique.org/tree/master/scripts
-.. _spécialisation: http://en.wikipedia.org/wiki/Darwin_Information_Typing_Architecture#Specialization
-.. _thèse de doctorat: https://texfaq.org/FAQ-hyphen
-.. _topics: http://docs.oasis-open.org/dita/v1.0/archspec/topicover.html
-.. _un point fort du produit: http://www.linformaticien.com/tests/id/20068/categoryid/48/edenwall-nufirewall-le-pare-feu-nouvelle-generation.aspx
-.. _xinclude: http://en.wikipedia.org/wiki/XInclude
-.. _xml_split: http://search.cpan.org/dist/XML-Twig/tools/xml_split/xml_split
-"""
+sed -i 's,`6 manières`_,[\1](https://www.robertdickau.com/stampfolding.html,g;' *.rst
+sed -i 's,`Alfresco`_,[\1](http://www.alfresco.com/fr,g;' *.rst
+sed -i 's,`Being a Techie Writer`_,[\1](http://techwhirl.com/techie-writer-series-part-i-being-a-techie-writer/,g;' *.rst
+sed -i 's,`CSS`_,[\1](https://github.com/olivier-carrere/redaction-technique.org/tree/master/_static,g;' *.rst
+sed -i 's,`Componize`_,[\1](http://www.componize.com,g;' *.rst
+sed -i 's,`DITA Open Toolkit 1.5.4`_,[\1](http://sourceforge.net/projects/dita-ot/files/DITA-OT Stable Release/DITA Open Toolkit 1.5.4/DITA-OT1.5.4_full_easy_install_bin.zip/download,g;' *.rst
+sed -i 's,`DITA XML`_,[\1](https://github.com/olivier-carrere/redaction-technique.org/tree/DITA_XML,g;' *.rst
+sed -i 's,`DITA integration for Drupal`_,[\1](http://drupal.org/project/dita,g;' *.rst
+sed -i 's,`DocBook`_,[\1](https://github.com/olivier-carrere/redaction-technique.org/tree/DocBook,g;' *.rst
+sed -i 's,`DocZone`_,[\1](http://www.doczone.com,g;' *.rst
+sed -i 's,`Flask`_,[\1](http://flask.pocoo.org/,g;' *.rst
+sed -i 's,`FrameMaker`_,[\1](http://en.wikipedia.org/wiki/Adobe_FrameMaker,g;' *.rst
+sed -i 's,`Git for windows`_,[\1](https://github.com/git-for-windows/git/releases/download/v2.18.0.windows.1/Git-2.18.0-64-bit.exe,g;' *.rst
+sed -i 's,`Git`_,[\1](http://www.git-scm.com,g;' *.rst
+sed -i 's,`GitHub Desktop`_,[\1](https://desktop.github.com/,g;' *.rst
+sed -i 's,`GitHub`_,[\1](https://github.com/,g;' *.rst
+sed -i 's,`Gummi`_,[\1](https://github.com/alexandervdm/gummi,g;' *.rst
+sed -i 's,`JPEG`_,[\1](http://fr.wikipedia.org/wiki/Jpeg,g;' *.rst
+sed -i 's,`Java`_,[\1](http://java.com/fr/download/manual.jsp?locale=fr,g;' *.rst
+sed -i 's,`Jinja`_,[\1](http://jinja.pocoo.org/,g;' *.rst
+sed -i 's,`Jourdainisez votre tirade`_,[\1](https://oliviercarrere.pythonanywhere.com/,g;' *.rst
+sed -i 's,`LFTP`_,[\1](https://lftp.yar.ru/,g;' *.rst
+sed -i 's,`LaTeX`_,[\1](https://www.latex-project.org/,g;' *.rst
+sed -i 's,`LinkedIn`_,[\1](http://fr.linkedin.com/in/carrereolivier,g;' *.rst
+sed -i 's,`Linux sur Android`_,[\1](https://korben.info/comment-installer-linux-sur-android.html,g;' *.rst
+sed -i 's,`Makefile`_,[\1](https://github.com/olivier-carrere/redaction-technique.org/commits/master/Makefile,g;' *.rst
+sed -i 's,`NOOBS`_,[\1](https://www.raspberrypi.org/downloads/noobs/,g;' *.rst
+sed -i 's,`NuFirewall`_,[\1](http://linuxfr.org/news/nufirewall-le-pare-feu-libre-sans-prise-de-t%C3%AAte,g;' *.rst
+sed -i 's,`Obambu`_,[\1](https://obambu.com/fr/hebergement/,g;' *.rst
+sed -i 's,`OpenDocument`_,[\1](http://fr.wikipedia.org/wiki/OpenDocument,g;' *.rst
+sed -i 's,`Photo Kevin Harber:  https://www.flickr.com/photos/kevharb/5391858379,g;' *.rst
+sed -i 's,`Piwigo`_,[\1](http://piwigo.org/,g;' *.rst
+sed -i 's,`Predictive`_,[\1](http://www.dr-qubit.org/emacs.php#predictive-download,g;' *.rst
+sed -i 's,`RAW`_,[\1](http://fr.wikipedia.org/wiki/RAW_(format_d%27image),g;' *.rst
+sed -i 's,`Read the Docs`_,[\1](https://readthedocs.org/projects/redaction-techniqueorg,g;' *.rst
+sed -i 's,`SimpleScreenRecorder`_,[\1](http://www.maartenbaert.be/simplescreenrecorder/,g;' *.rst
+sed -i 's,`SyncToy`_,[\1](http://www.microsoft.com/en-us/download/details.aspx?id=15155,g;' *.rst
+sed -i 's,`TIFF`_,[\1](http://fr.wikipedia.org/wiki/Tagged_Image_File_Format,g;' *.rst
+sed -i 's,`Trac`_,[\1](http://trac.edgewall.org,g;' *.rst
+sed -i 's,`Unison`_,[\1](http://www.cis.upenn.edu/~bcpierce/unison,g;' *.rst
+sed -i 's,`XML::Twig`_,[\1](http://www.xmltwig.org/xmltwig/,g;' *.rst
+sed -i 's,`XPATH`_,[\1](http://fr.wikipedia.org/wiki/XPath,g;' *.rst
+sed -i 's,`XSD`_,[\1](http://fr.wikipedia.org/wiki/XML_Schema,g;' *.rst
+sed -i 's,`XSL-FO`_,[\1](http://fr.wikipedia.org/wiki/XSL-FO,g;' *.rst
+sed -i 's,`classe de documents LaTeX leaflet`_,[\1](https://ctan.org/pkg/leaflet,g;' *.rst
+sed -i 's,`conref`_,[\1](http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html,g;' *.rst
+sed -i 's,`ditaval`_,[\1](http://docs.oasis-open.org/dita/v1.2/os/spec/common/about-ditaval.html,g;' *.rst
+sed -i 's,`expressions rationnelles`_,[\1](http://fr.wikipedia.org/wiki/Expression_rationnelle,g;' *.rst
+sed -i 's,`fdupes`_,[\1](https://github.com/adrianlopezroche/fdupes,g;' *.rst
+sed -i 's,`file`_,[\1](https://www.computerhope.com/unix/ufile.htm,g;' *.rst
+sed -i 's,`l'archive des fichiers schemas.xml`_,[\1](http://www.redaction-technique.org/media/schemas.redaction-technique.org.tar.gz,g;' *.rst
+sed -i 's,`l'archive des schémas RelaxNG pour DITA XML`_,[\1](http://www.redaction-technique.org/media/rnc.tar.gz,g;' *.rst
+sed -i 's,`minimalisme`_,[\1](https://www.utwente.nl/en/bms/ist/minimalism/,g;' *.rst
+sed -i 's,`minimaliste`_,[\1](https://www.instructionaldesign.org/theories/minimalism/,g;' *.rst
+sed -i 's,`modèle LaTeX du dépliant`_,[\1](https://www.overleaf.com/latex/templates/leaflet/ysdkbbhctfpc,g;' *.rst
+sed -i 's,`nombreux avantages de LaTeX`_,[\1](https://www.plpeeters.com/blog/fr/post/110-introduction-a-latex#comparaison-word-et-consorts-vs-latex,g;' *.rst
+sed -i 's,`perspective de l'utilisateur`_,[\1](https://www.utwente.nl/en/bms/ist/minimalism/principle2/,g;' *.rst
+sed -i 's,`piwigo.com`_,[\1](https://piwigo.com/plan,g;' *.rst
+sed -i 's,`reStructuredText`_,[\1](https://github.com/olivier-carrere/redaction-technique.org/tree/master,g;' *.rst
+sed -i 's,`reltable`_,[\1](http://docs.oasis-open.org/dita/v1.0/langspec/reltable.html,g;' *.rst
+sed -i 's,`rsync`_,[\1](http://rsync.samba.org,g;' *.rst
+sed -i 's,`script de génération multilingue DITA XML`_,[\1](http://www.redaction-technique.org/media/dita2target.sh,g;' *.rst
+sed -i 's,`scripts Bash`_,[\1](https://github.com/olivier-carrere/redaction-technique.org/tree/master/scripts,g;' *.rst
+sed -i 's,`spécialisation`_,[\1](http://en.wikipedia.org/wiki/Darwin_Information_Typing_Architecture#Specialization,g;' *.rst
+sed -i 's,`thèse de doctorat`_,[\1](https://texfaq.org/FAQ-hyphen,g;' *.rst
+sed -i 's,`topics`_,[\1](http://docs.oasis-open.org/dita/v1.0/archspec/topicover.html,g;' *.rst
+sed -i 's,`un point fort du produit`_,[\1](http://www.linformaticien.com/tests/id/20068/categoryid/48/edenwall-nufirewall-le-pare-feu-nouvelle-generation.aspx,g;' *.rst
+sed -i 's,`xinclude`_,[\1](http://en.wikipedia.org/wiki/XInclude,g;' *.rst
+sed -i 's,`xml_split`_,[\1](http://search.cpan.org/dist/XML-Twig/tools/xml_split/xml_split,g;' *.rst
 
-# -- Options for HTML output ---------------------------------------------------
-
-# The theme to use for HTML and HTML Help pages.  See the documentation for
-# a list of builtin themes.
-import sphinx_rtd_theme
-
-html_theme = "sphinx_rtd_theme"
-
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-
-# Theme options are theme-specific and customize the look and feel of a theme
-# further.  For a list of options available for each theme, see the
-# documentation.
-
-# Add any paths that contain custom themes here, relative to this directory.
-#html_theme_path = []
-
-# The name for this set of Sphinx documents.  If None, it defaults to
-# "<project> v<release> documentation".
-html_title = u' La documentation est une valeur ajoutée du logiciel.'
-
-# A shorter title for the navigation bar.  Default is the same as html_title.
-#html_short_title = None
-
-# The name of an image file (relative to this directory) to place at the top
-# of the sidebar.
-html_logo = "graphics/redaction-technique.png"
-
-# The name of an image file (within the static path) to use as favicon of the
-# docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
-# pixels large.
-html_favicon = "graphics/favicon.png"
-
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
-
-# If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
-# using the given strftime format.
-html_last_updated_fmt = '%Y'
-
-# If true, SmartyPants will be used to convert quotes and dashes to
-# typographically correct entities.
-#html_use_smartypants = True
-
-# Custom sidebar templates, maps document names to template names.
-#html_sidebars = {}
-
-# Additional templates that should be rendered to pages, maps page names to
-# template names.
-#html_additional_pages = {}
-
-# If false, no module index is generated.
-#html_domain_indices = True
-
-# If false, no index is generated.
-html_use_index = False
-
-# If true, the index is split into individual pages for each letter.
-#html_split_index = False
-
-# If true, links to the reST sources are added to the pages.
-html_show_sourcelink = True
-
-# If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
-html_show_sphinx = False
-
-# If true, "(C) Copyright ..." is shown in the HTML footer. Default is True.
-#html_show_copyright = True
-
-# If true, an OpenSearch description file will be output, and all pages will
-# contain a <link> tag referring to it.  The value of this option must be the
-# base URL from which the finished HTML is served.
-#html_use_opensearch = ''
-
-# This is the file name suffix for HTML files (e.g. ".xhtml").
-#html_file_suffix = None
-
-# Output file base name for HTML help builder.
-htmlhelp_basename = 'redaction-techniqueorgdoc'
-
-
-# -- Options for LaTeX output --------------------------------------------------
-
-latex_elements = {
-# The paper size ('letterpaper' or 'a4paper').
-    'papersize': 'a4paper',
-
-# The font size ('10pt', '11pt' or '12pt').
-#'pointsize': '10pt',
-
-# Additional stuff for the LaTeX preamble.
-#'preamble': '',
-
-    'babel': '\\usepackage[francais]{babel}',
-    'preamble': '\\usepackage{redaction-technique}',
-    'classoptions': ',openany',
-}
-
-latex_additional_files = [
-    '_themes/redaction-technique.sty',
-    '_themes/wallpaper.sty',
- ]
-
-# Grouping the document tree into LaTeX files. List of tuples
-# (source start file, target name, title, author, documentclass [howto/manual]).
-latex_documents = [
-  ('index', 'redaction-techniqueorg.tex', u'Processus de rédaction technique',
-   u'Olivier Carrère', 'manual', 'toctree_only'),
-]
-
-# The name of an image file (relative to this directory) to place at the top of
-# the title page.
-latex_logo = "graphics/redaction-technique.pdf"
-
-# For "manual" documents, if this is true, then toplevel headings are parts,
-# not chapters.
-#latex_use_parts = False
-
-# If true, show page references after internal links.
-latex_show_pagerefs = True
-
-# If true, show URL addresses after external links.
-latex_show_urls = 'footnote'
-
-# Documents to append as an appendix to all manuals.
-#latex_appendices = []
-
-# If false, no module index is generated.
-#latex_domain_indices = True
-
-
-# -- Options for manual page output --------------------------------------------
-
-# One entry per manual page. List of tuples
-# (source start file, name, description, authors, manual section).
-man_pages = [
-    ('index', 'redaction-techniqueorg', u'redaction-technique.org Documentation',
-     [u'Olivier Carrère'], 1)
-]
-
-# If true, show URL addresses after external links.
-#man_show_urls = False
-
-# -- Options for Epub output ---------------------------------------------------
-
-# Bibliographic Dublin Core info.
-epub_title = u'redaction-technique.org'
-epub_author = u'Olivier Carrère'
-epub_publisher = u'Olivier Carrère'
-epub_copyright = u'2015, Olivier Carrère'
-
-# The language of the text. It defaults to the language option
-# or en if the language is not set.
-#epub_language = ''
-
-# The scheme of the identifier. Typical schemes are ISBN or URL.
-#epub_scheme = ''
-
-# The unique identifier of the text. This can be a ISBN number
-# or the project homepage.
-#epub_identifier = ''
-
-# A unique identification for the text.
-#epub_uid = ''
-
-# A tuple containing the cover image and cover page html template filenames.
-#epub_cover = ()
-
-# HTML files that should be inserted before the pages created by sphinx.
-# The format is a list of tuples containing the path and title.
-#epub_pre_files = []
-
-# HTML files shat should be inserted after the pages created by sphinx.
-# The format is a list of tuples containing the path and title.
-#epub_post_files = []
-
-# A list of files that should not be packed into the epub file.
-#epub_exclude_files = []
-
-# The depth of the table of contents in toc.ncx.
-#epub_tocdepth = 3
-
-# Allow duplicate toc entries.
-#epub_tocdup = True
+,g;' *.rst
+# -- Options for HTML output ---------------------------------------------------,g;' *.rst
+,g;' *.rst
+# The theme to use for HTML and HTML Help pages.  See the documentation for,g;' *.rst
+# a list of builtin themes.,g;' *.rst
+import sphinx_rtd_theme,g;' *.rst
+,g;' *.rst
+html_theme = "sphinx_rtd_theme",g;' *.rst
+,g;' *.rst
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path()],g;' *.rst
+,g;' *.rst
+# Theme options are theme-specific and customize the look and feel of a theme,g;' *.rst
+# further.  For a list of options available for each theme, see the,g;' *.rst
+# documentation.,g;' *.rst
+,g;' *.rst
+# Add any paths that contain custom themes here, relative to this directory.,g;' *.rst
+#html_theme_path = [],g;' *.rst
+,g;' *.rst
+# The name for this set of Sphinx documents.  If None, it defaults to,g;' *.rst
+# "<project> v<release> documentation".,g;' *.rst
+html_title = u' La documentation est une valeur ajoutée du logiciel.',g;' *.rst
+,g;' *.rst
+# A shorter title for the navigation bar.  Default is the same as html_title.,g;' *.rst
+#html_short_title = None,g;' *.rst
+,g;' *.rst
+# The name of an image file (relative to this directory) to place at the top,g;' *.rst
+# of the sidebar.,g;' *.rst
+html_logo = "graphics/redaction-technique.png",g;' *.rst
+,g;' *.rst
+# The name of an image file (within the static path) to use as favicon of the,g;' *.rst
+# docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32,g;' *.rst
+# pixels large.,g;' *.rst
+html_favicon = "graphics/favicon.png",g;' *.rst
+,g;' *.rst
+# Add any paths that contain custom static files (such as style sheets) here,,g;' *.rst
+# relative to this directory. They are copied after the builtin static files,,g;' *.rst
+# so a file named "default.css" will overwrite the builtin "default.css".,g;' *.rst
+html_static_path = ['_static'],g;' *.rst
+,g;' *.rst
+# If not '', a 'Last updated on:' timestamp is inserted at every page bottom,,g;' *.rst
+# using the given strftime format.,g;' *.rst
+html_last_updated_fmt = '%Y',g;' *.rst
+,g;' *.rst
+# If true, SmartyPants will be used to convert quotes and dashes to,g;' *.rst
+# typographically correct entities.,g;' *.rst
+#html_use_smartypants = True,g;' *.rst
+,g;' *.rst
+# Custom sidebar templates, maps document names to template names.,g;' *.rst
+#html_sidebars = {},g;' *.rst
+,g;' *.rst
+# Additional templates that should be rendered to pages, maps page names to,g;' *.rst
+# template names.,g;' *.rst
+#html_additional_pages = {},g;' *.rst
+,g;' *.rst
+# If false, no module index is generated.,g;' *.rst
+#html_domain_indices = True,g;' *.rst
+,g;' *.rst
+# If false, no index is generated.,g;' *.rst
+html_use_index = False,g;' *.rst
+,g;' *.rst
+# If true, the index is split into individual pages for each letter.,g;' *.rst
+#html_split_index = False,g;' *.rst
+,g;' *.rst
+# If true, links to the reST sources are added to the pages.,g;' *.rst
+html_show_sourcelink = True,g;' *.rst
+,g;' *.rst
+# If true, "Created using Sphinx" is shown in the HTML footer. Default is True.,g;' *.rst
+html_show_sphinx = False,g;' *.rst
+,g;' *.rst
+# If true, "(C) Copyright ..." is shown in the HTML footer. Default is True.,g;' *.rst
+#html_show_copyright = True,g;' *.rst
+,g;' *.rst
+# If true, an OpenSearch description file will be output, and all pages will,g;' *.rst
+# contain a <link> tag referring to it.  The value of this option must be the,g;' *.rst
+# base URL from which the finished HTML is served.,g;' *.rst
+#html_use_opensearch = '',g;' *.rst
+,g;' *.rst
+# This is the file name suffix for HTML files (e.g. ".xhtml").,g;' *.rst
+#html_file_suffix = None,g;' *.rst
+,g;' *.rst
+# Output file base name for HTML help builder.,g;' *.rst
+htmlhelp_basename = 'redaction-techniqueorgdoc',g;' *.rst
+,g;' *.rst
+,g;' *.rst
+# -- Options for LaTeX output --------------------------------------------------,g;' *.rst
+,g;' *.rst
+latex_elements = {,g;' *.rst
+# The paper size ('letterpaper' or 'a4paper').,g;' *.rst
+    'papersize': 'a4paper',,g;' *.rst
+,g;' *.rst
+# The font size ('10pt', '11pt' or '12pt').,g;' *.rst
+#'pointsize': '10pt',,g;' *.rst
+,g;' *.rst
+# Additional stuff for the LaTeX preamble.,g;' *.rst
+#'preamble': '',,g;' *.rst
+,g;' *.rst
+    'babel': '\\usepackage[francais]{babel}',,g;' *.rst
+    'preamble': '\\usepackage{redaction-technique}',,g;' *.rst
+    'classoptions': ',openany',,g;' *.rst
+},g;' *.rst
+,g;' *.rst
+latex_additional_files = [,g;' *.rst
+    '_themes/redaction-technique.sty',,g;' *.rst
+    '_themes/wallpaper.sty',,g;' *.rst
+ ],g;' *.rst
+,g;' *.rst
+# Grouping the document tree into LaTeX files. List of tuples,g;' *.rst
+# (source start file, target name, title, author, documentclass [howto/manual]).,g;' *.rst
+latex_documents = [,g;' *.rst
+  ('index', 'redaction-techniqueorg.tex', u'Processus de rédaction technique',,g;' *.rst
+   u'Olivier Carrère', 'manual', 'toctree_only'),,g;' *.rst
+],g;' *.rst
+,g;' *.rst
+# The name of an image file (relative to this directory) to place at the top of,g;' *.rst
+# the title page.,g;' *.rst
+latex_logo = "graphics/redaction-technique.pdf",g;' *.rst
+,g;' *.rst
+# For "manual" documents, if this is true, then toplevel headings are parts,,g;' *.rst
+# not chapters.,g;' *.rst
+#latex_use_parts = False,g;' *.rst
+,g;' *.rst
+# If true, show page references after internal links.,g;' *.rst
+latex_show_pagerefs = True,g;' *.rst
+,g;' *.rst
+# If true, show URL addresses after external links.,g;' *.rst
+latex_show_urls = 'footnote',g;' *.rst
+,g;' *.rst
+# Documents to append as an appendix to all manuals.,g;' *.rst
+#latex_appendices = [],g;' *.rst
+,g;' *.rst
+# If false, no module index is generated.,g;' *.rst
+#latex_domain_indices = True,g;' *.rst
+,g;' *.rst
+,g;' *.rst
+# -- Options for manual page output --------------------------------------------,g;' *.rst
+,g;' *.rst
+# One entry per manual page. List of tuples,g;' *.rst
+# (source start file, name, description, authors, manual section).,g;' *.rst
+man_pages = [,g;' *.rst
+    ('index', 'redaction-techniqueorg', u'redaction-technique.org Documentation',,g;' *.rst
+     [u'Olivier Carrère'], 1),g;' *.rst
+],g;' *.rst
+,g;' *.rst
+# If true, show URL addresses after external links.,g;' *.rst
+#man_show_urls = False,g;' *.rst
+,g;' *.rst
+# -- Options for Epub output ---------------------------------------------------,g;' *.rst
+,g;' *.rst
+# Bibliographic Dublin Core info.,g;' *.rst
+epub_title = u'redaction-technique.org',g;' *.rst
+epub_author = u'Olivier Carrère',g;' *.rst
+epub_publisher = u'Olivier Carrère',g;' *.rst
+epub_copyright = u'2015, Olivier Carrère',g;' *.rst
+,g;' *.rst
+# The language of the text. It defaults to the language option,g;' *.rst
+# or en if the language is not set.,g;' *.rst
+#epub_language = '',g;' *.rst
+,g;' *.rst
+# The scheme of the identifier. Typical schemes are ISBN or URL.,g;' *.rst
+#epub_scheme = '',g;' *.rst
+,g;' *.rst
+# The unique identifier of the text. This can be a ISBN number,g;' *.rst
+# or the project homepage.,g;' *.rst
+#epub_identifier = '',g;' *.rst
+,g;' *.rst
+# A unique identification for the text.,g;' *.rst
+#epub_uid = '',g;' *.rst
+,g;' *.rst
+# A tuple containing the cover image and cover page html template filenames.,g;' *.rst
+#epub_cover = (),g;' *.rst
+,g;' *.rst
+# HTML files that should be inserted before the pages created by sphinx.,g;' *.rst
+# The format is a list of tuples containing the path and title.,g;' *.rst
+#epub_pre_files = [],g;' *.rst
+,g;' *.rst
+# HTML files shat should be inserted after the pages created by sphinx.,g;' *.rst
+# The format is a list of tuples containing the path and title.,g;' *.rst
+#epub_post_files = [],g;' *.rst
+,g;' *.rst
+# A list of files that should not be packed into the epub file.,g;' *.rst
+#epub_exclude_files = [],g;' *.rst
+,g;' *.rst
+# The depth of the table of contents in toc.ncx.,g;' *.rst
+#epub_tocdepth = 3,g;' *.rst
+,g;' *.rst
+# Allow duplicate toc entries.,g;' *.rst
+#epub_tocdup = True,g;' *.rst
