@@ -2,7 +2,6 @@
 title: Un référentiel unique ?
 description: A guide in my new Starlight docs site.
 ---
-# Un référentiel unique ?
 
 Idéalement, tout le contenu peut être placé sous un référentiel unique,
 par exemple le logiciel de gestion de versions [Git](). Ceci en maximise

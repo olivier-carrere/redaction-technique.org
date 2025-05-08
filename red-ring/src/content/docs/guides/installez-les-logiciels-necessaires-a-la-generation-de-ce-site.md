@@ -2,7 +2,6 @@
 title: Installez les logiciels nécessaires à la gestion de ce
 description: A guide in my new Starlight docs site.
 ---
-# Installez les logiciels nécessaires à la gestion de ce
 
 1.  Sélectionnez `Menu`{.interpreted-text role="guilabel"} \>
     `Accessoires`{.interpreted-text role="guilabel"} \>

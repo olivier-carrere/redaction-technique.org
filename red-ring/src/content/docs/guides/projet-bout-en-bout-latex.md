@@ -2,7 +2,6 @@
 title: LaTeX
 description: A guide in my new Starlight docs site.
 ---
-# LaTeX
 
 Pourquoi avoir choisi [LaTeX](#latex) pour réaliser le support *print*
 et non pas un logiciel de PAO classique ? Je souhaitais pouvoir remanier

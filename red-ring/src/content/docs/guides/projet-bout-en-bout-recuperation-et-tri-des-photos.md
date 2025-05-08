@@ -2,7 +2,6 @@
 title: Récupération et tri des photos
 description: A guide in my new Starlight docs site.
 ---
-# Récupération et tri des photos
 
 Après avoir collecté le maximum de photos, je me suis retrouvé avec plus
 de 10 000 photos et 30 Go de données. Ouf.

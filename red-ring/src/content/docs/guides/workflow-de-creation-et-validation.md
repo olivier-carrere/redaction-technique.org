@@ -2,7 +2,6 @@
 title: Workflow de création et validation
 description: A guide in my new Starlight docs site.
 ---
-# Workflow de création et validation
 
 Un processus de création et de mise à jour de la documentation technique
 qui repose sur la mémoire des acteurs humains est peu fiable. Un peut

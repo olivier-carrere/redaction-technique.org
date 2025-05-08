@@ -2,7 +2,6 @@
 title: Utiliser le nœud XML de plus bas niveau
 description: A guide in my new Starlight docs site.
 ---
-# Utiliser le nœud XML de plus bas niveau
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

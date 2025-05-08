@@ -2,7 +2,6 @@
 title: Du document à la base documentaire modulaire
 description: A guide in my new Starlight docs site.
 ---
-# Du document à la base documentaire modulaire
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

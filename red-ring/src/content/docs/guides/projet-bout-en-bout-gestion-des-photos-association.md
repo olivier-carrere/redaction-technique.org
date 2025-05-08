@@ -2,7 +2,6 @@
 title: Gestion des photos d\'une association
 description: A guide in my new Starlight docs site.
 ---
-# Gestion des photos d\'une association
 
 Une association de quelques centaines de personnes originaires de
 différents pays disposait de plusieurs milliers de photos, dispersées

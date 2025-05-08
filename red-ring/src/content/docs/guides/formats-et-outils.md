@@ -2,7 +2,6 @@
 title: Formats et outils
 description: A guide in my new Starlight docs site.
 ---
-# Formats et outils
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

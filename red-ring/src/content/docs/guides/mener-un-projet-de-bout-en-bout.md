@@ -2,7 +2,6 @@
 title: Mener un projet de bout en bout
 description: A guide in my new Starlight docs site.
 ---
-# Mener un projet de bout en bout
 
 ::: sidebar
 **`fa-history`{.interpreted-text role="awesome"} Modifications

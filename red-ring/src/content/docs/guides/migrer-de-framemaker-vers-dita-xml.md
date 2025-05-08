@@ -2,7 +2,6 @@
 title: Migrer de FrameMaker vers DITA XML
 description: A guide in my new Starlight docs site.
 ---
-# Migrer de FrameMaker vers DITA XML
 
 Le but de cette procédure est de :
 
@@ -77,7 +76,6 @@ open(INPUT,"<$ARGV[0]") or die;
 @input_array=<INPUT‣;
 close(INPUT);
 $input_scalar=join("",@input_array);
-# substitution
 $input_scalar =~ s#\<body‣(.|
 )*?</body‣##ig;
 open(OUTPUT,‣$ARGV[0]") or die;

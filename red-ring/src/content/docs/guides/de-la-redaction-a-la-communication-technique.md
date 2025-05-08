@@ -2,7 +2,6 @@
 title: De la rédaction à la communication technique
 description: A guide in my new Starlight docs site.
 ---
-# De la rédaction à la communication technique
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

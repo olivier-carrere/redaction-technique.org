@@ -2,7 +2,6 @@
 title: Organisation à la demande du contenu
 description: A guide in my new Starlight docs site.
 ---
-# Organisation à la demande du contenu
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

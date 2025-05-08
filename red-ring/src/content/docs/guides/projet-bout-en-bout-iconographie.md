@@ -2,7 +2,6 @@
 title: Iconographie
 description: A guide in my new Starlight docs site.
 ---
-# Iconographie
 
 Le choix iconographique s\'est avéré être un exercice de style très
 intéressant.

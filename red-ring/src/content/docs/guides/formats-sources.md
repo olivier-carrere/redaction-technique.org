@@ -2,7 +2,6 @@
 title: Formats sources
 description: A guide in my new Starlight docs site.
 ---
-# Formats sources
 
 Ce est disponible en trois formats, basés sur la version 1.1[^1]. Ces
 formats présentent des niveaux de fonctionnalités et de complexité

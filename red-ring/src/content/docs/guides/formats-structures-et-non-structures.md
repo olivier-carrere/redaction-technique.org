@@ -2,7 +2,6 @@
 title: Formats structurés et non structurés
 description: A guide in my new Starlight docs site.
 ---
-# Formats structurés et non structurés
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

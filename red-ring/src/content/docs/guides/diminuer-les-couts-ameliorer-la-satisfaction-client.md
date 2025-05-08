@@ -2,7 +2,6 @@
 title: Documentation technique - diminuer les coûts, améliorer la satisfaction client
 description: A guide in my new Starlight docs site.
 ---
-# Documentation technique : diminuer les coûts, améliorer la satisfaction client
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

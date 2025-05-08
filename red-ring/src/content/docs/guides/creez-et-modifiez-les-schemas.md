@@ -2,7 +2,6 @@
 title: Créez et modifiez les schémas
 description: A guide in my new Starlight docs site.
 ---
-# Créez et modifiez les schémas
 
 1.  Modifiez un fichier source des images de ce  :
     -   à l\'aide d\'un logiciel de dessin vectoriel :

@@ -2,7 +2,6 @@
 title: Les sources de ce sont gérées sous Git
 description: A guide in my new Starlight docs site.
 ---
-# Les sources de ce sont gérées sous Git
 
 Ce a été initialement développé sous WordPress. L\'impossibilité
 d\'effectuer sous ce des modifications transverses ou d\'avoir un suivi

@@ -2,7 +2,6 @@
 title: Indexation des photos
 description: A guide in my new Starlight docs site.
 ---
-# Indexation des photos
 
 Une fois les 500 photos retenues pour les projets d\'impression
 téléchargées sur le site, restait à les indexer.

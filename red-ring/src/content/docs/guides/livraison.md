@@ -2,7 +2,6 @@
 title: Livraison
 description: A guide in my new Starlight docs site.
 ---
-# Livraison
 
 Le livre le document à son destinataire de la manière appropriée :
 

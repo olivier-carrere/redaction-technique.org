@@ -2,7 +2,6 @@
 title: Prendre en compte les contraintes de traduction
 description: A guide in my new Starlight docs site.
 ---
-# Prendre en compte les contraintes de traduction
 
 L\'unité d\'information la plus petite est le nœud
 `<ph>`{.interpreted-text role="samp"}. Le doit cependant veiller à ne

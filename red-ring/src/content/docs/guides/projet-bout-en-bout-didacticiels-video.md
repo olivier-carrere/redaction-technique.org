@@ -2,7 +2,6 @@
 title: Didacticiels vidéo
 description: A guide in my new Starlight docs site.
 ---
-# Didacticiels vidéo
 
 J\'ai publié sur *YouTube* différents didacticiels, en français, anglais
 et espagnol, sur l\'utilisation de la galerie par les différents types

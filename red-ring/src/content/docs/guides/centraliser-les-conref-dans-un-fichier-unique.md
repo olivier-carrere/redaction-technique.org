@@ -2,7 +2,6 @@
 title: Centraliser les *conref* dans un fichier unique
 description: A guide in my new Starlight docs site.
 ---
-# Centraliser les *conref* dans un fichier unique
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

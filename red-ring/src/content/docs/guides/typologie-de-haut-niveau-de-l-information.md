@@ -2,7 +2,6 @@
 title: Typologie de haut niveau de l\'information
 description: A guide in my new Starlight docs site.
 ---
-# Typologie de haut niveau de l\'information
 
 propose au une typologie de haut niveau qui est une véritable aide à la
 structuration du contenu.

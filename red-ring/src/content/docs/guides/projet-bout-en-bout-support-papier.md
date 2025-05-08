@@ -2,7 +2,6 @@
 title: Support papier
 description: A guide in my new Starlight docs site.
 ---
-# Support papier
 
 J\'ai créé un dépliant expliquant :
 

@@ -2,7 +2,6 @@
 title: Jourdainisation en ligne d\'une tirade
 description: A guide in my new Starlight docs site.
 ---
-# Jourdainisation en ligne d\'une tirade
 
 À l\'instar du maître de philosophie du *Bourgeois gentilhomme* de
 Molière, un script Python peut facilement intervertir les mots d\'une
@@ -25,7 +24,6 @@ espaces avant les virgules que nous aurions insérées dans la liste :
 
 ``` python
 #! /usr/bin/python3
-# coding: utf-8
 
 phrase = "Belle Marquise vos beaux yeux me font mourir d’amour"
 liste = phrase.split()

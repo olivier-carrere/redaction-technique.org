@@ -2,7 +2,6 @@
 title: Restructuration du contenu FrameMaker
 description: A guide in my new Starlight docs site.
 ---
-# Restructuration du contenu FrameMaker
 
 La partie automatisée d\'une migration de [FrameMaker]() vers consiste à
 appliquer une table de conversion entre les styles et les structures .

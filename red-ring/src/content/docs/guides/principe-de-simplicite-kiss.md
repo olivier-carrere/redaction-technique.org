@@ -2,7 +2,6 @@
 title: Principe de simplicité KISS
 description: A guide in my new Starlight docs site.
 ---
-# Principe de simplicité KISS
 
 Le principe `KISS (Keep it simple stupid)`{.interpreted-text
 role="abbr"}, n\'est pas spécifique à la . Il s\'agit d\'un principe

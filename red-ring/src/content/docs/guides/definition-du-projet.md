@@ -2,7 +2,6 @@
 title: Définition du projet
 description: A guide in my new Starlight docs site.
 ---
-# Définition du projet
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

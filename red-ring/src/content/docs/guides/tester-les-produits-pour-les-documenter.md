@@ -2,7 +2,6 @@
 title: Tester les produits pour les documenter
 description: A guide in my new Starlight docs site.
 ---
-# Tester les produits pour les documenter
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

@@ -2,7 +2,6 @@
 title: Récupérez les sources de ce
 description: A guide in my new Starlight docs site.
 ---
-# Récupérez les sources de ce
 
 1.  Clonez le dépôt des sources de ce  :
 

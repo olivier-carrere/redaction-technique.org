@@ -2,7 +2,6 @@
 title: Validation et contrôle qualité
 description: A guide in my new Starlight docs site.
 ---
-# Validation et contrôle qualité
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

@@ -2,7 +2,6 @@
 title: Partager des blocs d\'information atomiques avec les *conref*
 description: A guide in my new Starlight docs site.
 ---
-# Partager des blocs d\'information atomiques avec les *conref*
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

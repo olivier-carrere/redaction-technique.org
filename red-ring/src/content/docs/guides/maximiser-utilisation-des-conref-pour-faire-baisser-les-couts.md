@@ -2,7 +2,6 @@
 title: Maximiser l\'utilisation des *conref* pour faire baisser les coûts
 description: A guide in my new Starlight docs site.
 ---
-# Maximiser l\'utilisation des *conref* pour faire baisser les coûts
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

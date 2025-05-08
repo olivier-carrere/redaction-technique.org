@@ -2,7 +2,6 @@
 title: Style rédactionnel
 description: A guide in my new Starlight docs site.
 ---
-# Style rédactionnel
 
 Puisqu\'il s\'agissait d\'un projet de communication interne, j\'ai pu
 adopter un style rédactionnel décontracté. J\'ai cependant veillé à ne

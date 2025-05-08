@@ -2,7 +2,6 @@
 title: Insérer automatiquement des données dans un fichier DITA XML
 description: A guide in my new Starlight docs site.
 ---
-# Insérer automatiquement des données dans un fichier DITA XML
 
 Nous voulons automatiser la génération du fichier DITA suivant :
 

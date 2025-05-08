@@ -2,7 +2,6 @@
 title: Documents monolithiques ou modulaires
 description: A guide in my new Starlight docs site.
 ---
-# Documents monolithiques ou modulaires
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

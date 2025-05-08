@@ -2,7 +2,6 @@
 title: Fichiers binaires ou texte
 description: A guide in my new Starlight docs site.
 ---
-# Fichiers binaires ou texte
 
 Les formats sources sont des formats binaires ou texte.
 

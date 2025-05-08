@@ -2,7 +2,6 @@
 title: Quel référentiel pour le travail de groupe ?
 description: A guide in my new Starlight docs site.
 ---
-# Quel référentiel pour le travail de groupe ?
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

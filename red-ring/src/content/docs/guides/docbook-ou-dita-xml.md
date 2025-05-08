@@ -2,7 +2,6 @@
 title: DocBook ou DITA XML ?
 description: A guide in my new Starlight docs site.
 ---
-# DocBook ou DITA XML ?
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

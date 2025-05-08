@@ -2,7 +2,6 @@
 title: Les répertoires réseau partagés - peu adaptés au travail de groupe
 description: A guide in my new Starlight docs site.
 ---
-# Les répertoires réseau partagés - peu adaptés au travail de groupe
 
 Les fichiers partagés par une équipe de sont souvent stockés dans un
 répertoire partagé sur le réseau.

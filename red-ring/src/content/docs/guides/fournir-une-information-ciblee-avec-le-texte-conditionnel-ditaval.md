@@ -2,7 +2,6 @@
 title: Fournir une information ciblée avec le texte conditionnel ditaval
 description: A guide in my new Starlight docs site.
 ---
-# Fournir une information ciblée avec le texte conditionnel ditaval
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
