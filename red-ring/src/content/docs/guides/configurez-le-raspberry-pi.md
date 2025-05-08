@@ -1,8 +1,6 @@
 ---
+title: Configurez le Raspberry Pi 3
 ---
----
-Configurez le Raspberry Pi 3 \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
-:::
 
 **Prérequis**
 

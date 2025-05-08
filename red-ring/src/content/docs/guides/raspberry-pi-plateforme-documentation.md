@@ -1,9 +1,6 @@
 ---
+title: Le Raspberry Pi 3 en tant que plateforme de documentation
 ---
----
-Le Raspberry Pi 3 en tant que plateforme de documentation
-===================================================
-:::
 
 Faut-il une débauche de puissance pour générer une documentation
 professionnelle ? Avec son unique giga-octet de mémoire vive et son
