@@ -1,17 +1,9 @@
 ---
-title: Cas concret : documentation de NuFirewall
+title: Cas concret - documentation de NuFirewall
 description: A guide in my new Starlight docs site.
 ---
 # Cas concret : documentation de NuFirewall
 
-La documentation de [NuFirewall](), qui a été perçue par la presse comme
-[un point fort du produit](), a été réalisée sous .
+La documentation de [NuFirewall](), qui a été perçue par la presse comme [un point fort du produit](), a été réalisée sous .
 
-Si je n\'avais pas utilisé un format qui favorise au maximum la
-réutilisation de l\'information, je n\'aurais pas autant pu me consacrer
-à l\'essentiel : le contenu.
-
-::: {.toctree hidden=""}
-partager-des-blocs-information-atomiques-avec-les-conref
-fournir-une-information-ciblee-avec-le-texte-conditionnel-ditaval
-:::
+Si je n\'avais pas utilisé un format qui favorise au maximum la réutilisation de l\'information, je n\'aurais pas autant pu me consacrer à l\'essentiel : le contenu.

@@ -1,5 +1,5 @@
 ---
-title: DITA Open Toolkit : afficher les références croisées dans les PDF
+title: DITA Open Toolkit - afficher les références croisées dans les PDF
 description: A guide in my new Starlight docs site.
 ---
 # DITA Open Toolkit : afficher les références croisées dans les PDF

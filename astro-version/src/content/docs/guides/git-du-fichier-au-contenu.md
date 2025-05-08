@@ -1,5 +1,5 @@
 ---
-title: Git : du fichier au contenu
+title: Git - du fichier au contenu
 description: A guide in my new Starlight docs site.
 ---
 # Git : du fichier au contenu
