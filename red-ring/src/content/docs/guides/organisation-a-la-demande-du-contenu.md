@@ -7,7 +7,7 @@ title: Organisation à la demande du contenu
 
 Les briques d\'information peuvent être assemblées à la demande dans des
 structures de table des matières externes, les *ditamap*.
-:::
+
 
 L\'organisation de l\'information sous DITA XML n\'est pas figée. Les
 briques peuvent être organisées dans différentes structures

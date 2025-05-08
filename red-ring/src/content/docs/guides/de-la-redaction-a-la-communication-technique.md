@@ -11,7 +11,7 @@ pour sélectionner, évaluer et utiliser une solution de haute
 technologie. Au sein de l\'entreprise, il est l\'interface entre les
 services R&D et marketing. À l\'extérieur, il crée le dialogue entre
 l\'entreprise et ses différents publics.
-:::
+
 
 La est souvent réduite à la rédaction technique. La rédaction technique
 est destinée à fournir la documentation des produits, et intervient en

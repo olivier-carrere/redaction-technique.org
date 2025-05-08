@@ -13,4 +13,4 @@ les-repertoires-reseau-partages-peu-adaptes-au-travail-de-groupe
 les-systemes-de-gestion-de-versions-rustiques-mais-fiables
 les-cms-le-workflow-en-prime-mais-une-fiabilite-a-tester
 base-de-donnees-sql un-referentiel-unique
-:::
+

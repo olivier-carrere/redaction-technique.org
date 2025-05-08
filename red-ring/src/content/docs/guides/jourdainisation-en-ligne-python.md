@@ -15,7 +15,7 @@ Voici le code du script, qui repose sur le *microframework* web
 
 ::: {.literalinclude language="python3" caption=""}
 code/word_switch_web.py
-:::
+
 
 Il aurait été amusant de jouer avec les méthodes de liste comme
 ci-dessous, mais cela aurait nécessité de supprimer par la suite les
@@ -38,24 +38,24 @@ et de sortie, basés sur \[Jinja\](<http://jinja.pocoo.org/> :
 
 ::: {.literalinclude language="html" caption=""}
 code/templates/base.html
-:::
+
 
 ::: {.literalinclude language="html" caption=""}
 code/templates/entry.html
-:::
+
 
 ::: {.literalinclude language="html" caption=""}
 code/templates/results.html
-:::
+
 
 Et enfin, la feuille de style CSS :
 
 ::: {.literalinclude language="css" caption=""}
 code/static/form.css
-:::
+
 
 ::: seealso
 -   `sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers`{.interpreted-text
     role="ref"}
 -   `expressions-regulieres-python`{.interpreted-text role="ref"}
-:::
+

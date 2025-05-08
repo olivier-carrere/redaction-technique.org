@@ -41,7 +41,7 @@ illimitées.
 html
 
 **Notes**
-:::
+
 
 [^1]: Dans le cas d\'une photo, le format cible est le format
     \[JPEG\](<http://fr.wikipedia.org/wiki/Jpeg> qui est utilisé pour

@@ -50,7 +50,7 @@ de\[LaTeX\]([https://www.latex-project.org/\\](https://www.latex-project.org/\)
 :::: note
 ::: title
 Note
-:::
+
 
 Les fervents du *WYSIWYG* se tourneront avec profit vers
 \[Gummi\](<https://github.com/alexandervdm/gummi>. Il s\'agit de *What

@@ -12,7 +12,7 @@ film en 3D : le verre gauche masque une moitié de l\'image, le verre
 droit en masque l\'autre moitié. Mais seul le rédacteur technique
 dispose de lunettes 3D et a une vision complète de l\'information
 contenue dans le projet DITA XML.
-:::
+
 
 Les destinataires de l\'information disposent de lunettes avec deux
 verres gauches ou deux verres droits. Ils ne voient donc qu\'une partie
@@ -64,7 +64,7 @@ Vous pouvez utiliser la structure suivante :
 :::: attention
 ::: title
 Attention
-:::
+
 
 Une clé de filtrage mal positionnée peut entraîner une erreur de
 compilation. En effet, si le code non filtré est conforme au schéma XSD

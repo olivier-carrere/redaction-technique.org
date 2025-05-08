@@ -36,4 +36,4 @@ Nous voulons automatiser la génération du fichier DITA suivant :
     role="ref"}
 -   `inserer-automatiquement-des-donnees-sql-dans-un-fichier-restructuredtext`{.interpreted-text
     role="ref"}
-:::
+

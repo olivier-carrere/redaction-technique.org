@@ -48,7 +48,7 @@ console, c\'est par ici !
 ::: seealso
 \[Being a Techie
 Writer\](<http://techwhirl.com/techie-writer-series-part-i-being-a-techie-writer/>
-:::
+
 
 ::: {.toctree hidden=""}
 jourdainisation-en-ligne-python raspberry-pi-plateforme-documentation
@@ -60,4 +60,4 @@ creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja
 inserer-automatiquement-des-donnees-dans-un-fichier-restructuredtext
 inserer-automatiquement-des-donnees-dans-un-fichier-dita-xml
 inserer-automatiquement-des-donnees-sql-dans-un-fichier-restructuredtext
-:::
+

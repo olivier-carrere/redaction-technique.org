@@ -73,4 +73,4 @@ Vous minimisez ainsi le risque d\'erreurs et l\'effort de mise à jour.
     role="ref"}
 -   `inserer-automatiquement-des-donnees-sql-dans-un-fichier-restructuredtext`{.interpreted-text
     role="ref"}
-:::
+

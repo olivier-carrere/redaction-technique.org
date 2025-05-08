@@ -79,17 +79,17 @@ conflits entre les *commits* ou les branches.
 
 ::: seealso
 -   `git-du-fichier-au-contenu`{.interpreted-text role="ref"}
-:::
+
 
 ::: only
 html
 
 **Notes**
-:::
+
 
 ::: {.toctree hidden=""}
 utiliser-les-branches-des-systemes-de-gestion-de-sources
-:::
+
 
 [^1]: En cas d\'incident réseau, l\'utilisateur est averti que la
     transaction destinée à placer le fichier modifié sur le dépôt a

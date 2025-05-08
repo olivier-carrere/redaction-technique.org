@@ -32,4 +32,4 @@ fournit un niveau de qualité constant, adapté aux buts de l\'entreprise.
 documentation microservices definition-du-projet
 collecte-de-l-information creation-du-contenu format-source referentiel
 validation-et-controle-qualite traduction format-cible livraison
-:::
+

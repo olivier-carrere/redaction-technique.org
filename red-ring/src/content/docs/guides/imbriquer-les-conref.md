@@ -11,7 +11,7 @@ ne pas trop imbriquer les
 \[conref\](<http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html>.
 Un seul niveau d\'imbrication (un *conref* imbriqué dans un autre) me
 semble le seuil au-delà duquel le contenu peut vite devenir ingérable.
-:::
+
 
 Dans l\'exemple ci-dessous, le *conref* source *see-admin-guide*
 contient le *conref* cible *admin-guide-title* :

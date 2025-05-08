@@ -10,7 +10,7 @@ techniques : des supports de rédaction technique différents, tels
 qu\'une aide en ligne et un manuel imprimé, doivent-ils proposer un
 contenu radicalement différent ou peuvent-ils être générés à partir du
 même contenu source ?
-:::
+
 
 Les contraintes de productivité et la réduction des coûts aidant, le
 débat a été tranché en faveur du *single-sourcing*. Le gain qualitatif,

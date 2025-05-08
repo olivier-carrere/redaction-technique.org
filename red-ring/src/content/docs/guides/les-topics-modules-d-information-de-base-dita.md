@@ -12,7 +12,7 @@ XML. Chaque *topic* a un titre et un corps de texte. Il ne traite que
 d\'un seul sujet. Il appartient donc au rédacteur technique de se baser
 sur la modularité proposée par DITA XML pour bien structurer
 l\'information.
-:::
+
 
 Les *topics* sont sémantiquement typés. Il existe idéalement un type de
 *topic* par type d\'information. DITA XML propose par défaut des
@@ -42,6 +42,6 @@ mécanisme *Xinclude* proposé par DocBook.
 html
 
 **Notes**
-:::
+
 
 [^1]: Pas au sens XPath.

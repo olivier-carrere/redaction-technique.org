@@ -14,7 +14,7 @@ photographie, le format source est le format
 généré par l\'appareil photo, et sur lequel les photographes
 professionnels préféreront apporter les retouches, et le format cible,
 le format JPEG.
-:::
+
 
 Les traitements de texte nous ont déshabitués à distinguer le fond de la
 forme. Mais confondre les deux entraîne beaucoup d\'erreurs et de perte
@@ -146,11 +146,11 @@ nombre limité de contextes.
 html
 
 **Notes**
-:::
+
 
 ::: {.toctree hidden=""}
 documents-monolithiques-ou-modulaires fichiers-binaires-ou-texte
-:::
+
 
 [^1]: Si le rédacteur technique met lui-même en page ses documents, il
     change de rôle lorsqu\'il effectue cette opération.

@@ -60,4 +60,4 @@ title: Créer des documents différents à partir des mêmes sources ReST (texte
     role="ref"}
 -   `creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-objet-texte-conditionnel`{.interpreted-text
     role="ref"}
-:::
+

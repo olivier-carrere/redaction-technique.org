@@ -9,7 +9,7 @@ Les formats structurés favorisent la création de documents minimalistes,
 complets et cohérents. Ils permettent au rédacteur technique de se
 concentrer sur le contenu et d\'améliorer l\'expérience utilisateur et
 l\'utilisabilité de la documentation technique.
-:::
+
 
 Les informations contenues dans un document technique peuvent être
 catégorisées selon leur sens. Par défaut, DITA XML propose trois types
@@ -100,4 +100,4 @@ Cohérentes
 ::: {.toctree hidden=""}
 docbook-ou-dita-xml migration-de-framemaker-vers-dita-xml
 migrer-de-framemaker-vers-dita-xml
-:::
+

@@ -26,4 +26,4 @@ Pour les plus curieux, il existe \[6
 manières\](<https://www.robertdickau.com/stampfolding.html> de plier
 cette brochure. Je me suis épargné des essais fastidieux en utilisant la
 [classe de documents LaTeX leaflet]().
-:::
+

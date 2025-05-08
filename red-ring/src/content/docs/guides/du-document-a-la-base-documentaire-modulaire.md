@@ -11,7 +11,7 @@ de nombreux documents, sous des formats hétérogènes. Ceci se traduit par
 des doublons, des incohérences, un coût de mise à jour et de traduction
 élevé, et des retards de livraison. Le rédacteur technique dispose
 cependant d\'autres modèles, plus efficaces.
-:::
+
 
 Le format de rédaction structurée DITA XML propose de passer du modèle
 du livre à celui du de la base documentaire modulaire. Le contenu
@@ -43,4 +43,4 @@ organisation-a-la-demande-du-contenu
 le-single-sourcing-un-format-source-plusieurs-formats-cibles
 les-topics-modules-d-information-de-base-dita
 gerer-son-contenu-dita-xml-avec-ou-sans-cms
-:::
+

@@ -5,7 +5,7 @@ title: Mener un projet de bout en bout
 ::: sidebar
 **`fa-history`{.interpreted-text role="awesome"} Modifications
 récentes**
-:::
+
 
 Il est assez rare, dans le cadre professionnel, de pouvoir mener un
 projet de (quasiment) A à Z, de la conception à la communication, en
@@ -210,7 +210,7 @@ Pour mettre à jour votre dépôt Gitlab :
 
     Cette opération devrait être nettement plus rapide que le clonage
     initial.
-:::
+
 
 Pour la synchronisation entre le serveur et ma copie locale, je me suis
 tourné vers \[LFTP\](<https://lftp.yar.ru/> :
@@ -224,7 +224,7 @@ $ lftp ftp://user:password@ftpaccount -e \
 :::: note
 ::: title
 Note
-:::
+
 
 Pour ignorer les différences de permissions sur les fichiers, j\'ai au
 préalable lancé la commande suivante sur mon dépôt local :
@@ -320,7 +320,7 @@ Pour les plus curieux, il existe \[6
 manières\](<https://www.robertdickau.com/stampfolding.html> de plier
 cette brochure. Je me suis épargné des essais fastidieux en utilisant la
 [classe de documents LaTeX leaflet]().
-:::
+
 
 ## LaTeX
 
@@ -372,7 +372,7 @@ de\[LaTeX\]([https://www.latex-project.org/\\](https://www.latex-project.org/\)
 :::: note
 ::: title
 Note
-:::
+
 
 Les fervents du *WYSIWYG* se tourneront avec profit vers
 \[Gummi\](<https://github.com/alexandervdm/gummi>. Il s\'agit de *What

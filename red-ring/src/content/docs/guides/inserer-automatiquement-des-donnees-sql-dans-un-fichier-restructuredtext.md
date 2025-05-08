@@ -72,4 +72,4 @@ PDF, HTML ou autre.
     role="ref"}
 -   `inserer-automatiquement-des-donnees-dans-un-fichier-restructuredtext`{.interpreted-text
     role="ref"}
-:::
+

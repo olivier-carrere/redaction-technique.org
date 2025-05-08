@@ -30,7 +30,7 @@ title: Gérez les versions de votre documentation
 :::: note
 ::: title
 Note
-:::
+
 
 -   Vos modifications sont purement locales et ne sont pas appliquées
     sur le dépot distant GitHub.

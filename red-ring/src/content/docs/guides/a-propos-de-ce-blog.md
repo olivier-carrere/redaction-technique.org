@@ -152,10 +152,10 @@ suivant varie selon le format cible :
     role="ref"}
 -   `creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-conditionnel`{.interpreted-text
     role="ref"}
-:::
+
 
 ::: {.toctree hidden=""}
 diminuer-les-couts-ameliorer-la-satisfaction-client
 redaction-technique-un-processus-industriel format-structure-dita-xml
 le-coin-du-geek contact
-:::
+

@@ -11,7 +11,7 @@ marketing, mais dont la fonction se comprend mieux avec l\'acronyme
 électronique de documents)`{.interpreted-text role="abbr"}, apportent
 des notions de *workflow* et de gestion des liens qui s\'avèrent
 précieuses lorsque l\'on gère des documents modulaires.
-:::
+
 
 S\'ils utilisent des formats monolithiques tels que FrameMaker, les
 rédacteurs techniques peuvent utiliser des Content Management System
@@ -48,7 +48,7 @@ associée à une procédure de sauvegarde et de restauration éprouvée.
 html
 
 **Notes**
-:::
+
 
 [^1]: À chaque dépôt du fichier sur le Content Management System, et non
     à chaque enregistrement de son travail par le rédacteur technique.

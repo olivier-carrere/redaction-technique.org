@@ -27,4 +27,4 @@ tous les acteurs de la société, surtout si le turn-over y est important.
 
 ::: seealso
 -   `git-du-fichier-au-contenu`{.interpreted-text role="ref"}
-:::
+

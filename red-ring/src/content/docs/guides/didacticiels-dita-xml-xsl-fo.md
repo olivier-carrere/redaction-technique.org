@@ -8,7 +8,7 @@ title: Didacticiels DITA XML et XSL-FO
 Les didacticiels suivants aideront le rédacteur technique à mettre en
 place et à utiliser une chaîne de création et de publication DITA XML
 libre.
-:::
+
 
 DITA XML est un langage de rédaction structurée qui permet de créer des
 documents sans se soucier de leur aspect final sur différents supports.
@@ -40,4 +40,4 @@ dita-open-toolkit-afficher-les-references-croisees-dans-les-pdf
 afficher-un-index-dans-un-pdf-mais-pas-sous-dita-open-toolkit
 utiliser-ide-nxml-pour-dita-xml
 accelerer-sa-saisie-avec-le-mode-predictive-pour-emacs
-:::
+

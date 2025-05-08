@@ -45,11 +45,11 @@ les bénéfices de ce choix deviennent manifestes.
 html
 
 **Notes**
-:::
+
 
 ::: seealso
 -   `git-du-fichier-au-contenu`{.interpreted-text role="ref"}
-:::
+
 
 [^1]: Le rédacteur technique peut ainsi voir où un élément
     d\'information est inclus ; lors de la mise à jour de cet élément,

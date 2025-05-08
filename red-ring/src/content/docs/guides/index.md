@@ -9,7 +9,7 @@ discours.
 ::: sidebar
 **`fa-history`{.interpreted-text role="awesome"} Modifications
 récentes**
-:::
+
 
 Nous, rédacteurs techniques, sommes comme des intervenants dispensant
 une formation dans une salle plongée dans le noir. N\'ayant qu\'une idée
@@ -158,4 +158,4 @@ diminuer-les-couts-ameliorer-la-satisfaction-client
 redaction-technique-un-processus-industriel format-structure-dita-xml
 mener-un-projet-de-bout-en-bout le-coin-du-geek a-propos-de-ce-blog
 contact
-:::
+

@@ -36,12 +36,12 @@ utilisateurs y auraient déjà beaucoup gagné, respectivement en :
 html
 
 **Notes**
-:::
+
 
 ::: {.toctree hidden=""}
 restructuration-du-contenu-framemaker
 table-de-conversion-framemaker-vers-dita-xml
-:::
+
 
 [^1]: LibreOffice propose une fonction d\'enregistrement au format
     DocBook, mais très imparfaite ; le XML qu\'elle produit peut servir

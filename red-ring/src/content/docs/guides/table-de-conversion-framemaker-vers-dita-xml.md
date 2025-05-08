@@ -33,7 +33,7 @@ plus simple que sous FrameMaker.
 html
 
 **Notes**
-:::
+
 
 [^1]: Bien que ce processus doive être rapide, je vous conseille de le
     faire juste après une livraison d\'une nouvelle version du document

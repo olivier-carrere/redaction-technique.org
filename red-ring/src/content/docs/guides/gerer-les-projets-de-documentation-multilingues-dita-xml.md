@@ -94,7 +94,7 @@ adapté, ou inspirer un nouveau script.
 :::: attention
 ::: title
 Attention
-:::
+
 
 Ce script est fourni sans garantie. Avant toute exécution de ce script,
 effectuez une sauvegarde de l\'ensemble de votre projet DITA XML,

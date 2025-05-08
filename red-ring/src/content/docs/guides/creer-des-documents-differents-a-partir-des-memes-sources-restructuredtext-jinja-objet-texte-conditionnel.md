@@ -290,4 +290,4 @@ blocs de texte selon leurs attributs.
     role="ref"}
 -   `creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-texte-conditionnel`{.interpreted-text
     role="ref"}
-:::
+

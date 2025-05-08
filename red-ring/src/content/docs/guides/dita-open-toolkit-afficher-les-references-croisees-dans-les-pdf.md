@@ -10,7 +10,7 @@ technique bien structurée. Elles permettent à l\'utilisateur de naviguer
 facilement dans les briques d\'information et sont un élément crucial de
 l\'utilisabilité du document final. DITA Open Toolkit les gère très
 bien, à condition d\'effectuer quelques réglages.
-:::
+
 
 Vous avez placé des balises *related-links* correctement formatées dans
 vos fichiers de contenu DITA XML, ou mieux, une
@@ -40,7 +40,7 @@ $ ant -Dargs.input=samples/sequence.ditamap -Doutput.dir=out/ \
 html
 
 **Notes**
-:::
+
 
 [^1]: Pour des raisons de « décontextualisation », et pour se donner la
     possibilité de réutiliser le contenu ailleurs, les références

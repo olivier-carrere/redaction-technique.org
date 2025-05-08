@@ -53,7 +53,7 @@ technique.
 html
 
 **Notes**
-:::
+
 
 [^1]: Dans la pratique, un schéma XSD.
 

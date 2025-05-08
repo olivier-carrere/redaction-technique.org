@@ -13,7 +13,7 @@ formats PDF, HTML, ou autre.
 :::: note
 ::: title
 Note
-:::
+
 
 Les buts de ce billet sont de :
 
@@ -28,9 +28,9 @@ Les buts de ce billet sont de :
     parfois au détriment de l\'élégance technique.
 ::::
 
-:::
+
 Configurez le Raspberry Pi 3 \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
-:::
+
 
 **Prérequis**
 
@@ -211,7 +211,7 @@ title: Gérez les versions de votre documentation
 :::: note
 ::: title
 Note
-:::
+
 
 -   Vos modifications sont purement locales et ne sont pas appliquées
     sur le dépot distant GitHub.

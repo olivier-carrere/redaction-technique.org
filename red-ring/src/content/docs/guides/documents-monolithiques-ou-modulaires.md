@@ -7,7 +7,7 @@ title: Documents monolithiques ou modulaires
 
 Le format source peut reposer sur des fichiers monolithiques ou sur des
 grappes de fichiers modulaires.
-:::
+
 
 Les fichiers monolithiques (par exemple MS Word, LibreOffice ou
 FrameMaker) centralisent tout le contenu dans un seul fichier, facile à
@@ -39,4 +39,4 @@ souplesse.
 
 ::: {.toctree hidden=""}
 qu-est-ce-qu-un-module-d-information
-:::
+

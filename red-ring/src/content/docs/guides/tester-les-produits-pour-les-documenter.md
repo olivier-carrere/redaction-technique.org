@@ -10,7 +10,7 @@ clients de l\'entreprise s\'il se contente de mettre en forme des
 informations glanées auprès des différents acteurs de la société. Jouant
 le rôle de Candide, il est le premier représentant des utilisateurs et
 se doit de tester les produits dans des conditions proches des leurs.
-:::
+
 
 Un conte chinois narre comment des aveugles se sont retrouvés confrontés
 à un éléphant. Aucun d\'entre eux, et pour cause, n\'ayant une

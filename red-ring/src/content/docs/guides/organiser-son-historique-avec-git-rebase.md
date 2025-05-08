@@ -9,7 +9,7 @@ Git est d\'un abord déroutant. Ses *workflows* s\'appliquent à du
 contenu plutôt qu\'à des fichiers. Résultat : le travail de groupe et la
 gestion de différentes versions concurrentes d\'un même contenu
 deviennent beaucoup plus simples.
-:::
+
 
 Git effectue des *commits* atomiques : il applique des lots de
 modifications sur un contenu souvent réparti sur plusieurs fichiers, au
@@ -70,7 +70,7 @@ par exemple.
 :::: attention
 ::: title
 Attention
-:::
+
 
 La commande *rebase* est potentiellement destructive ; veillez à
 sauvegarder votre espace de travail, répertoire *.git* compris, avant de
@@ -94,7 +94,7 @@ temps* de Git, puis fusionnés.
 :::: note
 ::: title
 Note
-:::
+
 
 Si vous avez effectué simultanément les deux tâches sur un ou plusieurs
 fichiers, pas de panique : grâce à la commande *git add -p* vous pouvez
@@ -120,7 +120,7 @@ sur le dépôt central.
 :::: important
 ::: title
 Important
-:::
+
 
 Moins vous réorganiserez vos *commits* (surtout chronologiquement), plus
 le risque de devoir corriger manuellement des conflits sera faible.

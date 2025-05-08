@@ -11,10 +11,10 @@ phrase, selon le fameux exemple du *Bourgeois gentilhomme* :
 
 ::: {.literalinclude language="python3"}
 code/word_switch.py
-:::
+
 
 ::: seealso
 -   `jourdainisation-en-ligne-python`{.interpreted-text role="ref"}
 -   `sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers`{.interpreted-text
     role="ref"}
-:::
+

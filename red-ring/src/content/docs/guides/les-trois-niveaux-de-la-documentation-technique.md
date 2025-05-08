@@ -50,4 +50,4 @@ résultat optimal.
 
 ::: {.toctree hidden=""}
 un-index-est-il-utile-dans-un-pdf
-:::
+

@@ -8,7 +8,7 @@ title: Utiliser le nœud XML de plus bas niveau
 Le rédacteur technique doit utiliser comme source du
 \[conref\](<http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html>
 le nœud DITA XML de plus bas niveau contenant l\'information à partager.
-:::
+
 
 Le but des *conref* étant de gérer des blocs d\'information de faibles
 dimensions, il est logique de les manipuler au niveau de la plus petite

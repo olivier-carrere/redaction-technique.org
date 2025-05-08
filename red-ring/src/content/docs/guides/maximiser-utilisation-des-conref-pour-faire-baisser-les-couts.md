@@ -10,7 +10,7 @@ Recourir aux
 est le meilleur moyen dont dispose le rédacteur technique pour faire
 baisser spectaculairement les coûts et les délais de publication de son
 contenu DITA XML, surtout pour les documents multilingues.
-:::
+
 
 De par la nature des informations qu\'elles contiennent, les sections de
 type *task* ont un taux plus élevé de réutilisation du contenu que
@@ -104,7 +104,7 @@ produit.
 :::: note
 ::: title
 Note
-:::
+
 
 Ne croyez pas qu\'il s\'agit là d\'une contrainte spécifiquement induite
 par la modularisation poussée du contenu. Pour avoir fait une école de

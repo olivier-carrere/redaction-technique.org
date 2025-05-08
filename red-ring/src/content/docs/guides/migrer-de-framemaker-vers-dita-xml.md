@@ -63,7 +63,7 @@ vous pouvez par exemple utiliser des scripts Perl du type :
 :::: attention
 ::: title
 Attention
-:::
+
 
 Ne lancez ce type de scripts que sur une copie de vos fichiers et non
 sur les fichiers originaux.

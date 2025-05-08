@@ -65,4 +65,4 @@ dans le `Makefile`{.interpreted-text role="file"}.
     role="ref"}
 -   `creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-objet-texte-conditionnel`{.interpreted-text
     role="ref"}
-:::
+

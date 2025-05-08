@@ -10,7 +10,7 @@ fichiers PDF le texte *Exemple :* devant le titre d\'un exemple contenu
 entre balises DITA XML `<example>`{.interpreted-text role="samp"}. La
 syntaxe \[XSL-FO\](<http://fr.wikipedia.org/wiki/XSL-FO> offre cependant
 cette possibilité.
-:::
+
 
 Supposons que le code source d\'un de vos fichiers DITA XML soit le
 suivant :

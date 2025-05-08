@@ -64,7 +64,7 @@ Pour mettre à jour votre dépôt Gitlab :
 
     Cette opération devrait être nettement plus rapide que le clonage
     initial.
-:::
+
 
 Pour la synchronisation entre le serveur et ma copie locale, je me suis
 tourné vers \[LFTP\](<https://lftp.yar.ru/> :
@@ -78,7 +78,7 @@ $ lftp ftp://user:password@ftpaccount -e \
 :::: note
 ::: title
 Note
-:::
+
 
 Pour ignorer les différences de permissions sur les fichiers, j\'ai au
 préalable lancé la commande suivante sur mon dépôt local :

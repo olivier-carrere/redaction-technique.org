@@ -14,7 +14,7 @@ contenu d\'entreprise sous un seul format, il semble naturel de
 capitaliser les efforts fournis sur la chaîne de création et de
 publication DocBook et de sélectionner ce format. C\'est pourtant se
 priver des gains de productivité spectaculaires offerts par DITA XML.
-:::
+
 
 Il est facile de générer du DocBook à partir de DITA XML. DITA Open
 Toolkit propose par défaut ce format cible, au même titre que le PDF ou
@@ -87,7 +87,7 @@ anticiper sur les nouveaux besoins.
 html
 
 **Notes**
-:::
+
 
 [^1]: Pour être aussi exact que possible, vous pouvez enregistrer une
     image JPEG au format TIFF ; mais cette image aura une qualité égale

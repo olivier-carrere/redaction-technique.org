@@ -10,7 +10,7 @@ DITA XML plus petits qu\'une section, il doit les partager au niveau des
 fichiers de contenu *dita* et non dans les structures de table des
 matières *ditamap*, grâce au mécanisme
 \[conref\](<http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html>.
-:::
+
 
 Le principe des *conref* est simple : lorsqu\'un *conref* est mentionné
 au niveau d\'un nœud XML donné, tout le contenu du nœud cible est
@@ -41,4 +41,4 @@ utiliser-le-noeud-xml-de-plus-bas-niveau
 prendre-en-compte-les-contraintes-de-traduction imbriquer-les-conref
 maximiser-utilisation-des-conref-pour-faire-baisser-les-couts
 proteger-les-informations-confidentielles
-:::
+

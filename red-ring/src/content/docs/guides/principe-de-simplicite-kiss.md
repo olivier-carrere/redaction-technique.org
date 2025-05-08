@@ -39,7 +39,7 @@ documente.
 html
 
 **Notes**
-:::
+
 
 [^1]: Même si les formats qui distinguent le contenu de la mise en page
     sont dans leur principe plus aptes à la mise en œuvre de la
