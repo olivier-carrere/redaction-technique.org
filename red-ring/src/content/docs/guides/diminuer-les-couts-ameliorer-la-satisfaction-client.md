@@ -5,7 +5,7 @@ title: Documentation technique - diminuer les coûts, améliorer la satisfactio
 La documentation technique, c\'est comme une ampoule : une ampoule basse
 consommation demande un investissement plus important en début de cycle
 de vie, mais a rapidement un coût plus faible.
-
+:::
 
 Comme une ampoule basse consommation, un processus de rédaction
 technique industriel diminue les coûts. Il réduit également le *time to
@@ -26,7 +26,7 @@ Coût moindre
 Qualité améliorée
 
 -   briques d\'information facilement optimisables
--   cohérence parfaite du contenu d\'entreprise
+    -   cohérence parfaite du contenu d\'entreprise
 
 Une documentation industrielle repose sur :
 
@@ -45,9 +45,4 @@ technique compétent, mauvaise exploitation du capital immatériel,
 diminution de la satisfaction client, augmentation des coûts de support,
 etc.) peuvent être considérables. Pourtant, les solutions et les
 compétences existent.
-
-::: {.toctree hidden=""}
-de-la-redaction-a-la-communication-technique
-les-trois-niveaux-de-la-documentation-technique
-principe-de-simplicite-kiss formats-et-outils
 
