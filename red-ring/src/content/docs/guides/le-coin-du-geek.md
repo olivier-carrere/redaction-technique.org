@@ -3,8 +3,8 @@ title: Le coin du geek
 ---
 
 Je suis un rédacteur technique à tendance *geek*. Après une grande
-frustration ressentie lors de l\'utilisation d\'outils tels que
-FrameMaker ou Flare, j\'ai progressivement eu envie de voir ce qui se
+frustration ressentie lors de l'utilisation d'outils tels que
+FrameMaker ou Flare, j'ai progressivement eu envie de voir ce qui se
 passait « sous le capot » et de comprendre ce qui se cachait derrière
 les interfaces graphiques.
 
@@ -19,31 +19,31 @@ de caractéristiques qui se reflètent dans la pratique de mon métier :
   rationnalisation       processus pour minimiser la quantité de travail
                          inutile.
 
-  Capacité d\'adaptation Vision du changement comme opportunité
-                         d\'acquérir et d\'utiliser de nouvelles
+  Capacité d'adaptation Vision du changement comme opportunité
+                         d'acquérir et d'utiliser de nouvelles
                          connaissances.
 
   Forte autonomie de     Créativité dans le choix des moyens mis en œuvre
   travail                pour atteindre efficacement les objectifs.
 
-  Sens de l\'innovation  Recherche constante de nouvelles solutions (dont
+  Sens de l'innovation  Recherche constante de nouvelles solutions (dont
                          il faut cependant évaluer le coût de mise en
-                         œuvre et l\'impact humain).
+                         œuvre et l'impact humain).
 
   Goût des rapports      Préférence pour le dialogue face à face pour
   humains                éviter tout présupposé ou incompréhension.
 
   Capacité               Apprentissage « sur le tas » de formats de
-  d\'apprentissage dans  documentation, langages informatiques ou
+  d'apprentissage dans  documentation, langages informatiques ou
   des domaines variés    environnements en ligne de commande.
 
   Recherche de           Amélioration de la satisfaction client,
-  l\'excellence          minimisation de la maintenance et meilleure
+  l'excellence          minimisation de la maintenance et meilleure
                          réutilisation du contenu existant.
   -----------------------------------------------------------------------
 
-Si vous vous reconnaissez dans ce portrait et n\'avez pas peur du mode
-console, c\'est par ici !
+Si vous vous reconnaissez dans ce portrait et n'avez pas peur du mode
+console, c'est par ici !
 
 ::: seealso
 \[Being a Techie

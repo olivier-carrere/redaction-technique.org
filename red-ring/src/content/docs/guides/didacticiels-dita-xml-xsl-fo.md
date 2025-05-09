@@ -13,7 +13,7 @@ libre.
 DITA XML est un langage de rédaction structurée qui permet de créer des
 documents sans se soucier de leur aspect final sur différents supports.
 XSL-FO est un langage qui permet de réorganiser et filtrer le contenu
-XML et de lui appliquer une mise en page à l\'aide d\'une feuille de
+XML et de lui appliquer une mise en page à l'aide d'une feuille de
 style.
 
 Un ensemble de fichiers DITA XML contient tout le contenu, relatif par
@@ -26,7 +26,7 @@ dans la version PDF.
 De même, si un produit doit être fourni en marque blanche à différents
 clients, une mise en page totalement différente peu être appliquée à sa
 documentation en spécifiant simplement un autre jeu de feuilles de style
-lors de la génération du livrable. Opération qui n\'est pas envisageable
+lors de la génération du livrable. Opération qui n'est pas envisageable
 en pratique avec des solutions traditionnelles de type FrameMaker.
 
 ::: {.toctree hidden=""}

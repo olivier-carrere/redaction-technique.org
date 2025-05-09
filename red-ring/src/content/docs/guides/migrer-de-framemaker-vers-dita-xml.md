@@ -28,7 +28,7 @@ Le but de cette procédure est de :
     choisissez `Fichier`{.interpreted-text role="guilabel"} ‣
     `Importer les
     définitions d'éléments`{.interpreted-text role="guilabel"} et
-    importez les définitions d\'éléments à partir de
+    importez les définitions d'éléments à partir de
     `DITA-topic-edd.fm`{.interpreted-text role="file"}.
 8.  Répétez les trois étapes ci-dessus pour les autres types de topics
     DITA XML (*task*, *reference*, etc.), en modifiant les noms de
@@ -50,7 +50,7 @@ Le but de cette procédure est de :
     role="file"} et cliquez sur `Ajouter
     structure`{.interpreted-text role="guilabel"}.
 14. Enregistrez le fichier de contenu FrameMaker au format XML sans
-    sélectionner d\'application.
+    sélectionner d'application.
 15. Ouvrez le fichier XML généré sous un éditeur DITA XML et corrigez la
     syntaxe DITA XML. Certains aspects de cette étape sont scriptables,
     mais il faut également procéder à des opérations manuelles de
@@ -82,13 +82,13 @@ print(OUTPUT $input_scalar);
 close(OUTPUT);
 ```
 
-Vous pouvez également modulariser facilement le contenu à l\'aide des
+Vous pouvez également modulariser facilement le contenu à l'aide des
 ciseaux XML
 \[xml_split\](<http://search.cpan.org/dist/XML-Twig/tools/xml_split/xml_split>,
 ou utiliser le module Perl
 \[XML::Twig\](<http://www.xmltwig.org/xmltwig/>, ou encore ce
 *one-liner* Bash pour renommer les fichiers `.dita`{.interpreted-text
-role="file"} d\'après leur titre :
+role="file"} d'après leur titre :
 
 ``` console
 $ ack "<title‣" *.dita| sed "s# #_#g;" |

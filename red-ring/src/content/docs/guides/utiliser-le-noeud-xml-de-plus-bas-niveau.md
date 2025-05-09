@@ -7,12 +7,12 @@ title: Utiliser le nœud XML de plus bas niveau
 
 Le rédacteur technique doit utiliser comme source du
 \[conref\](<http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html>
-le nœud DITA XML de plus bas niveau contenant l\'information à partager.
+le nœud DITA XML de plus bas niveau contenant l'information à partager.
 
 
-Le but des *conref* étant de gérer des blocs d\'information de faibles
+Le but des *conref* étant de gérer des blocs d'information de faibles
 dimensions, il est logique de les manipuler au niveau de la plus petite
-structure XML encapsulant l\'information, même si cette structure, pour
+structure XML encapsulant l'information, même si cette structure, pour
 être compatible avec le schéma XSD de la section DITA XML où elle
 intervient, doit elle-même être incluse dans des structures XML plus
 grandes.
@@ -52,12 +52,12 @@ structuré comme suit :
   </taskbody>
 ```
 
-Il s\'agit maintenant de placer un ID sur une structure XML afin de
-pouvoir réutiliser le contenu de cette structure. En l\'occurrence,
-c\'est une étape unique comprenant une commande unique que vous
+Il s'agit maintenant de placer un ID sur une structure XML afin de
+pouvoir réutiliser le contenu de cette structure. En l'occurrence,
+c'est une étape unique comprenant une commande unique que vous
 souhaitez réutiliser.
 
-Il est alors préférable d\'utiliser la syntaxe suivante :
+Il est alors préférable d'utiliser la syntaxe suivante :
 
 ``` xml
 <step>
@@ -79,7 +79,7 @@ plutôt que la suivante :
 
 En effet, dans le premier cas, vous pourrez utiliser le *conref* même si
 le nœud supérieur (`<step>`{.interpreted-text role="samp"}) contient
-d\'autres nœuds que `<step>`{.interpreted-text role="samp"} (par exemple
+d'autres nœuds que `<step>`{.interpreted-text role="samp"} (par exemple
 `<info>`{.interpreted-text role="samp"}).
 
 <figure>

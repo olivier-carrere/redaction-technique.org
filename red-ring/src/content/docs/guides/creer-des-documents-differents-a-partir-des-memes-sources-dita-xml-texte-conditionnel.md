@@ -60,7 +60,7 @@ mécanisme en quelques minutes.
     ```
 
     Ce code contient des balises DITA XML contenant des valeurs
-    *audience* différentes : nous allons exclure le contenu d\'une de
+    *audience* différentes : nous allons exclure le contenu d'une de
     ces deux balises lors de la génération du fichier cible en utilisant
     la clé *audience*.
 

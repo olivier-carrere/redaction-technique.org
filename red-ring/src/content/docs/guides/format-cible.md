@@ -2,14 +2,14 @@
 title: Format cible
 ---
 
-Le format cible[^1] d\'un support de rédaction technique est celui sous
-lequel l\'audience du message y accédera. Il est différent de celui sous
+Le format cible[^1] d'un support de rédaction technique est celui sous
+lequel l'audience du message y accédera. Il est différent de celui sous
 lequel le rédacteur technique crée le contenu. Le *single-sourcing*
 permet de générer plusieurs livrables à des formats différents à partir
-d\'un même format source.
+d'un même format source.
 
 À partir des fichiers sources validés, les livrables sont générés selon
-l\'une des méthodes suivantes :
+l'une des méthodes suivantes :
 
 Totalement automatique
 
@@ -26,14 +26,14 @@ Manuelle
 :   Par exemple, plaquette marketing au format traitement de texte ou
     DITA XML mise en page sous Indesign, exportée en PDF, puis
     imprimée ; selon la fréquence de publication du document final, des
-    filtres d\'import XML peuvent également être mis en place.
+    filtres d'import XML peuvent également être mis en place.
 
-Plus le processus est automatisé, plus le risque d\'erreur est faible et
-plus la publication et la mise à jour sont aisées. L\'automatisation
+Plus le processus est automatisé, plus le risque d'erreur est faible et
+plus la publication et la mise à jour sont aisées. L'automatisation
 facilite également le *single-sourcing*, qui consiste à générer
-plusieurs livrables à des formats cibles différents à partir d\'un même
+plusieurs livrables à des formats cibles différents à partir d'un même
 format source. Un projet au format DITA XML peut ainsi être livré sous
-forme de fichier PDF, d\'aide compilée Windows, d\'aide JavaHelp, de
+forme de fichier PDF, d'aide compilée Windows, d'aide JavaHelp, de
 site en HTML, etc. Le XML offre en ce domaine des possibilités quasi
 illimitées.
 
@@ -43,9 +43,9 @@ html
 **Notes**
 
 
-[^1]: Dans le cas d\'une photo, le format cible est le format
+[^1]: Dans le cas d'une photo, le format cible est le format
     \[JPEG\](<http://fr.wikipedia.org/wiki/Jpeg> qui est utilisé pour
-    l\'affichage Web ou l\'impression et sur lequel les modifications ne
+    l'affichage Web ou l'impression et sur lequel les modifications ne
     peuvent être annulées une fois fermé le logiciel de retouches.
 
 [^2]: Ceci est automatisable par un script ; le Content Management

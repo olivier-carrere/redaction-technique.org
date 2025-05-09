@@ -32,7 +32,7 @@ DocBook
 
 :   \[DocBook\](<https://github.com/olivier-carrere/redaction-technique.org/tree/DocBook>
     est un langage de balisage XML sémantique qui offre un rapport
-    fonctionnalités/complexité aujourd\'hui peu intéressant.
+    fonctionnalités/complexité aujourd'hui peu intéressant.
 
 [^1]: Seule la version reStructuredText, à partir de laquelle cette
     version HTML est créée, est maintenue.

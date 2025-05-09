@@ -3,7 +3,7 @@ title: Créer des documents différents à partir des mêmes sources *via* Jinja
 ---
 
 Le script Python `profiling.py`{.interpreted-text role="file"}
-ci-dessous permet de profiler du contenu en *preprocessing* à l\'aide du
+ci-dessous permet de profiler du contenu en *preprocessing* à l'aide du
 puissant moteur de modèle \[Jinja\](<http://jinja.pocoo.org/> :
 
 ``` python
@@ -55,7 +55,7 @@ Utilisation :
 $ ./profiling.py electrician
 ```
 
-Il suffit maintenant d\'appeler le script avant compilation *via* Sphinx
+Il suffit maintenant d'appeler le script avant compilation *via* Sphinx
 dans le `Makefile`{.interpreted-text role="file"}.
 
 ::: seealso

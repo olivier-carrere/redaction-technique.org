@@ -5,7 +5,7 @@ title: Insérer automatiquement des données dans un fichier reStructuredText
 Supposons que vous deviez présenter 3 produits, *Dianthus*, *Geum* et
 *Prunus*, chacun déclinés dans trois versions *1.0*, *1.5* et *2.3*.
 
-Plutôt que d\'écrire les données à la main dans le fichier de contenu,
+Plutôt que d'écrire les données à la main dans le fichier de contenu,
 vous pouvez les insérer automatiquement grâce à
 \[Jinja\](<http://jinja.pocoo.org/> et Python.
 
@@ -30,7 +30,7 @@ vous pouvez les insérer automatiquement grâce à
     $ ./populate.py             
     ```
 
-    Le contenu suivant s\'affiche :
+    Le contenu suivant s'affiche :
 
     ``` rest
     Produits et versions
@@ -66,7 +66,7 @@ vous pouvez les insérer automatiquement grâce à
     - 2.3
     ```
 
-Vous minimisez ainsi le risque d\'erreurs et l\'effort de mise à jour.
+Vous minimisez ainsi le risque d'erreurs et l'effort de mise à jour.
 
 ::: seealso
 -   `inserer-automatiquement-des-donnees-dans-un-fichier-dita-xml`{.interpreted-text

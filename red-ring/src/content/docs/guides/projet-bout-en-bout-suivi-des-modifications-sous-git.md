@@ -22,7 +22,7 @@ alt="graphics/latex-historique-forme-github.png" />
 GitHub</em></figcaption>
 </figure>
 
-Voici l\'évolution d\'un extrait du PDF compilé :
+Voici l'évolution d'un extrait du PDF compilé :
 
 ![](graphics/latex-diff-pdf.png)
 

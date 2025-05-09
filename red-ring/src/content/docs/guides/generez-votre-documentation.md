@@ -50,7 +50,7 @@ Et voilà. En quelques minutes, vous avez :
     *livre électronique* dans la version EPUB, *document* dans la
     version PDF et encore autrement dans la version HTML.
 
--   Généré dans trois formats différents une documentation d\'une
+-   Généré dans trois formats différents une documentation d'une
     soixantaine de pages comprenant une quarantaine de schémas.
 
     :::: note
@@ -66,14 +66,14 @@ Et voilà. En quelques minutes, vous avez :
         moteur de *templating* \[Jinja\](<http://jinja.pocoo.org/>.
     -   Les observateurs remarqueront que la version HTML du blog
         version 1.5 ne comporte pas de table des matières dans la
-        colonne de droite. C\'est qu\'en effet, cette version
-        n\'embarque pas le patch *1032292*. Je vous laisse chercher dans
-        l\'historique Git... voire créer une branche et le
+        colonne de droite. C'est qu'en effet, cette version
+        n'embarque pas le patch *1032292*. Je vous laisse chercher dans
+        l'historique Git... voire créer une branche et le
         *cherry-picker* !
     ::::
 
 Le Raspberry Pi 3 est donc une plateforme de documentation tout à fait
-crédible... à condition de se passer, ou presque, d\'interface
+crédible... à condition de se passer, ou presque, d'interface
 graphique !
 
 Le prochain test consistera à générer la version DITA XML de ce blog.

@@ -12,7 +12,7 @@ grappes de fichiers modulaires.
 Les fichiers monolithiques (par exemple MS Word, LibreOffice ou
 FrameMaker) centralisent tout le contenu dans un seul fichier, facile à
 manier, mais qui limite le partage du contenu ; le risque de disposer
-d\'informations incohérentes ou en doublon est alors important.
+d'informations incohérentes ou en doublon est alors important.
 
 <figure>
 <img src="graphics/monolithique.svg" alt="graphics/monolithique.svg" />
@@ -23,7 +23,7 @@ monolithique</em></figcaption>
 Les grappes de fichiers modulaires (par exemple DITA XML) agrègent le
 contenu de multiples fichiers, ce qui favorise le partage et la
 réutilisation de blocs de contenu. Un tel système est difficile à mettre
-en place au niveau de toute l\'entreprise, mais devrait être la norme
+en place au niveau de toute l'entreprise, mais devrait être la norme
 pour une équipe de rédaction technique.
 
 <figure>

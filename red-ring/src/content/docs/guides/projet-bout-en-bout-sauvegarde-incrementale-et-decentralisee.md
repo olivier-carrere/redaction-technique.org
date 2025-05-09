@@ -2,16 +2,16 @@
 title: Sauvegarde incrémentale et décentralisée
 ---
 
-Comment sauvegarder le patrimoine photo de l\'association, soit les
+Comment sauvegarder le patrimoine photo de l'association, soit les
 photos et la base de données Piwigo, de manière incrémentale et
-décentralisée ? Je me suis tourné vers Git avec l\'extension LFS, qui
+décentralisée ? Je me suis tourné vers Git avec l'extension LFS, qui
 gère élégamment les fichiers binaires.
 
-J\'ai tout d\'abord fait une copie du répertoire Piwigo du serveur sur
-un disque local, puis j\'ai initialisé un dépôt Git LFS. J\'ai ensuite
+J'ai tout d'abord fait une copie du répertoire Piwigo du serveur sur
+un disque local, puis j'ai initialisé un dépôt Git LFS. J'ai ensuite
 cloné ce dépôt sur Gitlab.
 
-Ainsi, tout membre de l\'association peut créer un compte Gitlab, puis,
+Ainsi, tout membre de l'association peut créer un compte Gitlab, puis,
 après avoir reçu le mot de passe, cloner la copie de sauvegarde.
 
 ::: admonition
@@ -19,8 +19,8 @@ Clonage du dépôt Gitlab
 
 *La procédure suivante était incluse dans une première version du
 dépliant LaTeX. Elle est donc minimaliste, ne serait-ce que pour des
-raisons d\'espace disponible sur la version imprimée. Je l\'ai par la
-suite supprimée du dépliant, car elle risquait plutôt d\'effrayer son
+raisons d'espace disponible sur la version imprimée. Je l'ai par la
+suite supprimée du dépliant, car elle risquait plutôt d'effrayer son
 lectorat, majoritairement technophobe.*
 
 Sous Windows, vous pouvez installer \[Git for
@@ -80,7 +80,7 @@ $ lftp ftp://user:password@ftpaccount -e \
 Note
 
 
-Pour ignorer les différences de permissions sur les fichiers, j\'ai au
+Pour ignorer les différences de permissions sur les fichiers, j'ai au
 préalable lancé la commande suivante sur mon dépôt local :
 
 ``` console
@@ -88,5 +88,5 @@ $ git config core.filemode false
 ```
 ::::
 
-L\'hébergement des photos est donc centralisé, la sauvegarde,
+L'hébergement des photos est donc centralisé, la sauvegarde,
 décentralisée.

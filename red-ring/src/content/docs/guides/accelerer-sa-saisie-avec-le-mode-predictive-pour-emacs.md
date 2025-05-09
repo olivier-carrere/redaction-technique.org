@@ -3,9 +3,9 @@ title: Accélérer sa saisie avec le mode Predictive pour Emacs
 ---
 
 Ce didacticiel mode Predictive pour Emacs est destiné à vous guider dans
-la mise en place et l\'utilisation du mode Emacs d\'aide à la rédaction
-et d\'autocomplétion des mots anglais et français Predictive dans un
-environnement GNU/Linux (en l\'occurrence, Debian).
+la mise en place et l'utilisation du mode Emacs d'aide à la rédaction
+et d'autocomplétion des mots anglais et français Predictive dans un
+environnement GNU/Linux (en l'occurrence, Debian).
 
 1.  Installez make et texinfo :
 
@@ -16,7 +16,7 @@ environnement GNU/Linux (en l\'occurrence, Debian).
 2.  Téléchargez
     \[Predictive\](<http://www.dr-qubit.org/emacs.php#predictive-download>.
 
-3.  Décompressez l\'archive Predictive :
+3.  Décompressez l'archive Predictive :
 
     ``` console
     $ tar xzvf predictive-0.23.13.tar.gz

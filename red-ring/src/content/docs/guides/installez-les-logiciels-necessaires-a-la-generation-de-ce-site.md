@@ -22,7 +22,7 @@ title: Installez les logiciels nécessaires à la gestion de ce blog
 
       Emacs         Environnement de développement intégré.
 
-      Gitk          Navigateur d\'historique du logiciel de gestion de
+      Gitk          Navigateur d'historique du logiciel de gestion de
                     versions décentralisé.
 
       Inkscape      Logiciel de dessin vectoriel.
@@ -34,7 +34,7 @@ title: Installez les logiciels nécessaires à la gestion de ce blog
                     \| format PDF.
       -----------------------------------------------------------------------
 
-3.  Libérez de l\'espace disque :
+3.  Libérez de l'espace disque :
 
     ``` console
     $ sudo aptitude clean

@@ -33,7 +33,7 @@ PDF, HTML ou autre.
     code/populate-sql-rst.py
     :::
 
-    Le contenu suivant s\'affiche :
+    Le contenu suivant s'affiche :
 
     ``` rest
     Produits et versions

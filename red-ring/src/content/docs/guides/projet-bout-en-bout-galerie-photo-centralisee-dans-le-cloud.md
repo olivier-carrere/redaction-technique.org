@@ -2,15 +2,15 @@
 title: Galerie photo centralisée dans le *cloud*
 ---
 
-Les membres de l\'association étant géographiquement dispersés, il était
+Les membres de l'association étant géographiquement dispersés, il était
 essentiel de proposer un hébergement centralisé dans le *cloud*.
 
-Je disposais d\'un nom de domaine non utilisé et de suffisamment
-d\'espace disque et de bases de données libres sur un hébergement
+Je disposais d'un nom de domaine non utilisé et de suffisamment
+d'espace disque et de bases de données libres sur un hébergement
 personnel.
 
-J\'ai donc installé une instance de \[Piwigo\](<http://piwigo.org/>,
-logiciel que je connaissais déjà (je l\'utilise pour des photos de
+J'ai donc installé une instance de \[Piwigo\](<http://piwigo.org/>,
+logiciel que je connaissais déjà (je l'utilise pour des photos de
 famille).
 
 <figure>
@@ -19,15 +19,15 @@ alt="graphics/galerie-photo.jpg" />
 <figcaption><a href="">Photo Kevin Harber</a></figcaption>
 </figure>
 
-J\'ai protégé l\'accès à la galerie initialement par un fichier
+J'ai protégé l'accès à la galerie initialement par un fichier
 [.htaccess]{.title-ref} commun à tous les utilisateurs, puis par la
 création de comptes personnels sous la galerie.
 
-L\'hébergement sur mon espace personnel peut durer quelques mois sans
-problème. Il serait cependant plus sain que l\'association soit
-propriétaire de l\'hébergement et du nom de domaine.
+L'hébergement sur mon espace personnel peut durer quelques mois sans
+problème. Il serait cependant plus sain que l'association soit
+propriétaire de l'hébergement et du nom de domaine.
 
-Une rapide étude (en septembre 2018) m\'a conduit à proposer les
+Une rapide étude (en septembre 2018) m'a conduit à proposer les
 solutions suivantes :
 
 +------+-----+--------+------+--------------------------------------+
@@ -105,9 +105,9 @@ solutions suivantes :
 +------+-----+--------+------+--------------------------------------+
 | Sa   | Gé  | Gérée  |      | on. \|                               |
 | uveg | rée | par    |      |                                      |
-| arde | par | l\'    |      | :   |                                |
+| arde | par | l'    |      | :   |                                |
 |      | l   | associ |      |                                      |
-|      | \'h | ation. |      | \-\-\-\-\-\-\-\-\-\-\-\-\-\-\--+     |
+|      | 'h | ation. |      | \-\-\-\-\-\-\-\-\-\-\-\-\-\-\--+     |
 |      | ébe |        |      |                                      |
 |      | rge |        |      | :                                    |
 |      | ur. |        |      |                                      |
@@ -118,12 +118,12 @@ solutions suivantes :
 | Avan | Mo  | L\     |      |                                      |
 | tage | ins | 'assoc |      |                                      |
 |      | d   | iation |      |                                      |
-|      | \'e | d      |      |                                      |
+|      | 'e | d      |      |                                      |
 |      | ffo | ispose |      |                                      |
 |      | rts | de     |      |                                      |
 |      | p   | tous   |      |                                      |
 |      | our | les    |      |                                      |
-|      | l\' | fic    |      |                                      |
+|      | l' | fic    |      |                                      |
 |      | ass | hiers. |      |                                      |
 |      | oci |        |      |                                      |
 |      | ati |        |      |                                      |

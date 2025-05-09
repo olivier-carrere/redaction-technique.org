@@ -3,9 +3,9 @@ title: À propos de ce blog
 ---
 
 Ce blog est conçu et réalisé par un rédacteur technique spécialisé dans
-l\'informatique.
+l'informatique.
 
-Puisqu\'il traite des processus et des formats de rédaction technique,
+Puisqu'il traite des processus et des formats de rédaction technique,
 son contenu est cependant moins pertinent que son historique et que ses
 branches
 \[Git\](<https://github.com/olivier-carrere/redaction-technique.org/>\>\`\_.
@@ -23,7 +23,7 @@ PDF, LaTeX, XSL-FO.
 ## Libérez vos informations de leurs silos
 
 Des solutions souples et fiables libèrent vos informations des silos
-d\'information cloisonnés où elles sont emprisonnées et sous-exploitées.
+d'information cloisonnés où elles sont emprisonnées et sous-exploitées.
 Oubliez MS Word ou FrameMaker pour passer de la maintenance de la
 documentation à la gestion du cycle de vie des projets documentaires
 modulaires !
@@ -35,7 +35,7 @@ doit :
 
 -   sortir en même temps,
 -   suivre les mêmes cycles de vie, et
--   faire l\'objet des mêmes processus de production et de contrôle
+-   faire l'objet des mêmes processus de production et de contrôle
     qualité.
 
 <figure>
@@ -47,14 +47,14 @@ texte</em></figcaption>
 
 Elle doit répondre idéalement aux critères suivants :
 
--   pas de *vendor lock-in* (indépendance du format et de l\'éditeur de
+-   pas de *vendor lock-in* (indépendance du format et de l'éditeur de
     contenu),
 -   chaînes de publication libres et gratuites,
 -   mise en page totalement automatisée.
 
 Il y a quelques années encore, les seuls outils permettant de fournir
 des livrables de qualité au format PDF ou HTML reposaient sur des
-formats binaires et propriétaires qui s\'intégraient mal aux systèmes de
+formats binaires et propriétaires qui s'intégraient mal aux systèmes de
 gestion de versions des équipes de développement.
 
 Résultat : réalisée à part, la documentation technique répondait
@@ -63,15 +63,15 @@ marché que les produits.
 
 DocBook, puis DITA XML et reStructuredText ont changé la donne : ces
 formats texte peuvent être modifiés avec tout type de programme, du
-simple éditeur de texte à l\'Integrated Development Environment
-graphique, et s\'intègrent parfaitement sous Subversion, Git ou tout
+simple éditeur de texte à l'Integrated Development Environment
+graphique, et s'intègrent parfaitement sous Subversion, Git ou tout
 autre système de gestion de versions.
 
 ### Les sources de ce blog sont gérées sous Git
 
-Ce blog a été initialement développé sous WordPress. L\'impossibilité
-d\'effectuer sous ce Content Management System des modifications
-transverses ou d\'avoir un suivi précis du cycle de vie du contenu a
+Ce blog a été initialement développé sous WordPress. L'impossibilité
+d'effectuer sous ce Content Management System des modifications
+transverses ou d'avoir un suivi précis du cycle de vie du contenu a
 entraîné une migration vers le format de balisage léger
 reStructuredText.
 
@@ -121,7 +121,7 @@ DocBook
 
 :   \[DocBook\](<https://github.com/olivier-carrere/redaction-technique.org/tree/DocBook>
     est un langage de balisage XML sémantique qui offre un rapport
-    fonctionnalités/complexité aujourd\'hui peu intéressant.
+    fonctionnalités/complexité aujourd'hui peu intéressant.
 
 ### Formats cibles
 

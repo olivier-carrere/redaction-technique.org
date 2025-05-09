@@ -2,7 +2,7 @@
 title: Documentation technique - diminuer les coûts, améliorer la satisfaction client
 ---
 
-La documentation technique, c\'est comme une ampoule : une ampoule basse
+La documentation technique, c'est comme une ampoule : une ampoule basse
 consommation demande un investissement plus important en début de cycle
 de vie, mais a rapidement un coût plus faible.
 :::
@@ -25,8 +25,8 @@ Coût moindre
 
 Qualité améliorée
 
--   briques d\'information facilement optimisables
-    -   cohérence parfaite du contenu d\'entreprise
+-   briques d'information facilement optimisables
+    -   cohérence parfaite du contenu d'entreprise
 
 Une documentation industrielle repose sur :
 
@@ -35,11 +35,11 @@ Une documentation industrielle repose sur :
 -   une chaîne de production et de publication documentaire fiable.
 
 Si la chaîne de création et de publication choisie repose sur des
-logiciels *open-source*, le coût de mise en place et d\'apprentissage
-peut même être compensé par l\'économie sur les licences de logiciels.
+logiciels *open-source*, le coût de mise en place et d'apprentissage
+peut même être compensé par l'économie sur les licences de logiciels.
 En tout état de cause, de trop nombreuses sociétés de haute technologie
 ont industrialisé leurs processus métier, mais laissent en friche la
-création, la gestion et la publication de leur contenu d\'entreprise.
+création, la gestion et la publication de leur contenu d'entreprise.
 Les coûts cachés (rédaction par des ingénieurs et non par un rédacteur
 technique compétent, mauvaise exploitation du capital immatériel,
 diminution de la satisfaction client, augmentation des coûts de support,

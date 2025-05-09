@@ -4,9 +4,9 @@ title: Expressions régulières en Python
 
 Le langage Python offre de nombreuses bibliothèques de fonctions. Celle
 dédiée aux expressions régulières peut vous aider à manipuler du texte,
-notamment si vous n\'êtes pas familier des utilitaires *sed* ou *awk*.
+notamment si vous n'êtes pas familier des utilitaires *sed* ou *awk*.
 
-Le code suivant illustre comment inverser l\'ordre des mots d\'une
+Le code suivant illustre comment inverser l'ordre des mots d'une
 phrase, selon le fameux exemple du *Bourgeois gentilhomme* :
 
 ::: {.literalinclude language="python3"}

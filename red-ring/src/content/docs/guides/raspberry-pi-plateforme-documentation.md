@@ -5,8 +5,8 @@ title: Le Raspberry Pi 3 en tant que plateforme de documentation
 Faut-il une débauche de puissance pour générer une documentation
 professionnelle ? Avec son unique giga-octet de mémoire vive et son
 processeur de *smartphone*, le Raspberry Pi 3 semble se positionner
-comme une bonne station bureautique des années 2000... À l\'usage, il
-s\'avère pourtant qu\'une unité centrale d\'une quarantaine d\'euros
+comme une bonne station bureautique des années 2000... À l'usage, il
+s'avère pourtant qu'une unité centrale d'une quarantaine d'euros
 suffit largement pour créer, gérer et générer une documentation aux
 formats PDF, HTML, ou autre.
 
@@ -24,8 +24,8 @@ Les buts de ce billet sont de :
     présentées ici fonctionnent également en mode graphique sous
     Windows, elles ne sont peut-être pas disponibles sous *Windows 10
     IoT*, destiné au Raspberry Pi 3.
--   Présenter un scénario d\'utilisation aussi simple que possible,
-    parfois au détriment de l\'élégance technique.
+-   Présenter un scénario d'utilisation aussi simple que possible,
+    parfois au détriment de l'élégance technique.
 ::::
 
 
@@ -47,7 +47,7 @@ Configurez le Raspberry Pi 3 \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
     La boîte de dialogue `Raspberry Pi Configuration`{.interpreted-text
     role="guilabel"} apparaît.
 
-3.  Sélectionnez l\'onglet `Localisation`{.interpreted-text
+3.  Sélectionnez l'onglet `Localisation`{.interpreted-text
     role="guilabel"}.
 
 4.  Cliquez sur `Set Locale`{.interpreted-text role="guilabel"},
@@ -82,7 +82,7 @@ Configurez le Raspberry Pi 3 \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
     $  sudo aptitude update && sudo aptitude safe-upgrade -y
     ```
 
-    Le temps de lire un épisode du *Surfer d\'argent*, et le système est
+    Le temps de lire un épisode du *Surfer d'argent*, et le système est
     mis à jour.
 
 9.  Sélectionnez `Menu`{.interpreted-text role="guilabel"} ‣
@@ -113,7 +113,7 @@ title: Installez les logiciels nécessaires à la gestion de ce blog
 
       Emacs         Environnement de développement intégré.
 
-      Gitk          Navigateur d\'historique du logiciel de gestion de
+      Gitk          Navigateur d'historique du logiciel de gestion de
                     versions décentralisé.
 
       Inkscape      Logiciel de dessin vectoriel.
@@ -125,7 +125,7 @@ title: Installez les logiciels nécessaires à la gestion de ce blog
                     \| format PDF.
       -----------------------------------------------------------------------
 
-3.  Libérez de l\'espace disque :
+3.  Libérez de l'espace disque :
 
     ``` console
     $ sudo aptitude clean
@@ -148,19 +148,19 @@ title: Récupérez les sources de ce blog
 title: Créez et modifiez le texte
 
 1.  Modifiez un fichier source modulaire de ce blog :
-    -   à l\'aide d\'un éditeur de texte :
+    -   à l'aide d'un éditeur de texte :
 
         ``` console
         $ leafpad *coin-du-geek.rst &
         ```
 
-    -   ou à l\'aide d\'un environnement de développement :
+    -   ou à l'aide d'un environnement de développement :
 
         ``` console
         $ emacs *coin-du-geek.rst &
         ```
 
-    -   ou à l\'aide d\'un éditeur en ligne, par exemple :
+    -   ou à l'aide d'un éditeur en ligne, par exemple :
 
         ``` console
         $ sed -i "s/répertoire/dossier/g;" *.rst
@@ -169,13 +169,13 @@ title: Créez et modifiez le texte
 title: Créez et modifiez les schémas
 
 1.  Modifiez un fichier source des images de ce blog :
-    -   à l\'aide d\'un logiciel de dessin vectoriel :
+    -   à l'aide d'un logiciel de dessin vectoriel :
 
         ``` console
         $ inkscape graphics/modulaire-texte-monolithique-binaire.svg &
         ```
 
-    -   ou à l\'aide d\'un éditeur en ligne :
+    -   ou à l'aide d'un éditeur en ligne :
 
         ``` console
         $ sed -i "s/docbook/XML/g;" graphics/*.svg
@@ -194,18 +194,18 @@ title: Gérez les versions de votre documentation
     $ git commit -m "Mon lot de modifications sur les images"
     ```
 
-2.  Affichez l\'historique des modifications des sources de ce blog :
+2.  Affichez l'historique des modifications des sources de ce blog :
 
     ``` console
     $ gitk &
     ```
 
     Ô surprise, vous avez sous les yeux, mais oui, une Graphical User
-    Interface ! C\'est tellement beau, qu\'on va faire une photo :
+    Interface ! C'est tellement beau, qu'on va faire une photo :
 
     ![](graphics/historique-git-redaction-technique.png)
 
-    *Un* commit *atomique s\'étendant sur une bonne quinzaine de
+    *Un* commit *atomique s'étendant sur une bonne quinzaine de
     fichiers*
 
 :::: note
@@ -216,12 +216,12 @@ Note
 -   Vos modifications sont purement locales et ne sont pas appliquées
     sur le dépot distant GitHub.
 -   Si vos modifications apportent une réelle valeur ajoutée à ce blog
-    (correction de coquille, ajout d\'information ou autre), n\'hésitez
+    (correction de coquille, ajout d'information ou autre), n'hésitez
     pas à me la soumettre sous forme de patch Git ou *via* votre compte
     GitHub.
--   GitHub n\'est probablement pas hébergé sur un cluster de
-    Raspberry Pi 3. Rien n\'empêche cependant d\'héberger un dépôt
-    distant Git sur un Raspberry Pi 3 connecté au réseau et d\'y accéder
+-   GitHub n'est probablement pas hébergé sur un cluster de
+    Raspberry Pi 3. Rien n'empêche cependant d'héberger un dépôt
+    distant Git sur un Raspberry Pi 3 connecté au réseau et d'y accéder
     par connexion sécurisée SSH.
 ::::
 
@@ -275,7 +275,7 @@ Et voilà. En quelques minutes, vous avez :
     *livre électronique* dans la version EPUB, *document* dans la
     version PDF et encore autrement dans la version HTML.
 
--   Généré dans trois formats différents une documentation d\'une
+-   Généré dans trois formats différents une documentation d'une
     soixantaine de pages comprenant une quarantaine de schémas.
 
     :::: note
@@ -291,14 +291,14 @@ Et voilà. En quelques minutes, vous avez :
         moteur de *templating* \[Jinja\](<http://jinja.pocoo.org/>.
     -   Les observateurs remarqueront que la version HTML du blog
         version 1.5 ne comporte pas de table des matières dans la
-        colonne de droite. C\'est qu\'en effet, cette version
-        n\'embarque pas le patch *1032292*. Je vous laisse chercher dans
-        l\'historique Git... voire créer une branche et le
+        colonne de droite. C'est qu'en effet, cette version
+        n'embarque pas le patch *1032292*. Je vous laisse chercher dans
+        l'historique Git... voire créer une branche et le
         *cherry-picker* !
     ::::
 
 Le Raspberry Pi 3 est donc une plateforme de documentation tout à fait
-crédible... à condition de se passer, ou presque, d\'interface
+crédible... à condition de se passer, ou presque, d'interface
 graphique !
 
 Le prochain test consistera à générer la version DITA XML de ce blog.

@@ -6,14 +6,14 @@ DITA XML est un formidable format pour gérer les projets de
 documentation. Pour les projets multilingues, cependant, le rédacteur
 technique doit créer un fichier *ditamap*, qui contient la structure de
 table des matières des documents, par version. Ceci entraîne un risque
-d\'erreurs et d\'incohérences. Heureusement, une méthodologie appropriée
-et un script d\'automatisation destiné à la chaîne de publication DITA
+d'erreurs et d'incohérences. Heureusement, une méthodologie appropriée
+et un script d'automatisation destiné à la chaîne de publication DITA
 Open Toolkit remédient à ce problème.
 
 ## Méthodologie de gestion des projets de documentation multilingues DITA XML
 
 1.  Le fichier *ditamap* ne doit pas comporter de section *navtitle*,
-    qui contient un titre en toutes lettres, au lieu d\'extraire le
+    qui contient un titre en toutes lettres, au lieu d'extraire le
     titre de la section DITA XML correspondante, et est donc propre à
     chaque langue.
 
@@ -68,14 +68,14 @@ Open Toolkit remédient à ce problème.
     e.  générer les fichiers cibles,
     f.  rétablir les valeurs initiales dans les fichiers sources.
 
-Heureusement, un script Bash (GNU/Linux) simple permet d\'automatiser
+Heureusement, un script Bash (GNU/Linux) simple permet d'automatiser
 cela.
 
 **Prérequis**
 
 -   Vous avez installé DITA Open Toolkit.
--   Votre projet DITA XML ne comporte qu\'un fichier *ditamap*.
--   Vos fichiers de contenu DITA XML ont l\'extension
+-   Votre projet DITA XML ne comporte qu'un fichier *ditamap*.
+-   Vos fichiers de contenu DITA XML ont l'extension
     `.dita`{.interpreted-text role="file"}.
 -   Les noms des répertoires des versions linguistiques correspondent
     aux codes de langues supportés par Dita Open Toolkit
@@ -97,10 +97,10 @@ Attention
 
 
 Ce script est fourni sans garantie. Avant toute exécution de ce script,
-effectuez une sauvegarde de l\'ensemble de votre projet DITA XML,
+effectuez une sauvegarde de l'ensemble de votre projet DITA XML,
 fichiers de configuration inclus (par exemple sous un système de gestion
 de versions). Assurez-vous de pouvoir restaurer facilement le projet
-dans son intégralité en cas d\'erreur ou de comportement inattendu.
+dans son intégralité en cas d'erreur ou de comportement inattendu.
 ::::
 
 Pour utiliser ce script :
@@ -132,7 +132,7 @@ Pour utiliser ce script :
 
     pour générer les fichiers cibles.
 
-    L\'argument *format cible* accepte les valeurs gérées par DITA Open
+    L'argument *format cible* accepte les valeurs gérées par DITA Open
     Toolkit.
 
     **Exemple**

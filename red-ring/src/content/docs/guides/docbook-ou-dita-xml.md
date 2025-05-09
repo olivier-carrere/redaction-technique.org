@@ -8,17 +8,17 @@ title: DocBook ou DITA XML ?
 Certaines entreprises ont parfois un contenu existant au format
 \[DocBook\](<https://github.com/olivier-carrere/redaction-technique.org/tree/DocBook>.
 Géré souvent par les acteurs les plus techniques de la société, il
-coexiste la plupart du temps avec d\'autres contenus au format
-FrameMaker ou traitement de texte. S\'il est décidé de fédérer tout le
-contenu d\'entreprise sous un seul format, il semble naturel de
+coexiste la plupart du temps avec d'autres contenus au format
+FrameMaker ou traitement de texte. S'il est décidé de fédérer tout le
+contenu d'entreprise sous un seul format, il semble naturel de
 capitaliser les efforts fournis sur la chaîne de création et de
-publication DocBook et de sélectionner ce format. C\'est pourtant se
+publication DocBook et de sélectionner ce format. C'est pourtant se
 priver des gains de productivité spectaculaires offerts par DITA XML.
 
 
 Il est facile de générer du DocBook à partir de DITA XML. DITA Open
 Toolkit propose par défaut ce format cible, au même titre que le PDF ou
-le HTML. L\'opération inverse ne peut pas être totalement automatisée.
+le HTML. L'opération inverse ne peut pas être totalement automatisée.
 Pourquoi ?
 
 <figure>
@@ -26,17 +26,17 @@ Pourquoi ?
 <figcaption><em>Un processus non réversible</em></figcaption>
 </figure>
 
-Il n\'est pas possible de migrer automatiquement des données de formats
+Il n'est pas possible de migrer automatiquement des données de formats
 pauvres vers des format riches en information.
 
 Tout simplement parce que le contenu au format DITA XML contient plus
-d\'informations. Passer d\'un format plus riche à un format plus pauvre
+d'informations. Passer d'un format plus riche à un format plus pauvre
 en information est une opération entropique qui peut facilement être
 automatisée. Par exemple, générer un PDF à partir de DITA XML. Effectuer
-l\'opération inverse exige d\'injecter de l\'intelligence, opération que
-seul l\'être humain peut aujourd\'hui effectuer.
+l'opération inverse exige d'injecter de l'intelligence, opération que
+seul l'être humain peut aujourd'hui effectuer.
 
-Si votre contenu était une photo, nous pourrions faire l\'analogie
+Si votre contenu était une photo, nous pourrions faire l'analogie
 suivante :
 
   --------------------------------------------------------------------------------- -------------------------------------------------------------
@@ -62,17 +62,17 @@ Le PDF est sémantiquement plus pauvre que DocBook, lui-même plus pauvre
 que DITA XML[^2].
 
 Si votre entreprise tient absolument à utiliser du DocBook, il est
-toujours loisible de générer le contenu DocBook à partir d\'un contenu
+toujours loisible de générer le contenu DocBook à partir d'un contenu
 source au format DITA XML. À condition que le contenu source reste au
-format DITA XML (c\'est à dire, à condition qu\'aucune modification
+format DITA XML (c'est à dire, à condition qu'aucune modification
 apportée au contenu DocBook ne soit sauvegardée) et que le format
-DocBook ne soit qu\'une étape de la génération des livrables, au même
+DocBook ne soit qu'une étape de la génération des livrables, au même
 titre que le format FO, vous bénéficiez ainsi des fonctionnalités
 avancées de réutilisation du contenu que propose DITA XML.
 
-L\'effort de migration d\'un format non structuré est certes un peu plus
+L'effort de migration d'un format non structuré est certes un peu plus
 important vers DITA XML que vers DocBook, puisque vous devez injecter
-plus d\'informations sémantiques. Vous devez également migrer le contenu
+plus d'informations sémantiques. Vous devez également migrer le contenu
 DocBook vers DITA XML, ce qui représente également un effort, quoique
 plus faible. Mais votre contenu est immédiatement de meilleure qualité,
 car plus structuré. Et vous pourrez rapidement cueillir tous les fruits
@@ -91,9 +91,9 @@ html
 
 [^1]: Pour être aussi exact que possible, vous pouvez enregistrer une
     image JPEG au format TIFF ; mais cette image aura une qualité égale
-    à celle de l\'image JPEG, inférieure à la qualité habituelle des
+    à celle de l'image JPEG, inférieure à la qualité habituelle des
     images TIFF. En revanche, on ne peut à ma connaissance pas
     enregistrer une image TIFF sous un format RAW.
 
 [^2]: Le PDF est cependant plus riche en informations de mise en page,
-    appliquées automatiquement à partir d\'une feuille de style.
+    appliquées automatiquement à partir d'une feuille de style.

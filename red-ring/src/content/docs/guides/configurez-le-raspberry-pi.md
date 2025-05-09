@@ -17,7 +17,7 @@ title: Configurez le Raspberry Pi 3
     La boîte de dialogue `Raspberry Pi Configuration`{.interpreted-text
     role="guilabel"} apparaît.
 
-3.  Sélectionnez l\'onglet `Localisation`{.interpreted-text
+3.  Sélectionnez l'onglet `Localisation`{.interpreted-text
     role="guilabel"}.
 
 4.  Cliquez sur `Set Locale`{.interpreted-text role="guilabel"},
@@ -52,7 +52,7 @@ title: Configurez le Raspberry Pi 3
     $  sudo aptitude update && sudo aptitude safe-upgrade -y
     ```
 
-    Le temps de lire un épisode du *Surfer d\'argent*, et le système est
+    Le temps de lire un épisode du *Surfer d'argent*, et le système est
     mis à jour.
 
 9.  Sélectionnez `Menu`{.interpreted-text role="guilabel"} ‣

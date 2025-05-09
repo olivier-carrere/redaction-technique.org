@@ -3,7 +3,7 @@ title: Créer des documents différents à partir des mêmes sources *via* Jinja
 ---
 
 Le script Python `profiling.py`{.interpreted-text role="file"}
-ci-dessous permet de profiler du contenu à l\'aide du puissant moteur de
+ci-dessous permet de profiler du contenu à l'aide du puissant moteur de
 modèle Avec \[Jinja\](<http://jinja.pocoo.org/>, vous pouvez définir des
 objets (audience, plateforme, version, etc.) et inclure ou exclure des
 blocs de texte selon leurs attributs.
@@ -203,19 +203,19 @@ blocs de texte selon leurs attributs.
 
 10. Utilisez une variante plus lisible au niveau du fichier de contenu :
 
-    Il est peut-être plus intuitif d\'indiquer dans le fichier de
+    Il est peut-être plus intuitif d'indiquer dans le fichier de
     contenu une valeur conviviale sous forme de chaîne de caractères.
     Surtout si les rédacteurs ne sont pas familiarisés avec la
-    programmation orientée objet, le test d\'égalité [==]{.title-ref}
+    programmation orientée objet, le test d'égalité [==]{.title-ref}
     étant plus parlant pour la plupart des gens.
 
     ::: {.literalinclude language="rest"}
     code/texte-conditionnel.rst
     :::
 
-    Il est plus économique d\'utiliser une seule classe d\'objets, même
+    Il est plus économique d'utiliser une seule classe d'objets, même
     si elle mélange un peu les choux et les carottes (autant dans cet
-    exemple tiré par les cheveux que dans la vraie vie, où l\'on
+    exemple tiré par les cheveux que dans la vraie vie, où l'on
     mélangerait des publics, des versions, des plateformes, etc.).
 
     ``` python
@@ -252,7 +252,7 @@ blocs de texte selon leurs attributs.
     ```
 
     Les plus attentifs auront remarqué que ce script rend inutile la
-    condition *else* du fichier de contenu, puisque l\'on teste la
+    condition *else* du fichier de contenu, puisque l'on teste la
     valeur des paramètres avant son exécution.
 
     Pour permettre le passage de valeurs non prévues et afficher le

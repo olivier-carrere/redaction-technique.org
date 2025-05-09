@@ -5,14 +5,14 @@ title: XSL-FO - insérer automatiquement un titre pour les exemples
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
-Par défaut, DITA Open Toolkit n\'insère pas automatiquement dans les
-fichiers PDF le texte *Exemple :* devant le titre d\'un exemple contenu
+Par défaut, DITA Open Toolkit n'insère pas automatiquement dans les
+fichiers PDF le texte *Exemple :* devant le titre d'un exemple contenu
 entre balises DITA XML `<example>`{.interpreted-text role="samp"}. La
 syntaxe \[XSL-FO\](<http://fr.wikipedia.org/wiki/XSL-FO> offre cependant
 cette possibilité.
 
 
-Supposons que le code source d\'un de vos fichiers DITA XML soit le
+Supposons que le code source d'un de vos fichiers DITA XML soit le
 suivant :
 
 ``` xml
@@ -27,7 +27,7 @@ suivant :
 </example>
 ```
 
-Vous souhaitez que le fichier PDF généré affiche l\'exemple structuré
+Vous souhaitez que le fichier PDF généré affiche l'exemple structuré
 comme suit :
 
 > **Exemple : XSL-FO**
@@ -38,7 +38,7 @@ comme suit :
 > ancestor-or-self
 > ```
 
-et que si l\'exemple ne contient pas de titre, il soit structuré comme
+et que si l'exemple ne contient pas de titre, il soit structuré comme
 suit :
 
 > **Exemple :**
@@ -60,7 +60,7 @@ par DITA Open Toolkit :
 > ancestor-or-self
 > ```
 
-Il est toujours possible d\'entrer le texte entre les balises
+Il est toujours possible d'entrer le texte entre les balises
 `<example>`{.interpreted-text role="samp"}, mais XSL-FO offre une
 manière de procéder plus élégante et structurée.
 

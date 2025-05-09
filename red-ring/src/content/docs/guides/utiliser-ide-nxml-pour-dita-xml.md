@@ -1,12 +1,12 @@
 ---
-title: Utiliser l\'IDE nXML pour DITA XML
+title: Utiliser l'IDE nXML pour DITA XML
 ---
 
 Le mode nXML propose de valider en temps réel les documents XML DocBook,
 XHTML ou autres. Plus la peine de connaître le schéma XML par cœur:
-votre éditeur de texte vous propose l\'autocomplétion des balises XML
+votre éditeur de texte vous propose l'autocomplétion des balises XML
 selon le contexte. Il ne supporte cependant pas DITA XML par défaut. Ce
-didacticiel vous permettra d\'utiliser ce mode Emacs pour DITA XML.
+didacticiel vous permettra d'utiliser ce mode Emacs pour DITA XML.
 
 **Prérequis**
 
@@ -28,7 +28,7 @@ didacticiel vous permettra d\'utiliser ce mode Emacs pour DITA XML.
     elles doivent être adaptées pour être utilisées dans un autre
     environnement.
 
-1.  Effectuez une sauvegarde de l\'ensemble de votre projet de
+1.  Effectuez une sauvegarde de l'ensemble de votre projet de
     documentation DITA XML.
 
 2.  Ouvrez un terminal et collez la suite de commandes suivante :
@@ -41,7 +41,7 @@ didacticiel vous permettra d\'utiliser ce mode Emacs pour DITA XML.
     tar xzvf nxml-mode-20041004.tar.gz && \
     wget $RED/nxml-mode-environmment.txt && \
     cp .emacs .emacs.bak && \
-    cat .emacs | sed '$a\' > .emacs.tmp && \
+    cat .emacs | sed '$a' > .emacs.tmp && \
     mv .emacs.tmp .emacs && \
     cat nxml-mode-environmment.txt >> .emacs && \
     rm  nxml-mode-environmment.txt
@@ -53,8 +53,8 @@ didacticiel vous permettra d\'utiliser ce mode Emacs pour DITA XML.
     :::
 
     Si un message vous avertit que le fichier `.emacs`{.interpreted-text
-    role="file"} n\'existe pas, collez les commandes suivantes, puis
-    recommencez l\'opération :
+    role="file"} n'existe pas, collez les commandes suivantes, puis
+    recommencez l'opération :
 
     ``` console
     $ cd && touch .emacs
@@ -67,10 +67,10 @@ didacticiel vous permettra d\'utiliser ce mode Emacs pour DITA XML.
     -   crée une copie de sauvegarde du fichier
         `.emacs`{.interpreted-text role="file"}
         (`.emacs.bak`{.interpreted-text role="file"}),
-    -   écrit les variables d\'environnement du mode nXML dans le
+    -   écrit les variables d'environnement du mode nXML dans le
         fichier `.emacs`{.interpreted-text role="file"}.
 
-3.  Téléchargez \`l\'archive des schémas RelaxNG pour\[DITA
+3.  Téléchargez \`l'archive des schémas RelaxNG pour\[DITA
     XML\](<https://github.com/olivier-carrere/redaction-technique.org/tree/DITA_XML>
     dans le répertoire racine de votre projet de documentation DITA XML.
 
@@ -84,7 +84,7 @@ didacticiel vous permettra d\'utiliser ce mode Emacs pour DITA XML.
     Cette commande crée un répertoire `rnc`{.interpreted-text
     role="file"} de même niveau que le *\<répertoire de langue\>*.
 
-5.  Téléchargez \[l\'archive des fichiers
+5.  Téléchargez \[l'archive des fichiers
     schemas.xml\](<http://www.redaction-technique.org/media/schemas.redaction-technique.org.tar.gz>
     dans le répertoire racine de votre projet de documentation DITA XML,
     puis collez la suite de commandes ci-dessous en remplaçant
@@ -134,7 +134,7 @@ didacticiel vous permettra d\'utiliser ce mode Emacs pour DITA XML.
 
 6.  Ouvrez un fichier de contenu DITA XML (`.dita`{.interpreted-text
     role="file"}) avec Emacs. La syntaxe DITA XML apparaît en couleurs.
-    Les endroits où le schéma n\'est pas respecté sont soulignés en
+    Les endroits où le schéma n'est pas respecté sont soulignés en
     rouge.
 
 7.  Pour insérer une nouvelle balise entrez \<, puis appuyez sur

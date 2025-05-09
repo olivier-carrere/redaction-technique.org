@@ -1,9 +1,9 @@
 ---
-title: Jourdainisation en ligne d\'une tirade
+title: Jourdainisation en ligne d'une tirade
 ---
 
-À l\'instar du maître de philosophie du *Bourgeois gentilhomme* de
-Molière, un script Python peut facilement intervertir les mots d\'une
+À l'instar du maître de philosophie du *Bourgeois gentilhomme* de
+Molière, un script Python peut facilement intervertir les mots d'une
 phrase pour dire la même chose de manière plus alambiquée  :
 
 À vous donc de jourdainiser votre tirade via ce script Python en ligne :
@@ -33,7 +33,7 @@ texte_final = texte_final.capitalize() + '.'
 print(texte_final)
 ```
 
-Voici maintenant les modèles générant les pages HTML de base, d\'entrée
+Voici maintenant les modèles générant les pages HTML de base, d'entrée
 et de sortie, basés sur \[Jinja\](<http://jinja.pocoo.org/> :
 
 ::: {.literalinclude language="html" caption=""}

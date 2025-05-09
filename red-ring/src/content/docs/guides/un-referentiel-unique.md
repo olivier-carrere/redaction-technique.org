@@ -10,7 +10,7 @@ DocBook, par exemple, on peut exploiter au mieux les capacités de
 *single-sourcing* de ces formats pour le publier sous la forme
 appropriée.
 
-Le contenu devient un réseau de modules d\'information ; il faut alors
+Le contenu devient un réseau de modules d'information ; il faut alors
 gérer les relations au sein de ce réseau, notamment lors des mises à
 jour.
 
