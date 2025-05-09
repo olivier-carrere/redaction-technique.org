@@ -30,10 +30,6 @@ export default defineConfig({
 						{ slug: 'guides/contact' },
 					],
 				},
-				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
-				},
 			],
 		}),
 	],
