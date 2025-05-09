@@ -9,12 +9,7 @@ rédacteur technique. L'un des meilleurs moyens d'y parvenir consiste à
 réduire le volume source de la documentation et à mieux gérer le contenu
 d'entreprise.
 
-<figure>
-<img src="graphics/degre-structuration.svg"
-alt="graphics/degre-structuration.svg" />
-<figcaption><em>Formats de documentation technique : degrés de
-structuration</em></figcaption>
-</figure>
+![Formats de documentation technique : degrés de structuration](graphics/degre-structuration.svg "Formats de documentation technique : degrés de structuration")
 
 L'information que le rédacteur technique fournit au public *doit* être
 redondante : l'entreprise doit présenter à chacun de ses publics toute
@@ -33,12 +28,7 @@ l'assembler à la demande. Il doit donc utiliser des modules structurés
 de manière homogène qui peuvent être facilement manipulés par des
 applications.
 
-<figure>
-<img src="graphics/non-redondance.svg"
-alt="graphics/non-redondance.svg" />
-<figcaption><em>Les sources de la documentation doivent être moins
-volumineuses que les livrables.</em></figcaption>
-</figure>
+![Les sources de la documentation doivent être moins volumineuses que les livrables.](graphics/non-redondance.svg "Les sources de la documentation doivent être moins volumineuses que les livrables.")
 
 DITA XML est une architecture XML de rédaction structurée destinée à la
 création de documents modulaires et à la réutilisation du contenu. À
@@ -54,11 +44,3 @@ la standardisation : si l'on peut construire des automobiles de modèles
 différents à partir d'un ensemble de pièces identiques, de même, le
 rédacteur technique peut publier des documents différents à partir d'un
 ensemble de briques d'information standardisées.
-
- {.toctree hidden=""}
-cas-concrets-utilisation-de-dita-xml.rst
-formats-structures-et-non-structures
-une-architecture-documentaire-trop-complexe
-du-document-a-la-base-documentaire-modulaire
-cas-concret-documentation-de-nufirewall
-

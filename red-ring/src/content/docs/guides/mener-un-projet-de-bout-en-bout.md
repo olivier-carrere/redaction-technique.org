@@ -2,11 +2,6 @@
 title: Mener un projet de bout en bout
 ---
 
- sidebar
-**`fa-history`{.interpreted-text role="awesome"} Modifications
-récentes**
-
-
 Il est assez rare, dans le cadre professionnel, de pouvoir mener un
 projet de (quasiment) A à Z, de la conception à la communication, en
 passant par la réalisation. Soit, gérer autant les aspects humains et
@@ -66,13 +61,13 @@ de sauvegarde à l'identique de l'ensemble des photos sur un disque dur
 externe.
 
 Ma première tâche fut de repérer, puis d'éliminer les doublons grâce à
-la commande \[fdupes\](<https://github.com/adrianlopezroche/fdupes>.
+la commande [fdupes](https://github.com/adrianlopezroche/fdupes).
 
 Il me fallait aussi ne pas passer à côté de perles et chercher les
 aiguilles intéressantes dans cette meule de foin. Certaines photos,
 notamment, se cachaient dans des répertoires zippés. D'autres
 n'avaient pas d'extension, et la commande
-\[file\](<https://www.computerhope.com/unix/ufile.htm> me fut très
+[file](https://www.computerhope.com/unix/ufile.htm) me fut très
 utile.
 
 Le but étant avant tout de mettre à disposition des photos pour des
@@ -105,15 +100,11 @@ Je disposais d'un nom de domaine non utilisé et de suffisamment
 d'espace disque et de bases de données libres sur un hébergement
 personnel.
 
-J'ai donc installé une instance de \[Piwigo\](<http://piwigo.org/>,
+J'ai donc installé une instance de [Piwigo](http://piwigo.org/),
 logiciel que je connaissais déjà (je l'utilise pour des photos de
 famille).
 
-<figure>
-<img src="graphics/galerie-photo.jpg"
-alt="graphics/galerie-photo.jpg" />
-<figcaption><a href="">Photo Kevin Harber</a></figcaption>
-</figure>
+![Photo Kevin Harber](graphics/galerie-photo.jpg "Photo Kevin Harber")
 
 J'ai protégé l'accès à la galerie initialement par un fichier
 [.htaccess]{.title-ref} commun à tous les utilisateurs, puis par la
@@ -143,8 +134,7 @@ photo. Comme il n'est pas possible de définir des mots-clés
 multilingues sous *Piwigo*, j'ai autant que faire se peut accompagné
 chaque mot-clé d'un pictogramme.
 
-Par exemple, Vélo `fa-bicycle`{.interpreted-text role="awesome"},
-Intérieur `fa-lightbulb`{.interpreted-text role="awesome"}, etc.
+Par exemple, Vélo, Intérieur, etc.
 
 ## Sauvegarde incrémentale et décentralisée
 
@@ -160,8 +150,7 @@ cloné ce dépôt sur Gitlab.
 Ainsi, tout membre de l'association peut créer un compte Gitlab, puis,
 après avoir reçu le mot de passe, cloner la copie de sauvegarde.
 
- admonition
-Clonage du dépôt Gitlab
+**Clonage du dépôt Gitlab**
 
 *La procédure suivante était incluse dans une première version du
 dépliant LaTeX. Elle est donc minimaliste, ne serait-ce que pour des
@@ -169,9 +158,9 @@ raisons d'espace disponible sur la version imprimée. Je l'ai par la
 suite supprimée du dépliant, car elle risquait plutôt d'effrayer son
 lectorat, majoritairement technophobe.*
 
-Sous Windows, vous pouvez installer \[Git for
-windows\](<https://github.com/git-for-windows/git/releases/download/v2.18.0.windows.1/Git-2.18.0-64-bit.exe>
-et \[GitHub Desktop\](<https://desktop.github.com/>.
+Sous Windows, vous pouvez installer [Git for
+windows](https://github.com/git-for-windows/git/releases/download/v2.18.0.windows.1/Git-2.18.0-64-bit.exe)
+et [GitHub Desktop](https://desktop.github.com/).
 
 Pour cloner le dépôt Gitlab sous une distribution Linux Debian ou
 dérivée (dont Ubuntu) :
@@ -213,7 +202,7 @@ Pour mettre à jour votre dépôt Gitlab :
 
 
 Pour la synchronisation entre le serveur et ma copie locale, je me suis
-tourné vers \[LFTP\](<https://lftp.yar.ru/> :
+tourné vers [LFTP](https://lftp.yar.ru/) :
 
 ``` console
 $ lftp ftp://user:password@ftpaccount -e \
@@ -221,18 +210,13 @@ $ lftp ftp://user:password@ftpaccount -e \
   repertoire-local; quit"
 ```
 
-: note
- title
-Note
-
-
 Pour ignorer les différences de permissions sur les fichiers, j'ai au
 préalable lancé la commande suivante sur mon dépôt local :
 
 ``` console
 $ git config core.filemode false
 ```
-:
+
 
 L'hébergement des photos est donc centralisé, la sauvegarde,
 décentralisée.
@@ -287,7 +271,7 @@ et espagnol, sur l'utilisation de la galerie par les différents types
 d'utilisateurs.
 
 J'ai utilisé pour cela
-\[SimpleScreenRecorder\](<http://www.maartenbaert.be/simplescreenrecorder/>.
+[SimpleScreenRecorder](http://www.maartenbaert.be/simplescreenrecorder/).
 Un premier essai avec le microphone intégré de mon portable s'étant
 révélé peu convaincant, j'ai enregistré ma voix avec un micro de bonne
 qualité, nommément, un *Bird UM1*. Pressé par le temps, et parce que ces
@@ -304,11 +288,10 @@ J'ai créé un dépliant expliquant :
 -   l'utilisation de la galerie par chaque type d'utilisateurs ;
 -   le workflow dans lequel s'inscrivent les utilisateurs.
 
- admonition
-Modèle LaTeX du dépliant
+**Modèle LaTeX du dépliant**
 
-Le \[modèle LaTeX du
-dépliant\](<https://www.overleaf.com/latex/templates/leaflet/ysdkbbhctfpc>,
+Le [modèle LaTeX du
+dépliant](https://www.overleaf.com/latex/templates/leaflet/ysdkbbhctfpc),
 partie émergée de l'iceberg, est publié sur *Overleaf*.
 
 Curieusement, le PDF généré sur *Overleaf* présente des défauts que je
@@ -316,15 +299,15 @@ ne constate pas lorsque je le publie en local.
 
 ![](graphics/leaflet-pliage.png)
 
-Pour les plus curieux, il existe \[6
-manières\](<https://www.robertdickau.com/stampfolding.html> de plier
+Pour les plus curieux, il existe [6
+manières](https://www.robertdickau.com/stampfolding.html) de plier
 cette brochure. Je me suis épargné des essais fastidieux en utilisant la
-[classe de documents LaTeX leaflet]().
+classe de documents LaTeX leaflet.
 
 
 ## LaTeX
 
-Pourquoi avoir choisi \[LaTeX\](<https://www.latex-project.org/> pour
+Pourquoi avoir choisi [LaTeX](https://www.latex-project.org/) pour
 réaliser le support *print* et non pas un logiciel de PAO classique ? Je
 souhaitais pouvoir remanier le texte sans refaire à chaque fois la mise
 en page. De même, je voulais pouvoir traduire le dépliant sans effectuer
@@ -361,21 +344,15 @@ Voici un exemple de code LaTeX :
 ```
 
 Le rendu PDF est illustré ci-dessous. Remarquez le calcul automatique
-des césures (qui a fait l'objet d'une \[thèse de
-doctorat\](<https://texfaq.org/FAQ-hyphen>). C'est l'un des \`nombreux
+des césures (qui a fait l'objet d'une [thèse de
+doctorat](https://texfaq.org/FAQ-hyphen)). C'est l'un des nombreux
 avantages
-de\[LaTeX\]([https://www.latex-project.org/\\](https://www.latex-project.org/\)
-...
+de[LaTeX](https://www.latex-project.org/)
 
 ![](graphics/latex-rendu.png)
 
-: note
- title
-Note
-
-
 Les fervents du *WYSIWYG* se tourneront avec profit vers
-\[Gummi\](<https://github.com/alexandervdm/gummi>. Il s'agit de *What
+[Gummi](https://github.com/alexandervdm/gummi). Il s'agit de *What
 you see is what you get* au sens strict (et plutôt de *tel écran, tel
 imprimé* que de *tel écran, tel écrit*). On ne peut en effet pas
 modifier le texte dans la fenêtre de visualisation, uniquement dans la
@@ -387,7 +364,7 @@ numérotations, disons... aléatoires, vous en comprendrez tout de suite
 l'avantage.
 
 ![](graphics/latex-wysiwyg-gummi.png)
-:
+
 
 D'autre part, une fois la structure du dépliant créée, il est facile de
 l'utiliser pour produire rapidement d'autres documents. De plus, le
@@ -402,19 +379,7 @@ modifications de fond ou de forme entre deux versions, de revenir à tout
 moment à une version précédente, de maintenir en parallèle plusieurs
 versions, etc.
 
-<figure>
-<img src="graphics/latex-historique-fond-github.png"
-alt="graphics/latex-historique-fond-github.png" />
-<figcaption><em>Visualisation de modifications de fond sous
-GitHub</em></figcaption>
-</figure>
-
-<figure>
-<img src="graphics/latex-historique-forme-github.png"
-alt="graphics/latex-historique-forme-github.png" />
-<figcaption><em>Visualisation de modifications de forme sous
-GitHub</em></figcaption>
-</figure>
+![Visualisation de modifications de fond sous GitHub](graphics/latex-historique-fond-github.png "Visualisation de modifications de fond sous GitHub")
 
 Voici l'évolution d'un extrait du PDF compilé :
 
@@ -443,18 +408,17 @@ iconographique :
 
 Une tâche concrète
 
-:   Bien qu'au premier abord très abstraite, la gestion des photos
-    s'assimile à un travail bien concret : la culture d'un potager ;
-    j'ai découvert à cette occasion que je n'avais rien inventé, et
-    que la notion de *désherbage* était familière aux iconographes.
+- Bien qu'au premier abord très abstraite, la gestion des photos
+  s'assimile à un travail bien concret : la culture d'un potager ;
+  j'ai découvert à cette occasion que je n'avais rien inventé, et
+  que la notion de *désherbage* était familière aux iconographes.
 
 Un travail de groupe
 
-:   La participation à la production graphique est un travail de groupe
-    et non d'individus isolés.
-
-    Après un premier choix d'images représentant à chaque fois une
-    personne unique, je suis passé à des photos de groupe.
+- La participation à la production graphique est un travail de groupe
+  et non d'individus isolés.
+  Après un premier choix d'images représentant à chaque fois une
+  personne unique, je suis passé à des photos de groupe.
 
 Après plusieurs essais, mon choix s'est fixé sur l'utilisation de
 photos anciennes, libres de droits ou sous licence Creative Commons.

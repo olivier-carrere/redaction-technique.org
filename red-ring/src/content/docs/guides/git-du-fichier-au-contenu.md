@@ -2,8 +2,6 @@
 title: Git - du fichier au contenu
 ---
 
- sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Vous êtes habitué à manipuler des fichiers ? Git vous invite à penser
 autrement. Avantage : vous avez une maîtrise beaucoup plus grande de

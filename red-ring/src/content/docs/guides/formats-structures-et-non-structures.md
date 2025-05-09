@@ -2,8 +2,6 @@
 title: Formats structurés et non structurés
 ---
 
- sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Les formats structurés favorisent la création de documents minimalistes,
 complets et cohérents. Ils permettent au rédacteur technique de se

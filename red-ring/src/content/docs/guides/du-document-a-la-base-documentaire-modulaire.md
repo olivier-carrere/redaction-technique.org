@@ -2,8 +2,6 @@
 title: Du document à la base documentaire modulaire
 ---
 
- sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Le modèle du livre est encore prédominant pour créer et gérer
 l'information. Mais le contenu d'entreprise est souvent disséminé dans

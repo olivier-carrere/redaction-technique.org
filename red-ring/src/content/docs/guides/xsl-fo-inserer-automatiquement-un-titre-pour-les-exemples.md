@@ -2,8 +2,6 @@
 title: XSL-FO - insérer automatiquement un titre pour les exemples
 ---
 
- sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Par défaut, DITA Open Toolkit n'insère pas automatiquement dans les
 fichiers PDF le texte *Exemple :* devant le titre d'un exemple contenu

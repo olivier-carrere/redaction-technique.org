@@ -2,8 +2,6 @@
 title: Fournir une information ciblée avec le texte conditionnel ditaval
 ---
 
- sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Un fichier
 \[ditaval\](<http://docs.oasis-open.org/dita/v1.2/os/spec/common/about-ditaval.html>

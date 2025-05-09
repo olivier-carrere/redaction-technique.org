@@ -2,8 +2,6 @@
 title: Centraliser les *conref* dans un fichier unique
 ---
 
- sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Pour favoriser l'utilisation des
 \[conref\](<http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html>

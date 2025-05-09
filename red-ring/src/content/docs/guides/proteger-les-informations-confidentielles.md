@@ -2,8 +2,6 @@
 title: Protéger les informations confidentielles
 ---
 
- sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Le puissant mécanisme
 \[conref\](<http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html>

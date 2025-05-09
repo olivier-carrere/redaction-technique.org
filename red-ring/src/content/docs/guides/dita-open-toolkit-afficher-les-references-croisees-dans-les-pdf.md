@@ -2,8 +2,6 @@
 title: DITA Open Toolkit - afficher les références croisées dans les PDF
 ---
 
- sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Les références croisées sont un élément important d'une documentation
 technique bien structurée. Elles permettent à l'utilisateur de naviguer

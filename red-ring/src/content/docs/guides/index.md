@@ -6,7 +6,6 @@ Lorsqu'un formateur entre dans une salle de formation, rien qu'au
 *look* des participants, il a déjà une idée de comment orienter son
 discours.
 
- sidebar
 **`fa-history`{.interpreted-text role="awesome"} Modifications
 récentes**
 

@@ -2,8 +2,6 @@
 title: Format source
 ---
 
- sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Le contenu d'un projet de rédaction technique est créé dans un format
 source, différent du format des livrables, le format cible. Pour

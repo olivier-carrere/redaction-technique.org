@@ -7,22 +7,22 @@ classifier selon les niveaux suivants :
 
 Friche
 
-:   -   Pas d'utilisation de processus documentaire.
-    -   Création de la documentation par des équipes non dédiées.
-    -   Utilisation de formats non adaptés ou utilisation incohérente de
-        formats adaptés.
+- Pas d'utilisation de processus documentaire.
+- Création de la documentation par des équipes non dédiées.
+- Utilisation de formats non adaptés ou utilisation incohérente de
+  formats adaptés.
 
 Jardin à l'anglaise
 
-:   -   Utilisation de processus documentaires fiables.
-    -   Création de la documentation par des équipes dédiées.
-    -   Utilisation cohérente de formats adaptés, mais non structurés.
+- Utilisation de processus documentaires fiables.
+- Création de la documentation par des équipes dédiées.
+- Utilisation cohérente de formats adaptés, mais non structurés.
 
 Jardin à la française
 
-:   -   Utilisation de processus documentaires fiables.
-    -   Création de la documentation par des équipes dédiées.
-    -   Utilisation cohérente de formats structurés.
+- Utilisation de processus documentaires fiables.
+- Création de la documentation par des équipes dédiées.
+- Utilisation cohérente de formats structurés.
 
 Les formats non adaptés à la rédaction technique sont par exemple les
 formats de traitement de texte, qui ne dissocient pas suffisamment la
@@ -47,7 +47,3 @@ métier ou sans mettre en place de processus de gestion du cycle de vie
 de la documentation technique, et vous obtiendrez des résultats
 décevants. Seule la présence conjointe de ces trois éléments fournira un
 résultat optimal.
-
- {.toctree hidden=""}
-un-index-est-il-utile-dans-un-pdf
-

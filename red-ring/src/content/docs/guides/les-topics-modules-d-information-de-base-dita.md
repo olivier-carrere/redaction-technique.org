@@ -2,8 +2,6 @@
 title: Les topics, modules d'information de base DITA XML
 ---
 
- sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Les
 \[topics\](<http://docs.oasis-open.org/dita/v1.0/archspec/topicover.html>

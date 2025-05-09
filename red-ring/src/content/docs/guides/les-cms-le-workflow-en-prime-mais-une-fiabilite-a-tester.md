@@ -2,8 +2,6 @@
 title: Les CMS - le *workflow* en prime, mais une fiabilité à tester
 ---
 
- sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Les Content Management System, ainsi dénommés pour des raisons purement
 marketing, mais dont la fonction se comprend mieux avec l'acronyme

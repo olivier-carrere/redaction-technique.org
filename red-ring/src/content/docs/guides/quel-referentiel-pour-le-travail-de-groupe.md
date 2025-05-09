@@ -2,8 +2,6 @@
 title: Quel référentiel pour le travail de groupe ?
 ---
 
- sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Le référentiel le plus fréquemment utilisé pour stocker des fichiers
 informatiques est le dossier, ou répertoire. Si ce dépôt est

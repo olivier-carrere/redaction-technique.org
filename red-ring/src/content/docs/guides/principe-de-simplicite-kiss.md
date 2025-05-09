@@ -2,8 +2,7 @@
 title: Principe de simplicité KISS
 ---
 
-Le principe `KISS (Keep it simple stupid)`{.interpreted-text
-role="abbr"}, n'est pas spécifique à la rédaction technique. Il s'agit
+Le principe KISS (Keep it simple stupid), n'est pas spécifique à la rédaction technique. Il s'agit
 d'un principe général d'ingénierie, qui postule que tout objet
 matériel ou virtuel construit par l'homme est plus fiable et plus
 facile à maintenir et à faire évoluer si sa complexité est
@@ -34,12 +33,6 @@ et son appréhension par son destinataire deviennent alors aisées. C'est
 un aspect fondamental du métier de rédacteur technique. Le rédacteur
 technique apporte ainsi une véritable valeur ajoutée au produit qu'il
 documente.
-
- only
-html
-
-**Notes**
-
 
 [^1]: Même si les formats qui distinguent le contenu de la mise en page
     sont dans leur principe plus aptes à la mise en œuvre de la

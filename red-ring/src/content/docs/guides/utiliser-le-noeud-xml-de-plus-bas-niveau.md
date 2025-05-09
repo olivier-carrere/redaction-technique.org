@@ -2,8 +2,6 @@
 title: Utiliser le nœud XML de plus bas niveau
 ---
 
- sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Le rédacteur technique doit utiliser comme source du
 \[conref\](<http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html>

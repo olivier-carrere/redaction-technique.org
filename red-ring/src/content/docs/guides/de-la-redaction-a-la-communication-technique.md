@@ -2,8 +2,6 @@
 title: De la rédaction à la communication technique
 ---
 
- sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Le but de la est de transformer les prospects en clients satisfaits. Le
 rédacteur technique fournit au marché l'information dont il a besoin
@@ -21,12 +19,7 @@ vie. Destinée autant au grand public, aux journalistes et aux prospects
 qu'aux clients, elle dépasse et englobe la rédaction technique,
 destinée uniquement aux utilisateurs.
 
-<figure>
-<img src="graphics/marketing-technique.svg"
-alt="graphics/marketing-technique.svg" />
-<figcaption><em>Supports de rédaction marketing et
-technique</em></figcaption>
-</figure>
+![Supports de rédaction marketing et technique](graphics/marketing-technique.svg "Supports de rédaction marketing et technique")
 
 La communication technique a pour but de montrer l'adéquation d'un
 produit aux besoins de sa cible. Elle recourt pour cela à différents

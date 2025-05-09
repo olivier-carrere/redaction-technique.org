@@ -8,16 +8,16 @@ l'informatique.
 Puisqu'il traite des processus et des formats de rédaction technique,
 son contenu est cependant moins pertinent que son historique et que ses
 branches
-\[Git\](<https://github.com/olivier-carrere/redaction-technique.org/>\>\`\_.
+[Git](https://github.com/olivier-carrere/redaction-technique.org/).
 
 Il traite des formats, des outils et des tâches suivants :
-reStructuredText, DITA XML, \[scripts
-Bash\](<https://github.com/olivier-carrere/redaction-technique.org/tree/master/scripts>,
+reStructuredText, DITA XML, [scripts
+Bash](https://github.com/olivier-carrere/redaction-technique.org/tree/master/scripts),
 awk, sed, expressions rationnelles, Python, gestion de versions, Git,
 compilation,
-\[Makefile\](<https://github.com/olivier-carrere/redaction-technique.org/commits/master/Makefile>,
+[Makefile](https://github.com/olivier-carrere/redaction-technique.org/commits/master/Makefile),
 Ant, XSLT, mise en page, HTML,
-\[CSS\](<https://github.com/olivier-carrere/redaction-technique.org/tree/master/_static>,
+[CSS](https://github.com/olivier-carrere/redaction-technique.org/tree/master/_static),
 PDF, LaTeX, XSL-FO.
 
 ## Libérez vos informations de leurs silos
@@ -38,12 +38,7 @@ doit :
 -   faire l'objet des mêmes processus de production et de contrôle
     qualité.
 
-<figure>
-<img src="graphics/integration-doc-dev.svg"
-alt="graphics/integration-doc-dev.svg" />
-<figcaption><em>Sources de documentation modulaires au format
-texte</em></figcaption>
-</figure>
+![Sources de documentation modulaires au format texte](graphics/integration-doc-dev.svg)
 
 Elle doit répondre idéalement aux critères suivants :
 
@@ -78,7 +73,7 @@ reStructuredText.
 ![](graphics/documentation-life-cycle-framework.svg)
 
 Toutes les versions de ce blog sont gérées sous le logiciel de gestion
-de versions décentralisé \[Git\](<http://www.git-scm.com>. Les
+de versions décentralisé [Git](http://www.git-scm.com). Les
 modifications de contenu, de structure ou de mise en page peuvent
 désormais être :
 
@@ -95,33 +90,14 @@ Ce blog est disponible en trois formats, basés sur la version 1.1. Ces
 formats présentent des niveaux de fonctionnalités et de complexité
 différents.
 
-<figure>
-<img src="graphics/fonctionnalites_complexite.svg"
-alt="graphics/fonctionnalites_complexite.svg" />
-<figcaption><em>Niveau de fonctionnalités et de complexité des formats
-texte</em></figcaption>
-</figure>
 
-reStructuredText
+![Niveau de fonctionnalités et de complexité des formats texte](graphics/integration-doc-dev.svg)
 
-:   \[reStructuredText\](<https://github.com/olivier-carrere/redaction-technique.org/tree/master>
-    est un langage de balisage léger de type Wiki ou Markdown qui,
-    combiné au générateur de documentation Sphinx, offre un bon niveau
-    de fonctionnalités.
-
-DITA XML
-
-:   \[DITA
-    XML\](<https://github.com/olivier-carrere/redaction-technique.org/tree/DITA_XML>
-    est une architecture documentaire XML sémantique et modulaire
-    complexe qui offre des gains de productivité importants grâce à une
-    forte réutilisation du contenu.
-
-DocBook
-
-:   \[DocBook\](<https://github.com/olivier-carrere/redaction-technique.org/tree/DocBook>
-    est un langage de balisage XML sémantique qui offre un rapport
-    fonctionnalités/complexité aujourd'hui peu intéressant.
+| Format         | Description                                                                                                                                                                    |
+|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| reStructuredText | [reStructuredText](https://github.com/olivier-carrere/redaction-technique.org/tree/master) est un langage de balisage léger de type Wiki ou Markdown qui, combiné au générateur de documentation Sphinx, offre un bon niveau de fonctionnalités. |
+| DITA XML       | [DITA XML](https://github.com/olivier-carrere/redaction-technique.org/tree/DITA_XML) est une architecture documentaire XML sémantique et modulaire complexe qui offre des gains de productivité importants grâce à une forte réutilisation du contenu. |
+| DocBook        | [DocBook](https://github.com/olivier-carrere/redaction-technique.org/tree/DocBook) est un langage de balisage XML sémantique qui offre un rapport fonctionnalités/complexité aujourd'hui peu intéressant. |
 
 ### Formats cibles
 
@@ -136,26 +112,9 @@ exactement. Elles présentent cependant de légères variations, mises en
 œuvre par un mécanisme de texte conditionnel. Par exemple, le terme
 suivant varie selon le format cible :
 
-  -------------------------------------------------------------
-  Format cible                   Terme
-  ------------------------------ ------------------------------
-  PDF                            document
-
-  EPUB                           livre électronique
-
-  HTML                           site
-  -------------------------------------------------------------
-
- seealso
--   `git-du-fichier-au-contenu`{.interpreted-text role="ref"}
--   `sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers`{.interpreted-text
-    role="ref"}
--   `creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-conditionnel`{.interpreted-text
-    role="ref"}
-
-
- {.toctree hidden=""}
-diminuer-les-couts-ameliorer-la-satisfaction-client
-redaction-technique-un-processus-industriel format-structure-dita-xml
-le-coin-du-geek contact
+| Format cible | Terme               |
+|--------------|---------------------|
+| PDF          | document            |
+| EPUB         | livre électronique  |
+| HTML         | site                |
 

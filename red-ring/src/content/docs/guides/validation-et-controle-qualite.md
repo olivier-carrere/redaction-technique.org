@@ -2,8 +2,6 @@
 title: Validation et contrôle qualité
 ---
 
- sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Un support de rédaction technique doit être soumis à un contrôle qualité
 rigoureux avant d'être communiqué à ses différentes cibles.

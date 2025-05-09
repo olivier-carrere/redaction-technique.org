@@ -2,8 +2,6 @@
 title: Didacticiels DITA XML et XSL-FO
 ---
 
- sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Les didacticiels suivants aideront le rédacteur technique à mettre en
 place et à utiliser une chaîne de création et de publication DITA XML

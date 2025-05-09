@@ -2,8 +2,6 @@
 title: sed - modifiez votre texte sans ouvrir vos fichiers
 ---
 
- sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Les clones d'Unix sont peu utilisés pour gérer la documentation
 technique. Ceci est étrange si l'on songe à la pléthore d'outils

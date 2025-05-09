@@ -2,8 +2,6 @@
 title: Définition du projet
 ---
 
- sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Un projet de rédaction technique apporte une valeur ajoutée aux produits
 et aide l'entreprise à mieux commercialiser son offre sur son marché.

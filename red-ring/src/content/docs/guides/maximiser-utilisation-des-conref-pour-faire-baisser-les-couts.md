@@ -2,8 +2,6 @@
 title: Maximiser l'utilisation des *conref* pour faire baisser les coûts
 ---
 
- sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Recourir aux
 \[conref\](<http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html>

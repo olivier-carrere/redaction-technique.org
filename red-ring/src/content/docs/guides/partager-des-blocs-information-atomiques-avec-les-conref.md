@@ -2,8 +2,6 @@
 title: Partager des blocs d'information atomiques avec les *conref*
 ---
 
- sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Lorsque le rédacteur technique veut réutiliser des blocs d'information
 DITA XML plus petits qu'une section, il doit les partager au niveau des

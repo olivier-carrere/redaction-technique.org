@@ -2,8 +2,6 @@
 title: Organiser son historique avec Git rebase
 ---
 
- sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Git est d'un abord déroutant. Ses *workflows* s'appliquent à du
 contenu plutôt qu'à des fichiers. Résultat : le travail de groupe et la

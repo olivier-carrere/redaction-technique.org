@@ -2,8 +2,6 @@
 title: DocBook ou DITA XML ?
 ---
 
- sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Certaines entreprises ont parfois un contenu existant au format
 \[DocBook\](<https://github.com/olivier-carrere/redaction-technique.org/tree/DocBook>.

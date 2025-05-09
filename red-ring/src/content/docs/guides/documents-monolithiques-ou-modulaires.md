@@ -2,8 +2,6 @@
 title: Documents monolithiques ou modulaires
 ---
 
- sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Le format source peut reposer sur des fichiers monolithiques ou sur des
 grappes de fichiers modulaires.

@@ -2,8 +2,6 @@
 title: Formats et outils
 ---
 
- sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Lorsqu'une entreprise décide d'industrialiser la rédaction technique,
 elle se pose d'emblée la question des outils. Or, plutôt que les
@@ -19,16 +17,11 @@ risque donc de limiter les choix ultérieurs de l'entreprise et de se
 révéler coûteux : il faut une licence par utilisateur, qu'il soit
 rédacteur technique, contributeur occasionnel ou traducteur.
 
-<figure>
-<img src="graphics/format-standard.svg"
-alt="graphics/format-standard.svg" />
-<figcaption><em>Un format standard laisse le choix de
-l'outil.</em></figcaption>
-</figure>
+![Un format standard laisse le choix de l'outil.](graphics/format-standard.svg "Un format standard laisse le choix de l'outil.")
 
 Si l'on réfléchit en termes de formats, en revanche, il est possible de
 mettre en place des solutions évolutives. Un format ouvert tel que
-\[OpenDocument\](<http://fr.wikipedia.org/wiki/OpenDocument> ou DITA
+[OpenDocument](http://fr.wikipedia.org/wiki/OpenDocument) ou DITA
 XML, par exemple (seul le second étant un format industriel de rédaction
 technique), n'est pas lié à un outil donné. Il est donc possible de le
 modifier et de le manipuler à l'aide de différents logiciels. Les

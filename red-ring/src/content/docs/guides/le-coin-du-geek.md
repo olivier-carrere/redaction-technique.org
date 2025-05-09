@@ -12,52 +12,15 @@ Cette approche facilite le dialogue avec les développeurs et donne une
 plus grande maîtrise des données. Elle se traduit par un certain nombre
 de caractéristiques qui se reflètent dans la pratique de mon métier :
 
-  -----------------------------------------------------------------------
-  Caractéristique        Application pratique
-  ---------------------- ------------------------------------------------
-  Recherche de           Industrialisation des formats, outils et
-  rationnalisation       processus pour minimiser la quantité de travail
-                         inutile.
-
-  Capacité d'adaptation Vision du changement comme opportunité
-                         d'acquérir et d'utiliser de nouvelles
-                         connaissances.
-
-  Forte autonomie de     Créativité dans le choix des moyens mis en œuvre
-  travail                pour atteindre efficacement les objectifs.
-
-  Sens de l'innovation  Recherche constante de nouvelles solutions (dont
-                         il faut cependant évaluer le coût de mise en
-                         œuvre et l'impact humain).
-
-  Goût des rapports      Préférence pour le dialogue face à face pour
-  humains                éviter tout présupposé ou incompréhension.
-
-  Capacité               Apprentissage « sur le tas » de formats de
-  d'apprentissage dans  documentation, langages informatiques ou
-  des domaines variés    environnements en ligne de commande.
-
-  Recherche de           Amélioration de la satisfaction client,
-  l'excellence          minimisation de la maintenance et meilleure
-                         réutilisation du contenu existant.
-  -----------------------------------------------------------------------
+| Caractéristique               | Application pratique                                                                                   |
+|------------------------------|--------------------------------------------------------------------------------------------------------|
+| Recherche de rationalisation | Industrialisation des formats, outils et processus pour minimiser la quantité de travail inutile.     |
+| Capacité d'adaptation        | Vision du changement comme opportunité d'acquérir et d'utiliser de nouvelles connaissances.           |
+| Forte autonomie de travail   | Créativité dans le choix des moyens mis en œuvre pour atteindre efficacement les objectifs.            |
+| Sens de l'innovation         | Recherche constante de nouvelles solutions (dont il faut cependant évaluer le coût et l’impact humain).|
+| Goût des rapports humains    | Préférence pour le dialogue face à face pour éviter tout présupposé ou incompréhension.                |
+| Capacité d'apprentissage dans des domaines variés | Apprentissage « sur le tas » de formats de documentation, langages informatiques ou environnements en ligne de commande. |
+| Recherche de l'excellence    | Amélioration de la satisfaction client, minimisation de la maintenance et meilleure réutilisation du contenu existant. |
 
 Si vous vous reconnaissez dans ce portrait et n'avez pas peur du mode
 console, c'est par ici !
-
- seealso
-\[Being a Techie
-Writer\](<http://techwhirl.com/techie-writer-series-part-i-being-a-techie-writer/>
-
-
- {.toctree hidden=""}
-jourdainisation-en-ligne-python raspberry-pi-plateforme-documentation
-sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers
-expressions-regulieres-python didacticiels-dita-xml-xsl-fo
-creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-rest-texte-conditionnel
-creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-texte-conditionnel
-creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-objet-texte-conditionnel
-inserer-automatiquement-des-donnees-dans-un-fichier-restructuredtext
-inserer-automatiquement-des-donnees-dans-un-fichier-dita-xml
-inserer-automatiquement-des-donnees-sql-dans-un-fichier-restructuredtext
-

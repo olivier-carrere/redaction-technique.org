@@ -2,8 +2,6 @@
 title: Tester les produits pour les documenter
 ---
 
- sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Le rédacteur technique ne peut fournir une documentation utile aux
 clients de l'entreprise s'il se contente de mettre en forme des
