@@ -14,7 +14,7 @@ export default defineConfig({
           lang: 'fr',
         },
       },
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/olivier-carrere/redaction-technique.org' }],
 			sidebar: [
 				{
 					label: 'Tech writing',
