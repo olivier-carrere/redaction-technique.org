@@ -2,7 +2,7 @@
 title: Définition du projet
 ---
 
-::: sidebar
+ sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Un projet de rédaction technique apporte une valeur ajoutée aux produits

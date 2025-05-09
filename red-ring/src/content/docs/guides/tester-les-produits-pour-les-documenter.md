@@ -2,7 +2,7 @@
 title: Tester les produits pour les documenter
 ---
 
-::: sidebar
+ sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Le rédacteur technique ne peut fournir une documentation utile aux

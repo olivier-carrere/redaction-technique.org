@@ -2,7 +2,7 @@
 title: Formats structurés et non structurés
 ---
 
-::: sidebar
+ sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Les formats structurés favorisent la création de documents minimalistes,
@@ -97,7 +97,7 @@ Cohérentes
     répétés à différents endroits, tels qu'une remarque, sont issus
     d'une seule et même source et sont donc strictement identiques.
 
-::: {.toctree hidden=""}
+ {.toctree hidden=""}
 docbook-ou-dita-xml migration-de-framemaker-vers-dita-xml
 migrer-de-framemaker-vers-dita-xml
 

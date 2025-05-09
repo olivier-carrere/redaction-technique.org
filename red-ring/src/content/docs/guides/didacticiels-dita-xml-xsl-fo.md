@@ -2,7 +2,7 @@
 title: Didacticiels DITA XML et XSL-FO
 ---
 
-::: sidebar
+ sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Les didacticiels suivants aideront le rédacteur technique à mettre en
@@ -29,7 +29,7 @@ documentation en spécifiant simplement un autre jeu de feuilles de style
 lors de la génération du livrable. Opération qui n'est pas envisageable
 en pratique avec des solutions traditionnelles de type FrameMaker.
 
-::: {.toctree hidden=""}
+ {.toctree hidden=""}
 xsl-fo-filtrer-du-contenu-selon-des-conditions-sauf-et-ou
 xsl-fo-inserer-automatiquement-un-titre-pour-les-exemples
 generer-un-pdf-avec-dita-open-toolkit-sous-gnu-linux

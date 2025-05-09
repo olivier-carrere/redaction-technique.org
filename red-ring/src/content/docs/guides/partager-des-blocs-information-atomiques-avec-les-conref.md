@@ -2,7 +2,7 @@
 title: Partager des blocs d'information atomiques avec les *conref*
 ---
 
-::: sidebar
+ sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Lorsque le rédacteur technique veut réutiliser des blocs d'information
@@ -35,7 +35,7 @@ lisibles que les *xinclude* et favorise leur utilisation.
 entre les sections DITA XML</em></figcaption>
 </figure>
 
-::: {.toctree hidden=""}
+ {.toctree hidden=""}
 centraliser-les-conref-dans-un-fichier-unique
 utiliser-le-noeud-xml-de-plus-bas-niveau
 prendre-en-compte-les-contraintes-de-traduction imbriquer-les-conref

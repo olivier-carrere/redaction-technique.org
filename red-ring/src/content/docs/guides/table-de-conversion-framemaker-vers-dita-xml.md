@@ -29,7 +29,7 @@ XML. Vous pouvez pendant cette phase continuer à publier de nouvelles
 versions du document ; la publication devrait d'ailleurs être beaucoup
 plus simple que sous FrameMaker.
 
-::: only
+ only
 html
 
 **Notes**

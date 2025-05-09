@@ -47,8 +47,8 @@ de\[LaTeX\]([https://www.latex-project.org/\\](https://www.latex-project.org/\)
 
 ![](graphics/latex-rendu.png)
 
-:::: note
-::: title
+: note
+ title
 Note
 
 
@@ -65,7 +65,7 @@ numérotations, disons... aléatoires, vous en comprendrez tout de suite
 l'avantage.
 
 ![](graphics/latex-wysiwyg-gummi.png)
-::::
+:
 
 D'autre part, une fois la structure du dépliant créée, il est facile de
 l'utiliser pour produire rapidement d'autres documents. De plus, le

@@ -2,7 +2,7 @@
 title: Centraliser les *conref* dans un fichier unique
 ---
 
-::: sidebar
+ sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Pour favoriser l'utilisation des

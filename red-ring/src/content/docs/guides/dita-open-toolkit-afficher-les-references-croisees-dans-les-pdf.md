@@ -2,7 +2,7 @@
 title: DITA Open Toolkit - afficher les références croisées dans les PDF
 ---
 
-::: sidebar
+ sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Les références croisées sont un élément important d'une documentation
@@ -36,7 +36,7 @@ $ ant -Dargs.input=samples/sequence.ditamap -Doutput.dir=out/ \
 -Dtranstype=pdf2 -Dargs.fo.include.rellinks=all
 ```
 
-::: only
+ only
 html
 
 **Notes**

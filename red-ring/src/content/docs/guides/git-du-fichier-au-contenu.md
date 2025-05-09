@@ -2,7 +2,7 @@
 title: Git - du fichier au contenu
 ---
 
-::: sidebar
+ sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Vous êtes habitué à manipuler des fichiers ? Git vous invite à penser
@@ -66,7 +66,7 @@ déciderez de partager votre travail, vous pourrez déplacer, fusionner ou
 supprimer vos *commits* avant de les envoyer sous forme de patchs ou de
 les déposer sur un dépôt central.
 
-::: {.toctree hidden=""}
+ {.toctree hidden=""}
 faire-sauter-les-goulets-etranglement-avec-les-branches
 organiser-son-historique-avec-git-rebase
 

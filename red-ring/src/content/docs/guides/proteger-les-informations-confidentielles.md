@@ -2,7 +2,7 @@
 title: Protéger les informations confidentielles
 ---
 
-::: sidebar
+ sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Le puissant mécanisme

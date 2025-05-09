@@ -2,7 +2,7 @@
 title: Format source
 ---
 
-::: sidebar
+ sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Le contenu d'un projet de rédaction technique est créé dans un format
@@ -142,13 +142,13 @@ contiennent des informations telles que la structure de table des
 matières ou les références croisées qui ne sont valables que dans un
 nombre limité de contextes.
 
-::: only
+ only
 html
 
 **Notes**
 
 
-::: {.toctree hidden=""}
+ {.toctree hidden=""}
 documents-monolithiques-ou-modulaires fichiers-binaires-ou-texte
 
 

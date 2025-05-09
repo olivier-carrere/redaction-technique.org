@@ -2,7 +2,7 @@
 title: Imbriquer les *conref*
 ---
 
-::: sidebar
+ sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Pour des raisons de facilité de mise à jour et de maintenance du contenu

@@ -6,7 +6,7 @@ Lorsqu'un formateur entre dans une salle de formation, rien qu'au
 *look* des participants, il a déjà une idée de comment orienter son
 discours.
 
-::: sidebar
+ sidebar
 **`fa-history`{.interpreted-text role="awesome"} Modifications
 récentes**
 
@@ -153,7 +153,7 @@ toujours utile d'en dresser le portrait type, afin de faciliter la
 communication en interne? Expliciter les présupposés de chacun est
 toujours une bonne idée.
 
-::: {.toctree hidden=""}
+ {.toctree hidden=""}
 diminuer-les-couts-ameliorer-la-satisfaction-client
 redaction-technique-un-processus-industriel format-structure-dita-xml
 mener-un-projet-de-bout-en-bout le-coin-du-geek a-propos-de-ce-blog

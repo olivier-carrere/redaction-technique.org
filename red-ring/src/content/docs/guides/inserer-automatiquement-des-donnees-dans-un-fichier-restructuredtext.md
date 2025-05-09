@@ -12,16 +12,16 @@ vous pouvez les insérer automatiquement grâce à
 1.  Créez le fichier `modele.rst`{.interpreted-text role="file"}
     suivant :
 
-    ::: {.literalinclude language="rest"}
+     {.literalinclude language="rest"}
     code/modele.rst
-    :::
+    
 
 2.  Créez le script Python `populate.py`{.interpreted-text role="file"}
     suivant :
 
-    ::: {.literalinclude language="python3"}
+     {.literalinclude language="python3"}
     code/populate.py
-    :::
+    
 
 3.  Rendez le script exécutable, puis exécutez-le :
 
@@ -68,7 +68,7 @@ vous pouvez les insérer automatiquement grâce à
 
 Vous minimisez ainsi le risque d'erreurs et l'effort de mise à jour.
 
-::: seealso
+ seealso
 -   `inserer-automatiquement-des-donnees-dans-un-fichier-dita-xml`{.interpreted-text
     role="ref"}
 -   `inserer-automatiquement-des-donnees-sql-dans-un-fichier-restructuredtext`{.interpreted-text

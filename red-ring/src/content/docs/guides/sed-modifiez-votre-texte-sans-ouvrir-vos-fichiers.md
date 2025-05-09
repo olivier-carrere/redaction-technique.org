@@ -2,7 +2,7 @@
 title: sed - modifiez votre texte sans ouvrir vos fichiers
 ---
 
-::: sidebar
+ sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Les clones d'Unix sont peu utilisés pour gérer la documentation
@@ -298,7 +298,7 @@ phrases de même structure. Ce qui n'est pas possible sous un traitement
 de texte ou autre outil muni d'une interface graphique, ou sur des
 fichiers binaires.
 
-::: seealso
+ seealso
 -   `jourdainisation-en-ligne-python`{.interpreted-text role="ref"}
 -   `expressions-regulieres-python`{.interpreted-text role="ref"}
 

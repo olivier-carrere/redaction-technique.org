@@ -2,7 +2,7 @@
 title: Fournir une information ciblée avec le texte conditionnel ditaval
 ---
 
-::: sidebar
+ sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Un fichier
@@ -61,8 +61,8 @@ Vous pouvez utiliser la structure suivante :
 </step>
 ```
 
-:::: attention
-::: title
+: attention
+ title
 Attention
 
 
@@ -98,4 +98,4 @@ moins une ligne :
 ```
 
 Ce code est donc incorrect et entraîne l'échec de la compilation.
-::::
+:

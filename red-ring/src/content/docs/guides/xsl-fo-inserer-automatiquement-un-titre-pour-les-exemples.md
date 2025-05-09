@@ -2,7 +2,7 @@
 title: XSL-FO - insérer automatiquement un titre pour les exemples
 ---
 
-::: sidebar
+ sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Par défaut, DITA Open Toolkit n'insère pas automatiquement dans les

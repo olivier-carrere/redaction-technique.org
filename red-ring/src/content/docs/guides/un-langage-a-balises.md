@@ -2,7 +2,7 @@
 title: Un langage à balises
 ---
 
-::: sidebar
+ sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 DITA XML est un langage à balises : le rédacteur technique structure

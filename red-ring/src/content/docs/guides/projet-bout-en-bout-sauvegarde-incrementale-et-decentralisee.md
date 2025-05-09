@@ -14,7 +14,7 @@ cloné ce dépôt sur Gitlab.
 Ainsi, tout membre de l'association peut créer un compte Gitlab, puis,
 après avoir reçu le mot de passe, cloner la copie de sauvegarde.
 
-::: admonition
+ admonition
 Clonage du dépôt Gitlab
 
 *La procédure suivante était incluse dans une première version du
@@ -75,8 +75,8 @@ $ lftp ftp://user:password@ftpaccount -e \
   repertoire-local; quit"
 ```
 
-:::: note
-::: title
+: note
+ title
 Note
 
 
@@ -86,7 +86,7 @@ préalable lancé la commande suivante sur mon dépôt local :
 ``` console
 $ git config core.filemode false
 ```
-::::
+:
 
 L'hébergement des photos est donc centralisé, la sauvegarde,
 décentralisée.

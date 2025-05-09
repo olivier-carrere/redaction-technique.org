@@ -2,7 +2,7 @@
 title: Documents monolithiques ou modulaires
 ---
 
-::: sidebar
+ sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Le format source peut reposer sur des fichiers monolithiques ou sur des
@@ -37,6 +37,6 @@ modulaires, mais ils le font mal. Inversement, un document DocBook ou
 DITA XML, par exemple, peut être monolithique, mais perd alors de sa
 souplesse.
 
-::: {.toctree hidden=""}
+ {.toctree hidden=""}
 qu-est-ce-qu-un-module-d-information
 

@@ -77,17 +77,17 @@ format XML et effectuent des comparaisons ligne par ligne entre les
 fichiers, et non pas nœud par nœud, ce qui multiplie inutilement les
 conflits entre les *commits* ou les branches.
 
-::: seealso
+ seealso
 -   `git-du-fichier-au-contenu`{.interpreted-text role="ref"}
 
 
-::: only
+ only
 html
 
 **Notes**
 
 
-::: {.toctree hidden=""}
+ {.toctree hidden=""}
 utiliser-les-branches-des-systemes-de-gestion-de-sources
 
 

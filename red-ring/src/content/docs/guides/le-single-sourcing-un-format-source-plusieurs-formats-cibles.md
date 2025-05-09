@@ -2,7 +2,7 @@
 title: Le single-sourcing - un format source, plusieurs formats cibles
 ---
 
-::: sidebar
+ sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Le *single-sourcing* est un sujet qui a longtemps divisé les rédacteurs

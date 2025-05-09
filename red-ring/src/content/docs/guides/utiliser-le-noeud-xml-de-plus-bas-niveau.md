@@ -2,7 +2,7 @@
 title: Utiliser le nœud XML de plus bas niveau
 ---
 
-::: sidebar
+ sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Le rédacteur technique doit utiliser comme source du

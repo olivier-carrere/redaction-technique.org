@@ -12,7 +12,7 @@ Si je n'avais pas utilisé un format qui favorise au maximum la
 réutilisation de l'information, je n'aurais pas autant pu me consacrer
 à l'essentiel : le contenu.
 
-::: {.toctree hidden=""}
+ {.toctree hidden=""}
 partager-des-blocs-information-atomiques-avec-les-conref
 fournir-une-information-ciblee-avec-le-texte-conditionnel-ditaval
 

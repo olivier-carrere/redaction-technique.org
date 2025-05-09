@@ -10,28 +10,28 @@ PDF, HTML ou autre.
 1.  Créez la base de données *SQLite3* `productdb.db`{.interpreted-text
     role="file"}:
 
-    ::: {.literalinclude language="python3"}
+     {.literalinclude language="python3"}
     code/create-sqlite3.py
-    :::
+    
 
 2.  Insérez des données dans la base :
 
-    ::: {.literalinclude language="python3"}
+     {.literalinclude language="python3"}
     code/insert-sqlite3.py
-    :::
+    
 
 3.  Créez le fichier `modele-sql.rst`{.interpreted-text role="file"}
     suivant :
 
-    ::: {.literalinclude language="rest"}
+     {.literalinclude language="rest"}
     code/modele-sql.rst
-    :::
+    
 
 4.  Exécutez le script Python suivant :
 
-    ::: {.literalinclude language="python3"}
+     {.literalinclude language="python3"}
     code/populate-sql-rst.py
-    :::
+    
 
     Le contenu suivant s'affiche :
 
@@ -67,7 +67,7 @@ PDF, HTML ou autre.
     - 2.7
     ```
 
-::: seealso
+ seealso
 -   `inserer-automatiquement-des-donnees-dans-un-fichier-dita-xml`{.interpreted-text
     role="ref"}
 -   `inserer-automatiquement-des-donnees-dans-un-fichier-restructuredtext`{.interpreted-text

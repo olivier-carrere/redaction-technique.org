@@ -28,7 +28,7 @@ aussi automatisée que possible. En mettant en place un processus
 industriel et reproductible, il diminue les coûts de production et
 fournit un niveau de qualité constant, adapté aux buts de l'entreprise.
 
-::: {.toctree hidden=""}
+ {.toctree hidden=""}
 documentation microservices definition-du-projet
 collecte-de-l-information creation-du-contenu format-source referentiel
 validation-et-controle-qualite traduction format-cible livraison

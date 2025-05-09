@@ -13,7 +13,7 @@ phrase pour dire la même chose de manière plus alambiquée  :
 Voici le code du script, qui repose sur le *microframework* web
 \[Flask\](<http://flask.pocoo.org/> :
 
-::: {.literalinclude language="python3" caption=""}
+ {.literalinclude language="python3" caption=""}
 code/word_switch_web.py
 
 
@@ -36,25 +36,25 @@ print(texte_final)
 Voici maintenant les modèles générant les pages HTML de base, d'entrée
 et de sortie, basés sur \[Jinja\](<http://jinja.pocoo.org/> :
 
-::: {.literalinclude language="html" caption=""}
+ {.literalinclude language="html" caption=""}
 code/templates/base.html
 
 
-::: {.literalinclude language="html" caption=""}
+ {.literalinclude language="html" caption=""}
 code/templates/entry.html
 
 
-::: {.literalinclude language="html" caption=""}
+ {.literalinclude language="html" caption=""}
 code/templates/results.html
 
 
 Et enfin, la feuille de style CSS :
 
-::: {.literalinclude language="css" caption=""}
+ {.literalinclude language="css" caption=""}
 code/static/form.css
 
 
-::: seealso
+ seealso
 -   `sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers`{.interpreted-text
     role="ref"}
 -   `expressions-regulieres-python`{.interpreted-text role="ref"}

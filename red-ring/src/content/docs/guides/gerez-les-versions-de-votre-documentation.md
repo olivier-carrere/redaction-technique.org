@@ -27,8 +27,8 @@ title: Gérez les versions de votre documentation
     *Un* commit *atomique s'étendant sur une bonne quinzaine de
     fichiers*
 
-:::: note
-::: title
+: note
+ title
 Note
 
 
@@ -42,4 +42,4 @@ Note
     Raspberry Pi 3. Rien n'empêche cependant d'héberger un dépôt
     distant Git sur un Raspberry Pi 3 connecté au réseau et d'y accéder
     par connexion sécurisée SSH.
-::::
+:

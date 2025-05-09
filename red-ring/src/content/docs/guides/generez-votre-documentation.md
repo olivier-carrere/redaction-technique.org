@@ -9,14 +9,14 @@ title: Générez votre documentation
     $ git checkout $(git describe --tags $(git rev-list --tags --max-count=1))
     ```
 
-    :::: note
-    ::: title
+    : note
+     title
     Note
-    :::
+    
 
     Oui, je sais, cette commande ne correspond pas exactement à la
     définition de *simple* donnée par le Larousse...
-    ::::
+    :
 
 2.  Générez la dernière version *taguée* de ce blog aux format PDF, HTML
     et EPUB :
@@ -53,10 +53,10 @@ Et voilà. En quelques minutes, vous avez :
 -   Généré dans trois formats différents une documentation d'une
     soixantaine de pages comprenant une quarantaine de schémas.
 
-    :::: note
-    ::: title
+    : note
+     title
     Note
-    :::
+    
 
     -   Le fichier `Makefile`{.interpreted-text role="file"} est assez
         brut de décoffrage et le temps de compilation peut facilement
@@ -70,7 +70,7 @@ Et voilà. En quelques minutes, vous avez :
         n'embarque pas le patch *1032292*. Je vous laisse chercher dans
         l'historique Git... voire créer une branche et le
         *cherry-picker* !
-    ::::
+    :
 
 Le Raspberry Pi 3 est donc une plateforme de documentation tout à fait
 crédible... à condition de se passer, ou presque, d'interface

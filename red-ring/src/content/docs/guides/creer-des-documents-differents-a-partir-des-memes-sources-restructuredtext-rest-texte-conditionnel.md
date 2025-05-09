@@ -53,7 +53,7 @@ title: Créer des documents différents à partir des mêmes sources ReST (texte
 6.  Ouvrez le fichier `_build/html/index.html`{.interpreted-text
     role="file"} sous un navigateur pour visualiser votre contenu.
 
-::: seealso
+ seealso
 -   `creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-conditionnel`{.interpreted-text
     role="ref"}
 -   `creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-texte-conditionnel`{.interpreted-text

@@ -2,7 +2,7 @@
 title: Les topics, modules d'information de base DITA XML
 ---
 
-::: sidebar
+ sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Les
@@ -38,7 +38,7 @@ pas être munis d'un titre, ne forment pas des *topics*. Elles peuvent
 être cependant partagées *via* le mécanisme *conref*, similaire au
 mécanisme *Xinclude* proposé par DocBook.
 
-::: only
+ only
 html
 
 **Notes**

@@ -10,7 +10,7 @@ J'ai créé un dépliant expliquant :
 -   l'utilisation de la galerie par chaque type d'utilisateurs ;
 -   le workflow dans lequel s'inscrivent les utilisateurs.
 
-::: admonition
+ admonition
 Modèle LaTeX du dépliant
 
 Le \[modèle LaTeX du

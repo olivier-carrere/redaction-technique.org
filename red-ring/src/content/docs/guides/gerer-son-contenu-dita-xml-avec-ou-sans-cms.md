@@ -41,13 +41,13 @@ particulier. Rien n'interdit donc de commencer à gérer ses projets sans
 Content Management System, puis d'avoir recours à une telle solution si
 les bénéfices de ce choix deviennent manifestes.
 
-::: only
+ only
 html
 
 **Notes**
 
 
-::: seealso
+ seealso
 -   `git-du-fichier-au-contenu`{.interpreted-text role="ref"}
 
 

@@ -45,12 +45,12 @@ de caractéristiques qui se reflètent dans la pratique de mon métier :
 Si vous vous reconnaissez dans ce portrait et n'avez pas peur du mode
 console, c'est par ici !
 
-::: seealso
+ seealso
 \[Being a Techie
 Writer\](<http://techwhirl.com/techie-writer-series-part-i-being-a-techie-writer/>
 
 
-::: {.toctree hidden=""}
+ {.toctree hidden=""}
 jourdainisation-en-ligne-python raspberry-pi-plateforme-documentation
 sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers
 expressions-regulieres-python didacticiels-dita-xml-xsl-fo

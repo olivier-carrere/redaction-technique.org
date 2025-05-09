@@ -37,7 +37,7 @@ forme de fichier PDF, d'aide compilée Windows, d'aide JavaHelp, de
 site en HTML, etc. Le XML offre en ce domaine des possibilités quasi
 illimitées.
 
-::: only
+ only
 html
 
 **Notes**

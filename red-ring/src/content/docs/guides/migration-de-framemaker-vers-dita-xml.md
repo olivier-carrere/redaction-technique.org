@@ -32,13 +32,13 @@ utilisateurs y auraient déjà beaucoup gagné, respectivement en :
 -   cohérence et rapidité de publication des nouvelles versions,
 -   facilité d'accès à l'information.
 
-::: only
+ only
 html
 
 **Notes**
 
 
-::: {.toctree hidden=""}
+ {.toctree hidden=""}
 restructuration-du-contenu-framemaker
 table-de-conversion-framemaker-vers-dita-xml
 

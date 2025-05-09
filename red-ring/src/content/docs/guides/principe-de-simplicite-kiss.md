@@ -35,7 +35,7 @@ un aspect fondamental du métier de rédacteur technique. Le rédacteur
 technique apporte ainsi une véritable valeur ajoutée au produit qu'il
 documente.
 
-::: only
+ only
 html
 
 **Notes**

@@ -2,7 +2,7 @@
 title: Validation et contrôle qualité
 ---
 
-::: sidebar
+ sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Un support de rédaction technique doit être soumis à un contrôle qualité
@@ -31,6 +31,6 @@ relecture comparée. Comparer les modules d'information directement sous
 le système de gestion de versions n'est pas suffisant, car ils ne sont
 que les « briques » du document final.
 
-::: {.toctree hidden=""}
+ {.toctree hidden=""}
 workflow-de-creation-et-validation
 

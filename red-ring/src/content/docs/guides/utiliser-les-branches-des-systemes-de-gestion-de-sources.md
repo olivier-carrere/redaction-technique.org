@@ -61,6 +61,6 @@ En tout cas, la solution des branches autorise de telles opérations, non
 celle des répertoires. Elle est cependant plus difficile à appréhender
 et à utiliser par l'équipe de rédaction technique.
 
-::: seealso
+ seealso
 -   `git-du-fichier-au-contenu`{.interpreted-text role="ref"}
 

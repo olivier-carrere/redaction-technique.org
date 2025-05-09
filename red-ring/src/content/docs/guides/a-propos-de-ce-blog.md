@@ -146,7 +146,7 @@ suivant varie selon le format cible :
   HTML                           site
   -------------------------------------------------------------
 
-::: seealso
+ seealso
 -   `git-du-fichier-au-contenu`{.interpreted-text role="ref"}
 -   `sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers`{.interpreted-text
     role="ref"}
@@ -154,7 +154,7 @@ suivant varie selon le format cible :
     role="ref"}
 
 
-::: {.toctree hidden=""}
+ {.toctree hidden=""}
 diminuer-les-couts-ameliorer-la-satisfaction-client
 redaction-technique-un-processus-industriel format-structure-dita-xml
 le-coin-du-geek contact

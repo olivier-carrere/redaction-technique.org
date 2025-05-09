@@ -37,6 +37,6 @@ silence des informations très techniques dans le guide de
 l'utilisateur. Inversement, il pourra étayer une brochure commerciale
 de données techniques précises pour étayer le discours marketing.
 
-::: {.toctree hidden=""}
+ {.toctree hidden=""}
 tester-les-produits-pour-les-documenter
 

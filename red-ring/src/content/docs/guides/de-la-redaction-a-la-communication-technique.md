@@ -2,7 +2,7 @@
 title: De la rédaction à la communication technique
 ---
 
-::: sidebar
+ sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Le but de la est de transformer les prospects en clients satisfaits. Le

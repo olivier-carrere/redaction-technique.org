@@ -47,10 +47,10 @@ didacticiel vous permettra d'utiliser ce mode Emacs pour DITA XML.
     rm  nxml-mode-environmment.txt
     ```
 
-    :::: note
-    ::: title
+    : note
+     title
     Note
-    :::
+    
 
     Si un message vous avertit que le fichier `.emacs`{.interpreted-text
     role="file"} n'existe pas, collez les commandes suivantes, puis
@@ -59,7 +59,7 @@ didacticiel vous permettra d'utiliser ce mode Emacs pour DITA XML.
     ``` console
     $ cd && touch .emacs
     ```
-    ::::
+    :
 
     Cette suite de commandes :
 

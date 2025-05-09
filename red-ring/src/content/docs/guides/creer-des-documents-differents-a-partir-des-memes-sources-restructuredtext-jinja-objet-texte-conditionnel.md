@@ -209,9 +209,9 @@ blocs de texte selon leurs attributs.
     programmation orientée objet, le test d'égalité [==]{.title-ref}
     étant plus parlant pour la plupart des gens.
 
-    ::: {.literalinclude language="rest"}
+     {.literalinclude language="rest"}
     code/texte-conditionnel.rst
-    :::
+    
 
     Il est plus économique d'utiliser une seule classe d'objets, même
     si elle mélange un peu les choux et les carottes (autant dans cet
@@ -241,9 +241,9 @@ blocs de texte selon leurs attributs.
 11. Modifiez votre script pour indiquer le public et la saison en
     paramètres :
 
-    ::: {.literalinclude language="python3"}
+     {.literalinclude language="python3"}
     code/profiling.py
-    :::
+    
 
     Utilisation :
 
@@ -283,7 +283,7 @@ blocs de texte selon leurs attributs.
         print('Veuillez indiquer le public et la saison')
     ```
 
-::: seealso
+ seealso
 -   `creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-conditionnel`{.interpreted-text
     role="ref"}
 -   `creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-rest-texte-conditionnel`{.interpreted-text

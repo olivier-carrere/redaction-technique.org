@@ -49,7 +49,7 @@ l'information. L'utilisateur y gagne en facilité et rapidité d'accès
 à l'information et en utilisabilité globale de la documentation
 technique.
 
-::: only
+ only
 html
 
 **Notes**

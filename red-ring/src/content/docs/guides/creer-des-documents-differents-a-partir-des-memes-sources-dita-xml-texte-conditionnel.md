@@ -135,7 +135,7 @@ mécanisme en quelques minutes.
 > -   aux plombiers et aux électriciens,
 > -   uniquement aux plombiers.
 
-::: seealso
+ seealso
 -   `creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-rest-texte-conditionnel`{.interpreted-text
     role="ref"}
 -   `creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-texte-conditionnel`{.interpreted-text

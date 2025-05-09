@@ -2,7 +2,7 @@
 title: Formats et outils
 ---
 
-::: sidebar
+ sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Lorsqu'une entreprise décide d'industrialiser la rédaction technique,

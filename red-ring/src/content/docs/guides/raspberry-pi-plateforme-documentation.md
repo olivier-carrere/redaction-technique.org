@@ -10,8 +10,8 @@ s'avère pourtant qu'une unité centrale d'une quarantaine d'euros
 suffit largement pour créer, gérer et générer une documentation aux
 formats PDF, HTML, ou autre.
 
-:::: note
-::: title
+: note
+ title
 Note
 
 
@@ -26,7 +26,7 @@ Les buts de ce billet sont de :
     IoT*, destiné au Raspberry Pi 3.
 -   Présenter un scénario d'utilisation aussi simple que possible,
     parfois au détriment de l'élégance technique.
-::::
+:
 
 
 Configurez le Raspberry Pi 3 \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
@@ -208,8 +208,8 @@ title: Gérez les versions de votre documentation
     *Un* commit *atomique s'étendant sur une bonne quinzaine de
     fichiers*
 
-:::: note
-::: title
+: note
+ title
 Note
 
 
@@ -223,7 +223,7 @@ Note
     Raspberry Pi 3. Rien n'empêche cependant d'héberger un dépôt
     distant Git sur un Raspberry Pi 3 connecté au réseau et d'y accéder
     par connexion sécurisée SSH.
-::::
+:
 
 title: Générez votre documentation
 
@@ -234,14 +234,14 @@ title: Générez votre documentation
     $ git checkout $(git describe --tags $(git rev-list --tags --max-count=1))
     ```
 
-    :::: note
-    ::: title
+    : note
+     title
     Note
-    :::
+    
 
     Oui, je sais, cette commande ne correspond pas exactement à la
     définition de *simple* donnée par le Larousse...
-    ::::
+    :
 
 2.  Générez la dernière version *taguée* de ce blog aux format PDF, HTML
     et EPUB :
@@ -278,10 +278,10 @@ Et voilà. En quelques minutes, vous avez :
 -   Généré dans trois formats différents une documentation d'une
     soixantaine de pages comprenant une quarantaine de schémas.
 
-    :::: note
-    ::: title
+    : note
+     title
     Note
-    :::
+    
 
     -   Le fichier `Makefile`{.interpreted-text role="file"} est assez
         brut de décoffrage et le temps de compilation peut facilement
@@ -295,7 +295,7 @@ Et voilà. En quelques minutes, vous avez :
         n'embarque pas le patch *1032292*. Je vous laisse chercher dans
         l'historique Git... voire créer une branche et le
         *cherry-picker* !
-    ::::
+    :
 
 Le Raspberry Pi 3 est donc une plateforme de documentation tout à fait
 crédible... à condition de se passer, ou presque, d'interface

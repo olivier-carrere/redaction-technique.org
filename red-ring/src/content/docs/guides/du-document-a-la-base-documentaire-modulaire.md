@@ -2,7 +2,7 @@
 title: Du document à la base documentaire modulaire
 ---
 
-::: sidebar
+ sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Le modèle du livre est encore prédominant pour créer et gérer
@@ -37,7 +37,7 @@ référentiel unique, tel qu'un ECM (système de gestion de contenu) ou un
 VCS (logiciel de gestion de versions). Le capital immatériel de la
 société est ainsi préservé.
 
-::: {.toctree hidden=""}
+ {.toctree hidden=""}
 un-langage-a-balises typologie-de-haut-niveau-de-l-information
 organisation-a-la-demande-du-contenu
 le-single-sourcing-un-format-source-plusieurs-formats-cibles

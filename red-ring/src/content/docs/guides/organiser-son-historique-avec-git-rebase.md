@@ -2,7 +2,7 @@
 title: Organiser son historique avec Git rebase
 ---
 
-::: sidebar
+ sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Git est d'un abord déroutant. Ses *workflows* s'appliquent à du
@@ -67,8 +67,8 @@ avant de les partager. Lancez la commande *git rebase -i HEAD\~5* pour
 réorganiser les *commits*, de la version en cours aux cinq précédentes,
 par exemple.
 
-:::: attention
-::: title
+: attention
+ title
 Attention
 
 
@@ -76,7 +76,7 @@ La commande *rebase* est potentiellement destructive ; veillez à
 sauvegarder votre espace de travail, répertoire *.git* compris, avant de
 l'exécuter, sous risque de perdre des données ; vous pouvez également
 créer une branche de sauvegarde provisoire.
-::::
+:
 
 Vous pouvez alors réécrire l'histoire pour proposer à vos
 collaborateurs un *commit* pour chaque tâche réalisée en son entier,
@@ -91,8 +91,8 @@ alt="graphics/git-rebase-commits-2.svg" />
 Les *commits* ont tout d'abord été regroupés par type sur la *flèche du
 temps* de Git, puis fusionnés.
 
-:::: note
-::: title
+: note
+ title
 Note
 
 
@@ -104,7 +104,7 @@ sont à la fois prêts et non prêts à être *commités* : il y a deux états
 des fichiers, chaque état représentant un stade partiel de votre travail
 et la somme des deux représentant la totalité des modifications que vous
 avez apportées.
-::::
+:
 
 Évidemment, vous n'avez plus accès aux *commits* intermédiaires, mais
 c'est ce que vous souhaitiez : chaque *commit* unique représente un
@@ -117,8 +117,8 @@ ensuite fusionnées avec celles du second dans son espace local *via* des
 *patches*. Enfin, les *commits* sont refactorisés avant de les placer
 sur le dépôt central.
 
-:::: important
-::: title
+: important
+ title
 Important
 
 
@@ -126,4 +126,4 @@ Moins vous réorganiserez vos *commits* (surtout chronologiquement), plus
 le risque de devoir corriger manuellement des conflits sera faible.
 Autrement dit, *git rebase* ne doit pas être une excuse pour ne pas
 planifier rationnellement son travail.
-::::
+:

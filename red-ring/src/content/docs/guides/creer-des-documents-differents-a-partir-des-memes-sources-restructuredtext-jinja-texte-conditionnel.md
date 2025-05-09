@@ -58,7 +58,7 @@ $ ./profiling.py electrician
 Il suffit maintenant d'appeler le script avant compilation *via* Sphinx
 dans le `Makefile`{.interpreted-text role="file"}.
 
-::: seealso
+ seealso
 -   `creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-conditionnel`{.interpreted-text
     role="ref"}
 -   `creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-rest-texte-conditionnel`{.interpreted-text

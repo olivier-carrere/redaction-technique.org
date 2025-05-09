@@ -2,7 +2,7 @@
 title: Maximiser l'utilisation des *conref* pour faire baisser les coûts
 ---
 
-::: sidebar
+ sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Recourir aux
@@ -101,8 +101,8 @@ régie. Avantage supplémentaire : il pourra ainsi interroger non
 seulement le rédacteur technique, mais également les concepteurs du
 produit.
 
-:::: note
-::: title
+: note
+ title
 Note
 
 
@@ -114,7 +114,7 @@ dans le texte cible et non transcrire une suite de mots d'une langue à
 l'autre) et avoir pratiqué la traduction technique durant plusieurs
 années, je sais que tout projet de traduction réussi repose sur une
 collaboration efficace entre concepteurs, rédacteurs et traducteurs.
-::::
+:
 
 Il est également possible de factoriser ainsi des éléments de structure,
 et non de contenu, tels que des en-têtes de tableaux. Vous pouvez ainsi

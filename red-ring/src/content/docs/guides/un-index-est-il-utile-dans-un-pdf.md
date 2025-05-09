@@ -2,7 +2,7 @@
 title: Un index est-il utile dans un PDF ?
 ---
 
-::: sidebar
+ sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 À l'heure des documents dématérialisés, un index est-il un élément

@@ -48,6 +48,6 @@ de la documentation technique, et vous obtiendrez des résultats
 décevants. Seule la présence conjointe de ces trois éléments fournira un
 résultat optimal.
 
-::: {.toctree hidden=""}
+ {.toctree hidden=""}
 un-index-est-il-utile-dans-un-pdf
 

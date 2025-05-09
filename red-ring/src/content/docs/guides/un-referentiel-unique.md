@@ -25,6 +25,6 @@ pas. Il est vrai que tant que les formats structurés ne seront pas
 enseignés dans le secondaire, il paraît utopique de vouloir y convertir
 tous les acteurs de la société, surtout si le turn-over y est important.
 
-::: seealso
+ seealso
 -   `git-du-fichier-au-contenu`{.interpreted-text role="ref"}
 

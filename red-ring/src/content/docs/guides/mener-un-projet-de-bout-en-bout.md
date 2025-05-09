@@ -2,7 +2,7 @@
 title: Mener un projet de bout en bout
 ---
 
-::: sidebar
+ sidebar
 **`fa-history`{.interpreted-text role="awesome"} Modifications
 récentes**
 
@@ -160,7 +160,7 @@ cloné ce dépôt sur Gitlab.
 Ainsi, tout membre de l'association peut créer un compte Gitlab, puis,
 après avoir reçu le mot de passe, cloner la copie de sauvegarde.
 
-::: admonition
+ admonition
 Clonage du dépôt Gitlab
 
 *La procédure suivante était incluse dans une première version du
@@ -221,8 +221,8 @@ $ lftp ftp://user:password@ftpaccount -e \
   repertoire-local; quit"
 ```
 
-:::: note
-::: title
+: note
+ title
 Note
 
 
@@ -232,7 +232,7 @@ préalable lancé la commande suivante sur mon dépôt local :
 ``` console
 $ git config core.filemode false
 ```
-::::
+:
 
 L'hébergement des photos est donc centralisé, la sauvegarde,
 décentralisée.
@@ -304,7 +304,7 @@ J'ai créé un dépliant expliquant :
 -   l'utilisation de la galerie par chaque type d'utilisateurs ;
 -   le workflow dans lequel s'inscrivent les utilisateurs.
 
-::: admonition
+ admonition
 Modèle LaTeX du dépliant
 
 Le \[modèle LaTeX du
@@ -369,8 +369,8 @@ de\[LaTeX\]([https://www.latex-project.org/\\](https://www.latex-project.org/\)
 
 ![](graphics/latex-rendu.png)
 
-:::: note
-::: title
+: note
+ title
 Note
 
 
@@ -387,7 +387,7 @@ numérotations, disons... aléatoires, vous en comprendrez tout de suite
 l'avantage.
 
 ![](graphics/latex-wysiwyg-gummi.png)
-::::
+:
 
 D'autre part, une fois la structure du dépliant créée, il est facile de
 l'utiliser pour produire rapidement d'autres documents. De plus, le

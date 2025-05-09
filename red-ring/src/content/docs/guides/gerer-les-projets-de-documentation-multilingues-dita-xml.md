@@ -91,8 +91,8 @@ Les valeurs supportées pour la dimension des pages PDF sont
 role="samp"} (US letter). Ce script peut être bien entendu facilement
 adapté, ou inspirer un nouveau script.
 
-:::: attention
-::: title
+: attention
+ title
 Attention
 
 
@@ -101,7 +101,7 @@ effectuez une sauvegarde de l'ensemble de votre projet DITA XML,
 fichiers de configuration inclus (par exemple sous un système de gestion
 de versions). Assurez-vous de pouvoir restaurer facilement le projet
 dans son intégralité en cas d'erreur ou de comportement inattendu.
-::::
+:
 
 Pour utiliser ce script :
 
