@@ -7,6 +7,13 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'Rédaction technique',
+      defaultLocale: 'root',
+      locales: {
+        root: {
+          label: 'French',
+          lang: 'fr',
+        },
+      },
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
 			sidebar: [
 				{
