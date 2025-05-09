@@ -17,18 +17,18 @@ export default defineConfig({
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/olivier-carrere/redaction-technique.org' }],
 			sidebar: [
 				{
-					label: 'Rédaction technique',
+					label: 'Tech writing',
 					items: [
-						{ slug: 'techwriting/diminuer-les-couts-ameliorer-la-satisfaction-client' },					
-						{ slug: 'techwriting/de-la-redaction-a-la-communication-technique' },
-						{ slug: 'techwriting/les-trois-niveaux-de-la-documentation-technique' },
-						{ slug: 'techwriting/principe-de-simplicite-kiss' },
-						{ slug: 'techwriting/formats-et-outils' },
+						{ slug: 'guides/diminuer-les-couts-ameliorer-la-satisfaction-client' },					
+						{ slug: 'guides/de-la-redaction-a-la-communication-technique' },
+						{ slug: 'guides/les-trois-niveaux-de-la-documentation-technique' },
+						{ slug: 'guides/principe-de-simplicite-kiss' },
+						{ slug: 'guides/formats-et-outils' },
 					],
 				},
 			
 				{
-					label: 'Formats structurés',
+					label: 'Guides',
 					items: [
 						{ slug: 'guides/format-structure-dita-xml' },
 						{ slug: 'guides/mener-un-projet-de-bout-en-bout' },
