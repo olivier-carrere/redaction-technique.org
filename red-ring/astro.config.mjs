@@ -20,10 +20,6 @@ export default defineConfig({
 					label: 'Tech writing',
 					items: [
 						{ slug: 'guides/diminuer-les-couts-ameliorer-la-satisfaction-client' },					
-						{ slug: 'guides/de-la-redaction-a-la-communication-technique' },
-						{ slug: 'guides/les-trois-niveaux-de-la-documentation-technique' },
-						{ slug: 'guides/principe-de-simplicite-kiss' },
-						{ slug: 'guides/formats-et-outils' },
 					],
 				},
 			
