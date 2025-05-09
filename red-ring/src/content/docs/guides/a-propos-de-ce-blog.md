@@ -38,7 +38,7 @@ doit :
 -   faire l'objet des mêmes processus de production et de contrôle
     qualité.
 
-![Sources de documentation modulaires au format texte](graphics/integration-doc-dev.svg)
+![Sources de documentation modulaires au format texte](graphics/integration-doc-dev.png)
 
 Elle doit répondre idéalement aux critères suivants :
 
@@ -70,7 +70,7 @@ transverses ou d'avoir un suivi précis du cycle de vie du contenu a
 entraîné une migration vers le format de balisage léger
 reStructuredText.
 
-![](graphics/documentation-life-cycle-framework.svg)
+![](graphics/documentation-life-cycle-framework.png)
 
 Toutes les versions de ce blog sont gérées sous le logiciel de gestion
 de versions décentralisé [Git](http://www.git-scm.com). Les
