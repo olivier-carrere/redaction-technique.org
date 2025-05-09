@@ -91,7 +91,7 @@ formats présentent des niveaux de fonctionnalités et de complexité
 différents.
 
 
-![Niveau de fonctionnalités et de complexité des formats texte](graphics/integration-doc-dev.svg)
+![Niveau de fonctionnalités et de complexité des formats texte](graphics/integration-doc-dev.png)
 
 | Format         | Description                                                                                                                                                                    |
 |----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
