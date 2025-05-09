@@ -17,7 +17,7 @@ export default defineConfig({
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/olivier-carrere/redaction-technique.org' }],
 			sidebar: [
 				{
-					label: 'Tech writing',
+					label: 'À propos de la rédaction technique',
 					items: [
 						{ slug: 'guides/diminuer-les-couts-ameliorer-la-satisfaction-client' },					
 					],
