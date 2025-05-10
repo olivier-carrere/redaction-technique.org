@@ -1,5 +1,8 @@
 ---
 title: Projet associatif - centralisation et gestion de photos
+pubDate: 2025-05-10
+author: 'Olivier Carrère'
+tags: ['association', 'photo management', 'workflow', 'Git', 'Piwigo']
 ---
 
 Il est rare, en milieu professionnel, de gérer un projet de bout en bout : conception, technique, communication… En association, c’est plus fréquent. C’est ainsi que j’ai mené un projet complet de gestion des photos pour une association internationale de plusieurs centaines de membres.
