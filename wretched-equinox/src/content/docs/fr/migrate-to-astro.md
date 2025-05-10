@@ -61,4 +61,4 @@ Une fois les fichiers `.md` prêts, la dernière étape a consisté à :
 
 ## Tout effacer
 
-Je me suis alors rendu compte que je n'étais plus satisfait du contenu, qui ne reflétait pas les pratiques de pointe en matière de rédaction technique, et j'ai décidé de faire un `git rm`de tout le site et de recommencer une toute nouvelle version à partir de zéro.
+Je me suis alors rendu compte que je n'étais plus satisfait du contenu, qui ne reflétait pas l'état de l'art en matière de rédaction technique, et j'ai décidé de faire un `git rm`de tout le site et de recommencer une toute nouvelle version à partir de zéro.
