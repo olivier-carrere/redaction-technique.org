@@ -40,11 +40,12 @@ Le blog était initialement sous WordPress, mais a été migré vers reStructure
 
 ## Formats disponibles
 
-Le contenu source existe en trois formats, chacun avec ses avantages :
+Le contenu source existe en quatre formats, chacun avec ses avantages :
 
 | Format                                                                                     | Description                             |
 | ------------------------------------------------------------------------------------------ | --------------------------------------- |
-| [reStructuredText](https://github.com/olivier-carrere/redaction-technique.org/tree/master) | Simple et efficace avec Sphinx          |
-| [DITA XML](https://github.com/olivier-carrere/redaction-technique.org/tree/DITA_XML)       | Modulaire et puissant                   |
-| [DocBook](https://github.com/olivier-carrere/redaction-technique.org/tree/DocBook)         | Complet, mais moins utilisé aujourd’hui |
+| [Markdown](https://github.com/olivier-carrere/redaction-technique.org/tree/astro/wretched-equinox/src/content/docs/guides) | Format de balisage léger géré par Astro.          |
+| [reStructuredText](https://github.com/olivier-carrere/redaction-technique.org/tree/master) | Simple et efficace avec Sphinx.          |
+| [DITA XML](https://github.com/olivier-carrere/redaction-technique.org/tree/DITA_XML)       | Modulaire, puissant, mais complexe et onéreux.                   |
+| [DocBook](https://github.com/olivier-carrere/redaction-technique.org/tree/DocBook)         | Complet, mais moins utilisé aujourd’hui. |
 

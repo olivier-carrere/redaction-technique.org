@@ -20,8 +20,6 @@ Des milliers de photos étaient éparpillées sur des ordinateurs personnels, sa
 
 ## Étapes du projet
 
-Bien sûr ! Voici ton contenu transformé en **liste à puces avec imbrication hiérarchique**, en respectant les niveaux d'information :
-
 - Récupération et tri
   - 10 000 photos (~30 Go) collectées
   - Sauvegarde initiale
