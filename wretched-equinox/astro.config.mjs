@@ -19,6 +19,7 @@ export default defineConfig({
 				{
 					label: 'À propos',
 					items: [
+						{ slug: 'guides/migration-vers-astro' },
 						{ slug: 'guides/diminuer-les-couts-ameliorer-la-satisfaction-client' },
 					],
 				},

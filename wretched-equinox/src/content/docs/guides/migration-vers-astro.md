@@ -4,13 +4,13 @@ title: Migration du site de Python Sphinx  vers Astro
 
 Astro est un générateur de site statique moderne, et Starlight est son thème conçu pour la documentation technique.
 
-Voici un aperçu du processus de migration de ce site de **Python Sphinx** (avec fichiers `.rst`) vers **Astro** (avec le thème **Starlight** et des fichier Markdown) :
+Voici un aperçu du processus de migration de ce site de **Python Sphinx** (avec fichiers `.rst`) vers **Astro** (avec le thème **Starlight** et des fichiers Markdown) :
 
-1. Installation du projet Astro avec le thème Starlight
+Installation du projet Astro avec le thème Starlight
 
-	```bash
-	npm create astro@latest -- --template starlight
-	```
+```bash
+npm create astro@latest -- --template starlight
+```
 
 > Cette commande initialise un projet Astro avec le thème Starlight préconfiguré (structure de navigation, pages de doc, recherche, etc.).
 
@@ -54,7 +54,7 @@ Une fois les fichiers `.md` prêts, la dernière étape a consisté à :
 2. Modifier `src/content/config.ts` pour configurer la navigation.
 3. Lancer le serveur de développement :
 
-```bash
-npm install
-npm run dev
-```
+	```bash
+	npm install
+	npm run dev
+	```
