@@ -17,14 +17,20 @@ export default defineConfig({
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/olivier-carrere/redaction-technique.org' }],
 			sidebar: [
 				{
-					label: 'À propos de la rédaction technique',
+					label: 'À propos',
 					items: [
-						{ slug: 'guides/diminuer-les-couts-ameliorer-la-satisfaction-client' },					
+						{ slug: 'guides/diminuer-les-couts-ameliorer-la-satisfaction-client' },
+					],
+				},
+				{
+					label: 'Processus',
+					items: [
+						{ slug: 'guides/redaction-technique-un-processus-industriel' },
 					],
 				},
 			
 				{
-					label: 'Guides',
+					label: 'Formats',
 					items: [
 						{ slug: 'guides/format-structure-dita-xml' },
 						{ slug: 'guides/mener-un-projet-de-bout-en-bout' },
@@ -33,6 +39,7 @@ export default defineConfig({
 						{ slug: 'guides/contact' },
 					],
 				},
+				
 			],
 		}),
 	],
