@@ -6,40 +6,43 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'Rédaction technique',
-      defaultLocale: 'root',
-      locales: {
-        root: {
-          label: 'French',
-          lang: 'fr',
-        },
-      },
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/olivier-carrere/redaction-technique.org' }],
-			sidebar: [
-				{
-					label: 'À propos',
-					items: [
-						{ slug: 'guides/migration-vers-astro' },
-						{ slug: 'guides/diminuer-les-couts-ameliorer-la-satisfaction-client' },
+			title: 'Technical Writing',
+			defaultLocale: 'en',
+			locales: {
+				fr: {
+					label: 'Français',
+					lang: 'fr',
+					title: 'Rédaction technique',
+					sidebar: [
+						{
+							label: 'À propos',
+							items: [
+								{ slug: 'fr/about-this-blog' },
+
+							],
+						},
 					],
 				},
-				{
-					label: 'Processus',
-					items: [
-						{ slug: 'guides/redaction-technique-un-processus-industriel' },
+				en: {
+					label: 'English',
+					lang: 'en',
+					title: 'Technical Writing',
+					sidebar: [
+						{
+							label: 'About',
+							items: [
+								{ slug: 'en/about-this-blog' },
+							],
+						},
 					],
 				},
-			
+			},
+			social: [
 				{
-					label: 'Formats',
-					items: [
-						{ slug: 'guides/format-structure-dita-xml' },
-						{ slug: 'guides/mener-un-projet-de-bout-en-bout' },
-						{ slug: 'guides/a-propos-de-ce-blog' },
-						{ slug: 'guides/contact' },
-					],
+					icon: 'github',
+					label: 'GitHub',
+					href: 'https://github.com/olivier-carrere/redaction-technique.org',
 				},
-				
 			],
 		}),
 	],
