@@ -18,7 +18,7 @@ npm create astro@latest -- --template starlight
 
 Sphinx files are in **reStructuredText** (`.rst`) markup. Astro/Starlight uses **Markdown** (`.md`). I used **Pandoc** to convert it to Markdown automatically:
 
-``bash
+```bash
 for i in ../*.rst; do pandoc “$i” -o “$(basename ‘$i’ .rst).md”; done
 ```
 
@@ -54,10 +54,11 @@ Once the `.md` files were ready, the final step was to:
 2. Modify `src/content/config.ts` to configure navigation.
 3. Launch the development server:
 
-	``bash
+	```bash
 	npm install
 	npm run dev
 	```
+
 ## Get rid of everything
 
 I then realized I was no longer happy with the content, that didn't reflect state-the-art technical writing practices, and just decided to `git rm` everything and start a brand new version from scratch.
