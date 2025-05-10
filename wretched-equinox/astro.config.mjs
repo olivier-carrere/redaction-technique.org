@@ -35,7 +35,6 @@ export default defineConfig({
 					items: [
 						{ slug: 'guides/format-structure-dita-xml' },
 						{ slug: 'guides/mener-un-projet-de-bout-en-bout' },
-						{ slug: 'guides/le-coin-du-geek' },
 						{ slug: 'guides/a-propos-de-ce-blog' },
 						{ slug: 'guides/contact' },
 					],
