@@ -4,7 +4,7 @@ title: Documentation technique - diminuer les coûts, améliorer la satisfactio
 
 La documentation technique demande un investissement initial plus élevé, mais réduit les coûts à long terme.
 
-### Avantages d'un processus de documentation industrialisé
+## Avantages d'un processus de documentation industrialisé
 
 **Réduction des coûts**
 

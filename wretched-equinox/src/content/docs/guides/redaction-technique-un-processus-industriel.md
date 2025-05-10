@@ -6,7 +6,7 @@ La rédaction technique repose sur des méthodes rigoureuses. Trop souvent perç
 
 Le rédacteur technique collabore avec l'ensemble des services (R\&D, marketing, support...) ainsi qu'avec les partenaires, utilisateurs ou journalistes. Il délivre une information claire, utile et cohérente, participant ainsi à la valorisation de l'image de l'entreprise.
 
-### Vers une documentation modulaire
+## Vers une documentation modulaire
 
 Alors que les logiciels adoptent une architecture en microservices, la documentation reste trop souvent monolithique. Il serait pourtant plus efficace de stocker l'information dans des sources modulaires (CSV, YAML, base de données…) et de générer dynamiquement un contenu adapté à chaque utilisateur.
 
@@ -16,7 +16,7 @@ Le rôle du rédacteur ne doit pas se limiter à l'écriture, mais s'étendre à
 * d'automatiser la production pour limiter les erreurs et faciliter les mises à jour,
 * de séparer contenu et mise en forme (principe DRY).
 
-### Apporter une vraie valeur
+## Apporter une vraie valeur
 
 Certains rédacteurs techniques peuvent se montrer réticents à cette approche, préférant garder la main sur l'ensemble du contenu. Pourtant, leur mission n'est pas de conserver l'information, mais de la transmettre de façon efficace.
 

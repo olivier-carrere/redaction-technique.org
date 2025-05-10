@@ -14,7 +14,7 @@ npm create astro@latest -- --template starlight
 
 > Cette commande initialise un projet Astro avec le thème Starlight préconfiguré (structure de navigation, pages de doc, recherche, etc.).
 
-### Conversion des fichiers `.rst` vers `.md`
+## Conversion des fichiers `.rst` vers `.md`
 
 Les fichiers Sphinx sont écrits en **reStructuredText** (`.rst`). Astro/Starlight utilise **Markdown** (`.md`). J'ai utilisé **Pandoc** pour convertir automatiquement les fichiers :
 
@@ -24,7 +24,7 @@ for i in ../*.rst; do pandoc "$i" -o "$(basename "$i" .rst).md"; done
 
 > Cette commande parcourt tous les fichiers `.rst` du dossier parent et les convertit en `.md` dans le répertoire courant.
 
-### Nettoyage post-conversion
+## Nettoyage post-conversion
 
 La conversion automatique n’est pas parfaite, mais la commande `sed` a permis d'effectuer des modifications sur tous les fichiers en une seule opération, par exemple :
 
@@ -37,7 +37,7 @@ sed -i 's/:ref:`\([^`]*\)`/[\1](#)/g' *.md   # Remplace les références Sphinx 
 sed -i '/^[-=~^#*]\+$/d' *.md
 ```
 
-### Nettoyage manuel
+## Nettoyage manuel
 
 Comme le volume à migrer est relativement faible, j'ai également fait les modifications manuelles suivantes :
 
@@ -46,7 +46,7 @@ Comme le volume à migrer est relativement faible, j'ai également fait les modi
 * Corriger les liens, images, encadrés (`note`, `warning`, etc.).
 * Recréer les tableaux par IA
 
-### Intégration dans Astro/Starlight
+## Intégration dans Astro/Starlight
 
 Une fois les fichiers `.md` prêts, la dernière étape a consisté à :
 

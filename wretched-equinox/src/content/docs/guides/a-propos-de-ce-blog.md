@@ -18,7 +18,7 @@ Il traite principalement des formats et outils de rédaction technique tels que 
 Les outils ouverts remplacent avantageusement les formats propriétaires comme Word ou FrameMaker.
 Ils permettent de passer à une gestion modulaire et intégrée du cycle de vie de la documentation.
 
-### Documentation intégrée au développement
+## Documentation intégrée au développement
 
 Une bonne documentation :
 
