@@ -34,6 +34,7 @@ export default defineConfig({
 							items: [
 								{ slug: 'en/about-this-blog' },
 								{ slug: 'en/migrate-to-astro' },
+								{ slug: 'en/assess-documentation-quality' },
 							],
 						},
 					],
