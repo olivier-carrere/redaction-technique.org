@@ -12,7 +12,7 @@ Documentation quality typically revolves around three primary areas:
 * **Usability**: How easily can users find, understand, and apply the information they need?
 * **Accuracy**: Does the documentation reflect the product truthfully and completely?
 
-![Assessing quality in documentation can rely on well-chosen metrics, that can be tracked in easy-to-use radar charts.](../guides/graphics/three-topics.svg)
+![Assessing quality in documentation can rely on well-chosen metrics, that can be tracked in easy-to-use radar charts.](../graphics/three-topics.svg)
 
 These areas can be broken down further into eight measurable aspects:
 
@@ -25,13 +25,13 @@ These areas can be broken down further into eight measurable aspects:
 7. Technical Accuracy
 8. Functional Scope
 
-![Radar chart: Modularity, change tracking, information typing, minimalism, style guide compliance, audience segmentation, technical accuracy, functional scope.](../guides/graphics/pie.svg)
+![Radar chart: Modularity, change tracking, information typing, minimalism, style guide compliance, audience segmentation, technical accuracy, functional scope.](../graphics/pie.svg)
 
 ## Visualizing quality with radar charts
 
 Radar charts allow teams to visualize how well documentation performs across these aspects. Each axis of the chart represents one dimension of quality. Over time, these charts help track improvements, identify regressions, and make informed trade-offs.
 
-![Visualizing quality with radar charts.](../guides/graphics/radar-ideal.svg)
+![Visualizing quality with radar charts.](../graphics/radar-ideal.svg)
 
 Sometimes, improving one aspect may reduce another. For instance, boosting functional scope might complicate minimalism. These trade-offs are normal. What matters is maintaining a chart shape that reflects the organization's priorities and user needs.
 
@@ -42,7 +42,7 @@ Not all radar charts should be symmetrical. A well-balanced chart doesn't necess
 * Should we invest more in technical accuracy or audience targeting?
 * Are we willing to sacrifice completeness for simplicity?
 
-![Chart: Poorly structured content.](../guides/graphics/radar-typing.svg)
+![Chart: Poorly structured content.](../graphics/radar-typing.svg)
 
 We might find that documentation for Product A (written by developers) looks vastly different from that of Product B (written by technical writers), especially if communication between both roles is limited. These patterns can reveal deeper process or collaboration issues.
 
@@ -104,7 +104,7 @@ Technical documentation must address multiple user profiles. Personas—fictiona
 
 How much of the product's functionality is actually documented? This metric helps identify coverage gaps. It should also reflect real usage: not all features are equally important to all users.
 
-![Chart: Quality over time.](../guides/graphics/radar-time.svg)
+![Chart: Quality over time.](../graphics/radar-time.svg)
 
 ### Technical accuracy
 
