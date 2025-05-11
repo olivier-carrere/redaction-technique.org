@@ -12,7 +12,7 @@ Tester les produits pour les documenter
 
 .. sidebar:: :awesome:`fa-bullhorn`
 
-   Le |techwriter| ne peut fournir une documentation utile aux clients de
+   Le rédacteur technique ne peut fournir une documentation utile aux clients de
    l'entreprise s'il se contente de mettre en forme des informations glanées
    auprès des différents acteurs de la société. Jouant le rôle de Candide, il
    est le premier représentant des utilisateurs et se doit de tester les
@@ -31,7 +31,7 @@ celui qui s'agrippait à une de ses oreilles croyait qu'il s'agissait d'un
 
    *Conte des aveugles et de l'éléphant*
 
-Le |techwriter| qui demande aux différents intervenants de
+Le rédacteur technique qui demande aux différents intervenants de
 l'entreprise à quoi sert le produit dont il doit créer la documentation et
 comment il fonctionne se retrouve comme celui qui demande aux aveugles à quoi
 ressemble un éléphant : pour la R&D, il s'agit de code élégamment rédigé,
@@ -40,9 +40,9 @@ marché, pour le support technique, d'un exécutable dont il faut corriger les
 bugs, etc.
 
 Pour avoir une vision réaliste de l'objet qu'il est censé décrire, le
-|techwriter| doit donc l'appréhender par lui-même et se faire sa
+rédacteur technique doit donc l'appréhender par lui-même et se faire sa
 propre opinion, qu'il pourra ensuite confronter à celle des autres acteurs de
-l'entreprise.  Le |techwriter| est un pragmatique qui s'intéresse à
+l'entreprise.  Le rédacteur technique est un pragmatique qui s'intéresse à
 la pratique, non à la théorie.
 S'il ne consulte que les développeurs, par exemple, il aura peu de
 chance de pouvoir créer une documentation satisfaisante pour l'utilisateur :
@@ -57,13 +57,13 @@ chance de pouvoir créer une documentation satisfaisante pour l'utilisateur :
 
   - ce que le développeur exprime,
 
-  - ce que le |techwriter| comprend,
+  - ce que le rédacteur technique comprend,
 
-  - ce que le |techwriter| rédige,
+  - ce que le rédacteur technique rédige,
 
   - ce que l'utilisateur comprend.
 
-Si le |techwriter| teste réellement le comportement du produit dans
+Si le rédacteur technique teste réellement le comportement du produit dans
 des conditions aussi proches que possible de celles rencontrées par
 l'utilisateur, les trois premières causes de déperdition d'information sont
 quasiment inexistantes. Pour réduire les deux dernières, il ne lui reste plus

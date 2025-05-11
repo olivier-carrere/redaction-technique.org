@@ -10,7 +10,7 @@
 Livraison
 =========
 
-Le |techwriter| livre le document à son destinataire de la manière
+Le rédacteur technique livre le document à son destinataire de la manière
 appropriée :
 
 -  animation publiée sur un site de streaming,

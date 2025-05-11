@@ -10,7 +10,7 @@
 Contact
 =======
 
-Vous pouvez me contacter *via* mon profil `LinkedIn`_.
+Vous pouvez me contacter *via* mon profil [LinkedIn](http://fr.linkedin.com/in/carrereolivier.
 
 .. figure:: graphics/olivier-carrere.jpg
 

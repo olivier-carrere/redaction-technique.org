@@ -7,7 +7,7 @@
 
 .. _installez-les-logiciels-necessaires-a-la-generation-de-ce-site:
 
-Installez les logiciels nécessaires à la gestion de ce |site|
+Installez les logiciels nécessaires à la gestion de ce blog
 -------------------------------------------------------------
 
 #. Sélectionnez :guilabel:`Menu` > :guilabel:`Accessoires` > :guilabel:`LXTerminal`.
@@ -36,7 +36,7 @@ Installez les logiciels nécessaires à la gestion de ce |site|
    |Python Sphinx|Générateur de documentation basé sur le format               |
    |             |reStructuredText.                                            |
    +-------------+-------------------------------------------------------------+
-   |Texlive      |Environnement LaTeX complet pour la génération du |site| au  |
+   |Texlive      |Environnement LaTeX complet pour la génération du blog au  |
    |             |format PDF.                                                  |
    +-------------+-------------------------------------------------------------+
 

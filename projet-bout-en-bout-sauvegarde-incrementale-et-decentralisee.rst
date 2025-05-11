@@ -28,7 +28,7 @@ avoir reçu le mot de passe, cloner la copie de sauvegarde.
    du dépliant, car elle risquait plutôt d'effrayer son lectorat,
    majoritairement technophobe.*
    
-   Sous Windows, vous pouvez installer `Git for windows`_ et `GitHub Desktop`_.
+   Sous Windows, vous pouvez installer [Git for windows](https://github.com/git-for-windows/git/releases/download/v2.18.0.windows.1/Git-2.18.0-64-bit.exe et [GitHub Desktop](https://desktop.github.com/.
    
    Pour cloner le dépôt Gitlab sous une distribution Linux Debian ou dérivée
    (dont Ubuntu) :
@@ -68,7 +68,7 @@ avoir reçu le mot de passe, cloner la copie de sauvegarde.
       Cette opération devrait être nettement plus rapide que le clonage initial.
    
 Pour la synchronisation entre le serveur et ma copie locale, je me suis tourné
-vers `LFTP`_ :
+vers [LFTP](https://lftp.yar.ru/ :
 
 .. code-block:: console
 

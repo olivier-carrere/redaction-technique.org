@@ -9,7 +9,7 @@ Créer des documents différents à partir des mêmes sources *via* Jinja (méth
 =====================================================================================
 
 Le script Python :file:`profiling.py` ci-dessous permet de profiler du
-contenu à l'aide du puissant moteur de modèle Avec `Jinja`_, vous
+contenu à l'aide du puissant moteur de modèle Avec [Jinja](http://jinja.pocoo.org/, vous
 pouvez définir des objets (audience, plateforme, version, etc.) et
 inclure ou exclure des blocs de texte selon leurs attributs.
 

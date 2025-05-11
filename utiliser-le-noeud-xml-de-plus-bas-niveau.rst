@@ -12,13 +12,13 @@ Utiliser le nœud XML de plus bas niveau
 
 .. sidebar:: :awesome:`fa-bullhorn`
 
-   Le |techwriter| doit utiliser comme source du `conref`_ le nœud |dita| de
+   Le rédacteur technique doit utiliser comme source du [conref](http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html le nœud DITA XML de
    plus bas niveau contenant l'information à partager.
 
 Le but des *conref* étant de gérer des blocs d'information de faibles
 dimensions, il est logique de les manipuler au niveau de la plus petite
 structure XML encapsulant l'information, même si cette structure, pour être
-compatible avec le schéma XSD de la section |dita| où elle intervient,
+compatible avec le schéma XSD de la section DITA XML où elle intervient,
 doit elle-même être incluse dans des structures XML plus grandes.
 
 .. figure:: graphics/conref-bas-niveau.svg

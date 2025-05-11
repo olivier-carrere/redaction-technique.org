@@ -34,8 +34,8 @@ Résultat : réalisée à part, la documentation technique répondait difficile
 aux mêmes exigences de qualité et de délai de mise sur le marché que les
 produits.
 
-|db|, puis |dita| et |rst| ont changé la donne : ces formats texte peuvent être
-modifiés avec tout type de programme, du simple éditeur de texte à l'|ide|
+DocBook, puis DITA XML et reStructuredText ont changé la donne : ces formats texte peuvent être
+modifiés avec tout type de programme, du simple éditeur de texte à l'Integrated Development Environment
 graphique, et s'intègrent parfaitement sous Subversion, Git ou tout autre
 système de gestion de versions.
 

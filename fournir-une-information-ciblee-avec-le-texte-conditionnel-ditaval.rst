@@ -12,11 +12,11 @@ Fournir une information ciblée avec le texte conditionnel ditaval
 
 .. sidebar:: :awesome:`fa-bullhorn`
 
-   Un fichier `ditaval`_ reprend le principe des lunettes que vous chaussez
+   Un fichier [ditaval](http://docs.oasis-open.org/dita/v1.2/os/spec/common/about-ditaval.html reprend le principe des lunettes que vous chaussez
    pour visualiser un film en 3D : le verre gauche masque une moitié de
-   l'image, le verre droit en masque l'autre moitié. Mais seul le |techwriter|
+   l'image, le verre droit en masque l'autre moitié. Mais seul le rédacteur technique
    dispose de lunettes 3D et a une vision complète de l'information contenue
-   dans le projet |dita|.
+   dans le projet DITA XML.
 
 Les destinataires de l'information disposent de lunettes
 avec deux verres gauches ou deux verres droits. Ils ne voient donc qu'une partie
@@ -67,7 +67,7 @@ Vous pouvez utiliser la structure suivante :
 .. attention::
 
    Une clé de filtrage mal positionnée peut entraîner une erreur de
-   compilation. En effet, si le code non filtré est conforme au schéma XSD |dita|,
+   compilation. En effet, si le code non filtré est conforme au schéma XSD DITA XML,
    le code filtré peut ne pas l'être.
 
    .. rubric:: Exemple

@@ -10,7 +10,7 @@
 Créez et modifiez les schémas
 -----------------------------
 
-#. Modifiez un fichier source des images de ce |site| :
+#. Modifiez un fichier source des images de ce blog :
 
    - à l'aide d'un logiciel de dessin vectoriel :
 

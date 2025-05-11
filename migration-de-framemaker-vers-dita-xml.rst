@@ -10,8 +10,8 @@
 Migration de FrameMaker vers DITA XML
 =====================================
 
-Migrer de |fm| vers |dita|, ce n'est pas comme
-enregistrer un document |ms-word| au format |libreoffice| [#]_. Aucun processus
+Migrer de FrameMaker vers DITA XML, ce n'est pas comme
+enregistrer un document MS Word au format LibreOffice [#]_. Aucun processus
 automatique ne permet de migrer un document non structuré vers un format
 structuré. Dans le pire des cas, selon la qualité de votre document de départ,
 cela peut s'apparenter à transformer une friche en jardin à la française. Mais
@@ -21,9 +21,9 @@ le rythme des livraisons.
 Pour filer la métaphore, si l'on se fixe pour but de convertir un marécage en
 parterre du château de Versailles, il convient de passer par l'étape du jardin à
 l'anglaise - soit un endroit certes non rigoureusement architecturé, mais très
-agréable à vivre. Bonne nouvelle : si le |techwriter| a utilisé de
+agréable à vivre. Bonne nouvelle : si le rédacteur technique a utilisé de
 manière cohérente un jeu de styles limité et organisé rationnellement son
-contenu |fm|, il est déjà certainement très proche de ce stade.
+contenu FrameMaker, il est déjà certainement très proche de ce stade.
 
 .. figure:: graphics/framemaker-to-dita-migration.svg
 
@@ -43,11 +43,11 @@ auraient déjà beaucoup gagné, respectivement en :
 
    .. rubric:: Notes
 
-.. [#] |libreoffice| propose une fonction d'enregistrement au format |db|, mais
+.. [#] LibreOffice propose une fonction d'enregistrement au format DocBook, mais
        très imparfaite ; le XML qu'elle produit peut servir de base à la
-       création d'une version |db|, avec beaucoup d'efforts… Sauf à maintenir
-       deux versions du même contenu, le processus de migration de |libreoffice|
-       vers |db| exige donc un arrêt temporaire des livraisons des nouvelles
+       création d'une version DocBook, avec beaucoup d'efforts… Sauf à maintenir
+       deux versions du même contenu, le processus de migration de LibreOffice
+       vers DocBook exige donc un arrêt temporaire des livraisons des nouvelles
        versions de la documentation ; il doit donc être soigneusement planifié.
 
 .. toctree::

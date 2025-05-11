@@ -12,7 +12,7 @@ Supposons que vous deviez présenter 3 produits, *Dianthus*, *Geum* et
 *Prunus*, chacun déclinés dans trois versions *1.0*, *1.5* et *2.3*.
 
 Plutôt que d'écrire les données à la main dans le fichier de contenu,
-vous pouvez les insérer automatiquement grâce à `Jinja`_ et Python.
+vous pouvez les insérer automatiquement grâce à [Jinja](http://jinja.pocoo.org/ et Python.
 
 #. Créez le fichier :file:`modele.rst` suivant :
 

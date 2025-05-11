@@ -12,11 +12,11 @@ XSL-FO : insérer automatiquement un titre pour les exemples
 
 .. sidebar:: :awesome:`fa-bullhorn`
 
-   Par défaut, |dita-ot| n'insère pas automatiquement dans les fichiers PDF le
-   texte *Exemple :* devant le titre d'un exemple contenu entre balises |dita|
-   :samp:`<example>`. La syntaxe `XSL-FO`_ offre cependant cette possibilité.
+   Par défaut, DITA Open Toolkit n'insère pas automatiquement dans les fichiers PDF le
+   texte *Exemple :* devant le titre d'un exemple contenu entre balises DITA XML
+   :samp:`<example>`. La syntaxe [XSL-FO](http://fr.wikipedia.org/wiki/XSL-FO offre cependant cette possibilité.
 
-Supposons que le code source d'un de vos fichiers |dita| soit le suivant :
+Supposons que le code source d'un de vos fichiers DITA XML soit le suivant :
 
 .. code-block:: xml
 
@@ -52,7 +52,7 @@ et que si l'exemple ne contient pas de titre, il soit structuré comme suit :
       ancestor-or-self
 
 Par défaut, cependant, ce contenu sera structuré comme suit dans le PDF par
-|dita-ot| :
+DITA Open Toolkit :
 
    **XSL-FO**
 
@@ -69,7 +69,7 @@ Insérer automatiquement une variable de texte avant le titre des exemples
 -------------------------------------------------------------------------
 
 #. Remplacez dans la feuille de style
-   :file:`plugins/org.dita.pdf2/xsl/fo/commons.xsl` (sous |dita-ot|
+   :file:`plugins/org.dita.pdf2/xsl/fo/commons.xsl` (sous DITA Open Toolkit
    1.7.)  le template suivant :
 
    .. code-block:: xslt

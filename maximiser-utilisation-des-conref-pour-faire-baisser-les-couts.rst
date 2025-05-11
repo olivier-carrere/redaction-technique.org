@@ -12,9 +12,9 @@ Maximiser l'utilisation des *conref* pour faire baisser les coûts
 
 .. sidebar:: :awesome:`fa-bullhorn`
 
-   Recourir aux `conref`_ est le meilleur moyen dont dispose le |techwriter|
+   Recourir aux [conref](http://docs.oasis-open.org/dita/v1.1/OS/archspec/conref.html est le meilleur moyen dont dispose le rédacteur technique
    pour faire baisser spectaculairement les coûts et les délais de publication
-   de son contenu |dita|, surtout pour les documents multilingues.
+   de son contenu DITA XML, surtout pour les documents multilingues.
 
 De par la nature des informations qu'elles contiennent, les sections de type
 *task* ont un taux plus élevé de réutilisation du contenu que celles de type
@@ -92,13 +92,13 @@ uniques), étant généré par des *conref*.
    </task>
 
 Seul le texte en noir doit être traduit. Traduire ce type de fichier de contenu
-|dita| consiste donc à traduire uniquement le titre de la section et
+DITA XML consiste donc à traduire uniquement le titre de la section et
 l'intégralité des *conref* sources. Lorsqu'il traduit un ensemble d'unités
 d'information placées en vrac dans un fichier, le traducteur manque cependant
 cruellement de contexte. Le créateur du contenu initial doit donc lui fournir
 une assistance constante. La méthode la plus efficace consiste à faire
 travailler le traducteur en régie. Avantage supplémentaire : il pourra ainsi
-interroger non seulement le |techwriter|, mais également les concepteurs
+interroger non seulement le rédacteur technique, mais également les concepteurs
 du produit.
 
 .. note::
@@ -115,6 +115,6 @@ du produit.
 Il est également possible de factoriser ainsi des éléments de structure, et non
 de contenu, tels que des en-têtes de tableaux. Vous pouvez ainsi présenter des
 informations de même type de manière homogène à moindre coût, c'est à dire sans
-recourir à la `spécialisation`_.
+recourir à la [spécialisation](http://en.wikipedia.org/wiki/Darwin_Information_Typing_Architecture#Specialization.
 
 .. text review: yes

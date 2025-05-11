@@ -20,7 +20,7 @@ phrase pour dire la même chose de manière plus alambiquée  :
 
     <iframe src="https://oliviercarrere.pythonanywhere.com/" height="600px" width="100%"></iframe>
 
-Voici le code du script, qui repose sur le *microframework* web `Flask`_ :
+Voici le code du script, qui repose sur le *microframework* web [Flask](http://flask.pocoo.org/ :
 
 .. literalinclude:: code/word_switch_web.py
       :language: python3
@@ -43,7 +43,7 @@ espaces avant les virgules que nous aurions insérées dans la liste :
    print(texte_final)
 
 Voici maintenant les modèles générant les pages HTML de base, d'entrée
-et de sortie, basés sur `Jinja`_ :
+et de sortie, basés sur [Jinja](http://jinja.pocoo.org/ :
 		 
 .. literalinclude:: code/templates/base.html
       :language: html

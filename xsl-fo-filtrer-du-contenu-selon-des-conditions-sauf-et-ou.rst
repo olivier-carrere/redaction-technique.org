@@ -10,7 +10,7 @@
 XSL-FO : filtrer du contenu selon des conditions « sauf » et « ou »
 ===================================================================
 
-Imaginons que vous vouliez filtrer les nœuds enfants de la balise |dita|
+Imaginons que vous vouliez filtrer les nœuds enfants de la balise DITA XML
 :samp:`<example>` et afficher tout son contenu à l'exception du titre (situé entre les
 balises :samp:`<title>`).
 
@@ -29,7 +29,7 @@ l'exception du nœud :samp:`<title>`. Cependant, le nœud :samp:`<example>`
 accepte le texte entré directement, sans être encapsulé dans des balises. Cette
 commande ne fera alors pas apparaître ce contenu.
 
-Supposons que le code source d'un de vos fichiers |dita| soit le suivant :
+Supposons que le code source d'un de vos fichiers DITA XML soit le suivant :
 
 .. code-block:: xml
 
@@ -67,7 +67,7 @@ d'utiliser la syntaxe suivante :
 
 Cependant, tous les éléments texte non encapsulés dans des balises enfant de la
 balise :samp:`<example>` seront placés en tête de l'exemple, avant les éléments
-encapsulés, même s'ils sont placés après dans le fichier source |dita|.
+encapsulés, même s'ils sont placés après dans le fichier source DITA XML.
 
 Le fichier PDF affichera l'exemple structuré comme suit :
 
@@ -79,7 +79,7 @@ Le fichier PDF affichera l'exemple structuré comme suit :
       ancestor-or-self
 
 Il faut alors utiliser la syntaxe *pipe* (condition booléenne *ou*) pour
-modifier le chemin `XPATH`_ comme suit :
+modifier le chemin [XPATH](http://fr.wikipedia.org/wiki/XPath comme suit :
 
 .. code-block:: xslt
 

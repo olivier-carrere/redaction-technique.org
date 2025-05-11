@@ -10,28 +10,28 @@
 Une architecture documentaire trop complexe ?
 =============================================
 
-|dita| permet des gains de productivité importants par la réduction du volume
-source que le |techwriter| crée, traduit et maintient. Ce gain de
+DITA XML permet des gains de productivité importants par la réduction du volume
+source que le rédacteur technique crée, traduit et maintient. Ce gain de
 productivité se fait au prix d'une plus grande complexité.
 
-Si les projets |dita| sont plus *complexes*, ils sont cependant moins *compliqués*
+Si les projets DITA XML sont plus *complexes*, ils sont cependant moins *compliqués*
 que des projets reposant sur des formats plus traditionnels de type
-|fm|. En effet, |dita| est une architecture rationnelle. Le |techwriter|
+FrameMaker. En effet, DITA XML est une architecture rationnelle. Le rédacteur technique
 se trouve donc face à un comportement prédictible des outils qu'il
 utilise, loin des *trucs et astuces* destinés à contourner les bugs ou les
 fonctionnements erratiques des outils plus lourds.
 
 Le tableau suivant présente les différents niveaux de complexité induits par
-|dita| et les
-solutions qui permettent au |techwriter| de les maîtriser plus
+DITA XML et les
+solutions qui permettent au rédacteur technique de les maîtriser plus
 facilement :
 
 +------------------------------+------------------------------+
 |Complexité                    |Solution                      |
 +==============================+==============================+
-|Syntaxe |dita|                ||ide| tel que XMetal ou nXML  |
+|Syntaxe DITA XML                |Integrated Development Environment tel que XMetal ou nXML  |
 +------------------------------+------------------------------+
-|Gestion des relations entre   ||cms| dédié tel que Componize |
+|Gestion des relations entre   |Content Management System dédié tel que Componize |
 |des briques d'information     |ou DocZone                    |
 |atomiques                     |                              |
 +------------------------------+------------------------------+
@@ -39,7 +39,7 @@ facilement :
 |XSLT                          |de feuilles de style          |
 +------------------------------+------------------------------+
 
-Pour une petite équipe de |techwriting|, l'écueil principal sera la
+Pour une petite équipe de rédaction technique, l'écueil principal sera la
 nécessité de mettre en œuvre la charte graphique de l'entreprise.
 Les autres aspects peuvent être gérés sans outil
 spécialisé, avec une bonne communication et une série de bonnes pratiques.

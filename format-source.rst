@@ -12,11 +12,11 @@ Format source
 
 .. sidebar:: :awesome:`fa-bullhorn`
 
-   Le contenu d'un projet de |techwriting| est créé dans un format source,
+   Le contenu d'un projet de rédaction technique est créé dans un format source,
    différent du format des livrables, le format cible. Pour reprendre une
    image fréquemment utilisée en développement logiciel, le format source est
    la recette de cuisine, le format cible, le plat. En photographie, le format
-   source est le format `RAW`_, qui est généré par l'appareil photo, et sur
+   source est le format [RAW](http://fr.wikipedia.org/wiki/RAW_(format_d%27image), qui est généré par l'appareil photo, et sur
    lequel les photographes professionnels préféreront apporter les retouches,
    et le format cible, le format JPEG.
 
@@ -34,7 +34,7 @@ Au cours du développement d'une documentation technique, ces deux aspects
 doivent être clairement distincts. Ils peuvent être pris en charge par deux
 intervenants différents :
 
-- le |techwriter|,
+- le rédacteur technique,
 
 - le graphiste [#]_.
 
@@ -47,18 +47,18 @@ rédaction et la mise en page s'opèrent sous des outils différents :
 - logiciel de PAO, par exemple InDesign ou Scribus.
 
 Lorsque la mise en page a une importance moindre que celle du contenu, ou
-lorsqu'elle doit être homogène, comme dans le cas d'une |doc|,
+lorsqu'elle doit être homogène, comme dans le cas d'une documentation technique,
 la rédaction et la mise en page s'opèrent sur :
 
 les mêmes fichiers
-   par exemple, des fichiers |fm|,
+   par exemple, des fichiers FrameMaker,
 
 des fichiers différents
    par exemple, des fichiers de contenu XML et une feuille de style XSLT.
 
-Dans un fichier |fm|, la séparation du fond et de la forme est élevée mais
+Dans un fichier FrameMaker, la séparation du fond et de la forme est élevée mais
 pas totale : le contenu et la mise en page sont placés dans le même
-fichier. |fm| applique une maquette de page homogène à tout un fichier,
+fichier. FrameMaker applique une maquette de page homogène à tout un fichier,
 mais autorise l'ajout manuel d'éléments de mise en page. La même maquette peut
 être dupliquée pour tout le document, ou une maquette différente peut être
 utilisée pour chaque fichier qui compose ce dernier.
@@ -70,7 +70,7 @@ utilisée pour chaque fichier qui compose ce dernier.
 Les formats sources peuvent être classés selon leur degré de modularité et leur
 format de fichier.
 
-Les formats XML structurés |db| et |dita| appliquent une maquette de page
+Les formats XML structurés DocBook et DITA XML appliquent une maquette de page
 homogène à tout un document, et n'autorisent pas l'ajout manuel d'éléments de
 mise en page [#]_, ni l'application de maquettes différentes aux
 différents fichiers qui composent le document.
@@ -80,20 +80,20 @@ différents fichiers qui composent le document.
 |                    |mise en page        |en page manuelle    |
 |                    |homogène            |                    |
 +====================+====================+====================+
-||ms-word|           |Non                 |Oui                 |
+|MS Word           |Non                 |Oui                 |
 +--------------------+--------------------+--------------------+
-||fm|                |Oui                 |Oui                 |
+|FrameMaker                |Oui                 |Oui                 |
 +--------------------+--------------------+--------------------+
-||dita|              |Oui                 |Non                 |
+|DITA XML              |Oui                 |Non                 |
 +--------------------+--------------------+--------------------+
 
 Si contenu et mise en page sont intimement liés, comme sous un traitement de
 texte, il est difficile de modifier le contenu sans perturber la mise en
 page. Résultat : à chaque publication d'une nouvelle version d'une documentation
-technique, l'équipe de |techwriting| passe de longues heures à
+technique, l'équipe de rédaction technique passe de longues heures à
 corriger les erreurs de mise en page générées par le logiciel. Le phénomène est
-moindre sous |fm| mais reste important. Il est nul avec les formats
-|dita| et |db| (les seules erreurs qui peuvent se produire sont des
+moindre sous FrameMaker mais reste important. Il est nul avec les formats
+DITA XML et DocBook (les seules erreurs qui peuvent se produire sont des
 erreurs de compilation dues à une syntaxe XML erronée ; ces erreurs sont
 facilement rectifiables).
 
@@ -126,15 +126,15 @@ Les formats disponibles peuvent donc être classés selon le tableau suivant :
 +---------------+---------------+---------------+---------------+
 |Format         |Texte          |Structuré      |Modulaire      |
 +===============+===============+===============+===============+
-||fm|           |Non            |Non            |Limité         |
+|FrameMaker           |Non            |Non            |Limité         |
 |natif          |               |               |               |
 +---------------+---------------+---------------+---------------+
-||db|           |Oui            |Oui            |Limité         |
+|DocBook           |Oui            |Oui            |Limité         |
 +---------------+---------------+---------------+---------------+
-||dita|         |Oui            |Oui            |Oui            |
+|DITA XML         |Oui            |Oui            |Oui            |
 +---------------+---------------+---------------+---------------+
 
-|fm| et |db| ne sont pas pleinement modulaires, car les plus petits
+FrameMaker et DocBook ne sont pas pleinement modulaires, car les plus petits
 éléments d'information manipulables ne sont pas génériques : ils contiennent des
 informations telles que la structure de table des matières ou les références
 croisées qui ne sont valables que dans un nombre limité de contextes.
@@ -143,7 +143,7 @@ croisées qui ne sont valables que dans un nombre limité de contextes.
 
    .. rubric:: Notes
 
-.. [#] Si le |techwriter| met lui-même en page ses documents, il
+.. [#] Si le rédacteur technique met lui-même en page ses documents, il
        change de rôle lorsqu'il effectue cette opération.
 
 .. [#] Ou très peu : dans les fichiers de contenu, il est seulement possible de

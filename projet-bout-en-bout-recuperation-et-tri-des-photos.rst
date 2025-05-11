@@ -16,12 +16,12 @@ sauvegarde à l'identique de l'ensemble des photos sur un disque dur
 externe.
 
 Ma première tâche fut de repérer, puis d'éliminer les doublons grâce à la
-commande `fdupes`_.
+commande [fdupes](https://github.com/adrianlopezroche/fdupes.
 
 Il me fallait aussi ne pas passer à côté de perles et chercher
 les aiguilles intéressantes dans cette meule de foin. Certaines photos,
 notamment, se cachaient dans des répertoires zippés. D'autres n'avaient pas
-d'extension, et la commande `file`_ me fut très utile.
+d'extension, et la commande [file](https://www.computerhope.com/unix/ufile.htm me fut très utile.
 
 Le but étant avant tout de mettre à disposition des photos pour des supports
 imprimés, j'ai procédé à un premier tri automatisé, selon le poids des

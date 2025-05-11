@@ -15,7 +15,7 @@ Documents monolithiques ou modulaires
    Le format source peut reposer sur des fichiers monolithiques ou sur des
    grappes de fichiers modulaires.
 
-Les fichiers monolithiques (par exemple |ms-word|, |libreoffice| ou |fm|)
+Les fichiers monolithiques (par exemple MS Word, LibreOffice ou FrameMaker)
 centralisent tout le contenu dans un seul fichier, facile à manier, mais qui
 limite le partage du contenu ; le risque de disposer d'informations incohérentes
 ou en doublon est alors important.
@@ -24,18 +24,18 @@ ou en doublon est alors important.
 
    *Format source de rédaction technique monolithique*
 
-Les grappes de fichiers modulaires (par exemple |dita|)
+Les grappes de fichiers modulaires (par exemple DITA XML)
 agrègent le contenu de multiples fichiers, ce qui favorise le partage et la
 réutilisation de blocs de contenu. Un tel système est difficile à mettre en
 place au niveau de toute l'entreprise, mais devrait être la norme pour une
-équipe de |techwriting|.
+équipe de rédaction technique.
 
 .. figure:: graphics/grappe.svg
 
    *Format source de rédaction technique modulaire*
 
 Certains traitements de texte proposent de gérer des documents modulaires, mais
-ils le font mal.  Inversement, un document |db| ou |dita|, par exemple, peut
+ils le font mal.  Inversement, un document DocBook ou DITA XML, par exemple, peut
 être monolithique, mais perd alors de sa souplesse.
 
 .. toctree::

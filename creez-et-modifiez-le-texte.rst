@@ -10,7 +10,7 @@
 Créez et modifiez le texte
 --------------------------
 
-#. Modifiez un fichier source modulaire de ce |site| :
+#. Modifiez un fichier source modulaire de ce blog :
 
    - à l'aide d'un éditeur de texte :
 

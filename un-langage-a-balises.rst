@@ -12,31 +12,31 @@ Un langage à balises
 
 .. sidebar:: :awesome:`fa-bullhorn`
 
-   |dita| est un langage à balises : le |techwriter| structure l'information
+   DITA XML est un langage à balises : le rédacteur technique structure l'information
    dans des fichiers sources sans mise en page, similaires aux fichiers
    sources de code informatique. L'utilisateur reçoit un document cible, par
    exemple un fichier PDF, où les balises sont remplacées par une mise en
    forme typographique.
 
 Si votre entreprise fournit à ses clients une documentation technique au format
-|ms-word|,
-le |techwriter| et l'utilisateur disposent des mêmes
+MS Word,
+le rédacteur technique et l'utilisateur disposent des mêmes
 supports d'information (il n'y a pas de différenciation entre le fichier source
 et le fichier cible). Ce qui semble a priori la solution la plus simple s'avère
-cependant peu efficace en termes de productivité de l'équipe de |techwriting|
+cependant peu efficace en termes de productivité de l'équipe de rédaction technique
 et de structuration de l'information.
 
-Avec un format texte tel que |dita|, le |techwriter| et le lecteur
+Avec un format texte tel que DITA XML, le rédacteur technique et le lecteur
 disposent de supports largement différents :
 
 Rédacteur technique
-   Le |techwriter| manipule des fichiers sources ; il utilise les balises pour
+   Le rédacteur technique manipule des fichiers sources ; il utilise les balises pour
    construire le document en marquant les éléments d'information qu'il crée ou
    réutilise. Les balises sont imbriquées comme des poupées russes organisées
    selon une syntaxe rigoureuse. Le fichier source n'est pas au format WYSIWYG :
    la mise en page sera appliquée lors de la transformation des fichiers sources
    en fichiers cibles (autrement dit, lors de la génération des livrables). Tout
-   au plus, certains logiciels graphiques tels XMetal, Oxygen ou |fm| structuré
+   au plus, certains logiciels graphiques tels XMetal, Oxygen ou FrameMaker structuré
    proposent-ils le format WYSIWYM (what you see is what you mean), où les
    balises sont remplacées à l'écran par une mise en forme générique, différente
    de l'aspect final du document. Je trouve cependant que l'un des intérêts
@@ -51,7 +51,7 @@ Utilisateur
    typographique dont le sens est explicité dans la section *Conventions
    typographiques* du document final.
 
-Un fichier source |dita| mélange du texte et des balises, délimitées par les
+Un fichier source DITA XML mélange du texte et des balises, délimitées par les
 signes < et >.
 Le texte proprement dit est encapsulé
 dans un jeu de balises ouvrantes de type <balise> et de balises fermantes de
