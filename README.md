@@ -1,66 +1,11 @@
 redaction-technique.org
 =======================
 
-Website powered by Python Sphinx about managing documentation as source code (in French)
+Website powered by Astro with the Starlight docs theme about managing documentation as source code.
 
-Prerequisites
--------------
+Build the static website:
 
-- GNU/Linux Debian 7
-- Git
-- Sphinx 1.1.3 or higher
-- Inkscape
-
-For PDF output
-~~~~~~~~~~~~~~
-
-- texlive
-- texlive-fonts-recommended
-- texlive-latex-extra
-
-Installing Sphinx
------------------
-
-$ sudo apt-get install python-sphinx
-
-Building the HTML output
-------------------------
-
-$ git clone https://github.com/olivier-carrere/redaction-technique.org.git
-
-$ cd redaction-technique.org
-
-$ make html
-
-Building the PDF output
-------------------------
-
-$ git clone https://github.com/olivier-carrere/redaction-technique.org.git
-
-$ cd redaction-technique.org
-
-$ make latexpdf
-
-Building the EPUB output
-------------------------
-
-$ git clone https://github.com/olivier-carrere/redaction-technique.org.git
-
-$ cd redaction-technique.org
-
-$ make epub
-
-Building all available outputs
-------------------------------
-
-$ git clone https://github.com/olivier-carrere/redaction-technique.org.git
-
-$ cd redaction-technique.org
-
-$ make all
-
-Troubleshooting
----------------
-
-If compilation fails, you can get a compiled version on
-https://readthedocs.org/projects/redaction-techniqueorg.
+``` bash
+$ cd astro/
+$ npm run dev
+```
