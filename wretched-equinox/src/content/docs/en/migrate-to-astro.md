@@ -61,4 +61,6 @@ Once the `.md` files were ready, the final step was to:
 
 ## Get rid of everything
 
-I then realized I was no longer happy with the content, that didn't reflect state-the-art technical writing practices, and just decided to `git rm` everything and start a brand new version from scratch.
+I then realized I was no longer satisfied with the content—it didn’t reflect state-of-the-art technical writing practices—so I just decided to  `git rm` everything and start fresh.
+
+Another reason for such a major overhaul was to leverage the excellent multilingual support the [Starlight](https://starlight.astro.build/guides/i18n/) theme offers. Each page should support at least two language variants, with users able to switch between them. Translating outdated content wasn't particularly appealing. I considered using the LangChain framework for AI-based translation, but this wouldn't have met the minimum quality standards I was aiming for.

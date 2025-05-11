@@ -62,3 +62,5 @@ Une fois les fichiers `.md` prêts, la dernière étape a consisté à :
 ## Tout effacer
 
 Je me suis alors rendu compte que je n'étais plus satisfait du contenu, qui ne reflétait pas l'état de l'art en matière de rédaction technique, et j'ai décidé de faire un `git rm` de tout le site et de recommencer une toute nouvelle version à partir de zéro.
+
+Autre raison pour cette refonte majeure : tirer parti de l'excellent support multilingue offert par le thème [Starlight](https://starlight.astro.build/guides/i18n/). Il fallait donc proposer une version en deux langues minimum de chaque page. L'idée de traduire un contenu obsolète n'était pas particulièrement séduisante. Utiliser l'environnement de développement LangChain pour une traduction basée sur l'IA représentait un défi intéressant, mais aurait conduit à une qualité en en deçà de ce que je souhaitais publier.
