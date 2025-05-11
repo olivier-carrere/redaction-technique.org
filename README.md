@@ -9,3 +9,5 @@ Build the static website:
 $ cd astro/
 $ npm run dev
 ```
+
+Visit live website at https://redaction-technique.org/
