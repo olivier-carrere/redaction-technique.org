@@ -3,8 +3,7 @@ import starlight from '@astrojs/starlight';
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://astronaut.github.io',
-  base: 'foo',
+  site: 'https://zendeshimarhu.github.io',
   integrations: [
     starlight({
       title: 'Technical Writing',
