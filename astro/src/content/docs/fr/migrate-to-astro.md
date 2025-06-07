@@ -8,6 +8,9 @@ Voici un aperçu du processus de migration de ce site de **Python Sphinx** (avec
 
 Installation du projet Astro avec le thème Starlight
 
+![echiquier](https://github.com/user-attachments/assets/cfafc2da-3039-4a0c-8e48-7bc308ccf3a2)
+
+
 ```bash
 npm create astro@latest -- --template starlight
 ```
