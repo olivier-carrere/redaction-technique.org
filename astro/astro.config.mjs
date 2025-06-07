@@ -4,6 +4,7 @@ import { defineConfig } from 'astro/config';
 
 export default defineConfig({
   site: 'https://astronaut.github.io',
+  base: 'foo',
   integrations: [
     starlight({
       title: 'Technical Writing',
