@@ -24,6 +24,17 @@ for i in ../*.rst; do pandoc "$i" -o "$(basename "$i" .rst).md"; done
 
 > Cette commande parcourt tous les fichiers `.rst` du dossier parent et les convertit en `.md` dans le répertoire courant.
 
+## Mon nouveau titre
+
+Mon
+nouveau
+para.
+
+![echiquier](https://github.com/user-attachments/assets/9a6d07e8-e53c-4a69-b030-6ed09fca8e44)
+
+Mon *nouvel* autre **paragraphe**.
+
+
 ## Nettoyage post-conversion
 
 La conversion automatique n’est pas parfaite, mais la commande `sed` a permis d'effectuer des modifications sur tous les fichiers en une seule opération, par exemple :
