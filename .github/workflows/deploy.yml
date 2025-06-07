@@ -1,3 +1,20 @@
+name: Deploy to GitHub Pages
+
+on:
+  # Trigger the workflow on push to the `master` branch
+  push:
+    branches: [ master ]
+  # Allow manual trigger
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+env:
+  PNPM_SCRIPT_EXECUTION: allow
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,13 +35,24 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
-        working-directory: astro  # <-- make sure this folder exists
+        working-directory: astro
 
       - name: Build site
         run: pnpm run build
-        working-directory: astro  # <-- match the above
+        working-directory: astro
 
       - name: Upload static site to Pages
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v2
         with:
           path: astro/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
