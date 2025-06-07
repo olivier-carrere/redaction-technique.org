@@ -14,16 +14,6 @@ npm create astro@latest -- --template starlight
 
 > Cette commande initialise un projet Astro avec le thème Starlight préconfiguré (structure de navigation, pages de doc, recherche, etc.).
 
-## Ma nouvelle section
-
-Mon nouveau paragraphe
-sur deux lignes dans le code source *markdown*.
-
-![echiquier](https://github.com/user-attachments/assets/feeb14d8-0ec5-42c3-b76e-abe4182f93d2)
-
-
-Mon nouvel autre **paragraphe**.
-
 ## Conversion des fichiers `.rst` vers `.md`
 
 Les fichiers Sphinx sont écrits en **reStructuredText** (`.rst`). Astro/Starlight utilise **Markdown** (`.md`). J'ai utilisé **Pandoc** pour convertir automatiquement les fichiers :
