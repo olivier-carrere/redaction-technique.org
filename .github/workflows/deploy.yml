@@ -39,8 +39,8 @@ jobs:
         run: pnpm run build
         working-directory: astro
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+      - name: Upload static site to Pages
+        uses: actions/upload-pages-artifact@v3
         with:
           path: astro/dist
 
