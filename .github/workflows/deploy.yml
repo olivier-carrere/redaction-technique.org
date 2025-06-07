@@ -1,10 +1,8 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Trigger the workflow on push to the `master` branch
   push:
-    branches: [ master ]
-  # Allow manual trigger
+    branches: [ master ]  # Or change to 'main' if that's your branch
   workflow_dispatch:
 
 permissions:
@@ -42,7 +40,7 @@ jobs:
         working-directory: astro
 
       - name: Upload static site to Pages
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v2  # ✅ use v2, NOT v3
         with:
           path: astro/dist
 
