@@ -14,6 +14,9 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  PNPM_SCRIPT_EXECUTION: allow
+
 jobs:
   build:
     runs-on: ubuntu-latest
