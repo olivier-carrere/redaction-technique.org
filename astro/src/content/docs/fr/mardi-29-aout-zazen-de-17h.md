@@ -3,7 +3,7 @@ title: 'Jivaka : le médecin légendaire et son destin extraordinaire'
 author: 'Maître Kosen'
 description: 'Découvrez l’histoire fascinante de Jivaka, fils de roi, devenu médecin légendaire grâce à son intelligence et sa quête de savoir. Jivaka et la médecine.'
 slug: 'jivaka-le-medecin-legendaire-et-son-destin-extraordinaire'
-lastUpdated: 2023-08-29T17:00:00
+lastUpdated: 2000-08-29T17:00:00
 keywords: ["jivaka", "médecine", "roi", "acupuncture", "karma", "savoir", "intelligence", "destin", "spiritualité", "héritage"]
 ---
 
