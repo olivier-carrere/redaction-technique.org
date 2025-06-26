@@ -8,7 +8,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'Technical Writing',
-      defaultLocale: 'en',
+      defaultLocale: 'fr',
       locales: {
         fr: {
           label: 'Français',
