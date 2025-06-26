@@ -20,9 +20,16 @@ sera un roi médical. Alors la fille du manguier enveloppa l'enfant dans
 un vêtement blanc et ordonna à une servante d'aller l'exposer dans la
 rue. La servante le mit dans la rue et le laissa là. A ce moment là, il
 y avait un prince, le Prince, qui passait sur un char. Il aperçoit au
-loin un objet blanc. Il demanda à ses éclaireurs: Qu'est-ce que c'est
-cet objet blanc? - C'est un petit garçon. - Il est mort ou vivant? - Il
-est bien vivant. Le prince ordonna alors de le recueillir, il chercha
+loin un objet blanc. Il demanda à ses éclaireurs: 
+
+- Qu'est-ce que c'est
+cet objet blanc?
+
+- C'est un petit garçon.
+- Il est mort ou vivant?
+- Il est bien vivant.
+
+Le prince ordonna alors de le recueillir, il chercha
 une nourrice, prit le garçon et le ramena à la fille du manguier. On
 appela le petit bébé, Jivaka. Il a grandi et quand il a eu à peu près 8
 ans, en fait il était beaucoup plus intelligent que les autres enfants.
@@ -35,12 +42,22 @@ Alors ils commencèrent à l'insulter.
 
 - Toi, t'as pas de père! Fils de pute! T'es un fils d'une fille
 débauchée! Comment peux-tu te permettre de te croire supérieur à nous!
+
 Le petit garçon ne savait pas quoi dire. Il revint donc auprès de sa
 mère et lui raconta tout. Il dit à sa mère: Je vois bien que tous les
 autres enfants sont très stupides par rapport à moi et cependant ils
-m'insultent et m'appellent fils sans père. Où est mon père? Sa mère lui
-dit: Ton père est le roi. - Si ce que vous dites est vrai, mère, comment
-pourrais-je prouver que je suis son fils? La mère lui donna l'anneau, la
+m'insultent et m'appellent fils sans père. 
+
+- Où est mon père?
+
+Sa mère lui dit:
+
+- Ton père est le roi.
+
+- Si ce que vous dites est vrai, mère, comment
+pourrais-je prouver que je suis son fils?
+
+La mère lui donna l'anneau, la
 bague avec le sceau. Il prit l'anneau et il se rendit à la cour du roi.
 Grâce à l'anneau, il entra dans le château et put rencontrer le roi. Il
 s'agenouilla devant lui et lui dit: Je suis votre fils. Il lui montra la
