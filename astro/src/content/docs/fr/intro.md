@@ -1,5 +1,6 @@
 ---
 title: Kusens de Maître Kosen depuis 2000
+slug: intro
 ---
 
 Voici les transcriptions de nombreux enseignements (kusens), de séances de questions-réponses (mondos) et d'initiations aux pratiques du zen données par un maître contemporain lors de retraites (sesshins) et de camps d'été. Il explore en profondeur la pratique du zazen, la philosophie bouddhiste, le karma, l'ego, et la voie vers l'éveil, tout en offrant des réflexions personnelles et des anecdotes. Le texte aborde également des questions existentielles, des problèmes communautaires et la manière d'appliquer les principes zen à la vie quotidienne. Il s'agit d'une ressource riche en concepts clés et en perspectives personnelles sur la pratique du zen.
