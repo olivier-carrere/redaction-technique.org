@@ -3,7 +3,7 @@ title: Enseignements de Maître Kosen - une pratique zen ancrée dans la moderni
 slug: intro
 ---
 
-Ces textes sont des transcriptions des enseignements de Maître Kosen, donnés lors de sesshins, de camps d'été et de retraites au temple Yujo Nyusanji entre 2000 et 2014. À travers kusens, mondos et initiations, il explore les multiples dimensions du zen, mêlant tradition et modernité, et offrant une approche à la fois spirituelle et profondément pratique. Ces enseignements, riches en concepts bouddhistes fondamentaux, abordent des thèmes variés tels que la posture, la respiration, le karma, l’ego, l’impermanence et la voie vers l’éveil, tout en s’ancrant dans la réalité tangible de la vie quotidienne.
+Ce texte est une transcription des enseignements de Maître Kosen, donnés lors de sesshins, de camps d'été et de retraites au temple Yujo Nyusanji entre 2000 et 2014. À travers kusens, mondos et initiations, il explore les multiples dimensions du zen, mêlant tradition et modernité, et offrant une approche à la fois spirituelle et profondément pratique. Ces enseignements, riches en concepts bouddhistes fondamentaux, abordent des thèmes variés tels que la posture, la respiration, le karma, l’ego, l’impermanence et la voie vers l’éveil, tout en s’ancrant dans la réalité tangible de la vie quotidienne.
 
 ## Une spiritualité ancrée dans l’expérience pratique
 
@@ -27,8 +27,10 @@ Maître Kosen invite ses disciples à incarner le zen dans chaque moment de leur
 
 En mêlant tradition et modernité, exigence et lâcher-prise, Maître Kosen propose une vision du zen à la fois accessible et infiniment vaste. Chaque instant devient une opportunité de transformation intérieure et de connexion à l’essence universelle. Ses enseignements, retranscrits avec soin, témoignent de la profondeur et de la richesse d’une pratique vivante, où spiritualité et quotidien ne font qu’un.
 
-La relation entre Maître Kosen et son maître, Maître Deshimaru, surnommé Sensei, est au cœur de sa pratique et de son enseignement du zen. Sensei est dépeint comme une figure marquante et inspirante, mêlant rigueur, compassion et bienveillance. Son influence sur Kosen est profonde, tant par la transmission directe du Dharma que par la posture, la respiration et l'attitude en zazen. Sensei incarne une recherche spirituelle authentique, transmettant plus par sa présence et sa foi que par des mots.
+## L'empreinte de Maître Deshimaru : hommage et transmission
 
-Kosen évoque avec respect et affection l'impact de Sensei, illustré par des anecdotes mêlant humour et humilité. Cette relation, teintée de crainte et d'admiration, est un pilier essentiel de son cheminement spirituel. Sensei enseignait sans artifices, poussant ses disciples à dépasser leurs limites tout en leur laissant la liberté de trouver leur propre voie. Il insistait sur l'importance de ne pas imiter son maître, mais de s'approprier et de vivre pleinement le zen.
+La relation entre Maître Kosen et son maître, Maître Deshimaru, surnommé Sensei, est au cœur de sa pratique et de son enseignement du zen. Sensei est dépeint comme une figure marquante et inspirante, mêlant rigueur, compassion et bienveillance. Son influence sur Maître Kosen est profonde, tant par la transmission directe du Dharma que par la posture, la respiration et l'attitude en zazen. Sensei incarne une recherche spirituelle authentique, transmettant plus par sa présence et sa foi que par des mots.
 
-Même après la mort de Sensei, le lien entre eux reste puissant. Sa présence spirituelle continue de guider Kosen, qui s'efforce de transmettre fidèlement cet héritage tout en l'adaptant à son époque. Cette relation maître-disciple transcende la vie et la mort, illustrant la profondeur et la force de la tradition zen.
+Maître Kosen évoque avec respect et affection l'impact de Sensei, illustré par des anecdotes mêlant humour et humilité. Cette relation, teintée de crainte et d'admiration, est un pilier essentiel de son cheminement spirituel. Sensei enseignait sans artifices, poussant ses disciples à dépasser leurs limites tout en leur laissant la liberté de trouver leur propre voie. Il insistait sur l'importance de ne pas imiter son maître, mais de s'approprier et de vivre pleinement le zen.
+
+Même après la mort de Sensei, le lien entre eux reste puissant. Sa présence spirituelle continue de guider Maître Kosen, qui s'efforce de transmettre fidèlement cet héritage tout en l'adaptant à son époque. Cette relation maître-disciple transcende la vie et la mort, illustrant la profondeur et la force de la tradition zen.
