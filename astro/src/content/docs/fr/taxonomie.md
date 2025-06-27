@@ -1,3 +1,6 @@
+---
+title: Taxonomie
+---
 # Pratiques et concepts fondamentaux (bouddhisme zen)
 
 ## Zazen
