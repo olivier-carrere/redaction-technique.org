@@ -3,7 +3,7 @@ title: Enseignements de Maître Kosen - une pratique zen ancrée dans la moderni
 slug: intro
 ---
 
-Ce texte est une transcription des enseignements de Maître Kosen, donnés lors de sesshins, de camps d'été et de retraites au temple Yujo Nyusanji entre 2000 et 2014. À travers kusens, mondos et initiations, il explore les multiples dimensions du zen, mêlant tradition et modernité, et offrant une approche à la fois spirituelle et profondément pratique. Ces enseignements, riches en concepts bouddhistes fondamentaux, abordent des thèmes variés tels que la posture, la respiration, le karma, l’ego, l’impermanence et la voie vers l’éveil, tout en s’ancrant dans la réalité tangible de la vie quotidienne.
+Vous trouverez ici des transcriptions des enseignements de Maître Kosen, donnés lors de sesshins, de camps d'été et de retraites au temple Yujo Nyusanji entre 2000 et 2014. À travers kusens, mondos et initiations, il explore les multiples dimensions du zen, mêlant tradition et modernité, et offrant une approche à la fois spirituelle et profondément pratique. Ces enseignements, riches en concepts bouddhistes fondamentaux, abordent des thèmes variés tels que la posture, la respiration, le karma, l’ego, l’impermanence et la voie vers l’éveil, tout en s’ancrant dans la réalité tangible de la vie quotidienne.
 
 ## Une spiritualité ancrée dans l’expérience pratique
 
