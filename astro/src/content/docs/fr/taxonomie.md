@@ -1,5 +1,6 @@
 ---
 title: Taxonomie
+slug: taxonomie
 ---
 # Pratiques et concepts fondamentaux (bouddhisme zen)
 
