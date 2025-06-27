@@ -1,5 +1,5 @@
 ---
-title: Enseignements de Maître Kosen : une pratique zen ancrée dans la modernité
+title: Enseignements de Maître Kosen - une pratique zen ancrée dans la modernité
 slug: intro
 ---
 
