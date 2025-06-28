@@ -7,7 +7,7 @@ lastUpdated: '2001-02-11T19:00:00'
 keywords: ['zazen', 'karma', 'mérites', 'satori', 'Bouddha', 'ego', 'posture', 'respiration', 'liberté intérieure', 'méditation zen']
 ---
 
-Dans le véritable zen, ce n'est pas essentiel de réciter, de prier
+Dans le véritable zen, ce n'est pas essentiel de réciter, de prier 
 Bouddha, de lire les sutras. Il suffit de le faire pendant la cérémonie,
 comme le "shoko" qui est la cérémonie avant de brûler l'encens, la
 "chaï" qui sont les prières différentes à Bouddha, le "kito"
