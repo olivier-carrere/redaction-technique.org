@@ -3,7 +3,7 @@ title: 'Comprendre le zen au-delà du karma et du regard ordinaire'
 author: 'Maître Kosen Thibaut'
 description: 'Comprendre le zen sans se laisser piéger par le karma ni par l’importance apparente des actes.'
 slug: 'comprendre-le-zen-au-dela-du-karma-et-du-regard-ordinaire'
-lastUpdated: 2000-08-24T20:30:00
+lastUpdated: 2014-08-15T20:30:00
 keywords: ['comprendre le zen', 'karma', 'regard ordinaire', 'mérite', 'satori', 'Gensha', 'Dogen', 'action juste', 'spiritualité', 'non-attachement']
 ---
 
