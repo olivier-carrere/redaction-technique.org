@@ -4,7 +4,7 @@ author: 'Maître Kosen Thibaut'
 description: 'Découvrez comment la pratique de zazen libère le karma et crée des mérites durables par la méditation assise.'
 slug: 'zazen-meditation-assise-transformation-karma'
 lastUpdated: '2001-02-11T19:00:00'
-keywords: ['zazen', 'karma', 'mérites', 'satori', 'Bouddha', 'ego', 'posture', 'respiration', 'liberté intérieure', 'méditation zen']
+keywords: ["zazen", "karma", "mérites", "satori", "Bouddha", "ego", "posture", "respiration", "liberté intérieure", "méditation zen"]
 ---
 
 Dans le véritable zen, ce n'est pas essentiel de réciter, de prier 
