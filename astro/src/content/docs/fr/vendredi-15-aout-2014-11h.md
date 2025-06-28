@@ -106,7 +106,7 @@ dans les continents du Nord ; un certain Jyothika est né pendant la
 crémation de sa mère : quand sa mère était morte, on l'a brulé comme
 on fait en Inde, et lui, il est né pendant la crémation, on ne peut
 pas le tuer ; et on parle aussi du docteur qui soignait le Bouddha,
-[Jivaka](mardi-29-aout-2000-zazen-de-17h.md), qui était un grand
+[Jivaka](jivaka-le-medecin-legendaire-et-son-destin-extraordinaire), qui était un grand
 physicien de l'époque. Il devint un grand disciple du Bouddha et
 veillait sur sa santé, et pour ce mérite on ne pouvait pas le tuer. Et
 ils vivaient très longtemps.
