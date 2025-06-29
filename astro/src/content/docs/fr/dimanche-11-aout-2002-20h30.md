@@ -27,7 +27,7 @@ Donc, serrez les mains doucement l'une contre l'autre pendant l'expiration.
 
 Il est vrai que tout le monde n'arrive pas jusqu'au zazen. Je dirais même que très peu de monde arrive jusqu'à s'asseoir en zazen et à pratiquer. J'ai parlé de la posture du kin hin enseignée par maître Kodo Sawaki.
 
-La position des mains en kin hin forme le merveilleux dessin de l'arobase d'internet. Tout le monde aime cet @. Pourquoi?
+La position des mains en kin hin forme le merveilleux dessin de l'arobase d'internet. Tout le monde aime cet @. Pourquoi&nbsp;?
 
 Parce qu'il exprime le yin et le yang , centrifuge et centripète, il y a quelque chose d'un peu fascinant, de spécial, de parfait dans cette lettre. Peu importe.
 
@@ -51,7 +51,7 @@ Mais maintenant, quelques décennies après, certains maîtres, comme moi, qui o
 
 Finalement le problème, c'est qu'il est assez difficile de pénétrer vraiment le monde du zazen en dilettante. Ce n'est pas une question tellement de temps. Sensei disait que même si vous pratiquez seulement une heure avec la détermination, avec la motivation, en oubliant tout, et surtout avec gratitude de pouvoir être dans le dojo, de pouvoir pratiquer avec les moines, alors ce zazen-là est beaucoup plus précieux que si vous pratiquez six heures d'un zazen endormi.
 
-Donc comment, en pratiquant avec des laïcs, peut-on ne pas perdre ce qu'on appelle bodaishin? Car zazen sans bodaishin, c'est vraiment sans intérêt, c'est déprécier, c'est cracher dans la soupe, à la fin, c'est ramener zazen plus bas que notre médiocrité personnelle. C'est ce qui se passe, et c'est ce qui s'est passé avec beaucoup de mes disciples.
+Donc comment, en pratiquant avec des laïcs, peut-on ne pas perdre ce qu'on appelle bodaishin&nbsp;? Car zazen sans bodaishin, c'est vraiment sans intérêt, c'est déprécier, c'est cracher dans la soupe, à la fin, c'est ramener zazen plus bas que notre médiocrité personnelle. C'est ce qui se passe, et c'est ce qui s'est passé avec beaucoup de mes disciples.
 
 ## La conscience de la mort, racine du bodaishin
 
