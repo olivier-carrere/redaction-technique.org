@@ -1,14 +1,14 @@
 ---
-title: 'Zazen et bodaishin : la pratique zen au cœur de l’impermanence'
-author: 'Maître Kosen Thibaut'
-description: 'Explorez la pratique du zazen et l’importance du bodaishin, le cœur de la conscience de l’impermanence dans la vie et la méditation zen.'
-slug: 'zazen-et-bodaishin-la-pratique-zen-au-coeur-de-l-impermanence'
-lastUpdated: 2002-08-11T20:30:00
-wordCount: 1206
-keywords: ["zazen", "bodaishin", "kin hin", "Kodo Sawaki", "impermanence", "mujo", "dojo", "zen et méditation", "bodhisattva", Manjusri", "conscience de la mort"]
+title&nbsp;: 'Zazen et bodaishin&nbsp;: la pratique zen au cœur de l’impermanence'
+author&nbsp;: 'Maître Kosen Thibaut'
+description&nbsp;: 'Explorez la pratique du zazen et l’importance du bodaishin, le cœur de la conscience de l’impermanence dans la vie et la méditation zen.'
+slug&nbsp;: 'zazen-et-bodaishin-la-pratique-zen-au-coeur-de-l-impermanence'
+lastUpdated&nbsp;: 2002-08-11T20&nbsp;:30&nbsp;:00
+wordCount&nbsp;: 1206
+keywords&nbsp;: ["zazen", "bodaishin", "kin hin", "Kodo Sawaki", "impermanence", "mujo", "dojo", "zen et méditation", "bodhisattva", Manjusri", "conscience de la mort"]
 ---
 
-<!-- Correction orthographique par Antidote -->
+<&nbsp;!-- Correction orthographique par Antidote -->
 
 La posture des mains doit être belle.
 
@@ -39,9 +39,9 @@ Dans les temps anciens, d'ailleurs pas si anciens que ça, il y a un siècle au 
 
 Les laïcs étaient considérés par les moines un peu comme des gens inférieurs qui n'avaient pas le droit de rentrer dans le dojo. Ils avaient juste la possibilité de faire des dons aux moines et de leur demander de prier pour eux, pour leur famille, leurs amis, d'influencer par leur zazen.
 
-## L’ouverture du dojo à tous : une révolution difficile
+## L’ouverture du dojo à tous&nbsp;: une révolution difficile
 
-Celui qui voulait entrer dans le dojo - il y a beaucoup d'histoires de cela - était refusé : « Non, vous êtes trop stupide , vous êtes trop faible, on ne vous accepte pas. »
+Celui qui voulait entrer dans le dojo - il y a beaucoup d'histoires de cela - était refusé&nbsp;: « Non, vous êtes trop stupide , vous êtes trop faible, on ne vous accepte pas. »
 
 La tradition voulait qu'on le laisse au moins trois jours dehors, devant la porte. Évidemment, une fois qu'il pouvait rentrer dans le dojo, pratiquer avec les moines, il y mettait toute sa force, il avait tout abandonné ce qu'il avait avant.
 
@@ -59,9 +59,9 @@ Donc comment, en pratiquant avec des laïcs, peut-on ne pas perdre ce qu'on appe
 
 Ne serait-ce que pour formuler certains enseignements dans le dojo, il faut penser qu'il y a quelqu'un qui puisse les recevoir, qui soit disponible à les recevoir. Ce n'est pas le tout d'écrire, de préparer un enseignement, de lire les sutras, de faire connaître aux gens les enseignements des maîtres anciens.
 
-Par exemple, je ne vais pas aller lire mes kusens au café du coin. Alors évidemment, les contextes de pratique qui sont les nôtres: on pratique pendant les vacances, les gens n'arrivent même pas le premier jour des sesshins, on s'inscrit et on ne vient pas, ou alors ils s'en vont avant la fin. C'est un peu le self-service du zazen, tout le monde peut rentrer dans le dojo, tout le monde peut sortir.
+Par exemple, je ne vais pas aller lire mes kusens au café du coin. Alors évidemment, les contextes de pratique qui sont les nôtres&nbsp;: on pratique pendant les vacances, les gens n'arrivent même pas le premier jour des sesshins, on s'inscrit et on ne vient pas, ou alors ils s'en vont avant la fin. C'est un peu le self-service du zazen, tout le monde peut rentrer dans le dojo, tout le monde peut sortir.
 
-Dogen explique : bodaishin naît de la conscience de mujo, c'est-à-dire de la conscience de l'impermanence de toute chose, et en particulier de notre vie.
+Dogen explique&nbsp;: bodaishin naît de la conscience de mujo, c'est-à-dire de la conscience de l'impermanence de toute chose, et en particulier de notre vie.
 
 Mais tout est fait dans notre société pour nous faire oublier cette impermanence de notre vie, la masquer. Il y a beaucoup de violence à la télé, des morts, des coups de pistolets, des flics, mais justement pour nous éloigner de la réalité de mujo.
 
@@ -73,10 +73,10 @@ Quand on fait zazen, on est complètement présent à la vie, on n'est pas dans 
 
 Moins le bodaishin est fort, plus les problèmes qui nous assaillent et qui nous font souffrir sont superficiels. Quand le bodaishin est fort, les petits problèmes superficiels, les attachements, les petites souffrances qu'on entretient sont balayés.
 
-Le bodhisattva Manjusri dit :
+Le bodhisattva Manjusri dit&nbsp;:
 
 « Celui qui est illuminé par le zazen est suprêmement indépendant, transcendant le monde, ne reposant sur rien, doté de toutes les vertus, libéré de tout ce qui existe, purifié, sans attaches, libre de l'imagination. »
 
-C'est le zazen de celui à qui on a refusé l'entrée dans le dojo et à qui on dit : « Allez, d'accord, maintenant rentre. »
+C'est le zazen de celui à qui on a refusé l'entrée dans le dojo et à qui on dit&nbsp;: « Allez, d'accord, maintenant rentre. »
 
 Il va s'asseoir entre deux moines anciens qui ont des postures comme des montagnes, il s'assoit de toutes ses forces, il n'ose pas bouger, et il est illuminé. L'illumination, ce n'est rien de plus que ça.
