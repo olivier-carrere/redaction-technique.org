@@ -1,6 +1,6 @@
 ---
 title: 'Zazen et bodaishin : la pratique zen au cœur de l’impermanence'
-author: 'Maître Kosen'
+author: 'Maître Kosen Thibaut'
 description: 'Explorez la pratique du zazen et l’importance du bodaishin, le cœur de la conscience de l’impermanence dans la vie et la méditation zen.'
 slug: 'zazen-et-bodaishin-la-pratique-zen-au-coeur-de-l-impermanence'
 lastUpdated: 2002-08-11T20:30:00
@@ -33,7 +33,7 @@ contenter d'à peu près. Sa posture en kin hin aussi bien qu'en zazen
 Donc serrez les mains doucement l'une contre l'autre pendant
 l'expiration.
 
-Zazen
+## Le sens profond du zazen et du kin hin
 
 Il est vrai que tout le monde n'arrive pas jusqu'au zazen. Je dirais
 même que très peu de monde arrive jusqu'à s'asseoir en zazen et à
@@ -68,6 +68,8 @@ avaient juste la possibilité de faire des dons aux moines et de leur
 demander de prier pour eux, pour leur famille, leurs amis, d'influencer
 par leur zazen.
 
+## L’ouverture du dojo à tous : une révolution difficile
+
 Celui qui voulait entrer dans le dojo - il y a beaucoup d'histoires de
 cela - était refusé : « Non, vous êtes trop stupide , vous êtes trop
 faible, on ne vous accepte pas. »
@@ -98,7 +100,9 @@ intérêt, c'est déprécier, c'est cracher dans la soupe, à la fin, c'est
 ramener zazen plus bas que notre médiocrité personnelle. C'est ce qui se
 passe, et c'est ce qui s'est passé avec beaucoup de mes disciples.
 
-Évidemment, c'est assez douloureux pour moi qui tient l'enseignement de
+## La conscience de la mort, racine du bodaishin
+
+Évidemment, c'est assez douloureux pour moi qui tiens l'enseignement de
 mes maîtres comme précieux.
 
 Ne serait-ce que pour formuler certains enseignements dans le dojo, il
