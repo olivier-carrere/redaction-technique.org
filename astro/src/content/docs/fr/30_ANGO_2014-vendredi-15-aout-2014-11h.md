@@ -104,6 +104,8 @@ déranger la sangha. Donc les trois premiers c'est tuer, et les deux
 autres s'approchent du fait de tuer. On dit qu'on ne peut pas tuer le
 Tathâgata, on peut seulement faire saigner son corps.
 
+## Naître dans le feu, tomber dans l’enfer
+
 Il y a des personnages mythiques qui ne sont pas sujets à une mort
 précoce. Par exemple les Boddhisattvas, dans leur dernière incarnation,
 on ne peut quasiment pas les tuer. Aussi certains anges dans les
