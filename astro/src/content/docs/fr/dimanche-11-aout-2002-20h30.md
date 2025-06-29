@@ -1,14 +1,14 @@
 ---
-title&nbsp;: 'Zazen et bodaishin&nbsp;: la pratique zen au cœur de l’impermanence'
-author&nbsp;: 'Maître Kosen Thibaut'
-description&nbsp;: 'Explorez la pratique du zazen et l’importance du bodaishin, le cœur de la conscience de l’impermanence dans la vie et la méditation zen.'
-slug&nbsp;: 'zazen-et-bodaishin-la-pratique-zen-au-coeur-de-l-impermanence'
-lastUpdated&nbsp;: 2002-08-11T20&nbsp;:30&nbsp;:00
-wordCount&nbsp;: 1206
-keywords&nbsp;: ["zazen", "bodaishin", "kin hin", "Kodo Sawaki", "impermanence", "mujo", "dojo", "zen et méditation", "bodhisattva", Manjusri", "conscience de la mort"]
+title: 'Zazen et bodaishin: la pratique zen au cœur de l’impermanence'
+author: 'Maître Kosen Thibaut'
+description: 'Explorez la pratique du zazen et l’importance du bodaishin, le cœur de la conscience de l’impermanence dans la vie et la méditation zen.'
+slug: 'zazen-et-bodaishin-la-pratique-zen-au-coeur-de-l-impermanence'
+lastUpdated: 2002-08-11T20:30:00
+wordCount: 1206
+keywords: ["zazen", "bodaishin", "kin hin", "Kodo Sawaki", "impermanence", "mujo", "dojo", "zen et méditation", "bodhisattva", Manjusri", "conscience de la mort"]
 ---
 
-<&nbsp;!-- Correction orthographique par Antidote -->
+<!-- Correction orthographique par Antidote -->
 
 La posture des mains doit être belle.
 
