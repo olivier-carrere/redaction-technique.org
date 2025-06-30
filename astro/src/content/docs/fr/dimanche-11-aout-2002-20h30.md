@@ -61,7 +61,7 @@ Ne serait-ce que pour formuler certains enseignements dans le dojo, il faut pens
 
 Par exemple, je ne vais pas aller lire mes kusens au café du coin. Alors évidemment, les contextes de pratique qui sont les nôtres&nbsp;: on pratique pendant les vacances, les gens n'arrivent même pas le premier jour des sesshins, on s'inscrit et on ne vient pas, ou alors ils s'en vont avant la fin. C'est un peu le self-service du zazen, tout le monde peut rentrer dans le dojo, tout le monde peut sortir.
 
-Dogen explique&nbsp;: bodaishin naît de la conscience de mujo, c'est-à-dire de la conscience de l'impermanence de toute chose, et en particulier de notre vie.
+Dogen explique&nbsp;: bodaishin naît de la conscience de mujo, c'est-à-dire de la conscience de [l'impermanence](../reconnaitre-corps-spirituel-obaku-eveil) de toute chose, et en particulier de notre vie.
 
 Mais tout est fait dans notre société pour nous faire oublier cette impermanence de notre vie, la masquer. Il y a beaucoup de violence à la télé, des morts, des coups de pistolets, des flics, mais justement pour nous éloigner de la réalité de mujo.
 
