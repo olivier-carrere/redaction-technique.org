@@ -12,7 +12,7 @@ keywords: ['zen', 'Deshimaru', 'Kodo Sawaki', 'ordination', 'moine zen', 'Eiheij
 
 Le zen de [Maître Deshimaru](../une-mere-en-quete-de-sagesse-zazen-et-enseignements-de-maitre-deshimaru), qui est la véritable essence de la transmission du bouddhisme, a été pendant deux générations de maîtres, préparé comme on prépare un plat cuisiné, préparé pour être transmis ici et maintenant. Je veux dire **ici** et **maintenant**.
 
-La première fois que j'ai réalisé ça, de la cuisine de Kodo Sawaki et Deshimaru, c'est lorsque je suis allé pour la première fois dans le grand temple japonais de Eiheiji. C'est le grand temple, le temple principal du soto zen au Japon, celui où maître Dogen lui-même a enseigné sept siècles auparavant.
+La première fois que j'ai réalisé ça, de la cuisine de Kodo Sawaki et Deshimaru, c'est lorsque je suis allé pour la première fois dans le grand temple japonais de [Eiheiji](https://www.sotozen.com/fre/temples/jp/eiheiji.html). C'est le grand temple, le temple principal du soto zen au Japon, celui où maître Dogen lui-même a enseigné sept siècles auparavant.
 
 Donc ce temple de Eiheiji a gardé la même tradition, les mêmes règles depuis sept siècles. Malgré tout, le côté cérémonial s'est quand même beaucoup développé. Et quand je suis entré dans ce temple avec mon maître, je me suis dit&nbsp;:
 
