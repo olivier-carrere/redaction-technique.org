@@ -5,35 +5,35 @@ description: 'Explorez la pratique du zazen et l’importance du bodaishin, le c
 slug: 'zazen-et-bodaishin-la-pratique-zen-au-coeur-de-l-impermanence'
 lastUpdated: 2002-08-11T20:30:00
 wordCount: 1206
-keywords: ["zazen", "bodaishin", "kin hin", "Kodo Sawaki", "impermanence", "mujo", "dojo", "zen et méditation", "bodhisattva", Manjusri", "conscience de la mort"]
+keywords: ["zazen", "bodaishin", "kinhin", "Kodo Sawaki", "impermanence", "mujo", "dojo", "zen et méditation", "bodhisattva", Manjusri", "conscience de la mort"]
 ---
 
 <!-- Correction orthographique par Antidote -->
 
 La posture des mains doit être belle.
 
-J'ai invité une fois à Amsterdam un Japonais. Je lui ai fait confiance et je lui ai dit qu'il pouvait diriger le zazen. Tout ce qu'il a trouvé moyen d'enseigner, c'était qu'il y a plusieurs façons de faire kin hin, qu'on pouvait mettre les mains soit à plat, soit comme Kodo Sawaki l'avait enseigné. C'est un enseignement stupide, car tout le résultat, c'était que les gens dans le dojo se demandaient comment mettre les mains.
+J'ai invité une fois à Amsterdam un Japonais. Je lui ai fait confiance et je lui ai dit qu'il pouvait diriger le zazen. Tout ce qu'il a trouvé moyen d'enseigner, c'était qu'il y a plusieurs façons de faire kinhin, qu'on pouvait mettre les mains soit à plat, soit comme Kodo Sawaki l'avait enseigné. C'est un enseignement stupide, car tout le résultat, c'était que les gens dans le dojo se demandaient comment mettre les mains.
 
 S'il y a plusieurs méthodes, il faut s'en tenir à une seule, et il faut prendre la meilleure.
 
 La position des mains enseignée par Kodo Sawaki est tout à fait exacte.
 Elle dégage beaucoup plus de force, de beauté et d'énergie. Et c'est évident pour ceux qui pratiquent zazen que c'est la méthode la plus évoluée.
 
-Kodo Sawaki a étudié très profondément la tradition du zazen et du kin hin, et aussi du kesa. Il ne pensait pas que la posture pouvait se contenter d'à peu près. Sa posture en kin hin aussi bien qu'en zazen était magnifique.
+Kodo Sawaki a étudié très profondément la tradition du zazen et du kinhin, et aussi du kesa. Il ne pensait pas que la posture pouvait se contenter d'à peu près. Sa posture en kinhin aussi bien qu'en zazen était magnifique.
 
 Donc, serrez les mains doucement l'une contre l'autre pendant l'expiration.
 
-## Le sens profond du zazen et du kin hin
+## Le sens profond du zazen et du kinhin
 
-Il est vrai que tout le monde n'arrive pas jusqu'au zazen. Je dirais même que très peu de monde arrive jusqu'à s'asseoir en zazen et à pratiquer. J'ai parlé de la posture du kin hin enseignée par maître Kodo Sawaki.
+Il est vrai que tout le monde n'arrive pas jusqu'au zazen. Je dirais même que très peu de monde arrive jusqu'à s'asseoir en zazen et à pratiquer. J'ai parlé de la posture du kinhin enseignée par maître Kodo Sawaki.
 
-La position des mains en kin hin forme le merveilleux dessin de l'arobase d'internet. Tout le monde aime cet @. Pourquoi&nbsp;?
+La position des mains en kinhin forme le merveilleux dessin de l'arobase d'internet. Tout le monde aime cet @. Pourquoi&nbsp;?
 
 Parce qu'il exprime le yin et le yang , centrifuge et centripète, il y a quelque chose d'un peu fascinant, de spécial, de parfait dans cette lettre. Peu importe.
 
-En fait, on dessine l'évolution depuis l'homme des cavernes, avec ses arcades sourcilières avancées en visière, qui se tient voûté, l'homme préhistorique, on voit l'évolution, de plus en plus on voit l'homme se redresser, et puis avant même d'arriver à l'ultime, c'est-à-dire au zazen et au kin hin, on le voit affalé sur un canapé devant la télé, ou allongé sur la plage en train de se faire bronzer.
+En fait, on dessine l'évolution depuis l'homme des cavernes, avec ses arcades sourcilières avancées en visière, qui se tient voûté, l'homme préhistorique, on voit l'évolution, de plus en plus on voit l'homme se redresser, et puis avant même d'arriver à l'ultime, c'est-à-dire au zazen et au kinhin, on le voit affalé sur un canapé devant la télé, ou allongé sur la plage en train de se faire bronzer.
 
-Le corps et l'esprit sont unité, le maximum de l'évolution humaine, c'est zazen et kin hin. Peu de gens entrent dans le dojo et encore moins y restent.
+Le corps et l'esprit sont unité, le maximum de l'évolution humaine, c'est zazen et kinhin. Peu de gens entrent dans le dojo et encore moins y restent.
 
 Dans les temps anciens, d'ailleurs pas si anciens que ça, il y a un siècle au Japon, l'engagement pour pouvoir entrer dans le dojo devait être absolu.
 
