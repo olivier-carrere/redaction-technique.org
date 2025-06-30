@@ -16,7 +16,7 @@ La première fois que j'ai réalisé ça, de la cuisine de Kodo Sawaki et Deshim
 
 Donc ce temple de Eiheiji a gardé la même tradition, les mêmes règles depuis sept siècles. Malgré tout, le côté cérémonial s'est quand même beaucoup développé. Et quand je suis entré dans ce temple avec mon maître, je me suis dit&nbsp;:
 
-"J'ai reçu l'ordination de moine de mon maître Taisen Deshimaru, mais l'idée de l'actualisation du moine que je représente n'a rien à voir avec les moines du temple de Eiheiji."
+«&nbsp;J'ai reçu l'ordination de moine de mon maître Taisen Deshimaru, mais l'idée de l'actualisation du moine que je représente n'a rien à voir avec les moines du temple de Eiheiji.&nbsp;»
 
 ## Une tradition adaptée au monde moderne
 
@@ -28,11 +28,11 @@ Les grands maîtres de la transmission, maître Kodo Sawaki et maître Deshimaru
 
 Quand maître Deshimaru est venu voir maître Kodo Sawaki pour lui demander de recevoir l'ordination de moine, Kodo Sawaki a refusé. Il a refusé pendant 40 ans. Pendant 40 ans, Maître Deshimaru voulait devenir un moine. Kodo lui dit&nbsp;:
 
-"Ce n'est pas ce genre de moine que je veux que vous deveniez."
+«&nbsp;Ce n'est pas ce genre de moine que je veux que vous deveniez.&nbsp;»
 
 Et il le renvoyait dans ses problèmes sociaux, dans la vie ordinaire. Quand enfin à la mort de son maître il a pu recevoir cette ordination ainsi que la transmission du dharma de Kodo Sawaki, tous les kesas, les affaires personnelles de son maître, il se trouva complètement décalé par rapport à ce qui se passait au Japon. Pendant 3 ans il s'est demandé&nbsp;:
 
-"Qu'est-ce que je vais faire&nbsp;? Maintenant, je suis moine, mais qu'est-ce que ça veut dire&nbsp;? Je n'ai rien à faire ici, je n'ai pas de temple, je n'ai rien à faire ici au Japon."
+«&nbsp;Qu'est-ce que je vais faire&nbsp;? Maintenant, je suis moine, mais qu'est-ce que ça veut dire&nbsp;? Je n'ai rien à faire ici, je n'ai pas de temple, je n'ai rien à faire ici au Japon.&nbsp;»
 
 Et, du tréfonds de ses doutes, de sa souffrance, il a incarné quelque chose ou quelqu'un qui symbolise totalement le personnage mythique du moine zen, du maître zen, comme Boddhidharma, hors du temps, hors de tout contexte, libre de tout, profondément humain, mais depuis un temps infini au-delà de ce monde. Complètement adaptable à n'importe quelle situation, pouvant parler tous les langages avec tout le monde, comprendre toute l'humanité. Et en même temps un être qui avait tout abandonné.
 
@@ -42,39 +42,39 @@ Et lui, au contraire de Kodo Sawaki, ordonna des moines très rapidement. Il sav
 
 Par exemple, c'est mon maître qui m'a dit&nbsp;:
 
-"Stéphane , vous devez devenir moine."
+«&nbsp;Stéphane , vous devez devenir moine.&nbsp;»
 
 Moi à cette époque j'étais très libre, je n'avais pas d'attaches, autrement dit je faisais n'importe quoi, j'habitais n'importe où, je me sentais très libre comme un moine. Alors j'ai dit&nbsp;:
 
-"Sensei, j'ai pas besoin de devenir moine, je le suis déjà."
+«&nbsp;Sensei, j'ai pas besoin de devenir moine, je le suis déjà.&nbsp;»
 
 Et là, il m'a regardé en faisant le signe avec son doigt que j'étais fou. Alors je me dis&nbsp;:
 
-"Bon d'accord, si Sensei veut que je sois moine, je reçois l'ordination."
+«&nbsp;Bon d'accord, si Sensei veut que je sois moine, je reçois l'ordination.&nbsp;»
 
 Je n'avais vraiment rien compris, et je n'ai rien compris jusqu'au jour de l'ordination. Je ne voulais même pas me raser la tête. Est-ce que c'est bien la peine de se raser la tête&nbsp;?
 
 Et tout à coup, alors que j'étais dans l'appartement du maître juste une demi-heure avant l'ordination, je me suis regardé dans la glace&nbsp;: je ne sais pas par quelle force, mais il a fallu absolument que je me coupe les cheveux tout de suite. Je me suis retrouvé rasé avec ma petite mèche. Sensei m'a regardé, il a rigolé, il dit&nbsp;:
 
-"Ah, on dirait que vous avez 12 ans&nbsp;! Vous êtes très pur."
+«&nbsp;Ah, on dirait que vous avez 12 ans&nbsp;! Vous êtes très pur.&nbsp;»
 
 Un an et demi plus tard, je me suis excusé auprès de mon maître. Je lui ai dit&nbsp;:
 
-"Écoutez Sensei, j'avais pas bien compris ce qu'était l'ordination. C'est vous qui m'avez demandé de devenir moine, mais moi je voudrais vous redemander à mon tour. C'est moi qui vous demande, Sensei, de me donner l'ordination de moine une deuxième fois."
+«&nbsp;Écoutez Sensei, j'avais pas bien compris ce qu'était l'ordination. C'est vous qui m'avez demandé de devenir moine, mais moi je voudrais vous redemander à mon tour. C'est moi qui vous demande, Sensei, de me donner l'ordination de moine une deuxième fois.&nbsp;»
 
 Alors il dit&nbsp;:
 
-"Oh avec Stéphane, c'est toujours spécial. D'accord&nbsp;!"
+«&nbsp;Oh avec Stéphane, c'est toujours spécial. D'accord&nbsp;!&nbsp;»
 
 Il m'a donné une deuxième fois l'ordination. Il m'a remis un rakusu sur lequel il avait écrit&nbsp;:
 
-"L'ordre cosmique suit Stéphane."
+«&nbsp;L'ordre cosmique suit Stéphane.&nbsp;»
 
 Normalement, c'est plutôt nous qui devons suivre l'ordre cosmique&nbsp;!
 
-Donc nous, les disciples actuels, qui avons hérité du même sentiment que maître Deshimaru a ressenti à la mort de son maître ( quand il s'est retrouvé tout seul à dire&nbsp;: "Voilà, j'ai reçu l'ordination, mais qu'est-ce que ça signifie, qu'est-ce que je dois faire&nbsp;?") nous demandons&nbsp;:
+Donc nous, les disciples actuels, qui avons hérité du même sentiment que maître Deshimaru a ressenti à la mort de son maître ( quand il s'est retrouvé tout seul à dire&nbsp;: «&nbsp;Voilà, j'ai reçu l'ordination, mais qu'est-ce que ça signifie, qu'est-ce que je dois faire&nbsp;?&nbsp;») nous demandons&nbsp;:
 
-"Qu'est-ce que ça signifie aujourd'hui être moine zen&nbsp;? Qu'est-ce que ça signifie, tout seul debout dans la rue avec son baluchon (sans les temples, sans l'AZI, sans la soto shu) être un moine zen&nbsp;?"
+«&nbsp;Qu'est-ce que ça signifie aujourd'hui être moine zen&nbsp;? Qu'est-ce que ça signifie, tout seul debout dans la rue avec son baluchon (sans les temples, sans l'AZI, sans la soto shu) être un moine zen&nbsp;?&nbsp;»
 
 Nous avons hérité du même koan que Deshimaru&nbsp;: c'est normal, nous sommes ses disciples.
 
