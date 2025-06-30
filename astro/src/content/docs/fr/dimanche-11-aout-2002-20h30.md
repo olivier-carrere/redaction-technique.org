@@ -41,7 +41,9 @@ Les laïcs étaient considérés par les moines un peu comme des gens inférieur
 
 ## L’ouverture du dojo à tous&nbsp;: une révolution difficile
 
-Celui qui voulait entrer dans le dojo - il y a beaucoup d'histoires de cela - était refusé&nbsp;: « Non, vous êtes trop stupide , vous êtes trop faible, on ne vous accepte pas. »
+Celui qui voulait entrer dans le dojo - il y a beaucoup d'histoires de cela - était refusé&nbsp;:
+
+> Non, vous êtes trop stupide , vous êtes trop faible, on ne vous accepte pas.
 
 La tradition voulait qu'on le laisse au moins trois jours dehors, devant la porte. Évidemment, une fois qu'il pouvait rentrer dans le dojo, pratiquer avec les moines, il y mettait toute sa force, il avait tout abandonné ce qu'il avait avant.
 
@@ -75,8 +77,10 @@ Moins le bodaishin est fort, plus les problèmes qui nous assaillent et qui nous
 
 Le bodhisattva Manjusri dit&nbsp;:
 
-« Celui qui est illuminé par le zazen est suprêmement indépendant, transcendant le monde, ne reposant sur rien, doté de toutes les vertus, libéré de tout ce qui existe, purifié, sans attaches, libre de l'imagination. »
+> Celui qui est illuminé par le zazen est suprêmement indépendant, transcendant le monde, ne reposant sur rien, doté de toutes les vertus, libéré de tout ce qui existe, purifié, sans attaches, libre de l'imagination.
 
-C'est le zazen de celui à qui on a refusé l'entrée dans le dojo et à qui on dit&nbsp;: « Allez, d'accord, maintenant rentre. »
+C'est le zazen de celui à qui on a refusé l'entrée dans le dojo et à qui on dit&nbsp;:
+
+> Allez, d'accord, maintenant rentre.
 
 Il va s'asseoir entre deux moines anciens qui ont des postures comme des montagnes, il s'assoit de toutes ses forces, il n'ose pas bouger, et il est illuminé. L'illumination, ce n'est rien de plus que ça.
