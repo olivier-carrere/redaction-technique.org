@@ -1,11 +1,11 @@
 ---
-title: "La transmission du zen - héritage de Maître Deshimaru et Kodo Sawaki"
-author: "Maître Kosen Thibaut"
-description: "Découvrez l"essence de la transmission du zen à travers l’héritage de Maître Deshimaru et Kodo Sawaki, adapté à la modernité."
-slug: "transmission-du-zen-maitre-deshimaru-kodo-sawaki"
-lastUpdated: 2000-08-06T07:30:00
-wordCount: 1115
-keywords: ["zen", "Deshimaru", "Kodo Sawaki", "ordination", "moine zen", "Eiheiji", "bouddhisme", "transmission", "koan", "spiritualité"]
+title: 'La transmission du zen : héritage de Maître Deshimaru et Kodo Sawaki'
+author: 'Maître Kosen Thibaut'
+description: 'Découvrez l’essence de la transmission du zen à travers l’héritage de Maître Deshimaru et Kodo Sawaki, adapté à la modernité.'
+slug: 'transmission-du-zen-maitre-deshimaru-kodo-sawaki'
+lastUpdated: 2000-08-06T07:30:00Z
+wordCount: 1296
+keywords: ['zen', 'Deshimaru', 'Kodo Sawaki', 'ordination', 'moine zen', 'Eiheiji', 'bouddhisme', 'transmission', 'koan', 'spiritualité']
 ---
 
 Le zen de Maître Deshimaru qui est la véritable essence de la
