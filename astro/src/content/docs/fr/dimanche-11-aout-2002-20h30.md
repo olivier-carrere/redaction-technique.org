@@ -12,7 +12,7 @@ keywords: ["zazen", "bodaishin", "kinhin", "Kodo Sawaki", "impermanence", "mujo"
 
 La posture des mains doit être belle.
 
-J'ai invité une fois à Amsterdam un Japonais. Je lui ai fait confiance et je lui ai dit qu'il pouvait diriger le zazen. Tout ce qu'il a trouvé moyen d'enseigner, c'était qu'il y a plusieurs façons de faire kinhin, qu'on pouvait mettre les mains soit à plat, soit comme [Kodo Sawaki](../transmission-du-zen-maitre-deshimaru-kodo-sawaki) l'avait enseigné. C'est un enseignement stupide, car tout le résultat, c'était que les gens dans le dojo se demandaient comment mettre les mains.
+J'ai invité une fois à [Amsterdam](https://zendojoamsterdam.nl) un Japonais. Je lui ai fait confiance et je lui ai dit qu'il pouvait diriger le zazen. Tout ce qu'il a trouvé moyen d'enseigner, c'était qu'il y a plusieurs façons de faire kinhin, qu'on pouvait mettre les mains soit à plat, soit comme [Kodo Sawaki](../transmission-du-zen-maitre-deshimaru-kodo-sawaki) l'avait enseigné. C'est un enseignement stupide, car tout le résultat, c'était que les gens dans le dojo se demandaient comment mettre les mains.
 
 S'il y a plusieurs méthodes, il faut s'en tenir à une seule, et il faut prendre la meilleure.
 
@@ -23,7 +23,7 @@ Kodo Sawaki a étudié très profondément la tradition du zazen et du kinhin, e
 
 Donc, serrez les mains doucement l'une contre l'autre pendant l'expiration.
 
-## Le sens profond du zazen et du kinhin
+## Le sens profond du zazen, kinhin et bodaishin
 
 Il est vrai que tout le monde n'arrive pas jusqu'au zazen. Je dirais même que très peu de monde arrive jusqu'à s'asseoir en zazen et à pratiquer. J'ai parlé de la posture du kinhin enseignée par maître Kodo Sawaki.
 
@@ -53,7 +53,7 @@ Finalement le problème, c'est qu'il est assez difficile de pénétrer vraiment 
 
 Donc comment, en pratiquant avec des laïcs, peut-on ne pas perdre ce qu'on appelle bodaishin&nbsp;? Car zazen sans bodaishin, c'est vraiment sans intérêt, c'est déprécier, c'est cracher dans la soupe, à la fin, c'est ramener zazen plus bas que notre médiocrité personnelle. C'est ce qui se passe, et c'est ce qui s'est passé avec beaucoup de mes disciples.
 
-## La conscience de la mort, racine du bodaishin
+## Comment la conscience de l’impermanence transforme le zazen
 
 Évidemment, c'est assez douloureux pour moi qui tiens l'enseignement de mes maîtres comme précieux.
 
