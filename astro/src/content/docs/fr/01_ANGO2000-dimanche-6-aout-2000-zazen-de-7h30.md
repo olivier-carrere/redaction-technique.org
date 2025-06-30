@@ -26,11 +26,11 @@ Les grands maîtres de la transmission, maître Kodo Sawaki et maître Deshimaru
 
 ## L'ordination selon Deshimaru
 
-Quand maître Deshimaru est venu voir maître Kodo Sawaki pour lui demander de recevoir l'ordination de moine, Kodo Sawaki a refusé. Il a refusé pendant 40 ans. Pendant 40 ans, Maître Deshimaru voulait devenir un moine. Kodo lui dit&nbsp;:
+Quand maître Deshimaru est venu voir maître Kodo Sawaki pour lui demander de recevoir l'ordination de moine, Kodo Sawaki a refusé. Il a refusé pendant quarante ans. Pendant quarante ans, Maître Deshimaru voulait devenir un moine. Kodo lui dit&nbsp;:
 
 > Ce n'est pas ce genre de moine que je veux que vous deveniez.
 
-Et il le renvoyait dans ses problèmes sociaux, dans la vie ordinaire. Quand enfin à la mort de son maître il a pu recevoir cette ordination ainsi que la transmission du dharma de Kodo Sawaki, tous les kesas, les affaires personnelles de son maître, il se trouva complètement décalé par rapport à ce qui se passait au Japon. Pendant 3 ans il s'est demandé&nbsp;:
+Et il le renvoyait dans ses problèmes sociaux, dans la vie ordinaire. Quand enfin à la mort de son maître il a pu recevoir cette ordination ainsi que la transmission du dharma de Kodo Sawaki, tous les kesas, les affaires personnelles de son maître, il se trouva complètement décalé par rapport à ce qui se passait au Japon. Pendant trois ans il s'est demandé&nbsp;:
 
 > Qu'est-ce que je vais faire&nbsp;? Maintenant, je suis moine, mais qu'est-ce que ça veut dire&nbsp;? Je n'ai rien à faire ici, je n'ai pas de temple, je n'ai rien à faire ici au Japon.
 
@@ -56,7 +56,7 @@ Je n'avais vraiment rien compris, et je n'ai rien compris jusqu'au jour de l'ord
 
 Et tout à coup, alors que j'étais dans l'appartement du maître juste une demi-heure avant l'ordination, je me suis regardé dans la glace&nbsp;: je ne sais pas par quelle force, mais il a fallu absolument que je me coupe les cheveux tout de suite. Je me suis retrouvé rasé avec ma petite mèche. Sensei m'a regardé, il a rigolé, il dit&nbsp;:
 
-> Ah, on dirait que vous avez 12 ans&nbsp;! Vous êtes très pur.
+> Ah, on dirait que vous avez douze ans&nbsp;! Vous êtes très pur.
 
 Un an et demi plus tard, je me suis excusé auprès de mon maître. Je lui ai dit&nbsp;:
 
