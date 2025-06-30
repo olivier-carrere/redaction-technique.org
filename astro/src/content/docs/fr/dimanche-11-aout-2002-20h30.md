@@ -1,5 +1,5 @@
 ---
-title: 'Zazen et bodaishin: la pratique zen au cœur de l’impermanence'
+title: 'Zazen et bodaishin : la pratique zen au cœur de l’impermanence'
 author: 'Maître Kosen Thibaut'
 description: 'Explorez la pratique du zazen et l’importance du bodaishin, le cœur de la conscience de l’impermanence dans la vie et la méditation zen.'
 slug: 'zazen-et-bodaishin-la-pratique-zen-au-coeur-de-l-impermanence'
