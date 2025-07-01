@@ -72,7 +72,7 @@ Il m'a donné une deuxième fois l'ordination. Il m'a remis un <abbr title="Vers
 
 Normalement, c'est plutôt nous qui devons suivre l'ordre cosmique&nbsp;!
 
-Donc nous, les disciples actuels, qui avons hérité du même sentiment que maître Deshimaru a ressenti à la mort de son maître ( quand il s'est retrouvé tout seul à dire&nbsp;: > Voilà, j'ai reçu l'ordination, mais qu'est-ce que ça signifie, qu'est-ce que je dois faire&nbsp;?) nous demandons&nbsp;:
+Donc nous, les disciples actuels, qui avons hérité du même sentiment que maître Deshimaru a ressenti à la mort de son maître (quand il s'est retrouvé tout seul à dire&nbsp;: Voilà, j'ai reçu l'ordination, mais qu'est-ce que ça signifie, qu'est-ce que je dois faire&nbsp;?) nous demandons&nbsp;:
 
 > Qu'est-ce que ça signifie aujourd'hui être moine zen&nbsp;? Qu'est-ce que ça signifie, tout seul debout dans la rue avec son baluchon (sans les temples, sans l'AZI, sans la soto shu) être un moine zen&nbsp;?
 
