@@ -20,7 +20,7 @@ Donc ce temple de Eiheiji a gardé la même tradition, les mêmes règles depuis
 
 ## Une tradition adaptée au monde moderne
 
-Pourtant eux aussi sont des moines, eux aussi suivent en quelque sorte la tradition. Mais il y a quelque chose de profondément différent, comme si eux étaient coupés du monde, comme s'ils appartenaient à un siècle passé et que nous, avec maître Deshimaru étions des moines hors du temps. Malgré toutes les idées que l'on peut se faire sur le bouddhisme , sur les moines zen, sur les temples, les immenses temples japonais, mon ordination et ma pratique avec maître Deshimaru me semblaient seules réelles, ce n'était pas du théâtre. C'est pareil, mais ça n'a rien à voir. Même si on s'inspire, même si on étudie par la pratique des anciens, en Chine, au Japon, en Inde, c'est la pratique de maintenant qui est importante, adaptée à la situation présente.
+Pourtant eux aussi sont des moines, eux aussi suivent en quelque sorte la tradition. Mais il y a quelque chose de profondément différent, comme si eux étaient coupés du monde, comme s'ils appartenaient à un siècle passé et que nous, avec maître Deshimaru étions des moines hors du temps. Malgré toutes les idées que l'on peut se faire sur le bouddhisme, sur les moines zen, sur les temples, les immenses temples japonais, mon ordination et ma pratique avec maître Deshimaru me semblaient seules réelles, ce n'était pas du théâtre. C'est pareil, mais ça n'a rien à voir. Même si on s'inspire, même si on étudie par la pratique des anciens, en Chine, au Japon, en Inde, c'est la pratique de maintenant qui est importante, adaptée à la situation présente.
 
 Les grands maîtres de la transmission, maître Kodo Sawaki et maître Deshimaru ont préparé cette adaptation depuis deux générations. Déjà, maître Kodo Sawaki au Japon a commencé par enseigner aux étudiants, dans une salle à l'université. Ensuite il a été le premier maître à enseigner aux laïcs. Parmi ses disciples, beaucoup d'écrivains, d'intellectuels, des artistes, des comédiens, acteurs, geishas, toute sorte de gens qui n'avaient rien à voir avec le monde qu'on rencontre dans les temples.
 
@@ -30,7 +30,7 @@ Quand maître Deshimaru est venu voir maître Kodo Sawaki pour lui demander de r
 
 > Ce n'est pas ce genre de moine que je veux que vous deveniez.
 
-Et il le renvoyait dans ses problèmes sociaux, dans la vie ordinaire. Quand enfin à la mort de son maître il a pu recevoir cette ordination ainsi que la transmission du dharma de Kodo Sawaki, tous les kesas, les affaires personnelles de son maître, il se trouva complètement décalé par rapport à ce qui se passait au Japon. Pendant trois ans il s'est demandé&nbsp;:
+Et il le renvoyait dans ses problèmes sociaux, dans la vie ordinaire. Quand enfin à la mort de son maître il a pu recevoir cette ordination ainsi que la transmission du dharma de Kodo Sawaki, tous les <abbr title="Robe des nonnes et moines zen.">kesas</abbr>, les affaires personnelles de son maître, il se trouva complètement décalé par rapport à ce qui se passait au Japon. Pendant trois ans il s'est demandé&nbsp;:
 
 > Qu'est-ce que je vais faire&nbsp;? Maintenant, je suis moine, mais qu'est-ce que ça veut dire&nbsp;? Je n'ai rien à faire ici, je n'ai pas de temple, je n'ai rien à faire ici au Japon.
 
@@ -42,7 +42,7 @@ Et lui, au contraire de Kodo Sawaki, ordonna des moines très rapidement. Il sav
 
 Par exemple, c'est mon maître qui m'a dit&nbsp;:
 
-> Stéphane , vous devez devenir moine.
+> Stéphane, vous devez devenir moine.
 
 Moi à cette époque j'étais très libre, je n'avais pas d'attaches, autrement dit je faisais n'importe quoi, j'habitais n'importe où, je me sentais très libre comme un moine. Alors j'ai dit&nbsp;:
 
@@ -66,7 +66,7 @@ Alors il dit&nbsp;:
 
 > Oh avec Stéphane, c'est toujours spécial. D'accord&nbsp;!
 
-Il m'a donné une deuxième fois l'ordination. Il m'a remis un rakusu sur lequel il avait écrit&nbsp;:
+Il m'a donné une deuxième fois l'ordination. Il m'a remis un <abbr title="Version miniature du kesa, robe des nonnes et moines zen, porté autour du cou.">rakusu</abbr> sur lequel il avait écrit&nbsp;:
 
 > L'ordre cosmique suit Stéphane.
 
