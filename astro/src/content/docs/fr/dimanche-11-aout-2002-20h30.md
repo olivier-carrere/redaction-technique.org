@@ -10,8 +10,7 @@ keywords: ["zazen", "bodaishin", "kinhin", "Kodo Sawaki", "impermanence", "mujo"
 
 <!-- Correction orthographique par Antidote -->
 
-La posture des mains doit être belle. 
-
+La posture des mains doit être belle.
 
 J'ai invité une fois à [Amsterdam](https://zendojoamsterdam.nl) un Japonais. Je lui ai fait confiance et je lui ai dit qu'il pouvait diriger le <abbr title="Méditation assise.">zazen</abbr>. Tout ce qu'il a trouvé moyen d'enseigner, c'était qu'il y a plusieurs façons de faire <abbr title="Marche méditative lente.">kinhin</abbr>, qu'on pouvait mettre les mains soit à plat, soit comme [Kodo Sawaki](../transmission-du-zen-maitre-deshimaru-kodo-sawaki) l'avait enseigné. C'est un enseignement stupide, car tout le résultat, c'était que les gens dans le dojo se demandaient comment mettre les mains.
 
@@ -20,11 +19,11 @@ S'il y a plusieurs méthodes, il faut s'en tenir à une seule, et il faut prendr
 La position des mains enseignée par Kodo Sawaki est tout à fait exacte.
 Elle dégage beaucoup plus de force, de beauté et d'énergie. Et c'est évident pour ceux qui pratiquent zazen que c'est la méthode la plus évoluée.
 
-Kodo Sawaki a étudié très profondément la tradition du zazen et du kinhin, et aussi du kesa. Il ne pensait pas que la posture pouvait se contenter d'à peu près. Sa posture en kinhin aussi bien qu'en zazen était magnifique.
+Kodo Sawaki a étudié très profondément la tradition du zazen et du kinhin, et aussi du <abbr title="Robe des nonnes et moines zen.">kesa</abbr>. Il ne pensait pas que la posture pouvait se contenter d'à peu près. Sa posture en kinhin aussi bien qu'en zazen était magnifique.
 
 Donc, serrez les mains doucement l'une contre l'autre pendant l'expiration.
 
-## Le sens profond du zazen, kinhin et bodaishin
+## Le sens profond de zazen, kinhin et bodaishin
 
 Il est vrai que tout le monde n'arrive pas jusqu'au zazen. Je dirais même que très peu de monde arrive jusqu'à s'asseoir en zazen et à pratiquer. J'ai parlé de la posture du kinhin enseignée par maître Kodo Sawaki.
 
