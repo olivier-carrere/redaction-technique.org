@@ -8,8 +8,6 @@ wordCount: 1206
 keywords: ["zazen", "bodaishin", "kinhin", "Kodo Sawaki", "impermanence", "mujo", "dojo", "zen et méditation", "bodhisattva", Manjusri", "conscience de la mort"]
 ---
 
-<!-- Correction orthographique par Antidote -->
-
 La posture des mains doit être belle.
 
 J'ai invité une fois à [Amsterdam](https://zendojoamsterdam.nl) un Japonais. Je lui ai fait confiance et je lui ai dit qu'il pouvait diriger le <abbr title="Méditation assise.">zazen</abbr>. Tout ce qu'il a trouvé moyen d'enseigner, c'était qu'il y a plusieurs façons de faire <abbr title="Marche méditative lente.">kinhin</abbr>, qu'on pouvait mettre les mains soit à plat, soit comme [Kodo Sawaki](../transmission-du-zen-maitre-deshimaru-kodo-sawaki) l'avait enseigné. C'est un enseignement stupide, car tout le résultat, c'était que les gens dans le dojo se demandaient comment mettre les mains.
@@ -29,7 +27,7 @@ Il est vrai que tout le monde n'arrive pas jusqu'au zazen. Je dirais même que t
 
 La position des mains en kinhin forme le merveilleux dessin de l'arobase d'internet. Tout le monde aime cet @. Pourquoi&nbsp;?
 
-Parce qu'il exprime le yin et le yang , centrifuge et centripète, il y a quelque chose d'un peu fascinant, de spécial, de parfait dans cette lettre. Peu importe.
+Parce qu'il exprime le yin et le yang, centrifuge et centripète, il y a quelque chose d'un peu fascinant, de spécial, de parfait dans cette lettre. Peu importe.
 
 En fait, on dessine l'évolution depuis l'homme des cavernes, avec ses arcades sourcilières avancées en visière, qui se tient voûté, l'homme préhistorique, on voit l'évolution, de plus en plus on voit l'homme se redresser, et puis avant même d'arriver à l'ultime, c'est-à-dire au zazen et au kinhin, on le voit affalé sur un canapé devant la télé, ou allongé sur la plage en train de se faire bronzer.
 
@@ -43,7 +41,7 @@ Les laïcs étaient considérés par les moines un peu comme des gens inférieur
 
 Celui qui voulait entrer dans le dojo - il y a beaucoup d'histoires de cela - était refusé&nbsp;:
 
-> Non, vous êtes trop stupide , vous êtes trop faible, on ne vous accepte pas.
+> Non, vous êtes trop stupide, vous êtes trop faible, on ne vous accepte pas.
 
 La tradition voulait qu'on le laisse au moins trois jours dehors, devant la porte. Évidemment, une fois qu'il pouvait rentrer dans le dojo, pratiquer avec les moines, il y mettait toute sa force, il avait tout abandonné ce qu'il avait avant.
 
