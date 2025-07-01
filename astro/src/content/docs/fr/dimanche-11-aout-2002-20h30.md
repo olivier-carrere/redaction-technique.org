@@ -53,7 +53,7 @@ Mais maintenant, quelques décennies après, certains maîtres, comme moi, qui o
 
 Finalement le problème, c'est qu'il est assez difficile de pénétrer vraiment le monde du zazen en dilettante. Ce n'est pas une question tellement de temps. Sensei disait que même si vous pratiquez seulement une heure avec la détermination, avec la motivation, en oubliant tout, et surtout avec gratitude de pouvoir être dans le dojo, de pouvoir pratiquer avec les moines, alors ce zazen-là est beaucoup plus précieux que si vous pratiquez six heures d'un zazen endormi.
 
-Donc comment, en pratiquant avec des laïcs, peut-on ne pas perdre ce qu'on appelle [bodaishin]("Esprit d'éveil")&nbsp;? Car zazen sans bodaishin, c'est vraiment sans intérêt, c'est déprécier, c'est cracher dans la soupe, à la fin, c'est ramener zazen plus bas que notre médiocrité personnelle. C'est ce qui se passe, et c'est ce qui s'est passé avec beaucoup de mes disciples.
+Donc comment, en pratiquant avec des laïcs, peut-on ne pas perdre ce qu'on appelle [bodaishin](# "Esprit d'éveil")&nbsp;? Car zazen sans bodaishin, c'est vraiment sans intérêt, c'est déprécier, c'est cracher dans la soupe, à la fin, c'est ramener zazen plus bas que notre médiocrité personnelle. C'est ce qui se passe, et c'est ce qui s'est passé avec beaucoup de mes disciples.
 
 ## Comment la conscience de l’impermanence transforme le zazen
 
