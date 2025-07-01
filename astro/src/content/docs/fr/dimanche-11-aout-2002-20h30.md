@@ -13,8 +13,7 @@ keywords: ["zazen", "bodaishin", "kinhin", "Kodo Sawaki", "impermanence", "mujo"
 La posture des mains doit être belle. 
 
 
-
-J'ai invité une fois à [Amsterdam](https://zendojoamsterdam.nl) un Japonais. Je lui ai fait confiance et je lui ai dit qu'il pouvait diriger le zazen. Tout ce qu'il a trouvé moyen d'enseigner, c'était qu'il y a plusieurs façons de faire kinhin, qu'on pouvait mettre les mains soit à plat, soit comme [Kodo Sawaki](../transmission-du-zen-maitre-deshimaru-kodo-sawaki) l'avait enseigné. C'est un enseignement stupide, car tout le résultat, c'était que les gens dans le dojo se demandaient comment mettre les mains.
+J'ai invité une fois à [Amsterdam](https://zendojoamsterdam.nl) un Japonais. Je lui ai fait confiance et je lui ai dit qu'il pouvait diriger le <abbr title="Méditation assise.">zazen</abbr>. Tout ce qu'il a trouvé moyen d'enseigner, c'était qu'il y a plusieurs façons de faire <abbr title="Marche méditative lente.">kinhin</abbr>, qu'on pouvait mettre les mains soit à plat, soit comme [Kodo Sawaki](../transmission-du-zen-maitre-deshimaru-kodo-sawaki) l'avait enseigné. C'est un enseignement stupide, car tout le résultat, c'était que les gens dans le dojo se demandaient comment mettre les mains.
 
 S'il y a plusieurs méthodes, il faut s'en tenir à une seule, et il faut prendre la meilleure.
 
