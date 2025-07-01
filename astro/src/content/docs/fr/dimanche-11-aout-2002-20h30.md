@@ -10,7 +10,9 @@ keywords: ["zazen", "bodaishin", "kinhin", "Kodo Sawaki", "impermanence", "mujo"
 
 <!-- Correction orthographique par Antidote -->
 
-La posture des mains doit être belle.
+La posture des mains doit être belle. 
+
+
 
 J'ai invité une fois à [Amsterdam](https://zendojoamsterdam.nl) un Japonais. Je lui ai fait confiance et je lui ai dit qu'il pouvait diriger le zazen. Tout ce qu'il a trouvé moyen d'enseigner, c'était qu'il y a plusieurs façons de faire kinhin, qu'on pouvait mettre les mains soit à plat, soit comme [Kodo Sawaki](../transmission-du-zen-maitre-deshimaru-kodo-sawaki) l'avait enseigné. C'est un enseignement stupide, car tout le résultat, c'était que les gens dans le dojo se demandaient comment mettre les mains.
 
@@ -53,7 +55,7 @@ Mais maintenant, quelques décennies après, certains maîtres, comme moi, qui o
 
 Finalement le problème, c'est qu'il est assez difficile de pénétrer vraiment le monde du zazen en dilettante. Ce n'est pas une question tellement de temps. Sensei disait que même si vous pratiquez seulement une heure avec la détermination, avec la motivation, en oubliant tout, et surtout avec gratitude de pouvoir être dans le dojo, de pouvoir pratiquer avec les moines, alors ce zazen-là est beaucoup plus précieux que si vous pratiquez six heures d'un zazen endormi.
 
-Donc comment, en pratiquant avec des laïcs, peut-on ne pas perdre ce qu'on appelle [bodaishin](# "Esprit d'éveil")&nbsp;? Car zazen sans bodaishin, c'est vraiment sans intérêt, c'est déprécier, c'est cracher dans la soupe, à la fin, c'est ramener zazen plus bas que notre médiocrité personnelle. C'est ce qui se passe, et c'est ce qui s'est passé avec beaucoup de mes disciples.
+Donc comment, en pratiquant avec des laïcs, peut-on ne pas perdre ce qu'on appelle <abbr title="Esprit d'éveil">bodaishin</abbr>&nbsp;? Car zazen sans bodaishin, c'est vraiment sans intérêt, c'est déprécier, c'est cracher dans la soupe, à la fin, c'est ramener zazen plus bas que notre médiocrité personnelle. C'est ce qui se passe, et c'est ce qui s'est passé avec beaucoup de mes disciples.
 
 ## Comment la conscience de l’impermanence transforme le zazen
 
