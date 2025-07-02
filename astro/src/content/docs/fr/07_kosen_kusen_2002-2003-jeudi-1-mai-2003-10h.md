@@ -3,7 +3,7 @@ title: "Kinhin et zazen : l'équilibre corporel au cœur de la pratique bouddhis
 author: "Maître Kosen Thibaut"
 description: "Zazen et kinhin : équilibre, posture et conscience dans la pratique bouddhiste quotidienne."
 slug: "kinhin-et-zazen-equilibre-et-posture"
-dateCreated: 2003-05-01T10:00:00
+lastUpdated: 2003-05-01T10:00:00
 wordCount: 1011
 keywords: ["zazen", "kinhin", "Maître Deshimaru", "bouddhisme", "posture", "équilibre", "nombril", "karma", "conscience corporelle", "dojo"]
 ---
