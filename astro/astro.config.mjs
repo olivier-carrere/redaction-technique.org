@@ -13,7 +13,7 @@ export default defineConfig({
         fr: {
           label: 'Français',
           lang: 'fr',
-          title: 'Rédaction technique',
+          title: 'Kosen Sangha',
           sidebar: [
             {
               label: 'À propos',
@@ -27,7 +27,7 @@ export default defineConfig({
         en: {
           label: 'English',
           lang: 'en',
-          title: 'Technical Writing',
+          title: 'Kosen Sangha',
           sidebar: [
             {
               label: 'About',
