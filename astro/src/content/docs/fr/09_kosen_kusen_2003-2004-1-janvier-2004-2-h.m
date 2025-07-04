@@ -2,19 +2,19 @@
 title: "Le corps n'existe pas : zazen, douleur et éveil chez Gensha"
 author: "Maître Kosen Thibaut"
 description: "Zazen et douleur : la sagesse de Gensha et l’expérience d’Etienne révèlent une vérité sur le corps et l’éveil."
-slug: "le-corps-nexiste-pas-zazen-douleur-eveil"
-lastUpdated: 2004-01-01T02:00:00
+slug: "le-corps-n-existe-pas-zazen-douleur-eveil"
+dateCreated: 2004-01-01T02:00:00
 wordCount: 779
 keywords: ["zazen", "Gensha", "Seppo", "karma", "corps", "douleur", "Dharma", "Bodhidharma", "Eka", "pratique spirituelle"]
 ---
 
-# L’enseignement de Gensha et la fin de vie d’Étienne
+## L’enseignement de Gensha et la fin de vie d’Étienne
 
 C'est drôle, parce que si <abbr title="Nom d’un maître zen chinois, disciple de Seppo.">Gensha</abbr> a dit: « Pourquoi cette douleur puisque le corps n'existe pas&nbsp;? » J'ai dit exactement la même phrase à Étienne avant qu'il meure. Étienne était très malade, il souffrait énormément, énormément, il avait un cancer généralisé, il avait mal, mal à tous les os, partout. Il y avait plusieurs personnes autour de lui, dont moi et des disciples à lui. On est un peu gêné quand on sait que quelqu'un est sur le point de mourir. Je lui ai dit : « Tu veux un massage&nbsp;? » Il dit : « Oui, oh oui&nbsp;! » Et quand je me suis mis à le masser, c'était tellement intense entre nous que tout le monde est parti. Je lui ai dit : « Ce corps n'existe pas, j'en ai eu la certitude, j'en ai eu la preuve. »
 
 Donc si <abbr title="Nom d’un maître zen chinois, disciple de Seppo.">Gensha</abbr> l'a dit, c'est que lui aussi l'avait compris, il en avait eu la preuve, il le savait déjà, ce n'était pas un truc intellectuel, il l'avait déjà expérimenté, mais « Ce corps n'existe pas », ça ne nous appartient pas non plus, cette connaissance ne nous appartient pas. La preuve, c'est que <abbr title="Nom d’un maître zen chinois, disciple de Seppo.">Gensha</abbr>, quand il a buté le pied contre la pierre, il avait beau dire que le corps n'existait pas, il avait drôlement mal, et qu'Étienne, malgré tout est mort. Et moi, j'ai beau avoir eu cette preuve, ça ne m'empêche pas de souffrir en <abbr title="Méditation assise.">zazen</abbr> et d'avoir le <abbr title="Destinée, fruit des actions passées.">karma</abbr> de mon corps. Le <abbr title="Méditation assise.">zazen</abbr> est extrêmement réaliste, c'est merveilleux.
 
-# Zazen : au-delà de la douleur et de l’illusion du corps
+## Zazen : au-delà de la douleur et de l’illusion du corps
 
 Alors <abbr title="Nom d’un maître zen chinois, disciple de Seppo.">Gensha</abbr> est revenu voir son maître, et le maître s'est un peu moqué de lui:
 
@@ -36,7 +36,7 @@ Donc <abbr title="Nom d’un maître zen chinois, disciple de Seppo.">Gensha</ab
 
 Ça veut dire que ce n'est pas parce qu'on se cherche qu'on se trouve. Ça veut dire que celui qui pratique la voie ne cherche pas, ne va pas quelque part, il ne se laisse pas abuser. Ça veut dire que quand on doit se rencontrer on se rencontre, on se rencontre soi-même.
 
-# Se rencontrer soi-même, pratiquer sans chercher
+## Se rencontrer soi-même, pratiquer sans chercher
 
 Depuis ce jour-là, <abbr title="Nom d’un maître zen chinois, disciple de Seppo.">Gensha</abbr> n'a jamais quitté <abbr title="Nom d’un maître zen chinois, maître de Gensha.">Seppo</abbr>, n'a jamais quitté le temple. Il ne cherchait pas non plus quelque chose chez <abbr title="Nom d’un maître zen chinois, maître de Gensha.">Seppo</abbr>, mais c'était la meilleure place pour pratiquer, c'était sa place à lui, et puis ils s'entendaient bien, <abbr title="Nom d’un maître zen chinois, maître de Gensha.">Seppo</abbr> était simple, il y avait une bonne ambiance de mecs qui se regardent eux-mêmes (Je dis hommes parce que les temples n'étaient pas mixtes).
 
