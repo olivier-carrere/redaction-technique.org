@@ -20,7 +20,7 @@ En fait ce qu'a enseigné Bouddha était issu de la tradition indienne, des reli
 
 ## Le vrai zen selon Bodhidharma et Deshimaru
 
-> Maître Deshimaru employait cette expression "vrai zen", "mon vrai zen"
+Maître Deshimaru employait cette expression "vrai zen", "mon vrai zen"
 
 Ah parce que les autres zens, ce n’est pas vrai ? Quel prétentieux ! Pourquoi dit-il que le sien est vrai et que les autres ce n’est pas vrai ? Il faut s’aimer tous, s’aimer les uns les autres, tout est vrai...
 
@@ -40,11 +40,7 @@ La nonne avait comme particularité d’avoir la véritable transmission du <abb
 
 > Celui-là c’est du vrai, je veux le suivre.
 
-Kodo refusa trois fois. À la troisième fois :
-
-> Clac ! Elle se coupe le petit doigt…
-
-Et dit :
+Kodo refusa trois fois. À la troisième fois : clac, elle se coupe le petit doigt et dit :
 
 > Tenez ! Ça c’est pour payer le fait que je change de Maître, acceptez-moi comme disciple !
 
@@ -54,11 +50,9 @@ Il accepta. Elle a beaucoup cousu le <abbr title="Robe des nonnes et moines zen.
 
 L’autre personne ayant reçu le <abbr title="Transmission du Dharma, reconnaissance officielle d’un disciple comme successeur.">shiho</abbr> n’était ni Narita, ni Kosho, ni un imposteur français désigné par la Sotoshu. C’était un moine que <abbr title="Sensei, surnom donné à Maître Deshimaru.">Sensei</abbr> appelait "son seul ami". Très maigre, visage pointu, éveillé. Kodo Sawaki lui avait donné le <abbr title="Transmission du Dharma, reconnaissance officielle d’un disciple comme successeur.">shiho</abbr> parce qu’il avait le satori. Il ne voulait pas être maître. Kosho, jaloux, a accusé ce moine d’avoir volé de l’argent. Il fut chassé. 
 
-> Ce moine n’avait jamais volé d’argent, ce moine était très pur…
+Ce moine n’avait jamais volé d’argent, ce moine était très pur… Ce moine finit ses jours dans une cabane à offrir du thé. 
 
-Ce moine finit ses jours dans une cabane à offrir du thé. 
-
-> Il n’y a pas de différence, disait Sensei.
+"Il n’y a pas de différence", disait Sensei.
 
 ## L’ordination, le rakusu et la foi
 
@@ -80,6 +74,4 @@ Il a dit :
 
 C’est ce que j’ai pensé à Eihei-ji. Pourtant j’avais reçu l’ordination. 
 
-> Qu’est-ce qu’un moine, au-delà des temps, au-delà des pays ?
-
-Question essentielle.
+Qu’est-ce qu’un moine, au-delà des temps, au-delà des pays ? Question essentielle.
