@@ -3,7 +3,7 @@ title: "Transmission du zen et ordination : le vrai shiho selon Maître Deshimar
 author: "Maître Kosen Thibaut"
 description: "Le vrai shiho selon Maître Deshimaru : transmission, ordination, et authenticité dans le zen de Kodo Sawaki."
 slug: "transmission-zen-shiho-maitre-deshimaru"
-lastUpdated: 2004-10-29T17:00:00
+dateCreated: 2004-10-29T17:00:00
 wordCount: 1830
 keywords: ["shiho", "Maître Deshimaru", "kesa", "rakusu", "Sensei", "Kodo Sawaki", "ordination", "Bouddha", "Bodhidharma", "Dogen"]
 ---
@@ -32,7 +32,7 @@ Deshimaru aussi, à un moment donné, juste au moment où je l'ai connu d’aill
 
 > Ah, ils ne comprennent rien ces Français, je rentre chez moi, je n’y arriverai jamais.
 
-## Le vrai shiho de Kodo Sawaki et l’importance du <abbr title="Robe des nonnes et moines zen.">kesa</abbr>
+## Le vrai shiho de Kodo Sawaki et l’importance du kesa
 
 Une fois je lui avais demandé, ... parce que d’après lui, il y a seulement deux personnes qui ont reçu le <abbr title="Transmission du Dharma, reconnaissance officielle d’un disciple comme successeur.">shiho</abbr> de <abbr title="Kodo Sawaki, maître zen japonais.">Kodo Sawaki</abbr>, en réalité trois personnes, parce qu’il y a une nonne et deux moines.
 
@@ -60,7 +60,7 @@ Ce moine finit ses jours dans une cabane à offrir du thé.
 
 > Il n’y a pas de différence, disait Sensei.
 
-## L’ordination, le <abbr title="Version miniature du kesa, robe des nonnes et moines zen, porté autour du cou.">rakusu</abbr> et la foi
+## L’ordination, le rakusu et la foi
 
 Je lui ai dit : 
 
