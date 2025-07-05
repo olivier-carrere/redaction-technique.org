@@ -13,6 +13,12 @@ tags: ["kinhin", "pratique du corps", "conscience corporelle", "éveil", "nature
 
 <abbr title="Marche méditative lente.">kinhin</abbr>
 
+!!! note
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
+    massa, nec semper lorem quam in massa.
+
 Commencer le <abbr title="Marche méditative lente.">kinhin</abbr> du pied droit. Il faut considérer qu'il y a quatre points d'appui sur la plante du pied : deux de chaque côté des talons, ensuite un à la racine du gros orteil et encore un autre, disons entre les deux derniers orteils à l'extérieur.
 
 Souvent les deux pieds ont un appui différent, et le centre de gravité de notre corps est déporté vers la droite ou vers la gauche. On va marcher plus sur l'extérieur d'un pied, ou plus sur l'intérieur, ou les deux pieds trop à l'intérieur, etc. C'est très sensible dans la marche, quand on se promène ou également quand on se tient debout, et souvent la station debout est une position pénible, les personnes qui doivent travailler debout ont souvent des douleurs dans le dos.
