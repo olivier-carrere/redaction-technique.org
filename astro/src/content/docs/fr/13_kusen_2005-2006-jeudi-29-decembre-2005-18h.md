@@ -11,10 +11,6 @@ tags: ["kinhin", "pratique du corps", "conscience corporelle", "éveil", "nature
 
 ## Kinhin et conscience de la posture
 
-<abbr title="Marche méditative lente.">kinhin</abbr>
-
-:::tip[Kinhin]
-
 Commencer le <abbr title="Marche méditative lente.">kinhin</abbr> du pied droit. Il faut considérer qu'il y a quatre points d'appui sur la plante du pied : deux de chaque côté des talons, ensuite un à la racine du gros orteil et encore un autre, disons entre les deux derniers orteils à l'extérieur.
 
 Souvent les deux pieds ont un appui différent, et le centre de gravité de notre corps est déporté vers la droite ou vers la gauche. On va marcher plus sur l'extérieur d'un pied, ou plus sur l'intérieur, ou les deux pieds trop à l'intérieur, etc. C'est très sensible dans la marche, quand on se promène ou également quand on se tient debout, et souvent la station debout est une position pénible, les personnes qui doivent travailler debout ont souvent des douleurs dans le dos.
@@ -28,8 +24,6 @@ Donc c'est extrêmement important, vous voyez, de projeter son attention là où
 Les pieds ne sont pas trop écartés l'un de l'autre. Pour les japonais, c'est dix centimètres, la largeur d'un poing, moi je dis que pour les occidentaux c'est vingt centimètres. Il n'y a aucune allusion là-dedans, mais c'est simplement que les japonais ont les jambes arquées, et de ce fait, ils ont les pieds naturellement plus rapprochés l'un de l'autre. Il faut bien être conscient du fait que les différentes races ont des particularités, au niveau des jambes par exemple pour les asiatiques, ça vient du fait qu'ils sont assis par terre depuis des siècles et cela a influencé la forme de leurs jambes. Egalement au niveau du bassin, on voit qu'il y a des différences entre les européens, les asiatiques et les africains. Donc on ne peut pas être totalement dogmatique au niveau de la posture.
 
 J'ai déjà expliqué que, pour les japonais par exemple, c'est beaucoup plus difficile la bascule du bassin, donc pour eux c'est un point sur lequel ils doivent toujours être vigilants, et forcer la cambrure au niveau de la cinquième vertèbre lombaire. Mais par contre, les occidentaux, dans beaucoup de cas, ont déjà une bonne cambrure au niveau de la cinquième vertèbre lombaire, même parfois excessive et donc si on force encore sur cette cambrure en <abbr title="Méditation assise.">zazen</abbr>, ça peut donner de mauvais résultats.
-
-:::
 
 Donc la posture, que ce soit en <abbr title="Marche méditative lente.">kinhin</abbr> ou en <abbr title="Méditation assise.">zazen</abbr>, doit devenir notre conscience, c'est-à-dire qu'on doit avoir conscience. C'est la signification, d'une certaine manière, de ce qu'on appelle l'illumination, de la plus simple illumination, c'est-à-dire « faire la lumière sur » et cette lumière, c'est la conscience. L'énergie est de la lumière, et est de la conscience, c'est la même chose ; de la conscience qu'on ne peut pas toujours capter, interpréter, mais disons, c'est de l'information.
 
@@ -85,9 +79,17 @@ C'est quelque chose d'extraordinaire, car le sixième patriarche n'avait jamais 
 
 > Les gens du sud n'ont pas la nature de bouddha.
 
+<aside>
+🔎 <strong>Note :</strong> Cette parole est historiquement attribuée au cinquième patriarche du zen chinois, Hongren. Elle reflète une croyance ancienne et discriminatoire qui sera précisément contredite par le geste de transmission au sixième patriarche, Eno, originaire du sud.  
+</aside>
+
 Comme s'il avait dit : 
 
 > Les arabes n'ont pas la nature de bouddha.
+
+<aside>
+⚠️ <strong>Note :</strong> Cette comparaison volontairement choquante est utilisée ici pour illustrer l’absurdité d’un tel préjugé dans un contexte moderne. Elle ne reflète en rien une opinion de l’auteur, mais sert de <em>kōan</em> rhétorique pour provoquer la réflexion sur les biais inconscients et les exclusions injustes dans l’histoire du zen.  
+</aside>
 
 Il n'avait pas dit ça seulement par hasard, mais parce que ça faisait corps avec sa propre histoire, sa propre expérience de jeunesse.
 
