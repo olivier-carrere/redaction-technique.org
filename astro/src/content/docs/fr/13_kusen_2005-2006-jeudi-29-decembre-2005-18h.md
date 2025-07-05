@@ -14,7 +14,6 @@ tags: ["kinhin", "pratique du corps", "conscience corporelle", "éveil", "nature
 <abbr title="Marche méditative lente.">kinhin</abbr>
 
 :::tip[Kinhin]
-Starlight is a documentation website toolkit built with [Astro](https://astro.build/). You can get started with this command:
 
 Commencer le <abbr title="Marche méditative lente.">kinhin</abbr> du pied droit. Il faut considérer qu'il y a quatre points d'appui sur la plante du pied : deux de chaque côté des talons, ensuite un à la racine du gros orteil et encore un autre, disons entre les deux derniers orteils à l'extérieur.
 
