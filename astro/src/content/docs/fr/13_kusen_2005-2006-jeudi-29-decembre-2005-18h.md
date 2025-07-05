@@ -13,14 +13,8 @@ tags: ["kinhin", "pratique du corps", "conscience corporelle", "éveil", "nature
 
 <abbr title="Marche méditative lente.">kinhin</abbr>
 
-:::note
+:::tip[Kinhin]
 Starlight is a documentation website toolkit built with [Astro](https://astro.build/). You can get started with this command:
-
-```sh
-npm create astro@latest -- --template starlight
-```
-
-:::
 
 Commencer le <abbr title="Marche méditative lente.">kinhin</abbr> du pied droit. Il faut considérer qu'il y a quatre points d'appui sur la plante du pied : deux de chaque côté des talons, ensuite un à la racine du gros orteil et encore un autre, disons entre les deux derniers orteils à l'extérieur.
 
@@ -32,13 +26,11 @@ Pendant <abbr title="Marche méditative lente.">kinhin</abbr>, les deux pieds do
 
 Donc c'est extrêmement important, vous voyez, de projeter son attention là où on veut la projeter. Ce n'est pas de la visualisation, c'est de l'observation toute simple de notre corps, donc ça requiert toute notre attention.
 
-## Corps, conscience et implosion intérieure
-
 Les pieds ne sont pas trop écartés l'un de l'autre. Pour les japonais, c'est dix centimètres, la largeur d'un poing, moi je dis que pour les occidentaux c'est vingt centimètres. Il n'y a aucune allusion là-dedans, mais c'est simplement que les japonais ont les jambes arquées, et de ce fait, ils ont les pieds naturellement plus rapprochés l'un de l'autre. Il faut bien être conscient du fait que les différentes races ont des particularités, au niveau des jambes par exemple pour les asiatiques, ça vient du fait qu'ils sont assis par terre depuis des siècles et cela a influencé la forme de leurs jambes. Egalement au niveau du bassin, on voit qu'il y a des différences entre les européens, les asiatiques et les africains. Donc on ne peut pas être totalement dogmatique au niveau de la posture.
 
 J'ai déjà expliqué que, pour les japonais par exemple, c'est beaucoup plus difficile la bascule du bassin, donc pour eux c'est un point sur lequel ils doivent toujours être vigilants, et forcer la cambrure au niveau de la cinquième vertèbre lombaire. Mais par contre, les occidentaux, dans beaucoup de cas, ont déjà une bonne cambrure au niveau de la cinquième vertèbre lombaire, même parfois excessive et donc si on force encore sur cette cambrure en <abbr title="Méditation assise.">zazen</abbr>, ça peut donner de mauvais résultats.
 
-<abbr title="Méditation assise.">zazen</abbr>
+:::
 
 Donc la posture, que ce soit en <abbr title="Marche méditative lente.">kinhin</abbr> ou en <abbr title="Méditation assise.">zazen</abbr>, doit devenir notre conscience, c'est-à-dire qu'on doit avoir conscience. C'est la signification, d'une certaine manière, de ce qu'on appelle l'illumination, de la plus simple illumination, c'est-à-dire « faire la lumière sur » et cette lumière, c'est la conscience. L'énergie est de la lumière, et est de la conscience, c'est la même chose ; de la conscience qu'on ne peut pas toujours capter, interpréter, mais disons, c'est de l'information.
 
