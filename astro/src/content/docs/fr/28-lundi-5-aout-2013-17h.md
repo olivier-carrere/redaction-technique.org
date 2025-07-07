@@ -8,8 +8,6 @@ wordCount: 1532
 keywords: ["karma", "Bouddha", "Vimalakirti", "kesa", "zazen", "Kumarata", "cause à effet", "Shodoka", "Nagarjuna", "Prajna Paramita"]
 ---
 
-# Lundi 5 août 2013 - 17 h
-
 Alors effectivement, Sakyamuni Bouddha a vécu des accidents, des maladies, des ennemis, des obstacles, qui peuvent s'apparenter comme pour chacun d'entre nous à une rétribution du karma. Vimalakirti dit :
 
 > Non, ce n'est pas une rétribution, c'est un enseignement, c'est pour sauver les gens. De toutes façons les rétributions sont toujours un enseignement.
