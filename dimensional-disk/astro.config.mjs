@@ -16,9 +16,8 @@ export default defineConfig({
         fr: {
           label: 'Français',
           lang: 'fr',
-          title: 'Kusens',
+          title: 'Rédaction technique',
           sidebar: [
-            { slug: '/' },
             {
               label: 'Constellations',
               collapsed: true,
