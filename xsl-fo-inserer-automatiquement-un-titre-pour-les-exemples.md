@@ -1,12 +1,21 @@
-# XSL-FO : insérer automatiquement un titre pour les exemples {#xsl-fo-inserer-automatiquement-un-titre-pour-les-exemples}
+---
+title: XSL-FO : insérer automatiquement un titre pour les exemples
+description: Insérer automatiquement dans les PDF le texte « Exemple : » devant le titre d’un exemple <example> grâce à XSL‑FO.
+slug: xsl-fo-inserer-automatiquement-un-titre-pour-les-exemples
+sidebar:
+  label: How-to
+  order: 1
+prev: null
+next: null
+---
 
-::: sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
+:::note
+**`fa-bullhorn`**
 
-Par défaut, n\'insère pas automatiquement dans les fichiers PDF le texte *Exemple :* devant le titre d\'un exemple contenu entre balises `<example>`{.interpreted-text role="samp"}. La syntaxe [XSL-FO]() offre cependant cette possibilité.
+Par défaut, n'insère pas automatiquement dans les fichiers PDF le texte Exemple : devant le titre d'un exemple contenu entre balises `<example>`. La syntaxe [XSL-FO]() offre cependant cette possibilité.
 :::
 
-Supposons que le code source d\'un de vos fichiers soit le suivant :
+Supposons que le code source d'un de vos fichiers soit le suivant :
 
 ``` xml
 <example>
@@ -20,7 +29,7 @@ Supposons que le code source d\'un de vos fichiers soit le suivant :
 </example>
 ```
 
-Vous souhaitez que le fichier PDF généré affiche l\'exemple structuré comme suit :
+Vous souhaitez que le fichier PDF généré affiche l'exemple structuré comme suit :
 
 > **Exemple : XSL-FO**
 >
@@ -30,7 +39,7 @@ Vous souhaitez que le fichier PDF généré affiche l\'exemple structuré comme 
 > ancestor-or-self
 > ```
 
-et que si l\'exemple ne contient pas de titre, il soit structuré comme suit :
+et que si l'exemple ne contient pas de titre, il soit structuré comme suit :
 
 > **Exemple :**
 >
@@ -50,11 +59,11 @@ Par défaut, cependant, ce contenu sera structuré comme suit dans le PDF par  
 > ancestor-or-self
 > ```
 
-Il est toujours possible d\'entrer le texte entre les balises `<example>`{.interpreted-text role="samp"}, mais XSL-FO offre une manière de procéder plus élégante et structurée.
+Il est toujours possible d'entrer le texte entre les balises `<example>`, mais XSL-FO offre une manière de procéder plus élégante et structurée.
 
 ## Insérer automatiquement une variable de texte avant le titre des exemples
 
-1.  Remplacez dans la feuille de style `plugins/org.dita.pdf2/xsl/fo/commons.xsl`{.interpreted-text role="file"} (sous 1.7.) le template suivant :
+1.  Remplacez dans la feuille de style `plugins/org.dita.pdf2/xsl/fo/commons.xsl` (sous 1.7.) le template suivant :
 
     ``` xslt
     <xsl:template match="*[contains(@class,' topic/example')]/*
@@ -85,10 +94,10 @@ Il est toujours possible d\'entrer le texte entre les balises `<example>`{.inter
     </xsl:template>
     ```
 
-2.  Définissez dans les fichiers contenant les variables de langue, tels que `plugins/org.dita.pdf2/cfg/common/vars/fr.xml`{.interpreted-text role="file"}, les variables de texte à insérer automatiquement, par exemple :
+2.  Définissez dans les fichiers contenant les variables de langue, tels que `plugins/org.dita.pdf2/cfg/common/vars/fr.xml`, les variables de texte à insérer automatiquement, par exemple :
 
     ``` xslt
     <variable id="my-example-text>Exemple :</variable>
     ```
 
-Pour obtenir un comportement homogène, vous devez désactiver ce traitement pour les exemples des types de *topics* spécifiques (*task*, notamment).
+Pour obtenir un comportement homogène, vous devez désactiver ce traitement pour les exemples des types de topics spécifiques (task, notamment).

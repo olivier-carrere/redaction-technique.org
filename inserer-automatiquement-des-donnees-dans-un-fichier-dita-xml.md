@@ -1,10 +1,19 @@
-# Insérer automatiquement des données dans un fichier DITA XML {#inserer-automatiquement-des-donnees-dans-un-fichier-dita-xml}
+---
+title: Insérer automatiquement des données dans un fichier DITA XML
+description: Nous voulons automatiser la génération du fichier DITA suivant :
+slug: inserer-automatiquement-des-donnees-dans-un-fichier-dita-xml
+sidebar:
+  label: How-to
+  order: 1
+prev: false
+next: false
+---
 
 Nous voulons automatiser la génération du fichier DITA suivant :
 
-> ::: {.literalinclude language="xml"}
-> code/modele.dita
-> :::
+::: {.literalinclude language="xml"}
+code/modele.dita
+:::
 
 1.  Installez les programmes et bibliothèques suivants :
 
@@ -12,7 +21,7 @@ Nous voulons automatiser la génération du fichier DITA suivant :
     $ sudo apt install libxml2-dev libxslt1-dev python3-lxml
     ```
 
-2.  Créez le script Python `populate-xml.py`{.interpreted-text role="file"} suivant :
+2.  Créez le script Python `populate-xml.py` suivant :
 
     ::: {.literalinclude language="python3"}
     code/populate-xml.py
@@ -25,9 +34,9 @@ Nous voulons automatiser la génération du fichier DITA suivant :
     $ ./populate-xml.py             
     ```
 
-    Le fichier `modele.dita`{.interpreted-text role="file"} est créé et contient les données souhaitées.
+    Le fichier `modele.dita` est créé et contient les données souhaitées.
 
-::: seealso
--   `inserer-automatiquement-des-donnees-dans-un-fichier-restructuredtext`{.interpreted-text role="ref"}
--   `inserer-automatiquement-des-donnees-sql-dans-un-fichier-restructuredtext`{.interpreted-text role="ref"}
+:::tip[Voir aussi]
+-   `inserer-automatiquement-des-donnees-dans-un-fichier-restructuredtext`
+-   `inserer-automatiquement-des-donnees-sql-dans-un-fichier-restructuredtext`
 :::

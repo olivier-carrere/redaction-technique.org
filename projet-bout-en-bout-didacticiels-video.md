@@ -1,5 +1,14 @@
-# Didacticiels vidéo {# projet-bout-en-bout-didacticiels-video}
+---
+title: "Didacticiels vidéo"
+description: "J'ai publié sur YouTube différents didacticiels, en français, anglais et espagnol, sur l'utilisation de la galerie par les différents types d'utilisateurs."
+slug: "projet-bout-en-bout-didacticiels-video"
+sidebar:
+  label: "How-to"
+  order: 1
+prev: null
+next: null
+---
 
-J\'ai publié sur *YouTube* différents didacticiels, en français, anglais et espagnol, sur l\'utilisation de la galerie par les différents types d\'utilisateurs.
+J'ai publié sur *YouTube* différents didacticiels, en français, anglais et espagnol, sur l'utilisation de la galerie par les différents types d'utilisateurs.
 
-J\'ai utilisé pour cela [SimpleScreenRecorder](). Un premier essai avec le microphone intégré de mon portable s\'étant révélé peu convaincant, j\'ai enregistré ma voix avec un micro de bonne qualité, nommément, un *Bird UM1*. Pressé par le temps, et parce que ces didacticiels s\'adressent à un public restreint (et indulgent), je n\'ai pas fait de montage, comme par exemple sous *Kdenlive*.
+J'ai utilisé pour cela [SimpleScreenRecorder](). Un premier essai avec le microphone intégré de mon portable s'étant révélé peu convaincant, j'ai enregistré ma voix avec un micro de bonne qualité, nommément, un *Bird UM1*. Pressé par le temps, et parce que ces didacticiels s'adressent à un public restreint (et indulgent), je n'ai pas fait de montage, comme par exemple sous *Kdenlive*.

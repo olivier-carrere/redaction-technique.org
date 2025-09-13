@@ -1,4 +1,13 @@
-# Formats cibles
+---
+title: Formats cibles
+description: Vous pouvez compiler ce avec Python Sphinx aux formats PDF, EPUB et HTML.
+slug: formats-cibles
+sidebar:
+  label: How-to
+  order: 1
+prev: null
+next: null
+---
 
 Vous pouvez compiler ce avec *Python Sphinx* aux formats :
 

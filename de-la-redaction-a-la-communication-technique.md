@@ -1,4 +1,13 @@
-# De la rédaction à la communication technique {#de-la-redaction-a-la-communication-technique}
+---
+title: De la rédaction à la communication technique
+description: La communication technique intervient dès l’amont du processus de vente et accompagne le produit tout au long de son cycle de vie, au-delà de la seule rédaction technique.
+slug: de-la-redaction-a-la-communication-technique
+sidebar:
+  label: How-to
+  order: 1
+prev: false
+next: false
+---
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**

@@ -1,4 +1,13 @@
-# Gérer son contenu DITA XML avec ou sans CMS ? {#gerer-son-contenu-dita-xml-avec-ou-sans-cms}
+---
+title: "Gérer son contenu DITA XML avec ou sans CMS ?"
+description: "L'architecture ne propose pas de mécanisme de workflow documentaire natif."
+slug: "gerer-son-contenu-dita-xml-avec-ou-sans-cms"
+sidebar:
+  label: "How-to"
+  order: 1
+prev: null
+next: null
+---
 
 L\'architecture ne propose pas de mécanisme de *workflow* documentaire natif. Les *workflows* sont pourtant un élément important d\'un processus efficace de gestion du cycle de vie du contenu.
 
@@ -12,14 +21,12 @@ Si l\'on opte pour un , celui-ci doit clairement supporter  : on ne gère pas u
 
 Quel que soit le choix initial, il est possible à tout instant de changer de stratégie, sans remettre en cause l\'existant. L\'architecture n\'est en effet liée à aucun référentiel particulier. Rien n\'interdit donc de commencer à gérer ses projets sans , puis d\'avoir recours à une telle solution si les bénéfices de ce choix deviennent manifestes.
 
-::: only
-html
-
-**Notes**
+:::note
+Notes
 :::
 
-::: seealso
--   `git-du-fichier-au-contenu`{.interpreted-text role="ref"}
+:::tip[Voir aussi]
+- `git-du-fichier-au-contenu`
 :::
 
 [^1]: Le peut ainsi voir où un élément d\'information est inclus ; lors de la mise à jour de cet élément, il peut alors juger si l\'élément modifié sera toujours valable dans les différents contextes.

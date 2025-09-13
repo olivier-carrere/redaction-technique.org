@@ -1,18 +1,25 @@
-# Support papier {# projet-bout-en-bout-support-papier}
+---
+title: Support papier
+description: Dépliant expliquant la connexion à la galerie, les rôles des utilisateurs, leur utilisation de la galerie et le workflow associé.
+slug: projet-bout-en-bout-support-papier
+sidebar:
+  label: How-to
+  order: 1
+prev: null
+next: null
+---
 
-J\'ai créé un dépliant expliquant :
+J'ai créé un dépliant expliquant :
 
--   comment se connecter à la galerie ;
--   les différents types d\'utilisateurs de l\'outil (en insistant sur le rôle -peu connu, mais crucial - des iconographes) ;
--   l\'utilisation de la galerie par chaque type d\'utilisateurs ;
--   le workflow dans lequel s\'inscrivent les utilisateurs.
+- comment se connecter à la galerie ;
+- les différents types d'utilisateurs de l'outil (en insistant sur le rôle -peu connu, mais crucial - des iconographes) ;
+- l'utilisation de la galerie par chaque type d'utilisateurs ;
+- le workflow dans lequel s'inscrivent les utilisateurs.
 
-::: admonition
-Modèle LaTeX du dépliant
+:::note[Modèle LaTeX du dépliant]
+Le [modèle LaTeX du dépliant](), partie émergée de l'iceberg, est publié sur Overleaf.
 
-Le [modèle LaTeX du dépliant](), partie émergée de l\'iceberg, est publié sur *Overleaf*.
-
-Curieusement, le PDF généré sur *Overleaf* présente des défauts que je ne constate pas lorsque je le publie en local.
+Curieusement, le PDF généré sur Overleaf présente des défauts que je ne constate pas lorsque je le publie en local.
 
 ![](graphics/leaflet-pliage.png)
 

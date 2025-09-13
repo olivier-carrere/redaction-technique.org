@@ -1,7 +1,16 @@
-# Format source
+---
+title: Format source
+description: Les traitements de texte nous ont déshabitués à distinguer le fond de la forme. Mais confondre les deux entraîne beaucoup d'erreurs et de perte de temps.
+slug: format-source
+sidebar:
+  label: How-to
+  order: 1
+prev: null
+next: null
+---
 
-::: sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
+:::note
+**`fa-bullhorn`**
 
 Le contenu d\'un projet de est créé dans un format source, différent du format des livrables, le format cible. Pour reprendre une image fréquemment utilisée en développement logiciel, le format source est la recette de cuisine, le format cible, le plat. En photographie, le format source est le format [RAW](), qui est généré par l\'appareil photo, et sur lequel les photographes professionnels préféreront apporter les retouches, et le format cible, le format JPEG.
 :::
@@ -90,14 +99,8 @@ Les formats disponibles peuvent donc être classés selon le tableau suivant :
 
 et ne sont pas pleinement modulaires, car les plus petits éléments d\'information manipulables ne sont pas génériques : ils contiennent des informations telles que la structure de table des matières ou les références croisées qui ne sont valables que dans un nombre limité de contextes.
 
-::: only
-html
-
+:::note
 **Notes**
-:::
-
-::: {.toctree hidden=""}
-documents-monolithiques-ou-modulaires fichiers-binaires-ou-texte
 :::
 
 [^1]: Si le met lui-même en page ses documents, il change de rôle lorsqu\'il effectue cette opération.

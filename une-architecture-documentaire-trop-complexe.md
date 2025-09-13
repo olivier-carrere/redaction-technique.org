@@ -1,4 +1,13 @@
-# Une architecture documentaire trop complexe ?
+---
+title: "Une architecture documentaire trop complexe ?"
+description: "permet des gains de productivité importants par la réduction du volume source que le crée, traduit et maintient. Ce gain de productivité se fait au prix d'une plus grande complexité."
+slug: "une-architecture-documentaire-trop-complexe"
+sidebar:
+  label: "How-to"
+  order: 1
+prev: null
+next: null
+---
 
 permet des gains de productivité importants par la réduction du volume source que le crée, traduit et maintient. Ce gain de productivité se fait au prix d\'une plus grande complexité.
 

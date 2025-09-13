@@ -1,4 +1,13 @@
-# Installez les logiciels nécessaires à la gestion de ce {#installez-les-logiciels-necessaires-a-la-generation-de-ce-site}
+---
+title: Installez les logiciels nécessaires à la génération de ce site
+description: Sélectionnez Menu > Accessoires > LXTerminal, puis installez les paquets requis.
+slug: installez-les-logiciels-necessaires-a-la-generation-de-ce-site
+sidebar:
+  label: How-to
+  order: 1
+prev: null
+next: null
+---
 
 1.  Sélectionnez `Menu`{.interpreted-text role="guilabel"} \> `Accessoires`{.interpreted-text role="guilabel"} \> `LXTerminal`{.interpreted-text role="guilabel"}.
 
@@ -8,7 +17,7 @@
     $ sudo aptitude install -y calibre emacs gitk inkscape python3-sphinx texlive-full
     ```
 
-    Le temps de lire cinq ou six épisodes de *The Amazing Spider-Man*, et les logiciels suivants sont installés :
+    Le temps de lire cinq ou six épisodes de The Amazing Spider-Man, et les logiciels suivants sont installés :
 
       -------------------------------------------------------------------------------------------
       Logiciel        Description
@@ -17,7 +26,7 @@
 
       Emacs           Environnement de développement intégré.
 
-      Gitk            Navigateur d\'historique du logiciel de gestion de versions décentralisé.
+      Gitk            Navigateur d'historique du logiciel de gestion de versions décentralisé.
 
       Inkscape        Logiciel de dessin vectoriel.
 
@@ -26,7 +35,7 @@
       Texlive         Environnement LaTeX complet pour la génération du au format PDF.
       -------------------------------------------------------------------------------------------
 
-3.  Libérez de l\'espace disque :
+3.  Libérez de l'espace disque :
 
     ``` console
     $ sudo aptitude clean

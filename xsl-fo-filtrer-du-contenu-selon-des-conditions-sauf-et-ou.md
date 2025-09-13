@@ -1,6 +1,15 @@
-# XSL-FO : filtrer du contenu selon des conditions « sauf » et « ou »
+---
+title: "XSL-FO : filtrer du contenu selon des conditions « sauf » et « ou »"
+description: "Imaginons que vous vouliez filtrer les nœuds enfants de la balise <example> et afficher tout son contenu à l'exception du titre (situé entre les balises <title>)."
+slug: "xsl-fo-filtrer-du-contenu-selon-des-conditions-sauf-et-ou"
+sidebar:
+  label: "How-to"
+  order: 1
+prev: null
+next: null
+---
 
-Imaginons que vous vouliez filtrer les nœuds enfants de la balise `<example>`{.interpreted-text role="samp"} et afficher tout son contenu à l\'exception du titre (situé entre les balises `<title>`{.interpreted-text role="samp"}).
+Imaginons que vous vouliez filtrer les nœuds enfants de la balise `<example>` et afficher tout son contenu à l'exception du titre (situé entre les balises `<title>`).
 
 Vous pouvez recourir alors à la syntaxe suivante :
 
@@ -12,9 +21,9 @@ Vous pouvez recourir alors à la syntaxe suivante :
 </xsl:template>
 ```
 
-Cette commande sélectionne tous les nœuds enfants du nœud `<example>`{.interpreted-text role="samp"}, à l\'exception du nœud `<title>`{.interpreted-text role="samp"}. Cependant, le nœud `<example>`{.interpreted-text role="samp"} accepte le texte entré directement, sans être encapsulé dans des balises. Cette commande ne fera alors pas apparaître ce contenu.
+Cette commande sélectionne tous les nœuds enfants du nœud `<example>`, à l'exception du nœud `<title>`. Cependant, le nœud `<example>` accepte le texte entré directement, sans être encapsulé dans des balises. Cette commande ne fera alors pas apparaître ce contenu.
 
-Supposons que le code source d\'un de vos fichiers soit le suivant :
+Supposons que le code source d'un de vos fichiers soit le suivant :
 
 ``` xml
 <example>
@@ -29,13 +38,13 @@ Supposons que le code source d\'un de vos fichiers soit le suivant :
 </example>
 ```
 
-Le fichier PDF affichera l\'exemple structuré comme suit :
+Le fichier PDF affichera l'exemple structuré comme suit :
 
 ``` xslt
 ancestor-or-self
 ```
 
-Le titre de l\'exemple n\'est pas affiché, ce qui correspond au résultat souhaité, mais le contenu non encapsulé dans des balises n\'apparaît pas, ce qui est un effet de bord indésirable. Pour sélectionner ce contenu, il faut sélectionner les nœuds textuels avec la syntaxe `text()`{.interpreted-text role="samp"}. Il est alors tentant d\'utiliser la syntaxe suivante :
+Le titre de l'exemple n'est pas affiché, ce qui correspond au résultat souhaité, mais le contenu non encapsulé dans des balises n'apparaît pas, ce qui est un effet de bord indésirable. Pour sélectionner ce contenu, il faut sélectionner les nœuds textuels avec la syntaxe `text()`. Il est alors tentant d'utiliser la syntaxe suivante :
 
 ``` xslt
 <xsl:template match="*[contains(@class,' topic/example ')]">
@@ -46,9 +55,9 @@ Le titre de l\'exemple n\'est pas affiché, ce qui correspond au résultat souha
 </xsl:template>
 ```
 
-Cependant, tous les éléments texte non encapsulés dans des balises enfant de la balise `<example>`{.interpreted-text role="samp"} seront placés en tête de l\'exemple, avant les éléments encapsulés, même s\'ils sont placés après dans le fichier source .
+Cependant, tous les éléments texte non encapsulés dans des balises enfant de la balise `<example>` seront placés en tête de l'exemple, avant les éléments encapsulés, même s'ils sont placés après dans le fichier source.
 
-Le fichier PDF affichera l\'exemple structuré comme suit :
+Le fichier PDF affichera l'exemple structuré comme suit :
 
 > Voici mon exemple de chemin XPATH :Texte non encapsulé situé après un nœud enfant.
 >
@@ -56,7 +65,7 @@ Le fichier PDF affichera l\'exemple structuré comme suit :
 > ancestor-or-self
 > ```
 
-Il faut alors utiliser la syntaxe *pipe* (condition booléenne *ou*) pour modifier le chemin [XPATH]() comme suit :
+Il faut alors utiliser la syntaxe pipe (condition booléenne ou) pour modifier le chemin [XPATH]() comme suit :
 
 ``` xslt
 <xsl:apply-templates select="text()|*[not(name()='title')]" />
@@ -72,7 +81,7 @@ Le résultat final sera :
 </xsl:template>
 ```
 
-Le fichier PDF affichera l\'exemple structuré comme suit :
+Le fichier PDF affichera l'exemple structuré comme suit :
 
 > Voici mon exemple de chemin XPATH :
 >

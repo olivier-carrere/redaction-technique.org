@@ -1,8 +1,17 @@
-# Cas concret : documentation de NuFirewall
+---
+title: "Cas concret : documentation de NuFirewall"
+description: "La documentation de NuFirewall, qui a été par la presse comme un point fort du produit, a été réalisée sous ."
+slug: "cas-concret-documentation-de-nufirewall"
+sidebar:
+  label: "How-to"
+  order: 1
+prev: false
+next: false
+---
 
 La documentation de [NuFirewall](), qui a été perçue par la presse comme [un point fort du produit](), a été réalisée sous .
 
-Si je n\'avais pas utilisé un format qui favorise au maximum la réutilisation de l\'information, je n\'aurais pas autant pu me consacrer à l\'essentiel : le contenu.
+Si je n'avais pas utilisé un format qui favorise au maximum la réutilisation de l'information, je n'aurais pas autant pu me consacrer à l'essentiel : le contenu.
 
 ::: {.toctree hidden=""}
 partager-des-blocs-information-atomiques-avec-les-conref fournir-une-information-ciblee-avec-le-texte-conditionnel-ditaval

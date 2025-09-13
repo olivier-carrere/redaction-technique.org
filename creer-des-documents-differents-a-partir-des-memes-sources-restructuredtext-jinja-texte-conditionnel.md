@@ -1,8 +1,19 @@
-# Créer des documents différents à partir des mêmes sources *via* Jinja {#creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-texte-conditionnel}
+---
+title: "Créer des documents différents à partir des mêmes sources via Jinja"
+description: "Le script Python profiling.py ci-dessous permet de profiler du contenu en preprocessing à l'aide du puissant moteur de modèle Jinja."
+slug: "creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-texte-conditionnel"
+sidebar:
+  label: "How-to"
+  order: 1
+prev: "creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-rest-texte-conditionnel"
+next: "creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-objet-texte-conditionnel"
+---
 
-Le script Python `profiling.py`{.interpreted-text role="file"} ci-dessous permet de profiler du contenu en *preprocessing* à l\'aide du puissant moteur de modèle [Jinja]() :
+<a id="creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-texte-conditionnel"></a>
 
-``` python
+Le script Python `profiling.py` ci-dessous permet de profiler du contenu en preprocessing à l'aide du puissant moteur de modèle [Jinja]() :
+
+```python
 #!/usr/bin/python
 import jinja2
 import sys
@@ -19,9 +30,9 @@ file.write(string)
 file.close() 
 ```
 
-Contenu du fichier `texte-conditionnel.rst`{.interpreted-text role="file"} :
+Contenu du fichier `texte-conditionnel.rst` :
 
-``` rest
+```rest
 Utilisation du texte conditionnel
 =================================
 
@@ -46,14 +57,14 @@ Utilisation du texte conditionnel
 
 Utilisation :
 
-``` console
+```console
 $ ./profiling.py electrician
 ```
 
-Il suffit maintenant d\'appeler le script avant compilation *via* Sphinx dans le `Makefile`{.interpreted-text role="file"}.
+Il suffit maintenant d'appeler le script avant compilation via Sphinx dans le `Makefile`.
 
-::: seealso
--   `creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-conditionnel`{.interpreted-text role="ref"}
--   `creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-rest-texte-conditionnel`{.interpreted-text role="ref"}
--   `creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-objet-texte-conditionnel`{.interpreted-text role="ref"}
+:::tip[Voir aussi]
+- `creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-conditionnel`
+- `creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-rest-texte-conditionnel`
+- `creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-objet-texte-conditionnel`
 :::

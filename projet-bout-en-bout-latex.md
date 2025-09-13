@@ -1,6 +1,15 @@
-# LaTeX {# projet-bout-en-bout-latex}
+---
+title: LaTeX
+description: Pourquoi avoir choisi LaTeX pour réaliser le support print et non pas un logiciel de PAO classique ?
+slug: projet-bout-en-bout-latex
+sidebar:
+  label: How-to
+  order: 1
+prev: null
+next: null
+---
 
-Pourquoi avoir choisi [LaTeX](#latex) pour réaliser le support *print* et non pas un logiciel de PAO classique ? Je souhaitais pouvoir remanier le texte sans refaire à chaque fois la mise en page. De même, je voulais pouvoir traduire le dépliant sans effectuer de tâche de PAO manuelle.
+Pourquoi avoir choisi [LaTeX](#latex) pour réaliser le support *print* et non pas un logiciel de PAO classique ? Je souhaitais pouvoir remanier le texte sans refaire à chaque fois la mise en page. De même, je voulais pouvoir traduire le dépliant sans effectuer de tâche de PAO manuelle.
 
 Voici un exemple de code LaTeX :
 
@@ -36,14 +45,10 @@ Le rendu PDF est illustré ci-dessous. Remarquez le calcul automatique des césu
 
 ![](graphics/latex-rendu.png)
 
-:::: note
-::: title
-Note
-:::
-
+:::note
 Les fervents du *WYSIWYG* se tourneront avec profit vers [Gummi](). Il s\'agit de *What you see is what you get* au sens strict (et plutôt de *tel écran, tel imprimé* que de *tel écran, tel écrit*). On ne peut en effet pas modifier le texte dans la fenêtre de visualisation, uniquement dans la fenêtre de code LaTeX. Vous savez donc exactement ce qui se passe « sous le capot » et avez une plus grande maîtrise qu\'en déléguant la création du code de mise en page à une interface graphique. Si vous manipulez souvent des listes numérotées et que vous avez été confronté à des numérotations, disons... aléatoires, vous en comprendrez tout de suite l\'avantage.
 
 ![](graphics/latex-wysiwyg-gummi.png)
-::::
+:::
 
 D\'autre part, une fois la structure du dépliant créée, il est facile de l\'utiliser pour produire rapidement d\'autres documents. De plus, le document peut être remanié par d\'autres personnes sans problème de licence ou de plateforme logicielle.

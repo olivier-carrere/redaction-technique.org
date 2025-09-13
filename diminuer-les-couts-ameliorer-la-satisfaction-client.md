@@ -1,4 +1,13 @@
-# Documentation technique : diminuer les coûts, améliorer la satisfaction client {#diminuer-les-couts-ameliorer-la-satisfaction-client}
+---
+title: "Documentation technique : diminuer les coûts, améliorer la satisfaction client"
+description: "Réduire les coûts, accélérer le time to market et améliorer la qualité grâce à une documentation industrielle."
+slug: "/diminuer-les-couts-ameliorer-la-satisfaction-client"
+sidebar:
+  label: "How-to"
+  order: 1
+prev: "/de-la-redaction-a-la-communication-technique"
+next: "/les-trois-niveaux-de-la-documentation-technique"
+---
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
@@ -31,7 +40,3 @@ Une documentation industrielle repose sur :
 -   une chaîne de production et de publication documentaire fiable.
 
 Si la chaîne de création et de publication choisie repose sur des logiciels *open-source*, le coût de mise en place et d\'apprentissage peut même être compensé par l\'économie sur les licences de logiciels. En tout état de cause, de trop nombreuses sociétés de haute technologie ont industrialisé leurs processus métier, mais laissent en friche la création, la gestion et la publication de leur contenu d\'entreprise. Les coûts cachés (rédaction par des ingénieurs et non par un compétent, mauvaise exploitation du capital immatériel, diminution de la satisfaction client, augmentation des coûts de support, etc.) peuvent être considérables. Pourtant, les solutions et les compétences existent.
-
-::: {.toctree hidden=""}
-de-la-redaction-a-la-communication-technique les-trois-niveaux-de-la-documentation-technique principe-de-simplicite-kiss formats-et-outils
-:::
