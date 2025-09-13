@@ -10,7 +10,7 @@ export default defineConfig({
     astroExpressiveCode(),
     mdx(),
     starlight({
-      title: 'Kusens de Maître Kosen',
+      title: 'Rédaction technique',
       defaultLocale: 'fr',
       locales: {
         fr: {
@@ -18,23 +18,11 @@ export default defineConfig({
           lang: 'fr',
           title: 'Kusens',
           sidebar: [
-	  { slug: 'fr/enseignement-oral/2000/02-camp-hiver/' },
+            { slug: '/' },
             {
               label: 'Constellations',
               collapsed: true,
-              autogenerate: { directory: 'fr/enseignement-oral/2000/01-camp-ete' },
-            },
-          ],
-        },
-        es: {
-          label: 'Español',
-          lang: 'es',
-          title: 'Mondos',
-          sidebar: [
-            {
-              label: 'Constelaciones',
-              collapsed: true,
-              autogenerate: { directory: 'es/enseignement-oral' },
+              autogenerate: { directory: './' },
             },
           ],
         },
