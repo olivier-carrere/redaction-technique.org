@@ -8,7 +8,6 @@ sidebar:
 ---
 
 ::: sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Le doit utiliser comme source du [conref]() le nœud de plus bas niveau contenant l\'information à partager.
 :::

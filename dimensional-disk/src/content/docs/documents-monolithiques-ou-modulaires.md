@@ -10,7 +10,6 @@ next: qu-est-ce-qu-un-module-d-information
 ---
 
 :::note
-**`fa-bullhorn`**
 
 Le format source peut reposer sur des fichiers monolithiques ou sur des grappes de fichiers modulaires.
 :::

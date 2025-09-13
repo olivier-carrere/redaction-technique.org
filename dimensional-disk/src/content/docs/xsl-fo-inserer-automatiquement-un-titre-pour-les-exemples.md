@@ -8,7 +8,6 @@ sidebar:
 ---
 
 :::note
-**`fa-bullhorn`**
 
 Par défaut, n'insère pas automatiquement dans les fichiers PDF le texte Exemple : devant le titre d'un exemple contenu entre balises `<example>`. La syntaxe [XSL-FO]() offre cependant cette possibilité.
 :::

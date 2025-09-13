@@ -9,7 +9,6 @@ next: "./xsl-fo-filtrer-du-contenu-selon-des-conditions-sauf-et-ou"
 ---
 
 ::: sidebar
-**`fa-bullhorn`**
 
 Les didacticiels suivants aideront le à mettre en place et à utiliser une chaîne de création et de publication libre.
 :::

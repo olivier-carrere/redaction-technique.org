@@ -10,7 +10,6 @@ next: false
 ---
 
 ::: sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Pour favoriser l'utilisation des [conref]() au sein d'une équipe de rédacteurs techniques, et également pour simplifier la maintenance des conref, il s'avère très efficace de centraliser tous les conref dans un fichier dédié.
 :::

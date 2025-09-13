@@ -8,7 +8,6 @@ sidebar:
 ---
 
 ::: sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Lorsque le veut réutiliser des blocs d'information plus petits qu'une section, il doit les partager au niveau des fichiers de contenu dita et non dans les structures de table des matières ditamap, grâce au mécanisme [conref]().
 :::

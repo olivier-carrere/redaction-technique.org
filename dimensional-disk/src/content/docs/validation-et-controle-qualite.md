@@ -10,7 +10,6 @@ next: "/workflow-de-creation-et-validation/"
 ---
 
 :::note
-**`fa-bullhorn`**
 
 Un support de doit être soumis à un contrôle qualité rigoureux avant d'être communiqué à ses différentes cibles.
 :::

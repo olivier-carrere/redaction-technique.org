@@ -8,7 +8,6 @@ sidebar:
 ---
 
 :::note
-**`fa-bullhorn`**
 
 Git est d’un abord déroutant. Ses workflows s’appliquent à du contenu plutôt qu’à des fichiers. Résultat : le travail de groupe et la gestion de différentes versions concurrentes d’un même contenu deviennent beaucoup plus simples.
 :::

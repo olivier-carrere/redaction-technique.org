@@ -10,7 +10,6 @@ next: "/les-trois-niveaux-de-la-documentation-technique"
 ---
 
 ::: sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 La , c\'est comme une ampoule : une ampoule basse consommation demande un investissement plus important en début de cycle de vie, mais a rapidement un coût plus faible.
 :::

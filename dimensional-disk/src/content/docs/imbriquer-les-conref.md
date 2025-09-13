@@ -8,7 +8,6 @@ sidebar:
 ---
 
 ::: sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Pour des raisons de facilité de mise à jour et de maintenance du contenu , le doit limiter l'effet poupée russe et ne pas trop imbriquer les [conref](). Un seul niveau d'imbrication (un *conref* imbriqué dans un autre) me semble le seuil au-delà duquel le contenu peut vite devenir ingérable.
 :::

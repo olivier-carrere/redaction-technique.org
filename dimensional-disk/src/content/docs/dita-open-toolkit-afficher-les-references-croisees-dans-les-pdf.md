@@ -10,7 +10,6 @@ next: false
 ---
 
 :::note
-**`fa-bullhorn`**
 
 Les références croisées sont un élément important d'une bien structurée. Elles permettent à l'utilisateur de naviguer facilement dans les briques d'information et sont un élément crucial de l'utilisabilité du document final. les gère très bien, à condition d'effectuer quelques réglages.
 :::

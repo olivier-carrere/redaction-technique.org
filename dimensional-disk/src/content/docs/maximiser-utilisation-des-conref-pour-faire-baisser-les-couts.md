@@ -8,7 +8,6 @@ sidebar:
 ---
 
 :::tip
-**`fa-bullhorn`**
 
 Recourir aux [conref]() est le meilleur moyen dont dispose le pour faire baisser spectaculairement les coûts et les délais de publication de son contenu , surtout pour les documents multilingues.
 :::

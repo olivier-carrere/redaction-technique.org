@@ -10,7 +10,6 @@ next: "organiser-son-historique-avec-git-rebase"
 ---
 
 :::tip
-**`fa-bullhorn`**
 
 Vous êtes habitué à manipuler des fichiers ? Git vous invite à penser autrement. Avantage : vous avez une maîtrise beaucoup plus grande de votre contenu.
 :::

@@ -8,7 +8,6 @@ sidebar:
 ---
 
 :::note
-**`fa-bullhorn`**
 
 Le contenu d\'un projet de est créé dans un format source, différent du format des livrables, le format cible. Pour reprendre une image fréquemment utilisée en développement logiciel, le format source est la recette de cuisine, le format cible, le plat. En photographie, le format source est le format [RAW](), qui est généré par l\'appareil photo, et sur lequel les photographes professionnels préféreront apporter les retouches, et le format cible, le format JPEG.
 :::

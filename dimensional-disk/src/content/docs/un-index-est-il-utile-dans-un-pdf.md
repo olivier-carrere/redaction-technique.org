@@ -8,7 +8,6 @@ sidebar:
 ---
 
 :::note
-**`fa-bullhorn`**
 
 À l'heure des documents dématérialisés, un index est-il un élément indispensable d'une bonne  ?
 :::
