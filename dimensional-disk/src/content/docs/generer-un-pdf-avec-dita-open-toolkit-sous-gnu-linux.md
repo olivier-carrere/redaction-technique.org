@@ -1,13 +1,22 @@
-# Générer un PDF avec DITA Open Toolkit sous GNU/Linux {#generer-un-pdf-avec-dita-open-toolkit-sous-gnu-linux}
+---
+title: Générer un PDF avec DITA Open Toolkit sous GNU/Linux
+description: Guide pour installer et utiliser la chaîne de publication DITA-OT (DITA Open Toolkit) sous GNU/Linux (Ubuntu ou Debian).
+slug: /generer-un-pdf-avec-dita-open-toolkit-sous-gnu-linux
+sidebar:
+  label: How-to
+  order: 1
+prev: null
+next: null
+---
 
-Ce didacticiel **DITA XML** est destiné à vous guider dans la mise en place et l\'utilisation de la chaîne de publication `DITA-OT (DITA Open Toolkit)`{.interpreted-text role="abbr"} dans un environnement GNU/Linux (Ubuntu ou Debian).
+Ce didacticiel DITA XML est destiné à vous guider dans la mise en place et l'utilisation de la chaîne de publication `DITA-OT (DITA Open Toolkit)` dans un environnement GNU/Linux (Ubuntu ou Debian).
 
-**Prérequis**
+Prérequis
 
--   Ubuntu ou Debian sur une machine physique ou virtuelle avec le mot de passe administrateur,
--   connexion Internet.
+- Ubuntu ou Debian sur une machine physique ou virtuelle avec le mot de passe administrateur,
+- connexion Internet.
 
-1.  Téléchargez et décompressez l\'archive `DITA-OT (DITA Open Toolkit)`{.interpreted-text role="abbr"} :
+1. Téléchargez et décompressez l'archive `DITA-OT (DITA Open Toolkit)` :
 
     ``` console
     $ export REPO="https://github.com/dita-ot/dita-ot"
@@ -15,11 +24,11 @@ Ce didacticiel **DITA XML** est destiné à vous guider dans la mise en place et
     $ tar -xzvf dita-ot-2.1.0.tar.gz
     ```
 
-2.  Générez votre premier PDF :
+2. Générez votre premier PDF :
 
     ``` console
     $ cd dita-ot-2.1.0
     $ dita -f pdf -i samples/taskbook.ditamap
     ```
 
-Félicitations, vous avez compilé votre premier projet **DITA XML** ! Le fichier PDF généré est `out/taskbook.pdf`{.interpreted-text role="file"}. Vous pouvez maintenant compiler d\'autres projets en ignorant les étapes 1 et 2.
+Félicitations, vous avez compilé votre premier projet DITA XML ! Le fichier PDF généré est `out/taskbook.pdf`. Vous pouvez maintenant compiler d'autres projets en ignorant les étapes 1 et 2.

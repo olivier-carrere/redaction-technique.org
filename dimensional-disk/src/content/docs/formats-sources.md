@@ -1,4 +1,13 @@
-# Formats sources
+---
+title: Formats sources
+description: Ce blog est disponible en trois formats, basés sur la version 1.1. Ces formats présentent des niveaux de fonctionnalités et de complexité différents.
+slug: formats-sources
+sidebar:
+  label: How-to
+  order: 1
+prev: false
+next: false
+---
 
 Ce blog est disponible en trois formats, basés sur la version 1.1[^1]. Ces formats présentent des niveaux de fonctionnalités et de complexité différents.
 
@@ -17,6 +26,6 @@ DITA XML
 
 DocBook
 
-:   [DocBook]() est un langage de balisage XML sémantique qui offre un rapport fonctionnalités/complexité aujourd\'hui peu intéressant.
+:   [DocBook]() est un langage de balisage XML sémantique qui offre un rapport fonctionnalités/complexité aujourd'hui peu intéressant.
 
 [^1]: Seule la version **reStructuredText**, à partir de laquelle cette version HTML est créée, est maintenue.

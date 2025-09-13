@@ -1,6 +1,15 @@
-# Le coin du *geek*
+---
+title: Le coin du geek
+description: Après une grande frustration ressentie lors de l'utilisation d'outils tels que FrameMaker ou Flare, j'ai progressivement eu envie de voir ce qui se passait « sous le capot » et de comprendre ce qui se cachait derrière les interfaces graphiques.
+slug: le-coin-du-geek
+sidebar:
+  label: How-to
+  order: 1
+prev: null
+next: null
+---
 
-Je suis un **rédacteur technique** à tendance *geek*. Après une grande frustration ressentie lors de l\'utilisation d\'outils tels que **FrameMaker** ou **Flare**, j\'ai progressivement eu envie de voir ce qui se passait « sous le capot » et de comprendre ce qui se cachait derrière les interfaces graphiques.
+Je suis un rédacteur technique à tendance geek. Après une grande frustration ressentie lors de l'utilisation d'outils tels que FrameMaker ou Flare, j'ai progressivement eu envie de voir ce qui se passait « sous le capot » et de comprendre ce qui se cachait derrière les interfaces graphiques.
 
 Cette approche facilite le dialogue avec les développeurs et donne une plus grande maîtrise des données. Elle se traduit par un certain nombre de caractéristiques qui se reflètent dans la pratique de mon métier :
 
@@ -9,25 +18,21 @@ Cette approche facilite le dialogue avec les développeurs et donne une plus gra
   ---------------------------------------------------- ---------------------------------------------------------------------------------------------------------------------------
   Recherche de rationnalisation                        Industrialisation des formats, outils et processus pour minimiser la quantité de travail inutile.
 
-  Capacité d\'adaptation                               Vision du changement comme opportunité d\'acquérir et d\'utiliser de nouvelles connaissances.
+  Capacité d'adaptation                               Vision du changement comme opportunité d'acquérir et d'utiliser de nouvelles connaissances.
 
   Forte autonomie de travail                           Créativité dans le choix des moyens mis en œuvre pour atteindre efficacement les objectifs.
 
-  Sens de l\'innovation                                Recherche constante de nouvelles solutions (dont il faut cependant évaluer le coût de mise en œuvre et l\'impact humain).
+  Sens de l'innovation                                Recherche constante de nouvelles solutions (dont il faut cependant évaluer le coût de mise en œuvre et l'impact humain).
 
   Goût des rapports humains                            Préférence pour le dialogue face à face pour éviter tout présupposé ou incompréhension.
 
-  Capacité d\'apprentissage dans des domaines variés   Apprentissage « sur le tas » de formats de documentation, langages informatiques ou environnements en ligne de commande.
+  Capacité d'apprentissage dans des domaines variés   Apprentissage « sur le tas » de formats de documentation, langages informatiques ou environnements en ligne de commande.
 
-  Recherche de l\'excellence                           Amélioration de la satisfaction client, minimisation de la maintenance et meilleure réutilisation du contenu existant.
+  Recherche de l'excellence                           Amélioration de la satisfaction client, minimisation de la maintenance et meilleure réutilisation du contenu existant.
   --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Si vous vous reconnaissez dans ce portrait et n\'avez pas peur du mode console, c\'est par ici !
+Si vous vous reconnaissez dans ce portrait et n'avez pas peur du mode console, c'est par ici !
 
-::: seealso
+:::tip[Voir aussi]
 [Being a Techie Writer]()
-:::
-
-::: {.toctree hidden=""}
-jourdainisation-en-ligne-python raspberry-pi-plateforme-documentation sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers expressions-regulieres-python didacticiels-dita-xml-xsl-fo creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-rest-texte-conditionnel creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-texte-conditionnel creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-objet-texte-conditionnel inserer-automatiquement-des-donnees-dans-un-fichier-restructuredtext inserer-automatiquement-des-donnees-dans-un-fichier-dita-xml inserer-automatiquement-des-donnees-sql-dans-un-fichier-restructuredtext
 :::

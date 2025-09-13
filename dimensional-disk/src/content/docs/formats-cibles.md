@@ -1,19 +1,24 @@
-# Formats cibles
+---
+title: Formats cibles
+description: Vous pouvez compiler ce blog avec Python Sphinx aux formats PDF, EPUB et HTML.
+slug: /formats-cibles
+sidebar:
+  label: How-to
+  order: 1
+prev: null
+next: null
+---
 
-Vous pouvez compiler ce blog avec *Python Sphinx* aux formats :
+Vous pouvez compiler ce blog avec Python Sphinx aux formats :
 
--   [PDF](download/redaction-techniqueorg.pdf),
--   [EPUB](download/redaction-techniqueorg.epub),
--   HTML.
+- [PDF](download/redaction-techniqueorg.pdf),
+- [EPUB](download/redaction-techniqueorg.epub),
+- HTML.
 
 Ces différentes versions sont générées à partir des mêmes sources exactement. Elles présentent cependant de légères variations, mises en œuvre par un mécanisme de texte conditionnel. Par exemple, le terme suivant varie selon le format cible :
 
-  -------------------------------------------------------------
-  Format cible                   Terme
-  ------------------------------ ------------------------------
-  PDF                            document
-
-  EPUB                           livre électronique
-
-  HTML                           site
-  -------------------------------------------------------------
+| Format cible | Terme              |
+|--------------|--------------------|
+| PDF          | document           |
+| EPUB         | livre électronique |
+| HTML         | site               |

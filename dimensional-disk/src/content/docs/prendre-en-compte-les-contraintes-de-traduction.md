@@ -1,15 +1,24 @@
-# Prendre en compte les contraintes de traduction
+---
+title: Prendre en compte les contraintes de traduction
+description: Pourquoi appliquer conref uniquement à des phrases complètes ou à des termes non traduits pour éviter des problèmes de traduction en DITA XML.
+slug: prendre-en-compte-les-contraintes-de-traduction
+sidebar:
+  label: How-to
+  order: 1
+prev: false
+next: false
+---
 
-L\'unité d\'information **DITA XML** la plus petite est le nœud `<ph>`{.interpreted-text role="samp"}. Le **rédacteur technique** doit cependant veiller à ne lui appliquer le mécanisme *conref* que pour une phrase complète ou un terme qui ne sera jamais traduit (par exemple, le nom de la société ou d\'un produit). De gros problèmes apparaissent sinon lors de la traduction dans d\'autres langues.
+L'unité d'information DITA XML la plus petite est le nœud `<ph>`. Le rédacteur technique doit cependant veiller à ne lui appliquer le mécanisme conref que pour une phrase complète ou un terme qui ne sera jamais traduit (par exemple, le nom de la société ou d'un produit). De gros problèmes apparaissent sinon lors de la traduction dans d'autres langues.
 
 <figure>
 <img src="graphics/traduction-conref.svg" alt="graphics/traduction-conref.svg" />
 <figcaption><em>Les phrases se découpent différemment selon les langues.</em></figcaption>
 </figure>
 
-**Exemple**
+Exemple
 
-Si vous décidez de pousser la granulométrie au niveau du segment de phrase et que vous définissez les *conref* suivants :
+Si vous décidez de pousser la granulométrie au niveau du segment de phrase et que vous définissez les conref suivants :
 
 ``` xml
 <ph id="click">Click the</ph>
@@ -29,9 +38,9 @@ Vous pouvez maintenant utiliser le code suivant :
 </p>
 ```
 
-pour que soit générée la phrase *Click the blue arrow*.
+pour que soit générée la phrase Click the blue arrow.
 
-Essayons maintenant de créer une version française de cette phrase. Nous traduisons donc les *conref* comme suit :
+Essayons maintenant de créer une version française de cette phrase. Nous traduisons donc les conref comme suit :
 
 ``` xml
 <ph id="click">Cliquez sur la</ph>
@@ -41,6 +50,6 @@ Essayons maintenant de créer une version française de cette phrase. Nous tradu
 <ph id="arrow">flèche</ph>
 ```
 
-Nous obtenons alors la phrase *Cliquez sur la bleue flèche*.
+Nous obtenons alors la phrase Cliquez sur la bleue flèche.
 
-Pour pallier ce problème, il faudrait réorganiser l\'ordre des *conref* dans le fichier **DITA XML** traduit, ce qui est difficilement gérable et fait perdre tout l\'intérêt du mécanisme. Sans compter que des problèmes pires que ce cas d\'école peuvent conduire à complètement abandonner dans la langue cible les *conref* utilisés dans la langue source (je n\'ai pas d\'exemple concret à offrir, ayant toujours évité de tomber dans ce genre de travers.)
+Pour pallier ce problème, il faudrait réorganiser l'ordre des conref dans le fichier DITA XML traduit, ce qui est difficilement gérable et fait perdre tout l'intérêt du mécanisme. Sans compter que des problèmes pires que ce cas d'école peuvent conduire à complètement abandonner dans la langue cible les conref utilisés dans la langue source (je n'ai pas d'exemple concret à offrir, ayant toujours évité de tomber dans ce genre de travers.)

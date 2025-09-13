@@ -1,8 +1,19 @@
-# Collecte de l\'information {#collecte-de-l-information}
+---
+title: "Collecte de l'information"
+description: "Le rédacteur technique collecte l'information auprès de différentes sources, internes et externes à l'entreprise."
+slug: "collecte-de-l-information"
+sidebar:
+  label: "How-to"
+  order: 1
+prev: null
+next: "tester-les-produits-pour-les-documenter"
+---
 
-Le **rédacteur technique** collecte l\'information auprès de différentes sources, internes et externes à l\'entreprise.
+<a id="collecte-de-l-information"></a>
 
-Une fois le projet de rédaction technique clairement défini, le **rédacteur technique** collecte toute l\'information disponible :
+Le **rédacteur technique** collecte l'information auprès de différentes sources, internes et externes à l'entreprise.
+
+Une fois le projet de rédaction technique clairement défini, le **rédacteur technique** collecte toute l'information disponible :
 
 -   spécifications du produit, Intranet, pages [Trac](),
 -   interview du service R&D,
@@ -17,10 +28,6 @@ Une fois le projet de rédaction technique clairement défini, le **rédacteur t
 <figcaption><em>Collecte de l'information</em></figcaption>
 </figure>
 
-Les informations doivent être recoupées pour minimiser le risque de transmettre des informations erronées ou plus à jour. Le **rédacteur technique** doit se livrer à un véritable travail d\'enquête. En se mettant à la place de l\'utilisateur, il vérifie chaque information et fait le tri entre les données pertinentes et celles qui ne seront que du bruit perturbant le message.
+Les informations doivent être recoupées pour minimiser le risque de transmettre des informations erronées ou plus à jour. Le **rédacteur technique** doit se livrer à un véritable travail d'enquête. En se mettant à la place de l'utilisateur, il vérifie chaque information et fait le tri entre les données pertinentes et celles qui ne seront que du bruit perturbant le message.
 
-Premier utilisateur des solutions développées par la société, le **rédacteur technique** a le rôle du *candide* qui remet chaque aspect de l\'information à transmettre dans son contexte. Il peut par exemple décider, contre l\'avis de la direction technique, de passer sous silence des informations très techniques dans le guide de l\'utilisateur. Inversement, il pourra étayer une brochure commerciale de données techniques précises pour étayer le discours marketing.
-
-::: {.toctree hidden=""}
-tester-les-produits-pour-les-documenter
-:::
+Premier utilisateur des solutions développées par la société, le **rédacteur technique** a le rôle du *candide* qui remet chaque aspect de l'information à transmettre dans son contexte. Il peut par exemple décider, contre l'avis de la direction technique, de passer sous silence des informations très techniques dans le guide de l'utilisateur. Inversement, il pourra étayer une brochure commerciale de données techniques précises pour étayer le discours marketing.

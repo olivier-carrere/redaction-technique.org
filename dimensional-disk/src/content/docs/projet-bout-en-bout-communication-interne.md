@@ -1,8 +1,17 @@
-# Communication interne {# projet-bout-en-bout-communication-interne}
+---
+title: "Communication interne"
+description: "Les outils et les process étant en place, restait à y faire adhérer les parties prenantes !"
+slug: "projet-bout-en-bout-communication-interne"
+sidebar:
+  label: "How-to"
+  order: 1
+prev: false
+next: false
+---
 
 Les outils et les process étant en place, restait à y faire adhérer les parties prenantes !
 
-J\'ai opté pour les supports de communication suivants :
+J'ai opté pour les supports de communication suivants :
 
--   des vidéos explicatives en ligne ;
--   un dépliant à distribuer lors des différents événements de l\'association.
+- des vidéos explicatives en ligne ;
+- un dépliant à distribuer lors des différents événements de l'association.

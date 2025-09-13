@@ -1,12 +1,20 @@
-# Mener un projet de bout en bout
+---
+title: Mener un projet de bout en bout
+description: Il est assez rare, dans le cadre professionnel, de pouvoir mener un projet de (quasiment) A à Z, de la conception à la communication, en passant par la réalisation.
+slug: mener-un-projet-de-bout-en-bout
+sidebar:
+  label: How-to
+  order: 1
+prev: false
+next: false
+---
 
-::: sidebar
-**`fa-history`{.interpreted-text role="awesome"} Modifications récentes**
+:::note[Modifications récentes]
 :::
 
 Il est assez rare, dans le cadre professionnel, de pouvoir mener un projet de (quasiment) A à Z, de la conception à la communication, en passant par la réalisation. Soit, gérer autant les aspects humains et organisationnels que les aspects techniques, ainsi que toute la communication: graphisme, rédactionnel, et même vidéo. C\'est plus souvent possible dans le cadre associatif.
 
-## Gestion des photos d\'une association {# projet-bout-en-bout-gestion-des-photos-association}
+## Gestion des photos d\'une association {#projet-bout-en-bout-gestion-des-photos-association}
 
 Une association de quelques centaines de personnes originaires de différents pays disposait de plusieurs milliers de photos, dispersées sur différents ordinateurs personnels.
 
@@ -35,7 +43,7 @@ Voici le schéma global de la solution :
 
 Tout a été réalisé sous *Linux*.
 
-## Récupération et tri des photos {# projet-bout-en-bout-recuperation-et-tri-des-photos}
+## Récupération et tri des photos {#projet-bout-en-bout-recuperation-et-tri-des-photos}
 
 Après avoir collecté le maximum de photos, je me suis retrouvé avec plus de 10 000 photos et 30 Go de données. Ouf.
 
@@ -55,7 +63,7 @@ Ensuite, j\'ai consulté les quelque 3 000 photos de plus de 1 Mo sous la visi
 
 Par comparaison de la liste originale des photos et de celle des fichiers de plus de 1 Mo conservés, j\'ai ensuite copié dans un autre répertoire à partir de la copie de sauvegarde les fichiers de plus de 1 Mo éliminés, afin de les mettre à disposition pour une utilisation sur Instagram, par exemple.
 
-## Galerie photo centralisée dans le *cloud* {# projet-bout-en-bout-galerie-photo-centralisee-dans-le-cloud}
+## Galerie photo centralisée dans le *cloud* {#projet-bout-en-bout-galerie-photo-centralisee-dans-le-cloud}
 
 Les membres de l\'association étant géographiquement dispersés, il était essentiel de proposer un hébergement centralisé dans le *cloud*.
 
@@ -68,7 +76,7 @@ J\'ai donc installé une instance de [Piwigo](), logiciel que je connaissais dé
 <figcaption><a href="">Photo Kevin Harber</a></figcaption>
 </figure>
 
-J\'ai protégé l\'accès à la galerie initialement par un fichier [.htaccess]{.title-ref} commun à tous les utilisateurs, puis par la création de comptes personnels sous la galerie.
+J\'ai protégé l\'accès à la galerie initialement par un fichier `.htaccess` commun à tous les utilisateurs, puis par la création de comptes personnels sous la galerie.
 
 L\'hébergement sur mon espace personnel peut durer quelques mois sans problème. Il serait cependant plus sain que l\'association soit propriétaire de l\'hébergement et du nom de domaine.
 
@@ -86,15 +94,15 @@ Une rapide étude (en septembre 2018) m\'a conduit à proposer les solutions sui
   Avantage         Moins d\'efforts pour l\'association.   L\'association dispose de tous les fichiers.   
   ------------------------------------------------------------------------------------------------------------------------------
 
-## Indexation des photos {# projet-bout-en-bout-indexation-des-photos}
+## Indexation des photos {#projet-bout-en-bout-indexation-des-photos}
 
 Une fois les 500 photos retenues pour les projets d\'impression téléchargées sur le site, restait à les indexer.
 
 J\'ai donc créé une centaine de mots-clés décrivant au mieux chaque photo. Comme il n\'est pas possible de définir des mots-clés multilingues sous *Piwigo*, j\'ai autant que faire se peut accompagné chaque mot-clé d\'un pictogramme.
 
-Par exemple, Vélo `fa-bicycle`{.interpreted-text role="awesome"}, Intérieur `fa-lightbulb`{.interpreted-text role="awesome"}, etc.
+Par exemple, Vélo `fa-bicycle`, Intérieur `fa-lightbulb`, etc.
 
-## Sauvegarde incrémentale et décentralisée {# projet-bout-en-bout-sauvegarde-incrementale-et-decentralisee}
+## Sauvegarde incrémentale et décentralisée {#projet-bout-en-bout-sauvegarde-incrementale-et-decentralisee}
 
 Comment sauvegarder le patrimoine photo de l\'association, soit les photos et la base de données Piwigo, de manière incrémentale et décentralisée ? Je me suis tourné vers Git avec l\'extension LFS, qui gère élégamment les fichiers binaires.
 
@@ -102,9 +110,7 @@ J\'ai tout d\'abord fait une copie du répertoire Piwigo du serveur sur un disqu
 
 Ainsi, tout membre de l\'association peut créer un compte Gitlab, puis, après avoir reçu le mot de passe, cloner la copie de sauvegarde.
 
-::: admonition
-Clonage du dépôt Gitlab
-
+:::note[Clonage du dépôt Gitlab]
 *La procédure suivante était incluse dans une première version du dépliant LaTeX. Elle est donc minimaliste, ne serait-ce que pour des raisons d\'espace disponible sur la version imprimée. Je l\'ai par la suite supprimée du dépliant, car elle risquait plutôt d\'effrayer son lectorat, majoritairement technophobe.*
 
 Sous Windows, vous pouvez installer [Git for windows]() et [GitHub Desktop]().
@@ -153,25 +159,21 @@ $ lftp ftp://user:password@ftpaccount -e \
   repertoire-local; quit"
 ```
 
-:::: note
-::: title
-Note
-:::
-
+:::note
 Pour ignorer les différences de permissions sur les fichiers, j\'ai au préalable lancé la commande suivante sur mon dépôt local :
 
 ``` console
 $ git config core.filemode false
 ```
-::::
+:::
 
 L\'hébergement des photos est donc centralisé, la sauvegarde, décentralisée.
 
-## Définition d\'un workflow de gestion des photos {# projet-bout-en-bout-definition-workflow-de-gestion-des-photos}
+## Définition d\'un workflow de gestion des photos {#projet-bout-en-bout-definition-workflow-de-gestion-des-photos}
 
 Une solution technique ne se suffit jamais à elle-même. J\'ai donc défini un workflow dans lequel s\'insérait la solution.
 
-## Définition des rôles des membres du worfklow photo {# projet-bout-en-bout-definition-des-roles-des-membres-du-worfklow-photo}
+## Définition des rôles des membres du worfklow photo {#projet-bout-en-bout-definition-des-roles-des-membres-du-worfklow-photo}
 
 La chaîne de production graphique s\'appuie sur 3 rôles :
 
@@ -187,7 +189,7 @@ Si les deux premiers sont familiers aux membres de l\'association, celui d\'icon
 
 En effet, l\'association a vécu des années sans galerie photo et pourra continuer à le faire, même si ce n\'est pas de manière optimale. Les membres continueront à prendre des photos et à créer des affiches. En revanche, l\'intérêt de la galerie est de centraliser le maximum de photos et d\'y donner un accès rapide. Elle ne sera utilisée que si son indexation est de qualité.
 
-## Communication interne {# projet-bout-en-bout-communication-interne}
+## Communication interne {#projet-bout-en-bout-communication-interne}
 
 Les outils et les process étant en place, restait à y faire adhérer les parties prenantes !
 
@@ -196,13 +198,13 @@ J\'ai opté pour les supports de communication suivants :
 -   des vidéos explicatives en ligne ;
 -   un dépliant à distribuer lors des différents événements de l\'association.
 
-## Didacticiels vidéo {# projet-bout-en-bout-didacticiels-video}
+## Didacticiels vidéo {#projet-bout-en-bout-didacticiels-video}
 
 J\'ai publié sur *YouTube* différents didacticiels, en français, anglais et espagnol, sur l\'utilisation de la galerie par les différents types d\'utilisateurs.
 
 J\'ai utilisé pour cela [SimpleScreenRecorder](). Un premier essai avec le microphone intégré de mon portable s\'étant révélé peu convaincant, j\'ai enregistré ma voix avec un micro de bonne qualité, nommément, un *Bird UM1*. Pressé par le temps, et parce que ces didacticiels s\'adressent à un public restreint (et indulgent), je n\'ai pas fait de montage, comme par exemple sous *Kdenlive*.
 
-## Support papier {# projet-bout-en-bout-support-papier}
+## Support papier {#projet-bout-en-bout-support-papier}
 
 J\'ai créé un dépliant expliquant :
 
@@ -211,9 +213,7 @@ J\'ai créé un dépliant expliquant :
 -   l\'utilisation de la galerie par chaque type d\'utilisateurs ;
 -   le workflow dans lequel s\'inscrivent les utilisateurs.
 
-::: admonition
-Modèle LaTeX du dépliant
-
+:::note[Modèle LaTeX du dépliant]
 Le [modèle LaTeX du dépliant](), partie émergée de l\'iceberg, est publié sur *Overleaf*.
 
 Curieusement, le PDF généré sur *Overleaf* présente des défauts que je ne constate pas lorsque je le publie en local.
@@ -223,7 +223,7 @@ Curieusement, le PDF généré sur *Overleaf* présente des défauts que je ne c
 Pour les plus curieux, il existe [6 manières]() de plier cette brochure. Je me suis épargné des essais fastidieux en utilisant la [classe de documents LaTeX leaflet]().
 :::
 
-## LaTeX {# projet-bout-en-bout-latex}
+## LaTeX {#projet-bout-en-bout-latex}
 
 Pourquoi avoir choisi [LaTeX]() pour réaliser le support *print* et non pas un logiciel de PAO classique ? Je souhaitais pouvoir remanier le texte sans refaire à chaque fois la mise en page. De même, je voulais pouvoir traduire le dépliant sans effectuer de tâche de PAO manuelle.
 
@@ -261,19 +261,15 @@ Le rendu PDF est illustré ci-dessous. Remarquez le calcul automatique des césu
 
 ![](graphics/latex-rendu.png)
 
-:::: note
-::: title
-Note
-:::
-
+:::note
 Les fervents du *WYSIWYG* se tourneront avec profit vers [Gummi](). Il s\'agit de *What you see is what you get* au sens strict (et plutôt de *tel écran, tel imprimé* que de *tel écran, tel écrit*). On ne peut en effet pas modifier le texte dans la fenêtre de visualisation, uniquement dans la fenêtre de code LaTeX. Vous savez donc exactement ce qui se passe « sous le capot » et avez une plus grande maîtrise qu\'en déléguant la création du code de mise en page à une interface graphique. Si vous manipulez souvent des listes numérotées et que vous avez été confronté à des numérotations, disons... aléatoires, vous en comprendrez tout de suite l\'avantage.
 
 ![](graphics/latex-wysiwyg-gummi.png)
-::::
+:::
 
 D\'autre part, une fois la structure du dépliant créée, il est facile de l\'utiliser pour produire rapidement d\'autres documents. De plus, le document peut être remanié par d\'autres personnes sans problème de licence ou de plateforme logicielle.
 
-## Suivi des modifications sous Git {# projet-bout-en-bout-suivi-des-modifications-sous-git}
+## Suivi des modifications sous Git {#projet-bout-en-bout-suivi-des-modifications-sous-git}
 
 Le suivi des modifications, que se soit sous Overleaf ou Git, prévient efficacement les erreurs : il est très facile de visualiser les modifications de fond ou de forme entre deux versions, de revenir à tout moment à une version précédente, de maintenir en parallèle plusieurs versions, etc.
 
@@ -293,11 +289,11 @@ Voici l\'évolution d\'un extrait du PDF compilé :
 
 On peut même envisager un travail collaboratif, synchrone ou asynchrone, sur le même projet.
 
-## Style rédactionnel {# projet-bout-en-bout-style-redactionnel}
+## Style rédactionnel {#projet-bout-en-bout-style-redactionnel}
 
 Puisqu\'il s\'agissait d\'un projet de communication interne, j\'ai pu adopter un style rédactionnel décontracté. J\'ai cependant veillé à ne pas pousser trop loin l\'aspect humoristique. Le but était avant tout d\'être compris, dans les 3 langues (français, anglais et espagnol).
 
-## Iconographie {# projet-bout-en-bout-iconographie}
+## Iconographie {#projet-bout-en-bout-iconographie}
 
 Le choix iconographique s\'est avéré être un exercice de style très intéressant.
 
@@ -321,7 +317,7 @@ Et car il s\'agit de s\'amuser en procédant à ces tâches, j\'ai joué sur un 
 
 ![](graphics/Frances_Densmore_recording_Mountain_Chief2.jpg)
 
-## Patience... {# projet-bout-en-bout-patience}
+## Patience... {#projet-bout-en-bout-patience}
 
 Évidemment, toute structure étant toujours plus ou moins rétive au changement, les choses ne se passeront pas comme je l\'imagine. Notamment, l\'équipe d\'iconographes que j\'appelle de mes vœux a peu de chance de voir le jour et je risque d\'être le seul à indexer les photos sous la galerie.
 

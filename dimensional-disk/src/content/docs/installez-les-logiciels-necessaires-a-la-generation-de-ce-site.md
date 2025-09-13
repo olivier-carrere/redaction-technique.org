@@ -1,6 +1,15 @@
-# Installez les logiciels nécessaires à la gestion de ce blog {#installez-les-logiciels-necessaires-a-la-generation-de-ce-site}
+---
+title: "Installez les logiciels nécessaires à la gestion de ce blog"
+description: "Sélectionnez Menu > Accessoires > LXTerminal."
+slug: "installez-les-logiciels-necessaires-a-la-generation-de-ce-site"
+sidebar:
+  label: "How-to"
+  order: 1
+prev: null
+next: null
+---
 
-1.  Sélectionnez `Menu`{.interpreted-text role="guilabel"} \> `Accessoires`{.interpreted-text role="guilabel"} \> `LXTerminal`{.interpreted-text role="guilabel"}.
+1.  Sélectionnez `Menu` \> `Accessoires` \> `LXTerminal`.
 
 2.  Installez les paquets logiciels suivants :
 

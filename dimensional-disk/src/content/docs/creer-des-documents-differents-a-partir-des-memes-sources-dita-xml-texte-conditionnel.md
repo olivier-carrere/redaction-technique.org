@@ -1,12 +1,21 @@
-# Créer des documents différents à partir des mêmes sources DITA XML (texte conditionnel) {#creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-conditionnel}
+---
+title: "Créer des documents différents à partir des mêmes sources DITA XML (texte conditionnel)"
+description: "DITA XML offre un mécanisme de texte conditionnel. Ce mécanisme favorise la réutilisation du contenu source et évite la redondance des informations."
+slug: "creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-conditionnel"
+sidebar:
+  label: "How-to"
+  order: 1
+prev: null
+next: null
+---
 
 **DITA XML** offre un mécanisme de texte conditionnel. Ce mécanisme favorise la réutilisation du contenu source et évite la redondance des informations. Ce didacticiel aidera le **rédacteur technique** à utiliser ce mécanisme en quelques minutes.
 
 **Prérequis**
 
--   Vous avez installé `DITA-OT (DITA Open Toolkit)`{.interpreted-text role="abbr"} dans le répertoire `DITA-OT1.5.4`{.interpreted-text role="file"} sous GNU/Linux ou Windows.
+-   Vous avez installé `DITA-OT (DITA Open Toolkit)` dans le répertoire `DITA-OT1.5.4` sous GNU/Linux ou Windows.
 
-1.  Collez le code suivant dans un fichier et enregistrez ce dernier sous le nom de `texte-conditionnel.dita`{.interpreted-text role="file"} dans le répertoire `DITA-OT1.5.4`{.interpreted-text role="file"} :
+1.  Collez le code suivant dans un fichier et enregistrez ce dernier sous le nom de `texte-conditionnel.dita` dans le répertoire `DITA-OT1.5.4` :
 
     ``` xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -49,9 +58,9 @@
     </topic>
     ```
 
-    Ce code contient des balises **DITA XML** contenant des valeurs *audience* différentes : nous allons exclure le contenu d\'une de ces deux balises lors de la génération du fichier cible en utilisant la clé *audience*.
+    Ce code contient des balises **DITA XML** contenant des valeurs *audience* différentes : nous allons exclure le contenu d'une de ces deux balises lors de la génération du fichier cible en utilisant la clé *audience*.
 
-2.  Collez le code suivant dans un fichier et enregistrez ce dernier sous le nom de `texte-conditionnel.ditamap`{.interpreted-text role="file"} dans le répertoire `DITA-OT1.5.4`{.interpreted-text role="file"} :
+2.  Collez le code suivant dans un fichier et enregistrez ce dernier sous le nom de `texte-conditionnel.ditamap` dans le répertoire `DITA-OT1.5.4` :
 
     ``` xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -67,7 +76,7 @@
     </bookmap>
     ```
 
-3.  Collez le code suivant dans un fichier et enregistrez ce dernier sous le nom de `electriciens.ditaval`{.interpreted-text role="file"} dans le répertoire `DITA-OT1.5.4`{.interpreted-text role="file"} :
+3.  Collez le code suivant dans un fichier et enregistrez ce dernier sous le nom de `electriciens.ditaval` dans le répertoire `DITA-OT1.5.4` :
 
     ``` xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -77,7 +86,7 @@
     </val>
     ```
 
-4.  Collez le code suivant dans un fichier et enregistrez ce dernier sous le nom de `plombiers.ditaval`{.interpreted-text role="file"} dans le répertoire `DITA-OT1.5.4`{.interpreted-text role="file"} :
+4.  Collez le code suivant dans un fichier et enregistrez ce dernier sous le nom de `plombiers.ditaval` dans le répertoire `DITA-OT1.5.4` :
 
     ``` xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -87,32 +96,32 @@
     </val>
     ```
 
-5.  Ouvrez un terminal et entrez la commande suivante dans le répertoire `DITA-OT1.5.4`{.interpreted-text role="file"} :
+5.  Ouvrez un terminal et entrez la commande suivante dans le répertoire `DITA-OT1.5.4` :
 
     ``` console
     $ java -jar lib/dost.jar /i:texte-conditionnel.ditamap \
     /filter:electriciens.ditaval /outdir:. /transtype:pdf2
     ```
 
-    Ouvrez le fichier `texte-conditionnel.pdf`{.interpreted-text role="file"} ; il contient des informations destinées :
+    Ouvrez le fichier `texte-conditionnel.pdf` ; il contient des informations destinées :
 
     -   aux plombiers et aux électriciens,
     -   uniquement aux électriciens.
 
-6.  Ouvrez un terminal et entrez la commande suivante dans le répertoire `DITA-OT1.5.4`{.interpreted-text role="file"} :
+6.  Ouvrez un terminal et entrez la commande suivante dans le répertoire `DITA-OT1.5.4` :
 
     ``` console
     $ java -jar lib/dost.jar /i:texte-conditionnel.ditamap \
     /filter:plombiers.ditaval /outdir:. /transtype:pdf2
     ```
 
-    Ouvrez le fichier `texte-conditionnel.pdf`{.interpreted-text role="file"} ; il contient des informations destinées :
+    Ouvrez le fichier `texte-conditionnel.pdf` ; il contient des informations destinées :
 
 > -   aux plombiers et aux électriciens,
 > -   uniquement aux plombiers.
 
-::: seealso
--   `creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-rest-texte-conditionnel`{.interpreted-text role="ref"}
--   `creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-texte-conditionnel`{.interpreted-text role="ref"}
--   `creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-objet-texte-conditionnel`{.interpreted-text role="ref"}
+:::tip[Voir aussi]
+-   `creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-rest-texte-conditionnel`
+-   `creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-texte-conditionnel`
+-   `creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-objet-texte-conditionnel`
 :::

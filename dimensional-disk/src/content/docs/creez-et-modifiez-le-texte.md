@@ -1,20 +1,29 @@
-# Créez et modifiez le texte {#creez-et-modifiez-le-texte}
+---
+title: Créez et modifiez le texte
+description: Modifiez un fichier source modulaire de ce blog.
+slug: creez-et-modifiez-le-texte
+sidebar:
+  label: How-to
+  order: 1
+prev: null
+next: null
+---
 
-1.  Modifiez un fichier source modulaire de ce blog :
-    -   à l\'aide d\'un éditeur de texte :
+1. Modifiez un fichier source modulaire de ce blog :
+   - à l'aide d'un éditeur de texte :
 
-        ``` console
-        $ leafpad *coin-du-geek.rst &
-        ```
+     ```console
+     $ leafpad *coin-du-geek.rst &
+     ```
 
-    -   ou à l\'aide d\'un environnement de développement :
+   - ou à l'aide d'un environnement de développement :
 
-        ``` console
-        $ emacs *coin-du-geek.rst &
-        ```
+     ```console
+     $ emacs *coin-du-geek.rst &
+     ```
 
-    -   ou à l\'aide d\'un éditeur en ligne, par exemple :
+   - ou à l'aide d'un éditeur en ligne, par exemple :
 
-        ``` console
-        $ sed -i "s/répertoire/dossier/g;" *.rst
-        ```
+     ```console
+     $ sed -i "s/répertoire/dossier/g;" *.rst
+     ```

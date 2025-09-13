@@ -1,12 +1,21 @@
-# Utiliser le nœud XML de plus bas niveau {#utiliser-le-noeud-xml-de-plus-bas-niveau}
+---
+title: "Utiliser le nœud XML de plus bas niveau"
+description: "Utilisez les conref au niveau de la plus petite structure XML pour une réutilisation précise tout en restant conforme au schéma DITA."
+slug: "utiliser-le-noeud-xml-de-plus-bas-niveau"
+sidebar:
+  label: "How-to"
+  order: 1
+prev: null
+next: null
+---
 
 ::: sidebar
 **`fa-bullhorn`{.interpreted-text role="awesome"}**
 
-Le **rédacteur technique** doit utiliser comme source du [conref]() le nœud **DITA XML** de plus bas niveau contenant l\'information à partager.
+Le **rédacteur technique** doit utiliser comme source du [conref]() le nœud **DITA XML** de plus bas niveau contenant l'information à partager.
 :::
 
-Le but des *conref* étant de gérer des blocs d\'information de faibles dimensions, il est logique de les manipuler au niveau de la plus petite structure XML encapsulant l\'information, même si cette structure, pour être compatible avec le schéma XSD de la section **DITA XML** où elle intervient, doit elle-même être incluse dans des structures XML plus grandes.
+Le but des *conref* étant de gérer des blocs d'information de faibles dimensions, il est logique de les manipuler au niveau de la plus petite structure XML encapsulant l'information, même si cette structure, pour être compatible avec le schéma XSD de la section **DITA XML** où elle intervient, doit elle-même être incluse dans des structures XML plus grandes.
 
 <figure>
 <img src="graphics/conref-bas-niveau.svg" alt="graphics/conref-bas-niveau.svg" />
@@ -38,9 +47,9 @@ Pour être conforme au schéma XSD, votre code doit au moins être structuré co
   </taskbody>
 ```
 
-Il s\'agit maintenant de placer un ID sur une structure XML afin de pouvoir réutiliser le contenu de cette structure. En l\'occurrence, c\'est une étape unique comprenant une commande unique que vous souhaitez réutiliser.
+Il s'agit maintenant de placer un ID sur une structure XML afin de pouvoir réutiliser le contenu de cette structure. En l'occurrence, c'est une étape unique comprenant une commande unique que vous souhaitez réutiliser.
 
-Il est alors préférable d\'utiliser la syntaxe suivante :
+Il est alors préférable d'utiliser la syntaxe suivante :
 
 ``` xml
 <step>
@@ -60,7 +69,7 @@ plutôt que la suivante :
 </step>
 ```
 
-En effet, dans le premier cas, vous pourrez utiliser le *conref* même si le nœud supérieur (`<step>`{.interpreted-text role="samp"}) contient d\'autres nœuds que `<step>`{.interpreted-text role="samp"} (par exemple `<info>`{.interpreted-text role="samp"}).
+En effet, dans le premier cas, vous pourrez utiliser le *conref* même si le nœud supérieur (`<step>`{.interpreted-text role="samp"}) contient d'autres nœuds que `<step>`{.interpreted-text role="samp"} (par exemple `<info>`{.interpreted-text role="samp"}).
 
 <figure>
 <img src="graphics/conref-haut-niveau.svg" alt="graphics/conref-haut-niveau.svg" />
