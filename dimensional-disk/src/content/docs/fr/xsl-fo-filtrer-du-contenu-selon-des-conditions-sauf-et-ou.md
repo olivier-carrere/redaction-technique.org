@@ -1,0 +1,90 @@
+---
+title: "XSL-FO : filtrer du contenu selon des conditions « sauf » et « ou »"
+description: "Imaginons que vous vouliez filtrer les nœuds enfants de la balise <example> et afficher tout son contenu à l'exception du titre (situé entre les balises <title>)."
+slug: "xsl-fo-filtrer-du-contenu-selon-des-conditions-sauf-et-ou"
+sidebar:
+  label: "How-to"
+  order: 1
+---
+
+Imaginons que vous vouliez filtrer les nœuds enfants de la balise `<example>` et afficher tout son contenu à l'exception du titre (situé entre les balises `<title>`).
+
+Vous pouvez recourir alors à la syntaxe suivante :
+
+``` 
+<xsl:template match="*[contains(@class,' topic/example ')]">
+  <fo:block>
+    <xsl:apply-templates select="*[not(name()='title')]" />
+  </fo:block>
+</xsl:template>
+```
+
+Cette commande sélectionne tous les nœuds enfants du nœud `<example>`, à l'exception du nœud `<title>`. Cependant, le nœud `<example>` accepte le texte entré directement, sans être encapsulé dans des balises. Cette commande ne fera alors pas apparaître ce contenu.
+
+Supposons que le code source d'un de vos fichiers soit le suivant :
+
+``` xml
+<example>
+  <title>
+    XSL-FO
+  </title>
+  Voici mon exemple de chemin XPATH :
+  <codeblock>
+    ancestor-or-self
+  </codeblock>
+  Texte non encapsulé situé après un nœud enfant.
+</example>
+```
+
+Le fichier PDF affichera l'exemple structuré comme suit :
+
+``` 
+ancestor-or-self
+```
+
+Le titre de l'exemple n'est pas affiché, ce qui correspond au résultat souhaité, mais le contenu non encapsulé dans des balises n'apparaît pas, ce qui est un effet de bord indésirable. Pour sélectionner ce contenu, il faut sélectionner les nœuds textuels avec la syntaxe `text()`. Il est alors tentant d'utiliser la syntaxe suivante :
+
+``` 
+<xsl:template match="*[contains(@class,' topic/example ')]">
+  <fo:block>
+    <xsl:apply-templates select="text()" />
+    <xsl:apply-templates select="*[not(name()='title')]" />
+  </fo:block>
+</xsl:template>
+```
+
+Cependant, tous les éléments texte non encapsulés dans des balises enfant de la balise `<example>` seront placés en tête de l'exemple, avant les éléments encapsulés, même s'ils sont placés après dans le fichier source.
+
+Le fichier PDF affichera l'exemple structuré comme suit :
+
+> Voici mon exemple de chemin XPATH :Texte non encapsulé situé après un nœud enfant.
+>
+> ``` 
+> ancestor-or-self
+> ```
+
+Il faut alors utiliser la syntaxe pipe (condition booléenne ou) pour modifier le chemin [XPATH]() comme suit :
+
+``` 
+<xsl:apply-templates select="text()|*[not(name()='title')]" />
+```
+
+Le résultat final sera :
+
+``` 
+<xsl:template match="*[contains(@class,' topic/example ')]">
+  <fo:block>
+    <xsl:apply-templates select="text()|*[not(name()='title')]" />
+  </fo:block>
+</xsl:template>
+```
+
+Le fichier PDF affichera l'exemple structuré comme suit :
+
+> Voici mon exemple de chemin XPATH :
+>
+> ``` 
+> ancestor-or-self
+> ```
+>
+> Texte non encapsulé situé après un nœud enfant.
