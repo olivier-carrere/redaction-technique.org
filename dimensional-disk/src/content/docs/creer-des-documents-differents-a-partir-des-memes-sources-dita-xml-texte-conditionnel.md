@@ -1,7 +1,6 @@
 ---
 title: "Créer des documents différents à partir des mêmes sources DITA XML (texte conditionnel)"
 description: "Utilisez le texte conditionnel pour réutiliser le contenu source et éviter la redondance."
-slug: "/creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-conditionnel"
 sidebar:
   label: "How-to"
   order: 1

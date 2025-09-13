@@ -1,7 +1,6 @@
 ---
 title: "XSL-FO : insérer automatiquement un titre pour les exemples"
 description: "Insérer automatiquement dans les PDF le texte « Exemple : » devant le titre d’un exemple <example> grâce à XSL‑FO."
-slug: xsl-fo-inserer-automatiquement-un-titre-pour-les-exemples
 sidebar:
   label: How-to
   order: 1

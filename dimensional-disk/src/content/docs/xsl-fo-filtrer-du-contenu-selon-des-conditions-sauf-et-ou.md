@@ -1,7 +1,6 @@
 ---
 title: "XSL-FO : filtrer du contenu selon des conditions « sauf » et « ou »"
 description: "Imaginons que vous vouliez filtrer les nœuds enfants de la balise <example> et afficher tout son contenu à l'exception du titre (situé entre les balises <title>)."
-slug: "xsl-fo-filtrer-du-contenu-selon-des-conditions-sauf-et-ou"
 sidebar:
   label: "How-to"
   order: 1

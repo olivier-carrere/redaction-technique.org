@@ -1,7 +1,6 @@
 ---
 title: "Workflow de création et validation"
 description: "Un processus de création et de mise à jour de la documentation technique qui repose sur la mémoire des acteurs humains est peu fiable."
-slug: "workflow-de-creation-et-validation"
 sidebar:
   label: "How-to"
   order: 1

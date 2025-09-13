@@ -1,7 +1,6 @@
 ---
 title: "Organisation à la demande du contenu"
 description: "Les briques peuvent être organisées dans différentes structures hiérarchiques, selon l'évolution des besoins."
-slug: organisation-a-la-demande-du-contenu
 sidebar:
   label: How-to
   order: 1

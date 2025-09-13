@@ -1,7 +1,6 @@
 ---
 title: "DocBook ou DITA XML ?"
 description: "Certaines entreprises ont parfois un contenu existant au format DocBook."
-slug: "docbook-ou-dita-xml"
 sidebar:
   label: "How-to"
   order: 1

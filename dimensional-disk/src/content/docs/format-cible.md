@@ -1,7 +1,6 @@
 ---
 title: "Format cible"
 description: "Le format cible d'un support est celui sous lequel l'audience du message y accédera."
-slug: format-cible
 sidebar:
   label: How-to
   order: 1

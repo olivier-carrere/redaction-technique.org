@@ -1,7 +1,6 @@
 ---
 title: "Sauvegarde incrémentale et décentralisée"
 description: "Comment sauvegarder le patrimoine photo (photos et base Piwigo) de manière incrémentale et décentralisée avec Git LFS."
-slug: /projet-bout-en-bout-sauvegarde-incrementale-et-decentralisee
 sidebar:
   label: How-to
   order: 1

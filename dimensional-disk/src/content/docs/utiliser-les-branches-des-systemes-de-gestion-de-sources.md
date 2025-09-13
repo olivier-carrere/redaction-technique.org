@@ -1,7 +1,6 @@
 ---
 title: "Utiliser les branches des systèmes de gestion de sources"
 description: "Les systèmes de gestion de sources proposent de créer des branches d'un projet pour gérer notamment différentes traductions de la documentation technique."
-slug: "utiliser-les-branches-des-systemes-de-gestion-de-sources"
 sidebar:
   label: "How-to"
   order: 1

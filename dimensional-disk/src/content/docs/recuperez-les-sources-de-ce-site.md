@@ -1,7 +1,6 @@
 ---
 title: "Récupérez les sources de ce site"
 description: "Clonez le dépôt des sources et placez-vous dans le répertoire du projet."
-slug: recuperez-les-sources-de-ce-site
 sidebar:
   label: How-to
   order: 1

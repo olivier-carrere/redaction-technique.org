@@ -1,7 +1,6 @@
 ---
 title: "Suivi des modifications sous Git"
 description: "Le suivi des modifications, que se soit sous Overleaf ou Git, prévient efficacement les erreurs : il est très facile de visualiser les modifications de fond ou de forme entre deux versions, de revenir à tout moment à une version précédente, de maintenir en parallèle plusieurs versions, etc."
-slug: /projet-bout-en-bout-suivi-des-modifications-sous-git
 sidebar:
   label: How-to
   order: 1

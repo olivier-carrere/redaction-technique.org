@@ -1,7 +1,6 @@
 ---
 title: "Documentation technique : diminuer les coûts, améliorer la satisfaction client"
 description: "Réduire les coûts, accélérer le time to market et améliorer la qualité grâce à une documentation industrielle."
-slug: "/diminuer-les-couts-ameliorer-la-satisfaction-client"
 sidebar:
   label: "How-to"
   order: 1

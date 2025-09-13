@@ -1,7 +1,6 @@
 ---
 title: "Créer des documents différents à partir des mêmes sources via Jinja (méthode objet)"
 description: "Profiler du contenu avec Jinja en définissant des objets (audience, plateforme, version, etc.) pour inclure ou exclure des blocs de texte selon leurs attributs."
-slug: creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-objet-texte-conditionnel
 sidebar:
   label: How-to
   order: 1

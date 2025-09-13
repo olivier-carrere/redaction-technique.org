@@ -1,7 +1,6 @@
 ---
 title: "Insérer automatiquement des données dans un fichier reStructuredText"
 description: "Présenter 3 produits — Dianthus, Geum et Prunus — chacun décliné en versions 1.0, 1.5 et 2.3."
-slug: inserer-automatiquement-des-donnees-dans-un-fichier-restructuredtext
 sidebar:
   label: How-to
   order: 1

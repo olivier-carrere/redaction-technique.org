@@ -1,7 +1,6 @@
 ---
 title: "Qu'est-ce qu'un module d'information ?"
 description: "Le principe des modules, inspiré du système des briques Lego, améliore la qualité des manuels techniques et la productivité."
-slug: "/qu-est-ce-qu-un-module-d-information"
 sidebar:
   label: "How-to"
   order: 1

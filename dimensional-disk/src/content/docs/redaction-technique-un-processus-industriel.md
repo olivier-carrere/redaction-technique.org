@@ -1,7 +1,6 @@
 ---
 title: "Rédaction technique : un processus industriel"
 description: "La rédaction technique repose sur des processus rationnels."
-slug: "redaction-technique-un-processus-industriel"
 sidebar:
   label: "How-to"
   order: 1

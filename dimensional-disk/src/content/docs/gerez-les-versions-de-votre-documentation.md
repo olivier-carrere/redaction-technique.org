@@ -1,7 +1,6 @@
 ---
 title: "Gérez les versions de votre documentation"
 description: "Commitez votre lot de modifications et affichez l'historique avec Git."
-slug: /gerez-les-versions-de-votre-documentation
 sidebar:
   label: How-to
   order: 1

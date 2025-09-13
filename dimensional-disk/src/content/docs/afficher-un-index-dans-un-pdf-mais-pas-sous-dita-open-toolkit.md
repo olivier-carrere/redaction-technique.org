@@ -1,7 +1,6 @@
 ---
 title: "Afficher un index dans un PDF (mais pas sous DITA Open Toolkit)"
 description: "Vous générez une sortie PDF et l'index n'apparaît pas : FOP ne supporte actuellement pas la génération des index."
-slug: afficher-un-index-dans-un-pdf-mais-pas-sous-dita-open-toolkit
 sidebar:
   label: How-to
   order: 1

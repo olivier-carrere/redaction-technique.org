@@ -1,7 +1,6 @@
 ---
 title: "Livraison"
 description: "Le livre le document à son destinataire de la manière appropriée."
-slug: livraison
 sidebar:
   label: How-to
   order: 1

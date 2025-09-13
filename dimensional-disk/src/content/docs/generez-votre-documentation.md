@@ -1,7 +1,6 @@
 ---
 title: "Générez votre documentation"
 description: "Récupérez la dernière version taguée et générez la documentation en PDF, HTML et EPUB depuis le terminal."
-slug: "generez-votre-documentation"
 sidebar:
   label: "How-to"
   order: 1

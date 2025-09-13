@@ -1,7 +1,6 @@
 ---
 title: "Utiliser l'IDE nXML pour DITA XML"
 description: "Le mode nXML valide en temps réel les documents XML, XHTML, etc., et propose l’autocomplétion contextuelle des balises."
-slug: "utiliser-ide-nxml-pour-dita-xml"
 sidebar:
   label: "How-to"
   order: 1

@@ -1,7 +1,6 @@
 ---
 title: "Documents monolithiques ou modulaires"
 description: "Les fichiers monolithiques centralisent tout le contenu dans un seul fichier, facile à manier, mais limitant le partage et augmentant le risque d’incohérences et de doublons."
-slug: documents-monolithiques-ou-modulaires
 sidebar:
   label: How-to
   order: 1

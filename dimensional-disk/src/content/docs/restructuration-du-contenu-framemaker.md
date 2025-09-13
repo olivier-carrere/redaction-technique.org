@@ -1,7 +1,6 @@
 ---
 title: "Restructuration du contenu FrameMaker"
 description: "La partie automatisée d'une migration de FrameMaker consiste à appliquer une table de conversion entre les styles et les structures."
-slug: restructuration-du-contenu-framemaker
 sidebar:
   label: How-to
   order: 1

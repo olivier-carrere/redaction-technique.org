@@ -1,7 +1,6 @@
 ---
 title: "Centraliser les conref dans un fichier unique"
 description: "Centraliser tous les conref dans un fichier dédié pour favoriser la réutilisation et simplifier la maintenance."
-slug: centraliser-les-conref-dans-un-fichier-unique
 sidebar:
   label: How-to
   order: 1

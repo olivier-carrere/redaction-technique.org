@@ -1,7 +1,6 @@
 ---
 title: "sed : modifiez votre texte sans ouvrir vos fichiers"
 description: "Prenons l'exemple du dialogue entre entre M. Jourdain et son maître de philosophie, dans le Bourgeois gentilhomme de Molière :"
-slug: "sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers"
 sidebar:
   label: "How-to"
   order: 1

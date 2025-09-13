@@ -1,7 +1,6 @@
 ---
 title: "Du document à la base documentaire modulaire"
 description: "Passer du modèle du livre à une base documentaire modulaire, composée de briques uniques assemblées à la demande pour produire différents formats."
-slug: /du-document-a-la-base-documentaire-modulaire
 sidebar:
   label: How-to
   order: 1

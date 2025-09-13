@@ -1,7 +1,6 @@
 ---
 title: "Organiser son historique avec Git rebase"
 description: "Git effectue des commits atomiques : il applique des lots de modifications sur un contenu souvent réparti sur plusieurs fichiers, au lieu de gérer des fichiers proprement dits."
-slug: /organiser-son-historique-avec-git-rebase
 sidebar:
   label: How-to
   order: 1

@@ -1,7 +1,6 @@
 ---
 title: "Imbriquer les conref"
 description: "Limitez l'imbrication des conref pour faciliter la maintenance; un seul niveau est recommandé."
-slug: /imbriquer-les-conref
 sidebar:
   label: How-to
   order: 1

@@ -1,7 +1,6 @@
 ---
 title: "Fournir une information ciblée avec le texte conditionnel ditaval"
 description: "Explique comment le profilage ditaval masque les informations non pertinentes pour offrir une information ciblée selon le public."
-slug: fournir-une-information-ciblee-avec-le-texte-conditionnel-ditaval
 sidebar:
   label: How-to
   order: 1

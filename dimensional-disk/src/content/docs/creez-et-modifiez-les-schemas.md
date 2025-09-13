@@ -1,7 +1,6 @@
 ---
 title: "Créez et modifiez les schémas"
 description: "Modifiez un fichier source des images."
-slug: "creez-et-modifiez-les-schemas"
 sidebar:
   label: "How-to"
   order: 1

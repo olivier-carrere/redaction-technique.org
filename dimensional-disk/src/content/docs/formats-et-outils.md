@@ -1,7 +1,6 @@
 ---
 title: "Formats et outils"
 description: "Les éditeurs développent des formats propriétaires que seuls leurs logiciels peuvent modifier, limitant les choix et augmentant les coûts."
-slug: "formats-et-outils"
 sidebar:
   label: "How-to"
   order: 1

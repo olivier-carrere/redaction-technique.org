@@ -1,7 +1,6 @@
 ---
 title: "Galerie photo centralisée dans le cloud"
 description: "Les membres de l'association étant géographiquement dispersés, il était essentiel de proposer un hébergement centralisé dans le cloud."
-slug: "projet-bout-en-bout-galerie-photo-centralisee-dans-le-cloud"
 sidebar:
   label: "How-to"
   order: 1

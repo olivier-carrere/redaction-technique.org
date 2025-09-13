@@ -1,7 +1,6 @@
 ---
 title: "Migration de FrameMaker vers DITA XML"
 description: "Mais une migration bien planifiée permet de passer au nouveau format sans perturber le rythme des livraisons."
-slug: migration-de-framemaker-vers-dita-xml
 sidebar:
   label: How-to
   order: 1

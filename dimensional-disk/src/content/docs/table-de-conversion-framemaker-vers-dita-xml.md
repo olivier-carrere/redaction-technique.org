@@ -1,7 +1,6 @@
 ---
 title: "Table de conversion FrameMaker vers DITA XML"
 description: "Lorsque les fichiers FrameMaker sont prêts pour la migration et que la chaîne est parfaitement intégrée aux processus techniques et humains de la société, le peut appliquer la table de conversion."
-slug: "table-de-conversion-framemaker-vers-dita-xml"
 sidebar:
   label: "How-to"
   order: 1

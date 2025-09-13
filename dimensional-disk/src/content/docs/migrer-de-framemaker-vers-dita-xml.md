@@ -1,7 +1,6 @@
 ---
 title: "Migrer de FrameMaker vers DITA XML"
 description: "Procédure pour migrer de FrameMaker vers DITA XML."
-slug: /migrer-de-framemaker-vers-dita-xml
 sidebar:
   label: How-to
   order: 1

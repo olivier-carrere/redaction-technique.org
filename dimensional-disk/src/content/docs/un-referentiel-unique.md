@@ -1,7 +1,6 @@
 ---
 title: "Un référentiel unique ?"
 description: "Idéalement, tout le contenu peut être placé sous un référentiel unique, par exemple le logiciel de gestion de versions Git."
-slug: "un-referentiel-unique"
 sidebar:
   label: "How-to"
   order: 1

@@ -1,7 +1,6 @@
 ---
 title: "Typologie de haut niveau de l'information"
 description: "propose au une typologie de haut niveau qui est une véritable aide à la structuration du contenu."
-slug: "/typologie-de-haut-niveau-de-l-information"
 sidebar:
   label: "How-to"
   order: 1

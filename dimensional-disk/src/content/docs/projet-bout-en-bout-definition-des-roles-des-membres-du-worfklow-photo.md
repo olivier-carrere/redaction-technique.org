@@ -1,7 +1,6 @@
 ---
 title: "Définition des rôles des membres du worfklow photo"
 description: "La chaîne de production graphique s'appuie sur 3 rôles :"
-slug: "/projet-bout-en-bout-definition-des-roles-des-membres-du-worfklow-photo"
 sidebar:
   label: "How-to"
   order: 1

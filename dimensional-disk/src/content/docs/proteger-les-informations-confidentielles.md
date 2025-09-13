@@ -1,7 +1,6 @@
 ---
 title: "Protéger les informations confidentielles"
 description: "Utiliser les conref pour masquer des informations confidentielles lors de la traduction, sans les exposer au traducteur."
-slug: "proteger-les-informations-confidentielles"
 sidebar:
   label: "How-to"
   order: 1

@@ -1,7 +1,6 @@
 ---
 title: "Configurez le Raspberry Pi"
 description: "Guide pas à pas pour configurer un Raspberry Pi : localisation, clavier, mise à jour du système et redémarrage."
-slug: "configurez-le-raspberry-pi"
 sidebar:
   label: "How-to"
   order: 1

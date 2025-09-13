@@ -1,7 +1,6 @@
 ---
 title: "Iconographie"
 description: "Le choix iconographique s'est avéré être un exercice de style très intéressant."
-slug: projet-bout-en-bout-iconographie
 sidebar:
   label: How-to
   order: 1

@@ -1,7 +1,6 @@
 ---
 title: "À propos de ce blog"
 description: "Ce est conçu et réalisé par un spécialisé dans l'informatique."
-slug: a-propos-de-ce-blog
 sidebar:
   label: How-to
   order: 1

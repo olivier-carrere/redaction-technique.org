@@ -1,7 +1,6 @@
 ---
 title: "Support papier"
 description: "Dépliant expliquant la connexion à la galerie, les rôles des utilisateurs, leur utilisation de la galerie et le workflow associé."
-slug: projet-bout-en-bout-support-papier
 sidebar:
   label: How-to
   order: 1

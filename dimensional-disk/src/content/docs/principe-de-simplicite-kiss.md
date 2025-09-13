@@ -1,7 +1,6 @@
 ---
 title: "Principe de simplicité KISS"
 description: "Principe général d’ingénierie : réduire la complexité pour améliorer la fiabilité, la maintenance et l’évolutivité."
-slug: /principe-de-simplicite-kiss
 sidebar:
   label: How-to
   order: 1

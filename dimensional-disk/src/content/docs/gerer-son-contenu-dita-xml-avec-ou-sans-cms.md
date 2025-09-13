@@ -1,7 +1,6 @@
 ---
 title: "Gérer son contenu DITA XML avec ou sans CMS ?"
 description: "L'architecture ne propose pas de mécanisme de workflow documentaire natif."
-slug: "gerer-son-contenu-dita-xml-avec-ou-sans-cms"
 sidebar:
   label: "How-to"
   order: 1

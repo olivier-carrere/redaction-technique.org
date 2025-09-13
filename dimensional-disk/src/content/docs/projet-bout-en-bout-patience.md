@@ -1,7 +1,6 @@
 ---
 title: "Patience..."
 description: "Évidemment, toute structure étant toujours plus ou moins rétive au changement, les choses ne se passeront pas comme je l'imagine."
-slug: projet-bout-en-bout-patience
 sidebar:
   label: How-to
   order: 1

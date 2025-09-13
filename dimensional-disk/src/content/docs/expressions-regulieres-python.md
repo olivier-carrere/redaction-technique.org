@@ -1,7 +1,6 @@
 ---
 title: "Expressions régulières en Python"
 description: "La bibliothèque d’expressions régulières de Python peut vous aider à manipuler du texte, notamment si vous n’êtes pas familier des utilitaires sed ou awk."
-slug: expressions-regulieres-python
 sidebar:
   label: How-to
   order: 1

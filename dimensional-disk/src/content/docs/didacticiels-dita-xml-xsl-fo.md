@@ -1,7 +1,6 @@
 ---
 title: "Didacticiels DITA XML et XSL-FO"
 description: "DITA XML est un langage de rédaction structurée pour créer des documents multi-supports, et XSL-FO permet de mettre en page le contenu XML via des feuilles de style."
-slug: "didacticiels-dita-xml-xsl-fo"
 sidebar:
   label: "How-to"
   order: 1

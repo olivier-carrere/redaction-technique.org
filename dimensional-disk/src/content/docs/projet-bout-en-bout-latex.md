@@ -1,7 +1,6 @@
 ---
 title: "LaTeX"
 description: "Pourquoi avoir choisi LaTeX pour réaliser le support print et non pas un logiciel de PAO classique ?"
-slug: projet-bout-en-bout-latex
 sidebar:
   label: How-to
   order: 1

@@ -1,7 +1,6 @@
 ---
 title: "Git : du fichier au contenu"
 description: "Pourquoi penser en termes de contenu plutôt qu’en termes de fichiers avec Git pour simplifier la gestion de projet."
-slug: "git-du-fichier-au-contenu"
 sidebar:
   label: "How-to"
   order: 1

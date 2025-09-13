@@ -1,7 +1,6 @@
 ---
 title: "Les CMS : le workflow en prime, mais une fiabilité à tester"
 description: "Les CMS apportent des notions de workflow et de gestion des liens précieuses lorsque l’on gère des documents modulaires."
-slug: les-cms-le-workflow-en-prime-mais-une-fiabilite-a-tester
 sidebar:
   label: How-to
   order: 1

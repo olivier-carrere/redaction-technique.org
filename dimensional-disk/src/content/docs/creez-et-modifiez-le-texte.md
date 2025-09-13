@@ -1,7 +1,6 @@
 ---
 title: "Créez et modifiez le texte"
 description: "Modifiez un fichier source modulaire à l'aide d'un éditeur de texte, d'un environnement de développement ou d'un éditeur en ligne."
-slug: "creez-et-modifiez-le-texte"
 sidebar:
   label: "How-to"
   order: 1

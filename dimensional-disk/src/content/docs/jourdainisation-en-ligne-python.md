@@ -1,7 +1,6 @@
 ---
 title: "Jourdainisation en ligne d'une tirade"
 description: "À l'instar du maître de philosophie du Bourgeois gentilhomme de Molière, un script Python peut facilement intervertir les mots d'une phrase pour dire la même chose de manière plus alambiquée."
-slug: "/jourdainisation-en-ligne-python"
 sidebar:
   label: "How-to"
   order: 1

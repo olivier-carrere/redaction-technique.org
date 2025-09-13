@@ -1,7 +1,6 @@
 ---
 title: "Prendre en compte les contraintes de traduction"
 description: "Utilisez conref uniquement pour des phrases complètes ou des termes non traduisibles afin d’éviter des problèmes de traduction."
-slug: prendre-en-compte-les-contraintes-de-traduction
 sidebar:
   label: How-to
   order: 1

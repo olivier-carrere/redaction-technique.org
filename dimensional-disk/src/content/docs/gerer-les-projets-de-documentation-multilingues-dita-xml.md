@@ -1,7 +1,6 @@
 ---
 title: "Gérer les projets de documentation multilingues DITA XML"
 description: "Méthodologie et script pour gérer des projets DITA XML multilingues et automatiser la génération par langue."
-slug: gerer-les-projets-de-documentation-multilingues-dita-xml
 sidebar:
   label: How-to
   order: 1

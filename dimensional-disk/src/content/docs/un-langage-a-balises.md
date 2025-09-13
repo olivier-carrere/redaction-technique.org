@@ -1,7 +1,6 @@
 ---
 title: "Un langage à balises"
 description: "Si votre entreprise fournit à ses clients une documentation technique au format , le et l'utilisateur disposent des mêmes supports d'information (il n'y a pas de différenciation entre le fichier source et le fichier cible)."
-slug: un-langage-a-balises
 sidebar:
   label: How-to
   order: 1

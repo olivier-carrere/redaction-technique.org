@@ -1,7 +1,6 @@
 ---
 title: "Les sources de ce sont gérées sous Git"
 description: "Migration depuis WordPress vers un format de balisage léger afin d'assurer un suivi précis du cycle de vie du contenu."
-slug: /les-sources-de-ce-sont-gerees-sous-git
 sidebar:
   label: How-to
   order: 1

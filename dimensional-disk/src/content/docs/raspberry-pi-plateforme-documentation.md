@@ -1,7 +1,6 @@
 ---
 title: "Le en tant que plateforme de documentation"
 description: "Une unité centrale d'une quarantaine d'euros suffit pour créer, gérer et générer une documentation aux formats PDF, HTML, ou autre."
-slug: raspberry-pi-plateforme-documentation
 sidebar:
   label: How-to
   order: 1

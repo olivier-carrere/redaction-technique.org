@@ -1,7 +1,6 @@
 ---
 title: "Style rédactionnel"
 description: "Style rédactionnel décontracté mais clair, adapté à une communication interne multilingue (français, anglais, espagnol)."
-slug: "projet-bout-en-bout-style-redactionnel"
 sidebar:
   label: "How-to"
   order: 1

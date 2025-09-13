@@ -1,7 +1,6 @@
 ---
 title: "Installez les logiciels nécessaires à la génération de ce site"
 description: "Sélectionnez Menu > Accessoires > LXTerminal, puis installez les paquets requis."
-slug: installez-les-logiciels-necessaires-a-la-generation-de-ce-site
 sidebar:
   label: How-to
   order: 1

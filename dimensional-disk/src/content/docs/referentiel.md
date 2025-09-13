@@ -1,7 +1,6 @@
 ---
 title: "Référentiel"
 description: "Le contenu est le capital immatériel de la société et doit être protégé comme tel."
-slug: referentiel
 sidebar:
   label: How-to
   order: 1

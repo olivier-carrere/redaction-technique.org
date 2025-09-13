@@ -1,7 +1,6 @@
 ---
 title: "Les systèmes de gestion de versions - rustiques mais fiables"
 description: "Travailler sur des fichiers sources au format texte, et non binaire, est l'occasion de gérer leur contenu sous un système de gestion des sources (Git, Subversion, SourceSafe) comme du code."
-slug: /les-systemes-de-gestion-de-versions-rustiques-mais-fiables
 sidebar:
   label: How-to
   order: 1

@@ -1,7 +1,6 @@
 ---
 title: "Le coin du geek"
 description: "Comprendre ce qui se passe « sous le capot » et ce qui se cache derrière les interfaces graphiques."
-slug: le-coin-du-geek
 sidebar:
   label: How-to
   order: 1

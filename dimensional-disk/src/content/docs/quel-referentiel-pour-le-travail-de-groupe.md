@@ -1,7 +1,6 @@
 ---
 title: "Quel référentiel pour le travail de groupe ?"
 description: "Pour travailler sur un fichier, le utilise un programme qui lit le fichier sur son disque dur et en charge une copie en mémoire vive."
-slug: "/quel-referentiel-pour-le-travail-de-groupe"
 sidebar:
   label: "How-to"
   order: 1

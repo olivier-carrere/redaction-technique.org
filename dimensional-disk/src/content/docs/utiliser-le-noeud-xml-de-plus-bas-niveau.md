@@ -1,7 +1,6 @@
 ---
 title: "Utiliser le nœud XML de plus bas niveau"
 description: "Le but des conref étant de gérer des blocs d'information de faibles dimensions, il est logique de les manipuler au niveau de la plus petite structure XML encapsulant l'information."
-slug: utiliser-le-noeud-xml-de-plus-bas-niveau
 sidebar:
   label: How-to
   order: 1

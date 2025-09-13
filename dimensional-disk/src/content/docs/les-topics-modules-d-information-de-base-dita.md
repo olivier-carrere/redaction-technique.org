@@ -1,7 +1,6 @@
 ---
 title: "Les topics, modules d'information de base DITA XML"
 description: "Les topics sont les plus petites unités d'information autonomes ; chaque topic a un titre, un corps, et ne traite que d'un seul sujet."
-slug: les-topics-modules-d-information-de-base-dita
 sidebar:
   label: How-to
   order: 1

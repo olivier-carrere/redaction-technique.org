@@ -1,7 +1,6 @@
 ---
 title: "Partager des blocs d'information atomiques avec les conref"
 description: "Le principe des conref est simple : lorsqu'un conref est mentionné au niveau d'un nœud XML donné, tout le contenu du nœud cible est remplacé par le contenu du nœud source."
-slug: "partager-des-blocs-information-atomiques-avec-les-conref"
 sidebar:
   label: "How-to"
   order: 1
