@@ -18,12 +18,27 @@ export default defineConfig({
           lang: 'fr',
           title: 'Kusens',
           sidebar: [
-	  { slug: 'fr/' },
+	  { slug: 'fr/enseignement-oral/2000/02-camp-hiver/' },
             {
               label: 'Constellations',
               collapsed: true,
-              autogenerate: { directory: 'fr/' },
+              autogenerate: { directory: 'fr/enseignement-oral/2000/01-camp-ete' },
             },
           ],
         },
+        es: {
+          label: 'Español',
+          lang: 'es',
+          title: 'Mondos',
+          sidebar: [
+            {
+              label: 'Constelaciones',
+              collapsed: true,
+              autogenerate: { directory: 'es/enseignement-oral' },
+            },
+          ],
+        },
+      },
+    }),
+  ],
 });
