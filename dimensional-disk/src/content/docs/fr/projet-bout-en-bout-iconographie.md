@@ -29,4 +29,4 @@ Après plusieurs essais, mon choix s'est fixé sur l'utilisation de photos ancie
 
 Et car il s'agit de s'amuser en procédant à ces tâches, j'ai joué sur un côté décalé, quitte à revenir parfois sur certains choix, dont l'humour était trop obscur... La photo suivante, par exemple, semblait ne faire rire que moi et n'apporter pas grand-chose à la compréhension de la section Didacticiels :
 
-![](graphics/Frances_Densmore_recording_Mountain_Chief2.jpg)
+![](/assets/Frances_Densmore_recording_Mountain_Chief2.jpg)

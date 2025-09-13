@@ -23,6 +23,6 @@ Le suivi des modifications, que se soit sous Overleaf ou Git, prévient efficace
 
 Voici l'évolution d'un extrait du PDF compilé :
 
-![](graphics/latex-diff-pdf.png)
+![](/assets/latex-diff-pdf.png)
 
 On peut même envisager un travail collaboratif, synchrone ou asynchrone, sur le même projet.

@@ -9,4 +9,4 @@ sidebar:
 
 Vous pouvez me contacter *via* mon profil [LinkedIn]().
 
-![](graphics/olivier-carrere.jpg)
+![](/assets/olivier-carrere.jpg)

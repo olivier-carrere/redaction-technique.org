@@ -26,7 +26,7 @@ sidebar:
 
     Ô surprise, vous avez sous les yeux, mais oui, une ! C'est tellement beau, qu'on va faire une photo :
 
-    ![](graphics/historique-git-redaction-technique.png)
+    ![](/assets/historique-git-redaction-technique.png)
 
     *Un* commit *atomique s'étendant sur une bonne quinzaine de fichiers*
 

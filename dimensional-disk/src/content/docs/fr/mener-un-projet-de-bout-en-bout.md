@@ -23,7 +23,7 @@ L'association récupérait en vrac les photos prises par ses membres lors de ses
 
 J'ai été chargé de centraliser les photos et d'en faciliter l'accès aux graphistes. Il est vrai que j'avais déjà pris des photos, créé des affiches et mis en place un forum de discussion pour l'association. J'avais donc une assez bonne vision des tâches impliquées. Le budget alloué s'élevait à strictement 0,00 euros.
 
-![](graphics/pile-photos.jpg)
+![](/assets/pile-photos.jpg)
 
 L'un des buts que je me suis fixés était de donner un maximum d'autonomie aux utilisateurs. Notamment, je souhaitais que les photographes téléchargent eux-mêmes les photos au lieu de me les envoyer. Selon le bon vieux principe : moins une chaîne a de maillons, plus elle est solide...
 
@@ -38,7 +38,7 @@ J'ai donc :
 
 Voici le schéma global de la solution :
 
-![](graphics/schema-galerie.svg)
+![](/assets/schema-galerie.svg)
 
 Tout a été réalisé sous *Linux*.
 
@@ -56,7 +56,7 @@ Le but étant avant tout de mettre à disposition des photos pour des supports i
 
 Les fichiers étant répartis dans une foultitude de sous-répertoires, j'ai utilisé la commande suivante sous Bash :
 
-![](graphics/find-command.svg)
+![](/assets/find-command.svg)
 
 Ensuite, j'ai consulté les quelque 3 000 photos de plus de 1 Mo sous la visionneuse *gThumb* et effacé les photos dont la qualité ou le sujet ne convenaient pas à un support de communication. Ceci a pris environ 3 heures. J'ai retenu environ 500 photos.
 
@@ -179,7 +179,7 @@ La chaîne de production graphique s'appuie sur 3 rôles :
 
 Si les deux premiers sont familiers aux membres de l'association, celui d'iconographe est nouveau pour beaucoup. Je me suis tout d'abord demandé si je devais utiliser ce mot peu usité. J'ai conclu que oui : il me fallait même insister sur ce sujet qui est la clé de la réussite à long terme du projet.
 
-![](graphics/workflow-photo-piwigo.svg)
+![](/assets/workflow-photo-piwigo.svg)
 
 En effet, l'association a vécu des années sans galerie photo et pourra continuer à le faire, même si ce n'est pas de manière optimale. Les membres continueront à prendre des photos et à créer des affiches. En revanche, l'intérêt de la galerie est de centraliser le maximum de photos et d'y donner un accès rapide. Elle ne sera utilisée que si son indexation est de qualité.
 
@@ -212,7 +212,7 @@ Le [modèle LaTeX du dépliant](), partie émergée de l'iceberg, est publié su
 
 Curieusement, le PDF généré sur *Overleaf* présente des défauts que je ne constate pas lorsque je le publie en local.
 
-![](graphics/leaflet-pliage.png)
+![](/assets/leaflet-pliage.png)
 
 Pour les plus curieux, il existe [6 manières]() de plier cette brochure. Je me suis épargné des essais fastidieux en utilisant la [classe de documents LaTeX leaflet]().
 :::
@@ -253,12 +253,12 @@ Voici un exemple de code LaTeX :
 
 Le rendu PDF est illustré ci-dessous. Remarquez le calcul automatique des césures (qui a fait l'objet d'une [thèse de doctorat]()). C'est l'un des [nombreux avantages de LaTeX]()...
 
-![](graphics/latex-rendu.png)
+![](/assets/latex-rendu.png)
 
 :::note
 Les fervents du *WYSIWYG* se tourneront avec profit vers [Gummi](). Il s'agit de *What you see is what you get* au sens strict (et plutôt de *tel écran, tel imprimé* que de *tel écran, tel écrit*). On ne peut en effet pas modifier le texte dans la fenêtre de visualisation, uniquement dans la fenêtre de code LaTeX. Vous savez donc exactement ce qui se passe « sous le capot » et avez une plus grande maîtrise qu'en déléguant la création du code de mise en page à une interface graphique. Si vous manipulez souvent des listes numérotées et que vous avez été confronté à des numérotations, disons... aléatoires, vous en comprendrez tout de suite l'avantage.
 
-![](graphics/latex-wysiwyg-gummi.png)
+![](/assets/latex-wysiwyg-gummi.png)
 :::
 
 D'autre part, une fois la structure du dépliant créée, il est facile de l'utiliser pour produire rapidement d'autres documents. De plus, le document peut être remanié par d'autres personnes sans problème de licence ou de plateforme logicielle.
@@ -279,7 +279,7 @@ Le suivi des modifications, que se soit sous Overleaf ou Git, prévient efficace
 
 Voici l'évolution d'un extrait du PDF compilé :
 
-![](graphics/latex-diff-pdf.png)
+![](/assets/latex-diff-pdf.png)
 
 On peut même envisager un travail collaboratif, synchrone ou asynchrone, sur le même projet.
 
@@ -309,7 +309,7 @@ Après plusieurs essais, mon choix s'est fixé sur l'utilisation de photos ancie
 
 Et car il s'agit de s'amuser en procédant à ces tâches, j'ai joué sur un côté décalé, quitte à revenir parfois sur certains choix, dont l'humour était trop obscur... La photo suivante, par exemple, semblait ne faire rire que moi et n'apporter pas grand-chose à la compréhension de la section *Didacticiels* :
 
-![](graphics/Frances_Densmore_recording_Mountain_Chief2.jpg)
+![](/assets/Frances_Densmore_recording_Mountain_Chief2.jpg)
 
 ## Patience... {# projet-bout-en-bout-patience}
 
