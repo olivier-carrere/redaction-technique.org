@@ -9,7 +9,6 @@ next: "/les-trois-niveaux-de-la-documentation-technique"
 ---
 
 La communication technique, cest comme une ampoule : une ampoule basse consommation demande un investissement plus important en début de cycle de vie, mais a rapidement un coût plus faible.
-:::
 
 Comme une ampoule basse consommation, un processus de industriel diminue les coûts. Il réduit également le *time to market*. À coût initial légèrement supérieur ou égal, il améliore également la qualité.
 
