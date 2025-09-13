@@ -15,7 +15,7 @@ Les buts de ce billet sont de :
 - Présenter un scénario d'utilisation aussi simple que possible, parfois au détriment de l'élégance technique.
 :::
 
-## Configurez le {#configurez-le-raspberry-pi}
+## Configurez le
 
 Prérequis
 
@@ -60,7 +60,7 @@ Prérequis
 
    Le redémarre.
 
-## Installez les logiciels nécessaires à la gestion de ce {#installez-les-logiciels-necessaires-a-la-generation-de-ce-site}
+## Installez les logiciels nécessaires à la gestion de ce
 
 1. Sélectionnez `Menu` > `Accessoires` > `LXTerminal`.
 
@@ -94,7 +94,7 @@ Prérequis
    $ sudo aptitude clean
    ```
 
-## Récupérez les sources de ce {#recuperez-les-sources-de-ce-site}
+## Récupérez les sources de ce
 
 1. Clonez le dépôt des sources de ce  :
 
@@ -108,7 +108,7 @@ Prérequis
    $ cd redaction-technique.org
    ```
 
-## Créez et modifiez le texte {#creez-et-modifiez-le-texte}
+## Créez et modifiez le texte
 
 1. Modifiez un fichier source modulaire de ce  :
    - à l'aide d'un éditeur de texte :
@@ -129,7 +129,7 @@ Prérequis
      $ sed -i "s/répertoire/dossier/g;" *.rst
      ```
 
-## Créez et modifiez les schémas {#creez-et-modifiez-les-schemas}
+## Créez et modifiez les schémas
 
 1. Modifiez un fichier source des images de ce  :
    - à l'aide d'un logiciel de dessin vectoriel :
@@ -144,7 +144,7 @@ Prérequis
      $ sed -i "s/docbook/XML/g;" graphics/*.svg
      ```
 
-## Gérez les versions de votre documentation {#gerez-les-versions-de-votre-documentation}
+## Gérez les versions de votre documentation
 
 1. Commitez votre lot de modifications sous  :
 
@@ -175,7 +175,7 @@ Prérequis
 - n'est probablement pas hébergé sur un cluster de . Rien n'empêche cependant d'héberger un dépôt distant sur un connecté au réseau et d'y accéder par connexion sécurisée .
 :::
 
-## Générez votre documentation {#generez-votre-documentation}
+## Générez votre documentation
 
 1. Revenez dans le terminal, puis récupérez la dernière version taguée de ce  :
 
