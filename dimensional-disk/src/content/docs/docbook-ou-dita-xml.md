@@ -15,10 +15,8 @@ Certaines entreprises ont parfois un contenu existant au format [DocBook](). Gé
 
 Il est facile de générer du à partir de . propose par défaut ce format cible, au même titre que le PDF ou le HTML. L'opération inverse ne peut pas être totalement automatisée. Pourquoi ?
 
-<figure>
-<img src="graphics/entropie.svg" alt="graphics/entropie.svg" />
-<figcaption><em>Un processus non réversible</em></figcaption>
-</figure>
+![Un processus non réversible](/assets/entropie.svg)
+**Un processus non réversible**
 
 Il n'est pas possible de migrer automatiquement des données de formats pauvres vers des format riches en information.
 
