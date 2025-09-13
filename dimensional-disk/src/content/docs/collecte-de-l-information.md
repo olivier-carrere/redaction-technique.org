@@ -20,10 +20,8 @@ Une fois le projet de rédaction technique clairement défini, le collecte toute
 - analyse de la concurrence,
 - lecture de la presse spécialisée.
 
-<figure>
-<img src="graphics/collecte.svg" alt="graphics/collecte.svg" />
-<figcaption><em>Collecte de l'information</em></figcaption>
-</figure>
+![Collecte de l'information](/assets/collecte.svg)
+**Collecte de l'information**
 
 Les informations doivent être recoupées pour minimiser le risque de transmettre des informations erronées ou plus à jour. Le doit se livrer à un véritable travail d'enquête. En se mettant à la place de l'utilisateur, il vérifie chaque information et fait le tri entre les données pertinentes et celles qui ne seront que du bruit perturbant le message.
 

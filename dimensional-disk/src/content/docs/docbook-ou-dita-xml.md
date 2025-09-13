@@ -36,10 +36,8 @@ Si votre contenu était une photo, nous pourrions faire l'analogie suivante :
 
 Le passage de RAW en TIFF et de TIFF en JPEG est destructif et ne peut se faire en sens inverse[^2].
 
-<figure>
-<img src="graphics/entropie-dita-docbook.svg" alt="graphics/entropie-dita-docbook.svg" />
-<figcaption><em>Un processus non réversible</em></figcaption>
-</figure>
+![Un processus non réversible](/assets/entropie-dita-docbook.svg)
+**Un processus non réversible**
 
 Le PDF est sémantiquement plus pauvre que , lui-même plus pauvre que [^3].
 

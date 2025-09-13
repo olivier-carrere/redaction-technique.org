@@ -15,10 +15,8 @@ Un important travail de restructuration du document doit cependant être effectu
 -   suppression des *overrides* (propriétés de texte appliquées manuellement et écrasant les styles ; ce genre d'hérésie est, sinon impossible, du moins très limité sous un format structuré),
 -   harmonisation et simplification des styles pour les limiter et les faire correspondre aux balises qui seront utilisées (par exemple, un style *note_important* vers la balise <note type="important> ; il faut donc au préalable analyser le contenu existant et décider quel ensemble de balises sera utilisé parmi les centaines de balises proposées par  : il est en effet fortement déconseillé de les utiliser toutes).
 
-<figure>
-<img src="graphics/framemaker-restructure.svg" alt="graphics/framemaker-restructure.svg" />
-<figcaption><em>Restructuration du contenu FrameMaker et mise en place de la chaîne DITA XML</em></figcaption>
-</figure>
+![Restructuration du contenu FrameMaker et mise en place de la chaîne DITA XML](/assets/framemaker-restructure.svg)
+**Restructuration du contenu FrameMaker et mise en place de la chaîne DITA XML**
 
 Ce travail d'harmonisation peut se faire en parallèle avec la mise à jour et la publication du document . La qualité de ce document n'en sera que meilleure. En même temps que cette réorganisation du contenu, vous pouvez mettre en place la chaîne complète de création, gestion et publication sur un échantillon de votre contenu :
 

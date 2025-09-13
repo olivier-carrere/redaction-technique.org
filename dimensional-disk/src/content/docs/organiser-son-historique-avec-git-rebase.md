@@ -32,10 +32,8 @@ Les contraintes de production vous obligeront souvent à scinder ces deux lots d
 
 Vous committez chaque sous-lot à chaque fois qu’il est achevé. Votre historique de commit ressemble alors au schéma suivant :
 
-<figure>
-<img src="graphics/git-rebase-commits.svg" alt="graphics/git-rebase-commits.svg" />
-<figcaption><em>Historique Git</em></figcaption>
-</figure>
+![Historique Git](/assets/git-rebase-commits.svg)
+**Historique Git**
 
 Lorsque vous placerez vos commits sur le dépôt central, certains commits représenteront une étape intermédiaire de l’une des tâches. Votre historique et vos branches seront donc plus difficiles à exploiter. D’autant plus que les tâches inachevées alternent. Pour en récupérer une seule, il faudra donc choisir soigneusement les commits via la commande git cherry-pick.
 
@@ -47,10 +45,8 @@ La commande rebase est potentiellement destructive ; veillez à sauvegarder votr
 
 Vous pouvez alors réécrire l’histoire pour proposer à vos collaborateurs un commit pour chaque tâche réalisée en son entier, comme sur le schéma suivant :
 
-<figure>
-<img src="graphics/git-rebase-commits-2.svg" alt="graphics/git-rebase-commits-2.svg" />
-<figcaption><em>Historique Git</em></figcaption>
-</figure>
+![Historique Git](/assets/git-rebase-commits-2.svg)
+**Historique Git**
 
 Les commits ont tout d’abord été regroupés par type sur la flèche du temps de Git, puis fusionnés.
 

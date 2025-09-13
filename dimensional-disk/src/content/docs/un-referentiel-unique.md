@@ -11,10 +11,8 @@ Idéalement, tout le contenu peut être placé sous un référentiel unique, par
 
 Le contenu devient un réseau de modules d'information ; il faut alors gérer les relations au sein de ce réseau, notamment lors des mises à jour.
 
-<figure>
-<img src="graphics/referentiel-unique.svg" alt="graphics/referentiel-unique.svg" />
-<figcaption><em>Référentiel unique</em></figcaption>
-</figure>
+![Référentiel unique](/assets/referentiel-unique.svg)
+**Référentiel unique**
 
 En pratique, il semble que rares sont les entreprises qui ont franchi ce pas. Il est vrai que tant que les formats structurés ne seront pas enseignés dans le secondaire, il paraît utopique de vouloir y convertir tous les acteurs de la société, surtout si le turn-over y est important.
 

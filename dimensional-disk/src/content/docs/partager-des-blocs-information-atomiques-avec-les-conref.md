@@ -20,10 +20,8 @@ Le principe des conref est simple : lorsqu'un conref est mentionné au niveau d'
 
 Une différence notable entre le mécanisme des conref et le mécanisme XML des [xinclude](), c'est que le nœud source doit être conforme au schéma XSD du fichier source et du fichier cible. Ce formalisme rigoureux, s'il s'avère moins souple et oblige parfois à quelques acrobaties, rend les conref beaucoup plus lisibles que les xinclude et favorise leur utilisation.
 
-<figure>
-<img src="graphics/conref.svg" alt="graphics/conref.svg" />
-<figcaption><em>Partage de blocs d'information de granulométrie fine entre les sections DITA XML</em></figcaption>
-</figure>
+![Partage de blocs d'information de granulométrie fine entre les sections DITA XML](/assets/conref.svg)
+**Partage de blocs d'information de granulométrie fine entre les sections DITA XML**
 
 ::: {.toctree hidden="}
 centraliser-les-conref-dans-un-fichier-unique utiliser-le-noeud-xml-de-plus-bas-niveau prendre-en-compte-les-contraintes-de-traduction imbriquer-les-conref maximiser-utilisation-des-conref-pour-faire-baisser-les-couts proteger-les-informations-confidentielles

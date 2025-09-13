@@ -29,10 +29,8 @@ reference
 
 :   Informations de référence sur une liste d'éléments tels que des options d'un programme.
 
-<figure>
-<img src="graphics/structured.svg" alt="graphics/structured.svg" />
-<figcaption><em>Formats structurés et non structurés</em></figcaption>
-</figure>
+![Formats structurés et non structurés](/assets/structured.svg)
+**Formats structurés et non structurés**
 
 Sous un format non structuré tel que le format traditionnel de [FrameMaker](), rien ne contraint le à organiser l'information selon son sens. Si des règles de rédaction rigoureuses ne sont pas scrupuleusement suivies, l'information fournie à l'utilisateur risque d'être peu claire et difficile à parcourir rapidement.
 

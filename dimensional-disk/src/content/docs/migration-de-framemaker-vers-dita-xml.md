@@ -13,10 +13,8 @@ Migrer de vers , ce n'est pas comme enregistrer un document au format [^1]. Aucu
 
 Pour filer la métaphore, si l'on se fixe pour but de convertir un marécage en parterre du château de Versailles, il convient de passer par l'étape du jardin à l'anglaise - soit un endroit certes non rigoureusement architecturé, mais très agréable à vivre. Bonne nouvelle : si le a utilisé de manière cohérente un jeu de styles limité et organisé rationnellement son contenu , il est déjà certainement très proche de ce stade.
 
-<figure>
-<img src="graphics/framemaker-to-dita-migration.svg" alt="graphics/framemaker-to-dita-migration.svg" />
-<figcaption><em>Migration de FrameMaker vers DITA XML</em></figcaption>
-</figure>
+![Migration de FrameMaker vers DITA XML](/assets/framemaker-to-dita-migration.svg)
+**Migration de FrameMaker vers DITA XML**
 
 D'ailleurs, si, pour une raison quelconque, votre projet de migration devait s'arrêter là, les rédacteurs techniques, l'entreprise et les utilisateurs y auraient déjà beaucoup gagné, respectivement en :
 
