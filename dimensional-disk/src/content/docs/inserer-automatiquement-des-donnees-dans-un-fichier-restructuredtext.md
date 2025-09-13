@@ -1,24 +1,16 @@
----
-title: "Insérer automatiquement des données dans un fichier reStructuredText"
-description: "Présenter 3 produits — Dianthus, Geum et Prunus — chacun décliné en versions 1.0, 1.5 et 2.3."
-sidebar:
-  label: How-to
-  order: 1
-prev: inserer-automatiquement-des-donnees-dans-un-fichier-dita-xml
-next: inserer-automatiquement-des-donnees-sql-dans-un-fichier-restructuredtext
----
+# Insérer automatiquement des données dans un fichier reStructuredText {#inserer-automatiquement-des-donnees-dans-un-fichier-restructuredtext}
 
-Supposons que vous deviez présenter 3 produits, Dianthus, Geum et Prunus, chacun déclinés dans trois versions 1.0, 1.5 et 2.3.
+Supposons que vous deviez présenter 3 produits, *Dianthus*, *Geum* et *Prunus*, chacun déclinés dans trois versions *1.0*, *1.5* et *2.3*.
 
-Plutôt que d'écrire les données à la main dans le fichier de contenu, vous pouvez les insérer automatiquement grâce à [Jinja]() et Python.
+Plutôt que d\'écrire les données à la main dans le fichier de contenu, vous pouvez les insérer automatiquement grâce à [Jinja]() et Python.
 
-1.  Créez le fichier `modele.rst` suivant :
+1.  Créez le fichier `modele.rst`{.interpreted-text role="file"} suivant :
 
     ::: {.literalinclude language="rest"}
     code/modele.rst
     :::
 
-2.  Créez le script Python `populate.py` suivant :
+2.  Créez le script Python `populate.py`{.interpreted-text role="file"} suivant :
 
     ::: {.literalinclude language="python3"}
     code/populate.py
@@ -31,9 +23,9 @@ Plutôt que d'écrire les données à la main dans le fichier de contenu, vous p
     $ ./populate.py             
     ```
 
-    Le contenu suivant s'affiche :
+    Le contenu suivant s\'affiche :
 
-    ``` txt
+    ``` rest
     Produits et versions
     ====================
 
@@ -67,9 +59,9 @@ Plutôt que d'écrire les données à la main dans le fichier de contenu, vous p
     - 2.3
     ```
 
-Vous minimisez ainsi le risque d'erreurs et l'effort de mise à jour.
+Vous minimisez ainsi le risque d\'erreurs et l\'effort de mise à jour.
 
-:::tip[Voir aussi]
--   `inserer-automatiquement-des-donnees-dans-un-fichier-dita-xml`
--   `inserer-automatiquement-des-donnees-sql-dans-un-fichier-restructuredtext`
+::: seealso
+-   `inserer-automatiquement-des-donnees-dans-un-fichier-dita-xml`{.interpreted-text role="ref"}
+-   `inserer-automatiquement-des-donnees-sql-dans-un-fichier-restructuredtext`{.interpreted-text role="ref"}
 :::

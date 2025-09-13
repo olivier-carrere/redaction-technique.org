@@ -1,17 +1,11 @@
----
-title: "Prendre en compte les contraintes de traduction"
-description: "Utilisez conref uniquement pour des phrases complètes ou des termes non traduisibles afin d’éviter des problèmes de traduction."
-sidebar:
-  label: How-to
-  order: 1
-prev: false
-next: false
----
+# Prendre en compte les contraintes de traduction
 
-L'unité d'information la plus petite est le nœud `<ph>`{.interpreted-text role="samp"}. Le doit cependant veiller à ne lui appliquer le mécanisme *conref* que pour une phrase complète ou un terme qui ne sera jamais traduit (par exemple, le nom de la société ou d'un produit). De gros problèmes apparaissent sinon lors de la traduction dans d'autres langues.
+L\'unité d\'information **DITA XML** la plus petite est le nœud `<ph>`{.interpreted-text role="samp"}. Le **rédacteur technique** doit cependant veiller à ne lui appliquer le mécanisme *conref* que pour une phrase complète ou un terme qui ne sera jamais traduit (par exemple, le nom de la société ou d\'un produit). De gros problèmes apparaissent sinon lors de la traduction dans d\'autres langues.
 
-![Les phrases se découpent différemment selon les langues.](/assets/traduction-conref.svg)
-**Les phrases se découpent différemment selon les langues.**
+<figure>
+<img src="graphics/traduction-conref.svg" alt="graphics/traduction-conref.svg" />
+<figcaption><em>Les phrases se découpent différemment selon les langues.</em></figcaption>
+</figure>
 
 **Exemple**
 
@@ -49,4 +43,4 @@ Essayons maintenant de créer une version française de cette phrase. Nous tradu
 
 Nous obtenons alors la phrase *Cliquez sur la bleue flèche*.
 
-Pour pallier ce problème, il faudrait réorganiser l'ordre des *conref* dans le fichier traduit, ce qui est difficilement gérable et fait perdre tout l'intérêt du mécanisme. Sans compter que des problèmes pires que ce cas d'école peuvent conduire à complètement abandonner dans la langue cible les *conref* utilisés dans la langue source (je n'ai pas d'exemple concret à offrir, ayant toujours évité de tomber dans ce genre de travers.)
+Pour pallier ce problème, il faudrait réorganiser l\'ordre des *conref* dans le fichier **DITA XML** traduit, ce qui est difficilement gérable et fait perdre tout l\'intérêt du mécanisme. Sans compter que des problèmes pires que ce cas d\'école peuvent conduire à complètement abandonner dans la langue cible les *conref* utilisés dans la langue source (je n\'ai pas d\'exemple concret à offrir, ayant toujours évité de tomber dans ce genre de travers.)

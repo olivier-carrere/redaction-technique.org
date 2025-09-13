@@ -1,12 +1,6 @@
----
-title: "Formats cibles"
-description: "Vous pouvez compiler ce avec Python Sphinx aux formats PDF, EPUB et HTML."
-sidebar:
-  label: How-to
-  order: 1
----
+# Formats cibles
 
-Vous pouvez compiler ce avec *Python Sphinx* aux formats :
+Vous pouvez compiler ce blog avec *Python Sphinx* aux formats :
 
 -   [PDF](download/redaction-techniqueorg.pdf),
 -   [EPUB](download/redaction-techniqueorg.epub),

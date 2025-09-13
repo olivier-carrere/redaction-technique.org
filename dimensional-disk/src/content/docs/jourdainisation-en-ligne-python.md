@@ -1,24 +1,14 @@
----
-title: "Jourdainisation en ligne d'une tirade"
-description: "À l'instar du maître de philosophie du Bourgeois gentilhomme de Molière, un script Python peut facilement intervertir les mots d'une phrase pour dire la même chose de manière plus alambiquée."
-sidebar:
-  label: "How-to"
-  order: 1
-prev: false
-next: false
----
+# Jourdainisation en ligne d\'une tirade {#jourdainisation-en-ligne-python}
 
-<a id="jourdainisation-en-ligne-python"></a>
-
-À l'instar du maître de philosophie du Bourgeois gentilhomme de Molière, un script Python peut facilement intervertir les mots d'une phrase pour dire la même chose de manière plus alambiquée  :
+À l\'instar du maître de philosophie du *Bourgeois gentilhomme* de Molière, un script Python peut facilement intervertir les mots d\'une phrase pour dire la même chose de manière plus alambiquée  :
 
 À vous donc de jourdainiser votre tirade via ce script Python en ligne :
 
 <iframe src="https://oliviercarrere.pythonanywhere.com/" height="600px" width="100%"></iframe>
 
-Voici le code du script, qui repose sur le microframework web [Flask]() :
+Voici le code du script, qui repose sur le *microframework* web [Flask]() :
 
-::: {.literalinclude language="python3" caption="}
+::: {.literalinclude language="python3" caption=""}
 code/word_switch_web.py
 :::
 
@@ -36,27 +26,27 @@ texte_final = texte_final.capitalize() + '.'
 print(texte_final)
 ```
 
-Voici maintenant les modèles générant les pages HTML de base, d'entrée et de sortie, basés sur [Jinja]() :
+Voici maintenant les modèles générant les pages HTML de base, d\'entrée et de sortie, basés sur [Jinja]() :
 
-::: {.literalinclude language="html" caption="}
+::: {.literalinclude language="html" caption=""}
 code/templates/base.html
 :::
 
-::: {.literalinclude language="html" caption="}
+::: {.literalinclude language="html" caption=""}
 code/templates/entry.html
 :::
 
-::: {.literalinclude language="html" caption="}
+::: {.literalinclude language="html" caption=""}
 code/templates/results.html
 :::
 
 Et enfin, la feuille de style CSS :
 
-::: {.literalinclude language="css" caption="}
+::: {.literalinclude language="css" caption=""}
 code/static/form.css
 :::
 
-:::tip[Voir aussi]
-- `sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers`
-- `expressions-regulieres-python`
+::: seealso
+-   `sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers`{.interpreted-text role="ref"}
+-   `expressions-regulieres-python`{.interpreted-text role="ref"}
 :::

@@ -1,11 +1,5 @@
----
-title: "Contact"
-description: "Vous pouvez me contacter via mon profil LinkedIn."
-sidebar:
-  label: How-to
-  order: 1
----
+# Contact
 
 Vous pouvez me contacter *via* mon profil [LinkedIn]().
 
-![](/assets/olivier-carrere.jpg)
+![](graphics/olivier-carrere.jpg)

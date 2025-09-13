@@ -1,16 +1,12 @@
----
-title: "Imbriquer les conref"
-description: "Limitez l'imbrication des conref pour faciliter la maintenance; un seul niveau est recommandé."
-sidebar:
-  label: How-to
-  order: 1
----
+# Imbriquer les *conref*
 
+::: sidebar
+**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
-Pour des raisons de facilité de mise à jour et de maintenance du contenu , le doit limiter l'effet poupée russe et ne pas trop imbriquer les [conref](). Un seul niveau d'imbrication (un *conref* imbriqué dans un autre) me semble le seuil au-delà duquel le contenu peut vite devenir ingérable.
+Pour des raisons de facilité de mise à jour et de maintenance du contenu **DITA XML**, le **rédacteur technique** doit limiter l\'effet *poupée russe* et ne pas trop imbriquer les [conref](). Un seul niveau d\'imbrication (un *conref* imbriqué dans un autre) me semble le seuil au-delà duquel le contenu peut vite devenir ingérable.
 :::
 
-Dans l'exemple ci-dessous, le *conref* source *see-admin-guide* contient le *conref* cible *admin-guide-title* :
+Dans l\'exemple ci-dessous, le *conref* source *see-admin-guide* contient le *conref* cible *admin-guide-title* :
 
 **Exemple**
 
@@ -21,7 +17,7 @@ Dans l'exemple ci-dessous, le *conref* source *see-admin-guide* contient le *con
 </p>
 ```
 
-Ce niveau de complexité est gérable. Mais si le *conref* source *admin-guide-title* contient lui même un *conref* cible, le code devient un vrai plat de spaghettis (sans compter les risques de référence circulaire). Les *conref* peuvent théoriquement être combinés à l'infini, mais les problèmes pratiques que cela engendre peuvent également être infinis !
+Ce niveau de complexité est gérable. Mais si le *conref* source *admin-guide-title* contient lui même un *conref* cible, le code **DITA XML** devient un vrai plat de spaghettis (sans compter les risques de référence circulaire). Les *conref* peuvent théoriquement être combinés à l\'infini, mais les problèmes pratiques que cela engendre peuvent également être infinis !
 
 <figure>
 <img src="graphics/imbriquer-conref.svg" alt="graphics/imbriquer-conref.svg" />
@@ -30,6 +26,6 @@ Ce niveau de complexité est gérable. Mais si le *conref* source *admin-guide-t
 
 Pour résumer la situation :
 
-- Il est tout à fait possible d'imbriquer plusieurs *conref* sources. Le seul effet de bord négatif porte sur la lisibilité du fichier contenant les *conref*.
-- L'imbrication de *conref* sources et cibles est possible mais rapidement ingérable.
-- Il est impossible d'imbriquer des *conref* cibles : le contenu du *conref* du niveau supérieur écrasera les valeurs des *conref* du niveau inférieur.
+-   Il est tout à fait possible d\'imbriquer plusieurs *conref* sources. Le seul effet de bord négatif porte sur la lisibilité du fichier contenant les *conref*.
+-   L\'imbrication de *conref* sources et cibles est possible mais rapidement ingérable.
+-   Il est impossible d\'imbriquer des *conref* cibles : le contenu du *conref* du niveau supérieur écrasera les valeurs des *conref* du niveau inférieur.

@@ -1,18 +1,12 @@
----
-title: "Quel référentiel pour le travail de groupe ?"
-description: "Pour travailler sur un fichier, le utilise un programme qui lit le fichier sur son disque dur et en charge une copie en mémoire vive."
-sidebar:
-  label: "How-to"
-  order: 1
-prev: false
-next: false
----
+# Quel référentiel pour le travail de groupe ? {#quel-referentiel-pour-le-travail-de-groupe}
 
+::: sidebar
+**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Le référentiel le plus fréquemment utilisé pour stocker des fichiers informatiques est le dossier, ou répertoire. Si ce dépôt est parfaitement adapté à la gestion de fichiers par un utilisateur unique sur son disque dur local, il montre rapidement ses limites pour le travail de groupe.
 :::
 
-Pour travailler sur un fichier, le utilise un programme qui lit le fichier sur son disque dur et en charge une copie en mémoire vive. Les modifications s\'effectuent sur cette copie. Lorsque le enregistre ses modifications, le programme écrase sur le disque dur la version précédente du fichier. La version précédente est donc définitivement supprimée, sauf si le programme a créé une copie de sauvegarde ou si le a utilisé la fonction *Enregistrer sous*, et non *Enregistrer*, pour créer une nouvelle version du fichier. Dans le premier cas, il n\'existe que deux versions du fichier à un instant donné : la version n et la version n-1. Dans le second cas, le peut créer autant de versions qu\'il le souhaite, par exemple en ajoutant le suffixe -1, -2, etc. au nom du fichier.
+Pour travailler sur un fichier, le **rédacteur technique** utilise un programme qui lit le fichier sur son disque dur et en charge une copie en mémoire vive. Les modifications s\'effectuent sur cette copie. Lorsque le **rédacteur technique** enregistre ses modifications, le programme écrase sur le disque dur la version précédente du fichier. La version précédente est donc définitivement supprimée, sauf si le programme a créé une copie de sauvegarde ou si le **rédacteur technique** a utilisé la fonction *Enregistrer sous*, et non *Enregistrer*, pour créer une nouvelle version du fichier. Dans le premier cas, il n\'existe que deux versions du fichier à un instant donné : la version n et la version n-1. Dans le second cas, le **rédacteur technique** peut créer autant de versions qu\'il le souhaite, par exemple en ajoutant le suffixe -1, -2, etc. au nom du fichier.
 
 Les programmes ne gèrent cependant pas la modification concurrente d\'un même fichier par plusieurs rédacteurs techniques. Dans le cas d\'un fichier disponible sur un disque réseau, imaginons qu\'Arsène et Louise ouvrent la même version de ce fichier sous un éditeur de texte. Chacun apporte des modifications différentes dans sa copie chargée en mémoire vive, puis enregistre son travail. Arsène enregistre tout d\'abord ses modifications, puis Louise. À la prochaine ouverture du fichier, seules les modifications de Louise figureront dans le fichier.
 

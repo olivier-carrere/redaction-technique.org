@@ -1,14 +1,8 @@
----
-title: "Communication interne"
-description: "Les outils et les process étant en place, restait à y faire adhérer les parties prenantes !"
-sidebar:
-  label: How-to
-  order: 1
----
+# Communication interne {# projet-bout-en-bout-communication-interne}
 
-Les outils et les process étant en place, restait à y faire adhérer les parties prenantes !
+Les outils et les process étant en place, restait à y faire adhérer les parties prenantes !
 
-J'ai opté pour les supports de communication suivants :
+J\'ai opté pour les supports de communication suivants :
 
-- des vidéos explicatives en ligne ;
-- un dépliant à distribuer lors des différents événements de l'association.
+-   des vidéos explicatives en ligne ;
+-   un dépliant à distribuer lors des différents événements de l\'association.

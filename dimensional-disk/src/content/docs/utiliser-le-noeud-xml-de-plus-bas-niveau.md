@@ -1,16 +1,12 @@
----
-title: "Utiliser le nœud XML de plus bas niveau"
-description: "Le but des conref étant de gérer des blocs d'information de faibles dimensions, il est logique de les manipuler au niveau de la plus petite structure XML encapsulant l'information."
-sidebar:
-  label: How-to
-  order: 1
----
+# Utiliser le nœud XML de plus bas niveau {#utiliser-le-noeud-xml-de-plus-bas-niveau}
 
+::: sidebar
+**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
-Le doit utiliser comme source du [conref]() le nœud de plus bas niveau contenant l\'information à partager.
+Le **rédacteur technique** doit utiliser comme source du [conref]() le nœud **DITA XML** de plus bas niveau contenant l\'information à partager.
 :::
 
-Le but des *conref* étant de gérer des blocs d\'information de faibles dimensions, il est logique de les manipuler au niveau de la plus petite structure XML encapsulant l\'information, même si cette structure, pour être compatible avec le schéma XSD de la section où elle intervient, doit elle-même être incluse dans des structures XML plus grandes.
+Le but des *conref* étant de gérer des blocs d\'information de faibles dimensions, il est logique de les manipuler au niveau de la plus petite structure XML encapsulant l\'information, même si cette structure, pour être compatible avec le schéma XSD de la section **DITA XML** où elle intervient, doit elle-même être incluse dans des structures XML plus grandes.
 
 <figure>
 <img src="graphics/conref-bas-niveau.svg" alt="graphics/conref-bas-niveau.svg" />
@@ -28,7 +24,7 @@ Pour être conforme au schéma XSD, votre code doit au moins être structuré co
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA 1.2 Task//EN"
-/usr/share/dita-ot/dtd/technicalContent/dtd/task.dtd">
+/usr/share/dita-ot/dtd/technicalContent/dtd/task.dtd"">
 <task id="shared" xml:lang="fr-fr">
   <title>Conref source</title>
   <taskbody>

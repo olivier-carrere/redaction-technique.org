@@ -1,34 +1,29 @@
----
-title: "Utiliser l'IDE nXML pour DITA XML"
-description: "Le mode nXML valide en temps réel les documents XML, XHTML, etc., et propose l’autocomplétion contextuelle des balises."
-sidebar:
-  label: "How-to"
-  order: 1
-prev: false
-next: false
----
+# Utiliser l\'IDE nXML pour DITA XML {#utiliser-ide-nxml-pour-dita-xml}
 
-Le mode nXML propose de valider en temps réel les documents XML, XHTML ou autres. Plus la peine de connaître le schéma XML par cœur: votre éditeur de texte vous propose l’autocomplétion des balises XML selon le contexte. Il ne supporte cependant pas par défaut. Ce didacticiel vous permettra d’utiliser ce mode Emacs pour .
+Le mode nXML propose de valider en temps réel les documents XML **DocBook**, XHTML ou autres. Plus la peine de connaître le schéma XML par cœur: votre éditeur de texte vous propose l\'autocomplétion des balises XML selon le contexte. Il ne supporte cependant pas **DITA XML** par défaut. Ce didacticiel vous permettra d\'utiliser ce mode Emacs pour **DITA XML**.
 
-Prérequis
+**Prérequis**
 
-- Emacs
-- La structure de répertoires de votre projet de documentation doit être la suivante :
-  - répertoire de langue
-    - concepts
-    - faq
-    - reference
-    - tasks
-    - topics
+-   Emacs
 
-  où <répertoire de langue> a la valeur en_US, ou fr_FR, etc.
-- Les instructions de ligne de commande sont conçues pour GNU/Linux ; elles doivent être adaptées pour être utilisées dans un autre environnement.
+-   La structure de répertoires de votre projet de documentation **DITA XML** doit être la suivante :
 
-1. Effectuez une sauvegarde de l’ensemble de votre projet de documentation.
+    -   répertoire de langue
+        -   concepts
+        -   faq
+        -   reference
+        -   tasks
+        -   topics
 
-2. Ouvrez un terminal et collez la suite de commandes suivante :
+    où *\<répertoire de langue\>* a la valeur *en_US*, ou *fr_FR*, etc.
 
-    ```console
+-   Les instructions de ligne de commande sont conçues pour GNU/Linux ; elles doivent être adaptées pour être utilisées dans un autre environnement.
+
+1.  Effectuez une sauvegarde de l\'ensemble de votre projet de documentation **DITA XML**.
+
+2.  Ouvrez un terminal et collez la suite de commandes suivante :
+
+    ``` console
     $ export THAI="http://www.thaiopensource.com/download"
     $ export RED="http://www.redaction-technique.org/media"
     $ cd && \
@@ -42,32 +37,37 @@ Prérequis
     rm  nxml-mode-environmment.txt
     ```
 
-    :::note[Note]
-    Si un message vous avertit que le fichier `.emacs` n’existe pas, collez les commandes suivantes, puis recommencez l’opération :
-
-    ```console
-    $ cd && touch .emacs
-    ```
+    :::: note
+    ::: title
+    Note
     :::
 
-    Cette suite de commandes :
-    - télécharge et décompresse le mode nXML,
-    - crée une copie de sauvegarde du fichier `.emacs` (`.emacs.bak`),
-    - écrit les variables d’environnement du mode nXML dans le fichier `.emacs`.
+    Si un message vous avertit que le fichier `.emacs`{.interpreted-text role="file"} n\'existe pas, collez les commandes suivantes, puis recommencez l\'opération :
 
-3. Téléchargez [l’archive des schémas RelaxNG pour DITA XML]() dans le répertoire racine de votre projet de documentation.
+    ``` console
+    $ cd && touch .emacs
+    ```
+    ::::
 
-4. Placez-vous dans le répertoire racine de votre projet de documentation, puis collez la commande suivante :
+    Cette suite de commandes :
 
-    ```console
+    -   télécharge et décompresse le mode nXML,
+    -   crée une copie de sauvegarde du fichier `.emacs`{.interpreted-text role="file"} (`.emacs.bak`{.interpreted-text role="file"}),
+    -   écrit les variables d\'environnement du mode nXML dans le fichier `.emacs`{.interpreted-text role="file"}.
+
+3.  Téléchargez [l\'archive des schémas RelaxNG pour DITA XML]() dans le répertoire racine de votre projet de documentation **DITA XML**.
+
+4.  Placez-vous dans le répertoire racine de votre projet de documentation **DITA XML**, puis collez la commande suivante :
+
+    ``` console
     $ tar xzvf rnc.tar.gz
     ```
 
-    Cette commande crée un répertoire `rnc` de même niveau que le <répertoire de langue>.
+    Cette commande crée un répertoire `rnc`{.interpreted-text role="file"} de même niveau que le *\<répertoire de langue\>*.
 
-5. Téléchargez [l’archive des fichiers schemas.xml]() dans le répertoire racine de votre projet de documentation, puis collez la suite de commandes ci-dessous en remplaçant <répertoire de langue> par la valeur appropriée, en_US, ou fr_FR, par exemple. Répétez cette étape pour tous vos répertoires de langue.
+5.  Téléchargez [l\'archive des fichiers schemas.xml]() dans le répertoire racine de votre projet de documentation **DITA XML**, puis collez la suite de commandes ci-dessous en remplaçant *\<répertoire de langue\>* par la valeur appropriée, *en_US*, ou *fr_FR*, par exemple. Répétez cette étape pour tous vos répertoires de langue.
 
-    ```console
+    ``` console
     $ export DIR="schemas.redaction-technique.org"
     $ tar xzvf $DIR.tar.gz && \
     cd <répertoire de langue> && \
@@ -80,23 +80,36 @@ Prérequis
     rm -rf ../$DIR/
     ```
 
-    Vos répertoires de langue doivent maintenant comporter les fichiers `schemas.xml` appropriés :
-    - fr_FR
-      - concepts
-        - schemas.xml
-      - faq
-        - schemas.xml
-      - reference
-        - schemas.xml
-      - tasks
-        - schemas.xml
-      - topics
-        - schemas.xml
+    Vos répertoires de langue doivent maintenant comporter les fichiers `schemas.xml`{.interpreted-text role="file"} appropriés :
 
-6. Ouvrez un fichier de contenu (`.dita`) avec Emacs. La syntaxe apparaît en couleurs. Les endroits où le schéma n’est pas respecté sont soulignés en rouge.
+    -   fr_FR
 
-7. Pour insérer une nouvelle balise, entrez <, puis appuyez sur Ctrl+Entrée. La liste des balises possibles apparaît.
+        -   concepts
+            -   schemas.xml
+        -   concepts
 
-8. Sélectionnez une balise, puis appuyez sur Entrée. Appuyez sur Ctrl+Entrée pour afficher la liste des attributs autorisés.
+        > -   schemas.xml
 
-9. Pour insérer une balise fermante après du texte, entrez </, puis appuyez sur Ctrl+Entrée.
+        -   faq
+
+        > -   schemas.xml
+
+        -   reference
+
+        > -   schemas.xml
+
+        -   tasks
+
+        > -   schemas.xml
+
+        -   topics
+
+        > -   schemas.xml
+
+6.  Ouvrez un fichier de contenu **DITA XML** (`.dita`{.interpreted-text role="file"}) avec Emacs. La syntaxe **DITA XML** apparaît en couleurs. Les endroits où le schéma n\'est pas respecté sont soulignés en rouge.
+
+7.  Pour insérer une nouvelle balise entrez \<, puis appuyez sur Ctrl+Entrée. La liste des balises possibles apparaît.
+
+8.  Sélectionnez une balise, puis appuyez sur Entrée. Appuyez sur Ctrl+Entrée pour afficher la liste des attributs autorisés.
+
+9.  Pour insérer une balise fermante après du texte, entrez \</, puis appuyez sur Ctrl+Entrée.

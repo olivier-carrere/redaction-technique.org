@@ -1,12 +1,6 @@
----
-title: "Gérez les versions de votre documentation"
-description: "Commitez votre lot de modifications et affichez l'historique avec Git."
-sidebar:
-  label: How-to
-  order: 1
----
+# Gérez les versions de votre documentation {#gerez-les-versions-de-votre-documentation}
 
-1.  *Commitez* votre lot de modifications sous :
+1.  *Commitez* votre lot de modifications sous *Git* :
 
     ``` console
     $ git config --global user.email "votre email"
@@ -17,22 +11,24 @@ sidebar:
     $ git commit -m "Mon lot de modifications sur les images"
     ```
 
-2.  Affichez l'historique des modifications des sources de ce :
+2.  Affichez l\'historique des modifications des sources de ce blog :
 
     ``` console
     $ gitk &
     ```
 
-    Ô surprise, vous avez sous les yeux, mais oui, une ! C'est tellement beau, qu'on va faire une photo :
+    Ô surprise, vous avez sous les yeux, mais oui, une `GUI (Graphical User Interface)`{.interpreted-text role="abbr"} ! C\'est tellement beau, qu\'on va faire une photo :
 
-    ![](/assets/historique-git-redaction-technique.png)
+    ![](graphics/historique-git-redaction-technique.png)
 
-    *Un* commit *atomique s'étendant sur une bonne quinzaine de fichiers*
+    *Un* commit *atomique s\'étendant sur une bonne quinzaine de fichiers*
 
-:::note[Note]
-
-- Vos modifications sont purement locales et ne sont pas appliquées sur le dépot distant .
-- Si vos modifications apportent une réelle valeur ajoutée à ce (correction de coquille, ajout d'information ou autre), n'hésitez pas à me la soumettre sous forme de patch ou *via* votre compte .
-- n'est probablement pas hébergé sur un cluster de . Rien n'empêche cependant d'héberger un dépôt distant sur un connecté au réseau et d'y accéder par connexion sécurisée .
-
+:::: note
+::: title
+Note
 :::
+
+-   Vos modifications sont purement locales et ne sont pas appliquées sur le dépot distant *GitHub*.
+-   Si vos modifications apportent une réelle valeur ajoutée à ce blog (correction de coquille, ajout d\'information ou autre), n\'hésitez pas à me la soumettre sous forme de patch *Git* ou *via* votre compte *GitHub*.
+-   *GitHub* n\'est probablement pas hébergé sur un cluster de **Raspberry Pi 3**. Rien n\'empêche cependant d\'héberger un dépôt distant *Git* sur un **Raspberry Pi 3** connecté au réseau et d\'y accéder par connexion sécurisée `SSH (Secure Shell)`{.interpreted-text role="abbr"}.
+::::
