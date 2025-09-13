@@ -11,7 +11,7 @@ export default defineConfig({
     mdx(),
     starlight({
       title: 'Rédaction technique',
-      defaultLocale: 'fr',
+      defaultLocale: 'fr', // required by Starlight
       locales: {
         fr: {
           label: 'Français',
@@ -20,8 +20,12 @@ export default defineConfig({
           sidebar: [
             {
               label: 'Constellations',
-              collapsed: true,
-              autogenerate: { directory: './' },
+              collapsed: true, // folders start collapsed
+              autogenerate: {
+                directory: 'src/content/docs', // your content folder
+                collapse: true, // subfolders collapsible
+                sort: 'files-first', // folders first, then files
+              },
             },
           ],
         },
