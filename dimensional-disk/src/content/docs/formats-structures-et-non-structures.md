@@ -11,7 +11,6 @@ next: false
 
 <a id="formats-structures-et-non-structures"></a>
 
-::: sidebar
 
 Les formats structurés favorisent la création de documents minimalistes, complets et cohérents. Ils permettent au de se concentrer sur le contenu et d'améliorer l'expérience utilisateur et l'utilisabilité de la documentation technique.
 :::

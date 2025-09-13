@@ -7,7 +7,6 @@ sidebar:
   order: 1
 ---
 
-::: sidebar
 
 Un fichier [ditaval]() reprend le principe des lunettes que vous chaussez pour visualiser un film en 3D : le verre gauche masque une moitié de l'image, le verre droit en masque l'autre moitié. Mais seul le dispose de lunettes 3D et a une vision complète de l'information contenue dans le projet .
 :::

@@ -7,7 +7,6 @@ sidebar:
   order: 1
 ---
 
-::: sidebar
 
 Les [topics]() sont les plus petites unités d'information autonomes gérées par . Chaque *topic* a un titre et un corps de texte. Il ne traite que d'un seul sujet. Il appartient donc au de se baser sur la modularité proposée par pour bien structurer l'information.
 :::

@@ -9,7 +9,6 @@ prev: "/de-la-redaction-a-la-communication-technique"
 next: "/les-trois-niveaux-de-la-documentation-technique"
 ---
 
-::: sidebar
 
 La , c\'est comme une ampoule : une ampoule basse consommation demande un investissement plus important en début de cycle de vie, mais a rapidement un coût plus faible.
 :::

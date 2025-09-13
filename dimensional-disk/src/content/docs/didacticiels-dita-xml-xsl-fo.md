@@ -8,7 +8,6 @@ sidebar:
 next: "./xsl-fo-filtrer-du-contenu-selon-des-conditions-sauf-et-ou"
 ---
 
-::: sidebar
 
 Les didacticiels suivants aideront le à mettre en place et à utiliser une chaîne de création et de publication libre.
 :::

@@ -7,7 +7,6 @@ sidebar:
   order: 1
 ---
 
-::: sidebar
 
 Un projet de apporte une valeur ajoutée aux produits et aide l'entreprise à mieux commercialiser son offre sur son marché. Mais, comme pour les projets de R&D ou de marketing, la définition du projet permet d'en estimer le budget et les retombées.
 :::

@@ -7,7 +7,6 @@ sidebar:
   order: 1
 ---
 
-::: sidebar
 
 Le ne peut fournir une documentation utile aux clients de l'entreprise s'il se contente de mettre en forme des informations glanées auprès des différents acteurs de la société. Jouant le rôle de Candide, il est le premier représentant des utilisateurs et se doit de tester les produits dans des conditions proches des leurs.
 :::

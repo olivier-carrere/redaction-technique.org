@@ -7,7 +7,6 @@ sidebar:
   order: 1
 ---
 
-::: sidebar
 
 Le puissant mécanisme [conref]() de se prête à d'autres applications que la réduction des coûts. Par exemple, le peut masquer des informations dans le code source.
 :::

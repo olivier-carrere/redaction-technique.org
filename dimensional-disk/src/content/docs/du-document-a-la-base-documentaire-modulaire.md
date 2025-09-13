@@ -9,7 +9,6 @@ prev: false
 next: /un-langage-a-balises
 ---
 
-::: sidebar
 
 Le modèle du livre est encore prédominant pour créer et gérer l'information. Mais le contenu d'entreprise est souvent disséminé dans de nombreux documents, sous des formats hétérogènes. Ceci se traduit par des doublons, des incohérences, un coût de mise à jour et de traduction élevé, et des retards de livraison. Le dispose cependant d'autres modèles, plus efficaces.
 :::

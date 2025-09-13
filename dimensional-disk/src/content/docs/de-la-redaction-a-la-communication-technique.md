@@ -9,7 +9,6 @@ prev: false
 next: false
 ---
 
-::: sidebar
 
 Le but de la est de transformer les prospects en clients satisfaits. Le fournit au marché l\'information dont il a besoin pour sélectionner, évaluer et utiliser une solution de haute technologie. Au sein de l\'entreprise, il est l\'interface entre les services R&D et marketing. À l\'extérieur, il crée le dialogue entre l\'entreprise et ses différents publics.
 :::

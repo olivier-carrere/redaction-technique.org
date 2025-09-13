@@ -7,7 +7,6 @@ sidebar:
   order: 1
 ---
 
-::: sidebar
 
 Lorsqu'une entreprise décide d'industrialiser la , elle se pose d'emblée la question des outils. Or, plutôt que les outils, ce sont les formats sous-jacents qui sont le point essentiel.
 :::

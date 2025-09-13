@@ -7,7 +7,6 @@ sidebar:
   order: 1
 ---
 
-::: sidebar
 
 Le doit utiliser comme source du [conref]() le nœud de plus bas niveau contenant l\'information à partager.
 :::

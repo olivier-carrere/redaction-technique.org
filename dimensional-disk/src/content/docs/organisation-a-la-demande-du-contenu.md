@@ -9,7 +9,6 @@ prev: false
 next: false
 ---
 
-::: sidebar
 
 Les briques d'information peuvent être assemblées à la demande dans des structures de table des matières externes, les ditamap.
 :::
