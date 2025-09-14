@@ -1,7 +1,6 @@
 ---
 title: "DITA Open Toolkit : afficher les références croisées dans les PDF"
 description: "Faire apparaître la section Voir aussi dans les PDF générés avec DITA-OT."
-slug: "/dita-open-toolkit-afficher-les-references-croisees-dans-les-pdf"
 ---
 
 :::note

@@ -1,7 +1,6 @@
 ---
 title: "Patience..."
 description: "Évidemment, toute structure étant toujours plus ou moins rétive au changement, les choses ne se passeront pas comme je l'imagine."
-slug: "projet-bout-en-bout-patience"
 ---
 
 Évidemment, toute structure étant toujours plus ou moins rétive au changement, les choses ne se passeront pas comme je l\'imagine. Notamment, l\'équipe d\'iconographes que j\'appelle de mes vœux a peu de chance de voir le jour et je risque d\'être le seul à indexer les photos sous la galerie.

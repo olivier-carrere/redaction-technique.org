@@ -1,7 +1,6 @@
 ---
 title: "Organiser son historique avec Git rebase"
 description: "Git est d'un abord déroutant : ses workflows s'appliquent à du contenu plutôt qu'à des fichiers."
-slug: /organiser-son-historique-avec-git-rebase
 ---
 
 

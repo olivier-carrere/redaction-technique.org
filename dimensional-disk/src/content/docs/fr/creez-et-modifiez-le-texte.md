@@ -1,7 +1,6 @@
 ---
 title: "Créez et modifiez le texte"
 description: "Modifiez un fichier source modulaire de ce blog."
-slug: creez-et-modifiez-le-texte
 ---
 
 1. Modifiez un fichier source modulaire de ce blog :

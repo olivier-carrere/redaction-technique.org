@@ -1,7 +1,6 @@
 ---
 title: "Communication interne"
 description: "Les outils et les process étant en place, restait à y faire adhérer les parties prenantes !"
-slug: "projet-bout-en-bout-communication-interne"
 ---
 
 Les outils et les process étant en place, restait à y faire adhérer les parties prenantes !

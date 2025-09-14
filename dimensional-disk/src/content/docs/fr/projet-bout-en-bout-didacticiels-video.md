@@ -1,7 +1,6 @@
 ---
 title: "Didacticiels vidéo"
 description: "J'ai publié sur YouTube différents didacticiels, en français, anglais et espagnol, sur l'utilisation de la galerie par les différents types d'utilisateurs."
-slug: "/projet-bout-en-bout-didacticiels-video"
 ---
 
 J'ai publié sur *YouTube* différents didacticiels, en français, anglais et espagnol, sur l'utilisation de la galerie par les différents types d'utilisateurs.

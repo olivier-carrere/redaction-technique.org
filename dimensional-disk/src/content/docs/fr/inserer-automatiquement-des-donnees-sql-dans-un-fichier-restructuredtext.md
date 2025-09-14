@@ -1,7 +1,6 @@
 ---
 title: "Insérer automatiquement des données SQL dans un fichier reStructuredText"
 description: "Nous allons créer une base de données de produits avec leurs versions, puis mettre en forme ces informations dans un fichier reStructuredText."
-slug: "inserer-automatiquement-des-donnees-sql-dans-un-fichier-restructuredtext"
 ---
 
 Nous allons créer une base de données de produits avec leurs versions, puis mettre en forme ces informations dans un fichier reStructuredText. Elles pourront donc facilement être mises en forme et publiées au format PDF, HTML ou autre.

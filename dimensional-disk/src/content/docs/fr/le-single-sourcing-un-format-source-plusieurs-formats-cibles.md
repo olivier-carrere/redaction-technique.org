@@ -1,7 +1,6 @@
 ---
 title: "Le single-sourcing : un format source, plusieurs formats cibles"
 description: "Les contraintes de productivité et la réduction des coûts aidant, le débat a été tranché en faveur du single-sourcing."
-slug: "le-single-sourcing-un-format-source-plusieurs-formats-cibles"
 ---
 
 

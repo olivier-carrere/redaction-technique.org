@@ -1,7 +1,6 @@
 ---
 title: "Créez et modifiez les schémas"
 description: "Modifiez un fichier source des images de ce blog à l'aide d'un logiciel de dessin vectoriel ou d'un éditeur en ligne."
-slug: creez-et-modifiez-les-schemas
 ---
 
 1. Modifiez un fichier source des images de ce blog :

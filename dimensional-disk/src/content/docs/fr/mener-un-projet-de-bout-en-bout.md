@@ -1,7 +1,6 @@
 ---
 title: "Mener un projet de bout en bout"
 description: "Il est assez rare, dans le cadre professionnel, de pouvoir mener un projet de (quasiment) A à Z, de la conception à la communication, en passant par la réalisation."
-slug: mener-un-projet-de-bout-en-bout
 ---
 
 :::note[Modifications récentes]

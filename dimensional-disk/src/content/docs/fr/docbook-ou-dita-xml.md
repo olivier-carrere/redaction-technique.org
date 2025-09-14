@@ -1,7 +1,6 @@
 ---
 title: "DocBook ou DITA XML ?"
 description: "Il est facile de générer du DocBook à partir de DITA XML."
-slug: "docbook-ou-dita-xml"
 ---
 
 

@@ -1,7 +1,6 @@
 ---
 title: "Format structuré DITA XML"
 description: "Diminuer les coûts et délais de production, et améliorer la qualité en réduisant le volume source et en mieux gérant le contenu."
-slug: /format-structure-dita-xml
 ---
 
 Diminuer les coûts de production et de traduction, réduire les délais de mise sur le marché (ou *time to market*) et améliorer la qualité de la documentation. Voilà les défis que doit relever aujourd'hui le **rédacteur technique**. L'un des meilleurs moyens d'y parvenir consiste à réduire le volume source de la documentation et à mieux gérer le contenu d'entreprise.

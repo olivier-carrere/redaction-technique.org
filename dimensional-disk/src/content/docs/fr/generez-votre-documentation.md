@@ -1,7 +1,6 @@
 ---
 title: "Générez votre documentation"
 description: "En quelques minutes, générez et affichez la documentation en PDF, HTML et EPUB."
-slug: generez-votre-documentation
 ---
 
 1. Revenez dans le terminal, puis récupérez la dernière version taguée de ce blog :

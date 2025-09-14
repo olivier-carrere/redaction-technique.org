@@ -1,7 +1,6 @@
 ---
 title: "XSL-FO : insérer automatiquement un titre pour les exemples"
 description: "Insérer automatiquement « Exemple : » avant le titre des exemples DITA (<example>) dans les PDF générés avec DITA-OT via XSL-FO."
-slug: "xsl-fo-inserer-automatiquement-un-titre-pour-les-exemples"
 ---
 
 

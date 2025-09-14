@@ -1,7 +1,6 @@
 ---
 title: "Cas concret : documentation de NuFirewall"
 description: "La documentation de NuFirewall, qui a été perçue par la presse comme un point fort du produit, a été réalisée sous DITA XML."
-slug: cas-concret-documentation-de-nufirewall
 ---
 
 La documentation de [NuFirewall](), qui a été perçue par la presse comme [un point fort du produit](), a été réalisée sous **DITA XML**.

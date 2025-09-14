@@ -1,7 +1,6 @@
 ---
 title: "Formats cibles"
 description: "Vous pouvez compiler ce blog avec Python Sphinx aux formats PDF, EPUB et HTML."
-slug: /formats-cibles
 ---
 
 Vous pouvez compiler ce blog avec Python Sphinx aux formats :

@@ -1,7 +1,6 @@
 ---
 title: "Maximiser l'utilisation des conref pour faire baisser les coûts"
 description: "De par la nature des informations qu'elles contiennent, les sections de type task ont un taux plus élevé de réutilisation du contenu que celles de type concept ou reference."
-slug: maximiser-utilisation-des-conref-pour-faire-baisser-les-couts
 ---
 
 :::tip

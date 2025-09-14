@@ -1,7 +1,6 @@
 ---
 title: "Récupérez les sources de ce blog"
 description: "Clonez le dépôt Git du blog et placez‑vous dans le répertoire des sources."
-slug: "recuperez-les-sources-de-ce-site"
 ---
 
 1. Clonez le dépôt Git des sources de ce blog :

@@ -1,7 +1,6 @@
 ---
 title: "Imbriquer les conref"
 description: "Pour des raisons de facilité de mise à jour et de maintenance du contenu DITA XML, le rédacteur technique doit limiter l'effet poupée russe et ne pas trop imbriquer les conref."
-slug: imbriquer-les-conref
 ---
 
 

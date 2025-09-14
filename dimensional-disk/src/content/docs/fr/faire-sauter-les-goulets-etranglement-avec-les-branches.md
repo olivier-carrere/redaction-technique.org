@@ -1,7 +1,6 @@
 ---
 title: "Faire sauter les goulets d'étranglement avec les branches"
 description: "Les branches Git permettent de facilement effectuer en parallèle plusieurs tâches non liées."
-slug: "faire-sauter-les-goulets-etranglement-avec-les-branches"
 ---
 
 <a id="faire-sauter-les-goulets-etranglement-avec-les-branches"></a>

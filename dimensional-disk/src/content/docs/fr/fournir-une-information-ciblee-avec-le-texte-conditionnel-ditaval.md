@@ -1,7 +1,6 @@
 ---
 title: "Fournir une information ciblée avec le texte conditionnel ditaval"
 description: "Les destinataires ne voient qu’une partie de l’information ; le profilage masque les informations inutiles pour chaque public afin de fournir un accès ciblé."
-slug: fournir-une-information-ciblee-avec-le-texte-conditionnel-ditaval
 ---
 
 

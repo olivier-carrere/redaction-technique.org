@@ -1,7 +1,6 @@
 ---
 title: "Formats structurés et non structurés"
 description: "Les informations contenues dans un document technique peuvent être catégorisées selon leur sens."
-slug: formats-structures-et-non-structures
 ---
 
 :::tip

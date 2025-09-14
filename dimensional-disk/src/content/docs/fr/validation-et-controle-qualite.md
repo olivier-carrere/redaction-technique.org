@@ -1,7 +1,6 @@
 ---
 title: "Validation et contrôle qualité"
 description: "Le contenu doit être validé avant livraison."
-slug: validation-et-controle-qualite
 ---
 
 <a id="validation-et-controle-qualite"></a>

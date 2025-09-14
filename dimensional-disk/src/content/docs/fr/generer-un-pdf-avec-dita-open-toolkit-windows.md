@@ -1,7 +1,6 @@
 ---
 title: "Générer un PDF avec DITA Open Toolkit (Windows)"
 description: "Ce didacticiel DITA XML guide la mise en place et l'utilisation de la chaîne de publication DITA-OT (DITA Open Toolkit) sous Windows."
-slug: /generer-un-pdf-avec-dita-open-toolkit-windows
 ---
 
 Ce didacticiel **DITA XML** est destiné à vous guider dans la mise en place et l'utilisation de la chaîne de publication `DITA-OT (DITA Open Toolkit)`{.interpreted-text role="abbr"} dans un environnement Windows (testé sur Windows XP).

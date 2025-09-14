@@ -1,7 +1,6 @@
 ---
 title: "Collecte de l'information"
 description: "Le rédacteur technique collecte l'information auprès de différentes sources, internes et externes à l'entreprise."
-slug: "collecte-de-l-information"
 ---
 
 <a id="collecte-de-l-information"></a>

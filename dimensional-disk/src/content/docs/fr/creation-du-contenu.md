@@ -1,7 +1,6 @@
 ---
 title: "Création du contenu"
 description: "Le rédacteur technique crée le contenu du projet de rédaction technique dans un dialogue constant avec les différents acteurs de la société : services R&D, marketing."
-slug: "creation-du-contenu"
 ---
 
 <a id="creation-du-contenu"></a>

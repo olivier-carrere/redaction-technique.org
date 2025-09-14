@@ -1,7 +1,6 @@
 ---
 title: "Git : du fichier au contenu"
 description: "Sous Git, pensez contenu plutôt que fichiers : c’est plus simple et évite bien des difficultés."
-slug: "git-du-fichier-au-contenu"
 ---
 
 :::note

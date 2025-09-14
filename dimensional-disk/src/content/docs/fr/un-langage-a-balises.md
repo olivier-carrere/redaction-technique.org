@@ -1,7 +1,6 @@
 ---
 title: "Un langage à balises"
 description: "Fournir la documentation technique au format MS Word semble simple mais s’avère peu efficace pour la productivité et la structuration de l’information."
-slug: un-langage-a-balises
 ---
 
 :::note
