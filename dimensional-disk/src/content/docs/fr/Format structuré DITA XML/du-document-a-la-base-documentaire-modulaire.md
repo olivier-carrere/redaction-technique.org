@@ -108,3 +108,64 @@ Pour ce faire, le **rédacteur technique** prendra soin de placer les éléments
 
 L'organisation des répertoires de travail doit également permettre l'utilisation de liens relatifs, notamment vers les images, qui ne seront jamais cassés.
 
+## Le single-sourcing : un format source, plusieurs formats cibles
+
+Le *single-sourcing* est un sujet qui a longtemps divisé les rédacteurs techniques : des supports de **rédaction technique** différents, tels qu'une aide en ligne et un manuel imprimé, doivent-ils proposer un contenu radicalement différent ou peuvent-ils être générés à partir du même contenu source ?
+:::
+
+Les contraintes de productivité et la réduction des coûts aidant, le débat a été tranché en faveur du *single-sourcing*. Le gain qualitatif, discutable, ne compense pas le coût de créer, maintenir et traduire une version source différente pour chaque version cible.
+
+![Un seul jeu d'informations, une multiplicité de formats de sortie](/assets/single-sourcing.svg)
+**Un seul jeu d'informations, une multiplicité de formats de sortie**
+
+Si le **rédacteur technique** pratique le *single-sourcing*, il doit cependant sélectionner en début de projet le paradigme sur lequel il se base : le livre ou l'aide en ligne. Pendant longtemps, les outils proposés reposaient soit sur un document de type livre (**MS Word**, ou **FrameMaker**, essentiellement) qui pouvait être exporté au format d'aide en ligne, soit sur un fichier source (RTF) d'aide Windows, pour générer un PDF. Une forte perte d'information de navigation (index, références croisées, liens, etc.) intervenait souvent lors de l'exportation.
+
+**DITA XML** propose un modèle agnostique quant au format cible. Les fichiers sources, bien que basés sur un modèle modulaire proche de celui de l'aide en ligne, peuvent facilement être exportés sous forme de fichier PDF, d'aide en ligne, de pages HTML liées ou autre, sans aucune perte d'information.
+
+## Les topics, modules d'information de base DITA XML
+
+:::note
+
+Les [topics]() sont les plus petites unités d'information autonomes gérées par **DITA XML**. Chaque *topic* a un titre et un corps de texte. Il ne traite que d'un seul sujet. Il appartient donc au **rédacteur technique** de se baser sur la modularité proposée par **DITA XML** pour bien structurer l'information.
+:::
+
+Les *topics* sont sémantiquement typés. Il existe idéalement un type de *topic* par type d'information. **DITA XML** propose par défaut des *topics* adaptés à la documentation des logiciels (description de concepts et de tâches, liste de commandes, etc.), mais de nouveaux types de *topics* peuvent être créés pour répondre à d'autres besoins.
+
+Les *topics* sont une des différences principales entre **DITA XML** et **DocBook**, qui ne propose pas de typologie des briques d'information.
+
+Les *topics* sont généralement stockés à plat dans des répertoires divisés par type de *topic*. Ils sont organisés hiérarchiquement dans des fichiers *ditamap* et peuvent être partagés entre différents documents. Les titres des modules ne sont pas affectés d'un niveau de titre. La structure des modules étant parfaitement homogène, un module peut avoir un niveau 3 dans un document donné, et un niveau 1 dans un autre document, sans qu'il y ait besoin de modifier en quoi que ce soit les *topics*.
+
+Les unités d'information atomiques[^1] telles que des remarques, des paragraphes, voire des phrases ou des segments de phrase, qui ne peuvent pas être munis d'un titre, ne forment pas des *topics*. Elles peuvent être cependant partagées via le mécanisme *conref*, similaire au mécanisme *Xinclude* proposé par **DocBook**.
+
+:::note
+Notes
+:::
+
+[^1]: Pas au sens XPath.
+
+## Gérer son contenu DITA XML avec ou sans CMS ?"
+
+L'architecture DITA XML ne propose pas de mécanisme de workflow documentaire natif. Les workflows sont pourtant un élément important d'un processus efficace de gestion du cycle de vie du contenu.
+
+Les `CMS (Content Management System)` gèrent également les métadonnées, ce qui permet une recherche plus efficace de l'information existante, et les rétroliens[^1].
+
+La plupart des entreprises sont réticentes à mettre en place des `CMS (Content Management System)`, outils dédiés aux workflows. Elles ont d'ailleurs parfois connu des échecs de mise en place de telles solutions part le passé.
+
+De plus, l'un des grands avantages de DITA XML, c'est de s'intégrer directement dans le système d'information en place. Chez les éditeurs de logiciels, notamment, rien de plus facile que de venir se greffer sur le système de gestion des sources en place, qu'il s'agisse de [Git]()[^2], de Subversion ou de SourceSafe. À budget quasi nul. Raison de plus pour ne pas investir du temps et de l'argent dans un `CMS (Content Management System)`. Les gains de productivité spectaculaires reportés par certaines entreprises suite à la mise en place d'un `CMS (Content Management System)` DITA XML ont cependant de quoi faire réfléchir. Ainsi, Epson America a pu réutiliser jusqu'à 90 % du contenu existant sur de nouveaux projets.
+
+Si l'on opte pour un `CMS (Content Management System)`, celui-ci doit clairement supporter DITA XML : on ne gère pas un jeu de briques d'information comme un document monolithique. Adieu donc SharePoint ou Alfresco, il faut se tourner vers des solutions dédiées telles que [Componize]() ou [DocZone]().
+
+Quel que soit le choix initial, il est possible à tout instant de changer de stratégie, sans remettre en cause l'existant. L'architecture DITA XML n'est en effet liée à aucun référentiel particulier. Rien n'interdit donc de commencer à gérer ses projets sans `CMS (Content Management System)`, puis d'avoir recours à une telle solution si les bénéfices de ce choix deviennent manifestes.
+
+:::note
+Notes
+:::
+
+:::tip[Voir aussi]
+- `git-du-fichier-au-contenu`
+:::
+
+[^1]: Le rédacteur technique peut ainsi voir où un élément d'information est inclus ; lors de la mise à jour de cet élément, il peut alors juger si l'élément modifié sera toujours valable dans les différents contextes.
+
+[^2]: Il est possible, quoiqu'un peu complexe, de mettre en place des workflows sous Git via des branches.
+
