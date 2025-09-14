@@ -16,7 +16,7 @@ Le [modèle LaTeX du dépliant](), partie émergée de l'iceberg, est publié su
 
 Curieusement, le PDF généré sur Overleaf présente des défauts que je ne constate pas lorsque je le publie en local.
 
-![](graphics/leaflet-pliage.png)
+![](/assets/leaflet-pliage.png)
 
 Pour les plus curieux, il existe [6 manières]() de plier cette brochure. Je me suis épargné des essais fastidieux en utilisant la [classe de documents LaTeX leaflet]().
 :::

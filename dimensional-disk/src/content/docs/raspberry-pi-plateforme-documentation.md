@@ -157,7 +157,7 @@ Les buts de ce billet sont de :
 
    Ô surprise, vous avez sous les yeux, mais oui, une `GUI (Graphical User Interface)` ! C'est tellement beau, qu'on va faire une photo :
 
-   ![](graphics/historique-git-redaction-technique.png)
+   ![](/assets/historique-git-redaction-technique.png)
 
    Un commit atomique s'étendant sur une bonne quinzaine de fichiers
 

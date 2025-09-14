@@ -16,7 +16,7 @@ Le but étant avant tout de mettre à disposition des photos pour des supports i
 
 Les fichiers étant répartis dans une foultitude de sous-répertoires, j’ai utilisé la commande suivante sous Bash :
 
-![](graphics/find-command.svg)
+![](/assets/find-command.svg)
 
 Ensuite, j’ai consulté les quelque 3 000 photos de plus de 1 Mo sous la visionneuse gThumb et effacé les photos dont la qualité ou le sujet ne convenaient pas à un support de communication. Ceci a pris environ 3 heures. J’ai retenu environ 500 photos.
 
