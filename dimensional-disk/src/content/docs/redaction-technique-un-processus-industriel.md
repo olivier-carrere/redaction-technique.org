@@ -2,8 +2,6 @@
 title: "Rédaction technique : un processus industriel"
 description: "La rédaction technique repose sur des processus rationnels."
 slug: redaction-technique-un-processus-industriel
-  link: /documentation
-  link: /definition-du-projet
 ---
 
 La rédaction technique repose sur des processus rationnels. Trop souvent associée à un fort aspect littéraire, elle est fréquemment laissée à l'improvisation et à l'inspiration du rédacteur technique. Le rédacteur technique, comme les autres intervenants de l'entreprise, doit répondre à ses objectifs de manière prévisible et reproductible.
