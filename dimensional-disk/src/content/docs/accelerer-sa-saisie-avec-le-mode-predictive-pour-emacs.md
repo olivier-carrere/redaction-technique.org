@@ -45,7 +45,7 @@ Ce didacticiel mode Predictive pour Emacs est destiné à vous guider dans la mi
 
 7.  Insérez le code suivant dans le fichier `.emacs` :
 
-    ``` cl
+    ``` 
     ;; predictive install location
          (add-to-list 'load-path "~/.emacs.d/predictive/")
          ;; dictionary locations
@@ -58,6 +58,6 @@ Ce didacticiel mode Predictive pour Emacs est destiné à vous guider dans la mi
 
 8.  Lancez Emacs, puis appuyez sur Alt+X et entrez :
 
-    ``` cl
+    ``` 
     predictive-mode
     ```
