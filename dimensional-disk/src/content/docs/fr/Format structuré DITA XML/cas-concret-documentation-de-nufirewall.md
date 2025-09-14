@@ -1,0 +1,314 @@
+---
+title: "Cas concret : documentation de NuFirewall"
+description: "La documentation de NuFirewall, qui a été perçue par la presse comme un point fort du produit, a été réalisée sous DITA XML."
+---
+
+La documentation de [NuFirewall](), qui a été perçue par la presse comme [un point fort du produit](), a été réalisée sous **DITA XML**.
+
+Si je n'avais pas utilisé un format qui favorise au maximum la réutilisation de l'information, je n'aurais pas autant pu me consacrer à l'essentiel : le contenu.
+
+:::tip[Voir aussi]
+- [partager-des-blocs-information-atomiques-avec-les-conref](./partager-des-blocs-information-atomiques-avec-les-conref)
+- [fournir-une-information-ciblee-avec-le-texte-conditionnel-ditaval](./fournir-une-information-ciblee-avec-le-texte-conditionnel-ditaval)
+:::
+
+## Partager des blocs d'information atomiques avec les conref
+
+Lorsque le **rédacteur technique** veut réutiliser des blocs d'information **DITA XML** plus petits qu'une section, il doit les partager au niveau des fichiers de contenu *dita* et non dans les structures de table des matières *ditamap*, grâce au mécanisme [conref]().
+:::
+
+Le principe des *conref* est simple : lorsqu'un *conref* est mentionné au niveau d'un nœud XML donné, tout le contenu du nœud cible est remplacé par le contenu du nœud source.
+
+<figure>
+<img src="graphics/ditamap.svg" alt="graphics/ditamap.svg" />
+<figcaption><em>Partage de blocs d'information de granulométrie large entre les</em> ditamap</figcaption>
+</figure>
+
+Une différence notable entre le mécanisme des *conref* et le mécanisme XML des [xinclude](), c'est que le nœud source doit être conforme au schéma XSD du fichier source *et* du fichier cible. Ce formalisme rigoureux, s'il s'avère moins souple et oblige parfois à quelques acrobaties, rend les *conref* beaucoup plus lisibles que les *xinclude* et favorise leur utilisation.
+
+![Partage de blocs d'information de granulométrie fine entre les sections DITA XML](/assets/conref.svg)
+**Partage de blocs d'information de granulométrie fine entre les sections DITA XML**
+
+### Centraliser les conref dans un fichier unique
+
+:::note
+
+Pour favoriser l'utilisation des [conref]() au sein d'une équipe de rédacteurs techniques, et également pour simplifier la maintenance des conref, il s'avère très efficace de centraliser tous les conref dans un fichier DITA XML dédié.
+:::
+
+Il est a priori plus simple, pour réutiliser un contenu d'un fichier DITA XML existant, de pointer vers ce contenu sans l'extraire de son contexte d'origine. Cependant, un des grands principes de la réutilisation du contenu est de décontextualiser le contenu. Il est donc à terme beaucoup plus efficace pour le rédacteur technique d'extraire le contenu réutilisé de son fichier d'origine et de le placer dans un fichier ne contenant que des sources de conref. Il est en effet beaucoup plus facile de placer tous les éléments sources dans un référentiel unique que de devoir chercher les différentes sources dans une multitude de fichiers.
+
+<figure>
+<img src="graphics/conref-non-centralises.svg" alt="graphics/conref-non-centralises.svg" />
+<figcaption><em>Gérer les</em> conref <em>de manière décentralisée est peu efficace</em></figcaption>
+</figure>
+
+Les conref sont en effet résolus à la compilation même si les fichiers contenant les valeurs sources ne sont pas référencés dans le fichier ditamap permettant de générer le livrable (ce qui veut dire également que les fichiers contenant les valeurs sources des conref peuvent se trouver dans un répertoire de niveau supérieur à celui du ditamap).
+
+<figure>
+<img src="graphics/conref.svg" alt="graphics/conref.svg" />
+<figcaption><em>Bonne gestion des</em> conref</figcaption>
+</figure>
+
+Les fichiers de contenu référencés dans des structures ditamap ne contiennent donc que des conref cibles, et un fichier central fédère tous les conref sources ; il contient éventuellement également quelques références internes à des conref cibles.
+
+Ce fichier central doit être de même type (task, concept, reference, etc.) que les fichiers de contenu, ou du moins du type composite, qui accepte tous types de structures DITA XML. Pour des raisons d'organisation, je trouve personnellement efficace de créer un fichier central par type de topic DITA XML, et donc de même type, pour partager les informations propres à chaque type. Je réserve le type composite à un fichier central fourre-tout contenant des informations partagées entre différents types de topics.
+
+Tous les conref sources d'un fichier donné doivent avoir un ID unique dans ce fichier ; veillez à utiliser des noms explicites pour les humains, vos fichiers dita contenant des conref cibles deviendront sinon rapidement illisibles !
+
+### Utiliser le nœud XML de plus bas niveau
+
+Le **rédacteur technique** doit utiliser comme source du [conref]() le nœud **DITA XML** de plus bas niveau contenant l'information à partager.
+:::
+
+Le but des *conref* étant de gérer des blocs d'information de faibles dimensions, il est logique de les manipuler au niveau de la plus petite structure XML encapsulant l'information, même si cette structure, pour être compatible avec le schéma XSD de la section **DITA XML** où elle intervient, doit elle-même être incluse dans des structures XML plus grandes.
+
+<figure>
+<img src="graphics/conref-bas-niveau.svg" alt="graphics/conref-bas-niveau.svg" />
+<figcaption><em>Placement du</em> conref <em>sur le nœud XML de plus bas niveau</em></figcaption>
+</figure>
+
+Vous voulez par exemple réutiliser la phrase *Cliquez sur OK.* Vous ne pouvez cependant pas indiquer dans le fichier contenant les *conref* sources uniquement le code suivant :
+
+``` xml
+<cmd>Cliquez sur OK.</cmd>
+```
+
+Pour être conforme au schéma XSD, votre code doit au moins être structuré comme suit :
+
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA 1.2 Task//EN"
+/usr/share/dita-ot/dtd/technicalContent/dtd/task.dtd">
+<task id="shared" xml:lang="fr-fr">
+  <title>Conref source</title>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>
+          Cliquez sur OK.
+        </cmd>
+      </step>
+    </steps>
+  </taskbody>
+```
+
+Il s'agit maintenant de placer un ID sur une structure XML afin de pouvoir réutiliser le contenu de cette structure. En l'occurrence, c'est une étape unique comprenant une commande unique que vous souhaitez réutiliser.
+
+Il est alors préférable d'utiliser la syntaxe suivante :
+
+``` xml
+<step>
+  <cmd id="click-ok">
+    Cliquez sur OK.
+  </cmd>
+</step>
+```
+
+plutôt que la suivante :
+
+``` xml
+<step id="click-ok">
+  <cmd>
+    Cliquez sur OK.
+  </cmd>
+</step>
+```
+
+En effet, dans le premier cas, vous pourrez utiliser le *conref* même si le nœud supérieur (`<step>`{.interpreted-text role="samp"}) contient d'autres nœuds que `<step>`{.interpreted-text role="samp"} (par exemple `<info>`{.interpreted-text role="samp"}).
+
+<figure>
+<img src="graphics/conref-haut-niveau.svg" alt="graphics/conref-haut-niveau.svg" />
+<figcaption><em>Placement du</em> conref <em>sur le nœud XML de plus haut niveau</em></figcaption>
+</figure>
+
+Dans le 2e cas, tout le contenu du nœud `<step>`{.interpreted-text role="samp"} sera remplacé par la valeur du *conref* source. Par exemple, dans le cas suivant, tout le contenu du nœud sera absent des livrables :
+
+``` xml
+<step id="click-ok">
+  <cmd/>
+  <info>
+    Si vous ne savez pas lire, c'est le bouton vert.
+  </info>
+</step>
+```
+
+### Prendre en compte les contraintes de traduction
+
+L'unité d'information DITA XML la plus petite est le nœud `<ph>`. Le rédacteur technique doit cependant veiller à ne lui appliquer le mécanisme conref que pour une phrase complète ou un terme qui ne sera jamais traduit (par exemple, le nom de la société ou d'un produit). De gros problèmes apparaissent sinon lors de la traduction dans d'autres langues.
+
+![Les phrases se découpent différemment selon les langues.](/assets/traduction-conref.svg)
+**Les phrases se découpent différemment selon les langues.**
+
+Exemple
+
+Si vous décidez de pousser la granulométrie au niveau du segment de phrase et que vous définissez les conref suivants :
+
+``` xml
+<ph id="click">Click the</ph>
+
+<ph id="blue">blue</ph>
+
+<ph id="arrow">arrow</ph>
+```
+
+Vous pouvez maintenant utiliser le code suivant :
+
+``` xml
+<p>
+  <ph conref="shared.dita/click"/>
+  <ph conref="shared.dita/blue"/>
+  <ph conref="shared.dita/arrow"/>.
+</p>
+```
+
+pour que soit générée la phrase Click the blue arrow.
+
+Essayons maintenant de créer une version française de cette phrase. Nous traduisons donc les conref comme suit :
+
+``` xml
+<ph id="click">Cliquez sur la</ph>
+
+<ph id="blue">bleue</ph>
+
+<ph id="arrow">flèche</ph>
+```
+
+Nous obtenons alors la phrase Cliquez sur la bleue flèche.
+
+Pour pallier ce problème, il faudrait réorganiser l'ordre des conref dans le fichier DITA XML traduit, ce qui est difficilement gérable et fait perdre tout l'intérêt du mécanisme. Sans compter que des problèmes pires que ce cas d'école peuvent conduire à complètement abandonner dans la langue cible les conref utilisés dans la langue source (je n'ai pas d'exemple concret à offrir, ayant toujours évité de tomber dans ce genre de travers.)
+
+### Imbriquer les conref
+
+Pour des raisons de facilité de mise à jour et de maintenance du contenu **DITA XML**, le **rédacteur technique** doit limiter l'effet poupée russe et ne pas trop imbriquer les [conref](). Un seul niveau d'imbrication (un *conref* imbriqué dans un autre) me semble le seuil au-delà duquel le contenu peut vite devenir ingérable.
+:::
+
+Dans l'exemple ci-dessous, le *conref* source *see-admin-guide* contient le *conref* cible *admin-guide-title* :
+
+**Exemple**
+
+``` xml
+<p id="see-admin-guide">
+  Pour de plus amples informations, voir le <ph
+  conref="shared.dita/admin-guide-title"/>.
+</p>
+```
+
+Ce niveau de complexité est gérable. Mais si le *conref* source *admin-guide-title* contient lui même un *conref* cible, le code **DITA XML** devient un vrai plat de spaghettis (sans compter les risques de référence circulaire). Les *conref* peuvent théoriquement être combinés à l'infini, mais les problèmes pratiques que cela engendre peuvent également être infinis !
+
+<figure>
+<img src="graphics/imbriquer-conref.svg" alt="graphics/imbriquer-conref.svg" />
+<figcaption><em>Imbriquer les</em> conref <em>sur plusieurs niveaux : puissant, mais dangereux !</em></figcaption>
+</figure>
+
+Pour résumer la situation :
+
+- Il est tout à fait possible d'imbriquer plusieurs *conref* sources. Le seul effet de bord négatif porte sur la lisibilité du fichier contenant les *conref*.
+- L'imbrication de *conref* sources et cibles est possible mais rapidement ingérable.
+- Il est impossible d'imbriquer des *conref* cibles : le contenu du *conref* du niveau supérieur écrasera les valeurs des *conref* du niveau inférieur.
+
+### Maximiser l'utilisation des conref pour faire baisser les coûts
+
+:::tip
+
+Recourir aux [conref]() est le meilleur moyen dont dispose le **rédacteur technique** pour faire baisser spectaculairement les coûts et les délais de publication de son contenu **DITA XML**, surtout pour les documents multilingues.
+:::
+
+De par la nature des informations qu'elles contiennent, les sections de type *task* ont un taux plus élevé de réutilisation du contenu que celles de type *concept* ou *reference*.
+
+<figure>
+<img src="graphics/maximiser-conref.svg" alt="graphics/maximiser-conref.svg" />
+<figcaption><em>Les</em> conref <em>modularisent de petits blocs d'information</em></figcaption>
+</figure>
+
+Comme dans l'exemple ci-dessous, il n'est pas rare d'obtenir rapidement des fichiers dont la seule valeur unique est le titre, le reste du contenu, *pourtant unique* (car il assemble de manière unique des blocs d'information non uniques), étant généré par des *conref*.
+
+**Exemple**
+
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA 1.2 Task//EN"
+"/usr/share/dita-ot/dtd/technicalContent/dtd/task.dtd">
+<task id="display-trends" xml:lang="fr-fr">
+  <title>Afficher les tendances</title>
+  <taskbody>
+    <context audience="basic">
+      <note type="restriction" audience="advanced">
+        <ul>
+          <li>
+            <ph conref="shared.dita/ip-control"/>
+          </li>
+        </ul>
+        <ph conref="../../shared/shared.dita/see-user-guide"
+        audience="no-user-guide"/>
+      </note>
+    </context>
+    <steps>
+      <step>
+        <cmd audience="basic">
+          <menucascade>
+            <uicontrol conref="shared.dita/logs"/>
+          </menucascade>
+        </cmd>
+        <choices audience="advanced">
+          <choice>
+            <ph conref="shared.dita/physical-appliance"/>
+            <menucascade>
+              <uicontrol conref="shared.dita/logs"/>
+            </menucascade>
+          </choice>
+          <choice>
+            <ph conref="shared.dita/virtual-appliance"/>
+            <menucascade>
+              <uicontrol conref="shared.dita/server"/>
+              <uicontrol conref="shared.dita/logs"/>
+            </menucascade>
+          </choice>
+        </choices>
+      </step>
+      <step>
+        <cmd>
+          <menucascade>
+            <uicontrol conref="shared.dita/all"/>
+            <uicontrol conref="shared.dita/editfile"/>
+          </menucascade>
+        </cmd>
+        <info>
+          <ul conref="shared.dita/drill-down">
+            <li/>
+          </ul>
+          <note conref="shared.dita/randomnames"/>
+        </info>
+      </step>
+    </steps>
+  </taskbody>
+</task>
+```
+
+Seul le texte en noir doit être traduit. Traduire ce type de fichier de contenu **DITA XML** consiste donc à traduire uniquement le titre de la section et l'intégralité des *conref* sources. Lorsqu'il traduit un ensemble d'unités d'information placées en vrac dans un fichier, le traducteur manque cependant cruellement de contexte. Le créateur du contenu initial doit donc lui fournir une assistance constante. La méthode la plus efficace consiste à faire travailler le traducteur en régie. Avantage supplémentaire : il pourra ainsi interroger non seulement le **rédacteur technique**, mais également les concepteurs du produit.
+
+:::note
+Ne croyez pas qu'il s'agit là d'une contrainte spécifiquement induite par la modularisation poussée du contenu. Pour avoir fait une école de traduction reposant sur le principe simple mais efficace du *triangle du sens* (le traducteur doit comprendre le texte source pour le reformuler dans le texte cible et non transcrire une suite de mots d'une langue à l'autre) et avoir pratiqué la traduction technique durant plusieurs années, je sais que tout projet de traduction réussi repose sur une collaboration efficace entre concepteurs, rédacteurs et traducteurs.
+:::
+
+Il est également possible de factoriser ainsi des éléments de structure, et non de contenu, tels que des en-têtes de tableaux. Vous pouvez ainsi présenter des informations de même type de manière homogène à moindre coût, c'est à dire sans recourir à la [spécialisation]().
+
+### Protéger les informations confidentielles
+
+<a id="proteger-les-informations-confidentielles"></a>
+
+:::tip
+
+Le puissant mécanisme [conref]() de **DITA XML** se prête à d'autres applications que la réduction des coûts. Par exemple, le **rédacteur technique** peut masquer des informations dans le code source.
+:::
+
+Voici un cas original d'utilisation des *conref* : imaginez que vous devez faire traduire un fichier contenant des informations confidentielles qui ne doivent pas figurer dans la version traduite et auxquelles le traducteur ne doit pas avoir accès (une clause de confidentialité interdit aux clients de diffuser l'information dont ils disposent).
+
+Comment faire ? Le filtrage à l'aide du mécanisme *ditaval* est conçu pour exclure des informations des livrables, non pour les masquer dans les fichiers sources. Allez-vous devoir créer deux jeux de fichiers sources, certains comportant les informations confidentielles, les autres non ? Adieu alors le *single-sourcing* et la réutilisation du contenu qui vous ont fait choisir **DITA XML** !
+
+![Masquer des informations confidentielles aux traducteurs](/assets/confidentiel.svg)
+**Masquer des informations confidentielles aux traducteurs**
+
+En plaçant le contenu confidentiel dans un fichier que vous appelez par exemple `confidentiel.dita` et en plaçant des *conref* assortis d'une clé de filtrage dans le fichier à traduire, vous avez résolu votre problème : le traducteur ne traduira que le texte non confidentiel, et le livrable généré dans la langue cible ne contiendra pas le texte confidentiel, noté comme conditionnel et exclu explicitement par le fichier *ditaval* passé en argument lors de la compilation.
+
+

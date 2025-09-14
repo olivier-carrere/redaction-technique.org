@@ -39,6 +39,7 @@ Utilisateur
 :   Seul le contenu est présenté au lecteur dans le fichier cible ; le texte marqué par des balises dans les fichiers sources a une mise en valeur typographique dont le sens est explicité dans la section Conventions typographiques du document final.
 
 Un fichier source DITA XML mélange du texte et des balises, délimitées par les signes < et >. Le texte proprement dit est encapsulé dans un jeu de balises ouvrantes de type <balise> et de balises fermantes de type </balise> selon le schéma <balise>texte</balise>. Tout texte entré hors d'une balise ouvrante et fermante est incorrect et produit un fichier non valide.
+
 ## Typologie de haut niveau de l'information
 
 **DITA XML** propose au **rédacteur technique** une typologie de haut niveau qui est une véritable aide à la structuration du contenu.
@@ -143,7 +144,7 @@ Notes
 
 [^1]: Pas au sens XPath.
 
-## Gérer son contenu DITA XML avec ou sans CMS ?"
+## Gérer son contenu DITA XML avec ou sans CMS ?
 
 L'architecture DITA XML ne propose pas de mécanisme de workflow documentaire natif. Les workflows sont pourtant un élément important d'un processus efficace de gestion du cycle de vie du contenu.
 
