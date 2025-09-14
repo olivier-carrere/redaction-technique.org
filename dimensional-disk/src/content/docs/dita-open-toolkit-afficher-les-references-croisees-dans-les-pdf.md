@@ -5,7 +5,6 @@ slug: "/dita-open-toolkit-afficher-les-references-croisees-dans-les-pdf"
 sidebar:
   label: "How-to"
   order: 1
-prev: false
 next: false
 ---
 

@@ -5,7 +5,6 @@ slug: "/cas-concrets-utilisation-de-dita-xml"
 sidebar:
   label: How-to
   order: 1
-prev: false
 next: false
 ---
 

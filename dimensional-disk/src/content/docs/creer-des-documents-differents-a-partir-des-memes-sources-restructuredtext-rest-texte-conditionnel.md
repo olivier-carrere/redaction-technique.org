@@ -5,7 +5,6 @@ slug: creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext
 sidebar:
   label: How-to
   order: 1
-prev: false
 next: false
 ---
 

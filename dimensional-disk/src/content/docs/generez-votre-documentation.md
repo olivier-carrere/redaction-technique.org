@@ -5,7 +5,6 @@ slug: generez-votre-documentation
 sidebar:
   label: How-to
   order: 1
-prev: false
 next: false
 ---
 

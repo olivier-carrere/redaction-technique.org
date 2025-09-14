@@ -5,7 +5,6 @@ slug: /inserer-automatiquement-des-donnees-dans-un-fichier-restructuredtext
 sidebar:
   label: How-to
   order: 1
-prev: /inserer-automatiquement-des-donnees-dans-un-fichier-dita-xml
 next: /inserer-automatiquement-des-donnees-sql-dans-un-fichier-restructuredtext
 ---
 

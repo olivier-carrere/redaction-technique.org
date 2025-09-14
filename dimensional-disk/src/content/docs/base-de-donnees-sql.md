@@ -5,7 +5,6 @@ slug: base-de-donnees-sql
 sidebar:
   label: How-to
   order: 1
-prev: null
 next: null
 ---
 

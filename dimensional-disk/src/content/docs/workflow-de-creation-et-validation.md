@@ -5,7 +5,6 @@ slug: workflow-de-creation-et-validation
 sidebar:
   label: How-to
   order: 1
-prev: null
 next: null
 ---
 

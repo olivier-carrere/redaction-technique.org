@@ -5,7 +5,6 @@ slug: "utiliser-ide-nxml-pour-dita-xml"
 sidebar:
   label: "How-to"
   order: 1
-prev: false
 next: false
 ---
 

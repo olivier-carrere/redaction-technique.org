@@ -5,7 +5,6 @@ slug: utiliser-les-branches-des-systemes-de-gestion-de-sources
 sidebar:
   label: How-to
   order: 1
-prev: false
 next: false
 ---
 

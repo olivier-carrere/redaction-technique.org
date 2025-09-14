@@ -5,7 +5,6 @@ slug: gerer-son-contenu-dita-xml-avec-ou-sans-cms
 sidebar:
   label: How-to
   order: 1
-prev: false
 next: false
 ---
 

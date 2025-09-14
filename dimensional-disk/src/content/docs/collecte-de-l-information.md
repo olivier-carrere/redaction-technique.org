@@ -5,7 +5,6 @@ slug: "collecte-de-l-information"
 sidebar:
   label: "How-to"
   order: 1
-prev: null
 next: "tester-les-produits-pour-les-documenter"
 ---
 

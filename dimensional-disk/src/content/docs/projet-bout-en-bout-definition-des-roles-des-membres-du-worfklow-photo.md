@@ -5,7 +5,6 @@ slug: projet-bout-en-bout-definition-des-roles-des-membres-du-worfklow-photo
 sidebar:
   label: How-to
   order: 1
-prev: false
 next: false
 ---
 

@@ -5,7 +5,6 @@ slug: creez-et-modifiez-le-texte
 sidebar:
   label: How-to
   order: 1
-prev: null
 next: null
 ---
 

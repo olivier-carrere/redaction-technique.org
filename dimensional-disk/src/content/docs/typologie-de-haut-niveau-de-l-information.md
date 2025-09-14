@@ -5,7 +5,6 @@ slug: /typologie-de-haut-niveau-de-l-information
 sidebar:
   label: How-to
   order: 1
-prev: false
 next: false
 ---
 

@@ -5,7 +5,6 @@ slug: une-architecture-documentaire-trop-complexe
 sidebar:
   label: How-to
   order: 1
-prev: false
 next: false
 ---
 

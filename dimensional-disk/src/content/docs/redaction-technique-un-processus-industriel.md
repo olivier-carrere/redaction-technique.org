@@ -5,7 +5,6 @@ slug: redaction-technique-un-processus-industriel
 sidebar:
   label: How-to
   order: 1
-prev:
   link: /documentation
   label: Documentation
 next:

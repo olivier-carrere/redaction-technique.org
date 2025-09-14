@@ -5,7 +5,6 @@ slug: "utiliser-le-noeud-xml-de-plus-bas-niveau"
 sidebar:
   label: "How-to"
   order: 1
-prev: null
 next: null
 ---
 

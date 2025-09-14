@@ -5,7 +5,6 @@ slug: projet-bout-en-bout-support-papier
 sidebar:
   label: How-to
   order: 1
-prev: null
 next: null
 ---
 

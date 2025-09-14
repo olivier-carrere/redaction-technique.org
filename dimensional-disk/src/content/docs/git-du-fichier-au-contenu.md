@@ -5,7 +5,6 @@ slug: "git-du-fichier-au-contenu"
 sidebar:
   label: How-to
   order: 1
-prev: organiser-son-historique-avec-git-rebase
 next: faire-sauter-les-goulets-etranglement-avec-les-branches
 ---
 

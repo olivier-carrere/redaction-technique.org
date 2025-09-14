@@ -5,7 +5,6 @@ slug: partager-des-blocs-information-atomiques-avec-les-conref
 sidebar:
   label: How-to
   order: 1
-prev: null
 next: centraliser-les-conref-dans-un-fichier-unique
 ---
 

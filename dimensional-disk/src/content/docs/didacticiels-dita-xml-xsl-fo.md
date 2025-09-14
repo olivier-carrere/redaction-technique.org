@@ -5,7 +5,6 @@ slug: didacticiels-dita-xml-xsl-fo
 sidebar:
   label: How-to
   order: 1
-prev: false
 next: xsl-fo-filtrer-du-contenu-selon-des-conditions-sauf-et-ou
 ---
 

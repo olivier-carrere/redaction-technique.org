@@ -5,7 +5,6 @@ slug: "les-topics-modules-d-information-de-base-dita"
 sidebar:
   label: "How-to"
   order: 1
-prev: null
 next: null
 ---
 

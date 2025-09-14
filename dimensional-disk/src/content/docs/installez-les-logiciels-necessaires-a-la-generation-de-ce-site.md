@@ -5,7 +5,6 @@ slug: "installez-les-logiciels-necessaires-a-la-generation-de-ce-site"
 sidebar:
   label: "How-to"
   order: 1
-prev: null
 next: null
 ---
 

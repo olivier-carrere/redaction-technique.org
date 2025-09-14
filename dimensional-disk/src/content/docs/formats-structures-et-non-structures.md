@@ -5,7 +5,6 @@ slug: formats-structures-et-non-structures
 sidebar:
   label: How-to
   order: 1
-prev: docbook-ou-dita-xml
 next: migration-de-framemaker-vers-dita-xml
 ---
 

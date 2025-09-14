@@ -5,7 +5,6 @@ slug: "/les-cms-le-workflow-en-prime-mais-une-fiabilite-a-tester"
 sidebar:
   label: How-to
   order: 1
-prev: null
 next: null
 ---
 

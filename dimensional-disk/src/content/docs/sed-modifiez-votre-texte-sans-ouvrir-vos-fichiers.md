@@ -5,7 +5,6 @@ slug: "sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers"
 sidebar:
   label: "How-to"
   order: 1
-prev: null
 next: null
 ---
 

@@ -5,7 +5,6 @@ slug: "creer-des-documents-differents-a-partir-des-memes-sources-restructuredtex
 sidebar:
   label: "How-to"
   order: 1
-prev: "creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-rest-texte-conditionnel"
 next: "creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-texte-conditionnel"
 ---
 

@@ -5,7 +5,6 @@ slug: "afficher-un-index-dans-un-pdf-mais-pas-sous-dita-open-toolkit"
 sidebar:
   label: "How-to"
   order: 1
-prev: null
 next: null
 ---
 

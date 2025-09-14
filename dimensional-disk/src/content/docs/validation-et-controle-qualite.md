@@ -5,7 +5,6 @@ slug: validation-et-controle-qualite
 sidebar:
   label: How-to
   order: 1
-prev: null
 next: workflow-de-creation-et-validation
 ---
 

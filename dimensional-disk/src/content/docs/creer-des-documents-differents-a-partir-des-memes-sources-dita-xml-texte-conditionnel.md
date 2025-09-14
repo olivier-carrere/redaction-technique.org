@@ -5,7 +5,6 @@ slug: "creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-
 sidebar:
   label: "How-to"
   order: 1
-prev: null
 next: null
 ---
 

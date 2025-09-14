@@ -5,7 +5,6 @@ slug: "organisation-a-la-demande-du-contenu"
 sidebar:
   label: "How-to"
   order: 1
-prev: null
 next: null
 ---
 

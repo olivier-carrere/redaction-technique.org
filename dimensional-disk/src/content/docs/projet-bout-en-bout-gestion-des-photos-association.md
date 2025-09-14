@@ -5,7 +5,6 @@ slug: "/projet-bout-en-bout-gestion-des-photos-association"
 sidebar:
   label: "How-to"
   order: 1
-prev: false
 next: false
 ---
 

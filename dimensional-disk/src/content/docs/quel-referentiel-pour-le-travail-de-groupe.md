@@ -5,7 +5,6 @@ slug: "/quel-referentiel-pour-le-travail-de-groupe"
 sidebar:
   label: "How-to"
   order: 1
-prev: false
 next: false
 ---
 

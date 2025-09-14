@@ -5,7 +5,6 @@ slug: "les-systemes-de-gestion-de-versions-rustiques-mais-fiables"
 sidebar:
   label: "How-to"
   order: 1
-prev: false
 next:
   link: "/utiliser-les-branches-des-systemes-de-gestion-de-sources"
   label: "Utiliser les branches des systèmes de gestion de sources"

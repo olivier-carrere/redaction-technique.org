@@ -5,7 +5,6 @@ slug: du-document-a-la-base-documentaire-modulaire
 sidebar:
   label: How-to
   order: 1
-prev: false
 next: /un-langage-a-balises
 ---
 

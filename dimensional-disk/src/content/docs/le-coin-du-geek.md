@@ -5,7 +5,6 @@ slug: le-coin-du-geek
 sidebar:
   label: How-to
   order: 1
-prev: null
 next: null
 ---
 

@@ -5,7 +5,6 @@ slug: les-sources-de-ce-blog-sont-gerees-sous-git
 sidebar:
   label: How-to
   order: 1
-prev: false
 next: false
 ---
 

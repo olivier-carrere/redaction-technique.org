@@ -5,7 +5,6 @@ slug: "xsl-fo-filtrer-du-contenu-selon-des-conditions-sauf-et-ou"
 sidebar:
   label: How-to
   order: 1
-prev: false
 next: false
 ---
 

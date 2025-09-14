@@ -5,7 +5,6 @@ slug: liberez-vos-informations-de-leurs-silos
 sidebar:
   label: How-to
   order: 1
-prev: false
 next: false
 ---
 

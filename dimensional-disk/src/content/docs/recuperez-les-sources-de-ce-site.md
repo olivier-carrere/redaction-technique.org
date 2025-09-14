@@ -5,7 +5,6 @@ slug: "recuperez-les-sources-de-ce-site"
 sidebar:
   label: How-to
   order: 1
-prev: null
 next: null
 ---
 

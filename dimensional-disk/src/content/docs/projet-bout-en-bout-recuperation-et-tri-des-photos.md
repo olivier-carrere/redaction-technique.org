@@ -5,7 +5,6 @@ slug: projet-bout-en-bout-recuperation-et-tri-des-photos
 sidebar:
   label: How-to
   order: 1
-prev: null
 next: null
 ---
 

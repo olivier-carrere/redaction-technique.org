@@ -5,7 +5,6 @@ slug: "/raspberry-pi-plateforme-documentation"
 sidebar:
   label: "How-to"
   order: 1
-prev: null
 next: null
 ---
 

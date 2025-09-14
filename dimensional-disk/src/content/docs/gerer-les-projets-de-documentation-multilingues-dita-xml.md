@@ -5,7 +5,6 @@ slug: gerer-les-projets-de-documentation-multilingues-dita-xml
 sidebar:
   label: How-to
   order: 1
-prev: null
 next: null
 ---
 

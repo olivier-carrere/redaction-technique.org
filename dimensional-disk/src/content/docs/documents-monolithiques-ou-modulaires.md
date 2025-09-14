@@ -5,7 +5,6 @@ slug: documents-monolithiques-ou-modulaires
 sidebar:
   label: How-to
   order: 1
-prev: false
 next: "./qu-est-ce-qu-un-module-d-information/"
 ---
 

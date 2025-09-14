@@ -5,7 +5,6 @@ slug: /generer-un-pdf-avec-dita-open-toolkit-sous-gnu-linux
 sidebar:
   label: How-to
   order: 1
-prev: null
 next: null
 ---
 

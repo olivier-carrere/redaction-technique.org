@@ -5,7 +5,6 @@ slug: table-de-conversion-framemaker-vers-dita-xml
 sidebar:
   label: How-to
   order: 1
-prev: null
 next: null
 ---
 

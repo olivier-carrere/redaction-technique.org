@@ -5,7 +5,6 @@ slug: "tester-les-produits-pour-les-documenter"
 sidebar:
   label: How-to
   order: 1
-prev: false
 next: false
 ---
 

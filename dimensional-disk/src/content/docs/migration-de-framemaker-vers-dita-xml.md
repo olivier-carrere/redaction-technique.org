@@ -5,7 +5,6 @@ slug: migration-de-framemaker-vers-dita-xml
 sidebar:
   label: How-to
   order: 1
-prev: /restructuration-du-contenu-framemaker
 next: /table-de-conversion-framemaker-vers-dita-xml
 ---
 

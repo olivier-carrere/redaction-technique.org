@@ -5,7 +5,6 @@ slug: fournir-une-information-ciblee-avec-le-texte-conditionnel-ditaval
 sidebar:
   label: How-to
   order: 1
-prev: null
 next: null
 ---
 

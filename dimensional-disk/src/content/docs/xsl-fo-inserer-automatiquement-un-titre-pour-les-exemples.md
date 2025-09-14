@@ -5,7 +5,6 @@ slug: "xsl-fo-inserer-automatiquement-un-titre-pour-les-exemples"
 sidebar:
   label: How-to
   order: 1
-prev: null
 next: null
 ---
 

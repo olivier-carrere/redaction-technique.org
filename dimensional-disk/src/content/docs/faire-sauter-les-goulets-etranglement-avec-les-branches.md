@@ -5,7 +5,6 @@ slug: "faire-sauter-les-goulets-etranglement-avec-les-branches"
 sidebar:
   label: "How-to"
   order: 1
-prev: false
 next: false
 ---
 

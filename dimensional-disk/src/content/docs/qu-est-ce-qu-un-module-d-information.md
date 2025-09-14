@@ -5,7 +5,6 @@ slug: "qu-est-ce-qu-un-module-d-information"
 sidebar:
   label: "How-to"
   order: 1
-prev: null
 next: null
 ---
 

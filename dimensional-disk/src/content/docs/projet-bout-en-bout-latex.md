@@ -5,7 +5,6 @@ slug: projet-bout-en-bout-latex
 sidebar:
   label: How-to
   order: 1
-prev: false
 next: false
 ---
 
