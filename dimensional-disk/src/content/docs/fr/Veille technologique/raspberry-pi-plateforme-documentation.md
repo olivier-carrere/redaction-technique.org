@@ -12,7 +12,7 @@ Les buts de ce billet sont de :
 - Présenter un scénario d'utilisation aussi simple que possible, parfois au détriment de l'élégance technique.
 :::
 
-# Configurez le Raspberry Pi 3 {#configurez-le-raspberry-pi}
+## Configurez le Raspberry Pi 3
 
 **Prérequis**
 
@@ -27,15 +27,16 @@ Les buts de ce billet sont de :
 3. Sélectionnez l'onglet `Localisation`.
 4. Cliquez sur `Set Locale`, sélectionnez les options suivantes, puis cliquez sur `OK` :
 
-      -----------------------------------------
-      Option               Valeur
-      -------------------- --------------------
-      Language             fr (French)
-
-      Country              FR (France)
-
-      Character Set        UTF-8
-      -----------------------------------------
+    | Option        | Valeur      |
+    |---------------|-------------|
+    | Language      | fr (French) |
+    | Country       | FR (France) |
+    | Character Set | UTF-8       |
+    
+    Ce tableau présente les paramètres de configuration par défaut pour un environnement francophone :
+    - **Langue :** français
+    - **Pays :** France
+    - **Encodage :** UTF-8, garantissant une compatibilité optimale avec les caractères spéciaux et accentués.
 
 5. Cliquez sur `Set Keyboard`, sélectionnez les valeurs correspondant à votre clavier, puis cliquez sur `OK`.
 6. Cliquez sur `OK` dans la boîte de dialogue `Raspberry Pi Configuration`.
@@ -52,7 +53,7 @@ Les buts de ce billet sont de :
 
    Le Raspberry Pi 3 redémarre.
 
-# Installez les logiciels nécessaires à la gestion de ce blog {#installez-les-logiciels-necessaires-a-la-generation-de-ce-site}
+## Installez les logiciels nécessaires à la gestion de ce blog
 
 1. Sélectionnez `Menu` > `Accessoires` > `LXTerminal`.
 2. Installez les paquets logiciels suivants :
@@ -63,21 +64,14 @@ Les buts de ce billet sont de :
 
    Le temps de lire cinq ou six épisodes de The Amazing Spider-Man, et les logiciels suivants sont installés :
 
-      -------------------------------------------------------------------------------------------
-      Logiciel        Description
-      --------------- ---------------------------------------------------------------------------
-      Calibre         Gestionnaire de livres numériques
-
-      Emacs           Environnement de développement intégré.
-
-      Gitk            Navigateur d'historique du logiciel de gestion de versions décentralisé.
-
-      Inkscape        Logiciel de dessin vectoriel.
-
-      Python Sphinx   Générateur de documentation basé sur le format reStructuredText.
-
-      Texlive         Environnement LaTeX complet pour la génération du blog au | format PDF.
-      -------------------------------------------------------------------------------------------
+    | Logiciel       | Description                                                                           |
+    |----------------|---------------------------------------------------------------------------------------|
+    | Calibre        | Gestionnaire de livres numériques.                                                    |
+    | Emacs          | Environnement de développement intégré.                                               |
+    | Gitk           | Navigateur d'historique du logiciel de gestion de versions décentralisé.              |
+    | Inkscape       | Logiciel de dessin vectoriel.                                                         |
+    | Python Sphinx  | Générateur de documentation basé sur le format reStructuredText.                      |
+    | Texlive        | Environnement LaTeX complet pour la génération du blog au format PDF.                 |
 
 3. Libérez de l'espace disque :
 
@@ -85,7 +79,7 @@ Les buts de ce billet sont de :
    $ sudo aptitude clean
    ```
 
-# Récupérez les sources de ce blog {#recuperez-les-sources-de-ce-site}
+## Récupérez les sources de ce blog
 
 1. Clonez le dépôt Git des sources de ce blog :
 
@@ -99,7 +93,7 @@ Les buts de ce billet sont de :
    $ cd redaction-technique.org
    ```
 
-# Créez et modifiez le texte {#creez-et-modifiez-le-texte}
+## Créez et modifiez le texte
 
 1. Modifiez un fichier source modulaire de ce blog :
    - à l'aide d'un éditeur de texte :
@@ -120,7 +114,7 @@ Les buts de ce billet sont de :
      $ sed -i "s/répertoire/dossier/g;" *.rst
      ```
 
-# Créez et modifiez les schémas {#creez-et-modifiez-les-schemas}
+## Créez et modifiez les schémas
 
 1. Modifiez un fichier source des images de ce blog :
    - à l'aide d'un logiciel de dessin vectoriel :
@@ -135,7 +129,7 @@ Les buts de ce billet sont de :
      $ sed -i "s/docbook/XML/g;" graphics/*.svg
      ```
 
-# Gérez les versions de votre documentation {#gerez-les-versions-de-votre-documentation}
+## Gérez les versions de votre documentation
 
 1. Commitez votre lot de modifications sous Git :
 
@@ -166,7 +160,7 @@ Les buts de ce billet sont de :
 - GitHub n'est probablement pas hébergé sur un cluster de Raspberry Pi 3. Rien n'empêche cependant d'héberger un dépôt distant Git sur un Raspberry Pi 3 connecté au réseau et d'y accéder par connexion sécurisée `SSH (Secure Shell)`.
 :::
 
-# Générez votre documentation {#generez-votre-documentation}
+## Générez votre documentation
 
 1. Revenez dans le terminal, puis récupérez la dernière version taguée de ce blog :
 
