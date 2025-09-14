@@ -30,7 +30,7 @@ file.close()
 
 Contenu du fichier `texte-conditionnel.rst` :
 
-``` rest
+``` txt
 Utilisation du texte conditionnel
 =================================
 

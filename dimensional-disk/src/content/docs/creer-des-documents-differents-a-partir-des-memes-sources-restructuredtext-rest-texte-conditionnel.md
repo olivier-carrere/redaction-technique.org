@@ -23,7 +23,7 @@ next: false
 
 3.  Ajoutez le contenu suivant au fichier `index.rst` en respectant bien les indentations :
 
-    ``` rest
+    ``` txt
     .. only:: electrician
 
     .. admonition:: Danger pour les électriciens

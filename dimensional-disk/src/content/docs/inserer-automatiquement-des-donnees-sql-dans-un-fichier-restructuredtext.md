@@ -37,7 +37,7 @@ Nous allons créer une base de données de produits avec leurs versions, puis me
 
     Le contenu suivant s'affiche :
 
-    ``` rest
+    ``` txt
     Produits et versions
     ====================
 

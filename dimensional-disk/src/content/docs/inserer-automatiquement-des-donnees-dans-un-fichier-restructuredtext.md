@@ -34,7 +34,7 @@ Plutôt que d’écrire les données à la main dans le fichier de contenu, vous
 
     Le contenu suivant s’affiche :
 
-    ``` rest
+    ``` txt
     Produits et versions
     ====================
 
