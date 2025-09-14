@@ -3,6 +3,10 @@ title: "Approche technique de la rédaction"
 description: "Face aux limites d’outils tels que FrameMaker ou Flare, j’ai souhaité comprendre ce qui se joue en arrière-plan et développer une maîtrise approfondie des mécanismes techniques."
 ---
 
+import { Card, CardGrid } from '@astrojs/starlight/components';
+import { LinkCard } from '@astrojs/starlight/components';
+
+
 Je suis rédacteur technique avec une forte appétence pour la compréhension des aspects technologiques sous-jacents. Confronté aux limites et frustrations liées à certains outils tels que FrameMaker ou Flare, j’ai progressivement ressenti le besoin d’aller « sous le capot » pour analyser ce qui se passe au-delà des interfaces graphiques.
 
 Cette démarche me permet aujourd’hui d’entretenir un dialogue plus fluide avec les développeurs et d’exercer un contrôle accru sur les données. Elle se traduit concrètement par plusieurs caractéristiques qui orientent ma pratique professionnelle :
@@ -26,6 +30,20 @@ Recherche de l'excellence                            Amélioration de la satisfa
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Si cette approche résonne avec la vôtre et que le travail en mode console ne vous effraie pas, alors poursuivons la discussion.  
+
+<CardGrid stagger>
+  <LinkCard title="Expressions régulières en Python" href="expressions-regulieres-python" description="La bibliothèque d'expressions régulières de Python aide à manipuler du texte, notamment si vous n'êtes pas familier avec sed ou awk." />
+  <LinkCard title="Créer des documents différents à partir des mêmes sources via Jinja" href="creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-texte-conditionnel" description="Le script Python profiling.py ci-dessous permet de profiler du contenu en preprocessing à l'aide du puissant moteur de modèle Jinja." />
+  <LinkCard title="Créer des documents différents à partir des mêmes sources ReST (texte conditionnel)" href="creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-rest-texte-conditionnel" description="Générer des variantes de documents à partir des mêmes sources ReST avec le texte conditionnel de Sphinx." />
+  <LinkCard title="sed : modifiez votre texte sans ouvrir vos fichiers" href="sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers" description="Les clones d'Unix sont peu utilisés pour gérer la documentation technique." />
+  <LinkCard title="Créer des documents différents à partir des mêmes sources via Jinja (méthode objet)" href="creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-objet-texte-conditionnel" description="Profiler du contenu avec Jinja en définissant des objets (audience, plateforme, version, etc.) pour inclure ou exclure des blocs selon leurs attributs à l’aide d’un script Python profiling.py." />
+  <LinkCard title="Jourdainisation en ligne d'une tirade" href="jourdainisation-en-ligne-python" description="À l'instar du maître de philosophie du Bourgeois gentilhomme de Molière, un script Python peut facilement intervertir les mots d'une phrase pour dire la même chose de manière plus alambiquée." />
+  <LinkCard title="Le Raspberry Pi 3 en tant que plateforme de documentation" href="raspberry-pi-plateforme-documentation" description="Avec ses ressources modestes, un Raspberry Pi 3 suffit pour créer, gérer et générer une documentation en PDF, HTML ou EPUB." />
+  <LinkCard title="Insérer automatiquement des données SQL dans un fichier reStructuredText" href="inserer-automatiquement-des-donnees-sql-dans-un-fichier-restructuredtext" description="Nous allons créer une base de données de produits avec leurs versions, puis mettre en forme ces informations dans un fichier reStructuredText." />
+  <LinkCard title="Didacticiels DITA XML et XSL-FO" href="didacticiels-dita-xml-xsl-fo" description="DITA XML est un langage de rédaction structurée qui permet de créer des documents sans se soucier de leur aspect final sur différents supports. XSL-FO est un langage qui permet de réorganiser et filtrer le contenu XML et de lui appliquer une mise en page à l'aide d'une feuille de style." />
+  <LinkCard title="Insérer automatiquement des données dans un fichier reStructuredText" href="inserer-automatiquement-des-donnees-dans-un-fichier-restructuredtext" description="Supposons que vous deviez présenter 3 produits, Dianthus, Geum et Prunus, chacun déclinés dans trois versions 1.0, 1.5 et 2.3." />
+</CardGrid>
+
 
 :::tip[Voir aussi]
 [Being a Techie Writer]()
