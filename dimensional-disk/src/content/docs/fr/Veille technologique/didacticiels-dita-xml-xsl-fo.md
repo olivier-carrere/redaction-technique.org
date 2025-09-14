@@ -520,3 +520,154 @@ Face à cette situation, vous avez quatre solutions :
 
 Le problème de l'index n'est donc pas un obstacle à l'adoption de **DITA XML**. Si votre support final est un document imprimé, les solutions existent. S'il s'agit d'un format électronique, l'absence d'un index est largement compensée par la fonction de recherche en plein texte.
 
+## Utiliser l’IDE nXML pour DITA XML
+
+<a id="utiliser-ide-nxml-pour-dita-xml"></a>
+
+Le mode nXML propose de valider en temps réel les documents XML **DocBook**, XHTML ou autres. Plus la peine de connaître le schéma XML par cœur: votre éditeur de texte vous propose l’autocomplétion des balises XML selon le contexte. Il ne supporte cependant pas **DITA XML** par défaut. Ce didacticiel vous permettra d’utiliser ce mode Emacs pour **DITA XML**.
+
+Prérequis
+
+- Emacs
+- La structure de répertoires de votre projet de documentation **DITA XML** doit être la suivante :
+  - répertoire de langue
+    - concepts
+    - faq
+    - reference
+    - tasks
+    - topics
+
+  où <répertoire de langue> a la valeur en_US, ou fr_FR, etc.
+- Les instructions de ligne de commande sont conçues pour GNU/Linux ; elles doivent être adaptées pour être utilisées dans un autre environnement.
+
+1. Effectuez une sauvegarde de l’ensemble de votre projet de documentation **DITA XML**.
+
+2. Ouvrez un terminal et collez la suite de commandes suivante :
+
+    ```console
+    $ export THAI="http://www.thaiopensource.com/download"
+    $ export RED="http://www.redaction-technique.org/media"
+    $ cd && \
+    wget $THAI/nxml-mode-20041004.tar.gz && \
+    tar xzvf nxml-mode-20041004.tar.gz && \
+    wget $RED/nxml-mode-environmment.txt && \
+    cp .emacs .emacs.bak && \
+    cat .emacs | sed '$a\' > .emacs.tmp && \
+    mv .emacs.tmp .emacs && \
+    cat nxml-mode-environmment.txt >> .emacs && \
+    rm  nxml-mode-environmment.txt
+    ```
+
+    :::note[Note]
+    Si un message vous avertit que le fichier `.emacs` n’existe pas, collez les commandes suivantes, puis recommencez l’opération :
+
+    ```console
+    $ cd && touch .emacs
+    ```
+    :::
+
+    Cette suite de commandes :
+    - télécharge et décompresse le mode nXML,
+    - crée une copie de sauvegarde du fichier `.emacs` (`.emacs.bak`),
+    - écrit les variables d’environnement du mode nXML dans le fichier `.emacs`.
+
+3. Téléchargez [l’archive des schémas RelaxNG pour DITA XML]() dans le répertoire racine de votre projet de documentation **DITA XML**.
+
+4. Placez-vous dans le répertoire racine de votre projet de documentation **DITA XML**, puis collez la commande suivante :
+
+    ```console
+    $ tar xzvf rnc.tar.gz
+    ```
+
+    Cette commande crée un répertoire `rnc` de même niveau que le <répertoire de langue>.
+
+5. Téléchargez [l’archive des fichiers schemas.xml]() dans le répertoire racine de votre projet de documentation **DITA XML**, puis collez la suite de commandes ci-dessous en remplaçant <répertoire de langue> par la valeur appropriée, en_US, ou fr_FR, par exemple. Répétez cette étape pour tous vos répertoires de langue.
+
+    ```console
+    $ export DIR="schemas.redaction-technique.org"
+    $ tar xzvf $DIR.tar.gz && \
+    cd <répertoire de langue> && \
+    cp ../$DIR/concepts/schemas.xml concepts/ && \
+    cp ../$DIR/faq/schemas.xml faq/ && \
+    cp ../$DIR/reference/schemas.xml reference/ && \
+    cp ../$DIR/tasks/schemas.xml tasks/ && \
+    cp ../$DIR/tasks/schemas.xml tasks/ && \
+    cp ../$DIR/topics/schemas.xml topics/ && \
+    rm -rf ../$DIR/
+    ```
+
+    Vos répertoires de langue doivent maintenant comporter les fichiers `schemas.xml` appropriés :
+    - fr_FR
+      - concepts
+        - schemas.xml
+      - faq
+        - schemas.xml
+      - reference
+        - schemas.xml
+      - tasks
+        - schemas.xml
+      - topics
+        - schemas.xml
+
+6. Ouvrez un fichier de contenu **DITA XML** (`.dita`) avec Emacs. La syntaxe **DITA XML** apparaît en couleurs. Les endroits où le schéma n’est pas respecté sont soulignés en rouge.
+
+7. Pour insérer une nouvelle balise entrez <, puis appuyez sur Ctrl+Entrée. La liste des balises possibles apparaît.
+
+8. Sélectionnez une balise, puis appuyez sur Entrée. Appuyez sur Ctrl+Entrée pour afficher la liste des attributs autorisés.
+
+9. Pour insérer une balise fermante après du texte, entrez </, puis appuyez sur Ctrl+Entrée.
+
+## Accélérer sa saisie avec le mode Predictive pour Emacs
+
+Ce didacticiel mode Predictive pour Emacs est destiné à vous guider dans la mise en place et l'utilisation du mode Emacs d'aide à la rédaction et d'autocomplétion des mots anglais et français Predictive dans un environnement GNU/Linux (en l'occurrence, Debian).
+
+1.  Installez make et texinfo :
+
+    ``` console
+    $ sudo aptitude install make texinfo
+    ```
+
+2.  Téléchargez [Predictive]().
+
+3.  Décompressez l'archive Predictive :
+
+    ``` console
+    $ tar xzvf predictive-0.23.13.tar.gz
+    ```
+
+4.  Placez-vous dans le répertoire `predictive` :
+
+    ``` console
+    $ cd predictive
+    ```
+
+5.  Compilez predictive :
+
+    ``` console
+    $ make
+    ```
+
+6.  Installez predictive :
+
+    ``` console
+    $ sudo make install
+    ```
+
+7.  Insérez le code suivant dans le fichier `.emacs` :
+
+    ``` 
+    ;; predictive install location
+         (add-to-list 'load-path "~/.emacs.d/predictive/")
+         ;; dictionary locations
+         (add-to-list 'load-path "~/.emacs.d/predictive/latex/")
+         (add-to-list 'load-path "~/.emacs.d/predictive/texinfo/")
+         (add-to-list 'load-path "~/.emacs.d/predictive/html/")
+         ;; load predictive package
+         (require 'predictive)
+    ```
+
+8.  Lancez Emacs, puis appuyez sur Alt+X et entrez :
+
+    ``` 
+    predictive-mode
+    ```
