@@ -102,3 +102,49 @@ documents-monolithiques-ou-modulaires fichiers-binaires-ou-texte
 [^1]: Si le **rédacteur technique** met lui-même en page ses documents, il change de rôle lorsqu'il effectue cette opération.
 
 [^2]: Ou très peu : dans les fichiers de contenu, il est seulement possible de mettre du texte en gras ou en italique, pas d'en changer la police, le corps ou la couleur.
+
+## Documents monolithiques ou modulaires
+
+Le format source peut reposer sur des fichiers monolithiques ou sur des grappes de fichiers modulaires.
+:::
+
+Les fichiers monolithiques (par exemple **MS Word**, **LibreOffice** ou **FrameMaker**) centralisent tout le contenu dans un seul fichier, facile à manier, mais qui limite le partage du contenu ; le risque de disposer d'informations incohérentes ou en doublon est alors important.
+
+![Format source de rédaction technique monolithique](/assets/monolithique.svg)
+**Format source de rédaction technique monolithique**
+
+Les grappes de fichiers modulaires (par exemple **DITA XML**) agrègent le contenu de multiples fichiers, ce qui favorise le partage et la réutilisation de blocs de contenu. Un tel système est difficile à mettre en place au niveau de toute l'entreprise, mais devrait être la norme pour une équipe de **rédaction technique**.
+
+![Format source de rédaction technique modulaire](/assets/grappe.svg)
+**Format source de rédaction technique modulaire**
+
+Certains traitements de texte proposent de gérer des documents modulaires, mais ils le font mal. Inversement, un document **DocBook** ou **DITA XML**, par exemple, peut être monolithique, mais perd alors de sa souplesse.
+
+### Qu'est-ce qu'un module d'information ?
+
+Le système modulaire le plus connu au monde est certainement celui des briques Lego. Adapté à la documentation technique, le principe des modules permet d'améliorer la qualité des manuels techniques et la productivité du rédacteur technique.
+
+Mais suffit-il de convertir sa documentation de FrameMaker vers un format structuré tel que DITA XML pour obtenir une documentation modulaire ? Hélas, non. Si le contenu de départ mélange les informations de tout type (concepts, procédures pas à pas, référence), il sera toujours possible de le convertir au format DITA XML en ne respectant pas rigoureusement la sémantique DITA XML. Voire en modifiant les feuilles de style XSLT ou en spécialisant les XSD pour les rendre plus laxistes.
+
+Or, si l'on obtient au final un document se basant sur des fichiers correpondant chacun à un schéma XSD différent (concept, task, ou reference), on n'obtient pas forcément ainsi une véritable documentation modulaire. En effet, essayez de construire alors un document ne regroupant que les fichiers d'un seul type : votre document aura toutes les chances d'être incomplet et incohérent.
+
+Cette documentation n'est pas modulaire, car elle ne repose pas sur de véritables modules d'information. Un module est un élément atomique complet et cohérent qui peut être réutilisé dans différents contextes. Si vous avez divisé votre document monolithique original en une multitude de fichiers, vous n'avez pas encore créé de modules d'information. La seconde étape consiste à ré-écrire chaque fichier (selon par exemple l'approche minimaliste) pour le rendre plus générique et en faire un véritable module. Il faut évidemment adopter une approche structuraliste et décider du contenu de chaque module dans la perspective de l'architecture documentaire globale. De même, des mentions telles que Voir la section suivante devront être remplacées par des reférences croisées. Idéalement, ces références croisées ne se situent pas dans les fichiers de contenu proprement dit sous la forme :
+
+``` xml
+<related-links>
+  <link href="content.dita#content"/>
+</related-links>
+```
+
+mais dans une section reltable propre à chaque fichier ditamap.
+
+Les modules sont ainsi parfaitement décontextualisés, et les informations de structure telles que les références croisées sont placés dans des fichiers ne comportant pas de contenu textuel.
+
+
+## Fichiers binaires ou texte
+
+Les formats sources sont des formats binaires ou texte.
+
+- Les formats binaires sont *opaques* : si on les ouvre avec un éditeur de texte de type *notepad*, tout ce que l'on voit est une suite de caractères hiéroglyphiques ; il n'est donc la plupart du temps possible de les modifier qu'avec un seul logiciel.
+- Les formats texte sont *transparents* : si on les ouvre avec un éditeur de texte, on voit du texte et des balises ; il est donc possible de les modifier avec différents logiciels et de leur appliquer des opérations de traitement par lot en ligne de commande, sans même les ouvrir, et d'utiliser de puissantes [expressions rationnelles]().
+
