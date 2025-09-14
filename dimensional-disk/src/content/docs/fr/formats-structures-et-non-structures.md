@@ -5,7 +5,6 @@ slug: formats-structures-et-non-structures
 ---
 
 :::tip
-**`fa-bullhorn`**
 
 Les formats structurés favorisent la création de documents minimalistes, complets et cohérents. Ils permettent au rédacteur technique de se concentrer sur le contenu et d'améliorer l'expérience utilisateur et l'utilisabilité de la documentation technique.
 :::

@@ -7,7 +7,6 @@ slug: validation-et-controle-qualite
 <a id="validation-et-controle-qualite"></a>
 
 :::note
-**`fa-bullhorn`**
 
 Un support de rédaction technique doit être soumis à un contrôle qualité rigoureux avant d'être communiqué à ses différentes cibles.
 :::

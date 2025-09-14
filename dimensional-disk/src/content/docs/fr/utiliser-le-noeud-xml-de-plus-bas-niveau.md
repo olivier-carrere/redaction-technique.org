@@ -5,7 +5,6 @@ slug: "utiliser-le-noeud-xml-de-plus-bas-niveau"
 ---
 
 ::: sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Le **rédacteur technique** doit utiliser comme source du [conref]() le nœud **DITA XML** de plus bas niveau contenant l'information à partager.
 :::

@@ -5,7 +5,6 @@ slug: "docbook-ou-dita-xml"
 ---
 
 ::: sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Certaines entreprises ont parfois un contenu existant au format [DocBook](). Géré souvent par les acteurs les plus techniques de la société, il coexiste la plupart du temps avec d'autres contenus au format **FrameMaker** ou traitement de texte. S'il est décidé de fédérer tout le contenu d'entreprise sous un seul format, il semble naturel de capitaliser les efforts fournis sur la chaîne de création et de publication **DocBook** et de sélectionner ce format. C'est pourtant se priver des gains de productivité spectaculaires offerts par **DITA XML**.
 :::

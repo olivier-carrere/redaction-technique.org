@@ -5,7 +5,6 @@ slug: un-langage-a-balises
 ---
 
 :::note
-`fa-bullhorn`
 
 DITA XML est un langage à balises : le rédacteur technique structure l'information dans des fichiers sources sans mise en page, similaires aux fichiers sources de code informatique. L'utilisateur reçoit un document cible, par exemple un fichier PDF, où les balises sont remplacées par une mise en forme typographique.
 :::

@@ -7,7 +7,6 @@ slug: /proteger-les-informations-confidentielles
 <a id="proteger-les-informations-confidentielles"></a>
 
 :::tip
-**`fa-bullhorn`**
 
 Le puissant mécanisme [conref]() de **DITA XML** se prête à d'autres applications que la réduction des coûts. Par exemple, le **rédacteur technique** peut masquer des informations dans le code source.
 :::

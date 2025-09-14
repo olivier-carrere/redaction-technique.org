@@ -4,7 +4,6 @@ description: "La recherche en plein texte semble avoir détrôné l'index."
 ---
 
 ::: sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 À l'heure des documents dématérialisés, un index est-il un élément indispensable d'une bonne **documentation technique** ?
 :::

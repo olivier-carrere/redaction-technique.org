@@ -5,7 +5,6 @@ slug: "les-topics-modules-d-information-de-base-dita"
 ---
 
 :::note
-**`fa-bullhorn`**
 
 Les [topics]() sont les plus petites unités d'information autonomes gérées par **DITA XML**. Chaque *topic* a un titre et un corps de texte. Il ne traite que d'un seul sujet. Il appartient donc au **rédacteur technique** de se baser sur la modularité proposée par **DITA XML** pour bien structurer l'information.
 :::

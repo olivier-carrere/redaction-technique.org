@@ -4,7 +4,6 @@ description: "La communication technique est souvent réduite à la rédaction t
 ---
 
 ::: sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Le but de la **communication technique** est de transformer les prospects en clients satisfaits. Le **rédacteur technique** fournit au marché l'information dont il a besoin pour sélectionner, évaluer et utiliser une solution de haute technologie. Au sein de l'entreprise, il est l'interface entre les services R&D et marketing. À l'extérieur, il crée le dialogue entre l'entreprise et ses différents publics.
 :::

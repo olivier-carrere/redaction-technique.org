@@ -4,7 +4,6 @@ description: "Git est d'un abord déroutant : ses workflows s'appliquent à du c
 slug: /organiser-son-historique-avec-git-rebase
 ---
 
-**`fa-bullhorn`**
 
 Git est d'un abord déroutant. Ses *workflows* s'appliquent à du contenu plutôt qu'à des fichiers. Résultat : le travail de groupe et la gestion de différentes versions concurrentes d'un même contenu deviennent beaucoup plus simples.
 

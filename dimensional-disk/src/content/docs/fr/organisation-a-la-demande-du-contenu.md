@@ -5,7 +5,6 @@ slug: "organisation-a-la-demande-du-contenu"
 ---
 
 ::: sidebar
-**`fa-bullhorn`{.interpreted-text role="awesome"}**
 
 Les briques d'information peuvent être assemblées à la demande dans des structures de table des matières externes, les *ditamap*.
 :::

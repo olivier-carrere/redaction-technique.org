@@ -5,7 +5,6 @@ slug: maximiser-utilisation-des-conref-pour-faire-baisser-les-couts
 ---
 
 :::tip
-**`fa-bullhorn`**
 
 Recourir aux [conref]() est le meilleur moyen dont dispose le **rédacteur technique** pour faire baisser spectaculairement les coûts et les délais de publication de son contenu **DITA XML**, surtout pour les documents multilingues.
 :::

@@ -5,7 +5,6 @@ slug: "/les-cms-le-workflow-en-prime-mais-une-fiabilite-a-tester"
 ---
 
 :::note
-**`fa-bullhorn`**
 
 Les `CMS (Content Management System)`, ainsi dénommés pour des raisons purement marketing, mais dont la fonction se comprend mieux avec l'acronyme `GED (système de gestion
 électronique de documents)`, apportent des notions de workflow et de gestion des liens qui s’avèrent précieuses lorsque l’on gère des documents modulaires.
