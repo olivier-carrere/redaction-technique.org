@@ -4,7 +4,6 @@ description: "Utilisez les conref au niveau de la plus petite structure XML pour
 slug: "utiliser-le-noeud-xml-de-plus-bas-niveau"
 ---
 
-::: sidebar
 
 Le **rédacteur technique** doit utiliser comme source du [conref]() le nœud **DITA XML** de plus bas niveau contenant l'information à partager.
 :::

@@ -4,7 +4,6 @@ description: "Pour travailler sur un fichier, le rédacteur technique utilise un
 slug: "/quel-referentiel-pour-le-travail-de-groupe"
 ---
 
-::: sidebar
 
 Le référentiel le plus fréquemment utilisé pour stocker des fichiers informatiques est le dossier, ou répertoire. Si ce dépôt est parfaitement adapté à la gestion de fichiers par un utilisateur unique sur son disque dur local, il montre rapidement ses limites pour le travail de groupe.
 :::

@@ -3,7 +3,6 @@ title: "Un index est-il utile dans un PDF ?"
 description: "La recherche en plein texte semble avoir détrôné l'index."
 ---
 
-::: sidebar
 
 À l'heure des documents dématérialisés, un index est-il un élément indispensable d'une bonne **documentation technique** ?
 :::

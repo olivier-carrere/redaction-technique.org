@@ -4,7 +4,6 @@ description: "DITA XML est un langage de rédaction structurée qui permet de cr
 slug: didacticiels-dita-xml-xsl-fo
 ---
 
-::: sidebar
 
 Les didacticiels suivants aideront le **rédacteur technique** à mettre en place et à utiliser une chaîne de création et de publication **DITA XML** libre.
 :::

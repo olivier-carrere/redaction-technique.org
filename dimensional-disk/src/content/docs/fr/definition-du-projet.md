@@ -4,7 +4,6 @@ description: "Communiquer des informations techniques sans savoir à qui ni dans
 slug: definition-du-projet
 ---
 
-::: sidebar
 
 Un projet de **rédaction technique** apporte une valeur ajoutée aux produits et aide l'entreprise à mieux commercialiser son offre sur son marché. Mais, comme pour les projets de R&D ou de marketing, la définition du projet permet d'en estimer le budget et les retombées.
 :::

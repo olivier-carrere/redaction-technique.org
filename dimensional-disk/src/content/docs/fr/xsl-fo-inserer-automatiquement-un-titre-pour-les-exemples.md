@@ -4,7 +4,6 @@ description: "Insérer automatiquement « Exemple : » avant le titre des exempl
 slug: "xsl-fo-inserer-automatiquement-un-titre-pour-les-exemples"
 ---
 
-::: sidebar
 
 Par défaut, `DITA-OT (DITA Open Toolkit)`{.interpreted-text role="abbr"} n'insère pas automatiquement dans les fichiers PDF le texte *Exemple :* devant le titre d'un exemple contenu entre balises **DITA XML** `<example>`{.interpreted-text role="samp"}. La syntaxe [XSL-FO]() offre cependant cette possibilité.
 :::

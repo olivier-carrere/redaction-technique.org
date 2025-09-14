@@ -4,7 +4,6 @@ description: "L'organisation de l'information sous DITA XML n'est pas figée; le
 slug: "organisation-a-la-demande-du-contenu"
 ---
 
-::: sidebar
 
 Les briques d'information peuvent être assemblées à la demande dans des structures de table des matières externes, les *ditamap*.
 :::

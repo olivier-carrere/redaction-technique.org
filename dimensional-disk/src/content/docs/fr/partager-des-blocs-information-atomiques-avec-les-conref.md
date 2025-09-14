@@ -4,7 +4,6 @@ description: "Le principe des conref est simple : lorsqu'un conref est mentionn�
 slug: partager-des-blocs-information-atomiques-avec-les-conref
 ---
 
-::: sidebar
 
 Lorsque le **rédacteur technique** veut réutiliser des blocs d'information **DITA XML** plus petits qu'une section, il doit les partager au niveau des fichiers de contenu *dita* et non dans les structures de table des matières *ditamap*, grâce au mécanisme [conref]().
 :::

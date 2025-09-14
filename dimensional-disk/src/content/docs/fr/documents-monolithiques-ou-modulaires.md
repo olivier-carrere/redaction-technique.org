@@ -4,7 +4,6 @@ description: "Les fichiers monolithiques centralisent tout le contenu dans un se
 slug: documents-monolithiques-ou-modulaires
 ---
 
-::: sidebar
 
 Le format source peut reposer sur des fichiers monolithiques ou sur des grappes de fichiers modulaires.
 :::
