@@ -13,7 +13,7 @@ Le script Python `profiling.py` ci-dessous permet de profiler du contenu à l'ai
 
 1. Créez le fichier `texte-conditionnel.rst` suivant :
 
-    ```rest
+    ```txt
     Utilisation du texte conditionnel
     =================================
 
@@ -77,7 +77,7 @@ Le script Python `profiling.py` ci-dessous permet de profiler du contenu à l'ai
 
 6. Créez une condition pour les publics autres que les éléctriciens ou les plombiers :
 
-    ```rest
+    ```txt
     Utilisation du texte conditionnel
     =================================
 
@@ -120,7 +120,7 @@ Le script Python `profiling.py` ci-dessous permet de profiler du contenu à l'ai
 
 8. Créez des conditions plus complexes :
 
-    ```rest
+    ```txt
     Utilisation du texte conditionnel
     =================================
 
@@ -200,7 +200,7 @@ Le script Python `profiling.py` ci-dessous permet de profiler du contenu à l'ai
 
     Il est peut-être plus intuitif d'indiquer dans le fichier de contenu une valeur conviviale sous forme de chaîne de caractères. Surtout si les rédacteurs ne sont pas familiarisés avec la programmation orientée objet, le test d'égalité `==` étant plus parlant pour la plupart des gens.
 
-    ```rest
+    ```txt
     .. literalinclude:: code/texte-conditionnel.rst
     ```
 
