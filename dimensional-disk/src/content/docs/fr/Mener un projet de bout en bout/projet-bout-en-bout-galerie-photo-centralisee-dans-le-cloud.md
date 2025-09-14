@@ -9,10 +9,7 @@ Je disposais d'un nom de domaine non utilisé et de suffisamment d'espace disque
 
 J'ai donc installé une instance de [Piwigo](), logiciel que je connaissais déjà (je l'utilise pour des photos de famille).
 
-<figure>
-<img src="graphics/galerie-photo.jpg" alt="graphics/galerie-photo.jpg" />
-<figcaption><a href=">Photo Kevin Harber</a></figcaption>
-</figure>
+![Photo Kevin Harber](/assets/galerie-photo.jpg)  
 
 J'ai protégé l'accès à la galerie initialement par un fichier `.htaccess` commun à tous les utilisateurs, puis par la création de comptes personnels sous la galerie.
 
