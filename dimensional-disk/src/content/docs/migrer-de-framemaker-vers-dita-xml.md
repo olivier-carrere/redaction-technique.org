@@ -1,6 +1,6 @@
 ---
-title: Migrer de FrameMaker vers DITA XML
-description: Migrer du contenu FrameMaker vers DITA XML et gérer la documentation DITA XML sans utiliser FrameMaker structuré.
+title: "Migrer de FrameMaker vers DITA XML"
+description: "Migrer du contenu FrameMaker vers DITA XML et gérer la documentation DITA XML sans utiliser FrameMaker structuré."
 slug: migrer-de-framemaker-vers-dita-xml
 sidebar:
   label: How-to
@@ -45,7 +45,7 @@ Ne lancez ce type de scripts que sur une copie de vos fichiers et non sur les fi
 open(INPUT,"<$ARGV[0]") or die;
 @input_array=<INPUT‣;
 close(INPUT);
-$input_scalar=join("",@input_array);
+$input_scalar=join(",@input_array);
 # substitution
 $input_scalar =~ s#\<body‣(.|\n)*?</body‣##ig;
 open(OUTPUT,‣$ARGV[0]") or die;

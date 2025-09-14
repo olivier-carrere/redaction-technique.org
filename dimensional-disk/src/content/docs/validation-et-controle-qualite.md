@@ -1,6 +1,6 @@
 ---
-title: Validation et contrôle qualité
-description: Le contenu doit être validé avant livraison.
+title: "Validation et contrôle qualité"
+description: "Le contenu doit être validé avant livraison."
 slug: validation-et-controle-qualite
 sidebar:
   label: How-to

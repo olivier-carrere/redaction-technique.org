@@ -1,6 +1,6 @@
 ---
-title: Migration de FrameMaker vers DITA XML
-description: Aucun processus automatique ne permet de migrer un document non structuré vers un format structuré; une migration bien planifiée permet de passer au nouveau format sans perturber les livraisons.
+title: "Migration de FrameMaker vers DITA XML"
+description: "Aucun processus automatique ne permet de migrer un document non structuré vers un format structuré; une migration bien planifiée permet de passer au nouveau format sans perturber les livraisons."
 slug: migration-de-framemaker-vers-dita-xml
 sidebar:
   label: How-to

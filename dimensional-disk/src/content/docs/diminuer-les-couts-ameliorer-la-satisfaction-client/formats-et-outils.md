@@ -1,12 +1,6 @@
 ---
-title: Formats et outils
-description: Lorsqu’une entreprise industrialise la rédaction technique, la question clé n’est pas l’outil mais le format sous-jacent.
-slug: formats-et-outils
-sidebar:
-  label: How-to
-  order: 1
-prev: false
-next: false
+title: "Formats et outils"
+description: "Lorsqu’une entreprise industrialise la rédaction technique, la question clé n’est pas l’outil mais le format sous-jacent."
 ---
 
 ::: sidebar

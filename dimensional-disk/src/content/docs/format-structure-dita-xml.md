@@ -1,6 +1,6 @@
 ---
-title: Format structuré DITA XML
-description: Diminuer les coûts et délais de production, et améliorer la qualité en réduisant le volume source et en mieux gérant le contenu.
+title: "Format structuré DITA XML"
+description: "Diminuer les coûts et délais de production, et améliorer la qualité en réduisant le volume source et en mieux gérant le contenu."
 slug: /format-structure-dita-xml
 sidebar:
   label: How-to

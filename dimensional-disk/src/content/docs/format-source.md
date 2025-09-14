@@ -105,7 +105,7 @@ html
 **Notes**
 :::
 
-::: {.toctree hidden=""}
+::: {.toctree hidden="}
 documents-monolithiques-ou-modulaires fichiers-binaires-ou-texte
 :::
 

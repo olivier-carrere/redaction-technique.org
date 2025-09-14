@@ -33,7 +33,7 @@ Pour être conforme au schéma XSD, votre code doit au moins être structuré co
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA 1.2 Task//EN"
-/usr/share/dita-ot/dtd/technicalContent/dtd/task.dtd"">
+/usr/share/dita-ot/dtd/technicalContent/dtd/task.dtd">
 <task id="shared" xml:lang="fr-fr">
   <title>Conref source</title>
   <taskbody>

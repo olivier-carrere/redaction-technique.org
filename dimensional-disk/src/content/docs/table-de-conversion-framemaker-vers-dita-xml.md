@@ -1,6 +1,6 @@
 ---
-title: Table de conversion FrameMaker vers DITA XML
-description: Appliquer la table de conversion lorsque les fichiers FrameMaker sont prêts et que la chaîne DITA XML est intégrée.
+title: "Table de conversion FrameMaker vers DITA XML"
+description: "Appliquer la table de conversion lorsque les fichiers FrameMaker sont prêts et que la chaîne DITA XML est intégrée."
 slug: table-de-conversion-framemaker-vers-dita-xml
 sidebar:
   label: How-to

@@ -1,12 +1,6 @@
 ---
 title: "Les trois niveaux de la documentation technique"
 description: "Si l’on compare la documentation technique à un jardin, on peut la classifier selon les niveaux suivants :"
-slug: "les-trois-niveaux-de-la-documentation-technique"
-sidebar:
-  label: "How-to"
-  order: 1
-prev: false
-next: "/un-index-est-il-utile-dans-un-pdf"
 ---
 
 Si l’on compare la documentation technique à un jardin, on peut la classifier selon les niveaux suivants :

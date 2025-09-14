@@ -1,12 +1,6 @@
 ---
-title: Principe de simplicité KISS
-description: Le principe KISS (Keep it simple stupid) est un principe général d’ingénierie qui préconise la simplicité pour améliorer fiabilité, maintenance et évolutivité.
-slug: /principe-de-simplicite-kiss
-sidebar:
-  label: How-to
-  order: 1
-prev: false
-next: false
+title: "Principe de simplicité KISS"
+description: "Le principe KISS (Keep it simple stupid) est un principe général d’ingénierie qui préconise la simplicité pour améliorer fiabilité, maintenance et évolutivité."
 ---
 
 Le principe `KISS (Keep it simple stupid)`{.interpreted-text role="abbr"}, n'est pas spécifique à la **rédaction technique**. Il s'agit d'un principe général d'ingénierie, qui postule que tout objet matériel ou virtuel construit par l'homme est plus fiable et plus facile à maintenir et à faire évoluer si sa complexité est volontairement réduite. C'est le principe mis en exergue par antiphrase par les Shadocks : *Pourquoi faire simple quand on peut faire compliqué* ?

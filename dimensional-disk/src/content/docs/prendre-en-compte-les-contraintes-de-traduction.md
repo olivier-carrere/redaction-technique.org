@@ -1,6 +1,6 @@
 ---
-title: Prendre en compte les contraintes de traduction
-description: Pourquoi appliquer conref uniquement à des phrases complètes ou à des termes non traduits pour éviter des problèmes de traduction en DITA XML.
+title: "Prendre en compte les contraintes de traduction"
+description: "Pourquoi appliquer conref uniquement à des phrases complètes ou à des termes non traduits pour éviter des problèmes de traduction en DITA XML."
 slug: prendre-en-compte-les-contraintes-de-traduction
 sidebar:
   label: How-to

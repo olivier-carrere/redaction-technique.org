@@ -1,6 +1,6 @@
 ---
-title: LaTeX
-description: Pourquoi avoir choisi LaTeX pour réaliser le support print afin de remanier le texte sans refaire la mise en page et traduire le dépliant sans tâches de PAO manuelles.
+title: "LaTeX"
+description: "Pourquoi avoir choisi LaTeX pour réaliser le support print afin de remanier le texte sans refaire la mise en page et traduire le dépliant sans tâches de PAO manuelles."
 slug: projet-bout-en-bout-latex
 sidebar:
   label: How-to

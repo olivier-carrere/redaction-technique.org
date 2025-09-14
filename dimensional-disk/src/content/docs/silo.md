@@ -1,6 +1,6 @@
 ---
-title: Libérez vos informations de leurs silos
-description: Des solutions souples et fiables libèrent vos informations des silos d'information cloisonnés où elles sont emprisonnées et sous-exploitées.
+title: "Libérez vos informations de leurs silos"
+description: "Des solutions souples et fiables libèrent vos informations des silos d'information cloisonnés où elles sont emprisonnées et sous-exploitées."
 slug: liberez-vos-informations-de-leurs-silos
 sidebar:
   label: How-to

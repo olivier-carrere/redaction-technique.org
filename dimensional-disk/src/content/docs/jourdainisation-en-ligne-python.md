@@ -17,7 +17,7 @@ next: false
 
 Voici le code du script, qui repose sur le microframework web [Flask]() :
 
-::: {.literalinclude language="python3" caption=""}
+::: {.literalinclude language="python3" caption="}
 code/word_switch_web.py
 :::
 
@@ -37,21 +37,21 @@ print(texte_final)
 
 Voici maintenant les modèles générant les pages HTML de base, d'entrée et de sortie, basés sur [Jinja]() :
 
-::: {.literalinclude language="html" caption=""}
+::: {.literalinclude language="html" caption="}
 code/templates/base.html
 :::
 
-::: {.literalinclude language="html" caption=""}
+::: {.literalinclude language="html" caption="}
 code/templates/entry.html
 :::
 
-::: {.literalinclude language="html" caption=""}
+::: {.literalinclude language="html" caption="}
 code/templates/results.html
 :::
 
 Et enfin, la feuille de style CSS :
 
-::: {.literalinclude language="css" caption=""}
+::: {.literalinclude language="css" caption="}
 code/static/form.css
 :::
 

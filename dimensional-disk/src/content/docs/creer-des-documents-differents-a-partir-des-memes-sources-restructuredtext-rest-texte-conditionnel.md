@@ -1,6 +1,6 @@
 ---
-title: Créer des documents différents à partir des mêmes sources ReST (texte conditionnel)
-description: Générer des variantes de documents à partir des mêmes sources ReST avec le texte conditionnel de Sphinx.
+title: "Créer des documents différents à partir des mêmes sources ReST (texte conditionnel)"
+description: "Générer des variantes de documents à partir des mêmes sources ReST avec le texte conditionnel de Sphinx."
 slug: creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-rest-texte-conditionnel
 sidebar:
   label: How-to

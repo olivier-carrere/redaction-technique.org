@@ -1,6 +1,6 @@
 ---
-title: Mener un projet de bout en bout
-description: Il est assez rare, dans le cadre professionnel, de pouvoir mener un projet de (quasiment) A à Z, de la conception à la communication, en passant par la réalisation.
+title: "Mener un projet de bout en bout"
+description: "Il est assez rare, dans le cadre professionnel, de pouvoir mener un projet de (quasiment) A à Z, de la conception à la communication, en passant par la réalisation."
 slug: mener-un-projet-de-bout-en-bout
 sidebar:
   label: How-to
@@ -73,7 +73,7 @@ J\'ai donc installé une instance de [Piwigo](), logiciel que je connaissais dé
 
 <figure>
 <img src="graphics/galerie-photo.jpg" alt="graphics/galerie-photo.jpg" />
-<figcaption><a href="">Photo Kevin Harber</a></figcaption>
+<figcaption><a href=">Photo Kevin Harber</a></figcaption>
 </figure>
 
 J\'ai protégé l\'accès à la galerie initialement par un fichier `.htaccess` commun à tous les utilisateurs, puis par la création de comptes personnels sous la galerie.

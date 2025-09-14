@@ -1,6 +1,6 @@
 ---
-title: Support papier
-description: Dépliant décrivant la connexion à la galerie, les types d’utilisateurs, leur utilisation et le workflow associé.
+title: "Support papier"
+description: "Dépliant décrivant la connexion à la galerie, les types d’utilisateurs, leur utilisation et le workflow associé."
 slug: projet-bout-en-bout-support-papier
 sidebar:
   label: How-to

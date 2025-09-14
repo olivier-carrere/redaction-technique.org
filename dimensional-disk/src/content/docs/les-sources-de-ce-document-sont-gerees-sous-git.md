@@ -1,6 +1,6 @@
 ---
-title: Les sources de ce blog sont gérées sous Git
-description: Ce blog, initialement sous WordPress, a migré vers reStructuredText pour permettre des modifications transverses et un suivi précis du cycle de vie du contenu.
+title: "Les sources de ce blog sont gérées sous Git"
+description: "Ce blog, initialement sous WordPress, a migré vers reStructuredText pour permettre des modifications transverses et un suivi précis du cycle de vie du contenu."
 slug: les-sources-de-ce-blog-sont-gerees-sous-git
 sidebar:
   label: How-to

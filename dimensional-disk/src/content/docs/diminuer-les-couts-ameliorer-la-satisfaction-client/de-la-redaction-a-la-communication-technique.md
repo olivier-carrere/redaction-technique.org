@@ -1,12 +1,6 @@
 ---
 title: "De la rédaction à la communication technique"
 description: "La communication technique est souvent réduite à la rédaction technique. La rédaction technique est destinée à fournir la documentation des produits, et intervient en aval de la vente."
-slug: de-la-redaction-a-la-communication-technique
-sidebar:
-  label: "How-to"
-  order: 1
-prev: false
-next: false
 ---
 
 ::: sidebar

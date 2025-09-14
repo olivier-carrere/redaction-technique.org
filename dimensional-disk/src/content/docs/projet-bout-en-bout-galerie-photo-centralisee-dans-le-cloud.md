@@ -1,6 +1,6 @@
 ---
-title: Galerie photo centralisée dans le cloud
-description: Les membres de l'association étant géographiquement dispersés, il était essentiel de proposer un hébergement centralisé dans le cloud.
+title: "Galerie photo centralisée dans le cloud"
+description: "Les membres de l'association étant géographiquement dispersés, il était essentiel de proposer un hébergement centralisé dans le cloud."
 slug: projet-bout-en-bout-galerie-photo-centralisee-dans-le-cloud
 sidebar:
   label: How-to
@@ -17,7 +17,7 @@ J'ai donc installé une instance de [Piwigo](), logiciel que je connaissais déj
 
 <figure>
 <img src="graphics/galerie-photo.jpg" alt="graphics/galerie-photo.jpg" />
-<figcaption><a href="">Photo Kevin Harber</a></figcaption>
+<figcaption><a href=">Photo Kevin Harber</a></figcaption>
 </figure>
 
 J'ai protégé l'accès à la galerie initialement par un fichier `.htaccess` commun à tous les utilisateurs, puis par la création de comptes personnels sous la galerie.

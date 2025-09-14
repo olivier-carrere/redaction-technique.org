@@ -1,6 +1,6 @@
 ---
-title: Du document à la base documentaire modulaire
-description: Le format de rédaction structurée DITA XML propose de passer du modèle du livre à celui de la base documentaire modulaire.
+title: "Du document à la base documentaire modulaire"
+description: "Le format de rédaction structurée DITA XML propose de passer du modèle du livre à celui de la base documentaire modulaire."
 slug: du-document-a-la-base-documentaire-modulaire
 sidebar:
   label: How-to

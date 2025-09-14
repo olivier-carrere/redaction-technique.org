@@ -1,6 +1,6 @@
 ---
-title: Centraliser les conref dans un fichier unique
-description: Il est plus efficace d'extraire le contenu réutilisé et de le placer dans un fichier ne contenant que des sources de conref.
+title: "Centraliser les conref dans un fichier unique"
+description: "Il est plus efficace d'extraire le contenu réutilisé et de le placer dans un fichier ne contenant que des sources de conref."
 slug: centraliser-les-conref-dans-un-fichier-unique
 sidebar:
   label: How-to

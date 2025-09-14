@@ -1,12 +1,6 @@
 ---
-title: Un index est-il utile dans un PDF ?
-description: La recherche en plein texte semble avoir détrôné l'index.
-slug: un-index-est-il-utile-dans-un-pdf
-sidebar:
-  label: How-to
-  order: 1
-prev: null
-next: null
+title: "Un index est-il utile dans un PDF ?"
+description: "La recherche en plein texte semble avoir détrôné l'index."
 ---
 
 ::: sidebar

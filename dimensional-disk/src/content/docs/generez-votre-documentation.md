@@ -1,6 +1,6 @@
 ---
-title: Générez votre documentation
-description: En quelques minutes, générez et affichez la documentation en PDF, HTML et EPUB.
+title: "Générez votre documentation"
+description: "En quelques minutes, générez et affichez la documentation en PDF, HTML et EPUB."
 slug: generez-votre-documentation
 sidebar:
   label: How-to

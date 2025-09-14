@@ -1,6 +1,6 @@
 ---
-title: Base de données SQL
-description: Dans le cas d'un CMS (Content Management System) de type Drupal, Joomla ou WordPress, le référentiel est une base de données SQL.
+title: "Base de données SQL"
+description: "Dans le cas d'un CMS (Content Management System) de type Drupal, Joomla ou WordPress, le référentiel est une base de données SQL."
 slug: base-de-donnees-sql
 sidebar:
   label: How-to
