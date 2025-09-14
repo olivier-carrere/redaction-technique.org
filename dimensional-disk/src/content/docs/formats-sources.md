@@ -11,10 +11,8 @@ next: false
 
 Ce blog est disponible en trois formats, basés sur la version 1.1[^1]. Ces formats présentent des niveaux de fonctionnalités et de complexité différents.
 
-<figure>
-<img src="graphics/fonctionnalites_complexite.svg" alt="graphics/fonctionnalites_complexite.svg" />
-<figcaption><em>Niveau de fonctionnalités et de complexité des formats texte</em></figcaption>
-</figure>
+![Niveau de fonctionnalités et de complexité des formats texte](/assets/fonctionnalites_complexite.svg)
+**Niveau de fonctionnalités et de complexité des formats texte**
 
 reStructuredText
 

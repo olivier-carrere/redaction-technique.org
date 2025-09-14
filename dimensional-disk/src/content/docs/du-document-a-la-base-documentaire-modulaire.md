@@ -19,10 +19,8 @@ Le modèle du livre est encore prédominant pour créer et gérer l'information.
 
 Le format de rédaction structurée DITA XML propose de passer du modèle du livre à celui du de la base documentaire modulaire. Le contenu d'entreprise repose sur des briques uniques, qui peuvent être assemblées dynamiquement, à la demande, pour produire des documents sous différents formats cibles.
 
-<figure>
-<img src="graphics/documentation-modulaire.svg" alt="graphics/documentation-modulaire.svg" />
-<figcaption><em>Une documentation modulaire offre une souplesse inégalée.</em></figcaption>
-</figure>
+![Une documentation modulaire offre une souplesse inégalée.](/assets/documentation-modulaire.svg)
+**Une documentation modulaire offre une souplesse inégalée.**
 
 Le volume de contenu source est minimisé, ce qui diminue les coûts de création, mise à jour et traduction du contenu d'entreprise. De plus, le rédacteur technique peut gérer les processus de rédaction, validation et traduction module par module. Les workflows peuvent ainsi être parallélisés, ce qui réduit les délais de mise sur le marché.
 

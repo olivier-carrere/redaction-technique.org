@@ -26,10 +26,8 @@ Sur des fichiers texte, et non binaires, un système de gestion de version offre
 - non-verrouillage des fichiers par les membres de l'équipe qui les ont ouverts.
 - possibilité de restauration très fine et dans le temps (depuis le dernier dépôt du fichier sur le référentiel) et en termes de quantité de travail[^3].
 
-<figure>
-<img src="graphics/versioning-system.svg" alt="graphics/versioning-system.svg" />
-<figcaption><em>Le système de gestion de versions conserve l'historique des modifications.</em></figcaption>
-</figure>
+![Le système de gestion de versions conserve l'historique des modifications.](/assets/versioning-system.svg)
+**Le système de gestion de versions conserve l'historique des modifications.**
 
 Des interfaces graphiques permettent d'utiliser directement sous les gestionnaires de fichiers ces outils originellement conçus pour être utilisés en ligne de commande. Cependant, le paradigme sur lequel ils reposent est parfois difficile à appréhender pour les publics les moins technophiles[^4].
 

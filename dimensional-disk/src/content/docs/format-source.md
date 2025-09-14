@@ -44,10 +44,8 @@ des fichiers différents
 
 Dans un fichier **FrameMaker**, la séparation du fond et de la forme est élevée mais pas totale : le contenu et la mise en page sont placés dans le même fichier. **FrameMaker** applique une maquette de page homogène à tout un fichier, mais autorise l'ajout manuel d'éléments de mise en page. La même maquette peut être dupliquée pour tout le document, ou une maquette différente peut être utilisée pour chaque fichier qui compose ce dernier.
 
-<figure>
-<img src="graphics/modulaire-texte-monolithique-binaire.svg" alt="graphics/modulaire-texte-monolithique-binaire.svg" />
-<figcaption><em>Formats sources : degré de modularité et format</em></figcaption>
-</figure>
+![Formats sources : degré de modularité et format](/assets/modulaire-texte-monolithique-binaire.svg)
+**Formats sources : degré de modularité et format**
 
 Les formats sources peuvent être classés selon leur degré de modularité et leur format de fichier.
 

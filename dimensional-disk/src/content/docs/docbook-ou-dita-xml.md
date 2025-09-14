@@ -17,10 +17,8 @@ Certaines entreprises ont parfois un contenu existant au format [DocBook](). Gé
 
 Il est facile de générer du **DocBook** à partir de **DITA XML**. `DITA-OT (DITA Open Toolkit)`{.interpreted-text role="abbr"} propose par défaut ce format cible, au même titre que le PDF ou le HTML. L'opération inverse ne peut pas être totalement automatisée. Pourquoi ?
 
-<figure>
-<img src="graphics/entropie.svg" alt="graphics/entropie.svg" />
-<figcaption><em>Un processus non réversible</em></figcaption>
-</figure>
+![Un processus non réversible](/assets/entropie.svg)
+**Un processus non réversible**
 
 Il n'est pas possible de migrer automatiquement des données de formats pauvres vers des format riches en information.
 
@@ -38,10 +36,8 @@ Si votre contenu était une photo, nous pourrions faire l'analogie suivante :
 
 Le passage de RAW en TIFF et de TIFF en JPEG est destructif et ne peut se faire en sens inverse[^1].
 
-<figure>
-<img src="graphics/entropie-dita-docbook.svg" alt="graphics/entropie-dita-docbook.svg" />
-<figcaption><em>Un processus non réversible</em></figcaption>
-</figure>
+![Un processus non réversible](/assets/entropie-dita-docbook.svg)
+**Un processus non réversible**
 
 Le PDF est sémantiquement plus pauvre que **DocBook**, lui-même plus pauvre que **DITA XML**[^2].
 

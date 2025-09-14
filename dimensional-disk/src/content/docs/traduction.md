@@ -15,10 +15,8 @@ Il n'y a pas de recette miracle : la livraison d'informations dans plusieurs lan
 
 Si la documentation repose sur un ensemble de modules, la traduction peut se faire en parallèle de la rédaction, ce qui réduit les délais de livraison.
 
-<figure>
-<img src="graphics/parallelisation-traduction.svg" alt="graphics/parallelisation-traduction.svg" />
-<figcaption><em>Parallèlisation de la rédaction et de la traduction</em></figcaption>
-</figure>
+![Parallèlisation de la rédaction et de la traduction](/assets/parallelisation-traduction.svg)
+**Parallèlisation de la rédaction et de la traduction**
 
 En ce qui concerne le référentiel des fichiers sources, vaut-il mieux placer les répertoires de langue en amont ou en aval des répertoires de projets documentaires ? Autrement dit, vaut-il mieux adopter la structure suivante :
 

@@ -17,10 +17,8 @@ Un fichier [ditaval]() reprend le principe des lunettes que vous chaussez pour v
 
 Les destinataires de l’information disposent de lunettes avec deux verres gauches ou deux verres droits. Ils ne voient donc qu’une partie de l’information. Loin d’être lésés par cet état de fait, ils ont ainsi un meilleur accès à l’information. Le profilage réalisé masque à chaque public les informations dont ils n’ont pas besoin et qui ne seraient pour eux que du bruit. Chaque audience bénéficie donc d’un meilleur accès à l’information qui la concerne, selon le fameux concept minimaliste de less is more.
 
-<figure>
-<img src="graphics/ditaval.svg" alt="graphics/ditaval.svg" />
-<figcaption><em>Texte conditionnel avec DITA XML</em></figcaption>
-</figure>
+![Texte conditionnel avec DITA XML](/assets/ditaval.svg)
+**Texte conditionnel avec DITA XML**
 
 Concrètement, le mécanisme ditaval est basé sur des opérateurs binaires : vous marquez un bloc d’information avec un attribut et une valeur, puis incluez ou excluez ce bloc dans le livrable en passant un opérande lors de la compilation (le bloc est inclus par défaut si aucun opérande n’est spécifié). C’est le principe du texte conditionnel.
 

@@ -11,10 +11,8 @@ next: false
 
 L'unité d'information DITA XML la plus petite est le nœud `<ph>`. Le rédacteur technique doit cependant veiller à ne lui appliquer le mécanisme conref que pour une phrase complète ou un terme qui ne sera jamais traduit (par exemple, le nom de la société ou d'un produit). De gros problèmes apparaissent sinon lors de la traduction dans d'autres langues.
 
-<figure>
-<img src="graphics/traduction-conref.svg" alt="graphics/traduction-conref.svg" />
-<figcaption><em>Les phrases se découpent différemment selon les langues.</em></figcaption>
-</figure>
+![Les phrases se découpent différemment selon les langues.](/assets/traduction-conref.svg)
+**Les phrases se découpent différemment selon les langues.**
 
 Exemple
 

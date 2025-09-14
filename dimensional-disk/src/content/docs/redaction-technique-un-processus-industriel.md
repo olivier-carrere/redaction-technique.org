@@ -17,9 +17,7 @@ La rédaction technique repose sur des processus rationnels. Trop souvent associ
 
 Ce processus repose sur une méthodologie rigoureuse et une chaîne de production fiable.
 
-<figure>
-<img src="graphics/processus.svg" alt="graphics/processus.svg" />
-<figcaption><em>Processus de rédaction technique</em></figcaption>
-</figure>
+![Processus de rédaction technique](/assets/processus.svg)
+**Processus de rédaction technique**
 
 Pour créer et valoriser un contenu à forte valeur ajoutée pour l'entreprise, le rédacteur technique dialogue constamment non seulement avec tous les acteurs internes de la société, mais aussi avec son écosystème : partenaires, journalistes, utilisateurs, etc. Il fournit ainsi aux différents publics l'information dont ils ont besoin. Ceci renforce l'image de marque de la société, améliore la satisfaction client et facilite la perception des avantages produit par les prospects. Le rédacteur technique s'appuie sur une chaîne de production aussi automatisée que possible. En mettant en place un processus industriel et reproductible, il diminue les coûts de production et fournit un niveau de qualité constant, adapté aux buts de l'entreprise.

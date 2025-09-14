@@ -27,10 +27,8 @@ La documentation fait partie du logiciel. Fournie avec le produit, elle doit :
 - suivre les mêmes cycles de vie, et
 - faire l'objet des mêmes processus de production et de contrôle qualité.
 
-<figure>
-<img src="graphics/integration-doc-dev.svg" alt="graphics/integration-doc-dev.svg" />
-<figcaption><em>Sources de documentation modulaires au format texte</em></figcaption>
-</figure>
+![Sources de documentation modulaires au format texte](/assets/integration-doc-dev.svg)
+**Sources de documentation modulaires au format texte**
 
 Elle doit répondre idéalement aux critères suivants :
 
@@ -62,10 +60,8 @@ Toutes les versions de ce blog sont gérées sous le logiciel de gestion de vers
 
 Ce blog est disponible en trois formats, basés sur la version 1.1. Ces formats présentent des niveaux de fonctionnalités et de complexité différents.
 
-<figure>
-<img src="graphics/fonctionnalites_complexite.svg" alt="graphics/fonctionnalites_complexite.svg" />
-<figcaption><em>Niveau de fonctionnalités et de complexité des formats texte</em></figcaption>
-</figure>
+![Niveau de fonctionnalités et de complexité des formats texte](/assets/fonctionnalites_complexite.svg)
+**Niveau de fonctionnalités et de complexité des formats texte**
 
 reStructuredText
 

@@ -17,10 +17,8 @@ Le **rédacteur technique** ne peut fournir une documentation utile aux clients 
 
 Un conte chinois narre comment des aveugles se sont retrouvés confrontés à un éléphant. Aucun d'entre eux, et pour cause, n'ayant une perception globale de l'animal, chacun en eut une image différente : celui qui en tenait une patte le prenait pour un arbre, celui qui en étreignait la trompe le confondait avec un serpent, celui qui avait empoigné une défense l'identifiait à une lance, et celui qui s'agrippait à une de ses oreilles croyait qu'il s'agissait d'un éventail.
 
-<figure>
-<img src="graphics/hanabusa-itcho.jpg" alt="graphics/hanabusa-itcho.jpg" />
-<figcaption><em>Conte des aveugles et de l'éléphant</em></figcaption>
-</figure>
+![Conte des aveugles et de l'éléphant](/assets/hanabusa-itcho.jpg)
+**Conte des aveugles et de l'éléphant**
 
 Le **rédacteur technique** qui demande aux différents intervenants de l'entreprise à quoi sert le produit dont il doit créer la documentation et comment il fonctionne se retrouve comme celui qui demande aux aveugles à quoi ressemble un éléphant : pour la R&D, il s'agit de code élégamment rédigé, pour le marketing, d'une offre à positionner face à la concurrence sur son marché, pour le support technique, d'un exécutable dont il faut corriger les bugs, etc.
 
