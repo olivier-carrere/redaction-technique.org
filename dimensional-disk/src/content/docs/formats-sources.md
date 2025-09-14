@@ -2,10 +2,6 @@
 title: "Formats sources"
 description: "Ce blog est disponible en trois formats, basés sur la version 1.1. Ces formats présentent des niveaux de fonctionnalités et de complexité différents."
 slug: formats-sources
-sidebar:
-  label: How-to
-  order: 1
-next: false
 ---
 
 Ce blog est disponible en trois formats, basés sur la version 1.1[^1]. Ces formats présentent des niveaux de fonctionnalités et de complexité différents.

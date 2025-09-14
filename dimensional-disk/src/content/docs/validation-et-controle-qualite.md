@@ -2,10 +2,6 @@
 title: "Validation et contrôle qualité"
 description: "Le contenu doit être validé avant livraison."
 slug: validation-et-controle-qualite
-sidebar:
-  label: How-to
-  order: 1
-next: workflow-de-creation-et-validation
 ---
 
 <a id="validation-et-controle-qualite"></a>

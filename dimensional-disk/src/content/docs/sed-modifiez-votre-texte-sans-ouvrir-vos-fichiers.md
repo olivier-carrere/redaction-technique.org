@@ -2,10 +2,6 @@
 title: "sed : modifiez votre texte sans ouvrir vos fichiers"
 description: "Les clones d'Unix sont peu utilisés pour gérer la documentation technique."
 slug: "sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers"
-sidebar:
-  label: "How-to"
-  order: 1
-next: null
 ---
 
 ::: sidebar

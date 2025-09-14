@@ -2,10 +2,6 @@
 title: "Créez et modifiez le texte"
 description: "Modifiez un fichier source modulaire de ce blog."
 slug: creez-et-modifiez-le-texte
-sidebar:
-  label: How-to
-  order: 1
-next: null
 ---
 
 1. Modifiez un fichier source modulaire de ce blog :

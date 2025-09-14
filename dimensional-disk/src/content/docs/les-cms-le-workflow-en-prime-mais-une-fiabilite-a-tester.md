@@ -2,10 +2,6 @@
 title: "Les CMS : le workflow en prime, mais une fiabilité à tester"
 description: "S’ils utilisent des formats monolithiques tels que FrameMaker, les rédacteurs techniques peuvent utiliser des CMS tels que SharePoint, Alfresco ou consorts."
 slug: "/les-cms-le-workflow-en-prime-mais-une-fiabilite-a-tester"
-sidebar:
-  label: How-to
-  order: 1
-next: null
 ---
 
 :::note

@@ -2,10 +2,6 @@
 title: "Le Raspberry Pi 3 en tant que plateforme de documentation"
 description: "Avec ses ressources modestes, un Raspberry Pi 3 suffit pour créer, gérer et générer une documentation en PDF, HTML ou EPUB."
 slug: "/raspberry-pi-plateforme-documentation"
-sidebar:
-  label: "How-to"
-  order: 1
-next: null
 ---
 
 Faut-il une débauche de puissance pour générer une documentation professionnelle ? Avec son unique giga-octet de mémoire vive et son processeur de smartphone, le Raspberry Pi 3 semble se positionner comme une bonne station bureautique des années 2000... À l'usage, il s'avère pourtant qu'une unité centrale d'une quarantaine d'euros suffit largement pour créer, gérer et générer une documentation aux formats PDF, HTML, ou autre.

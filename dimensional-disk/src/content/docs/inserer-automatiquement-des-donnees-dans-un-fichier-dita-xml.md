@@ -2,10 +2,6 @@
 title: "Insérer automatiquement des données dans un fichier DITA XML"
 description: "Nous voulons automatiser la génération du fichier DITA suivant :"
 slug: "inserer-automatiquement-des-donnees-dans-un-fichier-dita-xml"
-sidebar:
-  label: "How-to"
-  order: 1
-next: "inserer-automatiquement-des-donnees-sql-dans-un-fichier-restructuredtext"
 ---
 
 Nous voulons automatiser la génération du fichier DITA suivant :

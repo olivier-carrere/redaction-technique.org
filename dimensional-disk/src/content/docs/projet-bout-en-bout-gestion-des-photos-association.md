@@ -2,10 +2,6 @@
 title: "Gestion des photos d'une association"
 description: "Une association de quelques centaines de personnes originaires de différents pays disposait de plusieurs milliers de photos, dispersées sur différents ordinateurs personnels."
 slug: "/projet-bout-en-bout-gestion-des-photos-association"
-sidebar:
-  label: "How-to"
-  order: 1
-next: false
 ---
 
 Une association de quelques centaines de personnes originaires de différents pays disposait de plusieurs milliers de photos, dispersées sur différents ordinateurs personnels.

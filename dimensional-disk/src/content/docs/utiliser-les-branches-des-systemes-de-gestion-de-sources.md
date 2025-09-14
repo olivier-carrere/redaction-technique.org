@@ -2,10 +2,6 @@
 title: "Utiliser les branches des systèmes de gestion de sources"
 description: "Créer des branches dans un gestionnaire de sources pour gérer des projets divergents et les traductions de la documentation."
 slug: utiliser-les-branches-des-systemes-de-gestion-de-sources
-sidebar:
-  label: How-to
-  order: 1
-next: false
 ---
 
 Les systèmes de gestion de sources proposent de créer des branches d'un projet : si à un moment donné, un projet se divise en deux projets incompatibles, une branche est créée à partir du projet principal. Le **rédacteur technique** peut ainsi gérer les différentes traductions de la documentation technique.

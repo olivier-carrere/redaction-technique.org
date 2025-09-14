@@ -2,10 +2,6 @@
 title: "Accélérer sa saisie avec le mode Predictive pour Emacs"
 description: "Ce didacticiel pour Emacs guide la mise en place et l'utilisation du mode Predictive (autocomplétion FR/EN) sous GNU/Linux (Debian)."
 slug: "accelerer-sa-saisie-avec-le-mode-predictive-pour-emacs"
-sidebar:
-  label: "How-to"
-  order: 1
-next: false
 ---
 
 Ce didacticiel mode Predictive pour Emacs est destiné à vous guider dans la mise en place et l'utilisation du mode Emacs d'aide à la rédaction et d'autocomplétion des mots anglais et français Predictive dans un environnement GNU/Linux (en l'occurrence, Debian).

@@ -2,10 +2,6 @@
 title: "Prendre en compte les contraintes de traduction"
 description: "Pourquoi appliquer conref uniquement à des phrases complètes ou à des termes non traduits pour éviter des problèmes de traduction en DITA XML."
 slug: prendre-en-compte-les-contraintes-de-traduction
-sidebar:
-  label: How-to
-  order: 1
-next: false
 ---
 
 L'unité d'information DITA XML la plus petite est le nœud `<ph>`. Le rédacteur technique doit cependant veiller à ne lui appliquer le mécanisme conref que pour une phrase complète ou un terme qui ne sera jamais traduit (par exemple, le nom de la société ou d'un produit). De gros problèmes apparaissent sinon lors de la traduction dans d'autres langues.

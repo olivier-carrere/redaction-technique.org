@@ -2,10 +2,6 @@
 title: "Utiliser le nœud XML de plus bas niveau"
 description: "Utilisez les conref au niveau de la plus petite structure XML pour une réutilisation précise tout en restant conforme au schéma DITA."
 slug: "utiliser-le-noeud-xml-de-plus-bas-niveau"
-sidebar:
-  label: "How-to"
-  order: 1
-next: null
 ---
 
 ::: sidebar

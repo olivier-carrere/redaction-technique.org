@@ -2,10 +2,6 @@
 title: "Utiliser l’IDE nXML pour DITA XML"
 description: "Configurer le mode nXML d’Emacs pour la validation et l’autocomplétion de DITA XML, malgré l’absence de support par défaut."
 slug: "utiliser-ide-nxml-pour-dita-xml"
-sidebar:
-  label: "How-to"
-  order: 1
-next: false
 ---
 
 <a id="utiliser-ide-nxml-pour-dita-xml"></a>

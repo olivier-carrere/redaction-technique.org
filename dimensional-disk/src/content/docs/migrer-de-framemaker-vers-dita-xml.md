@@ -2,10 +2,6 @@
 title: "Migrer de FrameMaker vers DITA XML"
 description: "Migrer du contenu FrameMaker vers DITA XML et gérer la documentation DITA XML sans utiliser FrameMaker structuré."
 slug: migrer-de-framemaker-vers-dita-xml
-sidebar:
-  label: How-to
-  order: 1
-next: null
 ---
 
 Le but de cette procédure est de :

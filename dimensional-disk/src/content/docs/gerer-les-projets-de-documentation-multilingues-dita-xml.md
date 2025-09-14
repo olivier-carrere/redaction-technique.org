@@ -2,10 +2,6 @@
 title: "Gérer les projets de documentation multilingues DITA XML"
 description: "Méthodologie et script d’automatisation pour gérer des projets DITA XML multilingues avec DITA‑OT."
 slug: gerer-les-projets-de-documentation-multilingues-dita-xml
-sidebar:
-  label: How-to
-  order: 1
-next: null
 ---
 
 DITA XML est un formidable format pour gérer les projets de documentation. Pour les projets multilingues, cependant, le rédacteur technique doit créer un fichier ditamap, qui contient la structure de table des matières des documents, par version. Ceci entraîne un risque d'erreurs et d'incohérences. Heureusement, une méthodologie appropriée et un script d'automatisation destiné à la chaîne de publication `DITA-OT (DITA Open Toolkit)` remédient à ce problème.

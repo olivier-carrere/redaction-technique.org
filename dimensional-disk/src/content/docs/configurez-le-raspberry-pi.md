@@ -2,10 +2,6 @@
 title: "Configurez le Raspberry Pi 3"
 description: "Configurez le Raspberry Pi 3 sous Raspbian : langue, clavier et mises à jour."
 slug: configurez-le-raspberry-pi
-sidebar:
-  label: How-to
-  order: 1
-next: false
 ---
 
 **Prérequis**

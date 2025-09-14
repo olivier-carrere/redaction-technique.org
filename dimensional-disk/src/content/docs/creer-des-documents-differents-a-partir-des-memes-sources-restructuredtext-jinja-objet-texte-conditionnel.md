@@ -2,10 +2,6 @@
 title: "Créer des documents différents à partir des mêmes sources via Jinja (méthode objet)"
 description: "Profiler du contenu avec Jinja en définissant des objets (audience, plateforme, version, etc.) pour inclure ou exclure des blocs selon leurs attributs à l’aide d’un script Python profiling.py."
 slug: "creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-objet-texte-conditionnel"
-sidebar:
-  label: "How-to"
-  order: 1
-next: "creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-texte-conditionnel"
 ---
 
 Le script Python `profiling.py` ci-dessous permet de profiler du contenu à l'aide du puissant moteur de modèle Avec [Jinja](), vous pouvez définir des objets (audience, plateforme, version, etc.) et inclure ou exclure des blocs de texte selon leurs attributs.

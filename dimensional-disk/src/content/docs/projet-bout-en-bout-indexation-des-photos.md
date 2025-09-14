@@ -2,10 +2,6 @@
 title: "Indexation des photos"
 description: "Une fois les 500 photos retenues pour les projets d'impression téléchargées sur le site, restait à les indexer."
 slug: /projet-bout-en-bout-indexation-des-photos
-sidebar:
-  label: How-to
-  order: 1
-next: null
 ---
 
 Une fois les 500 photos retenues pour les projets d'impression téléchargées sur le site, restait à les indexer.

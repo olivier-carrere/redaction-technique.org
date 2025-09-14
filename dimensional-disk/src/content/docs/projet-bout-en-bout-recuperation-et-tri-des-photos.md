@@ -2,10 +2,6 @@
 title: "Récupération et tri des photos"
 description: "Après avoir collecté le maximum de photos, je me suis retrouvé avec plus de 10 000 photos et 30 Go de données."
 slug: projet-bout-en-bout-recuperation-et-tri-des-photos
-sidebar:
-  label: How-to
-  order: 1
-next: null
 ---
 
 Après avoir collecté le maximum de photos, je me suis retrouvé avec plus de 10 000 photos et 30 Go de données. Ouf.

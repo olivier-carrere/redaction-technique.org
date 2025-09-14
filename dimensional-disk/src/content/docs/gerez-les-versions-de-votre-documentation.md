@@ -2,10 +2,6 @@
 title: "Gérez les versions de votre documentation"
 description: "Commitez votre lot de modifications sous Git."
 slug: "gerez-les-versions-de-votre-documentation"
-sidebar:
-  label: How-to
-  order: 1
-next: false
 ---
 
 1. Commitez votre lot de modifications sous Git :

@@ -2,10 +2,6 @@
 title: "Installez les logiciels nécessaires à la gestion de ce blog"
 description: "Sélectionnez Menu > Accessoires > LXTerminal."
 slug: "installez-les-logiciels-necessaires-a-la-generation-de-ce-site"
-sidebar:
-  label: "How-to"
-  order: 1
-next: null
 ---
 
 1.  Sélectionnez `Menu` \> `Accessoires` \> `LXTerminal`.

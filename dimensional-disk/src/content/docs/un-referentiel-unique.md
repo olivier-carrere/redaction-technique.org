@@ -2,10 +2,6 @@
 title: "Un référentiel unique ?"
 description: "Idéalement, tout le contenu peut être placé sous un référentiel unique (par ex. Git) pour maximiser réutilisation, cohérence et qualité."
 slug: "un-referentiel-unique"
-sidebar:
-  label: "How-to"
-  order: 1
-next: false
 ---
 
 Idéalement, tout le contenu peut être placé sous un référentiel unique, par exemple le logiciel de gestion de versions [Git](). Ceci en maximise la réutilisation, la cohérence et la qualité. Si le contenu est au format **DITA XML** ou **DocBook**, par exemple, on peut exploiter au mieux les capacités de *single-sourcing* de ces formats pour le publier sous la forme appropriée.

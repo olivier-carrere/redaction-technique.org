@@ -2,10 +2,6 @@
 title: "Livraison"
 description: "Le rédacteur technique livre le document à son destinataire de la manière appropriée."
 slug: livraison
-sidebar:
-  label: How-to
-  order: 1
-next: false
 ---
 
 Le rédacteur technique livre le document à son destinataire de la manière appropriée :

@@ -2,10 +2,6 @@
 title: "Générer un PDF avec DITA Open Toolkit sous GNU/Linux"
 description: "Guide pour installer et utiliser la chaîne de publication DITA-OT (DITA Open Toolkit) sous GNU/Linux (Ubuntu ou Debian)."
 slug: /generer-un-pdf-avec-dita-open-toolkit-sous-gnu-linux
-sidebar:
-  label: How-to
-  order: 1
-next: null
 ---
 
 Ce didacticiel DITA XML est destiné à vous guider dans la mise en place et l'utilisation de la chaîne de publication `DITA-OT (DITA Open Toolkit)` dans un environnement GNU/Linux (Ubuntu ou Debian).

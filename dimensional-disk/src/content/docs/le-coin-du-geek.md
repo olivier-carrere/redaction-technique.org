@@ -2,10 +2,6 @@
 title: "Le coin du geek"
 description: "Après une grande frustration ressentie lors de l'utilisation d'outils tels que FrameMaker ou Flare, j'ai progressivement eu envie de voir ce qui se passait « sous le capot » et de comprendre ce qui se cachait derrière les interfaces graphiques."
 slug: le-coin-du-geek
-sidebar:
-  label: How-to
-  order: 1
-next: null
 ---
 
 Je suis un rédacteur technique à tendance geek. Après une grande frustration ressentie lors de l'utilisation d'outils tels que FrameMaker ou Flare, j'ai progressivement eu envie de voir ce qui se passait « sous le capot » et de comprendre ce qui se cachait derrière les interfaces graphiques.

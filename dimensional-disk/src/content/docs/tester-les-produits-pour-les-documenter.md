@@ -2,10 +2,6 @@
 title: "Tester les produits pour les documenter"
 description: "Un conte chinois narre comment des aveugles se sont retrouvés confrontés à un éléphant."
 slug: "tester-les-produits-pour-les-documenter"
-sidebar:
-  label: How-to
-  order: 1
-next: false
 ---
 
 ::: sidebar

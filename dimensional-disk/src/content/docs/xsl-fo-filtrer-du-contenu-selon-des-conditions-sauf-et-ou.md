@@ -2,10 +2,6 @@
 title: "XSL-FO : filtrer du contenu selon des conditions « sauf » et « ou »"
 description: "Filtrer les nœuds enfants de <example> et afficher tout sauf le titre."
 slug: "xsl-fo-filtrer-du-contenu-selon-des-conditions-sauf-et-ou"
-sidebar:
-  label: How-to
-  order: 1
-next: false
 ---
 
 Imaginons que vous vouliez filtrer les nœuds enfants de la balise DITA XML `<example>` et afficher tout son contenu à l'exception du titre (situé entre les balises `<title>`).

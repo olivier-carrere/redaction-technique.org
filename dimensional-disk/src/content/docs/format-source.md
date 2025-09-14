@@ -2,10 +2,6 @@
 title: "Format source"
 description: "Les traitements de texte nous ont déshabitués à distinguer le fond de la forme. Mais confondre les deux entraîne beaucoup d'erreurs et de perte de temps."
 slug: "format-source"
-sidebar:
-  label: "How-to"
-  order: 1
-next: false
 ---
 
 ::: sidebar

@@ -2,10 +2,6 @@
 title: "Restructuration du contenu FrameMaker"
 description: "La partie automatisée d'une migration de FrameMaker vers DITA XML consiste à appliquer une table de conversion entre les styles FrameMaker et les structures DITA XML."
 slug: restructuration-du-contenu-framemaker
-sidebar:
-  label: How-to
-  order: 1
-next: false
 ---
 
 La partie automatisée d'une migration de [FrameMaker]() vers **DITA XML** consiste à appliquer une table de conversion entre les styles **FrameMaker** et les structures **DITA XML**.

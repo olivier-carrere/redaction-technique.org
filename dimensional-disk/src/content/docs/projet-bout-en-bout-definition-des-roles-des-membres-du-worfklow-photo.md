@@ -2,10 +2,6 @@
 title: "Définition des rôles des membres du worfklow photo"
 description: "La chaîne de production graphique s’appuie sur trois rôles : photographe, iconographe et graphiste."
 slug: projet-bout-en-bout-definition-des-roles-des-membres-du-worfklow-photo
-sidebar:
-  label: How-to
-  order: 1
-next: false
 ---
 
 La chaîne de production graphique s’appuie sur 3 rôles :

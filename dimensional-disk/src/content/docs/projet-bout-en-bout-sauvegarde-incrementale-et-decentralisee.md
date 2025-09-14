@@ -2,10 +2,6 @@
 title: "Sauvegarde incrémentale et décentralisée"
 description: "Comment sauvegarder le patrimoine photo de l'association (photos et base Piwigo) de manière incrémentale et décentralisée avec Git LFS."
 slug: "projet-bout-en-bout-sauvegarde-incrementale-et-decentralisee"
-sidebar:
-  label: How-to
-  order: 1
-next: false
 ---
 
 Comment sauvegarder le patrimoine photo de l'association, soit les photos et la base de données Piwigo, de manière incrémentale et décentralisée ? Je me suis tourné vers Git avec l'extension LFS, qui gère élégamment les fichiers binaires.

@@ -2,10 +2,6 @@
 title: "Organisation à la demande du contenu"
 description: "L'organisation de l'information sous DITA XML n'est pas figée; les briques peuvent être organisées dans différentes structures hiérarchiques selon l'évolution des besoins."
 slug: "organisation-a-la-demande-du-contenu"
-sidebar:
-  label: "How-to"
-  order: 1
-next: null
 ---
 
 ::: sidebar

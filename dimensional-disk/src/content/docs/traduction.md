@@ -2,10 +2,6 @@
 title: "Traduction"
 description: "Les contraintes de traduction doivent être prises en compte en amont du processus rédactionnel."
 slug: traduction
-sidebar:
-  label: How-to
-  order: 1
-next: false
 ---
 
 Les contraintes de traduction doivent être prises en compte en amont du processus rédactionnel. Elles ont des implications autant sur le style rédactionnel que sur l'organisation du référentiel.

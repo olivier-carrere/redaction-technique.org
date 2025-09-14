@@ -2,10 +2,6 @@
 title: "Intégrer la documentation aux processus de développement"
 description: "La documentation fait partie du logiciel."
 slug: "/integrer-la-documentation-aux-processus-de-developpement"
-sidebar:
-  label: "How-to"
-  order: 1
-next: false
 ---
 
 La documentation fait partie du logiciel. Fournie avec le produit, elle doit :

@@ -2,10 +2,6 @@
 title: "Les topics, modules d'information de base DITA XML"
 description: "Les topics sont sémantiquement typés; un type de topic par type d'information. DITA XML fournit des types adaptés et peut être étendu."
 slug: "les-topics-modules-d-information-de-base-dita"
-sidebar:
-  label: "How-to"
-  order: 1
-next: null
 ---
 
 :::note

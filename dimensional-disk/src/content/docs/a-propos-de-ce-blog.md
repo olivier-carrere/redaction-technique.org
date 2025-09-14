@@ -2,10 +2,6 @@
 title: "À propos de ce blog"
 description: "Ce blog est conçu et réalisé par un rédacteur technique spécialisé dans l'informatique."
 slug: "a-propos-de-ce-blog"
-sidebar:
-  label: "How-to"
-  order: 1
-next: null
 ---
 
 Ce blog est conçu et réalisé par un **rédacteur technique** spécialisé dans l'informatique.

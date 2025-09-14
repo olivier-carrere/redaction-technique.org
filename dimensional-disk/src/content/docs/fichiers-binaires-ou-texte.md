@@ -2,10 +2,6 @@
 title: "Fichiers binaires ou texte"
 description: "Les formats sources sont des formats binaires ou texte."
 slug: fichiers-binaires-ou-texte
-sidebar:
-  label: How-to
-  order: 1
-next: null
 ---
 
 Les formats sources sont des formats binaires ou texte.

@@ -2,10 +2,6 @@
 title: "LaTeX"
 description: "Pourquoi avoir choisi LaTeX pour réaliser le support print afin de remanier le texte sans refaire la mise en page et traduire le dépliant sans tâches de PAO manuelles."
 slug: projet-bout-en-bout-latex
-sidebar:
-  label: How-to
-  order: 1
-next: false
 ---
 
 Pourquoi avoir choisi [LaTeX](#latex) pour réaliser le support *print* et non pas un logiciel de PAO classique ? Je souhaitais pouvoir remanier le texte sans refaire à chaque fois la mise en page. De même, je voulais pouvoir traduire le dépliant sans effectuer de tâche de PAO manuelle.

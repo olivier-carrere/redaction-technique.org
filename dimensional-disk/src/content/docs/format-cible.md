@@ -2,10 +2,6 @@
 title: "Format cible"
 description: "Le format cible d'un support de rédaction technique est celui sous lequel l'audience du message y accédera."
 slug: "format-cible"
-sidebar:
-  label: "How-to"
-  order: 1
-next: null
 ---
 
 Le format cible[^1] d'un support de **rédaction technique** est celui sous lequel l'audience du message y accédera. Il est différent de celui sous lequel le **rédacteur technique** crée le contenu. Le *single-sourcing* permet de générer plusieurs livrables à des formats différents à partir d'un même format source.
