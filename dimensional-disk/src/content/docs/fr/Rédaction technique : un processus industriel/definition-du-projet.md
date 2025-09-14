@@ -1,7 +1,6 @@
 ---
 title: "Définition du projet"
 description: "Communiquer des informations techniques sans savoir à qui ni dans quel but est un effort vain."
-slug: definition-du-projet
 ---
 
 
