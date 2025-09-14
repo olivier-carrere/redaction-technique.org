@@ -1,0 +1,38 @@
+---
+title: "Validation et contrôle qualité"
+description: "Le contenu doit être validé avant livraison."
+---
+
+<a id="validation-et-controle-qualite"></a>
+
+:::note
+
+Un support de rédaction technique doit être soumis à un contrôle qualité rigoureux avant d'être communiqué à ses différentes cibles.
+:::
+
+Le contenu doit être validé avant livraison. Cela paraît évident, mais cela demande de bien impliquer en amont les personnes chargées de la validation. Idéalement, la phase de validation se déroule en parallèle de la phase de création : plus les modifications interviennent tôt, moins elles sont coûteuses. Un outil de gestion de contenu d'entreprise tel qu'[Alfresco]() peut sembler intéressant afin de mettre en place des workflows, sur le papier du moins. Dans les faits, une telle solution peut s'avérer lourde. Elle est de plus peu compatible avec certains formats sources basés sur des documents modulaires et non monolithiques et avec les logiciels de gestion de versions (le projet [Componize]() se propose cependant de gérer des projets DITA XML sous Alfresco). Il reste cependant impératif de mettre en place des étapes de validation tout au long du projet. Associés à un système de gestion de versions, les outils de comparaison sont très utiles pour valider les mises à jour. Une version « taguée » d'un projet DITA XML et la version en cours peuvent par exemple être exportées au format RTF, puis comparées sous un traitement de texte. Cela est bien moins fastidieux qu'une relecture comparée. Comparer les modules d'information directement sous le système de gestion de versions n'est pas suffisant, car ils ne sont que les « briques » du document final.
+
+## Workflow de création et validation
+
+Un processus de création et de mise à jour de la documentation technique qui repose sur la mémoire des acteurs humains est peu fiable. Un **rédacteur technique** peut être fatigué, souffrant, en congés, oublier des données lorsqu'il est saturé d'informations ou avoir quitté la société. L'information entre deux personnes peut également mal circuler ou être mal comprise. C'est pour pallier ces faiblesses que l'homme a créé des outils. En revanche, il est créatif, à l'inverse des machines.
+
+Face à cet état de fait, il convient de mettre un système de gestion de l'information relative à l'évolution de la documentation qui soit tolérant à l'erreur humaine. Il faut donc soit :
+
+- mettre en œuvre des *workflows* sous un `CMS (Content Management System)`,
+- utiliser le système de gestion de tickets utilisés pour la gestion des nouvelles fonctionnalités du produit documenté (par exemple, Trac) :
+  - création d'un ticket par un développeur,
+  - mise en œuvre du ticket par un **rédacteur technique**,
+  - fermeture du ticket par le créateur du ticket,
+  - publication de la documentation lorsque tous les tickets critiques sont fermés.
+
+Les fonctions principales d'un `CMS (Content Management System)` sont les suivantes :
+
+- gestion des métadonnées,
+- *workflows*,
+- traçabilité,
+
+Quel qu'il soit, le système de suivi doit offrir une visibilité et une traçabilité totales des modifications apportées à la documentation technique (quoi, qui, quand).
+
+Ce système doit être unique et exhaustif : il doit centraliser toutes les demandes de modification de la documentation technique.
+
+Si le document est disponible en plusieurs langues, chaque ticket doit être dupliqué pour chaque langue ou, dans le cas d'un `CMS (Content Management System)`, à chaque langue doit correspondre un *workflow* distinct.
