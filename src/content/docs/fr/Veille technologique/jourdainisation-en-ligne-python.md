@@ -48,8 +48,3 @@ Et enfin, la feuille de style CSS :
 ::: {.literalinclude language="css" caption="}
 code/static/form.css
 :::
-
-:::tip[Voir aussi]
-- `sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers`
-- `expressions-regulieres-python`
-:::

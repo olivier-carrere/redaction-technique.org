@@ -261,8 +261,3 @@ Le script Python `profiling.py` ci-dessous permet de profiler du contenu à l'ai
         print('Veuillez indiquer le public et la saison')
     ```
 
-:::tip[Voir aussi]
-- `creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-conditionnel`
-- `creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-rest-texte-conditionnel`
-- `creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-texte-conditionnel`
-:::

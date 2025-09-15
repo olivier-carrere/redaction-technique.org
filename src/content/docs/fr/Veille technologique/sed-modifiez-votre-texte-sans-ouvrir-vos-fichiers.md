@@ -234,8 +234,3 @@ Te fait la houle forte tanguer, vaste océan, d'ivresse.
 ```
 
 Et voilà. En quelques instants, sans jamais ouvrir un seul fichier, nous appliquons une suite d'opérations complexes sur un nombre indéfini de phrases de même structure. Ce qui n'est pas possible sous un traitement de texte ou autre outil muni d'une interface graphique, ou sur des fichiers binaires.
-
-:::tip[Voir aussi]
-- `jourdainisation-en-ligne-python`
-- `expressions-regulieres-python`
-:::

@@ -29,8 +29,3 @@ code/modele.dita
     ```
 
     Le fichier `modele.dita` est créé et contient les données souhaitées.
-
-:::tip[Voir aussi]
--   `inserer-automatiquement-des-donnees-dans-un-fichier-restructuredtext`
--   `inserer-automatiquement-des-donnees-sql-dans-un-fichier-restructuredtext`
-:::

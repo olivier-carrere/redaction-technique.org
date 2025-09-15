@@ -49,9 +49,3 @@ description: "Générer des variantes de documents à partir des mêmes sources 
     ```
 
 6.  Ouvrez le fichier `_build/html/index.html` sous un navigateur pour visualiser votre contenu.
-
-:::tip[Voir aussi]
--   `creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-conditionnel`
--   `creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-texte-conditionnel`
--   `creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-objet-texte-conditionnel`
-:::

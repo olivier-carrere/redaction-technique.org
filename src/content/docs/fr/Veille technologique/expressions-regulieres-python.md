@@ -10,8 +10,3 @@ Le code suivant illustre comment inverser l'ordre des mots d'une phrase, selon l
 ::: {.literalinclude language="python3"}
 code/word_switch.py
 :::
-
-:::tip[Voir aussi]
-- `jourdainisation-en-ligne-python`
-- `sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers`
-:::

@@ -479,12 +479,6 @@ Pour utiliser ce script :
 > -   aux plombiers et aux électriciens,
 > -   uniquement aux plombiers.
 
-:::tip[Voir aussi]
--   `creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-rest-texte-conditionnel`
--   `creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-texte-conditionnel`
--   `creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-objet-texte-conditionnel`
-:::
-
 ## DITA Open Toolkit : afficher les références croisées dans les PDF
 
 :::note

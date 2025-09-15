@@ -88,9 +88,3 @@ Ces différentes versions sont générées à partir des mêmes sources exacteme
 
   HTML                           site
   -------------------------------------------------------------
-
-:::tip[Voir aussi]
-- `git-du-fichier-au-contenu`
-- `sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers`
-- `creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-conditionnel`
-:::

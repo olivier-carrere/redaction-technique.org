@@ -62,8 +62,3 @@ Nous allons créer une base de données de produits avec leurs versions, puis me
 
     - 2.7
     ```
-
-:::tip[Voir aussi]
-- `inserer-automatiquement-des-donnees-dans-un-fichier-dita-xml`
-- `inserer-automatiquement-des-donnees-dans-un-fichier-restructuredtext`
-:::

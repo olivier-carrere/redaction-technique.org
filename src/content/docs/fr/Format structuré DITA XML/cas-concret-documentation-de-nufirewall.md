@@ -7,11 +7,6 @@ La documentation de [NuFirewall](), qui a été perçue par la presse comme [un 
 
 Si je n'avais pas utilisé un format qui favorise au maximum la réutilisation de l'information, je n'aurais pas autant pu me consacrer à l'essentiel : le contenu.
 
-:::tip[Voir aussi]
-- [partager-des-blocs-information-atomiques-avec-les-conref](./partager-des-blocs-information-atomiques-avec-les-conref)
-- [fournir-une-information-ciblee-avec-le-texte-conditionnel-ditaval](./fournir-une-information-ciblee-avec-le-texte-conditionnel-ditaval)
-:::
-
 ## Partager des blocs d'information atomiques avec les conref
 
 Lorsque le **rédacteur technique** veut réutiliser des blocs d'information **DITA XML** plus petits qu'une section, il doit les partager au niveau des fichiers de contenu *dita* et non dans les structures de table des matières *ditamap*, grâce au mécanisme [conref]().

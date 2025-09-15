@@ -37,6 +37,5 @@ en
 
 de la version anglaise de la documentation peut facilement être appliquée aux versions chinoise, française, allemande ou autre si elle a fait l'objet d'un commit distinct. En pratique, cependant, cette opération peut s'avérer délicate et n'être réellement utile que si l'on doit gérer un grand nombre de différentes versions linguistiques. En tout cas, la solution des branches autorise de telles opérations, non celle des répertoires. Elle est cependant plus difficile à appréhender et à utiliser par l'équipe de **rédaction technique**.
 
-:::tip[Voir aussi]
--   `git-du-fichier-au-contenu`
-:::
+**Voir aussi**
+- [Git : du fichier au contenu](../git-du-fichier-au-contenu)

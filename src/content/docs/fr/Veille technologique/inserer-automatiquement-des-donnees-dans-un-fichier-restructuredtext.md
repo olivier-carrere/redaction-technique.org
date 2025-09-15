@@ -64,7 +64,6 @@ Plutôt que d’écrire les données à la main dans le fichier de contenu, vous
 
 Vous minimisez ainsi le risque d’erreurs et l’effort de mise à jour.
 
-:::tip[Voir aussi]
-- `inserer-automatiquement-des-donnees-dans-un-fichier-dita-xml`
-- `inserer-automatiquement-des-donnees-sql-dans-un-fichier-restructuredtext`
-:::
+**Voir aussi**
+- [Insérer automatiquement des données dans un fichier DITA XML](../inserer-automatiquement-des-donnees-dans-un-fichier-dita-xml)
+- [Insérer automatiquement des données SQL dans un fichier reStructuredText](../inserer-automatiquement-des-donnees-sql-dans-un-fichier-restructuredtext)

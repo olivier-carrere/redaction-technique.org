@@ -54,9 +54,3 @@ $ ./profiling.py electrician
 ```
 
 Il suffit maintenant d'appeler le script avant compilation *via* Sphinx dans le `Makefile`.
-
-:::tip[Voir aussi]
-- `creer-des-documents-differents-a-partir-des-memes-sources-dita-xml-texte-conditionnel`
-- `creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-rest-texte-conditionnel`
-- `creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-objet-texte-conditionnel`
-:::

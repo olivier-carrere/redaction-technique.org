@@ -43,9 +43,8 @@ Les systèmes de gestion de code source ont une fiabilité éprouvée et gèrent
 
 Un bémol cependant : ces outils ne sont pas destinés spécifiquement au format XML et effectuent des comparaisons ligne par ligne entre les fichiers, et non pas nœud par nœud, ce qui multiplie inutilement les conflits entre les commits ou les branches.
 
-:::tip[Voir aussi]
-- `git-du-fichier-au-contenu`
-:::
+**Voir aussi**
+- [Git : du fichier au contenu](../git-du-fichier-au-contenu)
 
 [^1]: En cas d'incident réseau, l'utilisateur est averti que la transaction destinée à placer le fichier modifié sur le dépôt a échoué ; il peut alors procéder à une nouvelle transaction, sa copie locale du fichier étant intacte.
 
