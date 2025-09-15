@@ -31,17 +31,13 @@ Pour favoriser l'utilisation des [conref]() au sein d'une équipe de rédacteurs
 
 Il est a priori plus simple, pour réutiliser un contenu d'un fichier DITA XML existant, de pointer vers ce contenu sans l'extraire de son contexte d'origine. Cependant, un des grands principes de la réutilisation du contenu est de décontextualiser le contenu. Il est donc à terme beaucoup plus efficace pour le rédacteur technique d'extraire le contenu réutilisé de son fichier d'origine et de le placer dans un fichier ne contenant que des sources de conref. Il est en effet beaucoup plus facile de placer tous les éléments sources dans un référentiel unique que de devoir chercher les différentes sources dans une multitude de fichiers.
 
-<figure>
-<img src="graphics/conref-non-centralises.svg" alt="graphics/conref-non-centralises.svg" />
-<figcaption><em>Gérer les</em> conref <em>de manière décentralisée est peu efficace</em></figcaption>
-</figure>
+![Gérer les conref de manière décentralisée est peu efficace](/assets/conref-non-centralises.svg)
+*Gérer les *conref* de manière décentralisée est peu efficace.*
 
 Les conref sont en effet résolus à la compilation même si les fichiers contenant les valeurs sources ne sont pas référencés dans le fichier ditamap permettant de générer le livrable (ce qui veut dire également que les fichiers contenant les valeurs sources des conref peuvent se trouver dans un répertoire de niveau supérieur à celui du ditamap).
 
-<figure>
-<img src="graphics/conref.svg" alt="graphics/conref.svg" />
-<figcaption><em>Bonne gestion des</em> conref</figcaption>
-</figure>
+![Bonne gestion des conref](/assets/conref.svg)
+*Bonne gestion des* conref
 
 Les fichiers de contenu référencés dans des structures ditamap ne contiennent donc que des conref cibles, et un fichier central fédère tous les conref sources ; il contient éventuellement également quelques références internes à des conref cibles.
 
@@ -56,10 +52,8 @@ Le **rédacteur technique** doit utiliser comme source du [conref]() le nœud **
 
 Le but des *conref* étant de gérer des blocs d'information de faibles dimensions, il est logique de les manipuler au niveau de la plus petite structure XML encapsulant l'information, même si cette structure, pour être compatible avec le schéma XSD de la section **DITA XML** où elle intervient, doit elle-même être incluse dans des structures XML plus grandes.
 
-<figure>
-<img src="graphics/conref-bas-niveau.svg" alt="graphics/conref-bas-niveau.svg" />
-<figcaption><em>Placement du</em> conref <em>sur le nœud XML de plus bas niveau</em></figcaption>
-</figure>
+![Placement du conref sur le nœud XML de plus bas niveau](/assets/conref-bas-niveau.svg)
+*Placement du *conref* sur le nœud XML de plus bas niveau.*
 
 Vous voulez par exemple réutiliser la phrase *Cliquez sur OK.* Vous ne pouvez cependant pas indiquer dans le fichier contenant les *conref* sources uniquement le code suivant :
 
@@ -110,10 +104,8 @@ plutôt que la suivante :
 
 En effet, dans le premier cas, vous pourrez utiliser le *conref* même si le nœud supérieur (`<step>`{.interpreted-text role="samp"}) contient d'autres nœuds que `<step>`{.interpreted-text role="samp"} (par exemple `<info>`{.interpreted-text role="samp"}).
 
-<figure>
-<img src="graphics/conref-haut-niveau.svg" alt="graphics/conref-haut-niveau.svg" />
-<figcaption><em>Placement du</em> conref <em>sur le nœud XML de plus haut niveau</em></figcaption>
-</figure>
+![Placement du conref sur le nœud XML de plus haut niveau](/assets/conref-haut-niveau.svg)
+*Placement du *conref* sur le nœud XML de plus haut niveau.*
 
 Dans le 2e cas, tout le contenu du nœud `<step>`{.interpreted-text role="samp"} sera remplacé par la valeur du *conref* source. Par exemple, dans le cas suivant, tout le contenu du nœud sera absent des livrables :
 
@@ -189,10 +181,8 @@ Dans l'exemple ci-dessous, le *conref* source *see-admin-guide* contient le *con
 
 Ce niveau de complexité est gérable. Mais si le *conref* source *admin-guide-title* contient lui même un *conref* cible, le code **DITA XML** devient un vrai plat de spaghettis (sans compter les risques de référence circulaire). Les *conref* peuvent théoriquement être combinés à l'infini, mais les problèmes pratiques que cela engendre peuvent également être infinis !
 
-<figure>
-<img src="graphics/imbriquer-conref.svg" alt="graphics/imbriquer-conref.svg" />
-<figcaption><em>Imbriquer les</em> conref <em>sur plusieurs niveaux : puissant, mais dangereux !</em></figcaption>
-</figure>
+![Imbriquer les conref sur plusieurs niveaux : puissant, mais dangereux !](/assets/imbriquer-conref.svg)
+*Imbriquer les *conref* sur plusieurs niveaux : puissant, mais dangereux !*
 
 Pour résumer la situation :
 
@@ -209,10 +199,8 @@ Recourir aux [conref]() est le meilleur moyen dont dispose le **rédacteur techn
 
 De par la nature des informations qu'elles contiennent, les sections de type *task* ont un taux plus élevé de réutilisation du contenu que celles de type *concept* ou *reference*.
 
-<figure>
-<img src="graphics/maximiser-conref.svg" alt="graphics/maximiser-conref.svg" />
-<figcaption><em>Les</em> conref <em>modularisent de petits blocs d'information</em></figcaption>
-</figure>
+![Les conref modularisent de petits blocs d'information](/assets/maximiser-conref.svg)
+*Les *conref* modularisent de petits blocs d'information.*
 
 Comme dans l'exemple ci-dessous, il n'est pas rare d'obtenir rapidement des fichiers dont la seule valeur unique est le titre, le reste du contenu, *pourtant unique* (car il assemble de manière unique des blocs d'information non uniques), étant généré par des *conref*.
 
