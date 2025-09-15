@@ -7,27 +7,115 @@ Nous allons créer une base de données de produits avec leurs versions, puis me
 
 1.  Créez la base de données *SQLite3* `productdb.db`:
 
-    ::: {.literalinclude language="python3"}
-    code/create-sqlite3.py
-    :::
+    ```
+    #!/usr/bin/python
+    # coding: utf8
+    import sqlite3
+    
+    try:
+        db = sqlite3.connect('productdb.db')
+    
+        cursor = db.cursor()
+    
+        cursor.execute('''CREATE TABLE products (
+            product text,
+            version text)''')
+    
+        db.commit()
+    
+        cursor.close()
+        db.close()
+    
+    except:
+        print('Erreur lors de la création de la base.')
+        exit(1)
+    
+    print('La base de données a été créée.')
+	```
 
 2.  Insérez des données dans la base :
 
-    ::: {.literalinclude language="python3"}
-    code/insert-sqlite3.py
-    :::
+    ```
+    #!/usr/bin/python
+    # coding: utf8
+    import sqlite3
+    
+    prods = [('dianthus', '1.0'), ('geum', '1.5'), ('prunus', '2.3'),
+             ('dianthus', '1.1'), ('geum', '1.7'), ('prunus', '2.5'),
+             ('dianthus', '1.2'), ('geum', '3.5'), ('prunus', '2.7'), ]
+    
+    try:
+        db = sqlite3.connect('productdb.db')
+    
+        cursor = db.cursor()
+    
+        for data in prods:
+            cursor.execute('INSERT INTO products (product, version) VALUES (?, ?)',
+                           data)
+    
+        db.commit()
+    
+        cursor.close()
+        db.close()
+    
+    except:
+        print('Erreur lors de l\'insertion de données dans la base.')
+        exit(1)
+    
+    print('Les données ont été insérées.')
+    ```
 
 3.  Créez le fichier `modele-sql.rst` suivant :
 
-    ::: {.literalinclude language="rest"}
-    code/modele-sql.rst
-    :::
+    ```
+        {% for prod in product %}
+    {{ prod | capitalize }}
+    {% for c in prod %}-{% endfor %}
+       {% for ver in version %}
+    - {{ ver }}
+       {% endfor %}
+    {% endfor %}
+    ```
 
 4.  Exécutez le script Python suivant :
 
-    ::: {.literalinclude language="python3"}
-    code/populate-sql-rst.py
-    :::
+    ```
+        #!/usr/bin/python
+    # coding: utf8
+    import sqlite3
+    import jinja2
+    
+    env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'))
+    template = env.get_template('modele-sql.rst')
+    
+    print('Produits et versions\n====================')
+    
+    try:
+        db = sqlite3.connect('productdb.db')
+    
+        cursor = db.cursor()
+    
+        for myprod in ("dianthus", "geum", "prunus"):
+            t = (myprod,)
+            cursor.execute('SELECT version FROM products WHERE product = ?', t)
+            mylist = []
+            for row in cursor:
+                mylist.append('{}'.format(*row))
+    
+            data = {
+                'product': [myprod],
+                'version': mylist
+            }
+    
+            print(template.render(data))
+    
+        cursor.close()
+        db.close()
+    
+    except:
+        print('Erreur lors de la lecture de la base.')
+        exit(1)
+    ```
 
     Le contenu suivant s'affiche :
 

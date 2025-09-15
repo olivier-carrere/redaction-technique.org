@@ -9,15 +9,36 @@ Plutôt que d’écrire les données à la main dans le fichier de contenu, vous
 
 1. Créez le fichier `modele.rst` suivant :
 
-    ::: {.literalinclude language="rest"}
-    code/modele.rst
-    :::
+    ```
+    Produits et versions
+    ====================
+    
+    {% for prod in product %}
+    {{ prod | capitalize }}
+    {% for c in prod %}-{% endfor %}
+       {% for ver in version %}
+    - {{ ver }}
+       {% endfor %}
+    {% endfor %}
+    ```
 
 2. Créez le script Python `populate.py` suivant :
 
-    ::: {.literalinclude language="python3"}
-    code/populate.py
-    :::
+    ```
+    #!/usr/bin/python
+    # coding: utf8
+    import jinja2
+    
+    env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'))
+    
+    template = env.get_template('modele.rst')
+    
+    data = {
+        'product': ['dianthus', 'geum', 'prunus'],
+        'version': ['1.0', '1.5', '2.3']
+        }
+    print(template.render(data))
+    ```
 
 3. Rendez le script exécutable, puis exécutez-le :
 

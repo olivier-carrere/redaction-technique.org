@@ -195,8 +195,50 @@ Le script Python `profiling.py` ci-dessous permet de profiler du contenu à l'ai
     Il est peut-être plus intuitif d'indiquer dans le fichier de contenu une valeur conviviale sous forme de chaîne de caractères. Surtout si les rédacteurs ne sont pas familiarisés avec la programmation orientée objet, le test d'égalité `==` étant plus parlant pour la plupart des gens.
 
     ```txt
-    .. literalinclude:: code/texte-conditionnel.rst
-    ```
+    Utilisation du texte conditionnel
+    =================================
+    
+    {% if public.personae == "electrician" %}
+    
+    .. admonition:: Danger pour les électriciens
+    
+       Risque d'électrocution
+    
+       Ne touchez pas les fils électriques.
+    
+    {% elif public.personae == "plumber" and public.season == "winter" %}
+    
+    .. admonition:: Danger pour les plombiers
+    
+       Risque de fracture
+    
+       Ne plongez pas dans la piscine gelée.
+    
+    {% elif public.personae == "plumber" and public.season == "summer" %}
+    
+    .. admonition:: Danger pour les plombiers
+    
+       Risque d'hydrocution
+    
+       Ne plongez pas dans l'eau froide lorsqu'il fait chaud.
+    
+    {% elif public.personae == "plumber" and public.season == "spring" or public.season == "autumn" %}
+    
+    .. admonition:: Danger pour les plombiers
+    
+       Risque de quelque chose
+    
+       Ne plongez pas dans la piscine, on ne sait jamais.
+    
+    {% else %}
+    
+    .. admonition:: Aucun danger
+    
+       Si vous n'êtes ni plombier, ni électricien, vous ne courez
+       aucun danger.
+    
+    {% endif %}
+	```
 
     Il est plus économique d'utiliser une seule classe d'objets, même si elle mélange un peu les choux et les carottes (autant dans cet exemple tiré par les cheveux que dans la vraie vie, où l'on mélangerait des publics, des versions, des plateformes, etc.).
 

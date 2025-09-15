@@ -5,10 +5,35 @@ description: "Nous voulons automatiser la génération du fichier DITA suivant 
 
 Nous voulons automatiser la génération du fichier DITA suivant :
 
-::: {.literalinclude language="xml"}
-code/modele.dita
-:::
-
+```
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA 1.2
+        Topic//EN"
+        "/usr/share/dita-ot/dtd/technicalContent/dtd/topic.dtd">
+<topic id="produits-et-versions">
+  <title>Produits et versions</title>
+  <body>
+    <p>Dianthus</p>
+    <ul>
+      <li>1.0</li>
+      <li>1.5</li>
+      <li>2.3</li>
+    </ul>
+    <p>Geum</p>
+    <ul>
+      <li>1.0</li>
+      <li>1.5</li>
+      <li>2.3</li>
+    </ul>
+    <p>Prunus</p>
+    <ul>
+      <li>1.0</li>
+      <li>1.5</li>
+      <li>2.3</li>
+    </ul>
+  </body>
+</topic>
+```
 1.  Installez les programmes et bibliothèques suivants :
 
     ``` console
@@ -17,10 +42,9 @@ code/modele.dita
 
 2.  Créez le script Python `populate-xml.py` suivant :
 
-    ::: {.literalinclude language="python3"}
+    ```
     code/populate-xml.py
-    :::
-
+    ```
 3.  Rendez le script exécutable, puis exécutez-le :
 
     ``` console
