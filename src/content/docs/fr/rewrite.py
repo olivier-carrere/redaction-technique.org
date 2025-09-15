@@ -5,15 +5,14 @@ from openai import OpenAI
 
 # --- CONFIGURATION ---
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-chunk_size = 3000      # Approx tokens per request
+chunk_size = 3000
 max_threads = 5
-min_block_paragraphs = 2  # Nombre minimum de paragraphes à regrouper pour former un bloc
 
 # --- FONCTION DE RÉÉCRITURE ---
 def rewrite_text(text: str) -> str:
     prompt = f"""
 Réécris le texte suivant en français dans une tonalité plus professionnelle, en conservant le sens et les détails. 
-Ne modifie pas le contenu du texte entre blocs de code (délimités par ```).
+Ne modifie **pas** la mise en forme ni le contenu des blocs de code (délimités par ```).
 
 {text}
 """
@@ -33,6 +32,7 @@ Ne modifie pas le contenu du texte entre blocs de code (délimités par ```).
 def split_into_blocks(body: str):
     """
     Retourne une liste de tuples (is_code_block, text)
+    Le texte entre ``` reste intact et non modifié.
     """
     blocks = []
     pattern = r"(```.*?```)"
@@ -42,11 +42,8 @@ def split_into_blocks(body: str):
         # texte avant le bloc code
         if start > last_index:
             text_block = body[last_index:start]
-            # regrouper petits paragraphes en blocs
-            paragraphs = [p for p in text_block.split("\n\n") if p.strip()]
-            if paragraphs:
-                # regroupe tous les paragraphes en un seul bloc
-                blocks.append((False, "\n\n".join(paragraphs)))
+            if text_block.strip():
+                blocks.append((False, text_block))
         # bloc code
         blocks.append((True, match.group(1)))
         last_index = end
@@ -54,9 +51,9 @@ def split_into_blocks(body: str):
     # texte après le dernier bloc code
     if last_index < len(body):
         text_block = body[last_index:]
-        paragraphs = [p for p in text_block.split("\n\n") if p.strip()]
-        if paragraphs:
-            blocks.append((False, "\n\n".join(paragraphs)))
+        if text_block.strip():
+            blocks.append((False, text_block))
+
     return blocks
 
 # --- TRAITEMENT D’UN FICHIER ---
@@ -83,11 +80,11 @@ def process_file(file_path: str):
     rewritten_blocks = []
     for is_code, block_text in blocks:
         if is_code:
-            rewritten_blocks.append(block_text)
+            rewritten_blocks.append(block_text)  # bloc code intact
         else:
-            rewritten_blocks.append(rewrite_text(block_text))
+            rewritten_blocks.append(rewrite_text(block_text))  # réécriture du texte
 
-    new_content = frontmatter + "<!-- Réécrit par OpenAI -->\n\n" + "\n\n".join(rewritten_blocks)
+    new_content = frontmatter + "<!-- Réécrit par OpenAI -->\n\n" + "".join(rewritten_blocks)
 
     with open(file_path, "w", encoding="utf-8") as f:
         f.write(new_content)
@@ -113,5 +110,5 @@ def process_markdown_files(root_dir: str):
 
 # --- EXECUTION ---
 if __name__ == "__main__":
-    root_dir = os.getcwd()  # utilise le répertoire courant
+    root_dir = os.getcwd()
     process_markdown_files(root_dir)
