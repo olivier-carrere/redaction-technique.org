@@ -61,13 +61,11 @@ Tout simplement parce que le contenu au format **DITA XML** contient plus d'info
 
 Si votre contenu était une photo, nous pourrions faire l'analogie suivante :
 
-  ---------------------------------------------------------------------------------------------------------------- ------------------------------------------------ -----
-  Format de contenu ==================+===========================================================+ **DITA XML**                                                    
-
-  **DocBook** \|TIFF                                                                                                                                            
-
-  PDF                                                                                                              JPEG                                         
-  ---------------------------------------------------------------------------------------------------------------- ------------------------------------------------ -----
+| Format de contenu | Format de photo |
+|-------------------|-----------------|
+| DITA XML          | RAW             |
+| DocBook           | TIFF            |
+| PDF               | JPEG            |
 
 Le passage de RAW en TIFF et de TIFF en JPEG est destructif et ne peut se faire en sens inverse.
 
