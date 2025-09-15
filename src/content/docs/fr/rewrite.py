@@ -1,11 +1,12 @@
 import os
+import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from openai import OpenAI
 
 # --- CONFIGURATION ---
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))  # Assurez-vous que OPENAI_API_KEY est défini
-chunk_size = 3000     # Approx tokens per request
-max_threads = 5       # Nombre maximum de threads simultanés
+chunk_size = 3000
+max_threads = 5
 
 # --- FONCTION DE RÉÉCRITURE ---
 def rewrite_text(text: str) -> str:
@@ -24,9 +25,9 @@ Réécris le texte suivant en français dans une tonalité plus professionnelle,
         return response.choices[0].message.content.strip()
     except Exception as e:
         print(f"Erreur API OpenAI : {e}")
-        return text  # retourne le texte original en cas d'erreur
+        return text
 
-# --- TRAITEMENT D’UN FICHIER PAR PARAGRAPHES ---
+# --- TRAITEMENT D’UN FICHIER PARAGRAPHES ---
 def process_file(file_path: str):
     print(f"Traitement du fichier : {file_path}")
     with open(file_path, "r", encoding="utf-8") as f:
@@ -36,10 +37,20 @@ def process_file(file_path: str):
         print("Ce fichier a déjà été réécrit, saut.\n")
         return
 
-    paragraphs = [p for p in content.split("\n\n") if p.strip()]
+    # Sépare frontmatter et contenu
+    match = re.match(r"^(---\n.*?\n---\n)(.*)$", content, re.DOTALL)
+    if match:
+        frontmatter = match.group(1)
+        body = match.group(2)
+    else:
+        frontmatter = ""
+        body = content
+
+    # Découpe le corps en paragraphes
+    paragraphs = [p for p in body.split("\n\n") if p.strip()]
     rewritten_paragraphs = [rewrite_text(p) for p in paragraphs]
 
-    new_content = "<!-- Réécrit par OpenAI -->\n\n" + "\n\n".join(rewritten_paragraphs)
+    new_content = frontmatter + "<!-- Réécrit par OpenAI -->\n\n" + "\n\n".join(rewritten_paragraphs)
 
     with open(file_path, "w", encoding="utf-8") as f:
         f.write(new_content)
@@ -67,4 +78,3 @@ def process_markdown_files(root_dir: str):
 if __name__ == "__main__":
     root_dir = os.getcwd()
     process_markdown_files(root_dir)
-
