@@ -285,13 +285,10 @@ Tout d\'abord, il s\'agissait de mettre en pratique les principes que je mettais
 
 J\'ai voulu faire passer les messages suivants via le choix iconographique :
 
-Une tâche concrète
-
-:   Bien qu\'au premier abord très abstraite, la gestion des photos s\'assimile à un travail bien concret : la culture d\'un potager ; j\'ai découvert à cette occasion que je n\'avais rien inventé, et que la notion de *désherbage* était familière aux iconographes.
-
-Un travail de groupe
-
-:   La participation à la production graphique est un travail de groupe et non d\'individus isolés.
+| Message                  | Description                                                                                                                                                                    |
+|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Une tâche concrète        | Bien qu'au premier abord très abstraite, la gestion des photos s'assimile à un travail bien concret : la culture d'un potager ; j'ai découvert à cette occasion que je n'avais rien inventé, et que la notion de *désherbage* était familière aux iconographes. |
+| Un travail de groupe      | La participation à la production graphique est un travail de groupe et non d'individus isolés.                                                                                 |
 
     Après un premier choix d\'images représentant à chaque fois une personne unique, je suis passé à des photos de groupe.
 
