@@ -26,13 +26,10 @@ Lorsque la mise en page a une importance équivalente à celle du contenu, ou lo
 
 Lorsque la mise en page a une importance moindre que celle du contenu, ou lorsqu'elle doit être homogène, comme dans le cas d'une **documentation technique**, la rédaction et la mise en page s'opèrent sur :
 
-les mêmes fichiers
-
-:   par exemple, des fichiers **FrameMaker**,
-
-des fichiers différents
-
-:   par exemple, des fichiers de contenu XML et une feuille de style XSLT.
+| Type de fichiers        | Exemple                                                                 |
+|-------------------------|-------------------------------------------------------------------------|
+| Les mêmes fichiers      | Par exemple, des fichiers **FrameMaker**.                               |
+| Des fichiers différents | Par exemple, des fichiers de contenu XML et une feuille de style XSLT. |
 
 Dans un fichier **FrameMaker**, la séparation du fond et de la forme est élevée mais pas totale : le contenu et la mise en page sont placés dans le même fichier. **FrameMaker** applique une maquette de page homogène à tout un fichier, mais autorise l'ajout manuel d'éléments de mise en page. La même maquette peut être dupliquée pour tout le document, ou une maquette différente peut être utilisée pour chaque fichier qui compose ce dernier.
 
@@ -43,17 +40,11 @@ Les formats sources peuvent être classés selon leur degré de modularité et l
 
 Les formats XML structurés **DocBook** et **DITA XML** appliquent une maquette de page homogène à tout un document, et n'autorisent pas l'ajout manuel d'éléments de mise en page[^2], ni l'application de maquettes différentes aux différents fichiers qui composent le document.
 
-+------------------------------------------------------------------------------------+
-| Format Possibilité de mise \|                                                      |
-|                                                                                    |
-| :   en page manuelle \| \|                                                         |
-|                                                                                    |
-| ====================+====================+====================+ **MS Word** Oui \| |
-+------------------------------------------------------------------------------------+
-| **FrameMaker** Oui                                                                 |
-+------------------------------------------------------------------------------------+
-| **DITA XML** Non \|                                                                |
-+------------------------------------------------------------------------------------+
+| Format        | Possibilité de mise en page manuelle|
+|---------------|----------------------------|
+| MS Word       | Oui                        |
+| FrameMaker    | Oui                        |
+| DITA XML      | Non                        |
 
 Si contenu et mise en page sont intimement liés, comme sous un traitement de texte, il est difficile de modifier le contenu sans perturber la mise en page. Résultat : à chaque publication d'une nouvelle version d'une documentation technique, l'équipe de **rédaction technique** passe de longues heures à corriger les erreurs de mise en page générées par le logiciel. Le phénomène est moindre sous **FrameMaker** mais reste important. Il est nul avec les formats **DITA XML** et **DocBook** (les seules erreurs qui peuvent se produire sont des erreurs de compilation dues à une syntaxe XML erronée ; ces erreurs sont facilement rectifiables).
 
@@ -79,13 +70,11 @@ Ce dernier aspect détermine la manière dont le format gère le single-sourcing
 
 Les formats disponibles peuvent donc être classés selon le tableau suivant :
 
-  ---------------------------------------------------------------------------------------------------------------
-  Format Structuré ===============+===============+===============+===============+ **FrameMaker** Non \| \| \|
-
-  **DocBook** Oui
-
-  **DITA XML** Oui
-  ---------------------------------------------------------------------------------------------------------------
+| Format Structuré | Possibilité de mise en page manuelle |
+|-----------------|----------------------------|
+| FrameMaker       | Non                        |
+| DocBook          | Oui                        |
+| DITA XML         | Oui                        |
 
 **FrameMaker** et **DocBook** ne sont pas pleinement modulaires, car les plus petits éléments d'information manipulables ne sont pas génériques : ils contiennent des informations telles que la structure de table des matières ou les références croisées qui ne sont valables que dans un nombre limité de contextes.
 
