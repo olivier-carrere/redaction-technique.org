@@ -70,11 +70,7 @@ reference
 
 Chacune de ces catégories de haut niveau propose un jeu de balises de plus bas niveau qui lui est propre. Si le **rédacteur technique** rédige un document technique, il y a toutes les chances pour que l'information qu'il a collectée et qu'il doit organiser fasse partie de l'une de ces trois catégories[^3]. Cette division en types d'information oblige donc d'entrée de jeu le **rédacteur technique** à structurer l'information. L'utilisateur y gagne en facilité et rapidité d'accès à l'information et en utilisabilité globale de la documentation technique.
 
-::: only
-html
-
 **Notes**
-:::
 
 [^1]: Dans la pratique, un schéma XSD.
 
@@ -85,7 +81,7 @@ html
 ## Organisation à la demande du contenu
 
 Les briques d'information peuvent être assemblées à la demande dans des structures de table des matières externes, les *ditamap*.
-:::
+
 
 L'organisation de l'information sous **DITA XML** n'est pas figée. Les briques peuvent être organisées dans différentes structures hiérarchiques, selon l'évolution des besoins. Si le **rédacteur technique** a pris soin de construire des briques d'information atomiques et génériques, il peut, à l'instar d'un constructeur automobile proposant sans cesse de nouveaux modèles par assemblage d'éléments standardisés, proposer par exemple les documents suivants :
 
@@ -112,7 +108,7 @@ L'organisation des répertoires de travail doit également permettre l'utilisati
 ## Le single-sourcing : un format source, plusieurs formats cibles
 
 Le *single-sourcing* est un sujet qui a longtemps divisé les rédacteurs techniques : des supports de **rédaction technique** différents, tels qu'une aide en ligne et un manuel imprimé, doivent-ils proposer un contenu radicalement différent ou peuvent-ils être générés à partir du même contenu source ?
-:::
+
 
 Les contraintes de productivité et la réduction des coûts aidant, le débat a été tranché en faveur du *single-sourcing*. Le gain qualitatif, discutable, ne compense pas le coût de créer, maintenir et traduire une version source différente pour chaque version cible.
 
@@ -138,9 +134,7 @@ Les *topics* sont généralement stockés à plat dans des répertoires divisés
 
 Les unités d'information atomiques[^1] telles que des remarques, des paragraphes, voire des phrases ou des segments de phrase, qui ne peuvent pas être munis d'un titre, ne forment pas des *topics*. Elles peuvent être cependant partagées via le mécanisme *conref*, similaire au mécanisme *Xinclude* proposé par **DocBook**.
 
-:::note
-Notes
-:::
+**Notes**
 
 [^1]: Pas au sens XPath.
 
@@ -161,9 +155,7 @@ Quel que soit le choix initial, il est possible à tout instant de changer de st
 **Voir aussi**
 - [Git : du fichier au contenu](../../rédaction-technique--un-processusindustriel/référentiel/git-du-fichier-au-contenu)
 
-:::note
-Notes
-:::
+**Notes**
 
 [^1]: Le rédacteur technique peut ainsi voir où un élément d'information est inclus ; lors de la mise à jour de cet élément, il peut alors juger si l'élément modifié sera toujours valable dans les différents contextes.
 

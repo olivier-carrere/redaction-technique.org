@@ -66,7 +66,7 @@ Cohérentes
 ## DocBook ou DITA XML ?
 
 Certaines entreprises ont parfois un contenu existant au format [DocBook](). Géré souvent par les acteurs les plus techniques de la société, il coexiste la plupart du temps avec d'autres contenus au format **FrameMaker** ou traitement de texte. S'il est décidé de fédérer tout le contenu d'entreprise sous un seul format, il semble naturel de capitaliser les efforts fournis sur la chaîne de création et de publication **DocBook** et de sélectionner ce format. C'est pourtant se priver des gains de productivité spectaculaires offerts par **DITA XML**.
-:::
+
 
 Il est facile de générer du **DocBook** à partir de **DITA XML**. `DITA-OT (DITA Open Toolkit)`{.interpreted-text role="abbr"} propose par défaut ce format cible, au même titre que le PDF ou le HTML. L'opération inverse ne peut pas être totalement automatisée. Pourquoi ?
 
@@ -160,11 +160,7 @@ Appliquez bien sûr ce processus à un petit jeu de documents[^2], qui ne soit p
 
 Vous pouvez maintenant progressivement modulariser et partager votre contenu dans le nouveau format afin de tirer parti au maximum de **DITA XML**. Vous pouvez pendant cette phase continuer à publier de nouvelles versions du document ; la publication devrait d'ailleurs être beaucoup plus simple que sous **FrameMaker**.
 
-::: only
-html
-
 **Notes**
-:::
 
 [^1]: Bien que ce processus doive être rapide, je vous conseille de le faire juste après une livraison d'une nouvelle version du document pour avoir la marge de temps suffisante avant la livraison suivante, des petits ajustements étant toujours nécessaires.
 

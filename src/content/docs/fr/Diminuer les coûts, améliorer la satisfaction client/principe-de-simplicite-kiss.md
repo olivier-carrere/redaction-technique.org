@@ -11,11 +11,7 @@ Ce qui a spectaculairement fonctionné pour des montres peut être appliqué ave
 
 De même, dans la formulation de ses phrases, le **rédacteur technique** doit toujours avoir le principe KISS à l'esprit. Il est facile de construire des phrases alambiquées qui dénotent plus une mécompréhension du sujet qu'un raffinement de l'écriture[^2]. Construire une phrase simple demande un effort de compréhension de son sujet. La rédaction du contenu et son appréhension par son destinataire deviennent alors aisées. C'est un aspect fondamental du métier de **rédacteur technique**. Le **rédacteur technique** apporte ainsi une véritable valeur ajoutée au produit qu'il documente.
 
-::: only
-html
-
 **Notes**
-:::
 
 [^1]: Même si les formats qui distinguent le contenu de la mise en page sont dans leur principe plus aptes à la mise en œuvre de la philosophie KISS.
 

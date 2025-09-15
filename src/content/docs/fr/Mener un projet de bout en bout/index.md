@@ -3,9 +3,6 @@ title: "Mener un projet de bout en bout"
 description: "Il est assez rare, dans le cadre professionnel, de pouvoir mener un projet de (quasiment) A à Z, de la conception à la communication, en passant par la réalisation."
 ---
 
-:::note[Modifications récentes]
-:::
-
 Il est assez rare, dans le cadre professionnel, de pouvoir mener un projet de (quasiment) A à Z, de la conception à la communication, en passant par la réalisation. Soit, gérer autant les aspects humains et organisationnels que les aspects techniques, ainsi que toute la communication: graphisme, rédactionnel, et même vidéo. C\'est plus souvent possible dans le cadre associatif.
 
 ## Gestion des photos d\'une association
@@ -103,6 +100,7 @@ Ainsi, tout membre de l\'association peut créer un compte Gitlab, puis, après 
 
 :::note[Clonage du dépôt Gitlab]
 *La procédure suivante était incluse dans une première version du dépliant LaTeX. Elle est donc minimaliste, ne serait-ce que pour des raisons d\'espace disponible sur la version imprimée. Je l\'ai par la suite supprimée du dépliant, car elle risquait plutôt d\'effrayer son lectorat, majoritairement technophobe.*
+:::
 
 Sous Windows, vous pouvez installer [Git for windows]() et [GitHub Desktop]().
 
@@ -140,7 +138,6 @@ Pour mettre à jour votre dépôt Gitlab :
     ```
 
     Cette opération devrait être nettement plus rapide que le clonage initial.
-:::
 
 Pour la synchronisation entre le serveur et ma copie locale, je me suis tourné vers [LFTP]() :
 

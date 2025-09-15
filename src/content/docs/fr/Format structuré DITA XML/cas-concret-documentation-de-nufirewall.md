@@ -10,7 +10,7 @@ Si je n'avais pas utilisé un format qui favorise au maximum la réutilisation d
 ## Partager des blocs d'information atomiques avec les conref
 
 Lorsque le **rédacteur technique** veut réutiliser des blocs d'information **DITA XML** plus petits qu'une section, il doit les partager au niveau des fichiers de contenu *dita* et non dans les structures de table des matières *ditamap*, grâce au mécanisme [conref]().
-:::
+
 
 Le principe des *conref* est simple : lorsqu'un *conref* est mentionné au niveau d'un nœud XML donné, tout le contenu du nœud cible est remplacé par le contenu du nœud source.
 
@@ -52,7 +52,7 @@ Tous les conref sources d'un fichier donné doivent avoir un ID unique dans ce f
 ### Utiliser le nœud XML de plus bas niveau
 
 Le **rédacteur technique** doit utiliser comme source du [conref]() le nœud **DITA XML** de plus bas niveau contenant l'information à partager.
-:::
+
 
 Le but des *conref* étant de gérer des blocs d'information de faibles dimensions, il est logique de les manipuler au niveau de la plus petite structure XML encapsulant l'information, même si cette structure, pour être compatible avec le schéma XSD de la section **DITA XML** où elle intervient, doit elle-même être incluse dans des structures XML plus grandes.
 
@@ -174,7 +174,7 @@ Pour pallier ce problème, il faudrait réorganiser l'ordre des conref dans le f
 ### Imbriquer les conref
 
 Pour des raisons de facilité de mise à jour et de maintenance du contenu **DITA XML**, le **rédacteur technique** doit limiter l'effet poupée russe et ne pas trop imbriquer les [conref](). Un seul niveau d'imbrication (un *conref* imbriqué dans un autre) me semble le seuil au-delà duquel le contenu peut vite devenir ingérable.
-:::
+
 
 Dans l'exemple ci-dessous, le *conref* source *see-admin-guide* contient le *conref* cible *admin-guide-title* :
 
@@ -307,7 +307,7 @@ En plaçant le contenu confidentiel dans un fichier que vous appelez par exemple
 ## Fournir une information ciblée avec le texte conditionnel ditaval
 
 Un fichier [ditaval]() reprend le principe des lunettes que vous chaussez pour visualiser un film en 3D : le verre gauche masque une moitié de l’image, le verre droit en masque l’autre moitié. Mais seul le **rédacteur technique** dispose de lunettes 3D et a une vision complète de l’information contenue dans le projet **DITA XML**.
-:::
+
 
 Les destinataires de l’information disposent de lunettes avec deux verres gauches ou deux verres droits. Ils ne voient donc qu’une partie de l’information. Loin d’être lésés par cet état de fait, ils ont ainsi un meilleur accès à l’information. Le profilage réalisé masque à chaque public les informations dont ils n’ont pas besoin et qui ne seraient pour eux que du bruit. Chaque audience bénéficie donc d’un meilleur accès à l’information qui la concerne, selon le fameux concept minimaliste de less is more.
 
@@ -338,6 +338,7 @@ Vous pouvez utiliser la structure suivante :
 
 :::caution[Attention]
 Une clé de filtrage mal positionnée peut entraîner une erreur de compilation. En effet, si le code non filtré est conforme au schéma XSD DITA XML, le code filtré peut ne pas l’être.
+:::
 
 Exemple
 
@@ -366,4 +367,4 @@ Or, selon le schéma XSD, les en-têtes de tableaux doivent contenir au moins un
 ```
 
 Ce code est donc incorrect et entraîne l’échec de la compilation.
-:::
+

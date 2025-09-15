@@ -5,7 +5,7 @@ description: "DITA XML est un langage de rédaction structurée qui permet de cr
 
 
 Les didacticiels suivants aideront le **rédacteur technique** à mettre en place et à utiliser une chaîne de création et de publication **DITA XML** libre.
-:::
+
 
 **DITA XML** est un langage de rédaction structurée qui permet de créer des documents sans se soucier de leur aspect final sur différents supports. XSL-FO est un langage qui permet de réorganiser et filtrer le contenu XML et de lui appliquer une mise en page à l'aide d'une feuille de style.
 
@@ -101,7 +101,7 @@ Le fichier PDF affichera l'exemple structuré comme suit :
 ## XSL-FO : insérer automatiquement un titre pour les exemples
 
 Par défaut, `DITA-OT (DITA Open Toolkit)`{.interpreted-text role="abbr"} n'insère pas automatiquement dans les fichiers PDF le texte *Exemple :* devant le titre d'un exemple contenu entre balises **DITA XML** `<example>`{.interpreted-text role="samp"}. La syntaxe [XSL-FO]() offre cependant cette possibilité.
-:::
+
 
 Supposons que le code source d'un de vos fichiers **DITA XML** soit le suivant :
 
@@ -495,9 +495,7 @@ $ ant -Dargs.input=samples/sequence.ditamap -Doutput.dir=out/ \
 -Dtranstype=pdf2 -Dargs.fo.include.rellinks=all
 ```
 
-:::note
 **Notes**
-:::
 
 [^1]: Pour des raisons de « décontextualisation », et pour se donner la possibilité de réutiliser le contenu ailleurs, les références croisées ne sont pas placées dans le corps du texte, mais en fin de section, dans une rubrique dédiée.
 

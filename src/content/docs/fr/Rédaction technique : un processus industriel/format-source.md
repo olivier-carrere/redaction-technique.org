@@ -5,7 +5,7 @@ description: "Les traitements de texte nous ont déshabitués à distinguer le f
 
 
 Le contenu d'un projet de **rédaction technique** est créé dans un format source, différent du format des livrables, le format cible. Pour reprendre une image fréquemment utilisée en développement logiciel, le format source est la recette de cuisine, le format cible, le plat. En photographie, le format source est le format [RAW](), qui est généré par l'appareil photo, et sur lequel les photographes professionnels préféreront apporter les retouches, et le format cible, le format JPEG.
-:::
+
 
 Les traitements de texte nous ont déshabitués à distinguer le fond de la forme. Mais confondre les deux entraîne beaucoup d'erreurs et de perte de temps.
 
@@ -89,16 +89,6 @@ Les formats disponibles peuvent donc être classés selon le tableau suivant :
 
 **FrameMaker** et **DocBook** ne sont pas pleinement modulaires, car les plus petits éléments d'information manipulables ne sont pas génériques : ils contiennent des informations telles que la structure de table des matières ou les références croisées qui ne sont valables que dans un nombre limité de contextes.
 
-::: only
-html
-
-**Notes**
-:::
-
-::: {.toctree hidden="}
-documents-monolithiques-ou-modulaires fichiers-binaires-ou-texte
-:::
-
 [^1]: Si le **rédacteur technique** met lui-même en page ses documents, il change de rôle lorsqu'il effectue cette opération.
 
 [^2]: Ou très peu : dans les fichiers de contenu, il est seulement possible de mettre du texte en gras ou en italique, pas d'en changer la police, le corps ou la couleur.
@@ -106,7 +96,6 @@ documents-monolithiques-ou-modulaires fichiers-binaires-ou-texte
 ## Documents monolithiques ou modulaires
 
 Le format source peut reposer sur des fichiers monolithiques ou sur des grappes de fichiers modulaires.
-:::
 
 Les fichiers monolithiques (par exemple **MS Word**, **LibreOffice** ou **FrameMaker**) centralisent tout le contenu dans un seul fichier, facile à manier, mais qui limite le partage du contenu ; le risque de disposer d'informations incohérentes ou en doublon est alors important.
 

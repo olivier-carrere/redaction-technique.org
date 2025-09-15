@@ -3,9 +3,7 @@ title: "Formats et outils"
 description: "Lorsqu’une entreprise industrialise la rédaction technique, la question clé n’est pas l’outil mais le format sous-jacent."
 ---
 
-
 Lorsqu'une entreprise décide d'industrialiser la **rédaction technique**, elle se pose d'emblée la question des outils. Or, plutôt que les outils, ce sont les formats sous-jacents qui sont le point essentiel.
-:::
 
 La plupart des éditeurs, afin de disposer d'un marché captif obligé de régulièrement payer des mises à jour de leurs produits, ont en effet développé des formats propriétaires que seuls leurs logiciels sont à même de modifier. Un fichier **MS Word** ou un fichier **FrameMaker** ne peuvent ainsi être modifiés que *via* les outils éponymes. Choisir un tel format risque donc de limiter les choix ultérieurs de l'entreprise et de se révéler coûteux : il faut une licence par utilisateur, qu'il soit **rédacteur technique**, contributeur occasionnel ou traducteur.
 

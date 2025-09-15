@@ -5,7 +5,6 @@ description: "Un conte chinois narre comment des aveugles se sont retrouvés con
 
 
 Le **rédacteur technique** ne peut fournir une documentation utile aux clients de l'entreprise s'il se contente de mettre en forme des informations glanées auprès des différents acteurs de la société. Jouant le rôle de Candide, il est le premier représentant des utilisateurs et se doit de tester les produits dans des conditions proches des leurs.
-:::
 
 Un conte chinois narre comment des aveugles se sont retrouvés confrontés à un éléphant. Aucun d'entre eux, et pour cause, n'ayant une perception globale de l'animal, chacun en eut une image différente : celui qui en tenait une patte le prenait pour un arbre, celui qui en étreignait la trompe le confondait avec un serpent, celui qui avait empoigné une défense l'identifiait à une lance, et celui qui s'agrippait à une de ses oreilles croyait qu'il s'agissait d'un éventail.
 

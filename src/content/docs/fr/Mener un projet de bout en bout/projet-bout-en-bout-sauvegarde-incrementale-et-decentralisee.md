@@ -11,6 +11,7 @@ Ainsi, tout membre de l'association peut créer un compte Gitlab, puis, après a
 
 :::note[Clonage du dépôt Gitlab]
 *La procédure suivante était incluse dans une première version du dépliant LaTeX. Elle est donc minimaliste, ne serait-ce que pour des raisons d'espace disponible sur la version imprimée. Je l'ai par la suite supprimée du dépliant, car elle risquait plutôt d'effrayer son lectorat, majoritairement technophobe.*
+:::
 
 Sous Windows, vous pouvez installer [Git for windows]() et [GitHub Desktop]().
 
@@ -48,7 +49,7 @@ Pour mettre à jour votre dépôt Gitlab :
     ```
 
     Cette opération devrait être nettement plus rapide que le clonage initial.
-:::
+
 
 Pour la synchronisation entre le serveur et ma copie locale, je me suis tourné vers [LFTP]() :
 
