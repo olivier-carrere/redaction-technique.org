@@ -1,6 +1,7 @@
 import os
 import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from bs4 import BeautifulSoup
 from openai import OpenAI
 
 # --- CONFIGURATION ---
@@ -10,9 +11,15 @@ max_threads = 5
 
 # --- FONCTION DE RÉÉCRITURE ---
 def rewrite_text(text: str) -> str:
+    """
+    Réécrit un texte en français avec ton professionnel,
+    en conservant les balises HTML intactes.
+    """
     prompt = f"""
-Réécris le texte suivant en français dans une tonalité plus professionnelle, en conservant le sens et les détails. 
-Ne modifie **pas** la mise en forme ni le contenu des blocs de code (délimités par ```).
+Réécris le texte suivant en français dans une tonalité plus professionnelle, 
+en conservant le sens et les balises HTML existantes (comme <abbr>, <strong>, <em>, etc.).
+Ne modifie **pas** les blocs de code (délimités par ```), et ne change pas la mise en forme Markdown.
+Ne modifie pas le texte entre `<` et `>` qui ne fait pas partie d'une balise HTML valide.
 
 {text}
 """
@@ -28,33 +35,35 @@ Ne modifie **pas** la mise en forme ni le contenu des blocs de code (délimités
         print(f"Erreur API OpenAI : {e}")
         return text
 
-# --- FONCTION POUR DÉCOUPER LE TEXTE EN BLOCS ---
+# --- DÉCOUPAGE EN BLOCS ---
 def split_into_blocks(body: str):
     """
     Retourne une liste de tuples (is_code_block, text)
-    Le texte entre ``` reste intact et non modifié.
     """
     blocks = []
     pattern = r"(```.*?```)"
     last_index = 0
     for match in re.finditer(pattern, body, re.DOTALL):
         start, end = match.span()
-        # texte avant le bloc code
         if start > last_index:
             text_block = body[last_index:start]
             if text_block.strip():
                 blocks.append((False, text_block))
-        # bloc code
         blocks.append((True, match.group(1)))
         last_index = end
-
-    # texte après le dernier bloc code
     if last_index < len(body):
         text_block = body[last_index:]
         if text_block.strip():
             blocks.append((False, text_block))
-
     return blocks
+
+# --- PRÉSERVATION DES BALISES HTML ---
+def preserve_html(text: str) -> str:
+    """
+    Utilise BeautifulSoup pour s'assurer que les balises HTML valides restent intactes
+    """
+    soup = BeautifulSoup(text, "html.parser")
+    return str(soup)
 
 # --- TRAITEMENT D’UN FICHIER ---
 def process_file(file_path: str):
@@ -75,14 +84,17 @@ def process_file(file_path: str):
         frontmatter = ""
         body = content
 
-    # Découpe en blocs et réécrit uniquement les blocs non-code
+    # Découpe en blocs
     blocks = split_into_blocks(body)
     rewritten_blocks = []
     for is_code, block_text in blocks:
         if is_code:
-            rewritten_blocks.append(block_text)  # bloc code intact
+            rewritten_blocks.append(block_text)
         else:
-            rewritten_blocks.append(rewrite_text(block_text))  # réécriture du texte
+            # préserve HTML avant réécriture
+            block_text = preserve_html(block_text)
+            rewritten_text = rewrite_text(block_text)
+            rewritten_blocks.append(rewritten_text)
 
     new_content = frontmatter + "<!-- Réécrit par OpenAI -->\n\n" + "".join(rewritten_blocks)
 
