@@ -1,9 +1,9 @@
 import os
-import openai
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from openai import OpenAI
 
 # --- CONFIGURATION ---
-openai.api_key = "VOTRE_CLE_API_OPENAI"
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))  # Assurez-vous que OPENAI_API_KEY est défini
 chunk_size = 3000     # Approx tokens per request
 max_threads = 5       # Nombre maximum de threads simultanés
 
@@ -15,7 +15,7 @@ Réécris le texte suivant en français dans une tonalité plus professionnelle,
 {text}
 """
     try:
-        response = openai.ChatCompletion.create(
+        response = client.chat.completions.create(
             model="gpt-4",
             messages=[{"role": "user", "content": prompt}],
             temperature=0.5,
@@ -32,12 +32,10 @@ def process_file(file_path: str):
     with open(file_path, "r", encoding="utf-8") as f:
         content = f.read()
 
-    # Vérifie si le fichier a déjà été réécrit
     if content.startswith("<!-- Réécrit par OpenAI"):
         print("Ce fichier a déjà été réécrit, saut.\n")
         return
 
-    # Découpe le texte en paragraphes
     paragraphs = [p for p in content.split("\n\n") if p.strip()]
     rewritten_paragraphs = [rewrite_text(p) for p in paragraphs]
 
@@ -50,7 +48,6 @@ def process_file(file_path: str):
 
 # --- PARCOURS DES FICHIERS EN MULTI-THREAD ---
 def process_markdown_files(root_dir: str):
-    # Collecte tous les fichiers .md
     md_files = [
         os.path.join(subdir, file)
         for subdir, _, files in os.walk(root_dir)
@@ -58,7 +55,6 @@ def process_markdown_files(root_dir: str):
         if file.endswith(".md")
     ]
 
-    # Traite les fichiers en parallèle
     with ThreadPoolExecutor(max_workers=max_threads) as executor:
         futures = [executor.submit(process_file, file) for file in md_files]
         for future in as_completed(futures):
@@ -69,5 +65,6 @@ def process_markdown_files(root_dir: str):
 
 # --- EXECUTION ---
 if __name__ == "__main__":
-    root_dir = os.getcwd()  # utilise le répertoire courant
+    root_dir = os.getcwd()
     process_markdown_files(root_dir)
+
