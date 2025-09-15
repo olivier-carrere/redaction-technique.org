@@ -8,23 +8,20 @@ from openai import OpenAI
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 max_threads = 5
 
-# --- IDENTIFICATION DU TEXTE À MARQUER ---
-def identify_unprofessional(text: str) -> str:
+# --- IDENTIFICATION DES LIGNES À MARQUER ---
+def identify_lines_to_comment(text: str) -> str:
     """
-    Analyse le texte et entoure uniquement les passages non professionnels
-    ou obsolètes avec des commentaires HTML indiquant la raison.
+    Pour chaque ligne, identifie si elle est non professionnelle ou obsolète,
+    et ajoute un commentaire HTML sur la même ligne indiquant la raison.
     """
     prompt = f"""
-Analyse le texte suivant et identifie uniquement les passages :
-- non professionnels (ex : ton trop familier, expressions informelles)
-- ou obsolètes en 2025 (ex : technologies ou références dépassées)
+Analyse le texte suivant ligne par ligne.
+Pour chaque ligne non professionnelle ou obsolète (ex: ton trop familier, contenu dépassé en 2025),
+ajoute **un commentaire HTML sur la même ligne** indiquant la raison, comme ceci :
+ligne de texte <!-- à réviser : raison -->
 
-Pour chaque passage problématique, entoure-le avec des commentaires HTML indiquant la raison :
-<!-- à réviser : [raison] -->
-[texte problématique]
-<!-- /à réviser -->
-
-Ne modifie **rien d'autre** (ni code, ni HTML, ni sauts de ligne, ni Markdown).
+Ne change **rien d'autre** (ni blocs de code, ni balises HTML, ni sauts de ligne, ni mise en forme Markdown).
+Ne fusionne pas de lignes.
 
 Texte à analyser :
 
@@ -43,6 +40,7 @@ Texte à analyser :
 
 # --- DÉCOUPAGE EN BLOCS ---
 def split_into_blocks(body: str):
+    """Sépare les blocs de code et le reste du texte"""
     pattern = r"(```.*?```)"
     blocks = []
     last_index = 0
@@ -57,7 +55,7 @@ def split_into_blocks(body: str):
     return blocks
 
 def preserve_html(text: str) -> str:
-    """Préserve toutes les balises HTML intactes"""
+    """Préserve les balises HTML intactes"""
     soup = BeautifulSoup(text, "html.parser")
     return str(soup)
 
@@ -71,7 +69,6 @@ def process_file(file_path: str):
         print("Ce fichier a déjà été analysé, saut.\n")
         return
 
-    # Séparer frontmatter et corps
     match = re.match(r"^(---\n.*?\n---\n)(.*)$", content, re.DOTALL)
     if match:
         frontmatter = match.group(1)
@@ -88,7 +85,7 @@ def process_file(file_path: str):
             processed_blocks.append(block_text)
         else:
             block_text = preserve_html(block_text)
-            processed = identify_unprofessional(block_text)
+            processed = identify_lines_to_comment(block_text)
             processed_blocks.append(processed)
 
     new_content = frontmatter + "<!-- Analyse par OpenAI -->\n" + "".join(processed_blocks)
