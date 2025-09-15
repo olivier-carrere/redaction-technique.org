@@ -12,16 +12,17 @@ max_threads = 5
 # --- FONCTION DE RÉÉCRITURE ---
 def rewrite_text(text: str) -> str:
     """
-    Réécrit le texte en français ton professionnel,
-    en conservant absolument toutes les balises HTML intactes.
+    Réécrit un texte en français ton professionnel, en conservant
+    absolument la mise en forme originale et toutes les balises HTML.
     """
     prompt = f"""
-Réécris le texte suivant en français dans une tonalité plus professionnelle, 
-en conservant **toutes les balises HTML** intactes, notamment <abbr>.
-Ne modifie pas le contenu des blocs de code (délimités par ```), 
-et ne change pas la mise en forme Markdown.
-Ne tente pas d’expliciter ou de développer les abréviations (<abbr>).
-Conserve le texte entre `<` et `>` qui n’est pas une balise HTML valide.
+Réécris le texte suivant en français dans une tonalité professionnelle.
+- Ne modifie **aucune mise en forme**, ni les sauts de ligne.
+- Ne modifie **jamais** les blocs de code (``` … ```).
+- Conserve toutes les balises HTML intactes (notamment <abbr>).
+- Ne modifie pas le texte entre `<` et `>` qui n'est pas une balise HTML.
+
+Texte à réécrire (avec sa mise en forme exacte) :
 
 {text}
 """
@@ -32,7 +33,7 @@ Conserve le texte entre `<` et `>` qui n’est pas une balise HTML valide.
             temperature=0.5,
             max_tokens=chunk_size
         )
-        return response.choices[0].message.content.strip()
+        return response.choices[0].message.content
     except Exception as e:
         print(f"Erreur API OpenAI : {e}")
         return text
@@ -93,11 +94,11 @@ def process_file(file_path: str):
         if is_code:
             rewritten_blocks.append(block_text)  # bloc code intact
         else:
-            # préserve le HTML
             block_text = preserve_html(block_text)
             rewritten_text = rewrite_text(block_text)
             rewritten_blocks.append(rewritten_text)
 
+    # Concatène en préservant les sauts de ligne exacts
     new_content = frontmatter + "<!-- Réécrit par OpenAI -->\n\n" + "".join(rewritten_blocks)
 
     with open(file_path, "w", encoding="utf-8") as f:
