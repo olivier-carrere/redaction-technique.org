@@ -16,14 +16,14 @@ Un processus de création et de mise à jour de la documentation technique qui r
 
 Face à cet état de fait, il convient de mettre un système de gestion de l'information relative à l'évolution de la documentation qui soit tolérant à l'erreur humaine. Il faut donc soit :
 
-- mettre en œuvre des *workflows* sous un `CMS (Content Management System)`,
+- mettre en œuvre des *workflows* sous un <abbr title="Content Management System">CMS</abbr>,
 - utiliser le système de gestion de tickets utilisés pour la gestion des nouvelles fonctionnalités du produit documenté (par exemple, Trac) :
   - création d'un ticket par un développeur,
   - mise en œuvre du ticket par un **rédacteur technique**,
   - fermeture du ticket par le créateur du ticket,
   - publication de la documentation lorsque tous les tickets critiques sont fermés.
 
-Les fonctions principales d'un `CMS (Content Management System)` sont les suivantes :
+Les fonctions principales d'un <abbr title="Content Management System">CMS</abbr> sont les suivantes :
 
 - gestion des métadonnées,
 - *workflows*,
@@ -33,4 +33,4 @@ Quel qu'il soit, le système de suivi doit offrir une visibilité et une traçab
 
 Ce système doit être unique et exhaustif : il doit centraliser toutes les demandes de modification de la documentation technique.
 
-Si le document est disponible en plusieurs langues, chaque ticket doit être dupliqué pour chaque langue ou, dans le cas d'un `CMS (Content Management System)`, à chaque langue doit correspondre un *workflow* distinct.
+Si le document est disponible en plusieurs langues, chaque ticket doit être dupliqué pour chaque langue ou, dans le cas d'un <abbr title="Content Management System">CMS</abbr>, à chaque langue doit correspondre un *workflow* distinct.

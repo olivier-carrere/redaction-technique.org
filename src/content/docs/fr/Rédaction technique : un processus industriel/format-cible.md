@@ -9,7 +9,7 @@ Le format cible d'un support de **rédaction technique** est celui sous lequel l
 
 | Type de publication      | Exemple                                                                                                                                                                                                                 |
 |--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Totalement automatique    | Par exemple, livre blanc du format structuré **DITA XML** au format cible PDF via `DITA-OT (DITA Open Toolkit)`.                                                                                                        |
+| Totalement automatique    | Par exemple, livre blanc du format structuré **DITA XML** au format cible PDF via <abbr title="DITA Open Toolkit">DITA-OT</abbr>.                                                                                                        |
 | Semi automatique          | Par exemple, contenu au format **DITA XML** exporté en HTML puis collé sous un CMS.                                                                                                   |
 | Manuelle                  | Par exemple, plaquette marketing au format traitement de texte ou **DITA XML** mise en page sous Indesign, exportée en PDF, puis imprimée ; selon la fréquence de publication du document final, des filtres d'import XML peuvent également être mis en place. |
 

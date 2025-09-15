@@ -50,7 +50,7 @@ Nous allons créer une base de données de produits avec leurs versions, puis me
         cursor = db.cursor()
     
         for data in prods:
-            cursor.execute('INSERT INTO products (product, version) VALUES (?, ?)',
+            cursor.execute('INSERT INTO products (product, version)<abbr title="?, ?">VALUES</abbr>',
                            data)
     
         db.commit()

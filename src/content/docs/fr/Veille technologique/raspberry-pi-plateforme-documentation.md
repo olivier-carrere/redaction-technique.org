@@ -8,7 +8,7 @@ Faut-il une débauche de puissance pour générer une documentation professionne
 :::note
 Les buts de ce billet sont de :
 
-- Présenter un `POC (Proof of Concept, démonstration de faisabilité)` et utiliser des ressources minimales pour créer, gérer et publier une documentation professionnelle. La plupart des opérations se déroulent donc en mode texte, sous Linux. Si les solutions présentées ici fonctionnent également en mode graphique sous Windows, elles ne sont peut-être pas disponibles sous Windows 10 IoT, destiné au Raspberry Pi 3.
+- Présenter un <abbr title="Proof of Concept, démonstration de faisabilité">POC</abbr> et utiliser des ressources minimales pour créer, gérer et publier une documentation professionnelle. La plupart des opérations se déroulent donc en mode texte, sous Linux. Si les solutions présentées ici fonctionnent également en mode graphique sous Windows, elles ne sont peut-être pas disponibles sous Windows 10 IoT, destiné au Raspberry Pi 3.
 - Présenter un scénario d'utilisation aussi simple que possible, parfois au détriment de l'élégance technique.
 :::
 
@@ -30,7 +30,7 @@ Les buts de ce billet sont de :
     | Option        | Valeur      |
     |---------------|-------------|
     | Language      | fr (French) |
-    | Country       | FR (France) |
+    | Country       |<abbr title="France">FR</abbr>|
     | Character Set | UTF-8       |
     
     Ce tableau présente les paramètres de configuration par défaut pour un environnement francophone :
@@ -148,7 +148,7 @@ Les buts de ce billet sont de :
    $ gitk &
    ```
 
-   Ô surprise, vous avez sous les yeux, mais oui, une `GUI (Graphical User Interface)` ! C'est tellement beau, qu'on va faire une photo :
+   Ô surprise, vous avez sous les yeux, mais oui, une <abbr title="Graphical User Interface">GUI</abbr> ! C'est tellement beau, qu'on va faire une photo :
 
    ![](/assets/historique-git-redaction-technique.png)
 
@@ -157,7 +157,7 @@ Les buts de ce billet sont de :
 :::note
 - Vos modifications sont purement locales et ne sont pas appliquées sur le dépot distant GitHub.
 - Si vos modifications apportent une réelle valeur ajoutée à ce blog (correction de coquille, ajout d'information ou autre), n'hésitez pas à me la soumettre sous forme de patch Git ou via votre compte GitHub.
-- GitHub n'est probablement pas hébergé sur un cluster de Raspberry Pi 3. Rien n'empêche cependant d'héberger un dépôt distant Git sur un Raspberry Pi 3 connecté au réseau et d'y accéder par connexion sécurisée `SSH (Secure Shell)`.
+- GitHub n'est probablement pas hébergé sur un cluster de Raspberry Pi 3. Rien n'empêche cependant d'héberger un dépôt distant Git sur un Raspberry Pi 3 connecté au réseau et d'y accéder par connexion sécurisée <abbr title="Secure Shell">SSH</abbr>.
 :::
 
 ## Générez votre documentation

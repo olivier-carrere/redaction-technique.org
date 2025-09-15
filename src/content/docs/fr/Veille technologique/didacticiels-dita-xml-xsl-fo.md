@@ -99,7 +99,7 @@ Le fichier PDF affichera l'exemple structuré comme suit :
 
 ## XSL-FO : insérer automatiquement un titre pour les exemples
 
-Par défaut, `DITA-OT (DITA Open Toolkit)`{.interpreted-text role="abbr"} n'insère pas automatiquement dans les fichiers PDF le texte *Exemple :* devant le titre d'un exemple contenu entre balises **DITA XML** `<example>`{.interpreted-text role="samp"}. La syntaxe [XSL-FO]() offre cependant cette possibilité.
+Par défaut, <abbr title="DITA Open Toolkit">DITA-OT</abbr>{.interpreted-text role="abbr"} n'insère pas automatiquement dans les fichiers PDF le texte *Exemple :* devant le titre d'un exemple contenu entre balises **DITA XML** `<example>`{.interpreted-text role="samp"}. La syntaxe [XSL-FO]() offre cependant cette possibilité.
 
 
 Supposons que le code source d'un de vos fichiers **DITA XML** soit le suivant :
@@ -136,7 +136,7 @@ et que si l'exemple ne contient pas de titre, il soit structuré comme suit :
 > ancestor-or-self
 > ```
 
-Par défaut, cependant, ce contenu sera structuré comme suit dans le PDF par `DITA-OT (DITA Open Toolkit)`{.interpreted-text role="abbr"} :
+Par défaut, cependant, ce contenu sera structuré comme suit dans le PDF par <abbr title="DITA Open Toolkit">DITA-OT</abbr>{.interpreted-text role="abbr"} :
 
 > **XSL-FO**
 >
@@ -150,7 +150,7 @@ Il est toujours possible d'entrer le texte entre les balises `<example>`{.interp
 
 ### Insérer automatiquement une variable de texte avant le titre des exemples
 
-1.  Remplacez dans la feuille de style `plugins/org.dita.pdf2/xsl/fo/commons.xsl` (sous `DITA-OT (DITA Open Toolkit)`{.interpreted-text role="abbr"} 1.7.) le template suivant :
+1.  Remplacez dans la feuille de style `plugins/org.dita.pdf2/xsl/fo/commons.xsl` (sous <abbr title="DITA Open Toolkit">DITA-OT</abbr>{.interpreted-text role="abbr"} 1.7.) le template suivant :
 
     ``` xslt
     <xsl:template match="*[contains(@class,' topic/example')]/*
@@ -191,14 +191,14 @@ Pour obtenir un comportement homogène, vous devez désactiver ce traitement pou
 
 ## Générer un PDF avec DITA Open Toolkit sous GNU/Linux
 
-Ce didacticiel DITA XML est destiné à vous guider dans la mise en place et l'utilisation de la chaîne de publication `DITA-OT (DITA Open Toolkit)` dans un environnement GNU/Linux (Ubuntu ou Debian).
+Ce didacticiel DITA XML est destiné à vous guider dans la mise en place et l'utilisation de la chaîne de publication <abbr title="DITA Open Toolkit">DITA-OT</abbr> dans un environnement GNU/Linux (Ubuntu ou Debian).
 
 Prérequis
 
 - Ubuntu ou Debian sur une machine physique ou virtuelle avec le mot de passe administrateur,
 - connexion Internet.
 
-1. Téléchargez et décompressez l'archive `DITA-OT (DITA Open Toolkit)` :
+1. Téléchargez et décompressez l'archive <abbr title="DITA Open Toolkit">DITA-OT</abbr> :
 
     ``` console
     $ export REPO="https://github.com/dita-ot/dita-ot"
@@ -217,7 +217,7 @@ Félicitations, vous avez compilé votre premier projet DITA XML ! Le fichier PD
 
 ## Générer un PDF avec DITA Open Toolkit (Windows)
 
-Ce didacticiel **DITA XML** est destiné à vous guider dans la mise en place et l'utilisation de la chaîne de publication `DITA-OT (DITA Open Toolkit)`{.interpreted-text role="abbr"} dans un environnement Windows (testé sur Windows XP).
+Ce didacticiel **DITA XML** est destiné à vous guider dans la mise en place et l'utilisation de la chaîne de publication <abbr title="DITA Open Toolkit">DITA-OT</abbr>{.interpreted-text role="abbr"} dans un environnement Windows (testé sur Windows XP).
 
 **Prérequis**
 
@@ -263,7 +263,7 @@ Ce didacticiel **DITA XML** est destiné à vous guider dans la mise en place et
 
 ## Gérer les projets de documentation multilingues DITA XML
 
-DITA XML est un formidable format pour gérer les projets de documentation. Pour les projets multilingues, cependant, le rédacteur technique doit créer un fichier ditamap, qui contient la structure de table des matières des documents, par version. Ceci entraîne un risque d'erreurs et d'incohérences. Heureusement, une méthodologie appropriée et un script d'automatisation destiné à la chaîne de publication `DITA-OT (DITA Open Toolkit)` remédient à ce problème.
+DITA XML est un formidable format pour gérer les projets de documentation. Pour les projets multilingues, cependant, le rédacteur technique doit créer un fichier ditamap, qui contient la structure de table des matières des documents, par version. Ceci entraîne un risque d'erreurs et d'incohérences. Heureusement, une méthodologie appropriée et un script d'automatisation destiné à la chaîne de publication <abbr title="DITA Open Toolkit">DITA-OT</abbr> remédient à ce problème.
 
 ### Méthodologie de gestion des projets de documentation multilingues DITA XML
 
@@ -315,7 +315,7 @@ Heureusement, un script Bash (GNU/Linux) simple permet d'automatiser cela.
 
 **Prérequis**
 
-- Vous avez installé `DITA-OT (DITA Open Toolkit)`.
+- Vous avez installé <abbr title="DITA Open Toolkit">DITA-OT</abbr>.
 - Votre projet DITA XML ne comporte qu'un fichier ditamap.
 - Vos fichiers de contenu DITA XML ont l'extension `.dita`.
 - Les noms des répertoires des versions linguistiques correspondent aux codes de langues supportés par Dita Open Toolkit (`fr_FR` ou `en_US`, par exemple).
@@ -354,7 +354,7 @@ Pour utiliser ce script :
 
    pour générer les fichiers cibles.
 
-   L'argument format cible accepte les valeurs gérées par `DITA-OT (DITA Open Toolkit)`.
+   L'argument format cible accepte les valeurs gérées par <abbr title="DITA Open Toolkit">DITA-OT</abbr>.
 
    **Exemple**
 
@@ -365,13 +365,13 @@ Pour utiliser ce script :
    Le fichier PDF `firewall.pdf` est alors généré dans le répertoire `out` (spécifié en dur dans le script).
    
    
-## Créer des documents différents à partir des mêmes sources DITA XML (texte conditionnel)
+## Créer des documents différents à partir des mêmes sources DITA<abbr title="texte conditionnel">XML</abbr>
 
 **DITA XML** offre un mécanisme de texte conditionnel. Ce mécanisme favorise la réutilisation du contenu source et évite la redondance des informations. Ce didacticiel aidera le **rédacteur technique** à utiliser ce mécanisme en quelques minutes.
 
 **Prérequis**
 
--   Vous avez installé `DITA-OT (DITA Open Toolkit)` dans le répertoire `DITA-OT1.5.4` sous GNU/Linux ou Windows.
+-   Vous avez installé <abbr title="DITA Open Toolkit">DITA-OT</abbr> dans le répertoire `DITA-OT1.5.4` sous GNU/Linux ou Windows.
 
 1.  Collez le code suivant dans un fichier et enregistrez ce dernier sous le nom de `texte-conditionnel.dita` dans le répertoire `DITA-OT1.5.4` :
 
@@ -482,28 +482,28 @@ Pour utiliser ce script :
 
 :::note
 
-Les références croisées sont un élément important d'une **documentation technique** bien structurée. Elles permettent à l'utilisateur de naviguer facilement dans les briques d'information et sont un élément crucial de l'utilisabilité du document final. `DITA-OT (DITA Open Toolkit)` les gère très bien, à condition d'effectuer quelques réglages.
+Les références croisées sont un élément important d'une **documentation technique** bien structurée. Elles permettent à l'utilisateur de naviguer facilement dans les briques d'information et sont un élément crucial de l'utilisabilité du document final. <abbr title="DITA Open Toolkit">DITA-OT</abbr> les gère très bien, à condition d'effectuer quelques réglages.
 :::
 
-Vous avez placé des balises *related-links* correctement formatées dans vos fichiers de contenu **DITA XML**, ou mieux, une [reltable]() dans votre structure de table des matières *ditamap* (la *reltable* permet de décontextualiser votre contenu et donc de mieux le réutiliser). Vous lancez votre commande de génération du PDF et, mauvaise surprise, aucune section *Voir aussi* n'apparaît dans le fichier cible ! Vous essayez alors de générer une version HTML de votre contenu et là, votre section *Voir aussi* est bien présente. `DITA-OT (DITA Open Toolkit)` ne supporterait-il pas les références croisées dans les PDF ?
+Vous avez placé des balises *related-links* correctement formatées dans vos fichiers de contenu **DITA XML**, ou mieux, une [reltable]() dans votre structure de table des matières *ditamap* (la *reltable* permet de décontextualiser votre contenu et donc de mieux le réutiliser). Vous lancez votre commande de génération du PDF et, mauvaise surprise, aucune section *Voir aussi* n'apparaît dans le fichier cible ! Vous essayez alors de générer une version HTML de votre contenu et là, votre section *Voir aussi* est bien présente. <abbr title="DITA Open Toolkit">DITA-OT</abbr> ne supporterait-il pas les références croisées dans les PDF ?
 
-Fort heureusement, non. Par défaut (allez savoir pourquoi), les références croisées ne sont pas générées dans les PDF par `DITA-OT (DITA Open Toolkit)`. Pour les afficher, attribuez la valeur *no* à la variable *disableRelatedLinks* du fichier `demo/fo/build_template.xml`. Si vous utilisez *ant*, il vous faudra également passer le paramètre *args.fo.include.rellinks=all* comme suit :
+Fort heureusement, non. Par défaut (allez savoir pourquoi), les références croisées ne sont pas générées dans les PDF par <abbr title="DITA Open Toolkit">DITA-OT</abbr>. Pour les afficher, attribuez la valeur *no* à la variable *disableRelatedLinks* du fichier `demo/fo/build_template.xml`. Si vous utilisez *ant*, il vous faudra également passer le paramètre *args.fo.include.rellinks=all* comme suit :
 
 ```console
 $ ant -Dargs.input=samples/sequence.ditamap -Doutput.dir=out/ \
 -Dtranstype=pdf2 -Dargs.fo.include.rellinks=all
 ```
 
-## Afficher un index dans un PDF (mais pas sous DITA Open Toolkit)
+## Afficher un index dans un<abbr title="mais pas sous DITA Open Toolkit">PDF</abbr>
 
-Tout n'est pas parfait sous `DITA-OT (DITA Open Toolkit)`{.interpreted-text role="abbr"}, le moteur de publication libre **DITA XML**. Vous avez méticuleusement inséré vos entrées d'index dans vos fichiers de contenu **DITA XML**. Vous générez une sortie PDF et l'index n'apparaît pas. Un message d'erreur de la compilation vous indique que, hélas, FOP ne supporte actuellement pas la génération des index.
+Tout n'est pas parfait sous <abbr title="DITA Open Toolkit">DITA-OT</abbr>{.interpreted-text role="abbr"}, le moteur de publication libre **DITA XML**. Vous avez méticuleusement inséré vos entrées d'index dans vos fichiers de contenu **DITA XML**. Vous générez une sortie PDF et l'index n'apparaît pas. Un message d'erreur de la compilation vous indique que, hélas, FOP ne supporte actuellement pas la génération des index.
 
 Face à cette situation, vous avez quatre solutions :
 
 - attendre que FOP supporte les index ; sans date de disponibilité, ce choix sera difficile à faire accepter par votre direction ;
 - abandonner **DITA XML** ; avouez que ce serait dommage de renoncer aux formidables gains de productivité que permet ce format ;
 - renoncer à afficher l'index dans le PDF ; les arguments en faveur d'un tel choix ont un certain poids : les index sont difficiles à maintenir et offre un surplus d'utilisabilité discutable dans un document qui ne sera consulté que marginalement sous forme imprimée ;
-- abandonner `DITA-OT (DITA Open Toolkit)`{.interpreted-text role="abbr"} et se tourner vers une solution propriétaire ; les logiciels non open-source, XMetal, par exemple, on souvent recours au moteur de publication XEP de RenderX qui lui, supporte parfaitement les index.
+- abandonner <abbr title="DITA Open Toolkit">DITA-OT</abbr>{.interpreted-text role="abbr"} et se tourner vers une solution propriétaire ; les logiciels non open-source, XMetal, par exemple, on souvent recours au moteur de publication XEP de RenderX qui lui, supporte parfaitement les index.
 
 Le problème de l'index n'est donc pas un obstacle à l'adoption de **DITA XML**. Si votre support final est un document imprimé, les solutions existent. S'il s'agit d'un format électronique, l'absence d'un index est largement compensée par la fonction de recherche en plein texte.
 

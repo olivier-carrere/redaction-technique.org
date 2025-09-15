@@ -11,8 +11,8 @@ Le tableau suivant présente les différents niveaux de complexité induits par 
 
 | Complexité | Solution |
 | --- | --- |
-| Syntaxe DITA XML | `IDE (Integrated Development Environment)` tel que XMetal ou nXML |
-| Gestion des relations entre des briques d'information atomiques | `CMS (Content Management System)` dédié tel que Componize ou DocZone |
+| Syntaxe DITA XML | <abbr title="Integrated Development Environment">IDE</abbr> tel que XMetal ou nXML |
+| Gestion des relations entre des briques d'information atomiques | <abbr title="Content Management System">CMS</abbr> dédié tel que Componize ou DocZone |
 | Syntaxe de la feuille de style XSLT | Logiciel graphique de création de feuilles de style |
 
 Pour une petite équipe de **rédaction technique**, l'écueil principal sera la nécessité de mettre en œuvre la charte graphique de l'entreprise. Les autres aspects peuvent être gérés sans outil spécialisé, avec une bonne communication et une série de bonnes pratiques.

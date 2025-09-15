@@ -34,11 +34,11 @@ Il y a quelques années encore, les seuls outils permettant de fournir des livra
 
 Résultat : réalisée à part, la documentation technique répondait difficilement aux mêmes exigences de qualité et de délai de mise sur le marché que les produits.
 
-**DocBook**, puis **DITA XML** et **reStructuredText** ont changé la donne : ces formats texte peuvent être modifiés avec tout type de programme, du simple éditeur de texte à l'`IDE (Integrated Development Environment)` graphique, et s'intègrent parfaitement sous Subversion, Git ou tout autre système de gestion de versions.
+**DocBook**, puis **DITA XML** et **reStructuredText** ont changé la donne : ces formats texte peuvent être modifiés avec tout type de programme, du simple éditeur de texte à l'<abbr title="Integrated Development Environment">IDE</abbr> graphique, et s'intègrent parfaitement sous Subversion, Git ou tout autre système de gestion de versions.
 
 ### Les sources de ce blog sont gérées sous Git
 
-Ce blog a été initialement développé sous WordPress. L'impossibilité d'effectuer sous ce `CMS (Content Management System)` des modifications transverses ou d'avoir un suivi précis du cycle de vie du contenu a entraîné une migration vers le format de balisage léger **reStructuredText**.
+Ce blog a été initialement développé sous WordPress. L'impossibilité d'effectuer sous ce <abbr title="Content Management System">CMS</abbr> des modifications transverses ou d'avoir un suivi précis du cycle de vie du contenu a entraîné une migration vers le format de balisage léger **reStructuredText**.
 
 ![](/assets/documentation-life-cycle-framework.webp)
 
