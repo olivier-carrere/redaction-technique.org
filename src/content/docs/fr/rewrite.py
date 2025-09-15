@@ -12,14 +12,16 @@ max_threads = 5
 # --- FONCTION DE RÉÉCRITURE ---
 def rewrite_text(text: str) -> str:
     """
-    Réécrit un texte en français avec ton professionnel,
-    en conservant les balises HTML intactes.
+    Réécrit le texte en français ton professionnel,
+    en conservant absolument toutes les balises HTML intactes.
     """
     prompt = f"""
 Réécris le texte suivant en français dans une tonalité plus professionnelle, 
-en conservant le sens et les balises HTML existantes (comme <abbr>, <strong>, <em>, etc.).
-Ne modifie **pas** les blocs de code (délimités par ```), et ne change pas la mise en forme Markdown.
-Ne modifie pas le texte entre `<` et `>` qui ne fait pas partie d'une balise HTML valide.
+en conservant **toutes les balises HTML** intactes, notamment <abbr>.
+Ne modifie pas le contenu des blocs de code (délimités par ```), 
+et ne change pas la mise en forme Markdown.
+Ne tente pas d’expliciter ou de développer les abréviations (<abbr>).
+Conserve le texte entre `<` et `>` qui n’est pas une balise HTML valide.
 
 {text}
 """
@@ -60,7 +62,7 @@ def split_into_blocks(body: str):
 # --- PRÉSERVATION DES BALISES HTML ---
 def preserve_html(text: str) -> str:
     """
-    Utilise BeautifulSoup pour s'assurer que les balises HTML valides restent intactes
+    Utilise BeautifulSoup pour s'assurer que toutes les balises HTML valides restent intactes
     """
     soup = BeautifulSoup(text, "html.parser")
     return str(soup)
@@ -84,14 +86,14 @@ def process_file(file_path: str):
         frontmatter = ""
         body = content
 
-    # Découpe en blocs
+    # Découpe en blocs et réécrit uniquement les blocs non-code
     blocks = split_into_blocks(body)
     rewritten_blocks = []
     for is_code, block_text in blocks:
         if is_code:
-            rewritten_blocks.append(block_text)
+            rewritten_blocks.append(block_text)  # bloc code intact
         else:
-            # préserve HTML avant réécriture
+            # préserve le HTML
             block_text = preserve_html(block_text)
             rewritten_text = rewrite_text(block_text)
             rewritten_blocks.append(rewritten_text)
