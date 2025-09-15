@@ -8,21 +8,23 @@ from openai import OpenAI
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 max_threads = 5
 
-# --- FONCTION D'IDENTIFICATION DE TEXTE À MARQUER ---
+# --- IDENTIFICATION DU TEXTE À MARQUER ---
 def identify_unprofessional(text: str) -> str:
     """
-    Envoie le texte à l'API OpenAI pour identifier uniquement les passages
-    obsolètes ou non professionnels. Renvoie le texte avec ces parties
-    entourées de commentaires HTML.
+    Analyse le texte et entoure uniquement les passages non professionnels
+    ou obsolètes avec des commentaires HTML indiquant la raison.
     """
     prompt = f"""
-Analyse le texte suivant. Identifie uniquement les passages
-qui sont non professionnels, trop familiers ou obsolètes en 2025.
-Ne modifie **rien d'autre** (ni code, ni HTML, ni sauts de ligne).
-Entoure ces passages avec des commentaires HTML comme ceci :
-<!-- à réviser -->[texte à réviser]<!-- /à réviser -->
+Analyse le texte suivant et identifie uniquement les passages :
+- non professionnels (ex : ton trop familier, expressions informelles)
+- ou obsolètes en 2025 (ex : technologies ou références dépassées)
 
-Ne change rien d'autre, préserve exactement la mise en forme.
+Pour chaque passage problématique, entoure-le avec des commentaires HTML indiquant la raison :
+<!-- à réviser : [raison] -->
+[texte problématique]
+<!-- /à réviser -->
+
+Ne modifie **rien d'autre** (ni code, ni HTML, ni sauts de ligne, ni Markdown).
 
 Texte à analyser :
 
