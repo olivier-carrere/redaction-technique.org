@@ -6,23 +6,24 @@ from openai import OpenAI
 
 # --- CONFIGURATION ---
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
 max_threads = 5
 
 # --- IDENTIFY LINES TO COMMENT ---
 def identify_lines_to_comment(text: str) -> str:
     """
     For each line, identify if it is unprofessional or outdated,
-    and add an inline HTML comment in English explaining why.
+    and add a comment on a separate line before and after the line explaining why.
     """
     prompt = f"""
 Analyze the following text line by line.
 For each line that is unprofessional (e.g., too informal tone)
 or outdated in 2025 (e.g., references, wording),
-add an inline HTML comment explaining the reason in English, like this:
+add a comment on a separate line before and after, like this:
 
-line of text <!-- to revise: reason -->
+<!-- to revise: reason :line of text -->
 
-Do NOT change anything else (no code blocks, no HTML tags, no line breaks, no Markdown formatting).
+Do NOT change anything else (no code blocks, no HTML tags, no Markdown formatting).
 Do NOT merge lines.
 
 Text to analyze:
