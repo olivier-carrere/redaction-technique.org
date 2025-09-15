@@ -8,22 +8,24 @@ from openai import OpenAI
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 max_threads = 5
 
-# --- IDENTIFICATION DES LIGNES À MARQUER ---
+# --- IDENTIFY LINES TO COMMENT ---
 def identify_lines_to_comment(text: str) -> str:
     """
-    Pour chaque ligne, identifie si elle est non professionnelle ou obsolète,
-    et ajoute un commentaire HTML sur la même ligne indiquant la raison.
+    For each line, identify if it is unprofessional or outdated,
+    and add an inline HTML comment in English explaining why.
     """
     prompt = f"""
-Analyse le texte suivant ligne par ligne.
-Pour chaque ligne non professionnelle ou obsolète (ex: ton trop familier, contenu dépassé en 2025),
-ajoute **un commentaire HTML sur la même ligne** indiquant la raison, comme ceci :
-ligne de texte <!-- à réviser : raison -->
+Analyze the following text line by line.
+For each line that is unprofessional (e.g., too informal tone)
+or outdated in 2025 (e.g., references, wording),
+add an inline HTML comment explaining the reason in English, like this:
 
-Ne change **rien d'autre** (ni blocs de code, ni balises HTML, ni sauts de ligne, ni mise en forme Markdown).
-Ne fusionne pas de lignes.
+line of text <!-- to revise: reason -->
 
-Texte à analyser :
+Do NOT change anything else (no code blocks, no HTML tags, no line breaks, no Markdown formatting).
+Do NOT merge lines.
+
+Text to analyze:
 
 {text}
 """
@@ -35,12 +37,12 @@ Texte à analyser :
         )
         return response.choices[0].message.content
     except Exception as e:
-        print(f"Erreur API OpenAI : {e}")
+        print(f"OpenAI API error: {e}")
         return text
 
-# --- DÉCOUPAGE EN BLOCS ---
+# --- SPLIT INTO BLOCKS ---
 def split_into_blocks(body: str):
-    """Sépare les blocs de code et le reste du texte"""
+    """Separate code blocks and other text"""
     pattern = r"(```.*?```)"
     blocks = []
     last_index = 0
@@ -55,18 +57,18 @@ def split_into_blocks(body: str):
     return blocks
 
 def preserve_html(text: str) -> str:
-    """Préserve les balises HTML intactes"""
+    """Preserve HTML tags intact"""
     soup = BeautifulSoup(text, "html.parser")
     return str(soup)
 
-# --- TRAITEMENT D’UN FICHIER ---
+# --- PROCESS A SINGLE FILE ---
 def process_file(file_path: str):
-    print(f"Traitement du fichier : {file_path}")
+    print(f"Processing file: {file_path}")
     with open(file_path, "r", encoding="utf-8") as f:
         content = f.read()
 
-    if content.startswith("<!-- Analyse par OpenAI"):
-        print("Ce fichier a déjà été analysé, saut.\n")
+    if content.startswith("<!-- Analyzed by OpenAI"):
+        print("File already analyzed, skipping.\n")
         return
 
     match = re.match(r"^(---\n.*?\n---\n)(.*)$", content, re.DOTALL)
@@ -88,14 +90,14 @@ def process_file(file_path: str):
             processed = identify_lines_to_comment(block_text)
             processed_blocks.append(processed)
 
-    new_content = frontmatter + "<!-- Analyse par OpenAI -->\n" + "".join(processed_blocks)
+    new_content = frontmatter + "<!-- Analyzed by OpenAI -->\n" + "".join(processed_blocks)
 
     with open(file_path, "w", encoding="utf-8") as f:
         f.write(new_content)
 
-    print(f"Fichier {file_path} mis à jour.\n")
+    print(f"File {file_path} updated.\n")
 
-# --- PARCOURS MULTI-THREAD ---
+# --- MULTI-THREAD PROCESSING ---
 def process_markdown_files(root_dir: str):
     md_files = [
         os.path.join(subdir, file)
@@ -110,7 +112,7 @@ def process_markdown_files(root_dir: str):
             try:
                 future.result()
             except Exception as e:
-                print(f"Erreur lors du traitement : {e}")
+                print(f"Error processing file: {e}")
 
 # --- EXECUTION ---
 if __name__ == "__main__":
