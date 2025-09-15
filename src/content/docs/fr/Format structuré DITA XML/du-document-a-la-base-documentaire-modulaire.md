@@ -80,7 +80,7 @@ Si le **rédacteur technique** pratique le *single-sourcing*, il doit cependant 
 
 ## Les topics, modules d'information de base DITA XML
 
-Les [topics]() sont les plus petites unités d'information autonomes gérées par **DITA XML**. Chaque *topic* a un titre et un corps de texte. Il ne traite que d'un seul sujet. Il appartient donc au **rédacteur technique** de se baser sur la modularité proposée par **DITA XML** pour bien structurer l'information.
+Les topics sont les plus petites unités d'information autonomes gérées par **DITA XML**. Chaque *topic* a un titre et un corps de texte. Il ne traite que d'un seul sujet. Il appartient donc au **rédacteur technique** de se baser sur la modularité proposée par **DITA XML** pour bien structurer l'information.
 
 Les *topics* sont sémantiquement typés. Il existe idéalement un type de *topic* par type d'information. **DITA XML** propose par défaut des *topics* adaptés à la documentation des logiciels (description de concepts et de tâches, liste de commandes, etc.), mais de nouveaux types de *topics* peuvent être créés pour répondre à d'autres besoins.
 
@@ -100,7 +100,7 @@ La plupart des entreprises sont réticentes à mettre en place des <abbr title="
 
 De plus, l'un des grands avantages de DITA XML, c'est de s'intégrer directement dans le système d'information en place. Chez les éditeurs de logiciels, notamment, rien de plus facile que de venir se greffer sur le système de gestion des sources en place, qu'il s'agisse de Git, de Subversion ou de SourceSafe. À budget quasi nul. Raison de plus pour ne pas investir du temps et de l'argent dans un <abbr title="Content Management System">CMS</abbr>. Les gains de productivité spectaculaires reportés par certaines entreprises suite à la mise en place d'un <abbr title="Content Management System">CMS</abbr> DITA XML ont cependant de quoi faire réfléchir. Ainsi, Epson America a pu réutiliser jusqu'à 90 % du contenu existant sur de nouveaux projets.
 
-Si l'on opte pour un <abbr title="Content Management System">CMS</abbr>, celui-ci doit clairement supporter DITA XML : on ne gère pas un jeu de briques d'information comme un document monolithique. Adieu donc SharePoint ou Alfresco, il faut se tourner vers des solutions dédiées telles que [Componize]() ou [DocZone]().
+Si l'on opte pour un <abbr title="Content Management System">CMS</abbr>, celui-ci doit clairement supporter DITA XML : on ne gère pas un jeu de briques d'information comme un document monolithique. Adieu donc SharePoint ou Alfresco, il faut se tourner vers des solutions dédiées telles que Componize ou DocZone.
 
 Quel que soit le choix initial, il est possible à tout instant de changer de stratégie, sans remettre en cause l'existant. L'architecture DITA XML n'est en effet liée à aucun référentiel particulier. Rien n'interdit donc de commencer à gérer ses projets sans <abbr title="Content Management System">CMS</abbr>, puis d'avoir recours à une telle solution si les bénéfices de ce choix deviennent manifestes.
 

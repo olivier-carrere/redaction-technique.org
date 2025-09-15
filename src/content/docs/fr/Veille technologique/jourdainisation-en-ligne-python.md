@@ -9,7 +9,7 @@ description: "À l'instar du maître de philosophie du Bourgeois gentilhomme de 
 
 <iframe src="https://oliviercarrere.pythonanywhere.com/" height="600px" width="100%"></iframe>
 
-Voici le code du script, qui repose sur le microframework web [Flask]() :
+Voici le code du script, qui repose sur le microframework web Flask :
 
 ```
 #!/usr/bin/python3
@@ -118,7 +118,7 @@ texte_final = texte_final.capitalize() + '.'
 print(texte_final)
 ```
 
-Voici maintenant les modèles générant les pages HTML de base, d'entrée et de sortie, basés sur [Jinja]() :
+Voici maintenant les modèles générant les pages HTML de base, d'entrée et de sortie, basés sur Jinja :
 
 ```
 <!doctype html>

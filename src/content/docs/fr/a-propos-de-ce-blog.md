@@ -7,7 +7,7 @@ Ce blog est conçu et réalisé par un **rédacteur technique** spécialisé dan
 
 Puisqu'il traite des processus et des formats de rédaction technique, son contenu est cependant moins pertinent que son historique et que ses branches [Git](https://github.com/olivier-carrere/redaction-technique.org/).
 
-Il traite des formats, des outils et des tâches suivants : **reStructuredText**, **DITA XML**, [scripts Bash](), awk, sed, expressions rationnelles, Python, gestion de versions, Git, compilation, [Makefile](), Ant, XSLT, mise en page, HTML, [CSS](), PDF, LaTeX, XSL-FO.
+Il traite des formats, des outils et des tâches suivants : **reStructuredText**, **DITA XML**, scripts Bash, awk, sed, expressions rationnelles, Python, gestion de versions, Git, compilation, Makefile, Ant, XSLT, mise en page, HTML, CSS, PDF, LaTeX, XSL-FO.
 
 ## Libérez vos informations de leurs silos
 
@@ -42,7 +42,7 @@ Ce blog a été initialement développé sous WordPress. L'impossibilité d'effe
 
 ![](/assets/documentation-life-cycle-framework.webp)
 
-Toutes les versions de ce blog sont gérées sous le logiciel de gestion de versions décentralisé [Git](). Les modifications de contenu, de structure ou de mise en page peuvent désormais être :
+Toutes les versions de ce blog sont gérées sous le logiciel de gestion de versions décentralisé Git. Les modifications de contenu, de structure ou de mise en page peuvent désormais être :
 
 - regroupées par lots cohérents,
 - liées à un ticket de logiciel de suivi de problèmes tel que *Bugzilla* ou *Trac*,
@@ -59,22 +59,22 @@ Ce blog est disponible en trois formats, basés sur la version 1.1. Ces formats 
 
 reStructuredText
 
-: [reStructuredText]() est un langage de balisage léger de type Wiki ou Markdown qui, combiné au générateur de documentation Sphinx, offre un bon niveau de fonctionnalités.
+: reStructuredText est un langage de balisage léger de type Wiki ou Markdown qui, combiné au générateur de documentation Sphinx, offre un bon niveau de fonctionnalités.
 
 DITA XML
 
-: [DITA XML]() est une architecture documentaire XML sémantique et modulaire complexe qui offre des gains de productivité importants grâce à une forte réutilisation du contenu.
+: DITA XML est une architecture documentaire XML sémantique et modulaire complexe qui offre des gains de productivité importants grâce à une forte réutilisation du contenu.
 
 DocBook
 
-: [DocBook]() est un langage de balisage XML sémantique qui offre un rapport fonctionnalités/complexité aujourd'hui peu intéressant.
+: DocBook est un langage de balisage XML sémantique qui offre un rapport fonctionnalités/complexité aujourd'hui peu intéressant.
 
 ### Formats cibles
 
 Vous pouvez compiler ce blog avec *Python Sphinx* aux formats :
 
-- [PDF](),
-- [EPUB](),
+- PDF,
+- EPUB,
 - HTML.
 
 Ces différentes versions sont générées à partir des mêmes sources exactement. Elles présentent cependant de légères variations, mises en œuvre par un mécanisme de texte conditionnel. Par exemple, le terme suivant varie selon le format cible :

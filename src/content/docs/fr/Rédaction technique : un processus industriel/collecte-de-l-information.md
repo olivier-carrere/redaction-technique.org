@@ -9,7 +9,7 @@ Le **rédacteur technique** collecte l'information auprès de différentes sourc
 
 Une fois le projet de rédaction technique clairement défini, le **rédacteur technique** collecte toute l'information disponible :
 
--   spécifications du produit, Intranet, pages [Trac](),
+-   spécifications du produit, Intranet, pages Trac,
 -   interview du service R&D,
 -   manipulation du produit,
 -   interview du service marketing,

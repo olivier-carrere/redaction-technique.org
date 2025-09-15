@@ -19,7 +19,7 @@ Les buts de ce billet sont de :
 - Carte micro-SD de 16 Go classe 10 (de préférence).
 - Connexion Internet filaire ou Wi-Fi.
 
-1. Installez la distribution Linux Raspbian sur votre Raspberry Pi 3 via [NOOBS]().
+1. Installez la distribution Linux Raspbian sur votre Raspberry Pi 3 via NOOBS.
 2. Sélectionnez `Menu` ‣ `Preferences` ‣ `Raspberry Pi Configuration`.
 
    La boîte de dialogue `Raspberry Pi Configuration` apparaît.
@@ -203,7 +203,7 @@ Et voilà. En quelques minutes, vous avez :
 
 :::note
 - Le fichier `Makefile` est assez brut de décoffrage et le temps de compilation peut facilement être optimisé.
-- Nous pourrions mettre en place une solution complète de texte conditionnel avec opérateurs booléens et tout et tout grâce au moteur de templating [Jinja]().
+- Nous pourrions mettre en place une solution complète de texte conditionnel avec opérateurs booléens et tout et tout grâce au moteur de templating Jinja.
 - Les observateurs remarqueront que la version HTML du blog version 1.5 ne comporte pas de table des matières dans la colonne de droite. C'est qu'en effet, cette version n'embarque pas le patch 1032292. Je vous laisse chercher dans l'historique Git... voire créer une branche et le cherry-picker !
 :::
 
@@ -211,4 +211,4 @@ Le Raspberry Pi 3 est donc une plateforme de documentation tout à fait crédibl
 
 Le prochain test consistera à générer la version DITA XML de ce blog.
 
-Le prochain prochain test consistera à générer ce blog sur un smartphone en installant une distribution [Linux sur Android]().
+Le prochain prochain test consistera à générer ce blog sur un smartphone en installant une distribution Linux sur Android.

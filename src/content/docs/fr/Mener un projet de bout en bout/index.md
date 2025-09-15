@@ -40,9 +40,9 @@ Après avoir collecté le maximum de photos, je me suis retrouvé avec plus de 1
 
 J\'ai commencé, avant toute opération automatique, par faire une copie de sauvegarde à l\'identique de l\'ensemble des photos sur un disque dur externe.
 
-Ma première tâche fut de repérer, puis d\'éliminer les doublons grâce à la commande [fdupes]().
+Ma première tâche fut de repérer, puis d\'éliminer les doublons grâce à la commande fdupes.
 
-Il me fallait aussi ne pas passer à côté de perles et chercher les aiguilles intéressantes dans cette meule de foin. Certaines photos, notamment, se cachaient dans des répertoires zippés. D\'autres n\'avaient pas d\'extension, et la commande [file]() me fut très utile.
+Il me fallait aussi ne pas passer à côté de perles et chercher les aiguilles intéressantes dans cette meule de foin. Certaines photos, notamment, se cachaient dans des répertoires zippés. D\'autres n\'avaient pas d\'extension, et la commande file me fut très utile.
 
 Le but étant avant tout de mettre à disposition des photos pour des supports imprimés, j\'ai procédé à un premier tri automatisé, selon le poids des fichiers : les fichiers moins lourds que 1 Mo pouvaient être sans soucis mis de côté.
 
@@ -60,7 +60,7 @@ Les membres de l\'association étant géographiquement dispersés, il était ess
 
 Je disposais d\'un nom de domaine non utilisé et de suffisamment d\'espace disque et de bases de données libres sur un hébergement personnel.
 
-J\'ai donc installé une instance de [Piwigo](), logiciel que je connaissais déjà (je l\'utilise pour des photos de famille).
+J\'ai donc installé une instance de Piwigo, logiciel que je connaissais déjà (je l\'utilise pour des photos de famille).
 
 ![Photo Kevin Harber](/assets/galerie-photo.jpg)
 
@@ -71,7 +71,7 @@ L\'hébergement sur mon espace personnel peut durer quelques mois sans problème
 Une rapide étude (en septembre 2018) m\'a conduit à proposer les solutions suivantes :
 
   ------------------------------------------------------------------------------------------------------------------------------
-                   [piwigo.com]()                          [Obambu]() Performance                         [Obambu]() Evolution
+                   piwigo.com                          Obambu Performance                         Obambu Evolution
   ---------------- --------------------------------------- ---------------------------------------------- ----------------------
   Prix annuel      39 €                                    23 €                                           15 €
 
@@ -102,7 +102,7 @@ Ainsi, tout membre de l\'association peut créer un compte Gitlab, puis, après 
 *La procédure suivante était incluse dans une première version du dépliant LaTeX. Elle est donc minimaliste, ne serait-ce que pour des raisons d\'espace disponible sur la version imprimée. Je l\'ai par la suite supprimée du dépliant, car elle risquait plutôt d\'effrayer son lectorat, majoritairement technophobe.*
 :::
 
-Sous Windows, vous pouvez installer [Git for windows]() et [GitHub Desktop]().
+Sous Windows, vous pouvez installer Git for windows et GitHub Desktop.
 
 Pour cloner le dépôt Gitlab sous une distribution Linux Debian ou dérivée (dont Ubuntu) :
 
@@ -139,7 +139,7 @@ Pour mettre à jour votre dépôt Gitlab :
 
     Cette opération devrait être nettement plus rapide que le clonage initial.
 
-Pour la synchronisation entre le serveur et ma copie locale, je me suis tourné vers [LFTP]() :
+Pour la synchronisation entre le serveur et ma copie locale, je me suis tourné vers LFTP :
 
 ``` console
 $ lftp ftp://user:password@ftpaccount -e \
@@ -190,7 +190,7 @@ J\'ai opté pour les supports de communication suivants :
 
 J\'ai publié sur *YouTube* différents didacticiels, en français, anglais et espagnol, sur l\'utilisation de la galerie par les différents types d\'utilisateurs.
 
-J\'ai utilisé pour cela [SimpleScreenRecorder](). Un premier essai avec le microphone intégré de mon portable s\'étant révélé peu convaincant, j\'ai enregistré ma voix avec un micro de bonne qualité, nommément, un *Bird UM1*. Pressé par le temps, et parce que ces didacticiels s\'adressent à un public restreint (et indulgent), je n\'ai pas fait de montage, comme par exemple sous *Kdenlive*.
+J\'ai utilisé pour cela SimpleScreenRecorder. Un premier essai avec le microphone intégré de mon portable s\'étant révélé peu convaincant, j\'ai enregistré ma voix avec un micro de bonne qualité, nommément, un *Bird UM1*. Pressé par le temps, et parce que ces didacticiels s\'adressent à un public restreint (et indulgent), je n\'ai pas fait de montage, comme par exemple sous *Kdenlive*.
 
 ## Support papier
 
@@ -202,18 +202,18 @@ J\'ai créé un dépliant expliquant :
 -   le workflow dans lequel s\'inscrivent les utilisateurs.
 
 :::note[Modèle LaTeX du dépliant]
-Le [modèle LaTeX du dépliant](), partie émergée de l\'iceberg, est publié sur *Overleaf*.
+Le modèle LaTeX du dépliant, partie émergée de l\'iceberg, est publié sur *Overleaf*.
 
 Curieusement, le PDF généré sur *Overleaf* présente des défauts que je ne constate pas lorsque je le publie en local.
 
 ![](/assets/leaflet-pliage.png)
 
-Pour les plus curieux, il existe [6 manières]() de plier cette brochure. Je me suis épargné des essais fastidieux en utilisant la [classe de documents LaTeX leaflet]().
+Pour les plus curieux, il existe 6 manières de plier cette brochure. Je me suis épargné des essais fastidieux en utilisant la classe de documents LaTeX leaflet.
 :::
 
 ## LaTeX
 
-Pourquoi avoir choisi [LaTeX]() pour réaliser le support *print* et non pas un logiciel de PAO classique ? Je souhaitais pouvoir remanier le texte sans refaire à chaque fois la mise en page. De même, je voulais pouvoir traduire le dépliant sans effectuer de tâche de PAO manuelle.
+Pourquoi avoir choisi LaTeX pour réaliser le support *print* et non pas un logiciel de PAO classique ? Je souhaitais pouvoir remanier le texte sans refaire à chaque fois la mise en page. De même, je voulais pouvoir traduire le dépliant sans effectuer de tâche de PAO manuelle.
 
 Voici un exemple de code LaTeX :
 
@@ -245,12 +245,12 @@ Voici un exemple de code LaTeX :
 \end{center}
 ```
 
-Le rendu PDF est illustré ci-dessous. Remarquez le calcul automatique des césures (qui a fait l\'objet d\'une [thèse de doctorat]()). C\'est l\'un des [nombreux avantages de LaTeX]()...
+Le rendu PDF est illustré ci-dessous. Remarquez le calcul automatique des césures (qui a fait l\'objet d\'une thèse de doctorat). C\'est l\'un des nombreux avantages de LaTeX...
 
 ![](/assets/latex-rendu.png)
 
 :::note
-Les fervents du *WYSIWYG* se tourneront avec profit vers [Gummi](). Il s\'agit de *What you see is what you get* au sens strict (et plutôt de *tel écran, tel imprimé* que de *tel écran, tel écrit*). On ne peut en effet pas modifier le texte dans la fenêtre de visualisation, uniquement dans la fenêtre de code LaTeX. Vous savez donc exactement ce qui se passe « sous le capot » et avez une plus grande maîtrise qu\'en déléguant la création du code de mise en page à une interface graphique. Si vous manipulez souvent des listes numérotées et que vous avez été confronté à des numérotations, disons... aléatoires, vous en comprendrez tout de suite l\'avantage.
+Les fervents du *WYSIWYG* se tourneront avec profit vers Gummi. Il s\'agit de *What you see is what you get* au sens strict (et plutôt de *tel écran, tel imprimé* que de *tel écran, tel écrit*). On ne peut en effet pas modifier le texte dans la fenêtre de visualisation, uniquement dans la fenêtre de code LaTeX. Vous savez donc exactement ce qui se passe « sous le capot » et avez une plus grande maîtrise qu\'en déléguant la création du code de mise en page à une interface graphique. Si vous manipulez souvent des listes numérotées et que vous avez été confronté à des numérotations, disons... aléatoires, vous en comprendrez tout de suite l\'avantage.
 
 ![](/assets/latex-wysiwyg-gummi.png)
 :::

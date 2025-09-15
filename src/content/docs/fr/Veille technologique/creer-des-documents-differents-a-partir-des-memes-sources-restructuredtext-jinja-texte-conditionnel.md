@@ -3,7 +3,7 @@ title: "Créer des documents différents à partir des mêmes sources via Jinja"
 description: "Le script Python profiling.py ci-dessous permet de profiler du contenu en preprocessing à l'aide du puissant moteur de modèle Jinja."
 ---
 
-Le script Python `profiling.py` ci-dessous permet de profiler du contenu en *preprocessing* à l'aide du puissant moteur de modèle [Jinja]() :
+Le script Python `profiling.py` ci-dessous permet de profiler du contenu en *preprocessing* à l'aide du puissant moteur de modèle Jinja :
 
 ``` python
 #!/usr/bin/python

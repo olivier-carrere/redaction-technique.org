@@ -5,7 +5,7 @@ description: "Supposons que vous deviez présenter 3 produits, Dianthus, Geum et
 
 Supposons que vous deviez présenter 3 produits, *Dianthus*, *Geum* et *Prunus*, chacun déclinés dans trois versions *1.0*, *1.5* et *2.3*.
 
-Plutôt que d’écrire les données à la main dans le fichier de contenu, vous pouvez les insérer automatiquement grâce à [Jinja]() et Python.
+Plutôt que d’écrire les données à la main dans le fichier de contenu, vous pouvez les insérer automatiquement grâce à Jinja et Python.
 
 1. Créez le fichier `modele.rst` suivant :
 

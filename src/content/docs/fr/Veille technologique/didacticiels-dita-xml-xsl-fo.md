@@ -70,7 +70,7 @@ Le fichier PDF affichera l'exemple structuré comme suit :
 > ancestor-or-self
 > ```
 
-Il faut alors utiliser la syntaxe pipe (condition booléenne ou) pour modifier le chemin [XPATH]() comme suit :
+Il faut alors utiliser la syntaxe pipe (condition booléenne ou) pour modifier le chemin XPATH comme suit :
 
 ``` xslt
 <xsl:apply-templates select="text()|*[not(name()='title')]" />
@@ -99,7 +99,7 @@ Le fichier PDF affichera l'exemple structuré comme suit :
 
 ## XSL-FO : insérer automatiquement un titre pour les exemples
 
-Par défaut, <abbr title="DITA Open Toolkit">DITA-OT</abbr>{.interpreted-text role="abbr"} n'insère pas automatiquement dans les fichiers PDF le texte *Exemple :* devant le titre d'un exemple contenu entre balises **DITA XML** `<example>`{.interpreted-text role="samp"}. La syntaxe [XSL-FO]() offre cependant cette possibilité.
+Par défaut, <abbr title="DITA Open Toolkit">DITA-OT</abbr>{.interpreted-text role="abbr"} n'insère pas automatiquement dans les fichiers PDF le texte *Exemple :* devant le titre d'un exemple contenu entre balises **DITA XML** `<example>`{.interpreted-text role="samp"}. La syntaxe XSL-FO offre cependant cette possibilité.
 
 
 Supposons que le code source d'un de vos fichiers **DITA XML** soit le suivant :
@@ -223,9 +223,9 @@ Ce didacticiel **DITA XML** est destiné à vous guider dans la mise en place et
 
 -   Connexion Internet
 
-1.  Téléchargez [Java](), puis lancez le programme d'installation.
+1.  Téléchargez Java, puis lancez le programme d'installation.
 
-2.  Téléchargez [DITA Open Toolkit 1.5.4]() sur le bureau, puis décompressez `DITA-OT1.5.4_full_easy_install_bin.zip`.
+2.  Téléchargez DITA Open Toolkit 1.5.4 sur le bureau, puis décompressez `DITA-OT1.5.4_full_easy_install_bin.zip`.
 
 3.  Sélectionnez `Exécuter`{.interpreted-text role="guilabel"} dans le menu `Démarrer`{.interpreted-text role="guilabel"}, collez la commande suivante, puis appuyez sur `Entrée`{.interpreted-text role="kbd"} :
 
@@ -329,7 +329,7 @@ Ce script est fourni sans garantie. Avant toute exécution de ce script, effectu
 
 Pour utiliser ce script :
 
-1. Téléchargez le [script de génération multilingue DITA XML]() dans le répertoire contenant le fichier ditamap du projet.
+1. Téléchargez le script de génération multilingue DITA XML dans le répertoire contenant le fichier ditamap du projet.
 
 2. Dans un terminal, placez-vous dans ce répertoire, puis entrez :
 
@@ -485,7 +485,7 @@ Pour utiliser ce script :
 Les références croisées sont un élément important d'une **documentation technique** bien structurée. Elles permettent à l'utilisateur de naviguer facilement dans les briques d'information et sont un élément crucial de l'utilisabilité du document final. <abbr title="DITA Open Toolkit">DITA-OT</abbr> les gère très bien, à condition d'effectuer quelques réglages.
 :::
 
-Vous avez placé des balises *related-links* correctement formatées dans vos fichiers de contenu **DITA XML**, ou mieux, une [reltable]() dans votre structure de table des matières *ditamap* (la *reltable* permet de décontextualiser votre contenu et donc de mieux le réutiliser). Vous lancez votre commande de génération du PDF et, mauvaise surprise, aucune section *Voir aussi* n'apparaît dans le fichier cible ! Vous essayez alors de générer une version HTML de votre contenu et là, votre section *Voir aussi* est bien présente. <abbr title="DITA Open Toolkit">DITA-OT</abbr> ne supporterait-il pas les références croisées dans les PDF ?
+Vous avez placé des balises *related-links* correctement formatées dans vos fichiers de contenu **DITA XML**, ou mieux, une reltable dans votre structure de table des matières *ditamap* (la *reltable* permet de décontextualiser votre contenu et donc de mieux le réutiliser). Vous lancez votre commande de génération du PDF et, mauvaise surprise, aucune section *Voir aussi* n'apparaît dans le fichier cible ! Vous essayez alors de générer une version HTML de votre contenu et là, votre section *Voir aussi* est bien présente. <abbr title="DITA Open Toolkit">DITA-OT</abbr> ne supporterait-il pas les références croisées dans les PDF ?
 
 Fort heureusement, non. Par défaut (allez savoir pourquoi), les références croisées ne sont pas générées dans les PDF par <abbr title="DITA Open Toolkit">DITA-OT</abbr>. Pour les afficher, attribuez la valeur *no* à la variable *disableRelatedLinks* du fichier `demo/fo/build_template.xml`. Si vous utilisez *ant*, il vous faudra également passer le paramètre *args.fo.include.rellinks=all* comme suit :
 
@@ -558,7 +558,7 @@ Prérequis
     - crée une copie de sauvegarde du fichier `.emacs` (`.emacs.bak`),
     - écrit les variables d’environnement du mode nXML dans le fichier `.emacs`.
 
-3. Téléchargez [l’archive des schémas RelaxNG pour DITA XML]() dans le répertoire racine de votre projet de documentation **DITA XML**.
+3. Téléchargez l’archive des schémas RelaxNG pour DITA XML dans le répertoire racine de votre projet de documentation **DITA XML**.
 
 4. Placez-vous dans le répertoire racine de votre projet de documentation **DITA XML**, puis collez la commande suivante :
 
@@ -568,7 +568,7 @@ Prérequis
 
     Cette commande crée un répertoire `rnc` de même niveau que le <répertoire de langue>.
 
-5. Téléchargez [l’archive des fichiers schemas.xml]() dans le répertoire racine de votre projet de documentation **DITA XML**, puis collez la suite de commandes ci-dessous en remplaçant <répertoire de langue> par la valeur appropriée, en_US, ou fr_FR, par exemple. Répétez cette étape pour tous vos répertoires de langue.
+5. Téléchargez l’archive des fichiers schemas.xml dans le répertoire racine de votre projet de documentation **DITA XML**, puis collez la suite de commandes ci-dessous en remplaçant <répertoire de langue> par la valeur appropriée, en_US, ou fr_FR, par exemple. Répétez cette étape pour tous vos répertoires de langue.
 
     ```console
     $ export DIR="schemas.redaction-technique.org"
@@ -614,7 +614,7 @@ Ce didacticiel mode Predictive pour Emacs est destiné à vous guider dans la mi
     $ sudo aptitude install make texinfo
     ```
 
-2.  Téléchargez [Predictive]().
+2.  Téléchargez Predictive.
 
 3.  Décompressez l'archive Predictive :
 

@@ -4,7 +4,7 @@ description: "Les traitements de texte nous ont déshabitués à distinguer le f
 ---
 
 
-Le contenu d'un projet de **rédaction technique** est créé dans un format source, différent du format des livrables, le format cible. Pour reprendre une image fréquemment utilisée en développement logiciel, le format source est la recette de cuisine, le format cible, le plat. En photographie, le format source est le format [RAW](), qui est généré par l'appareil photo, et sur lequel les photographes professionnels préféreront apporter les retouches, et le format cible, le format JPEG.
+Le contenu d'un projet de **rédaction technique** est créé dans un format source, différent du format des livrables, le format cible. Pour reprendre une image fréquemment utilisée en développement logiciel, le format source est la recette de cuisine, le format cible, le plat. En photographie, le format source est le format RAW, qui est généré par l'appareil photo, et sur lequel les photographes professionnels préféreront apporter les retouches, et le format cible, le format JPEG.
 
 
 Les traitements de texte nous ont déshabitués à distinguer le fond de la forme. Mais confondre les deux entraîne beaucoup d'erreurs et de perte de temps.
@@ -120,5 +120,5 @@ Les modules sont ainsi parfaitement décontextualisés, et les informations de s
 Les formats sources sont des formats binaires ou texte.
 
 - Les formats binaires sont *opaques* : si on les ouvre avec un éditeur de texte de type *notepad*, tout ce que l'on voit est une suite de caractères hiéroglyphiques ; il n'est donc la plupart du temps possible de les modifier qu'avec un seul logiciel.
-- Les formats texte sont *transparents* : si on les ouvre avec un éditeur de texte, on voit du texte et des balises ; il est donc possible de les modifier avec différents logiciels et de leur appliquer des opérations de traitement par lot en ligne de commande, sans même les ouvrir, et d'utiliser de puissantes [expressions rationnelles]().
+- Les formats texte sont *transparents* : si on les ouvre avec un éditeur de texte, on voit du texte et des balises ; il est donc possible de les modifier avec différents logiciels et de leur appliquer des opérations de traitement par lot en ligne de commande, sans même les ouvrir, et d'utiliser de puissantes expressions rationnelles.
 

@@ -19,7 +19,7 @@ Les informations contenues dans un document technique peuvent être catégorisé
 ![Formats structurés et non structurés](/assets/structured.svg)
 **Formats structurés et non structurés**
 
-Sous un format non structuré tel que le format traditionnel de [FrameMaker](), rien ne contraint le rédacteur technique à organiser l'information selon son sens. Si des règles de rédaction rigoureuses ne sont pas scrupuleusement suivies, l'information fournie à l'utilisateur risque d'être peu claire et difficile à parcourir rapidement.
+Sous un format non structuré tel que le format traditionnel de FrameMaker, rien ne contraint le rédacteur technique à organiser l'information selon son sens. Si des règles de rédaction rigoureuses ne sont pas scrupuleusement suivies, l'information fournie à l'utilisateur risque d'être peu claire et difficile à parcourir rapidement.
 
 Avec des formats structurés tels que DITA XML, en revanche :
 
@@ -42,12 +42,12 @@ Les règles syntaxiques interdisent au rédacteur technique de faire figurer une
 | Caractéristique | Description                                                                                                                                                                                                                                                                                                                                                                 |
 |-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Minimalistes    | Selon le principe de design *less is more*, l'utilisateur ne dispose que de l'information dont il a besoin : une section task, par exemple, ne contient que des prérequis, une procédure et quelques autres éléments spécifiques ; toutes les informations conceptuelles ou de référence sont placées dans des sections à part.                                      |
-| Complètes       | L'utilisateur dispose de toute l'information dont il a besoin ; une section de type task sans procédure n'est pas une section DITA XML valide et ne pourra pas être publiée ; il est même possible de mettre en œuvre un mécanisme vérifiant automatiquement avant publication la présence de blocs d'information facultatifs selon le schéma [XSD]() DITA XML, mais que le rédacteur technique juge obligatoires, tels que le résultat d'une procédure. |
+| Complètes       | L'utilisateur dispose de toute l'information dont il a besoin ; une section de type task sans procédure n'est pas une section DITA XML valide et ne pourra pas être publiée ; il est même possible de mettre en œuvre un mécanisme vérifiant automatiquement avant publication la présence de blocs d'information facultatifs selon le schéma XSD DITA XML, mais que le rédacteur technique juge obligatoires, tels que le résultat d'une procédure. |
 | Cohérentes      | Les informations de même type sont présentées dans le même ordre et avec la même mise en page ; les blocs d'information identiques répétés à différents endroits, tels qu'une remarque, sont issus d'une seule et même source et sont donc strictement identiques.                                                                                                      |
 
 ## DocBook ou DITA XML ?
 
-Certaines entreprises ont parfois un contenu existant au format [DocBook](). Géré souvent par les acteurs les plus techniques de la société, il coexiste la plupart du temps avec d'autres contenus au format **FrameMaker** ou traitement de texte. S'il est décidé de fédérer tout le contenu d'entreprise sous un seul format, il semble naturel de capitaliser les efforts fournis sur la chaîne de création et de publication **DocBook** et de sélectionner ce format. C'est pourtant se priver des gains de productivité spectaculaires offerts par **DITA XML**.
+Certaines entreprises ont parfois un contenu existant au format DocBook. Géré souvent par les acteurs les plus techniques de la société, il coexiste la plupart du temps avec d'autres contenus au format **FrameMaker** ou traitement de texte. S'il est décidé de fédérer tout le contenu d'entreprise sous un seul format, il semble naturel de capitaliser les efforts fournis sur la chaîne de création et de publication **DocBook** et de sélectionner ce format. C'est pourtant se priver des gains de productivité spectaculaires offerts par **DITA XML**.
 
 
 Il est facile de générer du **DocBook** à partir de **DITA XML**. <abbr title="DITA Open Toolkit">DITA-OT</abbr>{.interpreted-text role="abbr"} propose par défaut ce format cible, au même titre que le PDF ou le HTML. L'opération inverse ne peut pas être totalement automatisée. Pourquoi ?
@@ -64,9 +64,9 @@ Si votre contenu était une photo, nous pourrions faire l'analogie suivante :
   ---------------------------------------------------------------------------------------------------------------- ------------------------------------------------ -----
   Format de contenu ==================+===========================================================+ **DITA XML**                                                    
 
-  **DocBook** \|[TIFF]()                                                                                                                                            
+  **DocBook** \|TIFF                                                                                                                                            
 
-  PDF                                                                                                              [JPEG]()                                         
+  PDF                                                                                                              JPEG                                         
   ---------------------------------------------------------------------------------------------------------------- ------------------------------------------------ -----
 
 Le passage de RAW en TIFF et de TIFF en JPEG est destructif et ne peut se faire en sens inverse.
@@ -99,7 +99,7 @@ D'ailleurs, si, pour une raison quelconque, votre projet de migration devait s'a
 
 ### Restructuration du contenu FrameMaker
 
-La partie automatisée d'une migration de [FrameMaker]() vers **DITA XML** consiste à appliquer une table de conversion entre les styles **FrameMaker** et les structures **DITA XML**.
+La partie automatisée d'une migration de FrameMaker vers **DITA XML** consiste à appliquer une table de conversion entre les styles **FrameMaker** et les structures **DITA XML**.
 
 Un important travail de restructuration du document **FrameMaker** doit cependant être effectué en amont :
 
@@ -123,7 +123,7 @@ Si vos documents sont disponibles en plusieurs langues, vous devez modifier les 
 
 ### Table de conversion FrameMaker vers DITA XML
 
-Lorsque les fichiers [FrameMaker]() sont prêts pour la migration et que la chaîne **DITA XML** est parfaitement intégrée aux processus techniques et humains de la société, le **rédacteur technique** peut appliquer la table de conversion.
+Lorsque les fichiers FrameMaker sont prêts pour la migration et que la chaîne **DITA XML** est parfaitement intégrée aux processus techniques et humains de la société, le **rédacteur technique** peut appliquer la table de conversion.
 
 Vous devriez maintenant être à même d'archiver les fichiers **FrameMaker**, puis de basculer totalement vers le format **DITA XML**.
 
@@ -180,7 +180,7 @@ print(OUTPUT $input_scalar);
 close(OUTPUT);
 ```
 
-Vous pouvez également modulariser facilement le contenu à l'aide des ciseaux XML [xml_split](), ou utiliser le module Perl [XML::Twig](), ou encore ce one-liner Bash pour renommer les fichiers `.dita` d'après leur titre :
+Vous pouvez également modulariser facilement le contenu à l'aide des ciseaux XML xml_split, ou utiliser le module Perl XML::Twig, ou encore ce one-liner Bash pour renommer les fichiers `.dita` d'après leur titre :
 
 ```console
 $ ack "<title‣" *.dita| sed "s# #_#g;" |
