@@ -13,15 +13,15 @@ Ces systèmes :
 
 Sur des fichiers texte, et non binaires, un système de gestion de version offre des fonctionnalités supérieures :
 
-- pas de risque de pertes de données en cas de défaillance du réseau[^1],
-- possibilités de travail off-line (déconnecté) poussées[^2],
+- pas de risque de pertes de données en cas de défaillance du réseau,
+- possibilités de travail off-line (déconnecté) poussées,
 - non-verrouillage des fichiers par les membres de l'équipe qui les ont ouverts.
-- possibilité de restauration très fine et dans le temps (depuis le dernier dépôt du fichier sur le référentiel) et en termes de quantité de travail[^3].
+- possibilité de restauration très fine et dans le temps (depuis le dernier dépôt du fichier sur le référentiel) et en termes de quantité de travail.
 
 ![Le système de gestion de versions conserve l'historique des modifications.](/assets/versioning-system.svg)
 **Le système de gestion de versions conserve l'historique des modifications.**
 
-Des interfaces graphiques permettent d'utiliser directement sous les gestionnaires de fichiers ces outils originellement conçus pour être utilisés en ligne de commande. Cependant, le paradigme sur lequel ils reposent est parfois difficile à appréhender pour les publics les moins technophiles[^4].
+Des interfaces graphiques permettent d'utiliser directement sous les gestionnaires de fichiers ces outils originellement conçus pour être utilisés en ligne de commande. Cependant, le paradigme sur lequel ils reposent est parfois difficile à appréhender pour les publics les moins technophiles.
 
 Les systèmes de gestion des sources utilisent les concepts suivants :
 
@@ -39,11 +39,3 @@ Un bémol cependant : ces outils ne sont pas destinés spécifiquement au forma
 
 **Voir aussi**
 - [Git : du fichier au contenu](../git-du-fichier-au-contenu)
-
-[^1]: En cas d'incident réseau, l'utilisateur est averti que la transaction destinée à placer le fichier modifié sur le dépôt a échoué ; il peut alors procéder à une nouvelle transaction, sa copie locale du fichier étant intacte.
-
-[^2]: Surtout sous Git, conçu explicitement dans ce but.
-
-[^3]: Les systèmes de gestion de version favorisent un dépôt fréquent de modifications atomiques.
-
-[^4]: Même si Apple a contribué à en populariser certains aspects avec son application Time machine.

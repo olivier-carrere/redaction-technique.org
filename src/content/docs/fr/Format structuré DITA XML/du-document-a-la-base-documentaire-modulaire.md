@@ -3,12 +3,7 @@ title: "Du document à la base documentaire modulaire"
 description: "Le format de rédaction structurée DITA XML propose de passer du modèle du livre à celui de la base documentaire modulaire."
 ---
 
-<a id="du-document-a-la-base-documentaire-modulaire"></a>
-
-:::note
-
 Le modèle du livre est encore prédominant pour créer et gérer l'information. Mais le contenu d'entreprise est souvent disséminé dans de nombreux documents, sous des formats hétérogènes. Ceci se traduit par des doublons, des incohérences, un coût de mise à jour et de traduction élevé, et des retards de livraison. Le rédacteur technique dispose cependant d'autres modèles, plus efficaces.
-:::
 
 Le format de rédaction structurée DITA XML propose de passer du modèle du livre à celui du de la base documentaire modulaire. Le contenu d'entreprise repose sur des briques uniques, qui peuvent être assemblées dynamiquement, à la demande, pour produire des documents sous différents formats cibles.
 
@@ -21,10 +16,7 @@ Les fichiers DITA XML peuvent en outre être aisément centralisés sous un réf
 
 ## Un langage à balises
 
-:::note
-
 DITA XML est un langage à balises : le rédacteur technique structure l'information dans des fichiers sources sans mise en page, similaires aux fichiers sources de code informatique. L'utilisateur reçoit un document cible, par exemple un fichier PDF, où les balises sont remplacées par une mise en forme typographique.
-:::
 
 Si votre entreprise fournit à ses clients une documentation technique au format MS Word, le rédacteur technique et l'utilisateur disposent des mêmes supports d'information (il n'y a pas de différenciation entre le fichier source et le fichier cible). Ce qui semble a priori la solution la plus simple s'avère cependant peu efficace en termes de productivité de l'équipe de rédaction technique et de structuration de l'information.
 
@@ -52,15 +44,7 @@ S'il crée un nouveau document au format **FrameMaker**, **DocBook** ou traiteme
 | task (DITA XML)         | Procédure pas à pas destinée à réaliser une tâche.                                                                                                           |
 | reference (DITA XML)    | Information de référence du type explication de paramètres de commandes.                                                                                     |
 
-Chacune de ces catégories de haut niveau propose un jeu de balises de plus bas niveau qui lui est propre. Si le **rédacteur technique** rédige un document technique, il y a toutes les chances pour que l'information qu'il a collectée et qu'il doit organiser fasse partie de l'une de ces trois catégories[^3]. Cette division en types d'information oblige donc d'entrée de jeu le **rédacteur technique** à structurer l'information. L'utilisateur y gagne en facilité et rapidité d'accès à l'information et en utilisabilité globale de la documentation technique.
-
-**Notes**
-
-[^1]: Dans la pratique, un schéma XSD.
-
-[^2]: **DITA XML** propose trois types d'information de base, tandis que la méthode Information Mapping en propose sept.
-
-[^3]: S'il s'avère qu'il a réellement besoin d'une autre catégorie, il peut la créer via une spécialisation.
+Chacune de ces catégories de haut niveau propose un jeu de balises de plus bas niveau qui lui est propre. Si le **rédacteur technique** rédige un document technique, il y a toutes les chances pour que l'information qu'il a collectée et qu'il doit organiser fasse partie de l'une de ces trois catégories. Cette division en types d'information oblige donc d'entrée de jeu le **rédacteur technique** à structurer l'information. L'utilisateur y gagne en facilité et rapidité d'accès à l'information et en utilisabilité globale de la documentation technique.
 
 ## Organisation à la demande du contenu
 
@@ -96,10 +80,7 @@ Si le **rédacteur technique** pratique le *single-sourcing*, il doit cependant 
 
 ## Les topics, modules d'information de base DITA XML
 
-:::note
-
 Les [topics]() sont les plus petites unités d'information autonomes gérées par **DITA XML**. Chaque *topic* a un titre et un corps de texte. Il ne traite que d'un seul sujet. Il appartient donc au **rédacteur technique** de se baser sur la modularité proposée par **DITA XML** pour bien structurer l'information.
-:::
 
 Les *topics* sont sémantiquement typés. Il existe idéalement un type de *topic* par type d'information. **DITA XML** propose par défaut des *topics* adaptés à la documentation des logiciels (description de concepts et de tâches, liste de commandes, etc.), mais de nouveaux types de *topics* peuvent être créés pour répondre à d'autres besoins.
 
@@ -107,21 +88,17 @@ Les *topics* sont une des différences principales entre **DITA XML** et **DocBo
 
 Les *topics* sont généralement stockés à plat dans des répertoires divisés par type de *topic*. Ils sont organisés hiérarchiquement dans des fichiers *ditamap* et peuvent être partagés entre différents documents. Les titres des modules ne sont pas affectés d'un niveau de titre. La structure des modules étant parfaitement homogène, un module peut avoir un niveau 3 dans un document donné, et un niveau 1 dans un autre document, sans qu'il y ait besoin de modifier en quoi que ce soit les *topics*.
 
-Les unités d'information atomiques[^1] telles que des remarques, des paragraphes, voire des phrases ou des segments de phrase, qui ne peuvent pas être munis d'un titre, ne forment pas des *topics*. Elles peuvent être cependant partagées via le mécanisme *conref*, similaire au mécanisme *Xinclude* proposé par **DocBook**.
-
-**Notes**
-
-[^1]: Pas au sens XPath.
+Les unités d'information atomiques telles que des remarques, des paragraphes, voire des phrases ou des segments de phrase, qui ne peuvent pas être munis d'un titre, ne forment pas des *topics*. Elles peuvent être cependant partagées via le mécanisme *conref*, similaire au mécanisme *Xinclude* proposé par **DocBook**.
 
 ## Gérer son contenu DITA XML avec ou sans CMS ?
 
 L'architecture DITA XML ne propose pas de mécanisme de workflow documentaire natif. Les workflows sont pourtant un élément important d'un processus efficace de gestion du cycle de vie du contenu.
 
-Les `CMS (Content Management System)` gèrent également les métadonnées, ce qui permet une recherche plus efficace de l'information existante, et les rétroliens[^1].
+Les `CMS (Content Management System)` gèrent également les métadonnées, ce qui permet une recherche plus efficace de l'information existante, et les rétroliens.
 
 La plupart des entreprises sont réticentes à mettre en place des `CMS (Content Management System)`, outils dédiés aux workflows. Elles ont d'ailleurs parfois connu des échecs de mise en place de telles solutions part le passé.
 
-De plus, l'un des grands avantages de DITA XML, c'est de s'intégrer directement dans le système d'information en place. Chez les éditeurs de logiciels, notamment, rien de plus facile que de venir se greffer sur le système de gestion des sources en place, qu'il s'agisse de [Git]()[^2], de Subversion ou de SourceSafe. À budget quasi nul. Raison de plus pour ne pas investir du temps et de l'argent dans un `CMS (Content Management System)`. Les gains de productivité spectaculaires reportés par certaines entreprises suite à la mise en place d'un `CMS (Content Management System)` DITA XML ont cependant de quoi faire réfléchir. Ainsi, Epson America a pu réutiliser jusqu'à 90 % du contenu existant sur de nouveaux projets.
+De plus, l'un des grands avantages de DITA XML, c'est de s'intégrer directement dans le système d'information en place. Chez les éditeurs de logiciels, notamment, rien de plus facile que de venir se greffer sur le système de gestion des sources en place, qu'il s'agisse de Git, de Subversion ou de SourceSafe. À budget quasi nul. Raison de plus pour ne pas investir du temps et de l'argent dans un `CMS (Content Management System)`. Les gains de productivité spectaculaires reportés par certaines entreprises suite à la mise en place d'un `CMS (Content Management System)` DITA XML ont cependant de quoi faire réfléchir. Ainsi, Epson America a pu réutiliser jusqu'à 90 % du contenu existant sur de nouveaux projets.
 
 Si l'on opte pour un `CMS (Content Management System)`, celui-ci doit clairement supporter DITA XML : on ne gère pas un jeu de briques d'information comme un document monolithique. Adieu donc SharePoint ou Alfresco, il faut se tourner vers des solutions dédiées telles que [Componize]() ou [DocZone]().
 
@@ -129,10 +106,3 @@ Quel que soit le choix initial, il est possible à tout instant de changer de st
 
 **Voir aussi**
 - [Git : du fichier au contenu](../../rédaction-technique--un-processusindustriel/référentiel/git-du-fichier-au-contenu)
-
-**Notes**
-
-[^1]: Le rédacteur technique peut ainsi voir où un élément d'information est inclus ; lors de la mise à jour de cet élément, il peut alors juger si l'élément modifié sera toujours valable dans les différents contextes.
-
-[^2]: Il est possible, quoiqu'un peu complexe, de mettre en place des workflows sous Git via des branches.
-

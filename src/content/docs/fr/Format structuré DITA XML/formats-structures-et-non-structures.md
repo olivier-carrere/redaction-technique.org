@@ -69,12 +69,12 @@ Si votre contenu était une photo, nous pourrions faire l'analogie suivante :
   PDF                                                                                                              [JPEG]()                                         
   ---------------------------------------------------------------------------------------------------------------- ------------------------------------------------ -----
 
-Le passage de RAW en TIFF et de TIFF en JPEG est destructif et ne peut se faire en sens inverse[^1].
+Le passage de RAW en TIFF et de TIFF en JPEG est destructif et ne peut se faire en sens inverse.
 
 ![Un processus non réversible](/assets/entropie-dita-docbook.svg)
 **Un processus non réversible**
 
-Le PDF est sémantiquement plus pauvre que **DocBook**, lui-même plus pauvre que **DITA XML**[^2].
+Le PDF est sémantiquement plus pauvre que **DocBook**, lui-même plus pauvre que **DITA XML**.
 
 Si votre entreprise tient absolument à utiliser du **DocBook**, il est toujours loisible de générer le contenu **DocBook** à partir d'un contenu source au format **DITA XML**. À condition que le contenu source reste au format **DITA XML** (c'est à dire, à condition qu'aucune modification apportée au contenu **DocBook** ne soit sauvegardée) et que le format **DocBook** ne soit qu'une étape de la génération des livrables, au même titre que le format FO, vous bénéficiez ainsi des fonctionnalités avancées de réutilisation du contenu que propose **DITA XML**.
 
@@ -82,15 +82,9 @@ L'effort de migration d'un format non structuré est certes un peu plus importan
 
 De manière générale, un professionnel a toujours intérêt à travailler sur le format le plus riche, ne serait-ce que pour être pro-actif et anticiper sur les nouveaux besoins.
 
-**Notes**
-
-[^1]: Pour être aussi exact que possible, vous pouvez enregistrer une image JPEG au format TIFF ; mais cette image aura une qualité égale à celle de l'image JPEG, inférieure à la qualité habituelle des images TIFF. En revanche, on ne peut à ma connaissance pas enregistrer une image TIFF sous un format RAW.
-
-[^2]: Le PDF est cependant plus riche en informations de mise en page, appliquées automatiquement à partir d'une feuille de style.
-
 ## Migration de FrameMaker vers DITA XML
 
-Migrer de **FrameMaker** vers **DITA XML**, ce n'est pas comme enregistrer un document **MS Word** au format **LibreOffice**[^1]. Aucun processus automatique ne permet de migrer un document non structuré vers un format structuré. Dans le pire des cas, selon la qualité de votre document de départ, cela peut s'apparenter à transformer une friche en jardin à la française. Mais une migration bien planifiée permet de passer au nouveau format sans perturber le rythme des livraisons.
+Migrer de **FrameMaker** vers **DITA XML**, ce n'est pas comme enregistrer un document **MS Word** au format **LibreOffice**. Aucun processus automatique ne permet de migrer un document non structuré vers un format structuré. Dans le pire des cas, selon la qualité de votre document de départ, cela peut s'apparenter à transformer une friche en jardin à la française. Mais une migration bien planifiée permet de passer au nouveau format sans perturber le rythme des livraisons.
 
 Pour filer la métaphore, si l'on se fixe pour but de convertir un marécage en parterre du château de Versailles, il convient de passer par l'étape du jardin à l'anglaise - soit un endroit certes non rigoureusement architecturé, mais très agréable à vivre. Bonne nouvelle : si le **rédacteur technique** a utilisé de manière cohérente un jeu de styles limité et organisé rationnellement son contenu **FrameMaker**, il est déjà certainement très proche de ce stade.
 
@@ -102,8 +96,6 @@ D'ailleurs, si, pour une raison quelconque, votre projet de migration devait s'a
 - facilité de mise à jour,
 - cohérence et rapidité de publication des nouvelles versions,
 - facilité d'accès à l'information.
-
-[^1]: **LibreOffice** propose une fonction d'enregistrement au format **DocBook**, mais très imparfaite ; le XML qu'elle produit peut servir de base à la création d'une version **DocBook**, avec beaucoup d'efforts... Sauf à maintenir deux versions du même contenu, le processus de migration de **LibreOffice** vers **DocBook** exige donc un arrêt temporaire des livraisons des nouvelles versions de la documentation ; il doit donc être soigneusement planifié.
 
 ### Restructuration du contenu FrameMaker
 
@@ -131,22 +123,16 @@ Si vos documents sont disponibles en plusieurs langues, vous devez modifier les 
 
 ### Table de conversion FrameMaker vers DITA XML
 
-Lorsque les fichiers [FrameMaker]() sont prêts pour la migration et que la chaîne **DITA XML** est parfaitement intégrée aux processus techniques et humains de la société, le **rédacteur technique** peut appliquer la table de conversion[^1].
+Lorsque les fichiers [FrameMaker]() sont prêts pour la migration et que la chaîne **DITA XML** est parfaitement intégrée aux processus techniques et humains de la société, le **rédacteur technique** peut appliquer la table de conversion.
 
 Vous devriez maintenant être à même d'archiver les fichiers **FrameMaker**, puis de basculer totalement vers le format **DITA XML**.
 
 ![Application d'une table de conversion de FrameMaker vers DITA XML](/assets/dita-migration.svg)
 **Application d'une table de conversion de FrameMaker vers DITA XML**
 
-Appliquez bien sûr ce processus à un petit jeu de documents[^2], qui ne soit pas, si possible, d'une importance critique. Après ce premier succès, vous pourrez appliquer le processus aux autres jeux de documents.
+Appliquez bien sûr ce processus à un petit jeu de documents, qui ne soit pas, si possible, d'une importance critique. Après ce premier succès, vous pourrez appliquer le processus aux autres jeux de documents.
 
 Vous pouvez maintenant progressivement modulariser et partager votre contenu dans le nouveau format afin de tirer parti au maximum de **DITA XML**. Vous pouvez pendant cette phase continuer à publier de nouvelles versions du document ; la publication devrait d'ailleurs être beaucoup plus simple que sous **FrameMaker**.
-
-**Notes**
-
-[^1]: Bien que ce processus doive être rapide, je vous conseille de le faire juste après une livraison d'une nouvelle version du document pour avoir la marge de temps suffisante avant la livraison suivante, des petits ajustements étant toujours nécessaires.
-
-[^2]: J'appelle *jeu de documents* tout ensemble d'informations liées qui ne partage aucun contenu avec un autre ensemble ; si par exemple le document *A* partage une section avec le document *B*, le jeu de documents est *A+B* ; si vous dupliquez la section partagée afin qu'elle ne soit plus commune à *A* et *B*, *A* et *B* deviennent des jeux distincts.
 
 ### Migrer de FrameMaker vers DITA XML
 
