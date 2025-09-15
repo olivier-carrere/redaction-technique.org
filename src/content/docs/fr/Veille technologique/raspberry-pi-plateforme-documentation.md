@@ -30,7 +30,7 @@ Les buts de ce billet sont de :
     | Option        | Valeur      |
     |---------------|-------------|
     | Language      | fr (French) |
-    | Country       |<abbr title="France">FR</abbr>|
+    | Country       | <abbr title="France">FR</abbr> |
     | Character Set | UTF-8       |
     
     Ce tableau présente les paramètres de configuration par défaut pour un environnement francophone :

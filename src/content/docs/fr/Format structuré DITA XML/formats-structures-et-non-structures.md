@@ -50,7 +50,7 @@ Les règles syntaxiques interdisent au rédacteur technique de faire figurer une
 Certaines entreprises ont parfois un contenu existant au format DocBook. Géré souvent par les acteurs les plus techniques de la société, il coexiste la plupart du temps avec d'autres contenus au format **FrameMaker** ou traitement de texte. S'il est décidé de fédérer tout le contenu d'entreprise sous un seul format, il semble naturel de capitaliser les efforts fournis sur la chaîne de création et de publication **DocBook** et de sélectionner ce format. C'est pourtant se priver des gains de productivité spectaculaires offerts par **DITA XML**.
 
 
-Il est facile de générer du **DocBook** à partir de **DITA XML**. <abbr title="DITA Open Toolkit">DITA-OT</abbr>{.interpreted-text role="abbr"} propose par défaut ce format cible, au même titre que le PDF ou le HTML. L'opération inverse ne peut pas être totalement automatisée. Pourquoi ?
+Il est facile de générer du **DocBook** à partir de **DITA XML**. <abbr title="DITA Open Toolkit">DITA-OT</abbr> {.interpreted-text role="abbr"} propose par défaut ce format cible, au même titre que le PDF ou le HTML. L'opération inverse ne peut pas être totalement automatisée. Pourquoi ?
 
 ![Un processus non réversible](/assets/entropie.svg)
 **Un processus non réversible**
@@ -150,7 +150,7 @@ Le but de cette procédure est de :
     qu'EDD` et sauvegardez la nouvelle EDD sous le nom `DITA-topic-edd.fm`.
 7. Ouvrez le fichier `styles.fm`, puis choisissez `Fichier` ‣ `Importer les
     définitions d'éléments` et importez les définitions d'éléments à partir de `DITA-topic-edd.fm`.
-8. Répétez les trois étapes ci-dessus pour les autres types de topics DITA<abbr title="task, reference, etc.">XML</abbr>, en modifiant les noms de fichiers comme il se doit.
+8. Répétez les trois étapes ci-dessus pour les autres types de topics DITA <abbr title="task, reference, etc.">XML</abbr>, en modifiant les noms de fichiers comme il se doit.
 9. Ouvrez le fichier `styles.fm`, puis choisissez `StructureTools` ‣ `Générer le tableau de conversion`.
 10. Modifiez le fichier de conversion et faites correspondre chaque style FrameMaker à une balise DITA XML.
 11. Enregistrez le tableau de conversion sous le nom `DITA2FM-conversion-table.fm`.
