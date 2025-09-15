@@ -12,17 +12,18 @@ max_threads = 5
 # --- FONCTION DE RÉÉCRITURE ---
 def rewrite_text(text: str) -> str:
     """
-    Réécrit un texte en français ton professionnel, en conservant
-    absolument la mise en forme originale et toutes les balises HTML.
+    Réécrit un texte en français ton professionnel,
+    en conservant la mise en forme, tous les sauts de ligne et balises HTML.
     """
     prompt = f"""
 Réécris le texte suivant en français dans une tonalité professionnelle.
 - Ne modifie **aucune mise en forme**, ni les sauts de ligne.
 - Ne modifie **jamais** les blocs de code (``` … ```).
-- Conserve toutes les balises HTML intactes (notamment <abbr>).
+- Conserve toutes les balises HTML intactes, notamment <abbr>.
+- Ne tente pas d’expliciter ou de remplacer les abréviations (<abbr>).
 - Ne modifie pas le texte entre `<` et `>` qui n'est pas une balise HTML.
 
-Texte à réécrire (avec sa mise en forme exacte) :
+Texte à réécrire :
 
 {text}
 """
@@ -42,6 +43,7 @@ Texte à réécrire (avec sa mise en forme exacte) :
 def split_into_blocks(body: str):
     """
     Retourne une liste de tuples (is_code_block, text)
+    en conservant les sauts de ligne exacts autour des blocs de code.
     """
     blocks = []
     pattern = r"(```.*?```)"
@@ -50,14 +52,12 @@ def split_into_blocks(body: str):
         start, end = match.span()
         if start > last_index:
             text_block = body[last_index:start]
-            if text_block.strip():
-                blocks.append((False, text_block))
+            blocks.append((False, text_block))
         blocks.append((True, match.group(1)))
         last_index = end
     if last_index < len(body):
         text_block = body[last_index:]
-        if text_block.strip():
-            blocks.append((False, text_block))
+        blocks.append((False, text_block))
     return blocks
 
 # --- PRÉSERVATION DES BALISES HTML ---
@@ -87,19 +87,26 @@ def process_file(file_path: str):
         frontmatter = ""
         body = content
 
-    # Découpe en blocs et réécrit uniquement les blocs non-code
+    # Découpe en blocs
     blocks = split_into_blocks(body)
     rewritten_blocks = []
+
     for is_code, block_text in blocks:
         if is_code:
             rewritten_blocks.append(block_text)  # bloc code intact
         else:
+            # préserve HTML avant réécriture
             block_text = preserve_html(block_text)
-            rewritten_text = rewrite_text(block_text)
-            rewritten_blocks.append(rewritten_text)
+            rewritten = rewrite_text(block_text)
+            # conserve exactement les lignes vides avant et après le bloc
+            if block_text.startswith("\n") and not rewritten.startswith("\n"):
+                rewritten = "\n" + rewritten
+            if block_text.endswith("\n") and not rewritten.endswith("\n"):
+                rewritten = rewritten + "\n"
+            rewritten_blocks.append(rewritten)
 
-    # Concatène en préservant les sauts de ligne exacts
-    new_content = frontmatter + "<!-- Réécrit par OpenAI -->\n\n" + "".join(rewritten_blocks)
+    # Concatène tous les blocs sans modifier la mise en forme
+    new_content = frontmatter + "<!-- Réécrit par OpenAI -->\n" + "".join(rewritten_blocks)
 
     with open(file_path, "w", encoding="utf-8") as f:
         f.write(new_content)
