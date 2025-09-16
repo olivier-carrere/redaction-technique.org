@@ -9,11 +9,8 @@ hero:
 import { Card, CardGrid } from '@astrojs/starlight/components';
 import { LinkCard } from '@astrojs/starlight/components';
 
-Ce site est un *work in progress* destiné à tester la plateforme de documentation [Starlight](https://starlight.astro.build/). Il est en cours de migration de la plateforme [Python Sphinx](https://www.sphinx-doc.org/en/master/tutorial/getting-started.html) vers Astro, et de ReStructuredText vers Markdown. Vous pouvez suivre le processus de migration sur le [dépôt GitHub](https://github.com/olivier-carrere/redaction-technique.org).
-
-Le contenu obsolète va être progressivement remplacé par du contenu plus en phase avec les plateformes et les méthodes de rédaction techniques modernes.
-
 <CardGrid stagger>
+  <LinkCard title="Blog" href="https://www.redaction-technique.org/" description="Un blog consacré à tout ce qui touche à la documentation gérée comme du code." />
   <LinkCard title="Format structuré DITA XML" href="https://docs.redaction-technique.org/fr/format-structuré-dita-xml/" description="Diminuer les coûts de production et de traduction, réduire les délais de mise sur le marché et améliorer la qualité de la documentation." />
   <LinkCard title="Diminuer les coûts, améliorer la satisfaction client" href="https://docs.redaction-technique.org/fr/diminuer-les-coûts-améliorer-la-satisfaction-client/" description="Méthodes et bonnes pratiques pour optimiser le processus rédactionnel et maximiser la satisfaction client." />
   <LinkCard title="Veille technologique" href="https://docs.redaction-technique.org/fr/veille-technologique/" description="Suivi des tendances, outils et innovations dans le domaine de la documentation technique." />
