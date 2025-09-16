@@ -54,5 +54,4 @@ export default defineConfig({
       },
     }),
   ],
-  output: 'server',
 });
