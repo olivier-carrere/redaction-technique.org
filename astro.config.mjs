@@ -11,13 +11,13 @@ export default defineConfig({
     astroExpressiveCode(),
     mdx(),
     starlight({
-      title: 'Markdown and AI-Based Documentation',
+      title: 'Markdown & AI-Aided Rapid Documentation Development',
       defaultLocale: 'fr',
       locales: {
         en: {
           label: 'English',
           lang: 'en',
-          title: 'Markdown and AI-Based Documentation',
+          title: 'Markdown & AI-Aided Rapid Documentation Development',
           sidebar: [
             {
               label: 'An industrial process',
