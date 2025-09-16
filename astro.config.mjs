@@ -12,7 +12,7 @@ export default defineConfig({
     mdx(),
     starlight({
       title: 'Markdown and AI-Based Documentation',
-      defaultLocale: 'en',
+      defaultLocale: 'fr',
       locales: {
         en: {
           label: 'English',
