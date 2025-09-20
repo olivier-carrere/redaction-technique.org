@@ -1,5 +1,5 @@
 ---
-title: "Content creation
+title: "Content creation"
 description: "The technical writer creates the content of the technical writing project in constant dialogue with the company's various players: R&D departments, marketing."
 ---
 
