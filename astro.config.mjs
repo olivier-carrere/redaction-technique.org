@@ -8,7 +8,7 @@ import vercel from '@astrojs/vercel';
 const site = 'https://docs.redaction-technique.org/';
 
 export const locales = {
-  root: { label: 'English', lang: 'en' },
+  en: { label: 'English', lang: 'en' },
   fr: { label: 'Français', lang: 'fr' },
 };
 
