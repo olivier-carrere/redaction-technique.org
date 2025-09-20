@@ -30,6 +30,13 @@ export default defineConfig({
           },
           autogenerate: { directory: 'process' },
         },
+        {
+          label: 'Technology watch',
+          translations: {
+            fr: 'Veille technologique',
+          },
+          autogenerate: { directory: 'veille' },
+        },
       ],
     }),
     vercel({
