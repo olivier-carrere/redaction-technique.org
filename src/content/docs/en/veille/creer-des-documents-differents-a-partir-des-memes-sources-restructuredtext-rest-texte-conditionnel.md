@@ -17,7 +17,7 @@ description: "Generate document variants from the same ReST sources with Sphinx 
 
 3.  Add the following content to the `index.rst` file, respecting the indentations:
 
-    txt
+    ```txt
     .. only:: electrician
 
     .. admonition:: Danger for electricians
@@ -37,7 +37,7 @@ description: "Generate document variants from the same ReST sources with Sphinx 
 
 4.  To hide or not hide content intended for electricians or plumbers, comment out or not the following lines in the `conf.py` configuration file:
 
-    python
+    ```python
     tags.add('electrician')
     tags.add('plumber')
     ```

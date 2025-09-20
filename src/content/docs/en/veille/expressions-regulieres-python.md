@@ -7,7 +7,7 @@ The Python language offers numerous function libraries. The one dedicated to reg
 
 The following code illustrates how to reverse the order of words in a sentence, according to the famous example from *Bourgeois gentilhomme* :
 
-```
+```python
 #! /usr/bin/python
 # coding: utf8
 

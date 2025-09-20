@@ -217,7 +217,7 @@ Why did you choose LaTeX to create the *print* and not a conventional DTP progra
 
 Here's an example of LaTeX code:
 
-tex
+```latex
 \section{faTag Iconographs}
 
 \vspace*{\fill}

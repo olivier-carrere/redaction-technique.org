@@ -25,7 +25,7 @@ In theory, the branch solution allows you to perform cherry-picking and easily a
 
 For example, a change to
 
-xml
+```xml
 <image href="filter.png" placement="break"/>
 ```
 

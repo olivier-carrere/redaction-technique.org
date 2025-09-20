@@ -5,7 +5,7 @@ description: "The Python profiling.py script below allows you to profile content
 
 The `profiling.py` Python script below allows you to profile content in *preprocessing* using the powerful Jinja model engine:
 
-python
+```python
 #!/usr/bin/python
 import jinja2
 import sys
@@ -24,7 +24,7 @@ file.close()
 
 Contents of file `conditional-text.rst` :
 
-``` txt
+```txt
 Using conditional text
 =================================
 

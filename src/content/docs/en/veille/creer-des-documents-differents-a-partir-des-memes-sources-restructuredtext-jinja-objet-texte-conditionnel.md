@@ -32,7 +32,7 @@ With Jinja, you can define objects (audience, platform, version, etc.) and inclu
 
 2. Define an Audience class with two attributes for plumbers and electricians:
 
-    python
+    ```python
     class Audience:
         def __init__(self,electrician,plumber):
             self.elec=electrician
@@ -41,13 +41,13 @@ With Jinja, you can define objects (audience, platform, version, etc.) and inclu
 
 3. Create an instance of the Audience class whose value is true for electricians and false for plumbers:
 
-    python
+    ```python
     user=Audience(True,False)
     ```
 
 4. Create and run the following script:
 
-    python
+    ```python
     #!/usr/bin/python
     class Audience:
         def __init__(self,electrician,plumber):
@@ -71,7 +71,7 @@ With Jinja, you can define objects (audience, platform, version, etc.) and inclu
 
 6. Create a condition for audiences other than electricians or plumbers:
 
-    ``txt
+    ```rst
     Using conditional text
     =================================
 
@@ -103,7 +103,7 @@ With Jinja, you can define objects (audience, platform, version, etc.) and inclu
 
 7. Create a new class for seasons:
 
-    python
+    ```python
     class Season:
         def __init__(self,winter,spring,summer,autumn):
             self.win=winter
@@ -162,7 +162,7 @@ With Jinja, you can define objects (audience, platform, version, etc.) and inclu
 
 9. Vary the values of the Audience and Season class instances to filter the content of the `conditional-text.rst` file.
 
-    python
+    ```python
     #!/usr/bin/python
     class Audience:
         def __init__(self,electrician,plumber):
@@ -242,7 +242,7 @@ With Jinja, you can define objects (audience, platform, version, etc.) and inclu
 
     It's more economical to use a single object class, even if it does mix cabbages and carrots (as much in this far-fetched example as in real life, where you'd mix audiences, versions, platforms, etc.).
 
-    python
+    ```python
     #!/usr/bin/python
     class Audience:
         def __init__(self,pers,seas):
@@ -278,7 +278,7 @@ With Jinja, you can define objects (audience, platform, version, etc.) and inclu
 
     To allow the passage of unexpected values and display the contents of the else block, the code must be modified as follows:
 
-    python
+    ```python
     #!/usr/bin/python
     # coding: utf8
     class Audience:

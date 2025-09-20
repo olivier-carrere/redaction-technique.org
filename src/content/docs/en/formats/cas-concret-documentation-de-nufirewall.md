@@ -57,13 +57,13 @@ Since the purpose of *conref* is to manage small blocks of information, it makes
 
 For example, you might want to reuse the phrase *Click OK.* However, you can't just specify the following code in the file containing the source *conref*:
 
-xml
+```xml
 <Click OK.
 ```
 
 To comply with the XSD schema, your code must at least be structured as follows:
 
-xml
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA 1.2 Task//EN"
 /usr/share/dita-ot/dtd/technicalContent/dtd/task.dtd">
@@ -84,7 +84,7 @@ Now it's a matter of placing an ID on an XML structure so that you can reuse the
 
 It's best to use the following syntax:
 
-xml
+```xml
 <step>
   <cmd id="click-ok">
     Click on OK.
@@ -109,7 +109,7 @@ Indeed, in the first case, you'll be able to use the *conref* even if the top no
 
 In the 2nd case, the entire content of the `<step>`{.interpreted-text role="samp"} node will be replaced by the value of the source *conref*. For example, in the following case, all node content will be absent from the deliverables:
 
-xml
+```xml
 <step id="click-ok">
   <cmd/>
   <info>
@@ -129,7 +129,7 @@ Example
 
 If you decide to push the granularity down to the sentence segment level and define the following conref :
 
-xml
+```xml
 <ph id="click">Click the</ph>
 
 <ph id="blue">blue</ph>
@@ -139,7 +139,7 @@ xml
 
 You can now use the following code:
 
-``` xml
+```xml
 <p>
   <ph conref="shared.dita/click"/>
   <ph conref="shared.dita/blue"/>
@@ -151,7 +151,7 @@ to generate the phrase Click the blue arrow.
 
 Let's now try to create a French version of this sentence. We translate the conref as follows:
 
-xml
+```xml
 <ph id="click">Click on the</ph>
 
 <ph id="blue">blue</ph>
@@ -172,7 +172,7 @@ In the example below, the source *conref* *see-admin-guide* contains the target 
 
 **Example**
 
-xml
+```xml
 <p id="see-admin-guide">
   For further information, see the <ph
   conref="shared.dita/admin-guide-title"/>.
@@ -206,7 +206,7 @@ As in the example below, it's not uncommon to quickly obtain files whose only un
 
 **Example**
 
-xml
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA 1.2 Task//EN"
 "/usr/share/dita-ot/dtd/technicalContent/dtd/task.dtd">

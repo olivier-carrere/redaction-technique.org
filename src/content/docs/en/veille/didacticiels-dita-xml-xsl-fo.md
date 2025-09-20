@@ -18,7 +18,7 @@ Let's imagine you want to filter the child nodes of the DITA XML tag `<example>`
 
 You can then use the following syntax:
 
-xslt
+```xml
 <xsl:template match="*[contains(@class,' topic/example ')]">
   <fo:block>
     <xsl:apply-templates select="*[not(name()='title')]" />
@@ -30,7 +30,7 @@ This command selects all child nodes of the `<example>` node, with the exception
 
 Suppose the source code of one of your DITA XML files is as follows:
 
-xml
+```xml
 <example>
   <title>
     XSL-FO
@@ -45,13 +45,13 @@ xml
 
 The PDF file will display the example structured as follows:
 
-xslt
+```xml
 ancestor-or-self
 ```
 
 The title of the example is not displayed, which is the desired result, but content not encapsulated in tags is not displayed, which is an undesirable side effect. To select this content, text nodes must be selected using the `text()` syntax. It is then tempting to use the following syntax:
 
-xslt
+```xml
 <xsl:template match="*[contains(@class,' topic/example ')]">
   <fo:block>
     <xsl:apply-templates select="text()" />
@@ -66,19 +66,19 @@ The PDF file will display the example structured as follows:
 
 > Here's my example XPATH path:Unencapsulated text after a child node.
 >
-> ```` xslt
+> ```xml
 > ancestor-or-self
 > ```
 
 You must then use the pipe syntax (Boolean or condition) to modify the XPATH path as follows:
 
-xslt
+```xml
 <xsl:apply-templates select="text()|*[not(name()='title')]" />
 ```
 
 The final result will be :
 
-``` xslt
+```xml
 <xsl:template match="*[contains(@class,' topic/example ')]">
   <fo:block>
     <xsl:apply-templates select="text()|*[not(name()='title')]" />
@@ -90,7 +90,7 @@ The PDF file will display the example structured as follows:
 
 > Here is my example XPATH path:
 >
-> ```` xslt
+> ```xml
 > ancestor-or-self
 > ```
 >
@@ -104,7 +104,7 @@ By default, <abbr title="DITA Open Toolkit">DITA-OT</abbr> {.interpreted-text ro
 
 Suppose the source code of one of your **DITA XML** files is as follows:
 
-xml
+```xml
 <example>
   <title>
     XSL-FO
@@ -122,7 +122,7 @@ You want the generated PDF file to display the example structured as follows:
 >
 > Here's my example XPATH path:
 >
-> ```` xslt
+> ```xml
 > ancestor-or-self
 > ```
 
@@ -132,7 +132,7 @@ and if the example does not contain a title, it should be structured as follows:
 >
 > Here's my XPATH path example:
 >
-> ```` xslt
+> ```xml
 > ancestor-or-self
 > ```
 
@@ -142,7 +142,7 @@ By default, however, this content will be structured as follows in the PDF by <a
 >
 > Here is my example XPATH path:
 >
-> ```` xslt
+> ```xml
 > ancestor-or-self
 > ```
 
@@ -152,7 +152,7 @@ It's still possible to enter text between `<example>`{.interpreted-text role="sa
 
 1.  Replace in the `plugins/org.dita.pdf2/xsl/fo/commons.xsl` stylesheet (under <abbr title="DITA Open Toolkit">DITA-OT</abbr> {.interpreted-text role="abbr"} 1.7.) the following template:
 
-    xslt
+    ```xml
     <xsl:template match="*[contains(@class,' topic/example')]/*
     [contains(@class,' topic/title ')]>
       <fo:block xsl:use-attribute-sets="example.title>
@@ -164,7 +164,7 @@ It's still possible to enter text between `<example>`{.interpreted-text role="sa
 
     with the following code:
 
-    ``` xslt
+    ```xml
     <xsl:template match="*[contains(@class,' topic/example ')]>
       <fo:block xsl:use-attribute-sets="example.title>
         <xsl:call-template name="insertVariable>
@@ -183,7 +183,7 @@ It's still possible to enter text between `<example>`{.interpreted-text role="sa
 
 2.  Define in the files containing the language variables, such as `plugins/org.dita.pdf2/cfg/common/vars/en.xml`, the text variables to be inserted automatically, for example :
 
-    xslt
+    ```xml
     <variable id="my-example-text>Example:</variable>
     ```
 
@@ -339,7 +339,7 @@ To use this script :
 
 3. In the terminal, enter :
 
-   `````bash
+   ```bash
    $ mkdir out
    ```
 
@@ -347,7 +347,7 @@ To use this script :
 
 4. Enter :
 
-   ``````bash
+   ```bash
    $ ./dita2target.sh <ditamap file> \
    <language directory name> <target format>
    ```
@@ -420,7 +420,7 @@ To use this script :
 
 2.  Paste the following code into a file and save it as `conditional-text.ditamap` in the `DITA-OT1.5.4` directory:
 
-    xml
+    ```xml
     <?xml version="1.0" encoding="utf-8"?>
     <!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN"
     "/usr/share/dita-ot/dtd/bookmap/dtd/bookmap.dtd">
@@ -436,7 +436,7 @@ To use this script :
 
 3.  Paste the following code into a file and save it as `electriciens.ditaval` in the `DITA-OT1.5.4` directory:
 
-    xml
+    ```xml
     <?xml version="1.0" encoding="UTF-8"?>
     <val>
       <prop att="audience" val="electriciens" action="include"/>
@@ -446,7 +446,7 @@ To use this script :
 
 4.  Paste the following code into a file and save it as `plumbers.ditaval` in the `DITA-OT1.5.4` directory:
 
-    xml
+    ```xml
     <?xml version="1.0" encoding="UTF-8"?>
     <val>
       <prop att="audience" val="electriciens" action="exclude"/>
@@ -548,7 +548,7 @@ Prerequisites
     :::note[Note]
     If a message warns you that the `.emacs` file does not exist, paste the following commands, then repeat the operation:
 
-    `````bash
+    ```bash
     cd && touch .emacs
     ```
     :::

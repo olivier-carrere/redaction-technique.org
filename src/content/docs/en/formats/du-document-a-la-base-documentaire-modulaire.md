@@ -7,7 +7,7 @@ The book model is still predominant for creating and managing information. But e
 
 The DITA XML structured authoring format offers a way of moving from the book model to that of the modular document base. Enterprise content is based on single bricks, which can be dynamically assembled on demand to produce documents in different target formats.
 
-Modular documentation offers unrivalled flexibility](/assets/documentation-modulaire.svg)
+![Modular documentation offers unrivalled flexibility](/assets/documentation-modulaire.svg)
 **Modular documentation offers unrivalled flexibility.
 
 The volume of source content is minimized, reducing the cost of creating, updating and translating corporate content. What's more, the technical editor can manage the writing, validation and translation processes module by module. Workflows can thus be parallelized, reducing time-to-market.

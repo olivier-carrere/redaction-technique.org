@@ -9,7 +9,7 @@ Rather than writing data by hand into the content file, you can insert it automa
 
 1. Create the following `modele.rst` file:
 
-    ```
+    ```rst
     Products and versions
     ====================
     
@@ -24,7 +24,7 @@ Rather than writing data by hand into the content file, you can insert it automa
 
 2. Create the following Python script `populate.py`:
 
-    ```
+    ```python
     #!/usr/bin/python
     # coding: utf8
     import jinja2
@@ -49,7 +49,7 @@ Rather than writing data by hand into the content file, you can insert it automa
 
     The following content is displayed:
 
-    ``` txt
+    ```md
     Products and versions
     ====================
 

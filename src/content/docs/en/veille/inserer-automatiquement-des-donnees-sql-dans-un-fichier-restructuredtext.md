@@ -7,7 +7,7 @@ We're going to create a database of products with their versions, then format th
 
 1.  Create the *SQLite3* database `productdb.db`:
 
-    ```
+    ```python
     #!/usr/bin/python
     # coding: utf8
     import sqlite3
@@ -35,7 +35,7 @@ We're going to create a database of products with their versions, then format th
 
 2.  Insert data into the database:
 
-    ```
+    ```python
     #!/usr/bin/python
     # coding: utf8
     import sqlite3
@@ -67,8 +67,8 @@ We're going to create a database of products with their versions, then format th
 
 3.  Create the following `modele-sql.rst` file:
 
-    ```
-        {% for prod in product %}
+    ```sql
+    {% for prod in product %}
     {{ prod | capitalize }}
     {% for c in prod %}-{% endfor %}
        {% for ver in version %}
@@ -79,8 +79,8 @@ We're going to create a database of products with their versions, then format th
 
 4.  Run the following Python script:
 
-    ```
-        #!/usr/bin/python
+    ```python
+    #!/usr/bin/python
     # coding: utf8
     import sqlite3
     import jinja2
@@ -119,7 +119,7 @@ We're going to create a database of products with their versions, then format th
 
     The following content is displayed:
 
-    txt
+    ```md
     Products and versions
     ====================
 

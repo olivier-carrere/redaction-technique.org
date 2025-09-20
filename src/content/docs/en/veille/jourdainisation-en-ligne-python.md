@@ -11,7 +11,7 @@ So it's up to you to update your tirade with this online Python script:
 
 Here's the script code, based on the Flask web microframework:
 
-```
+```python
 #!/usr/bin/python3
 # coding: utf8
 
@@ -106,7 +106,7 @@ if __name__ == '__main__':
 
 It would have been fun to play with the list methods as shown below, but this would have meant deleting the spaces before the commas we would have inserted in the list:
 
-python
+```python
 #! /usr/bin/python3
 # coding: utf-8
 
@@ -120,7 +120,7 @@ print(final_text)
 
 Here are the templates for generating the basic HTML pages, input and output, based on Jinja :
 
-```
+```html
 <!doctype html>
 <html>
     <head>
@@ -135,7 +135,7 @@ Here are the templates for generating the basic HTML pages, input and output, ba
 </html>
 ```
 
-```
+```html
 {% extends 'base.html' %}
 
 {% block body %}
@@ -162,7 +162,7 @@ Here are the templates for generating the basic HTML pages, input and output, ba
 {% endblock %}
 ```
 
-```
+```html
 {% extends 'base.html' %}
 
 {% block body %}
@@ -180,7 +180,7 @@ Here are the templates for generating the basic HTML pages, input and output, ba
 
 And finally, the CSS style sheet:
 
-```
+```css
 body {
   font-family: Verdana, Geneva, Arial, sans-serif;
   font-size: medium;
