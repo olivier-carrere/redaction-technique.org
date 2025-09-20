@@ -24,8 +24,8 @@ def translate_text(text, source_lang="FR", target_lang="EN"):
 
 def translate_markdown_files():
     """Translate all .md files in current directory from French to English."""
-    for filename in os.listdir("."):
-        if filename.endswith(".md") and not filename.endswith("-en.md"):
+    for filename in os.listdir("*"):
+        if filename.endswith(".mdx") and not filename.endswith("-en.md"):
             print(f"Translating {filename}...")
             with open(filename, "r", encoding="utf-8") as f:
                 content = f.read()
