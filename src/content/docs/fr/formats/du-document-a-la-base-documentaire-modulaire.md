@@ -105,4 +105,4 @@ Si l'on opte pour un <abbr title="Content Management System">CMS</abbr>, celui-c
 Quel que soit le choix initial, il est possible à tout instant de changer de stratégie, sans remettre en cause l'existant. L'architecture DITA XML n'est en effet liée à aucun référentiel particulier. Rien n'interdit donc de commencer à gérer ses projets sans <abbr title="Content Management System">CMS</abbr>, puis d'avoir recours à une telle solution si les bénéfices de ce choix deviennent manifestes.
 
 **Voir aussi**
-- [Git : du fichier au contenu](../../process/référentiel/git-du-fichier-au-contenu)
+- [Git : du fichier au contenu](../../tech-writing-process/référentiel/git-du-fichier-au-contenu)

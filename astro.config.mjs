@@ -28,7 +28,7 @@ export default defineConfig({
           translations: {
             fr: 'Rédaction technique : un processus industriel',
           },
-          autogenerate: { directory: 'Process' },
+          autogenerate: { directory: 'tech-writing-process' },
         },
         {
           label: 'Technology watch',
