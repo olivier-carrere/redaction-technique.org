@@ -86,12 +86,12 @@ The source format can be based on monolithic files or on clusters of modular fil
 Monolithic files (e.g. **MS Word**, **LibreOffice** or **FrameMaker**) centralize all content in a single, easy-to-handle file, but limit content sharing; the risk of inconsistent or duplicate information is then significant.
 
 ![Monolithic technical writing source format](/assets/monolithic.svg)
-**Monolithic technical writing source format** (/assets/monolithic.svg)
+**Monolithic technical writing source format**
 
 Modular file clusters (e.g. **DITA XML**) aggregate the content of multiple files, enabling content blocks to be shared and reused. Such a system is difficult to implement company-wide, but should be the norm for a **technical writing** team.
 
 ![Modular technical writing source format](/assets/grappe.svg)
-**Modular technical writing source format** (/assets/grappe.svg)
+**Modular technical writing source format**
 
 Some word processors can handle modular documents, but they don't do it very well. Conversely, a **DocBook** or **DITA XML** document, for example, can be monolithic, but then loses its flexibility.
 

@@ -62,7 +62,7 @@ I had an unused domain name and enough free disk space and databases on my own h
 
 So I installed an instance of Piwigo, software I already knew (I use it for family photos).
 
-Photo Kevin Harber](/assets/galerie-photo.jpg)
+![Photo Kevin Harber](/assets/galerie-photo.jpg)
 
 I protected access to the gallery initially with a common `.htaccess` file for all users, then by creating personal accounts under the gallery.
 
@@ -261,10 +261,10 @@ On the other hand, once the flyer structure has been created, it's easy to use i
 
 Tracking changes, whether in Overleaf or Git, is an effective way of preventing errors: it's easy to visualize changes in content or form between two versions, to go back to a previous version at any time, to maintain several versions in parallel, etc.
 
-Visualization of background changes under GitHub](/assets/latex-historique-fond-github.png)
-**Viewing background changes in GitHub** [/assets/latex-historique-fond-github.png
+![Visualization of background changes under GitHub](/assets/latex-historique-fond-github.png)
+**Viewing background changes in GitHub**
 
-View form modifications in GitHub](/assets/latex-history-form-github.png)
+![View form modifications in GitHub](/assets/latex-history-form-github.png)
 **View form modifications in GitHub**!
 
 Here's the evolution of an extract from the compiled PDF:
