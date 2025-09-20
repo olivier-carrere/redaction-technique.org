@@ -163,7 +163,7 @@ Or else:
 ```bash
 echo $declaration |
 sed "s#$m \(d'\<.*\>)#\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8#"
-    ```
+```
 
 Or else:
 
@@ -177,7 +177,7 @@ Or else:
 ```bash
 echo $declaration |
 sed "s#$m \(d'\<.*\>)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#"
-    ```
+```
 
 ## A lot of effort...
 
