@@ -87,4 +87,4 @@ This minimizes the risk of errors and the effort involved in updating.
 
 **See also**
 - [Automatically insert data into a DITA XML file](.../insert-automatically-data-into-a-dita-xml-file)
-- Automatically insert SQL data into a reStructuredText file](../inser-automatically-insert-sql-data-into-a-restructuredtext-file)
+- [Automatically insert SQL data into a reStructuredText file](../inser-automatically-insert-sql-data-into-a-restructuredtext-file)

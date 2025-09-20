@@ -105,4 +105,4 @@ If you opt for a <abbr title="Content Management System">CMS</abbr>, it must cle
 Whatever the initial choice, it is possible to change strategy at any time, without jeopardizing the existing system. DITA XML architecture is not tied to any particular repository. So there's no reason why you can't start managing your projects without <abbr title="Content Management System">CMS</abbr>, and then switch to a DITA XML solution if the benefits of doing so become apparent.
 
 **See also**
-- Git: from file to content](../../tech-writing-process/reference/git-from-file-to-content)
+- [Git: from file to content](../../tech-writing-process/reference/git-from-file-to-content)
