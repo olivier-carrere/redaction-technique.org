@@ -23,13 +23,13 @@ Creating a translation of a documentation consists in forking, or branching, the
 
 In theory, the branch solution allows you to perform cherry-picking and easily apply changes affecting only the project's XML code to all target languages.
 
-For example, a change to
+For example, a change from
 
 ```xml
 <image href="filter.png" placement="break"/>
 ```
 
-at
+to
 
 ``` xml
 <image href="filter.png" placement="break" scalefit="yes"/>
