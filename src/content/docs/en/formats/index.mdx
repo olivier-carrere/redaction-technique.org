@@ -1,42 +1,20 @@
 ---
-title: "Format structuré DITA XML"
-description: "Diminuer les coûts et délais de production, et améliorer la qualité en réduisant le volume source et en mieux gérant le contenu."
+title: "Structured DITA XML format"
+description: "Reduce production costs and lead times, and improve quality by reducing source volume and better managing content."
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
-import { LinkCard } from '@astrojs/starlight/components';
+Reducing production and translation costs, shortening time to market, and improving documentation quality. These are the challenges facing **technical writers** today. One of the best ways to achieve this is to reduce the source volume of documentation and better manage enterprise content.
 
+![Technical documentation formats: degrees of structuring](/assets/degre-structuration.svg)
+**Technical documentation formats: degrees of structuring**
 
+The information that **technical writers** provide to the public *must* be redundant: the company must present each of its audiences with all the information they need, in the medium that is appropriate for them. To take the simplest example, each information medium must include the company's contact details. But up to 50% of the information disseminated by the company is repeated.
 
-Diminuer les coûts de production et de traduction, réduire les délais de mise sur le marché (ou *time to market*) et améliorer la qualité de la documentation. Voilà les défis que doit relever aujourd'hui le **rédacteur technique**. L'un des meilleurs moyens d'y parvenir consiste à réduire le volume source de la documentation et à mieux gérer le contenu d'entreprise.
+On the other hand, internal information redundancy generates additional costs, lengthens production cycles, and leads to a decrease in the consistency, and therefore the quality, of the content. It is therefore essential to reduce and better share source content and decrease its volume. The **technical writer** must divide the information into unique, standardized, and generic building blocks so that it can be assembled on demand. They must therefore use modules that are structured in a consistent manner and can be easily manipulated by applications.
 
-![Formats de documentation technique : degrés de structuration](/assets/degre-structuration.svg)
-**Formats de documentation technique : degrés de structuration**
+![Documentation sources must be less voluminous than deliverables.](/assets/non-redundancy.svg)
+**Documentation sources must be less voluminous than deliverables.**
 
-L'information que le **rédacteur technique** fournit au public *doit* être redondante : l'entreprise doit présenter à chacun de ses publics toute l'information dont il a besoin, sur le support qui lui est adapté. Pour prendre l'exemple le plus simple, chaque support d'information doit mentionner les coordonnées de la société. Mais jusqu'à 50 % de l'information disséminée par l'entreprise est répétée.
+**DITA XML** is a structured XML architecture for creating modular documents and reusing content. Using a common base of atomic **DITA XML** information modules, **technical writers** can provide all the information each user needs in real time, on any type of media, from e-learning to PDF or paper documents, to websites.
 
-En revanche, la redondance de l'information en interne engendre des coûts supplémentaires, allonge les cycles de production et entraîne une baisse de l'homogénéité, et donc de la qualité, du contenu. Il est donc primordial de diminuer et de mieux partager le contenu source et d'en diminuer le volume. Le **rédacteur technique** doit diviser l'information en briques autonomes uniques, standardisées et génériques, pour pouvoir l'assembler à la demande. Il doit donc utiliser des modules structurés de manière homogène qui peuvent être facilement manipulés par des applications.
-
-![Les sources de la documentation doivent être moins volumineuses que les livrables.](/assets/non-redondance.svg)
-**Les sources de la documentation doivent être moins volumineuses que les livrables.**
-
-**DITA XML** est une architecture XML de rédaction structurée destinée à la création de documents modulaires et à la réutilisation du contenu. À partir d'une base commune de modules d'information atomiques **DITA XML**, le **rédacteur technique** peut fournir en temps réel toute l'information dont chaque utilisateur a besoin, sur tout type de média, du support d'e-learning au document PDF ou papier, en passant par le site Web.
-
-**DITA XML** applique le principe de non-redondance des informations propre aux bases de données normalisées. Cette architecture transpose à la documentation technique la révolution introduite dans l'industrie par la standardisation : si l'on peut construire des automobiles de modèles différents à partir d'un ensemble de pièces identiques, de même, le **rédacteur technique** peut publier des documents différents à partir d'un ensemble de briques d'information standardisées.
-
-
-<CardGrid stagger>
-  <LinkCard title="Cas concrets d'utilisation de DITA XML" href="cas-concrets-utilisation-de-dita-xml" description="L'utilisation quotidienne du format de rédaction structurée DITA XML sur des projets multilingues en tant que rédacteur technique m'a amené à développer certaines solutions et astuces que je vous livre ici." />
-  <LinkCard title="Formats structurés et non structurés" href="formats-structures-et-non-structures" description="Les informations contenues dans un document technique peuvent être catégorisées selon leur sens." />
-  <LinkCard title="Une architecture documentaire trop complexe ?" href="une-architecture-documentaire-trop-complexe" description="DITA XML permet des gains de productivité en réduisant le volume source que le rédacteur technique crée, traduit et maintient, au prix d'une plus grande complexité." />
-  <LinkCard title="Du document à la base documentaire modulaire" href="du-document-a-la-base-documentaire-modulaire" description="Le format de rédaction structurée DITA XML propose de passer du modèle du livre à celui de la base documentaire modulaire." />
-  <LinkCard title="Cas concret : documentation de NuFirewall" href="cas-concret-documentation-de-nufirewall" description="La documentation de NuFirewall, qui a été perçue par la presse comme un point fort du produit, a été réalisée sous DITA XML." />
-</CardGrid>
-
-<CardGrid stagger>
-  <LinkCard title="Cas concrets d'utilisation de DITA XML" href="cas-concrets-utilisation-de-dita-xml" description="L'utilisation quotidienne du format de rédaction structurée DITA XML sur des projets multilingues en tant que rédacteur technique m'a amené à développer certaines solutions et astuces que je vous livre ici." />
-  <LinkCard title="Formats structurés et non structurés" href="formats-structures-et-non-structures" description="Les informations contenues dans un document technique peuvent être catégorisées selon leur sens." />
-  <LinkCard title="Une architecture documentaire trop complexe ?" href="une-architecture-documentaire-trop-complexe" description="DITA XML permet des gains de productivité en réduisant le volume source que le rédacteur technique crée, traduit et maintient, au prix d'une plus grande complexité." />
-  <LinkCard title="Du document à la base documentaire modulaire" href="du-document-a-la-base-documentaire-modulaire" description="Le format de rédaction structurée DITA XML propose de passer du modèle du livre à celui de la base documentaire modulaire." />
-  <LinkCard title="Cas concret : documentation de NuFirewall" href="cas-concret-documentation-de-nufirewall" description="La documentation de NuFirewall, qui a été perçue par la presse comme un point fort du produit, a été réalisée sous DITA XML." />
-</CardGrid>
+**DITA XML** applies the principle of non-redundancy of information specific to standardized databases. This architecture brings the revolution introduced in industry by standardization to technical documentation: just as different car models can be built from a set of identical parts, **technical writers** can publish different documents from a set of standardized information building blocks.
