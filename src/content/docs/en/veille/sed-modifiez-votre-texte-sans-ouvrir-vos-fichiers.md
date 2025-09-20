@@ -126,57 +126,57 @@ MONSIEUR JOURDAIN:
 
 I'd like to show him on the standard output:
 
-    ```bash
-    $ Belle marquise, your beautiful eyes make me die of love.
-    ```
+```bash
+$ Belle marquise, your beautiful eyes make me die of love.
+```
 
-    But I wish it were put in a gallant way, that it were turned nicely.
+But I wish it were put in a gallant way, that it were turned nicely.
 
 PHILOSOPHY MASTER:
 
 : They can be put first as you said:
 
-    ```bash
-    $ echo "Belle marquise, your beautiful \\
-    eyes make me die of love."
+```bash
+$ echo "Belle marquise, your beautiful \\
+eyes make me die of love."
+```
+
+Or :
+
+```bash
+$ export declaration="Beautiful marquise, your \
+beautiful eyes make me die of love."
+$ echo $declaration
+```
+
+Or :
+
+```bash
+$ export w="\(\<.*\>)"
+$ export m="$w $w, $w $w $w $w $w $w"
+$ echo $declaration |
+sed "s#$m \(d'\<.*\>)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#"
+```
+
+Or else:
+
+```bash
+echo $declaration |
+sed "s#$m \(d'\<.*\>)#\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8#"
     ```
 
-    Or :
+Or else:
 
-    ```bash
-    $ export declaration="Beautiful marquise, your \
-    beautiful eyes make me die of love."
-    $ echo $declaration
-    ```
+```bash
+echo $declaration |
+sed "s#$m \(d'\<.*\>)#\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#"
+```
 
-    Or :
+Or else:
 
-    ```bash
-    $ export w="\(\<.*\>)"
-    $ export m="$w $w, $w $w $w $w $w $w"
-    $ echo $declaration |
-    sed "s#$m \(d'\<.*\>)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#"
-    ```
-
-    Or else:
-
-    ```bash
-    echo $declaration |
-    sed "s#$m \(d'\<.*\>)#\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8#"
-    ```
-
-    Or else:
-
-    ```bash
-    echo $declaration |
-    sed "s#$m \(d'\<.*\>)#\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#"
-    ```
-
-    Or else:
-
-    ```bash
-    echo $declaration |
-    sed "s#$m \(d'\<.*\>)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#"
+```bash
+echo $declaration |
+sed "s#$m \(d'\<.*\>)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#"
     ```
 
 ## A lot of effort...
