@@ -37,6 +37,13 @@ export default defineConfig({
           },
           autogenerate: { directory: 'veille' },
         },
+        {
+          label: 'Structured DITA XML format',
+          translations: {
+            fr: 'Format structuré DITA XML',
+          },
+          autogenerate: { directory: 'formats' },
+        },
       ],
     }),
     vercel({
