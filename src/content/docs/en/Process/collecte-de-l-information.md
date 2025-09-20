@@ -3,6 +3,8 @@ title: "Gathering information"
 description: "Technical writers gather information from various sources, both internal and external to the company."
 ---
 
+<a id="information-gathering"></a>
+
 The **technical writer** collects information from various sources, both internal and external to the company.
 
 Once the technical writing project has been clearly defined, the **technical editor** gathers all available information:
