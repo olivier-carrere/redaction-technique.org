@@ -52,8 +52,8 @@ Some companies have existing content in DocBook format. Often managed by the com
 
 It's easy to generate **DocBook** from **DITA XML**. <abbr title="DITA Open Toolkit">DITA-OT</abbr> {.interpreted-text role="abbr"} offers this target format by default, just like PDF or HTML. The reverse operation cannot be fully automated. Why not?
 
-A non-reversible process](/assets/entropy.svg)
-**A non-reversible process
+![A non-reversible process](/assets/entropy.svg)
+**A non-reversible process**
 
 It's not possible to automatically migrate data from information-poor to information-rich formats.
 
@@ -69,8 +69,8 @@ If your content were a photo, we could make the following analogy:
 
 Switching from RAW to TIFF and from TIFF to JPEG is destructive and cannot be reversed.
 
-A non-reversible process](/assets/entropy-dita-docbook.svg)
-**A non-reversible process
+![A non-reversible process](/assets/entropy-dita-docbook.svg)
+**A non-reversible process**
 
 PDF is semantically poorer than **DocBook**, itself poorer than **DITA XML**.
 
@@ -86,8 +86,8 @@ Migrating from **FrameMaker** to **DITA XML** is not like saving a **MS Word** d
 
 To use a metaphor, if you set yourself the goal of converting a swamp into the parterre of the Château de Versailles, you'd have to go through the English garden stage - a place that may not be strictly architectural, but that's very pleasant to live in. Good news: if the **technical editor** has consistently used a limited set of styles and rationally organized his **FrameMaker** content, he's certainly already very close to this stage.
 
-Migration from FrameMaker to DITA XML](/assets/framemaker-to-dita-migration.svg)
-**Migration from FrameMaker to DITA XML**](/assets/framemaker-to-dita-migration.svg)
+![Migration from FrameMaker to DITA XML](/assets/framemaker-to-dita-migration.svg)
+**Migration from FrameMaker to DITA XML**
 
 By the way, if, for any reason, your migration project were to stop there, the technical writers, the company and the users would already have gained a great deal, respectively in :
 
@@ -105,8 +105,8 @@ However, a significant amount of restructuring of the **FrameMaker** document mu
 - elimination of *overrides* (text properties applied manually and overwriting styles; this kind of heresy is, if not impossible, at least very limited in a structured format),
 - harmonization and simplification of **FrameMaker** styles to limit them and match them to the **DITA XML** tags that will be used (for example, a *note_important* style to the <note type="important" tag>; it is therefore necessary to analyze the existing content beforehand and decide which set of tags will be used from among the hundreds proposed by **DITA XML**: it is strongly inadvisable to use them all).
 
-Restructuring FrameMaker content and setting up the DITA XML chain](/assets/framemaker-restructure.svg)
-**FrameMaker content restructuring and DITA XML string implementation** (/assets/framemaker-restructure.svg)
+![Restructuring FrameMaker content and setting up the DITA XML chain](/assets/framemaker-restructure.svg)
+**FrameMaker content restructuring and DITA XML string implementation**
 
 This harmonization work can be carried out in parallel with the updating and publication of the **FrameMaker** document. The quality of this document will be all the better for it. At the same time as reorganizing your content, you can implement the complete **DITA XML** creation, management and publication chain on a sample of your content:
 
@@ -126,7 +126,7 @@ Once the FrameMaker files are ready for migration, and the **DITA XML** chain ha
 You should now be able to archive the **FrameMaker** files, and then switch over completely to **DITA XML**.
 
 ![Apply conversion table from FrameMaker to DITA XML](/assets/dita-migration.svg)
-**Application of a conversion table from FrameMaker to DITA XML**.
+**Application of a conversion table from FrameMaker to DITA XML**
 
 Of course, you'll need to apply this process to a small set of documents, one that is not, if possible, of critical importance. After this initial success, you can apply the process to other document sets.
 

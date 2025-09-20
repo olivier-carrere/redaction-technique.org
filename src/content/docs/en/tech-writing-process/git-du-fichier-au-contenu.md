@@ -119,7 +119,7 @@ The *rebase* command is potentially destructive; be sure to back up your workspa
 
 You can then rewrite history to offer your collaborators a *commit* for each completed task in its entirety, as shown in the following diagram:
 
-Git history](/assets/git-rebase-commits-2.svg)
+![Git history](/assets/git-rebase-commits-2.svg)
 **Git history**
 
 The *commits* were first grouped by type on Git's *time arrow*, then merged.

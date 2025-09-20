@@ -17,7 +17,7 @@ Once the technical writing project has been clearly defined, the **technical edi
 - competitor analysis,
 - reading the trade press.
 
-Information gathering](/assets/collecte.svg)
+![Information gathering](/assets/collecte.svg)
 **Information gathering**
 
 Information must be cross-checked to minimize the risk of transmitting incorrect or out-of-date information. The **technical editor** must carry out genuine investigative work. By putting himself in the user's shoes, he checks each piece of information and sorts out the relevant data from that which is merely noise disrupting the message.

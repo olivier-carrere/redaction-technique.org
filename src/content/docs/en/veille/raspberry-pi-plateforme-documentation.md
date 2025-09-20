@@ -150,9 +150,9 @@ The aims of this post are to :
 
    O surprise, you're looking at a <abbr title="Graphical User Interface">GUI</abbr>! It's so beautiful, we're going to take a photo:
 
-   ![](/assets/historique-git-redaction-technique.png)
+   ![An atomic commit spanning a good fifteen files](/assets/historique-git-redaction-technique.png)
 
-   An atomic commit spanning a good fifteen files
+   **An atomic commit spanning a good fifteen files**
 
 :::note
 - Your changes are purely local and are not applied to the remote GitHub repository.

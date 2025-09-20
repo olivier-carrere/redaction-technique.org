@@ -10,7 +10,7 @@ There is no magic formula: delivering information in several languages requires 
 If the documentation is based on a set of modules, translation can be carried out in parallel with writing, thus reducing delivery times.
 
 ![Parallel editing and translation](/assets/parallel-translation.svg)
-**Parallelization of copywriting and translation** (/assets/parallelization-translation.svg)
+**Parallelization of copywriting and translation**
 
 With regard to the source file repository, is it better to place the language directories upstream or downstream of the document project directories? In other words, is it better to adopt the following structure :
 

@@ -18,8 +18,8 @@ On text files, not binary ones, a version control system offers superior functio
 - files are not locked by the team members who opened them.
 - very fine-grained restoration capabilities, both in terms of time (since the file was last deposited on the repository) and in terms of workload.
 
-![The versioning system retains the history of modifications](/assets/versioning-system.svg)
-**The versioning system keeps a history of changes.
+![The version control system retains the history of modifications](/assets/versioning-system.svg)
+**The version control system keeps a history of changes.**
 
 Graphical user interfaces allow these tools, originally designed for command-line use, to be used directly under file managers. However, the paradigm on which they are based is sometimes difficult to grasp for less technophile audiences.
 

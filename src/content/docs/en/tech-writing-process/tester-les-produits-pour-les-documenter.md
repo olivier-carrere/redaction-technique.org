@@ -8,8 +8,8 @@ The **technical editor** can't provide useful documentation for the company's cu
 
 A Chinese tale recounts how a group of blind men were confronted by an elephant. None of them, and for good reason, had a global perception of the animal, so each had a different image of it: the one who held a leg took it for a tree, the one who embraced the trunk mistook it for a snake, the one who grabbed a tusk identified it with a spear, and the one who clutched one of its ears thought it was a fan.
 
-Tale of the blind men and the elephant](/assets/hanabusa-itcho.jpg)
-**Tale of the Blind Men and the Elephant** (in French)
+![Tale of the blind men and the elephant](/assets/hanabusa-itcho.jpg)
+**Tale of the Blind Men and the Elephant**
 
 The **technical writer** who asks the various players in the company what the product he's to create documentation for is for, and how it works, finds himself like the one who asks the blind what an elephant looks like: for R&D, it's elegantly written code; for marketing, an offer to position against the competition in its market; for technical support, an executable whose bugs need to be corrected, and so on.
 

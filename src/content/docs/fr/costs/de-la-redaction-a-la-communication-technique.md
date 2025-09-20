@@ -9,7 +9,7 @@ Le but de la **communication technique** est de transformer les prospects en cli
 La **communication technique** est souvent réduite à la **rédaction technique**. La rédaction technique est destinée à fournir la documentation des produits, et intervient en aval de la vente. La communication technique intervient dès l'amont du processus de vente et accompagne le produit tout au long de son cycle de vie. Destinée autant au grand public, aux journalistes et aux prospects qu'aux clients, elle dépasse et englobe la rédaction technique, destinée uniquement aux utilisateurs.
 
 ![Supports de rédaction marketing et technique](/assets/marketing-technique.svg)
-*Supports de rédaction marketing et technique*
+**Supports de rédaction marketing et technique**
 
 La communication technique a pour but de montrer l'adéquation d'un produit aux besoins de sa cible. Elle recourt pour cela à différents supports, plus ou moins adaptés au niveau d'expertise de son public et à son statut par rapport à l'entreprise (grand public, journalistes, prospects, clients...). Le **rédacteur technique** doit adapter son message à chaque public. Utilisant toutes les ressources de la communication (rédaction, illustrations, films, animations...) il prend constamment en compte la dimension marketing. Pour augmenter les ventes, tout support de communication doit être un outil marketing.
 

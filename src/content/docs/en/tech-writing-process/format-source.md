@@ -34,8 +34,8 @@ When the layout is less important than the content, or when it needs to be homog
 
 In a **FrameMaker** file, the separation of content and form is high, but not total: content and layout are placed in the same file. **FrameMaker** applies a uniform page layout to an entire file, but allows layout elements to be added manually. The same layout can be duplicated for the entire document, or a different layout can be used for each file making up the document.
 
-Source formats: degree of modularity and format](/assets/modular-text-monolithic-binary.svg)
-**Source formats: degree of modularity and format** (/assets/modular-text-monolithic-binary.svg)
+![Source formats: degree of modularity and format](/assets/modular-text-monolithic-binary.svg)
+**Source formats: degree of modularity and format**
 
 Source formats can be classified according to their degree of modularity and file format.
 

@@ -8,7 +8,7 @@ The book model is still predominant for creating and managing information. But e
 The DITA XML structured authoring format offers a way of moving from the book model to that of the modular document base. Enterprise content is based on single bricks, which can be dynamically assembled on demand to produce documents in different target formats.
 
 ![Modular documentation offers unrivalled flexibility](/assets/documentation-modulaire.svg)
-**Modular documentation offers unrivalled flexibility.
+**Modular documentation offers unrivalled flexibility**
 
 The volume of source content is minimized, reducing the cost of creating, updating and translating corporate content. What's more, the technical editor can manage the writing, validation and translation processes module by module. Workflows can thus be parallelized, reducing time-to-market.
 
@@ -72,7 +72,7 @@ Single-sourcing* is a subject that has long divided technical writers: should di
 Productivity constraints and cost-cutting have led to a debate in favor of *single-sourcing*. The qualitative gain, debatable, does not offset the cost of creating, maintaining and translating a different source version for each target version.
 
 ![One set of information, multiple output formats](/assets/single-sourcing.svg)
-**One set of information, multiple output formats**.
+**One set of information, multiple output formats**
 
 If the **technical editor** practices *single-sourcing*, he must nevertheless select at the start of the project the paradigm on which he will base his work: the book or online help. For a long time, the tools offered were based either on a book-like document (**MS Word**, or **FrameMaker**, essentially) which could be exported in online help format, or on a Windows help source file (RTF), to generate a PDF. A significant loss of navigation information (indexes, cross-references, links, etc.) often occurred during export.
 
