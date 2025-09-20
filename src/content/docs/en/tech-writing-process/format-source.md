@@ -71,11 +71,11 @@ This last aspect determines how the format handles single-sourcing:
 
 The available formats can therefore be classified according to the following table:
 
-| Structured format | Manual layout option | Manual layout option
-| ---------------- | ------------------------------------ |
-| FrameMaker | No |
-| DocBook | Yes |
-| DITA XML | Yes |
+| Structured format | Manual layout option |
+|-------------------|----------------------|
+| FrameMaker        | No                   |
+| DocBook           | Yes                  |
+| DITA XML          | Yes                  |
 
 **FrameMaker** and **DocBook** are not fully modular, as the smallest elements of information that can be manipulated are not generic: they contain information such as table of contents structure or cross-references that are only valid in a limited number of contexts.
 
