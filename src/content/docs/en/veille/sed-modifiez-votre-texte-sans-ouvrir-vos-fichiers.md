@@ -10,20 +10,20 @@ Take, for example, the dialogue between M. Jourdain and his philosophy master in
 
 *MONSIEUR JOURDAIN :*
 
-:   *[...] So I'd like to put in a bill to her: "Belle marquise, vos beaux yeux me font mourir d'amour"; but I'd like it to be put in a gallant way, to be turned around nicely.
+:   *[...] Je voudrais donc lui mettre dans un billet : « Belle marquise, vos beaux yeux me font mourir d'amour » ; mais je voudrais que cela fût mis d'une manière galante, que cela fût tourné gentiment.*
 
 [...]
 
-*PHILOSOPHY TEACHER:*
+*MAÎTRE DE PHILOSOPHIE :*
 
-:   *We can put them first as you said: Belle marquise, vos beaux yeux me font mourir d'amour. Or: D'amour mourir me font, belle marquise, vos beaux yeux. Or: Vos yeux beaux d'amour me font, belle marquise, mourir. Or: Mourir vos beaux yeux, belle marquise, d'amour me font. Or: Me font vos yeux beaux mourir, belle marquise, d'amour.*
+:   *On les peut mettre premièrement comme vous avez dit : Belle marquise, vos beaux yeux me font mourir d'amour. Ou bien : D'amour mourir me font, belle marquise, vos beaux yeux. Ou bien : Vos yeux beaux d'amour me font, belle marquise, mourir. Ou bien : Mourir vos beaux yeux, belle marquise, d'amour me font. Ou bien : Me font vos yeux beaux mourir, belle marquise, d'amour.*
 
 Let's start by displaying the original sentence in a terminal:
 
 ```bash
-echo "Belle marquise, vos beaux \
-eyes make me die of love."
-Beautiful marquise, your beautiful eyes make me die of love.
+$ echo "Belle marquise, vos beaux \\
+yeux me font mourir d'amour."
+Belle marquise, vos beaux yeux me font mourir d'amour.
 ```
 
 Now we need to swap the words in the sentence to create a new one. For a simple transposition, you might find it easier to use awk. awk doesn't deal with lines, but with the fields of a record (of a line), delimited by spaces by default. In other words, awk treats text like a database. It can easily display the whole line, or just one or more fields, in any desired order. Fields are indicated in the form $n, where n indicates the position of the field in the line, starting from the left. So $1 indicates the first field, $2 the last, etc. $0 corresponds to the whole line.
@@ -31,10 +31,10 @@ Now we need to swap the words in the sentence to create a new one. For a simple 
 So we're going to give Mr. Jourdain's declaration of love as input to a one-line awk program, thanks to the pipeline redirection symbol (|).
 
 ```bash
-echo "Belle marquise, your beautiful eyes
-eyes make me die of love." |
-awk '{print $9" "$8" "$6" "$7" "$1" "$2" "$3" "$4" "$5}'
-d'amour. mourir me Belle marquise, vos beaux yeux
+$ echo "Belle marquise, vos beaux \\
+yeux me font mourir d'amour." |
+awk  '{print $9" "$8" "$6" "$7" "$1" "$2" "$3" "$4" "$5}'
+d'amour. mourir me font Belle marquise, vos beaux yeux
 ```
 
 The output of the echo command is not displayed. What is displayed is the output of the awk program, of which the output of the echo command, Mr Jourdain's declaration of love, was the input.
@@ -50,9 +50,9 @@ $ ls *.rst
 sed also supports back references, which display the value corresponding to a previously found literal or rational expression at the desired location. Fortunately for us, Mr Jourdain's declaration of love contains exactly nine words, which is the maximum number of back references possible.
 
 ```bash
-$ echo "Belle marquise, vos beaux \
-eyes make me die of love." |
-sed "s#\(.*\) \(.*\), \(.*\) \(.*\) \(.*\) \(.*\) \\\
+$ echo "Belle marquise, vos beaux \\
+yeux me font mourir d'amour." |
+sed "s#\(.*\) \(.*\), \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \\
 \(.*\)\(d'.*\)#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
 d'amour. mourir me font, Belle marquise, vos beaux yeux
 ```
@@ -63,8 +63,8 @@ We've run into the same problem: the regular expression .* doesn't correspond to
 $ export \
 p="\(\<.*\>\) \(\<.*\>\), \(\<.*\>\) \(\<.*\>\) \\
 \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(d'\<.*\>\)"
-$ echo "Belle marquise, your beautiful
-eyes make me die of love." |
+$ echo "Belle marquise, vos beaux \\
+yeux me font mourir d'amour." |
 sed "s#$p#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
 d'amour mourir me font, Belle marquise, vos beaux yeux.
 ```
@@ -73,10 +73,10 @@ We could also use the [[:alpha:]]* form, which is more legible but less concise:
 
 ```bash
 $ export a="[[:alpha:]]"
-$ export n="\($a*\) \($a*\), \($a*\) \($a*\) \($a*\) \($a*\) \".
-\($a*\) \($a*\) \($a*\)"
-$ echo "Belle marquise, your beautiful
-eyes make me die of love." |
+$ export n="\($a*\) \($a*\), \($a*\) \($a*\) \($a*\) \\
+\($a*\) \($a*\) \($a*\) \(d'$a*\)"
+$ echo "Belle marquise, vos beaux \\
+yeux me font mourir d'amour." |
 sed "s#$n#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
 d'amour mourir me font, Belle marquise, vos beaux yeux.
 ```
@@ -90,18 +90,18 @@ $ export m="$w $w, $w $w $w $w $w $w"
 
 ```bash
 $ echo "Belle marquise, vos beaux \\
-eyes make me die of love." |
-sed "s#$m \(d'\<.*\>)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#"
+yeux me font mourir d'amour." |
+sed "s#$m \(d'\<.*\>\)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#"
 D'amour mourir me font, belle marquise, vos beaux yeux.
 ```
 
 We can now easily redistribute the back references to get all the variations of the philosophy master:
 
 ```bash
-$ echo "Belle marquise, vos beaux \
-eyes make me die of love." |
-sed "s#$m \u\3 \5 \4 \6 \7, \l\1 \2, \8#"
-Your beautiful eyes of love make me, beautiful marquise, die.
+$ echo "Belle marquise, vos beaux \\
+yeux me font mourir d'amour." |
+sed "s#$m \(d'\<.*\>\)#\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8#"
+Vos yeux beaux d'amour me font, belle marquise, mourir.
 ```
 
 ```bash
@@ -112,9 +112,9 @@ Mourir vos beaux yeux, belle marquise, d'amour me font.
 ```
 
 ```bash
-$ echo "Belle marquise, vos beaux
-eyes make me die of love." |
-sed "s#$m \(d'\<.*\>)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#"
+$ echo "Belle marquise, vos beaux \\
+yeux me font mourir d'amour." |
+sed "s#$m \(d'\<.*\>\)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#"
 Me font vos yeux beaux mourir, belle marquise, d'amour.
 ```
 
@@ -127,7 +127,7 @@ MONSIEUR JOURDAIN:
 I'd like to show him on the standard output:
 
 ```bash
-$ Belle marquise, your beautiful eyes make me die of love.
+$ Belle marquise, vos beaux yeux me font mourir d'amour.
 ```
 
 But I wish it were put in a gallant way, that it were turned nicely.
@@ -137,25 +137,25 @@ PHILOSOPHY MASTER:
 : They can be put first as you said:
 
 ```bash
-$ echo "Belle marquise, your beautiful \\
-eyes make me die of love."
+$ echo "Belle marquise, vos beaux \\
+yeux me font mourir d'amour."
 ```
 
 Or :
 
 ```bash
-$ export declaration="Beautiful marquise, your \
-beautiful eyes make me die of love."
+$ export declaration="Belle marquise, vos \\
+beaux yeux me font mourir d'amour."
 $ echo $declaration
 ```
 
 Or :
 
 ```bash
-$ export w="\(\<.*\>)"
+$ export w="\(\<.*\>\)"
 $ export m="$w $w, $w $w $w $w $w $w"
 $ echo $declaration |
-sed "s#$m \(d'\<.*\>)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#"
+sed "s#$m \(d'\<.*\>\)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#"
 ```
 
 Or else:
@@ -190,14 +190,14 @@ This is unlikely to be the case here, but it is commonplace in technical documen
 To carry out our tests on a sample, let's place the three sentences above in a :
 
 ```bash
-echo "Dear doctor, these great misfortunes
-make you weep with bitterness." > variations.txt
+$ echo "Cher docteur, ces grands malheurs \\
+vous font pleurer d'amertume." > variations.txt
 
 $ echo "Petit garçon, cette bonne glace te \\
-makes you salivate with envy." >> variations.txt
+fait saliver d'envie." >> variations.txt
 
 $ echo "Vaste océan, la forte houle te \\
-makes you sway with intoxication." >> variations.txt
+fait tanguer d'ivresse." >> variations.txt
 ```
 
 Let's place the various sed commands in a different script each:
@@ -218,18 +218,18 @@ $ for (( i=1; i<5; i++ )); do
      sed -f moliere$i.sed ;
     done < variations.txt
    done
-From bitterness weep you make, dear doctor, these great misfortunes.
-D'envie saliver te fais, petit garçon, cette bonne glace.
+D'amertume pleurer vous font, cher docteur, ces grands malheurs.
+D'envie saliver te fait, petit garçon, cette bonne glace.
 D'ivresse tanguer te fait, vaste océan, la forte houle.
-These great misfortunes of bitterness make you, dear doctor, weep.
-This good ice cream of envy makes you, little boy, salivate.
-The strong swell of drunkenness makes you, vast ocean, pitch.
-Cry these great misfortunes, dear doctor, of bitterness make you.
-Salivate this good ice cream, little boy, of envy make you.
-Pitch the heavy swell, vast ocean, of drunkenness do you.
-Make you these woes great weep, dear doctor, of bitterness.
-Make you salivate, little boy, with envy.
-Make you the strong swell pitch, vast ocean, of drunkenness.
+Ces malheurs grands d'amertume vous font, cher docteur, pleurer.
+Cette glace bonne d'envie te fait, petit garçon, saliver.
+La houle forte d'ivresse te fait, vaste océan, tanguer.
+Pleurer ces grands malheurs, cher docteur, d'amertume vous font.
+Saliver cette bonne glace, petit garçon, d'envie te fait.
+Tanguer la forte houle, vaste océan, d'ivresse te fait.
+Vous font ces malheurs grands pleurer, cher docteur, d'amertume.
+Te fait cette glace bonne saliver, petit garçon, d'envie.
+Te fait la houle forte tanguer, vaste océan, d'ivresse.
 ```
 
 And there it is. In just a few moments, without ever opening a single file, we apply a series of complex operations to an indefinite number of sentences of the same structure. This is not possible with a word processor or any other tool with a graphical interface, or with binary files.
