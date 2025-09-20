@@ -24,9 +24,9 @@ export default defineConfig({
       locales,
       sidebar: [
         {
-          label: 'Resources',
+          label: 'Technical writing: An industrial process',
           translations: {
-            fr: 'Ressources',
+            fr: 'Rédaction technique : un processus industriel',
           },
           autogenerate: { directory: 'Rédaction technique : un processus industriel' },
         },
