@@ -3,7 +3,6 @@ title: "Source Format"
 starlight:
   lang: en
   hideFromSidebar: true  # prevents auto-insertion in English sidebar
-slug: "/en/rédaction-technique--un-processusindustriel/format-source/"
 ---
 
 The content of a **technical writing** project is created in a source format, different from the format of deliverables, the target format. To use a commonly used software analogy, the source format is the recipe, and the target format is the finished dish. In photography, the source format is the RAW file produced by the camera, which professional photographers prefer to edit, while the target format is JPEG.
