@@ -27,11 +27,11 @@ The aims of this post are to:
 3. Select the `Location` tab.
 4. Click on `Set Locale`, select the following options, then click `OK`:
 
-    | Option | Value |
-    |---------------|-------------|
-    | Language | fr (French) |
-    | Country | <abbr title="France">FR</abbr> |
-    | Character Set | UTF-8 |
+    | Option        | Value                          |
+    |---------------|--------------------------------|
+    | Language      | fr (French)                    |
+    | Country       | <abbr title="France">FR</abbr> |
+    | Character Set | UTF-8                          |
     
     This table shows the default configuration settings for a French-speaking environment:
     - Language:** French
@@ -64,14 +64,14 @@ The aims of this post are to:
 
    By the time I've read five or six episodes of The Amazing Spider-Man, the following software has been installed:
 
-    | Software | Description |
-    |----------------|---------------------------------------------------------------------------------------|
-    | Calibre | Digital Book Manager.
-    | Emacs Integrated Development Environment.
-    | Gitk | Decentralized version control software history browser.
-    | Inkscape Vector drawing software.
-    | Python Sphinx | Documentation generator based on reStructuredText format.
-    | Texlive | Complete LaTeX environment for PDF blog generation.
+    | Software      | Description                                               |
+    |---------------|-----------------------------------------------------------|
+    | Calibre       | Digital Book Manager.                                     |
+    | Emacs         | Integrated Development Environment.                       |
+    | Gitk          | Decentralized version control software history browser.   |
+    | Inkscape      | Vector drawing software.                                  |
+    | Python Sphinx | Documentation generator based on reStructuredText format. |
+    | Texlive       | Complete LaTeX environment for PDF blog generation.       |
 
 3. Free up disk space:
 

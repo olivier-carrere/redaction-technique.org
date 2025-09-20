@@ -10,11 +10,11 @@ Structured formats promote the creation of minimalist, complete and coherent doc
 
 The information contained in a technical document can be categorized according to its meaning. By default, DITA XML offers three basic types:
 
-| Type | Description |
-|------------|-------------------------------------------------------------------------------------------------|
-| concept | Introduction or presentation of a concept.
-| task | Sequential, numbered, step-by-step procedure for performing a task.
-| reference | Reference information on a list of items, such as program options.
+| Type      | Description                                                         |
+|-----------|---------------------------------------------------------------------|
+| concept   | Introduction or presentation of a concept.                          |
+| task      | Sequential, numbered, step-by-step procedure for performing a task. |
+| reference | Reference information on a list of items, such as program options.  |
 
 ![Structured and unstructured formats](/assets/structured.svg)
 **Structured and unstructured formats**
@@ -31,19 +31,19 @@ With structured formats such as DITA XML, on the other hand:
 
 High-level information types such as task are divided into lower-level types, for example:
 
-| Element | Description |
-|-----------|-----------------------------------------------------------|
-| prereq | List of mandatory items required to complete a task. | steps | Series of steps.
-| steps | Series of procedural steps.
-| stepxmp | Example of step completion.
+| Element | Description                                          |
+|---------|------------------------------------------------------|
+| prereq  | List of mandatory items required to complete a task. |
+| steps   | Series of procedural steps.                          |
+| stepxmp | Example of step completion.                          |
 
 Syntax rules prohibit the technical writer from including a step-by-step procedure in a section of any type other than task. This provides the technical writer with a real writing model to help him present information:
 
-| Characteristic | Description |
-|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| A task section, for example, contains only prerequisites, a procedure and a few other specific elements. All conceptual or reference information is placed in separate sections.
-| A task section without a procedure is not a valid DITA XML section and cannot be published. It is even possible to implement a mechanism that automatically checks for the presence of information blocks that are optional according to the DITA XML XSD schema, but which the technical editor deems mandatory, such as the result of a procedure.
-| Consistent | Information of the same type is presented in the same order and with the same layout; identical blocks of information repeated in different places, such as a remark, come from the same source and are therefore strictly identical. |
+| Characteristic | Description                                                                                                                                                                                                                                                                                                                                          |
+|----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Minimalist     | A task section, for example, contains only prerequisites, a procedure and a few other specific elements. All conceptual or reference information is placed in separate sections.                                                                                                                                                                     |
+| Comprehensive  | A task section without a procedure is not a valid DITA XML section and cannot be published. It is even possible to implement a mechanism that automatically checks for the presence of information blocks that are optional according to the DITA XML XSD schema, but which the technical editor deems mandatory, such as the result of a procedure. |
+| Consistent     | Information of the same type is presented in the same order and with the same layout; identical blocks of information repeated in different places, such as a remark, come from the same source and are therefore strictly identical.                                                                                                                |
 
 ## DocBook or DITA XML?
 
@@ -62,10 +62,10 @@ Simply because content in **DITA XML** format contains more information. Switchi
 If your content were a photo, we could make the following analogy:
 
 | Content format | Photo format |
-|-------------------|-----------------|
-| DITA XML | RAW |
-| DocBook | TIFF |
-| PDF | JPEG |
+|----------------|--------------|
+| DITA XML       | RAW          |
+| DocBook        | TIFF         |
+| PDF            | JPEG         |
 
 Switching from RAW to TIFF and from TIFF to JPEG is destructive and cannot be reversed.
 

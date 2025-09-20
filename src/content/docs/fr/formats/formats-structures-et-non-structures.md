@@ -10,11 +10,11 @@ Les formats structurés favorisent la création de documents minimalistes, compl
 
 Les informations contenues dans un document technique peuvent être catégorisées selon leur sens. Par défaut, DITA XML propose trois types de base :
 
-| Type       | Description                                                                                     |
-|------------|-------------------------------------------------------------------------------------------------|
-| concept    | Introduction ou présentation d'un concept.                                                     |
-| task       | Procédure pas à pas, séquentielle et numérotée, destinée à réaliser une tâche.                |
-| reference  | Informations de référence sur une liste d'éléments tels que des options d'un programme.       |
+| Type      | Description                                                                             |
+|-----------|-----------------------------------------------------------------------------------------|
+| concept   | Introduction ou présentation d'un concept.                                              |
+| task      | Procédure pas à pas, séquentielle et numérotée, destinée à réaliser une tâche.          |
+| reference | Informations de référence sur une liste d'éléments tels que des options d'un programme. |
 
 ![Formats structurés et non structurés](/assets/structured.svg)
 **Formats structurés et non structurés**
@@ -31,19 +31,19 @@ Avec des formats structurés tels que DITA XML, en revanche :
 
 Les types d'information de haut niveau tels que task sont divisés en types de plus bas niveau, par exemple :
 
-| Élément   | Description                                               |
-|-----------|-----------------------------------------------------------|
-| prereq    | Liste de points obligatoires préalables à la réalisation d'une tâche. |
-| steps     | Série d'étapes de la procédure.                          |
-| stepxmp   | Exemple de réalisation d'une étape.                      |
+| Élément | Description                                                           |
+|---------|-----------------------------------------------------------------------|
+| prereq  | Liste de points obligatoires préalables à la réalisation d'une tâche. |
+| steps   | Série d'étapes de la procédure.                                       |
+| stepxmp | Exemple de réalisation d'une étape.                                   |
 
 Les règles syntaxiques interdisent au rédacteur technique de faire figurer une procédure pas à pas dans une section d'un autre type que task. Le rédacteur technique dispose donc d'un véritable modèle de rédaction qui l'aide à présenter des informations :
 
-| Caractéristique | Description                                                                                                                                                                                                                                                                                                                                                                 |
-|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Minimalistes    | Selon le principe de design *less is more*, l'utilisateur ne dispose que de l'information dont il a besoin : une section task, par exemple, ne contient que des prérequis, une procédure et quelques autres éléments spécifiques ; toutes les informations conceptuelles ou de référence sont placées dans des sections à part.                                      |
+| Caractéristique | Description                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Minimalistes    | Selon le principe de design *less is more*, l'utilisateur ne dispose que de l'information dont il a besoin : une section task, par exemple, ne contient que des prérequis, une procédure et quelques autres éléments spécifiques ; toutes les informations conceptuelles ou de référence sont placées dans des sections à part.                                                                                                                      |
 | Complètes       | L'utilisateur dispose de toute l'information dont il a besoin ; une section de type task sans procédure n'est pas une section DITA XML valide et ne pourra pas être publiée ; il est même possible de mettre en œuvre un mécanisme vérifiant automatiquement avant publication la présence de blocs d'information facultatifs selon le schéma XSD DITA XML, mais que le rédacteur technique juge obligatoires, tels que le résultat d'une procédure. |
-| Cohérentes      | Les informations de même type sont présentées dans le même ordre et avec la même mise en page ; les blocs d'information identiques répétés à différents endroits, tels qu'une remarque, sont issus d'une seule et même source et sont donc strictement identiques.                                                                                                      |
+| Cohérentes      | Les informations de même type sont présentées dans le même ordre et avec la même mise en page ; les blocs d'information identiques répétés à différents endroits, tels qu'une remarque, sont issus d'une seule et même source et sont donc strictement identiques.                                                                                                                                                                                   |
 
 ## DocBook ou DITA XML ?
 

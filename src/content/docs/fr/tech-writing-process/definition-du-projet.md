@@ -7,12 +7,12 @@ Un projet de **rédaction technique** apporte une valeur ajoutée aux produits e
 
 Communiquer des informations techniques sans savoir à qui ni dans quel but est un effort vain. Avant d'initier un projet de **rédaction technique**, il est indispensable de clairement le définir. Il convient notamment de déterminer :
 
-| Élément              | Description                                                                                                                                         |
-|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| Élément               | Description                                                                                                                                                               |
+|-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Son objectif          | Augmenter la notoriété de l'entreprise, accroître sa couverture médias, amener les prospects à prendre contact avec la société, réduire les coûts de support technique... |
-| Sa cible              | Grand public, journalistes, prospects, clients...                                                                                                   |
-| Sa forme              | Livre blanc, mode d'emploi ou guide de l'utilisateur, brochure et *flyer*, site *web*, magazine d'entreprise, *print* ou *online*...                 |
-| Sa langue             | Suivant votre domaine d'activité, le projet sera décliné en une ou plusieurs langues (principalement l'anglais dans le secteur informatique).        |
-| Son mode de diffusion | Le document final peut être publié sur un site Internet ou Extranet, envoyé sous forme de fichier joint par *mail*, remis en mains propres au format papier, etc. |
+| Sa cible              | Grand public, journalistes, prospects, clients...                                                                                                                         |
+| Sa forme              | Livre blanc, mode d'emploi ou guide de l'utilisateur, brochure et *flyer*, site *web*, magazine d'entreprise, *print* ou *online*...                                      |
+| Sa langue             | Suivant votre domaine d'activité, le projet sera décliné en une ou plusieurs langues (principalement l'anglais dans le secteur informatique).                             |
+| Son mode de diffusion | Le document final peut être publié sur un site Internet ou Extranet, envoyé sous forme de fichier joint par *mail*, remis en mains propres au format papier, etc.         |
 
 L'analyse des résultats du projet donne ensuite de précieux renseignements pour améliorer encore l'impact des projets suivants.

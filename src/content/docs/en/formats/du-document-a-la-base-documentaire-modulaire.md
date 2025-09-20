@@ -22,10 +22,10 @@ If your company provides its customers with technical documentation in MS Word f
 
 With a text format such as DITA XML, the technical writer and the reader have very different media at their disposal:
 
-| Role | Description |
-|-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| The technical writer manipulates source files; he uses tags to construct the document, marking the information elements he creates or reuses. Tags are nested like Russian dolls, organized according to a rigorous syntax. The source file is not in WYSIWYG format: the layout will be applied when the source files are transformed into target files (in other words, when the deliverables are generated). Some graphics software packages, such as XMetal, Oxygen or structured FrameMaker, offer the <abbr title="what you see is what you mean">WYSIWYM</abbr> format, where tags are replaced on screen by a generic layout, different from the document's final appearance. The advantage of a markup language is that you can see exactly what you're doing by manipulating the markup yourself, without delegating interpretation to graphics software.
-| User | Only content is presented to the reader in the target file; text marked with tags in source files has a typographical emphasis, the meaning of which is explained in the Typographical Conventions section of the final document. | User
+| Role             | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Technical writer | The technical writer manipulates source files; he uses tags to construct the document, marking the information elements he creates or reuses. Tags are nested like Russian dolls, organized according to a rigorous syntax. The source file is not in WYSIWYG format: the layout will be applied when the source files are transformed into target files (in other words, when the deliverables are generated). Some graphics software packages, such as XMetal, Oxygen or structured FrameMaker, offer the <abbr title="what you see is what you mean">WYSIWYM</abbr> format, where tags are replaced on screen by a generic layout, different from the document's final appearance. The advantage of a markup language is that you can see exactly what you're doing by manipulating the markup yourself, without delegating interpretation to graphics software. |
+| User             | Only content is presented to the reader in the target file; text marked with tags in source files has a typographical emphasis, the meaning of which is explained in the Typographical Conventions section of the final document.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 
 
 A DITA XML source file is a mixture of text and tags, delimited by the < and > signs. The text itself is encapsulated in a set of opening tags of type <tag> and closing tags of type </tag> according to the <tag>text</tag> scheme. Any text entered outside an opening and closing tag is incorrect and produces an invalid file.
@@ -36,13 +36,13 @@ A DITA XML source file is a mixture of text and tags, delimited by the < and > s
 
 When creating a new document in **FrameMaker**, **DocBook** or word processing format, the **technical editor** is faced with a blank page. Depending on his professional rigor, the information transmitted to the user will oscillate between the following two poles:
 
-| Element / Concept | Description |
-|-------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| The user has quick and easy sequential access to the information he needs.
-| The user has to read an entire section, or even the entire document, to find useful information.
-| concept (DITA XML) | General text, such as an introduction or presentation.
-| task (DITA XML) | Step-by-step procedure for performing a task.
-| reference (DITA XML) | Reference information such as explanation of command parameters.
+| Element / Concept     | Description                                                                                      |
+|-----------------------|--------------------------------------------------------------------------------------------------|
+| Rational organization | The user has quick and easy sequential access to the information he needs.                       |
+| Informative magma     | The user has to read an entire section, or even the entire document, to find useful information. |
+| concept (DITA XML)    | General text, such as an introduction or presentation.                                           |
+| task (DITA XML)       | Step-by-step procedure for performing a task.                                                    |
+| reference (DITA XML)  | Reference information such as explanation of command parameters.                                 |
 
 Each of these high-level categories has its own set of lower-level tags. If the **technical editor** is writing a technical document, chances are that the information he has collected and needs to organize falls into one of these three categories. From the outset, therefore, this division into types of information obliges the **technical writer** to structure the information. The user gains in ease and speed of access to the information, and in the overall usability of the technical documentation.
 
@@ -53,12 +53,12 @@ Information bricks can be assembled on demand in external table of contents stru
 
 The organization of information in **DITA XML** is not fixed. Bricks can be organized in different hierarchical structures, according to changing needs. If the **technical editor** has taken care to build atomic and generic information bricks, he can, like a car manufacturer constantly proposing new models by assembling standardized elements, propose the following documents, for example:
 
-| Document | Content |
-|---------------------------|-----------------------------------------------|
-| Themes systematically organized into concepts and step-by-step procedures | Presentation document
-| Presentation document | Concepts |
-| Quikstart | Step-by-step procedures |
-| Reference manual | Reference information |
+| Document                                                                  | Content                 |
+|---------------------------------------------------------------------------|-------------------------|
+| Themes systematically organized into concepts and step-by-step procedures | Presentation document   |
+| Presentation document                                                     | Concepts                |
+| Quikstart                                                                 | Step-by-step procedures |
+| Reference manual                                                          | Reference information   |
 
 To achieve this, the **technical editor** should take care to place context-specific elements in *ditamap* structures and not in **DITA XML** content files. In particular, cross-references must be indicated in a *reltable* placed in the *ditamap*: if document *A* must refer to document *B* in *ditamap* *1*, it must also be able to be used without modification in *ditamap* *2*, where document *B* is not included.
 

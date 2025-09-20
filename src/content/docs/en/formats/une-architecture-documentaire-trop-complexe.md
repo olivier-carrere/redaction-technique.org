@@ -9,10 +9,10 @@ While **DITA XML** projects are more *complex*, they are less *complex* than pro
 
 The following table presents the different levels of complexity induced by **DITA XML** and the solutions that enable the **technical editor** to master them more easily:
 
-| Complexity | Solution |
-| --- | --- |
-| DITA XML syntax | <abbr title="Integrated Development Environment">IDE</abbr> such as XMetal or nXML |
-| Relationship management between atomic information bricks | <abbr title="Content Management System">CMS</abbr> such as Componize or DocZone |
-| XSLT stylesheet syntax | Graphical stylesheet creation software |
+| Complexity                                                | Solution                                                                           |
+|-----------------------------------------------------------|------------------------------------------------------------------------------------|
+| DITA XML syntax                                           | <abbr title="Integrated Development Environment">IDE</abbr> such as XMetal or nXML |
+| Relationship management between atomic information bricks | <abbr title="Content Management System">CMS</abbr> such as Componize or DocZone    |
+| XSLT stylesheet syntax                                    | Graphical stylesheet creation software                                             |
 
 For a small **technical writing** team, the main stumbling block will be the need to implement the company's graphic charter. Other aspects can be managed without specialized tools, with good communication and a series of best practices.

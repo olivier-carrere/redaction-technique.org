@@ -25,11 +25,11 @@ Graphical user interfaces allow these tools, originally designed for command-lin
 
 Source management systems use the following concepts:
 
-| Element | Description |
-|----------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| Trunk | Main repository holding all versions of files placed over time by the **technical editor** (or more frequently, the developer). |
-| Secondary repository created from the main version of the source code.
-| Tag | A snapshot of the trunk or branch at a given time. Allows you to easily freeze a version, e.g. the published version, and create an archive. |
+| Element | Description                                                                                                                                  |
+|---------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| Trunk   | Main repository holding all versions of files placed over time by the **technical editor** (or more frequently, the developer).              |
+| Branch  | Secondary repository created from the main version of the source code.                                                                       |
+| Tag     | A snapshot of the trunk or branch at a given time. Allows you to easily freeze a version, e.g. the published version, and create an archive. |
 
 If you take the trouble, it's also possible to misuse version management systems and lose data. In practice, however, with the same level of effort and skill, the risk of losing data is much lower if the **technical editor** manipulates text files under a version manager rather than binary files on a shared directory.
 

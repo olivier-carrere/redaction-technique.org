@@ -285,10 +285,10 @@ First of all, it was a question of putting into practice the principles I had pu
 
 I wanted to convey the following messages through my choice of iconography:
 
-| Message | Description |
-|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| I discovered that I hadn't invented anything, and that the concept of "weeding" was familiar to iconographers.
-| A group effort | Participation in graphic production is a group effort, not one of isolated individuals. |
+| Message         | Description                                                                                                    |
+|-----------------|----------------------------------------------------------------------------------------------------------------|
+| A concrete task | I discovered that I hadn't invented anything, and that the concept of "weeding" was familiar to iconographers. |
+| Teamwork        | Participation in graphic production is a group effort, not one of isolated individuals.                        |
 
     After an initial selection of images, each representing a single person, I moved on to group photos.
 
