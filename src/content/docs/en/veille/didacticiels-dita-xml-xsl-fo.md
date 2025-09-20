@@ -1,5 +1,5 @@
 ---
-title: "DITA XML and XSL-FO tutorials" - in French only
+title: "DITA XML and XSL-FO tutorials"
 description: "DITA XML is a structured authoring language that lets you create documents without worrying about their final appearance on different media. XSL-FO is a language that lets you reorganize and filter XML content and apply a layout to it using a style sheet."
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "Create different documents from the same ReST sources (conditional text)".
+title: "Create different documents from the same ReST sources (conditional text)"
 description: "Generate document variants from the same ReST sources with Sphinx conditional text."
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "The Raspberry Pi 3 as a documentation platform".
+title: "The Raspberry Pi 3 as a documentation platform"
 description: "With its modest resources, a Raspberry Pi 3 is all you need to create, manage and generate documentation in PDF, HTML or EPUB format."
 ---
 

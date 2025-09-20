@@ -1,5 +1,5 @@
 ---
-title: "Create different documents from the same sources using Jinja".
+title: "Create different documents from the same sources using Jinja"
 description: "The Python profiling.py script below allows you to profile content in preprocessing using the powerful Jinja template engine."
 ---
 

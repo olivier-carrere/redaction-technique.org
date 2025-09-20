@@ -1,5 +1,5 @@
 ---
-title: "Create different documents from the same sources via Jinja (object method)".
+title: "Create different documents from the same sources via Jinja (object method)"
 description: "Profiling content with Jinja by defining objects (audience, platform, version, etc.) to include or exclude blocks according to their attributes using a Python script profiling.py."
 ---
 

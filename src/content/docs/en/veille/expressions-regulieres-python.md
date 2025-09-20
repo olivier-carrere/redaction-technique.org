@@ -1,5 +1,5 @@
 ---
-title: "Regular expressions in Python
+title: "Regular expressions in Python"
 description: "Python's regular expression library helps you manipulate text, especially if you're not familiar with sed or awk."
 ---
 

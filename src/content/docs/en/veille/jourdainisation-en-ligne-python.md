@@ -1,5 +1,5 @@
 ---
-title: "Jourdainization d'une tirade" online
+title: "Shuffling words"
 description: "Like the philosophy master in Molière's Bourgeois gentilhomme, a Python script can easily switch words in a sentence to say the same thing in a more convoluted way."
 ---
 

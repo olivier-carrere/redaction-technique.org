@@ -1,5 +1,5 @@
 ---
-title: "sed: modify your text without opening your files".
+title: "sed: modify your text without opening your files"
 description: "Unix clones are rarely used to manage technical documentation."
 ---
 

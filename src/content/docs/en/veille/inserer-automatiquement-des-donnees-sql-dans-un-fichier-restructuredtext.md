@@ -1,5 +1,5 @@
 ---
-title: "Automatically insert SQL data into a reStructuredText file".
+title: "Automatically insert SQL data into a reStructuredText file"
 description: "We're going to create a database of products with their versions, then format this information in a reStructuredText file."
 ---
 
