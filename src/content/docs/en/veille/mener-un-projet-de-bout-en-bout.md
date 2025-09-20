@@ -1,6 +1,6 @@
 ---
 title: "Managing a project from start to finish"
-description: "It's quite rare, in a professional context, to be able to manage a project from (almost) A to Z, from conception to realization and communication.
+description: "It's quite rare, in a professional context, to be able to manage a project from (almost) A to Z, from conception to realization and communication."
 ---
 
 It's quite rare, in a professional context, to be able to manage a project from (almost) A to Z, from conception to communication, via realization. In other words, to manage the human and organizational aspects as well as the technical ones, and all the communication: graphic design, copywriting, and even video. This is more often possible in an associative context.
