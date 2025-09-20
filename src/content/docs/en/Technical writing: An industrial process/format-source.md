@@ -2,7 +2,7 @@
 title: "Source Format"
 starlight:
   lang: en
-  hideFromSidebar: false  # prevents auto-insertion in English sidebar
+  hideFromSidebar: true  # prevents auto-insertion in English sidebar
 slug: "/en/rédaction-technique--un-processusindustriel/format-source/"
 ---
 
