@@ -28,7 +28,7 @@ export default defineConfig({
           translations: {
             fr: 'Rédaction technique : un processus industriel',
           },
-          autogenerate: { directory: 'Rédaction technique : un processus industriel' },
+          autogenerate: { directory: 'process' },
         },
       ],
     }),
