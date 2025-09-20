@@ -12,7 +12,7 @@ If the documentation is based on a set of modules, translation can be carried ou
 ![Parallel editing and translation](/assets/parallel-translation.svg)
 **Parallelization of copywriting and translation**
 
-With regard to the source file repository, is it better to place the language directories upstream or downstream of the document project directories? In other words, is it better to adopt the following structure :
+With regard to the source file repository, is it better to place the language directories upstream or downstream of the document project directories? In other words, is it better to adopt the following structure:
 
 - english
   - product 1
@@ -21,7 +21,7 @@ With regard to the source file repository, is it better to place the language di
   - product 1
   - product 2
 
-or the following :
+or the following:
 
 - product 1
   - english

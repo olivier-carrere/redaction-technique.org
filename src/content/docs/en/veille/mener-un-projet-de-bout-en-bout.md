@@ -19,7 +19,7 @@ I was tasked with centralizing the photos and facilitating access for the graphi
 
 One of the goals I set myself was to give users as much autonomy as possible. In particular, I wanted photographers to upload photos themselves rather than sending them to me. As the old saying goes: the fewer the links in a chain, the stronger the chain...
 
-So I :
+So I:
 
 - collected and sorted the photos;
 - set up an online photo gallery;
@@ -46,7 +46,7 @@ I also had to avoid missing any pearls and look for interesting needles in this 
 
 As my main aim was to make photos available for printed media, I made an initial automated sort according to file size: files smaller than 1 MB could be put aside without a hitch.
 
-As the files were spread over a multitude of sub-directories, I used the following command in Bash :
+As the files were spread over a multitude of sub-directories, I used the following command in Bash:
 
 ![](/assets/find-command.svg)
 
@@ -104,7 +104,7 @@ This way, any member of the association can create a Gitlab account and, after r
 
 Under Windows, you can install Git for windows and GitHub Desktop.
 
-To clone the Gitlab repository under a Linux Debian or derivative distribution (including Ubuntu) :
+To clone the Gitlab repository under a Linux Debian or derivative distribution (including Ubuntu):
 
 1.  Request a Gitlab invitation.
 
@@ -114,7 +114,7 @@ To clone the Gitlab repository under a Linux Debian or derivative distribution (
     $ sudo apt install git git-lfs
     ```
 
-3.  Clone the :
+3.  Clone the:
 
     ```bash
     $ git clone https://gitlab.com/depot/communication.git
@@ -122,9 +122,9 @@ To clone the Gitlab repository under a Linux Debian or derivative distribution (
 
     The initial cloning process downloads more than 20 GB and can take several hours.
 
-To update your Gitlab repository :
+To update your Gitlab repository:
 
-1.  Go to the :
+1.  Go to the:
 
     ```bash
     $ cd communication
@@ -139,7 +139,7 @@ To update your Gitlab repository :
 
     This operation should be considerably faster than the initial cloning.
 
-For synchronization between the server and my local copy, I turned to LFTP :
+For synchronization between the server and my local copy, I turned to LFTP:
 
 ```bash
 $ lftp ftp://user:password@ftpaccount -e \
@@ -194,7 +194,7 @@ I used SimpleScreenRecorder for this. A first attempt with my laptop's built-in 
 
 ## Paper support
 
-I created a leaflet explaining :
+I created a leaflet explaining:
 
 - how to connect to the gallery;
 - the different types of users of the tool (with emphasis on the little-known but crucial role of iconographers);

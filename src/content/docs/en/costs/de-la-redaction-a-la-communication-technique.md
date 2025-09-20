@@ -15,7 +15,7 @@ The aim of technical communication is to demonstrate a product's suitability for
 
 But can you be both logical and creative? This is necessary in the fields of musical composition, architecture and computer development. It's also the case for a **technical copywriter**.
 
-This requires :
+This requires:
 
 - a study of the match between the public's needs and the company's resources,
 - good creative and writing skills,
@@ -24,7 +24,7 @@ This requires :
 
 This blog presents a few examples of technical communication media, their marketing value, their suitability for the target audience and how to get the most out of them.
 
-Adding value to content means :
+Adding value to content means:
 
 - producing quality content adapted to your target audience,
 - preserving existing content in its various versions,

@@ -21,7 +21,7 @@ The information contained in a technical document can be categorized according t
 
 In an unstructured format such as FrameMaker's traditional format, the technical writer is under no obligation to organize the information according to its meaning. If rigorous editing rules are not scrupulously followed, the information provided to the user is likely to be unclear and difficult to navigate quickly.
 
-With structured formats such as DITA XML, on the other hand :
+With structured formats such as DITA XML, on the other hand:
 
 - the technical writer concentrates on content,
 - information is presented to the user in a coherent, predictable organization,
@@ -29,7 +29,7 @@ With structured formats such as DITA XML, on the other hand :
 - information can be easily reorganized as required,
 - the usability of the information support provided is optimal.
 
-High-level information types such as task are divided into lower-level types, for example :
+High-level information types such as task are divided into lower-level types, for example:
 
 | Element | Description |
 |-----------|-----------------------------------------------------------|
@@ -89,7 +89,7 @@ To use a metaphor, if you set yourself the goal of converting a swamp into the p
 ![Migration from FrameMaker to DITA XML](/assets/framemaker-to-dita-migration.svg)
 **Migration from FrameMaker to DITA XML**
 
-By the way, if, for any reason, your migration project were to stop there, the technical writers, the company and the users would already have gained a great deal, respectively in :
+By the way, if, for any reason, your migration project were to stop there, the technical writers, the company and the users would already have gained a great deal, respectively in:
 
 - ease of updating,
 - consistency and speed of publication of new versions,
@@ -134,7 +134,7 @@ You can now progressively modularize and share your content in the new format to
 
 ### Migrating from FrameMaker to DITA XML
 
-The aim of this procedure is to :
+The aim of this procedure is to:
 
 - migrate FrameMaker content to DITA XML without having to delve into the arcana of FrameMaker EDDs (small projects only!),
 - manage technical documentation in DITA XML format, without using `structured` FrameMaker.
@@ -159,7 +159,7 @@ The aim of this procedure is to :
 14. Save the FrameMaker content file in XML format without selecting an application.
 15. Open the generated XML file in a DITA XML editor and correct the DITA XML syntax. Some aspects of this step can be scripted, but you'll also need to restructure the content manually. In particular, you'll need to place cross-references by hand, preferably in a reltable.
 
-To generate the elements needed to build a ditamap file, you can use Perl scripts such as :
+To generate the elements needed to build a ditamap file, you can use Perl scripts such as:
 
 :::caution[Warning]
 Only run this type of script on a copy of your files, not on the original files.

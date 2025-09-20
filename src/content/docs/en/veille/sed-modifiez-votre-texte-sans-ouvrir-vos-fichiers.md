@@ -8,15 +8,15 @@ Unix clones are rarely used to manage technical documentation. This is strange w
 
 Take, for example, the dialogue between M. Jourdain and his philosophy master in Molière's Bourgeois gentilhomme:
 
-*MONSIEUR JOURDAIN :*
+*MONSIEUR JOURDAIN:*
 
-:   *[...] Je voudrais donc lui mettre dans un billet : « Belle marquise, vos beaux yeux me font mourir d'amour » ; mais je voudrais que cela fût mis d'une manière galante, que cela fût tourné gentiment.*
+:   *[...] Je voudrais donc lui mettre dans un billet: « Belle marquise, vos beaux yeux me font mourir d'amour » ; mais je voudrais que cela fût mis d'une manière galante, que cela fût tourné gentiment.*
 
 [...]
 
-*MAÎTRE DE PHILOSOPHIE :*
+*MAÎTRE DE PHILOSOPHIE:*
 
-:   *On les peut mettre premièrement comme vous avez dit : Belle marquise, vos beaux yeux me font mourir d'amour. Ou bien : D'amour mourir me font, belle marquise, vos beaux yeux. Ou bien : Vos yeux beaux d'amour me font, belle marquise, mourir. Ou bien : Mourir vos beaux yeux, belle marquise, d'amour me font. Ou bien : Me font vos yeux beaux mourir, belle marquise, d'amour.*
+:   *On les peut mettre premièrement comme vous avez dit: Belle marquise, vos beaux yeux me font mourir d'amour. Ou bien: D'amour mourir me font, belle marquise, vos beaux yeux. Ou bien: Vos yeux beaux d'amour me font, belle marquise, mourir. Ou bien: Mourir vos beaux yeux, belle marquise, d'amour me font. Ou bien: Me font vos yeux beaux mourir, belle marquise, d'amour.*
 
 Let's start by displaying the original sentence in a terminal:
 
@@ -41,7 +41,7 @@ The output of the echo command is not displayed. What is displayed is the output
 
 However, the final output is not what was intended. The fields do not correspond exactly to words. The awk command therefore needs to be refined.
 
-It's simpler to turn to sed. sed selects sets of characters in lines, either quoted literally or via metacharacters in regular expressions. A well-known regular expression metacharacter is the *, indicating zero or an indefinite number of characters on the command line, as in :
+It's simpler to turn to sed. sed selects sets of characters in lines, either quoted literally or via metacharacters in regular expressions. A well-known regular expression metacharacter is the *, indicating zero or an indefinite number of characters on the command line, as in:
 
 ```bash
 $ ls *.rst
@@ -141,7 +141,7 @@ $ echo "Belle marquise, vos beaux \\
 yeux me font mourir d'amour."
 ```
 
-Or :
+Or:
 
 ```bash
 $ export declaration="Belle marquise, vos \\
@@ -149,7 +149,7 @@ beaux yeux me font mourir d'amour."
 $ echo $declaration
 ```
 
-Or :
+Or:
 
 ```bash
 $ export w="\(\<.*\>\)"
@@ -187,7 +187,7 @@ Dear doctor, these great misfortunes make you weep with bitterness. Little boy, 
 
 This is unlikely to be the case here, but it is commonplace in technical documentation to find sentences with the same structure, for reasons of stylistic homogeneity.
 
-To carry out our tests on a sample, let's place the three sentences above in a :
+To carry out our tests on a sample, let's place the three sentences above in a:
 
 ```bash
 $ echo "Cher docteur, ces grands malheurs \\
@@ -209,7 +209,7 @@ $ echo "s#$p#\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#" > moliere3.sed
 $ echo "s#$p#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#" > moliere4.sed
 ```
 
-Now let's loop through all the sed scripts on all the lines in the :
+Now let's loop through all the sed scripts on all the lines in the:
 
 ```bash
 $ for (( i=1; i<5; i++ )); do

@@ -18,7 +18,7 @@ Here's the script code, based on the Flask web microframework:
 """
 
 Generates sentence variations based on M. Jourdain's tirade
-from Molière's Bourgeois gentilhomme :
+from Molière's Bourgeois gentilhomme:
 
 Belle Marquise, your beautiful eyes make me die of love
 
@@ -118,7 +118,7 @@ final_text = final_text.capitalize() + '.'
 print(final_text)
 ```
 
-Here are the templates for generating the basic HTML pages, input and output, based on Jinja :
+Here are the templates for generating the basic HTML pages, input and output, based on Jinja:
 
 ```html
 <!doctype html>

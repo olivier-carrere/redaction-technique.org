@@ -127,7 +127,7 @@ The smallest DITA XML information unit is the `<ph>` node. However, the technica
 
 Example
 
-If you decide to push the granularity down to the sentence segment level and define the following conref :
+If you decide to push the granularity down to the sentence segment level and define the following conref:
 
 ```xml
 <ph id="click">Click the</ph>
@@ -168,7 +168,7 @@ To overcome this problem, you'd have to rearrange the order of the conref in the
 For reasons of ease of updating and maintenance of **DITA XML** content, the **technical editor** must limit the Russian doll effect and avoid nesting conref too much. A single level of nesting (one *conref* nested within another) seems to me to be the threshold beyond which content can quickly become unmanageable.
 
 
-In the example below, the source *conref* *see-admin-guide* contains the target *conref* *admin-guide-title* :
+In the example below, the source *conref* *see-admin-guide* contains the target *conref* *admin-guide-title*:
 
 **Example**
 

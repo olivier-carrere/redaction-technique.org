@@ -76,7 +76,7 @@ You must then use the pipe syntax (Boolean or condition) to modify the XPATH pat
 <xsl:apply-templates select="text()|*[not(name()='title')]" />
 ```
 
-The final result will be :
+The final result will be:
 
 ```xml
 <xsl:template match="*[contains(@class,' topic/example ')]">
@@ -128,7 +128,7 @@ You want the generated PDF file to display the example structured as follows:
 
 and if the example does not contain a title, it should be structured as follows:
 
-> **Example :**
+> **Example:**
 >
 > Here's my XPATH path example:
 >
@@ -136,7 +136,7 @@ and if the example does not contain a title, it should be structured as follows:
 > ancestor-or-self
 > ```
 
-By default, however, this content will be structured as follows in the PDF by <abbr title="DITA Open Toolkit">DITA-OT</abbr> {.interpreted-text role="abbr"} :
+By default, however, this content will be structured as follows in the PDF by <abbr title="DITA Open Toolkit">DITA-OT</abbr> {.interpreted-text role="abbr"}:
 
 > **XSL-FO**
 >
@@ -181,7 +181,7 @@ It's still possible to enter text between `<example>`{.interpreted-text role="sa
     </xsl:template>
     ```
 
-2.  Define in the files containing the language variables, such as `plugins/org.dita.pdf2/cfg/common/vars/en.xml`, the text variables to be inserted automatically, for example :
+2.  Define in the files containing the language variables, such as `plugins/org.dita.pdf2/cfg/common/vars/en.xml`, the text variables to be inserted automatically, for example:
 
     ```xml
     <variable id="my-example-text>Example:</variable>
@@ -198,7 +198,7 @@ Prerequisites
 - Ubuntu or Debian on a physical or virtual machine with administrator password,
 - Internet connection.
 
-1. Download and unzip the archive <abbr title="DITA Open Toolkit">DITA-OT</abbr> :
+1. Download and unzip the archive <abbr title="DITA Open Toolkit">DITA-OT</abbr>:
 
     ```bash
     $ export REPO="https://github.com/dita-ot/dita-ot"
@@ -206,7 +206,7 @@ Prerequisites
     $ tar -xzvf dita-ot-2.1.0.tar.gz
     ```
 
-2. Generate your first PDF :
+2. Generate your first PDF:
 
     ```bash
     cd dita-ot-2.1.0
@@ -227,7 +227,7 @@ This **DITA XML** tutorial is designed to guide you through setting up and using
 
 2.  Download DITA Open Toolkit 1.5.4 to your desktop, then unzip `DITA-OT1.5.4_full_easy_install_bin.zip`.
 
-3.  Select `Run`{.interpreted-text role="guilabel"} from the `Start`{.interpreted-text role="guilabel"} menu, paste the following command, then press `Enter`{.interpreted-text role="kbd"} :
+3.  Select `Run`{.interpreted-text role="guilabel"} from the `Start`{.interpreted-text role="guilabel"} menu, paste the following command, then press `Enter`{.interpreted-text role="kbd"}:
 
     ```bash
     cmd
@@ -271,7 +271,7 @@ DITA XML is a great format for managing documentation projects. For multilingual
 
 2. From the outset of your DITA XML project, place DITA XML content files in a sub-directory specific to the language in which they are initially written.
 
-   For example :
+   For example:
 
    - product
 
@@ -280,7 +280,7 @@ DITA XML is a great format for managing documentation projects. For multilingual
        - tasks
        - topics
 
-     and not :
+     and not:
 
    - product
 
@@ -290,19 +290,19 @@ DITA XML is a great format for managing documentation projects. For multilingual
 
 3. Replace all occurrences of the language-specific directory name in the ditamap file with a single temporary string.
 
-   For example, use the string `@language-code@` :
+   For example, use the string `@language-code@`:
 
    ```xml
    <topicref href="@language-code@/topics/managing-rights.dita"/>
    ```
 
-   and not :
+   and not:
 
    ```xml
    <topicref href="en_US/topics/managing-rights.dita"/>
    ```
 
-4. To generate the target files, you can now :
+4. To generate the target files, you can now:
 
    a. modify the `default.locale` parameter in the `demo/fo/build.xml` file,
    b. replace the language variable in the ditamap file with the name of the language directory,
@@ -327,17 +327,17 @@ Supported values for PDF page size are `fr_FR` (A4) and `en_US` (US letter). Thi
 This script is supplied without warranty. Before running this script, make a backup of your entire DITA XML project, including configuration files (e.g. under a version control system). Make sure you can easily restore the entire project in the event of an error or unexpected behavior.
 :::
 
-To use this script :
+To use this script:
 
 1. Download the multilingual DITA XML generation script into the directory containing the project ditamap file.
 
-2. In a terminal, navigate to this directory and enter :
+2. In a terminal, navigate to this directory and enter:
 
    ```bash
    $ chmod +x dita2target.sh
    ```
 
-3. In the terminal, enter :
+3. In the terminal, enter:
 
    ```bash
    $ mkdir out
@@ -345,7 +345,7 @@ To use this script :
 
    to create the directory containing the target files.
 
-4. Enter :
+4. Enter:
 
    ```bash
    $ ./dita2target.sh <ditamap file> \
@@ -461,7 +461,7 @@ To use this script :
     /filter:electriciens.ditaval /outdir:. /transtype:pdf2
     ```
 
-    Open the file `conditional-text.pdf`; it contains information for :
+    Open the file `conditional-text.pdf`; it contains information for:
 
     - plumbers and electricians,
     - electricians only.
@@ -473,7 +473,7 @@ To use this script :
     /filter:plumbers.ditaval /outdir:. /transtype:pdf2
     ```
 
-    Open the file `conditional-text.pdf`; it contains information for :
+    Open the file `conditional-text.pdf`; it contains information for:
 
 > - plumbers and electricians,
 > plumbers only.
@@ -545,15 +545,15 @@ Prerequisites
     rm nxml-mode-environmment.txt
     ```
 
-    :::note[Note]
+   :::note[Note]
     If a message warns you that the `.emacs` file does not exist, paste the following commands, then repeat the operation:
 
     ```bash
     cd && touch .emacs
     ```
-    :::
+   :::
 
-    This sequence of commands :
+    This sequence of commands:
     - downloads and unzips the nXML mode,
     - creates a backup copy of the `.emacs` file (`.emacs.bak`),
     - writes nXML mode environment variables to the `.emacs` file.
@@ -608,7 +608,7 @@ Prerequisites
 
 This Predictive mode tutorial for Emacs is designed to help you set up and use Emacs' Predictive word autocompletion and editing mode in a GNU/Linux environment (in this case, Debian).
 
-1.  Install make and texinfo :
+1.  Install make and texinfo:
 
     ```bash
     $ sudo aptitude install make texinfo
@@ -628,13 +628,13 @@ This Predictive mode tutorial for Emacs is designed to help you set up and use E
     $ cd predictive
     ```
 
-5.  Compile predictive :
+5.  Compile predictive:
 
     ```bash
     $ make
     ```
 
-6.  Install predictive :
+6.  Install predictive:
 
     ```bash
     $ sudo make install
@@ -653,7 +653,7 @@ This Predictive mode tutorial for Emacs is designed to help you set up and use E
          (require 'predictive)
     ```
 
-8.  Start Emacs, then press Alt+X and enter :
+8.  Start Emacs, then press Alt+X and enter:
 
     ```
     predictive-mode

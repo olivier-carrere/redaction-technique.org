@@ -3,7 +3,7 @@ title: "Create different documents from the same ReST sources (conditional text)
 description: "Generate document variants from the same ReST sources with Sphinx conditional text."
 ---
 
-1.  Install *Sphinx*, and *make* :
+1.  Install *Sphinx*, and *make*:
 
     ```bash
     $ sudo apt install python-sphinx make
@@ -42,7 +42,7 @@ description: "Generate document variants from the same ReST sources with Sphinx 
     tags.add('plumber')
     ```
 
-5.  Generate your content :
+5.  Generate your content:
 
     ```bash
     $ make html

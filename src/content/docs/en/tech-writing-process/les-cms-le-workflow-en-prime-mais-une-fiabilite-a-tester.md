@@ -5,7 +5,7 @@ description: "If they use monolithic formats such as FrameMaker, technical write
 
 The <abbr title="Content Management System">CMS</abbr>, so called for purely marketing reasons, but whose function is better understood with the acronym <abbr title="système de gestion électronique de documents">GED</abbr>, bring workflow and link management notions that prove invaluable when managing modular documents.
 
-If they use monolithic formats such as **FrameMaker**, technical writers can use <abbr title="Content Management System">CMS</abbr> such as SharePoint, Alfresco or consorts to :
+If they use monolithic formats such as **FrameMaker**, technical writers can use <abbr title="Content Management System">CMS</abbr> such as SharePoint, Alfresco or consorts to:
 
 1. download a local copy of shared files to their hard disk,
 2. make modifications to the local copy,

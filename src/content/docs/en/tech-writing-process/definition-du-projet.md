@@ -5,7 +5,7 @@ description: "Communicating technical information without knowing to whom or for
 
 A **technical writing** project adds value to products and helps the company to market its offering more effectively. But, as with R&D or marketing projects, project definition is the key to estimating budget and benefits.
 
-Communicating technical information without knowing to whom or for what purpose is a futile effort. Before initiating a **technical writing** project, it is essential to clearly define it. In particular, you need to determine :
+Communicating technical information without knowing to whom or for what purpose is a futile effort. Before initiating a **technical writing** project, it is essential to clearly define it. In particular, you need to determine:
 
 | Element | Description |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|

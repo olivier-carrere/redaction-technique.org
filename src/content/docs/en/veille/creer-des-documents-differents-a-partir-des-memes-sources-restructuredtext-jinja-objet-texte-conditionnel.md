@@ -112,7 +112,7 @@ With Jinja, you can define objects (audience, platform, version, etc.) and inclu
             self.aut=autumn
     ```
 
-8. Create more complex conditions :
+8. Create more complex conditions:
 
     ```txt
     Using conditional text
@@ -268,7 +268,7 @@ With Jinja, you can define objects (audience, platform, version, etc.) and inclu
     # File: code/profiling.py
     ```
 
-    Usage :
+    Usage:
 
     ```bash
     ./profiling.py plumber autumn

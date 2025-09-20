@@ -6,7 +6,7 @@ description: "With its modest resources, a Raspberry Pi 3 is all you need to cre
 Do you need an outpouring of power to generate professional documentation? With its single gigabyte of RAM and smartphone-like processor, the Raspberry Pi 3 seems to be positioned as a good office workstation from the 2000s... In practice, however, it turns out that a CPU costing around 40 euros is more than enough to create, manage and generate documentation in PDF, HTML or other formats.
 
 :::note
-The aims of this post are to :
+The aims of this post are to:
 
 - Present a <abbr title="Proof of Concept, demonstration of feasibility">POC</abbr> and use minimal resources to create, manage and publish professional documentation. Most operations therefore take place in text mode, under Linux. While the solutions presented here also work in graphical mode under Windows, they may not be available under Windows 10 IoT, intended for the Raspberry Pi 3.
 - Presenting a user scenario that's as simple as possible, sometimes to the detriment of technical elegance.
@@ -25,7 +25,7 @@ The aims of this post are to :
    The `Raspberry Pi Configuration` dialog box appears.
 
 3. Select the `Location` tab.
-4. Click on `Set Locale`, select the following options, then click `OK` :
+4. Click on `Set Locale`, select the following options, then click `OK`:
 
     | Option | Value |
     |---------------|-------------|
@@ -81,7 +81,7 @@ The aims of this post are to :
 
 ## Get the sources for this blog
 
-1. Clone the Git repository of this blog's sources :
+1. Clone the Git repository of this blog's sources:
 
    ```bash
    $ git clone https://github.com/olivier-carrere/redaction-technique.org.git
@@ -95,20 +95,20 @@ The aims of this post are to :
 
 ## Create and modify text
 
-1. Modify a modular source file of this blog :
-   - using a text editor :
+1. Modify a modular source file of this blog:
+   - using a text editor:
 
      ```bash
      $ leafpad *coin-du-geek.rst &
      ```
 
-   - or using a :
+   - or using a:
 
      ```bash
      $ emacs *coin-du-geek.rst &
      ```
 
-   - or using an online editor, such as :
+   - or using an online editor, such as:
 
      ```bash
      $ sed -i "s/directory/folder/g;" *.rst
@@ -116,14 +116,14 @@ The aims of this post are to :
 
 ## Create and modify schemas
 
-1. Modify a source file of the images in this blog :
-   - using vector graphics software :
+1. Modify a source file of the images in this blog:
+   - using vector graphics software:
 
      ```bash
      $ inkscape graphics/modular-text-monolithic-binary.svg &
      ```
 
-   - or with an online editor :
+   - or with an online editor:
 
      ```bash
      $ sed -i "s/docbook/XML/g;" graphics/*.svg
@@ -131,7 +131,7 @@ The aims of this post are to :
 
 ## Manage your documentation versions
 
-1. Start your batch of modifications in Git :
+1. Start your batch of modifications in Git:
 
    ```bash
    $ git config --global user.email "your email" $ git config --global user.name "your name
@@ -168,9 +168,9 @@ The aims of this post are to :
    $ git checkout $(git describe --tags $(git rev-list --tags --max-count=1))
    ```
 
-   :::note
+  :::note
    Yes, I know, this command doesn't exactly correspond to the Larousse definition of simple...
-   :::
+  :::
 
 2. Generate the latest tagged version of this blog in PDF, HTML and EPUB formats:
 
@@ -196,7 +196,7 @@ The aims of this post are to :
    $ ebook-viewer _build/epub/redaction-techniqueorg.epub &
    ```
 
-And there you have it. In just a few minutes, you have :
+And there you have it. In just a few minutes, you have:
 
 - Applied conditional text rules to common sources according to publication format. This content is called an e-book in the EPUB version, a document in the PDF version and something else in the HTML version.
 - Generated, in three different formats, a 60-page documentation including some 40 diagrams.

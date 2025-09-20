@@ -14,7 +14,7 @@ Content must be validated before delivery. This may seem obvious, but it require
 
 A process for creating and updating technical documentation that relies on the memory of human actors is unreliable. A **technical editor** may be tired, unwell, on vacation, forget data when saturated with information, or have left the company. Information between two people can also flow badly, or be misunderstood. Man has created tools to compensate for these weaknesses. On the other hand, they are creative, unlike machines.
 
-Given this state of affairs, we need an information management system for the evolution of documentation that is tolerant of human error. This means either :
+Given this state of affairs, we need an information management system for the evolution of documentation that is tolerant of human error. This means either:
 
 - implement *workflows* under a <abbr title="Content Management System">CMS</abbr>,
 - use the ticket management system used to manage new features of the documented product (e.g. Trac):

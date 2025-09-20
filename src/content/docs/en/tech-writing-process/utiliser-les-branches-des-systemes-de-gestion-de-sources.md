@@ -5,7 +5,7 @@ description: "Create branches in a source manager to manage divergent projects a
 
 Source management systems offer the option of creating branches of a project: if at any point a project splits into two incompatible projects, a branch is created from the main project. The **technical editor** can thus manage the various translations of technical documentation.
 
-In theory, the branch system can be used to manage :
+In theory, the branch system can be used to manage:
 
 - different translations of technical documentation,
 - different variations of the same technical documentation.
@@ -16,7 +16,7 @@ On the other hand, the branch management system is more or less suited to managi
 
 The main difference between the Git and Subversion source management systems is the way they handle branches. Creating a branch in Subversion is equivalent to duplicating a directory. The files in the two directories then evolve separately. In Git, on the other hand, branch creation is carried out without duplicating data. On the same local directory, a command can be used to change branches.
 
-Creating a translation of a documentation consists in forking, or branching, the initial document. When using Git, the choice is between :
+Creating a translation of a documentation consists in forking, or branching, the initial document. When using Git, the choice is between:
 
 - copy the source language directory,
 - create a branch on the source language directory.

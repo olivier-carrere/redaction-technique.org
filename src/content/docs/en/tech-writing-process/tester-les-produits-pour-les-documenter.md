@@ -16,7 +16,7 @@ The **technical writer** who asks the various players in the company what the pr
 To have a realistic vision of the object they're supposed to be describing, **technical writers** need to apprehend it for themselves and form their own opinions, which they can then compare with those of other people in the company. The **technical writer** is a pragmatist, interested in practice, not theory. If he consults only with developers, for example, he will have little chance of creating satisfactory documentation for the user:
 
 - on the one hand, developers often have an idealistic vision of how their product should work, which differs from how it actually behaves in real-life conditions,
-- on the other hand, information is necessarily lost between :
+- on the other hand, information is necessarily lost between:
   - what the developer knows,
   - what the developer expresses,
   - what the **technical editor** understands,

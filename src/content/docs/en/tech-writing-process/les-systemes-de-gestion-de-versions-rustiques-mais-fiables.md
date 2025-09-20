@@ -5,7 +5,7 @@ description: "Managing text documentation with a version control system (Git, Su
 
 Working with source files in text format, rather than binary, is an opportunity for the **technical writer** to manage his content as developers manage their code: under a source management system such as Git, Subversion or SourceSafe.
 
-These :
+These:
 
 - encourage group work,
 - eliminate duplicate copies of files and

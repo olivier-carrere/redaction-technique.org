@@ -22,7 +22,7 @@ file.write(string)
 file.close()
 ```
 
-Contents of file `conditional-text.rst` :
+Contents of file `conditional-text.rst`:
 
 ```txt
 Using conditional text
@@ -47,7 +47,7 @@ Using conditional text
 {% endif %}
 ```
 
-How to use :
+How to use:
 
 ```bash
 ./profiling.py electrician

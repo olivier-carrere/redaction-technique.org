@@ -20,7 +20,7 @@ It then stores it in one of two zones:
 - the index (temporary area),
 - the object database (persistent zone).
 
-When you add a file (*git add \<fichier\>*) :
+When you add a file (*git add \<fichier\>*):
 
 - the tree is placed in the index,
 - the contents are placed in the object database.
@@ -88,7 +88,7 @@ Git is confusing to get to grips with. Its *workflows* apply to content rather t
 
 Git performs atomic *commits*: it applies batches of modifications to content often spread over several files, instead of managing *files* themselves. It invites us to think in terms of batches of tasks on content, rather than per file.
 
-This may not seem very intuitive if you're used to working file by file rather than task by task. But once you've adapted your work habits to this *workflow*, you'll see :
+This may not seem very intuitive if you're used to working file by file rather than task by task. But once you've adapted your work habits to this *workflow*, you'll see:
 
 - you have a history that is much more easily exploited,
 - it's much easier to manage concurrent versions of the same content in parallel development branches.
