@@ -2,7 +2,7 @@ import os
 import requests
 
 # Set your DeepL Free API key here
-DEEPL_API_KEY = "39d97c04-f3bf-48cc-b662-424087954e0c:fx"
+DEEPL_API_KEY = ""
 
 # Base URL for DeepL Free API
 DEEPL_API_URL = "https://api-free.deepl.com/v2/translate"
