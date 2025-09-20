@@ -110,13 +110,13 @@ To clone the Gitlab repository under a Linux Debian or derivative distribution (
 
 2.  Install the following software:
 
-    console
+    ```bash
     $ sudo apt install git git-lfs
     ```
 
 3.  Clone the :
 
-    console
+    ```bash
     $ git clone https://gitlab.com/depot/communication.git
     ```
 
@@ -126,13 +126,13 @@ To update your Gitlab repository :
 
 1.  Go to the :
 
-    console
+    ```bash
     $ cd communication
     ```
 
 2.  Update the repository and delete obsolete local files:
 
-    console
+    ```bash
     $ git pull --rebase
     $ git lfs prune
     ```
@@ -141,7 +141,7 @@ To update your Gitlab repository :
 
 For synchronization between the server and my local copy, I turned to LFTP :
 
-console
+```bash
 $ lftp ftp://user:password@ftpaccount -e \
   "set ftp:ssl-allow no; mirror -e remote-directory \
   repertoire-local; quit"
@@ -150,7 +150,7 @@ $ lftp ftp://user:password@ftpaccount -e \
 :::note
 To ignore the differences in file permissions, I first ran the following command on my local repository:
 
-console
+```bash
 $ git config core.filemode false
 ```
 :::

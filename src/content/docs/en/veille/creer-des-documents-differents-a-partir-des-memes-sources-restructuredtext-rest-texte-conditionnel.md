@@ -5,13 +5,13 @@ description: "Generate document variants from the same ReST sources with Sphinx 
 
 1.  Install *Sphinx*, and *make* :
 
-    console
+    ```bash
     $ sudo apt install python-sphinx make
     ```
 
 2.  Create a Sphinx project using all the default choices:
 
-    console
+    ```bash
     $ sphinx-quickstart
     ```
 
@@ -44,7 +44,7 @@ description: "Generate document variants from the same ReST sources with Sphinx 
 
 5.  Generate your content :
 
-    console
+    ```bash
     $ make html
     ```
 

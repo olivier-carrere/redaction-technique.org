@@ -200,7 +200,7 @@ Prerequisites
 
 1. Download and unzip the archive <abbr title="DITA Open Toolkit">DITA-OT</abbr> :
 
-    console
+    ```bash
     $ export REPO="https://github.com/dita-ot/dita-ot"
     $ wget $REPO/releases/download/2.1/dita-ot-2.1.0.tar.gz
     $ tar -xzvf dita-ot-2.1.0.tar.gz
@@ -208,7 +208,7 @@ Prerequisites
 
 2. Generate your first PDF :
 
-    console
+    ```bash
     cd dita-ot-2.1.0
     $ dita -f pdf -i samples/taskbook.ditamap
     ```
@@ -229,7 +229,7 @@ This **DITA XML** tutorial is designed to guide you through setting up and using
 
 3.  Select `Run`{.interpreted-text role="guilabel"} from the `Start`{.interpreted-text role="guilabel"} menu, paste the following command, then press `Enter`{.interpreted-text role="kbd"} :
 
-    console
+    ```bash
     cmd
     ```
 
@@ -237,14 +237,14 @@ This **DITA XML** tutorial is designed to guide you through setting up and using
 
 4.  Paste the following command into the terminal:
 
-    console
+    ```bash
     set full=DITA-OT1.5.4_full_easy_install_bin
     cd Bureau\%full%\DITA-OT1.5.4
     ```
 
 5.  Paste the following command:
 
-    console
+    ```bash
     startcmd.bat
     ```
 
@@ -252,7 +252,7 @@ This **DITA XML** tutorial is designed to guide you through setting up and using
 
 6.  Paste the following command into the new terminal:
 
-    console
+    ```bash
     $ java -jar lib/dost.jar /i:samples/taskbook.ditamap\
     /outdir:. /transtype:pdf2
     ```
@@ -333,13 +333,13 @@ To use this script :
 
 2. In a terminal, navigate to this directory and enter :
 
-   console
+   ```bash
    $ chmod +x dita2target.sh
    ```
 
 3. In the terminal, enter :
 
-   ``console
+   `````bash
    $ mkdir out
    ```
 
@@ -347,7 +347,7 @@ To use this script :
 
 4. Enter :
 
-   ```console
+   ``````bash
    $ ./dita2target.sh <ditamap file> \
    <language directory name> <target format>
    ```
@@ -358,7 +358,7 @@ To use this script :
 
    **Example**
 
-   console
+   ```bash
    ./dita2target.sh firewall.ditamap en_US pdf2
    ```
 
@@ -456,7 +456,7 @@ To use this script :
 
 5.  Open a terminal and enter the following command in the `DITA-OT1.5.4` directory:
 
-    console
+    ```bash
     $ java -jar lib/dost.jar /i:texte-conditionnel.ditamap /filter:electriciens.ditaval /outdir:.
     /filter:electriciens.ditaval /outdir:. /transtype:pdf2
     ```
@@ -468,7 +468,7 @@ To use this script :
 
 6.  Open a terminal and enter the following command in the `DITA-OT1.5.4` directory:
 
-    console
+    ```bash
     java -jar lib/dost.jar /i:texte-conditionnel.ditamap /filter:plumbers.ditaval /outdir:.
     /filter:plumbers.ditaval /outdir:. /transtype:pdf2
     ```
@@ -489,7 +489,7 @@ You've placed correctly formatted *related-links* tags in your **DITA XML** cont
 
 Fortunately, no. By default (go figure), cross-references are not generated in PDFs by <abbr title="DITA Open Toolkit">DITA-OT</abbr>. To display them, assign the value *no* to the *disableRelatedLinks* variable in the `demo/fo/build_template.xml` file. If you use *ant*, you'll also need to pass the *args.fo.include.rellinks=all* parameter as follows:
 
-console
+```bash
 ant -Dargs.input=samples/sequence.ditamap -Doutput.dir=out/ \
 -Dtranstype=pdf2 -Dargs.fo.include.rellinks=all
 ```
@@ -531,7 +531,7 @@ Prerequisites
 
 2. Open a terminal and paste the following command sequence:
 
-    console
+    ```bash
     $ export THAI="http://www.thaiopensource.com/download"
     $ export RED="http://www.redaction-technique.org/media"
     $ cd && \
@@ -548,7 +548,7 @@ Prerequisites
     :::note[Note]
     If a message warns you that the `.emacs` file does not exist, paste the following commands, then repeat the operation:
 
-    ``console
+    `````bash
     cd && touch .emacs
     ```
     :::
@@ -562,7 +562,7 @@ Prerequisites
 
 4. Go to the root directory of your **DITA XML** documentation project, then paste the following command:
 
-    console
+    ```bash
     $ tar xzvf rnc.tar.gz
     ```
 
@@ -570,7 +570,7 @@ Prerequisites
 
 5. Download the archive of schemas.xml files into the root directory of your **DITA XML** documentation project, then paste the command sequence below, replacing <language directory> with the appropriate value, en_US, or fr_FR, for example. Repeat this step for all your language directories.
 
-    console
+    ```bash
     $ export DIR="schemas.redaction-technique.org"
     $ tar xzvf $DIR.tar.gz && \
     cd <language directory> && \
@@ -610,7 +610,7 @@ This Predictive mode tutorial for Emacs is designed to help you set up and use E
 
 1.  Install make and texinfo :
 
-    console
+    ```bash
     $ sudo aptitude install make texinfo
     ```
 
@@ -618,25 +618,25 @@ This Predictive mode tutorial for Emacs is designed to help you set up and use E
 
 3.  Unzip the Predictive archive:
 
-    console
+    ```bash
     $ tar xzvf predictive-0.23.13.tar.gz
     ```
 
 4.  Go to the `predictive` directory:
 
-    console
+    ```bash
     $ cd predictive
     ```
 
 5.  Compile predictive :
 
-    console
+    ```bash
     $ make
     ```
 
 6.  Install predictive :
 
-    console
+    ```bash
     $ sudo make install
     ```
 

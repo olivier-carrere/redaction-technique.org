@@ -180,7 +180,7 @@ close(OUTPUT);
 
 You can also easily modularize content using the xml_split XML scissors, or use the Perl XML::Twig module, or this Bash one-liner to rename `.dita` files after their title:
 
-```console
+```bash
 $ ack "<title‣" *.dita| sed "s# #_#g;" |
 tr '[:upper:]' '[:lower:]' |
 sed -E "s#(.*.dita)#mv \1#g;" |

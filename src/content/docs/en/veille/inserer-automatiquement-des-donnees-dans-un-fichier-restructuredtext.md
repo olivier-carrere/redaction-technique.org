@@ -42,7 +42,7 @@ Rather than writing data by hand into the content file, you can insert it automa
 
 3. Make the script executable, then run it:
 
-    console
+    ```bash
     chmod +x populate.py
     $ ./populate.py
     ```

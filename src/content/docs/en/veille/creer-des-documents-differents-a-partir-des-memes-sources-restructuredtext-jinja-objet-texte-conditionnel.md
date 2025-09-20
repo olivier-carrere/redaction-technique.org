@@ -270,7 +270,7 @@ With Jinja, you can define objects (audience, platform, version, etc.) and inclu
 
     Usage :
 
-    ```console
+    ```bash
     ./profiling.py plumber autumn
     ```
 

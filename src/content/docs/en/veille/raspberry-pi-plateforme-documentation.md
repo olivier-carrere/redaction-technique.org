@@ -43,7 +43,7 @@ The aims of this post are to :
 7. Select `Menu` ‣ `Accessories` ‣ `Terminal`.
 8. Update the system:
 
-   ``console
+   ```bash
    $ sudo aptitude update && sudo aptitude safe-upgrade -y
    ```
 
@@ -58,7 +58,7 @@ The aims of this post are to :
 1. Select `Menu` > `Accessories` > `LXTerminal`.
 2. Install the following software packages:
 
-   console
+   ```bash
    $ sudo aptitude install -y calibre emacs gitk inkscape python3-sphinx texlive-full
    ```
 
@@ -75,7 +75,7 @@ The aims of this post are to :
 
 3. Free up disk space:
 
-   console
+   ```bash
    $ sudo aptitude clean
    ```
 
@@ -83,13 +83,13 @@ The aims of this post are to :
 
 1. Clone the Git repository of this blog's sources :
 
-   console
+   ```bash
    $ git clone https://github.com/olivier-carrere/redaction-technique.org.git
    ```
 
 2. Go to the source directory of this blog:
 
-   ``console
+   ```bash
    cd redaction-technique.org
    ```
 
@@ -98,19 +98,19 @@ The aims of this post are to :
 1. Modify a modular source file of this blog :
    - using a text editor :
 
-     console
+     ```bash
      $ leafpad *coin-du-geek.rst &
      ```
 
    - or using a :
 
-     console
+     ```bash
      $ emacs *coin-du-geek.rst &
      ```
 
    - or using an online editor, such as :
 
-     console
+     ```bash
      $ sed -i "s/directory/folder/g;" *.rst
      ```
 
@@ -119,13 +119,13 @@ The aims of this post are to :
 1. Modify a source file of the images in this blog :
    - using vector graphics software :
 
-     console
+     ```bash
      $ inkscape graphics/modular-text-monolithic-binary.svg &
      ```
 
    - or with an online editor :
 
-     console
+     ```bash
      $ sed -i "s/docbook/XML/g;" graphics/*.svg
      ```
 
@@ -133,7 +133,7 @@ The aims of this post are to :
 
 1. Start your batch of modifications in Git :
 
-   console
+   ```bash
    $ git config --global user.email "your email" $ git config --global user.name "your name
    $ git config --global user.name "your name".
    $ git add *.rst
@@ -144,7 +144,7 @@ The aims of this post are to :
 
 2. View the modification history of this blog's sources:
 
-   ``console
+   ```bash
    $ gitk &
    ```
 
@@ -164,7 +164,7 @@ The aims of this post are to :
 
 1. Return to the terminal, then retrieve the latest tagged version of this blog:
 
-   console
+   ```bash
    $ git checkout $(git describe --tags $(git rev-list --tags --max-count=1))
    ```
 
@@ -174,25 +174,25 @@ The aims of this post are to :
 
 2. Generate the latest tagged version of this blog in PDF, HTML and EPUB formats:
 
-   console
+   ```bash
    $ make all
    ```
 
 3. Display the blog in PDF format:
 
-   ```console
+   ```bash
    $ xpdf _build/latex/redaction-techniqueorg.pdf &
    ```
 
 4. Display the blog in HTML format:
 
-   console
+   ```bash
    $ epiphany _build/html/index.html &
    ```
 
 5. Display the blog in EPUB format:
 
-   ``console
+   ```bash
    $ ebook-viewer _build/epub/redaction-techniqueorg.epub &
    ```
 

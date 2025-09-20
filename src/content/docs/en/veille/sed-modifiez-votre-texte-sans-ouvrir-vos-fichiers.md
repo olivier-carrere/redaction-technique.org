@@ -20,7 +20,7 @@ Take, for example, the dialogue between M. Jourdain and his philosophy master in
 
 Let's start by displaying the original sentence in a terminal:
 
-console
+```bash
 echo "Belle marquise, vos beaux \
 eyes make me die of love."
 Beautiful marquise, your beautiful eyes make me die of love.
@@ -30,7 +30,7 @@ Now we need to swap the words in the sentence to create a new one. For a simple 
 
 So we're going to give Mr. Jourdain's declaration of love as input to a one-line awk program, thanks to the pipeline redirection symbol (|).
 
-console
+```bash
 echo "Belle marquise, your beautiful eyes
 eyes make me die of love." |
 awk '{print $9" "$8" "$6" "$7" "$1" "$2" "$3" "$4" "$5}'
@@ -43,13 +43,13 @@ However, the final output is not what was intended. The fields do not correspond
 
 It's simpler to turn to sed. sed selects sets of characters in lines, either quoted literally or via metacharacters in regular expressions. A well-known regular expression metacharacter is the *, indicating zero or an indefinite number of characters on the command line, as in :
 
-console
+```bash
 $ ls *.rst
 ```
 
 sed also supports back references, which display the value corresponding to a previously found literal or rational expression at the desired location. Fortunately for us, Mr Jourdain's declaration of love contains exactly nine words, which is the maximum number of back references possible.
 
-console
+```bash
 $ echo "Belle marquise, vos beaux \
 eyes make me die of love." |
 sed "s#\(.*\) \(.*\), \(.*\) \(.*\) \(.*\) \(.*\) \\\
@@ -59,7 +59,7 @@ d'amour. mourir me font, Belle marquise, vos beaux yeux
 
 We've run into the same problem: the regular expression .* doesn't correspond to a word, but to a series of characters, including punctuation. We must then use the <.*> form, which corresponds to a word such as those used by Mr. Jourdain to make prose. We're going to use escape characters (backslash \) so that the < and > signs are not interpreted literally under certain consoles, but as metacharacters with a special function:
 
-console
+```bash
 $ export \
 p="\(\<.*\>\) \(\<.*\>\), \(\<.*\>\) \(\<.*\>\) \\
 \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(d'\<.*\>\)"
@@ -71,7 +71,7 @@ d'amour mourir me font, Belle marquise, vos beaux yeux.
 
 We could also use the [[:alpha:]]* form, which is more legible but less concise:
 
-console
+```bash
 $ export a="[[:alpha:]]"
 $ export n="\($a*\) \($a*\), \($a*\) \($a*\) \($a*\) \($a*\) \".
 \($a*\) \($a*\) \($a*\)"
@@ -83,12 +83,12 @@ d'amour mourir me font, Belle marquise, vos beaux yeux.
 
 That's better, but we've got a capitalization problem. So we're going to use the judiciously placed /u and /l operators. First, we'll export some variables to make the script more concise and readable:
 
-console
+```bash
 $ export w="\(\<.*\>)"
 $ export m="$w $w, $w $w $w $w $w $w"
 ```
 
-console
+```bash
 $ echo "Belle marquise, vos beaux \\
 eyes make me die of love." |
 sed "s#$m \(d'\<.*\>)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#"
@@ -97,21 +97,21 @@ D'amour mourir me font, belle marquise, vos beaux yeux.
 
 We can now easily redistribute the back references to get all the variations of the philosophy master:
 
-console
+```bash
 $ echo "Belle marquise, vos beaux \
 eyes make me die of love." |
 sed "s#$m \u\3 \5 \4 \6 \7, \l\1 \2, \8#"
 Your beautiful eyes of love make me, beautiful marquise, die.
 ```
 
-console
+```bash
 $ echo "Belle marquise, vos beaux \\\
 eyes make me die of love." |
 sed "s#$m \(d'\<.*\>)# \u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#"
 Mourir vos beaux yeux, belle marquise, d'amour me font.
 ```
 
-console
+```bash
 $ echo "Belle marquise, vos beaux
 eyes make me die of love." |
 sed "s#$m \(d'\<.*\>)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#"
@@ -126,7 +126,7 @@ MONSIEUR JOURDAIN:
 
 I'd like to show him on the standard output:
 
-    console
+    ```bash
     $ Belle marquise, your beautiful eyes make me die of love.
     ```
 
@@ -136,14 +136,14 @@ PHILOSOPHY MASTER:
 
 : They can be put first as you said:
 
-    console
+    ```bash
     $ echo "Belle marquise, your beautiful \\
     eyes make me die of love."
     ```
 
     Or :
 
-    console
+    ```bash
     $ export declaration="Beautiful marquise, your \
     beautiful eyes make me die of love."
     $ echo $declaration
@@ -151,7 +151,7 @@ PHILOSOPHY MASTER:
 
     Or :
 
-    console
+    ```bash
     $ export w="\(\<.*\>)"
     $ export m="$w $w, $w $w $w $w $w $w"
     $ echo $declaration |
@@ -160,21 +160,21 @@ PHILOSOPHY MASTER:
 
     Or else:
 
-    console
+    ```bash
     echo $declaration |
     sed "s#$m \(d'\<.*\>)#\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8#"
     ```
 
     Or else:
 
-    console
+    ```bash
     echo $declaration |
     sed "s#$m \(d'\<.*\>)#\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#"
     ```
 
     Or else:
 
-    console
+    ```bash
     echo $declaration |
     sed "s#$m \(d'\<.*\>)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#"
     ```
@@ -189,7 +189,7 @@ This is unlikely to be the case here, but it is commonplace in technical documen
 
 To carry out our tests on a sample, let's place the three sentences above in a :
 
-console
+```bash
 echo "Dear doctor, these great misfortunes
 make you weep with bitterness." > variations.txt
 
@@ -202,7 +202,7 @@ makes you sway with intoxication." >> variations.txt
 
 Let's place the various sed commands in a different script each:
 
-console
+```bash
 $ echo "s#$p#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#" > moliere1.sed
 $ echo "s#$p#\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8#" > moliere2.sed
 $ echo "s#$p#\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#" > moliere3.sed
@@ -211,7 +211,7 @@ $ echo "s#$p#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#" > moliere4.sed
 
 Now let's loop through all the sed scripts on all the lines in the :
 
-console
+```bash
 $ for (( i=1; i<5; i++ )); do
    while read s;
     do echo "$s" |

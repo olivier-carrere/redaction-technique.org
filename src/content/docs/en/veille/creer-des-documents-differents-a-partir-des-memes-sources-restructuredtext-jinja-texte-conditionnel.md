@@ -49,7 +49,7 @@ Using conditional text
 
 How to use :
 
-console
+```bash
 ./profiling.py electrician
 ```
 
