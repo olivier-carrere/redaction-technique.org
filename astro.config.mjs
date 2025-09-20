@@ -44,6 +44,13 @@ export default defineConfig({
           },
           autogenerate: { directory: 'formats' },
         },
+        {
+          label: 'Reduce costs, increase customer satisfaction',
+          translations: {
+            fr: 'Diminuer les coûts, augmenter la satisfaction client',
+          },
+          autogenerate: { directory: 'costs' },
+        },
       ],
     }),
     vercel({
