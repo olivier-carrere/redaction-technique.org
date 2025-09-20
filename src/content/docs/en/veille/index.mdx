@@ -1,0 +1,21 @@
+---
+title: "Technology Watch"
+description: "Generate, automate, and manage technical documentation with Python, Jinja, ReST, DITA XML, and practical advice for your projects and Raspberry Pi."
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+import { LinkCard } from '@astrojs/starlight/components';
+
+<CardGrid>
+  <LinkCard title="Create different documents from the same sources via Jinja (object method)" href="creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-objet-texte-conditionnel" description="Profiling content with Jinja by defining objects (audience, platform, version, etc.) to include or exclude blocks according to their attributes using a Python script profiling.py." />
+  <LinkCard title="Create different documents from the same sources using Jinja" href="creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-texte-conditionnel" description="The Python profiling.py script below allows you to profile content in preprocessing using the powerful Jinja template engine." />
+  <LinkCard title="Create different documents from the same ReST sources (conditional text)" href="creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-rest-texte-conditionnel" description="Generate document variants from the same ReST sources with Sphinx conditional text." />
+  <LinkCard title="DITA XML and XSL-FO tutorials" href="didacticiels-dita-xml-xsl-fo" description="DITA XML is a structured authoring language that lets you create documents without worrying about their final appearance on different media. XSL-FO is a language that lets you reorganize and filter XML content and apply a layout to it using a style sheet." />
+  <LinkCard title="Regular expressions in Python" href="expressions-regulieres-python" description="Python's regular expression library helps you manipulate text, especially if you're not familiar with sed or awk." />
+  <LinkCard title="Automatically insert data into a reStructuredText file" href="inserer-automatiquement-des-donnees-dans-un-fichier-restructuredtext" description="Suppose you need to present 3 products, Dianthus, Geum and Prunus, each in three versions 1.0, 1.5 and 2.3." />
+  <LinkCard title="Automatically insert SQL data into a reStructuredText file" href="inserer-automatiquement-des-donnees-sql-dans-un-fichier-restructuredtext" description="We're going to create a database of products with their versions, then format this information in a reStructuredText file." />
+  <LinkCard title="Shuffling words" href="jourdainisation-en-ligne-python" description="Like the philosophy master in Molière's Bourgeois gentilhomme, a Python script can easily switch words in a sentence to say the same thing in a more convoluted way." />
+  <LinkCard title="Managing a project from start to finish" href="mener-un-projet-de-bout-en-bout" description="It's quite rare, in a professional context, to be able to manage a project from (almost) A to Z, from conception to realization and communication." />
+  <LinkCard title="The Raspberry Pi 3 as a documentation platform" href="raspberry-pi-plateforme-documentation" description="With its modest resources, a Raspberry Pi 3 is all you need to create, manage and generate documentation in PDF, HTML or EPUB format." />
+  <LinkCard title="sed: modify your text without opening your files" href="sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers" description="Unix clones are rarely used to manage technical documentation." />
+</CardGrid>
