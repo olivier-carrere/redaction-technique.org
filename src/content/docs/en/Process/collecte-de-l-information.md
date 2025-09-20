@@ -1,5 +1,5 @@
 ---
-title: "Gathering information
+title: "Gathering information"
 description: "The technical writer gathers information from various sources, both internal and external to the company."
 ---
 

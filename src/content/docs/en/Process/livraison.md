@@ -1,5 +1,5 @@
 ---
-title: "Delivery
+title: "Delivery"
 description: "The technical writer delivers the document to its recipient in the appropriate manner."
 ---
 

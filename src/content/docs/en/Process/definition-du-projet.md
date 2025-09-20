@@ -1,5 +1,5 @@
 ---
-title: "Project definition
+title: "Project definition"
 description: "Communicating technical information without knowing to whom or for what purpose is a futile effort."
 ---
 

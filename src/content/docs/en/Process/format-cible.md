@@ -1,5 +1,5 @@
 ---
-title: "Target format
+title: "Target format"
 description: "The target format of a technical writing medium is the format in which the message's audience will access it."
 ---
 

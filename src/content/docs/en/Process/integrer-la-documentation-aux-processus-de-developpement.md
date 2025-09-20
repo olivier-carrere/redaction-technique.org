@@ -1,6 +1,6 @@
 ---
-title: "Integrating documentation into development processes".
-description: "Documentation is part of software.
+title: "Integrating documentation into development processes."
+description: "Documentation is part of software."
 ---
 
 Documentation is part of the software. Supplied with the product, it must :

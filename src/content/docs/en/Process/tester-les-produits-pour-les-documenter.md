@@ -1,5 +1,5 @@
 ---
-title: "Testing products to document them".
+title: "Testing products to document them."
 description: "A Chinese tale tells how blind people came face to face with an elephant."
 ---
 

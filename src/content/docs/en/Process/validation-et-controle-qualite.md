@@ -1,5 +1,5 @@
 ---
-title: "Validation and quality control
+title: "Validation and quality control"
 description: "The content must be validated before delivery."
 ---
 

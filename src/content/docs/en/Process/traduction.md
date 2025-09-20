@@ -1,5 +1,5 @@
 ---
-title: "Translation
+title: "Translation"
 description: "Translation constraints must be taken into account upstream of the editorial process."
 ---
 
