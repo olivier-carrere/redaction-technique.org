@@ -1,5 +1,5 @@
 ---
-title: "From document to modular document base".
+title: "From document to modular document base"
 description: "The DITA XML structured authoring format offers a way to move from the book model to the modular document base model."
 ---
 

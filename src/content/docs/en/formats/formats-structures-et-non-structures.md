@@ -1,5 +1,5 @@
 ---
-title: "Structured and unstructured formats".
+title: "Structured and unstructured formats"
 description: "The information contained in a technical document can be categorized according to its meaning."
 ---
 

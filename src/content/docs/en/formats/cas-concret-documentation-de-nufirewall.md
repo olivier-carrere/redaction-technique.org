@@ -1,5 +1,5 @@
 ---
-title: "Case study: NuFirewall documentation".
+title: "Case study: NuFirewall documentation"
 description: "NuFirewall's documentation, which was perceived by the press as one of the product's strong points, was produced using DITA XML."
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "Case studies in using DITA XML".
+title: "Case studies in using DITA XML"
 description: "My daily use of the DITA XML structured authoring format on multilingual projects as a technical writer has led me to develop a number of solutions and tips, which I share with you here."
 ---
 
