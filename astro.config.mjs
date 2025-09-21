@@ -19,7 +19,7 @@ export default defineConfig({
     astroExpressiveCode(),
     mdx(),
     starlight({
-      title: 'Markdown & AI-Aided Rapid Documentation Development',
+      title: 'Smart Docs with DITA',
       defaultLocale: 'en',
       locales,
       sidebar: [
