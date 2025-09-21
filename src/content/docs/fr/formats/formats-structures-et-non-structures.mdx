@@ -1,0 +1,194 @@
+---
+title: "Formats structurés et non structurés"
+description: "Les informations contenues dans un document technique peuvent être catégorisées selon leur sens."
+---
+---
+
+import { LinkButton } from '@astrojs/starlight/components';
+
+<LinkButton href="https://redaction-technique.org/">Check my latest blog post!</LinkButton>
+
+:::tip
+
+Les formats structurés favorisent la création de documents minimalistes, complets et cohérents. Ils permettent au rédacteur technique de se concentrer sur le contenu et d'améliorer l'expérience utilisateur et l'utilisabilité de la documentation technique.
+:::
+
+Les informations contenues dans un document technique peuvent être catégorisées selon leur sens. Par défaut, DITA XML propose trois types de base :
+
+| Type      | Description                                                                             |
+|-----------|-----------------------------------------------------------------------------------------|
+| concept   | Introduction ou présentation d'un concept.                                              |
+| task      | Procédure pas à pas, séquentielle et numérotée, destinée à réaliser une tâche.          |
+| reference | Informations de référence sur une liste d'éléments tels que des options d'un programme. |
+
+![Formats structurés et non structurés](/assets/structured.svg)
+**Formats structurés et non structurés**
+
+Sous un format non structuré tel que le format traditionnel de FrameMaker, rien ne contraint le rédacteur technique à organiser l'information selon son sens. Si des règles de rédaction rigoureuses ne sont pas scrupuleusement suivies, l'information fournie à l'utilisateur risque d'être peu claire et difficile à parcourir rapidement.
+
+Avec des formats structurés tels que DITA XML, en revanche :
+
+- le rédacteur technique se concentre sur le contenu,
+- l'information est présentée à l'utilisateur selon une organisation cohérente et prévisible,
+- l'accès à l'information est séquentiel et rapide,
+- l'information peut facilement être réorganisée selon les besoins,
+- l'utilisabilité du support d'information fourni est optimale.
+
+Les types d'information de haut niveau tels que task sont divisés en types de plus bas niveau, par exemple :
+
+| Élément | Description                                                           |
+|---------|-----------------------------------------------------------------------|
+| prereq  | Liste de points obligatoires préalables à la réalisation d'une tâche. |
+| steps   | Série d'étapes de la procédure.                                       |
+| stepxmp | Exemple de réalisation d'une étape.                                   |
+
+Les règles syntaxiques interdisent au rédacteur technique de faire figurer une procédure pas à pas dans une section d'un autre type que task. Le rédacteur technique dispose donc d'un véritable modèle de rédaction qui l'aide à présenter des informations :
+
+| Caractéristique | Description                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Minimalistes    | Selon le principe de design *less is more*, l'utilisateur ne dispose que de l'information dont il a besoin : une section task, par exemple, ne contient que des prérequis, une procédure et quelques autres éléments spécifiques ; toutes les informations conceptuelles ou de référence sont placées dans des sections à part.                                                                                                                      |
+| Complètes       | L'utilisateur dispose de toute l'information dont il a besoin ; une section de type task sans procédure n'est pas une section DITA XML valide et ne pourra pas être publiée ; il est même possible de mettre en œuvre un mécanisme vérifiant automatiquement avant publication la présence de blocs d'information facultatifs selon le schéma XSD DITA XML, mais que le rédacteur technique juge obligatoires, tels que le résultat d'une procédure. |
+| Cohérentes      | Les informations de même type sont présentées dans le même ordre et avec la même mise en page ; les blocs d'information identiques répétés à différents endroits, tels qu'une remarque, sont issus d'une seule et même source et sont donc strictement identiques.                                                                                                                                                                                   |
+
+## DocBook ou DITA XML ?
+
+Certaines entreprises ont parfois un contenu existant au format DocBook. Géré souvent par les acteurs les plus techniques de la société, il coexiste la plupart du temps avec d'autres contenus au format **FrameMaker** ou traitement de texte. S'il est décidé de fédérer tout le contenu d'entreprise sous un seul format, il semble naturel de capitaliser les efforts fournis sur la chaîne de création et de publication **DocBook** et de sélectionner ce format. C'est pourtant se priver des gains de productivité spectaculaires offerts par **DITA XML**.
+
+
+Il est facile de générer du **DocBook** à partir de **DITA XML**. <abbr title="DITA Open Toolkit">DITA-OT</abbr> propose par défaut ce format cible, au même titre que le PDF ou le HTML. L'opération inverse ne peut pas être totalement automatisée. Pourquoi ?
+
+![Un processus non réversible](/assets/entropie.svg)
+**Un processus non réversible**
+
+Il n'est pas possible de migrer automatiquement des données de formats pauvres vers des format riches en information.
+
+Tout simplement parce que le contenu au format **DITA XML** contient plus d'informations. Passer d'un format plus riche à un format plus pauvre en information est une opération entropique qui peut facilement être automatisée. Par exemple, générer un PDF à partir de **DITA XML**. Effectuer l'opération inverse exige d'injecter de l'intelligence, opération que seul l'être humain peut aujourd'hui effectuer.
+
+Si votre contenu était une photo, nous pourrions faire l'analogie suivante :
+
+| Format de contenu | Format de photo |
+|-------------------|-----------------|
+| DITA XML          | RAW             |
+| DocBook           | TIFF            |
+| PDF               | JPEG            |
+
+Le passage de RAW en TIFF et de TIFF en JPEG est destructif et ne peut se faire en sens inverse.
+
+![Un processus non réversible](/assets/entropie-dita-docbook.svg)
+**Un processus non réversible**
+
+Le PDF est sémantiquement plus pauvre que **DocBook**, lui-même plus pauvre que **DITA XML**.
+
+Si votre entreprise tient absolument à utiliser du **DocBook**, il est toujours loisible de générer le contenu **DocBook** à partir d'un contenu source au format **DITA XML**. À condition que le contenu source reste au format **DITA XML** (c'est à dire, à condition qu'aucune modification apportée au contenu **DocBook** ne soit sauvegardée) et que le format **DocBook** ne soit qu'une étape de la génération des livrables, au même titre que le format FO, vous bénéficiez ainsi des fonctionnalités avancées de réutilisation du contenu que propose **DITA XML**.
+
+L'effort de migration d'un format non structuré est certes un peu plus important vers **DITA XML** que vers **DocBook**, puisque vous devez injecter plus d'informations sémantiques. Vous devez également migrer le contenu **DocBook** vers **DITA XML**, ce qui représente également un effort, quoique plus faible. Mais votre contenu est immédiatement de meilleure qualité, car plus structuré. Et vous pourrez rapidement cueillir tous les fruits de votre labeur, notamment si une traduction de votre contenu dans une nouvelle langue est envisagée.
+
+De manière générale, un professionnel a toujours intérêt à travailler sur le format le plus riche, ne serait-ce que pour être pro-actif et anticiper sur les nouveaux besoins.
+
+## Migration de FrameMaker vers DITA XML
+
+Migrer de **FrameMaker** vers **DITA XML**, ce n'est pas comme enregistrer un document **MS Word** au format **LibreOffice**. Aucun processus automatique ne permet de migrer un document non structuré vers un format structuré. Dans le pire des cas, selon la qualité de votre document de départ, cela peut s'apparenter à transformer une friche en jardin à la française. Mais une migration bien planifiée permet de passer au nouveau format sans perturber le rythme des livraisons.
+
+Pour filer la métaphore, si l'on se fixe pour but de convertir un marécage en parterre du château de Versailles, il convient de passer par l'étape du jardin à l'anglaise - soit un endroit certes non rigoureusement architecturé, mais très agréable à vivre. Bonne nouvelle : si le **rédacteur technique** a utilisé de manière cohérente un jeu de styles limité et organisé rationnellement son contenu **FrameMaker**, il est déjà certainement très proche de ce stade.
+
+![Migration de FrameMaker vers DITA XML](/assets/framemaker-to-dita-migration.svg)
+**Migration de FrameMaker vers DITA XML**
+
+D'ailleurs, si, pour une raison quelconque, votre projet de migration devait s'arrêter là, les rédacteurs techniques, l'entreprise et les utilisateurs y auraient déjà beaucoup gagné, respectivement en :
+
+- facilité de mise à jour,
+- cohérence et rapidité de publication des nouvelles versions,
+- facilité d'accès à l'information.
+
+### Restructuration du contenu FrameMaker
+
+La partie automatisée d'une migration de FrameMaker vers **DITA XML** consiste à appliquer une table de conversion entre les styles **FrameMaker** et les structures **DITA XML**.
+
+Un important travail de restructuration du document **FrameMaker** doit cependant être effectué en amont :
+
+- restructuration de l'information selon les trois catégories *concept*, *tâche* et *référence*,
+- suppression des *overrides* (propriétés de texte appliquées manuellement et écrasant les styles ; ce genre d'hérésie est, sinon impossible, du moins très limité sous un format structuré),
+- harmonisation et simplification des styles **FrameMaker** pour les limiter et les faire correspondre aux balises **DITA XML** qui seront utilisées (par exemple, un style *note_important* vers la balise \<note type=\"important\> ; il faut donc au préalable analyser le contenu existant et décider quel ensemble de balises sera utilisé parmi les centaines de balises proposées par **DITA XML** : il est en effet fortement déconseillé de les utiliser toutes).
+
+![Restructuration du contenu FrameMaker et mise en place de la chaîne DITA XML](/assets/framemaker-restructure.svg)
+**Restructuration du contenu FrameMaker et mise en place de la chaîne DITA XML**
+
+Ce travail d'harmonisation peut se faire en parallèle avec la mise à jour et la publication du document **FrameMaker**. La qualité de ce document n'en sera que meilleure. En même temps que cette réorganisation du contenu, vous pouvez mettre en place la chaîne complète de création, gestion et publication **DITA XML** sur un échantillon de votre contenu :
+
+- mise en place des outils,
+- réalisation des feuilles de style des différents formats de sortie,
+- formation des rédacteurs techniques, graphistes et traducteurs,
+- formation et sensibilisation des autres acteurs de l'entreprise.
+
+Ce n'est qu'une fois que sa chaîne est fiable et acceptée, voire attendue par les autres acteurs de l'entreprise, que le **rédacteur technique** peut envisager la migration.
+
+Si vos documents sont disponibles en plusieurs langues, vous devez modifier les fichiers **FrameMaker** et effectuer la migration pour chaque langue. Si un projet de traduction dans une nouvelle langue se profile, mieux vaut effectuer la migration avant !
+
+### Table de conversion FrameMaker vers DITA XML
+
+Lorsque les fichiers FrameMaker sont prêts pour la migration et que la chaîne **DITA XML** est parfaitement intégrée aux processus techniques et humains de la société, le **rédacteur technique** peut appliquer la table de conversion.
+
+Vous devriez maintenant être à même d'archiver les fichiers **FrameMaker**, puis de basculer totalement vers le format **DITA XML**.
+
+![Application d'une table de conversion de FrameMaker vers DITA XML](/assets/dita-migration.svg)
+**Application d'une table de conversion de FrameMaker vers DITA XML**
+
+Appliquez bien sûr ce processus à un petit jeu de documents, qui ne soit pas, si possible, d'une importance critique. Après ce premier succès, vous pourrez appliquer le processus aux autres jeux de documents.
+
+Vous pouvez maintenant progressivement modulariser et partager votre contenu dans le nouveau format afin de tirer parti au maximum de **DITA XML**. Vous pouvez pendant cette phase continuer à publier de nouvelles versions du document ; la publication devrait d'ailleurs être beaucoup plus simple que sous **FrameMaker**.
+
+### Migrer de FrameMaker vers DITA XML
+
+Le but de cette procédure est de :
+
+- migrer son contenu FrameMaker vers DITA XML sans se plonger dans les arcanes des EDD FrameMaker (petits projets uniquement !),
+- gérer la documentation technique au format DITA XML sans utiliser FrameMaker `structuré`.
+
+1. Restructurez le contenu et les styles de vos fichiers de contenu FrameMaker selon les concepts DITA XML.
+2. Créez un document FrameMaker vide et importez-y tous les styles existants dans les fichiers à migrer.
+3. Appliquez tous les styles disponibles à des paragraphes vides du document FrameMaker vide.
+4. Enregistrez le document FrameMaker vide sous le nom `styles.fm`.
+5. Ouvrez FrameMaker `structuré 11` et créez un nouveau fichier DITA XML de type topic.
+6. Choisissez `StructureTools` ‣ `Exporter le catalogue d'éléments en tant
+    qu'EDD` et sauvegardez la nouvelle EDD sous le nom `DITA-topic-edd.fm`.
+7. Ouvrez le fichier `styles.fm`, puis choisissez `Fichier` ‣ `Importer les
+    définitions d'éléments` et importez les définitions d'éléments à partir de `DITA-topic-edd.fm`.
+8. Répétez les trois étapes ci-dessus pour les autres types de topics DITA <abbr title="task, reference, etc.">XML</abbr>, en modifiant les noms de fichiers comme il se doit.
+9. Ouvrez le fichier `styles.fm`, puis choisissez `StructureTools` ‣ `Générer le tableau de conversion`.
+10. Modifiez le fichier de conversion et faites correspondre chaque style FrameMaker à une balise DITA XML.
+11. Enregistrez le tableau de conversion sous le nom `DITA2FM-conversion-table.fm`.
+12. Ouvrez un fichier de contenu FrameMaker sous FrameMaker structuré 11 et choisissez `StructureTools` ‣ `Utilitaires` ‣ `Structurer le document en
+    cours`.
+13. Sélectionnez `DITA2FM-conversion-table.fm` et cliquez sur `Ajouter
+    structure`.
+14. Enregistrez le fichier de contenu FrameMaker au format XML sans sélectionner d'application.
+15. Ouvrez le fichier XML généré sous un éditeur DITA XML et corrigez la syntaxe DITA XML. Certains aspects de cette étape sont scriptables, mais il faut également procéder à des opérations manuelles de restructuration du contenu. Il vous faudra notamment placer à la main les références croisées, de préférence dans une reltable.
+
+Pour générer les éléments permettant de construire un fichier ditamap, vous pouvez par exemple utiliser des scripts Perl du type :
+
+:::caution[Attention]
+Ne lancez ce type de scripts que sur une copie de vos fichiers et non sur les fichiers originaux.
+:::
+
+```perl
+#!/usr/bin/perl
+open(INPUT,"<$ARGV[0]") or die;
+@input_array=<INPUT‣;
+close(INPUT);
+$input_scalar=join(",@input_array);
+# substitution
+$input_scalar =~ s#\<body‣(.|\n)*?</body‣##ig;
+open(OUTPUT,‣$ARGV[0]") or die;
+print(OUTPUT $input_scalar);
+close(OUTPUT);
+```
+
+Vous pouvez également modulariser facilement le contenu à l'aide des ciseaux XML xml_split, ou utiliser le module Perl XML::Twig, ou encore ce one-liner Bash pour renommer les fichiers `.dita` d'après leur titre :
+
+```console
+$ ack "<title‣" *.dita| sed "s# #_#g;" |
+tr '[:upper:]' '[:lower:]' |
+sed -E "s#(.*.dita)#mv \1#g;" |
+sed -E "s#\.dita.*<title‣(.*)</title‣#.dita \1.dita#g;"
+```
+

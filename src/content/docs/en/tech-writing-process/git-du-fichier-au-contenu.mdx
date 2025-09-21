@@ -1,0 +1,121 @@
+---
+title: "Git: from file to content"
+description: "With Git, think content rather than files: it's simpler and avoids many difficulties."
+proofreading: IA
+---
+
+import { LinkButton } from '@astrojs/starlight/components';
+
+<LinkButton href="https://redaction-technique.org/">Check my latest blog post!</LinkButton>
+---
+:::note
+Are you used to handling files? Git invites you to think differently. The advantage: you have much greater control over your content.
+:::
+
+What is a file? For you, it's a piece of content—an image, text, spreadsheet, or other—identified by a name. For your operating system, it's a sequence of bits on the hard disk with an associated file name and directory path. If you want to manage your project in terms of files in Git, you're in for trouble. If you think in terms of content, everything becomes much simpler.
+
+When you provide Git with a file, it decomposes it into two components:
+
+- a content (sequence of bits, or *blob*),
+- a tree (link between filename and content).
+
+These components are stored in one of two areas:
+
+- the index (temporary area),
+- the object database (persistent zone).
+
+When you add a file (`git add <file>`):
+
+- the tree is placed in the index,
+- the content is stored in the object database.
+
+When you *commit* a file:
+
+- the tree is permanently stored in the object database.
+
+Git does not directly compare two files. It compares their checksums, which are single numbers calculated from their contents. If the checksums of two files are identical, their contents are identical (to the nearest bit).
+
+The history of your project is not necessarily linear: you can have it follow several parallel paths, or branches.
+
+You can only create branches from a *commit*. Think of *commits* as junction points (with the road being your project's history) from which you can, if you wish, take your project in a different direction.
+
+If you create a branch, let's say *test*, while changes in your workspace have not been *committed* in your *master* branch, the changes you make will apply to the non-*committed* files in your workspace. If you make a mistake, you won't be able to restore the *status quo ante* of your files by returning to the *master* branch.
+
+To save your work progressively, allowing you to return to a previous state at any time, you need to *commit* regularly and back up your workspace, including the *.git* directory, e.g., using rsync. When you decide to share your work, you can move, merge, or delete your *commits* before sending them as patches or storing them in a central repository.
+
+## Overcoming bottlenecks with branches
+
+Git branches make it easy to perform several unrelated tasks in parallel:
+
+Let's imagine the following work scenario:
+
+- You are asked to migrate a section from one document to another.
+- You send your proposal for validation.
+- Validation is slow, and you have to move on to other parts of the documents.
+
+How do you overcome this bottleneck? It's relatively simple:
+
+1. By default, you work on the *master* branch. Your workspace contains modifications that you don't want to *commit* before validation.
+2. Create a new branch: *git checkout -b my-branch*.
+3. *Commit* your changes to the new branch: *git add my-files*, *git commit -m "my commit message"*.
+4. Return to the master branch: *git checkout master* and move on to your second task.
+5. If your first task is not validated, return to the provisional branch: *git checkout my-branch* and make a new commit (which you can merge with the previous one(s) after validation).
+6. When you receive validation for the first task, put your work in progress aside: *git stash*.
+7. Merge the provisional branch with the master branch: *git merge my-branch*.
+8. Retrieve your work in progress: *git stash pop*.
+
+If you don’t need to run two tasks in parallel, you can simply work in your local workspace. To revert changes, use the *git reset --hard HEAD* command to overwrite your non-*committed* files in the local directory with those from the last *commit*.
+
+## Organizing your history with git rebase
+
+Git can be confusing at first due to its focus on content rather than files. However, this approach simplifies group work and the management of different concurrent versions of the same content.
+
+Git performs atomic *commits*: it applies batches of modifications to content across multiple files, rather than managing individual files. This encourages thinking in terms of batches of tasks on content. 
+
+This may not seem intuitive if you're used to working file by file rather than task by task. But once you've adapted your work habits to this *workflow*, you'll see:
+
+- you have a history that is more effectively utilized,
+- it's much easier to manage concurrent versions of the same content in parallel development branches.
+
+Suppose you've identified two major types of changes to be made to your content:
+
+- command-line program synopses,
+- grammatical corrections to text.
+
+If your content is divided into a set of modular files, you might decide to make both types of changes in each file simultaneously. To distribute the work among a group of technical writers, simply allocate a batch of files to each of them.
+
+This *workflow* isn’t ideal for Git. Instead, divide the work into two batches of tasks, called *synopsis* and *text*, applied concurrently to all files.
+
+Production constraints may force you to further split these batches into sub-batches, which you'll have to alternate between.
+
+You *commit* each sub-batch upon completion. Your *commit* history will then resemble the following diagram:
+
+![Git history](/assets/en/git-rebase-commits.svg)
+**Git history**
+
+When placing your *commits* on the central repository, some will represent interim steps in a task. Your history and branches may be harder to manage as unfinished tasks alternate. To retrieve a single task, you'll need to carefully select the *commits* using the *git cherry-pick* command.
+
+Fortunately, Git facilitates reorganizing your *commits* before sharing them. Use the *git rebase -i HEAD~5* command to reorganize your *commits* from the current version to the previous five, for example.
+
+:::caution
+The *rebase* command is potentially destructive; ensure you back up your workspace, including the *.git* directory, before running it, or risk losing data. You can also create a temporary backup branch.
+:::
+
+You can then rewrite history to offer your collaborators a *commit* for each completed task, as shown in the following diagram:
+
+![Git history](/assets/en/git-rebase-commits-2.svg)
+**Git history**
+
+The *commits* are first grouped by type on Git’s *time arrow*, then merged.
+
+:::note
+If you've performed both tasks simultaneously on one or more files, don't panic. With the *git add -p* command, you can distribute your nested modifications over the appropriate *commits*. When you run *git status*, you'll see your files are both ready and not ready to be *committed*: two states of the files represent partial stages of your work, summing up to the total modifications you've made.
+:::
+
+By using this approach, you lose access to intermediate *commits*, but this is intentional: each unique *commit* represents a consistent state of your content.
+
+This *workflow* also facilitates teamwork: you can assign these tasks to two different team members, each working in their own local space. The former's changes are then merged with the latter's in their local space via *patches*. Finally, the *commits* are refactored before being placed in the central repository.
+
+:::important
+The less you reorganize your *commits* (especially chronologically), the lower the risk of having to manually resolve conflicts. In other words, *git rebase* should not be an excuse for unplanned work.
+:::
