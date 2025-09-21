@@ -1,17 +1,16 @@
 ---
 title: "Is an index useful in a PDF?"
 description: "Full-text search seems to have dethroned the index."
+proofreading: IA
 ---
+In the age of digital documents, is an index an indispensable element of good **technical documentation**?
 
+Full-text search appears to have replaced the index. Technical manuals are rarely provided to customers in paper form. PDF, a format for exchanging non-customer-facing source content and a marginally intended printed version, has become the norm. The *Ctrl+F* keystroke sequence is now a natural reflex for anyone seeking information.
 
-In the age of dematerialized documents, is an index an indispensable element of good **technical documentation**?
+Text intended for the web employs a wide range of terminology to enhance visibility on search engines. Using synonyms is essential to provide potential readers multiple paths to relevant information. Thus, search engines have rendered the index obsolete.
 
-Full-text searching seems to have superseded the index. Technical manuals are now only exceptionally supplied to customers in paper form. PDF, a format for exchange between a source format not intended for customers and a printed version only marginally intended for them, has become the norm. The *Ctrl+F* keystroke sequence is now a more natural reflex for anyone looking for information.
+However, if technical documentation uses consistent terminology, full-text search effectiveness diminishes: if the **technical writer** uses only the term *directory*, readers searching for *folder* will miss the information they need.
 
-A text intended for the Web will use a wide range of terminology to increase its visibility on search engines. The use of synonyms is de rigueur to give the potential reader several access paths to the source of information that may be of interest. Search engines have made the index obsolete.
+In this case, a well-crafted index is invaluable. The challenge lies in the significant effort required at the project's end, just before delivery. A poorly created index benefits neither the customer nor the company.
 
-If technical documentation uses consistent terminology, the effectiveness of full-text searching is reduced: if the **technical writer** has used only the term *directory*, readers searching for the word *folder* will miss the information they're looking for.
-
-In this case, the index, if it's well done, is very useful. The only problem is that creating a good index requires a major effort at the very end of the project, just before delivery time. And providing a poor index is of no interest to either the customer or the company.
-
-So, paradoxically, an index is more useful for good documentation than for bad documentation (at least, documentation with inconsistent terminology). But its cost/utility ratio is low. It's a luxury that companies can rarely afford, but certainly not the first quality aspect to be improved. An index is the icing on the cake of technical documentation - the most important thing is the cake.
+Paradoxically, an index is more useful for high-quality documentation than for inadequate documentation (with inconsistent terminology). However, its cost-to-benefit ratio is low. It's a luxury companies rarely afford and not the primary quality aspect to prioritize. An index is the icing on the cake of technical documentation, but the most important element is the cake itself.

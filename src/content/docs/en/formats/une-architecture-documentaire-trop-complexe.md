@@ -1,18 +1,18 @@
 ---
 title: "A document architecture that's too complex?"
 description: "DITA XML enables productivity gains by reducing the source volume that the technical writer creates, translates and maintains, at the cost of greater complexity."
+proofreading: IA
 ---
+**DITA XML** enables significant productivity gains by reducing the volume of content that the **technical writer** creates, translates, and maintains. However, this productivity gain involves increased complexity.
 
-**DITA XML** enables significant productivity gains by reducing the source volume that the **technical writer** creates, translates and maintains. This productivity gain comes at the price of greater complexity.
+While **DITA XML** projects are more complex, they are still less intricate than projects based on more traditional formats like **FrameMaker**. This is because **DITA XML** follows a logical architecture. As a result, the **technical writer** can rely on the predictable behavior of the tools used, avoiding the need for workarounds related to bugs or erratic functioning of more cumbersome tools.
 
-While **DITA XML** projects are more *complex*, they are less *complex* than projects based on more traditional **FrameMaker** type formats. This is because **DITA XML** is a rational architecture. The **technical writer** is therefore faced with a predictable behavior of the tools he uses, far from the *tips and tricks* intended to get around the bugs or erratic functioning of heavier tools.
-
-The following table presents the different levels of complexity induced by **DITA XML** and the solutions that enable the **technical writer** to master them more easily:
+The following table presents the different levels of complexity introduced by **DITA XML** and the solutions that help the **technical writer** manage them more effectively:
 
 | Complexity                                                | Solution                                                                           |
 |-----------------------------------------------------------|------------------------------------------------------------------------------------|
-| DITA XML syntax                                           | <abbr title="Integrated Development Environment">IDE</abbr> such as XMetal or nXML |
+| DITA XML syntax                                           | <abbr title="Integrated Development Environment">IDE</abbr> such as XMetaL or nXML |
 | Relationship management between atomic information bricks | <abbr title="Content Management System">CMS</abbr> such as Componize or DocZone    |
 | XSLT stylesheet syntax                                    | Graphical stylesheet creation software                                             |
 
-For a small **technical writing** team, the main stumbling block will be the need to implement the company's graphic charter. Other aspects can be managed without specialized tools, with good communication and a series of best practices.
+For a small **technical writing** team, the primary challenge will be implementing the company's graphic charter. Other aspects can be managed without specialized tools, through effective communication and a series of best practices.

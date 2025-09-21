@@ -3,7 +3,7 @@ title: "Managing a project from start to finish"
 description: "It's pretty rare, in a professional context, to be able to manage a project from (almost) A to Z, from conception to realization and communication."
 proofreading: IA
 ---
-In a professional setting, it is pretty rare to manage a project from A to Z, covering everything from conception to communication, including realization. This means overseeing both human and organizational components as well as the technical aspects, along with all forms of communication like graphic design, copywriting, and even video production. Such an opportunity is more common in an associative context.
+In a professional setting, it is pretty rare to manage a project from A to Z, covering everything from conception to communication, including realization. This means overseeing both human and organizational components as well as the technical aspects, along with all forms of communication like graphic design, writing, and even video production. Such an opportunity is more common in an associative context.
 
 ## Photo management for a non-profit
 

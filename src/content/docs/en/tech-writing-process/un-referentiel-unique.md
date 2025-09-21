@@ -1,16 +1,18 @@
 ---
 title: "A single repository?"
 description: "Ideally, all content can be placed under a single repository (e.g. Git) to maximize reuse, consistency and quality."
+proofreading: IA
 ---
+Ideally, all content should be placed in a single repository, such as Git version control software. This maximizes reuse, consistency, and quality. If the content is in **DITA XML** or **DocBook** format, for example, the *single-sourcing* capabilities of these formats can be fully exploited to publish the content in the appropriate form.
 
-Ideally, all content can be placed under a single repository, e.g. Git version control software. This maximizes reuse, consistency and quality. If the content is in **DITA XML** or **DocBook** format, for example, the *single-sourcing* capabilities of these formats can be fully exploited to publish it in the appropriate form.
+Content becomes a network of information modules, and the relationships within this network need to be managed, particularly during updates.
 
-Content becomes a network of information modules, and the relationships within this network need to be managed, particularly when it comes to updates.
+![Single Repository](/assets/unique-referential.svg)
+**Single Repository**
 
-![Unique repository](/assets/unique-referential.svg)
-**Unique repository**
+In practice, it appears that very few companies have taken this step. It is true that until structured formats are taught earlier in education, it seems unrealistic to expect all team members within a company to adopt them, especially if employee turnover is high.
 
-In practice, it seems that very few companies have taken this step. It's true that until structured formats are taught in secondary schools, it seems utopian to try and convert all the players in the company to them, especially if turnover is high.
+**See Also**
 
 **See also**
 

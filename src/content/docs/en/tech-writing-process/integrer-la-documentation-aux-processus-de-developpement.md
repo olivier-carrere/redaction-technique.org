@@ -1,11 +1,12 @@
 ---
 title: "Integrating documentation into development processes."
 description: "Documentation is part of software."
+proofreading: IA
 ---
 
 Documentation is part of the software. Supplied with the product, it must:
 
-- be released at the same time,
+- be released simultaneously,
 - follow the same life cycles, and
 - be subject to the same production and quality control processes.
 
@@ -18,8 +19,8 @@ Ideally, it should meet the following criteria:
 - free and open publishing channels,
 - fully automated layout.
 
-Until a few years ago, the only tools available to deliver quality deliverables in PDF or HTML format relied on binary and proprietary formats that didn't integrate well with development teams' version management systems.
+Until a few years ago, the only tools available to deliver quality deliverables in PDF or HTML relied on binary and proprietary formats that didn't integrate well with development teams' version control systems.
 
-As a result, technical documentation could not meet the same quality and time-to-market requirements as products.
+As a result, technical documentation could not meet the same quality and time-to-market requirements as the products.
 
-The **DocBook**, then **DITA XML** and **reStructuredText** have changed all that: these text formats can be edited with any type of program, from a simple text editor to a graphical <abbr title="Integrated Development Environment">IDE</abbr>, and integrate perfectly with Subversion, Git or any other version management system.
+**DocBook**, then **DITA XML**, and **reStructuredText** have changed all that: these text formats can be edited with any type of program, from a simple text editor to a graphical <abbr title="Integrated Development Environment">IDE</abbr>, integrating perfectly with Subversion, Git, or any other version control system.

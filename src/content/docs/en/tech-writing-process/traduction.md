@@ -1,18 +1,18 @@
 ---
 title: "Translation"
 description: "Translation constraints must be taken into account upstream of the editorial process."
+proofreading: IA
 ---
+Translation considerations must be addressed early in the editorial process, as they impact both the editorial style and the organization of repositories.
 
-Translation constraints must be taken into account upstream of the editorial process. They have implications for both editorial style and repository organization.
+There is no one-size-fits-all solution: delivering information in multiple languages requires ongoing oversight. However, addressing translation constraints early in the process and using an appropriate methodology can enhance quality and reduce costs and delivery times for multilingual versions. Translation should be integrated into the document workflow. Additionally, it is essential to ensure effective communication between technical writers, engineers, subject matter experts, designers, and translators.
 
-There is no magic formula: delivering information in several languages requires constant monitoring. But taking into account constraints upstream and using an appropriate methodology can improve quality and reduce costs and delivery times for multilingual versions. Translation must be integrated into the document workflow. It is also important to ensure that the various players involved - technical writers, engineers, experts and designers - communicate with the translators.
-
-If the documentation is based on a set of modules, translation can be carried out in parallel with writing, thus reducing delivery times.
+If documentation is modular, translation can occur concurrently with writing, thereby reducing delivery times.
 
 ![Parallel editing and translation](/assets/parallel-translation.svg)
-**Parallelization of copywriting and translation**
+**Parallelization of Writing and Translation**
 
-With regard to the source file repository, is it better to place the language directories upstream or downstream of the document project directories? In other words, is it better to adopt the following structure:
+Regarding the organization of source file repositories, is it preferable to position the language directories before or after the document project directories? In other words, should the structure be as follows:
 
 - english
   - product 1
@@ -21,15 +21,15 @@ With regard to the source file repository, is it better to place the language di
   - product 1
   - product 2
 
-or the following:
+or like this:
 
 - product 1
   - english
   - french
 - product 2
   - english
-  - english
+  - french
 
-In most cases, it's best to place the distinction between languages as far upstream as possible. To use software development terminology, creating a translation of a set of information is equivalent to creating a branch of that set. As it is easier to manipulate a branch by its root than by its branches, in practice it is much easier to manipulate complete directories, if only to provide them to translators, than a set of sub-directories.
+In most situations, it is advisable to distinguish languages as early as possible. Using software development terminology, creating a translation of a content set is akin to creating a branch of that set. It is easier to manage a branch from its root than from its extensions, making it more practical to handle complete directories, especially when providing them to translators, rather than using a set of subdirectories.
 
-Once the translation has been completed, changes made to either the source or translated version cannot be automatically applied to the other. To continue in the terminology of the software world, the new branch is a fork: changes made to one cannot be automatically applied to the other. To provide the same information in different languages, it is therefore crucial to effectively track updates to the original version.
+Once translation is completed, changes to either the source or translated version cannot be automatically mirrored. Continuing with software terminology, the new branch is a fork: modifications in one cannot be automatically reflected in the other. Therefore, to offer the same information in different languages, it is essential to effectively track updates to the original version.

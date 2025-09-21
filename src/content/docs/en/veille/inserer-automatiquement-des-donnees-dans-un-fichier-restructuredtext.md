@@ -1,22 +1,22 @@
 ---
 title: "Automatically insert data into a reStructuredText file"
 description: "Suppose you need to present 3 products, Dianthus, Geum and Prunus, each in three versions 1.0, 1.5 and 2.3."
+proofreading: IA
 ---
+Suppose you need to present three products: *Dianthus*, *Geum*, and *Prunus*, each available in versions *1.0*, *1.5*, and *2.3*.
 
-Suppose you had to present 3 products, *Dianthus*, *Geum* and *Prunus*, each available in three versions *1.0*, *1.5* and *2.3*.
+Instead of manually entering data into the content file, you can automate this process using Jinja and Python.
 
-Rather than writing data by hand into the content file, you can insert it automatically using Jinja and Python.
-
-1. Create the following `modele.rst` file:
+1. Create the following `template.rst` file:
 
     ```rst
-    Products and versions
-    ====================
+    Products and Versions
+    =====================
     
-    {% for prod in product %}
+    {% for prod in products %}
     {{ prod | capitalize }}
     {% for c in prod %}-{% endfor %}
-       {% for ver in version %}
+       {% for ver in versions %}
     - {{ ver }}
        {% endfor %}
     {% endfor %}
@@ -26,17 +26,17 @@ Rather than writing data by hand into the content file, you can insert it automa
 
     ```python
     #!/usr/bin/python
-    # coding: utf8
+    # coding: utf-8
     import jinja2
     
     env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'))
     
-    template = env.get_template('modele.rst')
+    template = env.get_template('template.rst')
     
     data = {
-        product': ['dianthus', 'geum', 'prunus'],
-        'version': ['1.0', '1.5', '2.3']
-        }
+        'products': ['dianthus', 'geum', 'prunus'],
+        'versions': ['1.0', '1.5', '2.3']
+    }
     print(template.render(data))
     ```
 
@@ -44,14 +44,14 @@ Rather than writing data by hand into the content file, you can insert it automa
 
     ```bash
     chmod +x populate.py
-    $ ./populate.py
+    ./populate.py
     ```
 
-    The following content is displayed:
+    The following output is displayed:
 
     ```md
-    Products and versions
-    ====================
+    Products and Versions
+    =====================
 
     Dianthus
     --------
@@ -83,8 +83,8 @@ Rather than writing data by hand into the content file, you can insert it automa
     - 2.3
     ```
 
-This minimizes the risk of errors and the effort involved in updating.
+This approach minimizes the risk of errors and reduces the effort involved in updating.
 
 **See also**
-- [Automatically insert data into a DITA XML file](.../insert-automatically-data-into-a-dita-xml-file)
-- [Automatically insert SQL data into a reStructuredText file](../inser-automatically-insert-sql-data-into-a-restructuredtext-file)
+- [Automatically insert data into a DITA XML file](../inserer-automatiquement-des-donnees-dans-un-fichier-dita-xml)
+- [Automatically insert SQL data into a reStructuredText file](../inserer-automatiquement-des-donnees-sql-dans-un-fichier-restructuredtext)
