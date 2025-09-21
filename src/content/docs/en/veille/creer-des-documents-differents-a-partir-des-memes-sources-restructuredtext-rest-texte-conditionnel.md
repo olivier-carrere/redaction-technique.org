@@ -1,6 +1,7 @@
 ---
 title: "Create different documents from the same ReST sources (conditional text)"
 description: "Generate document variants from the same ReST sources with Sphinx conditional text."
+proofreading: IA
 ---
 
 1.  Install *Sphinx*, and *make*:
@@ -9,13 +10,13 @@ description: "Generate document variants from the same ReST sources with Sphinx 
     $ sudo apt install python-sphinx make
     ```
 
-2.  Create a Sphinx project using all the default choices:
+2.  Create a Sphinx project using the default options:
 
     ```bash
     $ sphinx-quickstart
     ```
 
-3.  Add the following content to the `index.rst` file, respecting the indentations:
+3.  Add the following content to the `index.rst` file, maintaining the correct indentations:
 
     ```txt
     .. only:: electrician
@@ -35,7 +36,7 @@ description: "Generate document variants from the same ReST sources with Sphinx 
       Do not dive into the pool.
     ```
 
-4.  To hide or not hide content intended for electricians or plumbers, comment out or not the following lines in the `conf.py` configuration file:
+4.  To control the display of content intended for electricians or plumbers, uncomment or comment the following lines in the `conf.py` configuration file:
 
     ```python
     tags.add('electrician')

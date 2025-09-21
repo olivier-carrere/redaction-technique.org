@@ -1,6 +1,7 @@
 ---
 title: "Create different documents from the same sources using Jinja"
 description: "The Python profiling.py script below allows you to profile content in preprocessing using the powerful Jinja template engine."
+proofreading: IA
 ---
 
 The `profiling.py` Python script below allows you to profile content in *preprocessing* using the powerful Jinja model engine:
@@ -22,7 +23,7 @@ file.write(string)
 file.close()
 ```
 
-Contents of file `conditional-text.rst`:
+Contents of the file `conditional-text.rst`:
 
 ```txt
 Using conditional text
@@ -53,4 +54,4 @@ How to use:
 ./profiling.py electrician
 ```
 
-Now just call the script before compiling *via* Sphinx in the `Makefile`.
+Now, just call the script before compiling *via* Sphinx in the `Makefile`.

@@ -1,12 +1,11 @@
 ---
 title: "sed: modify your text without opening your files"
 description: "Unix clones are rarely used to manage technical documentation."
+proofreading: IA
 ---
+Unix clones such as Linux are rarely used to manage technical documentation. This is unusual when you consider the plethora of tools available on these platforms for manipulating text in various ways.
 
-
-Unix clones are rarely used to manage technical documentation. This is strange when you consider the plethora of tools available on these platforms for manipulating text in all directions.
-
-Take, for example, the dialogue between M. Jourdain and his philosophy master in Molière's Bourgeois gentilhomme:
+Consider the dialogue between M. Jourdain and his philosophy teacher in Molière's *Le Bourgeois Gentilhomme*:
 
 *MONSIEUR JOURDAIN:*
 
@@ -14,7 +13,7 @@ Take, for example, the dialogue between M. Jourdain and his philosophy master in
 
 [...]
 
-*MAÎTRE DE PHILOSOPHIE:*
+*PHILOSOPHY TEACHER:*
 
 :   *On les peut mettre premièrement comme vous avez dit: Belle marquise, vos beaux yeux me font mourir d'amour. Ou bien: D'amour mourir me font, belle marquise, vos beaux yeux. Ou bien: Vos yeux beaux d'amour me font, belle marquise, mourir. Ou bien: Mourir vos beaux yeux, belle marquise, d'amour me font. Ou bien: Me font vos yeux beaux mourir, belle marquise, d'amour.*
 
@@ -26,9 +25,9 @@ yeux me font mourir d'amour."
 Belle marquise, vos beaux yeux me font mourir d'amour.
 ```
 
-Now we need to swap the words in the sentence to create a new one. For a simple transposition, you might find it easier to use awk. awk doesn't deal with lines, but with the fields of a record (of a line), delimited by spaces by default. In other words, awk treats text like a database. It can easily display the whole line, or just one or more fields, in any desired order. Fields are indicated in the form $n, where n indicates the position of the field in the line, starting from the left. So $1 indicates the first field, $2 the last, etc. $0 corresponds to the whole line.
+Now we need to swap the words in the sentence to create a new one. For a simple transposition, you might find it easier to use `awk`. `awk` doesn't deal with lines, but with the fields of a record (of a line), delimited by spaces by default. In other words, `awk` treats text like a database. It can easily display the whole line or just one or more fields in any desired order. Fields are indicated in the form `$n`, where `n` indicates the position of the field in the line, starting from the left. So `$1` indicates the first field, `$2`, and so forth. `$0` corresponds to the whole line.
 
-So we're going to give Mr. Jourdain's declaration of love as input to a one-line awk program, thanks to the pipeline redirection symbol (|).
+So we're going to give Mr. Jourdain's declaration of love as input to a one-line `awk` program, using the pipeline redirection symbol (`|`).
 
 ```bash
 $ echo "Belle marquise, vos beaux \\
@@ -37,17 +36,17 @@ awk  '{print $9" "$8" "$6" "$7" "$1" "$2" "$3" "$4" "$5}'
 d'amour. mourir me font Belle marquise, vos beaux yeux
 ```
 
-The output of the echo command is not displayed. What is displayed is the output of the awk program, of which the output of the echo command, Mr Jourdain's declaration of love, was the input.
+The output of the `echo` command is not displayed. What is displayed is the output of the `awk` program, of which the output of the `echo` command, Mr. Jourdain's declaration of love, was the input.
 
-However, the final output is not what was intended. The fields do not correspond exactly to words. The awk command therefore needs to be refined.
+However, the final output is not what was intended. The fields do not correspond exactly to words. The `awk` command therefore needs to be refined.
 
-It's simpler to turn to sed. sed selects sets of characters in lines, either quoted literally or via metacharacters in regular expressions. A well-known regular expression metacharacter is the *, indicating zero or an indefinite number of characters on the command line, as in:
+It's simpler to turn to `sed`. `sed` selects sets of characters in lines, either quoted literally or via metacharacters in regular expressions. A well-known regular expression metacharacter is `*`, indicating zero or an indefinite number of characters on the command line, as in:
 
 ```bash
 $ ls *.rst
 ```
 
-sed also supports back references, which display the value corresponding to a previously found literal or rational expression at the desired location. Fortunately for us, Mr Jourdain's declaration of love contains exactly nine words, which is the maximum number of back references possible.
+`sed` also supports back references, which display the value corresponding to a previously found literal or rational expression at the desired location. Fortunately for us, Mr. Jourdain's declaration of love contains exactly nine words, which is the maximum number of back references possible.
 
 ```bash
 $ echo "Belle marquise, vos beaux \\
@@ -57,7 +56,7 @@ sed "s#\(.*\) \(.*\), \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \\
 d'amour. mourir me font, Belle marquise, vos beaux yeux
 ```
 
-We've run into the same problem: the regular expression .* doesn't correspond to a word, but to a series of characters, including punctuation. We must then use the <.*> form, which corresponds to a word such as those used by Mr. Jourdain to make prose. We're going to use escape characters (backslash \) so that the < and > signs are not interpreted literally under certain consoles, but as metacharacters with a special function:
+We've run into the same problem: the regular expression `.*` doesn't correspond to a word, but to a series of characters, including punctuation. We must then use the `\<.*\>` form, which corresponds to a word such as those used by Mr. Jourdain to create prose. We're going to use escape characters (backslash `\`) so that the `<` and `>` signs are not interpreted literally under certain consoles, but as metacharacters with a special function:
 
 ```bash
 $ export \
@@ -69,7 +68,7 @@ sed "s#$p#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
 d'amour mourir me font, Belle marquise, vos beaux yeux.
 ```
 
-We could also use the [[:alpha:]]* form, which is more legible but less concise:
+We could also use the `[[:alpha:]]*` form, which is more readable but less concise:
 
 ```bash
 $ export a="[[:alpha:]]"
@@ -81,7 +80,7 @@ sed "s#$n#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
 d'amour mourir me font, Belle marquise, vos beaux yeux.
 ```
 
-That's better, but we've got a capitalization problem. So we're going to use the judiciously placed /u and /l operators. First, we'll export some variables to make the script more concise and readable:
+That's better, but we've got a capitalization problem. So we're going to use the judiciously placed `/u` and `/l` operators. First, we'll export some variables to make the script more concise and readable:
 
 ```bash
 $ export w="\(\<.*\>)"
@@ -95,7 +94,7 @@ sed "s#$m \(d'\<.*\>\)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#"
 D'amour mourir me font, belle marquise, vos beaux yeux.
 ```
 
-We can now easily redistribute the back references to get all the variations of the philosophy master:
+We can now easily redistribute the back references to get all the variations of the philosophy teacher:
 
 ```bash
 $ echo "Belle marquise, vos beaux \\
@@ -120,9 +119,9 @@ Me font vos yeux beaux mourir, belle marquise, d'amour.
 
 ## Molière and GNU/Linux
 
-Let's rewrite the dialogue between M. Jourdain and his philosophy master in geek style:
+Let's rewrite the dialogue between M. Jourdain and his philosophy teacher in geek style:
 
-MONSIEUR JOURDAIN:
+**MONSIEUR JOURDAIN:**
 
 I'd like to show him on the standard output:
 
@@ -132,7 +131,7 @@ $ Belle marquise, vos beaux yeux me font mourir d'amour.
 
 But I wish it were put in a gallant way, that it were turned nicely.
 
-PHILOSOPHY MASTER:
+**PHILOSOPHY TEACHER:**
 
 : They can be put first as you said:
 
@@ -185,9 +184,9 @@ Admittedly, a lot of effort for not very much, you might say. But imagine a file
 
 Dear doctor, these great misfortunes make you weep with bitterness. Little boy, this good ice cream makes you salivate with envy. Vast ocean, the strong swell makes you pitch with drunkenness.
 
-This is unlikely to be the case here, but it is commonplace in technical documentation to find sentences with the same structure, for reasons of stylistic homogeneity.
+This might be uncommon, but it is typical in technical documentation to find sentences with the same structure, for reasons of stylistic homogeneity.
 
-To carry out our tests on a sample, let's place the three sentences above in a:
+To carry out our tests on a sample, let's place the three sentences above in a file:
 
 ```bash
 $ echo "Cher docteur, ces grands malheurs \\
@@ -200,7 +199,7 @@ $ echo "Vaste océan, la forte houle te \\
 fait tanguer d'ivresse." >> variations.txt
 ```
 
-Let's place the various sed commands in a different script each:
+Let's place the various `sed` commands in a different script each:
 
 ```bash
 $ echo "s#$p#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#" > moliere1.sed
@@ -209,7 +208,7 @@ $ echo "s#$p#\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#" > moliere3.sed
 $ echo "s#$p#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#" > moliere4.sed
 ```
 
-Now let's loop through all the sed scripts on all the lines in the:
+Now let's loop through all the `sed` scripts on all the lines in the file:
 
 ```bash
 $ for (( i=1; i<5; i++ )); do
@@ -232,4 +231,4 @@ Te fait cette glace bonne saliver, petit garçon, d'envie.
 Te fait la houle forte tanguer, vaste océan, d'ivresse.
 ```
 
-And there it is. In just a few moments, without ever opening a single file, we apply a series of complex operations to an indefinite number of sentences of the same structure. This is not possible with a word processor or any other tool with a graphical interface, or with binary files.
+And there it is. In just a few moments, without ever opening a single file, we apply a series of complex operations to an indefinite number of sentences of the same structure. This is not feasible with a word processor or any other tool with a graphical interface or with binary files.
