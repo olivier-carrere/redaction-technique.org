@@ -35,7 +35,7 @@ To promote and simplify conref usage within a team of technical writers, central
 
 While initially easier to reuse content by referencing existing DITA XML files without extracting them, one core content reuse principle is decontextualization. Extracting and placing reused content into a dedicated conref source file ultimately proves more efficient. It's easier to locate source elements in one repository than searching across numerous files.
 
-![Decentralized conref management is inefficient](/assets/en/conref-non-centralized.svg)
+![Decentralized conref management is inefficient](/assets/en/conref-non-centralises.svg)
 **Managing conrefs in a decentralized way is inefficient.**
 
 Conrefs are resolved at compile time even if source files are not referenced in the ditamap file generating the deliverable. Thus, conref sources can reside in higher-level directories than the ditamap.
@@ -55,7 +55,7 @@ The **technical writer** should use the lowest-level **DITA XML** node containin
 
 Given *conref*'s design for managing small information blocks, using the smallest XML structure encapsulating the information is logical, even if compatibility with the **DITA XML** section's XSD schema necessitates inclusion in larger structures.
 
-![Conref placed on lowest-level XML node](/assets/en/conref-low-level.svg)
+![Conref placed on lowest-level XML node](/assets/en/conref-bas-niveau.svg)
 **Placement on the lowest-level XML node.**
 
 For instance, to reuse "Click OK," ensure your source *conref* file is structured as:
@@ -99,7 +99,7 @@ instead of:
 
 In the first method, *conref* usage is possible even if the top node (`<step>`) includes nodes beyond `<step>`, such as `<info>`.
 
-![Conref placed on highest-level XML node](/assets/en/conref-high-level.svg)
+![Conref placed on highest-level XML node](/assets/en/conref-haut-niveau.svg)
 **Placement on top-level XML node.**
 
 In the second scenario, the entire `<step>` node content is replaced by the source *conref*. Thus, the following code will omit node content in deliverables:
@@ -117,7 +117,7 @@ In the second scenario, the entire `<step>` node content is replaced by the sour
 
 The smallest DITA XML information unit is the `<ph>` node. However, technical writers should apply the conref mechanism only for complete sentences or terms not intended for translation (e.g., company or product names). Otherwise, significant issues arise during language translation.
 
-![Sentence structure varies by language](/assets/en/translation-conref.svg)
+![Sentence structure varies by language](/assets/en/traduction-conref.svg)
 **Sentence structure varies by language.**
 
 Example
@@ -193,7 +193,7 @@ Leveraging conref enables **DITA XML** technical writers to significantly cut co
 
 *Task* sections, due to their nature, often see higher content reuse than *concept* or *reference* sections.
 
-![Conref modularizes small information blocks](/assets/en/maximize-conref.svg)
+![Conref modularizes small information blocks](/assets/en/maximiser-conref.svg)
 **Conrefs modularize small information blocks.**
 
 Quickly producing files with only unique titles, while generating the remainder from *conref*, is common.
