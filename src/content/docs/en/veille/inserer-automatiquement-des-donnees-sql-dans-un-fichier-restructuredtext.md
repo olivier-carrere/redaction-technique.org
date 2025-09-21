@@ -1,11 +1,11 @@
 ---
 title: "Automatically insert SQL data into a reStructuredText file"
 description: "We're going to create a database of products with their versions, then format this information in a reStructuredText file."
+proofreading: IA
 ---
+We're going to create a database of products with their versions, then format this information in a reStructuredText file. This information can then be easily formatted and published in PDF, HTML, or other formats.
 
-We're going to create a database of products with their versions, then format this information in a reStructuredText file. This information can then be easily formatted and published in PDF, HTML or other formats.
-
-1.  Create the *SQLite3* database `productdb.db`:
+1. Create the *SQLite3* database `productdb.db`:
 
     ```python
     #!/usr/bin/python
@@ -31,9 +31,9 @@ We're going to create a database of products with their versions, then format th
         exit(1)
     
     print('The database has been created.')
-	```
+    ```
 
-2.  Insert data into the database:
+2. Insert data into the database:
 
     ```python
     #!/usr/bin/python
@@ -65,7 +65,7 @@ We're going to create a database of products with their versions, then format th
     print('Data has been inserted.')
     ```
 
-3.  Create the following `modele-sql.rst` file:
+3. Create the following `modele-sql.rst` file:
 
     ```sql
     {% for prod in product %}
@@ -77,7 +77,7 @@ We're going to create a database of products with their versions, then format th
     {% endfor %}
     ```
 
-4.  Run the following Python script:
+4. Run the following Python script:
 
     ```python
     #!/usr/bin/python

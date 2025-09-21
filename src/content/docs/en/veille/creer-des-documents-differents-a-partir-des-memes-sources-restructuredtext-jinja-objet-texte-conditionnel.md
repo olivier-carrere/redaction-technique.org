@@ -1,6 +1,7 @@
 ---
 title: "Create different documents from the same sources via Jinja (object method)"
 description: "Profiling content with Jinja by defining objects (audience, platform, version, etc.) to include or exclude blocks according to their attributes using a Python script profiling.py."
+proofreading: IA
 ---
 
 With Jinja, you can define objects (audience, platform, version, etc.) and include or exclude text blocks according to their attributes.
@@ -192,7 +193,7 @@ With Jinja, you can define objects (audience, platform, version, etc.) and inclu
 
 10. Use a more readable variant in the content file:
 
-    It may be more intuitive to specify a user-friendly string value in the content file. Especially if editors are unfamiliar with object-oriented programming, as the `==` equality test is more meaningful to most people.
+    It may be more intuitive to specify a user-friendly string value in the content file, especially if editors are unfamiliar with object-oriented programming, as the `==` equality test is more meaningful to most people.
 
     ```txt
     Using conditional text
