@@ -13,7 +13,7 @@ The non-profit collected photos taken by its members at various events in bulk, 
 
 I was tasked with centralizing these photos and facilitating access for the graphic designers. Given my background in photography, poster creation, and setting up discussion forums for the non-profit, I had a clear understanding of the tasks involved. The budget allocated was exactly 0.00 euros.
 
-![](/assets/en/pile-photos.jpg)
+![](/assets/pile-photos.jpg)
 
 One of my objectives was to provide users with as much autonomy as possible. Specifically, I wanted photographers to upload photos themselves rather than sending them to me. As the old saying goes, the fewer the links in a chain, the stronger the chain.
 
@@ -60,7 +60,7 @@ I had an unused domain name, sufficient free disk space, and databases on my own
 
 Consequently, I installed an instance of Piwigo, a software I already used for family photos.
 
-![Photo Kevin Harber](/assets/en/galerie-photo.jpg)
+![Photo Kevin Harber](/assets/galerie-photo.jpg)
 
 Initially, I protected gallery access with a common `.htaccess` file for all users, later creating personal accounts for the gallery.
 
@@ -199,7 +199,7 @@ The LaTeX template for the flyer—just the tip of the iceberg—is published on
 
 Oddly, the PDF generated on *Overleaf* has defects I do not observe when publishing it locally.
 
-![](/assets/en/leaflet-pliage.png)
+![](/assets/leaflet-pliage.png)
 
 For the curious, there are 6 ways to fold this brochure. LaTeX’s leaflet document class saved me from tedious experimentation.
 :::
@@ -238,12 +238,12 @@ Here's an example of LaTeX code:
 
 Below is the PDF rendering. Note the automatic hyphenation calculation (the subject of a doctoral thesis). It's one of LaTeX's many advantages.
 
-![](/assets/en/latex-rendu.png)
+![](/assets/latex-rendu.png)
 
 :::note
 If you're a *WYSIWYG* supporter, try Gummi. It's *What You See Is What You Get* in the strictest sense, closer to "such a screen, such a print" than "such a screen, such a write." You cannot change text in the viewer window, only in the LaTeX code window, ensuring you understand what's happening "under the hood" and granting more control than delegating layout code creation to a graphical interface. If you frequently work with numbered lists and have dealt with, shall we say… erratic numbering, you'll immediately see the benefit.
 
-![](/assets/en/latex-wysiwyg-gummi.png)
+![](/assets/latex-wysiwyg-gummi.png)
 :::
 
 Once you've created your flyer structure, it's easy to use it to quickly produce other documents. Furthermore, others can rework the document without licensing or software platform concerns.
@@ -252,15 +252,15 @@ Once you've created your flyer structure, it's easy to use it to quickly produce
 
 Tracking changes in Overleaf or Git effectively prevents errors: it’s easy to visualize changes in content or form between versions, revert to a previous version anytime, and maintain multiple versions in parallel.
 
-![Visualization of background changes under GitHub](/assets/en/latex-historique-fond-github.png)
+![Visualization of background changes under GitHub](/assets/latex-historique-fond-github.png)
 **Viewing background changes in GitHub**
 
-![View form modifications in GitHub](/assets/en/latex-history-form-github.png)
+![View form modifications in GitHub](/assets/latex-history-form-github.png)
 **View form modifications in GitHub**!
 
 Here’s the evolution of an excerpt from the compiled PDF:
 
-![](/assets/en/latex-diff-pdf.png)
+![](/assets/latex-diff-pdf.png)
 
 You can collaborate on the same project, either synchronously or asynchronously.
 
@@ -287,7 +287,7 @@ After several trials, I decided to use old photos, either royalty-free or under 
 
 To have fun with these tasks, I played with the quirky side, even if it meant occasionally revisiting certain selections whose humor was too obscure. For example, the following photo, which amused only me, did little to enhance understanding of the *Tutorials* section:
 
-![](/assets/en/Frances_Densmore_recording_Mountain_Chief2.jpg)
+![](/assets/Frances_Densmore_recording_Mountain_Chief2.jpg)
 
 ## Patience
 

@@ -150,7 +150,7 @@ This post aims to:
 
    O surprise, you're looking at a <abbr title="Graphical User Interface">GUI</abbr>! It's so beautiful, we're going to take a photo:
 
-   ![An atomic commit spanning a good fifteen files](/assets/en/historique-git-redaction-technique.png)
+   ![An atomic commit spanning a good fifteen files](/assets/historique-git-redaction-technique.png)
 
    **An atomic commit spanning a good fifteen files**
 
