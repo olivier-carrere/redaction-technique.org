@@ -37,6 +37,5 @@ Source code management systems have a proven track record of reliability, managi
 
 One drawback, though: these tools are not specifically designed for the XML format and perform line-by-line comparisons between files rather than node-by-node comparisons, which can unnecessarily increase conflicts between commits or branches.
 
-**Voir aussi**
-
-- [Git : du fichier au contenu](../git-du-fichier-au-contenu)
+**Additional resources**
+- [Git: from file to content](../git-du-fichier-au-contenu)
