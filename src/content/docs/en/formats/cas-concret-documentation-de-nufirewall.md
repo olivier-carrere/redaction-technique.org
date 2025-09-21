@@ -13,12 +13,12 @@ When a **technical writer** needs to reuse specific **DITA XML** information blo
 
 The *conref* principle is straightforward: when a *conref* is specified at a particular XML node, the content of the target node is replaced by the content of the source node.
 
-![Sharing of large information blocks between ditamaps](/assets/ditamap.svg)
+![Sharing of large information blocks between ditamaps](/assets/en/ditamap.svg)
 **Sharing of broad granularity information blocks between ditamaps**
 
 A key difference between the *conref* mechanism and the XML xinclude mechanism is that the source node must comply with the XSD schema of both the source and target files. This formal rigor, while sometimes less flexible, enhances *conref* readability compared to *xinclude*, thereby encouraging its use.
 
-![Sharing fine-grained information blocks between DITA XML sections](/assets/conref.svg)
+![Sharing fine-grained information blocks between DITA XML sections](/assets/en/conref.svg)
 **Sharing of fine-grain information blocks between DITA XML sections**
 
 ### Centralize conrefs in a single file
@@ -30,12 +30,12 @@ To promote and simplify conref usage within a team of technical writers, central
 
 While initially easier to reuse content by referencing existing DITA XML files without extracting them, one core content reuse principle is decontextualization. Extracting and placing reused content into a dedicated conref source file ultimately proves more efficient. It's easier to locate source elements in one repository than searching across numerous files.
 
-![Decentralized conref management is inefficient](/assets/conref-non-centralized.svg)
+![Decentralized conref management is inefficient](/assets/en/conref-non-centralized.svg)
 **Managing conrefs in a decentralized way is inefficient.**
 
 Conrefs are resolved at compile time even if source files are not referenced in the ditamap file generating the deliverable. Thus, conref sources can reside in higher-level directories than the ditamap.
 
-![Good conref management](/assets/conref.svg)
+![Good conref management](/assets/en/conref.svg)
 **Good conref management**
 
 Content files in ditamap structures contain only target conref values, while a central file consolidates all source conref values, potentially with internal references to certain target values.
@@ -50,7 +50,7 @@ The **technical writer** should use the lowest-level **DITA XML** node containin
 
 Given *conref*'s design for managing small information blocks, using the smallest XML structure encapsulating the information is logical, even if compatibility with the **DITA XML** section's XSD schema necessitates inclusion in larger structures.
 
-![Conref placed on lowest-level XML node](/assets/conref-low-level.svg)
+![Conref placed on lowest-level XML node](/assets/en/conref-low-level.svg)
 **Placement on the lowest-level XML node.**
 
 For instance, to reuse "Click OK," ensure your source *conref* file is structured as:
@@ -94,7 +94,7 @@ instead of:
 
 In the first method, *conref* usage is possible even if the top node (`<step>`) includes nodes beyond `<step>`, such as `<info>`.
 
-![Conref placed on highest-level XML node](/assets/conref-high-level.svg)
+![Conref placed on highest-level XML node](/assets/en/conref-high-level.svg)
 **Placement on top-level XML node.**
 
 In the second scenario, the entire `<step>` node content is replaced by the source *conref*. Thus, the following code will omit node content in deliverables:
@@ -112,7 +112,7 @@ In the second scenario, the entire `<step>` node content is replaced by the sour
 
 The smallest DITA XML information unit is the `<ph>` node. However, technical writers should apply the conref mechanism only for complete sentences or terms not intended for translation (e.g., company or product names). Otherwise, significant issues arise during language translation.
 
-![Sentence structure varies by language](/assets/translation-conref.svg)
+![Sentence structure varies by language](/assets/en/translation-conref.svg)
 **Sentence structure varies by language.**
 
 Example
@@ -170,7 +170,7 @@ In the example below, source *conref* *see-admin-guide* includes target *conref*
 
 This complexity level is navigable. However, if *admin-guide-title* contains yet another target *conref*, the **DITA XML** becomes cumbersome (not to mention circular reference risks). In theory, *conref* combinations are infinite, but practical issues are vast!
 
-![Conref multi-level nesting: risky](/assets/imbriquer-conref.svg)
+![Conref multi-level nesting: risky](/assets/en/imbriquer-conref.svg)
 **Multi-level conref nesting: risky!**
 
 Summary:
@@ -188,7 +188,7 @@ Leveraging conref enables **DITA XML** technical writers to significantly cut co
 
 *Task* sections, due to their nature, often see higher content reuse than *concept* or *reference* sections.
 
-![Conref modularizes small information blocks](/assets/maximize-conref.svg)
+![Conref modularizes small information blocks](/assets/en/maximize-conref.svg)
 **Conrefs modularize small information blocks.**
 
 Quickly producing files with only unique titles, while generating the remainder from *conref*, is common.
@@ -276,7 +276,7 @@ Consider a scenario where a file with confidential information requires translat
 
 What can be done? The *ditaval* mechanism filters out information from the deliverables but not from the source files. Must you create separate source files for confidential and non-confidential information? That negates single-sourcing and content reuse—the very reasons for choosing **DITA XML**!
 
-![Hide confidential information from translators](/assets/confidentiel.svg)
+![Hide confidential information from translators](/assets/en/confidentiel.svg)
 **Hide confidential information from translators**
 
 By placing confidential content in a separate file (e.g., `confidential.dita`) and setting conref with a filter key in the translatable file, you manage access. The translator processes only non-confidential text, and deliverables in the target language exclude confidential content, marked as conditional and explicitly excluded via the *ditaval* file during compilation.
@@ -287,7 +287,7 @@ A ditaval file operates like 3D glasses: one lens masks one half of the informat
 
 The information recipients have glasses showing either only left or right lens content. Though they see less, they access what they need without noise. This adheres to the minimalist principle "less is more."
 
-![Conditional text with DITA XML](/assets/ditaval.svg)
+![Conditional text with DITA XML](/assets/en/ditaval.svg)
 **Conditional text with DITA XML**
 
 The ditaval mechanism is based on binary logic: mark a block with an attribute and value, then include or exclude it in deliverables via a compile-time operand (default is inclusion without operand). This constitutes conditional text.

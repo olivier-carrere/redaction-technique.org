@@ -34,7 +34,7 @@ When layout is less critical than content, or when it needs to be consistent, as
 
 In a **FrameMaker** file, the separation between content and form is significant, though not complete: content and layout reside in the same file. **FrameMaker** applies a consistent page layout to an entire file but allows manual addition of layout elements. The same layout can be duplicated for the entire document, or different layouts can be used for each file comprising the document.
 
-![Source formats: degree of modularity and format](/assets/modular-text-monolithic-binary.svg)
+![Source formats: degree of modularity and format](/assets/en/modular-text-monolithic-binary.svg)
 **Source formats: degree of modularity and format**
 
 Source formats can be classified by their degree of modularity and file format.
@@ -85,12 +85,12 @@ The source format can be based on either monolithic files or clusters of modular
 
 Monolithic files (e.g., **MS Word**, **LibreOffice**, or **FrameMaker**) centralize all content in a single, easily manageable file, but limit content sharing; this increases the risk of inconsistent or duplicate information.
 
-![Monolithic technical writing source format](/assets/monolithic.svg)
+![Monolithic technical writing source format](/assets/en/monolithic.svg)
 **Monolithic technical writing source format**
 
 Clusters of modular files (e.g., **DITA XML**) aggregate the content of multiple files, facilitating content sharing and reuse. This approach is challenging to implement company-wide but should be standard for a **technical writing** team.
 
-![Modular technical writing source format](/assets/grappe.svg)
+![Modular technical writing source format](/assets/en/grappe.svg)
 **Modular technical writing source format**
 
 Some word processors can handle modular documents, though not effectively. Conversely, a **DocBook** or **DITA XML** document can be monolithic, but then loses its flexibility.

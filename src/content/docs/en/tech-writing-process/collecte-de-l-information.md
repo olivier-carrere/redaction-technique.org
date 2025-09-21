@@ -18,7 +18,7 @@ Once the technical writing project has been clearly defined, the **technical wri
 - Competitor analysis,
 - Reading trade publications.
 
-![Information gathering](/assets/collecte.svg)
+![Information gathering](/assets/en/collecte.svg)
 **Information Gathering**
 
 Information must be cross-checked to minimize the risk of transmitting incorrect or outdated information. The **technical writer** must perform diligent investigative work. By putting themselves in the user's shoes, they check each piece of information and differentiate relevant data from noise that could disrupt the message.

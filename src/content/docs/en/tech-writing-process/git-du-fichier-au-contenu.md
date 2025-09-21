@@ -85,7 +85,7 @@ Production constraints may force you to further split these batches into sub-bat
 
 You *commit* each sub-batch upon completion. Your *commit* history will then resemble the following diagram:
 
-![Git history](/assets/git-rebase-commits.svg)
+![Git history](/assets/en/git-rebase-commits.svg)
 **Git history**
 
 When placing your *commits* on the central repository, some will represent interim steps in a task. Your history and branches may be harder to manage as unfinished tasks alternate. To retrieve a single task, you'll need to carefully select the *commits* using the *git cherry-pick* command.
@@ -98,7 +98,7 @@ The *rebase* command is potentially destructive; ensure you back up your workspa
 
 You can then rewrite history to offer your collaborators a *commit* for each completed task, as shown in the following diagram:
 
-![Git history](/assets/git-rebase-commits-2.svg)
+![Git history](/assets/en/git-rebase-commits-2.svg)
 **Git history**
 
 The *commits* are first grouped by type on Git’s *time arrow*, then merged.

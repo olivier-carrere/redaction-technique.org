@@ -17,7 +17,7 @@ The information contained in a technical document can be categorized according t
 | task      | Sequential, numbered, step-by-step procedure for performing a task. |
 | reference | Reference information on a list of items, such as program options.  |
 
-![Structured and unstructured formats](/assets/structured.svg)
+![Structured and unstructured formats](/assets/en/structured.svg)
 **Structured and unstructured formats**
 
 In an unstructured format such as FrameMaker's traditional format, the technical writer is under no obligation to organize the information according to its meaning. If rigorous editing rules are not followed, the information provided to the user is likely to be unclear and difficult to navigate quickly.
@@ -52,7 +52,7 @@ Some companies have existing content in DocBook format. Often managed by the com
 
 It's easy to generate DocBook from DITA XML. <abbr title="DITA Open Toolkit">DITA-OT</abbr> offers this target format by default, just like PDF or HTML. The reverse operation cannot be fully automated. Why not?
 
-![A non-reversible process](/assets/entropy.svg)
+![A non-reversible process](/assets/en/entropy.svg)
 **A non-reversible process**
 
 It's not possible to automatically migrate data from information-poor to information-rich formats.
@@ -69,7 +69,7 @@ If your content were a photo, we could make the following analogy:
 
 Switching from RAW to TIFF and from TIFF to JPEG is destructive and cannot be reversed.
 
-![A non-reversible process](/assets/entropy-dita-docbook.svg)
+![A non-reversible process](/assets/en/entropy-dita-docbook.svg)
 **A non-reversible process**
 
 PDF is semantically poorer than DocBook, which is itself poorer than DITA XML.
@@ -86,7 +86,7 @@ Migrating from FrameMaker to DITA XML is not like saving an MS Word document in 
 
 To use a metaphor, if you set yourself the goal of converting a swamp into a French garden, you'd have to go through the English garden stage—a place that may not be strictly architectural, but that's very pleasant to live in. Good news: if the technical writer has consistently used a limited set of styles and rationally organized their FrameMaker content, they're certainly already very close to this stage.
 
-![Migration from FrameMaker to DITA XML](/assets/framemaker-to-dita-migration.svg)
+![Migration from FrameMaker to DITA XML](/assets/en/framemaker-to-dita-migration.svg)
 **Migration from FrameMaker to DITA XML**
 
 By the way, if, for any reason, your migration project were to stop there, the technical writers, the company, and the users would already have gained a great deal, respectively, in:
@@ -105,7 +105,7 @@ However, a significant amount of restructuring of the FrameMaker document must b
 - elimination of overrides (text properties applied manually and overwriting styles; this kind of modification is, if not impossible, at least very limited in a structured format),
 - harmonization and simplification of FrameMaker styles to limit them and match them to the DITA XML tags that will be used (for example, a *note_important* style to the `<note type="important">` tag). It is necessary to analyze the existing content beforehand and decide which set of tags will be used from among the hundreds proposed by DITA XML: it is strongly inadvisable to use them all.
 
-![Restructuring FrameMaker content and setting up the DITA XML chain](/assets/framemaker-restructure.svg)
+![Restructuring FrameMaker content and setting up the DITA XML chain](/assets/en/framemaker-restructure.svg)
 **FrameMaker content restructuring and DITA XML string implementation**
 
 This harmonization work can be carried out in parallel with updating and publishing the FrameMaker document. The quality of this document will be all the better for it. Simultaneously with reorganizing your content, you can implement the complete DITA XML creation, management, and publication chain on a sample of your content:
@@ -125,7 +125,7 @@ Once the FrameMaker files are ready for migration and the DITA XML chain has bee
 
 You should now be able to archive the FrameMaker files and then switch over completely to DITA XML.
 
-![Apply conversion table from FrameMaker to DITA XML](/assets/dita-migration.svg)
+![Apply conversion table from FrameMaker to DITA XML](/assets/en/dita-migration.svg)
 **Application of a conversion table from FrameMaker to DITA XML**
 
 Of course, you'll need to apply this process to a small set of documents—one that is not, if possible, of critical importance. After this initial success, you can apply the process to other document sets.

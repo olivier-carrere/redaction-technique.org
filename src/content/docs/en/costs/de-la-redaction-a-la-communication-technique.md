@@ -7,7 +7,7 @@ The goal of **technical communication** is to convert prospects into satisfied c
 
 **Technical communication** is often equated with **technical writing**, which focuses on product documentation created post-sale. Technical communication, however, occurs before the sales process and accompanies the product throughout its life cycle. Targeting the general public, journalists, and prospects as well as customers, it goes beyond technical writing, which is intended solely for users.
 
-![Marketing and technical writing tools](/assets/marketing-technique.svg)
+![Marketing and technical writing tools](/assets/en/marketing-technique.svg)
 **Support for Marketing and Technical Writing**
 
 Technical communication aims to demonstrate a product's suitability for its target audience. It uses a variety of media, tailored to the level of expertise and status of its audience (general public, journalists, prospects, customers, etc.). The **technical writer** must adapt their message to each audience. By leveraging all communication resources (writing, illustrations, films, animations, etc.), they consistently incorporate a marketing dimension. To boost sales, every communication medium must also be a marketing tool.

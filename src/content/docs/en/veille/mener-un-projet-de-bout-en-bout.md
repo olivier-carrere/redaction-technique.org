@@ -13,7 +13,7 @@ The non-profit collected photos taken by its members at various events in bulk, 
 
 I was tasked with centralizing these photos and facilitating access for the graphic designers. Given my background in photography, poster creation, and setting up discussion forums for the non-profit, I had a clear understanding of the tasks involved. The budget allocated was exactly 0.00 euros.
 
-![](/assets/pile-photos.jpg)
+![](/assets/en/pile-photos.jpg)
 
 One of my objectives was to provide users with as much autonomy as possible. Specifically, I wanted photographers to upload photos themselves rather than sending them to me. As the old saying goes, the fewer the links in a chain, the stronger the chain.
 
@@ -28,7 +28,7 @@ Here’s what I did:
 
 Here is the overall solution diagram:
 
-![](/assets/schema-galerie.svg)
+![](/assets/en/schema-galerie.svg)
 
 Everything was developed using *Linux*.
 
@@ -46,7 +46,7 @@ Since the primary goal was to make photos available for print media, I initially
 
 Because the files were spread over numerous sub-directories, I used the following command in Bash:
 
-![](/assets/find-command.svg)
+![](/assets/en/find-command.svg)
 
 Next, I reviewed approximately 3,000 photos over 1 MB in size using the *gThumb* viewer, deleting any photos of poor quality or unsuitable subjects for a communication medium. This process took about 3 hours, resulting in 500 photos being retained.
 
@@ -60,7 +60,7 @@ I had an unused domain name, sufficient free disk space, and databases on my own
 
 Consequently, I installed an instance of Piwigo, a software I already used for family photos.
 
-![Photo Kevin Harber](/assets/galerie-photo.jpg)
+![Photo Kevin Harber](/assets/en/galerie-photo.jpg)
 
 Initially, I protected gallery access with a common `.htaccess` file for all users, later creating personal accounts for the gallery.
 
@@ -166,7 +166,7 @@ While the same person can alternate between these roles, it is crucial for effec
 
 Though the first two roles are familiar to non-profit members, the role of the iconographer is new to many. I queried whether to use this lesser-known term, but concluded I should emphasize it since it is crucial to the project's long-term success.
 
-![](/assets/workflow-photo-piwigo.svg)
+![](/assets/en/workflow-photo-piwigo.svg)
 
 Indeed, the non-profit has functioned for years without a photo gallery and can continue to do so, though not optimally. Members will continue to take photos and create posters. However, the gallery's purpose is to centralize as many photos as possible and facilitate quick access. It will only be used if its indexing is of high quality.
 
@@ -199,7 +199,7 @@ The LaTeX template for the flyer—just the tip of the iceberg—is published on
 
 Oddly, the PDF generated on *Overleaf* has defects I do not observe when publishing it locally.
 
-![](/assets/leaflet-pliage.png)
+![](/assets/en/leaflet-pliage.png)
 
 For the curious, there are 6 ways to fold this brochure. LaTeX’s leaflet document class saved me from tedious experimentation.
 :::
@@ -238,12 +238,12 @@ Here's an example of LaTeX code:
 
 Below is the PDF rendering. Note the automatic hyphenation calculation (the subject of a doctoral thesis). It's one of LaTeX's many advantages.
 
-![](/assets/latex-rendu.png)
+![](/assets/en/latex-rendu.png)
 
 :::note
 If you're a *WYSIWYG* supporter, try Gummi. It's *What You See Is What You Get* in the strictest sense, closer to "such a screen, such a print" than "such a screen, such a write." You cannot change text in the viewer window, only in the LaTeX code window, ensuring you understand what's happening "under the hood" and granting more control than delegating layout code creation to a graphical interface. If you frequently work with numbered lists and have dealt with, shall we say… erratic numbering, you'll immediately see the benefit.
 
-![](/assets/latex-wysiwyg-gummi.png)
+![](/assets/en/latex-wysiwyg-gummi.png)
 :::
 
 Once you've created your flyer structure, it's easy to use it to quickly produce other documents. Furthermore, others can rework the document without licensing or software platform concerns.
@@ -252,15 +252,15 @@ Once you've created your flyer structure, it's easy to use it to quickly produce
 
 Tracking changes in Overleaf or Git effectively prevents errors: it’s easy to visualize changes in content or form between versions, revert to a previous version anytime, and maintain multiple versions in parallel.
 
-![Visualization of background changes under GitHub](/assets/latex-historique-fond-github.png)
+![Visualization of background changes under GitHub](/assets/en/latex-historique-fond-github.png)
 **Viewing background changes in GitHub**
 
-![View form modifications in GitHub](/assets/latex-history-form-github.png)
+![View form modifications in GitHub](/assets/en/latex-history-form-github.png)
 **View form modifications in GitHub**!
 
 Here’s the evolution of an excerpt from the compiled PDF:
 
-![](/assets/latex-diff-pdf.png)
+![](/assets/en/latex-diff-pdf.png)
 
 You can collaborate on the same project, either synchronously or asynchronously.
 
@@ -287,7 +287,7 @@ After several trials, I decided to use old photos, either royalty-free or under 
 
 To have fun with these tasks, I played with the quirky side, even if it meant occasionally revisiting certain selections whose humor was too obscure. For example, the following photo, which amused only me, did little to enhance understanding of the *Tutorials* section:
 
-![](/assets/Frances_Densmore_recording_Mountain_Chief2.jpg)
+![](/assets/en/Frances_Densmore_recording_Mountain_Chief2.jpg)
 
 ## Patience
 

@@ -10,7 +10,7 @@ Documentation is part of the software. Supplied with the product, it must:
 - follow the same life cycles, and
 - be subject to the same production and quality control processes.
 
-![Modular documentation sources in text format](/assets/integration-doc-dev.svg)
+![Modular documentation sources in text format](/assets/en/integration-doc-dev.svg)
 **Modular documentation sources in text format**
 
 Ideally, it should meet the following criteria:

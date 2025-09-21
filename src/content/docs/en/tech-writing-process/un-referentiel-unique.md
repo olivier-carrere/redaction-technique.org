@@ -7,7 +7,7 @@ Ideally, all content should be placed in a single repository, such as Git versio
 
 Content becomes a network of information modules, and the relationships within this network need to be managed, particularly during updates.
 
-![Single Repository](/assets/unique-referential.svg)
+![Single Repository](/assets/en/unique-referential.svg)
 **Single Repository**
 
 In practice, it appears that very few companies have taken this step. It is true that until structured formats are taught earlier in education, it seems unrealistic to expect all team members within a company to adopt them, especially if employee turnover is high.
