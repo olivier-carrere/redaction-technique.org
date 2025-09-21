@@ -470,14 +470,14 @@
      inkscape:pageshadow="2"
      inkscape:zoom="1.420961"
      inkscape:cx="35.891203"
-     inkscape:cy="178.04852"
+     inkscape:cy="178.40039"
      inkscape:document-units="px"
-     inkscape:current-layer="g3864"
+     inkscape:current-layer="g3828"
      showgrid="false"
-     inkscape:window-width="1472"
-     inkscape:window-height="449"
+     inkscape:window-width="1728"
+     inkscape:window-height="1080"
      inkscape:window-x="0"
-     inkscape:window-y="38"
+     inkscape:window-y="37"
      inkscape:window-maximized="0"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -690,7 +690,7 @@
                x="8.918541"
                y="413.77234"
                style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.3692px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:'FreeMono Bold';text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#3a5e61;fill-opacity:1"
-               id="tspan9724-3-6-2-0">tâche</tspan></text>
+               id="tspan9724-3-6-2-0">task</tspan></text>
           <g
              id="g5988"
              transform="matrix(0.47288095,0,0,0.47288095,-433.13602,290.88444)">
@@ -802,7 +802,7 @@
                x="22.579058"
                y="460.41373"
                style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.3692px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:'FreeMono Bold';text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#3a5e61;fill-opacity:1"
-               id="tspan9724-3-6-2">référence</tspan></text>
+               id="tspan9724-3-6-2">reference</tspan></text>
           <g
              id="g6044"
              transform="matrix(0.47288095,0,0,0.47288095,-432.47284,277.80248)">
@@ -1360,21 +1360,16 @@
            xml:space="preserve"
            style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#006b7b;fill-opacity:1;stroke:none"
            x="760.53949"
-           y="500.50577"
+           y="504.50577"
            id="text7027-5-7-7-7-6"
            inkscape:export-filename="/home/olivier/Téléchargements/comtech.png"
            inkscape:export-xdpi="119"
            inkscape:export-ydpi="119"><tspan
              sodipodi:role="line"
              x="760.53949"
-             y="500.50577"
+             y="504.50577"
              style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.31034px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:'FreeMono Bold';text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#006b7b;fill-opacity:1"
-             id="tspan14713-9-2-6">table de</tspan><tspan
-             sodipodi:role="line"
-             x="760.53949"
-             y="547.0575"
-             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.31034px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:'FreeMono Bold';text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#006b7b;fill-opacity:1"
-             id="tspan4040">conversion</tspan></text>
+             id="tspan4040">conversion table</tspan></text>
         <path
            d="m 741.93689,484.22298 33.67451,0"
            id="path850-9-57-6-9"
