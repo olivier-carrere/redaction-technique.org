@@ -12,8 +12,6 @@ Content becomes a network of information modules, and the relationships within t
 
 In practice, it appears that very few companies have taken this step. It is true that until structured formats are taught earlier in education, it seems unrealistic to expect all team members within a company to adopt them, especially if employee turnover is high.
 
-**See Also**
+**Voir aussi**
 
-**See also**
-
-- [Git: from file to content](../git-from-file-to-content)
+- [Git : du fichier au contenu](../git-du-fichier-au-contenu)
