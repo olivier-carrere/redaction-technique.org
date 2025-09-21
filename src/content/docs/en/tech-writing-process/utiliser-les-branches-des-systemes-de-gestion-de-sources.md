@@ -37,5 +37,5 @@ to
 
 in the English version of the documentation can easily be applied to the Chinese, French, German, or other versions if it has been committed separately. In practice, this operation can be complex and is only useful if managing a large number of different language versions. Nevertheless, the branch solution allows such operations, while the directory solution does not. However, it is more challenging for the **technical editing** team to understand and use.
 
-**See also**
+**Additional resources**
 - [Git: from file to content](../git-du-fichier-au-contenu)

@@ -85,6 +85,6 @@ Instead of manually entering data into the content file, you can automate this p
 
 This approach minimizes the risk of errors and reduces the effort involved in updating.
 
-**See also**
+**Additional resources**
 - [Automatically insert data into a DITA XML file](../inserer-automatiquement-des-donnees-dans-un-fichier-dita-xml)
 - [Automatically insert SQL data into a reStructuredText file](../inserer-automatiquement-des-donnees-sql-dans-un-fichier-restructuredtext)
