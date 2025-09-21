@@ -9,7 +9,7 @@ If I hadn't used a format that encourages the reuse of information as much as po
 
 ## Sharing atomic blocks of information with conref
 
-When the **technical editor** wants to reuse **DITA XML** information blocks smaller than a section, he must share them at the level of *dita* content files and not in *ditamap* table of contents structures, thanks to the conref mechanism.
+When the **technical writer** wants to reuse **DITA XML** information blocks smaller than a section, he must share them at the level of *dita* content files and not in *ditamap* table of contents structures, thanks to the conref mechanism.
 
 
 The *conref* principle is simple: when a *conref* is mentioned at the level of a given XML node, all the content of the target node is replaced by the content of the source node.
@@ -47,7 +47,7 @@ All source conref in a given file must have a unique ID in that file; make sure 
 
 ### Use the lowest-level XML node
 
-The **technical editor** must use the lowest-level **DITA XML** node containing the information to be shared as the conref source.
+The **technical writer** must use the lowest-level **DITA XML** node containing the information to be shared as the conref source.
 
 
 Since the purpose of *conref* is to manage small blocks of information, it makes sense to manipulate them at the level of the smallest XML structure encapsulating the information, even if this structure, to be compatible with the XSD schema of the **DITA XML** section in which it occurs, must itself be included in larger XML structures.
@@ -165,7 +165,7 @@ To overcome this problem, you'd have to rearrange the order of the conref in the
 
 ### Imbricate conref
 
-For reasons of ease of updating and maintenance of **DITA XML** content, the **technical editor** must limit the Russian doll effect and avoid nesting conref too much. A single level of nesting (one *conref* nested within another) seems to me to be the threshold beyond which content can quickly become unmanageable.
+For reasons of ease of updating and maintenance of **DITA XML** content, the **technical writer** must limit the Russian doll effect and avoid nesting conref too much. A single level of nesting (one *conref* nested within another) seems to me to be the threshold beyond which content can quickly become unmanageable.
 
 
 In the example below, the source *conref* *see-admin-guide* contains the target *conref* *admin-guide-title*:
@@ -194,7 +194,7 @@ To sum up the situation:
 
 :::tip
 
-Using conref is the best way for the **technical editor** to dramatically reduce costs and publication times for his **DITA XML** content, especially for multilingual documents.
+Using conref is the best way for the **technical writer** to dramatically reduce costs and publication times for his **DITA XML** content, especially for multilingual documents.
 :::
 
 Due to the nature of the information they contain, *task* sections have a higher rate of content reuse than *concept* or *reference* sections.
@@ -266,7 +266,7 @@ As in the example below, it's not uncommon to quickly obtain files whose only un
 </task>
 ```
 
-Only the text in black needs to be translated. Translating this type of **DITA XML** content file therefore consists of translating only the section title and the entirety of the source *conref*. When translating a set of information units placed loosely in a file, however, the translator is sorely lacking in context. The creator of the original content must therefore provide constant assistance. The most effective method is to have the translator work on site. An additional advantage is that the translator is able to question not only the **technical editor**, but also the product designers.
+Only the text in black needs to be translated. Translating this type of **DITA XML** content file therefore consists of translating only the section title and the entirety of the source *conref*. When translating a set of information units placed loosely in a file, however, the translator is sorely lacking in context. The creator of the original content must therefore provide constant assistance. The most effective method is to have the translator work on site. An additional advantage is that the translator is able to question not only the **technical writer**, but also the product designers.
 
 :::note
 Don't think that this is a constraint specifically induced by the advanced modularization of content. Having attended a translation school based on the simple but effective principle of the *meaning triangle* (the translator must understand the source text in order to reformulate it in the target text, not transcribe a series of words from one language to another) and having practiced technical translation for several years, I know that any successful translation project relies on effective collaboration between designers, copywriters and translators.
@@ -280,7 +280,7 @@ It's also possible to factor structural elements, rather than content, such as t
 
 :::tip
 
-The powerful conref mechanism of **DITA XML** lends itself to applications other than cost reduction. For example, the **technical editor** can hide information in the source code.
+The powerful conref mechanism of **DITA XML** lends itself to applications other than cost reduction. For example, the **technical writer** can hide information in the source code.
 :::
 
 Here's an original use case for *conref*: imagine you need to translate a file containing confidential information that must not appear in the translated version, and to which the translator must not have access (a confidentiality clause forbids clients from distributing the information in their possession).
@@ -294,7 +294,7 @@ By placing the confidential content in a file that you call `confidential.dita`,
 
 ## Provide targeted information with ditaval conditional text
 
-A ditaval file is like the glasses you wear to view a 3D film: the left lens masks one half of the image, the right lens masks the other half. But only the **technical editor** has 3D glasses and a complete view of the information contained in the **DITA XML** project.
+A ditaval file is like the glasses you wear to view a 3D film: the left lens masks one half of the image, the right lens masks the other half. But only the **technical writer** has 3D glasses and a complete view of the information contained in the **DITA XML** project.
 
 
 The recipients of the information have glasses with two left or two right lenses. So they only see part of the information. Far from being disadvantaged by this, they have better access to the information. The profiling carried out hides from each audience the information they don't need, which for them would just be noise. Each audience therefore benefits from better access to the information that concerns it, in line with the famous minimalist concept of less is more.

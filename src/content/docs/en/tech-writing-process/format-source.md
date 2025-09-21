@@ -17,7 +17,7 @@ In fact, the document presented to the user has two fundamental aspects:
 
 During the development of technical documentation, these two aspects must be clearly distinguished. They can be handled by two different people:
 
-* the **technical editor**,
+* the **technical writer**,
 * the graphic designer.
 
 When the layout is as important as the content, or when it must be varied, as in the case of a sales brochure, writing and layout are carried out using different tools:

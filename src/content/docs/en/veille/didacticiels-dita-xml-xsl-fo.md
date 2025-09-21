@@ -3,7 +3,7 @@ title: "DITA XML and XSL-FO tutorials"
 description: "DITA XML is a structured authoring language that lets you create documents without worrying about their final appearance on different media. XSL-FO is a language that lets you reorganize and filter XML content and apply a layout to it using a style sheet."
 proofreading: IA
 ---
-The following tutorials will help the **technical editor** set up and use a free **DITA XML** authoring and publishing chain.
+The following tutorials will help the **technical writer** set up and use a free **DITA XML** authoring and publishing chain.
 
 **DITA XML** is a structured authoring language that allows you to create documents without worrying about their final appearance on different media. XSL-FO is a language for reorganizing and filtering XML content and applying a style sheet layout to it.
 
@@ -260,7 +260,7 @@ This **DITA XML** tutorial is designed to guide you through setting up and using
 
 ## Manage multilingual DITA XML documentation projects
 
-DITA XML is a great format for managing documentation projects. For multilingual projects, however, the technical editor must create a ditamap file, which contains the table-of-contents structure of the documents, by version. This creates the risk of errors and inconsistencies. Fortunately, an appropriate methodology and an automation script for the <abbr title="DITA Open Toolkit">DITA-OT</abbr> publishing chain remedy this problem.
+DITA XML is a great format for managing documentation projects. For multilingual projects, however, the technical writer must create a ditamap file, which contains the table-of-contents structure of the documents, by version. This creates the risk of errors and inconsistencies. Fortunately, an appropriate methodology and an automation script for the <abbr title="DITA Open Toolkit">DITA-OT</abbr> publishing chain remedy this problem.
 
 ### Methodology for multilingual DITA XML documentation projects
 

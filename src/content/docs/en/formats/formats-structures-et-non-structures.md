@@ -42,7 +42,7 @@ Syntax rules prohibit the technical writer from including a step-by-step procedu
 | Characteristic | Description                                                                                                                                                                                                                                                                                                                                          |
 |----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Minimalist     | A task section, for example, contains only prerequisites, a procedure and a few other specific elements. All conceptual or reference information is placed in separate sections.                                                                                                                                                                     |
-| Comprehensive  | A task section without a procedure is not a valid DITA XML section and cannot be published. It is even possible to implement a mechanism that automatically checks for the presence of information blocks that are optional according to the DITA XML XSD schema, but which the technical editor deems mandatory, such as the result of a procedure. |
+| Comprehensive  | A task section without a procedure is not a valid DITA XML section and cannot be published. It is even possible to implement a mechanism that automatically checks for the presence of information blocks that are optional according to the DITA XML XSD schema, but which the technical writer deems mandatory, such as the result of a procedure. |
 | Consistent     | Information of the same type is presented in the same order and with the same layout; identical blocks of information repeated in different places, such as a remark, come from the same source and are therefore strictly identical.                                                                                                                |
 
 ## DocBook or DITA XML?
@@ -84,7 +84,7 @@ Generally speaking, it's always in a professional's interest to work on the rich
 
 Migrating from **FrameMaker** to **DITA XML** is not like saving a **MS Word** document in **LibreOffice** format. There is no automatic process for migrating an unstructured document to a structured format. In the worst-case scenario, depending on the quality of your original document, this can be like turning a wasteland into a French garden. But a well-planned migration allows you to switch to the new format without disrupting the rhythm of your deliveries.
 
-To use a metaphor, if you set yourself the goal of converting a swamp into the parterre of the Château de Versailles, you'd have to go through the English garden stage - a place that may not be strictly architectural, but that's very pleasant to live in. Good news: if the **technical editor** has consistently used a limited set of styles and rationally organized his **FrameMaker** content, he's certainly already very close to this stage.
+To use a metaphor, if you set yourself the goal of converting a swamp into the parterre of the Château de Versailles, you'd have to go through the English garden stage - a place that may not be strictly architectural, but that's very pleasant to live in. Good news: if the **technical writer** has consistently used a limited set of styles and rationally organized his **FrameMaker** content, he's certainly already very close to this stage.
 
 ![Migration from FrameMaker to DITA XML](/assets/framemaker-to-dita-migration.svg)
 **Migration from FrameMaker to DITA XML**
@@ -112,10 +112,10 @@ This harmonization work can be carried out in parallel with the updating and pub
 
 - set up the tools,
 - creation of style sheets for the various output formats,
-- training of technical editors, graphic designers and translators,
+- training of technical writers, graphic designers and translators,
 - training and awareness-raising for other company staff.
 
-Only when the chain is reliable and accepted, and even expected by the other players in the company, can the **technical editor** consider migration.
+Only when the chain is reliable and accepted, and even expected by the other players in the company, can the **technical writer** consider migration.
 
 If your documents are available in several languages, you need to modify the **FrameMaker** files and perform the migration for each language. If you're planning to translate your documents into a new language, it's best to migrate them first!
 

@@ -5,7 +5,7 @@ description: "When a company industrializes technical writing, the key issue is 
 
 When a company decides to industrialize **technical writing**, the question of tools immediately arises. But rather than the tools, it's the underlying formats that are the key issue.
 
-Most publishers have developed proprietary formats that only their software can modify, in order to secure a captive market that is obliged to pay for regular updates of their products. A **MS Word** or **FrameMaker** file, for example, can only be modified *via* the eponymous tools. Choosing such a format risks limiting a company's future choices, and proving costly: a license is required for each user, whether they are a **technical editor**, occasional contributor or translator.
+Most publishers have developed proprietary formats that only their software can modify, in order to secure a captive market that is obliged to pay for regular updates of their products. A **MS Word** or **FrameMaker** file, for example, can only be modified *via* the eponymous tools. Choosing such a format risks limiting a company's future choices, and proving costly: a license is required for each user, whether they are a **technical writer**, occasional contributor or translator.
 
 ![A standard format leaves the choice of tool open](/assets/format-standard.svg)
 **A standard format leaves the choice of tool open**

@@ -3,7 +3,7 @@ title: "Using branches in source management systems."
 description: "Create branches in a source manager to manage divergent projects and documentation translations."
 ---
 
-Source management systems offer the option of creating branches of a project: if at any point a project splits into two incompatible projects, a branch is created from the main project. The **technical editor** can thus manage the various translations of technical documentation.
+Source management systems offer the option of creating branches of a project: if at any point a project splits into two incompatible projects, a branch is created from the main project. The **technical writer** can thus manage the various translations of technical documentation.
 
 In theory, the branch system can be used to manage:
 

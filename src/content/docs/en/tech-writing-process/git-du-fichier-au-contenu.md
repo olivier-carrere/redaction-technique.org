@@ -98,7 +98,7 @@ Let's say you've identified two major types of changes to be made to your conten
 - command-line program synopses,
 - grammatical corrections to text.
 
-If your content is divided into a set of modular files, you could decide to make both types of changes in each file one by one, at the same time. To distribute the work among a group of technical editors, simply allocate a batch of files to each of them.
+If your content is divided into a set of modular files, you could decide to make both types of changes in each file one by one, at the same time. To distribute the work among a group of technical writers, simply allocate a batch of files to each of them.
 
 This *workflow* is not best suited to Git. If you're using this version control system, it's best to divide the work into two batches of tasks, called *synopsis* and *text*, applied concurrently to all files.
 
