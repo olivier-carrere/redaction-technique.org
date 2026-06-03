@@ -8,7 +8,7 @@ import { LinkButton } from '@astrojs/starlight/components';
 
 <LinkButton href="https://redaction-technique.org/">Check my latest blog post!</LinkButton>
 ---
-Do you need a lot of power to generate professional documentation? With its single gigabyte of RAM and smartphone-like processor, the Raspberry Pi 3 seems fit for an early 2000s office workstation. In practice, however, a CPU costing around 40 euros is more than enough to create, manage, and generate documentation in PDF, HTML, or other formats.
+Do you need a lot of power to generate professional documentation? With its single gigabyte of RAM and smartphone-like processor, the Raspberry Pi 3 seems fit for an early 2000s office workstation. In practice, however, a CPU costing around 40 euros is more than enough to create, manage, and generate documentation in PDF, HTML, or other [target formats](../tech-writing-process/format-cible/).
 
 :::note
 This post aims to:
@@ -86,7 +86,7 @@ This post aims to:
 
 ## Get the sources for this blog
 
-1. Clone the Git repository of this blog's sources:
+1. Clone the [Git repository](../tech-writing-process/git-du-fichier-au-contenu/) of this blog's sources:
 
    ```bash
    $ git clone https://github.com/olivier-carrere/redaction-technique.org.git
@@ -208,7 +208,7 @@ And there you have it. In just a few minutes, you have:
 
 :::note
 - The `Makefile` is quite rough, and the compilation time can easily be optimized.
-- We could implement a complete conditional text solution with Boolean operators and all, thanks to the Jinja templating engine.
+- We could implement a complete [conditional text solution](creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-texte-conditionnel/) with Boolean operators and all, thanks to the Jinja templating engine.
 - Observers will notice that the HTML version of blog version 1.5 does not include a table of contents in the right-hand column. This is because this version does not include patch 1032292. I'll leave you to search in the Git history or even create a branch and cherry-pick!
 :::
 

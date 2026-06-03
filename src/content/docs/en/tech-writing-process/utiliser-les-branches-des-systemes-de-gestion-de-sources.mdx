@@ -8,7 +8,7 @@ import { LinkButton } from '@astrojs/starlight/components';
 
 <LinkButton href="https://redaction-technique.org/">Check my latest blog post!</LinkButton>
 ---
-Source management systems offer the option of creating branches for a project. If a project splits into two incompatible projects, a branch is created from the main project. This allows the **technical writer** to manage various translations of technical documentation.
+Source management systems offer the option of creating branches for a project. If a project splits into two incompatible projects, a branch is created from the main project. This allows the **technical writer** to manage various [translations](traduction/) of technical documentation.
 
 In theory, the branch system can be used to manage:
 
@@ -19,7 +19,7 @@ In practice, however, it is preferable to manage variations of the same document
 
 On the other hand, the branch management system is more or less suited for managing translations, depending on the source control system used.
 
-The main difference between Git and Subversion is the way they handle branches. Creating a branch in Subversion is equivalent to duplicating a directory. The files in these directories then evolve independently. In Git, however, branches can be created without duplicating data. Within the same local directory, you can use a command to switch between branches.
+The main difference between [Git](git-du-fichier-au-contenu/) and Subversion is the way they handle branches. Creating a branch in Subversion is equivalent to duplicating a directory. The files in these directories then evolve independently. In Git, however, branches can be created without duplicating data. Within the same local directory, you can use a command to switch between branches.
 
 Creating a translation of documentation involves forking or branching from the initial document. When using Git, the options are:
 

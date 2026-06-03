@@ -8,7 +8,7 @@ import { LinkButton } from '@astrojs/starlight/components';
 
 <LinkButton href="https://redaction-technique.org/">Check my latest blog post!</LinkButton>
 ---
-NuFirewall's documentation, praised by the press as a notable strength of the product, was developed using **DITA XML**.
+NuFirewall's documentation, praised by the press as a notable strength of the product, was developed using [**DITA XML**](formats-structures-et-non-structures/).
 
 By adopting a format that maximizes information reuse, I was able to focus more on the content itself. 
 
@@ -115,7 +115,7 @@ In the second scenario, the entire `<step>` node content is replaced by the sour
 
 ### Consider translation constraints
 
-The smallest DITA XML information unit is the `<ph>` node. However, technical writers should apply the conref mechanism only for complete sentences or terms not intended for translation (e.g., company or product names). Otherwise, significant issues arise during language translation.
+The smallest DITA XML information unit is the `<ph>` node. However, technical writers should apply the conref mechanism only for complete sentences or terms not intended for translation (e.g., company or product names). Otherwise, significant issues arise during [language translation](../tech-writing-process/traduction/).
 
 ![Sentence structure varies by language](/assets/en/traduction-conref.svg)
 **Sentence structure varies by language.**
@@ -188,7 +188,7 @@ Summary:
 
 :::tip
 
-Leveraging conref enables **DITA XML** technical writers to significantly cut costs and publishing times, especially in multilingual contexts.
+Leveraging conref enables **DITA XML** technical writers to significantly cut costs and publishing times, especially in multilingual contexts — an important consideration when [choosing formats and tools](../costs/formats-et-outils/).
 :::
 
 *Task* sections, due to their nature, often see higher content reuse than *concept* or *reference* sections.

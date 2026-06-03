@@ -11,7 +11,7 @@ import { LinkButton } from '@astrojs/starlight/components';
   hideFromSidebar: true
 proofreading: IA
 ---
-The content of a **technical writing** project is created in a source format, distinct from the format of the deliverables, or the target format. To use an analogy often found in software development, the source format is the recipe, while the target format is the dish. In photography, the source format is the RAW format produced by the camera, preferred by professional photographers for retouching, and the target format is the JPEG format.
+The content of a **technical writing** project is created in a source format, distinct from the format of the deliverables, or the [target format](format-cible/). To use an analogy often found in software development, the source format is the recipe, while the target format is the dish. In photography, the source format is the RAW format produced by the camera, preferred by professional photographers for retouching, and the target format is the JPEG format.
 
 Word processors have moved us away from distinguishing between form and content. However, confusing the two leads to numerous errors and wasted time.
 
@@ -44,7 +44,7 @@ In a **FrameMaker** file, the separation between content and form is significant
 
 Source formats can be classified by their degree of modularity and file format.
 
-Structured XML formats such as **DocBook** and **DITA XML** apply a uniform page layout to an entire document and do not permit the manual addition of layout elements or the application of different layouts to the various files that comprise the document.
+Structured XML formats such as **DocBook** and [**DITA XML**](../formats/formats-structures-et-non-structures/) apply a uniform page layout to an entire document and do not permit the manual addition of layout elements or the application of different layouts to the various files that comprise the document.
 
 | Format     | Manual layout options |
 |------------|-----------------------|
@@ -140,4 +140,4 @@ Source formats can be binary or text.
 - Binary formats are *opaque*: if opened with a text editor like *Notepad*, they display a series of indistinct characters and can typically only be modified with specific software.
 - Text formats are *transparent*: if opened with a text editor, they show text and tags, allowing them to be modified with various software, easily manipulated via batch processes on the command line, and facilitate the use of powerful regular expressions.
 
-**Markdown** exemplifies a transparent, simple, modular, and easily traceable text format.
+**Markdown** exemplifies a transparent, simple, modular, and easily traceable text format — ideal for managing content in a [version control system](../tech-writing-process/les-systemes-de-gestion-de-versions-rustiques-mais-fiables/) alongside other project assets.
