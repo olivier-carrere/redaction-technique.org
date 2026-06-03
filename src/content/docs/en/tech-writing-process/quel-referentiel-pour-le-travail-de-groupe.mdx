@@ -18,3 +18,9 @@ However, the programs do not support concurrent modification of the same file by
 To prevent this, many programs lock open files. This means they are only available for reading as long as the user modifying them has a copy open in RAM (i.e., until they close it). It is therefore not possible with this system to allow multiple users to work on the same file and make batch modifications across files, such as changing the path of all images.
 
 If the program used does not lock open files, constant coordination is required between team members. [Version management systems](les-systemes-de-gestion-de-versions-rustiques-mais-fiables/) address these limitations reliably.
+
+## Related articles
+
+- [Repository](referentiel/)
+- [Git: from file to content](git-du-fichier-au-contenu/)
+- [CMS: workflow as a bonus, but reliability to be tested](les-cms-le-workflow-en-prime-mais-une-fiabilite-a-tester/)
