@@ -58,7 +58,7 @@ Some companies have existing content in DocBook format. Often managed by the com
 
 It's easy to generate DocBook from DITA XML. <abbr title="DITA Open Toolkit">DITA-OT</abbr> offers this target format by default, just like PDF or HTML. The reverse operation cannot be fully automated. Why not?
 
-![A non-reversible process](/assets/en/entropie.svg)
+![Entropy diagram: migrating from rich DITA XML to poorer DocBook is a non-reversible information loss](/assets/en/entropie.svg)
 **A non-reversible process**
 
 It's not possible to automatically migrate data from information-poor to information-rich formats.
@@ -75,7 +75,7 @@ If your content were a photo, we could make the following analogy:
 
 Switching from RAW to TIFF and from TIFF to JPEG is destructive and cannot be reversed.
 
-![A non-reversible process](/assets/en/entropie-dita-docbook.svg)
+![Format hierarchy: DITA XML, DocBook, and PDF as progressively semantically poorer formats](/assets/en/entropie-dita-docbook.svg)
 **A non-reversible process**
 
 PDF is semantically poorer than DocBook, which is itself poorer than DITA XML.
@@ -188,4 +188,10 @@ tr '[:upper:]' '[:lower:]' |
 sed -E "s#(.*.dita)#mv \1#g;" |
 sed -E "s#\.dita.*<title‣(.*)</title‣#.dita \1.dita#g;"
 ```
+
+## Related articles
+
+- [From document to modular document base](du-document-a-la-base-documentaire-modulaire/)
+- [Case study: NuFirewall documentation](cas-concret-documentation-de-nufirewall/)
+- [Formats and tools](../costs/formats-et-outils/)
 
