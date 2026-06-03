@@ -1,2 +1,6 @@
 _build
 commitlog.txt
+node_modules/
+dist/
+.astro/
+.vercel/
