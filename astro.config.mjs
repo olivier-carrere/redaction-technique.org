@@ -19,7 +19,7 @@ export default defineConfig({
     astroExpressiveCode(),
     mdx(),
     starlight({
-      title: 'Smart Docs with DITA',
+      title: 'Redaction-technique.org',
       defaultLocale: 'en',
       locales,
       sidebar: [
