@@ -17,10 +17,10 @@ const frHref = restPath !== null ? `${siteUrl}/fr${restPath}` : null;
 const siteName = 'Redaction-technique.org';
 const defaultImage = `${siteUrl}/assets/galerie-photo.jpg`;
 const ogLocale = lang === 'fr' ? 'fr_FR' : 'en_US';
-const ogTitle = entry.data.title;
-const ogDescription = entry.data.description ?? '';
+const ogTitle = entry?.data?.title ?? siteName;
+const ogDescription = entry?.data?.description ?? '';
 
-const dateStr = entry.data.lastUpdated instanceof Date
+const dateStr = entry?.data?.lastUpdated instanceof Date
   ? entry.data.lastUpdated.toISOString().slice(0, 10)
   : undefined;
 
@@ -51,7 +51,7 @@ const schema = isHomepage
   : {
       '@context': 'https://schema.org',
       '@type': 'TechArticle',
-      headline: entry.data.title,
+      headline: entry?.data?.title ?? siteName,
       description: ogDescription,
       url: currentUrl,
       inLanguage: lang,
