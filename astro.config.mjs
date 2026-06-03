@@ -25,6 +25,7 @@ export default defineConfig({
       components: {
         Head: './src/components/Head.astro',
       },
+      lastUpdated: true,
       defaultLocale: 'en',
       locales,
       sidebar: [

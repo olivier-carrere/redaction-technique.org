@@ -14,6 +14,10 @@ const ogLocale = lang === 'fr' ? 'fr_FR' : 'en_US';
 const ogTitle = entry.data.title;
 const ogDescription = entry.data.description ?? '';
 
+const dateStr = entry.data.lastUpdated instanceof Date
+  ? entry.data.lastUpdated.toISOString().slice(0, 10)
+  : undefined;
+
 const personId = `${siteUrl}/#olivier-carrere`;
 
 const personSchema = {
@@ -47,6 +51,7 @@ const schema = isHomepage
       inLanguage: lang,
       author: { '@id': personId },
       publisher: { '@id': personId },
+      ...(dateStr && { datePublished: dateStr, dateModified: dateStr }),
     };
 ---
 
