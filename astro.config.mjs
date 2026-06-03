@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import mdx from '@astrojs/mdx';
 import astroExpressiveCode from 'astro-expressive-code';
+import sitemap from '@astrojs/sitemap';
 import vercel from '@astrojs/vercel';
 
 const site = 'https://docs.redaction-technique.org/';
@@ -16,6 +17,7 @@ export default defineConfig({
   site,
   trailingSlash: 'always',
   integrations: [
+    sitemap(),
     astroExpressiveCode(),
     mdx(),
     starlight({
