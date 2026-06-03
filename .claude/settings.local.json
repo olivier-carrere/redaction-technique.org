@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(npm pack *)",
+      "Bash(npx --yes @astrojs/starlight@0.35.2)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(sips *)",
+      "Bash(xargs -I{} sh -c 'echo \"=== {} ===\"; grep -E \"^\\(title|description\\):\" \"{}\"')",
+      "Bash(git -C /Users/olivier.carrere/Downloads/redaction-technique.org diff --name-only)",
+      "Bash(git -C /Users/olivier.carrere/Downloads/redaction-technique.org diff)",
+      "Bash(npm install *)",
+      "Bash(git config *)"
+    ]
+  }
+}

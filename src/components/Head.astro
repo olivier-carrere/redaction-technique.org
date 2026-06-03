@@ -8,6 +8,12 @@ const currentUrl = new URL(Astro.url.pathname, siteUrl).href;
 const pathname = Astro.url.pathname;
 const isHomepage = pathname === '/' || /^\/(en|fr)\/?$/.test(pathname);
 
+// hreflang: derive alternate-locale URLs from current pathname
+const localeMatch = pathname.match(/^\/(en|fr)(\/.*)?$/);
+const restPath = localeMatch ? (localeMatch[2] ?? '/') : null;
+const enHref = restPath !== null ? `${siteUrl}/en${restPath}` : null;
+const frHref = restPath !== null ? `${siteUrl}/fr${restPath}` : null;
+
 const siteName = 'Redaction-technique.org';
 const defaultImage = `${siteUrl}/assets/galerie-photo.jpg`;
 const ogLocale = lang === 'fr' ? 'fr_FR' : 'en_US';
@@ -75,5 +81,14 @@ const schema = isHomepage
 <meta name="twitter:description" content={ogDescription} />
 <meta name="twitter:image" content={defaultImage} />
 <meta name="twitter:image:alt" content={ogTitle} />
+
+<!-- hreflang -->
+{enHref && frHref && (
+  <>
+    <link rel="alternate" hreflang="en" href={enHref} />
+    <link rel="alternate" hreflang="fr" href={frHref} />
+    <link rel="alternate" hreflang="x-default" href={enHref} />
+  </>
+)}
 
 <script type="application/ld+json" set:html={JSON.stringify(schema)} />

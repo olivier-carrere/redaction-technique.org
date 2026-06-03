@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+
+export async function getStaticPaths() {
+  const docs = await getCollection('docs');
+  const enDocs = docs.filter(doc => doc.id.startsWith('en/') && !doc.id.endsWith('/index'));
+
+  const tagMap = new Map<string, typeof enDocs>();
+  for (const doc of enDocs) {
+    for (const tag of doc.data.tags ?? []) {
+      if (!tagMap.has(tag)) tagMap.set(tag, []);
+      tagMap.get(tag)!.push(doc);
+    }
+  }
+
+  return [...tagMap.entries()].map(([tag, articles]) => ({
+    params: { tag },
+    props: { tag, articles: articles.sort((a, b) => a.data.title.localeCompare(b.data.title)) },
+  }));
+}
+
+interface Props {
+  tag: string;
+  articles: Awaited<ReturnType<typeof getCollection<'docs'>>>;
+}
+
+const { tag, articles } = Astro.props;
+---
+
+<StarlightPage
+  frontmatter={{
+    title: `Tag: ${tag}`,
+    description: `All articles tagged with ${tag} on Redaction-technique.org`,
+  }}
+>
+  <p>{articles.length} article{articles.length !== 1 ? 's' : ''} tagged <strong>{tag}</strong>.</p>
+  <ul>
+    {articles.map(article => (
+      <li>
+        <a href={`/${article.id}/`}>{article.data.title}</a>
+        {article.data.description && <p>{article.data.description}</p>}
+      </li>
+    ))}
+  </ul>
+</StarlightPage>
