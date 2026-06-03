@@ -8,6 +8,12 @@ const currentUrl = new URL(Astro.url.pathname, siteUrl).href;
 const pathname = Astro.url.pathname;
 const isHomepage = pathname === '/' || /^\/(en|fr)\/?$/.test(pathname);
 
+const siteName = 'Redaction-technique.org';
+const defaultImage = `${siteUrl}/assets/galerie-photo.jpg`;
+const ogLocale = lang === 'fr' ? 'fr_FR' : 'en_US';
+const ogTitle = entry.data.title;
+const ogDescription = entry.data.description ?? '';
+
 const personId = `${siteUrl}/#olivier-carrere`;
 
 const personSchema = {
@@ -27,7 +33,7 @@ const schema = isHomepage
         '@type': 'WebSite',
         '@id': `${siteUrl}/#website`,
         url: siteUrl,
-        name: 'Redaction-technique.org',
+        name: siteName,
         author: { '@id': personId },
       },
       personSchema,
@@ -36,7 +42,7 @@ const schema = isHomepage
       '@context': 'https://schema.org',
       '@type': 'TechArticle',
       headline: entry.data.title,
-      description: entry.data.description ?? '',
+      description: ogDescription,
       url: currentUrl,
       inLanguage: lang,
       author: { '@id': personId },
@@ -45,4 +51,24 @@ const schema = isHomepage
 ---
 
 <Default {...Astro.props} />
+
+<!-- Open Graph -->
+<meta property="og:type" content={isHomepage ? 'website' : 'article'} />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:title" content={ogTitle} />
+<meta property="og:description" content={ogDescription} />
+<meta property="og:url" content={currentUrl} />
+<meta property="og:image" content={defaultImage} />
+<meta property="og:image:width" content="680" />
+<meta property="og:image:height" content="451" />
+<meta property="og:image:alt" content={ogTitle} />
+<meta property="og:locale" content={ogLocale} />
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={ogTitle} />
+<meta name="twitter:description" content={ogDescription} />
+<meta name="twitter:image" content={defaultImage} />
+<meta name="twitter:image:alt" content={ogTitle} />
+
 <script type="application/ld+json" set:html={JSON.stringify(schema)} />
