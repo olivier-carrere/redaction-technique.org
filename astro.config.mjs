@@ -20,6 +20,9 @@ export default defineConfig({
     mdx(),
     starlight({
       title: 'Redaction-technique.org',
+      components: {
+        Head: './src/components/Head.astro',
+      },
       defaultLocale: 'en',
       locales,
       sidebar: [

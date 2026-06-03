@@ -1,0 +1,48 @@
+---
+import Default from '@astrojs/starlight/components/Head.astro';
+import type { Props } from '@astrojs/starlight/props';
+
+const { entry, lang } = Astro.props as Props;
+const siteUrl = 'https://docs.redaction-technique.org';
+const currentUrl = new URL(Astro.url.pathname, siteUrl).href;
+const pathname = Astro.url.pathname;
+const isHomepage = pathname === '/' || /^\/(en|fr)\/?$/.test(pathname);
+
+const personId = `${siteUrl}/#olivier-carrere`;
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': personId,
+  name: 'Olivier Carrère',
+  url: 'https://redaction-technique.org',
+  jobTitle: lang === 'fr' ? 'Rédacteur technique' : 'Technical Writer',
+  sameAs: ['https://www.linkedin.com/in/carrereolivier/'],
+};
+
+const schema = isHomepage
+  ? [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        '@id': `${siteUrl}/#website`,
+        url: siteUrl,
+        name: 'Redaction-technique.org',
+        author: { '@id': personId },
+      },
+      personSchema,
+    ]
+  : {
+      '@context': 'https://schema.org',
+      '@type': 'TechArticle',
+      headline: entry.data.title,
+      description: entry.data.description ?? '',
+      url: currentUrl,
+      inLanguage: lang,
+      author: { '@id': personId },
+      publisher: { '@id': personId },
+    };
+---
+
+<Default {...Astro.props} />
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
