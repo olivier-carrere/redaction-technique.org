@@ -1,5 +1,6 @@
 ---
 import Default from '@astrojs/starlight/components/Head.astro';
+import SpeedInsights from '@vercel/speed-insights/astro';
 import type { Props } from '@astrojs/starlight/props';
 
 const { entry, lang } = Astro.props as Props;
@@ -92,3 +93,5 @@ const schema = isHomepage
 )}
 
 <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+<SpeedInsights />
