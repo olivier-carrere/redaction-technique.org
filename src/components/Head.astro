@@ -9,16 +9,28 @@ const pathname = Astro.url.pathname;
 const isHomepage = pathname === '/' || /^\/(en|fr)\/?$/.test(pathname);
 
 // hreflang: derive alternate-locale URLs from current pathname
-const localeMatch = pathname.match(/^\/(en|fr)(\/.*)?$/);
-const restPath = localeMatch ? (localeMatch[2] ?? '/') : null;
-const enHref = restPath !== null ? `${siteUrl}/en${restPath}` : null;
-const frHref = restPath !== null ? `${siteUrl}/fr${restPath}` : null;
+let enHref: string | null = null;
+let frHref: string | null = null;
+if (pathname === '/') {
+  enHref = `${siteUrl}/en/`;
+  frHref = `${siteUrl}/fr/`;
+} else {
+  const localeMatch = pathname.match(/^\/(en|fr)(\/.*)?$/);
+  if (localeMatch) {
+    const restPath = localeMatch[2] ?? '/';
+    enHref = `${siteUrl}/en${restPath}`;
+    frHref = `${siteUrl}/fr${restPath}`;
+  }
+}
 
 const siteName = 'Redaction-technique.org';
 const defaultImage = `${siteUrl}/assets/galerie-photo.jpg`;
 const ogLocale = lang === 'fr' ? 'fr_FR' : 'en_US';
 const ogTitle = entry?.data?.title ?? siteName;
-const ogDescription = entry?.data?.description ?? '';
+const siteDefaultDescription = lang === 'fr'
+  ? 'Guides experts en rédaction technique, DITA XML, Markdown, docs-as-code et automatisation de contenu pour communicants techniques.'
+  : 'Expert guides on technical writing, DITA XML, Markdown, docs-as-code, and content automation for technical communicators.';
+const ogDescription = entry?.data?.description || siteDefaultDescription;
 
 const dateStr = entry?.data?.lastUpdated instanceof Date
   ? entry.data.lastUpdated.toISOString().slice(0, 10)
@@ -34,6 +46,12 @@ const personSchema = {
   url: 'https://redaction-technique.org',
   jobTitle: lang === 'fr' ? 'Rédacteur technique' : 'Technical Writer',
   sameAs: ['https://www.linkedin.com/in/carrereolivier/'],
+};
+
+const articleAbout = {
+  '@type': 'Thing',
+  name: lang === 'fr' ? 'Rédaction technique' : 'Technical Writing',
+  sameAs: 'https://en.wikipedia.org/wiki/Technical_writing',
 };
 
 const schema = isHomepage
@@ -53,6 +71,7 @@ const schema = isHomepage
       '@type': 'TechArticle',
       headline: entry?.data?.title ?? siteName,
       description: ogDescription,
+      about: articleAbout,
       url: currentUrl,
       inLanguage: lang,
       author: { '@id': personId },
