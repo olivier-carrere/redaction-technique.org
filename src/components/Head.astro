@@ -1,8 +1,8 @@
 ---
 import Default from '@astrojs/starlight/components/Head.astro';
-import type { Props } from '@astrojs/starlight/props';
 
-const { entry, lang } = Astro.props as Props;
+// Starlight v0.35+: use Astro.locals.starlightRoute (Astro.props is deprecated)
+const { entry, lang } = Astro.locals.starlightRoute;
 const siteUrl = 'https://docs.redaction-technique.org';
 const currentUrl = new URL(Astro.url.pathname, siteUrl).href;
 const pathname = Astro.url.pathname;
@@ -25,12 +25,13 @@ if (pathname === '/') {
 
 const siteName = 'Redaction-technique.org';
 const defaultImage = `${siteUrl}/assets/galerie-photo.jpg`;
-const ogLocale = lang === 'fr' ? 'fr_FR' : 'en_US';
-const ogTitle = entry?.data?.title ?? siteName;
+// Starlight already emits og:title, og:description, og:type, og:url, og:locale,
+// og:site_name, and twitter:card — read data from the correct source for our additions.
 const siteDefaultDescription = lang === 'fr'
   ? 'Guides experts en rédaction technique, DITA XML, Markdown, docs-as-code et automatisation de contenu pour communicants techniques.'
   : 'Expert guides on technical writing, DITA XML, Markdown, docs-as-code, and content automation for technical communicators.';
-const ogDescription = entry?.data?.description || siteDefaultDescription;
+const pageTitle = entry?.data?.title ?? siteName;
+const pageDescription = entry?.data?.description || siteDefaultDescription;
 
 const dateStr = entry?.data?.lastUpdated instanceof Date
   ? entry.data.lastUpdated.toISOString().slice(0, 10)
@@ -69,8 +70,8 @@ const schema = isHomepage
   : {
       '@context': 'https://schema.org',
       '@type': 'TechArticle',
-      headline: entry?.data?.title ?? siteName,
-      description: ogDescription,
+      headline: pageTitle,
+      description: pageDescription,
       about: articleAbout,
       url: currentUrl,
       inLanguage: lang,
@@ -82,32 +83,19 @@ const schema = isHomepage
 
 <Default {...Astro.props} />
 
-<!-- Open Graph -->
-<meta property="og:type" content={isHomepage ? 'website' : 'article'} />
-<meta property="og:site_name" content={siteName} />
-<meta property="og:title" content={ogTitle} />
-<meta property="og:description" content={ogDescription} />
-<meta property="og:url" content={currentUrl} />
+<!-- og:image — not emitted by Starlight's default head -->
 <meta property="og:image" content={defaultImage} />
 <meta property="og:image:width" content="680" />
 <meta property="og:image:height" content="451" />
-<meta property="og:image:alt" content={ogTitle} />
-<meta property="og:locale" content={ogLocale} />
+<meta property="og:image:alt" content={pageTitle} />
 
-<!-- Twitter / X Card -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content={ogTitle} />
-<meta name="twitter:description" content={ogDescription} />
+<!-- Twitter / X Card — Starlight only sets twitter:card -->
+<meta name="twitter:title" content={pageTitle} />
+<meta name="twitter:description" content={pageDescription} />
 <meta name="twitter:image" content={defaultImage} />
-<meta name="twitter:image:alt" content={ogTitle} />
+<meta name="twitter:image:alt" content={pageTitle} />
 
-<!-- hreflang -->
-{enHref && frHref && (
-  <>
-    <link rel="alternate" hreflang="en" href={enHref} />
-    <link rel="alternate" hreflang="fr" href={frHref} />
-    <link rel="alternate" hreflang="x-default" href={enHref} />
-  </>
-)}
+<!-- x-default points to EN; en/fr alternates already emitted by Starlight -->
+{enHref && <link rel="alternate" hreflang="x-default" href={enHref} />}
 
 <script type="application/ld+json" set:html={JSON.stringify(schema)} />
