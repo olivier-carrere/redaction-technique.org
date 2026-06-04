@@ -1,5 +1,7 @@
 ---
 import Default from '@astrojs/starlight/components/Head.astro';
+import SpeedInsights from '@vercel/speed-insights/astro';
+import type { Props } from '@astrojs/starlight/props';
 
 // Starlight v0.35+: use Astro.locals.starlightRoute (Astro.props is deprecated)
 const { entry, lang } = Astro.locals.starlightRoute;
@@ -99,3 +101,5 @@ const schema = isHomepage
 {enHref && <link rel="alternate" hreflang="x-default" href={enHref} />}
 
 <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+<SpeedInsights />
