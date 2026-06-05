@@ -22,6 +22,7 @@ export default defineConfig({
     mdx(),
     starlight({
       title: 'Redaction-technique.org',
+      customCss: ['./src/styles/custom.css'],
       components: {
         Head: './src/components/Head.astro',
       },
