@@ -25,11 +25,17 @@ export default defineConfig({
       customCss: ['./src/styles/custom.css'],
       components: {
         Head: './src/components/Head.astro',
+        PageTitle: './src/components/PageTitle.astro',
       },
       lastUpdated: true,
       defaultLocale: 'en',
       locales,
       sidebar: [
+        {
+          label: '✍ Blog — redaction-technique.org',
+          link: 'https://redaction-technique.org/',
+          attrs: { target: '_blank', rel: 'noopener' },
+        },
         {
           label: 'Technical writing: An industrial process',
           translations: {

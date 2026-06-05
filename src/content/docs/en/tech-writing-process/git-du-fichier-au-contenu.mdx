@@ -5,10 +5,7 @@ tags: [git, version-control, docs-as-code]
 proofreading: IA
 ---
 
-import { LinkButton } from '@astrojs/starlight/components';
 
-<LinkButton href="https://redaction-technique.org/">Check my latest blog post!</LinkButton>
----
 :::note
 Are you used to handling files? Git invites you to think differently. The advantage: you have much greater control over your content.
 :::
@@ -36,7 +33,7 @@ When you *commit* a file:
 
 Git does not directly compare two files. It compares their checksums, which are single numbers calculated from their contents. If the checksums of two files are identical, their contents are identical (to the nearest bit).
 
-The history of your project is not necessarily linear: you can have it follow several parallel paths, or [branches](utiliser-les-branches-des-systemes-de-gestion-de-sources/).
+The history of your project is not necessarily linear: you can have it follow several parallel paths, or [branches](../utiliser-les-branches-des-systemes-de-gestion-de-sources/).
 
 You can only create branches from a *commit*. Think of *commits* as junction points (with the road being your project's history) from which you can, if you wish, take your project in a different direction.
 
@@ -115,7 +112,7 @@ If you've performed both tasks simultaneously on one or more files, don't panic.
 
 By using this approach, you lose access to intermediate *commits*, but this is intentional: each unique *commit* represents a consistent state of your content.
 
-This *workflow* also facilitates teamwork: you can assign these tasks to two different team members, each working in their own local space — an approach that supports [integrating documentation into development processes](integrer-la-documentation-aux-processus-de-developpement/). The former's changes are then merged with the latter's in their local space via *patches*. Finally, the *commits* are refactored before being placed in the central repository.
+This *workflow* also facilitates teamwork: you can assign these tasks to two different team members, each working in their own local space — an approach that supports [integrating documentation into development processes](../integrer-la-documentation-aux-processus-de-developpement/). The former's changes are then merged with the latter's in their local space via *patches*. Finally, the *commits* are refactored before being placed in the central repository.
 
 :::important
 The less you reorganize your *commits* (especially chronologically), the lower the risk of having to manually resolve conflicts. In other words, *git rebase* should not be an excuse for unplanned work.
@@ -123,6 +120,6 @@ The less you reorganize your *commits* (especially chronologically), the lower t
 
 ## Related articles
 
-- [Version management systems - rustic but reliable](les-systemes-de-gestion-de-versions-rustiques-mais-fiables/)
-- [Repository](referentiel/)
-- [A single repository?](un-referentiel-unique/)
+- [Version management systems - rustic but reliable](../les-systemes-de-gestion-de-versions-rustiques-mais-fiables/)
+- [Repository](../referentiel/)
+- [A single repository?](../un-referentiel-unique/)

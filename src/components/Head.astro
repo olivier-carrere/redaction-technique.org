@@ -103,6 +103,10 @@ const schema = isHomepage
 <!-- Override Starlight's og:type: article — homepage is a website, not an article -->
 {isHomepage && <meta property="og:type" content="website" />}
 
+<!-- Ensure og:description and og:locale are always populated consistently -->
+<meta property="og:description" content={pageDescription} />
+<meta property="og:locale" content={lang === 'fr' ? 'fr_FR' : 'en_GB'} />
+
 <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
 <SpeedInsights />

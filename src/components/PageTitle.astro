@@ -1,0 +1,14 @@
+---
+import Default from '@astrojs/starlight/components/PageTitle.astro';
+
+const pathname = Astro.url.pathname;
+const isHomepage = pathname === '/' || /^\/(en|fr)\/?$/.test(pathname);
+const isTagPage = pathname.startsWith('/tag/');
+---
+
+<Default {...Astro.props} />
+{!isHomepage && !isTagPage && (
+  <p class="sl-byline">
+    By <a href="https://www.linkedin.com/in/carrereolivier/" rel="author noopener" target="_blank">Olivier Carrère</a>
+  </p>
+)}

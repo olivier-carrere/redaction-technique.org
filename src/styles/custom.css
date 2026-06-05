@@ -7,3 +7,15 @@
   --sl-font: 'IBM Plex Sans Variable', sans-serif;
   --sl-font-mono: 'IBM Plex Mono', monospace;
 }
+
+.sl-byline {
+  font-size: var(--sl-text-sm);
+  color: var(--sl-color-gray-3);
+  margin-block: -0.25rem 1.5rem;
+}
+
+.sl-byline a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
