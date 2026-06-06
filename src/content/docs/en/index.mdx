@@ -6,9 +6,6 @@ tableOfContents: false
 hero:
   title: Technical documentation as an engineering practice
   tagline: For technical writers and documentation teams who want to reduce costs, automate content, and integrate docs into development workflows.
-  image:
-    file: ../../../assets/olivier-carrere.jpg
-    alt: Olivier Carrère — Technical writer
   actions:
     - text: Start with the process
       link: /en/tech-writing-process/project-definition/
@@ -26,8 +23,9 @@ head:
 ---
 
 import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+import AuthorBio from '../../../components/AuthorBio.astro';
 
-**Olivier Carrère** is a technical writer specialized in DITA XML, docs-as-code, and industrial documentation workflows. [↗ LinkedIn](https://www.linkedin.com/in/carrereolivier/)
+<AuthorBio />
 
 Whether you're choosing between DITA XML and Markdown, moving to a docs-as-code workflow, or integrating documentation into a CI/CD pipeline — these guides cover the methods, formats, and tools that make technical documentation a sustainable, scalable practice.
 

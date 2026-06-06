@@ -1,0 +1,72 @@
+---
+const lang = (Astro.locals as Record<string, any>)?.starlightRoute?.lang ?? 'en';
+
+const t = lang === 'fr'
+  ? {
+      title: 'Rédacteur technique',
+      bio: 'Spécialisé en DITA XML, pipelines docs-as-code et stratégie de contenu structuré pour les entreprises technologiques.',
+      linkedin: 'LinkedIn ↗',
+      blog: 'Blog ↗',
+    }
+  : {
+      title: 'Technical Writer',
+      bio: 'Specialized in DITA XML, docs-as-code pipelines, and structured content strategy for technology companies.',
+      linkedin: 'LinkedIn ↗',
+      blog: 'Blog ↗',
+    };
+---
+
+<div class="author-bio not-content">
+  <p class="author-bio__name">Olivier Carrère</p>
+  <p class="author-bio__title">{t.title}</p>
+  <p class="author-bio__desc">{t.bio}</p>
+  <p class="author-bio__links">
+    <a href="https://www.linkedin.com/in/carrereolivier/" rel="noopener noreferrer">{t.linkedin}</a>
+    {' · '}
+    <a href="https://redaction-technique.org/" rel="noopener noreferrer">{t.blog}</a>
+  </p>
+</div>
+
+<style>
+  .author-bio {
+    padding: 1.25rem 1.5rem;
+    margin-block: 2rem;
+    background-color: var(--sl-color-bg-nav);
+    border: 1px solid var(--sl-color-hairline-light);
+    border-radius: 0.5rem;
+  }
+
+  .author-bio__name {
+    font-size: var(--sl-text-lg);
+    font-weight: 600;
+    color: var(--sl-color-white);
+    margin: 0;
+  }
+
+  .author-bio__title {
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-gray-3);
+    margin: 0.1rem 0 0;
+  }
+
+  .author-bio__desc {
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-gray-2);
+    margin: 0.5rem 0 0;
+    line-height: 1.55;
+  }
+
+  .author-bio__links {
+    font-size: var(--sl-text-sm);
+    margin: 0.4rem 0 0;
+  }
+
+  .author-bio__links a {
+    color: var(--sl-color-text-accent);
+    text-decoration: none;
+  }
+
+  .author-bio__links a:hover {
+    text-decoration: underline;
+  }
+</style>
