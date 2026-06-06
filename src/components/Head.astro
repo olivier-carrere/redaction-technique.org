@@ -41,8 +41,7 @@ const dateStr = entry?.data?.lastUpdated instanceof Date
 
 const personId = `${siteUrl}/#olivier-carrere`;
 
-const personSchema = {
-  '@context': 'https://schema.org',
+const personEntity = {
   '@type': 'Person',
   '@id': personId,
   name: 'Olivier Carrère',
@@ -57,30 +56,62 @@ const articleAbout = {
   sameAs: 'https://en.wikipedia.org/wiki/Technical_writing',
 };
 
-const schema = isHomepage
-  ? [
-      {
-        '@context': 'https://schema.org',
-        '@type': 'WebSite',
-        '@id': `${siteUrl}/#website`,
-        url: siteUrl,
-        name: siteName,
-        author: { '@id': personId },
-      },
-      personSchema,
-    ]
-  : {
-      '@context': 'https://schema.org',
-      '@type': 'TechArticle',
-      headline: pageTitle,
-      description: pageDescription,
-      about: articleAbout,
-      url: currentUrl,
-      inLanguage: lang,
-      author: { '@id': personId },
-      publisher: { '@id': personId },
-      ...(dateStr && { datePublished: dateStr, dateModified: dateStr }),
-    };
+// BreadcrumbList derived from URL segments
+const pathParts = pathname.replace(/^\/+|\/+$/g, '').split('/').filter(Boolean);
+const localePrefix = (pathParts[0] === 'en' || pathParts[0] === 'fr') ? pathParts[0] : null;
+const contentParts = localePrefix ? pathParts.slice(1) : pathParts;
+
+type ListItem = { '@type': 'ListItem'; position: number; name: string; item: string };
+const breadcrumbItems: ListItem[] = [];
+
+if (!isHomepage && contentParts.length > 0) {
+  const homeLabel = lang === 'fr' ? 'Accueil' : 'Home';
+  const homeUrl = localePrefix ? `${siteUrl}/${localePrefix}/` : `${siteUrl}/`;
+  breadcrumbItems.push({ '@type': 'ListItem', position: 1, name: homeLabel, item: homeUrl });
+
+  let cumUrl = localePrefix ? `${siteUrl}/${localePrefix}` : siteUrl;
+  contentParts.forEach((seg, idx) => {
+    cumUrl += `/${seg}`;
+    const isLast = idx === contentParts.length - 1;
+    const label = isLast
+      ? pageTitle
+      : seg.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+    breadcrumbItems.push({ '@type': 'ListItem', position: idx + 2, name: label, item: `${cumUrl}/` });
+  });
+}
+
+// Build a single @graph block per page for maximum validator compatibility
+type SchemaNode = Record<string, unknown>;
+let graphNodes: SchemaNode[];
+
+if (isHomepage) {
+  graphNodes = [
+    { '@type': 'WebSite', '@id': `${siteUrl}/#website`, url: siteUrl, name: siteName, author: { '@id': personId } },
+    personEntity,
+  ];
+} else {
+  const articleNode: SchemaNode = {
+    '@type': 'TechArticle',
+    headline: pageTitle,
+    description: pageDescription,
+    image: defaultImage,
+    about: articleAbout,
+    url: currentUrl,
+    inLanguage: lang,
+    author: { '@id': personId },
+    publisher: { '@id': personId },
+  };
+  if (dateStr) {
+    articleNode.datePublished = dateStr;
+    articleNode.dateModified = dateStr;
+  }
+  graphNodes = [articleNode, personEntity];
+  if (breadcrumbItems.length > 0) {
+    graphNodes.push({ '@type': 'BreadcrumbList', itemListElement: breadcrumbItems });
+  }
+}
+
+const schema = { '@context': 'https://schema.org', '@graph': graphNodes };
 ---
 
 <Default {...Astro.props} />
@@ -99,9 +130,6 @@ const schema = isHomepage
 
 <!-- x-default points to EN; en/fr alternates already emitted by Starlight -->
 {enHref && <link rel="alternate" hreflang="x-default" href={enHref} />}
-
-<!-- Override Starlight's og:type: article — homepage is a website, not an article -->
-{isHomepage && <meta property="og:type" content="website" />}
 
 <!-- Ensure og:description and og:locale are always populated consistently -->
 <meta property="og:description" content={pageDescription} />
