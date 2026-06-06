@@ -48,7 +48,10 @@
       "Bash(node *)",
       "Bash(curl -si https://docs.redaction-technique.org/_astro/index.DlHiMAmH.css)",
       "Bash(curl -s https://docs.redaction-technique.org/en/)",
-      "Bash(curl -sI https://docs.redaction-technique.org/_vercel/insights/script.js)"
+      "Bash(curl -sI https://docs.redaction-technique.org/_vercel/insights/script.js)",
+      "Bash(curl -s http://localhost:4321/)",
+      "Bash(kill %1)",
+      "Bash(pkill -f \"astro dev\")"
     ]
   }
 }
