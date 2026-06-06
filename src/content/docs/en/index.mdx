@@ -1,6 +1,19 @@
 ---
 title: "Docs-as-Code & Technical Writing — Olivier Carrère"
 description: "Expert guides on technical writing, DITA XML, Markdown, docs-as-code, and content automation for technical communicators and documentation engineering teams."
+template: splash
+hero:
+  title: Technical documentation as an engineering practice
+  tagline: For technical writers and documentation teams who want to reduce costs, automate content, and integrate docs into development workflows.
+  actions:
+    - text: Start with the process
+      link: /en/tech-writing-process/definition-du-projet/
+      icon: right-arrow
+      variant: primary
+    - text: Read the blog
+      link: https://redaction-technique.org/
+      icon: external
+      variant: minimal
 head:
   - tag: meta
     attrs:
@@ -10,45 +23,40 @@ head:
 
 import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
+Whether you're choosing between DITA XML and Markdown, moving to a docs-as-code workflow, or integrating documentation into a CI/CD pipeline — these guides cover the methods, formats, and tools that make technical documentation a sustainable, scalable practice.
+
+## Technical writing: An industrial process
+
 <CardGrid>
-  <LinkCard title="From copywriting to technical communication" href="costs/de-la-redaction-a-la-communication-technique/" description="Technical communication is often reduced to technical writing. Technical writing is intended to provide product documentation, and is involved downstream of sales." />
-  <LinkCard title="Formats and tools" href="costs/formats-et-outils/" description="When a company industrializes technical writing, the key issue is not the tool but the underlying format." />
-  <LinkCard title="The three levels of technical documentation" href="costs/les-trois-niveaux-de-la-documentation-technique/" description="If we compare technical documentation to a garden, we can classify it" />
-  <LinkCard title="KISS Principle of Simplicity" href="costs/principe-de-simplicite-kiss/" description="The KISS principle (Keep it simple stupid) is a general engineering principle that advocates simplicity to improve reliability, maintenance and scalability." />
-  <LinkCard title="Is an index useful in a PDF?" href="costs/un-index-est-il-utile-dans-un-pdf/" description="Full-text search seems to have dethroned the index." />
-  <LinkCard title="Case study: NuFirewall documentation" href="formats/cas-concret-documentation-de-nufirewall/" description="NuFirewall's documentation, which was perceived by the press as one of the product's strong points, was produced using DITA XML." />
-  <LinkCard title="Case studies in using DITA XML" href="formats/cas-concrets-utilisation-de-dita-xml/" description="My daily use of the DITA XML structured authoring format on multilingual projects as a technical writer has led me to develop a number of solutions and tips, which I share with you here." />
-  <LinkCard title="From document to modular document base" href="formats/du-document-a-la-base-documentaire-modulaire/" description="The DITA XML structured authoring format offers a way to move from the book model to the modular document base model." />
-  <LinkCard title="Structured and unstructured formats" href="formats/formats-structures-et-non-structures/" description="The information contained in a technical document can be categorized according to its meaning." />
-  <LinkCard title="A document architecture that's too complex?" href="formats/une-architecture-documentaire-trop-complexe/" description="DITA XML enables productivity gains by reducing the source volume that the technical writer creates, translates and maintains, at the cost of greater complexity." />
-  <LinkCard title="SQL database" href="tech-writing-process/base-de-donnees-sql/" description="In the case of a CMS (Content Management System) such as Drupal, Joomla or WordPress, the repository is an SQL database." />
-  <LinkCard title="Gathering information" href="tech-writing-process/collecte-de-l-information/" description="Technical writers gather information from various sources, both internal and external to the company." />
-  <LinkCard title="Content creation" href="tech-writing-process/creation-du-contenu/" description="The technical writer creates the content of the technical writing project in constant dialogue with the company's various players: R&D departments, marketing." />
   <LinkCard title="Project definition" href="tech-writing-process/definition-du-projet/" description="Communicating technical information without knowing to whom or for what purpose is a futile effort." />
-  <LinkCard title="Target format" href="tech-writing-process/format-cible/" description="The target format of a technical writing medium is the format in which the message's audience will access it." />
-  <LinkCard title="Source format" href="tech-writing-process/format-source/" description="Word processors have unaccustomed us to distinguishing between form and content. But confusing the two leads to many errors and wasted time." />
+  <LinkCard title="Integrating documentation into development" href="tech-writing-process/integrer-la-documentation-aux-processus-de-developpement/" description="Documentation is part of software." />
   <LinkCard title="Git: from file to content" href="tech-writing-process/git-du-fichier-au-contenu/" description="With Git, think content rather than files: it's simpler and avoids many difficulties." />
-  <LinkCard title="Integrating documentation into development processes." href="tech-writing-process/integrer-la-documentation-aux-processus-de-developpement/" description="Documentation is part of software." />
-  <LinkCard title="CMS: workflow as a bonus, but reliability to be tested" href="tech-writing-process/les-cms-le-workflow-en-prime-mais-une-fiabilite-a-tester/" description="If they use monolithic formats such as FrameMaker, technical writers can use CMS such as SharePoint, Alfresco or consorts." />
-  <LinkCard title="Shared network directories - unsuitable for group work" href="tech-writing-process/les-repertoires-reseau-partages-peu-adaptes-au-travail-de-groupe/" description="Files shared by a technical writing team are often stored in a shared directory on the network." />
-  <LinkCard title="Version management systems - rustic but reliable" href="tech-writing-process/les-systemes-de-gestion-de-versions-rustiques-mais-fiables/" description="Managing text documentation with a version control system (Git, Subversion, SourceSafe) like code." />
-  <LinkCard title="Delivery" href="tech-writing-process/livraison/" description="The technical writer delivers the document to its recipient in the appropriate manner." />
-  <LinkCard title="Which repository for group work?" href="tech-writing-process/quel-referentiel-pour-le-travail-de-groupe/" description="To work on a file, the technical writer uses a program that reads the file from his hard disk and loads a copy into RAM." />
-  <LinkCard title="Repository" href="tech-writing-process/referentiel/" description="Content is a company's intangible capital and must be protected as such." />
-  <LinkCard title="Testing products to document them." href="tech-writing-process/tester-les-produits-pour-les-documenter/" description="A Chinese tale tells how blind people came face to face with an elephant." />
-  <LinkCard title="Translation" href="tech-writing-process/traduction/" description="Translation constraints must be taken into account upstream of the editorial process." />
-  <LinkCard title="A single repository?" href="tech-writing-process/un-referentiel-unique/" description="Ideally, all content can be placed under a single repository (e.g. Git) to maximize reuse, consistency and quality." />
-  <LinkCard title="Using branches in source management systems." href="tech-writing-process/utiliser-les-branches-des-systemes-de-gestion-de-sources/" description="Create branches in a source manager to manage divergent projects and documentation translations." />
-  <LinkCard title="Validation and quality control" href="tech-writing-process/validation-et-controle-qualite/" description="The content must be validated before delivery." />
-  <LinkCard title="Create different documents from the same sources via Jinja (object method)" href="veille/creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-objet-texte-conditionnel/" description="Profiling content with Jinja by defining objects (audience, platform, version, etc.) to include or exclude blocks according to their attributes using a Python script profiling.py." />
-  <LinkCard title="Create different documents from the same sources using Jinja" href="veille/creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-texte-conditionnel/" description="The Python profiling.py script below allows you to profile content in preprocessing using the powerful Jinja template engine." />
-  <LinkCard title="Create different documents from the same ReST sources (conditional text)" href="veille/creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-rest-texte-conditionnel/" description="Generate document variants from the same ReST sources with Sphinx conditional text." />
-  <LinkCard title="DITA XML and XSL-FO tutorials" href="veille/didacticiels-dita-xml-xsl-fo/" description="DITA XML is a structured authoring language that lets you create documents without worrying about their final appearance on different media. XSL-FO is a language that lets you reorganize and filter XML content and apply a layout to it using a style sheet." />
+  <LinkCard title="Explore all 18 articles →" href="tech-writing-process/" description="Source formats, repositories, version control, translation, delivery, and more." />
+</CardGrid>
+
+## Structured DITA XML format
+
+<CardGrid>
+  <LinkCard title="Structured and unstructured formats" href="formats/formats-structures-et-non-structures/" description="The information contained in a technical document can be categorized according to its meaning." />
+  <LinkCard title="From document to modular document base" href="formats/du-document-a-la-base-documentaire-modulaire/" description="DITA XML offers a way to move from the book model to the modular document base model." />
+  <LinkCard title="Case study: NuFirewall documentation" href="formats/cas-concret-documentation-de-nufirewall/" description="NuFirewall's documentation, perceived by the press as one of the product's strong points, was produced using DITA XML." />
+  <LinkCard title="Explore all 5 articles →" href="formats/" description="Structured formats, DITA XML use cases, and document architecture trade-offs." />
+</CardGrid>
+
+## Reduce costs, increase customer satisfaction
+
+<CardGrid>
+  <LinkCard title="From copywriting to technical communication" href="costs/de-la-redaction-a-la-communication-technique/" description="Technical communication is often reduced to technical writing, involved downstream of sales." />
+  <LinkCard title="The three levels of technical documentation" href="costs/les-trois-niveaux-de-la-documentation-technique/" description="If we compare technical documentation to a garden, we can classify it into three levels of care and ambition." />
+  <LinkCard title="Formats and tools" href="costs/formats-et-outils/" description="When a company industrializes technical writing, the key issue is not the tool but the underlying format." />
+  <LinkCard title="Explore all 5 articles →" href="costs/" description="KISS principle, PDF indexes, and the business case for structured documentation." />
+</CardGrid>
+
+## Technology watch
+
+<CardGrid>
+  <LinkCard title="DITA XML and XSL-FO tutorials" href="veille/didacticiels-dita-xml-xsl-fo/" description="DITA XML lets you create documents without worrying about their final appearance on different media." />
+  <LinkCard title="Conditional text with Sphinx" href="veille/creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-rest-texte-conditionnel/" description="Generate document variants from the same ReST sources with Sphinx conditional text." />
   <LinkCard title="Regular expressions in Python" href="veille/expressions-regulieres-python/" description="Python's regular expression library helps you manipulate text, especially if you're not familiar with sed or awk." />
-  <LinkCard title="Automatically insert data into a reStructuredText file" href="veille/inserer-automatiquement-des-donnees-dans-un-fichier-restructuredtext/" description="Suppose you need to present 3 products, Dianthus, Geum and Prunus, each in three versions 1.0, 1.5 and 2.3." />
-  <LinkCard title="Automatically insert SQL data into a reStructuredText file" href="veille/inserer-automatiquement-des-donnees-sql-dans-un-fichier-restructuredtext/" description="We're going to create a database of products with their versions, then format this information in a reStructuredText file." />
-  <LinkCard title="Shuffling words" href="veille/jourdainisation-en-ligne-python/" description="Like the philosophy master in Molière's Bourgeois gentilhomme, a Python script can easily switch words in a sentence to say the same thing in a more convoluted way." />
-  <LinkCard title="Managing a project from start to finish" href="veille/mener-un-projet-de-bout-en-bout/" description="It's quite rare, in a professional context, to be able to manage a project from (almost) A to Z, from conception to realization and communication." />
-  <LinkCard title="The Raspberry Pi 3 as a documentation platform" href="veille/raspberry-pi-plateforme-documentation/" description="With its modest resources, a Raspberry Pi 3 is all you need to create, manage and generate documentation in PDF, HTML or EPUB format." />
-  <LinkCard title="sed: modify your text without opening your files" href="veille/sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers/" description="Unix clones are rarely used to manage technical documentation." />
+  <LinkCard title="Explore all 11 articles →" href="veille/" description="Jinja templating, SQL automation, sed, and documentation toolchains." />
 </CardGrid>
