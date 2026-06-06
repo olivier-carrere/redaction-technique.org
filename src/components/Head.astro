@@ -131,9 +131,8 @@ const schema = { '@context': 'https://schema.org', '@graph': graphNodes };
 <!-- x-default points to EN; en/fr alternates already emitted by Starlight -->
 {enHref && <link rel="alternate" hreflang="x-default" href={enHref} />}
 
-<!-- Ensure og:description and og:locale are always populated consistently -->
+<!-- og:description: ensure it's always populated with the page-specific value -->
 <meta property="og:description" content={pageDescription} />
-<meta property="og:locale" content={lang === 'fr' ? 'fr_FR' : 'en_GB'} />
 
 <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
