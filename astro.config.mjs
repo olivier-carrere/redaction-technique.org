@@ -5,7 +5,6 @@ import mdx from '@astrojs/mdx';
 import astroExpressiveCode from 'astro-expressive-code';
 import sitemap from '@astrojs/sitemap';
 import vercel from '@astrojs/vercel';
-import rehypeMermaid from 'rehype-mermaid';
 
 const site = 'https://docs.redaction-technique.org/';
 
@@ -17,9 +16,6 @@ export const locales = {
 export default defineConfig({
   site,
   trailingSlash: 'always',
-  markdown: {
-    rehypePlugins: [rehypeMermaid],
-  },
   redirects: {
     // tech-writing-process
     '/en/tech-writing-process/base-de-donnees-sql/':                                                                          '/en/tech-writing-process/sql-database/',
