@@ -55,6 +55,25 @@ The point of a structured source is never the source itself — it's what you ca
 
 This is **separation of content and presentation** taken to its conclusion. The text, the dates, the cross-references live once; the format is a render target, not a copy. It's the same argument I made for [a YAML single source of truth](https://redaction-technique.org/blog/scalable-maintainable-technical-docs-with-yaml) — only here the outputs are a perfect-bound book and a screen layout instead of a table and an API.
 
+Each `make` target drives the same compilation sequence: inject the Git commit hash, run LuaLaTeX three times, resolve the glossary in between.
+
+```mermaid
+flowchart TD
+    tex[".tex files"]
+    git["git rev-parse"]
+    rev["revision.tex"]
+    p1["LuaLaTeX — pass 1"]
+    gl["makeglossaries-lite"]
+    p2["LuaLaTeX — pass 2"]
+    p3["LuaLaTeX — pass 3"]
+    pdf(["shinjinmei-tome-1.pdf"])
+
+    git --> rev
+    tex --> p1
+    rev --> p1
+    p1 --> gl --> p2 --> p3 --> pdf
+```
+
 > **Note:** the A4 two-column edition is the quiet winner of this list. It costs nothing extra to produce — it's just another target — yet it's ideal for institutional use. An asset you get for free is an asset worth promoting.
 
 ---
@@ -68,6 +87,32 @@ Two models, two jobs:
 
 - **Mistral Large 3** handles the repetitive, structural work — glossary generation, index tagging and merging, cross-chapter consistency checks, chapter-difficulty classification, ornament placement, even a pass that flags AI-generated phrasing.
 - **Claude Sonnet 4.6** handles the open-ended work — generating and fixing LaTeX, solving typographic problems, and assisting the Spanish translation.
+
+The pipeline that produces those `.tex` sources runs ten steps in sequence, six of them calling Mistral:
+
+```mermaid
+flowchart TD
+    raw["Transcriptions audio · Word"]
+    n1["text_to_latex.py<br/>Converts Word transcriptions to structured .tex files"]
+    n2["prepare_chapters.py<br/>Normalises tags and prepares chapter structure"]
+    n3["fix_typography_ai.py<br/>Fixes complex French typographic rules"]
+    n4["mistral_spellcheck.py<br/>Fixes spelling, punctuation, and typos"]
+    n5["split_sentences.py<br/>Splits long sentences for readability"]
+    n6["index_with_mistral.py<br/>Auto-generates and inserts thematic index entries"]
+    n7["glossary_with_mistral.py<br/>Enriches the glossary with definitions and zen terms"]
+    n8["check_tex_integrity.py<br/>Verifies consistency and integrity of .tex files"]
+    n9["ai_select.py<br/>Selects relevant sources and citations by theme"]
+    tex(["Final .tex files"])
+    mistral(["Mistral"])
+
+    raw --> n1 --> n2 --> n3 --> n4 --> n5 --> n6 --> n7 --> n8 --> n9 --> tex
+    n3 -.-> mistral
+    n4 -.-> mistral
+    n5 -.-> mistral
+    n6 -.-> mistral
+    n7 -.-> mistral
+    n9 -.-> mistral
+```
 
 What makes it a *loop* rather than a one-shot is direction. AI output feeds back into the LaTeX sources, which can then be re-checked against the next pass — **a continuous quality cycle, not a single verdict**. The machine drafts and flags; the human decides and commits. This is the same instinct behind an [AI-assisted workflow for translating legacy content](https://redaction-technique.org/blog/ai-translation-legacy-technical-docs): let automation carry the volume, and reserve judgment for the parts that need it.
 
