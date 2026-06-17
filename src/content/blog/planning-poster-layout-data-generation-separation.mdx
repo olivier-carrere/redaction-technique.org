@@ -14,7 +14,7 @@ tags: [docs-as-code, latex, yaml, automation, single-source-of-truth, structured
 
 ## Starting point: an InDesign file with 100% hardcoded values
 
-The planning poster for the Kosen Sangha — a two-page A4 landscape document covering September to August — was originally produced each year in InDesign. Every value in it was hardcoded: a graphic designer opened last year's file and manually rebuilt it for the new season.
+The planning poster for the Kosen Sangha — a two-page A3 landscape document covering September to August — was originally produced each year in InDesign. Every value in it was hardcoded: a graphic designer opened last year's file and manually rebuilt it for the new season.
 
 Page 1 alone concentrates most of the work. It holds a 12-month calendar grid — roughly 370 cells, each labelled with a day of the week. That alignment shifts every year: September 2025 opens on a Monday, September 2026 on a Tuesday. There is no carrying last year's grid forward. Every cell must be rechecked. For each of the dozen events on the calendar, the correct cells must then be filled with the right colour — preparation days in one shade, sesshin days (intensive silent retreats) in another, maintenance-work days in a third — and a label positioned by hand over the right week.
 
@@ -86,6 +86,26 @@ flowchart TD
 ```
 
 The generated `.tex` fragments are committed to the repository alongside the sources, so `planning-shared.tex` compiles without running the Python script at every LaTeX pass. The script only needs to run when data changes.
+
+---
+
+## Print-ready output
+
+The pipeline targets the same technical specifications as the original InDesign files. Each language edition produces a press-ready PDF — double-sided, large-format landscape, with bleed, embedded fonts, and high-resolution images.
+
+| Specification | Value |
+|---|---|
+| Trim size | A3 landscape — 420 × 297 mm |
+| Bleed | 2 mm on each side → MediaBox 424 × 301 mm |
+| Crop marks | Not embedded in the PDF; available as a build option |
+| Images | 300 ppi, RGB colour space, JPEG compression |
+| Fonts | Embedded and subsetted — Exo family (ExtraLight, Regular, Medium, SemiBold, Bold + italics), Verdana (Regular/Bold/Italic), Arial Narrow; fallback if `.ttf` files are absent |
+| PDF version | 1.4, tagged (accessibility structure), linearized for progressive web display |
+| Metadata | XMP present: title, creator, dates |
+| Restrictions | No encryption, forms, JavaScript, or attachments |
+| Target file size | ~2–3 MB |
+
+Producing output that matches these specs from YAML sources — fonts subsetted, bleed calculated, metadata populated — is what makes the architecture more than a maintainability improvement: it fully replaces the design tool, not just the data management around it.
 
 ---
 
@@ -163,7 +183,7 @@ The generator is also where data validation lives. If an event in `events.yaml` 
 
 **Form layer.** Three file types, each with a distinct scope:
 
-- `planning-shared.tex` — the single source of page structure for all three editions. It defines the two-page A4 landscape skeleton, references the macro file, and `\input{}`s the generated fragments. Contains no hardcoded data, text, colours, or measurements.
+- `planning-shared.tex` — the single source of page structure for all three editions. It defines the two-page A3 landscape skeleton, references the macro file, and `\input{}`s the generated fragments. Contains no hardcoded data, text, colours, or measurements.
 - `fr/planning.tex`, `en/planning.tex`, `es/planning.tex` — 5-line wrappers that set `\babellang{french|english|spanish}` and `\input{../planning-shared}`. They are never edited.
 - `fr/editorial.tex`, `en/editorial.tex`, `es/editorial.tex` — the per-language prose for page 2: descriptions of the practice, directions to the temple, registration instructions. This is the only part of the form layer that differs by language and that a non-developer might touch — and only to rework the prose, never for a year change.
 
@@ -191,7 +211,7 @@ You may end up editing one YAML file, two, or all three data files, depending on
 
 Separation of concerns — keeping data, display strings, typographic values, and form strictly apart — is not a new idea. It is MVC. It is XML/XSLT and DocBook. It is every static site generator ever built, and the founding premise of the docs-as-code movement. The [YAML single source of truth](https://redaction-technique.org/blog/scalable-maintainable-technical-docs-with-yaml) pattern applies the same logic to API reference tables. Anyone working in structured documentation knows this cold.
 
-What is less common is seeing it applied to a design-heavy annual print poster — a document that, in most organisations, lives in a designer's InDesign file and gets rebuilt by hand each year. Almost all docs-as-code writing assumes HTML output. The discipline rarely reaches a two-page A4 poster with a custom colour palette, a generated 12-month calendar grid, and an annual recurrence that makes the internal cross-referencing problem structural rather than incidental.
+What is less common is seeing it applied to a design-heavy annual print poster — a document that, in most organisations, lives in a designer's InDesign file and gets rebuilt by hand each year. Almost all docs-as-code writing assumes HTML output. The discipline rarely reaches a two-page A3 landscape poster with a custom colour palette, a generated 12-month calendar grid, and an annual recurrence that makes the internal cross-referencing problem structural rather than incidental.
 
 The books-as-code pipeline for the Shinjinmei volumes uses the same LaTeX infrastructure; the planning poster extends it with a data layer designed to absorb exactly this kind of yearly churn. The pattern works on a poster for the same reason it works on a web page: the problem was never about the output format.
 
