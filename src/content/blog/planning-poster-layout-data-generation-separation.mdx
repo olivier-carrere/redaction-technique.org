@@ -22,13 +22,13 @@ The event descriptions alongside the grid compound the problem. Each retreat lis
 
 The failure mode is quiet. A price updated in the session block but missed in the summer camp pricing table. A director listed correctly in the event description but still carrying last year's title in the calendar label. An IBAN corrected in the registration section, intact in the transport section. The document looks finished. The errors are real.
 
-The [LaTeX-based pipeline](https://redaction-technique.org/blog/books-as-code-spoken-teachings-latex-ai) that replaced InDesign applies a principle every docs-as-code practitioner already knows: separate data from layout, generate output from a structured source, give every fact exactly one home. What makes the case worth examining is not the principle — it is the artifact it is applied to.
+The [LaTeX-based pipeline](https://redaction-technique.org/blog/books-as-code-spoken-teachings-latex-ai) that replaced InDesign applies separation of concerns: data, language, typographic values, and form each live in their own layer; a Python generator mediates between them; every fact has exactly one home. What makes the case worth examining is not the principle — it is the artifact it is applied to.
 
 ---
 
 ## Five layers, one architecture
 
-The planning enforces a strict five-way separation. Each layer has a single job and no overlap with the others.
+The planning enforces separation of concerns across five layers. Each layer has a single job and no overlap with the others.
 
 | Layer | Files | Role |
 |---|---|---|
@@ -177,7 +177,7 @@ The three form templates are never touched. The layout — the part that takes e
 
 ## Familiar principle, unusual artifact
 
-Separation of data from presentation is not a new idea. It is MVC. It is XML/XSLT and DocBook. It is every static site generator ever built, and the founding premise of the docs-as-code movement. The [YAML single source of truth](https://redaction-technique.org/blog/scalable-maintainable-technical-docs-with-yaml) pattern applies the same logic to API reference tables. Anyone working in structured documentation knows this cold.
+Separation of concerns — keeping data, display strings, typographic values, and form strictly apart — is not a new idea. It is MVC. It is XML/XSLT and DocBook. It is every static site generator ever built, and the founding premise of the docs-as-code movement. The [YAML single source of truth](https://redaction-technique.org/blog/scalable-maintainable-technical-docs-with-yaml) pattern applies the same logic to API reference tables. Anyone working in structured documentation knows this cold.
 
 What is less common is seeing it applied to a design-heavy annual print poster — a document that, in most organisations, lives in a designer's InDesign file and gets rebuilt by hand each year. Almost all docs-as-code writing assumes HTML output. The discipline rarely reaches a two-page A4 poster with a custom colour palette, a generated 12-month calendar grid, and an annual recurrence that makes the internal cross-referencing problem structural rather than incidental.
 
