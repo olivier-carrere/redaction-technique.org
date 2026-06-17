@@ -22,7 +22,7 @@ The event descriptions alongside the grid compound the problem. Each retreat lis
 
 The failure mode is quiet. A price updated in the session block but missed in the summer camp pricing table. A director listed correctly in the event description but still carrying last year's title in the calendar label. An IBAN corrected in the registration section, intact in the transport section. The document looks finished. The errors are real.
 
-The [LaTeX-based pipeline](https://redaction-technique.org/blog/books-as-code-spoken-teachings-latex-ai) that replaced InDesign solved this with a rule so strict it sounds simple: **the layout file contains no hardcoded factual data**. Not a single date, price, name, or address.
+The [LaTeX-based pipeline](https://redaction-technique.org/blog/books-as-code-spoken-teachings-latex-ai) that replaced InDesign applies a principle every docs-as-code practitioner already knows: separate data from layout, generate output from a structured source, give every fact exactly one home. What makes the case worth examining is not the principle — it is the artifact it is applied to.
 
 ---
 
@@ -92,6 +92,12 @@ No LaTeX anywhere in these files. A non-technical editor can update them in any 
 - `calendar_body.tex` — the colour-coded calendar grid, generated cell by cell from the event list.
 - Five content fragments covering temple sessions, off-site sessions, and summer camp blocks.
 
+Two of those outputs are worth unpacking.
+
+**Calendar grid.** The 12-month grid — the visual centrepiece of page 1 — is generated entirely by the script. For each month, it calculates the weekday of the first day, then walks through the event list and assigns each day a colour class: preparation, session, or maintenance-work. The result is `calendar_body.tex`, a LaTeX table body of roughly 370 cells, with event labels placed on the correct week spans. Change the event dates in YAML, re-run the generator, the grid redraws itself. There is nothing to manually recheck.
+
+**Remote key resolution.** Some events in `events.yaml` carry a `remote_key` field instead of hardcoded dates. When the generator runs, it fetches the live programme JSON from the community website (5-second timeout; gracefully skipped if unavailable) and substitutes those dates. The YAML holds the key; the website holds the authoritative value. This keeps the PDF in sync with the online programme without duplicating dates in two places — one source, two surfaces.
+
 The generator is also where data validation lives: mismatched venue references, missing prices, or ambiguous director names fail here, not silently in the PDF.
 
 **Layout layer.** `planning.tex` is a stable file. It defines the two-page A4 landscape structure, the colour palette, the font stack, and the fixed editorial text — descriptions of the practice, directions to the temple, registration instructions. None of that changes year to year. What changes — dates, prices, names — is not in this file.
@@ -114,15 +120,15 @@ You may end up editing one YAML file or all three, depending on what changed. Th
 
 ---
 
-## Why this is a docs-as-code problem
+## Familiar principle, unusual artifact
 
-A print poster looks nothing like a documentation system, but the underlying tension is identical: how do you maintain factual accuracy across a document that presents the same information in multiple places, in multiple forms?
+Separation of data from presentation is not a new idea. It is MVC. It is XML/XSLT and DocBook. It is every static site generator ever built, and the founding premise of the docs-as-code movement. The [YAML single source of truth](https://redaction-technique.org/blog/scalable-maintainable-technical-docs-with-yaml) pattern applies the same logic to API reference tables. Anyone working in structured documentation knows this cold.
 
-The [YAML single source of truth](https://redaction-technique.org/blog/scalable-maintainable-technical-docs-with-yaml) pattern that works for API reference tables works here too — because the problem is the same. Content that appears in multiple places must live in exactly one place and be rendered everywhere else.
+What is less common is seeing it applied to a design-heavy annual print poster — a document that, in most organisations, lives in a designer's InDesign file and gets rebuilt by hand each year. Almost all docs-as-code writing assumes HTML output. The discipline rarely reaches a two-page A4 poster with a custom colour palette, a generated 12-month calendar grid, and an annual recurrence that makes the internal cross-referencing problem structural rather than incidental.
 
-The books-as-code pipeline for the Shinjinmei volumes uses the same LaTeX infrastructure. The planning poster extends it by adding a data layer thick enough to absorb an entire year's worth of factual change without touching a single line of layout code.
+The books-as-code pipeline for the Shinjinmei volumes uses the same LaTeX infrastructure; the planning poster extends it with a data layer designed to absorb exactly this kind of yearly churn. The principle is borrowed. The artifact is the case study.
 
-That's the test worth applying to any document that gets updated regularly: if a factual value changes, how many places in the source encode it? If the answer is more than one, each of those copies is a potential inconsistency waiting to diverge.
+That is the test worth applying to any document that gets updated regularly: if a factual value changes, how many places in the source encode it? If the answer is more than one, each of those copies is a potential inconsistency waiting to diverge.
 
 ---
 
