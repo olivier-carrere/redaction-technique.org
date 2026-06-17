@@ -16,7 +16,7 @@ tags: [docs-as-code, latex, yaml, automation, single-source-of-truth, structured
 
 The planning poster for the Kosen Sangha — a two-page A4 landscape document covering September to August — was originally produced each year in InDesign. Every value in it was hardcoded: a graphic designer opened last year's file and manually rebuilt it for the new season.
 
-Page 1 alone concentrates most of the work. It holds a 12-month calendar grid — roughly 370 cells, each labelled with a day of the week. That alignment shifts every year: September 2025 opens on a Monday, September 2026 on a Tuesday. There is no carrying last year's grid forward. Every cell must be rechecked. For each of the dozen events on the calendar, the correct cells must then be filled with the right colour — preparation days in one shade, session days in another, maintenance-work days in a third — and a label positioned by hand over the right week.
+Page 1 alone concentrates most of the work. It holds a 12-month calendar grid — roughly 370 cells, each labelled with a day of the week. That alignment shifts every year: September 2025 opens on a Monday, September 2026 on a Tuesday. There is no carrying last year's grid forward. Every cell must be rechecked. For each of the dozen events on the calendar, the correct cells must then be filled with the right colour — preparation days in one shade, sesshin days (intensive silent retreats) in another, maintenance-work days in a third — and a label positioned by hand over the right week.
 
 The event descriptions alongside the grid compound the problem. Each retreat lists: exact dates, the director's full name and title (monk, nun, or master), two prices (full rate and reduced rate), and occasionally special conditions. The same director's name appears in the event block, in the calendar label, and on page 2 in the certified-masters list. A name change — or a correction — has to be tracked down in all three places. The IBAN for bank transfers, the taxi company and price, the bus lines and timetables: all hardcoded text boxes, invisible to any find-and-replace that doesn't know where to look.
 
@@ -73,7 +73,7 @@ flowchart TD
     style F fill:#d4edda,stroke:#28a745
 ```
 
-The generated `.tex` fragments are committed to the repository alongside the sources, so `planning.tex` compiles without running the Python script at every LaTeX pass. The script only needs to run when data changes.
+The generated `.tex` fragments are committed to the repository alongside the sources, so `planning.tex` compiles without running the Python script at every LaTeX pass. The script only needs to run when data changes. (The filenames — `sesshins-temple-fr.tex`, `autres-sesshins-fr.tex` — use the original French term; the diagram labels are English glosses of their contents.)
 
 ---
 
@@ -137,7 +137,7 @@ becomes a named macro in `planning_meta.tex`:
 
 `planning.tex` calls `\inscriptioniban` wherever the IBAN appears. The YAML is the single source; the macro is the interface; `planning.tex` never sees the value directly.
 
-The generator is also where data validation lives: mismatched venue references, missing prices, or ambiguous director names fail here, not silently in the PDF.
+The generator is also where data validation lives. If an event in `events.yaml` names a director who has no entry in `godos.yaml`, the build stops immediately and reports the unknown name — not a rendering glitch discovered when someone pages through the finished PDF.
 
 **Layout layer.** `planning.tex` is a stable file. It defines the two-page A4 landscape structure, the colour palette, the font stack, and the fixed editorial text — descriptions of the practice, directions to the temple, registration instructions. None of that changes year to year. What changes — dates, prices, names — is not in this file.
 
