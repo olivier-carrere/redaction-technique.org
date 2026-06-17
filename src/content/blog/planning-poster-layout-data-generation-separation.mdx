@@ -35,7 +35,7 @@ The planning enforces separation of concerns across five layers. Each layer has 
 | **Data** | `events.yaml`, `godos.yaml`, `dojos.yaml` | All factual information: dates, prices, directors, venues, contacts. Pure YAML, no LaTeX, no language-specific strings. |
 | **Language** | `traduction.yaml` | All translatable display strings: month names, day abbreviations, section headings, price labels. Pure YAML, no facts. |
 | **Typography** | `layout.yaml` | All typographic constants: font sizes, leading, column widths, spacing, tabular parameters. Pure YAML, no LaTeX. |
-| **Generation** | `gen_calendar.py` | Three-class Python script: data loading and remote resolution, calendar coloring, LaTeX emission — each independently readable, testable, and modifiable. Run with `--lang fr`, `--lang en`, or `--lang es`. |
+| **Generation** | `gen_calendar.py` | Three-class Python script: `EventLoader` (data loading and remote resolution), `CalendarGrid` (calendar colouring), `LatexEmitter` (LaTeX output) — each independently readable, testable, and modifiable. Run with `--lang fr`, `--lang en`, or `--lang es`. |
 | **Form** | `planning-shared.tex` | Shared page structure (page 1 layout, page 2 skeleton). Contains no hardcoded data, text, colours, or measurements — all values are macros defined in `lang/planning_meta.tex`. |
 |  | `fr/planning.tex`, `en/planning.tex`, `es/planning.tex` | 5-line wrappers: set `\babellang` and `\input{../planning-shared}`. Never need editing for a year change or layout adjustment. |
 |  | `fr/editorial.tex`, `en/editorial.tex`, `es/editorial.tex` | Per-language page 2 prose: practical information, directions, prices narrative. |
@@ -109,7 +109,11 @@ No LaTeX anywhere in these files. No language-specific strings either: a directo
 
 **Generation layer.** `gen_calendar.py` was originally a ~995-line flat script mixing data loading, remote fetch, date resolution, calendar colouring, and LaTeX emission in a single file. The refactor introduces three classes — one per concern — so each piece can be read, tested, and modified in isolation, with identical LaTeX output. Separation of concerns applies inside the script for the same reason it applies across the file architecture: a change to calendar colouring logic should not require understanding the LaTeX emitter, and vice versa.
 
-The script reads the five YAML files and writes into the language subdirectory to avoid collisions when building multiple editions sequentially:
+- **`EventLoader`** — loads all YAML sources, fetches live retreat data from the community website (5-second timeout; gracefully skipped if unavailable), resolves `remote_key` date fields against the live data, and exposes translation helpers and event filters to the other classes.
+- **`CalendarGrid`** — builds the day-colour and label maps in three priority passes (external sesshins → temple events → summer camp), then writes `lang/calendar_body.tex`.
+- **`LatexEmitter`** — formats all data as LaTeX and writes `lang/planning_meta.tex` (data, translation, and layout macros, plus `\definecolor` commands for the full colour palette) and the five content fragments (`retreats.tex`, `offsite.tex`, `camp-ete-main.tex`, `camp-ete-prix.tex`, `camp-ete-argentine.tex`).
+
+The script writes all output into the language subdirectory to avoid collisions when building multiple editions sequentially:
 - `lang/planning_meta.tex` — one `\def` per data point, translated string, typographic constant, and `\definecolor` command for every colour, giving `planning-shared.tex` a named handle for every value.
 - `lang/calendar_body.tex` — the colour-coded calendar grid, generated cell by cell from the event list.
 - Five content fragments per language edition: temple sessions (`lang/retreats.tex`), off-site sessions (`lang/offsite.tex`), summer camp details (`lang/camp-ete-main.tex`), pricing table (`lang/camp-ete-prix.tex`), and Argentina camp (`lang/camp-ete-argentine.tex`).
