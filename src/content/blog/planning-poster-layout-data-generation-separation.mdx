@@ -92,7 +92,7 @@ No LaTeX anywhere in these files. No language-specific strings either: a directo
 
 **Language layer.** `traduction.yaml` holds every string that changes by language: month names (`January` / `Janvier`), day abbreviations (`M T W` / `L M M`), section headings, date connectors, price labels. Nothing in this file is factual — no dates, prices, or proper names. Nothing in the data files is language-specific. The generator resolves label lookups at build time using the `--lang` flag; switching from `--lang fr` to `--lang en` re-runs the generator against the same data files and produces the English edition.
 
-**Generation layer.** A single Python script that reads the three YAML files and writes:
+**Generation layer.** A single Python script that reads the four YAML files and writes:
 - `planning_meta.tex` — one `\def` per data point, giving `planning.tex` a named handle for every value.
 - `calendar_body.tex` — the colour-coded calendar grid, generated cell by cell from the event list.
 - Five content fragments covering temple sessions, off-site sessions, and summer camp blocks.
@@ -160,7 +160,7 @@ You may end up editing one YAML file or all three, depending on what changed. Th
 
 `planning.tex` is never touched. The layout — the part that takes effort to get right — stays exactly as it was.
 
-> **The principle at work:** each fact lives in exactly one place. Not "one file per update" — one location per fact. The three YAML files are three categories of fact, not three copies of the same information.
+> **The principle at work:** each fact lives in exactly one place. Not "one file per update" — one location per fact. The three data YAML files are three categories of fact, not three copies of the same information.
 
 ---
 
@@ -178,7 +178,7 @@ That is the test worth applying to any document that gets updated regularly: if 
 
 ## TL;DR
 
-- The planning poster is produced from three YAML files, a Python generator, and a LaTeX layout file with no hardcoded data.
+- The planning poster is produced from four YAML files, a Python generator, and a LaTeX layout file with no hardcoded data.
 - Updating for a new year means editing YAML only — `planning.tex` is never touched.
 - The generator acts as an explicit interface between data and layout: every data point becomes a named LaTeX macro.
 - This is the same separation-of-concerns principle that makes [YAML-driven documentation](https://redaction-technique.org/blog/scalable-maintainable-technical-docs-with-yaml) maintainable — applied here to a print artifact rather than a web page.
