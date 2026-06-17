@@ -165,7 +165,7 @@ Separation of data from presentation is not a new idea. It is MVC. It is XML/XSL
 
 What is less common is seeing it applied to a design-heavy annual print poster — a document that, in most organisations, lives in a designer's InDesign file and gets rebuilt by hand each year. Almost all docs-as-code writing assumes HTML output. The discipline rarely reaches a two-page A4 poster with a custom colour palette, a generated 12-month calendar grid, and an annual recurrence that makes the internal cross-referencing problem structural rather than incidental.
 
-The books-as-code pipeline for the Shinjinmei volumes uses the same LaTeX infrastructure; the planning poster extends it with a data layer designed to absorb exactly this kind of yearly churn. The principle is borrowed. The artifact is the case study.
+The books-as-code pipeline for the Shinjinmei volumes uses the same LaTeX infrastructure; the planning poster extends it with a data layer designed to absorb exactly this kind of yearly churn. The pattern works on a poster for the same reason it works on a web page: the problem was never about the output format.
 
 That is the test worth applying to any document that gets updated regularly: if a factual value changes, how many places in the source encode it? If the answer is more than one, each of those copies is a potential inconsistency waiting to diverge.
 
