@@ -46,14 +46,14 @@ The generator (`gen_calendar.py`) runs first, reading three YAML files and — o
 
 ```mermaid
 flowchart TD
-    R[("zen-deshimaru.com\n(live JSON)")] -->|remote_key resolution| G
+    R[("zen-deshimaru.com<br/>(live JSON)")] -->|remote_key resolution| G
     EV[(events.yaml)] --> G
     GO[(godos.yaml)] --> G
     DO[(dojos.yaml)] --> G
-    G[gen_calendar.py] --> M[planning_meta.tex\nmacros for all data]
-    G --> CB[calendar_body.tex\ncalendar grid]
-    G --> ST[sesshins-temple-fr.tex\ntemple sesshins]
-    G --> AS[autres-sesshins-fr.tex\noff-site sesshins]
+    G[gen_calendar.py] --> M[planning_meta.tex<br/>macros for all data]
+    G --> CB[calendar_body.tex<br/>calendar grid]
+    G --> ST[sesshins-temple-fr.tex<br/>temple sesshins]
+    G --> AS[autres-sesshins-fr.tex<br/>off-site sesshins]
     G --> CE[camp-ete-*.tex\nsummer camp]
 
     M --> P[planning.tex]
