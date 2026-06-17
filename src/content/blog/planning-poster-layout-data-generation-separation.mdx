@@ -98,6 +98,45 @@ Two of those outputs are worth unpacking.
 
 **Remote key resolution.** Some events in `events.yaml` carry a `remote_key` field instead of hardcoded dates. When the generator runs, it fetches the live programme JSON from the community website (5-second timeout; gracefully skipped if unavailable) and substitutes those dates. The YAML holds the key; the website holds the authoritative value. This keeps the PDF in sync with the online programme without duplicating dates in two places — one source, two surfaces.
 
+To make this concrete: here is one event from `events.yaml` — a two-day retreat with one director and two prices.
+
+```yaml
+- title: Sesshin du Sud
+  date: 2025-10-04
+  to: 2025-10-05
+  type: sesshin
+  dojo: temple Yujo Nyusanji
+  godo:
+    - Geneviève Sen Gyo Perrier
+  prix:
+    normal: 110
+    reduit: 85
+```
+
+The generator reads it and writes this block into `sesshins_temple_block.tex`:
+
+```latex
+\sub{Sesshin du Sud}
+4 to 5 October 2025\\
+led by Geneviève Sen Gyo Perrier\\
+\textbf{110\,\texteuro{} or 85\,\texteuro{}*}
+```
+
+Global facts follow a different path. The IBAN in `events.yaml`:
+
+```yaml
+inscriptions:
+  iban: "FR76 4255 9100 0008 0035 9417 710"
+```
+
+becomes a named macro in `planning_meta.tex`:
+
+```latex
+\def\inscriptioniban{FR76 4255 9100 0008 0035 9417 710}
+```
+
+`planning.tex` calls `\inscriptioniban` wherever the IBAN appears. The YAML is the single source; the macro is the interface; `planning.tex` never sees the value directly.
+
 The generator is also where data validation lives: mismatched venue references, missing prices, or ambiguous director names fail here, not silently in the PDF.
 
 **Layout layer.** `planning.tex` is a stable file. It defines the two-page A4 landscape structure, the colour palette, the font stack, and the fixed editorial text — descriptions of the practice, directions to the temple, registration instructions. None of that changes year to year. What changes — dates, prices, names — is not in this file.
