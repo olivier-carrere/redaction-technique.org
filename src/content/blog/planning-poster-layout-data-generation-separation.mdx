@@ -1,10 +1,10 @@
 ---
 draft: false
 title: "Every Fact Once: Separating Layout, Data, and Generation in a Print Calendar"
-snippet: "How a strict four-layer architecture — factual data, language strings, a Python generator, and a LaTeX layout with no hardcoded values — ensures every fact lives in exactly one place, so a year's update means editing YAML only, never the layout."
+snippet: "How a strict five-layer architecture — factual data, language strings, typographic constants, a Python generator, and a LaTeX form template with no hardcoded values — ensures every fact lives in exactly one place, so a year's update means editing YAML only, never the layout."
 image: {
     src: "/images/blog/planning-layout-content-data.webp",
-    alt: "Three distinct layers — YAML data, Python generator, LaTeX layout — converging into a single PDF"
+    alt: "Five distinct layers — YAML data, translations, typographic constants, Python generator, LaTeX form — converging into language-specific PDFs"
 }
 publishDate: "2026-06-17 00:00"
 category: "Blog"
@@ -26,24 +26,25 @@ The [LaTeX-based pipeline](https://redaction-technique.org/blog/books-as-code-sp
 
 ---
 
-## Four layers, one output
+## Five layers, one architecture
 
-The planning enforces a strict four-way separation. Each layer has a single job and no overlap with the others.
+The planning enforces a strict five-way separation. Each layer has a single job and no overlap with the others.
 
 | Layer | Files | Role |
 |---|---|---|
 | **Data** | `events.yaml`, `godos.yaml`, `dojos.yaml` | All factual information: dates, prices, directors, venues, contacts. Pure YAML, no LaTeX, no language-specific strings. |
 | **Language** | `traduction.yaml` | All translatable display strings: month names, day abbreviations, section headings, price labels. Pure YAML, no facts. |
-| **Generation** | `gen_calendar.py` | Reads data and language files; assembles language-specific LaTeX fragments and a macro file. Run with `--lang fr` or `--lang en` for the corresponding edition. |
-| **Layout** | `planning.tex` | Page structure, colours, fonts, and fixed editorial text. Calls macros for all data. Contains no factual values and no display strings. |
+| **Typography** | `layout.yaml` | All typographic constants: font sizes, leading, column widths, spacing, tabular parameters. Pure YAML, no LaTeX. |
+| **Generation** | `gen_calendar.py` | Reads all YAML files; assembles language-specific LaTeX fragments and a macro file. Run with `--lang fr`, `--lang en`, or `--lang es` for the corresponding edition. |
+| **Form** | `fr/planning.tex`, `en/planning.tex`, `es/planning.tex` | Page structure, colours, and fixed editorial text. Calls macros for all data, strings, and layout values. Contains no hardcoded facts, labels, or measurements. |
 
-Because data and language are separate files, the same `events.yaml` produces a French PDF and an English PDF without alteration. The layout layer calls macros such as `\planningyear`, `\inscriptioniban`, `\taxicompagnie` — resolved at build time from the generated macro file. If a value doesn't exist in YAML, it doesn't appear in the PDF. If a value changes in YAML, it changes everywhere in the PDF simultaneously.
+Because data, language, and typographic values are all in separate YAML files, the same `events.yaml` produces French, English, and Spanish PDFs without alteration. The form layer calls macros such as `\planningyear`, `\inscriptioniban`, `\taxicompagnie`, `\eventfontformat`, `\caldaysetup` — all resolved at build time from the generated macro file. If a value doesn't exist in YAML, it doesn't appear in the PDF. If a value changes in YAML, it changes everywhere in every language edition simultaneously.
 
 ---
 
 ## How the build flows
 
-The generator (`gen_calendar.py`) runs first, reading four YAML files — three for factual data, one for language strings — and optionally fetching live retreat data from the community website. Everything it produces is then consumed by `planning.tex` through standard LaTeX `\input{}` directives.
+The generator (`gen_calendar.py`) runs first, reading five YAML files — three for factual data, one for language strings, one for typographic constants — and optionally fetching live retreat data from the community website. Everything it produces is then consumed by `lang/planning.tex` through standard LaTeX `\input{}` directives.
 
 ```mermaid
 flowchart TD
@@ -51,16 +52,17 @@ flowchart TD
     EV[(events.yaml)] --> G
     GO[(godos.yaml)] --> G
     DO[(dojos.yaml)] --> G
-    TR[(traduction.yaml<br/>--lang fr / en)] --> G
-    G[gen_calendar.py] --> M[planning_meta.tex<br/>macros for all data]
+    TR[(traduction.yaml<br/>--lang fr / en / es)] --> G
+    LY[(layout.yaml)] --> G
+    G[gen_calendar.py<br/>--lang fr/en/es] --> M[planning_meta.tex<br/>macros for data + layout]
     G --> CB[calendar_body.tex<br/>calendar grid]
-    G --> ST[fr/retreats.tex<br/>temple sessions]
-    G --> AS[fr/offsite.tex<br/>off-site sessions]
-    G --> CE[fr/camp-ete-main.tex<br/>summer camp]
-    G --> CP[fr/camp-ete-prix.tex<br/>pricing table]
-    G --> CA[fr/camp-ete-argentine.tex<br/>Argentina camp]
+    G --> ST[lang/retreats.tex<br/>temple sessions]
+    G --> AS[lang/offsite.tex<br/>off-site sessions]
+    G --> CE[lang/camp-ete-main.tex<br/>summer camp]
+    G --> CP[lang/camp-ete-prix.tex<br/>pricing table]
+    G --> CA[lang/camp-ete-argentine.tex<br/>Argentina camp]
 
-    M --> P[planning.tex]
+    M --> P[lang/planning.tex]
     CB --> P
     ST --> P
     AS --> P
@@ -70,17 +72,18 @@ flowchart TD
 
     P --> L1[pdflatex pass 1]
     L1 --> L2[pdflatex pass 2]
-    L2 --> F([planning.pdf])
+    L2 --> F([fr/en/es-planning.pdf])
 
     style R fill:#e8f4f8,stroke:#4a9abb
     style EV fill:#e8f4f8,stroke:#4a9abb
     style GO fill:#e8f4f8,stroke:#4a9abb
     style DO fill:#e8f4f8,stroke:#4a9abb
     style TR fill:#eaf4e8,stroke:#4a9a5b
+    style LY fill:#eaf4e8,stroke:#4a9a5b
     style F fill:#d4edda,stroke:#28a745
 ```
 
-The generated `.tex` fragments are committed to the repository alongside the sources, so `planning.tex` compiles without running the Python script at every LaTeX pass. The script only needs to run when data changes.
+The generated `.tex` fragments are committed to the repository alongside the sources, so `lang/planning.tex` compiles without running the Python script at every LaTeX pass. The script only needs to run when data changes.
 
 ---
 
@@ -94,12 +97,14 @@ The generated `.tex` fragments are committed to the repository alongside the sou
 
 No LaTeX anywhere in these files. No language-specific strings either: a director's name is a name, not a label, and is rendered as-is in all editions.
 
-**Language layer.** `traduction.yaml` holds every string that changes by language: month names (`January` / `Janvier`), day abbreviations (`M T W` / `L M M`), section headings, date connectors, price labels. Nothing in this file is factual — no dates, prices, or proper names. Nothing in the data files is language-specific. The generator resolves label lookups at build time using the `--lang` flag; switching from `--lang fr` to `--lang en` re-runs the generator against the same data files and produces the English edition.
+**Language layer.** `traduction.yaml` holds every string that changes by language: month names (`January` / `Janvier` / `Enero`), day abbreviations (`M T W` / `L M M`), section headings, date connectors, price labels, Zen vocabulary, footer notes. Nothing in this file is factual — no dates, prices, or proper names. Nothing in the data files is language-specific. The generator resolves label lookups at build time using the `--lang` flag; switching from `--lang fr` to `--lang en` or `--lang es` re-runs the generator against the same data files and produces the English or Spanish edition.
 
-**Generation layer.** A single Python script that reads the four YAML files and writes:
-- `planning_meta.tex` — one `\def` per data point, giving `planning.tex` a named handle for every value.
+**Typography layer.** `layout.yaml` holds every typographic constant: font sizes and leading for each block, vertical spacing, calendar column widths, tabular parameters. The generator reads these values and exports them as LaTeX macros — `\eventfontformat`, `\caldaysetup`, `\prixtabcolsep` — into `planning_meta.tex`. The form templates contain no hardcoded measurements. Change a font size in `layout.yaml` and all three language editions rebuild with the new value. Like `traduction.yaml`, this file is year-independent: it changes only when typographic choices change, not when the programme does.
+
+**Generation layer.** A single Python script that reads the five YAML files and writes:
+- `planning_meta.tex` — one `\def` per data point and one per typographic constant, giving `lang/planning.tex` a named handle for every value.
 - `calendar_body.tex` — the colour-coded calendar grid, generated cell by cell from the event list.
-- Five content fragments: temple sessions (`fr/retreats.tex`), off-site sessions (`fr/offsite.tex`), summer camp details (`fr/camp-ete-main.tex`), pricing table (`fr/camp-ete-prix.tex`), and Argentina camp (`fr/camp-ete-argentine.tex`).
+- Five content fragments per language edition: temple sessions (`lang/retreats.tex`), off-site sessions (`lang/offsite.tex`), summer camp details (`lang/camp-ete-main.tex`), pricing table (`lang/camp-ete-prix.tex`), and Argentina camp (`lang/camp-ete-argentine.tex`).
 
 Two of those outputs are worth unpacking.
 
@@ -144,11 +149,11 @@ becomes a named macro in `planning_meta.tex`:
 \def\inscriptioniban{FR76 4255 9100 0008 0035 9417 710}
 ```
 
-`planning.tex` calls `\inscriptioniban` wherever the IBAN appears. The YAML is the single source; the macro is the interface; `planning.tex` never sees the value directly.
+`lang/planning.tex` calls `\inscriptioniban` wherever the IBAN appears. The YAML is the single source; the macro is the interface; the form template never sees the value directly.
 
 The generator is also where data validation lives. If an event in `events.yaml` names a director who has no entry in `godos.yaml`, the build stops immediately and reports the unknown name — not a rendering glitch discovered when someone pages through the finished PDF.
 
-**Layout layer.** `planning.tex` is a stable file. It defines the two-page A4 landscape structure, the colour palette, the font stack, and the fixed editorial text — descriptions of the practice, directions to the temple, registration instructions. None of that changes year to year. What changes — dates, prices, names — is not in this file.
+**Form layer.** Three stable files — `fr/planning.tex`, `en/planning.tex`, `es/planning.tex` — each defines the two-page A4 landscape structure, the colour palette, and the fixed editorial text for its language: descriptions of the practice, directions to the temple, registration instructions. None of that changes year to year. What changes — dates, prices, names, measurements — is not in these files.
 
 ---
 
@@ -158,13 +163,13 @@ The payoff is in the update cycle. To produce next year's planning:
 
 1. Edit `events.yaml`: set `annee` to the new year range, update the event list.
 2. Edit `godos.yaml` or `dojos.yaml` only if directors or venues have changed.
-3. Run `make planning`.
+3. Run `make planning` (French), `make planning-en` (English), or `make planning-es` (Spanish). Each target accepts `SAISON=25-26` to force a specific season.
 
-`traduction.yaml` is outside this cycle — it changes only when a display label is reworded or a new language is added, neither of which happens annually.
+`traduction.yaml` and `layout.yaml` are outside this cycle — they change only when display labels are reworded or typographic choices change, neither of which happens annually.
 
-You may end up editing one YAML file or all three, depending on what changed. The point is not the number of files — it is that each individual fact has exactly one home. A director's name lives in `godos.yaml` and nowhere else. An IBAN lives in `events.yaml` and nowhere else. When either changes, there is one place to update and zero places to forget.
+You may end up editing one YAML file, two, or all three data files, depending on what changed. The point is not the number of files — it is that each individual fact has exactly one home. A director's name lives in `godos.yaml` and nowhere else. An IBAN lives in `events.yaml` and nowhere else. When either changes, there is one place to update and zero places to forget.
 
-`planning.tex` is never touched. The layout — the part that takes effort to get right — stays exactly as it was.
+The three form templates are never touched. The layout — the part that takes effort to get right — stays exactly as it was, for all three language editions simultaneously.
 
 > **The principle at work:** each fact lives in exactly one place. Not "one file per update" — one location per fact. The three data files are three categories of fact, not three copies of the same information.
 
@@ -184,8 +189,8 @@ That is the test worth applying to any document that gets updated regularly: if 
 
 ## TL;DR
 
-- The planning poster is produced from four YAML files — three for factual data, one for language strings — a Python generator, and a LaTeX layout file with no hardcoded values.
-- Facts and display strings are strictly separate: `events.yaml` holds no labels; `traduction.yaml` holds no facts. The same data files produce French and English editions unchanged.
-- Updating for a new year means editing YAML only — `planning.tex` is never touched.
-- The generator acts as an explicit interface between data and layout: every data point becomes a named LaTeX macro.
-- This is the same separation-of-concerns principle that makes [YAML-driven documentation](https://redaction-technique.org/blog/scalable-maintainable-technical-docs-with-yaml) maintainable — applied here to a print artifact rather than a web page.
+- The planning poster is produced from five YAML files — three for factual data, one for language strings, one for typographic constants — a Python generator, and per-language LaTeX form templates with no hardcoded values.
+- Facts, display strings, and typographic values are strictly separate: `events.yaml` holds no labels or measurements; `traduction.yaml` holds no facts; `layout.yaml` holds no content. The same data files produce French, English, and Spanish editions unchanged.
+- Updating for a new year means editing YAML only — the three form templates are never touched.
+- The generator acts as an explicit interface between source and output: every data point, translated string, and typographic constant becomes a named LaTeX macro.
+- This is the same separation-of-concerns principle that makes [YAML-driven documentation](https://redaction-technique.org/blog/scalable-maintainable-technical-docs-with-yaml) maintainable — applied here to a multilingual print artifact rather than a web page.
