@@ -70,9 +70,12 @@ flowchart TD
     AS --> P
     CE --> P
 
-    P --> L1[pdflatex pass 1]
-    L1 --> L2[pdflatex pass 2]
-    L2 --> F([fr/en/es-planning.pdf])
+    IMG[(images/)] --> IP[prepare_images.py<br/>RGB → CMYK]
+    IP --> P
+    P --> L1[lualatex pass 1]
+    L1 --> L2[lualatex pass 2]
+    L2 --> PF[preflight.py<br/>pikepdf + PyMuPDF]
+    PF --> F([planning.pdf<br/>or -not-print-ready.pdf])
 
     style R fill:#e8f4f8,stroke:#4a9abb
     style EV fill:#e8f4f8,stroke:#4a9abb
@@ -80,6 +83,9 @@ flowchart TD
     style DO fill:#e8f4f8,stroke:#4a9abb
     style TR fill:#e8f4f8,stroke:#4a9abb
     style LY fill:#e8f4f8,stroke:#4a9abb
+    style IMG fill:#e8f4f8,stroke:#4a9abb
+    style IP fill:#fce8e8,stroke:#bb4a4a
+    style PF fill:#fce8e8,stroke:#bb4a4a
     style SH fill:#fff3cd,stroke:#856404
     style ED fill:#fff3cd,stroke:#856404
     style F fill:#d4edda,stroke:#28a745
@@ -91,21 +97,252 @@ The generated `.tex` fragments are committed to the repository alongside the sou
 
 ## Print-ready output
 
-The pipeline targets the same technical specifications as the original InDesign files. Each language edition produces a press-ready PDF — double-sided, large-format landscape, with bleed, embedded fonts, and high-resolution images.
+The pipeline produces a PDF/X-4 file ready for commercial printing — no Ghostscript, no manual export dialog. The implementation is Python + LuaLaTeX only, with a non-blocking preflight that enforces the following specifications.
 
 | Specification | Value |
 |---|---|
-| Trim size | A3 landscape — 420 × 297 mm |
-| Bleed | 2 mm on each side → MediaBox 424 × 301 mm |
-| Crop marks | Not embedded in the PDF; available as a build option |
-| Images | 300 ppi, RGB colour space, JPEG compression |
-| Fonts | Embedded and subsetted — Exo family (ExtraLight, Regular, Medium, SemiBold, Bold + italics), Verdana (Regular/Bold/Italic), Arial Narrow; fallback if `.ttf` files are absent |
-| PDF version | 1.4, tagged (accessibility structure), linearized for progressive web display |
-| Metadata | XMP present: title, creator, dates |
-| Restrictions | No encryption, forms, JavaScript, or attachments |
-| Target file size | ~2–3 MB |
+| Trim size (TrimBox) | A3 landscape — 420 × 297 mm |
+| Bleed | 2 mm on each side → BleedBox = MediaBox = 424 × 301 mm = 1201.89 × 853.23 pt |
+| TrimBox in points | `[5.669  5.669  1196.22  847.56]` (A3 centred, 2 mm inset) |
+| PDF standard | PDF/X-4 (PDF 1.6) |
+| Colour space | CMYK throughout — images converted upstream, vector colours defined as `cmyk` in `layout.yaml` |
+| Colour profile | FOGRA39 ICC v2, OutputIntent embedded by `pdfx` |
+| Images | 300 ppi minimum at placed size, CMYK |
+| Fonts | Embedded and subsetted (LuaLaTeX default) |
+| Metadata | XMP declared in `planning.xmpdata`: title, author, keywords |
+| Restrictions | No encryption, no JavaScript |
 
-Producing output that matches these specs from YAML sources — fonts subsetted, bleed calculated, metadata populated — is what makes the architecture more than a maintainability improvement: it fully replaces the design tool, not just the data management around it.
+The build follows one rule: **it always produces a PDF**. If all six preflight checks pass, the file keeps its name. If any check fails, the file is renamed to `planning-not-print-ready.pdf` and a report is written alongside it. Nothing ever aborts.
+
+### Step 1 — converting images to CMYK
+
+Before LaTeX runs, `prepare_images.py` converts every source image from RGB to CMYK using the FOGRA39 ICC profile via Pillow + LittleCMS. Resolution is checked but never faked: an image below 300 ppi is flagged as a preflight defect, not upscaled.
+
+```python
+from pathlib import Path
+from PIL import Image, ImageCms
+
+INTENT = {
+    "relative":   ImageCms.Intent.RELATIVE_COLORIMETRIC,
+    "perceptual": ImageCms.Intent.PERCEPTUAL,
+    "absolute":   ImageCms.Intent.ABSOLUTE_COLORIMETRIC,
+    "saturation": ImageCms.Intent.SATURATION,
+}
+
+def prepare_images(
+    src_dir: Path,
+    out_dir: Path,
+    icc_path: Path,
+    intent: str = "relative",
+) -> list[dict]:
+    rgb_profile  = ImageCms.createProfile("sRGB")
+    cmyk_profile = ImageCms.getOpenProfile(str(icc_path))
+    xform = ImageCms.buildTransform(
+        rgb_profile, cmyk_profile, "RGB", "CMYK",
+        renderingIntent=INTENT[intent],
+        flags=ImageCms.FLAGS["BLACKPOINTCOMPENSATION"],
+    )
+    issues: list[dict] = []
+    out_dir.mkdir(parents=True, exist_ok=True)
+    for src in sorted(src_dir.iterdir()):
+        if src.suffix.lower() not in {".jpg", ".jpeg", ".tif", ".tiff", ".png"}:
+            continue
+        with Image.open(src) as img:
+            dpi = img.info.get("dpi", (72, 72))
+            ppi = min(dpi)
+            if ppi < 300:
+                issues.append({"file": src.name, "check": "resolution",
+                               "detail": f"{ppi:.0f} ppi < 300 required"})
+            cmyk = (ImageCms.applyTransform(img.convert("RGB"), xform)
+                    if img.mode != "CMYK" else img.copy())
+            cmyk.save(out_dir / src.name, dpi=dpi,
+                      icc_profile=cmyk_profile.tobytes())
+    return issues
+```
+
+The function returns defects rather than raising. The orchestrator collects them alongside the post-build preflight results and decides at the end whether the PDF qualifies as print-ready.
+
+### Step 2 — PDF/X-4 output from LuaLaTeX
+
+The `pdfx` package, loaded with the `x-4` option, attaches the OutputIntent, embeds the FOGRA39 profile, and enforces the PDF/X-4 constraints that LuaLaTeX cannot enforce on its own. It reads XMP metadata from a companion file with the same base name and a `.xmpdata` extension. TrimBox and BleedBox are set via the LuaLaTeX primitive `\pdfextension pageattr` (the equivalent of pdfLaTeX's `\pdfpageattr`).
+
+```latex
+\usepackage[x-4]{pdfx}   % reads planning.xmpdata
+
+% A3 landscape + 2 mm bleed
+% BleedBox = MediaBox = 424 × 301 mm = 1201.89 × 853.23 pt
+% TrimBox  = A3 inset 2 mm → 5.669 pt each side
+\pdfextension pageattr{%
+  /TrimBox  [5.669 5.669 1196.22 847.56]%
+  /BleedBox [0     0     1201.89 853.23]%
+}
+```
+
+`planning.xmpdata` sits alongside `planning-shared.tex`:
+
+```
+\Title{Planning Kosen Sangha 2025--2026}
+\Author{Kosen Sangha}
+\Copyright{Kosen Sangha}
+\Keywords{planning\sep calendrier\sep retraites}
+\Publisher{Kosen Sangha}
+```
+
+All colours in `planning-shared.tex` call macros defined as `cmyk` tuples in `layout.yaml` — no `DeviceRGB` reaches the PDF. The `pdfx` package handles OutputIntent embedding; it does not convert colours. Conversion is entirely upstream: images in Python before the build, vector values in YAML before code generation.
+
+### Step 3 — non-blocking preflight
+
+`preflight.py` runs six checks against the compiled PDF using `pikepdf` and `PyMuPDF`. No check can abort the build — every result is recorded and the function always returns.
+
+```python
+import pikepdf, fitz
+from pathlib import Path
+
+MM_TO_PT = 72 / 25.4
+
+def run_preflight(pdf_path: Path) -> list[dict]:
+    results = []
+
+    def record(check, ok, detail=""):
+        results.append({"check": check, "ok": ok, "detail": detail})
+
+    with pikepdf.open(pdf_path) as pdf:
+        # [1] Box geometry: BleedBox 424×301 mm, TrimBox A3 420×297 mm
+        for i, page in enumerate(pdf.pages):
+            mb = [float(v) for v in page.mediabox]
+            tb = [float(v) for v in page.get("/TrimBox", page.mediabox)]
+            w_mb, h_mb = mb[2] - mb[0], mb[3] - mb[1]
+            w_tb, h_tb = tb[2] - tb[0], tb[3] - tb[1]
+            ok = (abs(w_mb - 424 * MM_TO_PT) < 1 and abs(h_mb - 301 * MM_TO_PT) < 1
+                  and abs(w_tb - 420 * MM_TO_PT) < 1 and abs(h_tb - 297 * MM_TO_PT) < 1)
+            record("boxes", ok,
+                   f"p{i+1}: MediaBox {w_mb:.1f}x{h_mb:.1f} pt  "
+                   f"TrimBox {w_tb:.1f}x{h_tb:.1f} pt")
+
+        # [2] Font embedding
+        for i, page in enumerate(pdf.pages):
+            for name, font in page.get("/Resources", {}).get("/Font", {}).items():
+                fd  = font.get("/FontDescriptor", {})
+                emb = fd.get("/FontFile") or fd.get("/FontFile2") or fd.get("/FontFile3")
+                record("fonts", bool(emb),
+                       f"p{i+1}: {name} {'embedded' if emb else 'NOT embedded'}")
+
+        # [5] OutputIntent
+        oi = pdf.Root.get("/OutputIntents")
+        record("output_intent", bool(oi),
+               "present" if oi else "missing — check FOGRA39 path in pdfx options")
+
+        # [6] PDF version 1.6, no encryption, no JavaScript
+        record("version",    pdf.pdf_version == "1.6", pdf.pdf_version)
+        record("encryption", not pdf.is_encrypted, "")
+        record("javascript",
+               not any(k in pdf.Root for k in {"/JS", "/JavaScript"}), "")
+
+    # [3, 4] Colour space and resolution via PyMuPDF
+    doc = fitz.open(str(pdf_path))
+    for page in doc:
+        for img_info in page.get_images(full=True):
+            xref = img_info[0]
+            pix  = fitz.Pixmap(doc, xref)
+            cs   = pix.colorspace.name if pix.colorspace else "unknown"
+            record("colorspace", "CMYK" in cs or pix.n == 4,
+                   f"xref {xref}: {cs}")
+            rects = page.get_image_rects(xref)
+            if rects:
+                r   = rects[0]
+                ppi = (min(pix.width  / (r.width  / 72),
+                           pix.height / (r.height / 72))
+                       if r.width and r.height else 0)
+                record("resolution", ppi >= 300, f"xref {xref}: {ppi:.0f} ppi")
+
+    return results
+```
+
+The six checks mirror exactly what a printer's preflight tool will verify: box dimensions, font embedding, colour space, image resolution, OutputIntent, and PDF validity. A failure produces a labelled entry with enough detail — file name, xref, measured value — to locate and fix the specific defect without paging through the PDF.
+
+### Orchestrating the build
+
+`build_print.py` drives the full pipeline: image preparation, two LuaLaTeX passes, preflight, and file naming.
+
+```python
+#!/usr/bin/env python3
+"""
+python build_print.py [--images SRC] [--icc ICC] [--intent INTENT]
+                      [--base NAME] [--strict]
+"""
+import argparse, subprocess, sys
+from pathlib import Path
+from prepare_images import prepare_images
+from preflight import run_preflight
+
+def build(args):
+    base    = Path(args.base)
+    out_pdf = base.with_suffix(".pdf")
+
+    # 1. Convert images to CMYK
+    img_issues = (prepare_images(Path(args.images), Path("images-cmyk"),
+                                 Path(args.icc), args.intent)
+                  if args.images else [])
+
+    # 2. Two LuaLaTeX passes — LaTeX error is the one hard stop
+    for _ in range(2):
+        r = subprocess.run(
+            ["lualatex", "--interaction=nonstopmode",
+             str(base.with_suffix(".tex"))],
+            capture_output=True, text=True,
+        )
+        if r.returncode != 0:
+            print(r.stdout[-3000:])
+            sys.exit(1)
+
+    # 3. Preflight
+    checks     = run_preflight(out_pdf)
+    all_issues = img_issues + [c for c in checks if not c["ok"]]
+
+    for c in checks:
+        mark = "OK" if c["ok"] else "FAIL"
+        print(f"  [{mark}]  {c['check']:<16}  {c['detail']}")
+
+    # 4. Name the output
+    if all_issues:
+        final  = base.parent / (base.name + "-not-print-ready.pdf")
+        report = base.parent / (base.name + "-preflight.txt")
+        out_pdf.rename(final)
+        report.write_text("\n".join(
+            f"[FAIL] {i.get('check','')}  {i.get('detail','')}"
+            for i in all_issues
+        ))
+        print(f"\n  [FAIL]  PDF not print-ready -> {final.name}")
+        print(f"          Report             -> {report.name}")
+        return 1 if args.strict else 0
+
+    print(f"\n  [OK]  All checks passed -> {out_pdf.name}")
+    return 0
+
+if __name__ == "__main__":
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--images",  default="")
+    ap.add_argument("--icc",     default="FOGRA39.icc")
+    ap.add_argument("--intent",  default="relative",
+                    choices=["relative","perceptual","absolute","saturation"])
+    ap.add_argument("--base",    default="planning")
+    ap.add_argument("--strict",  action="store_true",
+                    help="exit non-zero when PDF is not print-ready (CI use)")
+    sys.exit(build(ap.parse_args()))
+```
+
+A LaTeX compilation failure is the one hard stop — no PDF, nothing to rename. Every other defect is soft: the PDF is produced, renamed if needed, and a report written. `--strict` converts soft failures into a non-zero exit code for CI pipelines without changing the naming behaviour.
+
+```
+python build_print.py \
+    --images  src/images \
+    --icc     FOGRA39.icc \
+    --intent  relative \
+    --base    planning \
+    --strict
+```
+
+> **Extension point:** `run_preflight()` returns a plain list of dicts. Plugging veraPDF in later means appending to the same list — the naming and reporting logic is unchanged.
 
 ---
 
