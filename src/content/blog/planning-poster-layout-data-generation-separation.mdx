@@ -178,7 +178,8 @@ That is the test worth applying to any document that gets updated regularly: if 
 
 ## TL;DR
 
-- The planning poster is produced from four YAML files, a Python generator, and a LaTeX layout file with no hardcoded data.
+- The planning poster is produced from four YAML files — three for factual data, one for language strings — a Python generator, and a LaTeX layout file with no hardcoded values.
+- Facts and display strings are strictly separate: `events.yaml` holds no labels; `traduction.yaml` holds no facts. The same data files produce French and English editions unchanged.
 - Updating for a new year means editing YAML only — `planning.tex` is never touched.
 - The generator acts as an explicit interface between data and layout: every data point becomes a named LaTeX macro.
 - This is the same separation-of-concerns principle that makes [YAML-driven documentation](https://redaction-technique.org/blog/scalable-maintainable-technical-docs-with-yaml) maintainable — applied here to a print artifact rather than a web page.
