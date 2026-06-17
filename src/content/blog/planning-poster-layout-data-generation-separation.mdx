@@ -88,7 +88,7 @@ The generated `.tex` fragments are committed to the repository alongside the sou
 No LaTeX anywhere in these files. A non-technical editor can update them in any text editor.
 
 **Generation layer.** A single Python script that reads the three YAML files and writes:
-- `planning_meta.tex` — one `\newcommand` per data point, giving `planning.tex` a named handle for every value.
+- `planning_meta.tex` — one `\def` per data point, giving `planning.tex` a named handle for every value.
 - `calendar_body.tex` — the colour-coded calendar grid, generated cell by cell from the event list.
 - Five content fragments covering temple sessions, off-site sessions, and summer camp blocks.
 
