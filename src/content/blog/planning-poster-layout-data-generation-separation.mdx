@@ -1,7 +1,7 @@
 ---
 draft: false
-title: "One YAML Edit Per Year: Separating Layout, Data, and Generation in a Print Calendar"
-snippet: "How a strict three-layer architecture — pure YAML data, a Python generator, and a LaTeX layout with no hardcoded values — reduces a year's calendar update to a single file edit."
+title: "Every Fact Once: Separating Layout, Data, and Generation in a Print Calendar"
+snippet: "How a strict three-layer architecture — pure YAML data, a Python generator, and a LaTeX layout with no hardcoded values — ensures every fact lives in exactly one place, so a year's update means editing YAML only, never the layout."
 image: {
     src: "/images/blog/planning-layout-content-data.webp",
     alt: "Three distinct layers — YAML data, Python generator, LaTeX layout — converging into a single PDF"
@@ -106,9 +106,11 @@ The payoff is in the update cycle. To produce next year's planning:
 2. Edit `godos.yaml` or `dojos.yaml` only if directors or venues have changed.
 3. Run `make planning`.
 
-`planning.tex` is never touched. The layout — the part that takes effort to get right — stays exactly as it was. The data — the part that changes every year — lives in a place designed for change.
+You may end up editing one YAML file or all three, depending on what changed. The point is not the number of files — it is that each individual fact has exactly one home. A director's name lives in `godos.yaml` and nowhere else. An IBAN lives in `events.yaml` and nowhere else. When either changes, there is one place to update and zero places to forget.
 
-> **The principle at work:** isolate what changes from what doesn't. Data changes annually. Layout changes rarely. Generation is the glue between them. Keep each layer unaware of the others' internals.
+`planning.tex` is never touched. The layout — the part that takes effort to get right — stays exactly as it was.
+
+> **The principle at work:** each fact lives in exactly one place. Not "one file per update" — one location per fact. The three YAML files are three categories of fact, not three copies of the same information.
 
 ---
 
@@ -120,7 +122,7 @@ The [YAML single source of truth](https://redaction-technique.org/blog/scalable-
 
 The books-as-code pipeline for the Shinjinmei volumes uses the same LaTeX infrastructure. The planning poster extends it by adding a data layer thick enough to absorb an entire year's worth of factual change without touching a single line of layout code.
 
-That's the test worth applying to any document that gets updated regularly: if a factual value changes, how many files have to change? If the answer is more than one, the layers are not yet clean.
+That's the test worth applying to any document that gets updated regularly: if a factual value changes, how many places in the source encode it? If the answer is more than one, each of those copies is a potential inconsistency waiting to diverge.
 
 ---
 
