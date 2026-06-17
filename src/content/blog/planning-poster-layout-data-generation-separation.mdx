@@ -160,6 +160,8 @@ The payoff is in the update cycle. To produce next year's planning:
 2. Edit `godos.yaml` or `dojos.yaml` only if directors or venues have changed.
 3. Run `make planning`.
 
+`traduction.yaml` is outside this cycle — it changes only when a display label is reworded or a new language is added, neither of which happens annually.
+
 You may end up editing one YAML file or all three, depending on what changed. The point is not the number of files — it is that each individual fact has exactly one home. A director's name lives in `godos.yaml` and nowhere else. An IBAN lives in `events.yaml` and nowhere else. When either changes, there is one place to update and zero places to forget.
 
 `planning.tex` is never touched. The layout — the part that takes effort to get right — stays exactly as it was.
