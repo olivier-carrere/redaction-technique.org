@@ -26,23 +26,24 @@ The [LaTeX-based pipeline](https://redaction-technique.org/blog/books-as-code-sp
 
 ---
 
-## Three layers, one output
+## Four layers, one output
 
-The planning is built on a three-layer architecture. Each layer has a single job and no overlap with the others.
+The planning enforces a strict four-way separation. Each layer has a single job and no overlap with the others.
 
 | Layer | Files | Role |
 |---|---|---|
-| **Data** | `events.yaml`, `godos.yaml`, `dojos.yaml` | All factual information: dates, prices, directors, venues, contacts. Pure YAML, no LaTeX. |
-| **Generation** | `gen_calendar.py` | Reads the YAML files; produces LaTeX fragments and a macro file exposing every data point as a named LaTeX macro. |
-| **Layout** | `planning.tex` | Page structure, colours, fonts, and fixed editorial text. Calls macros for all data. Contains no factual values. |
+| **Data** | `events.yaml`, `godos.yaml`, `dojos.yaml` | All factual information: dates, prices, directors, venues, contacts. Pure YAML, no LaTeX, no language-specific strings. |
+| **Language** | `traduction.yaml` | All translatable display strings: month names, day abbreviations, section headings, price labels. Pure YAML, no facts. |
+| **Generation** | `gen_calendar.py` | Reads data and language files; assembles language-specific LaTeX fragments and a macro file. Run with `--lang fr` or `--lang en` for the corresponding edition. |
+| **Layout** | `planning.tex` | Page structure, colours, fonts, and fixed editorial text. Calls macros for all data. Contains no factual values and no display strings. |
 
-The layout layer calls macros such as `\planningyear`, `\sanghasite`, `\kosenrang`, `\templenom`, `\dojoemail`, `\taxicompagnie`, `\inscriptioniban` — all resolved at build time from the generated macro file. If a value doesn't exist in YAML, it doesn't appear in the PDF. If a value changes in YAML, it changes everywhere in the PDF simultaneously.
+Because data and language are separate files, the same `events.yaml` produces a French PDF and an English PDF without alteration. The layout layer calls macros such as `\planningyear`, `\inscriptioniban`, `\taxicompagnie` — resolved at build time from the generated macro file. If a value doesn't exist in YAML, it doesn't appear in the PDF. If a value changes in YAML, it changes everywhere in the PDF simultaneously.
 
 ---
 
 ## How the build flows
 
-The generator (`gen_calendar.py`) runs first, reading three YAML files and — optionally — fetching live retreat data from the community website to resolve date fields that reference the online programme. Everything it produces is then consumed by `planning.tex` through standard LaTeX `\input{}` directives.
+The generator (`gen_calendar.py`) runs first, reading four YAML files — three for factual data, one for language strings — and optionally fetching live retreat data from the community website. Everything it produces is then consumed by `planning.tex` through standard LaTeX `\input{}` directives.
 
 ```mermaid
 flowchart TD
@@ -50,6 +51,7 @@ flowchart TD
     EV[(events.yaml)] --> G
     GO[(godos.yaml)] --> G
     DO[(dojos.yaml)] --> G
+    TR[(traduction.yaml<br/>--lang fr / en)] --> G
     G[gen_calendar.py] --> M[planning_meta.tex<br/>macros for all data]
     G --> CB[calendar_body.tex<br/>calendar grid]
     G --> ST[retreats_block.tex<br/>temple sessions]
@@ -70,6 +72,7 @@ flowchart TD
     style EV fill:#e8f4f8,stroke:#4a9abb
     style GO fill:#e8f4f8,stroke:#4a9abb
     style DO fill:#e8f4f8,stroke:#4a9abb
+    style TR fill:#eaf4e8,stroke:#4a9a5b
     style F fill:#d4edda,stroke:#28a745
 ```
 
@@ -85,7 +88,9 @@ The generated `.tex` fragments are committed to the repository alongside the sou
 - `godos.yaml` — a reference list of retreat directors: full name, status (`master` / `monk` / `nun`), gender.
 - `dojos.yaml` — a reference list of practice venues: name, type, country, address, website, email, phone.
 
-No LaTeX anywhere in these files. A non-technical editor can update them in any text editor.
+No LaTeX anywhere in these files. No language-specific strings either: a director's name is a name, not a label, and is rendered as-is in all editions.
+
+**Language layer.** `traduction.yaml` holds every string that changes by language: month names (`January` / `Janvier`), day abbreviations (`M T W` / `L M M`), section headings, date connectors, price labels. Nothing in this file is factual — no dates, prices, or proper names. Nothing in the data files is language-specific. The generator resolves label lookups at build time using the `--lang` flag; switching from `--lang fr` to `--lang en` re-runs the generator against the same data files and produces the English edition.
 
 **Generation layer.** A single Python script that reads the three YAML files and writes:
 - `planning_meta.tex` — one `\def` per data point, giving `planning.tex` a named handle for every value.
