@@ -548,6 +548,8 @@ The build job then produces six press-ready PDFs — French, English, and Spanis
 
 `traduction.yaml` and `layout.yaml` are outside this cycle — they change only when display labels are reworded or typographic choices change, neither of which happens annually. `planning-shared.tex` and the thin wrappers are never touched. The layout stays exactly as it was, for all three language editions simultaneously.
 
+> **A considered alternative:** A Google Sheet with an Apps Script button could commit an updated `events.yaml` directly via the GitHub API, triggering CI automatically — or trigger `workflow_dispatch` with a sheet URL that the workflow fetches via the Sheets API. The tradeoff: the sheet's column structure must stay in sync with the YAML schema, and you need a GitHub token stored in Apps Script (or a Sheets API key in Actions secrets) — two external credentials to manage instead of zero. Given that the current setup already lets non-technical users edit `events.yaml` on GitHub.com with PR diff comments catching mistakes before merge, the added complexity is only worth it if users are genuinely blocked by editing YAML. They are not.
+
 > **The principle at work:** each fact lives in exactly one place. Not "one file per update" — one location per fact. The three data files are three categories of fact, not three copies of the same information.
 
 ---
