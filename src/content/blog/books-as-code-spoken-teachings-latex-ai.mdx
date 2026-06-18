@@ -197,6 +197,24 @@ None of that is glamorous. All of it is the difference between a PDF and a book.
 ---
 
 
+## Last-minute changes that stayed cheap
+
+The thirteen-day sprint produced 167 commits. Some of those commits happened in the final hours before the first copy was handed to a reader.
+
+In InDesign, a late change to the layout carries real risk. Any reflow cascades. Every affected page must be re-checked by eye. A spacing adjustment made at midnight on a deadline can push text out of position across a chapter break and nobody notices until a printed copy comes back wrong — at which point the original file may no longer be findable, let alone re-editable.
+
+In a LaTeX pipeline under Git, the same changes cost a one-line edit and a rebuild. A few that arrived after the typographic sprint was considered finished:
+
+- **Poem spacing.** A stray `\vspace{\baselineskip}` had been generating a blank line after every inline poem throughout all three volumes. One macro change, one rebuild — every occurrence fixed simultaneously, across 136 pages, without touching a single page by hand.
+- **Drop caps.** Adding `lhang=1` to `\lettrine` let every drop cap hang into the margin instead of pushing body text inward — a global change that affected every chapter opener. In InDesign: select every drop cap object individually.
+- **Index indentation.** Sub-entries were more deeply indented than continuation lines, inverting the visual hierarchy across the entire index. A `\makeatletter` block redefining `\@idxitem`, `\subitem`, and `\subsubitem` fixed it on the next pass. In InDesign: manual adjustment of every index entry.
+- **A typo from 2013.** "poumonsn" corrected to "poumons" in a source file from eleven years earlier. One edit, one commit, one rebuild. The correct word now appears in every format — A5, single-volume, Spanish, web — automatically.
+
+None of these were planned. All of them arrived late. What made them safe to absorb was not a good contingency plan — it was that global changes are mechanical. A line of LaTeX that fixes the drop cap on page 12 fixes every drop cap in all three volumes at the same time. The tighter the deadline, the more that property is worth.
+
+---
+
+
 ## A final pass: asking Claude to read the PDF
 
 Once the layout was stable, I gave Claude the rendered PDF with a single prompt: *"You're an experienced typographer. Check this PDF before printing."* That was the entire brief. An earlier attempt — asking simply *"Is this PDF well laid out?"* — had produced flattering but vague output: broadly positive, not much to act on. Framing Claude as a practitioner with a specific role changed the register entirely; the review came back structured, technical, and actionable. The summary: *"very good quality — sober, consistent, clearly done by someone who masters book typography. No blocking issues."* The Garamond/Cormorant small-caps pairing was called out specifically as "coherent and refined, suited to contemplative content." The kusen sheet — the structured header that opens each commentary, carrying the talk duration, time, date, source, and QR code — was flagged as "a distinctive and well-executed design element."
