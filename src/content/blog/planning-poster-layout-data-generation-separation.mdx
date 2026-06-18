@@ -546,7 +546,18 @@ Review the comment. Push a correction if anything looks wrong — the comment up
 
 The build job then produces six press-ready PDFs — French, English, and Spanish editions of both the current season and the upcoming one — downloadable as artefacts from the Actions tab.
 
-> **Free-tier cost.** GitHub Free includes 2,000 Actions minutes per month for private repositories. A LuaLaTeX build for three languages takes several minutes per push; heavy iteration during development eats through that budget fast. The 2,000-minute cap is a real constraint — the `livres-latex` repository hit it in June 2026 during pipeline development. The fix is straightforward: making the repository public removes the minute cap entirely, since GitHub Actions is free for public repositories with no limit. If the content allows it, that is the zero-cost path.
+> **GitHub Actions cost.** Public repositories on GitHub get Actions with no minute cap — the workflow runs entirely for free. If builds stop with a billing error despite the repository being public, the cause is typically a payment failure or a spending limit set above $0 with an invalid payment method, not minutes exhaustion. Check Settings → Billing &amp; plans, fix the payment method, and free Actions on public repos resume immediately with no waiting period.
+
+> **Building locally (identical to CI).** The CI workflow uses a published TeX Live Docker image. Running the exact same image locally guarantees identical output without a VM:
+> ```bash
+> docker run --rm -it \
+>   -v "$(pwd)":/workspace -w /workspace \
+>   registry.gitlab.com/islandoftex/images/texlive:TL2023-2023-12-31-full \
+>   bash
+> ```
+> Inside the container: `apt-get update -qq && apt-get install -y --no-install-recommends make python3 python3-yaml && make planning planning-en planning-es`
+>
+> On macOS ARM64, the image is AMD64 and runs under Rosetta emulation — it works but is slower than native. [OrbStack](https://orbstack.dev/) (`brew install orbstack`) uses Rosetta more efficiently than Docker Desktop; the same `docker run` command works unchanged. The alternative — a UTM Ubuntu ARM64 VM with TeX Live installed manually — would not be bit-for-bit identical to CI and requires more setup.
 
 `traduction.yaml` and `layout.yaml` are outside this cycle — they change only when display labels are reworded or typographic choices change, neither of which happens annually. `planning-shared.tex` and the thin wrappers are never touched. The layout stays exactly as it was, for all three language editions simultaneously.
 
