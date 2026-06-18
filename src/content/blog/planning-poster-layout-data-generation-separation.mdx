@@ -428,19 +428,11 @@ The generator is also where data validation lives. If an event in `events.yaml` 
 
 ## Updating for a new year
 
-The only file that changes each year is `events.yaml`. Everything else — layout, translations, typography, LaTeX templates — is stable.
-
-### Before touching anything: compare seasons
-
-```bash
-make diff-saison SAISON=26-27   # compare 25-26 → 26-27  (PREV= to override)
-```
-
-The report lists dates, prices, and events that changed between seasons. Catching a discrepancy here costs nothing; catching it after printing costs a reprint.
+The only file that changes each year is `events.yaml`. The entire workflow runs on GitHub — no LaTeX, no Python, no local tools required.
 
 ### Open a new season block
 
-`events.yaml` is structured as a list of season blocks. Copy the previous block and update three fields:
+Open `planning/events.yaml` on GitHub.com and click **Edit**. Copy the previous season block and update three fields:
 
 ```yaml
 - saison: "27-28"           # unique key
@@ -546,24 +538,15 @@ camp_ete_argentina:
 | `sangha` | `kosen_rang` | Kosen's patriarchal rank |
 | `sangha` | `maitres` | Certified masters list |
 
-### Build and publish
+### Open a pull request
 
-```bash
-# Build all three editions — press-ready PDF/X-4 with preflight
-make planning planning-en planning-es
+With the edits committed on a branch, open a Pull Request. The CI diff job immediately posts a comment listing every changed date, price, and event compared with the previous season — the same comparison `make diff-saison` runs locally, but automatic.
 
-# Open for visual check
-open planning/fr-planning.pdf planning/en-planning.pdf planning/es-planning.pdf
+Review the comment. Push a correction if anything looks wrong — the comment updates on every push. When the diff looks right, merge.
 
-# Publish
-git add planning/events.yaml
-git commit -m "Planning: nouvelle saison 27-28"
-git push origin main
-```
+The build job then produces six press-ready PDFs — French, English, and Spanish editions of both the current season and the upcoming one — downloadable as artefacts from the Actions tab.
 
-If `gen_calendar.py` reports an `ERREUR — events.yaml`, the field name in the error message identifies exactly where the problem is. Fix it and re-run.
-
-`traduction.yaml` and `layout.yaml` are outside this cycle — they change only when display labels are reworded or typographic choices change, neither of which happens annually. `planning-shared.tex` and the thin wrappers are never touched. The layout — the part that takes effort to get right — stays exactly as it was, for all three language editions simultaneously.
+`traduction.yaml` and `layout.yaml` are outside this cycle — they change only when display labels are reworded or typographic choices change, neither of which happens annually. `planning-shared.tex` and the thin wrappers are never touched. The layout stays exactly as it was, for all three language editions simultaneously.
 
 > **The principle at work:** each fact lives in exactly one place. Not "one file per update" — one location per fact. The three data files are three categories of fact, not three copies of the same information.
 
