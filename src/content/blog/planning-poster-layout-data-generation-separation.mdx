@@ -428,17 +428,142 @@ The generator is also where data validation lives. If an event in `events.yaml` 
 
 ## Updating for a new year
 
-The payoff is in the update cycle. To produce next year's planning:
+The only file that changes each year is `events.yaml`. Everything else — layout, translations, typography, LaTeX templates — is stable.
 
-1. Edit `events.yaml`: set `annee` to the new year range, update the event list.
-2. Edit `godos.yaml` or `dojos.yaml` only if directors or venues have changed.
-3. Run `make planning` (French), `make planning-en` (English), or `make planning-es` (Spanish). Each target accepts `SAISON=25-26` to force a specific season.
+### Before touching anything: compare seasons
 
-`traduction.yaml` and `layout.yaml` are outside this cycle — they change only when display labels are reworded or typographic choices change, neither of which happens annually.
+```bash
+make diff-saison SAISON=26-27   # compare 25-26 → 26-27  (PREV= to override)
+```
 
-You may end up editing one YAML file, two, or all three data files, depending on what changed. The point is not the number of files — it is that each individual fact has exactly one home. A director's name lives in `godos.yaml` and nowhere else. An IBAN lives in `events.yaml` and nowhere else. When either changes, there is one place to update and zero places to forget.
+The report lists dates, prices, and events that changed between seasons. Catching a discrepancy here costs nothing; catching it after printing costs a reprint.
 
-`planning-shared.tex` and the thin wrappers are never touched. The layout — the part that takes effort to get right — stays exactly as it was, for all three language editions simultaneously.
+### Open a new season block
+
+`events.yaml` is structured as a list of season blocks. Copy the previous block and update three fields:
+
+```yaml
+- saison: "27-28"           # unique key
+  annee: "2027--2028"       # displayed on the poster (LaTeX em-dash)
+  temple: temple Yujo Nyusanji
+```
+
+### Update the events
+
+For each event, three fields change every year:
+
+| Field | Description |
+|---|---|
+| `date` | Start date (`YYYY-MM-DD`) |
+| `to` | End date (`YYYY-MM-DD`) |
+| `godo` | Director name(s) |
+
+Events fall into three types: `samu` (no price), `sesshin` (fields `normal` / `reduit`), and `camp` (fields `session_normal`, `session_reduit`, `sesshin_normal`, `sesshin_reduit`).
+
+Most events recur each season and carry a `trad_key` that ties them to translated labels in `traduction.yaml`:
+
+| `trad_key` | Event |
+|---|---|
+| `samu_hivernage` | Garden winterisation (Nov.) |
+| `samu_printemps` | Spring samu (May) |
+| `samu_camp_ete` | Samu before/after summer camp |
+| `camp_automne` | Autumn camp (Nov.) |
+| `camp_hiver` | Winter camp (Dec.–Jan.) |
+| `sesshin_fin_hiver` | Late-winter sesshin (Feb.) |
+| `camp_paques` | Easter camp (Mar.–Apr.) |
+| `camp_printemps` | Spring camp (May) |
+| `sesshin_kesa` | Kesa sesshin (Jun.) |
+| `zazoom` | Zazoom 24h (Sep.) |
+| `sesshin_dijon` | Dijon sesshin (Feb.) |
+| `sesshin_lyon` | Lyon sesshin (Mar.) |
+| `sesshin_suede` | Göteborg sesshin (Oct.) |
+| `sesshin_amsterdam` | Amsterdam sesshin(s) |
+| `sesshin_barcelona` | Barcelona sesshin(s) |
+
+A second group is optional — present in some seasons, absent in others:
+
+| `trad_key` / title | Event |
+|---|---|
+| `samu_juin` | June temple samu |
+| `sesshin_clermont` | Clermont-Ferrand sesshin |
+| `sesshin_kesa_amsterdam` | Amsterdam kesa sesshin |
+| `sesshin_sud` | Sesshin du Sud |
+| `session_chili` | Zen y Pacífico — Chile |
+| `session_mexique` | Mexico session |
+| `Zen y playa` | Zen y playa — Barcelona (Aug.) |
+| `Québec` | Quebec sesshin |
+
+### Update the summer camp
+
+```yaml
+camp_ete:
+  lieu: temple Yujo Nyusanji
+  permanents_price: ???        # full-season rate for residents (€)
+  jeunes_price: ???            # youth rate per session (€)
+  jeunes_age_min: 18
+  jeunes_age_max: 26
+  prep_duree: { min: 4, max: 6 }
+  permanent_retard: ???        # late-arrival / early-departure penalty (€/day)
+  intersession_nuit: ???       # inter-session overnight rate (€)
+  intersession_repas: ???      # inter-session meal rate (€)
+  ordination_moine: ???        # monk/nun ordination supplement (€)
+  ordination_bodhi: ???        # bodhisattva ordination supplement (€)
+  ordination_session: 3        # session number that includes ordinations
+  sessions:
+    - id: camp-ete-session-1-20XX
+      date: 20XX-07-??
+      to:   20XX-07-??
+      preparation: 6
+      decoupage: { preparation: 5, repos: 1, sesshin: "2,5" }
+      godo: [Pierre Soko Leroux]
+      prix:
+        session_normal: ???    session_reduit: ???
+        sesshin_normal: ???    sesshin_reduit: ???
+```
+
+### Update the Argentina camp
+
+```yaml
+camp_ete_argentina:
+  lieu: "temple Shobogenji"
+  lieu_es: "templo Shobogenji"
+  pays_key: pays_argentine
+  sessions:
+    - date: 20XX-01-??   to: 20XX-01-??   godo: [Toshiro Taïgen Yamauchi]
+    - date: 20XX-01-??   to: 20XX-01-??   feminine: true   godo: [Paula Reikiku Femenias]
+    - date: 20XX-01-??   to: 20XX-02-??   feminine: true   godo: [Ariadna Doseï Labbate]
+  contact: zen-deshimaru.com.ar
+```
+
+### Check global data (rarely changes)
+
+| Section | Field | Description |
+|---|---|---|
+| `inscriptions` | `iban`, `bic` | Bank account details |
+| `inscriptions` | `cotisation` | Annual ABZD membership fee (€) |
+| `transport` | `taxi_prix`, `taxi_compagnie`, `taxi_telephone` | Taxi details |
+| `samu` | `sejour.price` | Samu stay rate (€/day) |
+| `sangha` | `kosen_rang` | Kosen's patriarchal rank |
+| `sangha` | `maitres` | Certified masters list |
+
+### Build and publish
+
+```bash
+# Build all three editions — press-ready PDF/X-4 with preflight
+make planning planning-en planning-es
+
+# Open for visual check
+open planning/fr-planning.pdf planning/en-planning.pdf planning/es-planning.pdf
+
+# Publish
+git add planning/events.yaml
+git commit -m "Planning: nouvelle saison 27-28"
+git push origin main
+```
+
+If `gen_calendar.py` reports an `ERREUR — events.yaml`, the field name in the error message identifies exactly where the problem is. Fix it and re-run.
+
+`traduction.yaml` and `layout.yaml` are outside this cycle — they change only when display labels are reworded or typographic choices change, neither of which happens annually. `planning-shared.tex` and the thin wrappers are never touched. The layout — the part that takes effort to get right — stays exactly as it was, for all three language editions simultaneously.
 
 > **The principle at work:** each fact lives in exactly one place. Not "one file per update" — one location per fact. The three data files are three categories of fact, not three copies of the same information.
 
