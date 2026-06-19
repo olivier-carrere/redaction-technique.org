@@ -227,6 +227,23 @@ The review didn't change the layout. It produced a checklist for the next revisi
 ---
 
 
+## The cover: two reviewers, one verdict
+
+The cover received the same treatment as the interior. Submitted twice, independently, to an AI model with the same brief — *"You're an experienced typographer. Review this before printing."* — both sessions returned **8.5/10**, with striking convergence on strengths, critical findings, and minor action items.
+
+The strengths were the ones the design was aiming for: a visual hierarchy descending clearly from the Chinese calligram to title, subtitle, volume number, author, and publisher; generous whitespace; an atmosphere of sober contemplation suited to the subject. The classical Roman typeface, the turquoise accent, the small caps for the author's name — all read as intended.
+
+The critical finding in both sessions was identical: anomalous characters in extracted PDF text — `pre￾mier`, `héri￾tier`, `trans￾mission`. The character appearing between syllables is not a hyphen. It is a soft hyphen (`U+00AD`): a Unicode conditional break signal that is invisible in normal reading but surfaces as `￾` when text is extracted from the PDF. Its presence points to a font-embedding or export problem in the source. Fix before sending to press.
+
+The minor items were optical rather than structural: the title block sitting 5–10mm below the natural visual centre; the back-cover photo reading as slightly dominant against the text; the turquoise a candidate for darkening 10–15% to hold its weight under print conditions. None of these blocked publication; all were actionable in one session.
+
+Where the two reviewers diverged: one called the spine "particularly successful — often the hardest part of a cover"; the other suggested breaking its single line of text across three shorter lines for better shelf legibility. That kind of disagreement is useful — it points to something worth testing rather than something definitively wrong.
+
+What both agreed on: the cover is already professional. The encoding issue is technical, not typographic — and it is exactly the kind of issue that becomes invisible when you have been staring at the same file for a week.
+
+---
+
+
 ## A bridge between the page and the voice
 
 The most affecting design decision is also the simplest. Every chapter carries a **QR code linking to the original recording** — dozens of talks migrated off an aging podcast host and onto a stable channel. A reader following the printed transcription can, in one scan, hear the teacher's actual voice saying the same words.

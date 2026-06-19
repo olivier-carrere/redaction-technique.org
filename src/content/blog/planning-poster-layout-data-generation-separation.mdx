@@ -546,6 +546,8 @@ Review the comment. Push a correction if anything looks wrong — the comment up
 
 The build job then produces six press-ready PDFs — French, English, and Spanish editions of both the current season and the upcoming one — downloadable as artefacts from the Actions tab.
 
+> **Web form prototype.** A guided alternative to direct YAML editing is demonstrated at [zen-paris.org/planning-mockup.html](https://www.zen-paris.org/planning-mockup.html): a three-step form — season code and language selector, then session entry, then a "Générer le planning" action — that mirrors the data structure and connects to the same GitHub Actions pipeline. The completion state shows a PDF preview and a download link (`fr-planning.pdf`), alongside a reference to the Actions build log. The prototype runs against pre-filled 2025–2026 data with no live network calls; the pipeline it demonstrates is production.
+
 > **GitHub Actions cost.** Public repositories on GitHub get Actions with no minute cap — the workflow runs entirely for free. If builds stop with a billing error despite the repository being public, the cause is typically a payment failure or a spending limit set above $0 with an invalid payment method, not minutes exhaustion. Check Settings → Billing &amp; plans, fix the payment method, and free Actions on public repos resume immediately with no waiting period.
 
 > **Building locally when GitHub Actions is unavailable.** Pull the CI image once, then use `make planning-ci` — it builds FR + EN + ES in the exact same environment as the Actions workflow (TeX Live 2023, Linux AMD64):
