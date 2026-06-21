@@ -1,0 +1,100 @@
+---
+draft: true
+title: "One Fact, Two Surfaces: remote_key Resolution and the Print-Meets-Web SSOT"
+snippet: "The YAML holds a key. The live community website holds the authoritative date. The PDF stays in sync with the online programme without duplicating dates in two places. One fact, two surfaces — neither is primary."
+image: {
+    src: "/images/blog/planning-layout-content-data.webp",
+    alt: "Five distinct layers — YAML data, translations, typographic constants, Python generator, LaTeX form — converging into language-specific PDFs"
+}
+publishDate: "2026-06-26 01:00"
+category: "Blog"
+author: "Olivier Carrère"
+tags: [docs-as-code, yaml, single-source-of-truth, automation]
+---
+
+## The duplication problem
+
+The annual planning poster and the community website both need the same retreat dates. If those dates are stored in two places, they will eventually diverge. A website update that doesn't reach the poster. A poster correction that doesn't reach the website. A date that's right in one place and wrong in the other — and nobody notices until someone registers for the wrong week.
+
+The standard solution is to designate one system as the source of truth and synchronise the other. But synchronisation requires a process: someone to trigger it, a mechanism to run it, a way to verify it happened. In a volunteer-run community organisation, processes that require manual triggering tend to be forgotten under deadline pressure.
+
+The `remote_key` pattern avoids synchronisation by making the PDF a consumer of the website's data rather than a second copy of it.
+
+## How it works
+
+Some events in `events.yaml` carry a `remote_key` field instead of hardcoded dates:
+
+```yaml
+- title: Camp d'été
+  remote_key: camp-ete-session-1-2026
+  type: camp
+  dojo: temple Yujo Nyusanji
+  godo:
+    - Pierre Soko Leroux
+  prix:
+    session_normal: 680
+    session_reduit: 520
+```
+
+When the generator runs, `EventLoader` fetches the live programme JSON from the community website — with a 5-second timeout and a graceful skip if the site is unreachable — and resolves `remote_key` values against the live data:
+
+```python
+def resolve_remote_keys(self, events: list[dict]) -> list[dict]:
+    if not self.remote_data:
+        return events  # graceful degradation: use events as-is
+    for event in events:
+        key = event.get("remote_key")
+        if key and key in self.remote_data:
+            remote = self.remote_data[key]
+            event["date"] = remote["date"]
+            event.setdefault("to", remote.get("to", remote["date"]))
+    return events
+```
+
+The YAML holds the key; the website holds the authoritative date; the generator stitches them together at build time. The PDF uses the website's date. The website's date is the source. There is no synchronisation step.
+
+## What this means in practice
+
+When the website updates a retreat date — because the teacher changed, because the venue changed, because the session was rescheduled — the PDF picks up the change automatically on the next build. No manual update to `events.yaml`. No process to trigger. No possibility of the poster and the website diverging on a date that was sourced from the same place.
+
+The YAML retains the non-date information that the website doesn't carry: the pricing structure, the director's name for the printed description, the event type for the calendar colouring logic. These are facts that belong to the poster and don't exist on the website. The `remote_key` mechanism fetches what the website knows and leaves the rest in YAML.
+
+## Graceful degradation
+
+The remote fetch has a 5-second timeout and catches all network exceptions:
+
+```python
+def fetch_remote(self, url: str) -> dict:
+    try:
+        import urllib.request, json
+        with urllib.request.urlopen(url, timeout=5) as r:
+            return json.loads(r.read())
+    except Exception:
+        return {}  # degraded: remote_key events use YAML fallback
+```
+
+If the website is unreachable — network outage, CI runner with no outbound access, a build during site maintenance — `remote_data` is empty and `resolve_remote_keys` returns events unchanged. Events without hardcoded dates won't have dates at all, which the generator's validation step will flag. Events with hardcoded dates as fallback will use them.
+
+The failure is visible, not silent. The build continues; the generated content is incomplete; the preflight output or the generator's warnings identify which events are missing dates. A rebuild when the site is reachable resolves it.
+
+## The single-source principle, extended
+
+The [YAML single source of truth](https://redaction-technique.org/blog/scalable-maintainable-technical-docs-with-yaml) pattern keeps facts in one place. The `remote_key` pattern extends it across a system boundary: the authoritative date lives in the website's database, and the poster is a consumer rather than a copy.
+
+The distinction matters because the website's database has its own governance. People update it for their own reasons, through their own interfaces, on their own schedule. If the poster had to be updated in sync, it would either lag behind (when the poster update is forgotten) or create a separate editing process (when the poster is designated authoritative and the website must follow). Neither is sustainable.
+
+Making the poster a consumer means the website's update process stays as it is. The poster update is free: just rebuild.
+
+## Where this pattern fits
+
+`remote_key` resolution is appropriate when:
+- The authoritative source is a live system that updates independently
+- The data you need is available as a structured feed (JSON, API, sitemap)
+- The consumer document doesn't need to be built in environments without network access, or can degrade gracefully when the source is unreachable
+
+It's not appropriate when:
+- The consumer is the authoritative source (YAML is primary, website should follow)
+- The source doesn't expose a structured feed
+- The build environment cannot make network requests and graceful degradation produces unusable output
+
+For the planning poster, the community website is genuinely primary for retreat dates — it's the public-facing calendar. The poster is derived. `remote_key` encodes that relationship in the architecture rather than relying on a manual process to maintain consistency.
