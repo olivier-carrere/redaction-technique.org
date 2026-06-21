@@ -1,0 +1,161 @@
+---
+draft: true
+title: "One Source, Three Languages: The Strict Facts-vs-Display-Strings Split"
+snippet: "events.yaml holds no labels. traduction.yaml holds no facts. The generator resolves them at build time with --lang fr, --lang en, or --lang es. What enforcing this constraint looks like in practice, and why the discipline is worth the friction it creates."
+image: {
+    src: "/images/blog/planning-layout-content-data.webp",
+    alt: "Five distinct layers — YAML data, translations, typographic constants, Python generator, LaTeX form — converging into language-specific PDFs"
+}
+publishDate: "2026-06-26 01:00"
+category: "Blog"
+author: "Olivier Carrère"
+tags: [docs-as-code, yaml, single-source-of-truth, automation]
+---
+
+## The distinction that makes multilingual output tractable
+
+Producing a document in multiple languages from one source requires a constraint that is easy to state and easy to violate: **facts and display strings must never live in the same file**.
+
+A fact is a value that appears identically in all language editions: a director's name, a date, a price, a bank account number, a retreat venue. A display string is a label that varies by language: "led by" / "sous la direction de" / "dirigido por", "January" / "Janvier" / "Enero", "Registration" / "Inscriptions" / "Inscripciones".
+
+If both live together — if a fact file contains "January" alongside the date, or if a translation file contains a retreat price alongside the label for it — the separation is already broken. A new language edition requires editing the fact file. A fact correction requires reviewing the translation file. The two concerns are coupled, and multilingual maintenance becomes complex in proportion to how many violations accumulate.
+
+The planning poster enforces the constraint architecturally: facts files contain no strings, strings files contain no facts, and the generator enforces the distinction at build time.
+
+## The data layer: facts only
+
+Three YAML files hold all factual information for the poster. None of them contains a single language-specific string.
+
+`events.yaml` holds retreat events for the year:
+
+```yaml
+- title: Sesshin du Sud
+  date: 2025-10-04
+  to: 2025-10-05
+  type: sesshin
+  dojo: temple Yujo Nyusanji
+  godo:
+    - Geneviève Sen Gyo Perrier
+  prix:
+    normal: 110
+    reduit: 85
+```
+
+The `title` field here is a name, not a label — it is the retreat's proper name and appears as-is in all language editions. The `type` field is a key used by the generator for calendar colouring; it never appears as text in the output. The prices are numbers. The director's name is a proper name. Nothing in this entry changes when the language changes.
+
+`godos.yaml` holds director reference data — full name, status (master/monk/nun), gender. All facts. No labels.
+
+`dojos.yaml` holds venue reference data — name, type, country, address, contact. All facts. No labels.
+
+## The language layer: display strings only
+
+`traduction.yaml` holds every string that varies by language, under language keys:
+
+```yaml
+fr:
+  mois:
+    septembre: Septembre
+    octobre: Octobre
+    novembre: Novembre
+    # ... through août
+  jours:
+    lundi: L
+    mardi: M
+    mercredi: M
+    jeudi: J
+    vendredi: V
+    samedi: S
+    dimanche: D
+  labels:
+    dirige_par: "dirigé par"
+    prix_normal: "tarif normal"
+    prix_reduit: "tarif réduit"
+    inscription: "Inscriptions"
+
+en:
+  mois:
+    septembre: September
+    octobre: October
+    # ...
+  jours:
+    lundi: M
+    mardi: T
+    # ...
+  labels:
+    dirige_par: "led by"
+    prix_normal: "full rate"
+    prix_reduit: "reduced rate"
+    inscription: "Registration"
+
+es:
+  mois:
+    septembre: Septiembre
+    # ...
+  labels:
+    dirige_par: "dirigido por"
+    prix_normal: "tarifa normal"
+    prix_reduit: "tarifa reducida"
+    inscription: "Inscripciones"
+```
+
+Nothing in this file is factual. No dates. No prices. No proper names. Nothing that a fact correction would need to touch.
+
+## How the generator resolves them
+
+The generator runs with a `--lang` flag:
+
+```bash
+python gen_calendar.py --lang fr   # French edition
+python gen_calendar.py --lang en   # English edition
+python gen_calendar.py --lang es   # Spanish edition
+```
+
+Inside `EventLoader`, the constructor loads the translation table for the active language:
+
+```python
+def __init__(self, lang: str):
+    self.lang = lang
+    with open("traduction.yaml") as f:
+        all_translations = yaml.safe_load(f)
+    self.translations = all_translations[lang]
+```
+
+When the generator builds an event description, it combines fact and label:
+
+```python
+def format_event_block(self, event: dict) -> str:
+    director = ", ".join(event["godo"])
+    led_by   = self.translations["labels"]["dirige_par"]
+    price    = event["prix"]["normal"]
+    rate     = self.translations["labels"]["prix_normal"]
+    # ...
+    return f"{director}\\\\{led_by}\\\\{price}\\,\\texteuro{{{}}}"
+```
+
+The fact (director name, price) comes from the data layer. The label ("led by", "tarif normal") comes from the language layer. Neither layer contains the other's content. The generator is the only place where both are combined — and it produces language-specific output, not a multilingual file with embedded language switching.
+
+## What this means for adding a language
+
+Adding a Spanish edition to a system that previously produced only French and English required:
+
+1. Adding an `es:` block to `traduction.yaml` with all required translation keys
+2. Running `gen_calendar.py --lang es`
+3. Adding a thin `es/planning.tex` wrapper (five lines: set `\babellang{spanish}` and `\input{../planning-shared}`)
+
+The data files were untouched. The template was untouched. The generator was untouched. The only changes were in the language layer and the thin wrapper — exactly the layers that should change when adding a language.
+
+Contrast this with a system where facts and labels are mixed in the same file. Adding Spanish would require reviewing every data file for embedded French labels, extracting them, creating a separate translation, and updating the references — a refactor rather than an extension.
+
+## The constraint in practice
+
+The discipline creates friction. A new fact added to `events.yaml` doesn't automatically have a display label; the label must be added to `traduction.yaml` in all active languages before the build works. A new label added in French must immediately have English and Spanish equivalents, or the English and Spanish builds will fail when the generator tries to look up the key.
+
+This is intentional. The build failure for a missing translation key is a feature, not a bug. It enforces the constraint at build time: a multilingual document with a missing translation in one language is an incomplete document, and incomplete documents should not build silently into PDFs that look complete but aren't.
+
+The alternative — silently falling back to the source language or to an empty string for missing translations — produces PDFs that contain untranslated fragments or blank labels. These look like errors to a reader who receives the Spanish edition with French labels in it. A build failure that says "missing key `prix_normal` in `es` translations" is harder to ignore and easier to fix than a printed poster with untranslated text.
+
+## The broader principle
+
+The facts-vs-display-strings split is a specific application of the [five-layer separation-of-concerns architecture](https://redaction-technique.org/blog/separation-of-concerns-print-pipeline). It's worth treating as a named constraint rather than a consequence of good organisation, because it's easy to violate incrementally — one hardcoded string here, one translated label mixed into a data file there — and the violations compound silently until adding a new language requires significant refactoring rather than a YAML addition.
+
+Name the constraint. Enforce it at build time. Make violations cause build failures rather than subtle output errors. The discipline is worth the friction.
