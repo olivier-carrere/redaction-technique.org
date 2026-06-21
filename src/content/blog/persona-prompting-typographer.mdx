@@ -1,0 +1,61 @@
+---
+draft: true
+title: "Persona Prompting: 'You're an Experienced Typographer, Check This Before Printing'"
+snippet: "The same PDF, two different prompts. 'Is this well laid out?' returned vague positivity. 'You're an experienced typographer, check this before printing' returned a structured technical review. The before/after register change is a clean, demonstrable lesson."
+image: {
+    src: "/images/blog/how-to-read-book.webp",
+    alt: "Annotated diagram showing how to read the book: poem, poem commentary, QR code linking to audio and video, glossary, gauge, section markers, title and metadata"
+}
+publishDate: "2026-06-17 01:00"
+category: "Blog"
+author: "Olivier Carrère"
+tags: [ai, prompting, typography]
+---
+
+## Two prompts, one PDF
+
+A PDF is ready for final review. It's been through twenty commits of typographic iteration. The layout is stable. The question is whether anything was missed.
+
+You can ask that question two ways.
+
+**Version 1:** *"Is this PDF well laid out?"*
+
+**Version 2:** *"You're an experienced typographer. Check this PDF before printing."*
+
+Both prompts go to the same model, with the same PDF attached. The outputs are not the same.
+
+## What the vague prompt returns
+
+*"Is this well laid out?"* tends to return validation with caveats. The model reads the PDF, identifies that the layout follows standard conventions, and produces a response structured around what is working — which, after twenty commits of careful iteration, is most things. The caveats exist, but they're phrased tentatively: *you might consider*, *it could be worth checking*, *some readers may find*.
+
+This is useful in the same way that a polite peer review is useful: it confirms you haven't made any egregious errors. It doesn't give you a list of things to fix before you go to press.
+
+The problem isn't the model's capability. It's the frame. "Is this well laid out?" is a yes/no question with an implied preference for "yes." The model answers accordingly.
+
+## What the persona prompt returns
+
+*"You're an experienced typographer. Check this PDF before printing."* changes the implicit contract. An experienced typographer reviewing a file before printing is not looking for reasons to validate it — they're looking for problems. They have a professional standard they're applying. They're accountable for what gets through.
+
+The review that came back from this prompt was structured, technical, and actionable. The summary: *"very good quality — sober, consistent, clearly done by someone who masters book typography. No blocking issues."* But the substance was in the specifics:
+
+- The Garamond/Cormorant small-caps pairing was called out as "coherent and refined, suited to contemplative content"
+- The kusen sheet — the structured header opening each commentary — was flagged as "a distinctive and well-executed design element"
+- Three action items came back: run a widows/orphans pass across all 136 pages; check QR code positioning on longer titles; tag the PDF for digital accessibility if an accessible edition is ever produced
+
+These are not vague suggestions. They're a pre-press checklist. They came from the same model that would have returned polite validation had the prompt been phrased differently.
+
+## The mechanism
+
+The persona does two things. First, it establishes a **role** that carries implicit knowledge and standards. An "experienced typographer" knows about widows, orphans, rivers, bleed zones, PDF tagging, and the specific failure modes that appear in print but not on screen. The model populates that role from its training. The prompt doesn't need to list these concerns — the role implies them.
+
+Second, it establishes a **purpose**: checking before printing, not evaluating in the abstract. This orients the review toward actionable pre-press findings rather than general aesthetic assessment. The framing cues the model to produce output that functions as a checklist rather than a critique.
+
+## What this generalises to
+
+The persona technique works wherever the task has a natural expert role attached to it. "You're an experienced security engineer, review this authentication code before it ships" produces a different review than "is this authentication code good?" The role brings the standards; the purpose brings the orientation.
+
+The key is specificity. "You're an expert" is marginally better than nothing. "You're an experienced typographer checking a PDF before a print run" is substantially better, because the role and the task together activate a specific cluster of knowledge and a specific evaluative frame.
+
+It's also worth noting what the technique doesn't do. It doesn't make the model infallible. The review may miss things; the three action items it returned may not be the three most important items. The technique improves the signal-to-noise ratio; it doesn't guarantee completeness.
+
+The practical test is comparison: does the persona-framed prompt consistently return more actionable output than the open-ended version? In this project, the answer was clearly yes — which is enough to make it the default prompting approach for review tasks.
