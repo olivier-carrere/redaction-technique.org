@@ -1,0 +1,89 @@
+---
+draft: true
+title: "Validate Structured Data at Build Time, Not in the Artifact"
+snippet: "If an event names a director who has no entry in godos.yaml, the build stops immediately and reports the unknown name. Not a rendering glitch discovered while paging through the PDF — a named failure at the source, before any LaTeX runs."
+image: {
+    src: "/images/blog/planning-layout-content-data.webp",
+    alt: "Five distinct layers — YAML data, translations, typographic constants, Python generator, LaTeX form — converging into language-specific PDFs"
+}
+publishDate: "2026-06-29 01:00"
+category: "Blog"
+author: "Olivier Carrère"
+tags: [docs-as-code, yaml, automation]
+---
+
+## Two places an error can surface
+
+A data error in a structured document has two possible discovery points: at build time, or in the artifact.
+
+**At build time:** the error is caught before any output is produced. The failure message names the error, its location, and what was expected. The person who triggered the build sees a clear report. Nothing is printed, shipped, or submitted until the error is fixed.
+
+**In the artifact:** the error survives the build and appears in the output. Someone pages through the PDF and notices that the director's name is missing, or wrong, or rendered as a fallback placeholder. The error is now in a file that may have already been distributed — or is about to be.
+
+The difference between these two outcomes is where the validation lives.
+
+## The unknown-director check
+
+The planning poster's event data references retreat directors by name. A director's full name and status (monk, nun, or master) determine how they're formatted in the event description, in the calendar label, and in the certified-masters list on page 2. This information lives in `godos.yaml` — a reference file separate from the event list.
+
+If an event in `events.yaml` names a director who has no entry in `godos.yaml`, the template has no status information to render. The failure mode in an unvalidated pipeline is a glitch: a missing title, a fallback string, a blank field in the printed output. The glitch may be subtle enough to survive a review and reach the press.
+
+The generator's `EventLoader.validate()` method stops that:
+
+```python
+def validate(self) -> None:
+    known_godos = {g["name"] for g in self.godos}
+    errors = []
+    for event in self.events:
+        for name in event.get("godo", []):
+            if name not in known_godos:
+                errors.append(
+                    f"Unknown director '{name}' in event '{event.get('title', '?')}' "
+                    f"({event.get('date', '?')}). "
+                    f"Add to godos.yaml or correct the spelling."
+                )
+    if errors:
+        for e in errors:
+            print(f"[ERROR] {e}", file=sys.stderr)
+        sys.exit(1)
+```
+
+The check runs before any LaTeX is generated. If any event references an unknown director, the generator prints every error — name, event title, date, and the corrective action — and exits with a non-zero code. The LaTeX files are never written. The build never reaches `lualatex`. The output is a clear failure report, not a subtly broken PDF.
+
+## Why this is better than a graceful fallback
+
+A graceful fallback would handle the unknown director silently: emit an empty string, use a default title, or skip the name entirely. The build succeeds. The PDF is produced. The error is invisible to the pipeline.
+
+This is worse than a build failure for the same reason that a silent data corruption is worse than a crash: the corruption may be undetected for a long time, it may be distributed to other systems, and when it's finally found, it's harder to trace to its origin.
+
+A build that fails loudly on an unknown director:
+- Makes the error impossible to miss
+- Makes the error easy to fix (the report names the offending event and the missing godo)
+- Ensures the error never reaches the output
+
+A build that silently produces a glitch:
+- May or may not be noticed during review
+- Requires finding the glitch in the output and tracing it back to the source
+- May reach print before anyone notices
+
+The build failure is the cheaper outcome every time.
+
+## The principle generalises
+
+Any structured data that is referenced by name in a template can be cross-checked at generation time. The `godos.yaml` cross-check is one example. Others in the same pipeline:
+
+- **Dojo validation**: if an event references a `dojo` name that has no entry in `dojos.yaml`, the generator can fail with a clear message rather than silently emitting a broken venue reference.
+- **`trad_key` validation**: if an event carries a `trad_key` that has no entry in `traduction.yaml` for the active language, the generator can fail rather than emitting a missing-translation placeholder.
+- **Date consistency**: if an event's `to` date is before its `date`, the generator can fail rather than producing a calendar entry that spans no days.
+
+Each of these checks follows the same pattern: load the reference set, walk the event list, check for references that aren't in the reference set, collect all failures, report and exit if any are found.
+
+The cost is a few lines of Python. The benefit is a category of error that cannot survive to the artifact.
+
+## Build-time vs. runtime validation
+
+In a web application, the equivalent distinction is between validating data when it's submitted (input validation) and validating it when it's used (runtime assertion). The principle is the same: fail as early as possible, as close to the source of the error as possible, with as much information as possible.
+
+In a docs-as-code pipeline, "as early as possible" is the generation step — before any LaTeX runs, before any PDF is produced, while the error is still just wrong text in a YAML file. The generation step is the seam where data becomes output. It's the right place to check that the data is valid before committing to the output.
+
+A structured document is only as reliable as its validation. Validation in the artifact is too late. Validation at build time is the right moment.
