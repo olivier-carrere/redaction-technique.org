@@ -1,0 +1,56 @@
+---
+draft: true
+title: "The Part That Stayed Slow: Taste Doesn't Automate"
+snippet: "Twenty commits on type parameters alone. EB Garamond beat four alternatives. 11pt became 10pt. Italic small caps beat bold headers. Automation freed up time; it didn't replace the judgment work."
+image: {
+    src: "/images/blog/how-to-read-book.webp",
+    alt: "Annotated diagram showing how to read the book: poem, poem commentary, QR code linking to audio and video, glossary, gauge, section markers, title and metadata"
+}
+publishDate: "2026-06-20 01:00"
+category: "Blog"
+author: "Olivier Carrère"
+tags: [typography, latex, docs-as-code]
+---
+
+## What automation bought
+
+The nine-step pipeline, the CI build, the `make` targets — these automated the mechanical work: converting transcriptions, generating glossary entries, checking integrity, building PDFs. They bought time. They did not buy taste.
+
+Typography drew more iteration than any other part of the sprint: twenty commits on type parameters alone, and more on colour and spacing. Automation made it possible to test a change across 136 pages in the time it takes to run `make`. It did not make the judgment about which change to test easier.
+
+## The body font: five candidates, one survivor
+
+The body font was tested against four alternatives before settling on EB Garamond:
+
+- **Libertinus** — clean, contemporary, technically excellent. Too cool for the material.
+- **Crimson Pro** — warm, humanist, a reasonable candidate. Something about it on the page felt effortful rather than settled.
+- **Cardo** — designed for classical and liturgical texts, which seemed apt. In practice, it read as old rather than timeless.
+- **Gentium Plus** — designed for multilingual work, excellent for the glossary's Japanese and Sanskrit terms. The body text wanted something that carried more weight.
+
+Each alternative looked promising in isolation. Each was rejected when tested against a page of the actual text. EB Garamond held the warmth that spoken French needs on the page. The others didn't. That judgment isn't computable from typeface specifications. It requires setting the text, printing a page, and reading it.
+
+The body size came down from 11pt to 10pt: the larger size felt like a lecture — text at a deliberate, formal distance. The smaller size felt like the text trusted the reader. This is not a measurable property. It's an impression, tested on several readers before being committed.
+
+## Headers: from bold to italic small caps
+
+Headers started at bold, which is where most templates begin and most documents stay. Bold headers have the virtue of legibility: they're unmissable. They also pull the eye away from the text they're supposed to introduce.
+
+Switching to italic small caps at 40% grey made the headers quieter. A header's job is to orient the reader before they enter the text, not to compete with the text for attention. At 40% grey, a header registers as structural without announcing itself. The eye still finds it; it just doesn't find it first.
+
+The grey value is specific. 35% is too light — the header reads as a watermark rather than a structural element. 50% is too heavy — it approaches the visual weight of body text and loses its hierarchical function. 40% is where the header holds its position in the hierarchy without asserting it unnecessarily. Finding that value required setting test pages and comparing them side by side.
+
+## Ornaments and structural marks
+
+Every structural element in the book — ornaments between sections, QR codes, chapter-difficulty indicators, section markers — received its own grey value. The calibration goal was the same in each case: present but not competing.
+
+A QR code at full black competes with the text on the same page. A QR code at 70% grey still scans cleanly but reads as a design element rather than a demand for attention. A section ornament at 40% grey echoes the header without rivalling the body. These are small differences, invisible individually, cumulative in effect.
+
+The 20-commit count on type parameters alone is a record of that calibration process. Each commit tested a value. Some values were reverted. Some were iterated. A few were settled on the first try by luck. None of them were automated.
+
+## The irreducible remainder
+
+The purpose of automation in this project was to compress the time spent on mechanical tasks so that the time saved could go somewhere more useful. It worked. But it revealed, by subtraction, what the mechanical tasks had been hiding: the judgment work.
+
+Typography is not decorative. It's the difference between a PDF and a book — between output that satisfies a technical definition of "formatted" and output that a reader can spend hours with without discomfort. That difference lives in the body of a font, in a grey value, in a point size, in the weight of a header. It doesn't live in any specification that can be fed to a machine.
+
+The tip worth writing down: when a tool makes the mechanical work cheap, spend the time you save on the judgment work — the kerning, the grey values, the page that simply *feels* settled. Automation buys you the time. It doesn't make the judgment for you.
