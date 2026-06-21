@@ -1,0 +1,101 @@
+---
+draft: true
+title: "Refactoring a 995-Line Script into Three Classes: EventLoader, CalendarGrid, LatexEmitter"
+snippet: "A flat 995-line script mixing data loading, remote fetch, date resolution, calendar colouring, and LaTeX emission in a single file. The refactor: three classes, one concern each, identical output. Why separation of concerns inside the code matters as much as across files."
+image: {
+    src: "/images/blog/planning-layout-content-data.webp",
+    alt: "Five distinct layers — YAML data, translations, typographic constants, Python generator, LaTeX form — converging into language-specific PDFs"
+}
+publishDate: "2026-06-28 01:00"
+category: "Blog"
+author: "Olivier Carrère"
+tags: [docs-as-code, automation, separation-of-concerns]
+---
+
+## The problem with a 995-line flat script
+
+The original `gen_calendar.py` was a single file of nearly a thousand lines. It worked. It produced correct output. It had accumulated, over time, all the concerns a calendar generator needs: loading YAML data, resolving remote keys, computing weekday alignment, colouring calendar cells, emitting LaTeX macros, writing content fragments.
+
+All of these concerns were mixed together. A function that needed to know the current language also touched the event list. A loop that coloured calendar cells also formatted date strings for output. The remote fetch lived next to the LaTeX emission. Understanding any one part required understanding all the context it depended on — which meant understanding most of the file.
+
+This is the standard problem with flat scripts that grow over time: they accumulate coupling. Each addition makes the next addition harder, because the next addition has more context to navigate and more ways to accidentally touch something it shouldn't.
+
+The refactor introduced three classes, one per concern. The output is identical.
+
+## The three classes
+
+**`EventLoader`** — loads all YAML sources and resolves the data model:
+- Reads `events.yaml`, `godos.yaml`, `dojos.yaml`, `traduction.yaml`, `layout.yaml`
+- Fetches live retreat data from the community website (with timeout and graceful skip)
+- Resolves `remote_key` date fields against the live data
+- Validates event data: unknown directors, missing required fields
+- Exposes translation helpers and event filters to the other classes
+
+`EventLoader` knows about data. It knows nothing about LaTeX.
+
+**`CalendarGrid`** — builds the day-colour and label maps:
+- Accepts the loaded event model from `EventLoader`
+- Computes the weekday alignment for each month
+- Assigns colour classes to days in three priority passes (external sesshins → temple events → summer camp)
+- Writes `lang/calendar_body.tex`
+
+`CalendarGrid` knows about calendar logic and colour assignment. It knows nothing about how data was loaded or how other LaTeX content is formatted.
+
+**`LatexEmitter`** — formats all data as LaTeX:
+- Accepts the loaded event model from `EventLoader`
+- Writes `lang/planning_meta.tex` (all macros: data, translations, typography, colours)
+- Writes the five content fragments: `retreats.tex`, `offsite.tex`, `camp-ete-main.tex`, `camp-ete-prix.tex`, `camp-ete-argentine.tex`
+
+`LatexEmitter` knows about LaTeX formatting. It knows nothing about calendar colouring logic or remote resolution.
+
+## What the main script becomes
+
+With three classes, the script's main function becomes a coordination layer:
+
+```python
+def main():
+    args = parse_args()
+
+    loader  = EventLoader(args.lang)
+    loader.load()           # reads all YAML, fetches remote, resolves keys
+    loader.validate()       # fails fast on unknown directors, etc.
+
+    grid    = CalendarGrid(loader)
+    grid.build()            # computes colour map and writes calendar_body.tex
+
+    emitter = LatexEmitter(loader)
+    emitter.emit_meta()     # writes planning_meta.tex
+    emitter.emit_content()  # writes the five content fragments
+```
+
+Each step is independently readable. A change to calendar colouring logic goes into `CalendarGrid.build()`. A new macro to emit goes into `LatexEmitter.emit_meta()`. A new data source goes into `EventLoader.load()`. None of these changes requires understanding the other classes.
+
+## Why this matters
+
+The argument for three classes is not complexity for its own sake. It's the same argument as for separating data, language, typography, and form across files: a change to one concern should not require understanding all the others.
+
+In a 995-line flat script:
+- Fixing a calendar colouring bug requires navigating a file that also contains LaTeX emission logic
+- Adding a new content fragment requires navigating a file that also contains data loading logic
+- Testing calendar colouring in isolation is difficult because the colouring logic is entangled with other concerns
+
+In a three-class structure:
+- `CalendarGrid` can be read, tested, and modified in isolation from data loading and LaTeX emission
+- `LatexEmitter` can be modified to add or change output without touching colouring logic
+- `EventLoader` can be modified to add a new data source without touching either output class
+
+The test surface is also cleaner. A unit test for `CalendarGrid` can construct a minimal `EventLoader` with synthetic events and verify the colour map without running the full pipeline. A unit test for `LatexEmitter` can verify macro output for a known input without involving any calendar logic.
+
+## The output is identical
+
+The refactor changed no behaviour. The LaTeX files produced by the three-class version are the same files the flat script produced. This is the point: the refactor is pure structural improvement. It makes the code easier to read, modify, and test. It does not change what the code does.
+
+This constraint — identical output — is also the validation criterion. If the refactored script produces different LaTeX, something went wrong. Running both versions against the same input and diffing the output is the regression test.
+
+## The broader principle
+
+Separation of concerns applies inside the code for the same reason it applies across the file architecture. The planning poster separates data, language, typography, and form into different files so that a change to one doesn't require touching the others. The `gen_calendar.py` script separates data loading, calendar logic, and LaTeX emission into different classes so that a change to one doesn't require understanding the others.
+
+The principle is the same at both scales. The coupling problem doesn't respect file boundaries — it appears wherever concerns are mixed, whether across files or within a single script. The remedy is also the same: name the concerns, give each one a home, and enforce the boundary.
+
+A 995-line flat script that works is better than a 995-line flat script that doesn't. A three-class structure that works is better than either — not because it does more, but because the next person who needs to change it will spend less time understanding what they're changing.
