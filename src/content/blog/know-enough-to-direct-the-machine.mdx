@@ -1,0 +1,57 @@
+---
+draft: true
+title: "Know Enough to Direct the Machine: How AI Collaboration Scales with Expertise"
+snippet: "AI collaboration works in proportion to the domain knowledge you bring. Without a baseline, you're accepting output on trust rather than judgment. The Lupton anecdote and a LaTeX-from-scratch baseline made the difference between steering and rubber-stamping."
+image: {
+    src: "/images/blog/how-to-read-book.webp",
+    alt: "Annotated diagram showing how to read the book: poem, poem commentary, QR code linking to audio and video, glossary, gauge, section markers, title and metadata"
+}
+publishDate: "2026-06-27 01:00"
+category: "Blog"
+author: "Olivier Carrère"
+tags: [ai, docs-as-code, latex]
+---
+
+## The scaling relationship
+
+There's a naive version of the AI-for-technical-work narrative: the tool handles the complexity, the human provides the intent, and prior domain knowledge becomes less important because the AI fills the gaps.
+
+This isn't what happens in practice. AI collaboration works — it genuinely scales what one person can accomplish — but it scales *in proportion to the domain knowledge you bring*. The more precisely you can specify what good looks like, the more precisely the AI can produce it. The more you can recognise a plausible-but-wrong output, the more you can redirect before it propagates.
+
+Without a baseline, you're accepting output on trust. That's not the same as working with an AI — it's outsourcing judgment you don't have.
+
+## The Lupton observation
+
+Early in the sprint, the body text was set at 11pt. The layout looked reasonable. Nothing was clearly wrong.
+
+A browse through Ellen Lupton's *Thinking with Type* caught one clue about body size: for a 10pt–12pt range in a book-length text, the smaller sizes typically fit more comfortably in the reader's eye and trim more pages from the total count. The observation wasn't prescriptive — it was a design principle that pointed somewhere worth testing.
+
+Dropping from 11pt to 10pt trimmed roughly twenty pages from the book and made it easier to read. The 10pt version felt like the text trusted the reader; the 11pt version felt like a lecture.
+
+Without that baseline — without having read even a survey-level book on typographic principles — the 11pt setting would have remained. It looked fine. "Looks fine" isn't "looks right," but it's not visibly wrong either, and without a reference point, there's nothing to test against.
+
+This is what domain knowledge does in an AI-assisted workflow: it provides the reference points that let you ask useful questions. "Is 11pt appropriate for this format and audience?" is a testable question. "Is the body text good?" is not.
+
+## The LaTeX baseline
+
+Having [built a LaTeX document from scratch](https://www.overleaf.com/latex/templates/leaflet/ysdkbbhctfpc) a few years earlier made a specific class of error visible. Claude's LaTeX output is architecturally sound — it handles package selection, document structure, and the interaction between packages well. What it occasionally produces is technically valid LaTeX that is not idiomatic: roundabout solutions, more verbose implementations than necessary, patterns that work but that an experienced LaTeX writer wouldn't use.
+
+Without a prior LaTeX baseline, these are invisible. The output compiles; it produces the right visual result; there's nothing to complain about. With even a minimal LaTeX background, a roundabout solution registers as odd — not necessarily wrong, but worth a second look and often replaceable with something cleaner.
+
+This matters not because idiomatic LaTeX is inherently better, but because non-idiomatic LaTeX tends to be more fragile. An unnecessarily complex macro that works in one context may not work when a new package is added, or when a later edit changes a surrounding structure. Recognising non-idiomatic patterns is how you catch fragility before it becomes a compilation failure.
+
+## The practical implication
+
+The relationship between domain knowledge and AI productivity is not a threshold — it's a gradient. Knowing nothing, you can still use AI to produce output you couldn't produce at all, and that's genuinely useful. Knowing enough, you can evaluate output, redirect toward better solutions, and steer around failure modes before they appear.
+
+For anyone entering an AI-assisted workflow in an unfamiliar domain, the investment that pays most reliably is a minimum viable baseline: enough to distinguish a plausible output from a good one. For typography, that's an afternoon with Lupton. For LaTeX, it's a small document built from scratch. For any domain, it's whatever it takes to have developed an opinion.
+
+The AI will produce more. The baseline is what turns "more" into "better."
+
+## A note on trust versus judgment
+
+There's a structural difference between trusting an AI's output and judging it. Trust is a bet on reliability — you believe the output is correct because the tool has generally been correct before. Judgment is an evaluation — you assess the output against criteria you can articulate.
+
+In a domain where you lack expertise, trust is all you have. The output may be correct; you can't tell. In a domain where you have a baseline, judgment becomes possible. You can identify what to check, what to question, and what to accept.
+
+AI collaboration at scale requires judgment. Judgment requires a baseline. Building the baseline is the non-automatable part of the work.
