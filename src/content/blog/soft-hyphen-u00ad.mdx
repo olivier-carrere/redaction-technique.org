@@ -1,0 +1,82 @@
+---
+draft: true
+title: "The Soft Hyphen (U+00AD): The Invisible Character That Breaks PDF Text Extraction"
+snippet: "It's invisible on screen. It prints correctly. But when text is extracted from the PDF — by an accessibility checker, a search engine, or a copy-paste — U+00AD surfaces as a garbage character between syllables. Here's what it is, where it comes from, and how to find it."
+image: {
+    src: "/images/blog/how-to-read-book.webp",
+    alt: "Annotated diagram showing how to read the book: poem, poem commentary, QR code linking to audio and video, glossary, gauge, section markers, title and metadata"
+}
+publishDate: "2026-06-23 01:00"
+category: "Blog"
+author: "Olivier Carrère"
+tags: [typography, latex, docs-as-code]
+---
+
+## The character that hides in plain sight
+
+Both independent AI reviews of the cover PDF surfaced the same critical finding. The extracted text contained anomalous characters between syllables: `pre￾mier`, `héri￾tier`, `trans￾mission`. The character appearing between those syllables is not a hyphen, a dash, or a visible separator of any kind. It's `U+00AD` — the **soft hyphen**.
+
+On screen: invisible. In print: invisible. When text is extracted: `￾`.
+
+## What a soft hyphen is
+
+Unicode `U+00AD` is a conditional line-break hint. It tells a rendering system: "if you need to break this word at a line end, break it here and render a hyphen." If no break is needed, the character is invisible — it takes no space, it renders nothing, it's simply not there.
+
+In running body text, this works correctly. The word `premier` sits on one line, the soft hyphen is ignored, and nobody knows it's there. If the word is at a line end and a break is needed, the renderer breaks the line, inserts a hyphen, and moves `mier` to the next line. This is what typesetting engines do with soft hyphens.
+
+The problem arises at text extraction. PDF text extraction doesn't render lines — it reads the character stream from the PDF's internal content encoding. A soft hyphen in the character stream is a character. It has a Unicode code point. Text extraction faithfully reports it: `U+00AD`. Depending on the character set and rendering context, this appears as a visible glyph — typically a broken rectangle `￾` — between syllables.
+
+## Where it comes from
+
+Soft hyphens in a PDF source can arrive from several places:
+
+**Word processor hyphenation.** Microsoft Word sometimes inserts soft hyphens when automatic hyphenation is enabled and a word is manually hyphenated by the user with Ctrl+- (Windows) or Option+- (Mac). When the Word document is exported to another format, the soft hyphen may survive.
+
+**OCR and transcription pipelines.** Optical character recognition and some transcription tools insert soft hyphens as part of line-break reconstruction. If a transcribed document was formatted for a narrow column, hyphenated words from the original layout may have been transcribed with embedded soft hyphens.
+
+**Direct Unicode insertion.** Someone typed `U+00AD` directly into a source file, possibly intending it as a regular hyphen or as a typographic hint that was appropriate in a different rendering context.
+
+For a pipeline that converts Word transcriptions to LaTeX, the first and second sources are both plausible. The transcription pipeline needs to strip soft hyphens from the Word source before they propagate to LaTeX and from LaTeX into the PDF.
+
+## How to find it
+
+**In a text file or source document:**
+
+```bash
+grep -rn $'\xc2\xad' src/
+```
+
+`U+00AD` encodes as `0xC2 0xAD` in UTF-8. The grep above finds every file in the source tree that contains the character and reports the line number.
+
+**In a PDF:**
+
+Most PDF viewers won't show the soft hyphen directly. Copy a block of text from the suspect PDF and paste it into a plain-text editor. If the text contains `­` (which will appear as a visible character in the editor even if it was invisible in the PDF), the soft hyphen is present.
+
+An accessibility checker — PDF/UA validators, Adobe Acrobat's accessibility tools — will also flag embedded soft hyphens as anomalous characters in the character stream.
+
+**In a LaTeX source:**
+
+If the soft hyphen entered via the Word-to-LaTeX conversion step, it may appear as `\- ` (LaTeX's soft hyphen command) or as a literal `U+00AD` in the `.tex` file. Both `grep` commands are useful: grep for the Unicode code point and for `\-`.
+
+## How to fix it
+
+In the Python preprocessing pipeline, add a normalisation step before LaTeX conversion:
+
+```python
+import re
+
+def strip_soft_hyphens(text: str) -> str:
+    return text.replace('­', '')
+```
+
+Apply this to all text extracted from Word documents before it enters the LaTeX pipeline. The soft hyphen carries no semantic content in typeset text — it's a rendering hint, and LaTeX's own hyphenation engine will handle line breaks without it.
+
+If soft hyphens appear in the LaTeX source directly (as `\-`), they're more ambiguous — `\-` is sometimes used for legitimate manual hyphenation control in LaTeX. Review each instance: if it was carried over from the transcription pipeline, remove it; if it was added deliberately for a specific word's line-breaking behaviour, leave it.
+
+## The broader lesson
+
+The soft hyphen is an example of a class of problem that's invisible at production time and surfaces in post-production or deployment. The PDF looks correct. It prints correctly. The error only appears when the artifact is processed in an unexpected way — text extraction, accessibility scanning, search indexing.
+
+For a print-primary project, "it looks right and prints right" is usually sufficient. For a project where the PDF will also be distributed digitally, searched, or submitted to accessibility review, the invisible character matters. The fix is cheap — one normalisation step in the pipeline — but only if you know to look for it.
+
+AI-assisted review found it. The human reviewer, having stared at the same PDF for a week, did not.
