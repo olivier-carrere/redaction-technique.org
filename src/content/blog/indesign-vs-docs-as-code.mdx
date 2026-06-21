@@ -1,0 +1,88 @@
+---
+draft: true
+title: "Why Hand-Maintained InDesign Files Rot — and What Docs-as-Code Does Instead"
+snippet: "A 370-cell calendar that shifts every year. A director's name in three places. An IBAN in an invisible text box. These are not unusual InDesign problems — they are what InDesign files become when they accumulate facts with no single home. Two projects show what the alternative looks like."
+image: {
+    src: "/images/blog/planning-layout-content-data.webp",
+    alt: "Five distinct layers — YAML data, translations, typographic constants, Python generator, LaTeX form — converging into language-specific PDFs"
+}
+publishDate: "2026-06-22 01:00"
+category: "Blog"
+author: "Olivier Carrère"
+tags: [docs-as-code, latex, git, automation, single-source-of-truth]
+---
+
+## The same problem, two artifacts
+
+Consider two print documents built in InDesign.
+
+The first is an annual two-page A3 planning poster for a Zen community. Page 1 holds a 12-month calendar grid — roughly 370 cells, each labelled with a day of the week. That alignment shifts every year: September 2025 opens on a Monday, September 2026 on a Tuesday, September 2027 on a Friday. There is no carrying last year's grid forward. Every cell must be rechecked. For each of the dozen events on the calendar, the correct cells must be filled with the right colour — preparation days, retreat days, maintenance days each in their own shade — and a label positioned by hand over the right week.
+
+The event descriptions compound the problem. Each retreat lists exact dates, the director's full name and title, two prices. The same director's name appears in the event block, in the calendar label, and on page 2 in the certified-masters list. The IBAN for bank transfers lives in an invisible text box in the registration section — and in another invisible text box in the transport section. A name change or a correction has to be tracked down in all of these places by hand. The document looks finished. The errors are real.
+
+The second is a three-volume edition of a teacher's recorded talks. The document is long, involves multiple contributors, and has a hard deadline: a press run. In InDesign, a late change to the layout carries real risk. Any reflow cascades. Every affected page must be re-checked by eye. A spacing adjustment made at midnight on a deadline can push text out of position across a chapter break and nobody notices until a printed copy comes back wrong — at which point the original file may no longer be findable, let alone re-editable.
+
+These are not unusual InDesign problems. They are what InDesign files become when they accumulate facts with no single home.
+
+## What "no single home" means in practice
+
+An InDesign file stores text in frames. Frames don't know about each other. A director's name that appears in three frames is three independent copies of the same fact. Correct one and the others remain unchanged — unless the editor knows to look for them, which requires knowing the document well enough to know where the name appears.
+
+This is the brittle-file failure mode: the document encodes facts without structure. Its internal consistency depends on the discipline and memory of whoever last edited it. Maintenance accumulates difficulty: each year, each revision, the editor must re-learn the document's hidden geography.
+
+The failure mode is quiet. A price updated in the session block but missed in the pricing table. A director listed correctly in the event description but still carrying last year's title in the calendar label. An IBAN corrected in the registration section, intact in the transport section. These errors survive review because they look plausible. They surface in print.
+
+## What docs-as-code does instead
+
+The alternative is to give every fact exactly one home and derive all appearances from it.
+
+In the planning poster pipeline, the IBAN lives once in `events.yaml`:
+
+```yaml
+inscriptions:
+  iban: "FR76 4255 9100 0008 0035 9417 710"
+```
+
+The generator reads it and emits a named macro:
+
+```latex
+\def\inscriptioniban{FR76 4255 9100 0008 0035 9417 710}
+```
+
+The shared template calls `\inscriptioniban` wherever the IBAN appears — registration section, payment instructions, bank transfer block. Change the value in YAML, rebuild, and every occurrence in every language edition is correct. There is nothing else to update. There is nowhere else the old value can survive.
+
+The director's name lives once in `godos.yaml`. The generator reads it and populates the event block, the calendar label, and the certified-masters list from the same source. Correct the name in YAML, rebuild, all three places update simultaneously.
+
+The 370-cell calendar grid is generated entirely from the event dates in `events.yaml`. Change a date, re-run the generator, the grid redraws: the cells move, the colour spans shift, the label repositions. No manual cell-by-cell update across 370 entries.
+
+## Late changes that stayed cheap
+
+The books pipeline shows the same property under deadline pressure. Thirteen days, 167 commits. Some of those commits happened in the final hours before the first copy was handed to a reader.
+
+A stray `\vspace{\baselineskip}` had been generating a blank line after every inline poem throughout all three volumes. One macro change, one rebuild — every occurrence fixed simultaneously, across 136 pages, without touching a single page by hand. In InDesign: locate every poem instance, check for extra spacing, remove it manually from each.
+
+Adding `lhang=1` to the `\lettrine` command let every drop cap hang into the margin instead of pushing body text inward — a global change that affected every chapter opener in all three volumes. In InDesign: select every drop cap object individually.
+
+Sub-entries in the index were more deeply indented than continuation lines, inverting the visual hierarchy across the entire index. A `\makeatletter` block redefining three internal commands fixed it on the next pass. In InDesign: manual adjustment of every index entry.
+
+A typo — "poumonsn" for "poumons" — in a source file from eleven years earlier. One edit, one commit, one rebuild. The correct word appeared in every format: A5, single-volume, Spanish edition, web. Automatically. In a copy-based workflow, the question is which copy has the fix and which still has the error.
+
+## The structural reason
+
+The InDesign model couples content to format. Facts live in frames; frames live in a layout; the layout is the document. Changing a fact requires navigating the layout. Changing a layout requires touching the facts it contains. The two concerns are entangled from the first edit.
+
+The docs-as-code model separates them. Facts live in structured files — YAML, plain text, LaTeX source. The layout is a template that consumes facts through named interfaces. Changing a fact means changing the structured file; the template is untouched. Changing the layout means changing the template; the facts are untouched.
+
+This separation is what makes global changes cheap. A macro change that propagates to every occurrence isn't a clever LaTeX trick — it's the consequence of having a single source. There is only one place the fact lives, so there is only one place to change it, and every derived occurrence reflects the change automatically.
+
+The tighter the deadline, the more that property is worth. When there's no time to re-check 136 pages by eye, or to hunt for an IBAN across an invisible text box geography you half-remember from last year, a system where "fix it once" actually means "fix it everywhere" is not a nice-to-have. It's the difference between a correction that lands and a correction that misses.
+
+## What this costs
+
+The docs-as-code approach requires upfront investment: a structured data model, a build system, a LaTeX or other template engine, and the discipline to maintain the separation. For a one-time document produced by one person with no plans to revise it, that investment is not worth making.
+
+For a document that recurs annually — like a planning poster — or involves multiple contributors under deadline — like a multi-volume book — or accumulates corrections over time — like any living document — the investment pays back in proportion to how often the document is updated and how many facts it contains.
+
+The planning poster changes every year. It has a dozen events, each with dates, prices, and director references that appear in multiple places. The InDesign alternative required rechecking all of it by hand, every year, with no structural guarantee that a correction in one place propagated to the others.
+
+The docs-as-code alternative requires editing one YAML file and rebuilding. The guarantee is structural, not procedural. It doesn't depend on the editor's discipline or memory. It's a property of the architecture.
