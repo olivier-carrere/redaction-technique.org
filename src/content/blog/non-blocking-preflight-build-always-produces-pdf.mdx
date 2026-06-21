@@ -1,0 +1,158 @@
+---
+draft: true
+title: "Non-Blocking Preflight, or: A Build That Always Produces a PDF"
+snippet: "One hard stop, five soft failures, a renamed file, and a report alongside it. The design philosophy behind a preflight that never aborts — plus the pikepdf/PyMuPDF six-check implementation and the --strict flag for CI."
+image: {
+    src: "/images/blog/planning-layout-content-data.webp",
+    alt: "Five distinct layers — YAML data, translations, typographic constants, Python generator, LaTeX form — converging into language-specific PDFs"
+}
+publishDate: "2026-06-23 01:00"
+category: "Blog"
+author: "Olivier Carrère"
+tags: [docs-as-code, latex, automation]
+---
+
+## The design philosophy
+
+Preflight can fail two ways. The first failure is obvious: the preflight tool aborts the build, no PDF is produced, and whoever triggered the build gets an error message with no artifact. The second failure is subtler: the preflight tool silently produces a file that looks correct on screen but fails at the print shop — and nobody finds out until the file has been submitted.
+
+Both failures are bad. But only one of them is recoverable cheaply.
+
+The design philosophy here is different from both: **the build always produces a PDF**. If all checks pass, the file keeps its name: `planning.pdf`. If any check fails, the file is renamed: `planning-not-print-ready.pdf`. A report listing every failure is written alongside it. Nothing ever aborts mid-build due to a preflight failure.
+
+This has three consequences:
+
+1. **The artifact is always available.** Someone waiting for the PDF gets a PDF — with a name that makes its status unambiguous. They can look at it, verify the defect, and decide whether it's blocking.
+2. **Failures are explicit and actionable.** The report names the check, the page, the measured value, and enough detail to locate the specific defect. "xref 42: 214 ppi" is actionable. "preflight failed" is not.
+3. **CI can enforce hard failures without changing the naming logic.** The `--strict` flag converts soft failures into a non-zero exit code — useful for blocking a merge — without altering how the file is named or the report is written.
+
+The one hard stop is a LaTeX compilation failure. If `lualatex` returns non-zero, there is no PDF to rename. That failure exits immediately. Everything else is soft.
+
+## The six checks
+
+`preflight.py` runs six checks using `pikepdf` (for PDF structure) and `PyMuPDF`/`fitz` (for image analysis):
+
+```python
+import pikepdf, fitz
+from pathlib import Path
+
+MM_TO_PT = 72 / 25.4
+
+def run_preflight(pdf_path: Path) -> list[dict]:
+    results = []
+
+    def record(check, ok, detail=""):
+        results.append({"check": check, "ok": ok, "detail": detail})
+
+    with pikepdf.open(pdf_path) as pdf:
+        # [1] Box geometry: BleedBox 424×301 mm, TrimBox A3 420×297 mm
+        for i, page in enumerate(pdf.pages):
+            mb = [float(v) for v in page.mediabox]
+            tb = [float(v) for v in page.get("/TrimBox", page.mediabox)]
+            w_mb, h_mb = mb[2] - mb[0], mb[3] - mb[1]
+            w_tb, h_tb = tb[2] - tb[0], tb[3] - tb[1]
+            ok = (abs(w_mb - 424 * MM_TO_PT) < 1 and abs(h_mb - 301 * MM_TO_PT) < 1
+                  and abs(w_tb - 420 * MM_TO_PT) < 1 and abs(h_tb - 297 * MM_TO_PT) < 1)
+            record("boxes", ok,
+                   f"p{i+1}: MediaBox {w_mb:.1f}x{h_mb:.1f} pt  "
+                   f"TrimBox {w_tb:.1f}x{h_tb:.1f} pt")
+
+        # [2] Font embedding
+        for i, page in enumerate(pdf.pages):
+            for name, font in page.get("/Resources", {}).get("/Font", {}).items():
+                fd  = font.get("/FontDescriptor", {})
+                emb = fd.get("/FontFile") or fd.get("/FontFile2") or fd.get("/FontFile3")
+                record("fonts", bool(emb),
+                       f"p{i+1}: {name} {'embedded' if emb else 'NOT embedded'}")
+
+        # [5] OutputIntent
+        oi = pdf.Root.get("/OutputIntents")
+        record("output_intent", bool(oi),
+               "present" if oi else "missing — check FOGRA39 path in pdfx options")
+
+        # [6] PDF version 1.6, no encryption, no JavaScript
+        record("version",    pdf.pdf_version == "1.6", pdf.pdf_version)
+        record("encryption", not pdf.is_encrypted, "")
+        record("javascript",
+               not any(k in pdf.Root for k in {"/JS", "/JavaScript"}), "")
+
+    # [3, 4] Colour space and resolution via PyMuPDF
+    doc = fitz.open(str(pdf_path))
+    for page in doc:
+        for img_info in page.get_images(full=True):
+            xref = img_info[0]
+            pix  = fitz.Pixmap(doc, xref)
+            cs   = pix.colorspace.name if pix.colorspace else "unknown"
+            record("colorspace", "CMYK" in cs or pix.n == 4,
+                   f"xref {xref}: {cs}")
+            rects = page.get_image_rects(xref)
+            if rects:
+                r   = rects[0]
+                ppi = (min(pix.width  / (r.width  / 72),
+                           pix.height / (r.height / 72))
+                       if r.width and r.height else 0)
+                record("resolution", ppi >= 300, f"xref {xref}: {ppi:.0f} ppi")
+
+    return results
+```
+
+The six checks mirror exactly what a commercial print shop's preflight tool will verify:
+
+| # | Check | Library | What it catches |
+|---|---|---|---|
+| 1 | **Box geometry** | pikepdf | TrimBox and BleedBox not matching A3+2mm spec |
+| 2 | **Font embedding** | pikepdf | Any font not embedded or subsetted |
+| 3 | **Colour space** | PyMuPDF | Any image not in CMYK |
+| 4 | **Resolution** | PyMuPDF | Any image below 300 ppi at placed size |
+| 5 | **OutputIntent** | pikepdf | Missing FOGRA39 ICC profile |
+| 6 | **PDF validity** | pikepdf | Wrong PDF version, encryption, or JavaScript |
+
+Every check calls `record()` regardless of pass or fail. The function always returns. No check can abort the build.
+
+## The orchestrator
+
+`build_print.py` collects image-preparation defects from `prepare_images.py` and preflight defects from `run_preflight()`, then decides the output name:
+
+```python
+# 3. Preflight
+checks     = run_preflight(out_pdf)
+all_issues = img_issues + [c for c in checks if not c["ok"]]
+
+for c in checks:
+    mark = "OK" if c["ok"] else "FAIL"
+    print(f"  [{mark}]  {c['check']:<16}  {c['detail']}")
+
+# 4. Name the output
+if all_issues:
+    final  = base.parent / (base.name + "-not-print-ready.pdf")
+    report = base.parent / (base.name + "-preflight.txt")
+    out_pdf.rename(final)
+    report.write_text("\n".join(
+        f"[FAIL] {i.get('check','')}  {i.get('detail','')}"
+        for i in all_issues
+    ))
+    print(f"\n  [FAIL]  PDF not print-ready -> {final.name}")
+    print(f"          Report             -> {report.name}")
+    return 1 if args.strict else 0
+
+print(f"\n  [OK]  All checks passed -> {out_pdf.name}")
+return 0
+```
+
+The naming logic and the CI exit code are independent. `--strict` adds a non-zero return when there are failures, which is what CI needs to block a merge. Without `--strict`, the build exits 0 even with failures — the file is renamed and the report is written, but the pipeline continues.
+
+## Why this matters in practice
+
+Consider two failure scenarios:
+
+**Scenario A: an image that went through the wrong conversion path and is still RGB.** The preflight catches it. The PDF is renamed `planning-not-print-ready.pdf`. The report says `[FAIL] colorspace  xref 12: DeviceRGB`. The designer opens the report, runs `prepare_images.py` again on the correct source, rebuilds. The file is corrected before it leaves the build environment.
+
+**Scenario B: an image that passed all checks but whose resolution is 280 ppi.** The preflight catches it. The report says `[FAIL] resolution  xref 8: 280 ppi`. The image either needs to be resourced at higher resolution or the placed size needs to reduce — the resolution is checked at placed size, not at the image's native size. The designer has the information to make the right call.
+
+In both cases, the designer has a PDF to look at while reading the report. They can correlate the failing check with the visible output. The diagnosis is faster than if the build had aborted with no artifact.
+
+## The extension point
+
+`run_preflight()` returns a plain list of dicts. Plugging in a more rigorous validator — veraPDF, for instance — means appending its results to the same list before returning. The naming and reporting logic in `build_print.py` is unchanged. The check list grows; the contract stays the same.
+
+This is the same separation-of-concerns principle that structures the rest of the pipeline: each function does one thing, returns a consistent structure, and doesn't reach into the orchestrator's decisions.
