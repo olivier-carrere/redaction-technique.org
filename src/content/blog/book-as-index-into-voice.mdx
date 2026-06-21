@@ -1,0 +1,53 @@
+---
+draft: true
+title: "The Book as an Index into the Voice: QR Codes, Print, and the Problem of Aging Hosts"
+snippet: "Every chapter carries a QR code linking to the original recording. The book doesn't replace the talks — it indexes them. Print and digital stop competing and start reinforcing each other, held together by a square of black-and-white ink."
+image: {
+    src: "/images/blog/how-to-read-book.webp",
+    alt: "Annotated diagram showing how to read the book: poem, poem commentary, QR code linking to audio and video, glossary, gauge, section markers, title and metadata"
+}
+publishDate: "2026-06-25 01:00"
+category: "Blog"
+author: "Olivier Carrère"
+tags: [docs-as-code, publishing, single-source-of-truth]
+---
+
+## What QR codes do in a book
+
+The conventional use of a QR code in print is supplementary: a link to a website, an app download, an extended section that didn't fit. The code is an escape hatch out of the printed page and into something else. The book is primary; the digital is extra.
+
+These volumes reverse that relationship — or rather, they refuse the hierarchy. The book is a **transcription** of spoken talks. The original artifact is the voice, and the voice is on the recording. The book makes it possible to read, study, mark up, and return to. The recording makes it possible to hear what the text can't carry: timing, emphasis, the breath before a long sentence, the stillness after a teaching lands.
+
+Neither is primary. They're different modes of access to the same teaching.
+
+The QR code in every chapter is what makes that equivalence legible. One scan links the reader to the talk that produced the transcription they're holding. They can follow along. They can switch between reading and listening. They can hear the voice the editor was trying to preserve.
+
+## The problem with audio hosting
+
+Any audio-first publication faces a distribution problem. The talks exist; they need to live somewhere; that somewhere is a platform — a podcast host, a streaming service, a file server — and platforms age. Contracts change. Policies change. The platform that seemed like a stable choice two years ago may impose restrictions, change terms, or simply disappear.
+
+A migration trail from one host to another to a third is a warning: every migration is an event where QR codes can break, URLs can change, and listeners can arrive at dead links in books that are already in print.
+
+The structural solution is **decoupling the identifier from the host**. A stable, redirectable URL — owned by the organisation rather than the platform — means the QR code in a printed book can remain valid even as the underlying hosting changes. The code resolves to a URL the organisation controls; the URL redirects to wherever the current host serves the file. A host migration becomes a redirect update, not a reprinting.
+
+For a posthumous edition of a teacher's talks, the longevity argument is particularly strong. The books will be read for longer than any particular streaming platform's product roadmap extends.
+
+## The kusen sheet
+
+The design element that carries this is the kusen sheet — the structured header that opens each chapter, before the commentary text begins.
+
+![Annotated diagram showing how to read the book: poem, poem commentary, QR code linking to audio and video, glossary, gauge, section markers, title and metadata](/images/blog/how-to-read-book.webp)
+
+The kusen sheet carries: the talk date, the location, the source text being commented, the duration, and the QR code. A reader can place the talk in time and geography before reading a word of the commentary. A reader who wants to listen first can scan the code, start the recording, and follow the text while the teacher speaks.
+
+The AI review of the final PDF noted the kusen sheet specifically as "a distinctive and well-executed design element." It also flagged one action item: on talks with longer titles and URLs, the QR code sits close to the right edge of the header. Those cases need individual checking before any future print run.
+
+## Print and digital reinforcing each other
+
+The standard frame for print vs. digital is competition: print is static, digital is living; print ages, digital updates; readers choose one or the other depending on their habits. This frame generates bad design decisions — print that tries to look like a screen, digital that tries to look like a page, hybrids that satisfy neither.
+
+The frame that actually served this project was **complementarity**: print is for study, for margin notes, for returning to a passage; digital is for listening, for sharing, for the voice the text can't contain. A QR code in every chapter makes the complementarity navigable. There's nothing to choose — you have both, from one page.
+
+This is, at a small scale, what the docs-as-code principle produces when applied to the full content lifecycle rather than just to the build process: one source, multiple access paths, none of them primary, each serving what the others can't.
+
+The book is not a replacement for the talks. It's an index into them. That's the whole design, stated plainly, printed in every chapter, and resolved by a square of black-and-white ink.
