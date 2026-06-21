@@ -1,0 +1,106 @@
+---
+draft: true
+title: "RGB to CMYK in Python: Pillow, LittleCMS, and the Principle of Checking Without Faking"
+snippet: "The prepare_images.py walkthrough: converting every source image to CMYK using the FOGRA39 ICC profile via Pillow and LittleCMS, with black-point compensation. Resolution is checked at placed size — never faked, never upscaled."
+image: {
+    src: "/images/blog/planning-layout-content-data.webp",
+    alt: "Five distinct layers — YAML data, translations, typographic constants, Python generator, LaTeX form — converging into language-specific PDFs"
+}
+publishDate: "2026-06-24 01:00"
+category: "Blog"
+author: "Olivier Carrère"
+tags: [docs-as-code, latex, automation]
+---
+
+## Why upstream, not at the RIP
+
+RGB-to-CMYK conversion at the print shop's RIP is unpredictable. Different shops apply different ICC profiles; some default to generic CMYK without any profile. The conversion algorithm and rendering intent interact with the specific values in the image, and the results can diverge significantly from what you see on screen.
+
+The correct approach is to convert images before they enter the LaTeX build. By the time `lualatex` runs, every rasterised image in the document is already CMYK, profile-embedded, and verified. The RIP receives CMYK data and passes it through to the press without conversion.
+
+This is what `prepare_images.py` does: it runs once, before the first LaTeX pass, and converts all source images from RGB to CMYK using the FOGRA39 ICC profile via Pillow and LittleCMS.
+
+## The implementation
+
+```python
+from pathlib import Path
+from PIL import Image, ImageCms
+
+INTENT = {
+    "relative":   ImageCms.Intent.RELATIVE_COLORIMETRIC,
+    "perceptual": ImageCms.Intent.PERCEPTUAL,
+    "absolute":   ImageCms.Intent.ABSOLUTE_COLORIMETRIC,
+    "saturation": ImageCms.Intent.SATURATION,
+}
+
+def prepare_images(
+    src_dir: Path,
+    out_dir: Path,
+    icc_path: Path,
+    intent: str = "relative",
+) -> list[dict]:
+    rgb_profile  = ImageCms.createProfile("sRGB")
+    cmyk_profile = ImageCms.getOpenProfile(str(icc_path))
+    xform = ImageCms.buildTransform(
+        rgb_profile, cmyk_profile, "RGB", "CMYK",
+        renderingIntent=INTENT[intent],
+        flags=ImageCms.FLAGS["BLACKPOINTCOMPENSATION"],
+    )
+    issues: list[dict] = []
+    out_dir.mkdir(parents=True, exist_ok=True)
+    for src in sorted(src_dir.iterdir()):
+        if src.suffix.lower() not in {".jpg", ".jpeg", ".tif", ".tiff", ".png"}:
+            continue
+        with Image.open(src) as img:
+            dpi = img.info.get("dpi", (72, 72))
+            ppi = min(dpi)
+            if ppi < 300:
+                issues.append({"file": src.name, "check": "resolution",
+                               "detail": f"{ppi:.0f} ppi < 300 required"})
+            cmyk = (ImageCms.applyTransform(img.convert("RGB"), xform)
+                    if img.mode != "CMYK" else img.copy())
+            cmyk.save(out_dir / src.name, dpi=dpi,
+                      icc_profile=cmyk_profile.tobytes())
+    return issues
+```
+
+## What each part does
+
+**The transform is built once.** `ImageCms.buildTransform()` constructs a reusable colour transform from the source profile (sRGB) to the destination profile (FOGRA39). Building it once and applying it to each image is more efficient than creating a new transform per image.
+
+**Rendering intent is parameterisable.** The function accepts `relative`, `perceptual`, `absolute`, or `saturation`. For photographic content, `relative` (relative colorimetric with black-point compensation) is almost always the right choice — it maps out-of-gamut colours to the nearest in-gamut equivalent while preserving the relationship between in-gamut colours. `perceptual` compresses the entire gamut to fit, which can soften saturated colours; it's appropriate when preserving the overall tonal feel matters more than accuracy. `absolute` and `saturation` are rarely useful for print.
+
+**Black-point compensation is always on.** `BLACKPOINTCOMPENSATION` maps the source profile's black point to the destination profile's black point. Without it, deep shadows in sRGB images can shift when converted to the narrower CMYK gamut. The flag is specific to LittleCMS (the library Pillow uses for colour management) and is not part of the ICC standard — it's a practical correction for a known perceptual problem.
+
+**Resolution is checked, not fixed.** If an image's stored DPI metadata is below 300 ppi, the function records a defect and continues. It does not upscale the image. Upscaling would produce an image that passes the resolution check while being softened by interpolation — a fake pass. The correct response to a low-resolution image is to source a higher-resolution original or reduce its placed size in the layout. The preflight check that runs after the LaTeX build verifies resolution at placed size, which is more reliable than the stored DPI metadata for catching images that are nominally 300 ppi but placed at a size that makes them effectively lower.
+
+**Already-CMYK images are passed through.** If an image is already in CMYK mode, the function copies it without applying the transform. This prevents double conversion, which would apply FOGRA39 to data that was already in FOGRA39 — compounding any gamut compression that occurred in the first conversion.
+
+**The ICC profile is embedded in the output.** `icc_profile=cmyk_profile.tobytes()` writes the FOGRA39 profile into each output file's ICC metadata. This is required for the PDF's OutputIntent to be meaningful: the OutputIntent says the document's intended output condition is FOGRA39; the embedded profile in each image confirms that the image data is already in FOGRA39 CMYK.
+
+## What the function returns
+
+The function returns a list of defect dicts, not exceptions. A resolution failure is a soft defect — the conversion runs anyway. The orchestrator collects these defects alongside the post-build preflight results and applies the naming logic to the combined list.
+
+```python
+# In build_print.py
+img_issues = prepare_images(Path(args.images), Path("images-cmyk"),
+                             Path(args.icc), args.intent)
+
+# ... LaTeX passes ...
+
+checks     = run_preflight(out_pdf)
+all_issues = img_issues + [c for c in checks if not c["ok"]]
+```
+
+A resolution defect caught by `prepare_images.py` flows into `all_issues` alongside a font-embedding defect caught by `run_preflight()`. Both end up in the same report. The print shop sees one list of things to fix, not two separate tool outputs to reconcile.
+
+## The principle: checked, never faked
+
+The rule is simple: the build checks what it can check and reports what it finds. It does not silently fix defects in ways that obscure the underlying problem.
+
+Upscaling a low-resolution image to 300 ppi would make the resolution check pass while degrading the image quality. Converting an image with an incorrect colour profile to CMYK would produce the right mode with the wrong values. Both would produce clean preflight reports on bad data.
+
+The alternative — check and report, never fake — produces preflight defects that point to real problems. The designer who gets a defect for `240 ppi` knows to source a better image. The designer who gets a clean pass on an upscaled image doesn't know anything is wrong until the printed sheet comes back soft.
+
+The build's job is to surface defects, not to hide them.
