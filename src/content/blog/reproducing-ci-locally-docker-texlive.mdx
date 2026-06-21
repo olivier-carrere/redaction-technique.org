@@ -1,0 +1,95 @@
+---
+draft: true
+title: "Reproducing CI Locally with Docker: Pinned TeX Live, make planning-ci, and the OrbStack Tip for macOS ARM"
+snippet: "Pull the pinned TeX Live 2023 image once. Run make planning-ci. Get FR + EN + ES in the exact same environment as the Actions workflow — on a machine with no local LaTeX installation. Plus: the GitHub Actions free-on-public-repos billing gotcha."
+image: {
+    src: "/images/blog/planning-layout-content-data.webp",
+    alt: "Five distinct layers — YAML data, translations, typographic constants, Python generator, LaTeX form — converging into language-specific PDFs"
+}
+publishDate: "2026-07-01 01:00"
+category: "Blog"
+author: "Olivier Carrère"
+tags: [docs-as-code, latex, automation, ci-cd]
+---
+
+## Why local CI reproduction matters
+
+The GitHub Actions workflow pins TeX Live 2023 on Ubuntu AMD64. That combination — a specific toolchain version on a specific platform — is the environment that produces the canonical press-ready PDFs. If your local environment differs — a newer TeX Live, a different OS, macOS instead of Linux — your local build may produce different output.
+
+This is the [reproducible builds](https://redaction-technique.org/blog/reproducible-builds-for-print) problem at the local development level: the CI environment is authoritative; the local environment is an approximation. Most of the time the approximation is close enough for iterating on content. When you need to verify exactly what CI would produce — before a press run, after a toolchain update, when debugging a layout difference — you want to run the actual CI environment locally.
+
+Docker makes this possible without installing TeX Live locally.
+
+## The commands
+
+Pull the pinned image once:
+
+```bash
+docker pull --platform linux/amd64 \
+  registry.gitlab.com/islandoftex/images/texlive:TL2023-2023-12-31-full
+```
+
+Then run the local CI target:
+
+```bash
+make planning-ci
+```
+
+This builds French, English, and Spanish editions in the exact same environment as the Actions workflow: TeX Live 2023, Linux AMD64, the same image tag. The PDFs that come out are the same PDFs that would come out of GitHub Actions on the same commit.
+
+The `planning-ci` Makefile target mounts the repository into the container and runs the full build sequence — image preparation, generator, two LuaLaTeX passes, preflight — inside it. No local LaTeX installation needed. The container provides the toolchain; the repository provides the source.
+
+## macOS ARM64: use OrbStack, not Docker Desktop
+
+On an Apple Silicon Mac (M1/M2/M3), running an AMD64 container requires CPU emulation. Docker Desktop uses Apple's Virtualization Framework with Rosetta for this, but OrbStack handles AMD64 emulation more efficiently in practice — the builds are faster, the resource overhead is lower, and the startup time is shorter.
+
+Install OrbStack:
+
+```bash
+brew install orbstack
+```
+
+After installation, OrbStack replaces Docker Desktop as the container runtime. The commands above work unchanged — `docker pull` and `make planning-ci` run through OrbStack transparently. No flags, no additional configuration.
+
+If you already have Docker Desktop installed, OrbStack will prompt on first launch to take over the Docker socket. Accepting this means all `docker` commands route through OrbStack. Declining means you need to set `DOCKER_HOST` explicitly. The takeover is reversible.
+
+The practical difference on a typical Apple Silicon machine: a full FR + EN + ES build that takes ~4–5 minutes under Docker Desktop takes ~2–3 minutes under OrbStack, because Rosetta translation runs faster under OrbStack's hypervisor.
+
+## Linux: standard Docker setup
+
+On Linux, the setup is straightforward:
+
+```bash
+sudo apt install docker.io
+sudo systemctl start docker
+sudo usermod -aG docker $USER   # add yourself to the docker group
+# log out and back in for the group change to take effect
+```
+
+After that, `docker pull` and `make planning-ci` work without `sudo`. No OrbStack needed — Linux runs AMD64 containers natively.
+
+**What to avoid on Linux:** a UTM VM with TeX Live installed manually. This would not be bit-for-bit identical to CI (different TeX Live configuration, different minor version potentially, different system libraries) and requires significantly more setup than pulling a pinned Docker image. The Docker path is the right call for local CI reproduction.
+
+## The GitHub Actions billing gotcha
+
+GitHub Actions on public repositories is free with no minute cap. The planning poster's workflow runs entirely for free as long as the repository remains public.
+
+If builds stop with a billing error despite the repository being public, the cause is almost never minutes exhaustion. It's typically one of:
+
+- **A spending limit set above $0 with an invalid payment method.** GitHub interprets this as "charge me for overages" — and when the payment method is invalid, it holds builds.
+- **An organisation billing issue** on a forked repository or one transferred to an organisation account.
+
+The fix: go to Settings → Billing & plans. If there's a spending limit above $0, set it to $0 (meaning "never charge me — free minutes only"). Fix the payment method if one is registered. Free Actions on public repos resume immediately with no waiting period.
+
+This is a counterintuitive point: having a spending limit of $0 is more permissive than having a spending limit of $10 with a bad credit card. The $0 limit explicitly tells GitHub not to try to charge you; the $10 limit with an invalid card creates a failed payment state that blocks all Actions until the payment method is resolved.
+
+## When to use Docker locally vs. pushing to CI
+
+The local Docker build and the GitHub Actions build produce identical output. The choice is about workflow:
+
+- **Iterating on content**: push to a branch and let CI build. The output is an artifact in the Actions UI, downloadable without running anything locally.
+- **Debugging a CI failure**: run `make planning-ci` locally to reproduce the failure in the same environment without burning CI minutes and waiting for a runner.
+- **Pre-press verification**: run `make planning-ci` locally to get the final press file from the canonical environment before submitting to the print shop.
+- **Working offline**: run `make planning-ci` locally without network access. The remote key resolution will degrade gracefully; everything else builds from local files.
+
+In practice: most content iteration goes through CI; pre-press verification goes through local Docker. The two environments are interchangeable because they run the same image.
