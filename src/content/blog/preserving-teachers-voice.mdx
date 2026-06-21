@@ -1,0 +1,61 @@
+---
+draft: true
+title: "Preserving a Teacher's Voice: The Human Story Behind the Pipeline"
+snippet: "Stéphane Kōsen Thibaut taught for twenty years. People recorded it. He passed in September 2025. What remained was the recordings, the transcriptions, and the will to publish. This is the story the pipeline was built to serve."
+image: {
+    src: "/images/blog/how-to-read-book.webp",
+    alt: "Annotated diagram showing how to read the book: poem, poem commentary, QR code linking to audio and video, glossary, gauge, section markers, title and metadata"
+}
+publishDate: "2026-06-28 01:00"
+category: "Blog"
+author: "Olivier Carrère"
+tags: [publishing]
+---
+
+## Before the pipeline, a person
+
+Every post in this series has been about tools: Git history, `make` targets, LuaLaTeX passes, Mistral API calls, Claude Code sessions. That framing is accurate — the project really was a software engineering effort. But software engineering projects don't usually start with a teacher's death and the question of what remains.
+
+This is the post about what the pipeline was built to serve.
+
+## Stéphane Kōsen Thibaut
+
+Stéphane Kōsen Thibaut was born in 1950 and died in September 2025. He was a French Sōtō Zen monk, a dharma heir of Taisen Deshimaru, and one of the people most responsible for rooting that lineage in Europe and Latin America. He founded the first Sōtō temple in South America, in Argentina, and founded Yūjō Nyūsanji in France. He taught for two decades.
+
+His teachings were weekly dharma talks: discourses given at dojos across Europe on Zen practice and classical texts. The same way a Zen teacher has always taught — by showing up, week after week, in front of the people who came to practice, and speaking about what the texts say and what practice is.
+
+People recorded these talks. Session after session, over twenty years. The recordings accumulated. The community transcribed them. An archive formed — audio files, Word documents, a corpus that existed in hard drives and file folders rather than in print.
+
+When Kōsen passed, the recordings and transcriptions remained. The will to publish them remained. There was no publishing house, no budget, no technical infrastructure beyond what the community had built for itself. There was a question: how do you turn this into something people can hold?
+
+## The three volumes
+
+The answer was three volumes of recorded talks, covering the period from 2002 to 2024. Not a selection — a substantial portion of the archive, structured, transcribed, and typeset as closely as the technology allowed to the format the teacher himself might have chosen for his words.
+
+The kusen sheet that opens each chapter carries the talk's date, location, and duration — a record not just of what was said but of when and where. The QR code links to the original recording. The glossary, generated with Mistral's help, defines the Japanese and Sanskrit terms that appear in the texts. The index, also AI-assisted, makes the themes and references navigable across all three volumes.
+
+The book is not a substitute for the talks. It's an index into them — a way to arrive at the recording, or to follow it, or to return to a passage and study it in the margins of a physical page.
+
+## What made the project unusual
+
+Most book projects have an author who is still alive to review the output. This one didn't. Every editorial decision — which talks to include, how to handle ellipsis in the transcriptions, what weight to give the typographic choices — was made in the absence of the person whose voice was being preserved.
+
+That absence is not something the pipeline could address. The pipeline made the mechanical work reliable and reproducible. It did not make the editorial work easier. The judgment about what fidelity to a teacher's voice requires — when a sentence can be simplified and when it can't, when the transcription's imperfections are part of the record and when they're errors — required people who had been in the dojos, who had heard the talks, who knew the voice well enough to recognise when it was being distorted.
+
+This is what the [AI sentence-splitting failure](https://redaction-technique.org/blog/when-ai-fails-sentence-splitting) was really about: a tool that could produce grammatically correct output but could not recognise what made the original worth preserving. The recognition required human judgment informed by long familiarity with the material.
+
+## Why this audience is different
+
+The other posts in this series address practitioners: technical writers, documentation engineers, developers thinking about docs-as-code. This post addresses a different audience — people who are not technical but who may face a similar situation: an archive, a community, a loss, and the question of what to do with what remains.
+
+For that audience, the technical details are secondary. What matters is that the work was done — that twenty years of weekly talks exist now in a form that can be read, held, passed to someone who didn't know the teacher, studied in a margin, linked from a QR code back to the voice that produced them.
+
+The pipeline made that possible. The reason to build it was older than any of the tools.
+
+## A note on duration
+
+The teacher spoke for twenty years. The recordings exist for as long as the media and the hosting hold. The books exist for as long as the paper does.
+
+The question of how long "as long as the paper does" is — whether the books will be read in ten years, in thirty, whether the archive will survive the platforms it currently lives on — is not one the pipeline answers. It's a question that belongs to the community that holds the archive.
+
+What the pipeline did was make the first answer available: a physical object, camera-ready, with a commit hash in the colophon and a QR code in every chapter. Whatever the archive becomes next, it starts from here.
