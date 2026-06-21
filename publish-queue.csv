@@ -1,0 +1,33 @@
+# date,file  — one post is promoted from the `draft` branch to `main` each Tuesday
+# at 10:00 Europe/Paris, in this order. Reorder, add, remove, or comment out lines
+# freely; the workflow simply looks up today's date. Lines starting with # are ignored.
+2026-06-23,indesign-vs-docs-as-code.mdx
+2026-06-30,non-blocking-preflight-build-always-produces-pdf.mdx
+2026-07-07,reliability-vs-latency-claude-cli.mdx
+2026-07-14,pdfx4-lualatex-without-ghostscript.mdx
+2026-07-21,separation-of-concerns-print-pipeline.mdx
+2026-07-28,persona-prompting-typographer.mdx
+2026-08-04,generating-calendar-grid-programmatically.mdx
+2026-08-11,cicd-for-print-artifacts.mdx
+2026-08-18,soft-hyphen-u00ad.mdx
+2026-08-25,ai-in-the-loop-not-on-top.mdx
+2026-09-01,generator-as-interface-yaml-to-latex-macros.mdx
+2026-09-08,rgb-to-cmyk-python.mdx
+2026-09-15,validate-structured-data-at-build-time.mdx
+2026-09-22,ai-consensus-as-signal.mdx
+2026-09-29,typography-stays-slow.mdx
+2026-10-06,one-fact-two-surfaces-remote-key-resolution.mdx
+2026-10-13,reproducible-builds-for-print.mdx
+2026-10-20,a4-from-a5-scaling-trap.mdx
+2026-10-27,reproducing-ci-locally-docker-texlive.mdx
+2026-11-03,non-technical-users-docs-as-code-pipeline.mdx
+2026-11-10,books-as-code-manifesto.mdx
+2026-11-17,docs-as-code-for-a-poster.mdx
+2026-11-24,one-source-three-languages.mdx
+2026-12-01,know-enough-to-direct-the-machine.mdx
+2026-12-08,book-as-index-into-voice.mdx
+2026-12-15,refactoring-995-line-script-three-classes.mdx
+2026-12-22,when-ai-fails-sentence-splitting.mdx
+2026-12-29,what-happens-when-you-read-bringhurst.mdx
+2027-01-05,community-supported-publishing-economics.mdx
+2027-01-12,preserving-teachers-voice.mdx
