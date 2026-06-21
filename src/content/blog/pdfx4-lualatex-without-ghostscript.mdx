@@ -1,0 +1,115 @@
+---
+draft: true
+title: "PDF/X-4 from LuaLaTeX Without Ghostscript: TrimBox, BleedBox, FOGRA39, and the pdfx Package"
+snippet: "Producing a PDF/X-4 press-ready file from LuaLaTeX without touching Ghostscript: the pdfx package, TrimBox/BleedBox geometry in points, FOGRA39 OutputIntent, CMYK-only colour discipline, and XMP metadata — everything a print shop will verify."
+image: {
+    src: "/images/blog/planning-layout-content-data.webp",
+    alt: "Five distinct layers — YAML data, translations, typographic constants, Python generator, LaTeX form — converging into language-specific PDFs"
+}
+publishDate: "2026-06-22 01:00"
+category: "Blog"
+author: "Olivier Carrère"
+tags: [latex, docs-as-code, typography]
+---
+
+## Why Ghostscript is the wrong tool for this job
+
+The conventional path to a PDF/X-compliant press file from a LaTeX project runs through Ghostscript: produce a standard PDF, then post-process it with `gs -dPDFX`. This works, but it introduces a dependency — and more importantly, it treats compliance as a post-processing step rather than a property of the build.
+
+Post-processing with Ghostscript can change page geometry, re-embed fonts, and alter colour values in ways that are hard to predict and hard to verify without running a full preflight on the output. It is also a separate tool with its own version constraints, its own failure modes, and its own place in the dependency chain.
+
+The alternative is to produce a compliant file directly from LuaLaTeX, using the `pdfx` package. No post-processing. No Ghostscript. The compliance is built into the build.
+
+## The pdfx package
+
+Loading `pdfx` with the `x-4` option is what turns a standard LuaLaTeX output into a PDF/X-4 file:
+
+```latex
+\usepackage[x-4]{pdfx}   % reads planning.xmpdata
+```
+
+The package does three things:
+- Attaches an **OutputIntent** pointing to the embedded ICC colour profile
+- Embeds the FOGRA39 ICC profile in the PDF's output intent dictionary
+- Enforces the PDF/X-4 constraints that LuaLaTeX cannot enforce on its own (no encryption, no JavaScript, no transparency that isn't PDF/X-4-legal)
+
+It also reads XMP metadata from a companion `.xmpdata` file with the same base name as the `.tex` file. The metadata is embedded in the PDF's XMP stream — required by PDF/X-4:
+
+```
+\Title{Planning Kosen Sangha 2025--2026}
+\Author{Kosen Sangha}
+\Copyright{Kosen Sangha}
+\Keywords{planning\sep calendrier\sep retraites}
+\Publisher{Kosen Sangha}
+```
+
+The `pdfx` package handles the OutputIntent embedding. It does not convert colours. Colour conversion is entirely upstream of LaTeX — images in Python before the build, vector colours in YAML before code generation. By the time LuaLaTeX runs, every colour in the document is already CMYK.
+
+## Box geometry
+
+A PDF/X-4 file must carry correct `TrimBox` and `BleedBox` entries. In LuaLaTeX, these are set via `\pdfextension pageattr` (the LuaLaTeX equivalent of pdfLaTeX's `\pdfpageattr`):
+
+```latex
+% A3 landscape + 2 mm bleed
+% BleedBox = MediaBox = 424 × 301 mm = 1201.89 × 853.23 pt
+% TrimBox  = A3 inset 2 mm → 5.669 pt each side
+\pdfextension pageattr{%
+  /TrimBox  [5.669 5.669 1196.22 847.56]%
+  /BleedBox [0     0     1201.89 853.23]%
+}
+```
+
+The arithmetic behind these values:
+
+- **A3 landscape** is 420 × 297 mm.
+- **2 mm bleed** on each side extends the page to 424 × 301 mm.
+- **Points** are the PDF coordinate unit: 1 pt = 25.4/72 mm, so 1 mm = 72/25.4 ≈ 2.8346 pt.
+- **BleedBox** covers the full extended page: 424 × 2.8346 ≈ 1201.89 pt wide, 301 × 2.8346 ≈ 853.23 pt tall.
+- **TrimBox** is inset by 2 mm = 5.669 pt on each side from the BleedBox, leaving a box from (5.669, 5.669) to (1196.22, 847.56).
+
+These values go into the PDF's page dictionary. When the print shop's RIP or imposition software reads the file, it finds the TrimBox — the intended finished size — and the BleedBox — the extent of the content including bleed. Trim marks are derived from the TrimBox. Content that must survive trimming must sit within it; content that must bleed off the edge must reach the BleedBox.
+
+The A4 scaling post covers what goes wrong when you ask a print shop to scale an A5 file rather than generating A4 natively. The same logic applies to TrimBox and BleedBox: if these entries don't match the physical dimensions of the document as the press will handle it, the file is wrong regardless of how it looks on screen.
+
+## CMYK-only colour discipline
+
+PDF/X-4 does not prohibit RGB, but most print workflows expect CMYK. More importantly, RGB-to-CMYK conversion at the RIP is unpredictable — different printers apply different profiles, and the results can diverge significantly from what you see on screen.
+
+The correct approach is to convert all colours upstream:
+
+- **Images**: converted from RGB to CMYK in Python using the FOGRA39 ICC profile before LaTeX runs. See the [RGB→CMYK in Python post](https://redaction-technique.org/blog/rgb-to-cmyk-python) for the implementation.
+- **Vector colours**: defined as `cmyk` tuples in `layout.yaml`, exported by the generator as `\definecolor` commands using LaTeX's `cmyk` colour model. No `DeviceRGB` call reaches the PDF.
+
+```yaml
+# layout.yaml
+colors:
+  sesshin: [0.0, 0.45, 0.85, 0.05]   # CMYK
+  samu:    [0.15, 0.0, 0.55, 0.0]    # CMYK
+  header:  [0.0, 0.0, 0.0, 1.0]      # black
+```
+
+The generator reads these and writes them into `planning_meta.tex`:
+
+```latex
+\definecolor{sesshin}{cmyk}{0.0, 0.45, 0.85, 0.05}
+\definecolor{samu}{cmyk}{0.15, 0.0, 0.55, 0.0}
+\definecolor{header}{cmyk}{0.0, 0.0, 0.0, 1.0}
+```
+
+`planning-shared.tex` uses only these named colours. No hardcoded colour values appear in the LaTeX source. Changing a colour means changing the YAML and rebuilding — the change propagates to all three language editions automatically.
+
+## What the preflight verifies
+
+The automated preflight that runs after the build checks the OutputIntent, PDF version, encryption, and colour space independently of `pdfx`'s own enforcement. This is not redundant — it's defence in depth. The preflight checks what's actually in the file, not what the build intended to put there. See the [preflight post](https://redaction-technique.org/blog/non-blocking-preflight) for the implementation.
+
+The print shop will run its own preflight. The automated checks are there to catch failures before the file leaves the build environment — when fixing them is cheap — rather than after the file has been submitted, when fixing them costs time, the print run, or both.
+
+## Summing up
+
+PDF/X-4 from LuaLaTeX without Ghostscript requires three things:
+
+1. The `pdfx` package with the `x-4` option and a `.xmpdata` companion file
+2. Explicit TrimBox and BleedBox values via `\pdfextension pageattr`, with coordinates calculated in points from the physical dimensions and bleed
+3. All colours in CMYK before LaTeX runs — images converted in Python, vector colours defined as `cmyk` tuples in YAML
+
+The result is a file that passes commercial preflight without post-processing, and whose compliance is verifiable by inspecting the build rather than by trusting a post-processing step that may have changed the file in ways the build didn't intend.
