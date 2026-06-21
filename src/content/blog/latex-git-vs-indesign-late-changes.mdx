@@ -1,0 +1,55 @@
+---
+draft: true
+title: "LaTeX + Git vs. InDesign for Late Changes: One-Line Global Edits Across 136 Pages"
+snippet: "A stray \\vspace, drop cap lhang, index indentation, a typo from 2013 — all fixed in the final hours before print, across all three volumes, without touching a single page by hand. The case for a LaTeX pipeline when deadlines compress."
+image: {
+    src: "/images/blog/how-to-read-book.webp",
+    alt: "Annotated diagram showing how to read the book: poem, poem commentary, QR code linking to audio and video, glossary, gauge, section markers, title and metadata"
+}
+publishDate: "2026-06-21 01:00"
+category: "Blog"
+author: "Olivier Carrère"
+tags: [docs-as-code, latex, git, automation]
+---
+
+## The deadline test
+
+The thirteen-day sprint produced 167 commits. Some of those commits happened in the final hours before the first copy was handed to a reader. This is where tool choices are stress-tested.
+
+In InDesign, a late change to the layout carries real risk. Any reflow cascades. Every affected page must be re-checked by eye. A spacing adjustment made at midnight on a deadline can push text out of position across a chapter break and nobody notices until a printed copy comes back wrong — at which point the original file may no longer be findable, let alone re-editable.
+
+In a LaTeX pipeline under Git, the same changes cost a one-line edit and a rebuild.
+
+## Four changes, all late, all global
+
+**Poem spacing.** A stray `\vspace{\baselineskip}` had been generating a blank line after every inline poem throughout all three volumes. The fix was replacing it with a bare `\par` in the poem macro definition. One edit, one `make`, every occurrence corrected — across 136 pages of Volume I, across all three volumes — simultaneously, without touching a single page by hand.
+
+In InDesign, this would require locating every poem instance, checking every one for the extra spacing, and removing it manually from each. With nested styles and object-based layout, there's also no guarantee that a single style change propagates correctly to every instance.
+
+**Drop caps.** Adding `lhang=1` to the `\lettrine` command let every drop cap hang into the margin instead of pushing body text inward. The change affected every chapter opener in all three volumes. In a LaTeX document, the parameter lives in one place: the macro call site. Change it once; every drop cap in the corpus reflects the change on the next build.
+
+In InDesign, drop caps are placed objects. Updating the hang parameter means selecting every drop cap object individually and applying the change — or, if they were placed correctly with a paragraph style, hoping the style propagates cleanly to all instances.
+
+**Index indentation.** Sub-entries were more deeply indented than continuation lines, inverting the visual hierarchy across the entire index. The fix was a `\makeatletter` block redefining `\@idxitem`, `\subitem`, and `\subsubitem`. One block of LaTeX, one rebuild, every index entry in all three volumes corrected.
+
+InDesign's index editor doesn't expose indentation at this level of control without paragraph styles, which in turn require selecting and re-applying to every sub-entry and continuation line in the index. An index of any length makes this slow and error-prone.
+
+**A typo from 2013.** The word "poumonsn" appeared in a source file from eleven years earlier — a transposition that had survived through every version of the text. One character corrected in the source file, one commit, one rebuild. The correct word now appears in every format — A5, single-volume, Spanish, web — automatically, because every format is derived from the same source.
+
+In a copy-based workflow, the typo may or may not exist in each format depending on which file was used to generate which output. There is no single place to fix it.
+
+## The structural reason
+
+The difference is not a LaTeX-versus-InDesign preference. It's a consequence of how changes propagate in each system.
+
+In InDesign, changes propagate to the extent that the layout was built with reusable styles — and if it wasn't, they propagate manually, which means they propagate inconsistently. Late changes to body text can cause reflowing. Reflowing causes page breaks to shift. Page break shifts require re-checking every affected page.
+
+In a LaTeX pipeline, a macro change propagates everywhere the macro is called. A source correction propagates to every derived format. A typographic parameter propagates to every document that uses it. The build is the integration test: if `make` passes, the change is consistently applied. If it fails, the build log says where.
+
+## The tighter the deadline, the more this matters
+
+None of the four changes above were planned. They arrived late. What made them safe to absorb wasn't a good contingency plan — it was that global changes are mechanical in a LaTeX pipeline. A one-line macro fix applies everywhere, unconditionally, on the next build.
+
+The tighter the deadline, the more that property is worth. When there's no time to re-check 136 pages by eye, you want a system where "fix it once" actually means "fix it everywhere." LaTeX with Git is that system. InDesign isn't — at least not without heroic style discipline applied from the first day of the project.
+
+The case for a docs-as-code approach to book production isn't primarily about reproducibility or auditability, though those matter. It's this: when the deadline compresses, you want global changes to be cheap.
