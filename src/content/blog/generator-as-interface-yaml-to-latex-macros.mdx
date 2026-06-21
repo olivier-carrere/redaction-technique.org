@@ -1,0 +1,95 @@
+---
+draft: true
+title: "The Generator as an Interface: YAML Values to Named LaTeX Macros"
+snippet: "The YAML holds the IBAN. The LaTeX template calls \\inscriptioniban. The template never sees the raw value. The generator is the interface between data and form — and why this architectural pattern is stronger than embedding values directly."
+image: {
+    src: "/images/blog/planning-layout-content-data.webp",
+    alt: "Five distinct layers — YAML data, translations, typographic constants, Python generator, LaTeX form — converging into language-specific PDFs"
+}
+publishDate: "2026-06-27 01:00"
+category: "Blog"
+author: "Olivier Carrère"
+tags: [docs-as-code, yaml, latex, single-source-of-truth, separation-of-concerns]
+---
+
+## What "single source of truth" actually requires
+
+A single source of truth means a fact is stored in exactly one place. But storage alone isn't enough. A fact stored in one place and referenced directly from twenty places in a template is still fragile: the template is coupled to the format of the fact. Change the fact's representation — a different key name, a different nesting level, a different file — and all twenty references break.
+
+The generator-as-interface pattern decouples the template from both the location and the format of the fact. The template never references the data source. It references a named macro. The generator is responsible for reading the data source, computing the macro value, and writing the binding. The template is stable across any change to the data architecture.
+
+## The concrete example: the IBAN
+
+The IBAN in `events.yaml`:
+
+```yaml
+inscriptions:
+  iban: "FR76 4255 9100 0008 0035 9417 710"
+```
+
+The generator reads this and writes a named macro into `planning_meta.tex`:
+
+```latex
+\def\inscriptioniban{FR76 4255 9100 0008 0035 9417 710}
+```
+
+`planning-shared.tex` calls `\inscriptioniban` at every point where the IBAN appears — the registration section, the payment instructions, the bank transfer block on page 2. The template doesn't know where the IBAN comes from. It doesn't know its format. It doesn't know the key name in YAML. It knows one thing: there is a macro called `\inscriptioniban`, and it holds the current value.
+
+Change the IBAN in YAML — because the bank account changed, because a digit was wrong, because the routing code format changed — and rebuild. Every occurrence in every language edition updates simultaneously. There is nothing else to do.
+
+## What the full macro file looks like
+
+The generator produces a `planning_meta.tex` file that contains a `\def` for every data point, translated string, typographic constant, and colour in the system:
+
+```latex
+% Data macros
+\def\planningyear{2025--2026}
+\def\inscriptioniban{FR76 4255 9100 0008 0035 9417 710}
+\def\inscriptionbic{CCBPFRPPTLS}
+\def\inscriptioncotisation{50}
+\def\taxicompagnie{Taxi Lons}
+\def\taxiprix{25}
+\def\taxitelephone{06\,xx\,xx\,xx\,xx}
+
+% Translation macros (resolved for --lang fr)
+\def\moisjanvier{Janvier}
+\def\jourLundi{L}
+\def\jourMardi{M}
+\def\labelpreinscription{Pré-inscription}
+
+% Typography macros
+\def\eventfontformat{\small\itshape}
+\def\headertitlefont{\Large\bfseries}
+\def\caldayfont{\scriptsize}
+\def\colsidewidth{2.8cm}
+\def\calresizewidth{0.92\textwidth}
+
+% Colour macros
+\definecolor{sesshin}{cmyk}{0.0, 0.45, 0.85, 0.05}
+\definecolor{preparation}{cmyk}{0.0, 0.10, 0.35, 0.0}
+\definecolor{samu}{cmyk}{0.15, 0.0, 0.55, 0.0}
+```
+
+Every value in this file was computed by the generator from YAML sources. `planning-shared.tex` contains no hardcoded data, no hardcoded strings, no hardcoded measurements, and no hardcoded colour values. It is a pure template: structure and form, with all values injected through macros at build time.
+
+## The template as a stable contract
+
+`planning-shared.tex` and the thin language wrappers are never edited. Not for a year change, not for a price update, not for a layout adjustment (unless the layout requires a structural change to the template itself). The stability of the template is a guarantee of the interface contract: the macros will be defined before the template runs, and the template only calls macros it knows will be defined.
+
+This is the same guarantee a well-typed function signature provides: the caller doesn't need to know how the callee implements its logic, only that it will return the right type. The LaTeX template doesn't need to know how the generator computes `\inscriptioniban`, only that it will be a string containing an IBAN-formatted value.
+
+## The scope of the pattern
+
+The macro pattern applies to three categories of value:
+
+**Data values** — facts that change annually or when a fact changes: IBAN, prices, director names, event dates. These are the primary motivation for the pattern.
+
+**Translation strings** — labels that change by language edition but not by year: month names, section headings, day abbreviations. The same generator pass that emits data macros emits translation macros for the active language. The template uses `\moisjanvier` and gets the right string regardless of which edition is being built.
+
+**Typographic constants** — font sizes, column widths, spacing values that change only when a design decision changes. Including these in the macro system means a typographic adjustment in `layout.yaml` propagates to all three language editions on the next build, just as a data change does.
+
+## What this is not
+
+This is not generic SSOT — "one place to update". SSOT means the fact has one home. The generator-as-interface pattern means the template has one way to access any fact, regardless of where that fact lives or how it's structured. It's an additional constraint: not just "one home" but "one access pattern". The template is insulated from the data architecture. The data architecture can change — different file, different key, different nesting level, remote resolution — without touching the template, as long as the generator continues to emit the correct macro.
+
+The distinction matters when the data architecture is in flux. New events can be added, new fields introduced, `remote_key` resolution added for some events — all without the template knowing. The interface stays stable. The implementation changes behind it.
