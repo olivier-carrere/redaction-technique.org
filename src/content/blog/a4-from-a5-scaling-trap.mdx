@@ -1,0 +1,59 @@
+---
+draft: true
+title: "The A4-from-A5 Scaling Trap: Why Naive Upscaling Breaks Print Files"
+snippet: "Asking a print shop to scale an A5 PDF to A4 seems harmless. It degrades image resolution to 212 ppi, misaligns bleed zones, and leaves TrimBox/BleedBox geometry describing the wrong page size. The traps are invisible until ink hits paper."
+image: {
+    src: "/images/blog/how-to-read-book.webp",
+    alt: "Annotated diagram showing how to read the book: poem, poem commentary, QR code linking to audio and video, glossary, gauge, section markers, title and metadata"
+}
+publishDate: "2026-06-22 01:00"
+category: "Blog"
+author: "Olivier Carrère"
+tags: [latex, docs-as-code, typography]
+---
+
+## The naive approach and what it costs
+
+You have a camera-ready A5 PDF. A colleague asks for an A4 version. The simplest path: hand the A5 file to the print shop and ask them to scale it up by √2 ≈ 1.414, which is the ratio between the two paper sizes.
+
+This looks like a reasonable request. It produces a broken press file.
+
+The problems accumulate in three distinct ways, each invisible on screen.
+
+## Problem 1: Image resolution degrades below minimum spec
+
+Resolution and linear dimension are inversely related. A 300 ppi image at A5 (148 × 210 mm) becomes a 212 ppi image at A4 (210 × 297 mm), because the same pixels are spread over a larger area. The calculation: 300 ÷ √2 ≈ 212.
+
+212 ppi is below the 300 ppi minimum that most commercial print shops require for offset press work. At 212 ppi, halftone screening produces visible dot patterns in photographic images. Fine text in images — labels, captions embedded in graphics, the cover lettering in an image file — softens. The degradation is subtle on a laser proof and visible on the final press sheet.
+
+The fix is not to scale the PDF. It is to generate the A4 layout natively from source, with images sized for the A4 page dimensions, so that every image starts at 300 ppi for the output format.
+
+## Problem 2: Bleed zones scale with the page instead of staying fixed
+
+A correctly prepared press file includes a 3mm bleed zone on each edge — extra content that extends beyond the trim marks, so that when the paper is cut, any slight variation in cut position doesn't produce an unprinted white border on the final trimmed page.
+
+When an A5 file is scaled to A4, the bleed zones scale with it. A 3mm bleed on an A5 page becomes a 3mm × √2 ≈ 4.24mm bleed on the scaled A4 page. This doesn't match the standard 3mm specification. Some print shops will accept it; others will flag the file; a few will trim to the wrong mark and produce a visually degraded result.
+
+A natively generated A4 file has 3mm bleeds at A4. Not scaled bleeds. Correct bleeds, specified for the output format.
+
+## Problem 3: TrimBox and BleedBox describe the wrong geometry
+
+A PDF contains page boxes in its internal dictionary: `MediaBox` (the full page), `TrimBox` (the intended finished size after trimming), and `BleedBox` (the area including bleed). These boxes are metadata that prepress software and RIP systems read to determine how to impose and trim the file.
+
+When an A5 PDF is scaled to A4, the page dimensions scale. The `TrimBox` and `BleedBox` entries do not — or if they do, they describe the A4 geometry in scaled A5 coordinates, which produces the same mismatch. The press is working from a document that thinks it is one size while the paper is another.
+
+The result can be: wrong imposition, trim marks in the wrong position, or a press operator who flags the file before it goes on press — adding delay and cost to the job.
+
+## The correct approach: generate natively
+
+`make a4` generates the A4 layout from the same source as `make tome1`, but with different geometry parameters. The Makefile passes A4 page dimensions, margins recalculated for A4, and image placements recalculated for the larger format. Every measurement is specified for the output format from the start.
+
+This is exactly the property that makes a `make`-driven single-source pipeline worth the setup cost. The alternative — producing A5 and asking the print shop to handle the rest — is a false economy. The print shop's upscaling is technically free; the time spent fixing the resulting file is not.
+
+## Who needs to know this
+
+Most technical writers producing documentation never encounter this problem, because their outputs are digital or sized consistently. But anyone producing a multi-format print artifact — a book in A5 and A4, a poster in A3 and A1, a leaflet in DL and A4 — will eventually hit one of these three traps.
+
+The resolution degradation is the most widely understood, but it's also the most avoidable: check your ppi at the output size before sending to press. The bleed zone and TrimBox problems are more obscure. They're also the ones that produce physically wrong output rather than merely softer output — the kind of wrong that requires a rerun, not just a judgment call about acceptable quality.
+
+Native generation for each target format is the answer to all three. It's more work upfront. It's much less work when the file comes back from the proof and needs to be corrected.
