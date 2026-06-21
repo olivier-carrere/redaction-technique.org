@@ -1,0 +1,62 @@
+---
+draft: true
+title: "Docs-as-Code Applied to a Poster: Familiar Principle, Unusual Artifact"
+snippet: "Docs-as-code is a discipline almost always illustrated with API reference, developer guides, or technical manuals. A two-page A3 annual planning poster with a custom colour palette and a generated 12-month calendar grid is a different kind of artifact — and the principle works anyway, for exactly the same reasons."
+image: {
+    src: "/images/blog/planning-layout-content-data.webp",
+    alt: "Five distinct layers — YAML data, translations, typographic constants, Python generator, LaTeX form — converging into language-specific PDFs"
+}
+publishDate: "2026-06-25 01:00"
+category: "Blog"
+author: "Olivier Carrère"
+tags: [docs-as-code, latex, yaml, automation, single-source-of-truth]
+---
+
+## The assumption baked into every docs-as-code article
+
+The [books-as-code manifesto](https://redaction-technique.org/blog/books-as-code-manifesto) argued that a book is a repository: plain-text sources, Git history, a reproducible build. That post's artifact — a three-volume edition of a teacher's talks — is unusual for docs-as-code writing, which typically assumes HTML or PDF output from a documentation site generator.
+
+The planning poster is more unusual still. It is not documentation. It is not a book. It is a design-heavy annual print artifact: two pages, A3 landscape, custom colour palette, a 12-month calendar grid that resets every September, event descriptions with prices and director references, three language editions, press-ready PDF/X-4 output with CMYK colour management and bleed geometry.
+
+Almost everything about it differs from the artifacts that docs-as-code writing assumes. And the principle applies anyway.
+
+## What makes the poster a different challenge
+
+**The content is not prose.** A book has chapters and paragraphs. A documentation site has pages and sections. The planning poster has a calendar grid with approximately 370 cells, event blocks with structured fields (date, director, price tiers), a certified-masters list, pricing tables, and practical information in three languages. The data model is relational, not hierarchical.
+
+**The format is design-first.** A documentation site can use a default theme and be functional. A planning poster is a physical object that will be printed, posted, handled, and read at arm's length. Typography, colour, and spatial layout are not adjustable parameters — they are part of the artifact's utility. A cell label that reads at arm's length, a colour that distinguishes retreat types under fluorescent lighting: these are functional requirements, not aesthetic preferences.
+
+**The update cycle creates structural inconsistency risk.** The poster recurs annually. The same fields update every year: dates, prices, director assignments. Other fields stay stable: venue addresses, bank account details, the certified-masters list. In a hand-maintained InDesign file, the distinction between "update this every year" and "update this rarely" is enforced by the editor's memory. In a structured pipeline, it's enforced by the data model.
+
+**The output requirements are print-specific.** PDF/X-4 compliance. CMYK throughout. 300 ppi minimum for rasterised images. TrimBox and BleedBox geometry correct to the millimetre. These requirements don't exist for a documentation site. They require specific toolchain choices (the `pdfx` LaTeX package, `Pillow` + LittleCMS for image conversion, `pikepdf` + `PyMuPDF` for preflight) that have no equivalent in a typical docs-as-code setup.
+
+## Why the principle applies anyway
+
+None of these differences change the underlying problem the principle solves.
+
+The planning poster has facts that appear in multiple places: a director's name in the event block, the calendar label, and the certified-masters list. An IBAN in the registration section and the transport section. Event dates in the calendar grid and in the event description. In an InDesign file, each of these is an independent copy. Correct one; the others remain wrong unless the editor knows to look.
+
+The docs-as-code approach gives each fact exactly one home. The director's name lives in `godos.yaml`. The IBAN lives in `events.yaml`. The generator reads both and populates all occurrences from the same source. Correct the name in YAML; rebuild; all three occurrences are correct. This is not a property of LaTeX or of YAML or of any specific tool. It's a property of having a structured data model with one home per fact.
+
+The poster also has a build that benefits from determinism and reproducibility. The calendar grid — 370 cells, weekday alignment computed from the first day of September — is either correct for the season or it isn't. In a hand-maintained grid, every cell must be rechecked. In a generated grid, the cells are correct by construction: they follow from the event dates in YAML. A correctness guarantee from the data model is stronger than a correctness guarantee from the editor's attention.
+
+## The poster as a companion to the book
+
+The [books-as-code manifesto](https://redaction-technique.org/blog/books-as-code-manifesto) and this post are siblings, not duplicates. Both argue that docs-as-code works outside its usual domain. But the arguments are different because the artifacts are different.
+
+The book's argument is about **longevity and craft**: a teacher's voice preserved in a reproducible artifact, with a commit hash in the colophon and a QR code linking back to the original recordings. The structural discipline serves a human purpose — keeping the voice legible, reproducible, and reachable — that is distinct from any technical advantage.
+
+The poster's argument is about **operational efficiency**: an annual document that recurs, involves non-technical editors, must be consistent across multiple surfaces, and must meet commercial print specifications. The structural discipline serves a practical purpose — reducing the annual maintenance burden and eliminating a class of consistency errors — that is easier to quantify.
+
+The book shows what docs-as-code enables at the craft level. The poster shows what it enables at the operational level. Together they suggest that the discipline's domain is broader than its usual application — that any document with structured data, multiple derived surfaces, and an update cycle is a candidate, regardless of output format or editorial context.
+
+## The test worth applying
+
+The test is not "is this a technical document?" or "does it produce HTML?". It is:
+
+- Does the document contain facts that appear in more than one place?
+- Does it recur, or need to be reproduced reliably from the same source?
+- Does it involve more than one contributor, or need to be updated by someone other than the person who designed it?
+- Would a global change — a corrected IBAN, a renamed section, a new colour for a category — currently require finding and updating multiple locations by hand?
+
+If the answer to any of these is yes, the document has the problem that docs-as-code solves. The artifact's format — poster, book, manual, API reference — is secondary. The structural problem is the same.
