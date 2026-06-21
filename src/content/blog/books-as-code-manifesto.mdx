@@ -1,0 +1,53 @@
+---
+draft: true
+title: "Books as Code: The Manifesto"
+snippet: "A book is a software project that happens to produce a physical artifact. Plain-text sources, Git history, a reproducible build — the docs-as-code discipline applied to print."
+image: {
+    src: "/images/blog/how-to-read-book.webp",
+    alt: "Annotated diagram showing how to read the book: poem, poem commentary, QR code linking to audio and video, glossary, gauge, section markers, title and metadata"
+}
+publishDate: "2026-06-11 01:00"
+category: "Blog"
+author: "Olivier Carrère"
+tags: [docs-as-code, latex, git, single-source-of-truth, automation]
+---
+
+## A book is a repository
+
+The instinct, when you have a stack of Word transcriptions, is to open a word processor and start formatting. That path leads where it always leads: a brittle file nobody else can rebuild, layout tangled into content, and no way to ask *what changed between this version and the last one?*
+
+The alternative is to treat a book the same way a software team treats a codebase. Not as a metaphor — as a literal architectural decision. Plain-text sources. Git history. A build system that produces the artifact on demand. A clean separation between content and presentation.
+
+This is what [storing content in plain files rather than a database](https://redaction-technique.org/blog/manage-content-in-files-not-databases) looks like when applied to print. The source is text. The history is legible. The build is reproducible. Collaboration doesn't require sharing a binary file by email.
+
+## What this means in practice
+
+In a LaTeX project under Git, the book's source looks like any other repository: files you can read in a text editor, commits you can diff, branches you can merge or revert. The working directory on your machine is interchangeable with the CI runner's. The PDF that comes out of `make` on your laptop is the same PDF that comes out of the automated build — because the inputs and the toolchain are identical.
+
+Every physical copy of the book carries the **Git commit hash** in its colophon. That hash is a permanent address in the repository. Check out that revision, run `make`, and the volume in your hands rebuilds — same text, same layout, same page count — from source.
+
+The pipeline is linear and auditable:
+
+> **Spoken talk → audio recording → Word transcription → LaTeX → print**
+>
+> A parallel branch exports Markdown for the web. A third denoises the audio for streaming. QR codes stitch the three back together.
+
+Every step is traceable. Nothing is hand-assembled.
+
+## Why this isn't just a LaTeX preference
+
+The choice of toolchain matters less than the discipline it enables. The core principle is the one behind any reproducible build: the artifact is a function of the source and the environment, not of whoever happened to be at the keyboard when it was last saved.
+
+That property becomes valuable the moment more than one person touches the work — or the moment anyone needs to reproduce the work more than once. For a single-author document produced once, a word processor is fine. For a multi-contributor project that ships multiple formats, evolves over time, and needs to be rebuilt on demand, the word-processor model breaks down immediately.
+
+Docs-as-code applies the answer that software engineering already arrived at decades ago: version-control the source, automate the build, keep format and content separate.
+
+## The discipline scales
+
+This project produced three volumes, seven build targets, two languages, and a web edition from one LaTeX corpus. It ran 167 commits in thirteen days. It absorbed last-minute layout fixes across 136 pages without anyone touching a single page by hand. A one-line change to a macro propagated instantly to every occurrence across all three volumes.
+
+None of that is unique to books. It's the same property that makes CI pipelines worth running and YAML single-source-of-truth systems worth building. The medium is print; the discipline is engineering.
+
+The other posts in this series go deeper on specific parts of the system: [reproducible builds and the build environment record](https://redaction-technique.org/blog/reproducible-builds-for-print), [the `make`-target table as a single-source-of-truth case study](https://redaction-technique.org/blog/one-source-many-outputs), [CI/CD for a printed book](https://redaction-technique.org/blog/cicd-for-printed-book), and [what makes late changes cheap instead of dangerous](https://redaction-technique.org/blog/latex-git-vs-indesign-late-changes).
+
+The short version: a book is a repository. Build it like one.
