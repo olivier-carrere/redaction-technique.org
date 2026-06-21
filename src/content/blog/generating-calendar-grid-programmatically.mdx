@@ -1,0 +1,94 @@
+---
+draft: true
+title: "Generating a Calendar Grid Programmatically: 370 Cells That Redraw Themselves from YAML"
+snippet: "The planning poster's 12-month calendar grid — roughly 370 cells, weekday alignment recomputed for each new season, event colours placed on the correct week spans — is generated entirely by a Python script from YAML event data. Change a date; rebuild; the grid redraws itself."
+image: {
+    src: "/images/blog/planning-layout-content-data.webp",
+    alt: "Five distinct layers — YAML data, translations, typographic constants, Python generator, LaTeX form — converging into language-specific PDFs"
+}
+publishDate: "2026-06-25 01:00"
+category: "Blog"
+author: "Olivier Carrère"
+tags: [docs-as-code, yaml, automation, single-source-of-truth]
+---
+
+## The problem the grid solves
+
+Page 1 of the annual planning poster is dominated by a 12-month calendar grid. September opens the year; August closes it. Across those twelve months, approximately 370 cells — one per day, grouped by week, labelled with a day-of-week abbreviation — must be printed correctly.
+
+In the original InDesign file, this grid was rebuilt by hand each year. The weekday alignment shifts every season: September 2025 opens on a Monday, September 2026 on a Tuesday, September 2027 on a Friday. There is no carrying last year's grid forward. Every cell must be rechecked — all 370 of them. For each event on the calendar, the correct cells must be filled with the correct colour (preparation days, session days, maintenance-work days each have their own shade) and a label positioned by hand over the right week span.
+
+The failure mode is quiet. A preparation day coloured in session colour. A label spanning the wrong week. A colour that ran one day too long because the date shifted between draft and final and the grid wasn't re-verified.
+
+The `CalendarGrid` class eliminates this class of error by generating the grid entirely from data.
+
+## The generation logic
+
+The `CalendarGrid` class in `gen_calendar.py` takes the loaded event data and produces `calendar_body.tex` — the complete LaTeX table body for the grid.
+
+The logic runs in three stages:
+
+**Stage 1: Compute weekday alignment.** For each month in the planning year (September through August), calculate the day of the week of the first day. This determines how many blank cells to insert before the first day of the month. `datetime.date(year, month, 1).weekday()` returns 0 for Monday, 6 for Sunday.
+
+**Stage 2: Assign colour classes.** Walk through every day in the calendar year. For each day, check the event list and assign a colour class:
+- Preparation days get the preparation colour
+- Sesshin (retreat) days get the sesshin colour  
+- Samu (maintenance-work) days get the samu colour
+- Days with no event are left uncoloured
+
+The assignment runs in three priority passes — external sesshins, then temple events, then the summer camp — so that events that share a date are coloured by the highest-priority rule.
+
+**Stage 3: Emit the LaTeX table body.** Walk through the days again and emit one LaTeX cell per day, with:
+- A `\colorbox` call using the assigned colour class name
+- The day number as content
+- The appropriate column separator for the weekday position (Monday starts a new row)
+- Event labels placed on the correct week span using `\multicolumn`
+
+The result is `calendar_body.tex`: a LaTeX table body of roughly 370 cells, ready to be `\input{}`-ted into the shared template.
+
+## What the YAML drives
+
+A single event entry in `events.yaml` is all the grid needs to colour a date range and place a label:
+
+```yaml
+- title: Sesshin du Sud
+  date: 2025-10-04
+  to: 2025-10-05
+  type: sesshin
+  dojo: temple Yujo Nyusanji
+  godo:
+    - Geneviève Sen Gyo Perrier
+  prix:
+    normal: 110
+    reduit: 85
+```
+
+The generator reads `date` and `to` to determine which cells to colour. It reads `type` to determine which colour to apply. It reads `title` (or the translated `trad_key` label if present) to produce the label. The rest of the fields — `dojo`, `godo`, `prix` — go to the event description block, not to the grid.
+
+Change `date: 2025-10-04` to `date: 2025-10-11`, re-run the generator, and the grid redraws: the previous week's cells are uncoloured, the new week's cells are coloured in sesshin colour, and the label moves to the new week span. No manual cell-by-cell update. No possibility of missing one cell out of 370.
+
+## The colour palette in YAML
+
+The colour names used in the grid are defined in `layout.yaml` under a `colors:` key, as CMYK tuples:
+
+```yaml
+colors:
+  sesshin:     [0.0, 0.45, 0.85, 0.05]
+  preparation: [0.0, 0.10, 0.35, 0.0]
+  samu:        [0.15, 0.0, 0.55, 0.0]
+  camp:        [0.0, 0.25, 0.60, 0.0]
+```
+
+The generator exports these as `\definecolor` commands in `planning_meta.tex`. The calendar body references colour names, not values. If the preparation colour changes, the YAML changes, the generator re-exports the `\definecolor` command, and every preparation day in the grid updates — without touching `calendar_body.tex`.
+
+## The translation layer
+
+The day-of-week abbreviations in the column headers — `L M M J V S D` for French, `M T W T F S S` for English — come from `traduction.yaml`. The generator reads the abbreviations for the active language and emits them as the column header row. The same calendar body is produced with the correct abbreviations for each language edition; the grid structure is language-independent.
+
+## The answer to "rechecked every cell by hand"
+
+The original InDesign workflow required rechecking every cell by hand, every year, for every event. In a 12-month grid with 370 cells and a dozen events per season, that's a significant amount of careful, repetitive visual inspection — exactly the kind of work where a single tired afternoon produces an error that survives to the printed copy.
+
+The generated grid eliminates the recheck because there is nothing to recheck. The cells are correct by construction: they're computed from the dates in YAML, coloured by the event types in YAML, labelled with the translated strings from YAML. An error in the grid is an error in the data, and data errors are caught by the generator's validation step before any LaTeX runs.
+
+The human task is to ensure the YAML is correct. That's one verified source, not 370 cells.
