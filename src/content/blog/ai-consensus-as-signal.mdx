@@ -1,0 +1,66 @@
+---
+draft: true
+title: "AI Consensus as Signal: Two Independent Reviews, One Score, One Critical Finding"
+snippet: "The cover was submitted twice to an AI reviewer, independently, with the same brief. Both sessions returned 8.5/10. Both surfaced the same critical finding. Where reviewers agree tells you what's solid; where they diverge tells you what to test."
+image: {
+    src: "/images/blog/shinjinmei-tome-1-couverture.webp",
+    alt: "Full cover spread for Commentaires du Shinjinmei Tome I — front cover, spine, and back cover"
+}
+publishDate: "2026-06-18 01:00"
+category: "Blog"
+author: "Olivier Carrère"
+tags: [ai, prompting, typography]
+---
+
+## Why run the same review twice
+
+A single AI review has a problem: you don't know how much of the output is signal and how much is noise. The model may have fixated on something incidental, missed something structural, or weighted the same features differently depending on what else was in context. One review gives you one perspective. It may be accurate; it may be the model's equivalent of noticing the wrong thing.
+
+Running the same review twice, independently — two sessions, same brief, same PDF, no shared context — lets you separate signal from noise. What both sessions agree on is probably real. What only one session notices is a candidate for closer examination, not immediate action.
+
+This is how the cover review worked.
+
+## The cover
+
+![Full cover spread for Commentaires du Shinjinmei Tome I — front cover, spine, and back cover](/images/blog/shinjinmei-tome-1-couverture.webp)
+
+The cover was submitted to an AI reviewer twice, independently, using the persona prompt: *"You're an experienced typographer. Review this before printing."*
+
+Both sessions returned **8.5/10**.
+
+## Where they agreed: strengths
+
+The convergence on strengths was precise. Both reviews identified:
+
+- Visual hierarchy descending clearly from the Chinese calligram to title, subtitle, volume number, author, and publisher
+- Generous whitespace
+- An atmosphere of sober contemplation suited to the subject matter
+- The classical Roman typeface, the turquoise accent, and the small caps for the author's name reading as intended
+
+When two independent reviewers, with no shared context, identify the same strengths in the same terms, those strengths are probably real. They're what the design is doing correctly, not what one reviewer happened to notice.
+
+## Where they agreed: the critical finding
+
+Both sessions surfaced the same critical finding, phrased almost identically. The cover contains anomalous characters in extracted PDF text: `pre￾mier`, `héri￾tier`, `trans￾mission`. The character appearing between syllables is not a hyphen. It is a **soft hyphen** (`U+00AD`) — a Unicode conditional break signal that is invisible in normal reading but surfaces as `￾` when text is extracted from the PDF.
+
+This is exactly the kind of finding that becomes invisible when you've been staring at the same file for a week. The characters look correct on screen. They print correctly. The problem only surfaces at text extraction — PDF accessibility checkers, search indexing, copy-paste. Both reviewers caught it independently. That convergence is what elevated it from "minor note" to "fix before sending to press."
+
+The [soft hyphen post](https://redaction-technique.org/blog/soft-hyphen-u00ad) goes deeper on what it is, where it comes from, and how to find and remove it.
+
+## Where they diverged: the spine
+
+The one meaningful divergence was on the spine.
+
+One reviewer called it "particularly successful — often the hardest part of a cover." The other suggested breaking its single line of text across three shorter lines for better shelf legibility.
+
+This is useful disagreement. Not because one reviewer is right and the other wrong — both observations are defensible — but because the divergence identifies something worth testing. The spine is a design element where reasonable practitioners disagree. It's the thing to show a human with strong opinions about cover design before going to press.
+
+Where both reviewers agree, you have validated decisions. Where they diverge, you have open questions. Both are worth knowing.
+
+## The meta-lesson: agreement as a quality signal
+
+The 8.5/10 score from two independent sessions is more meaningful than 8.5/10 from one. The score itself is less important than the consistency — it's evidence that the model is responding to something real in the PDF rather than to session-specific noise.
+
+The same logic applies to the action items. Three items came back from each session. Some overlapped; all were actionable. The overlap is the priority list. The non-overlapping items are candidates for a second look, not automatic dismissal.
+
+For any high-stakes review — a document going to print, code shipping to production, a design going to a client — running the review twice and comparing the outputs costs a few minutes. What it buys is a rough separation between what's solid and what's still open. That's worth more than a single higher-confidence-feeling review that may be confidently wrong.
