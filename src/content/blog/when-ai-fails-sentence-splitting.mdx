@@ -1,0 +1,55 @@
+---
+draft: true
+title: "When AI Fails: The Sentence-Splitting Post-Mortem"
+snippet: "Mistral cut long sentences at grammatically valid but rhythmically wrong points, producing choppy fragments that lost the teacher's spoken cadence. An honest account of what didn't work — and why it was harder to detect than a compile error."
+image: {
+    src: "/images/blog/how-to-read-book.webp",
+    alt: "Annotated diagram showing how to read the book: poem, poem commentary, QR code linking to audio and video, glossary, gauge, section markers, title and metadata"
+}
+publishDate: "2026-06-19 01:00"
+category: "Blog"
+author: "Olivier Carrère"
+tags: [ai, automation, docs-as-code]
+---
+
+## The step that earns its place in the diagram but not in the success column
+
+The nine-step pipeline that transforms transcriptions into `.tex` files has a weak link. Step 5 — `split_sentences.py` — called Mistral to break long sentences into shorter ones for improved readability. The task seemed well-suited for a language model: it requires syntactic understanding, contextual judgment, and knowledge of where a sentence can be divided without distorting its meaning.
+
+The output was technically correct. The sentences Mistral produced were grammatically valid, properly punctuated, and individually coherent. They also failed — not catastrophically, but in a way that was harder to detect and more expensive to fix than a compile error.
+
+## What went wrong
+
+The teacher's spoken style carries a distinctive rhythm. His talks were dharma talks — discourses on Zen practice and classical texts, delivered to practitioners in dojos, shaped by twenty years of teaching the same material to different audiences. Long sentences in his talks are often long for a reason: they carry a thought through qualification, qualification of qualification, and resolution in a way that short sentences can't sustain.
+
+Mistral cut these sentences at grammatically valid points — coordinating conjunctions, transitional clauses, the seam between a subject and its elaboration. Each cut was defensible. The cumulative effect was choppy: fragments that each said something, but lost the unfolding quality that made the original worth preserving. The spoken cadence — the thing the project existed to keep — was gone from the passages Mistral had processed.
+
+An example (paraphrased):
+
+> **Original:** "When we speak of the mind that does not hold on, we are not speaking of a mind that is empty of content, but of a mind that receives what arises without grasping, in the same way that a mirror receives whatever stands before it without choosing."
+
+> **Split:** "When we speak of the mind that does not hold on, we are not speaking of a mind that is empty of content. We speak of a mind that receives what arises without grasping. This is like a mirror receiving whatever stands before it without choosing."
+
+The split version says the same things. It does not say them the same way. For a technical document, this is an acceptable tradeoff. For transcribed teachings being preserved for a posthumous edition, it is not.
+
+## Why it was harder to catch than a compile error
+
+A LaTeX compile error announces itself. The build fails; the log identifies the line; the problem is unambiguous. A sentence-splitting error looks fine. It passes a spellcheck. It passes a grammar check. It looks slightly simpler than the original, which can seem like an improvement.
+
+To recognise the failure, you need to know what you're preserving. The sentence structure is not a stylistic preference to be optimised away — it's part of what makes the teaching distinctive. Knowing that requires having read the talks carefully enough to have an internalized sense of what the voice sounds like. The AI had no access to that judgment. The human reviewing the output had to supply it.
+
+This is the diagnostic challenge with failures in the subjective register: they don't fail loudly. They degrade quietly, and the degradation is only visible to someone who knows what the original should have felt like.
+
+## What the failure cost
+
+The sentence-splitting pass had to be reviewed and rewritten by hand for every passage it had processed. This took longer than leaving the original sentences alone would have. The net contribution of the step was negative: it produced work to undo rather than work to keep.
+
+This is an honest account. Not every step in a pipeline earns its keep. The step is still documented — in the pipeline diagram, in the book itself — because the failure is part of the record. A project that only documents its successes is a project that's harder to learn from.
+
+## What this implies for AI-assisted editing
+
+The sentence-splitting failure illustrates a category of task where AI assistance is genuinely unreliable: tasks where the quality criterion is not expressible as a rule and cannot be checked automatically. Grammar is checkable. Rhythm is not. Grammatical validity is necessary but not sufficient for preserving a voice.
+
+The implication is not that AI shouldn't attempt stylistic work. It's that stylistic AI tasks require a human reviewer with enough domain knowledge to evaluate the output against the original intent — not just against surface correctness. And it means that when the review cost exceeds the generation benefit, the task should be flagged as not worth automating.
+
+For this project, sentence splitting wasn't worth automating. The pass was removed and the long sentences remained. The teacher's cadence, once recognised as the thing being preserved, was treated as a constraint rather than a target for optimisation.
