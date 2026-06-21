@@ -1,0 +1,72 @@
+---
+draft: true
+title: "Letting Non-Technical People Drive a Docs-as-Code Pipeline"
+snippet: "Edit events.yaml in the GitHub browser editor → open a PR → the CI diff comment lists every changed date, price, and event → merge → six press-ready PDFs. No LaTeX, no Python, no local tools. How low the barrier can actually go — and where it can't go lower."
+image: {
+    src: "/images/blog/planning-layout-content-data.webp",
+    alt: "Five distinct layers — YAML data, translations, typographic constants, Python generator, LaTeX form — converging into language-specific PDFs"
+}
+publishDate: "2026-06-30 01:00"
+category: "Blog"
+author: "Olivier Carrère"
+tags: [docs-as-code, yaml, automation, ci-cd]
+---
+
+## The barrier that matters
+
+A docs-as-code pipeline is only as useful as the people who can update it. If the person who knows the retreat dates also needs to know how to install LuaLaTeX, set up Python virtual environments, and push to a Git remote, the pipeline has the wrong barrier in the wrong place.
+
+The technical infrastructure — Python generator, LaTeX build, GitHub Actions CI — is not what changes every year. What changes every year is `events.yaml`: a YAML file with dates, prices, and director names. If the person who maintains the retreat calendar can edit `events.yaml` without leaving a web browser, the pipeline does its job. Everything else is hidden complexity that they never need to see.
+
+## The browser workflow
+
+The entire annual update can be performed on GitHub.com:
+
+1. **Open `planning/events.yaml`** in the GitHub file browser. Click the pencil icon to edit in place.
+2. **Copy the previous season block**, update three fields: `saison`, `annee`, and the per-event `date`, `to`, and `godo` entries.
+3. **Commit to a new branch** using the "Create a new branch" option in the commit dialog.
+4. **Open a Pull Request** from the branch. GitHub prompts for this automatically after the commit.
+
+At this point, the CI pipeline runs. Within a few minutes, the diff job posts a comment on the PR listing every changed date, price, and event compared with the previous season — the same comparison `make diff-saison` runs locally, but automatic and attached to the PR where reviewers can see it.
+
+The comment format is a structured diff: events added, events removed, events changed with before/after values for dates, prices, and director names. A reviewer can read this comment and know exactly what will appear in the printed poster before merging.
+
+If anything looks wrong — a price that wasn't updated, a date that needs correction, a director name that changed — push a correction commit to the same branch. The CI diff comment updates on every push. The PR is the review record.
+
+When the diff looks right, merge. The build job runs on `main`, produces six press-ready PDFs (French, English, and Spanish editions of the current and upcoming seasons), and makes them available as downloadable artifacts from the Actions tab.
+
+No LaTeX. No Python. No local tools.
+
+## The web form prototype
+
+A further step down the barrier is demonstrated at [zen-paris.org/planning-mockup.html](https://www.zen-paris.org/planning-mockup.html): a guided three-step form — season code and language selector, then session entry, then a "Générer le planning" action — that mirrors the data structure of `events.yaml` and connects to the same GitHub Actions pipeline.
+
+The prototype runs against pre-filled 2025–2026 data. The completion state shows a PDF preview and a download link alongside a reference to the Actions build log. The pipeline it demonstrates is production.
+
+A form like this eliminates the need to understand YAML syntax at all. A volunteer who knows the retreat calendar but has never seen a YAML file can fill in a web form with dates and prices and trigger a press-ready PDF. The form validates inputs, prevents invalid combinations, and generates the YAML structure behind the scenes.
+
+## The Google Sheets alternative — and why it was rejected
+
+A considered alternative: a Google Sheet with an Apps Script button that commits an updated `events.yaml` to the repository via the GitHub API, triggering CI automatically. Or: a `workflow_dispatch` trigger that fetches a sheet URL via the Sheets API.
+
+The tradeoff is real. A Google Sheet is a familiar interface for people who edit annual calendars. Cells are more forgiving than YAML syntax. Sharing and commenting are built in.
+
+But the tradeoff has costs:
+
+- The sheet's column structure must stay in sync with the YAML schema. A new field added to the YAML requires updating the sheet and the Apps Script that reads it.
+- A GitHub token must live in Apps Script (or a Sheets API key in Actions secrets) — two external credentials to manage, each with its own rotation and revocation process.
+- The validation that the generator performs on the YAML — unknown directors, malformed dates, missing required fields — must be duplicated or the sheet generates a broken YAML that fails at build time with a cryptic error.
+
+The current setup already lets non-technical users edit `events.yaml` on GitHub.com through the browser editor, with PR diff comments catching mistakes before merge. The barrier is YAML syntax, which is readable enough for structured calendar data: dates, prices, and names in a consistent structure. Users are not blocked by it.
+
+Adding the Google Sheets layer would buy a more familiar interface and cost two external credentials, a synchronisation dependency, and a validation gap. Given that the current setup works, the added complexity is only worth it if users are genuinely blocked. They are not.
+
+## Where the barrier can't go lower
+
+Some barriers are irreducible. The YAML file is the data model; someone has to understand the data model well enough to fill it in correctly. A `remote_key` field that resolves against the live website requires knowing which key to use. A `trad_key` that maps to a translated label requires knowing which label to use.
+
+These are knowledge barriers, not tool barriers. A web form can remove the need to know YAML syntax. It cannot remove the need to know which retreat is which, which director leads which session, what the prices are, and when the dates are.
+
+The person who knows those things is the person who maintains the retreat calendar. The pipeline's job is to make sure that person doesn't also need to be the person who knows LaTeX, Python, Git, and GitHub Actions.
+
+On that measure, the browser workflow delivers: edit a YAML file in a web interface, open a PR, review a structured diff, merge, and download six press-ready PDFs. The technical complexity is fully hidden. The knowledge requirement — knowing the retreat programme — is exactly and only what it should be.
