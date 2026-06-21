@@ -1,0 +1,89 @@
+name: Weekly publish
+
+# Each Tuesday at 10:00 Europe/Paris, promote the post scheduled for today from the
+# `draft` branch onto `main`. The commit to main triggers Vercel's existing auto-deploy,
+# so nothing has to be configured on Vercel.
+#
+# A literal `git merge draft` would publish all posts at once, so instead this promotes
+# exactly the one file named in publish-queue.csv for today's date.
+#
+# GitHub cron is UTC-only and DST-unaware, so two UTC times cover 10:00 Paris across the
+# year and the guard keeps only the one that is correct today.
+
+on:
+  schedule:
+    - cron: '0 8 * * 2'   # 10:00 Paris (CEST, summer, UTC+2)
+    - cron: '0 9 * * 2'   # 10:00 Paris (CET,  winter, UTC+1)
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Publish the post queued for this date (YYYY-MM-DD). Blank = today in Paris."
+        required: false
+
+permissions:
+  contents: write          # required to push the promotion commit to main
+
+env:
+  BLOG_DIR: src/content/blog   # adjust if your posts live elsewhere
+  DRAFT_BRANCH: draft
+  QUEUE: publish-queue.csv     # lives at the repo root on main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Decide whether this run should publish
+        id: gate
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "go=true" >> "$GITHUB_OUTPUT"
+          else
+            HOUR="$(TZ='Europe/Paris' date +%H)"
+            echo "Paris hour: $HOUR"
+            if [ "$HOUR" = "10" ]; then echo "go=true" >> "$GITHUB_OUTPUT"; else echo "go=false" >> "$GITHUB_OUTPUT"; fi
+          fi
+
+      - name: Check out main
+        if: steps.gate.outputs.go == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Promote today's post from the draft branch
+        if: steps.gate.outputs.go == 'true'
+        run: |
+          set -euo pipefail
+
+          TODAY="${{ github.event.inputs.date }}"
+          [ -z "$TODAY" ] && TODAY="$(TZ='Europe/Paris' date +%F)"
+          echo "Publish date: $TODAY"
+
+          FILE="$(awk -F, -v d="$TODAY" '$1==d {print $2; exit}' "$QUEUE" || true)"
+          if [ -z "${FILE:-}" ]; then
+            echo "No post scheduled for $TODAY — nothing to do."
+            exit 0
+          fi
+          echo "Scheduled post: $FILE"
+
+          # Pull just that file's content from the tip of the draft branch.
+          git fetch origin "$DRAFT_BRANCH"
+          git checkout FETCH_HEAD -- "$BLOG_DIR/$FILE"
+
+          # Make it live: flip the draft flag and stamp the publish date.
+          # (Remove the publishDate line if your posts already carry the date you want shown.)
+          sed -i 's/^draft:[[:space:]]*true/draft: false/' "$BLOG_DIR/$FILE"
+          sed -i "s|^publishDate:.*|publishDate: \"$TODAY 10:00\"|" "$BLOG_DIR/$FILE"
+
+          git config user.name  "publish-bot"
+          git config user.email "publish-bot@users.noreply.github.com"
+          git add "$BLOG_DIR/$FILE"
+
+          if git diff --cached --quiet; then
+            echo "$FILE is already published and unchanged — skipping commit."
+            exit 0
+          fi
+
+          git commit -m "Publish: $FILE ($TODAY)"
+          git pull --rebase origin main   # avoid a race if main moved since checkout
+          git push origin main
