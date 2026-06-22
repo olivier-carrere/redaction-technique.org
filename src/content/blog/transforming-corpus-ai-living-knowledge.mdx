@@ -20,7 +20,7 @@ How can a non-profit turn 7,000 pages of articles—a vast sea of text—into co
 
 ```mermaid
 flowchart LR
-Files@{ shape: cyl, label: "1.8 million words\n1,800 articles\n7,000 pages" }-->Public[Target audience]
+Files@{ shape: cyl, label: "1.8 million words<br/>1,800 articles<br/>7,000 pages" }-->Public[Target audience]
 ```
 
 
@@ -80,7 +80,7 @@ radar-beta
   curve m["Male"]{77.8, 77.8, 77.8, 77.8, 77.8, 77.8}
   curve w["Age"]{4, 60, 104, 156, 236, 284}
 
-  curve f["Female"]{22.2, 22.2, 22.2, 22.2, 22.2, 22.2}
+  curve fem["Female"]{22.2, 22.2, 22.2, 22.2, 22.2, 22.2}
 
   max 300
   min 0
@@ -109,9 +109,9 @@ The non-profit operates with a very limited budget and cannot afford to hire a c
 ```mermaid
 flowchart LR
 ScoreCheck[Target audience]
-ScoreCheck --> a[Topic 1\nTime and consistency]
-ScoreCheck --> b[Topic 2\nAuthenticity]
-ScoreCheck --> c[Topic 3\nEffectiveness & safety]
+ScoreCheck --> a[Topic 1<br/>Time and consistency]
+ScoreCheck --> b[Topic 2<br/>Authenticity]
+ScoreCheck --> c[Topic 3<br/>Effectiveness & safety]
 ```
 
 Insights like these allow the non-profit to **tailor its content and digests**, ensuring the corpus of articles speaks directly to the needs and questions of younger audiences, while also informing social media and micro-blogging strategies.
@@ -128,15 +128,15 @@ For each topic, the workflow involved:
 
 ```mermaid
 flowchart LR
-Files@{ shape: cyl, label: "1.8 million words\n1,800 articles\n7,000 pages" }
+Files@{ shape: cyl, label: "1.8 million words<br/>1,800 articles<br/>7,000 pages" }
 
-Files --> C@{ shape: docs, label: "1 article per day\nfor 5 years\non website"}
-Files --> Quotes{Quote ranking\n& retrieval}
-Files --> ScoreCheck{Print - 200 pages\ndigests by topic}
+Files --> C@{ shape: docs, label: "1 article per day<br/>for 5 years<br/>on website"}
+Files --> Quotes{Quote ranking<br/>& retrieval}
+Files --> ScoreCheck{Print - 200 pages<br/>digests by topic}
 Quotes --> blue[Micro-blogging]
-ScoreCheck --> E@{ shape: paper-tape, label: "Topic 1\nTime and consistency"}
-ScoreCheck --> F@{ shape: paper-tape, label: "Topic 2\nAuthenticity"}
-ScoreCheck --> G@{ shape: paper-tape, label: "Topic 3\nEffectiveness & safety"}
+ScoreCheck --> E@{ shape: paper-tape, label: "Topic 1<br/>Time and consistency"}
+ScoreCheck --> F@{ shape: paper-tape, label: "Topic 2<br/>Authenticity"}
+ScoreCheck --> G@{ shape: paper-tape, label: "Topic 3<br/>Effectiveness & safety"}
 ```
 
 This process transforms the archive from a static repository into a **living, thematic ecosystem**, where content is both discoverable and shareable.
@@ -167,6 +167,8 @@ Automated workflows assist in reading each article, identifying **topics, tags, 
 
 A Python-based workflow evaluates every article, assigning **semantic scores** that reflect each topic’s presence and intensity.
 The result is a **harmonized dataset**, where every page carries structured metadata—ready for discovery, filtering, or print curation.
+
+A note on what these numbers are and aren't, because the rest of this post leans on them. An `interest_score` of 10 is a model's judgment, produced in the confident register models always use — it is not a measurement, and it has had no contact with an actual reader's interest. The same holds for the "ten most common questions" scanned from forums and the resonance ranking on quotes: useful heuristics for *where to look first*, not evidence of what the audience actually wants. They're a way to triage 7,000 pages no human could read in full, which is genuinely valuable — but triage, not truth. Treated as a starting point for human editorial judgment, they save enormous time. Treated as the judgment itself, they quietly hand the decision of what's worth surfacing from a teacher's life work to a scoring function. For a corpus where the point is fidelity to meaning, that's the line to hold: let the model sort the pile, let a person who knows the material decide what rises from it.
 
 ---
 

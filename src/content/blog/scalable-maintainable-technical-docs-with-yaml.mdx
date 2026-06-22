@@ -454,6 +454,14 @@ A stronger alternative is to **extract data at build time from a structured sour
 
 By decoupling data from presentation, you gain maintainability, consistency, and flexibility as your content grows.
 
+## Where YAML wins — and where it doesn't
+
+The title of this post is deliberately bold, so it's worth scoping the claim honestly: YAML outperforms the alternatives *for a specific job* — structured reference data, modest in size, that builds into a site or feeds an API. Stretch it past that job and the comparison flips, because the alternatives weren't strawmen; each is strong where YAML is weak.
+
+A **database** wins the moment data is large, queried in arbitrary ways, written concurrently by many users, or has to change between builds. The performance "issues" tabled above describe a database pressed into being a static lookup it never needed to be; used as a query engine over relational data, it's YAML that falls apart — there is no `JOIN` across flat files, and a 50,000-row YAML file is a parsing problem, not a source of truth. **Markdown** wins for prose: once content is paragraphs rather than fields, a schema is overhead and Markdown's readability is the whole point. **XML/DITA** still wins where you need *enforced* structure across a large team — schema validation, controlled vocabularies, and specialization are real capabilities that YAML conventions only approximate. And YAML has its own sharp edges a fair comparison shouldn't omit: indentation sensitivity, the `no`/`yes`/`on` boolean traps, and no native schema unless you bolt on JSON Schema or a validator.
+
+The honest version of the claim is narrower and more useful than the headline: for small-to-medium structured reference data you want under Git and rendered many ways, YAML is the best-fit source of truth. That's a common case — common enough to earn a bold title — but it's a lane, not a universal verdict.
+
 ---
 
 <blockquote>

@@ -183,6 +183,8 @@ Files are great for many use cases, but databases make sense when you need:
 
 If your project needs those, a hybrid approach (files for the majority of content + database for the dynamic parts) also works well.
 
+There’s one more cost that isn’t about querying at all: the people. The files approach quietly assumes contributors who are comfortable with Git, branches, and pull requests. For a developer that’s home turf; for a subject-matter expert who just wants to fix a sentence, a WordPress admin box can be genuinely easier than `git commit`. The flat-file model doesn’t remove the editing barrier, it relocates it — from a database admin UI to a command line. Whether that's a win depends entirely on who's editing. Teams that pair the files model with a browser-based editor and pull-request previews get most of the benefit without forcing every contributor through the terminal; teams that don't can find their "simpler" stack is simpler only for the people who built it.
+
 ## Quick practical checklist to get started
 
 1. Keep each post/page as a Markdown file with YAML frontmatter.

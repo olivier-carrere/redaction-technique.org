@@ -1,10 +1,10 @@
 ---
 draft: false
 title: "Transforming a Corpus of 1,800 Articles into an AI-Powered Discovery Service"
-snippet: "DITA brought structure through XML, but its complexity often felt heavy. Markdown offers a lightweight alternative where technical writers can still apply DITA’s information typing principles—using open, freely available tools and without the XML overhead."
+snippet: "1,800 lecture transcripts — 1.8 million words once trapped in Word 97 files — converted to Markdown, scored and tagged by AI, and turned into a searchable discovery platform that also generates print-ready LaTeX anthologies."
 image: {
     src: "/images/blog/transforming-meditation-classes-ai-discovery.webp",
-    alt: "Illustration of a feather symbolizing Markdown as a lightweight alternative to DITA XML"
+    alt: "Illustration of a large text corpus being organized into labelled, searchable categories"
 }
 publishDate: "2025-10-28"
 category: "Blog"
@@ -118,6 +118,8 @@ It works in three stages:
 2. **Gaussian Normalization**
    To ensure a smooth and realistic distribution of results, the raw scores are rebalanced using a **Gaussian (normal) curve**, spreading the final values evenly across the 1–10 range. This avoids clusters of identical scores and makes large-scale data more insightful.
 
+   This step is worth a second look, because it's a presentation choice dressed as a correction. There's no law that thematic relevance is normally distributed — for a corpus built around a few core themes, it may genuinely be bimodal (strongly on-topic or not) or heavily skewed. Forcing those raw scores onto a bell curve spreads them out and makes ranking cleaner, but it also manufactures gradations that may not exist in the underlying material and flattens real clusters that do. It's a reasonable move *if* the goal is "rank everything relative to everything else for browsing"; it's the wrong move if the goal is "find the genuinely on-theme articles," where the raw clustering was the signal, not noise to be smoothed away. Normalize for presentation, but keep the raw score too — the shape of the raw distribution is telling you something about the corpus that the normalized one hides.
+
 
     **AI-Generated Metadata Example**
 
@@ -160,7 +162,7 @@ No one could realistically read 1.8 million words of articles in print — even 
 
 ```mermaid
 flowchart TD
-Files[1,800 Markdown files\n~1.8 million words] --> AI_Eval[AI Scoring]
+Files[1,800 Markdown files<br/>~1.8 million words] --> AI_Eval[AI Scoring]
 AI_Eval --> ScoreCheck{Score Above Threshold?}
 ScoreCheck -->|Yes| BookCheck{Already in Existing Book?}
 
@@ -198,7 +200,7 @@ It performs the entire workflow in a few elegant steps:
 3. **Book Assembly**
    The script then reconstructs a master file, **main.tex**, combining:
 
-   * a custom-themed LaTeX preamble (Garamond typography, A5 format, glossary of practice-related@ terms),
+   * a custom-themed LaTeX preamble (Garamond typography, A5 format, glossary of practice-related terms),
    * **\input{}** references for each chapter,
    * and a closing section with a glossary of key words.
 

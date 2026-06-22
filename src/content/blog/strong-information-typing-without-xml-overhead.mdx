@@ -94,7 +94,7 @@ graph LR
   S2 --> S2c
 
   %% Styling
-  classDef topic fill:#fbe9e4,stroke:#experimental-astro-api-docsdf9277,stroke-width:2px,color:#5a2e23,font-weight:bold,rx:8,ry:8;
+  classDef topic fill:#fbe9e4,stroke:#df9277,stroke-width:2px,color:#5a2e23,font-weight:bold,rx:8,ry:8;
   classDef step fill:#f6d1c5,stroke:#d97d61,stroke-width:2px,color:#4a241a,font-weight:bold,rx:8,ry:8;
   classDef substep fill:#efb9a6,stroke:#c96a52,stroke-width:2px,color:#3d1d15,font-weight:bold,rx:8,ry:8;
 
@@ -168,6 +168,8 @@ By bringing DITA’s principles into lightweight environments, you:
 * Reduce ambiguity for readers.
 * Simplify onboarding for new writers.
 * Make your documentation friendlier to automation and AI-assisted tools.
+
+There is one thing the move loses, and it's worth saying plainly rather than discovering it later. DITA didn't just *encourage* information typing — its schema *enforced* it. A task topic that lacked steps wouldn't validate; the structure was machine-checkable. Markdown enforces nothing: it will render a "task" with no steps, a "reference" with no table, a "concept" that's secretly a procedure, and never complain. So what you carry across is the discipline, not the guarantee. For a small team that internalised the typing mindset, that's usually enough. For a larger or changing team, the discipline drifts unless you rebuild a lighter version of the guardrail — a front-matter `type:` field, page templates per type, a linter or CI check that flags a task topic missing its steps. The mindset is portable; the enforcement has to be re-earned, cheaply, on the new stack.
 
 DITA taught us to think in types, not just topics. Markdown lets us practice that thinking with less overhead, using tools that integrate smoothly into today’s development workflows. [YAML as a single source of truth](/blog/scalable-maintainable-technical-docs-with-yaml) is one powerful complement to this approach—bringing the same structured rigour to reference data.
 
