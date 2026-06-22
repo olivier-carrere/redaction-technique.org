@@ -7,7 +7,7 @@ proofreading: IA
 
 
 
-Like the master philosopher in Molière's Bourgeois gentilhomme, a Python script can easily swap words in a sentence to say the same thing in a more convoluted way:
+Like the philosophy master in Molière's Bourgeois gentilhomme, a Python script can easily swap words in a sentence to say the same thing in a more convoluted way:
 
 So it's up to you to update your tirade with this online Python script:
 
@@ -59,35 +59,35 @@ def jourdain() -> 'html':
     tir.append(marquise1)
     tir.append(vos2)
     tir.append(beaux3)
-    shot.append(eyes4)
-    shot.append(me5)
+    tir.append(eyes4)
+    tir.append(me5)
     tir.append(font6)
-    tir.append(mourir7)
-    shot.append(damour8)
+    tir.append(die7)
+    tir.append(damour8)
 
     """
     8 7 5 6, 0 1, 2 3 4
     D'amour mourir me font, belle Marquise, vos beaux yeux
     """
     results0 = (str.capitalize(tir[8]) + ' ' + tir[7] + ' ' + tir[5] +
-                ' ' + shot[6] + ', ' + str.lower(shot[0]) + ' ' + shot[1] +
-                ', ' + shot[2] + ' ' + shot[3] + ' ' + shot[4] + '.')
+                ' ' + tir[6] + ', ' + str.lower(tir[0]) + ' ' + tir[1] +
+                ', ' + tir[2] + ' ' + tir[3] + ' ' + tir[4] + '.')
 
     """
     2 4 3 8 5 6, 0 1, 7
     Your beautiful eyes of love make me, beautiful Marquise, die
     """
     results1 = (str.capitalize(tir[2]) + ' ' + tir[4] + ' ' + tir[3] + ' ' +
-                shot[8] + ' ' + shot[5] + ' ' + shot[6] + ', ' +
-                str.lower(shot[0]) + ' ' + shot[1] + ', ' + shot[7] + '.')
+                tir[8] + ' ' + tir[5] + ' ' + tir[6] + ', ' +
+                str.lower(tir[0]) + ' ' + tir[1] + ', ' + tir[7] + '.')
 
     """
     7 2 3 4, 0 1, 8 5 6
     Die your beautiful eyes, beautiful Marquise, of love make me
     """
     results2 = (str.capitalize(tir[7]) + ' ' + tir[2] + ' ' + tir[3] +
-                ' ' + shot[4] + ', ' + str.lower(shot[0]) + ' ' + shot[1] + ', ' +
-                shot[8] + ' ' + shot[5] + ' ' + shot[6] + '.')
+                ' ' + tir[4] + ', ' + str.lower(tir[0]) + ' ' + tir[1] + ', ' +
+                tir[8] + ' ' + tir[5] + ' ' + tir[6] + '.')
 
     """
     5 6 2 4 3 7, 0 1, 8
@@ -95,10 +95,10 @@ def jourdain() -> 'html':
     """
     results3 = (str.capitalize(tir[5]) + ' ' + tir[6] + ' ' + tir[2] +
                 ' ' + tir[4] + ' ' + tir[3] + ' ' + tir[7] + ', ' +
-                str.lower(shot[0]) + ' ' + shot[1] + ', ' + shot[8] + '.')
+                str.lower(tir[0]) + ' ' + tir[1] + ', ' + tir[8] + '.')
 
     return render_template('results.html',
-                           the_title='Here's the tirade jourdainisée!',
+                           the_title="Here's the tirade jourdainisée!",
                            the_results0=results0,
                            the_results1=results1,
                            the_results2=results2,
@@ -150,14 +150,14 @@ Here are the templates for generating the basic HTML pages, input and output, ba
 <table>
 <p>Enter your tirade:</p>
 <tr><td><input name='belle' type='TEXT' width='60' value='Belle'></td></tr>
-<tr><td><input name='marquise' type='TEXT' value='Marquise'></td></<tr>
+<tr><td><input name='marquise' type='TEXT' value='Marquise'></td></tr>
 <tr><td><input name='vos' type='TEXT' width='60' value='vos'></td></tr>
-<tr><td><input name='beaux' type='TEXT' value='beaux'></td></<tr>
-<tr><td><input name='eyes' type='TEXT' value='eyes'></td></<tr>
-<tr><td><input name='me' type='TEXT' value='me'></td></<tr>
+<tr><td><input name='beaux' type='TEXT' value='beaux'></td></tr>
+<tr><td><input name='eyes' type='TEXT' value='eyes'></td></tr>
+<tr><td><input name='me' type='TEXT' value='me'></td></tr>
 <tr><td><input name='font' type='TEXT' value='font'></td></tr>
-<tr><td><input name='die' type='TEXT' value='die'></td></<tr>
-<tr><td><input name='damour' type='TEXT' value='d'amour'></td></tr>
+<tr><td><input name='die' type='TEXT' value='die'></td></tr>
+<tr><td><input name='damour' type='TEXT' value="d'amour"></td></tr>
 </table>
 
 <p><input value='Jourdainiser' type='SUBMIT'></p>

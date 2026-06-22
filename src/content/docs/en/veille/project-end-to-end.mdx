@@ -214,7 +214,7 @@ Why choose LaTeX to create the *print* materials instead of a conventional DTP p
 Here's an example of LaTeX code:
 
 ```latex
-\section{faTag Iconographers}
+\section{\faTag{} Iconographers}
 
 \vspace*{\fill}
 
@@ -223,7 +223,7 @@ Here's an example of LaTeX code:
    \item Contact us to join our team of iconographers.
    \item Display a photo from the album \emph{Community}.
    \item Click on \faPencil \textbf{Keywords}.
-   \Add keywords to photos:
+   \item Add keywords to photos:
 
      \begin{itemize}
        \item Indicate \emph{Print} if the photo is suitable for printing, \emph{Web} if not.
@@ -235,7 +235,7 @@ Here's an example of LaTeX code:
 \begin{center}
   \setlength{\fboxsep}{0pt}%
   \setlength{\fboxrule}{0pt}%
-  \fbox{includegraphics[angle=5,width=linewidth]{iconographes}}%
+  \fbox{\includegraphics[angle=5,width=\linewidth]{iconographes}}%
 \end{center}
 ```
 
@@ -259,7 +259,7 @@ Tracking changes in Overleaf or Git effectively prevents errors: it’s easy to 
 **Viewing background changes in GitHub**
 
 ![GitHub diff view showing LaTeX typographic style modifications between document versions](/assets/latex-history-form-github.png)
-**View form modifications in GitHub**!
+**View form modifications in GitHub**
 
 Here’s the evolution of an excerpt from the compiled PDF:
 

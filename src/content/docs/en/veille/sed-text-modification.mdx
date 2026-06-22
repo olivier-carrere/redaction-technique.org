@@ -86,7 +86,7 @@ d'amour mourir me font, Belle marquise, vos beaux yeux.
 That's better, but we've got a capitalization problem. So we're going to use the judiciously placed `/u` and `/l` operators. First, we'll export some variables to make the script more concise and readable:
 
 ```bash
-$ export w="\(\<.*\>)"
+$ export w="\(\<.*\>\)"
 $ export m="$w $w, $w $w $w $w $w $w"
 ```
 
@@ -108,8 +108,8 @@ Vos yeux beaux d'amour me font, belle marquise, mourir.
 
 ```bash
 $ echo "Belle marquise, vos beaux \\\
-eyes make me die of love." |
-sed "s#$m \(d'\<.*\>)# \u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#"
+yeux me font mourir d'amour." |
+sed "s#$m \(d'\<.*\>\)# \u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#"
 Mourir vos beaux yeux, belle marquise, d'amour me font.
 ```
 
@@ -164,21 +164,21 @@ Or else:
 
 ```bash
 echo $declaration |
-sed "s#$m \(d'\<.*\>)#\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8#"
+sed "s#$m \(d'\<.*\>\)#\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8#"
 ```
 
 Or else:
 
 ```bash
 echo $declaration |
-sed "s#$m \(d'\<.*\>)#\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#"
+sed "s#$m \(d'\<.*\>\)#\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#"
 ```
 
 Or else:
 
 ```bash
 echo $declaration |
-sed "s#$m \(d'\<.*\>)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#"
+sed "s#$m \(d'\<.*\>\)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#"
 ```
 
 ## A lot of effort...

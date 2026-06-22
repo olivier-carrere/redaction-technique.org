@@ -53,7 +53,7 @@ We're going to create a database of products with their versions, then format th
         cursor = db.cursor()
     
         for data in prods:
-            cursor.execute('INSERT INTO products (product, version) <abbr title="?, ?">VALUES</abbr> ',
+            cursor.execute('INSERT INTO products (product, version) VALUES (?, ?)',
                            data)
     
         db.commit()
@@ -70,7 +70,7 @@ We're going to create a database of products with their versions, then format th
 
 3. Create the following `modele-sql.rst` file:
 
-    ```sql
+    ```rst
     {% for prod in product %}
     {{ prod | capitalize }}
     {% for c in prod %}-{% endfor %}
@@ -91,7 +91,7 @@ We're going to create a database of products with their versions, then format th
     env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'))
     template = env.get_template('modele-sql.rst')
     
-    print('Products and versions====================')
+    print('Products and versions\n====================')
     
     try:
         db = sqlite3.connect('productdb.db')
@@ -106,8 +106,8 @@ We're going to create a database of products with their versions, then format th
                 mylist.append('{}'.format(*row))
     
             data = {
-                product': [myprod],
-                version': mylist
+                'product': [myprod],
+                'version': mylist
             }
     
             print(template.render(data))

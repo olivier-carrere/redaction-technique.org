@@ -6,13 +6,13 @@ proofreading: IA
 ---
 
 
-The following tutorials will help the **technical writer** set up and use a free **DITA XML** authoring and publishing chain. For a broader overview of [structured and unstructured formats](../formats/formats-structures-et-non-structures/), including the rationale for choosing DITA XML, see the dedicated article.
+The following tutorials will help the technical writer set up and use a free DITA XML authoring and publishing chain. For a broader overview of [structured and unstructured formats](../formats/formats-structures-et-non-structures/), including the rationale for choosing DITA XML, see the dedicated article.
 
-**DITA XML** is a structured authoring language that allows you to create documents without worrying about their final appearance on different media. XSL-FO is a language for reorganizing and filtering XML content and applying a style sheet layout to it.
+DITA XML is a structured authoring language that allows you to create documents without worrying about their final appearance on different media. XSL-FO is a language for reorganizing and filtering XML content and applying a style sheet layout to it.
 
-A set of **DITA XML** files contains all the content related, for example, to a product. Various XSL-FO style sheets are used to publish this content in PDF, HTML, or other formats, applying complex transformations. The summary of each section of the final document may, for example, appear in the HTML version but not in the PDF version.
+A set of DITA XML files contains all the content related, for example, to a product. Various XSL-FO style sheets are used to publish this content in PDF, HTML, or other formats, applying complex transformations. The summary of each section of the final document may, for example, appear in the HTML version but not in the PDF version.
 
-Similarly, if a product is to be supplied as a white label to different customers, a completely different layout can be applied to its documentation simply by specifying a different set of style sheets when generating the deliverable. In practice, this is not possible with traditional **FrameMaker** solutions.
+Similarly, if a product is to be supplied as a white label to different customers, a completely different layout can be applied to its documentation simply by specifying a different set of style sheets when generating the deliverable. In practice, this is not possible with traditional FrameMaker solutions.
 
 ## XSL-FO: Filter content according to "except" and "or" conditions
 
@@ -100,9 +100,9 @@ The PDF file will display the example structured as follows:
 
 ## XSL-FO: Automatically insert a title for examples
 
-By default, <abbr title="DITA Open Toolkit">DITA-OT</abbr> does not automatically insert the text *Example:* before the title of an example contained between **DITA XML** tags `<example>`. However, XSL-FO syntax offers this possibility.
+By default, <abbr title="DITA Open Toolkit">DITA-OT</abbr> does not automatically insert the text *Example:* before the title of an example contained between DITA XML tags `<example>`. However, XSL-FO syntax offers this possibility.
 
-Suppose the source code of one of your **DITA XML** files is as follows:
+Suppose the source code of one of your DITA XML files is as follows:
 
 ```xml
 <example>
@@ -154,8 +154,8 @@ It's possible to enter text between `<example>` tags, but XSL-FO offers a more e
 
     ```xml
     <xsl:template match="*[contains(@class,' topic/example')]/*
-    [contains(@class,' topic/title ')]>
-      <fo:block xsl:use-attribute-sets="example.title>
+    [contains(@class,' topic/title ')]">
+      <fo:block xsl:use-attribute-sets="example.title">
         <xsl:call-template name="commonattributes"/>
         <xsl:apply-templates/>
       </fo:block>
@@ -165,9 +165,9 @@ It's possible to enter text between `<example>` tags, but XSL-FO offers a more e
     with the following code:
 
     ```xml
-    <xsl:template match="*[contains(@class,' topic/example ')]>
-      <fo:block xsl:use-attribute-sets="example.title>
-        <xsl:call-template name="insertVariable>
+    <xsl:template match="*[contains(@class,' topic/example ')]">
+      <fo:block xsl:use-attribute-sets="example.title">
+        <xsl:call-template name="insertVariable">
         <xsl:with-param name="theVariableID"
         select="'my-example-text'"/>
         </xsl:call-template>
@@ -184,7 +184,7 @@ It's possible to enter text between `<example>` tags, but XSL-FO offers a more e
 2. Define in the files containing the language variables, such as `plugins/org.dita.pdf2/cfg/common/vars/en.xml`, the text variables to be inserted automatically, for example:
 
     ```xml
-    <variable id="my-example-text>Example:</variable>
+    <variable id="my-example-text">Example:</variable>
     ```
 
 To achieve consistent behavior, you should disable this treatment for examples of specific *topics* types (*task*, in particular).
@@ -217,7 +217,7 @@ Congratulations, you've compiled your first DITA XML project! The PDF file gener
 
 ## Generate a PDF with DITA Open Toolkit (Windows)
 
-This **DITA XML** tutorial is designed to guide you through setting up and using the <abbr title="DITA Open Toolkit">DITA-OT</abbr> publishing chain in a Windows environment (tested on Windows XP).
+This DITA XML tutorial is designed to guide you through setting up and using the <abbr title="DITA Open Toolkit">DITA-OT</abbr> publishing chain in a Windows environment (tested on Windows XP).
 
 **Prerequisites**
 
@@ -257,9 +257,9 @@ This **DITA XML** tutorial is designed to guide you through setting up and using
     /outdir:. /transtype:pdf2
     ```
 
-    This command generates a PDF file from a sample **DITA XML** project.
+    This command generates a PDF file from a sample DITA XML project.
 
-    Congratulations, you've compiled your first **DITA XML** project! You'll find the target file `taskbook.pdf` in the `Desktop\%full%\DITA-OT1.5.4` directory. You can now compile other projects by skipping steps 1 and 2.
+    Congratulations, you've compiled your first DITA XML project! You'll find the target file `taskbook.pdf` in the `Desktop\%full%\DITA-OT1.5.4` directory. You can now compile other projects by skipping steps 1 and 2.
 
 ## Manage multilingual DITA XML documentation projects
 
@@ -366,7 +366,7 @@ To use this script:
 
 ## Create different documents from the same DITA sources
 
-**DITA XML** offers a conditional text mechanism. This mechanism promotes the reuse of source content and avoids redundant information. This tutorial will help the **technical writer** use this mechanism in just a few minutes.
+DITA XML offers a conditional text mechanism. This mechanism promotes the reuse of source content and avoids redundant information. This tutorial will help the technical writer use this mechanism in just a few minutes.
 
 **Prerequisites**
 
@@ -415,7 +415,7 @@ To use this script:
     </topic>
     ```
 
-    This code contains **DITA XML** tags containing different *audience* values: we'll exclude the contents of one of these two tags when generating the target file using the *audience* key.
+    This code contains DITA XML tags containing different *audience* values: we'll exclude the contents of one of these two tags when generating the target file using the *audience* key.
 
 2. Paste the following code into a file and save it as `conditional-text.ditamap` in the `DITA-OT1.5.4` directory:
 
@@ -456,7 +456,7 @@ To use this script:
 5. Open a terminal and enter the following command in the `DITA-OT1.5.4` directory:
 
     ```bash
-    $ java -jar lib/dost.jar /i:texte-conditionnel.ditamap /filter:electricians.ditaval /outdir:.
+    $ java -jar lib/dost.jar /i:conditional-text.ditamap \
     /filter:electricians.ditaval /outdir:. /transtype:pdf2
     ```
 
@@ -468,22 +468,22 @@ To use this script:
 6. Open a terminal and enter the following command in the `DITA-OT1.5.4` directory:
 
     ```bash
-    java -jar lib/dost.jar /i:texte-conditionnel.ditamap /filter:plumbers.ditaval /outdir:.
+    java -jar lib/dost.jar /i:conditional-text.ditamap \
     /filter:plumbers.ditaval /outdir:. /transtype:pdf2
     ```
 
     Open the file `conditional-text.pdf`; it contains information for:
 
-> - plumbers and electricians,
-> plumbers only.
+    - plumbers and electricians,
+    - plumbers only.
 
 ## DITA Open Toolkit: Display cross-references in PDFs
 
 :::note
-Cross-references are an important element of well-structured **technical documentation**. They enable the user to navigate easily through the information bricks and are a crucial element in the usability of the final document. <abbr title="DITA Open Toolkit">DITA-OT</abbr> handles them very well, provided a few adjustments are made.
+Cross-references are an important element of well-structured technical documentation. They enable the user to navigate easily through the building blocks and are a crucial element in the usability of the final document. <abbr title="DITA Open Toolkit">DITA-OT</abbr> handles them very well, provided a few adjustments are made.
 :::
 
-You have placed correctly formatted *related-links* tags in your **DITA XML** content files, or better still, a reltable in your *ditamap* table of contents structure (the *reltable* allows you to decontextualize your content and therefore reuse it better). You launch your PDF generation command and, unpleasantly, no *Additional resources* section appears in the target file! You then try to generate an HTML version of your content and there, your *See also* section is indeed present. Wouldn't <abbr title="DITA Open Toolkit">DITA-OT</abbr> support cross-referencing in PDFs?
+You have placed correctly formatted *related-links* tags in your DITA XML content files, or better still, a reltable in your *ditamap* table of contents structure (the *reltable* allows you to decontextualize your content and therefore reuse it better). You launch your PDF generation command and, unpleasantly, no *Additional resources* section appears in the target file! You then try to generate an HTML version of your content and there, your *See also* section is indeed present. Wouldn't <abbr title="DITA Open Toolkit">DITA-OT</abbr> support cross-referencing in PDFs?
 
 Fortunately, no. By default, cross-references are not generated in PDFs by <abbr title="DITA Open Toolkit">DITA-OT</abbr>. To display them, assign the value *no* to the *disableRelatedLinks* variable in the `demo/fo/build_template.xml` file. If you use *ant*, you'll also need to pass the *args.fo.include.rellinks=all* parameter as follows:
 
@@ -494,25 +494,25 @@ ant -Dargs.input=samples/sequence.ditamap -Doutput.dir=out/ \
 
 ## Display an Index in PDF
 
-Various challenges might arise when using <abbr title="DITA Open Toolkit">DITA-OT</abbr>, the **DITA XML** free publishing engine. You've meticulously inserted your index entries into your **DITA XML** content files. You generate a PDF output and the index does not appear. A compiler error message tells you that, unfortunately, FOP does not currently support index generation.
+Various challenges might arise when using <abbr title="DITA Open Toolkit">DITA-OT</abbr>, the DITA XML free publishing engine. You've meticulously inserted your index entries into your DITA XML content files. You generate a PDF output and the index does not appear. A compiler error message tells you that, unfortunately, FOP does not currently support index generation.
 
 Faced with this situation, you have several solutions:
 
 - Wait until FOP supports indexes; without an availability date, this choice will be difficult to get approved.
-- Abandon **DITA XML**; it would be a shame to give up the remarkable productivity gains offered by this format.
+- Abandon DITA XML; it would be a shame to give up the remarkable productivity gains offered by this format.
 - Forgo displaying the index in the PDF; indexes are difficult to maintain and offer a questionable surplus of usability in a document that will only be consulted marginally in printed form.
-- Abandon <abbr title="DITA Open Toolkit">DITA-OT</abbr> and turn to a proprietary solution; non-open-source software, such as XMetal, often uses RenderX's XEP publishing engine, which supports indexes perfectly.
+- Abandon <abbr title="DITA Open Toolkit">DITA-OT</abbr> and turn to a proprietary solution; non-open-source software, such as XMetaL, often uses RenderX's XEP publishing engine, which supports indexes perfectly.
 
-The index problem is not an obstacle to the adoption of **DITA XML**. If your final medium is a printed document, solutions exist. If it's an electronic format, the absence of an index is more than compensated for by the full-text search function.
+The index problem is not an obstacle to the adoption of DITA XML. If your final medium is a printed document, solutions exist. If it's an electronic format, the absence of an index is more than compensated for by the full-text search function.
 
 ## Use the nXML IDE for DITA XML
 
-The nXML mode offers real-time validation of XML **DocBook**, XHTML, or other documents. No need to know the XML schema by heart: your text editor will autocomplete XML tags according to context. It does not, however, support **DITA XML** by default. This tutorial will show you how to use this Emacs mode for **DITA XML**.
+The nXML mode offers real-time validation of XML DocBook, XHTML, or other documents. No need to know the XML schema by heart: your text editor will autocomplete XML tags according to context. It does not, however, support DITA XML by default. This tutorial will show you how to use this Emacs mode for DITA XML.
 
 **Prerequisites**
 
 - Emacs
-- The directory structure of your **DITA XML** documentation project must be as follows:
+- The directory structure of your DITA XML documentation project must be as follows:
   - language directory
     - concepts
     - faq
@@ -523,7 +523,7 @@ The nXML mode offers real-time validation of XML **DocBook**, XHTML, or other do
   where `<language directory>` has the value en_US, or fr_FR, etc.
 - Command-line instructions are designed for GNU/Linux; they must be adapted for use in other environments.
 
-1. Make a backup of your entire **DITA XML** documentation project.
+1. Make a backup of your entire DITA XML documentation project.
 
 2. Open a terminal and paste the following command sequence:
 
@@ -554,9 +554,9 @@ The nXML mode offers real-time validation of XML **DocBook**, XHTML, or other do
     - Creates a backup copy of the `.emacs` file (`.emacs.bak`).
     - Writes nXML mode environment variables to the `.emacs` file.
 
-3. Download the RelaxNG schema archive for DITA XML into the root directory of your **DITA XML** documentation project.
+3. Download the RelaxNG schema archive for DITA XML into the root directory of your DITA XML documentation project.
 
-4. Go to the root directory of your **DITA XML** documentation project, then paste the following command:
+4. Go to the root directory of your DITA XML documentation project, then paste the following command:
 
     ```bash
     $ tar xzvf rnc.tar.gz
@@ -564,7 +564,7 @@ The nXML mode offers real-time validation of XML **DocBook**, XHTML, or other do
 
     This command creates an `rnc` directory at the same level as the `<language directory>`.
 
-5. Download the archive of schemas.xml files into the root directory of your **DITA XML** documentation project, then paste the command sequence below, replacing `<language directory>` with the appropriate value, such as en_US, or fr_FR. Repeat this step for all your language directories.
+5. Download the archive of schemas.xml files into the root directory of your DITA XML documentation project, then paste the command sequence below, replacing `<language directory>` with the appropriate value, such as en_US, or fr_FR. Repeat this step for all your language directories.
 
     ```bash
     $ export DIR="schemas.redaction-technique.org"
@@ -574,13 +574,12 @@ The nXML mode offers real-time validation of XML **DocBook**, XHTML, or other do
     cp ../$DIR/faq/schemas.xml faq/ && \
     cp ../$DIR/reference/schemas.xml reference/ && \
     cp ../$DIR/tasks/schemas.xml tasks/ && \
-    cp ../$DIR/tasks/schemas.xml tasks/ && \
     cp ../$DIR/topics/schemas.xml topics/ && \
     rm -rf ../$DIR/
     ```
 
     Your language directories should now contain the appropriate `schemas.xml` files:
-    - en_FR
+    - en_US
       - concepts
         - schemas.xml
       - faq
@@ -592,7 +591,7 @@ The nXML mode offers real-time validation of XML **DocBook**, XHTML, or other do
       - topics
         - schemas.xml
 
-6. Open a **DITA XML** content file (`.dita`) with Emacs. The **DITA XML** syntax is shown in color. Places where the schema is not respected are underlined in red.
+6. Open a DITA XML content file (`.dita`) with Emacs. The DITA XML syntax is shown in color. Places where the schema is not respected are underlined in red.
 
 7. To insert a new tag, enter `<`, then press Ctrl+Enter. The list of possible tags appears.
 

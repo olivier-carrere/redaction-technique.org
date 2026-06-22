@@ -26,19 +26,19 @@ This approach uses Sphinx's built-in `only` directive rather than a [Jinja prepr
     ```txt
     .. only:: electrician
 
-    .. admonition:: Danger for electricians
+       .. admonition:: Danger for electricians
 
-      Risk of electric shock
+          Risk of electric shock
 
-      Do not touch electrical wires.
+          Do not touch electrical wires.
 
     .. only:: plumber
 
-    .. admonition:: Danger for plumbers
+       .. admonition:: Danger for plumbers
 
-      Risk of drowning
+          Risk of drowning
 
-      Do not dive into the pool.
+          Do not dive into the pool.
     ```
 
 4.  To control the display of content intended for electricians or plumbers, uncomment or comment the following lines in the `conf.py` configuration file:

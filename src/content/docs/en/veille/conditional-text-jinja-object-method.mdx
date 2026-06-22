@@ -19,17 +19,17 @@ With Jinja, you can define objects (audience, platform, version, etc.) and inclu
 
     .. admonition:: Danger for electricians
 
-    Risk of electrocution
+       Risk of electrocution
 
-    Do not touch electrical wires.
+       Do not touch electrical wires.
 
     {% else %}
 
     .. admonition:: Danger for plumbers
 
-    Risk of drowning
+       Risk of drowning
 
-    Do not dive into the pool.
+       Do not dive into the pool.
 
     {% endif %}
     ```
@@ -83,24 +83,23 @@ With Jinja, you can define objects (audience, platform, version, etc.) and inclu
 
     .. admonition:: Danger for electricians
 
-    Risk of electrocution
+       Risk of electrocution
 
-    Do not touch electrical wires.
+       Do not touch electrical wires.
 
     {% elif public.plum %}
 
     .. admonition:: Danger for plumbers
 
-    Risk of drowning
+       Risk of drowning
 
-    Do not dive into the pool.
+       Do not dive into the pool.
 
     {% else %}
 
     .. admonition:: No danger
 
-    If you're not a plumber or an electrician, you're not in any
-    no danger.
+       If you're not a plumber or an electrician, you're not in any danger.
 
     {% endif %}
     ```
@@ -126,40 +125,39 @@ With Jinja, you can define objects (audience, platform, version, etc.) and inclu
 
     .. admonition:: Danger for electricians
 
-    Risk of electrocution
+       Risk of electrocution
 
-    Do not touch electrical wires.
+       Do not touch electrical wires.
 
     {% elif public.plum and seas.wint %}
 
     .. admonition:: Danger for plumbers
 
-    Risk of fracture
+       Risk of fracture
 
-    Do not dive into the frozen pool.
+       Do not dive into the frozen pool.
 
     {% elif public.plum and seas.summ %}
 
     .. admonition:: Danger for plumbers
 
-    Risk of hydrocution
+       Risk of hydrocution
 
-    Do not dive into cold water when it is hot.
+       Do not dive into cold water when it is hot.
 
     {% elif public.plum and seas.spri or seas.autu %}
 
     .. admonition:: Danger for plumbers
 
-    Risk of something
+       Risk of something
 
-    Don't dive into the pool, you never know.
+       Don't dive into the pool, you never know.
 
     {% else %}
 
     .. admonition:: No danger
 
-    If you're not a plumber or an electrician, you're not in any
-    no danger.
+       If you're not a plumber or an electrician, you're not in any danger.
 
     {% endif %}
     ```
@@ -238,8 +236,7 @@ With Jinja, you can define objects (audience, platform, version, etc.) and inclu
     
     .. admonition:: No danger
     
-       If you're not a plumber or an electrician, you're not in any
-       no danger.
+       If you're not a plumber or an electrician, you're not in any danger.
     
     {% endif %}
 	```
@@ -297,12 +294,12 @@ With Jinja, you can define objects (audience, platform, version, etc.) and inclu
 
     if len(sys.argv) == 3:
         pubparam=str(sys.argv[1])
-    seasparam=str(sys.argv[2])
-    user=Audience(pubparam,seasparam)
-    env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'))
-    template = env.get_template('texte-conditionnel.rst')
-    string=template.render(public=user)
-    print(string)
+        seasparam=str(sys.argv[2])
+        user=Audience(pubparam,seasparam)
+        env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'))
+        template = env.get_template('texte-conditionnel.rst')
+        string=template.render(public=user)
+        print(string)
     else:
         print('Please indicate public and season')
     ```
