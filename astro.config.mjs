@@ -17,6 +17,7 @@ export default defineConfig({
   site,
   trailingSlash: 'always',
   redirects: {
+    '/': '/en/',
     // tech-writing-process — EN old slugs
     '/en/tech-writing-process/base-de-donnees-sql/':                                                                          '/en/tech-writing-process/sql-database/',
     '/en/tech-writing-process/collecte-de-l-information/':                                                                    '/en/tech-writing-process/gathering-information/',
