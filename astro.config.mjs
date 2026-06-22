@@ -27,6 +27,7 @@ export default defineConfig({
     '/en/tech-writing-process/git-du-fichier-au-contenu/':                                                                    '/en/tech-writing-process/git-from-file-to-content/',
     '/en/tech-writing-process/integrer-la-documentation-aux-processus-de-developpement/':                                     '/en/tech-writing-process/integrating-documentation-into-development/',
     '/en/tech-writing-process/les-cms-le-workflow-en-prime-mais-une-fiabilite-a-tester/':                                     '/en/tech-writing-process/cms-workflow-and-reliability/',
+    '/fr/tech-writing-process/les-cms-le-workflow-en-prime-mais-une-fiabilite-a-tester/':                                     '/fr/tech-writing-process/cms-workflow-and-reliability/',
     '/en/tech-writing-process/les-repertoires-reseau-partages-peu-adaptes-au-travail-de-groupe/':                             '/en/tech-writing-process/shared-network-directories/',
     '/en/tech-writing-process/les-systemes-de-gestion-de-versions-rustiques-mais-fiables/':                                   '/en/tech-writing-process/version-management-systems/',
     '/en/tech-writing-process/livraison/':                                                                                    '/en/tech-writing-process/delivery/',
