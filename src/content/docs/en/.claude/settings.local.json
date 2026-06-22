@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git commit '--author=Olivier Carrere <carrereo@gmail.com>' -m ' *)",
+      "Bash(git push *)",
+      "Bash(git mv *)",
+      "Bash(python3 *)",
+      "Bash(git add *)"
+    ]
+  }
+}

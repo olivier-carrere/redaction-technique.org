@@ -51,7 +51,14 @@
       "Bash(curl -sI https://docs.redaction-technique.org/_vercel/insights/script.js)",
       "Bash(curl -s http://localhost:4321/)",
       "Bash(kill %1)",
-      "Bash(pkill -f \"astro dev\")"
+      "Bash(pkill -f \"astro dev\")",
+      "Bash(identify /Users/olivier.carrere/Desktop/shinjinmei-docs-as-code.png)",
+      "Bash(ffmpeg -i /Users/olivier.carrere/Desktop/shinjinmei-docs-as-code.png -c:v libwebp -quality 85 /Users/olivier.carrere/Downloads/redaction-technique.org/public/assets/shinjinmei-docs-as-code.webp)",
+      "Bash(cwebp -q 85 ~/Downloads/portrait-cv-lunettes-juin-26.png -o /Users/olivier.carrere/Downloads/techwriterblog/public/images/about/olivier-carrere.webp)",
+      "WebSearch",
+      "WebFetch(domain:fr.wikipedia.org)",
+      "Bash(pandoc ~/Desktop/rapport-mise-en-page.docx -t plain)",
+      "Bash(cwebp -q 85 ~/Desktop/portrait-cv-lunettes-juin-26.png -o /Users/olivier.carrere/Downloads/techwriterblog/public/images/about/olivier-carrere.webp)"
     ]
   }
 }

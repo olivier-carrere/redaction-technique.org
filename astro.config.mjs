@@ -17,7 +17,7 @@ export default defineConfig({
   site,
   trailingSlash: 'always',
   redirects: {
-    // tech-writing-process
+    // tech-writing-process — EN old slugs
     '/en/tech-writing-process/base-de-donnees-sql/':                                                                          '/en/tech-writing-process/sql-database/',
     '/en/tech-writing-process/collecte-de-l-information/':                                                                    '/en/tech-writing-process/gathering-information/',
     '/en/tech-writing-process/creation-du-contenu/':                                                                          '/en/tech-writing-process/content-creation/',
@@ -27,7 +27,6 @@ export default defineConfig({
     '/en/tech-writing-process/git-du-fichier-au-contenu/':                                                                    '/en/tech-writing-process/git-from-file-to-content/',
     '/en/tech-writing-process/integrer-la-documentation-aux-processus-de-developpement/':                                     '/en/tech-writing-process/integrating-documentation-into-development/',
     '/en/tech-writing-process/les-cms-le-workflow-en-prime-mais-une-fiabilite-a-tester/':                                     '/en/tech-writing-process/cms-workflow-and-reliability/',
-    '/fr/tech-writing-process/les-cms-le-workflow-en-prime-mais-une-fiabilite-a-tester/':                                     '/fr/tech-writing-process/cms-workflow-and-reliability/',
     '/en/tech-writing-process/les-repertoires-reseau-partages-peu-adaptes-au-travail-de-groupe/':                             '/en/tech-writing-process/shared-network-directories/',
     '/en/tech-writing-process/les-systemes-de-gestion-de-versions-rustiques-mais-fiables/':                                   '/en/tech-writing-process/version-management-systems/',
     '/en/tech-writing-process/livraison/':                                                                                    '/en/tech-writing-process/delivery/',
@@ -38,19 +37,51 @@ export default defineConfig({
     '/en/tech-writing-process/un-referentiel-unique/':                                                                        '/en/tech-writing-process/single-repository/',
     '/en/tech-writing-process/utiliser-les-branches-des-systemes-de-gestion-de-sources/':                                     '/en/tech-writing-process/using-branches/',
     '/en/tech-writing-process/validation-et-controle-qualite/':                                                               '/en/tech-writing-process/validation-quality-control/',
-    // formats
+    // tech-writing-process — FR old slugs
+    '/fr/tech-writing-process/base-de-donnees-sql/':                                                                          '/fr/tech-writing-process/sql-database/',
+    '/fr/tech-writing-process/collecte-de-l-information/':                                                                    '/fr/tech-writing-process/gathering-information/',
+    '/fr/tech-writing-process/creation-du-contenu/':                                                                          '/fr/tech-writing-process/content-creation/',
+    '/fr/tech-writing-process/definition-du-projet/':                                                                         '/fr/tech-writing-process/project-definition/',
+    '/fr/tech-writing-process/format-cible/':                                                                                 '/fr/tech-writing-process/target-format/',
+    '/fr/tech-writing-process/format-source/':                                                                                '/fr/tech-writing-process/source-format/',
+    '/fr/tech-writing-process/git-du-fichier-au-contenu/':                                                                    '/fr/tech-writing-process/git-from-file-to-content/',
+    '/fr/tech-writing-process/integrer-la-documentation-aux-processus-de-developpement/':                                     '/fr/tech-writing-process/integrating-documentation-into-development/',
+    '/fr/tech-writing-process/les-cms-le-workflow-en-prime-mais-une-fiabilite-a-tester/':                                     '/fr/tech-writing-process/cms-workflow-and-reliability/',
+    '/fr/tech-writing-process/les-repertoires-reseau-partages-peu-adaptes-au-travail-de-groupe/':                             '/fr/tech-writing-process/shared-network-directories/',
+    '/fr/tech-writing-process/les-systemes-de-gestion-de-versions-rustiques-mais-fiables/':                                   '/fr/tech-writing-process/version-management-systems/',
+    '/fr/tech-writing-process/livraison/':                                                                                    '/fr/tech-writing-process/delivery/',
+    '/fr/tech-writing-process/quel-referentiel-pour-le-travail-de-groupe/':                                                   '/fr/tech-writing-process/which-repository-for-group-work/',
+    '/fr/tech-writing-process/referentiel/':                                                                                  '/fr/tech-writing-process/repository/',
+    '/fr/tech-writing-process/tester-les-produits-pour-les-documenter/':                                                      '/fr/tech-writing-process/testing-products/',
+    '/fr/tech-writing-process/traduction/':                                                                                   '/fr/tech-writing-process/translation/',
+    '/fr/tech-writing-process/un-referentiel-unique/':                                                                        '/fr/tech-writing-process/single-repository/',
+    '/fr/tech-writing-process/utiliser-les-branches-des-systemes-de-gestion-de-sources/':                                     '/fr/tech-writing-process/using-branches/',
+    '/fr/tech-writing-process/validation-et-controle-qualite/':                                                               '/fr/tech-writing-process/validation-quality-control/',
+    // formats — EN old slugs
     '/en/formats/cas-concret-documentation-de-nufirewall/':                                                                   '/en/formats/nufirewall-case-study/',
     '/en/formats/cas-concrets-utilisation-de-dita-xml/':                                                                      '/en/formats/dita-xml-case-studies/',
     '/en/formats/du-document-a-la-base-documentaire-modulaire/':                                                              '/en/formats/document-to-modular-base/',
     '/en/formats/formats-structures-et-non-structures/':                                                                      '/en/formats/structured-unstructured-formats/',
     '/en/formats/une-architecture-documentaire-trop-complexe/':                                                               '/en/formats/document-architecture-complexity/',
-    // costs
+    // formats — FR old slugs
+    '/fr/formats/cas-concret-documentation-de-nufirewall/':                                                                   '/fr/formats/nufirewall-case-study/',
+    '/fr/formats/cas-concrets-utilisation-de-dita-xml/':                                                                      '/fr/formats/dita-xml-case-studies/',
+    '/fr/formats/du-document-a-la-base-documentaire-modulaire/':                                                              '/fr/formats/document-to-modular-base/',
+    '/fr/formats/formats-structures-et-non-structures/':                                                                      '/fr/formats/structured-unstructured-formats/',
+    '/fr/formats/une-architecture-documentaire-trop-complexe/':                                                               '/fr/formats/document-architecture-complexity/',
+    // costs — EN old slugs
     '/en/costs/de-la-redaction-a-la-communication-technique/':                                                                '/en/costs/copywriting-to-technical-communication/',
     '/en/costs/formats-et-outils/':                                                                                           '/en/costs/formats-and-tools/',
     '/en/costs/les-trois-niveaux-de-la-documentation-technique/':                                                             '/en/costs/three-levels-of-documentation/',
     '/en/costs/principe-de-simplicite-kiss/':                                                                                 '/en/costs/kiss-principle/',
     '/en/costs/un-index-est-il-utile-dans-un-pdf/':                                                                          '/en/costs/index-in-pdf/',
-    // veille
+    // costs — FR old slugs
+    '/fr/costs/de-la-redaction-a-la-communication-technique/':                                                                '/fr/costs/copywriting-to-technical-communication/',
+    '/fr/costs/formats-et-outils/':                                                                                           '/fr/costs/formats-and-tools/',
+    '/fr/costs/les-trois-niveaux-de-la-documentation-technique/':                                                             '/fr/costs/three-levels-of-documentation/',
+    '/fr/costs/principe-de-simplicite-kiss/':                                                                                 '/fr/costs/kiss-principle/',
+    '/fr/costs/un-index-est-il-utile-dans-un-pdf/':                                                                          '/fr/costs/index-in-pdf/',
+    // veille — EN old slugs
     '/en/veille/creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-objet-texte-conditionnel/': '/en/veille/conditional-text-jinja-object-method/',
     '/en/veille/creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-texte-conditionnel/':      '/en/veille/conditional-text-jinja/',
     '/en/veille/creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-rest-texte-conditionnel/':       '/en/veille/conditional-text-sphinx-rest/',
@@ -62,6 +93,18 @@ export default defineConfig({
     '/en/veille/mener-un-projet-de-bout-en-bout/':                                                                          '/en/veille/project-end-to-end/',
     '/en/veille/raspberry-pi-plateforme-documentation/':                                                                     '/en/veille/raspberry-pi-documentation-platform/',
     '/en/veille/sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers/':                                                        '/en/veille/sed-text-modification/',
+    // veille — FR old slugs
+    '/fr/veille/creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-objet-texte-conditionnel/': '/fr/veille/conditional-text-jinja-object-method/',
+    '/fr/veille/creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-texte-conditionnel/':      '/fr/veille/conditional-text-jinja/',
+    '/fr/veille/creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-rest-texte-conditionnel/':       '/fr/veille/conditional-text-sphinx-rest/',
+    '/fr/veille/didacticiels-dita-xml-xsl-fo/':                                                                             '/fr/veille/dita-xml-xslfo-tutorials/',
+    '/fr/veille/expressions-regulieres-python/':                                                                             '/fr/veille/python-regular-expressions/',
+    '/fr/veille/inserer-automatiquement-des-donnees-dans-un-fichier-restructuredtext/':                                      '/fr/veille/auto-insert-data-restructuredtext/',
+    '/fr/veille/inserer-automatiquement-des-donnees-sql-dans-un-fichier-restructuredtext/':                                  '/fr/veille/auto-insert-sql-data-restructuredtext/',
+    '/fr/veille/jourdainisation-en-ligne-python/':                                                                           '/fr/veille/word-shuffling-python/',
+    '/fr/veille/mener-un-projet-de-bout-en-bout/':                                                                          '/fr/veille/project-end-to-end/',
+    '/fr/veille/raspberry-pi-plateforme-documentation/':                                                                     '/fr/veille/raspberry-pi-documentation-platform/',
+    '/fr/veille/sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers/':                                                        '/fr/veille/sed-text-modification/',
   },
   integrations: [
     sitemap(),

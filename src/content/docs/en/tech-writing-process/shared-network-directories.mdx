@@ -7,7 +7,7 @@ proofreading: IA
 
 
 
-Files shared by a technical writing team are often stored in a shared directory on the network. [Version management systems](../les-systemes-de-gestion-de-versions-rustiques-mais-fiables/) offer a more robust alternative for collaborative work.
+Files shared by a technical writing team are often stored in a shared directory on the network. [Version management systems](../version-management-systems/) offer a more robust alternative for collaborative work.
 
 Technical writers work directly on shared files, which poses the following challenges:
 
@@ -20,10 +20,10 @@ Even with frequent backups, directories are not a secure repository for data. Th
 Copying a file from the network to modify it on a personal hard drive and then overwriting the network version with the local version is a risky operation:
 
 - Team members are not notified if another member is modifying the same file simultaneously, leading to potential loss of changes by one of the technical writers.
-- When manually copying files, either via a graphical file manager or from the command line, the technical writer can easily overwrite the most recent version with an older one. A file synchronization program such as rsync or Unison (the latter being better suited for bidirectional synchronization) from the command line under GNU/Linux or Windows, or a graphical equivalent such as SyncToy, is recommended. However, these programs rely on the last modification date of the files. When updating or publishing a FrameMaker book, for instance, this can create conflicts between files, as FrameMaker saves all the files in the book, even if their content has not been modified. For a deeper look at how [Git](../git-du-fichier-au-contenu/) manages content rather than files, see the dedicated article.
+- When manually copying files, either via a graphical file manager or from the command line, the technical writer can easily overwrite the most recent version with an older one. A file synchronization program such as rsync or Unison (the latter being better suited for bidirectional synchronization) from the command line under GNU/Linux or Windows, or a graphical equivalent such as SyncToy, is recommended. However, these programs rely on the last modification date of the files. When updating or publishing a FrameMaker book, for instance, this can create conflicts between files, as FrameMaker saves all the files in the book, even if their content has not been modified. For a deeper look at how [Git](../git-from-file-to-content/) manages content rather than files, see the dedicated article.
 
 ## Related articles
 
-- [Which repository for group work?](../quel-referentiel-pour-le-travail-de-groupe/)
-- [Repository](../referentiel/)
-- [A single repository?](../un-referentiel-unique/)
+- [Which repository for group work?](../which-repository-for-group-work/)
+- [Repository](../repository/)
+- [A single repository?](../single-repository/)
