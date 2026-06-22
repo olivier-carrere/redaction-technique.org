@@ -1,0 +1,85 @@
+---
+title: "About this blog"
+description: "A technical writing blog specializing in DITA XML, docs-as-code, documentation automation, and technical communication, by Olivier Carrère, technical writer."
+---
+This blog is designed and produced by a **technical writer** specializing in software.
+
+Since it deals with technical writing processes and formats, its content is however less relevant than its history and its [Git](https://github.com/olivier-carrere/redaction-technique.org/) branches.
+
+It covers the following formats, tools, and tasks: **reStructuredText**, **DITA XML**, Bash scripts, awk, sed, regular expressions, Python, version control, Git, compilation, Makefile, Ant, XSLT, layout, HTML, CSS, PDF, LaTeX, XSL-FO.
+
+## Free your information from its silos
+
+Flexible and reliable solutions free your information from siloed repositories where it is imprisoned and underutilized. Move beyond **MS Word** or **FrameMaker** to shift from documentation maintenance to managing the lifecycle of modular documentation projects.
+
+### Integrate documentation into the development process
+
+Documentation is part of the software. Delivered with the product, it must:
+
+- ship at the same time,
+- follow the same life cycles, and
+- be subject to the same production and quality control processes.
+
+![Modular documentation sources in text format](/assets/integration-doc-dev.webp)
+*Modular documentation sources in text format*
+
+Ideally, it should meet the following criteria:
+
+- no *vendor lock-in* (independence of format and content editor),
+- free and open-source publishing chains,
+- fully automated layout.
+
+Not so long ago, the only tools capable of delivering quality PDF or HTML output relied on binary and proprietary formats that integrate poorly with development teams' version control systems.
+
+As a result, technical documentation was produced separately and struggled to meet the same quality and time-to-market requirements as the products themselves.
+
+**DocBook**, then **DITA XML** and **reStructuredText** changed the game: these text formats can be edited with any type of program, from a simple text editor to a graphical <abbr title="Integrated Development Environment">IDE</abbr>, and integrate perfectly with Subversion, Git, or any other version control system.
+
+### This blog's sources are managed under Git
+
+This blog was initially developed under WordPress. The inability to make cross-cutting changes or to have precise tracking of the content lifecycle under this <abbr title="Content Management System">CMS</abbr> led to a migration to the lightweight markup format **reStructuredText**.
+
+![](/assets/documentation-life-cycle-framework.webp)
+
+All versions of this blog are managed under the decentralized version control software Git. Content, structure, or layout changes can now be:
+
+- grouped into coherent batches,
+- linked to a ticket in an issue tracker such as *Bugzilla* or *Trac*,
+- validated by peers,
+- shared between different versions of the documentation project,
+- undone in a single operation, etc.
+
+### Source formats
+
+This blog is available in three formats, based on version 1.1. These formats have different levels of features and complexity.
+
+![Feature and complexity levels of text formats](/assets/fonctionnalites_complexite.svg)
+*Feature and complexity levels of text formats*
+
+reStructuredText
+
+: reStructuredText is a lightweight wiki- or Markdown-style markup language that, combined with the Sphinx documentation generator, offers a good level of features.
+
+DITA XML
+
+: DITA XML is a complex, semantic, modular XML document architecture that delivers significant productivity gains through extensive content reuse.
+
+DocBook
+
+: DocBook is a semantic XML markup language whose feature-to-complexity ratio is today of limited interest.
+
+### Target formats
+
+You can compile this blog with *Python Sphinx* to the following formats:
+
+- PDF,
+- EPUB,
+- HTML.
+
+These different versions are generated from exactly the same sources. They present slight variations, however, implemented through a conditional text mechanism. For example, the following term varies according to the target format:
+
+| Target format | Term         |
+|---------------|--------------|
+| PDF           | document     |
+| EPUB          | e-book       |
+| HTML          | site         |

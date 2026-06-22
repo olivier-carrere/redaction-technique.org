@@ -93,6 +93,8 @@ export default defineConfig({
     '/en/veille/mener-un-projet-de-bout-en-bout/':                                                                          '/en/veille/project-end-to-end/',
     '/en/veille/raspberry-pi-plateforme-documentation/':                                                                     '/en/veille/raspberry-pi-documentation-platform/',
     '/en/veille/sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers/':                                                        '/en/veille/sed-text-modification/',
+    '/fr/a-propos-de-ce-blog/':                                                                                                 '/fr/about-this-blog/',
+    '/fr/inserer-automatiquement-des-donnees-dans-un-fichier-dita-xml/':                                                        '/fr/veille/auto-insert-data-dita-xml/',
     // veille — FR old slugs
     '/fr/veille/creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-objet-texte-conditionnel/': '/fr/veille/conditional-text-jinja-object-method/',
     '/fr/veille/creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-texte-conditionnel/':      '/fr/veille/conditional-text-jinja/',
