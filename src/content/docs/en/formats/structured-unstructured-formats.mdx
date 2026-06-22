@@ -31,7 +31,7 @@ With structured formats such as DITA XML, on the other hand:
 - information is presented to the user in a coherent, predictable organization,
 - access to information is sequential and rapid,
 - information can be easily reorganized as required,
-- the usability of the information support provided is optimal.
+- the deliverable is as usable as it can be.
 
 High-level information types such as task are divided into lower-level types, for example:
 
@@ -83,11 +83,11 @@ The effort involved in migrating from an unstructured format to DITA XML is a li
 
 Generally speaking, it's always in a professional's interest to work on the richest format, if only to be proactive and anticipate new needs.
 
-## FrameMaker Migration to DITA XML
+## Migrating from FrameMaker to DITA XML
 
 Migrating from FrameMaker to DITA XML is not like saving an MS Word document in LibreOffice format. There is no automatic process for migrating an unstructured document to a structured format. In the worst-case scenario, depending on the quality of your original document, this can be like transforming a wasteland into a structured garden. But a well-planned migration allows you to switch to the new format without disrupting the rhythm of your deliveries.
 
-To use a metaphor, if you set yourself the goal of converting a swamp into a French garden, you'd have to go through the English garden stage—a place that may not be strictly architectural, but that's very pleasant to live in. Good news: if the technical writer has consistently used a limited set of styles and rationally organized their FrameMaker content, they're certainly already very close to this stage.
+To put it in garden terms: turning a wasteland into a French garden means passing through the English garden stage first—a place that may not be strictly architectural, but that's very pleasant to live in. Good news: if the technical writer has consistently used a limited set of styles and rationally organized their FrameMaker content, they're certainly already very close to this stage.
 
 ![Migration from FrameMaker to DITA XML](/assets/en/framemaker-to-dita-migration.svg)
 **Migration from FrameMaker to DITA XML**
@@ -98,7 +98,7 @@ By the way, if, for any reason, your migration project were to stop there, the t
 - consistency and speed of publication of new versions,
 - easier access to information.
 
-### FrameMaker Content Restructuring
+### Restructuring FrameMaker content
 
 The automated part of a migration from FrameMaker to DITA XML consists of applying a conversion table between FrameMaker styles and DITA XML structures.
 
@@ -109,7 +109,7 @@ However, a significant amount of restructuring of the FrameMaker document must b
 - harmonization and simplification of FrameMaker styles to limit them and match them to the DITA XML tags that will be used (for example, a *note_important* style to the `<note type="important">` tag). It is necessary to analyze the existing content beforehand and decide which set of tags will be used from among the hundreds proposed by DITA XML: it is strongly inadvisable to use them all.
 
 ![Restructuring FrameMaker content and setting up the DITA XML chain](/assets/en/framemaker-restructure.svg)
-**FrameMaker content restructuring and DITA XML string implementation**
+**FrameMaker content restructuring and DITA XML chain implementation**
 
 This harmonization work can be carried out in parallel with updating and publishing the FrameMaker document. The quality of this document will be all the better for it. Simultaneously with reorganizing your content, you can implement the complete DITA XML creation, management, and publication chain on a sample of your content:
 
@@ -122,9 +122,9 @@ Only when the chain is reliable and accepted, and even expected by the other pla
 
 If your documents are available in several languages, you need to modify the FrameMaker files and perform the migration for each language. If you're planning to translate your documents into a new language, it's best to migrate them first!
 
-### FrameMaker to DITA XML Conversion Table
+### The FrameMaker-to-DITA XML conversion table
 
-Once the FrameMaker files are ready for migration and the DITA XML chain has been fully integrated into the company's technical and human processes, the Technical Editor can apply the conversion table.
+Once the FrameMaker files are ready for migration and the DITA XML chain has been fully integrated into the company's technical and human processes, the technical writer can apply the conversion table.
 
 You should now be able to archive the FrameMaker files and then switch over completely to DITA XML.
 
@@ -135,7 +135,7 @@ Of course, you'll need to apply this process to a small set of documents—one t
 
 You can now progressively modularize and share your content in the new format to get the most out of DITA XML. During this phase, you can continue to publish new versions of the document; in fact, publishing should be much simpler than with FrameMaker.
 
-### Migrating from FrameMaker to DITA XML
+### A step-by-step migration procedure
 
 The aim of this procedure is to (see also [DITA XML tutorials](../veille/didacticiels-dita-xml-xsl-fo/) for setting up the publishing chain):
 
@@ -166,13 +166,13 @@ Only run this type of script on a copy of your files, not on the original files.
 
 ```perl
 #!/usr/bin/perl
-open(INPUT,"<$ARGV[0]") or die;
-@input_array=<INPUT>;
+open(INPUT, "<$ARGV[0]") or die;
+@input_array = <INPUT>;
 close(INPUT);
-$input_scalar=join(",@input_array);
+$input_scalar = join("", @input_array);
 # substitution
-$input_scalar =~ s#\<body‣(.|\n)*?</body‣##ig;
-open(OUTPUT,‣$ARGV[0]") or die;
+$input_scalar =~ s#<body>(.|\n)*?</body>##ig;
+open(OUTPUT, ">$ARGV[0]") or die;
 print(OUTPUT $input_scalar);
 close(OUTPUT);
 ```
@@ -180,10 +180,10 @@ close(OUTPUT);
 You can also easily modularize content using the xml_split XML scissors, or use the Perl XML::Twig module, or this Bash one-liner to rename `.dita` files after their title:
 
 ```bash
-$ ack "<title‣" *.dita| sed "s# #_#g;" |
+$ ack "<title>" *.dita | sed "s# #_#g;" |
 tr '[:upper:]' '[:lower:]' |
-sed -E "s#(.*.dita)#mv \1#g;" |
-sed -E "s#\.dita.*<title‣(.*)</title‣#.dita \1.dita#g;"
+sed -E "s#(.*\.dita)#mv \1#g;" |
+sed -E "s#\.dita.*<title>(.*)</title>#.dita \1.dita#g;"
 ```
 
 ## Related articles
