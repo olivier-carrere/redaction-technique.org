@@ -54,21 +54,21 @@ Let's imagine the following work scenario:
 How do you overcome this bottleneck? It's relatively simple:
 
 1. By default, you work on the *master* branch. Your workspace contains modifications that you don't want to *commit* before validation.
-2. Create a new branch: *git checkout -b my-branch*.
-3. *Commit* your changes to the new branch: *git add my-files*, *git commit -m "my commit message"*.
-4. Return to the master branch: *git checkout master* and move on to your second task.
-5. If your first task is not validated, return to the provisional branch: *git checkout my-branch* and make a new commit (which you can merge with the previous one(s) after validation).
-6. When you receive validation for the first task, put your work in progress aside: *git stash*.
-7. Merge the provisional branch with the master branch: *git merge my-branch*.
-8. Retrieve your work in progress: *git stash pop*.
+2. Create a new branch: `git checkout -b my-branch`.
+3. *Commit* your changes to the new branch: `git add my-files`, `git commit -m "my commit message"`.
+4. Return to the master branch: `git checkout master` and move on to your second task.
+5. If your first task is not validated, return to the provisional branch: `git checkout my-branch` and make a new commit (which you can merge with the previous one(s) after validation).
+6. When you receive validation for the first task, put your work in progress aside: `git stash`.
+7. Merge the provisional branch with the master branch: `git merge my-branch`.
+8. Retrieve your work in progress: `git stash pop`.
 
-If you don’t need to run two tasks in parallel, you can simply work in your local workspace. To revert changes, use the *git reset --hard HEAD* command to overwrite your non-*committed* files in the local directory with those from the last *commit*.
+If you don’t need to run two tasks in parallel, you can simply work in your local workspace. To revert changes, use the `git reset --hard HEAD` command to overwrite your non-*committed* files in the local directory with those from the last *commit*.
 
 ## Organizing your history with git rebase
 
 Git can be confusing at first due to its focus on content rather than files. However, this approach simplifies group work and the management of different concurrent versions of the same content.
 
-Git performs atomic *commits*: it applies batches of modifications to content across multiple files, rather than managing individual files. This encourages thinking in terms of batches of tasks on content. 
+Git performs atomic *commits*: it applies batches of modifications to content across multiple files, rather than managing individual files. This encourages thinking in terms of batches of tasks on content.
 
 This may not seem intuitive if you're used to working file by file rather than task by task. But once you've adapted your work habits to this *workflow*, you'll see:
 
@@ -91,9 +91,9 @@ You *commit* each sub-batch upon completion. Your *commit* history will then res
 ![Git commit history with interleaved synopsis and text correction commits before rebase reorganization](/assets/en/git-rebase-commits.svg)
 **Git history**
 
-When placing your *commits* on the central repository, some will represent interim steps in a task. Your history and branches may be harder to manage as unfinished tasks alternate. To retrieve a single task, you'll need to carefully select the *commits* using the *git cherry-pick* command.
+When placing your *commits* on the central repository, some will represent interim steps in a task. Your history and branches may be harder to manage as unfinished tasks alternate. To retrieve a single task, you'll need to carefully select the *commits* using the `git cherry-pick` command.
 
-Fortunately, Git facilitates reorganizing your *commits* before sharing them. Use the *git rebase -i HEAD~5* command to reorganize your *commits* from the current version to the previous five, for example.
+Fortunately, Git facilitates reorganizing your *commits* before sharing them. Use the `git rebase -i HEAD~5` command to reorganize your *commits* from the current version to the previous five, for example.
 
 :::caution
 The *rebase* command is potentially destructive; ensure you back up your workspace, including the *.git* directory, before running it, or risk losing data. You can also create a temporary backup branch.
@@ -107,7 +107,7 @@ You can then rewrite history to offer your collaborators a *commit* for each com
 The *commits* are first grouped by type on Git’s *time arrow*, then merged.
 
 :::note
-If you've performed both tasks simultaneously on one or more files, don't panic. With the *git add -p* command, you can distribute your nested modifications over the appropriate *commits*. When you run *git status*, you'll see your files are both ready and not ready to be *committed*: two states of the files represent partial stages of your work, summing up to the total modifications you've made.
+If you've performed both tasks simultaneously on one or more files, don't panic. With the `git add -p` command, you can distribute your nested modifications over the appropriate *commits*. When you run `git status`, you'll see your files are both ready and not ready to be *committed*: two states of the files represent partial stages of your work, summing up to the total modifications you've made.
 :::
 
 By using this approach, you lose access to intermediate *commits*, but this is intentional: each unique *commit* represents a consistent state of your content.
@@ -115,7 +115,7 @@ By using this approach, you lose access to intermediate *commits*, but this is i
 This *workflow* also facilitates teamwork: you can assign these tasks to two different team members, each working in their own local space — an approach that supports [integrating documentation into development processes](../integrer-la-documentation-aux-processus-de-developpement/). The former's changes are then merged with the latter's in their local space via *patches*. Finally, the *commits* are refactored before being placed in the central repository.
 
 :::important
-The less you reorganize your *commits* (especially chronologically), the lower the risk of having to manually resolve conflicts. In other words, *git rebase* should not be an excuse for unplanned work.
+The less you reorganize your *commits* (especially chronologically), the lower the risk of having to manually resolve conflicts. In other words, `git rebase` should not be an excuse for unplanned work.
 :::
 
 ## Related articles
