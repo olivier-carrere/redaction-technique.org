@@ -82,7 +82,7 @@ export default defineConfig({
     '/fr/costs/principe-de-simplicite-kiss/':                                                                                 '/fr/costs/kiss-principle/',
     '/fr/costs/un-index-est-il-utile-dans-un-pdf/':                                                                          '/fr/costs/index-in-pdf/',
     // veille — EN old slugs
-    '/en/veille/creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-objet-texte-conditionnel/': '/en/veille/conditional-text-jinja-object-method/',
+    '/en/veille/creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-objet-texte-conditionnel/': '/en/tutorials/conditional-text-jinja-object-method/',
     '/en/veille/creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-texte-conditionnel/':      '/en/veille/conditional-text-jinja/',
     '/en/veille/creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-rest-texte-conditionnel/':       '/en/veille/conditional-text-sphinx-rest/',
     '/en/veille/didacticiels-dita-xml-xsl-fo/':                                                                             '/en/veille/dita-xml-xslfo-tutorials/',
@@ -96,7 +96,7 @@ export default defineConfig({
     '/fr/a-propos-de-ce-blog/':                                                                                                 '/fr/about-this-blog/',
     '/fr/inserer-automatiquement-des-donnees-dans-un-fichier-dita-xml/':                                                        '/fr/veille/auto-insert-data-dita-xml/',
     // veille — FR old slugs
-    '/fr/veille/creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-objet-texte-conditionnel/': '/fr/veille/conditional-text-jinja-object-method/',
+    '/fr/veille/creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-objet-texte-conditionnel/': '/fr/tutorials/conditional-text-jinja-object-method/',
     '/fr/veille/creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-texte-conditionnel/':      '/fr/veille/conditional-text-jinja/',
     '/fr/veille/creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-rest-texte-conditionnel/':       '/fr/veille/conditional-text-sphinx-rest/',
     '/fr/veille/didacticiels-dita-xml-xsl-fo/':                                                                             '/fr/veille/dita-xml-xslfo-tutorials/',
@@ -107,6 +107,35 @@ export default defineConfig({
     '/fr/veille/mener-un-projet-de-bout-en-bout/':                                                                          '/fr/veille/project-end-to-end/',
     '/fr/veille/raspberry-pi-plateforme-documentation/':                                                                     '/fr/veille/raspberry-pi-documentation-platform/',
     '/fr/veille/sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers/':                                                        '/fr/veille/sed-text-modification/',
+
+    // veille → tutorials — EN canonical
+    '/en/veille/':                                                                                                                    '/en/tutorials/',
+    '/en/veille/auto-insert-data-dita-xml/':                                                                                                              '/en/tutorials/auto-insert-data-dita-xml/',
+    '/en/veille/auto-insert-data-restructuredtext/':                                                                                                              '/en/tutorials/auto-insert-data-restructuredtext/',
+    '/en/veille/auto-insert-sql-data-restructuredtext/':                                                                                                              '/en/tutorials/auto-insert-sql-data-restructuredtext/',
+    '/en/veille/conditional-text-jinja-object-method/':                                                                                                              '/en/tutorials/conditional-text-jinja-object-method/',
+    '/en/veille/conditional-text-jinja/':                                                                                                              '/en/tutorials/conditional-text-jinja/',
+    '/en/veille/conditional-text-sphinx-rest/':                                                                                                              '/en/tutorials/conditional-text-sphinx-rest/',
+    '/en/veille/dita-xml-xslfo-tutorials/':                                                                                                              '/en/tutorials/dita-xml-xslfo-tutorials/',
+    '/en/veille/project-end-to-end/':                                                                                                              '/en/tutorials/project-end-to-end/',
+    '/en/veille/python-regular-expressions/':                                                                                                              '/en/tutorials/python-regular-expressions/',
+    '/en/veille/raspberry-pi-documentation-platform/':                                                                                                              '/en/tutorials/raspberry-pi-documentation-platform/',
+    '/en/veille/sed-text-modification/':                                                                                                              '/en/tutorials/sed-text-modification/',
+    '/en/veille/word-shuffling-python/':                                                                                                              '/en/tutorials/word-shuffling-python/',
+    // veille → tutorials — FR canonical
+    '/fr/veille/':                                                                                                                    '/fr/tutorials/',
+    '/fr/veille/auto-insert-data-dita-xml/':                                                                                                              '/fr/tutorials/auto-insert-data-dita-xml/',
+    '/fr/veille/auto-insert-data-restructuredtext/':                                                                                                              '/fr/tutorials/auto-insert-data-restructuredtext/',
+    '/fr/veille/auto-insert-sql-data-restructuredtext/':                                                                                                              '/fr/tutorials/auto-insert-sql-data-restructuredtext/',
+    '/fr/veille/conditional-text-jinja-object-method/':                                                                                                              '/fr/tutorials/conditional-text-jinja-object-method/',
+    '/fr/veille/conditional-text-jinja/':                                                                                                              '/fr/tutorials/conditional-text-jinja/',
+    '/fr/veille/conditional-text-sphinx-rest/':                                                                                                              '/fr/tutorials/conditional-text-sphinx-rest/',
+    '/fr/veille/dita-xml-xslfo-tutorials/':                                                                                                              '/fr/tutorials/dita-xml-xslfo-tutorials/',
+    '/fr/veille/project-end-to-end/':                                                                                                              '/fr/tutorials/project-end-to-end/',
+    '/fr/veille/python-regular-expressions/':                                                                                                              '/fr/tutorials/python-regular-expressions/',
+    '/fr/veille/raspberry-pi-documentation-platform/':                                                                                                              '/fr/tutorials/raspberry-pi-documentation-platform/',
+    '/fr/veille/sed-text-modification/':                                                                                                              '/fr/tutorials/sed-text-modification/',
+    '/fr/veille/word-shuffling-python/':                                                                                                              '/fr/tutorials/word-shuffling-python/',
   },
   integrations: [
     sitemap(),
@@ -136,11 +165,11 @@ export default defineConfig({
           autogenerate: { directory: 'tech-writing-process' },
         },
         {
-          label: 'Technology watch',
+          label: 'Tutorials',
           translations: {
             fr: 'Veille technologique',
           },
-          autogenerate: { directory: 'veille' },
+          autogenerate: { directory: 'tutorials' },
         },
         {
           label: 'Structured DITA XML format',
