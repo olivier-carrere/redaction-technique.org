@@ -46,17 +46,17 @@ Les règles syntaxiques interdisent au rédacteur technique de faire figurer une
 
 ## DocBook ou DITA XML ?
 
-Certaines entreprises ont parfois un contenu existant au format DocBook. Géré souvent par les acteurs les plus techniques de la société, il coexiste la plupart du temps avec d'autres contenus au format **FrameMaker** ou traitement de texte. S'il est décidé de fédérer tout le contenu d'entreprise sous un seul format, il semble naturel de capitaliser les efforts fournis sur la chaîne de création et de publication **DocBook** et de sélectionner ce format. C'est pourtant se priver des gains de productivité spectaculaires offerts par **DITA XML**.
+Certaines entreprises ont parfois un contenu existant au format DocBook. Géré souvent par les acteurs les plus techniques de la société, il coexiste la plupart du temps avec d'autres contenus au format FrameMaker ou traitement de texte. S'il est décidé de fédérer tout le contenu d'entreprise sous un seul format, il semble naturel de capitaliser les efforts fournis sur la chaîne de création et de publication DocBook et de sélectionner ce format. C'est pourtant se priver des gains de productivité spectaculaires offerts par DITA XML.
 
 
-Il est facile de générer du **DocBook** à partir de **DITA XML**. <abbr title="DITA Open Toolkit">DITA-OT</abbr> propose par défaut ce format cible, au même titre que le PDF ou le HTML. L'opération inverse ne peut pas être totalement automatisée. Pourquoi ?
+Il est facile de générer du DocBook à partir de DITA XML. <abbr title="DITA Open Toolkit">DITA-OT</abbr> propose par défaut ce format cible, au même titre que le PDF ou le HTML. L'opération inverse ne peut pas être totalement automatisée. Pourquoi ?
 
 ![Un processus non réversible](/assets/entropie.svg)
 **Un processus non réversible**
 
 Il n'est pas possible de migrer automatiquement des données de formats pauvres vers des format riches en information.
 
-Tout simplement parce que le contenu au format **DITA XML** contient plus d'informations. Passer d'un format plus riche à un format plus pauvre en information est une opération entropique qui peut facilement être automatisée. Par exemple, générer un PDF à partir de **DITA XML**. Effectuer l'opération inverse exige d'injecter de l'intelligence, opération que seul l'être humain peut aujourd'hui effectuer.
+Tout simplement parce que le contenu au format DITA XML contient plus d'informations. Passer d'un format plus riche à un format plus pauvre en information est une opération entropique qui peut facilement être automatisée. Par exemple, générer un PDF à partir de DITA XML. Effectuer l'opération inverse exige d'injecter de l'intelligence, opération que seul l'être humain peut aujourd'hui effectuer.
 
 Si votre contenu était une photo, nous pourrions faire l'analogie suivante :
 
@@ -71,19 +71,19 @@ Le passage de RAW en TIFF et de TIFF en JPEG est destructif et ne peut se faire 
 ![Un processus non réversible](/assets/entropie-dita-docbook.svg)
 **Un processus non réversible**
 
-Le PDF est sémantiquement plus pauvre que **DocBook**, lui-même plus pauvre que **DITA XML**.
+Le PDF est sémantiquement plus pauvre que DocBook, lui-même plus pauvre que DITA XML.
 
-Si votre entreprise tient absolument à utiliser du **DocBook**, il est toujours loisible de générer le contenu **DocBook** à partir d'un contenu source au format **DITA XML**. À condition que le contenu source reste au format **DITA XML** (c'est à dire, à condition qu'aucune modification apportée au contenu **DocBook** ne soit sauvegardée) et que le format **DocBook** ne soit qu'une étape de la génération des livrables, au même titre que le format FO, vous bénéficiez ainsi des fonctionnalités avancées de réutilisation du contenu que propose **DITA XML**.
+Si votre entreprise tient absolument à utiliser du DocBook, il est toujours loisible de générer le contenu DocBook à partir d'un contenu source au format DITA XML. À condition que le contenu source reste au format DITA XML (c'est-à-dire, à condition qu'aucune modification apportée au contenu DocBook ne soit sauvegardée) et que le format DocBook ne soit qu'une étape de la génération des livrables, au même titre que le format FO, vous bénéficiez ainsi des fonctionnalités avancées de réutilisation du contenu que propose DITA XML.
 
-L'effort de migration d'un format non structuré est certes un peu plus important vers **DITA XML** que vers **DocBook**, puisque vous devez injecter plus d'informations sémantiques. Vous devez également migrer le contenu **DocBook** vers **DITA XML**, ce qui représente également un effort, quoique plus faible. Mais votre contenu est immédiatement de meilleure qualité, car plus structuré. Et vous pourrez rapidement cueillir tous les fruits de votre labeur, notamment si une traduction de votre contenu dans une nouvelle langue est envisagée.
+L'effort de migration d'un format non structuré est certes un peu plus important vers DITA XML que vers DocBook, puisque vous devez injecter plus d'informations sémantiques. Vous devez également migrer le contenu DocBook vers DITA XML, ce qui représente également un effort, quoique plus faible. Mais votre contenu est immédiatement de meilleure qualité, car plus structuré. Et vous pourrez rapidement cueillir tous les fruits de votre labeur, notamment si une traduction de votre contenu dans une nouvelle langue est envisagée.
 
 De manière générale, un professionnel a toujours intérêt à travailler sur le format le plus riche, ne serait-ce que pour être pro-actif et anticiper sur les nouveaux besoins.
 
 ## Migration de FrameMaker vers DITA XML
 
-Migrer de **FrameMaker** vers **DITA XML**, ce n'est pas comme enregistrer un document **MS Word** au format **LibreOffice**. Aucun processus automatique ne permet de migrer un document non structuré vers un format structuré. Dans le pire des cas, selon la qualité de votre document de départ, cela peut s'apparenter à transformer une friche en jardin à la française. Mais une migration bien planifiée permet de passer au nouveau format sans perturber le rythme des livraisons.
+Migrer de FrameMaker vers DITA XML, ce n'est pas comme enregistrer un document MS Word au format LibreOffice. Aucun processus automatique ne permet de migrer un document non structuré vers un format structuré. Dans le pire des cas, selon la qualité de votre document de départ, cela peut s'apparenter à transformer une friche en jardin à la française. Mais une migration bien planifiée permet de passer au nouveau format sans perturber le rythme des livraisons.
 
-Pour filer la métaphore, si l'on se fixe pour but de convertir un marécage en parterre du château de Versailles, il convient de passer par l'étape du jardin à l'anglaise - soit un endroit certes non rigoureusement architecturé, mais très agréable à vivre. Bonne nouvelle : si le **rédacteur technique** a utilisé de manière cohérente un jeu de styles limité et organisé rationnellement son contenu **FrameMaker**, il est déjà certainement très proche de ce stade.
+Pour filer la métaphore, si l'on se fixe pour but de convertir un marécage en parterre du château de Versailles, il convient de passer par l'étape du jardin à l'anglaise - soit un endroit certes non rigoureusement architecturé, mais très agréable à vivre. Bonne nouvelle : si le rédacteur technique a utilisé de manière cohérente un jeu de styles limité et organisé rationnellement son contenu FrameMaker, il est déjà certainement très proche de ce stade.
 
 ![Migration de FrameMaker vers DITA XML](/assets/framemaker-to-dita-migration.svg)
 **Migration de FrameMaker vers DITA XML**
@@ -96,42 +96,42 @@ D'ailleurs, si, pour une raison quelconque, votre projet de migration devait s'a
 
 ### Restructuration du contenu FrameMaker
 
-La partie automatisée d'une migration de FrameMaker vers **DITA XML** consiste à appliquer une table de conversion entre les styles **FrameMaker** et les structures **DITA XML**.
+La partie automatisée d'une migration de FrameMaker vers DITA XML consiste à appliquer une table de conversion entre les styles FrameMaker et les structures DITA XML.
 
-Un important travail de restructuration du document **FrameMaker** doit cependant être effectué en amont :
+Un important travail de restructuration du document FrameMaker doit cependant être effectué en amont :
 
 - restructuration de l'information selon les trois catégories *concept*, *tâche* et *référence*,
 - suppression des *overrides* (propriétés de texte appliquées manuellement et écrasant les styles ; ce genre d'hérésie est, sinon impossible, du moins très limité sous un format structuré),
-- harmonisation et simplification des styles **FrameMaker** pour les limiter et les faire correspondre aux balises **DITA XML** qui seront utilisées (par exemple, un style *note_important* vers la balise \<note type=\"important\> ; il faut donc au préalable analyser le contenu existant et décider quel ensemble de balises sera utilisé parmi les centaines de balises proposées par **DITA XML** : il est en effet fortement déconseillé de les utiliser toutes).
+- harmonisation et simplification des styles FrameMaker pour les limiter et les faire correspondre aux balises DITA XML qui seront utilisées (par exemple, un style *note_important* vers la balise `<note type="important">` ; il faut donc au préalable analyser le contenu existant et décider quel ensemble de balises sera utilisé parmi les centaines de balises proposées par DITA XML : il est en effet fortement déconseillé de les utiliser toutes).
 
 ![Restructuration du contenu FrameMaker et mise en place de la chaîne DITA XML](/assets/framemaker-restructure.svg)
 **Restructuration du contenu FrameMaker et mise en place de la chaîne DITA XML**
 
-Ce travail d'harmonisation peut se faire en parallèle avec la mise à jour et la publication du document **FrameMaker**. La qualité de ce document n'en sera que meilleure. En même temps que cette réorganisation du contenu, vous pouvez mettre en place la chaîne complète de création, gestion et publication **DITA XML** sur un échantillon de votre contenu :
+Ce travail d'harmonisation peut se faire en parallèle avec la mise à jour et la publication du document FrameMaker. La qualité de ce document n'en sera que meilleure. En même temps que cette réorganisation du contenu, vous pouvez mettre en place la chaîne complète de création, gestion et publication DITA XML sur un échantillon de votre contenu :
 
 - mise en place des outils,
 - réalisation des feuilles de style des différents formats de sortie,
 - formation des rédacteurs techniques, graphistes et traducteurs,
 - formation et sensibilisation des autres acteurs de l'entreprise.
 
-Ce n'est qu'une fois que sa chaîne est fiable et acceptée, voire attendue par les autres acteurs de l'entreprise, que le **rédacteur technique** peut envisager la migration.
+Ce n'est qu'une fois que sa chaîne est fiable et acceptée, voire attendue par les autres acteurs de l'entreprise, que le rédacteur technique peut envisager la migration.
 
-Si vos documents sont disponibles en plusieurs langues, vous devez modifier les fichiers **FrameMaker** et effectuer la migration pour chaque langue. Si un projet de traduction dans une nouvelle langue se profile, mieux vaut effectuer la migration avant !
+Si vos documents sont disponibles en plusieurs langues, vous devez modifier les fichiers FrameMaker et effectuer la migration pour chaque langue. Si un projet de traduction dans une nouvelle langue se profile, mieux vaut effectuer la migration avant !
 
 ### Table de conversion FrameMaker vers DITA XML
 
-Lorsque les fichiers FrameMaker sont prêts pour la migration et que la chaîne **DITA XML** est parfaitement intégrée aux processus techniques et humains de la société, le **rédacteur technique** peut appliquer la table de conversion.
+Lorsque les fichiers FrameMaker sont prêts pour la migration et que la chaîne DITA XML est parfaitement intégrée aux processus techniques et humains de la société, le rédacteur technique peut appliquer la table de conversion.
 
-Vous devriez maintenant être à même d'archiver les fichiers **FrameMaker**, puis de basculer totalement vers le format **DITA XML**.
+Vous devriez maintenant être à même d'archiver les fichiers FrameMaker, puis de basculer totalement vers le format DITA XML.
 
 ![Application d'une table de conversion de FrameMaker vers DITA XML](/assets/dita-migration.svg)
 **Application d'une table de conversion de FrameMaker vers DITA XML**
 
 Appliquez bien sûr ce processus à un petit jeu de documents, qui ne soit pas, si possible, d'une importance critique. Après ce premier succès, vous pourrez appliquer le processus aux autres jeux de documents.
 
-Vous pouvez maintenant progressivement modulariser et partager votre contenu dans le nouveau format afin de tirer parti au maximum de **DITA XML**. Vous pouvez pendant cette phase continuer à publier de nouvelles versions du document ; la publication devrait d'ailleurs être beaucoup plus simple que sous **FrameMaker**.
+Vous pouvez maintenant progressivement modulariser et partager votre contenu dans le nouveau format afin de tirer parti au maximum de DITA XML. Vous pouvez pendant cette phase continuer à publier de nouvelles versions du document ; la publication devrait d'ailleurs être beaucoup plus simple que sous FrameMaker.
 
-### Migrer de FrameMaker vers DITA XML
+### Procédure de migration pas à pas
 
 Le but de cette procédure est de :
 
@@ -167,12 +167,12 @@ Ne lancez ce type de scripts que sur une copie de vos fichiers et non sur les fi
 ```perl
 #!/usr/bin/perl
 open(INPUT,"<$ARGV[0]") or die;
-@input_array=<INPUT‣;
+@input_array=<INPUT>;
 close(INPUT);
-$input_scalar=join(",@input_array);
+$input_scalar=join("",@input_array);
 # substitution
-$input_scalar =~ s#\<body‣(.|\n)*?</body‣##ig;
-open(OUTPUT,‣$ARGV[0]") or die;
+$input_scalar =~ s#<body>(.|\n)*?</body>##ig;
+open(OUTPUT,">$ARGV[0]") or die;
 print(OUTPUT $input_scalar);
 close(OUTPUT);
 ```
@@ -180,9 +180,9 @@ close(OUTPUT);
 Vous pouvez également modulariser facilement le contenu à l'aide des ciseaux XML xml_split, ou utiliser le module Perl XML::Twig, ou encore ce one-liner Bash pour renommer les fichiers `.dita` d'après leur titre :
 
 ```console
-$ ack "<title‣" *.dita| sed "s# #_#g;" |
+$ ack "<title>" *.dita | sed "s# #_#g;" |
 tr '[:upper:]' '[:lower:]' |
-sed -E "s#(.*.dita)#mv \1#g;" |
-sed -E "s#\.dita.*<title‣(.*)</title‣#.dita \1.dita#g;"
+sed -E "s#(.*\.dita)#mv \1#g;" |
+sed -E "s#\.dita.*<title>(.*)</title>#.dita \1.dita#g;"
 ```
 
