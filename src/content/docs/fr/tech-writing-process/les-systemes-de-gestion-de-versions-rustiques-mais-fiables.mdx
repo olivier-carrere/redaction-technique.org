@@ -2,7 +2,7 @@
 title: "Les systèmes de gestion de versions - rustiques mais fiables"
 description: "Gérez la documentation technique avec Git, Subversion ou SourceSafe comme du code source : suivez les modifications, collaborez en équipe et restaurez des versions."
 ---
-Travailler sur des fichiers sources au format texte, et non binaire, est l'occasion pour le **rédacteur technique** de gérer son contenu comme les développeurs gèrent leur code : sous un système de gestion des sources tel que Git, Subversion ou SourceSafe.
+Travailler sur des fichiers sources au format texte, et non binaire, est l'occasion pour le rédacteur technique de gérer son contenu comme les développeurs gèrent leur code : sous un système de gestion des sources tel que Git, Subversion ou SourceSafe.
 
 Ces systèmes :
 
@@ -26,13 +26,13 @@ Les systèmes de gestion des sources utilisent les concepts suivants :
 
 | Élément  | Description                                                                                                                                      |
 |----------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| Tronc    | Dépôt principal conservant toutes les versions des fichiers placées au cours du temps par le **rédacteur technique** (ou plus fréquemment, le développeur). |
+| Tronc    | Dépôt principal conservant toutes les versions des fichiers placées au cours du temps par le rédacteur technique (ou plus fréquemment, le développeur). |
 | Branche  | Dépôt secondaire créé à partir de la version principale du code source.                                                                           |
 | Tag      | Instantané du tronc ou d'une branche à un instant t. Permet de figer facilement une version, par exemple, la version publiée, et de créer une archive. |
 
-Si l'on s'en donne la peine, il est également possible de mal utiliser les systèmes de gestion de version et de perdre des données. Mais, en pratique, à même niveau d'effort et de compétence, le risque de perdre de données est nettement moindre si le **rédacteur technique** manipule des fichiers texte sous un gestionnaire de version plutôt que des fichiers binaires sur un répertoire partagé.
+Si l'on s'en donne la peine, il est également possible de mal utiliser les systèmes de gestion de version et de perdre des données. Mais, en pratique, à même niveau d'effort et de compétence, le risque de perdre des données est nettement moindre si le rédacteur technique manipule des fichiers texte sous un gestionnaire de version plutôt que des fichiers binaires sur un répertoire partagé.
 
-Les systèmes de gestion de code source ont une fiabilité éprouvée et gèrent des millions de lignes de code. Tout comme les systèmes de fichiers (Ext4, Btrfs, etc.) ils évoluent lentement, selon une politique conservatrice, et ne sont proposés en production que lorsqu'ils ont été exhaustivement débogués. Si les plus grands projets de développement informatique, tel que GNU/Linux, par exemple, leur font confiance, pourquoi ne pas également leur confier la **documentation technique** ?
+Les systèmes de gestion de code source ont une fiabilité éprouvée et gèrent des millions de lignes de code. Tout comme les systèmes de fichiers (Ext4, Btrfs, etc.) ils évoluent lentement, selon une politique conservatrice, et ne sont proposés en production que lorsqu'ils ont été exhaustivement débogués. Si les plus grands projets de développement informatique, tel que GNU/Linux, par exemple, leur font confiance, pourquoi ne pas également leur confier la documentation technique ?
 
 Un bémol cependant : ces outils ne sont pas destinés spécifiquement au format XML et effectuent des comparaisons ligne par ligne entre les fichiers, et non pas nœud par nœud, ce qui multiplie inutilement les conflits entre les commits ou les branches.
 
