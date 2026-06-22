@@ -30,7 +30,7 @@ Nous allons créer une base de données de produits avec leurs versions, puis me
         exit(1)
     
     print('La base de données a été créée.')
-	```
+    ```
 
 2.  Insérez des données dans la base :
 
@@ -49,7 +49,7 @@ Nous allons créer une base de données de produits avec leurs versions, puis me
         cursor = db.cursor()
     
         for data in prods:
-            cursor.execute('INSERT INTO products (product, version) <abbr title="?, ?">VALUES</abbr> ',
+            cursor.execute('INSERT INTO products (product, version) VALUES (?, ?)',
                            data)
     
         db.commit()
@@ -67,7 +67,7 @@ Nous allons créer une base de données de produits avec leurs versions, puis me
 3.  Créez le fichier `modele-sql.rst` suivant :
 
     ```
-        {% for prod in product %}
+    {% for prod in product %}
     {{ prod | capitalize }}
     {% for c in prod %}-{% endfor %}
        {% for ver in version %}
@@ -79,7 +79,7 @@ Nous allons créer une base de données de produits avec leurs versions, puis me
 4.  Exécutez le script Python suivant :
 
     ```
-        #!/usr/bin/python
+    #!/usr/bin/python
     # coding: utf8
     import sqlite3
     import jinja2
@@ -118,7 +118,7 @@ Nous allons créer une base de données de produits avec leurs versions, puis me
 
     Le contenu suivant s'affiche :
 
-    ``` txt
+    ```txt
     Produits et versions
     ====================
 
