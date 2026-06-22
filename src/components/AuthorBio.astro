@@ -4,8 +4,8 @@ const lang = (Astro.locals as Record<string, any>)?.starlightRoute?.lang ?? 'en'
 
 <p class="author-byline not-content">
   {lang === 'fr'
-    ? <span>Par <a href="https://www.linkedin.com/in/carrereolivier/" rel="noopener noreferrer">Olivier Carrère</a>, rédacteur technique</span>
-    : <span>By <a href="https://www.linkedin.com/in/carrereolivier/" rel="noopener noreferrer">Olivier Carrère</a>, technical writer</span>
+    ? <span>Par <a href="https://www.linkedin.com/in/carrereolivier/" rel="noopener noreferrer">Olivier Carrère</a>, rédacteur technique · <a href="https://redaction-technique.org/" rel="noopener noreferrer">Blog ↗</a></span>
+    : <span>By <a href="https://www.linkedin.com/in/carrereolivier/" rel="noopener noreferrer">Olivier Carrère</a>, technical writer · <a href="https://redaction-technique.org/" rel="noopener noreferrer">Blog ↗</a></span>
   }
 </p>
 
