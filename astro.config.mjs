@@ -2,9 +2,9 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import mdx from '@astrojs/mdx';
-import astroExpressiveCode from 'astro-expressive-code';
 import sitemap from '@astrojs/sitemap';
 import vercel from '@astrojs/vercel';
+import { unified } from '@astrojs/markdown-remark';
 
 const site = 'https://docs.redaction-technique.org/';
 
@@ -16,6 +16,11 @@ export const locales = {
 export default defineConfig({
   site,
   trailingSlash: 'always',
+  markdown: {
+    // Astro 7 defaults to the Sätteri engine, which escapes the raw-HTML icon
+    // injected into Starlight asides. Keep the remark/rehype pipeline instead.
+    processor: unified(),
+  },
   redirects: {
     '/': '/en/',
     // tech-writing-process — EN old slugs
@@ -139,9 +144,6 @@ export default defineConfig({
     '/fr/veille/word-shuffling-python/':                                                                                                              '/fr/tutorials/word-shuffling-python/',
   },
   integrations: [
-    sitemap(),
-    astroExpressiveCode(),
-    mdx(),
     starlight({
       title: 'Redaction-technique.org',
       customCss: ['./src/styles/custom.css'],
@@ -188,6 +190,8 @@ export default defineConfig({
         },
       ],
     }),
+    mdx(),
+    sitemap(),
     vercel({
       webAnalytics: {
         enabled: true,
