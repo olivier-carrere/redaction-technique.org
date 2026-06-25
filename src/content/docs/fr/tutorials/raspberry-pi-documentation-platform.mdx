@@ -7,7 +7,7 @@ Faut-il une débauche de puissance pour générer une documentation professionne
 :::note
 Les buts de ce billet sont de :
 
-- Présenter un <abbr title="Proof of Concept, démonstration de faisabilité">POC</abbr> et utiliser des ressources minimales pour créer, gérer et publier une documentation professionnelle. La plupart des opérations se déroulent donc en mode texte, sous Linux. Si les solutions présentées ici fonctionnent également en mode graphique sous Windows, elles ne sont peut-être pas disponibles sous Windows 10 IoT, destiné au Raspberry Pi 3.
+- Présenter un <abbr title="Proof of Concept, démonstration de faisabilité">POC</abbr> et utiliser des ressources minimales pour créer, gérer et publier une documentation professionnelle. La plupart des opérations se déroulent donc en mode texte, sous Linux, mais les mêmes outils fonctionnent également en mode graphique.
 - Présenter un scénario d'utilisation aussi simple que possible, parfois au détriment de l'élégance technique.
 :::
 
@@ -15,10 +15,10 @@ Les buts de ce billet sont de :
 
 **Prérequis**
 
-- Carte micro-SD de 16 Go classe 10 (de préférence).
+- Carte micro-SD de 32 Go classe 10 (de préférence).
 - Connexion Internet filaire ou Wi-Fi.
 
-1. Installez la distribution Linux Raspbian sur votre Raspberry Pi 3 via NOOBS.
+1. Installez la distribution Linux Raspberry Pi OS sur votre Raspberry Pi 3 à l'aide de Raspberry Pi Imager.
 2. Sélectionnez `Menu` ‣ `Preferences` ‣ `Raspberry Pi Configuration`.
 
    La boîte de dialogue `Raspberry Pi Configuration` apparaît.
@@ -43,7 +43,7 @@ Les buts de ce billet sont de :
 8. Mettez à jour le système :
 
    ```console
-   $  sudo aptitude update && sudo aptitude safe-upgrade -y
+   $ sudo apt update && sudo apt full-upgrade -y
    ```
 
    Le temps de lire un épisode du Surfer d'argent, et le système est mis à jour.
@@ -58,7 +58,7 @@ Les buts de ce billet sont de :
 2. Installez les paquets logiciels suivants :
 
    ```console
-   $ sudo aptitude install -y calibre emacs gitk inkscape python3-sphinx texlive-full
+   $ sudo apt install -y calibre emacs gitk inkscape python3-sphinx texlive-full
    ```
 
    Le temps de lire cinq ou six épisodes de The Amazing Spider-Man, et les logiciels suivants sont installés :
@@ -75,7 +75,7 @@ Les buts de ce billet sont de :
 3. Libérez de l'espace disque :
 
    ```console
-   $ sudo aptitude clean
+   $ sudo apt clean
    ```
 
 ## Récupérez les sources de ce blog

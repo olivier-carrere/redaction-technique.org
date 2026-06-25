@@ -11,7 +11,7 @@ Do you need a lot of power to generate professional documentation? With its sing
 :::note
 This post aims to:
 
-- Present a <abbr title="Proof of Concept, demonstration of feasibility">POC</abbr> and use minimal resources to create, manage, and publish professional documentation. Most operations occur in text mode under Linux. While these solutions work in graphical mode under Windows, they may not be available on Windows 10 IoT, intended for the Raspberry Pi 3.
+- Present a <abbr title="Proof of Concept, demonstration of feasibility">POC</abbr> and use minimal resources to create, manage, and publish professional documentation. Most operations occur in text mode under Linux, though the same tools also work in graphical mode.
 - Present a user scenario that's as simple as possible, sometimes at the expense of technical elegance.
 :::
 
@@ -19,10 +19,10 @@ This post aims to:
 
 **Prerequisites**
 
-- 16 GB class 10 micro-SD card (recommended).
+- 32 GB class 10 micro-SD card (recommended).
 - Wired or Wi-Fi Internet connection.
 
-1. Install the Raspbian Linux distribution on your Raspberry Pi 3 via NOOBS.
+1. Install the Raspberry Pi OS distribution on your Raspberry Pi 3 using Raspberry Pi Imager.
 2. Select `Menu` ‣ `Preferences` ‣ `Raspberry Pi Configuration`.
 
    The `Raspberry Pi Configuration` dialog box appears.
@@ -47,7 +47,7 @@ This post aims to:
 8. Update the system:
 
    ```bash
-   $ sudo aptitude update && sudo aptitude safe-upgrade -y
+   $ sudo apt update && sudo apt full-upgrade -y
    ```
 
    Time to read an episode of The Silver Surfer, and the system is updated.
@@ -62,7 +62,7 @@ This post aims to:
 2. Install the following software packages:
 
    ```bash
-   $ sudo aptitude install -y calibre emacs gitk inkscape python3-sphinx texlive-full
+   $ sudo apt install -y calibre emacs gitk inkscape python3-sphinx texlive-full
    ```
 
    By the time I've read five or six episodes of The Amazing Spider-Man, the following software has been installed:
@@ -79,7 +79,7 @@ This post aims to:
 3. Free up disk space:
 
    ```bash
-   $ sudo aptitude clean
+   $ sudo apt clean
    ```
 
 ## Get the sources for this blog
