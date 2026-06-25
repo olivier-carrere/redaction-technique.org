@@ -163,28 +163,28 @@ export default defineConfig({
           translations: {
             fr: 'Rédaction technique : un processus industriel',
           },
-          autogenerate: { directory: 'tech-writing-process' },
+          items: [{ autogenerate: { directory: 'tech-writing-process' } }],
         },
         {
           label: 'Tutorials',
           translations: {
             fr: 'Didacticiels',
           },
-          autogenerate: { directory: 'tutorials' },
+          items: [{ autogenerate: { directory: 'tutorials' } }],
         },
         {
           label: 'Structured DITA XML format',
           translations: {
             fr: 'Format structuré DITA XML',
           },
-          autogenerate: { directory: 'formats' },
+          items: [{ autogenerate: { directory: 'formats' } }],
         },
         {
           label: 'Reduce costs, increase customer satisfaction',
           translations: {
             fr: 'Diminuer les coûts, augmenter la satisfaction client',
           },
-          autogenerate: { directory: 'costs' },
+          items: [{ autogenerate: { directory: 'costs' } }],
         },
       ],
     }),
