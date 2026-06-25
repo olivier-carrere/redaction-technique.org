@@ -26,7 +26,7 @@ if (pathname === '/') {
 }
 
 const siteName = 'Redaction-technique.org';
-const defaultImage = `${siteUrl}/assets/galerie-photo.jpg`;
+const defaultImage = `${siteUrl}/assets/opengraph.jpg`;
 // Starlight already emits og:title, og:description, og:type, og:url, og:locale,
 // og:site_name, and twitter:card — read data from the correct source for our additions.
 const siteDefaultDescription = lang === 'fr'
@@ -118,8 +118,8 @@ const schema = { '@context': 'https://schema.org', '@graph': graphNodes };
 
 <!-- og:image — not emitted by Starlight's default head -->
 <meta property="og:image" content={defaultImage} />
-<meta property="og:image:width" content="680" />
-<meta property="og:image:height" content="451" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content={pageTitle} />
 
 <!-- Twitter / X Card — Starlight only sets twitter:card -->
