@@ -1,6 +1,6 @@
 ---
 lastUpdated: false
-title: "Rédaction technique et automatisation de la documentation"
+title: "Rédaction technique, étape par étape — Olivier Carrère"
 description: "Guides experts en rédaction technique, DITA XML, Markdown, docs-as-code et automatisation de contenu pour les communicants techniques et équipes documentation."
 template: splash
 tableOfContents: false
@@ -28,12 +28,14 @@ import AuthorBio from '../../../components/AuthorBio.astro';
 
 <AuthorBio />
 
+*Un guide pratique du processus docs-as-code, de la définition du projet à la livraison — le [blog](https://redaction-technique.org/), ce sont des essais et des analyses ; ici, c'est le manuel.*
+
 Que vous choisissiez entre DITA XML et Markdown, passiez à un workflow docs-as-code ou intégriez la documentation à votre pipeline CI/CD — ces guides couvrent les méthodes, formats et outils qui font de la documentation technique une pratique durable et évolutive.
 
 ## Nouveau ici ? Commencez par ces quatre articles
 
 1. [Les trois niveaux de la documentation technique](costs/three-levels-of-documentation/) — situez où se trouve aujourd'hui la pratique documentaire de votre organisation
-2. [Formats structurés et non structurés](formats/structured-unstructured-formats/) — le choix de format qui détermine tout le reste
+2. [Formats structurés et non structurés](formats/structured-vs-unstructured-formats/) — le choix de format qui détermine tout le reste
 3. [Cas concret : documentation de NuFirewall](formats/nufirewall-case-study/) — la rédaction structurée en production, avec un résultat concret
 4. [Intégrer la documentation aux processus de développement](tech-writing-process/integrating-documentation-into-development/) — le changement de workflow et d'outillage qui s'ensuit
 
@@ -50,8 +52,8 @@ Que vous choisissiez entre DITA XML et Markdown, passiez à un workflow docs-as-
 
 <CardGrid>
   <LinkCard title="Cas concret : documentation de NuFirewall" href="formats/nufirewall-case-study/" description="La presse a cité la documentation comme un atout produit, pas un supplément. Un regard détaillé sur les techniques DITA XML qui l'ont rendu possible." />
-  <LinkCard title="Formats structurés et non structurés" href="formats/structured-unstructured-formats/" description="Les trois types de topics DITA — concept, tâche, référence — imposent une structure qui rend le contenu réutilisable, traduisible et cohérent." />
-  <LinkCard title="Du document à la base documentaire modulaire" href="formats/document-to-modular-base/" description="Remplacez les manuels monolithiques par des modules de topics réutilisables : traductions moins coûteuses, revues parallèles, plusieurs formats de sortie à partir d'une seule source." />
+  <LinkCard title="Formats structurés et non structurés" href="formats/structured-vs-unstructured-formats/" description="Les trois types de topics DITA — concept, tâche, référence — imposent une structure qui rend le contenu réutilisable, traduisible et cohérent." />
+  <LinkCard title="Du document à la base documentaire modulaire" href="formats/modular-documentation/" description="Remplacez les manuels monolithiques par des modules de topics réutilisables : traductions moins coûteuses, revues parallèles, plusieurs formats de sortie à partir d'une seule source." />
   <LinkCard title="Voir les 5 articles →" href="formats/" description="Formats structurés, cas d'usage DITA XML et compromis d'architecture documentaire." />
 </CardGrid>
 
@@ -67,7 +69,7 @@ Que vous choisissiez entre DITA XML et Markdown, passiez à un workflow docs-as-
 ## Didacticiels
 
 <CardGrid>
-  <LinkCard title="Didacticiels DITA XML et XSL-FO" href="tutorials/dita-xml-xslfo-tutorials/" description="Mettez en place la chaîne de publication DITA XML vers PDF avec XSL-FO — de la rédaction des sources à la sortie mise en page, étape par étape." />
+  <LinkCard title="Didacticiels DITA XML et XSL-FO" href="tutorials/dita-xml-xsl-fo-tutorials/" description="Mettez en place la chaîne de publication DITA XML vers PDF avec XSL-FO — de la rédaction des sources à la sortie mise en page, étape par étape." />
   <LinkCard title="Texte conditionnel avec Sphinx" href="tutorials/conditional-text-sphinx-rest/" description="Générer des variantes de documents à partir des mêmes sources ReST avec le texte conditionnel de Sphinx." />
   <LinkCard title="Expressions régulières en Python" href="tutorials/python-regular-expressions/" description="La bibliothèque d'expressions régulières de Python aide à manipuler du texte, notamment si vous n'êtes pas familier avec sed ou awk." />
   <LinkCard title="Voir les 11 articles →" href="tutorials/" description="Templates Jinja, automatisation SQL, sed et chaînes d'outils de documentation." />

@@ -1,6 +1,6 @@
 ---
 lastUpdated: false
-title: "Docs-as-Code & Technical Writing — Olivier Carrère"
+title: "Technical Writing, Step by Step — Olivier Carrère"
 description: "Expert guides on technical writing, DITA XML, Markdown, docs-as-code, and content automation for technical communicators and documentation engineering teams."
 template: splash
 tableOfContents: false
@@ -28,12 +28,14 @@ import AuthorBio from '../../../components/AuthorBio.astro';
 
 <AuthorBio />
 
+*A practical guide to the docs-as-code process, from project definition to delivery — the [blog](https://redaction-technique.org/) is essays and opinion; this is the manual.*
+
 Whether you're choosing between DITA XML and Markdown, moving to a docs-as-code workflow, or integrating documentation into a CI/CD pipeline — these guides cover the methods, formats, and tools that make technical documentation a sustainable, scalable practice.
 
 ## New here? Start with these four articles
 
 1. [The three levels of technical documentation](costs/three-levels-of-documentation/) — locate where your organization's documentation practice sits today
-2. [Structured and unstructured formats](formats/structured-unstructured-formats/) — the format choice that determines everything downstream
+2. [Structured and unstructured formats](formats/structured-vs-unstructured-formats/) — the format choice that determines everything downstream
 3. [Case study: NuFirewall documentation](formats/nufirewall-case-study/) — structured authoring in production, with a press-validated outcome
 4. [Integrating documentation into development](tech-writing-process/integrating-documentation-into-development/) — the workflow and toolchain change that follows
 
@@ -50,8 +52,8 @@ Whether you're choosing between DITA XML and Markdown, moving to a docs-as-code 
 
 <CardGrid>
   <LinkCard title="Case study: NuFirewall documentation" href="formats/nufirewall-case-study/" description="Press reviewers cited the documentation as a product strength, not a supplement. A detailed look at the DITA XML techniques that made it possible." />
-  <LinkCard title="Structured and unstructured formats" href="formats/structured-unstructured-formats/" description="DITA's three topic types — concept, task, reference — enforce structure that makes content reusable, translatable, and consistent." />
-  <LinkCard title="From document to modular document base" href="formats/document-to-modular-base/" description="Replace monolithic manuals with reusable topic modules: lower translation costs, parallel reviews, multiple output formats from one source pool." />
+  <LinkCard title="Structured and unstructured formats" href="formats/structured-vs-unstructured-formats/" description="DITA's three topic types — concept, task, reference — enforce structure that makes content reusable, translatable, and consistent." />
+  <LinkCard title="From document to modular document base" href="formats/modular-documentation/" description="Replace monolithic manuals with reusable topic modules: lower translation costs, parallel reviews, multiple output formats from one source pool." />
   <LinkCard title="Explore all 5 articles →" href="formats/" description="Structured formats, DITA XML use cases, and document architecture trade-offs." />
 </CardGrid>
 
@@ -67,7 +69,7 @@ Whether you're choosing between DITA XML and Markdown, moving to a docs-as-code 
 ## Tutorials
 
 <CardGrid>
-  <LinkCard title="DITA XML and XSL-FO tutorials" href="tutorials/dita-xml-xslfo-tutorials/" description="Set up the DITA XML to PDF publishing chain with XSL-FO — step-by-step from source authoring to styled output." />
+  <LinkCard title="DITA XML and XSL-FO tutorials" href="tutorials/dita-xml-xsl-fo-tutorials/" description="Set up the DITA XML to PDF publishing chain with XSL-FO — step-by-step from source authoring to styled output." />
   <LinkCard title="Conditional text with Sphinx" href="tutorials/conditional-text-sphinx-rest/" description="Generate document variants from the same ReST sources with Sphinx conditional text." />
   <LinkCard title="Regular expressions in Python" href="tutorials/python-regular-expressions/" description="Python's regular expression library helps you manipulate text, especially if you're not familiar with sed or awk." />
   <LinkCard title="Explore all 11 articles →" href="tutorials/" description="Jinja templating, SQL automation, sed, and documentation toolchains." />
