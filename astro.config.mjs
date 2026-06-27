@@ -165,7 +165,31 @@ export default defineConfig({
           translations: {
             fr: 'Rédaction technique : un processus industriel',
           },
-          items: [{ autogenerate: { directory: 'tech-writing-process' } }],
+          // Explicit process order (define → gather → format → create →
+          // version/collaborate → validate → translate → deliver) instead of
+          // alphabetical autogenerate. Labels are derived per-locale from each
+          // page's frontmatter title.
+          items: [
+            { slug: 'tech-writing-process/project-definition' },
+            { slug: 'tech-writing-process/gathering-information' },
+            { slug: 'tech-writing-process/testing-products' },
+            { slug: 'tech-writing-process/source-format' },
+            { slug: 'tech-writing-process/target-format' },
+            { slug: 'tech-writing-process/content-creation' },
+            { slug: 'tech-writing-process/integrating-documentation-into-development' },
+            { slug: 'tech-writing-process/version-management-systems' },
+            { slug: 'tech-writing-process/git-from-file-to-content' },
+            { slug: 'tech-writing-process/using-branches' },
+            { slug: 'tech-writing-process/repository' },
+            { slug: 'tech-writing-process/single-repository' },
+            { slug: 'tech-writing-process/which-repository-for-group-work' },
+            { slug: 'tech-writing-process/shared-network-directories' },
+            { slug: 'tech-writing-process/sql-database' },
+            { slug: 'tech-writing-process/cms-workflow-and-reliability' },
+            { slug: 'tech-writing-process/validation-quality-control' },
+            { slug: 'tech-writing-process/translation' },
+            { slug: 'tech-writing-process/delivery' },
+          ],
         },
         {
           label: 'Tutorials',
