@@ -23,7 +23,6 @@ const strings = {
     outputEmpty: "Click the button to run.",
     buildBadge:
       "BUILD v3 · deterministic permutations (no random shuffle) · first output line should be the original sentence",
-    codeTitle: "The Python doing the work",
     foot: "The runtime is fetched on first load, so the dot stays amber for a few seconds while genuine CPython boots in your browser. The last sample line has only two words, so Python flags it instead of rephrasing it — everything runs client-side, no server involved.",
     typeAtLeastOne: "Type at least one sentence.",
     flagText: "skipped &mdash; {n} words, needs 9",
@@ -39,7 +38,6 @@ const strings = {
     outputEmpty: "Cliquez sur le bouton pour exécuter.",
     buildBadge:
       "BUILD v3 · permutations déterministes (sans mélange aléatoire) · la première ligne de sortie doit être la phrase d'origine",
-    codeTitle: "Le Python qui fait le travail",
     foot: "Le runtime est téléchargé au premier chargement : le point reste ambre quelques secondes, le temps que CPython démarre dans votre navigateur. La dernière ligne d'exemple ne compte que deux mots : Python la signale au lieu de la reformuler — tout s'exécute côté client, sans serveur.",
     typeAtLeastOne: "Saisissez au moins une phrase.",
     flagText: "ignorée &mdash; {n} mots, il en faut 9",
@@ -53,43 +51,6 @@ const defaultSentences = [
   "Vaste océan, la forte houle te fait tanguer d'ivresse.",
   "Phrase incomplète.",
 ].join("\n");
-
-// Curated snippet shown verbatim (String.raw keeps the `\9 \8` back-refs
-// literal). Comments stay in English — it's source code.
-const pyDisplay = String.raw`from pyscript import when, document
-import html
-
-# Each pattern lists the 1-based word positions, in order.
-# "," means: stick a comma onto the word just before it.
-# These are the philosophy teacher's reorderings — the same
-# index maps the sed back-references (\9 \8 \6 ...) produce.
-PATTERNS = [
-    [1, 2, ",", 3, 4, 5, 6, 7, 8, 9],          # the original line
-    [9, 8, 6, 7, ",", 1, 2, ",", 3, 4, 5],
-    [3, 5, 4, 9, 6, 7, ",", 1, 2, ",", 8],
-    [8, 3, 4, 5, ",", 1, 2, ",", 9, 6, 7],
-    [6, 7, 3, 5, 4, 8, ",", 1, 2, ",", 9],
-]
-
-def reorder(words, pattern):
-    parts = []
-    for token in pattern:
-        if token == ",":
-            parts[-1] += ","
-        else:
-            parts.append(words[token - 1])
-    line = " ".join(parts)
-    return line[0].upper() + line[1:] + "."
-
-def process(sentence):
-    """Return (variants, word_count); variants is None if not 9 words."""
-    words = [w.strip(",.").lower() for w in sentence.split()]
-    if len(words) != 9:
-        return None, len(words)                # the shape check / flag
-    return [reorder(words, p) for p in PATTERNS], 9
-
-# run() splits the textarea on newlines, calls process() on each line,
-# and renders the five phrasings — or a "skipped, N words" note.`;
 
 // The real, executed Python. Localized user-facing strings are interpolated;
 // `{n}`, `{src}` etc. are Python f-string fields and stay literal in JS.
@@ -187,11 +148,6 @@ document.querySelector("#status").innerText = (
     <div id="output"><span class="empty">{strings.outputEmpty}</span></div>
   </div>
 
-  <div class="code">
-    <p class="ctitle">{strings.codeTitle}</p>
-    <pre>{pyDisplay}</pre>
-  </div>
-
   <p class="foot">{strings.foot}</p>
 </div>
 
@@ -207,9 +163,6 @@ document.querySelector("#status").innerText = (
     --pysd-live: #e0a800;
     --pysd-line: #d5dce7;
     --pysd-flag: #b26a00;
-    --pysd-code-bg: #101a30;
-    --pysd-code-ink: #e8eefb;
-    --pysd-code-dim: #7e93b8;
 
     background: #e7ebf1;
     color: var(--pysd-ink);
@@ -383,30 +336,6 @@ document.querySelector("#status").innerText = (
     font-family: "JetBrains Mono", monospace;
     font-size: 12px;
     color: var(--pysd-flag);
-  }
-  .pysd .code {
-    background: var(--pysd-code-bg);
-    border-radius: 12px;
-    padding: 18px 20px;
-    margin-top: 18px;
-    overflow: auto;
-  }
-  .pysd .ctitle {
-    font-family: "JetBrains Mono", monospace;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--pysd-code-dim);
-    margin: 0 0 12px;
-  }
-  .pysd pre {
-    margin: 0;
-    color: var(--pysd-code-ink);
-    font-family: "JetBrains Mono", monospace;
-    font-size: 13px;
-    line-height: 1.7;
-    background: transparent;
-    padding: 0;
   }
   .pysd .foot {
     margin-top: 26px;
