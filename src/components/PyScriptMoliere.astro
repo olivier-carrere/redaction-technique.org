@@ -21,6 +21,8 @@ const strings = {
     runButton: "Rephrase every line",
     outputLabel: "Output from Python",
     outputEmpty: "Click the button to run.",
+    buildBadge:
+      "BUILD v3 · deterministic permutations (no random shuffle) · first output line should be the original sentence",
     codeTitle: "The Python doing the work",
     foot: "The runtime is fetched on first load, so the dot stays amber for a few seconds while genuine CPython boots in your browser. The last sample line has only two words, so Python flags it instead of rephrasing it — everything runs client-side, no server involved.",
     typeAtLeastOne: "Type at least one sentence.",
@@ -35,6 +37,8 @@ const strings = {
     runButton: "Reformuler chaque ligne",
     outputLabel: "Sortie de Python",
     outputEmpty: "Cliquez sur le bouton pour exécuter.",
+    buildBadge:
+      "BUILD v3 · permutations déterministes (sans mélange aléatoire) · la première ligne de sortie doit être la phrase d'origine",
     codeTitle: "Le Python qui fait le travail",
     foot: "Le runtime est téléchargé au premier chargement : le point reste ambre quelques secondes, le temps que CPython démarre dans votre navigateur. La dernière ligne d'exemple ne compte que deux mots : Python la signale au lieu de la reformuler — tout s'exécute côté client, sans serveur.",
     typeAtLeastOne: "Saisissez au moins une phrase.",
@@ -169,6 +173,7 @@ document.querySelector("#status").innerText = (
     <div class="status">
       <span class="dot"></span><span id="status">{strings.booting}</span>
     </div>
+    <p class="build-badge">{strings.buildBadge}</p>
   </header>
 
   <div class="card">
@@ -272,6 +277,13 @@ document.querySelector("#status").innerText = (
     100% {
       box-shadow: 0 0 0 0 rgba(224, 168, 0, 0);
     }
+  }
+  .pysd .build-badge {
+    margin: 10px 0 0;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--pysd-accent);
   }
   .pysd .card {
     background: var(--pysd-surface);
