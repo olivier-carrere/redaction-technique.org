@@ -22,7 +22,7 @@ Prenons l'exemple du dialogue entre M. Jourdain et son maître de philosophie, d
 Commençons par afficher la phrase d'origine dans un terminal :
 
 ```console
-$ echo "Belle marquise, vos beaux \\
+$ echo "Belle marquise, vos beaux \
 yeux me font mourir d'amour."
 Belle marquise, vos beaux yeux me font mourir d'amour.
 ```
@@ -32,7 +32,7 @@ Il s'agit maintenant d'intervertir les mots de la phrase, pour en créer une nou
 Nous allons donc donner la déclaration d'amour de M. Jourdain en entrée d'un programme awk d'une ligne, grâce au symbole de redirection pipeline (|).
 
 ```console
-$ echo "Belle marquise, vos beaux \\
+$ echo "Belle marquise, vos beaux \
 yeux me font mourir d'amour." |
 awk  '{print $9" "$8" "$6" "$7" "$1" "$2" "$3" "$4" "$5}'
 d'amour. mourir me font Belle marquise, vos beaux yeux
@@ -51,9 +51,9 @@ $ ls *.rst
 sed gère également des références arrières, qui affichent à l'endroit où on le souhaite la valeur correspondant à une expression littérale ou rationnelle trouvée auparavant. Heureusement pour nous, la déclaration d'amour de M. Jourdain contient exactement neuf mots, ce qui correspond au nombre maximal de références arrières possibles.
 
 ```console
-$ echo "Belle marquise, vos beaux \\
+$ echo "Belle marquise, vos beaux \
 yeux me font mourir d'amour." |
-sed "s#\(.*\) \(.*\), \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \\
+sed "s#\(.*\) \(.*\), \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \
 \(.*\)\(d'.*\)#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
 d'amour. mourir me font, Belle marquise, vos beaux yeux
 ```
@@ -62,9 +62,9 @@ Nous butons sur le même problème : l'expression régulière .* ne correspond p
 
 ```console
 $ export \
-p="\(\<.*\>\) \(\<.*\>\), \(\<.*\>\) \(\<.*\>\) \\
+p="\(\<.*\>\) \(\<.*\>\), \(\<.*\>\) \(\<.*\>\) \
 \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(d'\<.*\>\)"
-$ echo "Belle marquise, vos beaux \\
+$ echo "Belle marquise, vos beaux \
 yeux me font mourir d'amour." |
 sed "s#$p#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
 d'amour mourir me font, Belle marquise, vos beaux yeux.
@@ -74,9 +74,9 @@ Nous pourrions également utiliser la forme [[:alpha:]]* qui fait gagner en lisi
 
 ```console
 $ export a="[[:alpha:]]"
-$ export n="\($a*\) \($a*\), \($a*\) \($a*\) \($a*\) \\
+$ export n="\($a*\) \($a*\), \($a*\) \($a*\) \($a*\) \
 \($a*\) \($a*\) \($a*\) \(d'$a*\)"
-$ echo "Belle marquise, vos beaux \\
+$ echo "Belle marquise, vos beaux \
 yeux me font mourir d'amour." |
 sed "s#$n#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
 d'amour mourir me font, Belle marquise, vos beaux yeux.
@@ -90,7 +90,7 @@ $ export m="$w $w, $w $w $w $w $w $w"
 ```
 
 ```console
-$ echo "Belle marquise, vos beaux \\
+$ echo "Belle marquise, vos beaux \
 yeux me font mourir d'amour." |
 sed "s#$m \(d'\<.*\>\)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#"
 D'amour mourir me font, belle marquise, vos beaux yeux.
@@ -99,21 +99,21 @@ D'amour mourir me font, belle marquise, vos beaux yeux.
 Nous pouvons maintenant facilement redistribuer les références arrières pour obtenir toutes les variations du maître de philosophie :
 
 ```console
-$ echo "Belle marquise, vos beaux \\
+$ echo "Belle marquise, vos beaux \
 yeux me font mourir d'amour." |
 sed "s#$m \(d'\<.*\>\)#\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8#"
 Vos yeux beaux d'amour me font, belle marquise, mourir.
 ```
 
 ```console
-$ echo "Belle marquise, vos beaux \\
+$ echo "Belle marquise, vos beaux \
 yeux me font mourir d'amour." |
 sed "s#$m \(d'\<.*\>\)#\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#"
 Mourir vos beaux yeux, belle marquise, d'amour me font.
 ```
 
 ```console
-$ echo "Belle marquise, vos beaux \\
+$ echo "Belle marquise, vos beaux \
 yeux me font mourir d'amour." |
 sed "s#$m \(d'\<.*\>\)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#"
 Me font vos yeux beaux mourir, belle marquise, d'amour.
@@ -138,14 +138,14 @@ Mais je voudrais que cela fût mis d'une manière galante, que cela fût tourné
 On les peut mettre premièrement comme vous avez dit :
 
 ```console
-$ echo "Belle marquise, vos beaux \\
+$ echo "Belle marquise, vos beaux \
 yeux me font mourir d'amour."
 ```
 
 Ou bien :
 
 ```console
-$ export declaration="Belle marquise, vos \\
+$ export declaration="Belle marquise, vos \
 beaux yeux me font mourir d'amour."
 $ echo $declaration
 ```
@@ -195,13 +195,13 @@ Ceci est en l'occurrence peu probable, mais il est en revanche monnaie courante 
 Pour effectuer nos tests sur un échantillon, plaçons les trois phrases précédentes dans un fichier :
 
 ```console
-$ echo "Cher docteur, ces grands malheurs \\
+$ echo "Cher docteur, ces grands malheurs \
 vous font pleurer d'amertume." > variations.txt
 
-$ echo "Petit garçon, cette bonne glace te \\
+$ echo "Petit garçon, cette bonne glace te \
 fait saliver d'envie." >> variations.txt
 
-$ echo "Vaste océan, la forte houle te \\
+$ echo "Vaste océan, la forte houle te \
 fait tanguer d'ivresse." >> variations.txt
 ```
 

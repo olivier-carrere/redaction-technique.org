@@ -23,7 +23,7 @@ Consider the dialogue between Mr. Jourdain and his Professor of Philosophy in Mo
 
 Let's start by displaying the original sentence in a terminal:
 
-```bash
+```console
 $ echo "Fair Marchioness, your beautiful eyes make me die of love."
 Fair Marchioness, your beautiful eyes make me die of love.
 ```
@@ -32,7 +32,7 @@ Now we need to swap the words in the sentence to create a new one. For a simple 
 
 So we're going to give Mr. Jourdain's declaration of love as input to a one-line `awk` program, using the pipeline redirection symbol (`|`).
 
-```bash
+```console
 $ echo "Fair Marchioness, your beautiful eyes make me die of love." |
 awk '{print $9" "$10" "$8" "$6" "$7" "$1" "$2" "$3" "$4" "$5}'
 of love. die make me Fair Marchioness, your beautiful eyes
@@ -44,24 +44,24 @@ However, the final output is not what was intended. The fields do not correspond
 
 It's simpler to turn to `sed`. `sed` selects sets of characters in lines, either quoted literally or via metacharacters in regular expressions. A well-known regular expression metacharacter is `*`, indicating zero or an indefinite number of characters on the command line, as in:
 
-```bash
+```console
 $ ls *.rst
 ```
 
 `sed` also supports back references, which display the value corresponding to a previously found literal or regular expression at the desired location. Mr. Jourdain's declaration of love contains ten words. `sed`, however, offers only nine back references, `\1` through `\9`: it reads `\10` as `\1` followed by a literal `0`, so a tenth word cannot be addressed directly. Fortunately, the last two words — `of love` — always travel together in the professor's reorderings, so we can capture them as a single group and stay within the nine-reference limit.
 
-```bash
+```console
 $ echo "Fair Marchioness, your beautiful eyes make me die of love." |
-sed "s#\(.*\) \(.*\), \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \\
+sed "s#\(.*\) \(.*\), \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \
 \(.*\) \(of .*\)#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
 of love. die make me, Fair Marchioness, your beautiful eyes
 ```
 
 We've run into the same problem: the regular expression `.*` doesn't correspond to a word, but to a series of characters, including punctuation. We must then use the `\<.*\>` form, which corresponds to a word, like the ones Mr. Jourdain uses to make prose. We're going to use escape characters (backslash `\`) so that the `<` and `>` signs are not interpreted literally under certain consoles, but as metacharacters with a special function. The final group, `\(\<.*\> \<.*\>\)`, captures two words at once — the closing phrase `of love`:
 
-```bash
+```console
 $ export \
-p="\(\<.*\>\) \(\<.*\>\), \(\<.*\>\) \(\<.*\>\) \\
+p="\(\<.*\>\) \(\<.*\>\), \(\<.*\>\) \(\<.*\>\) \
 \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\> \<.*\>\)"
 $ echo "Fair Marchioness, your beautiful eyes make me die of love." |
 sed "s#$p#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
@@ -70,9 +70,9 @@ of love die make me, Fair Marchioness, your beautiful eyes.
 
 We could also use the `[[:alpha:]]*` form, which is more readable but less concise:
 
-```bash
+```console
 $ export a="[[:alpha:]]"
-$ export n="\($a*\) \($a*\), \($a*\) \($a*\) \($a*\) \\
+$ export n="\($a*\) \($a*\), \($a*\) \($a*\) \($a*\) \
 \($a*\) \($a*\) \($a*\) \($a* $a*\)"
 $ echo "Fair Marchioness, your beautiful eyes make me die of love." |
 sed "s#$n#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
@@ -81,12 +81,12 @@ of love die make me, Fair Marchioness, your beautiful eyes.
 
 That's better, but we've got a capitalization problem. So we're going to use the judiciously placed `\u` and `\l` operators. First, we'll export some variables to make the script more concise and readable:
 
-```bash
+```console
 $ export w="\(\<.*\>\)"
 $ export m="$w $w, $w $w $w $w $w $w"
 ```
 
-```bash
+```console
 $ echo "Fair Marchioness, your beautiful eyes make me die of love." |
 sed "s#$m \(\<.*\> \<.*\>\)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#"
 Of love die make me, fair Marchioness, your beautiful eyes.
@@ -94,19 +94,19 @@ Of love die make me, fair Marchioness, your beautiful eyes.
 
 We can now easily redistribute the back references to get all the professor's variations:
 
-```bash
+```console
 $ echo "Fair Marchioness, your beautiful eyes make me die of love." |
 sed "s#$m \(\<.*\> \<.*\>\)#\u\3 \4 \5 \9 \6 \7, \l\1 \2, \8#"
 Your beautiful eyes of love make me, fair Marchioness, die.
 ```
 
-```bash
+```console
 $ echo "Fair Marchioness, your beautiful eyes make me die of love." |
 sed "s#$m \(\<.*\> \<.*\>\)#\u\8 \9 \3 \4 \5, \l\1 \2, \6 \7#"
 Die of love your beautiful eyes, fair Marchioness, make me.
 ```
 
-```bash
+```console
 $ echo "Fair Marchioness, your beautiful eyes make me die of love." |
 sed "s#$m \(\<.*\> \<.*\>\)#\u\7 \6 \3 \4 \5 \8, \l\1 \2, \9#"
 Me make your beautiful eyes die, fair Marchioness, of love.
@@ -120,7 +120,7 @@ Let's rewrite the dialogue between Mr. Jourdain and his Professor of Philosophy 
 
 I'd like to show her on the standard output:
 
-```bash
+```console
 $ Fair Marchioness, your beautiful eyes make me die of love.
 ```
 
@@ -130,21 +130,21 @@ But I wish it were put in a gallant way, that it were turned nicely.
 
 They can be put first as you said:
 
-```bash
+```console
 $ echo "Fair Marchioness, your beautiful eyes make me die of love."
 ```
 
 Or:
 
-```bash
-$ export declaration="Fair Marchioness, your beautiful eyes \\
+```console
+$ export declaration="Fair Marchioness, your beautiful eyes \
 make me die of love."
 $ echo $declaration
 ```
 
 Or:
 
-```bash
+```console
 $ export w="\(\<.*\>\)"
 $ export m="$w $w, $w $w $w $w $w $w"
 $ echo $declaration |
@@ -153,21 +153,21 @@ sed "s#$m \(\<.*\> \<.*\>\)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#"
 
 Or else:
 
-```bash
+```console
 echo $declaration |
 sed "s#$m \(\<.*\> \<.*\>\)#\u\3 \4 \5 \9 \6 \7, \l\1 \2, \8#"
 ```
 
 Or else:
 
-```bash
+```console
 echo $declaration |
 sed "s#$m \(\<.*\> \<.*\>\)#\u\8 \9 \3 \4 \5, \l\1 \2, \6 \7#"
 ```
 
 Or else:
 
-```bash
+```console
 echo $declaration |
 sed "s#$m \(\<.*\> \<.*\>\)#\u\7 \6 \3 \4 \5 \8, \l\1 \2, \9#"
 ```
@@ -186,17 +186,17 @@ This may look contrived, but structurally identical sentences are common in tech
 
 To carry out our tests on a sample, let's place the two sentences above in a file:
 
-```bash
-$ echo "Dear doctor, these great misfortunes \\
+```console
+$ echo "Dear doctor, these great misfortunes \
 make you weep with bitterness." > variations.txt
 
-$ echo "Vast ocean, the strong swell \\
+$ echo "Vast ocean, the strong swell \
 makes you pitch with drunkenness." >> variations.txt
 ```
 
 Let's place the various `sed` commands in a different script each. We reuse the pattern `$p`, this time ending with the generic two-word group `\(\<.*\> \<.*\>\)` so it captures `with bitterness` and `with drunkenness` just as well as `of love`:
 
-```bash
+```console
 $ export p="$m \(\<.*\> \<.*\>\)"
 $ echo "s#$p#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#" > moliere1.sed
 $ echo "s#$p#\u\3 \4 \5 \9 \6 \7, \l\1 \2, \8#" > moliere2.sed
@@ -206,7 +206,7 @@ $ echo "s#$p#\u\7 \6 \3 \4 \5 \8, \l\1 \2, \9#" > moliere4.sed
 
 Now let's loop through all the `sed` scripts on all the lines in the file:
 
-```bash
+```console
 $ for (( i=1; i<5; i++ )); do
    while read s;
     do echo "$s" |
