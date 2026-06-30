@@ -13,32 +13,20 @@ const { lang = "en" } = Astro.props;
 
 const strings = {
   en: {
-    eyebrow: "PyScript · executing in your browser",
-    title: "This page is running Python.",
-    sub: "No server, no install. Python loops over every line you give it — the way the tutorial's final script runs across a whole file — rewriting each nine-word sentence into the philosophy teacher's five phrasings, and flagging any line that isn't the right shape.",
-    booting: "Booting the Python interpreter…",
     inputLabel: "Your sentences — one per line, nine words each",
     runButton: "Rephrase every line",
     outputLabel: "Output from Python",
     outputEmpty: "Click the button to run.",
-    buildBadge:
-      "BUILD v3 · deterministic permutations (no random shuffle) · first output line should be the original sentence",
-    foot: "The runtime is fetched on first load, so the dot stays amber for a few seconds while genuine CPython boots in your browser. The last sample line has only two words, so Python flags it instead of rephrasing it — everything runs client-side, no server involved.",
+    foot: "The last sample line has only two words, so Python flags it instead of rephrasing it — everything runs client-side, no server involved.",
     typeAtLeastOne: "Type at least one sentence.",
     flagText: "skipped &mdash; {n} words, needs 9",
   },
   fr: {
-    eyebrow: "PyScript · exécution dans votre navigateur",
-    title: "Cette page exécute du Python.",
-    sub: "Pas de serveur, pas d'installation. Python parcourt chaque ligne que vous lui donnez — comme le script final du tutoriel s'exécute sur tout un fichier — et réécrit chaque phrase de neuf mots selon les cinq formulations du maître de philosophie, en signalant toute ligne qui n'a pas la bonne forme.",
-    booting: "Démarrage de l'interpréteur Python…",
     inputLabel: "Vos phrases — une par ligne, neuf mots chacune",
     runButton: "Reformuler chaque ligne",
     outputLabel: "Sortie de Python",
     outputEmpty: "Cliquez sur le bouton pour exécuter.",
-    buildBadge:
-      "BUILD v3 · permutations déterministes (sans mélange aléatoire) · la première ligne de sortie doit être la phrase d'origine",
-    foot: "Le runtime est téléchargé au premier chargement : le point reste ambre quelques secondes, le temps que CPython démarre dans votre navigateur. La dernière ligne d'exemple ne compte que deux mots : Python la signale au lieu de la reformuler — tout s'exécute côté client, sans serveur.",
+    foot: "La dernière ligne d'exemple ne compte que deux mots : Python la signale au lieu de la reformuler — tout s'exécute côté client, sans serveur.",
     typeAtLeastOne: "Saisissez au moins une phrase.",
     flagText: "ignorée &mdash; {n} mots, il en faut 9",
   },
@@ -55,7 +43,7 @@ const defaultSentences = [
 // The real, executed Python. Localized user-facing strings are interpolated;
 // `{n}`, `{src}` etc. are Python f-string fields and stay literal in JS.
 const pyRun = `from pyscript import when, document
-import sys, html
+import html
 
 PATTERNS = [
     [1, 2, ",", 3, 4, 5, 6, 7, 8, 9],
@@ -101,12 +89,7 @@ def run(event):
         else:
             lines = "".join(f'<div class="line">{html.escape(v)}</div>' for v in variants)
             blocks.append(f'<div class="block"><div class="src">{src}</div>{lines}</div>')
-    box.innerHTML = "".join(blocks)
-
-# Runs once the interpreter is ready — confirms genuine CPython has loaded.
-document.querySelector("#status").innerText = (
-    "Python ready · " + sys.version.split()[0] + " (CPython via Pyodide)"
-)`;
+    box.innerHTML = "".join(blocks)`;
 ---
 
 <!-- PyScript runtime (left untouched by Astro via is:inline). -->
@@ -127,16 +110,6 @@ document.querySelector("#status").innerText = (
 />
 
 <div class="pysd">
-  <header>
-    <p class="eyebrow">{strings.eyebrow}</p>
-    <div class="pysd-title">{strings.title}</div>
-    <p class="sub">{strings.sub}</p>
-    <div class="status">
-      <span class="dot"></span><span id="status">{strings.booting}</span>
-    </div>
-    <p class="build-badge">{strings.buildBadge}</p>
-  </header>
-
   <div class="card">
     <label for="input">{strings.inputLabel}</label>
     <textarea id="input">{defaultSentences}</textarea>
@@ -160,7 +133,6 @@ document.querySelector("#status").innerText = (
     --pysd-ink: #15223b;
     --pysd-muted: #5a6a84;
     --pysd-accent: #2f6fed;
-    --pysd-live: #e0a800;
     --pysd-line: #d5dce7;
     --pysd-flag: #b26a00;
 
@@ -177,73 +149,15 @@ document.querySelector("#status").innerText = (
   .pysd * {
     box-sizing: border-box;
   }
-  .pysd .eyebrow {
-    font-family: "JetBrains Mono", monospace;
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--pysd-accent);
-    margin: 0 0 10px;
-  }
-  .pysd .pysd-title {
-    font-family: "Space Grotesk", sans-serif;
-    font-weight: 700;
-    font-size: clamp(24px, 4vw, 34px);
-    line-height: 1.05;
-    margin: 0 0 12px;
-    letter-spacing: -0.02em;
-    color: var(--pysd-ink);
-  }
-  .pysd .sub {
-    margin: 0;
-    color: var(--pysd-muted);
-    max-width: 58ch;
-  }
-  .pysd .sub code {
-    font-family: "JetBrains Mono", monospace;
-    font-size: 0.9em;
-  }
-  .pysd .status {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    margin-top: 18px;
-    font-family: "JetBrains Mono", monospace;
-    font-size: 13px;
-    color: var(--pysd-muted);
-  }
-  .pysd .dot {
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: var(--pysd-live);
-    box-shadow: 0 0 0 0 rgba(224, 168, 0, 0.55);
-    animation: pysd-pulse 1.6s infinite;
-  }
-  @keyframes pysd-pulse {
-    0% {
-      box-shadow: 0 0 0 0 rgba(224, 168, 0, 0.55);
-    }
-    70% {
-      box-shadow: 0 0 0 9px rgba(224, 168, 0, 0);
-    }
-    100% {
-      box-shadow: 0 0 0 0 rgba(224, 168, 0, 0);
-    }
-  }
-  .pysd .build-badge {
-    margin: 10px 0 0;
-    font-family: "JetBrains Mono", monospace;
-    font-size: 11px;
-    letter-spacing: 0.06em;
-    color: var(--pysd-accent);
-  }
   .pysd .card {
     background: var(--pysd-surface);
     border: 1px solid var(--pysd-line);
     border-radius: 14px;
     padding: 22px;
     margin-top: 18px;
+  }
+  .pysd .card:first-child {
+    margin-top: 0;
   }
   .pysd label {
     display: block;
@@ -349,10 +263,5 @@ document.querySelector("#status").innerText = (
     border: 1px solid var(--pysd-line);
     padding: 1px 6px;
     border-radius: 5px;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .pysd .dot {
-      animation: none;
-    }
   }
 </style>
