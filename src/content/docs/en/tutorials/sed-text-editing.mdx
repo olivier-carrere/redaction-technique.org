@@ -4,6 +4,8 @@ description: "Learn to use sed, the Unix stream editor, to batch-edit technical 
 tags: [automation]
 ---
 
+import PyScriptMoliere from '../../../../components/PyScriptMoliere.astro';
+
 
 Unix clones such as Linux are rarely used to manage technical documentation. This is unusual when you consider the plethora of tools available on these platforms for manipulating text in various ways — tools that complement [Python's regular expression library](../python-regular-expressions/) for batch text manipulation.
 
@@ -179,6 +181,10 @@ Or else:
 echo $declaration |
 sed "s#$m \(d'\<.*\>\)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#"
 ```
+
+That same word-shuffling idea doesn't have to stay in the shell. Here it is running as real Python, live in this page:
+
+<PyScriptMoliere lang="en" />
 
 ## A lot of effort...
 

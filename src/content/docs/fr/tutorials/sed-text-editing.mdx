@@ -2,6 +2,9 @@
 title: "sed : modifiez votre texte sans ouvrir vos fichiers"
 description: "Utilisez sed, l'éditeur de flux Unix, pour modifier en lot vos fichiers de documentation technique sans les ouvrir — idéal pour automatiser les mises à jour de contenu."
 ---
+
+import PyScriptMoliere from '../../../../components/PyScriptMoliere.astro';
+
 Les clones d'Unix sont peu utilisés pour gérer la documentation technique. Ceci est étrange si l'on songe à la pléthore d'outils disponibles sous ces plateformes pour manipuler du texte dans tous les sens.
 
 Prenons l'exemple du dialogue entre M. Jourdain et son maître de philosophie, dans le Bourgeois gentilhomme de Molière :
@@ -176,6 +179,10 @@ MAÎTRE DE PHILOSOPHIE :
     $ echo $declaration |
     sed "s#$m \(d'\<.*\>\)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#"
     ```
+
+La même idée de permutation de mots n'a pas à rester dans le shell. La voici en vrai Python, exécuté en direct dans cette page :
+
+<PyScriptMoliere lang="fr" />
 
 ## Beaucoup d'efforts...
 

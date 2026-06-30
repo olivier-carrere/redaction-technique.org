@@ -1,0 +1,315 @@
+---
+// Live, in-browser Python demo (PyScript / Pyodide) that mirrors the
+// word-shuffling sed exercise from the Molière tutorial. Self-contained:
+// loads its own PyScript runtime and fonts, styles are namespaced under
+// `.pysd` so nothing leaks into the surrounding docs page.
+interface Props {
+  lang?: "en" | "fr";
+}
+
+const { lang = "en" } = Astro.props;
+
+const strings = {
+  en: {
+    eyebrow: "PyScript · executing in your browser",
+    title: "This page is running Python.",
+    sub: 'No server, no install. The sentence below is rearranged by Python code running client-side &mdash; the same word-shuffling idea from the Molière <code>sed</code> tutorial, this time in actual Python.',
+    booting: "Booting the Python interpreter…",
+    inputLabel: "Your sentence",
+    runButton: "Shuffle the words",
+    outputLabel: "Output from Python",
+    outputEmpty: "Click the button to run.",
+    typeFirst: "Type a sentence first.",
+    codeTitle: "The Python that's running, verbatim",
+    foot: "The runtime is fetched on first load, so the dot stays amber for a few seconds while genuine CPython boots in your browser. Everything below the fold runs entirely client-side &mdash; no server involved.",
+  },
+  fr: {
+    eyebrow: "PyScript · exécution dans votre navigateur",
+    title: "Cette page exécute du Python.",
+    sub: "Pas de serveur, pas d'installation. La phrase ci-dessous est réorganisée par du code Python qui s'exécute côté client &mdash; la même idée de permutation de mots que le tutoriel <code>sed</code> sur Molière, cette fois en vrai Python.",
+    booting: "Démarrage de l'interpréteur Python…",
+    inputLabel: "Votre phrase",
+    runButton: "Mélanger les mots",
+    outputLabel: "Sortie de Python",
+    outputEmpty: "Cliquez sur le bouton pour exécuter.",
+    typeFirst: "Saisissez une phrase.",
+    codeTitle: "Le Python qui s'exécute, tel quel",
+    foot: "Le runtime est téléchargé au premier chargement&nbsp;: le point reste ambre quelques secondes, le temps que CPython démarre dans votre navigateur. Tout ci-dessous s'exécute entièrement côté client &mdash; sans serveur.",
+  },
+}[lang];
+
+const defaultSentence = "Belle marquise, vos beaux yeux me font mourir d'amour.";
+
+// Single source of truth for the Python: rendered verbatim into the <pre>
+// (auto-escaped) AND injected into the <script type="py"> (raw, via set:html).
+// `typeFirst` is interpolated and must stay free of apostrophes / double quotes.
+const pyCode = `from pyscript import when, document
+import sys, random
+
+def variations(sentence, n=5):
+    words = sentence.split()
+    seen, out = set(), []
+    while len(out) < n and len(seen) < 200:
+        order = words[:]
+        random.shuffle(order)
+        line = " ".join(order)
+        if line not in seen:
+            seen.add(line)
+            out.append(line)
+    return out
+
+@when("click", "#run")
+def run(event):
+    text = str(document.querySelector("#input").value).strip()
+    box  = document.querySelector("#output")
+    if not text:
+        box.innerHTML = '<span class="empty">${strings.typeFirst}</span>'
+        return
+    box.innerText = "\\n".join(variations(text))
+
+# Runs once the interpreter is ready — confirms genuine CPython has loaded.
+document.querySelector("#status").innerText = (
+    "Python ready · " + sys.version.split()[0] + " (CPython via Pyodide)"
+)`;
+---
+
+<!-- PyScript runtime (left untouched by Astro via is:inline). -->
+<link
+  rel="stylesheet"
+  href="https://pyscript.net/releases/2026.6.2/core.css"
+/>
+<script
+  type="module"
+  is:inline
+  src="https://pyscript.net/releases/2026.6.2/core.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;600&display=swap"
+  rel="stylesheet"
+/>
+
+<div class="pysd">
+  <header>
+    <p class="eyebrow">{strings.eyebrow}</p>
+    <div class="pysd-title">{strings.title}</div>
+    <p class="sub" set:html={strings.sub}></p>
+    <div class="status">
+      <span class="dot"></span><span id="status">{strings.booting}</span>
+    </div>
+  </header>
+
+  <div class="card">
+    <label for="input">{strings.inputLabel}</label>
+    <textarea id="input">{defaultSentence}</textarea>
+    <button id="run" type="button">{strings.runButton}</button>
+  </div>
+
+  <div class="card">
+    <label>{strings.outputLabel}</label>
+    <div id="output"><span class="empty">{strings.outputEmpty}</span></div>
+  </div>
+
+  <div class="code">
+    <p class="ctitle">{strings.codeTitle}</p>
+    <pre>{pyCode}</pre>
+  </div>
+
+  <p class="foot" set:html={strings.foot}></p>
+</div>
+
+<!-- The real, running Python. type="py" = Pyodide (full CPython). -->
+<script type="py" is:inline set:html={pyCode}></script>
+
+<style is:global>
+  .pysd {
+    --pysd-surface: #ffffff;
+    --pysd-ink: #15223b;
+    --pysd-muted: #5a6a84;
+    --pysd-accent: #2f6fed;
+    --pysd-live: #e0a800;
+    --pysd-line: #d5dce7;
+    --pysd-code-bg: #101a30;
+    --pysd-code-ink: #e8eefb;
+    --pysd-code-dim: #7e93b8;
+
+    background: #e7ebf1;
+    color: var(--pysd-ink);
+    font-family: "Inter", system-ui, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    border: 1px solid var(--pysd-line);
+    border-radius: 16px;
+    padding: 28px 24px 32px;
+    margin: 2rem 0;
+  }
+  .pysd * {
+    box-sizing: border-box;
+  }
+  .pysd .eyebrow {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--pysd-accent);
+    margin: 0 0 10px;
+  }
+  .pysd .pysd-title {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(24px, 4vw, 34px);
+    line-height: 1.05;
+    margin: 0 0 12px;
+    letter-spacing: -0.02em;
+    color: var(--pysd-ink);
+  }
+  .pysd .sub {
+    margin: 0;
+    color: var(--pysd-muted);
+    max-width: 56ch;
+  }
+  .pysd .sub code {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.9em;
+  }
+  .pysd .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 18px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    color: var(--pysd-muted);
+  }
+  .pysd .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--pysd-live);
+    box-shadow: 0 0 0 0 rgba(224, 168, 0, 0.55);
+    animation: pysd-pulse 1.6s infinite;
+  }
+  @keyframes pysd-pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(224, 168, 0, 0.55);
+    }
+    70% {
+      box-shadow: 0 0 0 9px rgba(224, 168, 0, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(224, 168, 0, 0);
+    }
+  }
+  .pysd .card {
+    background: var(--pysd-surface);
+    border: 1px solid var(--pysd-line);
+    border-radius: 14px;
+    padding: 22px;
+    margin-top: 18px;
+  }
+  .pysd label {
+    display: block;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--pysd-muted);
+    margin-bottom: 10px;
+  }
+  .pysd textarea {
+    width: 100%;
+    min-height: 74px;
+    resize: vertical;
+    padding: 12px 14px;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    color: var(--pysd-ink);
+    border: 1px solid var(--pysd-line);
+    border-radius: 9px;
+    background: #fbfcfe;
+  }
+  .pysd textarea:focus {
+    outline: 2px solid var(--pysd-accent);
+    outline-offset: 1px;
+    border-color: transparent;
+  }
+  .pysd button {
+    margin-top: 14px;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: #fff;
+    background: var(--pysd-accent);
+    border: none;
+    border-radius: 9px;
+    padding: 11px 22px;
+    cursor: pointer;
+    transition:
+      transform 0.06s ease,
+      background 0.15s ease;
+  }
+  .pysd button:hover {
+    background: #235ed1;
+  }
+  .pysd button:active {
+    transform: translateY(1px);
+  }
+  .pysd button:focus-visible {
+    outline: 2px solid var(--pysd-ink);
+    outline-offset: 2px;
+  }
+  .pysd #output {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--pysd-ink);
+    white-space: pre-wrap;
+    min-height: 24px;
+  }
+  .pysd #output .empty {
+    color: var(--pysd-muted);
+  }
+  .pysd .code {
+    background: var(--pysd-code-bg);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-top: 18px;
+    overflow: auto;
+  }
+  .pysd .ctitle {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--pysd-code-dim);
+    margin: 0 0 12px;
+  }
+  .pysd pre {
+    margin: 0;
+    color: var(--pysd-code-ink);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    line-height: 1.7;
+    background: transparent;
+    padding: 0;
+  }
+  .pysd .foot {
+    margin-top: 26px;
+    margin-bottom: 0;
+    font-size: 13px;
+    color: var(--pysd-muted);
+  }
+  .pysd .foot code {
+    font-family: "JetBrains Mono", monospace;
+    background: #fff;
+    border: 1px solid var(--pysd-line);
+    padding: 1px 6px;
+    border-radius: 5px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .pysd .dot {
+      animation: none;
+    }
+  }
+</style>
