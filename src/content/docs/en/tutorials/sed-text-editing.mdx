@@ -25,6 +25,9 @@ Let's start by displaying the original sentence in a terminal:
 
 ```console
 $ echo "Fair Marchioness, your beautiful eyes make me die of love."
+```
+
+```text title="Output"
 Fair Marchioness, your beautiful eyes make me die of love.
 ```
 
@@ -35,6 +38,9 @@ So we're going to give Mr. Jourdain's declaration of love as input to a one-line
 ```console
 $ echo "Fair Marchioness, your beautiful eyes make me die of love." |
 awk '{print $9" "$10" "$8" "$6" "$7" "$1" "$2" "$3" "$4" "$5}'
+```
+
+```text title="Output"
 of love. die make me Fair Marchioness, your beautiful eyes
 ```
 
@@ -54,6 +60,9 @@ $ ls *.rst
 $ echo "Fair Marchioness, your beautiful eyes make me die of love." |
 sed "s#\(.*\) \(.*\), \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \
 \(.*\) \(of .*\)#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
+```
+
+```text title="Output"
 of love. die make me, Fair Marchioness, your beautiful eyes
 ```
 
@@ -65,6 +74,9 @@ p="\(\<.*\>\) \(\<.*\>\), \(\<.*\>\) \(\<.*\>\) \
 \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\> \<.*\>\)"
 $ echo "Fair Marchioness, your beautiful eyes make me die of love." |
 sed "s#$p#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
+```
+
+```text title="Output"
 of love die make me, Fair Marchioness, your beautiful eyes.
 ```
 
@@ -76,6 +88,9 @@ $ export n="\($a*\) \($a*\), \($a*\) \($a*\) \($a*\) \
 \($a*\) \($a*\) \($a*\) \($a* $a*\)"
 $ echo "Fair Marchioness, your beautiful eyes make me die of love." |
 sed "s#$n#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
+```
+
+```text title="Output"
 of love die make me, Fair Marchioness, your beautiful eyes.
 ```
 
@@ -89,6 +104,9 @@ $ export m="$w $w, $w $w $w $w $w $w"
 ```console
 $ echo "Fair Marchioness, your beautiful eyes make me die of love." |
 sed "s#$m \(\<.*\> \<.*\>\)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#"
+```
+
+```text title="Output"
 Of love die make me, fair Marchioness, your beautiful eyes.
 ```
 
@@ -97,18 +115,27 @@ We can now easily redistribute the back references to get all the professor's va
 ```console
 $ echo "Fair Marchioness, your beautiful eyes make me die of love." |
 sed "s#$m \(\<.*\> \<.*\>\)#\u\3 \4 \5 \9 \6 \7, \l\1 \2, \8#"
+```
+
+```text title="Output"
 Your beautiful eyes of love make me, fair Marchioness, die.
 ```
 
 ```console
 $ echo "Fair Marchioness, your beautiful eyes make me die of love." |
 sed "s#$m \(\<.*\> \<.*\>\)#\u\8 \9 \3 \4 \5, \l\1 \2, \6 \7#"
+```
+
+```text title="Output"
 Die of love your beautiful eyes, fair Marchioness, make me.
 ```
 
 ```console
 $ echo "Fair Marchioness, your beautiful eyes make me die of love." |
 sed "s#$m \(\<.*\> \<.*\>\)#\u\7 \6 \3 \4 \5 \8, \l\1 \2, \9#"
+```
+
+```text title="Output"
 Me make your beautiful eyes die, fair Marchioness, of love.
 ```
 
@@ -213,6 +240,9 @@ $ for (( i=1; i<5; i++ )); do
      sed -f moliere$i.sed ;
     done < variations.txt
    done
+```
+
+```text title="Output"
 With bitterness weep make you, dear doctor, these great misfortunes.
 With drunkenness pitch makes you, vast ocean, the strong swell.
 These great misfortunes with bitterness make you, dear doctor, weep.

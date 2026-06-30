@@ -24,6 +24,9 @@ Commençons par afficher la phrase d'origine dans un terminal :
 ```console
 $ echo "Belle marquise, vos beaux \
 yeux me font mourir d'amour."
+```
+
+```text title="Sortie"
 Belle marquise, vos beaux yeux me font mourir d'amour.
 ```
 
@@ -35,6 +38,9 @@ Nous allons donc donner la déclaration d'amour de M. Jourdain en entrée d'un p
 $ echo "Belle marquise, vos beaux \
 yeux me font mourir d'amour." |
 awk  '{print $9" "$8" "$6" "$7" "$1" "$2" "$3" "$4" "$5}'
+```
+
+```text title="Sortie"
 d'amour. mourir me font Belle marquise, vos beaux yeux
 ```
 
@@ -55,6 +61,9 @@ $ echo "Belle marquise, vos beaux \
 yeux me font mourir d'amour." |
 sed "s#\(.*\) \(.*\), \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \
 \(.*\)\(d'.*\)#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
+```
+
+```text title="Sortie"
 d'amour. mourir me font, Belle marquise, vos beaux yeux
 ```
 
@@ -67,6 +76,9 @@ p="\(\<.*\>\) \(\<.*\>\), \(\<.*\>\) \(\<.*\>\) \
 $ echo "Belle marquise, vos beaux \
 yeux me font mourir d'amour." |
 sed "s#$p#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
+```
+
+```text title="Sortie"
 d'amour mourir me font, Belle marquise, vos beaux yeux.
 ```
 
@@ -79,6 +91,9 @@ $ export n="\($a*\) \($a*\), \($a*\) \($a*\) \($a*\) \
 $ echo "Belle marquise, vos beaux \
 yeux me font mourir d'amour." |
 sed "s#$n#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
+```
+
+```text title="Sortie"
 d'amour mourir me font, Belle marquise, vos beaux yeux.
 ```
 
@@ -93,6 +108,9 @@ $ export m="$w $w, $w $w $w $w $w $w"
 $ echo "Belle marquise, vos beaux \
 yeux me font mourir d'amour." |
 sed "s#$m \(d'\<.*\>\)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#"
+```
+
+```text title="Sortie"
 D'amour mourir me font, belle marquise, vos beaux yeux.
 ```
 
@@ -102,6 +120,9 @@ Nous pouvons maintenant facilement redistribuer les références arrières pour 
 $ echo "Belle marquise, vos beaux \
 yeux me font mourir d'amour." |
 sed "s#$m \(d'\<.*\>\)#\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8#"
+```
+
+```text title="Sortie"
 Vos yeux beaux d'amour me font, belle marquise, mourir.
 ```
 
@@ -109,6 +130,9 @@ Vos yeux beaux d'amour me font, belle marquise, mourir.
 $ echo "Belle marquise, vos beaux \
 yeux me font mourir d'amour." |
 sed "s#$m \(d'\<.*\>\)#\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7#"
+```
+
+```text title="Sortie"
 Mourir vos beaux yeux, belle marquise, d'amour me font.
 ```
 
@@ -116,6 +140,9 @@ Mourir vos beaux yeux, belle marquise, d'amour me font.
 $ echo "Belle marquise, vos beaux \
 yeux me font mourir d'amour." |
 sed "s#$m \(d'\<.*\>\)#\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9#"
+```
+
+```text title="Sortie"
 Me font vos yeux beaux mourir, belle marquise, d'amour.
 ```
 
@@ -223,6 +250,9 @@ $ for (( i=1; i<5; i++ )); do
      sed -f moliere$i.sed ;
     done < variations.txt
    done
+```
+
+```text title="Sortie"
 D'amertume pleurer vous font, cher docteur, ces grands malheurs.
 D'envie saliver te fait, petit garçon, cette bonne glace.
 D'ivresse tanguer te fait, vaste océan, la forte houle.
