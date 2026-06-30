@@ -1,56 +1,103 @@
 ---
 // Live, in-browser Python demo (PyScript / Pyodide) that mirrors the
-// tutorial's final whole-file sed script: it loops over every line,
-// rewrites each nine-word sentence into the philosophy teacher's five
-// phrasings, and flags any line that isn't the right shape.
+// tutorial's positional word-permutation trick: it loops over every line,
+// rewrites each line into the philosophy teacher's five phrasings by word
+// position, and flags any line that isn't the right shape.
 // Self-contained: loads its own PyScript runtime and fonts; styles are
 // namespaced under `.pysd` so nothing leaks into the surrounding docs page.
+// Per-language config drives the patterns, word count, sample lines and an
+// optional header — EN and FR diverge (10 word-slots vs 9).
 interface Props {
   lang?: "en" | "fr";
 }
 
 const { lang = "en" } = Astro.props;
 
-const strings = {
+const config = {
   en: {
-    inputLabel: "Your sentences — one per line, nine words each",
-    runButton: "Rephrase every line",
-    outputLabel: "Output from Python",
-    outputEmpty: "Click the button to run.",
-    foot: "The last sample line has only two words, so Python flags it instead of rephrasing it — everything runs client-side, no server involved.",
-    typeAtLeastOne: "Type at least one sentence.",
-    flagText: "skipped &mdash; {n} words, needs 9",
+    wordCount: 10,
+    patterns: [
+      [1, 2, ",", 3, 4, 5, 6, 7, 8, 9, 10],
+      [9, 10, 8, 6, 7, ",", 1, 2, ",", 3, 4, 5],
+      [3, 4, 5, 9, 10, 6, 7, ",", 1, 2, ",", 8],
+      [8, 9, 10, 3, 4, 5, ",", 1, 2, ",", 6, 7],
+      [7, 6, 3, 4, 5, 8, ",", 1, 2, ",", 9, 10],
+    ],
+    defaultSentences: [
+      "Fair Marchioness, your beautiful eyes make me die of love.",
+      "Dear doctor, these great misfortunes make you weep with bitterness.",
+      "Vast ocean, the strong swell makes you pitch with drunkenness.",
+      "Only a fragment.",
+    ].join("\n"),
+    header: {
+      eyebrow: "PyScript · executing in your browser",
+      title: "This page is running Python.",
+      sub: `No server, no install. Python reproduces the philosophy teacher's five rephrasings live — permuting the words of each ten-word line by position, the same trick the tutorial does with <code>sed</code> back-references — and flags any line that isn't the right shape.`,
+      gloss: `The reorderings follow Charles Heron Wall's 1876 English translation of Molière's <em>Le Bourgeois Gentilhomme</em> (Act II, Scene 4); the headline line is <span class="tr">"Fair Marchioness, your beautiful eyes make me die of love."</span> English uses ten word-slots where French uses nine, because "of love" renders the single French word "d'amour".<cite>Translation: Charles Heron Wall, 1876 (public domain).</cite>`,
+      booting: "Booting the Python interpreter…",
+    },
+    strings: {
+      inputLabel: "Your sentences — one per line, ten words each",
+      runButton: "Rephrase every line",
+      outputLabel: "Output from Python",
+      outputEmpty: "Click the button to run.",
+      foot: "The runtime is fetched on first load, so the dot stays amber for a few seconds while genuine CPython boots in your browser. The last sample line isn't ten words, so Python flags it instead of rephrasing it — everything runs client-side, no server involved.",
+      typeAtLeastOne: "Type at least one sentence.",
+      flagText: "skipped &mdash; {n} words, needs 10",
+    },
   },
   fr: {
-    inputLabel: "Vos phrases — une par ligne, neuf mots chacune",
-    runButton: "Reformuler chaque ligne",
-    outputLabel: "Sortie de Python",
-    outputEmpty: "Cliquez sur le bouton pour exécuter.",
-    foot: "La dernière ligne d'exemple ne compte que deux mots : Python la signale au lieu de la reformuler — tout s'exécute côté client, sans serveur.",
-    typeAtLeastOne: "Saisissez au moins une phrase.",
-    flagText: "ignorée &mdash; {n} mots, il en faut 9",
+    wordCount: 9,
+    patterns: [
+      [1, 2, ",", 3, 4, 5, 6, 7, 8, 9],
+      [9, 8, 6, 7, ",", 1, 2, ",", 3, 4, 5],
+      [3, 5, 4, 9, 6, 7, ",", 1, 2, ",", 8],
+      [8, 3, 4, 5, ",", 1, 2, ",", 9, 6, 7],
+      [6, 7, 3, 5, 4, 8, ",", 1, 2, ",", 9],
+    ],
+    defaultSentences: [
+      "Belle marquise, vos beaux yeux me font mourir d'amour.",
+      "Cher docteur, ces grands malheurs vous font pleurer d'amertume.",
+      "Petit garçon, cette bonne glace te fait saliver d'envie.",
+      "Vaste océan, la forte houle te fait tanguer d'ivresse.",
+      "Phrase incomplète.",
+    ].join("\n"),
+    header: null,
+    strings: {
+      inputLabel: "Vos phrases — une par ligne, neuf mots chacune",
+      runButton: "Reformuler chaque ligne",
+      outputLabel: "Sortie de Python",
+      outputEmpty: "Cliquez sur le bouton pour exécuter.",
+      foot: "La dernière ligne d'exemple ne compte que deux mots : Python la signale au lieu de la reformuler — tout s'exécute côté client, sans serveur.",
+      typeAtLeastOne: "Saisissez au moins une phrase.",
+      flagText: "ignorée &mdash; {n} mots, il en faut 9",
+    },
   },
 }[lang];
 
-const defaultSentences = [
-  "Belle marquise, vos beaux yeux me font mourir d'amour.",
-  "Cher docteur, ces grands malheurs vous font pleurer d'amertume.",
-  "Petit garçon, cette bonne glace te fait saliver d'envie.",
-  "Vaste océan, la forte houle te fait tanguer d'ivresse.",
-  "Phrase incomplète.",
-].join("\n");
+// Build the executable Python from the per-language config. JSON arrays of
+// numbers and "," strings are valid Python list literals, so they drop in
+// directly. `{n}`/`{src}` etc. are Python f-string fields and stay literal.
+const patternsPy = config.patterns
+  .map((p) => "    " + JSON.stringify(p) + ",")
+  .join("\n");
 
-// The real, executed Python. Localized user-facing strings are interpolated;
-// `{n}`, `{src}` etc. are Python f-string fields and stay literal in JS.
+// The status badge only exists when a header is rendered (EN); skip the
+// #status update otherwise so the script doesn't touch a missing element.
+const statusBlock = config.header
+  ? `
+
+# Runs once the interpreter is ready — confirms genuine CPython has loaded.
+document.querySelector("#status").innerText = (
+    "Python ready · " + sys.version.split()[0] + " (CPython via Pyodide)"
+)`
+  : "";
+
 const pyRun = `from pyscript import when, document
-import html
+import ${config.header ? "sys, html" : "html"}
 
 PATTERNS = [
-    [1, 2, ",", 3, 4, 5, 6, 7, 8, 9],
-    [9, 8, 6, 7, ",", 1, 2, ",", 3, 4, 5],
-    [3, 5, 4, 9, 6, 7, ",", 1, 2, ",", 8],
-    [8, 3, 4, 5, ",", 1, 2, ",", 9, 6, 7],
-    [6, 7, 3, 5, 4, 8, ",", 1, 2, ",", 9],
+${patternsPy}
 ]
 
 def reorder(words, pattern):
@@ -65,9 +112,9 @@ def reorder(words, pattern):
 
 def process(sentence):
     words = [w.strip(",.").lower() for w in sentence.split()]
-    if len(words) != 9:
+    if len(words) != ${config.wordCount}:
         return None, len(words)
-    return [reorder(words, p) for p in PATTERNS], 9
+    return [reorder(words, p) for p in PATTERNS], ${config.wordCount}
 
 @when("click", "#run")
 def run(event):
@@ -75,7 +122,7 @@ def run(event):
     box = document.querySelector("#output")
     sentences = [ln.strip() for ln in raw.splitlines() if ln.strip()]
     if not sentences:
-        box.innerHTML = '<span class="empty">${strings.typeAtLeastOne}</span>'
+        box.innerHTML = '<span class="empty">${config.strings.typeAtLeastOne}</span>'
         return
     blocks = []
     for sentence in sentences:
@@ -84,12 +131,12 @@ def run(event):
         if variants is None:
             blocks.append(
                 f'<div class="block bad"><div class="src">{src}</div>'
-                f'<div class="flag">${strings.flagText}</div></div>'
+                f'<div class="flag">${config.strings.flagText}</div></div>'
             )
         else:
             lines = "".join(f'<div class="line">{html.escape(v)}</div>' for v in variants)
             blocks.append(f'<div class="block"><div class="src">{src}</div>{lines}</div>')
-    box.innerHTML = "".join(blocks)`;
+    box.innerHTML = "".join(blocks)${statusBlock}`;
 ---
 
 <!-- PyScript runtime (left untouched by Astro via is:inline). -->
@@ -110,18 +157,33 @@ def run(event):
 />
 
 <div class="pysd">
+  {
+    config.header && (
+      <header>
+        <p class="eyebrow">{config.header.eyebrow}</p>
+        <div class="pysd-title">{config.header.title}</div>
+        <p class="sub" set:html={config.header.sub} />
+        {config.header.gloss && <p class="gloss" set:html={config.header.gloss} />}
+        <div class="status">
+          <span class="dot" />
+          <span id="status">{config.header.booting}</span>
+        </div>
+      </header>
+    )
+  }
+
   <div class="card">
-    <label for="input">{strings.inputLabel}</label>
-    <textarea id="input">{defaultSentences}</textarea>
-    <button id="run" type="button">{strings.runButton}</button>
+    <label for="input">{config.strings.inputLabel}</label>
+    <textarea id="input">{config.defaultSentences}</textarea>
+    <button id="run" type="button">{config.strings.runButton}</button>
   </div>
 
   <div class="card">
-    <label>{strings.outputLabel}</label>
-    <div id="output"><span class="empty">{strings.outputEmpty}</span></div>
+    <label>{config.strings.outputLabel}</label>
+    <div id="output"><span class="empty">{config.strings.outputEmpty}</span></div>
   </div>
 
-  <p class="foot">{strings.foot}</p>
+  <p class="foot">{config.strings.foot}</p>
 </div>
 
 <!-- The real, running Python. type="py" = Pyodide (full CPython). -->
@@ -133,6 +195,7 @@ def run(event):
     --pysd-ink: #15223b;
     --pysd-muted: #5a6a84;
     --pysd-accent: #2f6fed;
+    --pysd-live: #e0a800;
     --pysd-line: #d5dce7;
     --pysd-flag: #b26a00;
 
@@ -148,6 +211,81 @@ def run(event):
   }
   .pysd * {
     box-sizing: border-box;
+  }
+  .pysd .eyebrow {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--pysd-accent);
+    margin: 0 0 10px;
+  }
+  .pysd .pysd-title {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(24px, 4vw, 34px);
+    line-height: 1.05;
+    margin: 0 0 12px;
+    letter-spacing: -0.02em;
+    color: var(--pysd-ink);
+  }
+  .pysd .sub {
+    margin: 0;
+    color: var(--pysd-muted);
+    max-width: 60ch;
+  }
+  .pysd .sub code {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.9em;
+  }
+  .pysd .gloss {
+    margin: 16px 0 0;
+    color: var(--pysd-ink);
+    max-width: 62ch;
+    font-size: 14.5px;
+    line-height: 1.6;
+  }
+  .pysd .gloss .tr {
+    font-style: italic;
+  }
+  .pysd .gloss code {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.9em;
+  }
+  .pysd .gloss cite {
+    display: block;
+    margin-top: 4px;
+    font-style: normal;
+    color: var(--pysd-muted);
+    font-size: 12px;
+  }
+  .pysd .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 18px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    color: var(--pysd-muted);
+  }
+  .pysd .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--pysd-live);
+    box-shadow: 0 0 0 0 rgba(224, 168, 0, 0.55);
+    animation: pysd-pulse 1.6s infinite;
+  }
+  @keyframes pysd-pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(224, 168, 0, 0.55);
+    }
+    70% {
+      box-shadow: 0 0 0 9px rgba(224, 168, 0, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(224, 168, 0, 0);
+    }
   }
   .pysd .card {
     background: var(--pysd-surface);
@@ -263,5 +401,10 @@ def run(event):
     border: 1px solid var(--pysd-line);
     padding: 1px 6px;
     border-radius: 5px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .pysd .dot {
+      animation: none;
+    }
   }
 </style>
