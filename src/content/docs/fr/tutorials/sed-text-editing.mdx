@@ -22,7 +22,7 @@ Prenons l'exemple du dialogue entre M. Jourdain et son maître de philosophie, d
 
 Commençons par afficher la phrase d'origine dans un terminal :
 
-<Tabs syncKey="io">
+<Tabs>
 <TabItem label="Entrée">
 
 ```console
@@ -44,7 +44,7 @@ Il s'agit maintenant d'intervertir les mots de la phrase, pour en créer une nou
 
 Nous allons donc donner la déclaration d'amour de M. Jourdain en entrée d'un programme awk d'une ligne, grâce au symbole de redirection pipeline (|).
 
-<Tabs syncKey="io">
+<Tabs>
 <TabItem label="Entrée">
 
 ```console
@@ -75,7 +75,7 @@ $ ls *.rst
 
 sed gère également des références arrières, qui affichent à l'endroit où on le souhaite la valeur correspondant à une expression littérale ou rationnelle trouvée auparavant. Heureusement pour nous, la déclaration d'amour de M. Jourdain contient exactement neuf mots, ce qui correspond au nombre maximal de références arrières possibles.
 
-<Tabs syncKey="io">
+<Tabs>
 <TabItem label="Entrée">
 
 ```console
@@ -97,7 +97,7 @@ d'amour. mourir me font, Belle marquise, vos beaux yeux
 
 Nous butons sur le même problème : l'expression régulière .* ne correspond pas à un mot, mais à une suite de caractères, ponctuation comprise. Il faut alors utiliser la forme `<.*>`, qui correspond à un mot tel que ceux dont M. Jourdain se sert pour faire de la prose. Nous allons utiliser les caractères d'échappement (barre oblique inverse \) pour que les signes `<` et `>` ne soient pas interprétés littéralement sous certaines consoles, mais comme des méta-caractères ayant une fonction spéciale :
 
-<Tabs syncKey="io">
+<Tabs>
 <TabItem label="Entrée">
 
 ```console
@@ -121,7 +121,7 @@ d'amour mourir me font, Belle marquise, vos beaux yeux.
 
 Nous pourrions également utiliser la forme [[:alpha:]]* qui fait gagner en lisibilité, mais perdre en concision :
 
-<Tabs syncKey="io">
+<Tabs>
 <TabItem label="Entrée">
 
 ```console
@@ -150,7 +150,7 @@ $ export w="\(\<.*\>\)"
 $ export m="$w $w, $w $w $w $w $w $w"
 ```
 
-<Tabs syncKey="io">
+<Tabs>
 <TabItem label="Entrée">
 
 ```console
@@ -171,7 +171,7 @@ D'amour mourir me font, belle marquise, vos beaux yeux.
 
 Nous pouvons maintenant facilement redistribuer les références arrières pour obtenir toutes les variations du maître de philosophie :
 
-<Tabs syncKey="io">
+<Tabs>
 <TabItem label="Entrée">
 
 ```console
@@ -190,7 +190,7 @@ Vos yeux beaux d'amour me font, belle marquise, mourir.
 </TabItem>
 </Tabs>
 
-<Tabs syncKey="io">
+<Tabs>
 <TabItem label="Entrée">
 
 ```console
@@ -209,7 +209,7 @@ Mourir vos beaux yeux, belle marquise, d'amour me font.
 </TabItem>
 </Tabs>
 
-<Tabs syncKey="io">
+<Tabs>
 <TabItem label="Entrée">
 
 ```console
@@ -325,7 +325,7 @@ $ echo "s/$p/\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9/" > moliere4.sed
 
 Exécutons maintenant en boucle tous les scripts sed sur toutes les lignes du fichier :
 
-<Tabs syncKey="io">
+<Tabs>
 <TabItem label="Entrée">
 
 ```console

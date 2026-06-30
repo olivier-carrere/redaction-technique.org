@@ -24,7 +24,7 @@ Consider the dialogue between Mr. Jourdain and his Professor of Philosophy in Mo
 
 Let's start by displaying the original sentence in a terminal:
 
-<Tabs syncKey="io">
+<Tabs>
 <TabItem label="Input">
 
 ```console
@@ -45,7 +45,7 @@ Now we need to swap the words in the sentence to create a new one. For a simple 
 
 So we're going to give Mr. Jourdain's declaration of love as input to a one-line `awk` program, using the pipeline redirection symbol (`|`).
 
-<Tabs syncKey="io">
+<Tabs>
 <TabItem label="Input">
 
 ```console
@@ -75,7 +75,7 @@ $ ls *.rst
 
 `sed` also supports back references, which display the value corresponding to a previously found literal or regular expression at the desired location. Mr. Jourdain's declaration of love contains ten words. `sed`, however, offers only nine back references, `\1` through `\9`: it reads `\10` as `\1` followed by a literal `0`, so a tenth word cannot be addressed directly. Fortunately, the last two words — `of love` — always travel together in the professor's reorderings, so we can capture them as a single group and stay within the nine-reference limit.
 
-<Tabs syncKey="io">
+<Tabs>
 <TabItem label="Input">
 
 ```console
@@ -96,7 +96,7 @@ of love. die make me, Fair Marchioness, your beautiful eyes
 
 We've run into the same problem: the regular expression `.*` doesn't correspond to a word, but to a series of characters, including punctuation. We must then use the `\<.*\>` form, which corresponds to a word, like the ones Mr. Jourdain uses to make prose. We're going to use escape characters (backslash `\`) so that the `<` and `>` signs are not interpreted literally under certain consoles, but as metacharacters with a special function. The final group, `\(\<.*\> \<.*\>\)`, captures two words at once — the closing phrase `of love`:
 
-<Tabs syncKey="io">
+<Tabs>
 <TabItem label="Input">
 
 ```console
@@ -119,7 +119,7 @@ of love die make me, Fair Marchioness, your beautiful eyes.
 
 We could also use the `[[:alpha:]]*` form, which is more readable but less concise:
 
-<Tabs syncKey="io">
+<Tabs>
 <TabItem label="Input">
 
 ```console
@@ -147,7 +147,7 @@ $ export w="\(\<.*\>\)"
 $ export m="$w $w, $w $w $w $w $w $w"
 ```
 
-<Tabs syncKey="io">
+<Tabs>
 <TabItem label="Input">
 
 ```console
@@ -167,7 +167,7 @@ Of love die make me, fair Marchioness, your beautiful eyes.
 
 We can now easily redistribute the back references to get all the professor's variations:
 
-<Tabs syncKey="io">
+<Tabs>
 <TabItem label="Input">
 
 ```console
@@ -185,7 +185,7 @@ Your beautiful eyes of love make me, fair Marchioness, die.
 </TabItem>
 </Tabs>
 
-<Tabs syncKey="io">
+<Tabs>
 <TabItem label="Input">
 
 ```console
@@ -203,7 +203,7 @@ Die of love your beautiful eyes, fair Marchioness, make me.
 </TabItem>
 </Tabs>
 
-<Tabs syncKey="io">
+<Tabs>
 <TabItem label="Input">
 
 ```console
@@ -315,7 +315,7 @@ $ echo "s/$p/\u\7 \6 \3 \4 \5 \8, \l\1 \2, \9/" > moliere4.sed
 
 Now let's loop through all the `sed` scripts on all the lines in the file:
 
-<Tabs syncKey="io">
+<Tabs>
 <TabItem label="Input">
 
 ```console
