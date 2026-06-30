@@ -5,6 +5,7 @@ tags: [automation]
 ---
 
 import PyScriptMoliere from '../../../../components/PyScriptMoliere.astro';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
 
 
 Unix clones such as Linux are rarely used to manage technical documentation. This is unusual when you consider the plethora of tools available on these platforms for manipulating text in various ways — tools that complement [Python's regular expression library](../python-regular-expressions/) for batch text manipulation.
@@ -23,26 +24,44 @@ Consider the dialogue between Mr. Jourdain and his Professor of Philosophy in Mo
 
 Let's start by displaying the original sentence in a terminal:
 
+<Tabs syncKey="io">
+<TabItem label="Input">
+
 ```console
 $ echo "Fair Marchioness, your beautiful eyes make me die of love."
 ```
 
-```text title="Output"
+</TabItem>
+<TabItem label="Output">
+
+```text
 Fair Marchioness, your beautiful eyes make me die of love.
 ```
+
+</TabItem>
+</Tabs>
 
 Now we need to swap the words in the sentence to create a new one. For a simple transposition, you might find it easier to use `awk`. `awk` doesn't deal with lines, but with the fields of a record (of a line), delimited by spaces by default. In other words, `awk` treats text like a database. It can easily display the whole line or just one or more fields in any desired order. Fields are indicated in the form `$n`, where `n` indicates the position of the field in the line, starting from the left. So `$1` indicates the first field, `$2` the second, and so forth, up to `$10` for the tenth word. `$0` corresponds to the whole line.
 
 So we're going to give Mr. Jourdain's declaration of love as input to a one-line `awk` program, using the pipeline redirection symbol (`|`).
+
+<Tabs syncKey="io">
+<TabItem label="Input">
 
 ```console
 $ echo "Fair Marchioness, your beautiful eyes make me die of love." |
 awk '{print $9" "$10" "$8" "$6" "$7" "$1" "$2" "$3" "$4" "$5}'
 ```
 
-```text title="Output"
+</TabItem>
+<TabItem label="Output">
+
+```text
 of love. die make me Fair Marchioness, your beautiful eyes
 ```
+
+</TabItem>
+</Tabs>
 
 The output of the `echo` command is not displayed. What is displayed is the output of the `awk` program, of which the output of the `echo` command, Mr. Jourdain's declaration of love, was the input.
 
@@ -56,43 +75,70 @@ $ ls *.rst
 
 `sed` also supports back references, which display the value corresponding to a previously found literal or regular expression at the desired location. Mr. Jourdain's declaration of love contains ten words. `sed`, however, offers only nine back references, `\1` through `\9`: it reads `\10` as `\1` followed by a literal `0`, so a tenth word cannot be addressed directly. Fortunately, the last two words — `of love` — always travel together in the professor's reorderings, so we can capture them as a single group and stay within the nine-reference limit.
 
+<Tabs syncKey="io">
+<TabItem label="Input">
+
 ```console
 $ echo "Fair Marchioness, your beautiful eyes make me die of love." |
-sed "s#\(.*\) \(.*\), \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \
-\(.*\) \(of .*\)#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
+sed "s/\(.*\) \(.*\), \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \
+\(.*\) \(of .*\)/\9 \8 \6 \7, \1 \2, \3 \4 \5/"
 ```
 
-```text title="Output"
+</TabItem>
+<TabItem label="Output">
+
+```text
 of love. die make me, Fair Marchioness, your beautiful eyes
 ```
 
+</TabItem>
+</Tabs>
+
 We've run into the same problem: the regular expression `.*` doesn't correspond to a word, but to a series of characters, including punctuation. We must then use the `\<.*\>` form, which corresponds to a word, like the ones Mr. Jourdain uses to make prose. We're going to use escape characters (backslash `\`) so that the `<` and `>` signs are not interpreted literally under certain consoles, but as metacharacters with a special function. The final group, `\(\<.*\> \<.*\>\)`, captures two words at once — the closing phrase `of love`:
+
+<Tabs syncKey="io">
+<TabItem label="Input">
 
 ```console
 $ export \
 p="\(\<.*\>\) \(\<.*\>\), \(\<.*\>\) \(\<.*\>\) \
 \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\> \<.*\>\)"
 $ echo "Fair Marchioness, your beautiful eyes make me die of love." |
-sed "s#$p#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
+sed "s/$p/\9 \8 \6 \7, \1 \2, \3 \4 \5/"
 ```
 
-```text title="Output"
+</TabItem>
+<TabItem label="Output">
+
+```text
 of love die make me, Fair Marchioness, your beautiful eyes.
 ```
 
+</TabItem>
+</Tabs>
+
 We could also use the `[[:alpha:]]*` form, which is more readable but less concise:
+
+<Tabs syncKey="io">
+<TabItem label="Input">
 
 ```console
 $ export a="[[:alpha:]]"
 $ export n="\($a*\) \($a*\), \($a*\) \($a*\) \($a*\) \
 \($a*\) \($a*\) \($a*\) \($a* $a*\)"
 $ echo "Fair Marchioness, your beautiful eyes make me die of love." |
-sed "s#$n#\9 \8 \6 \7, \1 \2, \3 \4 \5#"
+sed "s/$n/\9 \8 \6 \7, \1 \2, \3 \4 \5/"
 ```
 
-```text title="Output"
+</TabItem>
+<TabItem label="Output">
+
+```text
 of love die make me, Fair Marchioness, your beautiful eyes.
 ```
+
+</TabItem>
+</Tabs>
 
 That's better, but we've got a capitalization problem. So we're going to use the judiciously placed `\u` and `\l` operators. First, we'll export some variables to make the script more concise and readable:
 
@@ -101,43 +147,79 @@ $ export w="\(\<.*\>\)"
 $ export m="$w $w, $w $w $w $w $w $w"
 ```
 
+<Tabs syncKey="io">
+<TabItem label="Input">
+
 ```console
 $ echo "Fair Marchioness, your beautiful eyes make me die of love." |
-sed "s#$m \(\<.*\> \<.*\>\)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#"
+sed "s/$m \(\<.*\> \<.*\>\)/\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5/"
 ```
 
-```text title="Output"
+</TabItem>
+<TabItem label="Output">
+
+```text
 Of love die make me, fair Marchioness, your beautiful eyes.
 ```
 
+</TabItem>
+</Tabs>
+
 We can now easily redistribute the back references to get all the professor's variations:
+
+<Tabs syncKey="io">
+<TabItem label="Input">
 
 ```console
 $ echo "Fair Marchioness, your beautiful eyes make me die of love." |
-sed "s#$m \(\<.*\> \<.*\>\)#\u\3 \4 \5 \9 \6 \7, \l\1 \2, \8#"
+sed "s/$m \(\<.*\> \<.*\>\)/\u\3 \4 \5 \9 \6 \7, \l\1 \2, \8/"
 ```
 
-```text title="Output"
+</TabItem>
+<TabItem label="Output">
+
+```text
 Your beautiful eyes of love make me, fair Marchioness, die.
 ```
 
+</TabItem>
+</Tabs>
+
+<Tabs syncKey="io">
+<TabItem label="Input">
+
 ```console
 $ echo "Fair Marchioness, your beautiful eyes make me die of love." |
-sed "s#$m \(\<.*\> \<.*\>\)#\u\8 \9 \3 \4 \5, \l\1 \2, \6 \7#"
+sed "s/$m \(\<.*\> \<.*\>\)/\u\8 \9 \3 \4 \5, \l\1 \2, \6 \7/"
 ```
 
-```text title="Output"
+</TabItem>
+<TabItem label="Output">
+
+```text
 Die of love your beautiful eyes, fair Marchioness, make me.
 ```
 
+</TabItem>
+</Tabs>
+
+<Tabs syncKey="io">
+<TabItem label="Input">
+
 ```console
 $ echo "Fair Marchioness, your beautiful eyes make me die of love." |
-sed "s#$m \(\<.*\> \<.*\>\)#\u\7 \6 \3 \4 \5 \8, \l\1 \2, \9#"
+sed "s/$m \(\<.*\> \<.*\>\)/\u\7 \6 \3 \4 \5 \8, \l\1 \2, \9/"
 ```
 
-```text title="Output"
+</TabItem>
+<TabItem label="Output">
+
+```text
 Me make your beautiful eyes die, fair Marchioness, of love.
 ```
+
+</TabItem>
+</Tabs>
 
 ## Molière and GNU/Linux
 
@@ -175,28 +257,28 @@ Or:
 $ export w="\(\<.*\>\)"
 $ export m="$w $w, $w $w $w $w $w $w"
 $ echo $declaration |
-sed "s#$m \(\<.*\> \<.*\>\)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#"
+sed "s/$m \(\<.*\> \<.*\>\)/\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5/"
 ```
 
 Or else:
 
 ```console
 echo $declaration |
-sed "s#$m \(\<.*\> \<.*\>\)#\u\3 \4 \5 \9 \6 \7, \l\1 \2, \8#"
+sed "s/$m \(\<.*\> \<.*\>\)/\u\3 \4 \5 \9 \6 \7, \l\1 \2, \8/"
 ```
 
 Or else:
 
 ```console
 echo $declaration |
-sed "s#$m \(\<.*\> \<.*\>\)#\u\8 \9 \3 \4 \5, \l\1 \2, \6 \7#"
+sed "s/$m \(\<.*\> \<.*\>\)/\u\8 \9 \3 \4 \5, \l\1 \2, \6 \7/"
 ```
 
 Or else:
 
 ```console
 echo $declaration |
-sed "s#$m \(\<.*\> \<.*\>\)#\u\7 \6 \3 \4 \5 \8, \l\1 \2, \9#"
+sed "s/$m \(\<.*\> \<.*\>\)/\u\7 \6 \3 \4 \5 \8, \l\1 \2, \9/"
 ```
 
 That same word-shuffling idea doesn't have to stay in the shell. Here it is running as real Python, live in this page:
@@ -225,13 +307,16 @@ Let's place the various `sed` commands in a different script each. We reuse the 
 
 ```console
 $ export p="$m \(\<.*\> \<.*\>\)"
-$ echo "s#$p#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#" > moliere1.sed
-$ echo "s#$p#\u\3 \4 \5 \9 \6 \7, \l\1 \2, \8#" > moliere2.sed
-$ echo "s#$p#\u\8 \9 \3 \4 \5, \l\1 \2, \6 \7#" > moliere3.sed
-$ echo "s#$p#\u\7 \6 \3 \4 \5 \8, \l\1 \2, \9#" > moliere4.sed
+$ echo "s/$p/\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5/" > moliere1.sed
+$ echo "s/$p/\u\3 \4 \5 \9 \6 \7, \l\1 \2, \8/" > moliere2.sed
+$ echo "s/$p/\u\8 \9 \3 \4 \5, \l\1 \2, \6 \7/" > moliere3.sed
+$ echo "s/$p/\u\7 \6 \3 \4 \5 \8, \l\1 \2, \9/" > moliere4.sed
 ```
 
 Now let's loop through all the `sed` scripts on all the lines in the file:
+
+<Tabs syncKey="io">
+<TabItem label="Input">
 
 ```console
 $ for (( i=1; i<5; i++ )); do
@@ -242,7 +327,10 @@ $ for (( i=1; i<5; i++ )); do
    done
 ```
 
-```text title="Output"
+</TabItem>
+<TabItem label="Output">
+
+```text
 With bitterness weep make you, dear doctor, these great misfortunes.
 With drunkenness pitch makes you, vast ocean, the strong swell.
 These great misfortunes with bitterness make you, dear doctor, weep.
@@ -252,6 +340,9 @@ Pitch with drunkenness the strong swell, vast ocean, makes you.
 You make these great misfortunes weep, dear doctor, with bitterness.
 You makes the strong swell pitch, vast ocean, with drunkenness.
 ```
+
+</TabItem>
+</Tabs>
 
 And there it is. In just a few moments, without ever opening a single file, we apply a series of complex operations to an indefinite number of sentences of the same structure. This is not feasible with a word processor or any other tool with a graphical interface or with binary files — which is one reason why [text-based source formats](../tech-writing-process/source-format/) are so well-suited for automated workflows.
 

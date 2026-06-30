@@ -19,3 +19,11 @@
   text-decoration: underline;
   text-underline-offset: 2px;
 }
+
+/* Shell prompt injected by the ec-shell-prompt Expressive Code plugin:
+   visible "$ " marker that is excluded from copy and text selection. */
+.expressive-code .shell-prompt {
+  user-select: none;
+  -webkit-user-select: none;
+  color: var(--sl-color-gray-3);
+}

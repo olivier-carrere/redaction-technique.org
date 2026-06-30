@@ -5,6 +5,7 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import vercel from '@astrojs/vercel';
 import { unified } from '@astrojs/markdown-remark';
+import { pluginShellPrompt } from './src/plugins/ec-shell-prompt.mjs';
 
 const site = 'https://docs.redaction-technique.org/';
 
@@ -159,6 +160,9 @@ export default defineConfig({
     starlight({
       title: 'Redaction-technique.org',
       customCss: ['./src/styles/custom.css'],
+      expressiveCode: {
+        plugins: [pluginShellPrompt()],
+      },
       components: {
         Head: './src/components/Head.astro',
         PageTitle: './src/components/PageTitle.astro',
