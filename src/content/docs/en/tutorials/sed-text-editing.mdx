@@ -9,15 +9,15 @@ import PyScriptMoliere from '../../../../components/PyScriptMoliere.astro';
 
 Unix clones such as Linux are rarely used to manage technical documentation. This is unusual when you consider the plethora of tools available on these platforms for manipulating text in various ways — tools that complement [Python's regular expression library](../python-regular-expressions/) for batch text manipulation.
 
-Consider the dialogue between M. Jourdain and his philosophy teacher in Molière's *Le Bourgeois Gentilhomme*. We will work from Charles Heron Wall's 1876 English translation:
+Consider the dialogue between Mr. Jourdain and his Professor of Philosophy in Molière's *Le Bourgeois Gentilhomme*. We will work from the English rendering below, adapted from Charles Heron Wall's prose translation:
 
-**MONSIEUR JOURDAIN:**
+**MR. JOURDAIN:**
 
-*[...] I should like to put into a note: « Fair marchioness, your beautiful eyes make me die of love » ; but I want it phrased in a gallant way, turned nicely.*
+*[...] I should like to put into a note: "Fair marchioness, your beautiful eyes make me die of love"; but I want it phrased in a gallant way, turned nicely.*
 
 [...]
 
-**PHILOSOPHY TEACHER:**
+**PROFESSOR OF PHILOSOPHY:**
 
 *They may be put, first of all, as you said: Fair marchioness, your beautiful eyes make me die of love. Or: Of love die make me, fair marchioness, your beautiful eyes. Or: Your beautiful eyes of love make me, fair marchioness, die. Or: Die of love your beautiful eyes, fair marchioness, make me. Or: Me make your beautiful eyes die, fair marchioness, of love.*
 
@@ -48,7 +48,7 @@ It's simpler to turn to `sed`. `sed` selects sets of characters in lines, either
 $ ls *.rst
 ```
 
-`sed` also supports back references, which display the value corresponding to a previously found literal or rational expression at the desired location. Mr. Jourdain's declaration of love contains ten words. `sed`, however, offers only nine back references, `\1` through `\9`: it reads `\10` as `\1` followed by a literal `0`, so a tenth word cannot be addressed directly. Fortunately, the last two words — `of love` — always travel together in the philosophy teacher's reorderings, so we can capture them as a single group and stay within the nine-reference limit.
+`sed` also supports back references, which display the value corresponding to a previously found literal or regular expression at the desired location. Mr. Jourdain's declaration of love contains ten words. `sed`, however, offers only nine back references, `\1` through `\9`: it reads `\10` as `\1` followed by a literal `0`, so a tenth word cannot be addressed directly. Fortunately, the last two words — `of love` — always travel together in the professor's reorderings, so we can capture them as a single group and stay within the nine-reference limit.
 
 ```bash
 $ echo "Fair marchioness, your beautiful eyes make me die of love." |
@@ -57,7 +57,7 @@ sed "s#\(.*\) \(.*\), \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \\
 of love. die make me, Fair marchioness, your beautiful eyes
 ```
 
-We've run into the same problem: the regular expression `.*` doesn't correspond to a word, but to a series of characters, including punctuation. We must then use the `\<.*\>` form, which corresponds to a word such as those used by Mr. Jourdain to create prose. We're going to use escape characters (backslash `\`) so that the `<` and `>` signs are not interpreted literally under certain consoles, but as metacharacters with a special function. The final group, `\(\<.*\> \<.*\>\)`, captures two words at once — the closing phrase `of love`:
+We've run into the same problem: the regular expression `.*` doesn't correspond to a word, but to a series of characters, including punctuation. We must then use the `\<.*\>` form, which corresponds to a word, like the ones Mr. Jourdain uses to make prose. We're going to use escape characters (backslash `\`) so that the `<` and `>` signs are not interpreted literally under certain consoles, but as metacharacters with a special function. The final group, `\(\<.*\> \<.*\>\)`, captures two words at once — the closing phrase `of love`:
 
 ```bash
 $ export \
@@ -92,7 +92,7 @@ sed "s#$m \(\<.*\> \<.*\>\)#\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5#"
 Of love die make me, fair marchioness, your beautiful eyes.
 ```
 
-We can now easily redistribute the back references to get all the variations of the philosophy teacher:
+We can now easily redistribute the back references to get all the professor's variations:
 
 ```bash
 $ echo "Fair marchioness, your beautiful eyes make me die of love." |
@@ -114,11 +114,11 @@ Me make your beautiful eyes die, fair marchioness, of love.
 
 ## Molière and GNU/Linux
 
-Let's rewrite the dialogue between M. Jourdain and his philosophy teacher in geek style:
+Let's rewrite the dialogue between Mr. Jourdain and his Professor of Philosophy in geek style:
 
-**MONSIEUR JOURDAIN:**
+**MR. JOURDAIN:**
 
-I'd like to show him on the standard output:
+I'd like to show her on the standard output:
 
 ```bash
 $ Fair marchioness, your beautiful eyes make me die of love.
@@ -126,7 +126,7 @@ $ Fair marchioness, your beautiful eyes make me die of love.
 
 But I wish it were put in a gallant way, that it were turned nicely.
 
-**PHILOSOPHY TEACHER:**
+**PROFESSOR OF PHILOSOPHY:**
 
 They can be put first as you said:
 
@@ -182,7 +182,7 @@ Admittedly, a lot of effort for not very much, you might say. But imagine a file
 
 Dear doctor, these great misfortunes make you weep with bitterness. Vast ocean, the strong swell makes you pitch with drunkenness.
 
-This might be uncommon, but it is typical in technical documentation to find sentences with the same structure, for reasons of stylistic homogeneity.
+This may look contrived, but structurally identical sentences are common in technical documentation, for the sake of stylistic consistency.
 
 To carry out our tests on a sample, let's place the two sentences above in a file:
 
