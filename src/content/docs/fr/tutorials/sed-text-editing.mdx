@@ -4,6 +4,7 @@ description: "Utilisez sed, l'éditeur de flux Unix, pour modifier en lot vos fi
 ---
 
 import PyScriptMoliere from '../../../../components/PyScriptMoliere.astro';
+import SedMoliere from '../../../../components/SedMoliere.astro';
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 
 Les clones d'Unix sont peu utilisés pour gérer la documentation technique. Ceci est étrange si l'on songe à la pléthore d'outils disponibles sous ces plateformes pour manipuler du texte dans tous les sens.
@@ -288,6 +289,10 @@ Ou bien :
 $ echo $declaration |
 sed "s/$m \(d'\<.*\>\)/\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9/"
 ```
+
+Chaque commande ci-dessus exécutait GNU sed. Voici ce binaire même — compilé depuis son code source C en WebAssembly — qui exécute le vrai GNU sed, en direct dans cette page. Modifiez les phrases et reformulez-les vous-même :
+
+<SedMoliere lang="fr" />
 
 La même idée de permutation de mots n'a pas à rester dans le shell. La voici en vrai Python, exécuté en direct dans cette page :
 

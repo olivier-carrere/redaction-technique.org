@@ -1,0 +1,349 @@
+---
+// Live, in-browser GNU sed demo. Unlike the sibling PyScript widget, this runs
+// the *actual* GNU sed 4.9 binary — compiled from C to WebAssembly with
+// Emscripten (public/sed/sed.js + sed.wasm) — so the tutorial's own command is
+// what executes. It applies each of the philosophy teacher's reorderings as a
+// separate `sed "s/PATTERN/REPLACEMENT/"` over every input line, exercising the
+// GNU-only operators \u \l \< \> that a busybox sed could not run.
+// Styles are namespaced under `.sedd` so nothing leaks into the docs page.
+interface Props {
+  lang?: "en" | "fr";
+}
+
+const { lang = "en" } = Astro.props;
+
+// w/m mirror the shell variables the tutorial exports; the 9th group differs by
+// language (EN captures the trailing two-word "of love"; FR the "d'amour" word).
+const w = "\\(\\<.*\\>\\)";
+const m = `${w} ${w}, ${w} ${w} ${w} ${w} ${w} ${w}`;
+
+const config = {
+  en: {
+    pattern: `${m} \\(\\<.*\\> \\<.*\\>\\)`,
+    replacements: [
+      "\\u\\9 \\8 \\6 \\7, \\l\\1 \\2, \\3 \\4 \\5",
+      "\\u\\3 \\4 \\5 \\9 \\6 \\7, \\l\\1 \\2, \\8",
+      "\\u\\8 \\9 \\3 \\4 \\5, \\l\\1 \\2, \\6 \\7",
+      "\\u\\7 \\6 \\3 \\4 \\5 \\8, \\l\\1 \\2, \\9",
+    ],
+    defaultSentences: [
+      "Fair Marchioness, your beautiful eyes make me die of love.",
+      "Dear doctor, these great misfortunes make you weep with bitterness.",
+      "Only a fragment.",
+    ].join("\n"),
+    strings: {
+      inputLabel: "Your sentences — one per line, nine words each",
+      runButton: "Run through GNU sed",
+      outputLabel: "Output from GNU sed (stdout)",
+      outputEmpty: "Click the button to run.",
+      booting: "Loading the sed binary…",
+      ready: "· WebAssembly",
+      typeAtLeastOne: "Type at least one sentence.",
+      noMatch: "no match — not nine words, so sed left the line unchanged",
+      foot: "The ~250 KB binary is fetched once and cached. Each phrasing is a separate sed substitution over your lines — the same command the tutorial builds, running for real, client-side.",
+    },
+  },
+  fr: {
+    pattern: `${m} \\(d'\\<.*\\>\\)`,
+    replacements: [
+      "\\u\\9 \\8 \\6 \\7, \\l\\1 \\2, \\3 \\4 \\5",
+      "\\u\\3 \\5 \\4 \\9 \\6 \\7, \\l\\1 \\2, \\8",
+      "\\u\\8 \\3 \\4 \\5, \\l\\1 \\2, \\9 \\6 \\7",
+      "\\u\\6 \\7 \\3 \\5 \\4 \\8, \\l\\1 \\2, \\9",
+    ],
+    defaultSentences: [
+      "Belle marquise, vos beaux yeux me font mourir d'amour.",
+      "Cher docteur, ces grands malheurs vous font pleurer d'amertume.",
+      "Phrase incomplète.",
+    ].join("\n"),
+    strings: {
+      inputLabel: "Vos phrases — une par ligne, neuf mots chacune",
+      runButton: "Exécuter avec GNU sed",
+      outputLabel: "Sortie de GNU sed (stdout)",
+      outputEmpty: "Cliquez sur le bouton pour exécuter.",
+      booting: "Chargement du binaire sed…",
+      ready: "· WebAssembly",
+      typeAtLeastOne: "Saisissez au moins une phrase.",
+      noMatch: "aucune correspondance — pas neuf mots, sed laisse la ligne inchangée",
+      foot: "Le binaire (~250 Ko) est téléchargé une fois puis mis en cache. Chaque reformulation est une substitution sed distincte sur vos lignes — la commande même du didacticiel, exécutée pour de vrai, côté client.",
+    },
+  },
+}[lang];
+
+const scripts = config.replacements.map((r) => `s/${config.pattern}/${r}/`);
+const { strings } = config;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;600&display=swap"
+  rel="stylesheet"
+/>
+
+<!-- The compiled GNU sed: a classic script that defines the global createSed(). -->
+<script is:inline src="/sed/sed.js"></script>
+
+<div class="sedd">
+  <div class="status">
+    <span class="dot"></span>
+    <span class="ver">{strings.booting}</span>
+  </div>
+
+  <div class="card">
+    <label for="sedd-input">{strings.inputLabel}</label>
+    <textarea id="sedd-input">{config.defaultSentences}</textarea>
+    <button id="sedd-run" type="button" disabled>{strings.runButton}</button>
+  </div>
+
+  <div class="card">
+    <label>{strings.outputLabel}</label>
+    <div id="sedd-output"><span class="empty">{strings.outputEmpty}</span></div>
+  </div>
+
+  <p class="foot">{strings.foot}</p>
+</div>
+
+<script define:vars={{ scripts, strings }}>
+  const root = document.querySelector(".sedd");
+  const verEl = root.querySelector(".ver");
+  const dotEl = root.querySelector(".dot");
+  const runBtn = root.querySelector("#sedd-run");
+  const inputEl = root.querySelector("#sedd-input");
+  const outBox = root.querySelector("#sedd-output");
+
+  // Each invocation gets a fresh module: sed calls exit() when done, which tears
+  // the runtime down, so we re-instantiate rather than reuse.
+  async function runSed(args, stdin) {
+    const out = [], err = [];
+    const Module = await createSed({
+      noInitialRun: true,
+      print: (s) => out.push(s),
+      printErr: (s) => err.push(s),
+    });
+    if (stdin !== undefined) Module.FS.writeFile("/input.txt", stdin);
+    try {
+      Module.callMain(stdin !== undefined ? [...args, "/input.txt"] : args);
+    } catch (e) {
+      if (!(e && e.name === "ExitStatus" && e.status === 0)) err.push(String(e));
+    }
+    return { out, err };
+  }
+
+  function escapeHtml(s) {
+    return s.replace(/[&<>"']/g, (c) =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])
+    );
+  }
+
+  (async () => {
+    const { out } = await runSed(["--version"]);
+    const raw = out.find((l) => /GNU sed/.test(l)) || "GNU sed";
+    const ver = raw.replace(/^.*\(GNU sed\)\s*/, "GNU sed ");
+    verEl.textContent = `${ver} ${strings.ready}`;
+    dotEl.classList.add("ready");
+    runBtn.disabled = false;
+  })();
+
+  runBtn.addEventListener("click", async () => {
+    const lines = inputEl.value.split("\n").map((l) => l.trim()).filter(Boolean);
+    if (!lines.length) {
+      outBox.innerHTML = `<span class="empty">${strings.typeAtLeastOne}</span>`;
+      return;
+    }
+    runBtn.disabled = true;
+    const stdin = lines.join("\n") + "\n";
+
+    // One sed run per phrasing over all lines, then regroup the outputs by line.
+    const perScript = [];
+    for (const script of scripts) {
+      const { out } = await runSed([script], stdin);
+      perScript.push(out);
+    }
+    runBtn.disabled = false;
+
+    const blocks = lines.map((src, i) => {
+      const variants = perScript.map((o) => o[i] ?? "");
+      const matched = variants.some((v) => v !== src);
+      const srcHtml = `<div class="src">${escapeHtml(src)}</div>`;
+      if (!matched) {
+        return `<div class="block bad">${srcHtml}<div class="flag">${strings.noMatch}</div></div>`;
+      }
+      const out = variants.map((v) => `<div class="line">${escapeHtml(v)}</div>`).join("");
+      return `<div class="block">${srcHtml}${out}</div>`;
+    });
+    outBox.innerHTML = blocks.join("");
+  });
+</script>
+
+<style is:global>
+  .sedd {
+    --sedd-surface: #ffffff;
+    --sedd-ink: #15223b;
+    --sedd-muted: #5a6a84;
+    --sedd-accent: #2f6fed;
+    --sedd-live: #e0a800;
+    --sedd-line: #d5dce7;
+    --sedd-flag: #b26a00;
+
+    background: #e7ebf1;
+    color: var(--sedd-ink);
+    font-family: "Inter", system-ui, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    border: 1px solid var(--sedd-line);
+    border-radius: 16px;
+    padding: 28px 24px 32px;
+    margin: 2rem 0;
+  }
+  .sedd * {
+    box-sizing: border-box;
+  }
+  .sedd .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0 0 18px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    color: var(--sedd-muted);
+  }
+  .sedd .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--sedd-live);
+    box-shadow: 0 0 0 0 rgba(224, 168, 0, 0.55);
+    animation: sedd-pulse 1.6s infinite;
+  }
+  .sedd .dot.ready {
+    background: #1fa971;
+    animation: none;
+    box-shadow: none;
+  }
+  @keyframes sedd-pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(224, 168, 0, 0.55);
+    }
+    70% {
+      box-shadow: 0 0 0 9px rgba(224, 168, 0, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(224, 168, 0, 0);
+    }
+  }
+  .sedd .card {
+    background: var(--sedd-surface);
+    border: 1px solid var(--sedd-line);
+    border-radius: 14px;
+    padding: 22px;
+    margin-top: 18px;
+  }
+  .sedd label {
+    display: block;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sedd-muted);
+    margin-bottom: 10px;
+  }
+  .sedd textarea {
+    width: 100%;
+    min-height: 96px;
+    resize: vertical;
+    padding: 12px 14px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 14px;
+    color: var(--sedd-ink);
+    border: 1px solid var(--sedd-line);
+    border-radius: 9px;
+    background: #fbfcfe;
+    line-height: 1.7;
+  }
+  .sedd textarea:focus {
+    outline: 2px solid var(--sedd-accent);
+    outline-offset: 1px;
+    border-color: transparent;
+  }
+  .sedd button {
+    margin-top: 14px;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: #fff;
+    background: var(--sedd-accent);
+    border: none;
+    border-radius: 9px;
+    padding: 11px 22px;
+    cursor: pointer;
+    transition:
+      transform 0.06s ease,
+      background 0.15s ease;
+  }
+  .sedd button:hover {
+    background: #235ed1;
+  }
+  .sedd button:active {
+    transform: translateY(1px);
+  }
+  .sedd button:disabled {
+    background: #9fb3d6;
+    cursor: not-allowed;
+  }
+  .sedd button:focus-visible {
+    outline: 2px solid var(--sedd-ink);
+    outline-offset: 2px;
+  }
+  .sedd #sedd-output {
+    min-height: 24px;
+  }
+  .sedd #sedd-output .empty {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 14px;
+    color: var(--sedd-muted);
+  }
+  .sedd .block {
+    padding: 14px 0;
+    border-top: 1px solid var(--sedd-line);
+  }
+  .sedd .block:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+  .sedd .src {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    color: var(--sedd-muted);
+    margin-bottom: 9px;
+  }
+  .sedd .src::before {
+    content: "$\00a0";
+    color: var(--sedd-accent);
+  }
+  .sedd .line {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 14px;
+    line-height: 1.85;
+    color: var(--sedd-ink);
+  }
+  .sedd .block.bad .src {
+    color: #9aa6ba;
+  }
+  .sedd .flag {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    color: var(--sedd-flag);
+  }
+  .sedd .foot {
+    margin-top: 26px;
+    margin-bottom: 0;
+    font-size: 13px;
+    color: var(--sedd-muted);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sedd .dot {
+      animation: none;
+    }
+  }
+</style>

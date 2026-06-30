@@ -5,6 +5,7 @@ tags: [automation]
 ---
 
 import PyScriptMoliere from '../../../../components/PyScriptMoliere.astro';
+import SedMoliere from '../../../../components/SedMoliere.astro';
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 
 
@@ -280,6 +281,10 @@ Or else:
 echo $declaration |
 sed "s/$m \(\<.*\> \<.*\>\)/\u\7 \6 \3 \4 \5 \8, \l\1 \2, \9/"
 ```
+
+Every command above ran GNU sed. Here is that very binary — compiled from its C source to WebAssembly — running real GNU sed, live in this page. Edit the sentences and rephrase them yourself:
+
+<SedMoliere lang="en" />
 
 That same word-shuffling idea doesn't have to stay in the shell. Here it is running as real Python, live in this page:
 
