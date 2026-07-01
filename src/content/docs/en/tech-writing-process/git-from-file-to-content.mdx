@@ -34,7 +34,7 @@ Git does not directly compare two files. It compares their checksums, which are 
 
 The history of your project is not necessarily linear: you can have it follow several parallel paths, or [branches](../using-branches/).
 
-You can only create branches from a *commit*. Think of *commits* as junction points (with the road being your project's history) from which you can, if you wish, take your project in a different direction.
+You can only create branches from a *commit*. Think of *commits* as roundabouts (with the road being your project's history) from which you can, if you wish, take your project in a different direction.
 
 If you create a branch, let's say *test*, while changes in your workspace have not been *committed* in your *master* branch, the changes you make will apply to the non-*committed* files in your workspace. If you make a mistake, you won't be able to restore the *status quo ante* of your files by returning to the *master* branch.
 
@@ -56,10 +56,12 @@ How do you overcome this bottleneck? It's relatively simple:
 2. Create a new branch: `git checkout -b my-branch`.
 3. *Commit* your changes to the new branch: `git add my-files`, `git commit -m "my commit message"`.
 4. Return to the master branch: `git checkout master` and move on to your second task.
-5. If your first task is not validated, return to the provisional branch: `git checkout my-branch` and make a new commit (which you can merge with the previous one(s) after validation).
-6. When you receive validation for the first task, put your work in progress aside: `git stash`.
-7. Merge the provisional branch with the master branch: `git merge my-branch`.
-8. Retrieve your work in progress: `git stash pop`.
+
+   If your first task is not validated: return to the provisional branch (`git checkout my-branch`) and make a new commit, which you can merge with the previous one(s) after validation.
+
+5. When you receive validation for the first task, put your work in progress aside: `git stash`.
+6. Merge the provisional branch with the master branch: `git merge my-branch`.
+7. Retrieve your work in progress: `git stash pop`.
 
 If you don’t need to run two tasks in parallel, you can simply work in your local workspace. To revert changes, use the `git reset --hard HEAD` command to overwrite your non-*committed* files in the local directory with those from the last *commit*.
 
