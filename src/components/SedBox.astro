@@ -166,24 +166,23 @@ const variants = {
     cmd: [
       `export w="${w}"`,
       `export m="$w $w, $w $w $w $w $w $w"`,
-      `echo $declaration |`,
       `sed "s/$m ${c.two}/${c.reps.m1}/"`,
     ],
     scripts: [`s/${m} ${c.two}/${c.reps.m1}/`],
     input: c.single,
   },
   geek2: {
-    cmd: [`echo $declaration |`, `sed "s/$m ${c.two}/${c.reps.m2}/"`],
+    cmd: [`sed "s/$m ${c.two}/${c.reps.m2}/"`],
     scripts: [`s/${m} ${c.two}/${c.reps.m2}/`],
     input: c.single,
   },
   geek3: {
-    cmd: [`echo $declaration |`, `sed "s/$m ${c.two}/${c.reps.m3}/"`],
+    cmd: [`sed "s/$m ${c.two}/${c.reps.m3}/"`],
     scripts: [`s/${m} ${c.two}/${c.reps.m3}/`],
     input: c.single,
   },
   geek4: {
-    cmd: [`echo $declaration |`, `sed "s/$m ${c.two}/${c.reps.m4}/"`],
+    cmd: [`sed "s/$m ${c.two}/${c.reps.m4}/"`],
     scripts: [`s/${m} ${c.two}/${c.reps.m4}/`],
     input: c.single,
   },
