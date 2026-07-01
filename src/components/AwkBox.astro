@@ -1,0 +1,261 @@
+---
+// A live, in-browser awk box, sibling to SedBox. It runs the real GNU Awk 5.3.1
+// binary compiled from C to WebAssembly with Emscripten (public/awk/awk.js +
+// awk.wasm). The `echo` variant is a no-op (awk program "1" reprints the input
+// unchanged); the `awk` variant runs the tutorial's field-reordering program.
+// The ~600 KB binary loads once per page via a shared window.__awkReady promise,
+// and every box gets a unique id so its script only touches its own markup.
+// Styles are namespaced under `.awkbox` so nothing leaks into the docs page.
+interface Props {
+  lang?: "en" | "fr";
+  variant: "echo" | "awk";
+}
+
+const { lang = "en", variant } = Astro.props;
+
+const config = {
+  en: {
+    sentence: "Fair Marchioness, your beautiful eyes make me die of love.",
+    awkProgram: `{print $9" "$10" "$8" "$6" "$7" "$1" "$2" "$3" "$4" "$5}`,
+    strings: {
+      cmdLabel: "Command",
+      inputLabel: "Input — edit and run again",
+      runButton: "Run",
+      booting: "Loading awk…",
+      outputLabel: "Output",
+      outputEmpty: "Click Run to execute.",
+      typeAtLeastOne: "Type at least one sentence.",
+    },
+  },
+  fr: {
+    sentence: "Belle marquise, vos beaux yeux me font mourir d'amour.",
+    awkProgram: `{print $9" "$8" "$6" "$7" "$1" "$2" "$3" "$4" "$5}`,
+    strings: {
+      cmdLabel: "Commande",
+      inputLabel: "Entrée — modifiez puis relancez",
+      runButton: "Exécuter",
+      booting: "Chargement d'awk…",
+      outputLabel: "Sortie",
+      outputEmpty: "Cliquez sur Exécuter.",
+      typeAtLeastOne: "Saisissez au moins une phrase.",
+    },
+  },
+}[lang];
+
+const c = config;
+
+const variants = {
+  echo: {
+    cmd: [`echo "${c.sentence}"`],
+    program: "1",
+    input: c.sentence,
+  },
+  awk: {
+    cmd: [`awk '${c.awkProgram}'`],
+    program: c.awkProgram,
+    input: c.sentence,
+  },
+}[variant];
+
+const { strings } = c;
+const uid = "awkbox-" + Math.random().toString(36).slice(2, 10);
+const program = variants.program;
+---
+
+<div class="awkbox" id={uid}>
+  <div class="cmd-wrap">
+    <label>{strings.cmdLabel}</label>
+    {variants.cmd.map((line) => <pre class="cmd">{line}</pre>)}
+  </div>
+
+  <label>{strings.inputLabel}</label>
+  <textarea class="ab-input">{variants.input}</textarea>
+  <button class="ab-run" type="button" disabled>{strings.booting}</button>
+
+  <label>{strings.outputLabel}</label>
+  <div class="ab-output"><span class="empty">{strings.outputEmpty}</span></div>
+</div>
+
+<script define:vars={{ uid, program, strings }}>
+  const root = document.getElementById(uid);
+  const runBtn = root.querySelector(".ab-run");
+  const inputEl = root.querySelector(".ab-input");
+  const outBox = root.querySelector(".ab-output");
+
+  // Load the ~600 KB awk.js exactly once per page, no matter how many boxes.
+  window.__awkReady =
+    window.__awkReady ||
+    new Promise((resolve) => {
+      if (window.createAwk) return resolve();
+      const s = document.createElement("script");
+      s.src = "/awk/awk.js";
+      s.onload = () => resolve();
+      document.head.appendChild(s);
+    });
+
+  // Each invocation gets a fresh module: awk calls exit() when done, which tears
+  // the runtime down, so we re-instantiate rather than reuse.
+  async function runAwk(args, stdin) {
+    const out = [], err = [];
+    const Module = await createAwk({
+      noInitialRun: true,
+      print: (s) => out.push(s),
+      printErr: (s) => err.push(s),
+    });
+    if (stdin !== undefined) Module.FS.writeFile("/input.txt", stdin);
+    try {
+      Module.callMain(stdin !== undefined ? [...args, "/input.txt"] : args);
+    } catch (e) {
+      if (!(e && e.name === "ExitStatus" && e.status === 0)) err.push(String(e));
+    }
+    return { out, err };
+  }
+
+  function escapeHtml(s) {
+    return s.replace(/[&<>"']/g, (ch) =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch])
+    );
+  }
+
+  window.__awkReady.then(() => {
+    runBtn.disabled = false;
+    runBtn.textContent = strings.runButton;
+  });
+
+  runBtn.addEventListener("click", async () => {
+    const lines = inputEl.value.split("\n").map((l) => l.trim()).filter(Boolean);
+    if (!lines.length) {
+      outBox.innerHTML = `<span class="empty">${strings.typeAtLeastOne}</span>`;
+      return;
+    }
+    runBtn.disabled = true;
+    const stdin = lines.join("\n") + "\n";
+
+    const { out } = await runAwk([program], stdin);
+    runBtn.disabled = false;
+
+    outBox.innerHTML =
+      out.map((v) => `<div class="line">${escapeHtml(v)}</div>`).join("") ||
+      `<span class="empty">${strings.outputEmpty}</span>`;
+  });
+</script>
+
+<style is:global>
+  .awkbox {
+    --ab-surface: #ffffff;
+    --ab-ink: #15223b;
+    --ab-muted: #5a6a84;
+    --ab-accent: #2f6fed;
+    --ab-line: #d5dce7;
+
+    background: #e7ebf1;
+    color: var(--ab-ink);
+    font-family: "Inter", system-ui, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    border: 1px solid var(--ab-line);
+    border-radius: 14px;
+    padding: 20px 20px 22px;
+    margin: 1.6rem 0;
+  }
+  .awkbox * {
+    box-sizing: border-box;
+  }
+  .awkbox label {
+    display: block;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ab-muted);
+    margin: 0 0 8px;
+  }
+  .awkbox .cmd-wrap {
+    margin-bottom: 16px;
+  }
+  .awkbox .cmd {
+    margin: 0 0 6px;
+    padding: 10px 12px;
+    background: #0f1b2d;
+    color: #e6ecf5;
+    border-radius: 8px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12.5px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+  .awkbox .cmd:last-child {
+    margin-bottom: 0;
+  }
+  .awkbox .cmd::before {
+    content: "$\00a0";
+    color: #5fd08b;
+  }
+  .awkbox textarea {
+    width: 100%;
+    min-height: 72px;
+    resize: vertical;
+    padding: 11px 13px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 14px;
+    color: var(--ab-ink);
+    border: 1px solid var(--ab-line);
+    border-radius: 9px;
+    background: #fbfcfe;
+    line-height: 1.7;
+  }
+  .awkbox textarea:focus {
+    outline: 2px solid var(--ab-accent);
+    outline-offset: 1px;
+    border-color: transparent;
+  }
+  .awkbox button {
+    margin: 12px 0 18px;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #fff;
+    background: var(--ab-accent);
+    border: none;
+    border-radius: 9px;
+    padding: 9px 20px;
+    cursor: pointer;
+    transition:
+      transform 0.06s ease,
+      background 0.15s ease;
+  }
+  .awkbox button:hover {
+    background: #235ed1;
+  }
+  .awkbox button:active {
+    transform: translateY(1px);
+  }
+  .awkbox button:disabled {
+    background: #9fb3d6;
+    cursor: not-allowed;
+  }
+  .awkbox button:focus-visible {
+    outline: 2px solid var(--ab-ink);
+    outline-offset: 2px;
+  }
+  .awkbox .ab-output {
+    min-height: 24px;
+    background: var(--ab-surface);
+    border: 1px solid var(--ab-line);
+    border-radius: 9px;
+    padding: 12px 13px;
+  }
+  .awkbox .ab-output .empty {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    color: var(--ab-muted);
+  }
+  .awkbox .line {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--ab-ink);
+    overflow-wrap: anywhere;
+  }
+</style>

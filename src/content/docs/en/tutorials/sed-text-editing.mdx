@@ -7,7 +7,7 @@ tags: [automation]
 import PyScriptMoliere from '../../../../components/PyScriptMoliere.astro';
 import SedMoliere from '../../../../components/SedMoliere.astro';
 import SedBox from '../../../../components/SedBox.astro';
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import AwkBox from '../../../../components/AwkBox.astro';
 
 
 Unix clones such as Linux are rarely used to manage technical documentation. This is unusual when you consider the plethora of tools available on these platforms for manipulating text in various ways — tools that complement [Python's regular expression library](../python-regular-expressions/) for batch text manipulation.
@@ -26,44 +26,13 @@ Consider the dialogue between Mr. Jourdain and his Professor of Philosophy in Mo
 
 Let's start by displaying the original sentence in a terminal:
 
-<Tabs>
-<TabItem label="Input">
-
-```console
-$ echo "Fair Marchioness, your beautiful eyes make me die of love."
-```
-
-</TabItem>
-<TabItem label="Output">
-
-```text
-Fair Marchioness, your beautiful eyes make me die of love.
-```
-
-</TabItem>
-</Tabs>
+<AwkBox lang="en" variant="echo" />
 
 Now we need to swap the words in the sentence to create a new one. For a simple transposition, you might find it easier to use `awk`. `awk` doesn't deal with lines, but with the fields of a record (of a line), delimited by spaces by default. In other words, `awk` treats text like a database. It can easily display the whole line or just one or more fields in any desired order. Fields are indicated in the form `$n`, where `n` indicates the position of the field in the line, starting from the left. So `$1` indicates the first field, `$2` the second, and so forth, up to `$10` for the tenth word. `$0` corresponds to the whole line.
 
 So we're going to give Mr. Jourdain's declaration of love as input to a one-line `awk` program, using the pipeline redirection symbol (`|`).
 
-<Tabs>
-<TabItem label="Input">
-
-```console
-$ echo "Fair Marchioness, your beautiful eyes make me die of love." |
-awk '{print $9" "$10" "$8" "$6" "$7" "$1" "$2" "$3" "$4" "$5}'
-```
-
-</TabItem>
-<TabItem label="Output">
-
-```text
-of love. die make me Fair Marchioness, your beautiful eyes
-```
-
-</TabItem>
-</Tabs>
+<AwkBox lang="en" variant="awk" />
 
 The output of the `echo` command is not displayed. What is displayed is the output of the `awk` program, of which the output of the `echo` command, Mr. Jourdain's declaration of love, was the input.
 

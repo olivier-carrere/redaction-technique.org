@@ -6,7 +6,7 @@ description: "Utilisez sed, l'éditeur de flux Unix, pour modifier en lot vos fi
 import PyScriptMoliere from '../../../../components/PyScriptMoliere.astro';
 import SedMoliere from '../../../../components/SedMoliere.astro';
 import SedBox from '../../../../components/SedBox.astro';
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import AwkBox from '../../../../components/AwkBox.astro';
 
 Les clones d'Unix sont peu utilisés pour gérer la documentation technique. Ceci est étrange si l'on songe à la pléthore d'outils disponibles sous ces plateformes pour manipuler du texte dans tous les sens.
 
@@ -24,44 +24,13 @@ Prenons l'exemple du dialogue entre M. Jourdain et son maître de philosophie, d
 
 Commençons par afficher la phrase d'origine dans un terminal :
 
-<Tabs>
-<TabItem label="Entrée">
-
-```console
-$ echo "Belle marquise, vos beaux yeux me font mourir d'amour."
-```
-
-</TabItem>
-<TabItem label="Sortie">
-
-```text
-Belle marquise, vos beaux yeux me font mourir d'amour.
-```
-
-</TabItem>
-</Tabs>
+<AwkBox lang="fr" variant="echo" />
 
 Il s'agit maintenant d'intervertir les mots de la phrase, pour en créer une nouvelle. Pour une simple transposition, on pourrait juger plus facile d'utiliser awk. awk ne gère en effet pas des lignes, mais des champs d'un enregistrement (d'une ligne), délimités par défaut par des espaces. Autrement dit, awk traite le texte comme une base de données. Il peut facilement afficher toute la ligne, ou seulement un ou plusieurs champs, dans l'ordre souhaité. Les champs sont indiqués sous la forme $n, où n indique la position du champ dans la ligne, à partir de la gauche. Ainsi $1 indique le premier champ, $2 le deuxième, etc. $0 correspond à toute la ligne.
 
 Nous allons donc donner la déclaration d'amour de M. Jourdain en entrée d'un programme awk d'une ligne, grâce au symbole de redirection pipeline (|).
 
-<Tabs>
-<TabItem label="Entrée">
-
-```console
-$ echo "Belle marquise, vos beaux yeux me font mourir d'amour." |
-awk  '{print $9" "$8" "$6" "$7" "$1" "$2" "$3" "$4" "$5}'
-```
-
-</TabItem>
-<TabItem label="Sortie">
-
-```text
-d'amour. mourir me font Belle marquise, vos beaux yeux
-```
-
-</TabItem>
-</Tabs>
+<AwkBox lang="fr" variant="awk" />
 
 La sortie de la commande echo n'est pas affichée. Ce qui est affiché, c'est la sortie du programme awk, dont la sortie de la commande echo, soit la déclaration d'amour de M. Jourdain, était l'entrée.
 
