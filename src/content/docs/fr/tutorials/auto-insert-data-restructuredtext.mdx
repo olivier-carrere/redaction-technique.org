@@ -1,6 +1,6 @@
 ---
 title: "Insérer automatiquement des données dans un fichier reStructuredText"
-description: "Insérez automatiquement des données produit dans vos fichiers reStructuredText avec Python pour générer des tableaux de versions et matrices produit dynamiques."
+description: "Insérez automatiquement des données produit dans vos fichiers reStructuredText avec Python pour générer des listes de versions par produit à partir de données structurées."
 ---
 Supposons que vous deviez présenter 3 produits, *Dianthus*, *Geum* et *Prunus*, chacun déclinés dans trois versions *1.0*, *1.5* et *2.3*.
 
@@ -11,7 +11,6 @@ Plutôt que d’écrire les données à la main dans le fichier de contenu, vous
     ```
     Produits et versions
     ====================
-    
     {% for prod in product %}
     {{ prod | capitalize }}
     {% for c in prod %}-{% endfor %}
@@ -25,10 +24,10 @@ Plutôt que d’écrire les données à la main dans le fichier de contenu, vous
 
     ```
     #!/usr/bin/python
-    # coding: utf8
+    # coding: utf-8
     import jinja2
     
-    env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'))
+    env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'), lstrip_blocks=True)
     
     template = env.get_template('modele.rst')
     

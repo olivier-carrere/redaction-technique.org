@@ -1,6 +1,6 @@
 ---
 title: "Automatically insert data into a reStructuredText file"
-description: "Automatically insert product data into reStructuredText documentation with Python - generate product tables and version matrices from structured data files."
+description: "Automatically insert product data into reStructuredText documentation with Python - generate per-product version lists from structured data files."
 tags: [python, automation]
 ---
 
@@ -14,7 +14,6 @@ Instead of manually entering data into the content file, you can automate this p
     ```rst
     Products and Versions
     =====================
-    
     {% for prod in products %}
     {{ prod | capitalize }}
     {% for c in prod %}-{% endfor %}
@@ -31,7 +30,7 @@ Instead of manually entering data into the content file, you can automate this p
     # coding: utf-8
     import jinja2
     
-    env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'))
+    env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'), lstrip_blocks=True)
     
     template = env.get_template('template.rst')
     
@@ -87,15 +86,13 @@ Instead of manually entering data into the content file, you can automate this p
 
 This approach minimizes the risk of errors and reduces the effort involved in updating.
 
-**Additional resources**
-- [Auto-insert data into a DITA XML file](../auto-insert-data-dita-xml/)
-- [Automatically insert SQL data into a reStructuredText file](../auto-insert-sql-data-restructuredtext/)
-
 ## Related articles
 
 - [Create different documents from the same sources via Jinja (object method)](../conditional-text-jinja-object-method/)
 - [Regular expressions in Python](../python-regular-expressions/)
 - [The Raspberry Pi 3 as a documentation platform](../raspberry-pi-documentation-platform/)
+- [Auto-insert data into a DITA XML file](../auto-insert-data-dita-xml/)
+- [Automatically insert SQL data into a reStructuredText file](../auto-insert-sql-data-restructuredtext/)
 
 ## Related reading
 
