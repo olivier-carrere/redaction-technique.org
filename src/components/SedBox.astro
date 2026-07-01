@@ -30,7 +30,7 @@ interface Props {
 
 const { lang = "en", variant } = Astro.props;
 
-// Shared building blocks — mirror the shell variables the tutorial exports.
+// Shared building blocks - mirror the shell variables the tutorial exports.
 const w = "\\(\\<.*\\>\\)";
 const m = `${w} ${w}, ${w} ${w} ${w} ${w} ${w} ${w}`;
 const a = "[[:alpha:]]";
@@ -56,8 +56,8 @@ const config = {
     ].join("\n"),
     strings: {
       cmdLabel: "Command",
-      cmdEditLabel: "Command — edit and run",
-      inputLabel: "Input — edit and run again",
+      cmdEditLabel: "Command - edit and run",
+      inputLabel: "Input - edit and run again",
       runButton: "Run",
       booting: "Loading sed…",
       outputLabel: "Output",
@@ -85,8 +85,8 @@ const config = {
     ].join("\n"),
     strings: {
       cmdLabel: "Commande",
-      cmdEditLabel: "Commande — modifiez puis relancez",
-      inputLabel: "Entrée — modifiez puis relancez",
+      cmdEditLabel: "Commande - modifiez puis relancez",
+      inputLabel: "Entrée - modifiez puis relancez",
       runButton: "Exécuter",
       booting: "Chargement de sed…",
       outputLabel: "Sortie",

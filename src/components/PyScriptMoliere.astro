@@ -6,7 +6,7 @@
 // Self-contained: loads its own PyScript runtime and fonts; styles are
 // namespaced under `.pysd` so nothing leaks into the surrounding docs page.
 // Per-language config drives the patterns, word count, sample lines and an
-// optional header — EN and FR diverge (10 word-slots vs 9).
+// optional header - EN and FR diverge (10 word-slots vs 9).
 interface Props {
   lang?: "en" | "fr";
 }
@@ -30,13 +30,13 @@ const config = {
     ].join("\n"),
     header: null,
     strings: {
-      inputLabel: "Your sentences — one per line, ten words each",
+      inputLabel: "Your sentences - one per line, ten words each",
       runButton: "Rephrase every line",
       outputLabel: "Output from Python",
       outputEmpty: "Click the button to run.",
-      foot: "The runtime is fetched on first load, so the dot stays amber for a few seconds while genuine CPython boots in your browser. Any line that isn't ten words is flagged instead of rephrased — everything runs client-side, no server involved.",
+      foot: "The runtime is fetched on first load, so the dot stays amber for a few seconds while genuine CPython boots in your browser. Any line that isn't ten words is flagged instead of rephrased - everything runs client-side, no server involved.",
       typeAtLeastOne: "Type at least one sentence.",
-      flagText: "skipped &mdash; {n} words, needs 10",
+      flagText: "skipped - {n} words, needs 10",
     },
   },
   fr: {
@@ -57,13 +57,13 @@ const config = {
     ].join("\n"),
     header: null,
     strings: {
-      inputLabel: "Vos phrases — une par ligne, neuf mots chacune",
+      inputLabel: "Vos phrases - une par ligne, neuf mots chacune",
       runButton: "Reformuler chaque ligne",
       outputLabel: "Sortie de Python",
       outputEmpty: "Cliquez sur le bouton pour exécuter.",
-      foot: "Toute ligne qui ne compte pas neuf mots est signalée au lieu d'être reformulée — tout s'exécute côté client, sans serveur.",
+      foot: "Toute ligne qui ne compte pas neuf mots est signalée au lieu d'être reformulée - tout s'exécute côté client, sans serveur.",
       typeAtLeastOne: "Saisissez au moins une phrase.",
-      flagText: "ignorée &mdash; {n} mots, il en faut 9",
+      flagText: "ignorée - {n} mots, il en faut 9",
     },
   },
 }[lang];
@@ -80,7 +80,7 @@ const patternsPy = config.patterns
 const statusBlock = config.header
   ? `
 
-# Runs once the interpreter is ready — confirms genuine CPython has loaded.
+# Runs once the interpreter is ready - confirms genuine CPython has loaded.
 document.querySelector("#status").innerText = (
     "Python ready · " + sys.version.split()[0] + " (CPython via Pyodide)"
 )`

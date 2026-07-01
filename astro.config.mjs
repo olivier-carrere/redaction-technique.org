@@ -6,6 +6,7 @@ import sitemap from '@astrojs/sitemap';
 import vercel from '@astrojs/vercel';
 import { unified } from '@astrojs/markdown-remark';
 import { pluginShellPrompt } from './src/plugins/ec-shell-prompt.mjs';
+import { remarkEmDash } from './src/plugins/remark-em-dash.mjs';
 
 const site = 'https://docs.redaction-technique.org/';
 
@@ -21,6 +22,7 @@ export default defineConfig({
     // Astro 7 defaults to the Sätteri engine, which escapes the raw-HTML icon
     // injected into Starlight asides. Keep the remark/rehype pipeline instead.
     processor: unified(),
+    remarkPlugins: [remarkEmDash],
   },
   redirects: {
     '/': '/en/',
@@ -172,7 +174,7 @@ export default defineConfig({
       locales,
       sidebar: [
         {
-          label: '✍ Blog — redaction-technique.org',
+          label: '✍ Blog - redaction-technique.org',
           link: 'https://redaction-technique.org/',
           attrs: { target: '_blank', rel: 'noopener' },
         },

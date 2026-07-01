@@ -1,7 +1,7 @@
 ---
 // Live, in-browser GNU sed demo. Unlike the sibling PyScript widget, this runs
-// the *actual* GNU sed 4.9 binary — compiled from C to WebAssembly with
-// Emscripten (public/sed/sed.js + sed.wasm) — so the tutorial's own command is
+// the *actual* GNU sed 4.9 binary - compiled from C to WebAssembly with
+// Emscripten (public/sed/sed.js + sed.wasm) - so the tutorial's own command is
 // what executes. It applies each of the philosophy teacher's reorderings as a
 // separate `sed "s/PATTERN/REPLACEMENT/"` over every input line, exercising the
 // GNU-only operators \u \l \< \> that a busybox sed could not run.
@@ -32,15 +32,15 @@ const config = {
       "Sweet nightingale, your gentle song makes me ache with longing.",
     ].join("\n"),
     strings: {
-      inputLabel: "Your sentences — one per line, ten words each",
+      inputLabel: "Your sentences - one per line, ten words each",
       runButton: "Run through GNU sed",
       outputLabel: "Output from GNU sed (stdout)",
       outputEmpty: "Click the button to run.",
       booting: "Loading the sed binary…",
       ready: "· WebAssembly",
       typeAtLeastOne: "Type at least one sentence.",
-      noMatch: "no match — not ten words, so sed left the line unchanged",
-      foot: "The ~250 KB binary is fetched once and cached. Each phrasing is a separate sed substitution over your lines — the same command the tutorial builds, running for real, client-side.",
+      noMatch: "no match - not ten words, so sed left the line unchanged",
+      foot: "The ~250 KB binary is fetched once and cached. Each phrasing is a separate sed substitution over your lines - the same command the tutorial builds, running for real, client-side.",
     },
   },
   fr: {
@@ -58,15 +58,15 @@ const config = {
       "Vaste océan, la forte houle te fait tanguer d'ivresse.",
     ].join("\n"),
     strings: {
-      inputLabel: "Vos phrases — une par ligne, neuf mots chacune",
+      inputLabel: "Vos phrases - une par ligne, neuf mots chacune",
       runButton: "Exécuter avec GNU sed",
       outputLabel: "Sortie de GNU sed (stdout)",
       outputEmpty: "Cliquez sur le bouton pour exécuter.",
       booting: "Chargement du binaire sed…",
       ready: "· WebAssembly",
       typeAtLeastOne: "Saisissez au moins une phrase.",
-      noMatch: "aucune correspondance — pas neuf mots, sed laisse la ligne inchangée",
-      foot: "Le binaire (~250 Ko) est téléchargé une fois puis mis en cache. Chaque reformulation est une substitution sed distincte sur vos lignes — la commande même du didacticiel, exécutée pour de vrai, côté client.",
+      noMatch: "aucune correspondance - pas neuf mots, sed laisse la ligne inchangée",
+      foot: "Le binaire (~250 Ko) est téléchargé une fois puis mis en cache. Chaque reformulation est une substitution sed distincte sur vos lignes - la commande même du didacticiel, exécutée pour de vrai, côté client.",
     },
   },
 }[lang];
