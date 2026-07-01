@@ -38,11 +38,11 @@ The output of the `echo` command is not displayed. What is displayed is the outp
 
 However, the final output is not what was intended. The fields do not correspond exactly to words: the period is stuck to `love`, the comma to `Marchioness`, and the capitalization is wrong. The `awk` command therefore needs to be refined.
 
-It's simpler to turn to `sed`. `sed` selects sets of characters in lines, either quoted literally or via metacharacters in regular expressions. A well-known regular expression metacharacter is `*`, indicating zero or an indefinite number of characters on the command line, as in:
+It's simpler to turn to `sed`. `sed` selects sets of characters in lines, either quoted literally or via metacharacters in regular expressions. A well-known regular expression metacharacter is `*`, meaning "zero or more of the preceding item": `a*` matches zero or more `a`s, and `.*` — any character, repeated — matches an arbitrary run of characters.
 
-```console
-$ ls *.rst
-```
+:::note[Shell glob vs. regex]
+Don't confuse the regex `*` with the shell glob `*`. On the command line, `ls *.rst` uses `*` on its own to mean "any sequence of characters." In a regular expression the bare `*` only repeats whatever precedes it; it's `.*` that behaves like the shell glob.
+:::
 
 `sed` also supports back references, which display the value corresponding to a previously found literal or regular expression at the desired location. Mr. Jourdain's declaration of love contains ten words. `sed`, however, offers only nine back references, `\1` through `\9`: it reads `\10` as `\1` followed by a literal `0`, so a tenth word cannot be addressed directly. Fortunately, the last two words — `of love` — always travel together in the professor's reorderings, so we can capture them as a single group and stay within the nine-reference limit.
 
@@ -50,11 +50,19 @@ $ ls *.rst
 
 We've run into the same problem: the regular expression `.*` doesn't correspond to a word, but to a series of characters, including punctuation. We must then use the `\<.*\>` form, which corresponds to a word, like the ones Mr. Jourdain uses to make prose. We're going to use escape characters (backslash `\`) so that the `<` and `>` signs are not interpreted literally under certain consoles, but as metacharacters with a special function. The final group, `\(\<.*\> \<.*\>\)`, captures two words at once — the closing phrase `of love`:
 
+:::caution[GNU sed only]
+The word-boundary markers `\<` and `\>`, and the case operators `\u` / `\l` used further down, are GNU sed extensions. The default `sed` on BSD/macOS doesn't support them — install GNU sed (`brew install gnu-sed`) and run it as `gsed`.
+:::
+
 <SedBox lang="en" variant="p" />
 
 We could also use the `[[:alpha:]]*` form, which is more readable but less concise:
 
 <SedBox lang="en" variant="n" />
+
+:::tip[Why the final period survives]
+Notice the trailing period is still there in the output, even though no replacement pattern ever mentions it. That's because sed's `s` command only rewrites the span it matches, and the capture groups stop at the word boundary (`\>`) just before the period. Anything a substitution doesn't match is passed through verbatim.
+:::
 
 That's better, but we've got a capitalization problem. So we're going to use the judiciously placed `\u` and `\l` operators. First, we'll export some variables to make the script more concise and readable:
 
@@ -79,6 +87,10 @@ I'd like to show her on the standard output:
 ```console
 $ Fair Marchioness, your beautiful eyes make me die of love.
 ```
+
+:::note
+This is Mr. Jourdain's naive attempt — like the man who spoke prose without knowing it, he types the sentence straight at the prompt. Run as-is, the shell would try to execute `Fair` as a command and fail; the working version, with `echo` in front, comes just below.
+:::
 
 But I wish it were put in a gallant way, that it were turned nicely.
 
@@ -134,7 +146,7 @@ Now let's loop through all the `sed` scripts on all the lines in the file:
 
 <SedBox lang="en" variant="loop" />
 
-And there it is. In just a few moments, without ever opening a single file, we apply a series of complex operations to an indefinite number of sentences of the same structure. This is not feasible with a word processor or any other tool with a graphical interface or with binary files — which is one reason why [text-based source formats](../tech-writing-process/source-format/) are so well-suited for automated workflows.
+And there it is. In just a few moments, without ever opening a single file, we apply a series of complex operations to an indefinite number of sentences of the same structure. This is not feasible with a word processor or any other tool with a graphical interface or with binary files — which is one reason why [text-based source formats](../../tech-writing-process/source-format/) are so well-suited for automated workflows.
 
 ## Related articles
 
