@@ -1,0 +1,343 @@
+---
+// A live, in-browser GNU sed box. Each instance replaces one static
+// Input/Output example in the tutorial: the read-only command is the very
+// `sed` script that runs, the input textarea is editable, and pressing Run
+// executes the real GNU sed 4.9 binary (public/sed/sed.js + sed.wasm, compiled
+// from C to WebAssembly with Emscripten). Many boxes can coexist on one page:
+// the ~250 KB binary is loaded once through a shared window.__sedReady promise,
+// and every box gets a unique id so its script only touches its own markup.
+// Styles are namespaced under `.sedbox` so nothing leaks into the docs page.
+interface Props {
+  lang?: "en" | "fr";
+  variant: "literal" | "p" | "n" | "m1" | "m2" | "m3" | "m4" | "loop";
+}
+
+const { lang = "en", variant } = Astro.props;
+
+// Shared building blocks — mirror the shell variables the tutorial exports.
+const w = "\\(\\<.*\\>\\)";
+const m = `${w} ${w}, ${w} ${w} ${w} ${w} ${w} ${w}`;
+const a = "[[:alpha:]]";
+const rBase = "\\9 \\8 \\6 \\7, \\1 \\2, \\3 \\4 \\5";
+
+const config = {
+  en: {
+    two: "\\(\\<.*\\> \\<.*\\>\\)",
+    lit: "\\(.*\\) \\(.*\\), \\(.*\\) \\(.*\\) \\(.*\\) \\(.*\\) \\(.*\\) \\(.*\\) \\(of .*\\)",
+    nTail: `\\(${a}* ${a}*\\)`,
+    nDisplay:
+      "\\($a*\\) \\($a*\\), \\($a*\\) \\($a*\\) \\($a*\\) \\($a*\\) \\($a*\\) \\($a*\\) \\($a* $a*\\)",
+    reps: {
+      m1: "\\u\\9 \\8 \\6 \\7, \\l\\1 \\2, \\3 \\4 \\5",
+      m2: "\\u\\3 \\4 \\5 \\9 \\6 \\7, \\l\\1 \\2, \\8",
+      m3: "\\u\\8 \\9 \\3 \\4 \\5, \\l\\1 \\2, \\6 \\7",
+      m4: "\\u\\7 \\6 \\3 \\4 \\5 \\8, \\l\\1 \\2, \\9",
+    },
+    single: "Fair Marchioness, your beautiful eyes make me die of love.",
+    loopInput: [
+      "Dear doctor, these great misfortunes make you weep with bitterness.",
+      "Vast ocean, the strong swell makes you pitch with drunkenness.",
+    ].join("\n"),
+    strings: {
+      cmdLabel: "Command",
+      inputLabel: "Input — edit and run again",
+      runButton: "Run",
+      booting: "Loading sed…",
+      outputLabel: "Output",
+      outputEmpty: "Click Run to execute.",
+      typeAtLeastOne: "Type at least one sentence.",
+    },
+  },
+  fr: {
+    two: "\\(d'\\<.*\\>\\)",
+    lit: "\\(.*\\) \\(.*\\), \\(.*\\) \\(.*\\) \\(.*\\) \\(.*\\) \\(.*\\) \\(.*\\)\\(d'.*\\)",
+    nTail: `\\(d'${a}*\\)`,
+    nDisplay:
+      "\\($a*\\) \\($a*\\), \\($a*\\) \\($a*\\) \\($a*\\) \\($a*\\) \\($a*\\) \\($a*\\) \\(d'$a*\\)",
+    reps: {
+      m1: "\\u\\9 \\8 \\6 \\7, \\l\\1 \\2, \\3 \\4 \\5",
+      m2: "\\u\\3 \\5 \\4 \\9 \\6 \\7, \\l\\1 \\2, \\8",
+      m3: "\\u\\8 \\3 \\4 \\5, \\l\\1 \\2, \\9 \\6 \\7",
+      m4: "\\u\\6 \\7 \\3 \\5 \\4 \\8, \\l\\1 \\2, \\9",
+    },
+    single: "Belle marquise, vos beaux yeux me font mourir d'amour.",
+    loopInput: [
+      "Cher docteur, ces grands malheurs vous font pleurer d'amertume.",
+      "Petit garçon, cette bonne glace te fait saliver d'envie.",
+      "Vaste océan, la forte houle te fait tanguer d'ivresse.",
+    ].join("\n"),
+    strings: {
+      cmdLabel: "Commande",
+      inputLabel: "Entrée — modifiez puis relancez",
+      runButton: "Exécuter",
+      booting: "Chargement de sed…",
+      outputLabel: "Sortie",
+      outputEmpty: "Cliquez sur Exécuter.",
+      typeAtLeastOne: "Saisissez au moins une phrase.",
+    },
+  },
+}[lang];
+
+const c = config;
+const pPat = `${m} ${c.two}`;
+const nPat = `\\(${a}*\\) \\(${a}*\\), \\(${a}*\\) \\(${a}*\\) \\(${a}*\\) \\(${a}*\\) \\(${a}*\\) \\(${a}*\\) ${c.nTail}`;
+
+const loopCmd = `for (( i=1; i<5; i++ )); do
+   while read s;
+    do echo "$s" |
+     sed -f moliere$i.sed ;
+    done < variations.txt
+   done`;
+
+const variants = {
+  literal: {
+    cmd: [`sed "s/${c.lit}/${rBase}/"`],
+    scripts: [`s/${c.lit}/${rBase}/`],
+    input: c.single,
+  },
+  p: {
+    cmd: [`export p="${pPat}"`, `sed "s/$p/${rBase}/"`],
+    scripts: [`s/${pPat}/${rBase}/`],
+    input: c.single,
+  },
+  n: {
+    cmd: [`export a="[[:alpha:]]"`, `export n="${c.nDisplay}"`, `sed "s/$n/${rBase}/"`],
+    scripts: [`s/${nPat}/${rBase}/`],
+    input: c.single,
+  },
+  m1: {
+    cmd: [`sed "s/$m ${c.two}/${c.reps.m1}/"`],
+    scripts: [`s/${m} ${c.two}/${c.reps.m1}/`],
+    input: c.single,
+  },
+  m2: {
+    cmd: [`sed "s/$m ${c.two}/${c.reps.m2}/"`],
+    scripts: [`s/${m} ${c.two}/${c.reps.m2}/`],
+    input: c.single,
+  },
+  m3: {
+    cmd: [`sed "s/$m ${c.two}/${c.reps.m3}/"`],
+    scripts: [`s/${m} ${c.two}/${c.reps.m3}/`],
+    input: c.single,
+  },
+  m4: {
+    cmd: [`sed "s/$m ${c.two}/${c.reps.m4}/"`],
+    scripts: [`s/${m} ${c.two}/${c.reps.m4}/`],
+    input: c.single,
+  },
+  loop: {
+    cmd: [loopCmd],
+    scripts: [c.reps.m1, c.reps.m2, c.reps.m3, c.reps.m4].map(
+      (r) => `s/${m} ${c.two}/${r}/`
+    ),
+    input: c.loopInput,
+  },
+}[variant];
+
+const { strings } = c;
+const uid = "sedbox-" + Math.random().toString(36).slice(2, 10);
+const scripts = variants.scripts;
+---
+
+<div class="sedbox" id={uid}>
+  <div class="cmd-wrap">
+    <label>{strings.cmdLabel}</label>
+    {variants.cmd.map((line) => <pre class="cmd">{line}</pre>)}
+  </div>
+
+  <label>{strings.inputLabel}</label>
+  <textarea class="sb-input">{variants.input}</textarea>
+  <button class="sb-run" type="button" disabled>{strings.booting}</button>
+
+  <label>{strings.outputLabel}</label>
+  <div class="sb-output"><span class="empty">{strings.outputEmpty}</span></div>
+</div>
+
+<script define:vars={{ uid, scripts, strings }}>
+  const root = document.getElementById(uid);
+  const runBtn = root.querySelector(".sb-run");
+  const inputEl = root.querySelector(".sb-input");
+  const outBox = root.querySelector(".sb-output");
+
+  // Load the ~250 KB sed.js exactly once per page, no matter how many boxes.
+  window.__sedReady =
+    window.__sedReady ||
+    new Promise((resolve) => {
+      if (window.createSed) return resolve();
+      const s = document.createElement("script");
+      s.src = "/sed/sed.js";
+      s.onload = () => resolve();
+      document.head.appendChild(s);
+    });
+
+  // Each invocation gets a fresh module: sed calls exit() when done, which tears
+  // the runtime down, so we re-instantiate rather than reuse.
+  async function runSed(args, stdin) {
+    const out = [], err = [];
+    const Module = await createSed({
+      noInitialRun: true,
+      print: (s) => out.push(s),
+      printErr: (s) => err.push(s),
+    });
+    if (stdin !== undefined) Module.FS.writeFile("/input.txt", stdin);
+    try {
+      Module.callMain(stdin !== undefined ? [...args, "/input.txt"] : args);
+    } catch (e) {
+      if (!(e && e.name === "ExitStatus" && e.status === 0)) err.push(String(e));
+    }
+    return { out, err };
+  }
+
+  function escapeHtml(s) {
+    return s.replace(/[&<>"']/g, (ch) =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch])
+    );
+  }
+
+  window.__sedReady.then(() => {
+    runBtn.disabled = false;
+    runBtn.textContent = strings.runButton;
+  });
+
+  runBtn.addEventListener("click", async () => {
+    const lines = inputEl.value.split("\n").map((l) => l.trim()).filter(Boolean);
+    if (!lines.length) {
+      outBox.innerHTML = `<span class="empty">${strings.typeAtLeastOne}</span>`;
+      return;
+    }
+    runBtn.disabled = true;
+    const stdin = lines.join("\n") + "\n";
+
+    // One sed run per script over all lines; concatenate stdout in order.
+    const outLines = [];
+    for (const script of scripts) {
+      const { out } = await runSed([script], stdin);
+      outLines.push(...out);
+    }
+    runBtn.disabled = false;
+
+    outBox.innerHTML =
+      outLines.map((v) => `<div class="line">${escapeHtml(v)}</div>`).join("") ||
+      `<span class="empty">${strings.outputEmpty}</span>`;
+  });
+</script>
+
+<style is:global>
+  .sedbox {
+    --sb-surface: #ffffff;
+    --sb-ink: #15223b;
+    --sb-muted: #5a6a84;
+    --sb-accent: #2f6fed;
+    --sb-line: #d5dce7;
+
+    background: #e7ebf1;
+    color: var(--sb-ink);
+    font-family: "Inter", system-ui, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    border: 1px solid var(--sb-line);
+    border-radius: 14px;
+    padding: 20px 20px 22px;
+    margin: 1.6rem 0;
+  }
+  .sedbox * {
+    box-sizing: border-box;
+  }
+  .sedbox label {
+    display: block;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sb-muted);
+    margin: 0 0 8px;
+  }
+  .sedbox .cmd-wrap {
+    margin-bottom: 16px;
+  }
+  .sedbox .cmd {
+    margin: 0 0 6px;
+    padding: 10px 12px;
+    background: #0f1b2d;
+    color: #e6ecf5;
+    border-radius: 8px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12.5px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+  .sedbox .cmd:last-child {
+    margin-bottom: 0;
+  }
+  .sedbox .cmd::before {
+    content: "$\00a0";
+    color: #5fd08b;
+  }
+  .sedbox textarea {
+    width: 100%;
+    min-height: 72px;
+    resize: vertical;
+    padding: 11px 13px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 14px;
+    color: var(--sb-ink);
+    border: 1px solid var(--sb-line);
+    border-radius: 9px;
+    background: #fbfcfe;
+    line-height: 1.7;
+  }
+  .sedbox textarea:focus {
+    outline: 2px solid var(--sb-accent);
+    outline-offset: 1px;
+    border-color: transparent;
+  }
+  .sedbox button {
+    margin: 12px 0 18px;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #fff;
+    background: var(--sb-accent);
+    border: none;
+    border-radius: 9px;
+    padding: 9px 20px;
+    cursor: pointer;
+    transition:
+      transform 0.06s ease,
+      background 0.15s ease;
+  }
+  .sedbox button:hover {
+    background: #235ed1;
+  }
+  .sedbox button:active {
+    transform: translateY(1px);
+  }
+  .sedbox button:disabled {
+    background: #9fb3d6;
+    cursor: not-allowed;
+  }
+  .sedbox button:focus-visible {
+    outline: 2px solid var(--sb-ink);
+    outline-offset: 2px;
+  }
+  .sedbox .sb-output {
+    min-height: 24px;
+    background: var(--sb-surface);
+    border: 1px solid var(--sb-line);
+    border-radius: 9px;
+    padding: 12px 13px;
+  }
+  .sedbox .sb-output .empty {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    color: var(--sb-muted);
+  }
+  .sedbox .line {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--sb-ink);
+    overflow-wrap: anywhere;
+  }
+</style>

@@ -6,6 +6,7 @@ tags: [automation]
 
 import PyScriptMoliere from '../../../../components/PyScriptMoliere.astro';
 import SedMoliere from '../../../../components/SedMoliere.astro';
+import SedBox from '../../../../components/SedBox.astro';
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 
 
@@ -76,66 +77,15 @@ $ ls *.rst
 
 `sed` also supports back references, which display the value corresponding to a previously found literal or regular expression at the desired location. Mr. Jourdain's declaration of love contains ten words. `sed`, however, offers only nine back references, `\1` through `\9`: it reads `\10` as `\1` followed by a literal `0`, so a tenth word cannot be addressed directly. Fortunately, the last two words — `of love` — always travel together in the professor's reorderings, so we can capture them as a single group and stay within the nine-reference limit.
 
-<Tabs>
-<TabItem label="Input">
-
-```console
-$ echo "Fair Marchioness, your beautiful eyes make me die of love." |
-sed "s/\(.*\) \(.*\), \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \(of .*\)/\9 \8 \6 \7, \1 \2, \3 \4 \5/"
-```
-
-</TabItem>
-<TabItem label="Output">
-
-```text
-of love. die make me, Fair Marchioness, your beautiful eyes
-```
-
-</TabItem>
-</Tabs>
+<SedBox lang="en" variant="literal" />
 
 We've run into the same problem: the regular expression `.*` doesn't correspond to a word, but to a series of characters, including punctuation. We must then use the `\<.*\>` form, which corresponds to a word, like the ones Mr. Jourdain uses to make prose. We're going to use escape characters (backslash `\`) so that the `<` and `>` signs are not interpreted literally under certain consoles, but as metacharacters with a special function. The final group, `\(\<.*\> \<.*\>\)`, captures two words at once — the closing phrase `of love`:
 
-<Tabs>
-<TabItem label="Input">
-
-```console
-$ export p="\(\<.*\>\) \(\<.*\>\), \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\> \<.*\>\)"
-$ echo "Fair Marchioness, your beautiful eyes make me die of love." |
-sed "s/$p/\9 \8 \6 \7, \1 \2, \3 \4 \5/"
-```
-
-</TabItem>
-<TabItem label="Output">
-
-```text
-of love die make me, Fair Marchioness, your beautiful eyes.
-```
-
-</TabItem>
-</Tabs>
+<SedBox lang="en" variant="p" />
 
 We could also use the `[[:alpha:]]*` form, which is more readable but less concise:
 
-<Tabs>
-<TabItem label="Input">
-
-```console
-$ export a="[[:alpha:]]"
-$ export n="\($a*\) \($a*\), \($a*\) \($a*\) \($a*\) \($a*\) \($a*\) \($a*\) \($a* $a*\)"
-$ echo "Fair Marchioness, your beautiful eyes make me die of love." |
-sed "s/$n/\9 \8 \6 \7, \1 \2, \3 \4 \5/"
-```
-
-</TabItem>
-<TabItem label="Output">
-
-```text
-of love die make me, Fair Marchioness, your beautiful eyes.
-```
-
-</TabItem>
-</Tabs>
+<SedBox lang="en" variant="n" />
 
 That's better, but we've got a capitalization problem. So we're going to use the judiciously placed `\u` and `\l` operators. First, we'll export some variables to make the script more concise and readable:
 
@@ -144,79 +94,15 @@ $ export w="\(\<.*\>\)"
 $ export m="$w $w, $w $w $w $w $w $w"
 ```
 
-<Tabs>
-<TabItem label="Input">
-
-```console
-$ echo "Fair Marchioness, your beautiful eyes make me die of love." |
-sed "s/$m \(\<.*\> \<.*\>\)/\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5/"
-```
-
-</TabItem>
-<TabItem label="Output">
-
-```text
-Of love die make me, fair Marchioness, your beautiful eyes.
-```
-
-</TabItem>
-</Tabs>
+<SedBox lang="en" variant="m1" />
 
 We can now easily redistribute the back references to get all the professor's variations:
 
-<Tabs>
-<TabItem label="Input">
+<SedBox lang="en" variant="m2" />
 
-```console
-$ echo "Fair Marchioness, your beautiful eyes make me die of love." |
-sed "s/$m \(\<.*\> \<.*\>\)/\u\3 \4 \5 \9 \6 \7, \l\1 \2, \8/"
-```
+<SedBox lang="en" variant="m3" />
 
-</TabItem>
-<TabItem label="Output">
-
-```text
-Your beautiful eyes of love make me, fair Marchioness, die.
-```
-
-</TabItem>
-</Tabs>
-
-<Tabs>
-<TabItem label="Input">
-
-```console
-$ echo "Fair Marchioness, your beautiful eyes make me die of love." |
-sed "s/$m \(\<.*\> \<.*\>\)/\u\8 \9 \3 \4 \5, \l\1 \2, \6 \7/"
-```
-
-</TabItem>
-<TabItem label="Output">
-
-```text
-Die of love your beautiful eyes, fair Marchioness, make me.
-```
-
-</TabItem>
-</Tabs>
-
-<Tabs>
-<TabItem label="Input">
-
-```console
-$ echo "Fair Marchioness, your beautiful eyes make me die of love." |
-sed "s/$m \(\<.*\> \<.*\>\)/\u\7 \6 \3 \4 \5 \8, \l\1 \2, \9/"
-```
-
-</TabItem>
-<TabItem label="Output">
-
-```text
-Me make your beautiful eyes die, fair Marchioness, of love.
-```
-
-</TabItem>
-</Tabs>
+<SedBox lang="en" variant="m4" />
 
 ## Molière and GNU/Linux
 
@@ -313,34 +199,7 @@ $ echo "s/$p/\u\7 \6 \3 \4 \5 \8, \l\1 \2, \9/" > moliere4.sed
 
 Now let's loop through all the `sed` scripts on all the lines in the file:
 
-<Tabs>
-<TabItem label="Input">
-
-```console
-$ for (( i=1; i<5; i++ )); do
-   while read s;
-    do echo "$s" |
-     sed -f moliere$i.sed ;
-    done < variations.txt
-   done
-```
-
-</TabItem>
-<TabItem label="Output">
-
-```text
-With bitterness weep make you, dear doctor, these great misfortunes.
-With drunkenness pitch makes you, vast ocean, the strong swell.
-These great misfortunes with bitterness make you, dear doctor, weep.
-The strong swell with drunkenness makes you, vast ocean, pitch.
-Weep with bitterness these great misfortunes, dear doctor, make you.
-Pitch with drunkenness the strong swell, vast ocean, makes you.
-You make these great misfortunes weep, dear doctor, with bitterness.
-You makes the strong swell pitch, vast ocean, with drunkenness.
-```
-
-</TabItem>
-</Tabs>
+<SedBox lang="en" variant="loop" />
 
 And there it is. In just a few moments, without ever opening a single file, we apply a series of complex operations to an indefinite number of sentences of the same structure. This is not feasible with a word processor or any other tool with a graphical interface or with binary files — which is one reason why [text-based source formats](../tech-writing-process/source-format/) are so well-suited for automated workflows.
 

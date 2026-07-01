@@ -5,6 +5,7 @@ description: "Utilisez sed, l'éditeur de flux Unix, pour modifier en lot vos fi
 
 import PyScriptMoliere from '../../../../components/PyScriptMoliere.astro';
 import SedMoliere from '../../../../components/SedMoliere.astro';
+import SedBox from '../../../../components/SedBox.astro';
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 
 Les clones d'Unix sont peu utilisés pour gérer la documentation technique. Ceci est étrange si l'on songe à la pléthore d'outils disponibles sous ces plateformes pour manipuler du texte dans tous les sens.
@@ -74,66 +75,15 @@ $ ls *.rst
 
 sed gère également des références arrières, qui affichent à l'endroit où on le souhaite la valeur correspondant à une expression littérale ou rationnelle trouvée auparavant. Heureusement pour nous, la déclaration d'amour de M. Jourdain contient exactement neuf mots, ce qui correspond au nombre maximal de références arrières possibles.
 
-<Tabs>
-<TabItem label="Entrée">
-
-```console
-$ echo "Belle marquise, vos beaux yeux me font mourir d'amour." |
-sed "s/\(.*\) \(.*\), \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \(.*\)\(d'.*\)/\9 \8 \6 \7, \1 \2, \3 \4 \5/"
-```
-
-</TabItem>
-<TabItem label="Sortie">
-
-```text
-d'amour. mourir me font, Belle marquise, vos beaux yeux
-```
-
-</TabItem>
-</Tabs>
+<SedBox lang="fr" variant="literal" />
 
 Nous butons sur le même problème : l'expression régulière .* ne correspond pas à un mot, mais à une suite de caractères, ponctuation comprise. Il faut alors utiliser la forme `<.*>`, qui correspond à un mot tel que ceux dont M. Jourdain se sert pour faire de la prose. Nous allons utiliser les caractères d'échappement (barre oblique inverse \) pour que les signes `<` et `>` ne soient pas interprétés littéralement sous certaines consoles, mais comme des méta-caractères ayant une fonction spéciale :
 
-<Tabs>
-<TabItem label="Entrée">
-
-```console
-$ export p="\(\<.*\>\) \(\<.*\>\), \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(d'\<.*\>\)"
-$ echo "Belle marquise, vos beaux yeux me font mourir d'amour." |
-sed "s/$p/\9 \8 \6 \7, \1 \2, \3 \4 \5/"
-```
-
-</TabItem>
-<TabItem label="Sortie">
-
-```text
-d'amour mourir me font, Belle marquise, vos beaux yeux.
-```
-
-</TabItem>
-</Tabs>
+<SedBox lang="fr" variant="p" />
 
 Nous pourrions également utiliser la forme [[:alpha:]]* qui fait gagner en lisibilité, mais perdre en concision :
 
-<Tabs>
-<TabItem label="Entrée">
-
-```console
-$ export a="[[:alpha:]]"
-$ export n="\($a*\) \($a*\), \($a*\) \($a*\) \($a*\) \($a*\) \($a*\) \($a*\) \(d'$a*\)"
-$ echo "Belle marquise, vos beaux yeux me font mourir d'amour." |
-sed "s/$n/\9 \8 \6 \7, \1 \2, \3 \4 \5/"
-```
-
-</TabItem>
-<TabItem label="Sortie">
-
-```text
-d'amour mourir me font, Belle marquise, vos beaux yeux.
-```
-
-</TabItem>
-</Tabs>
+<SedBox lang="fr" variant="n" />
 
 C'est mieux, mais nous avons un problème de capitalisation. Nous allons donc utiliser les opérateurs /u et /l placés judicieusement. Auparavant, nous allons exporter des variables pour rendre le script plus concis et plus lisible :
 
@@ -142,79 +92,15 @@ $ export w="\(\<.*\>\)"
 $ export m="$w $w, $w $w $w $w $w $w"
 ```
 
-<Tabs>
-<TabItem label="Entrée">
-
-```console
-$ echo "Belle marquise, vos beaux yeux me font mourir d'amour." |
-sed "s/$m \(d'\<.*\>\)/\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5/"
-```
-
-</TabItem>
-<TabItem label="Sortie">
-
-```text
-D'amour mourir me font, belle marquise, vos beaux yeux.
-```
-
-</TabItem>
-</Tabs>
+<SedBox lang="fr" variant="m1" />
 
 Nous pouvons maintenant facilement redistribuer les références arrières pour obtenir toutes les variations du maître de philosophie :
 
-<Tabs>
-<TabItem label="Entrée">
+<SedBox lang="fr" variant="m2" />
 
-```console
-$ echo "Belle marquise, vos beaux yeux me font mourir d'amour." |
-sed "s/$m \(d'\<.*\>\)/\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8/"
-```
+<SedBox lang="fr" variant="m3" />
 
-</TabItem>
-<TabItem label="Sortie">
-
-```text
-Vos yeux beaux d'amour me font, belle marquise, mourir.
-```
-
-</TabItem>
-</Tabs>
-
-<Tabs>
-<TabItem label="Entrée">
-
-```console
-$ echo "Belle marquise, vos beaux yeux me font mourir d'amour." |
-sed "s/$m \(d'\<.*\>\)/\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7/"
-```
-
-</TabItem>
-<TabItem label="Sortie">
-
-```text
-Mourir vos beaux yeux, belle marquise, d'amour me font.
-```
-
-</TabItem>
-</Tabs>
-
-<Tabs>
-<TabItem label="Entrée">
-
-```console
-$ echo "Belle marquise, vos beaux yeux me font mourir d'amour." |
-sed "s/$m \(d'\<.*\>\)/\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9/"
-```
-
-</TabItem>
-<TabItem label="Sortie">
-
-```text
-Me font vos yeux beaux mourir, belle marquise, d'amour.
-```
-
-</TabItem>
-</Tabs>
+<SedBox lang="fr" variant="m4" />
 
 ## Molière et GNU/Linux
 
@@ -312,37 +198,6 @@ $ echo "s/$p/\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9/" > moliere4.sed
 
 Exécutons maintenant en boucle tous les scripts sed sur toutes les lignes du fichier :
 
-<Tabs>
-<TabItem label="Entrée">
-
-```console
-$ for (( i=1; i<5; i++ )); do
-   while read s;
-    do echo "$s" |
-     sed -f moliere$i.sed ;
-    done < variations.txt
-   done
-```
-
-</TabItem>
-<TabItem label="Sortie">
-
-```text
-D'amertume pleurer vous font, cher docteur, ces grands malheurs.
-D'envie saliver te fait, petit garçon, cette bonne glace.
-D'ivresse tanguer te fait, vaste océan, la forte houle.
-Ces malheurs grands d'amertume vous font, cher docteur, pleurer.
-Cette glace bonne d'envie te fait, petit garçon, saliver.
-La houle forte d'ivresse te fait, vaste océan, tanguer.
-Pleurer ces grands malheurs, cher docteur, d'amertume vous font.
-Saliver cette bonne glace, petit garçon, d'envie te fait.
-Tanguer la forte houle, vaste océan, d'ivresse te fait.
-Vous font ces malheurs grands pleurer, cher docteur, d'amertume.
-Te fait cette glace bonne saliver, petit garçon, d'envie.
-Te fait la houle forte tanguer, vaste océan, d'ivresse.
-```
-
-</TabItem>
-</Tabs>
+<SedBox lang="fr" variant="loop" />
 
 Et voilà. En quelques instants, sans jamais ouvrir un seul fichier, nous appliquons une suite d'opérations complexes sur un nombre indéfini de phrases de même structure. Ce qui n'est pas possible sous un traitement de texte ou autre outil muni d'une interface graphique, ou sur des fichiers binaires.
