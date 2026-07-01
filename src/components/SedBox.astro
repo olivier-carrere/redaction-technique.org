@@ -154,12 +154,12 @@ const variants = {
   },
   echoSentence: {
     cmd: [`echo "${c.single}"`],
-    scripts: [""],
+    scripts: ["s/$//"],
     input: c.single,
   },
   echoDeclaration: {
     cmd: [`export declaration="${c.single}"`, `echo $declaration`],
-    scripts: [""],
+    scripts: ["s/$//"],
     input: c.single,
   },
   geek1: {
@@ -190,7 +190,7 @@ const variants = {
     cmd: c.loopInput
       .split("\n")
       .map((s, i) => `echo "${s}" ${i === 0 ? ">" : ">>"} variations.txt`),
-    scripts: [""],
+    scripts: ["s/$//"],
     input: c.loopInput,
   },
   echoScripts: {
@@ -200,7 +200,7 @@ const variants = {
         (r, i) => `echo "s/$p/${r}/" > moliere${i + 1}.sed`
       ),
     ],
-    scripts: [""],
+    scripts: ["s/$//"],
     input: [c.reps.m1, c.reps.m2, c.reps.m3, c.reps.m4]
       .map((r) => `s/$p/${r}/`)
       .join("\n"),
