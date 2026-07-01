@@ -84,46 +84,27 @@ Mais je voudrais que cela fût mis d'une manière galante, que cela fût tourné
 
 On les peut mettre premièrement comme vous avez dit :
 
-```console
-$ echo "Belle marquise, vos beaux yeux me font mourir d'amour."
-```
+<SedBox lang="fr" variant="echoSentence" />
 
 Ou bien :
 
-```console
-$ export declaration="Belle marquise, vos beaux yeux me font mourir d'amour."
-$ echo $declaration
-```
+<SedBox lang="fr" variant="echoDeclaration" />
 
 Ou bien :
 
-```console
-$ export w="\(\<.*\>\)"
-$ export m="$w $w, $w $w $w $w $w $w"
-$ echo $declaration |
-sed "s/$m \(d'\<.*\>\)/\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5/"
-```
+<SedBox lang="fr" variant="geek1" />
 
 Ou bien :
 
-```console
-$ echo $declaration |
-sed "s/$m \(d'\<.*\>\)/\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8/"
-```
+<SedBox lang="fr" variant="geek2" />
 
 Ou bien :
 
-```console
-$ echo $declaration |
-sed "s/$m \(d'\<.*\>\)/\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7/"
-```
+<SedBox lang="fr" variant="geek3" />
 
 Ou bien :
 
-```console
-$ echo $declaration |
-sed "s/$m \(d'\<.*\>\)/\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9/"
-```
+<SedBox lang="fr" variant="geek4" />
 
 Chaque commande ci-dessus exécutait GNU sed. Voici ce binaire même — compilé depuis son code source C en WebAssembly — qui exécute le vrai GNU sed, en direct dans cette page. Modifiez les phrases et reformulez-les vous-même :
 
@@ -143,22 +124,11 @@ Ceci est en l'occurrence peu probable, mais il est en revanche monnaie courante 
 
 Pour effectuer nos tests sur un échantillon, plaçons les trois phrases précédentes dans un fichier :
 
-```console
-$ echo "Cher docteur, ces grands malheurs vous font pleurer d'amertume." > variations.txt
-
-$ echo "Petit garçon, cette bonne glace te fait saliver d'envie." >> variations.txt
-
-$ echo "Vaste océan, la forte houle te fait tanguer d'ivresse." >> variations.txt
-```
+<SedBox lang="fr" variant="echoVariations" />
 
 Plaçons les différentes commandes sed dans un script différent chacune :
 
-```console
-$ echo "s/$p/\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5/" > moliere1.sed
-$ echo "s/$p/\u\3 \5 \4 \9 \6 \7, \l\1 \2, \8/" > moliere2.sed
-$ echo "s/$p/\u\8 \3 \4 \5, \l\1 \2, \9 \6 \7/" > moliere3.sed
-$ echo "s/$p/\u\6 \7 \3 \5 \4 \8, \l\1 \2, \9/" > moliere4.sed
-```
+<SedBox lang="fr" variant="echoScripts" />
 
 Exécutons maintenant en boucle tous les scripts sed sur toutes les lignes du fichier :
 

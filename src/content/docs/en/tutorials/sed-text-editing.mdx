@@ -86,46 +86,27 @@ But I wish it were put in a gallant way, that it were turned nicely.
 
 They can be put first as you said:
 
-```console
-$ echo "Fair Marchioness, your beautiful eyes make me die of love."
-```
+<SedBox lang="en" variant="echoSentence" />
 
 Or:
 
-```console
-$ export declaration="Fair Marchioness, your beautiful eyes make me die of love."
-$ echo $declaration
-```
+<SedBox lang="en" variant="echoDeclaration" />
 
 Or:
 
-```console
-$ export w="\(\<.*\>\)"
-$ export m="$w $w, $w $w $w $w $w $w"
-$ echo $declaration |
-sed "s/$m \(\<.*\> \<.*\>\)/\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5/"
-```
+<SedBox lang="en" variant="geek1" />
 
 Or else:
 
-```console
-echo $declaration |
-sed "s/$m \(\<.*\> \<.*\>\)/\u\3 \4 \5 \9 \6 \7, \l\1 \2, \8/"
-```
+<SedBox lang="en" variant="geek2" />
 
 Or else:
 
-```console
-echo $declaration |
-sed "s/$m \(\<.*\> \<.*\>\)/\u\8 \9 \3 \4 \5, \l\1 \2, \6 \7/"
-```
+<SedBox lang="en" variant="geek3" />
 
 Or else:
 
-```console
-echo $declaration |
-sed "s/$m \(\<.*\> \<.*\>\)/\u\7 \6 \3 \4 \5 \8, \l\1 \2, \9/"
-```
+<SedBox lang="en" variant="geek4" />
 
 Every command above ran GNU sed. Here is that very binary — compiled from its C source to WebAssembly — running real GNU sed, live in this page. Edit the sentences and rephrase them yourself:
 
@@ -145,21 +126,11 @@ This may look contrived, but structurally identical sentences are common in tech
 
 To carry out our tests on a sample, let's place the two sentences above in a file:
 
-```console
-$ echo "Dear doctor, these great misfortunes make you weep with bitterness." > variations.txt
-
-$ echo "Vast ocean, the strong swell makes you pitch with drunkenness." >> variations.txt
-```
+<SedBox lang="en" variant="echoVariations" />
 
 Let's place the various `sed` commands in a different script each. We reuse the pattern `$p`, this time ending with the generic two-word group `\(\<.*\> \<.*\>\)` so it captures `with bitterness` and `with drunkenness` just as well as `of love`:
 
-```console
-$ export p="$m \(\<.*\> \<.*\>\)"
-$ echo "s/$p/\u\9 \8 \6 \7, \l\1 \2, \3 \4 \5/" > moliere1.sed
-$ echo "s/$p/\u\3 \4 \5 \9 \6 \7, \l\1 \2, \8/" > moliere2.sed
-$ echo "s/$p/\u\8 \9 \3 \4 \5, \l\1 \2, \6 \7/" > moliere3.sed
-$ echo "s/$p/\u\7 \6 \3 \4 \5 \8, \l\1 \2, \9/" > moliere4.sed
-```
+<SedBox lang="en" variant="echoScripts" />
 
 Now let's loop through all the `sed` scripts on all the lines in the file:
 

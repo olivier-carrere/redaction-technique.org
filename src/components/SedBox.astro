@@ -9,7 +9,23 @@
 // Styles are namespaced under `.sedbox` so nothing leaks into the docs page.
 interface Props {
   lang?: "en" | "fr";
-  variant: "literal" | "p" | "n" | "m1" | "m2" | "m3" | "m4" | "loop";
+  variant:
+    | "literal"
+    | "p"
+    | "n"
+    | "m1"
+    | "m2"
+    | "m3"
+    | "m4"
+    | "loop"
+    | "echoSentence"
+    | "echoDeclaration"
+    | "geek1"
+    | "geek2"
+    | "geek3"
+    | "geek4"
+    | "echoVariations"
+    | "echoScripts";
 }
 
 const { lang = "en", variant } = Astro.props;
@@ -135,6 +151,60 @@ const variants = {
       (r) => `s/${m} ${c.two}/${r}/`
     ),
     input: c.loopInput,
+  },
+  echoSentence: {
+    cmd: [`echo "${c.single}"`],
+    scripts: [""],
+    input: c.single,
+  },
+  echoDeclaration: {
+    cmd: [`export declaration="${c.single}"`, `echo $declaration`],
+    scripts: [""],
+    input: c.single,
+  },
+  geek1: {
+    cmd: [
+      `export w="${w}"`,
+      `export m="$w $w, $w $w $w $w $w $w"`,
+      `echo $declaration |`,
+      `sed "s/$m ${c.two}/${c.reps.m1}/"`,
+    ],
+    scripts: [`s/${m} ${c.two}/${c.reps.m1}/`],
+    input: c.single,
+  },
+  geek2: {
+    cmd: [`echo $declaration |`, `sed "s/$m ${c.two}/${c.reps.m2}/"`],
+    scripts: [`s/${m} ${c.two}/${c.reps.m2}/`],
+    input: c.single,
+  },
+  geek3: {
+    cmd: [`echo $declaration |`, `sed "s/$m ${c.two}/${c.reps.m3}/"`],
+    scripts: [`s/${m} ${c.two}/${c.reps.m3}/`],
+    input: c.single,
+  },
+  geek4: {
+    cmd: [`echo $declaration |`, `sed "s/$m ${c.two}/${c.reps.m4}/"`],
+    scripts: [`s/${m} ${c.two}/${c.reps.m4}/`],
+    input: c.single,
+  },
+  echoVariations: {
+    cmd: c.loopInput
+      .split("\n")
+      .map((s, i) => `echo "${s}" ${i === 0 ? ">" : ">>"} variations.txt`),
+    scripts: [""],
+    input: c.loopInput,
+  },
+  echoScripts: {
+    cmd: [
+      `export p="$m ${c.two}"`,
+      ...[c.reps.m1, c.reps.m2, c.reps.m3, c.reps.m4].map(
+        (r, i) => `echo "s/$p/${r}/" > moliere${i + 1}.sed`
+      ),
+    ],
+    scripts: [""],
+    input: [c.reps.m1, c.reps.m2, c.reps.m3, c.reps.m4]
+      .map((r) => `s/$p/${r}/`)
+      .join("\n"),
   },
 }[variant];
 
