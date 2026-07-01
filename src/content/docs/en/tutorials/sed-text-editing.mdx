@@ -81,8 +81,7 @@ $ ls *.rst
 
 ```console
 $ echo "Fair Marchioness, your beautiful eyes make me die of love." |
-sed "s/\(.*\) \(.*\), \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \
-\(.*\) \(of .*\)/\9 \8 \6 \7, \1 \2, \3 \4 \5/"
+sed "s/\(.*\) \(.*\), \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \(.*\) \(of .*\)/\9 \8 \6 \7, \1 \2, \3 \4 \5/"
 ```
 
 </TabItem>
@@ -101,9 +100,7 @@ We've run into the same problem: the regular expression `.*` doesn't correspond 
 <TabItem label="Input">
 
 ```console
-$ export \
-p="\(\<.*\>\) \(\<.*\>\), \(\<.*\>\) \(\<.*\>\) \
-\(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\> \<.*\>\)"
+$ export p="\(\<.*\>\) \(\<.*\>\), \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\>\) \(\<.*\> \<.*\>\)"
 $ echo "Fair Marchioness, your beautiful eyes make me die of love." |
 sed "s/$p/\9 \8 \6 \7, \1 \2, \3 \4 \5/"
 ```
@@ -125,8 +122,7 @@ We could also use the `[[:alpha:]]*` form, which is more readable but less conci
 
 ```console
 $ export a="[[:alpha:]]"
-$ export n="\($a*\) \($a*\), \($a*\) \($a*\) \($a*\) \
-\($a*\) \($a*\) \($a*\) \($a* $a*\)"
+$ export n="\($a*\) \($a*\), \($a*\) \($a*\) \($a*\) \($a*\) \($a*\) \($a*\) \($a* $a*\)"
 $ echo "Fair Marchioness, your beautiful eyes make me die of love." |
 sed "s/$n/\9 \8 \6 \7, \1 \2, \3 \4 \5/"
 ```
@@ -247,8 +243,7 @@ $ echo "Fair Marchioness, your beautiful eyes make me die of love."
 Or:
 
 ```console
-$ export declaration="Fair Marchioness, your beautiful eyes \
-make me die of love."
+$ export declaration="Fair Marchioness, your beautiful eyes make me die of love."
 $ echo $declaration
 ```
 
@@ -301,11 +296,9 @@ This may look contrived, but structurally identical sentences are common in tech
 To carry out our tests on a sample, let's place the two sentences above in a file:
 
 ```console
-$ echo "Dear doctor, these great misfortunes \
-make you weep with bitterness." > variations.txt
+$ echo "Dear doctor, these great misfortunes make you weep with bitterness." > variations.txt
 
-$ echo "Vast ocean, the strong swell \
-makes you pitch with drunkenness." >> variations.txt
+$ echo "Vast ocean, the strong swell makes you pitch with drunkenness." >> variations.txt
 ```
 
 Let's place the various `sed` commands in a different script each. We reuse the pattern `$p`, this time ending with the generic two-word group `\(\<.*\> \<.*\>\)` so it captures `with bitterness` and `with drunkenness` just as well as `of love`:
