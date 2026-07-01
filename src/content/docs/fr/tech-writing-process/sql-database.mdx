@@ -1,5 +1,5 @@
 ---
 title: "Base de données SQL"
-description: "Dans un CMS (Drupal, Joomla, WordPress), le contenu documentaire est stocké en base SQL. Implications pour la sauvegarde, la migration et la réutilisation du contenu."
+description: "Dans un CMS comme Drupal, Joomla ou WordPress, le contenu documentaire est stocké en base SQL, qui ne conserve qu'un historique article par article et interdit la recherche-remplacement globale - d'où l'intérêt de le gérer en fichiers texte."
 ---
 Dans le cas d'un <abbr title="Content Management System">CMS</abbr> de type Drupal, Joomla ou WordPress, le référentiel est une base de données SQL. Il conserve un historique, mais uniquement article par article et ne permet pas la recherche et le remplacement de texte à travers tout le contenu. Cela peut justifier le choix de gérer le contenu sous-jacent du <abbr title="Content Management System">CMS</abbr> sous forme de fichiers texte.
