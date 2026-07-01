@@ -9,18 +9,16 @@ tags: [python, automation]
 The `profiling.py` Python script below allows you to profile content in *preprocessing* using the powerful Jinja template engine. For a more complex variant using object-oriented classes, see [creating different documents via Jinja (object method)](../conditional-text-jinja-object-method/). You can also generate documents [directly from ReST conditional text](../conditional-text-sphinx-rest/) without a separate preprocessing step.
 
 ```python
-#!/usr/bin/python
+#!/usr/bin/env python3
 import jinja2
 import sys
-reload(sys)
-sys.setdefaultencoding('utf8')
 
 public=str(sys.argv[1])
 env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'))
 template = env.get_template('conditional-text.rst')
 string=template.render(audience=public)
 
-file = open('texte-conditionnel.rst','w')
+file = open('conditional-text-output.rst','w')
 file.write(string)
 file.close()
 ```

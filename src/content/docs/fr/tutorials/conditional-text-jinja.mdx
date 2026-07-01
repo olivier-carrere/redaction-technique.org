@@ -5,18 +5,16 @@ description: "Profilez du contenu reStructuredText avec Jinja et Python en prét
 Le script Python `profiling.py` ci-dessous permet de profiler du contenu en *preprocessing* à l'aide du puissant moteur de modèle Jinja :
 
 ```python
-#!/usr/bin/python
+#!/usr/bin/env python3
 import jinja2
 import sys
-reload(sys)
-sys.setdefaultencoding('utf8')
 
 public=str(sys.argv[1])
 env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'))
 template = env.get_template('texte-conditionnel.rst')
 string=template.render(audience=public)
 
-file = open('texte-conditionnel.rst','w') 
+file = open('texte-conditionnel-sortie.rst','w') 
 file.write(string) 
 file.close() 
 ```
