@@ -155,12 +155,12 @@ const variants = {
   echoSentence: {
     cmd: [`echo "${c.single}"`],
     scripts: ["s/$//"],
-    input: c.single,
+    input: "",
   },
   echoDeclaration: {
     cmd: [`export declaration="${c.single}"`, `echo $declaration`],
     scripts: ["s/$//"],
-    input: c.single,
+    input: "",
   },
   geek1: {
     cmd: [
