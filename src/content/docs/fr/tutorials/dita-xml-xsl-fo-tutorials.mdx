@@ -195,70 +195,56 @@ Ce didacticiel DITA XML est destiné à vous guider dans la mise en place et l'u
 **Prérequis**
 
 - Ubuntu ou Debian sur une machine physique ou virtuelle avec le mot de passe administrateur,
+- Java 17 ou version ultérieure (JDK),
 - connexion Internet.
 
 1. Téléchargez et décompressez l'archive <abbr title="DITA Open Toolkit">DITA-OT</abbr> :
 
     ```console
     $ export REPO="https://github.com/dita-ot/dita-ot"
-    $ wget $REPO/releases/download/2.1/dita-ot-2.1.0.tar.gz
-    $ tar -xzvf dita-ot-2.1.0.tar.gz
+    $ wget $REPO/releases/download/4.4/dita-ot-4.4.zip
+    $ unzip dita-ot-4.4.zip
     ```
 
 2. Générez votre premier PDF :
 
     ```console
-    $ cd dita-ot-2.1.0
-    $ dita -f pdf -i samples/taskbook.ditamap
+    $ cd dita-ot-4.4
+    $ bin/dita --input=samples/taskbook.ditamap --format=pdf
     ```
 
 Félicitations, vous avez compilé votre premier projet DITA XML ! Le fichier PDF généré est `out/taskbook.pdf`. Vous pouvez maintenant compiler d'autres projets en ignorant les étapes 1 et 2.
 
 ## Générer un PDF avec DITA Open Toolkit (Windows)
 
-Ce didacticiel DITA XML est destiné à vous guider dans la mise en place et l'utilisation de la chaîne de publication <abbr title="DITA Open Toolkit">DITA-OT</abbr>  dans un environnement Windows (testé sur Windows XP).
+Ce didacticiel DITA XML est destiné à vous guider dans la mise en place et l'utilisation de la chaîne de publication <abbr title="DITA Open Toolkit">DITA-OT</abbr> sur une installation Windows actuelle.
 
 **Prérequis**
 
+-   Java 17 ou version ultérieure (JDK)
 -   Connexion Internet
 
 1.  Téléchargez Java, puis lancez le programme d'installation.
 
-2.  Téléchargez DITA Open Toolkit 1.5.4 sur le bureau, puis décompressez `DITA-OT1.5.4_full_easy_install_bin.zip`.
+2.  Téléchargez DITA Open Toolkit 4.4 (`dita-ot-4.4.zip`), puis décompressez l'archive, par exemple sur le bureau.
 
-3.  Sélectionnez `Exécuter` dans le menu `Démarrer`, collez la commande suivante, puis appuyez sur `Entrée` :
+3.  Ouvrez le menu `Démarrer`, saisissez `cmd`, puis appuyez sur `Entrée`. Un terminal apparaît.
+
+4.  Dans le terminal, placez-vous dans le répertoire décompressé :
 
     ```console
-    cmd
+    cd Bureau\dita-ot-4.4
     ```
 
-    Un terminal apparaît.
-
-4.  Collez la commande suivante dans le terminal :
+5.  Générez votre premier PDF :
 
     ```console
-    set full=DITA-OT1.5.4_full_easy_install_bin
-    cd Bureau\%full%\DITA-OT1.5.4
-    ```
-
-5.  Collez la commande suivante :
-
-    ```console
-    startcmd.bat
-    ```
-
-    Un nouveau terminal apparaît.
-
-6.  Collez la commande suivante dans le nouveau terminal :
-
-    ```console
-    $ java -jar lib/dost.jar /i:samples/taskbook.ditamap \
-    /outdir:. /transtype:pdf2
+    bin\dita.bat --input=samples\taskbook.ditamap --format=pdf
     ```
 
     Cette commande génère un fichier PDF à partir d'un projet DITA XML d'exemple.
 
-    Félicitations, vous avez compilé votre premier projet DITA XML ! Vous trouverez le fichier cible `taskbook.pdf` dans le répertoire `Bureau\\%full%\\DITA-OT1.5.4`. Vous pouvez maintenant compiler d'autres projets en ignorant les étapes 1 et 2.
+    Félicitations, vous avez compilé votre premier projet DITA XML ! Vous trouverez le fichier cible dans le répertoire `out`. Vous pouvez maintenant compiler d'autres projets en ignorant les étapes 1 et 2.
 
 ## Gérer les projets de documentation multilingues DITA XML
 
@@ -493,28 +479,23 @@ $ ant -Dargs.input=samples/sequence.ditamap -Doutput.dir=out/ \
 -Dtranstype=pdf2 -Dargs.fo.include.rellinks=all
 ```
 
-## Afficher un index dans un <abbr title="mais pas sous DITA Open Toolkit">PDF</abbr>
+## Afficher un index dans un PDF
 
-Tout n'est pas parfait sous <abbr title="DITA Open Toolkit">DITA-OT</abbr> , le moteur de publication libre DITA XML. Vous avez méticuleusement inséré vos entrées d'index dans vos fichiers de contenu DITA XML. Vous générez une sortie PDF et l'index n'apparaît pas. Un message d'erreur de la compilation vous indique que, hélas, FOP ne supporte actuellement pas la génération des index.
+Vous avez méticuleusement inséré vos entrées d'index dans vos fichiers de contenu DITA XML et vous souhaitez qu'elles apparaissent dans le PDF généré.
 
-Face à cette situation, vous avez quatre solutions :
+Historiquement, le moteur Apache FOP fourni avec <abbr title="DITA Open Toolkit">DITA-OT</abbr> ne prenait pas en charge la génération des index : afficher un index imposait alors un moteur FO commercial (tel que XEP de RenderX, utilisé par des outils propriétaires comme XMetaL) ou l'un de plusieurs contournements. Ce n'est plus le cas : la génération des index a été refondue dans DITA-OT 2.2 et l'Apache FOP fourni produit désormais les index directement. Avec une version actuelle de <abbr title="DITA Open Toolkit">DITA-OT</abbr>, les entrées d'index que vous insérez dans votre contenu DITA XML sont incluses dans le PDF, sans moteur supplémentaire ni contournement.
 
-- attendre que FOP supporte les index ; sans date de disponibilité, ce choix sera difficile à faire accepter par votre direction ;
-- abandonner DITA XML ; avouez que ce serait dommage de renoncer aux formidables gains de productivité que permet ce format ;
-- renoncer à afficher l'index dans le PDF ; les arguments en faveur d'un tel choix ont un certain poids : les index sont difficiles à maintenir et offrent un surplus d'utilisabilité discutable dans un document qui ne sera consulté que marginalement sous forme imprimée ;
-- abandonner <abbr title="DITA Open Toolkit">DITA-OT</abbr>  et se tourner vers une solution propriétaire ; les logiciels non open-source, XMetaL, par exemple, ont souvent recours au moteur de publication XEP de RenderX qui lui, supporte parfaitement les index.
-
-Le problème de l'index n'est donc pas un obstacle à l'adoption de DITA XML. Si votre support final est un document imprimé, les solutions existent. S'il s'agit d'un format électronique, l'absence d'un index est largement compensée par la fonction de recherche en plein texte.
+Si vous choisissez malgré tout de ne pas afficher d'index dans le PDF, cela reste une option légitime : les index sont difficiles à maintenir et offrent un surplus d'utilisabilité discutable dans un document qui ne sera consulté que marginalement sous forme imprimée. Et pour un format électronique, l'absence d'un index est largement compensée par la fonction de recherche en plein texte.
 
 ## Utiliser l’IDE nXML pour DITA XML
 
 <a id="utiliser-ide-nxml-pour-dita-xml"></a>
 
-Le mode nXML propose de valider en temps réel les documents XML DocBook, XHTML ou autres. Plus la peine de connaître le schéma XML par cœur : votre éditeur de texte vous propose l’autocomplétion des balises XML selon le contexte. Il ne supporte cependant pas DITA XML par défaut. Ce didacticiel vous permettra d’utiliser ce mode Emacs pour DITA XML.
+Le mode nXML propose de valider en temps réel les documents XML (DocBook, XHTML et autres) et d’autocompléter les balises XML selon le contexte, sans qu’il soit besoin de connaître le schéma par cœur. Il est intégré au cœur d’Emacs depuis Emacs 23 : il n’y a donc rien à installer, tout Emacs actuel le contient déjà. Par défaut, cependant, le mode nXML ne connaît pas DITA XML ; ce didacticiel vous permet de l’activer pour DITA XML en associant les schémas RelaxNG de DITA.
 
 **Prérequis**
 
-- Emacs
+- Emacs 23 ou version ultérieure (toute version actuelle ; le mode nXML est inclus)
 - La structure de répertoires de votre projet de documentation DITA XML doit être la suivante :
   - répertoire de langue
     - concepts
@@ -528,34 +509,11 @@ Le mode nXML propose de valider en temps réel les documents XML DocBook, XHTML 
 
 1. Effectuez une sauvegarde de l’ensemble de votre projet de documentation DITA XML.
 
-2. Ouvrez un terminal et collez la suite de commandes suivante :
+2. Le mode nXML fait déjà partie d’Emacs : il n’y a donc rien à télécharger ni à corriger. C’est le mode par défaut des fichiers `.xml` ; pour l’utiliser également sur les fichiers de contenu DITA, indiquez à Emacs d’ouvrir les fichiers `.dita` en mode nXML en ajoutant la ligne suivante à votre fichier `.emacs` (ou `init.el`) :
 
-    ```console
-    $ export THAI="http://www.thaiopensource.com/download"
-    $ export RED="http://www.redaction-technique.org/media"
-    $ cd && \
-    wget $THAI/nxml-mode-20041004.tar.gz && \
-    tar xzvf nxml-mode-20041004.tar.gz && \
-    wget $RED/nxml-mode-environmment.txt && \
-    cp .emacs .emacs.bak && \
-    cat .emacs | sed '$a\' > .emacs.tmp && \
-    mv .emacs.tmp .emacs && \
-    cat nxml-mode-environmment.txt >> .emacs && \
-    rm  nxml-mode-environmment.txt
+    ```lisp
+    (add-to-list 'auto-mode-alist '("\\.dita\\'" . nxml-mode))
     ```
-
-    :::note[Note]
-    Si un message vous avertit que le fichier `.emacs` n’existe pas, collez les commandes suivantes, puis recommencez l’opération :
-
-    ```console
-    $ cd && touch .emacs
-    ```
-    :::
-
-    Cette suite de commandes :
-    - télécharge et décompresse le mode nXML,
-    - crée une copie de sauvegarde du fichier `.emacs` (`.emacs.bak`),
-    - écrit les variables d’environnement du mode nXML dans le fichier `.emacs`.
 
 3. Téléchargez l’archive des schémas RelaxNG pour DITA XML dans le répertoire racine de votre projet de documentation DITA XML.
 
@@ -594,6 +552,8 @@ Le mode nXML propose de valider en temps réel les documents XML DocBook, XHTML 
       - topics
         - schemas.xml
 
+    Ces fichiers `schemas.xml` sont les fichiers de localisation de schémas du mode nXML : ils indiquent à nXML quel schéma RelaxNG appliquer à chaque type de *topic* DITA, ce qui active la validation et l’autocomplétion. Pour associer manuellement un schéma au tampon courant, utilisez plutôt `C-c C-s C-f` (`rng-set-schema-file-name`).
+
 6. Ouvrez un fichier de contenu DITA XML (`.dita`) avec Emacs. La syntaxe DITA XML apparaît en couleurs. Les endroits où le schéma n’est pas respecté sont soulignés en rouge.
 
 7. Pour insérer une nouvelle balise entrez `<` puis appuyez sur Ctrl+Entrée. La liste des balises possibles apparaît.
@@ -606,10 +566,14 @@ Le mode nXML propose de valider en temps réel les documents XML DocBook, XHTML 
 
 Ce didacticiel mode Predictive pour Emacs est destiné à vous guider dans la mise en place et l'utilisation du mode Emacs d'aide à la rédaction et d'autocomplétion des mots anglais et français Predictive dans un environnement GNU/Linux (en l'occurrence, Debian).
 
-1.  Installez make et texinfo :
+:::note[Note]
+Le paquet Predictive ne semble plus maintenu : sa dernière version (0.24) date de février 2013. Les instructions ci-dessous sont conservées à titre de référence — vérifiez l’état actuel de l’outil avant d’y investir du temps. Pour une alternative légère et directement utilisable, l’auteur du paquet suggère le mode `pabbrev`.
+:::
+
+1.  Installez make et texinfo :
 
     ```console
-    $ sudo aptitude install make texinfo
+    $ sudo apt install make texinfo
     ```
 
 2.  Téléchargez Predictive.
