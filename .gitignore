@@ -4,3 +4,8 @@ node_modules/
 dist/
 .astro/
 .vercel/
+
+# Local-only working artifacts, never committed
+.claude/
+*.zip
+veille/
