@@ -3,6 +3,8 @@ lastUpdated: false
 title: "Structured DITA XML format"
 description: "Reduce production costs and delivery time in technical documentation by choosing the right format, structured authoring approach, and modular content reuse strategies."
 ---
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
 Reducing production and translation costs, shortening time to market, and improving documentation quality. These are the challenges facing technical writers today. One of the best ways to achieve this is to reduce the source volume of documentation and better manage enterprise content.
 
 ![Technical documentation formats: degrees of structuring](/assets/en/degre-structuration.svg)
@@ -18,3 +20,12 @@ On the other hand, internal information redundancy generates additional costs, l
 DITA XML is a structured XML architecture for creating modular documents and reusing content. Using a common base of atomic DITA XML information modules, technical writers can provide all the information each user needs in real time, on any type of media, from e-learning to PDF or paper documents, to websites.
 
 DITA XML applies the principle of non-redundancy of information specific to standardized databases. This architecture brings the revolution introduced in industry by standardization to technical documentation: just as different car models can be built from a set of identical parts, technical writers can publish different documents from a set of standardized information building blocks.
+
+
+<CardGrid stagger>
+  <LinkCard title="Case studies in using DITA XML" href="dita-xml-case-studies" description="My daily use of the DITA XML structured authoring format on multilingual projects as a technical writer has enabled me to develop several solutions and tips, which I'd like to share with you here." />
+  <LinkCard title="Structured and unstructured formats" href="structured-vs-unstructured-formats" description="Structured formats promote the creation of minimalist, complete, and coherent documents." />
+  <LinkCard title="A document architecture that's too complex?" href="document-architecture-complexity" description="DITA XML enables productivity gains by reducing the source volume that the technical writer creates, translates and maintains, at the cost of greater complexity." />
+  <LinkCard title="From document to modular document base" href="modular-documentation" description="The DITA XML structured authoring format offers a transition from the book model to a modular document base." />
+  <LinkCard title="Case study: NuFirewall documentation" href="nufirewall-case-study" description="NuFirewall's documentation, praised by the press as a notable strength of the product, was developed using DITA XML." />
+</CardGrid>
