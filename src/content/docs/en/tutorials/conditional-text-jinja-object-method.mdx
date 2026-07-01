@@ -51,7 +51,7 @@ With Jinja, you can define objects (audience, platform, version, etc.) and inclu
 4. Create and run the following script:
 
     ```python
-    #!/usr/bin/python
+    #!/usr/bin/env python3
     class Audience:
         def __init__(self,electrician,plumber):
             self.elec=electrician
@@ -59,12 +59,10 @@ With Jinja, you can define objects (audience, platform, version, etc.) and inclu
 
     import jinja2
     import sys
-    reload(sys)
-    sys.setdefaultencoding('utf8')
 
     user=Audience(True,False)
     env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'))
-    template = env.get_template('texte-conditionnel.rst')
+    template = env.get_template('conditional-text.rst')
     string=template.render(public=user)
 
     print(string)
@@ -108,10 +106,10 @@ With Jinja, you can define objects (audience, platform, version, etc.) and inclu
     ```python
     class Season:
         def __init__(self,winter,spring,summer,autumn):
-            self.win=winter
-            self.spr=spring
-            self.sum=summer
-            self.aut=autumn
+            self.wint=winter
+            self.spri=spring
+            self.summ=summer
+            self.autu=autumn
     ```
 
 8. Create more complex conditions:
@@ -164,7 +162,7 @@ With Jinja, you can define objects (audience, platform, version, etc.) and inclu
 9. Vary the values of the Audience and Season class instances to filter the content of the `conditional-text.rst` file.
 
     ```python
-    #!/usr/bin/python
+    #!/usr/bin/env python3
     class Audience:
         def __init__(self,electrician,plumber):
             self.elec=electrician
@@ -179,8 +177,6 @@ With Jinja, you can define objects (audience, platform, version, etc.) and inclu
 
     import jinja2
     import sys
-    reload(sys)
-    sys.setdefaultencoding('utf8')
 
     user=Audience(False,True)
     when=Season(False,False,False,True)
@@ -240,10 +236,10 @@ With Jinja, you can define objects (audience, platform, version, etc.) and inclu
     {% endif %}
 	```
 
-    It's more economical to use a single object class, even if it does mix cabbages and carrots (as much in this far-fetched example as in real life, where you'd mix audiences, versions, platforms, etc.).
+    It's more economical to use a single object class, even if it does mix apples and oranges (as much in this far-fetched example as in real life, where you'd mix audiences, versions, platforms, etc.).
 
     ```python
-    #!/usr/bin/python
+    #!/usr/bin/env python3
     class Audience:
         def __init__(self,pers,seas):
             self.personae=pers
@@ -251,8 +247,6 @@ With Jinja, you can define objects (audience, platform, version, etc.) and inclu
 
     import jinja2
     import sys
-    reload(sys)
-    sys.setdefaultencoding('utf8')
 
     user=Audience("plumber", "winter")
     env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'))
@@ -265,12 +259,10 @@ With Jinja, you can define objects (audience, platform, version, etc.) and inclu
 11. Modify your script to indicate the public and the season as parameters:
 
     ```python
-    #!/usr/bin/python
+    #!/usr/bin/env python3
     # coding: utf8
     import jinja2
     import sys
-    reload(sys)
-    sys.setdefaultencoding('utf8')
 
 
     class Audience:
@@ -286,14 +278,14 @@ With Jinja, you can define objects (audience, platform, version, etc.) and inclu
         if pubparam in public and seasparam in four_seasons:
             user = Audience(pubparam, seasparam)
             env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'))
-            template = env.get_template('texte-conditionnel.rst')
+            template = env.get_template('conditional-text.rst')
             string = template.render(public=user)
             print(string)
         else:
-    	print('''Valeurs admises :\nelectrician ou plumber en 1er paramètre\nwinter,
-            spring, summer, autumn en 2nd paramètre''')
+    	print('''Accepted values:\nelectrician or plumber as the 1st parameter\nwinter,
+            spring, summer, autumn as the 2nd parameter''')
     else:
-        print('Veuillez indiquer le public et la saison')
+        print('Please indicate the audience and the season')
     ```
 
     Usage:
@@ -307,7 +299,7 @@ With Jinja, you can define objects (audience, platform, version, etc.) and inclu
     To allow the passage of unexpected values and display the contents of the else block, the code must be modified as follows:
 
     ```python
-    #!/usr/bin/python
+    #!/usr/bin/env python3
     # coding: utf8
     class Audience:
         def __init__(self,pers,seas):
@@ -316,15 +308,13 @@ With Jinja, you can define objects (audience, platform, version, etc.) and inclu
 
     import jinja2
     import sys
-    reload(sys)
-    sys.setdefaultencoding('utf8')
 
     if len(sys.argv) == 3:
         pubparam=str(sys.argv[1])
         seasparam=str(sys.argv[2])
         user=Audience(pubparam,seasparam)
         env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'))
-        template = env.get_template('texte-conditionnel.rst')
+        template = env.get_template('conditional-text.rst')
         string=template.render(public=user)
         print(string)
     else:
