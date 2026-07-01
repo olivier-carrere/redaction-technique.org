@@ -5,7 +5,7 @@ tags: [dita-xml]
 ---
 
 
-NuFirewall's documentation, praised by the press as a notable strength of the product, was developed using [DITA XML](../structured-vs-unstructured-formats/).
+NuFirewall's documentation, praised by the press as a notable strength of the product, was developed using [DITA XML](../).
 
 By adopting a format that maximizes information reuse, I was able to focus more on the content itself.
 
@@ -61,7 +61,7 @@ For instance, to reuse "Click OK," ensure your source *conref* file is structure
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA 1.2 Task//EN"
 "/usr/share/dita-ot/dtd/technicalContent/dtd/task.dtd">
-<task id="shared" xml:lang="fr-fr">
+<task id="shared" xml:lang="en-us">
   <title>Conref source</title>
   <taskbody>
     <steps>
@@ -106,7 +106,7 @@ In the second scenario, the entire `<step>` node content is replaced by the sour
 <step id="click-ok">
   <cmd/>
   <info>
-    The button is green.
+    If you can't read, it's the green button.
   </info>
 </step>
 ```
@@ -202,7 +202,7 @@ A common pattern is to write only the unique titles and pull in everything else 
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA 1.2 Task//EN"
 "/usr/share/dita-ot/dtd/technicalContent/dtd/task.dtd">
-<task id="display-trends" xml:lang="fr-fr">
+<task id="display-trends" xml:lang="en-us">
   <title>Display trends</title>
   <taskbody>
     <context audience="basic">
@@ -258,10 +258,10 @@ A common pattern is to write only the unique titles and pull in everything else 
 </task>
 ```
 
-Only the text in black requires translation. Translating this type of DITA XML content involves translating just the title and the full set of source *conref*. Translators, lacking context for these discrete information units, require support. Ideally, translators work onsite, accessing both the technical writer and product designers.
+Only the plain text content - not the surrounding markup - requires translation. Translating this type of DITA XML content involves translating just the title and the full set of source *conref*. Translators, lacking context for these discrete information units, require support. Ideally, translators work onsite, accessing both the technical writer and product designers.
 
 :::note
-This is not a constraint solely from advanced content modularization. As a translation school graduate with experience in technical translation, effective projects rely on collaboration among designers, writers, and translators.
+This is not a constraint solely from advanced content modularization. As a translation school graduate - trained in the *triangle of meaning* principle, whereby the translator must understand the source text well enough to reformulate it in the target language rather than transcribing words one by one - and with several years of technical translation experience, I've found that every successful project relies on collaboration among designers, writers, and translators.
 :::
 
 You can also apply this to structural elements, like table headings, to present information consistently at lower costs without specialization.
