@@ -1,0 +1,29 @@
+name: CI build
+
+# Fail loudly when the site does not compile.
+#
+# A single invalid MDX file (e.g. a bare `<br>` instead of `<br />`) breaks
+# `astro build`. Vercel keeps serving the last good deployment, so the source and
+# the live site silently drift apart with no visible error. Running the build on
+# every push and pull request to master turns that silent freeze into a red check.
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run build
