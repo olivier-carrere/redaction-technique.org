@@ -87,10 +87,10 @@ We're going to create a database of products with their versions, then format th
     import sqlite3
     import jinja2
     
-    env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'))
+    env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'), lstrip_blocks=True)
     template = env.get_template('modele-sql.rst')
     
-    print('Products and versions\n====================')
+    print('Products and versions\n=====================')
     
     try:
         db = sqlite3.connect('productdb.db')
@@ -123,7 +123,7 @@ We're going to create a database of products with their versions, then format th
 
     ```md
     Products and versions
-    ====================
+    =====================
 
     Dianthus
     --------
@@ -134,6 +134,8 @@ We're going to create a database of products with their versions, then format th
 
     - 1.2
 
+
+
     Geum
     ----
 
@@ -142,6 +144,8 @@ We're going to create a database of products with their versions, then format th
     - 1.7
 
     - 3.5
+
+
 
     Prunus
     ------

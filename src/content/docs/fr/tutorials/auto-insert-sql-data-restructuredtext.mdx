@@ -84,7 +84,7 @@ Nous allons créer une base de données de produits avec leurs versions, puis me
     import sqlite3
     import jinja2
     
-    env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'))
+    env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'), lstrip_blocks=True)
     template = env.get_template('modele-sql.rst')
     
     print('Produits et versions\n====================')
@@ -131,6 +131,8 @@ Nous allons créer une base de données de produits avec leurs versions, puis me
 
     - 1.2
 
+
+
     Geum
     ----
 
@@ -139,6 +141,8 @@ Nous allons créer une base de données de produits avec leurs versions, puis me
     - 1.7
 
     - 3.5
+
+
 
     Prunus
     ------
