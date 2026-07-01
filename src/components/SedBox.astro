@@ -106,7 +106,11 @@ const variants = {
     input: c.single,
   },
   m1: {
-    cmd: [`sed "s/$m ${c.two}/${c.reps.m1}/"`],
+    cmd: [
+      `export w="${w}"`,
+      `export m="$w $w, $w $w $w $w $w $w"`,
+      `sed "s/$m ${c.two}/${c.reps.m1}/"`,
+    ],
     scripts: [`s/${m} ${c.two}/${c.reps.m1}/`],
     input: c.single,
   },

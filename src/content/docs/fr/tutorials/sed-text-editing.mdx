@@ -56,11 +56,6 @@ Nous pourrions également utiliser la forme [[:alpha:]]* qui fait gagner en lisi
 
 C'est mieux, mais nous avons un problème de capitalisation. Nous allons donc utiliser les opérateurs /u et /l placés judicieusement. Auparavant, nous allons exporter des variables pour rendre le script plus concis et plus lisible :
 
-```console
-$ export w="\(\<.*\>\)"
-$ export m="$w $w, $w $w $w $w $w $w"
-```
-
 <SedBox lang="fr" variant="m1" />
 
 Nous pouvons maintenant facilement redistribuer les références arrières pour obtenir toutes les variations du maître de philosophie :

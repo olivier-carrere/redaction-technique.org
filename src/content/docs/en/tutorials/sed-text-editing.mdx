@@ -58,11 +58,6 @@ We could also use the `[[:alpha:]]*` form, which is more readable but less conci
 
 That's better, but we've got a capitalization problem. So we're going to use the judiciously placed `\u` and `\l` operators. First, we'll export some variables to make the script more concise and readable:
 
-```console
-$ export w="\(\<.*\>\)"
-$ export m="$w $w, $w $w $w $w $w $w"
-```
-
 <SedBox lang="en" variant="m1" />
 
 We can now easily redistribute the back references to get all the professor's variations:
