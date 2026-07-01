@@ -1,6 +1,6 @@
 ---
 title: "sed : modifiez votre texte sans ouvrir vos fichiers"
-description: "Utilisez sed, l'éditeur de flux Unix, pour modifier en lot vos fichiers de documentation technique sans les ouvrir — idéal pour automatiser les mises à jour de contenu."
+description: "Utilisez sed, l'éditeur de flux Unix, pour modifier en lot vos fichiers de documentation technique sans les ouvrir - idéal pour automatiser les mises à jour de contenu."
 ---
 
 import PyScriptMoliere from '../../../../components/PyScriptMoliere.astro';
@@ -10,7 +10,7 @@ import AwkBox from '../../../../components/AwkBox.astro';
 
 Les clones d'Unix sont peu utilisés pour gérer la documentation technique. Ceci est étrange si l'on songe à la pléthore d'outils disponibles sous ces plateformes pour manipuler du texte dans tous les sens.
 
-Prenons l'exemple du dialogue entre M. Jourdain et son maître de philosophie, dans le Bourgeois gentilhomme de Molière :
+Prenons l'exemple du dialogue entre M. Jourdain et son maître de philosophie, dans le *Bourgeois gentilhomme* de Molière :
 
 **MONSIEUR JOURDAIN :**
 
@@ -36,17 +36,17 @@ La sortie de la commande echo n'est pas affichée. Ce qui est affiché, c'est la
 
 La sortie finale ne correspond cependant pas à ce que l'on souhaitait. Les champs ne correspondent pas trait pour trait à des mots. Il faudrait donc raffiner la commande awk.
 
-Il est plus simple de se tourner vers sed. sed sélectionne dans des lignes des ensembles de caractères cités littéralement, ou via des méta-caractères dans des expressions rationnelles (ou expressions régulières). Un méta-caractère connu des expressions rationnelles est le signe *, indiquant, en ligne de commande, zéro ou un nombre indéfini de caractères, comme dans :
+Il est plus simple de se tourner vers sed. sed sélectionne dans des lignes des ensembles de caractères cités littéralement, ou via des méta-caractères dans des expressions rationnelles (ou expressions régulières). Un méta-caractère bien connu des expressions rationnelles est `*`, qui signifie « zéro ou plusieurs occurrences de l'élément précédent » : `a*` correspond à zéro ou plusieurs `a`, et `.*` - n'importe quel caractère, répété - correspond à une suite quelconque de caractères.
 
-```console
-$ ls *.rst
-```
+:::note[Glob shell et regex]
+Ne confondez pas le `*` des expressions régulières avec le `*` du glob shell. En ligne de commande, `ls *.rst` utilise `*` seul pour signifier « n'importe quelle suite de caractères ». Dans une expression régulière, le `*` seul ne fait que répéter ce qui le précède ; c'est `.*` qui se comporte comme le glob shell.
+:::
 
 sed gère également des références arrières, qui affichent à l'endroit où on le souhaite la valeur correspondant à une expression littérale ou rationnelle trouvée auparavant. Heureusement pour nous, la déclaration d'amour de M. Jourdain contient exactement neuf mots, ce qui correspond au nombre maximal de références arrières possibles.
 
 <SedBox lang="fr" variant="literal" />
 
-Nous butons sur le même problème : l'expression régulière .* ne correspond pas à un mot, mais à une suite de caractères, ponctuation comprise. Il faut alors utiliser la forme `<.*>`, qui correspond à un mot tel que ceux dont M. Jourdain se sert pour faire de la prose. Nous allons utiliser les caractères d'échappement (barre oblique inverse \) pour que les signes `<` et `>` ne soient pas interprétés littéralement sous certaines consoles, mais comme des méta-caractères ayant une fonction spéciale :
+Nous butons sur le même problème : l'expression régulière .* ne correspond pas à un mot, mais à une suite de caractères, ponctuation comprise. Il faut alors utiliser la forme `\<.*\>`, qui correspond à un mot tel que ceux dont M. Jourdain se sert pour faire de la prose. Nous allons utiliser les caractères d'échappement (barre oblique inverse `\`) pour que les signes `<` et `>` ne soient pas interprétés littéralement sous certaines consoles, mais comme des méta-caractères ayant une fonction spéciale :
 
 <SedBox lang="fr" variant="p" />
 
@@ -54,7 +54,7 @@ Nous pourrions également utiliser la forme [[:alpha:]]* qui fait gagner en lisi
 
 <SedBox lang="fr" variant="n" />
 
-C'est mieux, mais nous avons un problème de capitalisation. Nous allons donc utiliser les opérateurs /u et /l placés judicieusement. Auparavant, nous allons exporter des variables pour rendre le script plus concis et plus lisible :
+C'est mieux, mais nous avons un problème de capitalisation. Nous allons donc utiliser les opérateurs `\u` et `\l` placés judicieusement. Auparavant, nous allons exporter des variables pour rendre le script plus concis et plus lisible :
 
 <SedBox lang="fr" variant="m1" />
 
@@ -106,11 +106,13 @@ Ou bien :
 
 <SedBox lang="fr" variant="geek4" />
 
-Chaque commande ci-dessus exécutait GNU sed. Voici ce binaire même — compilé depuis son code source C en WebAssembly — qui exécute le vrai GNU sed, en direct dans cette page. Modifiez les phrases et reformulez-les vous-même :
+Chaque commande sed ci-dessus exécutait GNU sed. Voici ce binaire même - compilé depuis son code source C en WebAssembly - qui exécute le vrai GNU sed, en direct dans cette page. Modifiez les phrases et reformulez-les vous-même :
+
+<noscript>Les démonstrations interactives ci-dessous nécessitent JavaScript. Sans lui, les commandes restent lisibles plus haut dans la page et fonctionnent à l'identique dans un terminal muni de GNU sed et de Python.</noscript>
 
 <SedMoliere lang="fr" />
 
-La même idée de permutation de mots n'a pas à rester dans le shell. La voici en vrai Python, exécuté en direct dans cette page :
+La même idée de permutation de mots n'a pas à rester dans le shell : on la retrouve avec les [expressions régulières en Python](../python-regular-expressions/) ou dans la [jourdainisation en ligne d'une tirade](../word-shuffling-python/). La voici en vrai Python, exécuté en direct dans cette page :
 
 <PyScriptMoliere lang="fr" />
 
@@ -133,3 +135,9 @@ Exécutons maintenant en boucle tous les scripts sed sur toutes les lignes du fi
 <SedBox lang="fr" variant="loop" />
 
 Et voilà. En quelques instants, sans jamais ouvrir un seul fichier, nous appliquons une suite d'opérations complexes sur un nombre indéfini de phrases de même structure. Ce qui n'est pas possible sous un traitement de texte ou autre outil muni d'une interface graphique, ou sur des fichiers binaires.
+
+## Articles connexes
+
+- [Créer des documents différents à partir des mêmes sources via Jinja](../conditional-text-jinja/)
+- [Insérer automatiquement des données dans un fichier reStructuredText](../auto-insert-data-restructuredtext/)
+- [Le Raspberry Pi 3 en tant que plateforme de documentation](../raspberry-pi-documentation-platform/)
