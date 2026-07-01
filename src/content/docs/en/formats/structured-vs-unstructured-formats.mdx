@@ -4,7 +4,7 @@ description: "Compare structured formats (DITA XML, DocBook) and unstructured fo
 tags: [dita-xml, structured-authoring]
 ---
 
-
+import DitaRenameBox from '../../../../components/DitaRenameBox.astro';
 
 :::tip
 
@@ -184,6 +184,10 @@ tr '[:upper:]' '[:lower:]' |
 sed -E "s#(.*\.dita)#mv \1#g;" |
 sed -E "s#\.dita.*<title>(.*)</title>#.dita \1.dita#g;"
 ```
+
+The text-processing core runs live below. The input stands in for the output of `ack "<title>" *.dita`, and `tr` is rewritten as sed's `\L`. Edit the lines and see the `mv` commands change:
+
+<DitaRenameBox lang="en" />
 
 ## Related articles
 

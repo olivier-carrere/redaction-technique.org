@@ -1,0 +1,267 @@
+---
+// A live, in-browser demo of the DITA batch-rename pipeline. It reuses the
+// GNU sed 4.9 WebAssembly binary (public/sed/sed.js + sed.wasm) shared with
+// SedBox via the window.__sedReady loader. The real one-liner starts with
+// `ack "<title>" *.dita` (a Perl grep) and pipes through `tr`; neither can run
+// in the browser, so the input textarea stands in for the ack output and `tr`
+// is rewritten as sed's `\L`. The remaining stages are the genuine sed scripts
+// from the tutorial, run in sequence (each stage's output feeds the next),
+// producing the `mv` commands. Styles are namespaced under `.ditabox`.
+interface Props {
+  lang?: "en" | "fr";
+}
+
+const { lang = "en" } = Astro.props;
+
+// The pipeline stages that actually run, in order. `tr '[:upper:]' '[:lower:]'`
+// becomes `sed "s/.*/\L&/"`; the last two stages need extended regex (-E).
+const stages = [
+  { args: [], script: "s/ /_/g", display: `sed "s/ /_/g" |` },
+  { args: [], script: "s/.*/\\L&/", display: `sed "s/.*/\\L&/" |` },
+  { args: ["-E"], script: "s#(.*\\.dita)#mv \\1#", display: `sed -E "s#(.*\\.dita)#mv \\1#" |` },
+  {
+    args: ["-E"],
+    script: "s#\\.dita.*<title>(.*)</title>#.dita \\1.dita#",
+    display: `sed -E "s#\\.dita.*<title>(.*)</title>#.dita \\1.dita#"`,
+  },
+];
+
+const sample = [
+  "intro.dita:<title>Getting Started</title>",
+  "config.dita:<title>Configuration Guide</title>",
+  "install.dita:<title>Installation Notes</title>",
+].join("\n");
+
+const config = {
+  en: {
+    strings: {
+      cmdLabel: "Pipeline",
+      inputLabel: 'Input — stands in for the output of ack "<title>" *.dita',
+      runButton: "Run",
+      booting: "Loading sed…",
+      outputLabel: "Output — the mv commands to run",
+      outputEmpty: "Click Run to execute.",
+      typeAtLeastOne: "Type at least one line.",
+    },
+  },
+  fr: {
+    strings: {
+      cmdLabel: "Pipeline",
+      inputLabel: 'Entrée — tient lieu de la sortie de ack "<title>" *.dita',
+      runButton: "Exécuter",
+      booting: "Chargement de sed…",
+      outputLabel: "Sortie — les commandes mv à exécuter",
+      outputEmpty: "Cliquez sur Exécuter.",
+      typeAtLeastOne: "Saisissez au moins une ligne.",
+    },
+  },
+}[lang];
+
+const { strings } = config;
+const uid = "ditabox-" + Math.random().toString(36).slice(2, 10);
+const runStages = stages.map(({ args, script }) => ({ args, script }));
+const cmdLines = stages.map((s) => s.display);
+---
+
+<div class="ditabox" id={uid}>
+  <div class="cmd-wrap">
+    <label>{strings.cmdLabel}</label>
+    {cmdLines.map((line) => <pre class="cmd">{line}</pre>)}
+  </div>
+
+  <label>{strings.inputLabel}</label>
+  <textarea class="db-input">{sample}</textarea>
+  <button class="db-run" type="button" disabled>{strings.booting}</button>
+
+  <label>{strings.outputLabel}</label>
+  <div class="db-output"><span class="empty">{strings.outputEmpty}</span></div>
+</div>
+
+<script define:vars={{ uid, runStages, strings }}>
+  const root = document.getElementById(uid);
+  const runBtn = root.querySelector(".db-run");
+  const inputEl = root.querySelector(".db-input");
+  const outBox = root.querySelector(".db-output");
+
+  // Load the sed binary exactly once per page, shared with SedBox.
+  window.__sedReady =
+    window.__sedReady ||
+    new Promise((resolve) => {
+      if (window.createSed) return resolve();
+      const s = document.createElement("script");
+      s.src = "/sed/sed.js";
+      s.onload = () => resolve();
+      document.head.appendChild(s);
+    });
+
+  // Each sed run gets a fresh module: sed calls exit() when done, tearing the
+  // runtime down, so we re-instantiate per stage rather than reuse.
+  async function runSed(args, stdin) {
+    const out = [], err = [];
+    const Module = await createSed({
+      noInitialRun: true,
+      print: (s) => out.push(s),
+      printErr: (s) => err.push(s),
+    });
+    Module.FS.writeFile("/input.txt", stdin);
+    try {
+      Module.callMain([...args, "/input.txt"]);
+    } catch (e) {
+      if (!(e && e.name === "ExitStatus" && e.status === 0)) err.push(String(e));
+    }
+    return { out, err };
+  }
+
+  function escapeHtml(s) {
+    return s.replace(/[&<>"']/g, (ch) =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch])
+    );
+  }
+
+  window.__sedReady.then(() => {
+    runBtn.disabled = false;
+    runBtn.textContent = strings.runButton;
+  });
+
+  runBtn.addEventListener("click", async () => {
+    const lines = inputEl.value.split("\n").map((l) => l.trim()).filter(Boolean);
+    if (!lines.length) {
+      outBox.innerHTML = `<span class="empty">${strings.typeAtLeastOne}</span>`;
+      return;
+    }
+    runBtn.disabled = true;
+
+    // Feed each stage's output into the next, mirroring the shell pipe.
+    let stream = lines.join("\n") + "\n";
+    for (const stage of runStages) {
+      const { out } = await runSed([stage.script, ...stage.args], stream);
+      stream = out.join("\n") + "\n";
+    }
+    runBtn.disabled = false;
+
+    const result = stream.split("\n").filter(Boolean);
+    outBox.innerHTML =
+      result.map((v) => `<div class="line">${escapeHtml(v)}</div>`).join("") ||
+      `<span class="empty">${strings.outputEmpty}</span>`;
+  });
+</script>
+
+<style is:global>
+  .ditabox {
+    --db-surface: #ffffff;
+    --db-ink: #15223b;
+    --db-muted: #5a6a84;
+    --db-accent: #2f6fed;
+    --db-line: #d5dce7;
+
+    background: #e7ebf1;
+    color: var(--db-ink);
+    font-family: "Inter", system-ui, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    border: 1px solid var(--db-line);
+    border-radius: 14px;
+    padding: 20px 20px 22px;
+    margin: 1.6rem 0;
+  }
+  .ditabox * {
+    box-sizing: border-box;
+  }
+  .ditabox label {
+    display: block;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--db-muted);
+    margin: 0 0 8px;
+  }
+  .ditabox .cmd-wrap {
+    margin-bottom: 16px;
+  }
+  .ditabox .cmd {
+    margin: 0 0 6px;
+    padding: 10px 12px;
+    background: #0f1b2d;
+    color: #e6ecf5;
+    border-radius: 8px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12.5px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+  .ditabox .cmd:last-child {
+    margin-bottom: 0;
+  }
+  .ditabox .cmd::before {
+    content: "$\00a0";
+    color: #5fd08b;
+  }
+  .ditabox textarea {
+    width: 100%;
+    min-height: 84px;
+    resize: vertical;
+    padding: 11px 13px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 14px;
+    color: var(--db-ink);
+    border: 1px solid var(--db-line);
+    border-radius: 9px;
+    background: #fbfcfe;
+    line-height: 1.7;
+  }
+  .ditabox textarea:focus {
+    outline: 2px solid var(--db-accent);
+    outline-offset: 1px;
+    border-color: transparent;
+  }
+  .ditabox button {
+    margin: 12px 0 18px;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #fff;
+    background: var(--db-accent);
+    border: none;
+    border-radius: 9px;
+    padding: 9px 20px;
+    cursor: pointer;
+    transition:
+      transform 0.06s ease,
+      background 0.15s ease;
+  }
+  .ditabox button:hover {
+    background: #235ed1;
+  }
+  .ditabox button:active {
+    transform: translateY(1px);
+  }
+  .ditabox button:disabled {
+    background: #9fb3d6;
+    cursor: not-allowed;
+  }
+  .ditabox button:focus-visible {
+    outline: 2px solid var(--db-ink);
+    outline-offset: 2px;
+  }
+  .ditabox .db-output {
+    min-height: 24px;
+    background: var(--db-surface);
+    border: 1px solid var(--db-line);
+    border-radius: 9px;
+    padding: 12px 13px;
+  }
+  .ditabox .db-output .empty {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    color: var(--db-muted);
+  }
+  .ditabox .line {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--db-ink);
+    overflow-wrap: anywhere;
+  }
+</style>

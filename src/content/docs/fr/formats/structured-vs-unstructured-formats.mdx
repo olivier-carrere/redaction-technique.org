@@ -2,6 +2,9 @@
 title: "Formats structurés et non structurés"
 description: "Comparez les formats structurés (DITA XML, DocBook) et non structurés (Word, PDF) pour la documentation technique : réutilisation, traduction et évolutivité."
 ---
+
+import DitaRenameBox from '../../../../components/DitaRenameBox.astro';
+
 :::tip
 
 Les formats structurés favorisent la création de documents minimalistes, complets et cohérents. Ils permettent au rédacteur technique de se concentrer sur le contenu et d'améliorer l'expérience utilisateur et l'utilisabilité de la documentation technique.
@@ -185,4 +188,8 @@ tr '[:upper:]' '[:lower:]' |
 sed -E "s#(.*\.dita)#mv \1#g;" |
 sed -E "s#\.dita.*<title>(.*)</title>#.dita \1.dita#g;"
 ```
+
+Le cœur de traitement de texte s'exécute en direct ci-dessous. L'entrée tient lieu de la sortie de `ack "<title>" *.dita`, et `tr` est réécrit avec le `\L` de sed. Modifiez les lignes et observez les commandes `mv` changer :
+
+<DitaRenameBox lang="fr" />
 
