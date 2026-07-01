@@ -56,6 +56,7 @@ const config = {
     ].join("\n"),
     strings: {
       cmdLabel: "Command",
+      cmdEditLabel: "Command — edit and run",
       inputLabel: "Input — edit and run again",
       runButton: "Run",
       booting: "Loading sed…",
@@ -84,6 +85,7 @@ const config = {
     ].join("\n"),
     strings: {
       cmdLabel: "Commande",
+      cmdEditLabel: "Commande — modifiez puis relancez",
       inputLabel: "Entrée — modifiez puis relancez",
       runButton: "Exécuter",
       booting: "Chargement de sed…",
@@ -156,11 +158,13 @@ const variants = {
     cmd: [`echo "${c.single}"`],
     scripts: ["s/$//"],
     input: "",
+    editable: true,
   },
   echoDeclaration: {
     cmd: [`export declaration="${c.single}"`, `echo $declaration`],
     scripts: ["s/$//"],
     input: "",
+    editable: true,
   },
   geek1: {
     cmd: [
@@ -210,27 +214,82 @@ const variants = {
 const { strings } = c;
 const uid = "sedbox-" + Math.random().toString(36).slice(2, 10);
 const scripts = variants.scripts;
+const editable = variants.editable === true;
 ---
 
 <div class="sedbox" id={uid}>
   <div class="cmd-wrap">
-    <label>{strings.cmdLabel}</label>
-    {variants.cmd.map((line) => <pre class="cmd">{line}</pre>)}
+    <label>{editable ? strings.cmdEditLabel : strings.cmdLabel}</label>
+    {
+      editable ? (
+        <textarea class="sb-cmd" rows={variants.cmd.length}>{variants.cmd.join("\n")}</textarea>
+      ) : (
+        variants.cmd.map((line) => <pre class="cmd">{line}</pre>)
+      )
+    }
   </div>
 
-  <label>{strings.inputLabel}</label>
-  <textarea class="sb-input">{variants.input}</textarea>
+  {
+    !editable && (
+      <Fragment>
+        <label>{strings.inputLabel}</label>
+        <textarea class="sb-input">{variants.input}</textarea>
+      </Fragment>
+    )
+  }
   <button class="sb-run" type="button" disabled>{strings.booting}</button>
 
   <label>{strings.outputLabel}</label>
   <div class="sb-output"><span class="empty">{strings.outputEmpty}</span></div>
 </div>
 
-<script define:vars={{ uid, scripts, strings }}>
+<script define:vars={{ uid, scripts, strings, editable }}>
   const root = document.getElementById(uid);
   const runBtn = root.querySelector(".sb-run");
   const inputEl = root.querySelector(".sb-input");
+  const cmdEl = root.querySelector(".sb-cmd");
   const outBox = root.querySelector(".sb-output");
+
+  // Minimal echo evaluator for the editable "echo" boxes: resolves export
+  // variables, strips file redirections, expands $VAR, and returns the lines
+  // that echo would print. The result is then run through real sed (s/$//).
+  function unquote(s) {
+    s = s.trim();
+    if (
+      (s.startsWith('"') && s.endsWith('"')) ||
+      (s.startsWith("'") && s.endsWith("'"))
+    )
+      return s.slice(1, -1);
+    return s;
+  }
+  function expand(s, vars) {
+    return s.replace(
+      /\$\{([A-Za-z_]\w*)\}|\$([A-Za-z_]\w*)/g,
+      (_, a, b) => {
+        const k = a || b;
+        return k in vars ? vars[k] : "";
+      }
+    );
+  }
+  function evalEcho(text) {
+    const vars = {};
+    const lines = [];
+    for (const raw of text.split("\n")) {
+      const line = raw.trim();
+      if (!line || line.startsWith("#")) continue;
+      let m = line.match(/^export\s+([A-Za-z_]\w*)=(.*)$/);
+      if (m) {
+        vars[m[1]] = expand(unquote(m[2]), vars);
+        continue;
+      }
+      m = line.match(/^echo\s+(.*)$/);
+      if (m) {
+        let arg = m[1].replace(/\s*>>?\s*\S+\s*$/, "");
+        lines.push(expand(unquote(arg), vars));
+      }
+    }
+    return lines;
+  }
 
   // Load the ~250 KB sed.js exactly once per page, no matter how many boxes.
   window.__sedReady =
@@ -273,7 +332,9 @@ const scripts = variants.scripts;
   });
 
   runBtn.addEventListener("click", async () => {
-    const lines = inputEl.value.split("\n").map((l) => l.trim()).filter(Boolean);
+    const lines = editable
+      ? evalEcho(cmdEl.value)
+      : inputEl.value.split("\n").map((l) => l.trim()).filter(Boolean);
     if (!lines.length) {
       outBox.innerHTML = `<span class="empty">${strings.typeAtLeastOne}</span>`;
       return;
@@ -342,6 +403,25 @@ const scripts = variants.scripts;
   }
   .sedbox .cmd:last-child {
     margin-bottom: 0;
+  }
+  .sedbox .sb-cmd {
+    width: 100%;
+    resize: vertical;
+    padding: 10px 12px;
+    background: #0f1b2d;
+    color: #e6ecf5;
+    border: 1px solid var(--sb-line);
+    border-radius: 8px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12.5px;
+    line-height: 1.6;
+    white-space: pre;
+    overflow-wrap: anywhere;
+  }
+  .sedbox .sb-cmd:focus {
+    outline: 2px solid var(--sb-accent);
+    outline-offset: 1px;
+    border-color: transparent;
   }
   .sedbox .cmd::before {
     content: "$\00a0";
