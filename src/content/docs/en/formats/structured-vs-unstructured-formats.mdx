@@ -76,7 +76,7 @@ Switching from RAW to TIFF and from TIFF to JPEG is destructive and cannot be re
 
 PDF is semantically poorer than DocBook, which is itself poorer than DITA XML.
 
-If your company insists on using DocBook, you can always generate DocBook content from DITA XML source content. As long as the source content remains in DITA XML format (i.e., as long as no changes to the DocBook content are saved), and as long as the DocBook format is only a step in the generation of deliverables, you benefit from the advanced content reuse features offered by DITA XML.
+If your company insists on using DocBook, you can always generate DocBook content from DITA XML source content. As long as the source content remains in DITA XML format (i.e., as long as no changes to the DocBook content are saved), and as long as the DocBook format is only a step in the generation of deliverables, just as the FO format commonly is, you benefit from the advanced content reuse features offered by DITA XML.
 
 The effort involved in migrating from an unstructured format to DITA XML is a little greater than to DocBook, since you need to inject more semantic information. You also have to migrate the DocBook content to DITA XML, which also represents an effort, albeit a smaller one. But your content is immediately of better quality because it's more structured. You'll soon reap the rewards of your hard work, especially if you're thinking of translating your content into a new language.
 
@@ -84,9 +84,11 @@ Generally speaking, it's always in a professional's interest to work on the rich
 
 ## Migrating from FrameMaker to DITA XML
 
+{/* TODO: "FrameMaker Structured 11" (2012) and the menu paths below are outdated; refresh for a current FrameMaker release when this section is next revised. */}
+
 Migrating from FrameMaker to DITA XML is not like saving an MS Word document in LibreOffice format. There is no automatic process for migrating an unstructured document to a structured format. In the worst-case scenario, depending on the quality of your original document, this can be like transforming a wasteland into a structured garden. But a well-planned migration allows you to switch to the new format without disrupting the rhythm of your deliveries.
 
-To put it in garden terms: turning a wasteland into a French garden means passing through the English garden stage first—a place that may not be strictly architectural, but that's very pleasant to live in. Good news: if the technical writer has consistently used a limited set of styles and rationally organized their FrameMaker content, they're certainly already very close to this stage.
+To put it in garden terms: turning a swamp into the gardens of Versailles means passing through the English garden stage first - a place that may not be strictly architectural, but that's very pleasant to live in. Good news: if the technical writer has consistently used a limited set of styles and rationally organized their FrameMaker content, they're certainly already very close to this stage.
 
 ![Migration from FrameMaker to DITA XML](/assets/en/framemaker-to-dita-migration.svg)
 **Migration from FrameMaker to DITA XML**
@@ -130,7 +132,7 @@ You should now be able to archive the FrameMaker files and then switch over comp
 ![Apply conversion table from FrameMaker to DITA XML](/assets/en/dita-migration.svg)
 **Application of a conversion table from FrameMaker to DITA XML**
 
-Of course, you'll need to apply this process to a small set of documents—one that is not, if possible, of critical importance. After this initial success, you can apply the process to other document sets.
+Of course, you'll need to apply this process to a small set of documents - one that is not, if possible, of critical importance. After this initial success, you can apply the process to other document sets.
 
 You can now progressively modularize and share your content in the new format to get the most out of DITA XML. During this phase, you can continue to publish new versions of the document; in fact, publishing should be much simpler than with FrameMaker.
 
@@ -145,7 +147,7 @@ The aim of this procedure is to (see also [DITA XML tutorials](../../tutorials/d
 2. Create an empty FrameMaker document and import all existing styles from the files to be migrated.
 3. Apply all available styles to empty paragraphs in the empty FrameMaker document.
 4. Save the empty FrameMaker document as `styles.fm`.
-5. Open FrameMaker `Structured 11` and create a new DITA XML topic file.
+5. Open FrameMaker Structured 11 and create a new DITA XML topic file.
 6. Choose `StructureTools` ‣ `Export element catalog as EDD` and save the new EDD as `DITA-topic-edd.fm`.
 7. Open the `styles.fm` file, then choose `File` ‣ `Import element definitions` and import the element definitions from `DITA-topic-edd.fm`.
 8. Repeat the above three steps for the other DITA topic types (`task`, `reference`, etc.), modifying the file names as appropriate.

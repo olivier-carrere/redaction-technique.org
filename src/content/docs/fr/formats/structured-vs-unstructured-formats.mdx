@@ -84,6 +84,8 @@ De manière générale, un professionnel a toujours intérêt à travailler sur 
 
 ## Migration de FrameMaker vers DITA XML
 
+{/* TODO : « FrameMaker Structured 11 » (2012) et les chemins de menus ci-dessous sont obsolètes ; à actualiser pour une version récente de FrameMaker lors de la prochaine révision de cette section. */}
+
 Migrer de FrameMaker vers DITA XML, ce n'est pas comme enregistrer un document MS Word au format LibreOffice. Aucun processus automatique ne permet de migrer un document non structuré vers un format structuré. Dans le pire des cas, selon la qualité de votre document de départ, cela peut s'apparenter à transformer une friche en jardin à la française. Mais une migration bien planifiée permet de passer au nouveau format sans perturber le rythme des livraisons.
 
 Pour filer la métaphore, si l'on se fixe pour but de convertir un marécage en parterre du château de Versailles, il convient de passer par l'étape du jardin à l'anglaise - soit un endroit certes non rigoureusement architecturé, mais très agréable à vivre. Bonne nouvelle : si le rédacteur technique a utilisé de manière cohérente un jeu de styles limité et organisé rationnellement son contenu FrameMaker, il est déjà certainement très proche de ce stade.
@@ -145,19 +147,15 @@ Le but de cette procédure est de :
 2. Créez un document FrameMaker vide et importez-y tous les styles existants dans les fichiers à migrer.
 3. Appliquez tous les styles disponibles à des paragraphes vides du document FrameMaker vide.
 4. Enregistrez le document FrameMaker vide sous le nom `styles.fm`.
-5. Ouvrez FrameMaker `structuré 11` et créez un nouveau fichier DITA XML de type topic.
-6. Choisissez `StructureTools` ‣ `Exporter le catalogue d'éléments en tant
-    qu'EDD` et sauvegardez la nouvelle EDD sous le nom `DITA-topic-edd.fm`.
-7. Ouvrez le fichier `styles.fm`, puis choisissez `Fichier` ‣ `Importer les
-    définitions d'éléments` et importez les définitions d'éléments à partir de `DITA-topic-edd.fm`.
+5. Ouvrez FrameMaker structuré 11 et créez un nouveau fichier DITA XML de type topic.
+6. Choisissez `StructureTools` ‣ `Exporter le catalogue d'éléments en tant qu'EDD` et sauvegardez la nouvelle EDD sous le nom `DITA-topic-edd.fm`.
+7. Ouvrez le fichier `styles.fm`, puis choisissez `Fichier` ‣ `Importer les définitions d'éléments` et importez les définitions d'éléments à partir de `DITA-topic-edd.fm`.
 8. Répétez les trois étapes ci-dessus pour les autres types de topics DITA <abbr title="task, reference, etc.">XML</abbr>, en modifiant les noms de fichiers comme il se doit.
 9. Ouvrez le fichier `styles.fm`, puis choisissez `StructureTools` ‣ `Générer le tableau de conversion`.
 10. Modifiez le fichier de conversion et faites correspondre chaque style FrameMaker à une balise DITA XML.
 11. Enregistrez le tableau de conversion sous le nom `DITA2FM-conversion-table.fm`.
-12. Ouvrez un fichier de contenu FrameMaker sous FrameMaker structuré 11 et choisissez `StructureTools` ‣ `Utilitaires` ‣ `Structurer le document en
-    cours`.
-13. Sélectionnez `DITA2FM-conversion-table.fm` et cliquez sur `Ajouter
-    structure`.
+12. Ouvrez un fichier de contenu FrameMaker sous FrameMaker structuré 11 et choisissez `StructureTools` ‣ `Utilitaires` ‣ `Structurer le document en cours`.
+13. Sélectionnez `DITA2FM-conversion-table.fm` et cliquez sur `Ajouter structure`.
 14. Enregistrez le fichier de contenu FrameMaker au format XML sans sélectionner d'application.
 15. Ouvrez le fichier XML généré sous un éditeur DITA XML et corrigez la syntaxe DITA XML. Certains aspects de cette étape sont scriptables, mais il faut également procéder à des opérations manuelles de restructuration du contenu. Il vous faudra notamment placer à la main les références croisées, de préférence dans une reltable.
 
