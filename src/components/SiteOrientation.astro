@@ -1,0 +1,139 @@
+---
+interface Props {
+  lang?: string;
+}
+
+const routeLang = (Astro.locals as Record<string, any>)?.starlightRoute?.lang;
+const lang = Astro.props.lang || routeLang || 'en';
+const isFr = lang === 'fr';
+---
+
+<div class="site-orientation not-content">
+  <div class="orientation-header">
+    <span class="orientation-badge">
+      {isFr ? 'Manuel de référence' : 'Documentation Manual'}
+    </span>
+    <p class="orientation-byline">
+      {isFr ? (
+        <span>Par <a href="https://www.linkedin.com/in/carrereolivier/" target="_blank" rel="noopener noreferrer">Olivier Carrère</a>, rédacteur technique &middot; <a href="https://redaction-technique.org/" target="_blank" rel="noopener noreferrer" class="blog-pill">Blog d'essais ↗</a></span>
+      ) : (
+        <span>By <a href="https://www.linkedin.com/in/carrereolivier/" target="_blank" rel="noopener noreferrer">Olivier Carrère</a>, technical writer &middot; <a href="https://redaction-technique.org/" target="_blank" rel="noopener noreferrer" class="blog-pill">Opinion Blog ↗</a></span>
+      )}
+    </p>
+  </div>
+
+  <div class="orientation-body">
+    <p class="orientation-mission">
+      {isFr ? (
+        <span><strong>Ce site est le manuel technique</strong> : le guide de référence du processus docs-as-code, de la définition du projet à la livraison. Le <a href="https://redaction-technique.org/" target="_blank" rel="noopener noreferrer">blog compagnon</a> réunit quant à lui réflexions, essais et analyses d'opinion.</span>
+      ) : (
+        <span><strong>This site is the technical manual</strong>: a practical guide to the docs-as-code process, from project definition to delivery. The companion <a href="https://redaction-technique.org/" target="_blank" rel="noopener noreferrer">blog</a> publishes in-depth essays, analysis, and opinion.</span>
+      )}
+    </p>
+    <p class="orientation-context">
+      {isFr ? (
+        <span>Que vous choisissiez entre DITA XML et Markdown, passiez à un workflow docs-as-code ou intégriez la documentation à votre chaîne CI/CD &mdash; ces guides couvrent les méthodes, formats et outils pour faire de la documentation une pratique d'ingénierie durable et évolutive.</span>
+      ) : (
+        <span>Whether you're choosing between DITA XML and Markdown, migrating to a docs-as-code workflow, or integrating documentation into a CI/CD pipeline &mdash; these guides cover the methods, formats, and tools that make technical documentation a sustainable, scalable engineering practice.</span>
+      )}
+    </p>
+  </div>
+</div>
+
+<style>
+  .site-orientation {
+    margin: 0 0 2.5rem 0;
+    padding: 1.25rem 1.5rem;
+    background: var(--sl-color-gray-6);
+    border: 1px solid var(--sl-color-gray-5);
+    border-left: 4px solid var(--sl-color-accent);
+    border-radius: 0.5rem;
+  }
+
+  .orientation-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding-bottom: 0.85rem;
+    margin-bottom: 0.85rem;
+    border-bottom: 1px solid var(--sl-color-gray-5);
+  }
+
+  .orientation-badge {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--sl-font-mono);
+    font-size: var(--sl-text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--sl-color-accent-high);
+    background: var(--sl-color-accent-low);
+    padding: 0.2rem 0.6rem;
+    border-radius: 0.25rem;
+  }
+
+  .orientation-byline {
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-gray-3);
+    margin: 0;
+  }
+
+  .orientation-byline a {
+    color: var(--sl-color-white);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .orientation-byline a:hover {
+    color: var(--sl-color-text-accent);
+  }
+
+  .blog-pill {
+    color: var(--sl-color-accent-high) !important;
+    font-weight: 500;
+  }
+
+  .orientation-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .orientation-mission {
+    font-size: var(--sl-text-base);
+    line-height: 1.55;
+    color: var(--sl-color-white);
+    margin: 0;
+  }
+
+  .orientation-mission strong {
+    font-weight: 600;
+  }
+
+  .orientation-mission a {
+    color: var(--sl-color-accent-high);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .orientation-context {
+    font-size: var(--sl-text-sm);
+    line-height: 1.55;
+    color: var(--sl-color-gray-2);
+    margin: 0;
+  }
+
+  @media (max-width: 48rem) {
+    .site-orientation {
+      padding: 1rem 1.15rem;
+    }
+    .orientation-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  }
+</style>

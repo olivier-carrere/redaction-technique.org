@@ -27,3 +27,140 @@
   -webkit-user-select: none;
   color: var(--sl-color-gray-3);
 }
+
+/* ===================================================
+   HOMEPAGE REFINEMENTS (docs.redaction-technique.org)
+   =================================================== */
+
+/* 1. Compact Hero (reduce vertical footprint by ~25-35%) */
+.hero {
+  padding-bottom: 1rem !important;
+}
+
+@media (min-width: 50rem) {
+  .hero {
+    padding-block: clamp(2rem, calc(1.5rem + 4vmin), 4rem) !important;
+  }
+}
+
+.hero .stack {
+  gap: 1.25rem !important;
+}
+
+.hero .copy {
+  gap: 0.75rem !important;
+}
+
+.hero h1 {
+  font-size: clamp(2.25rem, calc(1.5rem + 3.2vw), 3.75rem) !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.02em !important;
+  font-weight: 700 !important;
+}
+
+.hero .tagline {
+  font-size: clamp(var(--sl-text-base), calc(0.95rem + 0.4vw), var(--sl-text-lg)) !important;
+  line-height: 1.55 !important;
+  color: var(--sl-color-gray-2) !important;
+  max-width: 52ch !important;
+}
+
+.hero .actions {
+  gap: 0.75rem 1.25rem !important;
+}
+
+/* 2. Section Headings & Explanatory Leads */
+.sl-markdown-content h2 {
+  font-size: clamp(1.75rem, calc(1.3rem + 1.2vw), 2.25rem) !important;
+  letter-spacing: -0.015em;
+  margin-top: 3rem !important;
+  margin-bottom: 0.35rem !important;
+}
+
+.section-lead {
+  font-size: var(--sl-text-base);
+  color: var(--sl-color-gray-2);
+  line-height: 1.55;
+  margin-top: 0 !important;
+  margin-bottom: 1.5rem !important;
+  max-width: 65ch;
+}
+
+/* 3. Link Card Subtle Hover & Focus Interactions */
+.sl-link-card {
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.sl-link-card .title {
+  font-size: var(--sl-text-base) !important;
+  line-height: 1.35 !important;
+}
+
+.sl-link-card .description {
+  font-size: var(--sl-text-sm) !important;
+  line-height: 1.45 !important;
+}
+
+.sl-link-card .icon {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.sl-link-card:hover .icon {
+  transform: translateX(3px);
+}
+
+.sl-link-card:has(a:focus-visible) {
+  outline: 2px solid var(--sl-color-accent);
+  outline-offset: 2px;
+}
+
+/* 4. Section Navigation Affordance ("View all X articles →") */
+.section-more {
+  margin-top: 1rem !important;
+  margin-bottom: 3.5rem !important;
+  padding-top: 0.25rem;
+}
+
+.section-more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: var(--sl-text-sm);
+  font-weight: 600;
+  color: var(--sl-color-accent-high);
+  text-decoration: none;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  margin-left: -0.5rem;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.section-more-link:hover {
+  background: var(--sl-color-gray-6);
+  color: var(--sl-color-white);
+  text-decoration: none;
+}
+
+.section-more-link .arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.section-more-link:hover .arrow {
+  transform: translateX(3px);
+}
+
+.section-more-link:focus-visible {
+  outline: 2px solid var(--sl-color-accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sl-link-card,
+  .sl-link-card .icon,
+  .section-more-link,
+  .section-more-link .arrow {
+    transition: none !important;
+    transform: none !important;
+  }
+}

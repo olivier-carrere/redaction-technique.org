@@ -1,0 +1,238 @@
+---
+interface Props {
+  lang?: string;
+}
+
+const routeLang = (Astro.locals as Record<string, any>)?.starlightRoute?.lang;
+const lang = Astro.props.lang || routeLang || 'en';
+const isFr = lang === 'fr';
+
+const steps = isFr ? [
+  {
+    num: '01',
+    title: 'Les trois niveaux de la documentation technique',
+    href: '/fr/costs/three-levels-of-documentation/',
+    desc: "Situez où se trouve aujourd'hui la pratique documentaire de votre organisation — de la friche au DITA structuré.",
+  },
+  {
+    num: '02',
+    title: 'Formats structurés et non structurés',
+    href: '/fr/formats/structured-vs-unstructured-formats/',
+    desc: 'Le choix de format fondamental qui détermine tout le reste : réutilisation, coûts de traduction et outillage.',
+  },
+  {
+    num: '03',
+    title: 'Cas concret : documentation de NuFirewall',
+    href: '/fr/formats/nufirewall-case-study/',
+    desc: 'La rédaction structurée en production — analyse détaillée des techniques DITA XML saluées par la presse spécialisée.',
+  },
+  {
+    num: '04',
+    title: 'Intégrer la documentation aux processus de développement',
+    href: '/fr/tech-writing-process/integrating-documentation-into-development/',
+    desc: 'Traiter la documentation comme du code : cadence de livraison, contrôle de versions et intégration continue.',
+  },
+] : [
+  {
+    num: '01',
+    title: 'The three levels of technical documentation',
+    href: '/en/costs/three-levels-of-documentation/',
+    desc: "Locate where your organization's documentation practice sits today — from ad-hoc drafting to structured DITA.",
+  },
+  {
+    num: '02',
+    title: 'Structured and unstructured formats',
+    href: '/en/formats/structured-vs-unstructured-formats/',
+    desc: 'The foundational format choice that determines everything downstream: content reuse, translation cost, and tooling.',
+  },
+  {
+    num: '03',
+    title: 'Case study: NuFirewall documentation',
+    href: '/en/formats/nufirewall-case-study/',
+    desc: 'Structured authoring in production — a detailed look at the DITA XML techniques that earned press-validated documentation.',
+  },
+  {
+    num: '04',
+    title: 'Integrating documentation into development',
+    href: '/en/tech-writing-process/integrating-documentation-into-development/',
+    desc: 'Treating documentation like code: aligning release cadence, version control, automated testing, and CI/CD pipelines.',
+  },
+];
+---
+
+<section class="start-here-panel not-content" aria-labelledby="start-here-heading">
+  <div class="start-here-header">
+    <span class="start-here-kicker">{isFr ? 'Commencez ici' : 'Start Here'}</span>
+    <h2 id="start-here-heading" class="start-here-title">
+      {isFr ? 'Un parcours méthodique en quatre étapes' : 'A practical path through technical documentation'}
+    </h2>
+    <p class="start-here-desc">
+      {isFr
+        ? 'Si vous découvrez ce site ou repensez votre architecture documentaire, suivez cette séquence recommandée :'
+        : 'New to the site or re-evaluating your documentation architecture? Follow this curated sequential path:'}
+    </p>
+  </div>
+
+  <div class="start-here-sequence" role="list">
+    {steps.map((step) => (
+      <div class="start-here-item" role="listitem">
+        <a href={step.href} class="start-here-link">
+          <span class="start-here-num" aria-hidden="true">{step.num}</span>
+          <div class="start-here-content">
+            <span class="start-here-step-title">{step.title}</span>
+            <span class="start-here-step-desc">{step.desc}</span>
+          </div>
+          <svg class="start-here-arrow" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/>
+          </svg>
+        </a>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .start-here-panel {
+    margin: 0 0 3.5rem 0;
+    padding: 1.75rem 2rem;
+    background: var(--sl-color-gray-6);
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.75rem;
+    box-shadow: var(--sl-shadow-sm);
+  }
+
+  .start-here-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .start-here-kicker {
+    display: inline-block;
+    font-family: var(--sl-font-mono);
+    font-size: var(--sl-text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--sl-color-accent-high);
+    margin-bottom: 0.35rem;
+  }
+
+  .start-here-title {
+    font-size: clamp(1.35rem, calc(1.1rem + 1vw), 1.75rem);
+    font-weight: 700;
+    color: var(--sl-color-white);
+    line-height: 1.25;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .start-here-desc {
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-gray-3);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .start-here-sequence {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .start-here-item {
+    margin: 0;
+  }
+
+  .start-here-link {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1rem 1.25rem;
+    background: var(--sl-color-bg);
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: background 0.15s ease, border-color 0.15s ease;
+    position: relative;
+  }
+
+  .start-here-link:hover {
+    background: var(--sl-color-gray-7, var(--sl-color-gray-6));
+    border-color: var(--sl-color-gray-3);
+  }
+
+  .start-here-link:focus-visible {
+    outline: 2px solid var(--sl-color-accent);
+    outline-offset: 2px;
+  }
+
+  .start-here-num {
+    font-family: var(--sl-font-mono);
+    font-size: var(--sl-text-xs);
+    font-weight: 700;
+    color: var(--sl-color-accent);
+    background: var(--sl-color-accent-low);
+    border: 1px solid var(--sl-color-accent);
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
+    letter-spacing: 0.05em;
+    align-self: center;
+  }
+
+  .start-here-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 0;
+  }
+
+  .start-here-step-title {
+    font-size: var(--sl-text-base);
+    font-weight: 600;
+    color: var(--sl-color-white);
+    line-height: 1.35;
+  }
+
+  .start-here-link:hover .start-here-step-title {
+    color: var(--sl-color-accent-high);
+  }
+
+  .start-here-step-desc {
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-gray-3);
+    line-height: 1.45;
+  }
+
+  .start-here-arrow {
+    color: var(--sl-color-gray-3);
+    flex-shrink: 0;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+
+  .start-here-link:hover .start-here-arrow {
+    color: var(--sl-color-white);
+    transform: translateX(3px);
+  }
+
+  @media (max-width: 40rem) {
+    .start-here-panel {
+      padding: 1.25rem 1rem;
+    }
+    .start-here-link {
+      grid-template-columns: auto 1fr auto;
+      gap: 0.75rem;
+      padding: 0.875rem 0.75rem;
+    }
+    .start-here-num {
+      align-self: flex-start;
+      margin-top: 0.15rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .start-here-link,
+    .start-here-arrow {
+      transition: none !important;
+      transform: none !important;
+    }
+  }
+</style>

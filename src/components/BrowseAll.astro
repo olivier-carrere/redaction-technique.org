@@ -1,0 +1,181 @@
+---
+interface Props {
+  lang?: string;
+}
+
+const routeLang = (Astro.locals as Record<string, any>)?.starlightRoute?.lang;
+const lang = Astro.props.lang || routeLang || 'en';
+const isFr = lang === 'fr';
+
+const sections = isFr ? [
+  { title: 'Processus industriel', count: '19 articles', href: '/fr/tech-writing-process/', desc: 'Définition, Git, branches, validation, traduction, livraison' },
+  { title: 'Formats DITA XML', count: '5 articles', href: '/fr/formats/', desc: 'DITA XML, modularité, cas concrets et architecture documentaire' },
+  { title: 'Argumentaire économique', count: '5 articles', href: '/fr/costs/', desc: 'Modèles de maturité, coûts d’outillage, principe KISS et ROI' },
+  { title: 'Didacticiels', count: '11 articles', href: '/fr/tutorials/', desc: 'DITA-OT, XSL-FO, Sphinx, regex Python et automatisation' },
+] : [
+  { title: 'Industrial Process', count: '19 articles', href: '/en/tech-writing-process/', desc: 'Definition, Git, branching, validation, translation, delivery' },
+  { title: 'Structured DITA XML', count: '5 articles', href: '/en/formats/', desc: 'DITA XML, modularity, case studies, and document architecture' },
+  { title: 'Business Case & Strategy', count: '5 articles', href: '/en/costs/', desc: 'Maturity tiers, tooling costs, KISS principle, and documentation ROI' },
+  { title: 'Practical Tutorials', count: '11 articles', href: '/en/tutorials/', desc: 'DITA-OT, XSL-FO, Sphinx, Python regex, and publishing pipelines' },
+];
+---
+
+<section class="browse-all-panel not-content" aria-labelledby="browse-all-heading">
+  <div class="browse-all-header">
+    <span class="browse-all-kicker">{isFr ? 'Explorer' : 'Browse All'}</span>
+    <h2 id="browse-all-heading" class="browse-all-title">
+      {isFr ? 'Toutes les sections du manuel' : 'Browse the full documentation manual'}
+    </h2>
+    <p class="browse-all-desc">
+      {isFr
+        ? '40 articles couvrant l’ensemble de la pratique documentaire, des fondements stratégiques aux scripts d’automatisation.'
+        : '40 articles covering the full spectrum of technical communication, from foundational strategy to automated publishing pipelines.'}
+    </p>
+  </div>
+
+  <div class="browse-all-grid">
+    {sections.map((sec) => (
+      <a href={sec.href} class="browse-all-card">
+        <div class="browse-card-top">
+          <span class="browse-card-title">{sec.title}</span>
+          <span class="browse-card-count">{sec.count}</span>
+        </div>
+        <p class="browse-card-desc">{sec.desc}</p>
+        <span class="browse-card-link-text">
+          {isFr ? 'Accéder à la section →' : 'Explore section →'}
+        </span>
+      </a>
+    ))}
+  </div>
+</section>
+
+<style>
+  .browse-all-panel {
+    margin: 4rem 0 2rem 0;
+    padding: 2rem;
+    background: var(--sl-color-gray-6);
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.75rem;
+  }
+
+  .browse-all-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .browse-all-kicker {
+    display: inline-block;
+    font-family: var(--sl-font-mono);
+    font-size: var(--sl-text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--sl-color-accent-high);
+    margin-bottom: 0.35rem;
+  }
+
+  .browse-all-title {
+    font-size: clamp(1.25rem, calc(1rem + 1vw), 1.6rem);
+    font-weight: 700;
+    color: var(--sl-color-white);
+    line-height: 1.25;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .browse-all-desc {
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-gray-3);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .browse-all-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  @media (min-width: 48rem) {
+    .browse-all-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .browse-all-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.15rem 1.25rem;
+    background: var(--sl-color-bg);
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+
+  .browse-all-card:hover {
+    background: var(--sl-color-gray-7, var(--sl-color-gray-6));
+    border-color: var(--sl-color-gray-3);
+  }
+
+  .browse-all-card:focus-visible {
+    outline: 2px solid var(--sl-color-accent);
+    outline-offset: 2px;
+  }
+
+  .browse-card-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .browse-card-title {
+    font-size: var(--sl-text-base);
+    font-weight: 600;
+    color: var(--sl-color-white);
+  }
+
+  .browse-all-card:hover .browse-card-title {
+    color: var(--sl-color-accent-high);
+  }
+
+  .browse-card-count {
+    font-family: var(--sl-font-mono);
+    font-size: var(--sl-text-xs);
+    color: var(--sl-color-accent);
+    background: var(--sl-color-accent-low);
+    padding: 0.1rem 0.4rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--sl-color-accent);
+    flex-shrink: 0;
+  }
+
+  .browse-card-desc {
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-gray-3);
+    line-height: 1.45;
+    margin: 0 0 0.75rem 0;
+    flex: 1;
+  }
+
+  .browse-card-link-text {
+    font-size: var(--sl-text-xs);
+    font-weight: 600;
+    color: var(--sl-color-accent-high);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  @media (max-width: 40rem) {
+    .browse-all-panel {
+      padding: 1.25rem 1rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .browse-all-card {
+      transition: none !important;
+    }
+  }
+</style>

@@ -6,7 +6,7 @@ template: splash
 tableOfContents: false
 hero:
   title: "Technical writing: process, formats, and tooling"
-  tagline: Methods, formats, and tooling for technical writers who treat documentation as an engineering practice.
+  tagline: "An engineering approach to designing, writing, maintaining, and publishing technical documentation."
   actions:
     - text: Start with the process
       link: /en/tech-writing-process/project-definition/
@@ -24,53 +24,85 @@ head:
 ---
 
 import { CardGrid, LinkCard } from '@astrojs/starlight/components';
-import AuthorBio from '../../../components/AuthorBio.astro';
+import SiteOrientation from '../../../components/SiteOrientation.astro';
+import StartHere from '../../../components/StartHere.astro';
+import BrowseAll from '../../../components/BrowseAll.astro';
 
-<AuthorBio />
+<SiteOrientation lang="en" />
 
-*A practical guide to the docs-as-code process, from project definition to delivery - the [blog](https://redaction-technique.org/) is essays and opinion; this is the manual.*
-
-Whether you're choosing between DITA XML and Markdown, moving to a docs-as-code workflow, or integrating documentation into a CI/CD pipeline - these guides cover the methods, formats, and tools that make technical documentation a sustainable, scalable practice.
-
-## New here? Start with these four articles
-
-1. [The three levels of technical documentation](costs/three-levels-of-documentation/) - locate where your organization's documentation practice sits today
-2. [Structured and unstructured formats](formats/structured-vs-unstructured-formats/) - the format choice that determines everything downstream
-3. [Case study: NuFirewall documentation](formats/nufirewall-case-study/) - structured authoring in production, with a press-validated outcome
-4. [Integrating documentation into development](tech-writing-process/integrating-documentation-into-development/) - the workflow and toolchain change that follows
+<StartHere lang="en" />
 
 ## Technical writing: an industrial process
+
+<p class="section-lead">
+  How to approach technical writing as an engineering discipline &mdash; from project definition to version control, automated testing, quality validation, and delivery.
+</p>
 
 <CardGrid>
   <LinkCard title="Project definition" href="tech-writing-process/project-definition/" description="Define audience, scope, and deliverables before writing - five project parameters every technical writing engagement needs." />
   <LinkCard title="Integrating documentation into development" href="tech-writing-process/integrating-documentation-into-development/" description="Treat docs like code: same release cadence, same version control, same review process." />
   <LinkCard title="Git: from file to content" href="tech-writing-process/git-from-file-to-content/" description="Git stores content blobs, not filenames - understanding that model makes branching and diffing documentation much simpler." />
-  <LinkCard title="Explore all 19 articles →" href="tech-writing-process/" description="Source formats, repositories, version control, translation, delivery, and more." />
 </CardGrid>
 
+<p class="section-more not-content">
+  <a href="tech-writing-process/" class="section-more-link">
+    View all 19 process articles <span class="arrow" aria-hidden="true">&rarr;</span>
+  </a>
+</p>
+
 ## Structured DITA XML format
+
+<p class="section-lead">
+  How structured and unstructured documentation differ &mdash; topic-based authoring, single-sourcing, and modular document architecture without vendor lock-in.
+</p>
 
 <CardGrid>
   <LinkCard title="Case study: NuFirewall documentation" href="formats/nufirewall-case-study/" description="Press reviewers cited the documentation as a product strength, not a supplement. A detailed look at the DITA XML techniques that made it possible." />
   <LinkCard title="Structured and unstructured formats" href="formats/structured-vs-unstructured-formats/" description="DITA's three topic types - concept, task, reference - enforce structure that makes content reusable, translatable, and consistent." />
   <LinkCard title="From document to modular document base" href="formats/modular-documentation/" description="Replace monolithic manuals with reusable topic modules: lower translation costs, parallel reviews, multiple output formats from one source pool." />
-  <LinkCard title="Explore all 5 articles →" href="formats/" description="Structured formats, DITA XML use cases, and document architecture trade-offs." />
 </CardGrid>
 
+<p class="section-more not-content">
+  <a href="formats/" class="section-more-link">
+    View all 5 formats articles <span class="arrow" aria-hidden="true">&rarr;</span>
+  </a>
+</p>
+
 ## The business case for structured documentation
+
+<p class="section-lead">
+  Why documentation architecture matters to an organization &mdash; maturity models, long-term maintenance costs, and technical communication economics.
+</p>
 
 <CardGrid>
   <LinkCard title="From technical writing to technical communication" href="costs/copywriting-to-technical-communication/" description="Technical communication starts before the sale - why the role spans marketing, journalism, and product documentation." />
   <LinkCard title="The three levels of technical documentation" href="costs/three-levels-of-documentation/" description="A three-tier maturity model - wasteland, topic-based, structured DITA - to locate where your organization sits and what the next level costs." />
   <LinkCard title="Formats and tools" href="costs/formats-and-tools/" description="Choose your source format before your tool - the format determines vendor lock-in, automation options, and long-term costs." />
-  <LinkCard title="Explore all 5 articles →" href="costs/" description="KISS principle, PDF indexes, and the business case for structured documentation." />
 </CardGrid>
 
+<p class="section-more not-content">
+  <a href="costs/" class="section-more-link">
+    View all 5 strategy & economics articles <span class="arrow" aria-hidden="true">&rarr;</span>
+  </a>
+</p>
+
 ## Tutorials
+
+<p class="section-lead">
+  Practical implementation guides and tooling &mdash; step-by-step instructions for DITA-OT, XSL-FO, Sphinx, Python regular expressions, and automation scripts.
+</p>
 
 <CardGrid>
   <LinkCard title="DITA XML and XSL-FO tutorials" href="tutorials/dita-xml-xsl-fo-tutorials/" description="Set up the DITA XML to PDF publishing chain with XSL-FO - step-by-step from source authoring to styled output." />
   <LinkCard title="Conditional text with Sphinx" href="tutorials/conditional-text-sphinx-rest/" description="Generate document variants from the same ReST sources with Sphinx conditional text." />
   <LinkCard title="Regular expressions in Python" href="tutorials/python-regular-expressions/" description="Python's regular expression library helps you manipulate text, especially if you're not familiar with sed or awk." />
-  <LinkCard title="Explore all 11 articles →" href="tutorials/" description="Jinja templating, SQL automation, sed, and documentation toolchains." />
 </CardGrid>
+
+<p class="section-more not-content">
+  <a href="tutorials/" class="section-more-link">
+    View all 11 tutorials <span class="arrow" aria-hidden="true">&rarr;</span>
+  </a>
+</p>
+
+<BrowseAll lang="en" />
+

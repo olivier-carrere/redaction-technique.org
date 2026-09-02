@@ -6,7 +6,7 @@ template: splash
 tableOfContents: false
 hero:
   title: "Rédaction technique : processus, formats et outils"
-  tagline: Méthodes, formats et outils pour les rédacteurs techniques qui traitent la documentation comme une pratique d'ingénierie.
+  tagline: "Une approche d'ingénierie pour concevoir, rédiger, maintenir et publier la documentation technique."
   actions:
     - text: Découvrir le processus
       link: /fr/tech-writing-process/project-definition/
@@ -24,53 +24,85 @@ head:
 ---
 
 import { CardGrid, LinkCard } from '@astrojs/starlight/components';
-import AuthorBio from '../../../components/AuthorBio.astro';
+import SiteOrientation from '../../../components/SiteOrientation.astro';
+import StartHere from '../../../components/StartHere.astro';
+import BrowseAll from '../../../components/BrowseAll.astro';
 
-<AuthorBio />
+<SiteOrientation lang="fr" />
 
-*Un guide pratique du processus docs-as-code, de la définition du projet à la livraison - le [blog](https://redaction-technique.org/), ce sont des essais et des analyses ; ici, c'est le manuel.*
-
-Que vous choisissiez entre DITA XML et Markdown, passiez à un workflow docs-as-code ou intégriez la documentation à votre pipeline CI/CD - ces guides couvrent les méthodes, formats et outils qui font de la documentation technique une pratique durable et évolutive.
-
-## Nouveau ici ? Commencez par ces quatre articles
-
-1. [Les trois niveaux de la documentation technique](costs/three-levels-of-documentation/) - situez où se trouve aujourd'hui la pratique documentaire de votre organisation
-2. [Formats structurés et non structurés](formats/structured-vs-unstructured-formats/) - le choix de format qui détermine tout le reste
-3. [Cas concret : documentation de NuFirewall](formats/nufirewall-case-study/) - la rédaction structurée en production, avec un résultat concret
-4. [Intégrer la documentation aux processus de développement](tech-writing-process/integrating-documentation-into-development/) - le changement de workflow et d'outillage qui s'ensuit
+<StartHere lang="fr" />
 
 ## Rédaction technique : un processus industriel
+
+<p class="section-lead">
+  Aborder la rédaction technique comme une discipline d'ingénierie &mdash; définition du périmètre, contrôle de versions, tests automatisés, contrôle qualité et livraison.
+</p>
 
 <CardGrid>
   <LinkCard title="Définition du projet" href="tech-writing-process/project-definition/" description="Définissez audience, périmètre et livrables avant d'écrire - les cinq paramètres que tout projet de rédaction technique doit fixer." />
   <LinkCard title="Intégrer la documentation aux processus de développement" href="tech-writing-process/integrating-documentation-into-development/" description="Traitez la documentation comme du code : même cadence de livraison, même contrôle de versions, même processus de revue." />
   <LinkCard title="Git : du fichier au contenu" href="tech-writing-process/git-from-file-to-content/" description="Git stocke des blobs de contenu, pas des noms de fichiers - comprendre ce modèle simplifie considérablement la gestion des branches et des diffs documentaires." />
-  <LinkCard title="Voir les 19 articles →" href="tech-writing-process/" description="Formats source, référentiels, gestion de versions, traduction, livraison, et plus encore." />
 </CardGrid>
 
+<p class="section-more not-content">
+  <a href="tech-writing-process/" class="section-more-link">
+    Voir les 19 articles du processus <span class="arrow" aria-hidden="true">&rarr;</span>
+  </a>
+</p>
+
 ## Format structuré DITA XML
+
+<p class="section-lead">
+  Comprendre les différences fondamentales entre formats structurés et non structurés &mdash; rédaction par sujets, source unique et modularité sans enfermement propriétaire.
+</p>
 
 <CardGrid>
   <LinkCard title="Cas concret : documentation de NuFirewall" href="formats/nufirewall-case-study/" description="La presse a cité la documentation comme un atout produit, pas un supplément. Un regard détaillé sur les techniques DITA XML qui l'ont rendu possible." />
   <LinkCard title="Formats structurés et non structurés" href="formats/structured-vs-unstructured-formats/" description="Les trois types de topics DITA - concept, tâche, référence - imposent une structure qui rend le contenu réutilisable, traduisible et cohérent." />
   <LinkCard title="Du document à la base documentaire modulaire" href="formats/modular-documentation/" description="Remplacez les manuels monolithiques par des modules de topics réutilisables : traductions moins coûteuses, revues parallèles, plusieurs formats de sortie à partir d'une seule source." />
-  <LinkCard title="Voir les 5 articles →" href="formats/" description="Formats structurés, cas d'usage DITA XML et compromis d'architecture documentaire." />
 </CardGrid>
 
+<p class="section-more not-content">
+  <a href="formats/" class="section-more-link">
+    Voir les 5 articles sur les formats <span class="arrow" aria-hidden="true">&rarr;</span>
+  </a>
+</p>
+
 ## L'argumentaire économique de la documentation structurée
+
+<p class="section-lead">
+  Pourquoi l'architecture documentaire compte pour l'organisation &mdash; modèles de maturité, coûts de maintenance à long terme et rentabilité de la communication technique.
+</p>
 
 <CardGrid>
   <LinkCard title="De la rédaction à la communication technique" href="costs/copywriting-to-technical-communication/" description="La communication technique commence avant la vente - pourquoi ce rôle englobe le marketing, le journalisme et la documentation produit." />
   <LinkCard title="Les trois niveaux de la documentation technique" href="costs/three-levels-of-documentation/" description="Un modèle de maturité en trois niveaux - friche, documentation par sujets, DITA structuré - pour situer votre organisation et estimer ce que représente le niveau suivant." />
   <LinkCard title="Formats et outils" href="costs/formats-and-tools/" description="Choisissez votre format source avant votre outil - le format détermine l'enfermement propriétaire, les possibilités d'automatisation et les coûts à long terme." />
-  <LinkCard title="Voir les 5 articles →" href="costs/" description="Principe KISS, index PDF et l'argumentaire économique de la documentation structurée." />
 </CardGrid>
 
+<p class="section-more not-content">
+  <a href="costs/" class="section-more-link">
+    Voir les 5 articles sur l'argumentaire économique <span class="arrow" aria-hidden="true">&rarr;</span>
+  </a>
+</p>
+
 ## Didacticiels
+
+<p class="section-lead">
+  Guides pratiques de mise en œuvre et d'outillage &mdash; pas-à-pas pour DITA-OT, XSL-FO, Sphinx, expressions régulières en Python et scripts d'automatisation.
+</p>
 
 <CardGrid>
   <LinkCard title="Didacticiels DITA XML et XSL-FO" href="tutorials/dita-xml-xsl-fo-tutorials/" description="Mettez en place la chaîne de publication DITA XML vers PDF avec XSL-FO - de la rédaction des sources à la sortie mise en page, étape par étape." />
   <LinkCard title="Texte conditionnel avec Sphinx" href="tutorials/conditional-text-sphinx-rest/" description="Générer des variantes de documents à partir des mêmes sources ReST avec le texte conditionnel de Sphinx." />
   <LinkCard title="Expressions régulières en Python" href="tutorials/python-regular-expressions/" description="La bibliothèque d'expressions régulières de Python aide à manipuler du texte, notamment si vous n'êtes pas familier avec sed ou awk." />
-  <LinkCard title="Voir les 11 articles →" href="tutorials/" description="Templates Jinja, automatisation SQL, sed et chaînes d'outils de documentation." />
 </CardGrid>
+
+<p class="section-more not-content">
+  <a href="tutorials/" class="section-more-link">
+    Voir les 11 didacticiels <span class="arrow" aria-hidden="true">&rarr;</span>
+  </a>
+</p>
+
+<BrowseAll lang="fr" />
+
