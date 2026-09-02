@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
+import { formatTagDisplay, tagSlug } from "@/utils/all";
 
 function readingTime(body: string): number {
   const text = body
@@ -21,8 +22,31 @@ const publishedBlogEntries = await getCollection("blog", ({ data }) => {
 
 publishedBlogEntries.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
 
+// Featured: 3 most recent articles
 const featured = publishedBlogEntries.slice(0, 3);
 const rest = publishedBlogEntries.slice(3);
+
+// Group remaining articles by publication year for editorial information scent
+const articlesByYear = rest.reduce((acc, post) => {
+  const year = post.data.publishDate.getFullYear().toString();
+  if (!acc[year]) acc[year] = [];
+  acc[year].push(post);
+  return acc;
+}, {} as Record<string, typeof rest>);
+const years = Object.keys(articlesByYear).sort((a, b) => Number(b) - Number(a));
+
+// Dynamic key topics for restrained IA strip between featured and archive
+const tagCounts = new Map<string, number>();
+for (const post of publishedBlogEntries) {
+  for (const tag of post.data.tags ?? []) {
+    const slug = tagSlug(tag);
+    tagCounts.set(slug, (tagCounts.get(slug) ?? 0) + 1);
+  }
+}
+const topTopics = [...tagCounts.entries()]
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 6)
+  .map(([slug]) => ({ slug, label: formatTagDisplay(slug) }));
 ---
 
 <Layout
@@ -51,69 +75,197 @@ const rest = publishedBlogEntries.slice(3);
     ])} />
   </Fragment>
 
-  <Container>
-    <!-- Hero -->
-    <div class="mt-16 mb-14 max-w-2xl">
-      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight leading-tight">
-        Markup and Meaning
-      </h1>
-      <p class="mt-4 text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-        Articles on docs-as-code, structured authoring, and AI-assisted documentation by Olivier Carrère — a technical writer specialising in DITA XML, Markdown, and YAML.
-        Practical writing on how structure, automation, and the right tools make documentation scale.
-      </p>
-    </div>
+  <Container class="max-w-5xl">
+    <!-- Masthead / Hero -->
+    <header class="pt-12 sm:pt-16 pb-12 sm:pb-16 border-b border-slate-200/80 dark:border-slate-800">
+      <div class="max-w-2xl">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-slate-50 leading-[1.08]">
+          Markup and Meaning
+        </h1>
+        <p class="mt-5 text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+          Practical writing on docs-as-code, structured authoring, and AI-assisted documentation &mdash; how the right structure and tooling make docs scale without losing clarity. By Olivier Carrère, a technical writer working in DITA XML, Markdown, and YAML.
+        </p>
+      </div>
+    </header>
 
-    <!-- Featured: 3 most recent as cards -->
-    <section>
-      <h2 class="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-5">Latest</h2>
-      <div class="grid gap-6 sm:grid-cols-3">
+    <!-- Featured / Latest Stories: 3-column editorial grid -->
+    <section class="pt-10 sm:pt-12" aria-labelledby="featured-heading">
+      <div class="flex items-baseline justify-between mb-6 pb-2 border-b border-slate-200/60 dark:border-slate-800">
+        <h2 id="featured-heading" class="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
+          Latest
+        </h2>
+        <span class="text-xs text-slate-400 dark:text-slate-500 font-mono">01 &mdash; 03</span>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {featured.map((post, index) => (
-          <a href={`/blog/${post.slug}`} class="group flex flex-col rounded-xl border border-gray-100 dark:border-slate-700 overflow-hidden hover:border-blue-200 dark:hover:border-blue-700 hover:shadow-md transition">
-            <img
-              src={post.data.image.src}
-              alt={post.data.image.alt}
-              class="w-full h-44 object-cover"
-              loading={index === 0 ? "eager" : "lazy"}
-              decoding={index === 0 ? "sync" : "async"}
-            />
-            <div class="flex flex-col flex-1 p-4 bg-white dark:bg-slate-800">
-              <span class="text-xs font-medium text-blue-600 uppercase tracking-wider mb-1">{post.data.category}</span>
-              <h3 class="font-semibold text-gray-900 dark:text-slate-100 leading-snug group-hover:text-blue-700 dark:group-hover:text-blue-400 transition mb-2">
-                {post.data.title}
+          <article class="group flex flex-col h-full rounded-lg border border-slate-200/70 dark:border-slate-800 bg-white dark:bg-slate-900/40 p-4 transition-colors hover:border-slate-300 dark:hover:border-slate-700">
+            {post.data.image?.src && (
+              <a
+                href={`/blog/${post.slug}`}
+                tabindex="-1"
+                aria-hidden="true"
+                class="block aspect-[16/10] overflow-hidden rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-800/80 mb-4"
+              >
+                <img
+                  src={post.data.image.src}
+                  alt=""
+                  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                  loading={index === 0 ? "eager" : "lazy"}
+                  decoding={index === 0 ? "sync" : "async"}
+                />
+              </a>
+            )}
+
+            <div class="flex flex-col flex-1">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-1.5 block">
+                {post.data.category}
+              </span>
+
+              <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 leading-snug tracking-tight mb-2">
+                <a
+                  href={`/blog/${post.slug}`}
+                  class="group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:outline-none rounded-sm"
+                >
+                  {post.data.title}
+                </a>
               </h3>
-              <p class="text-sm text-gray-500 dark:text-slate-400 line-clamp-2 flex-1">{post.data.snippet}</p>
-              <div class="flex items-center gap-2 mt-3">
-                <time class="text-xs text-gray-500 dark:text-slate-500" datetime={post.data.publishDate.toISOString()}>
+
+              <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-3 leading-relaxed mb-4 flex-1">
+                {post.data.snippet}
+              </p>
+
+              <div class="flex items-center gap-2 pt-3 mt-auto border-t border-slate-100 dark:border-slate-800/80 text-xs text-slate-500 dark:text-slate-400">
+                <time datetime={post.data.publishDate.toISOString()}>
                   {post.data.publishDate.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
                 </time>
-                <span class="text-gray-300 dark:text-slate-600">·</span>
-                <span class="text-xs text-gray-500 dark:text-slate-500">{readingTime(post.body)} min read</span>
+                <span aria-hidden="true" class="text-slate-300 dark:text-slate-600">&middot;</span>
+                <span>{readingTime(post.body)} min read</span>
               </div>
             </div>
-          </a>
+          </article>
         ))}
       </div>
     </section>
 
-    <!-- Compact list for remaining posts -->
-    {rest.length > 0 && (
-      <section class="mt-14 mb-16">
-        <h2 class="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-4">More articles</h2>
-        <ul class="divide-y divide-gray-100 dark:divide-slate-800">
-          {rest.map((post) => (
-            <li>
-              <a href={`/blog/${post.slug}`} class="group flex items-baseline justify-between gap-4 py-3 hover:text-blue-700 dark:hover:text-blue-400 transition">
-                <span class="font-medium text-gray-800 dark:text-slate-200 group-hover:text-blue-700 dark:group-hover:text-blue-400 leading-snug">{post.data.title}</span>
-                <span class="text-xs text-gray-500 dark:text-slate-500 shrink-0 flex gap-2">
-                  <time datetime={post.data.publishDate.toISOString()}>
-                    {post.data.publishDate.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
-                  </time>
-                  <span>· {readingTime(post.body)} min</span>
-                </span>
+    <!-- Restrained Topic Navigation Strip (Editorial Information Scent) -->
+    {topTopics.length > 0 && (
+      <section class="my-12 sm:my-16 py-5 border-y border-slate-200/70 dark:border-slate-800" aria-label="Key Topics">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div class="flex items-center gap-2.5">
+            <span class="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 shrink-0">
+              Key Topics
+            </span>
+            <span class="hidden sm:inline text-slate-300 dark:text-slate-700" aria-hidden="true">&vert;</span>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2">
+            {topTopics.map((topic) => (
+              <a
+                href={`/tag/${topic.slug}`}
+                class="text-xs font-medium px-2.5 py-1 rounded border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-blue-400 hover:text-blue-600 dark:hover:border-blue-500 dark:hover:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:outline-none"
+              >
+                {topic.label}
               </a>
-            </li>
+            ))}
+            <a
+              href="/topics"
+              class="text-xs font-semibold text-blue-600 dark:text-blue-400 hover:underline px-2 py-1 inline-flex items-center gap-1 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:outline-none rounded"
+            >
+              All topics &rarr;
+            </a>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- More Articles / Archive Section -->
+    {rest.length > 0 && (
+      <section class="mb-20" aria-labelledby="archive-heading">
+        <div class="flex items-baseline justify-between mb-8 pb-2 border-b border-slate-200/60 dark:border-slate-800">
+          <div>
+            <h2 id="archive-heading" class="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
+              More Articles
+            </h2>
+            <p class="text-xs text-slate-400 dark:text-slate-500 mt-0.5">
+              Chronological archive of technical documentation essays
+            </p>
+          </div>
+          <a
+            href="/blog"
+            class="text-xs font-semibold text-blue-600 dark:text-blue-400 hover:underline focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:outline-none rounded"
+          >
+            View full directory &rarr;
+          </a>
+        </div>
+
+        <div class="space-y-10">
+          {years.map((year) => (
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs font-mono font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+                  {year}
+                </span>
+                <div class="h-px flex-1 bg-slate-100 dark:bg-slate-800" aria-hidden="true" />
+              </div>
+
+              <ul class="divide-y divide-slate-100 dark:divide-slate-800/70" role="list">
+                {articlesByYear[year].map((post) => (
+                  <li>
+                    <a
+                      href={`/blog/${post.slug}`}
+                      class="group flex items-center justify-between gap-4 py-3.5 -mx-3 px-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:outline-none"
+                    >
+                      <div class="flex items-center gap-3.5 min-w-0 flex-1">
+                        {post.data.image?.src && (
+                          <img
+                            src={post.data.image.src}
+                            alt=""
+                            width="80"
+                            height="52"
+                            class="w-16 h-11 sm:w-20 sm:h-13 object-cover rounded border border-slate-200/60 dark:border-slate-800 shrink-0 bg-slate-100 dark:bg-slate-800"
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        )}
+                        <div class="min-w-0 flex-1">
+                          <span class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-0.5 block">
+                            {post.data.category}
+                          </span>
+                          <h3 class="text-sm sm:text-base font-medium text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors leading-snug">
+                            {post.data.title}
+                          </h3>
+                        </div>
+                      </div>
+
+                      <div class="shrink-0 text-right pl-3 text-xs text-slate-500 dark:text-slate-400 tabular-nums">
+                        <time datetime={post.data.publishDate.toISOString()} class="block">
+                          {post.data.publishDate.toLocaleDateString("en-US", { month: "short", day: "numeric" })}
+                        </time>
+                        <span class="block text-[11px] text-slate-400 dark:text-slate-500">
+                          {readingTime(post.body)} min
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
-        </ul>
+        </div>
+
+        <!-- Archive Bottom Affordance -->
+        <div class="mt-10 pt-6 border-t border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
+          <span>{publishedBlogEntries.length} published essays in total</span>
+          <div class="flex items-center gap-5">
+            <a href="/topics" class="font-semibold text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:outline-none rounded">
+              Browse Topics &rarr;
+            </a>
+            <a href="/blog" class="font-semibold text-blue-600 dark:text-blue-400 hover:underline focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:outline-none rounded">
+              Full Archive &rarr;
+            </a>
+          </div>
+        </div>
       </section>
     )}
   </Container>

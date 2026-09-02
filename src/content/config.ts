@@ -10,7 +10,7 @@ const blogCollection = defineCollection({
     image: z.object({
       src: z.string(),
       alt: z.string(),
-    }),
+    }).optional(),
     publishDate: z.string().transform(str => new Date(str)),
     author: z.string().default('Olivier Carrère'),
     category: z.string(),

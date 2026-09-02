@@ -1,21 +1,88 @@
 ---
+const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
+const isHome = pathname === "/";
+const isTopics = pathname.startsWith("/topics") || pathname.startsWith("/tag");
+const isAbout = pathname.startsWith("/about");
+const isContact = pathname.startsWith("/contact");
+const isSearch = pathname.startsWith("/search");
 ---
 
 <nav id="site-nav" class="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-slate-800 transition-shadow duration-200">
   <div class="max-w-5xl mx-auto px-4 flex items-center justify-between h-14">
-    <a href="/" class="font-bold text-slate-800 dark:text-slate-100 text-lg hover:text-slate-600 dark:hover:text-slate-300 transition">
+    <a href="/" class="font-bold text-slate-800 dark:text-slate-100 text-lg hover:text-slate-600 dark:hover:text-slate-300 transition focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:outline-none rounded">
       Technical<span class="font-normal text-slate-500 dark:text-slate-400"> Writing</span>
     </a>
 
     <!-- Desktop nav -->
     <ul class="hidden sm:flex items-center gap-1 text-sm font-medium">
-      <li><a href="/" class="px-3 py-1.5 rounded-md text-gray-600 dark:text-slate-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-slate-800 transition">Home</a></li>
-      <li><a href="/topics" class="px-3 py-1.5 rounded-md text-gray-600 dark:text-slate-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-slate-800 transition">Topics</a></li>
-      <li><a href="/about" class="px-3 py-1.5 rounded-md text-gray-600 dark:text-slate-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-slate-800 transition">About</a></li>
-      <li><a href="/contact" class="px-3 py-1.5 rounded-md text-gray-600 dark:text-slate-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-slate-800 transition">Contact</a></li>
-      <li><a href="/search" class="px-3 py-1.5 rounded-md text-gray-600 dark:text-slate-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-slate-800 transition">Search</a></li>
       <li>
-        <button id="theme-toggle" aria-label="Toggle dark mode" class="p-2 rounded-md text-gray-500 dark:text-slate-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-slate-800 transition">
+        <a
+          href="/"
+          aria-current={isHome ? "page" : undefined}
+          class:list={[
+            "px-3 py-1.5 rounded-md transition focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:outline-none",
+            isHome
+              ? "font-semibold text-slate-950 dark:text-white bg-slate-100 dark:bg-slate-800"
+              : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800"
+          ]}
+        >Home</a>
+      </li>
+      <li>
+        <a
+          href="/topics"
+          aria-current={isTopics ? "page" : undefined}
+          class:list={[
+            "px-3 py-1.5 rounded-md transition focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:outline-none",
+            isTopics
+              ? "font-semibold text-slate-950 dark:text-white bg-slate-100 dark:bg-slate-800"
+              : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800"
+          ]}
+        >Topics</a>
+      </li>
+      <li>
+        <a
+          href="/about"
+          aria-current={isAbout ? "page" : undefined}
+          class:list={[
+            "px-3 py-1.5 rounded-md transition focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:outline-none",
+            isAbout
+              ? "font-semibold text-slate-950 dark:text-white bg-slate-100 dark:bg-slate-800"
+              : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800"
+          ]}
+        >About</a>
+      </li>
+      <li>
+        <a
+          href="/contact"
+          aria-current={isContact ? "page" : undefined}
+          class:list={[
+            "px-3 py-1.5 rounded-md transition focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:outline-none",
+            isContact
+              ? "font-semibold text-slate-950 dark:text-white bg-slate-100 dark:bg-slate-800"
+              : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800"
+          ]}
+        >Contact</a>
+      </li>
+      <li>
+        <a
+          href="/search"
+          aria-current={isSearch ? "page" : undefined}
+          class:list={[
+            "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md transition focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:outline-none",
+            isSearch
+              ? "font-semibold text-slate-950 dark:text-white bg-slate-100 dark:bg-slate-800"
+              : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800"
+          ]}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-slate-400 dark:text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="8" />
+            <path stroke-linecap="round" d="m21 21-4.3-4.3" />
+          </svg>
+          Search
+        </a>
+      </li>
+      <li>
+        <button id="theme-toggle" aria-label="Toggle dark mode" class="p-2 rounded-md text-gray-500 dark:text-slate-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-slate-800 transition focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:outline-none">
           <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
           </svg>
@@ -25,16 +92,21 @@
         </button>
       </li>
       <li>
-        <a href="https://docs.redaction-technique.org/" target="_blank" rel="noopener noreferrer"
-          class="ml-1 px-3 py-1.5 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition text-sm">
-          Smart Docs →
+        <a
+          href="https://docs.redaction-technique.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="ml-1 px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:border-blue-400 hover:text-blue-600 dark:hover:border-blue-500 dark:hover:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition text-xs font-medium focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:outline-none"
+          title="Read the companion documentation handbook"
+        >
+          Smart Docs &rarr;
         </a>
       </li>
     </ul>
 
     <!-- Mobile: dark toggle + hamburger -->
     <div class="flex sm:hidden items-center gap-1">
-      <button id="theme-toggle-mobile" aria-label="Toggle dark mode" class="p-2 text-gray-500 dark:text-slate-400 hover:text-gray-900 dark:hover:text-white">
+      <button id="theme-toggle-mobile" aria-label="Toggle dark mode" class="p-2 text-gray-500 dark:text-slate-400 hover:text-gray-900 dark:hover:text-white focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:outline-none rounded">
         <svg id="icon-moon-mobile" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
         </svg>
@@ -42,7 +114,7 @@
           <circle cx="12" cy="12" r="5"/><path stroke-linecap="round" d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
         </svg>
       </button>
-      <button id="nav-toggle" class="p-2 text-gray-600 dark:text-slate-300 hover:text-gray-900 dark:hover:text-white" aria-label="Toggle menu" aria-expanded="false">
+      <button id="nav-toggle" class="p-2 text-gray-600 dark:text-slate-300 hover:text-gray-900 dark:hover:text-white focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:outline-none rounded" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
         <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
@@ -56,15 +128,74 @@
   <!-- Mobile menu -->
   <div id="mobile-menu" class="hidden sm:hidden border-t border-gray-100 dark:border-slate-800 bg-white dark:bg-slate-900">
     <ul class="flex flex-col px-4 py-3 gap-1 text-sm font-medium">
-      <li><a href="/" class="block px-3 py-2 rounded-md text-gray-700 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-800">Home</a></li>
-      <li><a href="/topics" class="block px-3 py-2 rounded-md text-gray-700 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-800">Topics</a></li>
-      <li><a href="/about" class="block px-3 py-2 rounded-md text-gray-700 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-800">About</a></li>
-      <li><a href="/contact" class="block px-3 py-2 rounded-md text-gray-700 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-800">Contact</a></li>
-      <li><a href="/search" class="block px-3 py-2 rounded-md text-gray-700 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-800">Search</a></li>
       <li>
-        <a href="https://docs.redaction-technique.org/" target="_blank" rel="noopener noreferrer"
-          class="block px-3 py-2 rounded-md text-blue-600 hover:bg-blue-50 dark:hover:bg-slate-800">
-          Smart Docs →
+        <a
+          href="/"
+          aria-current={isHome ? "page" : undefined}
+          class:list={[
+            "block px-3 py-2 rounded-md transition",
+            isHome
+              ? "font-semibold text-slate-950 dark:text-white bg-slate-100 dark:bg-slate-800"
+              : "text-gray-700 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-800"
+          ]}
+        >Home</a>
+      </li>
+      <li>
+        <a
+          href="/topics"
+          aria-current={isTopics ? "page" : undefined}
+          class:list={[
+            "block px-3 py-2 rounded-md transition",
+            isTopics
+              ? "font-semibold text-slate-950 dark:text-white bg-slate-100 dark:bg-slate-800"
+              : "text-gray-700 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-800"
+          ]}
+        >Topics</a>
+      </li>
+      <li>
+        <a
+          href="/about"
+          aria-current={isAbout ? "page" : undefined}
+          class:list={[
+            "block px-3 py-2 rounded-md transition",
+            isAbout
+              ? "font-semibold text-slate-950 dark:text-white bg-slate-100 dark:bg-slate-800"
+              : "text-gray-700 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-800"
+          ]}
+        >About</a>
+      </li>
+      <li>
+        <a
+          href="/contact"
+          aria-current={isContact ? "page" : undefined}
+          class:list={[
+            "block px-3 py-2 rounded-md transition",
+            isContact
+              ? "font-semibold text-slate-950 dark:text-white bg-slate-100 dark:bg-slate-800"
+              : "text-gray-700 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-800"
+          ]}
+        >Contact</a>
+      </li>
+      <li>
+        <a
+          href="/search"
+          aria-current={isSearch ? "page" : undefined}
+          class:list={[
+            "block px-3 py-2 rounded-md transition",
+            isSearch
+              ? "font-semibold text-slate-950 dark:text-white bg-slate-100 dark:bg-slate-800"
+              : "text-gray-700 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-800"
+          ]}
+        >Search</a>
+      </li>
+      <li>
+        <a
+          href="https://docs.redaction-technique.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block px-3 py-2 rounded-md text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-slate-800 font-medium"
+        >
+          Smart Docs &rarr;
         </a>
       </li>
     </ul>

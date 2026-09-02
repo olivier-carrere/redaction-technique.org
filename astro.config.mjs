@@ -4,7 +4,7 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
 import yaml from "@rollup/plugin-yaml";
-import vercel from "@astrojs/vercel/serverless";
+import vercel from "@astrojs/vercel";
 import pagefind from "astro-pagefind";
 import { visit } from "unist-util-visit";
 
