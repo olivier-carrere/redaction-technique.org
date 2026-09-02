@@ -168,6 +168,7 @@ export default defineConfig({
       components: {
         Head: './src/components/Head.astro',
         PageTitle: './src/components/PageTitle.astro',
+        Pagination: './src/components/Pagination.astro',
       },
       lastUpdated: true,
       defaultLocale: 'en',
