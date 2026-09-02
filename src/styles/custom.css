@@ -216,7 +216,7 @@
 
 /* 1. Central Article Visual Priority & Layout */
 :root {
-  --sl-content-width: 45rem; /* ~720px optimal reading measure */
+  --sl-content-width: 48rem; /* ~768px reading column with room for wider diagrams/tables */
   --sl-line-height: 1.68;
 }
 
@@ -276,43 +276,207 @@
   padding-top: clamp(1.5rem, 2.5vw, 2.25rem) !important;
 }
 
-/* 3. Body Typography & Rhythm */
+/* 3. Body Typography & Prose Reading Rhythm */
 .sl-markdown-content {
   font-size: var(--sl-text-base);
   line-height: 1.68;
   color: var(--sl-color-gray-2);
 }
 
-.sl-markdown-content p {
-  line-height: 1.68;
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
+/* Differentiated Reading Width: Narrow comfortable measure for prose */
+.sl-markdown-content > p,
+.sl-markdown-content > ul,
+.sl-markdown-content > ol,
+.sl-markdown-content > blockquote {
+  max-width: 43rem;
 }
 
+.sl-markdown-content p {
+  line-height: 1.68;
+  margin-top: 1.15rem;
+  margin-bottom: 1.15rem;
+}
+
+/* Section Landmarks: Generous space before headings, compact space after */
 .sl-markdown-content h2:not(:where(.not-content *)) {
-  font-size: clamp(1.65rem, calc(1.3rem + 0.9vw), 2.125rem) !important;
+  font-size: clamp(1.65rem, calc(1.3rem + 1vw), 2.15rem) !important;
   font-weight: 700 !important;
   letter-spacing: -0.015em !important;
-  margin-top: 2.75rem !important;
+  margin-top: clamp(3.25rem, 6vw, 4.5rem) !important;
   margin-bottom: 0.85rem !important;
-  line-height: 1.25 !important;
+  line-height: 1.22 !important;
   color: var(--sl-color-white) !important;
+  border-top: 1px solid var(--sl-color-hairline) !important;
+  padding-top: 1.75rem !important;
+  max-width: 46rem;
+}
+
+/* Don't render top border on first H2 in article body */
+.sl-markdown-content > h2:first-of-type,
+.sl-markdown-content > :first-child h2:not(:where(.not-content *)) {
+  border-top: none !important;
+  padding-top: 0 !important;
+  margin-top: 2.25rem !important;
 }
 
 .sl-markdown-content h3:not(:where(.not-content *)) {
-  font-size: clamp(1.25rem, calc(1.1rem + 0.4vw), 1.5rem) !important;
+  font-size: clamp(1.25rem, calc(1.1rem + 0.5vw), 1.45rem) !important;
   font-weight: 600 !important;
   letter-spacing: -0.01em !important;
-  margin-top: 2rem !important;
+  margin-top: clamp(2.25rem, 4.5vw, 3rem) !important;
   margin-bottom: 0.65rem !important;
   line-height: 1.3 !important;
   color: var(--sl-color-white) !important;
+  max-width: 46rem;
+}
+
+.sl-markdown-content h4:not(:where(.not-content *)) {
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  margin-top: 1.75rem !important;
+  margin-bottom: 0.5rem !important;
+  color: var(--sl-color-gray-1) !important;
+  max-width: 46rem;
+}
+
+/* Bullet list rhythm */
+.sl-markdown-content ul:not(:where(.not-content *)) {
+  padding-inline-start: 1.25rem;
+  margin-block: 1rem 1.25rem;
 }
 
 .sl-markdown-content li:not(:where(.not-content *)) {
-  margin-top: 0.4rem;
-  margin-bottom: 0.4rem;
+  margin-top: 0.35rem;
+  margin-bottom: 0.35rem;
   line-height: 1.65;
+}
+
+/* Step-by-Step Procedure & Numbered Lists */
+.sl-markdown-content ol:not(:where(.not-content *)) {
+  padding-inline-start: 1.5rem !important;
+  margin-block: 1.25rem 1.75rem !important;
+}
+
+.sl-markdown-content ol:not(:where(.not-content *)) > li {
+  margin-block: 0.65rem !important;
+  line-height: 1.65 !important;
+  padding-inline-start: 0.25rem !important;
+}
+
+.sl-markdown-content ol:not(:where(.not-content *)) > li::marker {
+  font-weight: 600 !important;
+  color: var(--sl-color-accent-high) !important;
+}
+
+/* Inline Code Pills */
+.sl-markdown-content :not(pre) > code {
+  font-size: 0.85em !important;
+  padding: 0.15em 0.35em !important;
+  border-radius: 0.25rem !important;
+  background-color: var(--sl-color-gray-6) !important;
+  border: 1px solid var(--sl-color-hairline) !important;
+  color: var(--sl-color-accent-high) !important;
+  font-family: var(--sl-font-mono) !important;
+}
+
+/* Inline Links */
+.sl-markdown-content a:not(:where(.not-content *, .sl-anchor-link, [rel~='author'], .pagination-card)) {
+  color: var(--sl-color-accent-high);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(92, 167, 228, 0.4);
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.sl-markdown-content a:not(:where(.not-content *, .sl-anchor-link, [rel~='author'], .pagination-card)):hover {
+  color: var(--sl-color-white);
+  text-decoration-color: var(--sl-color-accent-high);
+}
+
+/* Bold Technical Concepts */
+.sl-markdown-content strong:not(:where(.not-content *)) {
+  color: var(--sl-color-white);
+  font-weight: 600;
+}
+
+/* Diagrams and Technical Illustrations */
+.sl-markdown-content p:has(> img) {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  margin-block: 2.25rem 2.5rem !important;
+  padding: 1.25rem 1.5rem !important;
+  background-color: rgba(255, 255, 255, 0.015) !important;
+  border: 1px solid var(--sl-color-hairline) !important;
+  border-radius: 0.5rem !important;
+  max-width: 100% !important;
+}
+
+.sl-markdown-content p > img {
+  display: block !important;
+  max-width: 100% !important;
+  height: auto !important;
+  margin-inline: auto !important;
+}
+
+.sl-markdown-content p:has(> img) > strong {
+  display: block !important;
+  font-size: var(--sl-text-xs) !important;
+  font-weight: 500 !important;
+  color: var(--sl-color-gray-3) !important;
+  margin-top: 1rem !important;
+  letter-spacing: 0.02em !important;
+  padding-top: 0.5rem !important;
+  border-top: 1px dashed var(--sl-color-hairline) !important;
+  width: 100% !important;
+  max-width: 32rem !important;
+}
+
+.sl-markdown-content p:has(> img) > strong::before {
+  content: 'Figure — ';
+  font-weight: 600 !important;
+  color: var(--sl-color-gray-2) !important;
+}
+
+:lang(fr) .sl-markdown-content p:has(> img) > strong::before {
+  content: 'Figure : ';
+  font-weight: 600 !important;
+  color: var(--sl-color-gray-2) !important;
+}
+
+/* Restrained Callouts / Asides */
+.sl-markdown-content .starlight-aside {
+  margin-block: 2rem 2.5rem !important;
+  padding: 1.15rem 1.35rem !important;
+  border-radius: 0.375rem !important;
+  border-inline-start-width: 3px !important;
+  box-shadow: none !important;
+  max-width: 100% !important;
+}
+
+.sl-markdown-content .starlight-aside__title {
+  font-size: var(--sl-text-xs) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  margin-bottom: 0.5rem !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.45rem !important;
+}
+
+.sl-markdown-content .starlight-aside__content p {
+  font-size: var(--sl-text-sm) !important;
+  line-height: 1.62 !important;
+  margin-block: 0.35rem !important;
+  max-width: 100% !important;
+}
+
+/* Code Blocks UX */
+.sl-markdown-content .expressive-code {
+  margin-block: 1.75rem 2.25rem !important;
+  max-width: 100% !important;
 }
 
 /* Heading anchor links */
@@ -427,6 +591,32 @@ starlight-toc nav ul a[aria-current='true'] {
   color: var(--sl-color-accent-high) !important;
   font-weight: 600 !important;
   border-inline-start-color: var(--sl-color-accent) !important;
+}
+
+/* TOC Nested Hierarchy for Sub-Sections (H3) */
+starlight-toc nav ul ul {
+  padding-inline-start: 0.75rem !important;
+  border-inline-start: 1px solid var(--sl-color-hairline) !important;
+  margin-top: 0.2rem !important;
+  margin-bottom: 0.35rem !important;
+  margin-inline-start: 0.35rem !important;
+}
+
+starlight-toc nav ul ul a {
+  font-size: 0.75rem !important;
+  padding-block: 0.2rem !important;
+  color: var(--sl-color-gray-4) !important;
+  border-inline-start: none !important;
+  padding-inline-start: 0.25rem !important;
+}
+
+starlight-toc nav ul ul a:hover {
+  color: var(--sl-color-white) !important;
+}
+
+starlight-toc nav ul ul a[aria-current='true'] {
+  color: var(--sl-color-accent-high) !important;
+  font-weight: 600 !important;
 }
 
 /* 6. Related Articles Secondary Navigation */
