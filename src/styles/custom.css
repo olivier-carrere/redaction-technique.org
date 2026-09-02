@@ -504,24 +504,28 @@ starlight-toc nav ul a[aria-current='true'] {
   outline-offset: 2px;
 }
 
-/* 7. Table UX Enhancements */
+/* 7. Universal Table UX Enhancements (Applied across all documentation pages) */
 .sl-markdown-content table:not(:where(.not-content *)) {
   display: table !important;
   width: 100% !important;
   max-width: 100% !important;
   border-collapse: collapse !important;
   border-spacing: 0 !important;
-  margin-block: 1.75rem 2rem !important;
+  margin-block: 1.75rem 2.25rem !important;
   font-size: var(--sl-text-sm) !important;
   line-height: 1.6 !important;
+  border: 1px solid var(--sl-color-hairline) !important;
+  border-radius: 0.375rem !important;
+  overflow: hidden !important;
 }
 
 .sl-markdown-content thead:not(:where(.not-content *)) {
+  background-color: var(--sl-color-gray-6) !important;
   border-bottom: 2px solid var(--sl-color-gray-4) !important;
 }
 
 .sl-markdown-content th:not(:where(.not-content *)) {
-  padding: 0.65rem 0.85rem !important;
+  padding: 0.75rem 1rem !important;
   font-size: var(--sl-text-xs) !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
@@ -529,41 +533,50 @@ starlight-toc nav ul a[aria-current='true'] {
   color: var(--sl-color-white) !important;
   vertical-align: bottom !important;
   border-bottom: 2px solid var(--sl-color-gray-4) !important;
-  background-color: var(--sl-color-gray-6) !important;
+  text-align: left !important;
 }
 
 .sl-markdown-content td:not(:where(.not-content *)) {
-  padding: 0.75rem 0.85rem !important;
+  padding: 0.8rem 1rem !important;
   border-bottom: 1px solid var(--sl-color-hairline) !important;
   vertical-align: top !important;
   color: var(--sl-color-gray-2) !important;
-  line-height: 1.55 !important;
+  line-height: 1.6 !important;
 }
 
-.sl-markdown-content tr:last-child td:not(:where(.not-content *)) {
-  border-bottom: 1px solid var(--sl-color-hairline) !important;
+.sl-markdown-content tbody tr:last-child td:not(:where(.not-content *)) {
+  border-bottom: none !important;
 }
 
-.sl-markdown-content tr:hover td:not(:where(.not-content *)) {
-  background-color: rgba(255, 255, 255, 0.02) !important;
+.sl-markdown-content tbody tr:nth-child(even) td:not(:where(.not-content *)) {
+  background-color: rgba(255, 255, 255, 0.015) !important;
 }
 
+.sl-markdown-content tbody tr:hover td:not(:where(.not-content *)) {
+  background-color: rgba(255, 255, 255, 0.035) !important;
+}
+
+/* Key/Element Column: semibold contrast with natural wrapping */
 .sl-markdown-content :is(th, td):first-child:not(:where(.not-content *)) {
-  padding-inline-start: 0.85rem !important;
+  padding-inline-start: 1rem !important;
   color: var(--sl-color-white) !important;
-  font-weight: 500 !important;
-  white-space: nowrap !important;
+  font-weight: 600 !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
 }
 
 .sl-markdown-content :is(th, td):last-child:not(:where(.not-content *)) {
-  padding-inline-end: 0.85rem !important;
+  padding-inline-end: 1rem !important;
 }
 
-@media (max-width: 42rem) {
+/* Responsive table behavior on tablet/mobile */
+@media (max-width: 48rem) {
   .sl-markdown-content table:not(:where(.not-content *)) {
     display: block !important;
     overflow-x: auto !important;
     -webkit-overflow-scrolling: touch !important;
+    width: 100% !important;
+    border-radius: 0.375rem !important;
   }
 }
 
