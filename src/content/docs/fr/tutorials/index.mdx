@@ -1,21 +1,87 @@
 ---
 lastUpdated: false
+tableOfContents: false
+prev: false
+next: false
 title: "Didacticiels"
-description: "Générez, automatisez et gérez la documentation technique avec Python, Jinja, ReST, DITA XML et des conseils pratiques pour vos projets et Raspberry Pi."
+description: "Guides pratiques pour automatiser, rédiger et publier la documentation technique avec Python, Jinja, reStructuredText et DITA XML."
 ---
 import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
+Guides pratiques couvrant l’outillage documentaire, l’automatisation du single-sourcing, la rédaction structurée et les chaînes de publication multi-formats.
+
+## Rédaction structurée et publication multicanal
+
+Méthodes de filtrage, de profilage et de transformation de sources uniques vers de multiples livrables.
+
 <CardGrid>
-  <LinkCard title="Créer des documents différents à partir des mêmes sources via Jinja (méthode objet)" href="conditional-text-jinja-object-method" description="Définissez l’audience, la plateforme et la version comme des objets Python, puis laissez Jinja filtrer votre contenu à la compilation - plus propre que des flags à base de chaînes de caractères." />
-  <LinkCard title="Créer des documents différents à partir des mêmes sources via Jinja" href="conditional-text-jinja" description="Un script Python de preprocessing qui utilise des templates Jinja pour inclure ou supprimer des sections de contenu avant de passer les sources à votre générateur de documentation." />
-  <LinkCard title="Créer des documents différents à partir des mêmes sources ReST (texte conditionnel)" href="conditional-text-sphinx-rest" description="Générer des variantes de documents à partir des mêmes sources ReST avec le texte conditionnel de Sphinx." />
-  <LinkCard title="Didacticiels DITA XML et XSL-FO" href="dita-xml-xsl-fo-tutorials" description="Didacticiels pas à pas pour rédiger en DITA XML et générer des PDF avec des feuilles de style XSL-FO." />
-  <LinkCard title="Expressions régulières en Python" href="python-regular-expressions" description="La bibliothèque d’expressions régulières de Python aide à manipuler du texte, notamment si vous n’êtes pas familier avec sed ou awk." />
-  <LinkCard title="Approche technique de la rédaction" href="index" description="Face aux limites d’outils tels que FrameMaker ou Flare, j’ai souhaité comprendre ce qui se joue en arrière-plan et développer une maîtrise approfondie des mécanismes techniques." />
-  <LinkCard title="Insérer automatiquement des données dans un fichier DITA XML" href="auto-insert-data-dita-xml" description="Automatisez la génération de fichiers DITA XML avec Python en insérant des données produit dynamiques dans vos topics DITA." />
-  <LinkCard title="Insérer automatiquement des données dans un fichier reStructuredText" href="auto-insert-data-restructuredtext" description="Créez un template reStructuredText que Python renseigne en noms de produits et versions à la compilation - plus aucune mise à jour manuelle à chaque version." />
-  <LinkCard title="Insérer automatiquement des données SQL dans un fichier reStructuredText" href="auto-insert-sql-data-restructuredtext" description="Interrogez une base de données produit et injectez directement les résultats dans un fichier reStructuredText - gardez la documentation synchronisée avec la source de vérité." />
-  <LinkCard title="Mener un projet de bout en bout" href="project-end-to-end" description="Des milliers de photos dispersées sur des dizaines d'ordinateurs, un budget de zéro euro et une archive centralisée : un projet suivi de la prise en charge à la livraison." />
-  <LinkCard title="Le Raspberry Pi 3 en tant que plateforme de documentation" href="raspberry-pi-documentation-platform" description="Avec ses ressources modestes, un Raspberry Pi 3 suffit pour créer, gérer et générer une documentation en PDF, HTML ou EPUB." />
-  <LinkCard title="sed : modifiez votre texte sans ouvrir vos fichiers" href="sed-text-editing" description="Effectuez des recherches et remplacements ciblés dans des centaines de fichiers de documentation en une seule commande - comment sed gère les modifications de texte en masse sans ouvrir un seul fichier." />
+  <LinkCard
+    title="Didacticiels DITA XML et XSL-FO"
+    href="dita-xml-xsl-fo-tutorials"
+    description="Didacticiels pas à pas pour rédiger en DITA XML et générer des PDF avec des feuilles de style XSL-FO."
+  />
+  <LinkCard
+    title="Créer des documents différents à partir des mêmes sources via Jinja (méthode objet)"
+    href="conditional-text-jinja-object-method"
+    description="Définissez l’audience, la plateforme et la version comme des objets Python, puis laissez Jinja filtrer votre contenu à la compilation - plus propre que des flags à base de chaînes de caractères."
+  />
+  <LinkCard
+    title="Créer des documents différents à partir des mêmes sources via Jinja"
+    href="conditional-text-jinja"
+    description="Un script Python de preprocessing qui utilise des templates Jinja pour inclure ou supprimer des sections de contenu avant de passer les sources à votre générateur de documentation."
+  />
+  <LinkCard
+    title="Créer des documents différents à partir des mêmes sources ReST (texte conditionnel)"
+    href="conditional-text-sphinx-rest"
+    description="Générer des variantes de documents à partir des mêmes sources ReST avec le texte conditionnel de Sphinx."
+  />
+</CardGrid>
+
+## Automatisation de contenu et intégration de données
+
+Techniques d’extraction de données et d’injection dynamique depuis des bases SQL directement dans vos sources documentaires.
+
+<CardGrid>
+  <LinkCard
+    title="Insérer automatiquement des données dans un fichier DITA XML"
+    href="auto-insert-data-dita-xml"
+    description="Automatisez la génération de fichiers DITA XML avec Python en insérant des données produit dynamiques dans vos topics DITA."
+  />
+  <LinkCard
+    title="Insérer automatiquement des données dans un fichier reStructuredText"
+    href="auto-insert-data-restructuredtext"
+    description="Créez un template reStructuredText que Python renseigne en noms de produits et versions à la compilation - plus aucune mise à jour manuelle à chaque version."
+  />
+  <LinkCard
+    title="Insérer automatiquement des données SQL dans un fichier reStructuredText"
+    href="auto-insert-sql-data-restructuredtext"
+    description="Interrogez une base de données produit et injectez directement les résultats dans un fichier reStructuredText - gardez la documentation synchronisée avec la source de vérité."
+  />
+</CardGrid>
+
+## Traitement de texte et outillage technique
+
+Manipulation de texte en ligne de commande, refactorisation par lots et infrastructure légère pour vos pipelines documentaires.
+
+<CardGrid>
+  <LinkCard
+    title="sed : modifiez votre texte sans ouvrir vos fichiers"
+    href="sed-text-editing"
+    description="Effectuez des recherches et remplacements ciblés dans des centaines de fichiers de documentation en une seule commande - comment sed gère les modifications de texte en masse sans ouvrir un seul fichier."
+  />
+  <LinkCard
+    title="Expressions régulières en Python"
+    href="python-regular-expressions"
+    description="La bibliothèque d’expressions régulières de Python aide à manipuler du texte, notamment si vous n’êtes pas familier avec sed ou awk."
+  />
+  <LinkCard
+    title="Le Raspberry Pi 3 en tant que plateforme de documentation"
+    href="raspberry-pi-documentation-platform"
+    description="Avec ses ressources modestes, un Raspberry Pi 3 suffit pour créer, gérer et générer une documentation en PDF, HTML ou EPUB."
+  />
+  <LinkCard
+    title="Mener un projet de bout en bout"
+    href="project-end-to-end"
+    description="Des milliers de photos dispersées sur des dizaines d'ordinateurs, un budget de zéro euro et une archive centralisée : un projet suivi de la prise en charge à la livraison."
+  />
 </CardGrid>

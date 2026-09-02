@@ -180,6 +180,7 @@ export default defineConfig({
         },
         {
           label: 'Technical writing: An industrial process',
+          collapsed: true,
           translations: {
             fr: 'Rédaction technique : un processus industriel',
           },
@@ -211,6 +212,7 @@ export default defineConfig({
         },
         {
           label: 'Tutorials',
+          collapsed: true,
           translations: {
             fr: 'Didacticiels',
           },
@@ -218,6 +220,7 @@ export default defineConfig({
         },
         {
           label: 'Structured DITA XML format',
+          collapsed: true,
           translations: {
             fr: 'Format structuré DITA XML',
           },
@@ -225,6 +228,7 @@ export default defineConfig({
         },
         {
           label: 'Reduce costs, increase customer satisfaction',
+          collapsed: true,
           translations: {
             fr: 'Diminuer les coûts, augmenter la satisfaction client',
           },

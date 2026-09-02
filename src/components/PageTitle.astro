@@ -4,11 +4,18 @@ import Default from '@astrojs/starlight/components/PageTitle.astro';
 const pathname = Astro.url.pathname;
 const isHomepage = pathname === '/' || /^\/(en|fr)\/?$/.test(pathname);
 const isTagPage = pathname.startsWith('/tag/');
+const routeLang = (Astro.locals as Record<string, any>)?.starlightRoute?.lang;
+const lang = routeLang ?? (pathname.startsWith('/fr') ? 'fr' : 'en');
+const isFr = lang === 'fr';
 ---
 
 <Default {...Astro.props} />
 {!isHomepage && !isTagPage && (
-  <p class="sl-byline">
-    By <a href="https://www.linkedin.com/in/carrereolivier/" rel="author noopener" target="_blank">Olivier Carrère</a>
+  <p class="sl-byline not-content">
+    {isFr ? (
+      <span>Par <a href="https://www.linkedin.com/in/carrereolivier/" rel="author noopener" target="_blank">Olivier Carrère</a>, rédacteur technique</span>
+    ) : (
+      <span>By <a href="https://www.linkedin.com/in/carrereolivier/" rel="author noopener" target="_blank">Olivier Carrère</a>, technical writer</span>
+    )}
   </p>
 )}
