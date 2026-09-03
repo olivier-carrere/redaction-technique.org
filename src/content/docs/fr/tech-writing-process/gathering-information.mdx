@@ -2,6 +2,9 @@
 title: "Collecte de l'information"
 description: "Collecte d'information en rédaction technique : interviews d'experts, tests produit, documentation existante et observations terrain pour construire un contenu précis."
 ---
+
+import Mermaid from '../../../../components/Mermaid.astro';
+
 <a id="collecte-de-l-information"></a>
 
 Le rédacteur technique collecte l'information auprès de différentes sources, internes et externes à l'entreprise.
@@ -17,7 +20,11 @@ Une fois le projet de rédaction technique clairement défini, le rédacteur tec
 -   analyse de la concurrence,
 -   lecture de la presse spécialisée.
 
-![Collecte de l'information](/assets/collecte.svg)
+
+<Mermaid code={`graph TD
+    A["Collecte de l'information"] --> B[Interview]
+    A --> C["Manipulation du produit"]
+    A --> D["Analyse des sources écrites"]`} />
 **Collecte de l'information**
 
 Les informations doivent être recoupées pour minimiser le risque de transmettre des informations erronées ou obsolètes. Le rédacteur technique doit se livrer à un véritable travail d'enquête. En se mettant à la place de l'utilisateur, il vérifie chaque information et fait le tri entre les données pertinentes et celles qui ne seront que du bruit perturbant le message.

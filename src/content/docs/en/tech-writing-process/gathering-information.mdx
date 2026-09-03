@@ -4,7 +4,7 @@ description: "How technical writers gather information: expert interviews, produ
 tags: [technical-writing]
 ---
 
-
+import Mermaid from '../../../../components/Mermaid.astro';
 
 <a id="information-gathering"></a>
 
@@ -21,7 +21,11 @@ Once the [technical writing project has been clearly defined](../project-definit
 - Competitor analysis,
 - Reading trade publications.
 
-![Information gathering](/assets/en/collecte.svg)
+
+<Mermaid code={`graph TD
+    A[Gathering information] --> B[Interview]
+    A --> C[Product manipulation]
+    A --> D[Written source analysis]`} />
 **Information Gathering**
 
 Information must be cross-checked to minimize the risk of transmitting incorrect or outdated information. The technical writer must perform diligent investigative work. By putting themselves in the user's shoes, they check each piece of information and differentiate relevant data from noise that could disrupt the message.

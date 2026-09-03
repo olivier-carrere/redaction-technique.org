@@ -1,0 +1,54 @@
+---
+// Client-side Mermaid rendering. mermaid.js is bundled by Vite from node_modules
+// (no build-time headless browser) — the repo previously tried rehype-mermaid +
+// playwright for build-time SVG rendering and reverted it. The diagram
+// re-renders on Starlight's light/dark toggle (document.documentElement's
+// data-theme attribute) and after view-transition navigation.
+interface Props {
+  code: string;
+}
+
+const { code } = Astro.props;
+const uid = "mermaid-" + Math.random().toString(36).slice(2, 10);
+---
+
+<div class="mermaid-diagram" id={uid} data-code={code}></div>
+
+<script>
+  import mermaid from "mermaid";
+
+  function currentTheme() {
+    return document.documentElement.dataset.theme === "light" ? "default" : "dark";
+  }
+
+  async function renderOne(el) {
+    const code = el.dataset.code;
+    if (!code) return;
+    mermaid.initialize({ startOnLoad: false, theme: currentTheme(), securityLevel: "strict" });
+    const { svg } = await mermaid.render(el.id + "-svg", code);
+    el.innerHTML = svg;
+  }
+
+  function renderAll() {
+    document.querySelectorAll(".mermaid-diagram").forEach(renderOne);
+  }
+
+  renderAll();
+  document.addEventListener("astro:page-load", renderAll);
+  new MutationObserver(renderAll).observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["data-theme"],
+  });
+</script>
+
+<style>
+  .mermaid-diagram {
+    display: flex;
+    justify-content: center;
+    margin: 1.75rem 0;
+  }
+  .mermaid-diagram :global(svg) {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
