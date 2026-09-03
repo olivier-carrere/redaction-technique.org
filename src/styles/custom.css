@@ -1,4 +1,5 @@
 @import '@fontsource-variable/ibm-plex-sans';
+@import '@fontsource-variable/ibm-plex-sans/wght-italic.css';
 @import '@fontsource/ibm-plex-mono/400.css';
 @import '@fontsource/ibm-plex-mono/400-italic.css';
 @import '@fontsource/ibm-plex-mono/600.css';
@@ -55,12 +56,14 @@
   font-size: clamp(2.25rem, calc(1.5rem + 3.2vw), 3.75rem) !important;
   line-height: 1.15 !important;
   letter-spacing: -0.02em !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
 }
 
 .hero .tagline {
-  font-size: clamp(var(--sl-text-base), calc(0.95rem + 0.4vw), var(--sl-text-lg)) !important;
+  /* Lead/introductory text: ~19-21px, matching the article lead scale below */
+  font-size: clamp(1.1875rem, calc(1rem + 0.6vw), 1.3125rem) !important;
   line-height: 1.55 !important;
+  font-weight: 400 !important;
   color: var(--sl-color-gray-2) !important;
   max-width: 52ch !important;
 }
@@ -202,8 +205,9 @@
   .sl-link-card .icon,
   .section-more-link,
   .section-more-link .arrow,
-  .pagination-links a,
-  .pagination-links svg,
+  .pagination-card,
+  .pagination-arrow,
+  .pagination-title,
   .sl-markdown-content .sl-heading-wrapper:has(#related-articles, #articles-connexes) + ul > li > a {
     transition: none !important;
     transform: none !important;
@@ -244,7 +248,7 @@
   font-size: clamp(2rem, calc(1.5rem + 1.8vw), 2.75rem) !important;
   line-height: 1.2 !important;
   letter-spacing: -0.02em !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   color: var(--sl-color-white) !important;
   margin-bottom: 0.5rem !important;
   overflow-wrap: break-word;
@@ -278,7 +282,8 @@
 
 /* 3. Body Typography & Prose Reading Rhythm */
 .sl-markdown-content {
-  font-size: var(--sl-text-base);
+  /* Body copy: 17px / 1.65-1.75 line-height, tuned for long-form reading */
+  font-size: 1.0625rem;
   line-height: 1.68;
   color: var(--sl-color-gray-2);
 }
@@ -300,7 +305,7 @@
 /* Section Landmarks: Generous space before headings, compact space after */
 .sl-markdown-content h2:not(:where(.not-content *)) {
   font-size: clamp(1.5rem, calc(1.25rem + 0.8vw), 1.85rem) !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   letter-spacing: -0.015em !important;
   margin-top: clamp(2.75rem, 5vw, 3.75rem) !important;
   margin-bottom: 0.65rem !important;
@@ -320,7 +325,7 @@
 }
 
 .sl-markdown-content h3:not(:where(.not-content *)) {
-  font-size: clamp(1.15rem, calc(1.05rem + 0.35vw), 1.35rem) !important;
+  font-size: clamp(1.3125rem, calc(1.2rem + 0.4vw), 1.4375rem) !important;
   font-weight: 600 !important;
   letter-spacing: -0.01em !important;
   margin-top: clamp(1.75rem, 3.5vw, 2.25rem) !important;
@@ -331,7 +336,7 @@
 }
 
 .sl-markdown-content h4:not(:where(.not-content *)) {
-  font-size: 1.05rem !important;
+  font-size: clamp(1.125rem, calc(1.05rem + 0.3vw), 1.25rem) !important;
   font-weight: 600 !important;
   margin-top: 1.5rem !important;
   margin-bottom: 0.4rem !important;
@@ -370,7 +375,7 @@
 
 /* Inline Code Pills */
 .sl-markdown-content :not(pre) > code {
-  font-size: 0.85em !important;
+  font-size: 0.92em !important;
   padding: 0.15em 0.35em !important;
   border-radius: 0.25rem !important;
   background-color: var(--sl-color-gray-6) !important;
@@ -399,6 +404,53 @@
   font-weight: 600;
 }
 
+.sl-markdown-content em:not(:where(.not-content *)) {
+  font-style: italic;
+  color: var(--sl-color-gray-1);
+}
+
+/* Editorial Blockquotes: subtle accent + generous rhythm, not a code treatment.
+   Quotes in this content sometimes wrap a fenced code sample, so text styling
+   stays restrained (no italics/size jump) rather than forcing a "literary" look. */
+.sl-markdown-content blockquote:not(:where(.not-content *)) {
+  margin-block: 1.5rem 1.75rem !important;
+  padding-block: 0.15rem !important;
+  border-inline-start-width: 3px !important;
+  border-inline-start-color: var(--sl-color-gray-4) !important;
+  color: var(--sl-color-gray-1) !important;
+}
+
+.sl-markdown-content blockquote > p:not(:where(.not-content *)) {
+  line-height: 1.7 !important;
+}
+
+/* Highlighted terms: a restrained accent-tinted mark, not the browser's default yellow */
+.sl-markdown-content mark:not(:where(.not-content *)) {
+  background-color: var(--sl-color-accent-low);
+  color: var(--sl-color-accent-high);
+  padding: 0.05em 0.3em;
+  border-radius: 0.2rem;
+}
+
+/* Keyboard notation: monospace keycap, distinct from inline <code> */
+.sl-markdown-content kbd:not(:where(.not-content *)) {
+  font-family: var(--sl-font-mono);
+  font-size: 0.85em;
+  padding: 0.1em 0.45em;
+  border: 1px solid var(--sl-color-gray-4);
+  border-bottom-width: 2px;
+  border-radius: 0.3rem;
+  background-color: var(--sl-color-gray-6);
+  color: var(--sl-color-gray-1);
+}
+
+/* Abbreviations: dotted underline signals a title tooltip, no font change */
+.sl-markdown-content abbr[title]:not(:where(.not-content *)) {
+  text-decoration: underline dotted;
+  text-underline-offset: 2px;
+  cursor: help;
+}
+
 /* Clean Integrated Technical Diagrams (No decorative card borders or excess space) */
 .sl-markdown-content p:has(> img) {
   display: flex !important;
@@ -423,7 +475,8 @@
 
 .sl-markdown-content p:has(> img) > strong {
   display: block !important;
-  font-size: var(--sl-text-xs) !important;
+  font-size: var(--sl-text-sm) !important;
+  line-height: 1.5 !important;
   font-weight: 500 !important;
   color: var(--sl-color-gray-3) !important;
   margin-top: 0.5rem !important;
@@ -458,7 +511,7 @@
 
 .sl-markdown-content .starlight-aside__title {
   font-size: var(--sl-text-xs) !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.08em !important;
   margin-bottom: 0.35rem !important;
@@ -482,7 +535,7 @@
 
 .sl-markdown-content .expressive-code pre {
   padding: 0.85rem 1.15rem !important;
-  font-size: 0.875rem !important;
+  font-size: 0.92em !important;
   line-height: 1.55 !important;
   border: 1px solid var(--sl-color-hairline) !important;
   border-radius: 0.375rem !important;
@@ -501,7 +554,7 @@
 .sl-markdown-content p:has(+ .expressive-code) > strong:only-child {
   display: inline-block;
   font-size: var(--sl-text-xs);
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--sl-color-gray-3);
@@ -522,7 +575,7 @@
 /* 4. Left Sidebar Scanability */
 .sidebar-content summary .group-label .large {
   font-size: var(--sl-text-xs) !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.08em !important;
   color: var(--sl-color-gray-3) !important;
@@ -558,6 +611,7 @@
 
 .sidebar-content ul ul a {
   font-size: var(--sl-text-sm) !important;
+  font-weight: 450 !important;
   line-height: 1.45 !important;
   padding-block: 0.35rem !important;
   color: var(--sl-color-gray-2) !important;
@@ -574,7 +628,7 @@
 .sidebar-content a[aria-current='page'],
 .sidebar-content a[aria-current='page']:hover,
 .sidebar-content a[aria-current='page']:focus {
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   color: var(--sl-color-accent-high) !important;
   background-color: var(--sl-color-accent-low) !important;
   border-inline-start: 2px solid var(--sl-color-accent) !important;
@@ -589,7 +643,7 @@
 /* 5. Right TOC ("On this page") */
 starlight-toc nav h2#starlight__on-this-page {
   font-size: var(--sl-text-xs) !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.08em !important;
   color: var(--sl-color-gray-3) !important;
@@ -598,6 +652,7 @@ starlight-toc nav h2#starlight__on-this-page {
 
 starlight-toc nav ul a {
   font-size: var(--sl-text-xs) !important;
+  font-weight: 450 !important;
   line-height: 1.4 !important;
   padding-block: 0.3rem !important;
   color: var(--sl-color-gray-3) !important;
@@ -618,7 +673,7 @@ starlight-toc nav ul a:focus-visible {
 
 starlight-toc nav ul a[aria-current='true'] {
   color: var(--sl-color-accent-high) !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   border-inline-start-color: var(--sl-color-accent) !important;
 }
 
@@ -645,7 +700,7 @@ starlight-toc nav ul ul a:hover {
 
 starlight-toc nav ul ul a[aria-current='true'] {
   color: var(--sl-color-accent-high) !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
 }
 
 /* 6. Related Articles Secondary Navigation */
@@ -657,7 +712,7 @@ starlight-toc nav ul ul a[aria-current='true'] {
 
 .sl-markdown-content .sl-heading-wrapper:has(#related-articles, #articles-connexes) :is(h2, h3) {
   font-size: var(--sl-text-xs) !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.08em !important;
   color: var(--sl-color-gray-3) !important;
@@ -746,7 +801,7 @@ starlight-toc nav ul ul a[aria-current='true'] {
 .sl-markdown-content th:not(:where(.not-content *)) {
   padding: 0.75rem 1rem !important;
   font-size: var(--sl-text-xs) !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.06em !important;
   color: var(--sl-color-white) !important;
@@ -761,6 +816,14 @@ starlight-toc nav ul ul a[aria-current='true'] {
   vertical-align: top !important;
   color: var(--sl-color-gray-2) !important;
   line-height: 1.6 !important;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Numeric-looking cell values line up on their digits instead of ragged text metrics */
+.sl-markdown-content td[align='right']:not(:where(.not-content *)),
+.sl-markdown-content td[align='char']:not(:where(.not-content *)) {
+  font-family: var(--sl-font-mono) !important;
+  font-size: 0.9em !important;
 }
 
 .sl-markdown-content tbody tr:last-child td:not(:where(.not-content *)) {
@@ -819,75 +882,8 @@ footer .meta time {
   font-weight: 500;
 }
 
-.pagination-links {
-  margin-top: 1.25rem !important;
-  gap: 1rem !important;
-}
-
-.pagination-links a {
-  background: var(--sl-color-gray-6) !important;
-  border: 1px solid var(--sl-color-gray-5) !important;
-  border-radius: 0.5rem !important;
-  padding: 1rem 1.25rem !important;
-  box-shadow: none !important;
-  transition: background-color 0.15s ease, border-color 0.15s ease !important;
-  text-decoration: none !important;
-}
-
-.pagination-links a:hover {
-  background: var(--sl-color-gray-5) !important;
-  border-color: var(--sl-color-gray-3) !important;
-}
-
-.pagination-links a:focus-visible {
-  outline: 2px solid var(--sl-color-accent) !important;
-  outline-offset: 2px !important;
-}
-
-.pagination-links a > span {
-  font-size: var(--sl-text-xs) !important;
-  font-weight: 600 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.08em !important;
-  color: var(--sl-color-gray-3) !important;
-  line-height: 1.4 !important;
-}
-
-.pagination-links a:hover > span {
-  color: var(--sl-color-accent-high) !important;
-}
-
-.pagination-links .link-title {
-  display: block !important;
-  margin-top: 0.35rem !important;
-  font-size: var(--sl-text-base) !important;
-  font-weight: 600 !important;
-  color: var(--sl-color-white) !important;
-  line-height: 1.35 !important;
-  text-transform: none !important;
-  letter-spacing: normal !important;
-}
-
-.pagination-links svg {
-  color: var(--sl-color-gray-3) !important;
-  transition: transform 0.2s ease, color 0.2s ease !important;
-}
-
-.pagination-links a[rel='prev']:hover svg {
-  color: var(--sl-color-white) !important;
-  transform: translateX(-3px);
-}
-
-.pagination-links a[rel='next']:hover svg {
-  color: var(--sl-color-white) !important;
-  transform: translateX(3px);
-}
-
-@media (max-width: 48rem) {
-  .pagination-links {
-    grid-template-columns: 1fr !important;
-  }
-}
+/* Pagination prev/next cards are fully styled in src/components/Pagination.astro,
+   which replaced Starlight's default `.pagination-links` markup. */
 
 /* ===================================================
    SEMANTIC DEFINITION LISTS
@@ -899,7 +895,7 @@ footer .meta time {
 
 .sl-markdown-content dl dt,
 .sl-markdown-content .def-list dt {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.05em;
   color: var(--sl-color-white);
   line-height: 1.45;
