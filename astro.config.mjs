@@ -7,6 +7,7 @@ import vercel from '@astrojs/vercel';
 import { unified } from '@astrojs/markdown-remark';
 import { pluginShellPrompt } from './src/plugins/ec-shell-prompt.mjs';
 import { remarkEmDash } from './src/plugins/remark-em-dash.mjs';
+import { rehypeDefinitionList } from './src/plugins/rehype-definition-list.mjs';
 
 const site = 'https://docs.redaction-technique.org/';
 
@@ -23,6 +24,7 @@ export default defineConfig({
     // injected into Starlight asides. Keep the remark/rehype pipeline instead.
     processor: unified(),
     remarkPlugins: [remarkEmDash],
+    rehypePlugins: [rehypeDefinitionList],
   },
   redirects: {
     '/': '/en/',
@@ -164,6 +166,9 @@ export default defineConfig({
       customCss: ['./src/styles/custom.css'],
       expressiveCode: {
         plugins: [pluginShellPrompt()],
+        styleOverrides: {
+          codeFontFamily: 'var(--sl-font-mono)',
+        },
       },
       components: {
         Head: './src/components/Head.astro',

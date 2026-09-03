@@ -888,3 +888,50 @@ footer .meta time {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* ===================================================
+   SEMANTIC DEFINITION LISTS
+   =================================================== */
+.sl-markdown-content dl,
+.sl-markdown-content .def-list {
+  margin-block: 1.5rem;
+}
+
+.sl-markdown-content dl dt,
+.sl-markdown-content .def-list dt {
+  font-weight: 700;
+  font-size: 1.05em;
+  color: var(--sl-color-white);
+  line-height: 1.45;
+  margin-top: 1.35rem;
+  margin-bottom: 0.35rem;
+}
+
+.sl-markdown-content dl dt:first-child,
+.sl-markdown-content .def-list dt:first-child {
+  margin-top: 0;
+}
+
+.sl-markdown-content dl dd,
+.sl-markdown-content .def-list dd {
+  margin-inline-start: 0;
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+  color: var(--sl-color-gray-2);
+}
+
+.sl-markdown-content dl dd p,
+.sl-markdown-content .def-list dd p {
+  margin-block: 0.5rem;
+}
+
+.sl-markdown-content dl dd p:first-child,
+.sl-markdown-content .def-list dd p:first-child {
+  margin-top: 0;
+}
+
+.sl-markdown-content dl dd p:last-child,
+.sl-markdown-content .def-list dd p:last-child {
+  margin-bottom: 0;
+}
+
