@@ -75,13 +75,6 @@ const scripts = config.replacements.map((r) => `s/${config.pattern}/${r}/`);
 const { strings } = config;
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;600&display=swap"
-  rel="stylesheet"
-/>
-
 <!-- The compiled GNU sed: a classic script that defines the global createSed(). -->
 <script is:inline src="/sed/sed.js"></script>
 
@@ -189,7 +182,7 @@ const { strings } = config;
 
     background: #e7ebf1;
     color: var(--sedd-ink);
-    font-family: "Inter", system-ui, sans-serif;
+    font-family: var(--sl-font);
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
     border: 1px solid var(--sedd-line);
@@ -205,7 +198,7 @@ const { strings } = config;
     align-items: center;
     gap: 9px;
     margin: 0 0 18px;
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--sl-font-mono);
     font-size: 13px;
     color: var(--sedd-muted);
   }
@@ -242,7 +235,7 @@ const { strings } = config;
   }
   .sedd label {
     display: block;
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--sl-font-mono);
     font-size: 12px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -254,7 +247,7 @@ const { strings } = config;
     min-height: 96px;
     resize: vertical;
     padding: 12px 14px;
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--sl-font-mono);
     font-size: 14px;
     color: var(--sedd-ink);
     border: 1px solid var(--sedd-line);
@@ -269,7 +262,7 @@ const { strings } = config;
   }
   .sedd button {
     margin-top: 14px;
-    font-family: "Space Grotesk", sans-serif;
+    font-family: var(--sl-font);
     font-weight: 500;
     font-size: 15px;
     color: #fff;
@@ -300,7 +293,7 @@ const { strings } = config;
     min-height: 24px;
   }
   .sedd #sedd-output .empty {
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--sl-font-mono);
     font-size: 14px;
     color: var(--sedd-muted);
   }
@@ -313,7 +306,7 @@ const { strings } = config;
     padding-top: 0;
   }
   .sedd .src {
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--sl-font-mono);
     font-size: 12px;
     color: var(--sedd-muted);
     margin-bottom: 9px;
@@ -323,7 +316,7 @@ const { strings } = config;
     color: var(--sedd-accent);
   }
   .sedd .line {
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--sl-font-mono);
     font-size: 14px;
     line-height: 1.85;
     color: var(--sedd-ink);
@@ -332,7 +325,7 @@ const { strings } = config;
     color: #9aa6ba;
   }
   .sedd .flag {
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--sl-font-mono);
     font-size: 12px;
     color: var(--sedd-flag);
   }

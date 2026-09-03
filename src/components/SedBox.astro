@@ -366,7 +366,7 @@ const editable = variants.editable === true;
 
     background: #e7ebf1;
     color: var(--sb-ink);
-    font-family: "Inter", system-ui, sans-serif;
+    font-family: var(--sl-font);
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
     border: 1px solid var(--sb-line);
@@ -379,7 +379,7 @@ const editable = variants.editable === true;
   }
   .sedbox label {
     display: block;
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--sl-font-mono);
     font-size: 11px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -395,7 +395,7 @@ const editable = variants.editable === true;
     background: #0f1b2d;
     color: #e6ecf5;
     border-radius: 8px;
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--sl-font-mono);
     font-size: 12.5px;
     line-height: 1.6;
     white-space: pre-wrap;
@@ -412,7 +412,7 @@ const editable = variants.editable === true;
     color: #e6ecf5;
     border: 1px solid var(--sb-line);
     border-radius: 8px;
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--sl-font-mono);
     font-size: 12.5px;
     line-height: 1.6;
     white-space: pre;
@@ -432,7 +432,7 @@ const editable = variants.editable === true;
     min-height: 72px;
     resize: vertical;
     padding: 11px 13px;
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--sl-font-mono);
     font-size: 14px;
     color: var(--sb-ink);
     border: 1px solid var(--sb-line);
@@ -447,7 +447,7 @@ const editable = variants.editable === true;
   }
   .sedbox button {
     margin: 12px 0 18px;
-    font-family: "Space Grotesk", sans-serif;
+    font-family: var(--sl-font);
     font-weight: 500;
     font-size: 14px;
     color: #fff;
@@ -482,12 +482,12 @@ const editable = variants.editable === true;
     padding: 12px 13px;
   }
   .sedbox .sb-output .empty {
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--sl-font-mono);
     font-size: 13px;
     color: var(--sb-muted);
   }
   .sedbox .line {
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--sl-font-mono);
     font-size: 14px;
     line-height: 1.8;
     color: var(--sb-ink);

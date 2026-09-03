@@ -142,13 +142,6 @@ def run(event):
   is:inline
   src="https://pyscript.net/releases/2026.6.2/core.js"></script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;600&display=swap"
-  rel="stylesheet"
-/>
-
 <div class="pysd">
   {
     config.header && (
@@ -194,7 +187,7 @@ def run(event):
 
     background: #e7ebf1;
     color: var(--pysd-ink);
-    font-family: "Inter", system-ui, sans-serif;
+    font-family: var(--sl-font);
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
     border: 1px solid var(--pysd-line);
@@ -206,7 +199,7 @@ def run(event):
     box-sizing: border-box;
   }
   .pysd .eyebrow {
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--sl-font-mono);
     font-size: 12px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -214,7 +207,7 @@ def run(event):
     margin: 0 0 10px;
   }
   .pysd .pysd-title {
-    font-family: "Space Grotesk", sans-serif;
+    font-family: var(--sl-font);
     font-weight: 700;
     font-size: clamp(24px, 4vw, 34px);
     line-height: 1.05;
@@ -228,7 +221,7 @@ def run(event):
     max-width: 60ch;
   }
   .pysd .sub code {
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--sl-font-mono);
     font-size: 0.9em;
   }
   .pysd .gloss {
@@ -242,7 +235,7 @@ def run(event):
     font-style: italic;
   }
   .pysd .gloss code {
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--sl-font-mono);
     font-size: 0.9em;
   }
   .pysd .gloss cite {
@@ -257,7 +250,7 @@ def run(event):
     align-items: center;
     gap: 9px;
     margin-top: 18px;
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--sl-font-mono);
     font-size: 13px;
     color: var(--pysd-muted);
   }
@@ -292,7 +285,7 @@ def run(event):
   }
   .pysd label {
     display: block;
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--sl-font-mono);
     font-size: 12px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -304,7 +297,7 @@ def run(event):
     min-height: 128px;
     resize: vertical;
     padding: 12px 14px;
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--sl-font-mono);
     font-size: 14px;
     color: var(--pysd-ink);
     border: 1px solid var(--pysd-line);
@@ -319,7 +312,7 @@ def run(event):
   }
   .pysd button {
     margin-top: 14px;
-    font-family: "Space Grotesk", sans-serif;
+    font-family: var(--sl-font);
     font-weight: 500;
     font-size: 15px;
     color: #fff;
@@ -346,7 +339,7 @@ def run(event):
     min-height: 24px;
   }
   .pysd #output .empty {
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--sl-font-mono);
     font-size: 14px;
     color: var(--pysd-muted);
   }
@@ -359,7 +352,7 @@ def run(event):
     padding-top: 0;
   }
   .pysd .src {
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--sl-font-mono);
     font-size: 12px;
     color: var(--pysd-muted);
     margin-bottom: 9px;
@@ -369,7 +362,7 @@ def run(event):
     color: var(--pysd-accent);
   }
   .pysd .line {
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--sl-font-mono);
     font-size: 14px;
     line-height: 1.85;
     color: var(--pysd-ink);
@@ -378,7 +371,7 @@ def run(event):
     color: #9aa6ba;
   }
   .pysd .flag {
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--sl-font-mono);
     font-size: 12px;
     color: var(--pysd-flag);
   }
@@ -389,7 +382,7 @@ def run(event):
     color: var(--pysd-muted);
   }
   .pysd .foot code {
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--sl-font-mono);
     background: #fff;
     border: 1px solid var(--pysd-line);
     padding: 1px 6px;

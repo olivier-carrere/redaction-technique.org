@@ -156,7 +156,7 @@ const cmdLines = stages.map((s) => s.display);
 
     background: #e7ebf1;
     color: var(--db-ink);
-    font-family: "Inter", system-ui, sans-serif;
+    font-family: var(--sl-font);
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
     border: 1px solid var(--db-line);
@@ -169,7 +169,7 @@ const cmdLines = stages.map((s) => s.display);
   }
   .ditabox label {
     display: block;
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--sl-font-mono);
     font-size: 11px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -185,7 +185,7 @@ const cmdLines = stages.map((s) => s.display);
     background: #0f1b2d;
     color: #e6ecf5;
     border-radius: 8px;
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--sl-font-mono);
     font-size: 12.5px;
     line-height: 1.6;
     white-space: pre-wrap;
@@ -203,7 +203,7 @@ const cmdLines = stages.map((s) => s.display);
     min-height: 84px;
     resize: vertical;
     padding: 11px 13px;
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--sl-font-mono);
     font-size: 14px;
     color: var(--db-ink);
     border: 1px solid var(--db-line);
@@ -218,7 +218,7 @@ const cmdLines = stages.map((s) => s.display);
   }
   .ditabox button {
     margin: 12px 0 18px;
-    font-family: "Space Grotesk", sans-serif;
+    font-family: var(--sl-font);
     font-weight: 500;
     font-size: 14px;
     color: #fff;
@@ -253,12 +253,12 @@ const cmdLines = stages.map((s) => s.display);
     padding: 12px 13px;
   }
   .ditabox .db-output .empty {
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--sl-font-mono);
     font-size: 13px;
     color: var(--db-muted);
   }
   .ditabox .line {
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--sl-font-mono);
     font-size: 14px;
     line-height: 1.8;
     color: var(--db-ink);
