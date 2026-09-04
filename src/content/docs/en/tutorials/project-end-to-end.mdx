@@ -32,7 +32,7 @@ Here’s what I did:
 Here is the overall solution diagram:
 
 <Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-graph LR
+graph TD
     accTitle: Photo gallery workflow diagram
     accDescr: Diagram showing photographers uploading and iconographers selecting, classifying, and indexing photos into Piwigo, which feeds a Git repository backed up locally and cloned by non-profit members, and lets graphic designers search and download photos.
 
@@ -206,7 +206,7 @@ While the same person can alternate between these roles, it is crucial for effec
 Though the first two roles are familiar to non-profit members, the role of the iconographer is new to many. I queried whether to use this lesser-known term, but concluded I should emphasize it since it is crucial to the project's long-term success.
 
 <Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-graph LR
+graph TD
     accTitle: Piwigo photo management workflow by role
     accDescr: Diagram showing the photographer shooting, editing, and uploading photos, the iconographer selecting, classifying, and adding keywords, and the graphic designer viewing, downloading, and publishing them.
 

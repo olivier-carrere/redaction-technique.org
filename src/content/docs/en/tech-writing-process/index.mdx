@@ -10,28 +10,22 @@ Technical writing is based on rational processes. Too often associated with a st
 
 This process is based on a rigorous methodology and a reliable production chain.
 
-<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
-graph LR
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+graph TD
     accTitle: Technical writing process
-    accDescr: Diagram showing the methodology row, project definition, information gathering, content development, validation with translation branching off it, and delivery, connected to the production line row, source format, repository, and target format, with content development feeding source format and target format feeding delivery.
+    accDescr: Diagram showing the methodology track, project definition, information gathering, content development, validation with translation branching off it, and delivery, connected to the production line track, source format, repository, and target format, with content development feeding source format and target format feeding delivery.
 
-    subgraph methodology["Methodology"]
-        direction LR
-        PD[Project definition] --> IG[Information gathering] --> CD[Content development] --> V[Validation] --> DE[Delivery]
-    end
-
-    subgraph production["Production line"]
-        direction LR
-        SF[Source format] --> R[Repository] --> TF[Target format]
-    end
-
-    V --> T[Translation]
-    CD --> SF
+    PD["Project definition (methodology)"] --> IG["Information gathering (methodology)"] --> CD["Content development (methodology)"]
+    CD --> V["Validation (methodology)"] --> DE["Delivery (methodology)"]
+    V --> T["Translation (methodology)"]
+    CD --> SF["Source format (production line)"] --> R["Repository (production line)"] --> TF["Target format (production line)"]
     TF --> DE
 
-    classDef step fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+    classDef methodology fill:{{childFill}},stroke:{{parentStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+    classDef production fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
 
-    class PD,IG,CD,V,DE,SF,R,TF,T step
+    class PD,IG,CD,V,DE,T methodology
+    class SF,R,TF production
 
     linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **Technical writing process**

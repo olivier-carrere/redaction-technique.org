@@ -17,7 +17,7 @@ Lorsque le rédacteur technique veut réutiliser des blocs d'information DITA XM
 Le principe des *conref* est simple : lorsqu'un *conref* est mentionné au niveau d'un nœud XML donné, tout le contenu du nœud cible est remplacé par le contenu du nœud source.
 
 <Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-graph LR
+graph TD
     accTitle: Partage de blocs d'information entre ditamap
     accDescr: Schéma montrant le ditamap A référençant 1.dita et 2.dita, et le ditamap B référençant 2.dita et 3.dita, avec 2.dita partagé entre les deux ditamaps.
 
@@ -66,7 +66,7 @@ Pour favoriser l'utilisation des conref au sein d'une équipe de rédacteurs tec
 Il est a priori plus simple, pour réutiliser un contenu d'un fichier DITA XML existant, de pointer vers ce contenu sans l'extraire de son contexte d'origine. Cependant, un des grands principes de la réutilisation du contenu est de décontextualiser le contenu. Il est donc à terme beaucoup plus efficace pour le rédacteur technique d'extraire le contenu réutilisé de son fichier d'origine et de le placer dans un fichier ne contenant que des sources de conref. Il est en effet beaucoup plus facile de placer tous les éléments sources dans un référentiel unique que de devoir chercher les différentes sources dans une multitude de fichiers.
 
 <Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-graph LR
+graph TD
     accTitle: Gestion décentralisée des conref
     accDescr: Schéma montrant trois fichiers DITA se référençant les uns les autres en cercle, sans fichier source central.
 
@@ -114,7 +114,7 @@ Le rédacteur technique doit utiliser comme source du conref le nœud DITA XML d
 Le but des *conref* étant de gérer des blocs d'information de faibles dimensions, il est logique de les manipuler au niveau de la plus petite structure XML encapsulant l'information, même si cette structure, pour être compatible avec le schéma XSD de la section DITA XML où elle intervient, doit elle-même être incluse dans des structures XML plus grandes.
 
 <Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-graph LR
+graph TD
     accTitle: Conref sur le nœud XML de plus bas niveau
     accDescr: Schéma montrant un conref placé sur un nœud cmd de bas niveau, référençant un autre nœud cmd.
 
@@ -178,7 +178,7 @@ plutôt que la suivante :
 En effet, dans le premier cas, vous pourrez utiliser le *conref* même si le nœud supérieur (`<step>`) contient d'autres nœuds que `<step>` (par exemple `<info>`).
 
 <Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-graph LR
+graph TD
     accTitle: Conref sur le nœud XML de plus haut niveau
     accDescr: Schéma montrant un conref placé sur un nœud step de haut niveau, référençant un autre nœud step et remplaçant tout son contenu.
 
@@ -285,7 +285,7 @@ Dans l'exemple ci-dessous, le *conref* source *see-admin-guide* contient le *con
 Ce niveau de complexité est gérable. Mais si le *conref* source *admin-guide-title* contient lui-même un *conref* cible, le code DITA XML devient un vrai plat de spaghettis (sans compter les risques de référence circulaire). Les *conref* peuvent théoriquement être combinés à l'infini, mais les problèmes pratiques que cela engendre peuvent également être infinis !
 
 <Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-graph LR
+graph TD
     accTitle: Imbriquer les conref sur plusieurs niveaux est risqué
     accDescr: Schéma montrant trois niveaux d'imbrication de conref, un conref pointant vers un conref pointant vers un autre conref.
 
@@ -314,7 +314,7 @@ Recourir aux conref est le meilleur moyen dont dispose le rédacteur technique p
 De par la nature des informations qu'elles contiennent, les sections de type *task* ont un taux plus élevé de réutilisation du contenu que celles de type *concept* ou *reference*.
 
 <Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
-graph LR
+graph TD
     accTitle: Les conref modularisent de petits blocs d'information
     accDescr: Schéma opposant une source monolithique sans réutilisation à une source modulaire composée de plusieurs blocs conref.
 
@@ -420,7 +420,7 @@ Voici un cas original d'utilisation des *conref* : imaginez que vous devez faire
 Comment faire ? Le filtrage à l'aide du mécanisme *ditaval* est conçu pour exclure des informations des livrables, non pour les masquer dans les fichiers sources. Allez-vous devoir créer deux jeux de fichiers sources, certains comportant les informations confidentielles, les autres non ? Adieu alors le *single-sourcing* et la réutilisation du contenu qui vous ont fait choisir DITA XML !
 
 <Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-graph LR
+graph TD
     accTitle: Masquer des informations confidentielles aux traducteurs
     accDescr: Schéma montrant une source confidentielle en langue A divisée par la traduction en deux branches, chacune filtrée par ditaval, produisant un livrable langue A conservant les informations confidentielles et un livrable langue B les excluant.
 
@@ -449,7 +449,7 @@ Un fichier ditaval reprend le principe des lunettes que vous chaussez pour visua
 Les destinataires de l’information disposent de lunettes avec deux verres gauches ou deux verres droits. Ils ne voient donc qu’une partie de l’information. Loin d’être lésés par cet état de fait, ils ont ainsi un meilleur accès à l’information. Le profilage réalisé masque à chaque public les informations dont ils n’ont pas besoin et qui ne seraient pour eux que du bruit. Chaque audience bénéficie donc d’un meilleur accès à l’information qui la concerne, selon le fameux concept minimaliste de less is more.
 
 <Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-graph LR
+graph TD
     accTitle: Texte conditionnel avec ditaval
     accDescr: Schéma montrant une source filtrée par ditaval vers deux cibles distinctes, chacune ne recevant que le contenu qui lui est destiné.
 

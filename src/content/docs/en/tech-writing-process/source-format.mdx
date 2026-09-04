@@ -100,7 +100,7 @@ The source format can be based on either monolithic files or clusters of modular
 Monolithic files (e.g., MS Word, LibreOffice, or FrameMaker) centralize all content in a single, easily manageable file, but limit content sharing; this increases the risk of inconsistent or duplicate information.
 
 <Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
-graph LR
+graph TD
     accTitle: Monolithic technical writing source format
     accDescr: Diagram showing two self-contained monolithic documents with no shared content between them.
 
@@ -118,7 +118,7 @@ graph LR
 Clusters of modular files (e.g., DITA XML) aggregate the content of multiple files, facilitating content sharing and reuse. This approach is challenging to implement company-wide but should be standard for a technical writing team.
 
 <Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
-graph LR
+graph TD
     accTitle: Modular technical writing source format
     accDescr: Diagram showing modular file clusters reused across two documents, Document A and Document B, sharing content instead of duplicating it.
 

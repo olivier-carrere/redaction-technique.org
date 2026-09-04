@@ -33,7 +33,7 @@ J'ai donc :
 Voici le schéma global de la solution :
 
 <Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-graph LR
+graph TD
     accTitle: Schéma du flux de travail de la galerie photo
     accDescr: Schéma montrant les photographes téléversant et les iconographes sélectionnant, classant et indexant les photos dans Piwigo, qui alimente un dépôt Git sauvegardé localement et cloné par les membres de l'association, et permettant aux graphistes de rechercher et télécharger des photos.
 
@@ -207,7 +207,7 @@ La chaîne de production graphique s'appuie sur 3 rôles :
 Si les deux premiers sont familiers aux membres de l'association, celui d'iconographe est nouveau pour beaucoup. Je me suis tout d'abord demandé si je devais utiliser ce mot peu usité. J'ai conclu que oui : il me fallait même insister sur ce sujet qui est la clé de la réussite à long terme du projet.
 
 <Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-graph LR
+graph TD
     accTitle: Flux de gestion des photos Piwigo par rôle
     accDescr: Schéma montrant le photographe prenant la photo, la retouchant et la téléversant, l'iconographe sélectionnant, classant et ajoutant des mots-clés, et le graphiste consultant, téléchargeant et publiant les photos.
 

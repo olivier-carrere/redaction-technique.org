@@ -20,7 +20,7 @@ Les informations contenues dans un document technique peuvent être catégorisé
 | reference | Informations de référence sur une liste d'éléments tels que des options d'un programme. |
 
 <Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
-graph LR
+graph TD
     accTitle: Organisation du contenu structurée ou non structurée
     accDescr: Schéma comparant des sections non structurées, qui restent des blocs indifférenciés, à des sections structurées, chacune décomposée en types d'information concept, task et reference.
 
@@ -83,7 +83,7 @@ Certaines entreprises ont parfois un contenu existant au format DocBook. Géré 
 Il est facile de générer du DocBook à partir de DITA XML. <abbr title="DITA Open Toolkit">DITA-OT</abbr> propose par défaut ce format cible, au même titre que le PDF ou le HTML. L'opération inverse ne peut pas être totalement automatisée. Pourquoi ?
 
 <Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-graph LR
+graph TD
     accTitle: RAW vers TIFF vers JPEG, un processus non réversible
     accDescr: Schéma montrant une chaîne à sens unique de RAW vers TIFF vers JPEG, chaque étape perdant des informations qui ne peuvent pas être récupérées en inversant le processus.
 
@@ -111,7 +111,7 @@ Si votre contenu était une photo, nous pourrions faire l'analogie suivante :
 Le passage de RAW en TIFF et de TIFF en JPEG est destructif et ne peut se faire en sens inverse.
 
 <Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-graph LR
+graph TD
     accTitle: DITA XML vers DocBook vers PDF, un processus non réversible
     accDescr: Schéma montrant une chaîne à sens unique de DITA XML vers DocBook vers PDF, chaque étape sémantiquement plus pauvre que la précédente et non récupérable en inversant le processus.
 
@@ -196,7 +196,7 @@ Lorsque les fichiers FrameMaker sont prêts pour la migration et que la chaîne 
 Vous devriez maintenant être à même d'archiver les fichiers FrameMaker, puis de basculer totalement vers le format DITA XML.
 
 <Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-graph LR
+graph TD
     accTitle: Application d'une table de conversion de FrameMaker vers DITA XML
     accDescr: Schéma montrant le contenu FrameMaker converti en DITA XML par l'application d'une table de conversion.
 

@@ -21,7 +21,7 @@ The information contained in a technical document can be categorized according t
 | reference | Reference information on a list of items, such as program options.  |
 
 <Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
-graph LR
+graph TD
     accTitle: Structured versus unstructured content organization
     accDescr: Diagram comparing unstructured sections, which remain undifferentiated blocks, with structured sections, each broken down into concept, task, and reference information types.
 
@@ -83,7 +83,7 @@ Some companies have existing content in DocBook format. Often managed by the com
 It's easy to generate DocBook from DITA XML. <abbr title="DITA Open Toolkit">DITA-OT</abbr> offers this target format by default, just like PDF or HTML. The reverse operation cannot be fully automated. Why not?
 
 <Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-graph LR
+graph TD
     accTitle: RAW to TIFF to JPEG is a non-reversible process
     accDescr: Diagram showing a one-way chain from RAW to TIFF to JPEG, each step losing information that cannot be recovered by reversing the process.
 
@@ -111,7 +111,7 @@ If your content were a photo, we could make the following analogy:
 Switching from RAW to TIFF and from TIFF to JPEG is destructive and cannot be reversed.
 
 <Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-graph LR
+graph TD
     accTitle: DITA XML to DocBook to PDF is a non-reversible process
     accDescr: Diagram showing a one-way chain from DITA XML to DocBook to PDF, each step semantically poorer than the last and not recoverable by reversing the process.
 
@@ -196,7 +196,7 @@ Once the FrameMaker files are ready for migration and the DITA XML chain has bee
 You should now be able to archive the FrameMaker files and then switch over completely to DITA XML.
 
 <Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-graph LR
+graph TD
     accTitle: Application of a conversion table from FrameMaker to DITA XML
     accDescr: Diagram showing FrameMaker content converted to DITA XML by applying a conversion table.
 

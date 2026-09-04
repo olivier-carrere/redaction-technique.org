@@ -10,28 +10,22 @@ La rédaction technique repose sur des processus rationnels. Trop souvent associ
 
 Ce processus repose sur une méthodologie rigoureuse et une chaîne de production fiable.
 
-<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
-graph LR
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+graph TD
     accTitle: Processus de rédaction technique
-    accDescr: Schéma montrant la ligne méthodologie, définition du projet, collecte de l'information, création du contenu, validation d'où part la traduction, et livraison, reliée à la ligne chaîne de production, format source, référentiel et format cible, la création du contenu alimentant le format source et le format cible alimentant la livraison.
+    accDescr: Schéma montrant la piste méthodologie, définition du projet, collecte de l'information, création du contenu, validation d'où part la traduction, et livraison, reliée à la piste chaîne de production, format source, référentiel et format cible, la création du contenu alimentant le format source et le format cible alimentant la livraison.
 
-    subgraph methodology["Méthodologie"]
-        direction LR
-        PD["Définition du projet"] --> IG["Collecte de l'information"] --> CD["Création du contenu"] --> V[Validation] --> DE[Livraison]
-    end
-
-    subgraph production["Chaîne de production"]
-        direction LR
-        SF["Format source"] --> R["Référentiel"] --> TF["Format cible"]
-    end
-
-    V --> T[Traduction]
-    CD --> SF
+    PD["Définition du projet (méthodologie)"] --> IG["Collecte de l'information (méthodologie)"] --> CD["Création du contenu (méthodologie)"]
+    CD --> V["Validation (méthodologie)"] --> DE["Livraison (méthodologie)"]
+    V --> T["Traduction (méthodologie)"]
+    CD --> SF["Format source (chaîne de production)"] --> R["Référentiel (chaîne de production)"] --> TF["Format cible (chaîne de production)"]
     TF --> DE
 
-    classDef step fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+    classDef methodology fill:{{childFill}},stroke:{{parentStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+    classDef production fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
 
-    class PD,IG,CD,V,DE,SF,R,TF,T step
+    class PD,IG,CD,V,DE,T methodology
+    class SF,R,TF production
 
     linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **Processus de rédaction technique**

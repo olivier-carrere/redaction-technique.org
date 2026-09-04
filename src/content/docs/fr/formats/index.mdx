@@ -11,7 +11,7 @@ import Mermaid from '../../../../components/Mermaid.astro';
 Diminuer les coûts de production et de traduction, réduire les délais de mise sur le marché (ou *time to market*) et améliorer la qualité de la documentation. Voilà les défis que doit relever aujourd'hui le rédacteur technique. L'un des meilleurs moyens d'y parvenir consiste à réduire le volume source de la documentation et à mieux gérer le contenu d'entreprise.
 
 <Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-graph LR
+graph TD
     accTitle: Formats de documentation technique selon le degré de structuration
     accDescr: Schéma classant reStructuredText, FrameMaker, DocBook et DITA XML par degré de structuration croissant.
 
@@ -31,7 +31,7 @@ L'information que le rédacteur technique fournit au public *doit* être redonda
 En revanche, la redondance de l'information en interne engendre des coûts supplémentaires, allonge les cycles de production et entraîne une baisse de l'homogénéité, et donc de la qualité, du contenu. Il est donc primordial de diminuer et de mieux partager le contenu source et d'en diminuer le volume. Le rédacteur technique doit diviser l'information en briques autonomes uniques, standardisées et génériques, pour pouvoir l'assembler à la demande. Il doit donc utiliser des modules structurés de manière homogène qui peuvent être facilement manipulés par des applications.
 
 <Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-graph LR
+graph TD
     accTitle: Les sources de la documentation doivent être moins volumineuses que les livrables
     accDescr: Schéma montrant des sources compactes et non redondantes produisant un livrable PDF.
 
