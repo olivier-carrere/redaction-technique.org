@@ -2,6 +2,9 @@
 title: "About this blog"
 description: "A technical writing blog specializing in DITA XML, docs-as-code, documentation automation, and technical communication, by Olivier Carrère, technical writer."
 ---
+
+import Mermaid from '../../../components/Mermaid.astro';
+
 This blog is designed and produced by a technical writer specializing in software.
 
 Since it deals with technical writing processes and formats, its content is, however, less relevant than its history and its [Git](https://github.com/olivier-carrere/redaction-technique.org/) branches.
@@ -53,7 +56,20 @@ All versions of this blog are managed under the decentralized version control so
 
 This blog is available in three formats, based on version 1.1. These formats have different levels of features and complexity.
 
-![Feature and complexity levels of text formats](/assets/fonctionnalites_complexite.svg)
+<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "quadrant1Fill": "{{childFill}}", "quadrant2Fill": "{{childFill}}", "quadrant3Fill": "{{childFill}}", "quadrant4Fill": "{{childFill}}", "quadrant1TextFill": "{{lineColor}}", "quadrant2TextFill": "{{lineColor}}", "quadrant3TextFill": "{{lineColor}}", "quadrant4TextFill": "{{lineColor}}", "quadrantPointFill": "{{parentStroke}}", "quadrantPointTextFill": "{{childText}}", "quadrantXAxisTextFill": "{{childText}}", "quadrantYAxisTextFill": "{{childText}}", "quadrantInternalBorderStrokeFill": "{{lineColor}}", "quadrantExternalBorderStrokeFill": "{{lineColor}}", "quadrantTitleFill": "{{childText}}"}}}%%
+quadrantChart
+    accTitle: Feature and complexity levels of text formats
+    accDescr: Quadrant chart plotting reStructuredText, DocBook, and DITA XML by complexity and features. reStructuredText is low on both axes. DocBook is more complex but still limited in features. DITA XML is both complex and feature-rich.
+    title Feature and complexity levels of text formats
+    x-axis Low complexity --> High complexity
+    y-axis Low features --> High features
+    quadrant-1 Complex, feature-rich
+    quadrant-2 Simple, feature-rich
+    quadrant-3 Simple, limited features
+    quadrant-4 Complex, limited features
+    reStructuredText: [0.15, 0.25]
+    DocBook: [0.65, 0.25]
+    DITA XML: [0.65, 0.75]`} />
 **Feature and complexity levels of text formats**
 
 reStructuredText
