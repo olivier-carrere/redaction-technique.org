@@ -188,23 +188,35 @@ La chaîne de production graphique s'appuie sur 3 rôles :
 
 Si les deux premiers sont familiers aux membres de l'association, celui d'iconographe est nouveau pour beaucoup. Je me suis tout d'abord demandé si je devais utiliser ce mot peu usité. J'ai conclu que oui : il me fallait même insister sur ce sujet qui est la clé de la réussite à long terme du projet.
 
-<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-graph TD
+<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
+swimlane-beta
     accTitle: Flux de gestion des photos Piwigo par rôle
-    accDescr: Schéma montrant le photographe prenant la photo, la retouchant et la téléversant, l'iconographe sélectionnant, classant et ajoutant des mots-clés, et le graphiste consultant, téléchargeant et publiant les photos.
+    accDescr: Trois couloirs représentant le photographe, l'iconographe et le graphiste. Le photographe prend la photo, la retouche et la téléverse ; l'iconographe sélectionne, classe et ajoute des mots-clés ; le graphiste consulte, télécharge et publie les photos.
 
-    Photographe --> Prise["Prise de vue"] --> Retouche --> Upload --> Selection["Sélection et classement"]
-    Iconographe --> Selection
-    Selection --> Motscles["Ajout de mots-clés"]
-    Motscles --> Consultation["Consultation et téléchargement"]
-    Graphiste --> Consultation
-    Consultation --> Publication
+    subgraph photographe["Photographe"]
+        prise["Prise de vue"]
+        retouche["Retouche"]
+        upload["Upload"]
+        prise --> retouche --> upload
+    end
 
-    classDef role fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
-    classDef step fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+    subgraph iconographe["Iconographe"]
+        selection["Sélection et classement"]
+        motscles["Ajout de mots-clés"]
+        selection --> motscles
+    end
 
-    class Photographe,Iconographe,Graphiste role
-    class Prise,Retouche,Upload,Selection,Motscles,Consultation,Publication step
+    subgraph graphiste["Graphiste"]
+        consultation["Consultation et téléchargement"]
+        publication["Publication"]
+        consultation --> publication
+    end
+
+    upload --> selection
+    motscles --> consultation
+
+    classDef step fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:1.5px,color:{{parentText}},font-weight:500
+    class prise,retouche,upload,selection,motscles,consultation,publication step
 
     linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 

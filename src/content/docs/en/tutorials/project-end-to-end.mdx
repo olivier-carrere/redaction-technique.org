@@ -187,23 +187,35 @@ While the same person can alternate between these roles, it is crucial for effec
 
 Though the first two roles are familiar to non-profit members, the role of the iconographer is new to many. I queried whether to use this lesser-known term, but concluded I should emphasize it since it is crucial to the project's long-term success.
 
-<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-graph TD
+<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
+swimlane-beta
     accTitle: Piwigo photo management workflow by role
-    accDescr: Diagram showing the photographer shooting, editing, and uploading photos, the iconographer selecting, classifying, and adding keywords, and the graphic designer viewing, downloading, and publishing them.
+    accDescr: Three lanes for the photographer, the iconographer, and the graphic designer. The photographer shoots, edits, and uploads the photo; the iconographer selects, classifies, and adds keywords; the graphic designer views, downloads, and publishes the photos.
 
-    Photographer --> Shooting --> Editing --> Upload --> Selection["Selection and classification"]
-    Iconographer --> Selection
-    Selection --> Keywords["Adding keywords"]
-    Keywords --> Viewing["Viewing and downloading"]
-    Designer["Graphic designer"] --> Viewing
-    Viewing --> Publishing
+    subgraph photographer["Photographer"]
+        shooting["Shooting"]
+        editing["Editing"]
+        upload["Upload"]
+        shooting --> editing --> upload
+    end
 
-    classDef role fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
-    classDef step fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+    subgraph iconographer["Iconographer"]
+        selection["Selection and classification"]
+        keywords["Adding keywords"]
+        selection --> keywords
+    end
 
-    class Photographer,Iconographer,Designer role
-    class Shooting,Editing,Upload,Selection,Keywords,Viewing,Publishing step
+    subgraph designer["Graphic designer"]
+        viewing["Viewing and downloading"]
+        publishing["Publishing"]
+        viewing --> publishing
+    end
+
+    upload --> selection
+    keywords --> viewing
+
+    classDef step fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:1.5px,color:{{parentText}},font-weight:500
+    class shooting,editing,upload,selection,keywords,viewing,publishing step
 
     linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 
