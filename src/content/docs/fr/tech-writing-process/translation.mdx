@@ -2,13 +2,34 @@
 title: "Traduction"
 description: "Planifiez la traduction dès le début du projet documentaire : anticipez-la pour réduire coûts et délais, traduisez le contenu modulaire en parallèle de la rédaction, et organisez le référentiel source par langue."
 ---
+import Mermaid from '../../../../components/Mermaid.astro';
+
 Les contraintes de traduction doivent être prises en compte en amont du processus rédactionnel. Elles ont des implications autant sur le style rédactionnel que sur l'organisation du référentiel.
 
 Il n'y a pas de recette miracle : la livraison d'informations dans plusieurs langues demande un suivi constant. Mais la prise en compte des contraintes en amont et l'utilisation d'une méthodologie appropriée permettent d'améliorer la qualité et de diminuer les coûts et les délais de livraison des versions multilingues. La traduction doit être intégrée au workflow documentaire. Il faut également faire communiquer avec les traducteurs les différents acteurs : rédacteurs techniques, mais également ingénieurs, experts et concepteurs.
 
 Si la documentation repose sur un ensemble de modules, la traduction peut se faire en parallèle de la rédaction, ce qui réduit les délais de livraison.
 
-![Parallélisation de la rédaction et de la traduction](/assets/parallelisation-traduction.svg)
+<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "taskBkgColor": "{{childFill}}", "taskBorderColor": "{{childStroke}}", "taskTextColor": "{{childText}}", "taskTextOutsideColor": "{{childText}}", "taskTextLightColor": "{{childText}}", "taskTextDarkColor": "{{childText}}", "sectionBkgColor": "{{parentFill}}", "sectionBkgColor2": "{{childFill}}", "gridColor": "{{lineColor}}"}}}%%
+gantt
+    accTitle: Rédaction et traduction en mode sériel ou parallèle
+    accDescr: Diagramme de Gantt comparant un processus sériel, où la traduction ne démarre qu'une fois le document source entièrement validé et livré, et un processus parallèle, où la traduction du contenu modulaire démarre dès sa rédaction, réduisant le délai de mise sur le marché.
+    dateFormat YYYY-MM-DD
+    axisFormat %d
+    section Processus sériel
+    Document monolithique  :s1, 2024-01-01, 1d
+    Validation globale     :s2, after s1, 1d
+    Livraison              :s3, after s2, 1d
+    Traduction             :s4, after s3, 1d
+    Validation globale     :s5, after s4, 1d
+    Livraison              :s6, after s5, 1d
+    section Processus parallèle
+    Document modulaire     :p1, 2024-01-01, 1d
+    Validations partielles :p2, after p1, 1d
+    Livraison              :p3, after p2, 1d
+    Traduction             :p4, after p1, 1d
+    Validations partielles :p5, after p4, 1d
+    Livraison              :p6, after p5, 1d`} />
 **Parallélisation de la rédaction et de la traduction**
 
 En ce qui concerne le référentiel des fichiers sources, vaut-il mieux placer les répertoires de langue en amont ou en aval des répertoires de projets documentaires ? Autrement dit, vaut-il mieux adopter la structure suivante :
