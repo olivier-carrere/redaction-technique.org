@@ -4,6 +4,7 @@ description: "It's pretty rare, in a professional context, to be able to manage 
 tags: [python, automation]
 ---
 
+import Mermaid from '../../../../components/Mermaid.astro';
 
 In a professional setting, it is pretty rare to manage a project from A to Z, covering everything from conception to communication, including realization. This means overseeing both human and organizational components as well as the technical aspects, along with all forms of communication like graphic design, writing, and even video production. Such an opportunity is more common in an associative context.
 
@@ -30,7 +31,25 @@ Here’s what I did:
 
 Here is the overall solution diagram:
 
-![Photo gallery workflow diagram: photographers, iconographers, and graphic designers using Piwigo](/assets/en/schema-galerie.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+graph LR
+    accTitle: Photo gallery workflow diagram
+    accDescr: Diagram showing photographers uploading and iconographers selecting, classifying, and indexing photos into Piwigo, which feeds a Git repository backed up locally and cloned by non-profit members, and lets graphic designers search and download photos.
+
+    Photographer -->|Upload| Piwigo
+    Iconographer -->|Selection, classification, indexing| Piwigo
+    Piwigo --> Git[Git repository]
+    Git --> Backup[Local backup]
+    Git -->|Clone| Member["Non-profit member"]
+    Piwigo -->|Search, download| Designer["Graphic designer"]
+
+    classDef hub fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
+    classDef node fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class Piwigo hub
+    class Photographer,Iconographer,Git,Backup,Member,Designer node
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 
 Everything was developed using *Linux*.
 
@@ -168,7 +187,25 @@ While the same person can alternate between these roles, it is crucial for effec
 
 Though the first two roles are familiar to non-profit members, the role of the iconographer is new to many. I queried whether to use this lesser-known term, but concluded I should emphasize it since it is crucial to the project's long-term success.
 
-![Piwigo photo management workflow showing roles: photographer uploads, iconographer indexes, graphic designer downloads](/assets/en/workflow-photo-piwigo.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+graph LR
+    accTitle: Piwigo photo management workflow by role
+    accDescr: Diagram showing the photographer shooting, editing, and uploading photos, the iconographer selecting, classifying, and adding keywords, and the graphic designer viewing, downloading, and publishing them.
+
+    Photographer --> Shooting --> Editing --> Upload --> Selection["Selection and classification"]
+    Iconographer --> Selection
+    Selection --> Keywords["Adding keywords"]
+    Keywords --> Viewing["Viewing and downloading"]
+    Designer["Graphic designer"] --> Viewing
+    Viewing --> Publishing
+
+    classDef role fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
+    classDef step fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class Photographer,Iconographer,Designer role
+    class Shooting,Editing,Upload,Selection,Keywords,Viewing,Publishing step
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 
 Indeed, the non-profit has functioned for years without a photo gallery and can continue to do so, though not optimally. Members will continue to take photos and create posters. However, the gallery's purpose is to centralize as many photos as possible and facilitate quick access. It will only be used if its indexing is of high quality.
 

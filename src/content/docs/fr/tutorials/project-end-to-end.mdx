@@ -2,6 +2,9 @@
 title: "Mener un projet de bout en bout"
 description: "Il est assez rare, dans le cadre professionnel, de pouvoir mener un projet de (quasiment) A à Z, de la conception à la communication, en passant par la réalisation."
 ---
+
+import Mermaid from '../../../../components/Mermaid.astro';
+
 Il est assez rare, dans le cadre professionnel, de pouvoir mener un projet de (quasiment) A à Z, de la conception à la communication, en passant par la réalisation. Soit, gérer autant les aspects humains et organisationnels que les aspects techniques, ainsi que toute la communication: graphisme, rédactionnel, et même vidéo. C'est plus souvent possible dans le cadre associatif.
 
 ## Gestion des photos d'une association
@@ -29,7 +32,25 @@ J'ai donc :
 
 Voici le schéma global de la solution :
 
-![Schéma du flux de travail de la galerie photo : photographes, iconographes et graphistes utilisant Piwigo](/assets/schema-galerie.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+graph LR
+    accTitle: Schéma du flux de travail de la galerie photo
+    accDescr: Schéma montrant les photographes téléversant et les iconographes sélectionnant, classant et indexant les photos dans Piwigo, qui alimente un dépôt Git sauvegardé localement et cloné par les membres de l'association, et permettant aux graphistes de rechercher et télécharger des photos.
+
+    Photographe -->|Upload| Piwigo
+    Iconographe -->|Sélection, classement, indexation| Piwigo
+    Piwigo --> Git["Dépôt Git"]
+    Git --> Sauvegarde["Sauvegarde locale"]
+    Git -->|Clone| Membre["Membre de l'association"]
+    Piwigo -->|Recherche, téléchargement| Graphiste
+
+    classDef hub fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
+    classDef node fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class Piwigo hub
+    class Photographe,Iconographe,Git,Sauvegarde,Membre,Graphiste node
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 
 Tout a été réalisé sous *Linux*.
 
@@ -167,7 +188,25 @@ La chaîne de production graphique s'appuie sur 3 rôles :
 
 Si les deux premiers sont familiers aux membres de l'association, celui d'iconographe est nouveau pour beaucoup. Je me suis tout d'abord demandé si je devais utiliser ce mot peu usité. J'ai conclu que oui : il me fallait même insister sur ce sujet qui est la clé de la réussite à long terme du projet.
 
-![Flux de gestion des photos Piwigo montrant les rôles : le photographe téléverse, l'iconographe indexe, le graphiste télécharge](/assets/workflow-photo-piwigo.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+graph LR
+    accTitle: Flux de gestion des photos Piwigo par rôle
+    accDescr: Schéma montrant le photographe prenant la photo, la retouchant et la téléversant, l'iconographe sélectionnant, classant et ajoutant des mots-clés, et le graphiste consultant, téléchargeant et publiant les photos.
+
+    Photographe --> Prise["Prise de vue"] --> Retouche --> Upload --> Selection["Sélection et classement"]
+    Iconographe --> Selection
+    Selection --> Motscles["Ajout de mots-clés"]
+    Motscles --> Consultation["Consultation et téléchargement"]
+    Graphiste --> Consultation
+    Consultation --> Publication
+
+    classDef role fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
+    classDef step fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class Photographe,Iconographe,Graphiste role
+    class Prise,Retouche,Upload,Selection,Motscles,Consultation,Publication step
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 
 En effet, l'association a vécu des années sans galerie photo et pourra continuer à le faire, même si ce n'est pas de manière optimale. Les membres continueront à prendre des photos et à créer des affiches. En revanche, l'intérêt de la galerie est de centraliser le maximum de photos et d'y donner un accès rapide. Elle ne sera utilisée que si son indexation est de qualité.
 
