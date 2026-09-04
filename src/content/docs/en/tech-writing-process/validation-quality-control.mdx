@@ -12,7 +12,25 @@ import Mermaid from '../../../../components/Mermaid.astro';
 Technical writing materials must undergo rigorous quality control before being sent to their intended audiences.
 :::
 
-Content must be validated before [delivery](../delivery/). This may seem obvious, but it requires the involvement of the people in charge of validation from the outset. Ideally, the validation phase takes place in parallel with the creation phase: early modifications are less costly. An enterprise content management tool such as Alfresco may seem like an attractive way to set up workflows, at least on paper. In reality, however, such a solution can be cumbersome. It is also incompatible with certain source formats based on modular, non-monolithic documents and version management software (the Componize project, however, proposes managing DITA XML projects within Alfresco). It remains imperative to set up validation stages throughout the project. Combined with a version management system, comparison tools are very useful for validating updates. For example, a "tagged" version of a DITA XML project and the current version can be exported in RTF format, then compared in a word processor. This is far less tedious than a manual comparison. Comparing information modules directly in the version management system is not sufficient, as they are merely the "building blocks" of the final document.
+Content must be validated before [delivery](../delivery/). This may seem obvious, but it requires the involvement of the people in charge of validation from the outset. Ideally, the validation phase takes place in parallel with the creation phase: early modifications are less costly.
+
+<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "taskBkgColor": "{{childFill}}", "taskBorderColor": "{{childStroke}}", "taskTextColor": "{{childText}}", "taskTextOutsideColor": "{{childText}}", "taskTextLightColor": "{{childText}}", "taskTextDarkColor": "{{childText}}", "sectionBkgColor": "{{parentFill}}", "sectionBkgColor2": "{{childFill}}", "gridColor": "{{lineColor}}"}}}%%
+gantt
+    accTitle: Serial or parallel validation of the writing phase
+    accDescr: Gantt chart comparing a serial process, where validation only starts once writing is complete, and a parallel process, where validation starts as soon as the first modules are written, shortening the publication timeline.
+    dateFormat YYYY-MM-DD
+    axisFormat %d
+    section Serial process
+    Writing               :s1, 2024-01-01, 3d
+    Validation            :s2, after s1, 2d
+    Publication           :s3, after s2, 1d
+    section Parallel process
+    Writing               :p1, 2024-01-01, 3d
+    Continuous validation :p2, 2024-01-01, 3d
+    Publication           :p3, after p1, 1d`} />
+**Validating in parallel with writing shortens the publication timeline.**
+
+An enterprise content management tool such as Alfresco may seem like an attractive way to set up workflows, at least on paper. In reality, however, such a solution can be cumbersome. It is also incompatible with certain source formats based on modular, non-monolithic documents and version management software (the Componize project, however, proposes managing DITA XML projects within Alfresco). It remains imperative to set up validation stages throughout the project. Combined with a version management system, comparison tools are very useful for validating updates. For example, a "tagged" version of a DITA XML project and the current version can be exported in RTF format, then compared in a word processor. This is far less tedious than a manual comparison. Comparing information modules directly in the version management system is not sufficient, as they are merely the "building blocks" of the final document.
 
 ## Creation and validation workflow
 
