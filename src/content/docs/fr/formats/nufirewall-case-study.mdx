@@ -206,7 +206,26 @@ Dans le 2e cas, tout le contenu du nœud `<step>` sera remplacé par la valeur d
 
 L'unité d'information DITA XML la plus petite est le nœud `<ph>`. Le rédacteur technique doit cependant veiller à ne lui appliquer le mécanisme conref que pour une phrase complète ou un terme qui ne sera jamais traduit (par exemple, le nom de la société ou d'un produit). De gros problèmes apparaissent sinon lors de la [traduction dans d'autres langues](../../tech-writing-process/translation/).
 
-![Les phrases se découpent différemment selon les langues.](/assets/traduction-conref.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
+graph TB
+    accTitle: Les phrases se découpent différemment selon les langues
+    accDescr: Schéma montrant les mêmes segments conref assemblés dans un ordre différent pour deux langues, illustrant pourquoi le conref au niveau du segment ne se traduit pas proprement.
+
+    subgraph langA["Langue A"]
+        direction LR
+        A1["conref A"] --> A2["conref B"] --> A3["conref C"]
+    end
+
+    subgraph langB["Langue B"]
+        direction LR
+        B1["conref B"] --> B2["conref E"] --> B3["conref A"]
+    end
+
+    classDef seg fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class A1,A2,A3,B1,B2,B3 seg
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **Les phrases se découpent différemment selon les langues.**
 
 **Exemple**
@@ -265,7 +284,18 @@ Dans l'exemple ci-dessous, le *conref* source *see-admin-guide* contient le *con
 
 Ce niveau de complexité est gérable. Mais si le *conref* source *admin-guide-title* contient lui-même un *conref* cible, le code DITA XML devient un vrai plat de spaghettis (sans compter les risques de référence circulaire). Les *conref* peuvent théoriquement être combinés à l'infini, mais les problèmes pratiques que cela engendre peuvent également être infinis !
 
-![Imbriquer les conref sur plusieurs niveaux : puissant, mais dangereux !](/assets/imbriquer-conref.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+graph LR
+    accTitle: Imbriquer les conref sur plusieurs niveaux est risqué
+    accDescr: Schéma montrant trois niveaux d'imbrication de conref, un conref pointant vers un conref pointant vers un autre conref.
+
+    A[conref] --> B[conref] --> C[conref]
+
+    classDef node fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class A,B,C node
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **Imbriquer les conref sur plusieurs niveaux : puissant, mais dangereux !**
 
 Pour résumer la situation :
@@ -283,7 +313,25 @@ Recourir aux conref est le meilleur moyen dont dispose le rédacteur technique p
 
 De par la nature des informations qu'elles contiennent, les sections de type *task* ont un taux plus élevé de réutilisation du contenu que celles de type *concept* ou *reference*.
 
-![Les conref modularisent de petits blocs d'information](/assets/maximiser-conref.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
+graph LR
+    accTitle: Les conref modularisent de petits blocs d'information
+    accDescr: Schéma opposant une source monolithique sans réutilisation à une source modulaire composée de plusieurs blocs conref.
+
+    subgraph mono["Source monolithique"]
+        M[Contenu]
+    end
+
+    subgraph mod["Source modulaire"]
+        direction TB
+        C1[conref]
+        C2[conref]
+        C3[conref]
+    end
+
+    classDef node fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class M,C1,C2,C3 node`} />
 **Les conref modularisent de petits blocs d'information.**
 
 Comme dans l'exemple ci-dessous, il n'est pas rare d'obtenir rapidement des fichiers dont la seule valeur unique est le titre, le reste du contenu, *pourtant unique* (car il assemble de manière unique des blocs d'information non uniques), étant généré par des *conref*.

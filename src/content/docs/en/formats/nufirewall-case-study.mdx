@@ -197,7 +197,26 @@ In the second scenario, the entire `<step>` node content is replaced by the sour
 
 The smallest DITA XML information unit is the `<ph>` node. However, technical writers should apply the conref mechanism only for complete sentences or terms not intended for translation (e.g., company or product names). Otherwise, significant issues arise during [language translation](../../tech-writing-process/translation/).
 
-![Sentence structure varies by language](/assets/en/traduction-conref.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
+graph TB
+    accTitle: Sentence structure varies by language
+    accDescr: Diagram showing the same conref segments assembled in a different order for two languages, illustrating why segment-level conref does not translate cleanly.
+
+    subgraph langA["Language A"]
+        direction LR
+        A1["conref A"] --> A2["conref B"] --> A3["conref C"]
+    end
+
+    subgraph langB["Language B"]
+        direction LR
+        B1["conref B"] --> B2["conref E"] --> B3["conref A"]
+    end
+
+    classDef seg fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class A1,A2,A3,B1,B2,B3 seg
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **Sentence structure varies by language.**
 
 **Example**
@@ -255,7 +274,18 @@ In the example below, source *conref* *see-admin-guide* includes target *conref*
 
 This level of complexity is navigable. But if *admin-guide-title* contains yet another target *conref*, the DITA XML becomes cumbersome (and you risk circular references). In theory the possible combinations are endless; in practice the problems multiply just as fast.
 
-![Conref multi-level nesting: risky](/assets/en/imbriquer-conref.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+graph LR
+    accTitle: Multi-level conref nesting is risky
+    accDescr: Diagram showing three levels of conref nesting, one conref pointing to a conref pointing to another conref.
+
+    A[conref] --> B[conref] --> C[conref]
+
+    classDef node fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class A,B,C node
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **Multi-level conref nesting: risky!**
 
 Summary:
@@ -273,7 +303,25 @@ Leveraging conref enables DITA XML technical writers to significantly cut costs 
 
 *Task* sections, due to their nature, often see higher content reuse than *concept* or *reference* sections.
 
-![Conref modularizes small information blocks](/assets/en/maximiser-conref.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
+graph LR
+    accTitle: Conrefs modularize small information blocks
+    accDescr: Diagram contrasting a monolithic source with no reuse against a modular source built from several conref blocks.
+
+    subgraph mono["Monolithic source"]
+        M[Content]
+    end
+
+    subgraph mod["Modular source"]
+        direction TB
+        C1[conref]
+        C2[conref]
+        C3[conref]
+    end
+
+    classDef node fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class M,C1,C2,C3 node`} />
 **Conrefs modularize small information blocks.**
 
 A common pattern is to write only the unique titles and pull in everything else with *conref*.
