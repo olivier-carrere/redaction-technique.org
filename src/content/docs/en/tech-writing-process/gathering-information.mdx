@@ -22,10 +22,22 @@ Once the [technical writing project has been clearly defined](../project-definit
 - Reading trade publications.
 
 
-<Mermaid code={`graph TD
-    A[Gathering information] --> B[Interview]
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}}}%%
+graph TD
+    accTitle: Gathering information process
+    accDescr: Diagram showing that gathering information relies on three activities: interviews, product manipulation, and written source analysis.
+
+    A[Gathering information] --> B["&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interview&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"]
     A --> C[Product manipulation]
-    A --> D[Written source analysis]`} />
+    A --> D[Written source analysis]
+
+    classDef parent fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
+    classDef child fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class A parent
+    class B,C,D child
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **Information Gathering**
 
 Information must be cross-checked to minimize the risk of transmitting incorrect or outdated information. The technical writer must perform diligent investigative work. By putting themselves in the user's shoes, they check each piece of information and differentiate relevant data from noise that could disrupt the message.

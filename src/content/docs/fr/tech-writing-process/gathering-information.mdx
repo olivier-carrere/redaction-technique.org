@@ -21,10 +21,22 @@ Une fois le projet de rédaction technique clairement défini, le rédacteur tec
 -   lecture de la presse spécialisée.
 
 
-<Mermaid code={`graph TD
-    A["Collecte de l'information"] --> B[Interview]
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}}}%%
+graph TD
+    accTitle: Processus de collecte de l'information
+    accDescr: Schéma montrant que la collecte de l'information repose sur trois activités : l'interview, la manipulation du produit et l'analyse des sources écrites.
+
+    A["Collecte de l'information"] --> B["&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interview&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"]
     A --> C["Manipulation du produit"]
-    A --> D["Analyse des sources écrites"]`} />
+    A --> D["Analyse des sources écrites"]
+
+    classDef parent fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
+    classDef child fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class A parent
+    class B,C,D child
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **Collecte de l'information**
 
 Les informations doivent être recoupées pour minimiser le risque de transmettre des informations erronées ou obsolètes. Le rédacteur technique doit se livrer à un véritable travail d'enquête. En se mettant à la place de l'utilisateur, il vérifie chaque information et fait le tri entre les données pertinentes et celles qui ne seront que du bruit perturbant le message.

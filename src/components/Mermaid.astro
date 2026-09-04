@@ -21,10 +21,41 @@ const uid = "mermaid-" + Math.random().toString(36).slice(2, 10);
     return document.documentElement.dataset.theme === "light" ? "default" : "dark";
   }
 
+  // Mermaid's classDef/linkStyle grammar can't parse CSS var(), so diagram
+  // source uses {{token}} placeholders resolved here against the site's
+  // Starlight color tokens (src/styles/custom.css / props.css), per theme.
+  const palettes = {
+    dark: {
+      parentFill: "#17264f",
+      parentStroke: "#3369ff",
+      parentText: "#b3c7ff",
+      childFill: "#23262f",
+      childStroke: "#555962",
+      childText: "#edeef3",
+      lineColor: "#888c96",
+    },
+    default: {
+      parentFill: "#cfd4fc",
+      parentStroke: "#3d50f5",
+      parentText: "#0f1c8a",
+      childFill: "#edeef3",
+      childStroke: "#888c96",
+      childText: "#23262f",
+      lineColor: "#555962",
+    },
+  };
+
+  function applyPalette(code, theme) {
+    const palette = palettes[theme];
+    return code.replace(/\{\{(\w+)\}\}/g, (match, key) => palette[key] ?? match);
+  }
+
   async function renderOne(el) {
-    const code = el.dataset.code;
-    if (!code) return;
-    mermaid.initialize({ startOnLoad: false, theme: currentTheme(), securityLevel: "strict" });
+    const raw = el.dataset.code;
+    if (!raw) return;
+    const theme = currentTheme();
+    const code = applyPalette(raw, theme);
+    mermaid.initialize({ startOnLoad: false, theme, securityLevel: "strict" });
     const { svg } = await mermaid.render(el.id + "-svg", code);
     el.innerHTML = svg;
   }
