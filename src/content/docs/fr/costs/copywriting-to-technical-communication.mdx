@@ -2,11 +2,29 @@
 title: "De la rédaction à la communication technique"
 description: "La communication technique ne se réduit pas à la rédaction produit. Découvrez leur différence de périmètre et la valeur ajoutée de la communication technique."
 ---
+import Mermaid from '../../../../components/Mermaid.astro';
+
 Le but de la communication technique est de transformer les prospects en clients satisfaits. Le rédacteur technique fournit au marché l'information dont il a besoin pour sélectionner, évaluer et utiliser une solution de haute technologie. Au sein de l'entreprise, il est l'interface entre les services R&D et marketing. À l'extérieur, il crée le dialogue entre l'entreprise et ses différents publics.
 
 La communication technique est souvent réduite à la rédaction technique. La rédaction technique est destinée à fournir la documentation des produits, et intervient en aval de la vente. La communication technique intervient dès l'amont du processus de vente et accompagne le produit tout au long de son cycle de vie. Destinée autant au grand public, aux journalistes et aux prospects qu'aux clients, elle dépasse et englobe la rédaction technique, destinée uniquement aux utilisateurs.
 
-![Supports de rédaction marketing et technique](/assets/marketing-technique.svg)
+<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "quadrant1Fill": "{{childFill}}", "quadrant2Fill": "{{childFill}}", "quadrant3Fill": "{{childFill}}", "quadrant4Fill": "{{childFill}}", "quadrant1TextFill": "{{lineColor}}", "quadrant2TextFill": "{{lineColor}}", "quadrant3TextFill": "{{lineColor}}", "quadrant4TextFill": "{{lineColor}}", "quadrantPointFill": "{{parentStroke}}", "quadrantPointTextFill": "{{childText}}", "quadrantXAxisTextFill": "{{childText}}", "quadrantYAxisTextFill": "{{childText}}", "quadrantInternalBorderStrokeFill": "{{lineColor}}", "quadrantExternalBorderStrokeFill": "{{lineColor}}", "quadrantTitleFill": "{{childText}}"}}}%%
+quadrantChart
+    accTitle: Supports de rédaction marketing et technique selon le niveau technique et la valeur marketing
+    accDescr: Diagramme en quadrants positionnant six supports de communication selon leur niveau technique et leur valeur marketing. L'animation est peu technique et à forte valeur marketing. Le guide de l'utilisateur est très technique et à faible valeur marketing. Le livre blanc est élevé sur les deux axes. Le magazine d'entreprise est faible sur les deux. La plaquette et le site web se situent au milieu.
+    title Supports de rédaction marketing et technique
+    x-axis Niveau technique faible --> Niveau technique élevé
+    y-axis Valeur marketing faible --> Valeur marketing élevée
+    quadrant-1 Marketing et technique élevés
+    quadrant-2 Marketing élevé, technique faible
+    quadrant-3 Marketing et technique faibles
+    quadrant-4 Marketing faible, technique élevé
+    Animation: [0.10, 0.73]
+    "Magazine d'entreprise": [0.25, 0.31]
+    Plaquette: [0.48, 0.42]
+    "Site web": [0.64, 0.61]
+    "Livre blanc": [0.93, 0.57]
+    "Guide de l'utilisateur": [0.81, 0.11]`} />
 **Supports de rédaction marketing et technique**
 
 La communication technique a pour but de montrer l'adéquation d'un produit aux besoins de sa cible. Elle recourt pour cela à différents supports, plus ou moins adaptés au niveau d'expertise de son public et à son statut par rapport à l'entreprise (grand public, journalistes, prospects, clients...). Le rédacteur technique doit adapter son message à chaque public. Utilisant toutes les ressources de la communication (rédaction, illustrations, films, animations...) il prend constamment en compte la dimension marketing. Pour augmenter les ventes, tout support de communication doit être un outil marketing.

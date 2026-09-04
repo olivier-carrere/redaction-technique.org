@@ -4,12 +4,29 @@ description: "Technical communication is often reduced to technical writing. Tec
 tags: [technical-writing]
 ---
 
+import Mermaid from '../../../../components/Mermaid.astro';
 
 The goal of **technical communication** is to turn prospects into satisfied customers. The technical writer gives the market the information it needs to choose, evaluate, and use a high-tech product. Inside the company, they sit at the interface between R&D and marketing; outside it, they open a dialogue between the company and its many audiences. The [three levels of technical documentation](../three-levels-of-documentation/) offer a useful framework for understanding where a company's documentation stands today.
 
 Technical communication is often reduced to **technical writing** — the product documentation produced once a sale is made. But technical communication starts earlier, before the sale, and stays with the product across its entire life cycle. Where technical writing speaks to users, technical communication also speaks to the general public, to journalists, and to prospects.
 
-![Marketing and technical writing tools](/assets/en/marketing-technique.svg)
+<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "quadrant1Fill": "{{childFill}}", "quadrant2Fill": "{{childFill}}", "quadrant3Fill": "{{childFill}}", "quadrant4Fill": "{{childFill}}", "quadrant1TextFill": "{{lineColor}}", "quadrant2TextFill": "{{lineColor}}", "quadrant3TextFill": "{{lineColor}}", "quadrant4TextFill": "{{lineColor}}", "quadrantPointFill": "{{parentStroke}}", "quadrantPointTextFill": "{{childText}}", "quadrantXAxisTextFill": "{{childText}}", "quadrantYAxisTextFill": "{{childText}}", "quadrantInternalBorderStrokeFill": "{{lineColor}}", "quadrantExternalBorderStrokeFill": "{{lineColor}}", "quadrantTitleFill": "{{childText}}"}}}%%
+quadrantChart
+    accTitle: Marketing and technical writing media by technical level and marketing value
+    accDescr: Quadrant chart plotting six communication media by technical level and marketing value. Animation is low-technical and high-marketing. User guide is high-technical and low-marketing. White paper is high on both axes. Corporate magazine is low on both. Brochure and website sit near the middle.
+    title Marketing and technical writing tools
+    x-axis Low Technical level --> High Technical level
+    y-axis Low Marketing value --> High Marketing value
+    quadrant-1 High marketing, high technical
+    quadrant-2 High marketing, low technical
+    quadrant-3 Low marketing, low technical
+    quadrant-4 Low marketing, high technical
+    Animation: [0.10, 0.73]
+    Corporate magazine: [0.25, 0.31]
+    Brochure: [0.48, 0.42]
+    Website: [0.64, 0.61]
+    White paper: [0.93, 0.57]
+    User guide: [0.81, 0.11]`} />
 *Technical communication supports both marketing and technical writing.*
 
 Its aim is to show that a product fits its audience. To do that, it draws on a range of media, each tailored to the reader's level of expertise and role — general public, journalists, prospects, customers. The technical writer adapts the message to each one, and whatever the medium — text, illustration, film, animation — a marketing dimension runs through all of it. To support sales, every piece of communication has to work as a marketing tool too.
