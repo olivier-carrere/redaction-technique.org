@@ -2,11 +2,31 @@
 title: "Un référentiel unique ?"
 description: "Un référentiel Git unique pour la documentation technique maximise la réutilisation, la cohérence et la qualité, tout en simplifiant la collaboration en équipe."
 ---
+import Mermaid from '../../../../components/Mermaid.astro';
+
 Idéalement, tout le contenu peut être placé sous un référentiel unique, par exemple le logiciel de gestion de versions Git. Ceci en maximise la réutilisation, la cohérence et la qualité. Si le contenu est au format DITA XML ou DocBook, par exemple, on peut exploiter au mieux les capacités de *single-sourcing* de ces formats pour le publier sous la forme appropriée.
 
 Le contenu devient un réseau de modules d'information ; il faut alors gérer les relations au sein de ce réseau, notamment lors des mises à jour.
 
-![Référentiel unique](/assets/referentiel-unique.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+graph TD
+    accTitle: Référentiel unique alimentant plusieurs livrables
+    accDescr: Schéma montrant un référentiel de documentation unique alimentant six formats de livrables : plaquette, site web, magazine d'entreprise, livre blanc, guide de l'utilisateur et animation.
+
+    A["Référentiel unique"] --> B[Plaquette]
+    A --> C["Site web"]
+    A --> D["Magazine d'entreprise"]
+    A --> E["Livre blanc"]
+    A --> F["Guide de l'utilisateur"]
+    A --> G[Animation]
+
+    classDef parent fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
+    classDef child fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class A parent
+    class B,C,D,E,F,G child
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **Référentiel unique**
 
 En pratique, il semble que rares sont les entreprises qui ont franchi ce pas. Il est vrai que tant que les formats structurés ne seront pas enseignés dans le secondaire, il paraît utopique de vouloir y convertir tous les acteurs de la société, surtout si le turn-over y est important.

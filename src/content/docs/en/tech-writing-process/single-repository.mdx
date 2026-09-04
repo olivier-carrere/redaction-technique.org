@@ -4,12 +4,31 @@ description: "A single Git repository for all technical documentation content ma
 tags: [git, version-control]
 ---
 
+import Mermaid from '../../../../components/Mermaid.astro';
 
 Ideally, all content should be placed in a single repository, such as Git version control software. This maximizes reuse, consistency, and quality. If the content is in [DITA XML](../../formats/modular-documentation/) or DocBook format, for example, the *single-sourcing* capabilities of these formats can be fully exploited to publish the content in the appropriate form.
 
 Content becomes a network of information modules, and the relationships within this network need to be managed, particularly during updates.
 
-![Single documentation repository centralizing all DITA XML and DocBook content for maximum reuse and consistency](/assets/en/referentiel-unique.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+graph TD
+    accTitle: Single repository feeding multiple deliverables
+    accDescr: Diagram showing a single documentation repository feeding six deliverable formats: brochure, website, corporate magazine, white paper, user guide, and animation.
+
+    A[Single repository] --> B[Brochure]
+    A --> C[Website]
+    A --> D[Corporate magazine]
+    A --> E[White paper]
+    A --> F[User guide]
+    A --> G[Animation]
+
+    classDef parent fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
+    classDef child fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class A parent
+    class B,C,D,E,F,G child
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **Single Repository**
 
 In practice, it appears that very few companies have taken this step. It is true that until structured formats are taught in secondary education, it seems unrealistic to expect all team members within a company to adopt them, especially if employee turnover is high. A [CMS](../cms-workflow-and-reliability/) can help bridge the gap, but its reliability must be carefully evaluated.
