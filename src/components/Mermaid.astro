@@ -6,13 +6,21 @@
 // data-theme attribute) and after view-transition navigation.
 interface Props {
   code: string;
+  // Opt-in fixed backdrop for diagrams whose fills use literal (non-theme-token)
+  // colors and need a stable canvas behind them regardless of light/dark mode.
+  background?: string;
 }
 
-const { code } = Astro.props;
+const { code, background } = Astro.props;
 const uid = "mermaid-" + Math.random().toString(36).slice(2, 10);
 ---
 
-<div class="mermaid-diagram" id={uid} data-code={code}></div>
+<div
+  class="mermaid-diagram"
+  id={uid}
+  data-code={code}
+  style={background ? `background:${background};border-radius:8px;padding:1rem;` : undefined}
+></div>
 
 <script>
   import mermaid from "mermaid";
