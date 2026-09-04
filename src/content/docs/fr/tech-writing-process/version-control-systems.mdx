@@ -2,6 +2,8 @@
 title: "Les systèmes de gestion de versions - rustiques mais fiables"
 description: "Gérez la documentation technique avec Git ou Subversion comme du code source : suivez les modifications, collaborez en équipe et restaurez des versions."
 ---
+import Mermaid from '../../../../components/Mermaid.astro';
+
 Travailler sur des fichiers sources au format texte, et non binaire, est l'occasion pour le rédacteur technique de gérer son contenu comme les développeurs gèrent leur code : sous un système de gestion des sources tel que Git ou Subversion (ou, historiquement, SourceSafe, abandonné vers 2010).
 
 Ces systèmes :
@@ -17,7 +19,14 @@ Sur des fichiers texte, et non binaires, un système de gestion de version offre
 - non-verrouillage des fichiers par les membres de l'équipe qui les ont ouverts,
 - possibilité de restauration très fine et dans le temps (depuis le dernier dépôt du fichier sur le référentiel) et en termes de quantité de travail.
 
-![Le système de gestion de versions conserve l'historique des modifications.](/assets/versioning-system.svg)
+<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "git0": "{{parentStroke}}", "commitLabelColor": "{{childText}}", "commitLabelBackground": "{{childFill}}", "tagLabelBackground": "{{parentFill}}", "tagLabelBorder": "{{parentStroke}}", "tagLabelColor": "{{parentText}}"}}}%%
+gitGraph
+    accTitle: Historique des versions sur le tronc
+    accDescr: Graphe de type Git représentant le tronc sous forme d'une suite de commits, dont deux sont marqués par un tag correspondant à une version publiée.
+    commit tag: "version 1"
+    commit
+    commit tag: "version 2"
+    commit`} />
 **Le système de gestion de versions conserve l'historique des modifications.**
 
 Des interfaces graphiques permettent d'utiliser directement sous les gestionnaires de fichiers ces outils originellement conçus pour être utilisés en ligne de commande. Cependant, le paradigme sur lequel ils reposent est parfois difficile à appréhender pour les publics les moins technophiles.
