@@ -4,6 +4,7 @@ description: "Comparez les formats structurés (DITA XML, DocBook) et non struct
 ---
 
 import DitaRenameBox from '../../../../components/DitaRenameBox.astro';
+import Mermaid from '../../../../components/Mermaid.astro';
 
 :::tip
 
@@ -18,7 +19,34 @@ Les informations contenues dans un document technique peuvent être catégorisé
 | task      | Procédure pas à pas, séquentielle et numérotée, destinée à réaliser une tâche.          |
 | reference | Informations de référence sur une liste d'éléments tels que des options d'un programme. |
 
-![Formats structurés et non structurés](/assets/structured.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
+graph LR
+    accTitle: Organisation du contenu structurée ou non structurée
+    accDescr: Schéma comparant des sections non structurées, qui restent des blocs indifférenciés, à des sections structurées, chacune décomposée en types d'information concept, task et reference.
+
+    subgraph un["Non structuré"]
+        direction TB
+        U1["Section 1"]
+        U2["Section 2"]
+    end
+
+    subgraph str["Structuré"]
+        direction TB
+        S1["Section 1"] --> C1[concept]
+        S1 --> T1[task]
+        S1 --> R1[reference]
+        S2["Section 2"] --> C2[concept]
+        S2 --> T2[task]
+        S2 --> R2[reference]
+    end
+
+    classDef section fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
+    classDef itype fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class U1,U2,S1,S2 section
+    class C1,T1,R1,C2,T2,R2 itype
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **Formats structurés et non structurés**
 
 Sous un format non structuré tel que le format traditionnel de FrameMaker, rien ne contraint le rédacteur technique à organiser l'information selon son sens. Si des règles de rédaction rigoureuses ne sont pas scrupuleusement suivies, l'information fournie à l'utilisateur risque d'être peu claire et difficile à parcourir rapidement.
