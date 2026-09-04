@@ -3,6 +3,7 @@ title: "Validation and quality control"
 description: "Validate technical documentation before delivery: run validation in parallel with writing, track every change request through a CMS workflow or a ticketing system, and use comparison tools to review updates reliably."
 tags: [technical-writing]
 ---
+import Mermaid from '../../../../components/Mermaid.astro';
 
 
 
@@ -25,6 +26,18 @@ Given this situation, we need an information management system for the evolution
   - implementation of the ticket by a technical writer,
   - closure of the ticket by the ticket creator,
   - publication of documentation when all critical tickets have been closed.
+
+<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "cScale1": "{{parentFill}}", "cScaleLabel1": "{{parentText}}", "cScaleInv1": "{{parentStroke}}", "cScale2": "{{parentFill}}", "cScaleLabel2": "{{parentText}}", "cScaleInv2": "{{parentStroke}}", "cScale3": "{{parentFill}}", "cScaleLabel3": "{{parentText}}", "cScaleInv3": "{{parentStroke}}", "cScale4": "{{parentFill}}", "cScaleLabel4": "{{parentText}}", "cScaleInv4": "{{parentStroke}}", "cScale5": "{{parentFill}}", "cScaleLabel5": "{{parentText}}", "cScaleInv5": "{{parentStroke}}"}, "kanban": {"sectionWidth": 260}}}%%
+kanban
+    created[Created]
+        t1[New feature to document]@{ ticket: 'DOC-142', assigned: 'Developer', priority: 'High' }
+    inprogress[Writing in progress]
+        t2[Update the installation guide]@{ ticket: 'DOC-138', assigned: 'Technical writer', priority: 'Very High' }
+    closed[Closed]
+        t3[Add a configuration example]@{ ticket: 'DOC-121', assigned: 'Technical writer' }
+    published[Published]
+        t4[Rework the troubleshooting section]@{ ticket: 'DOC-098' }`} />
+**The ticket workflow moves each request through to publication.**
 
 The main functions of a CMS are as follows:
 

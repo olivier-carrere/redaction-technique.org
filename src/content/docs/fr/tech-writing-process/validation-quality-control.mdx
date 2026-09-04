@@ -2,6 +2,8 @@
 title: "Validation et contrôle qualité"
 description: "Validez la documentation technique avant livraison : menez la validation en parallèle de la rédaction, tracez chaque demande de modification via un workflow CMS ou un système de tickets, et comparez les versions pour fiabiliser les mises à jour."
 ---
+import Mermaid from '../../../../components/Mermaid.astro';
+
 :::note
 
 Un support de rédaction technique doit être soumis à un contrôle qualité rigoureux avant d'être communiqué à ses différentes cibles.
@@ -21,6 +23,18 @@ Face à cet état de fait, il convient de mettre en place un système de gestion
   - mise en œuvre du ticket par un rédacteur technique,
   - fermeture du ticket par le créateur du ticket,
   - publication de la documentation lorsque tous les tickets critiques sont fermés.
+
+<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "cScale1": "{{parentFill}}", "cScaleLabel1": "{{parentText}}", "cScaleInv1": "{{parentStroke}}", "cScale2": "{{parentFill}}", "cScaleLabel2": "{{parentText}}", "cScaleInv2": "{{parentStroke}}", "cScale3": "{{parentFill}}", "cScaleLabel3": "{{parentText}}", "cScaleInv3": "{{parentStroke}}", "cScale4": "{{parentFill}}", "cScaleLabel4": "{{parentText}}", "cScaleInv4": "{{parentStroke}}", "cScale5": "{{parentFill}}", "cScaleLabel5": "{{parentText}}", "cScaleInv5": "{{parentStroke}}"}, "kanban": {"sectionWidth": 260}}}%%
+kanban
+    created[Créé]
+        t1[Nouvelle fonctionnalité à documenter]@{ ticket: 'DOC-142', assigned: 'Développeur', priority: 'High' }
+    inprogress[Rédaction en cours]
+        t2[Mise à jour du guide d'installation]@{ ticket: 'DOC-138', assigned: 'Rédacteur technique', priority: 'Very High' }
+    closed[Fermé]
+        t3[Ajout d'un exemple de configuration]@{ ticket: 'DOC-121', assigned: 'Rédacteur technique' }
+    published[Publié]
+        t4[Refonte de la section dépannage]@{ ticket: 'DOC-098' }`} />
+**Le workflow de tickets fait progresser chaque demande jusqu'à la publication.**
 
 Les fonctions principales d’un CMS sont les suivantes :
 
