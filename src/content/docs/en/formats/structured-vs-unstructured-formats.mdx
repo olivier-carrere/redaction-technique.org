@@ -82,7 +82,18 @@ Some companies have existing content in DocBook format. Often managed by the com
 
 It's easy to generate DocBook from DITA XML. <abbr title="DITA Open Toolkit">DITA-OT</abbr> offers this target format by default, just like PDF or HTML. The reverse operation cannot be fully automated. Why not?
 
-![Entropy diagram: migrating from rich DITA XML to poorer DocBook is a non-reversible information loss](/assets/en/entropie.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+graph LR
+    accTitle: RAW to TIFF to JPEG is a non-reversible process
+    accDescr: Diagram showing a one-way chain from RAW to TIFF to JPEG, each step losing information that cannot be recovered by reversing the process.
+
+    A[RAW] --> B[TIFF] --> C[JPEG]
+
+    classDef step fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class A,B,C step
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **A non-reversible process**
 
 It's not possible to automatically migrate data from information-poor to information-rich formats.
@@ -99,7 +110,18 @@ If your content were a photo, we could make the following analogy:
 
 Switching from RAW to TIFF and from TIFF to JPEG is destructive and cannot be reversed.
 
-![Format hierarchy: DITA XML, DocBook, and PDF as progressively semantically poorer formats](/assets/en/entropie-dita-docbook.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+graph LR
+    accTitle: DITA XML to DocBook to PDF is a non-reversible process
+    accDescr: Diagram showing a one-way chain from DITA XML to DocBook to PDF, each step semantically poorer than the last and not recoverable by reversing the process.
+
+    A[DITA XML] --> B[DocBook] --> C[PDF]
+
+    classDef step fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class A,B,C step
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **A non-reversible process**
 
 PDF is semantically poorer than DocBook, which is itself poorer than DITA XML.
@@ -118,7 +140,15 @@ Migrating from FrameMaker to DITA XML is not like saving an MS Word document in 
 
 To put it in garden terms: turning a swamp into the gardens of Versailles means passing through the English garden stage first - a place that may not be strictly architectural, but that's very pleasant to live in. Good news: if the technical writer has consistently used a limited set of styles and rationally organized their FrameMaker content, they're certainly already very close to this stage.
 
-![Migration from FrameMaker to DITA XML](/assets/en/framemaker-to-dita-migration.svg)
+<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "taskBkgColor": "{{childFill}}", "taskBorderColor": "{{childStroke}}", "taskTextColor": "{{childText}}", "taskTextOutsideColor": "{{childText}}", "taskTextLightColor": "{{childText}}", "taskTextDarkColor": "{{childText}}", "sectionBkgColor": "{{parentFill}}", "sectionBkgColor2": "{{childFill}}", "gridColor": "{{lineColor}}"}}}%%
+gantt
+    accTitle: Migration from FrameMaker to DITA XML
+    accDescr: Diagram showing the migration to DITA XML and the implementation of the DITA XML workflow running as two parallel activities.
+    dateFormat YYYY-MM-DD
+    axisFormat %d
+    section Migration
+    Migration to DITA XML                    :m1, 2024-01-01, 3d
+    Implementation of the DITA XML workflow  :m2, 2024-01-01, 3d`} />
 **Migration from FrameMaker to DITA XML**
 
 By the way, if, for any reason, your migration project were to stop there, the technical writers, the company, and the users would already have gained a great deal, respectively, in:
@@ -137,7 +167,15 @@ However, a significant amount of restructuring of the FrameMaker document must b
 - elimination of overrides (text properties applied manually and overwriting styles; this kind of modification is, if not impossible, at least very limited in a structured format),
 - harmonization and simplification of FrameMaker styles to limit them and match them to the DITA XML tags that will be used (for example, a *note_important* style to the `<note type="important">` tag). It is necessary to analyze the existing content beforehand and decide which set of tags will be used from among the hundreds proposed by DITA XML: it is strongly inadvisable to use them all.
 
-![Restructuring FrameMaker content and setting up the DITA XML chain](/assets/en/framemaker-restructure.svg)
+<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "taskBkgColor": "{{childFill}}", "taskBorderColor": "{{childStroke}}", "taskTextColor": "{{childText}}", "taskTextOutsideColor": "{{childText}}", "taskTextLightColor": "{{childText}}", "taskTextDarkColor": "{{childText}}", "sectionBkgColor": "{{parentFill}}", "sectionBkgColor2": "{{childFill}}", "gridColor": "{{lineColor}}"}}}%%
+gantt
+    accTitle: FrameMaker content restructuring and DITA XML chain implementation
+    accDescr: Diagram showing FrameMaker content restructuring running alongside implementing the DITA XML chain, as two parallel activities.
+    dateFormat YYYY-MM-DD
+    axisFormat %d
+    section Restructuring
+    FrameMaker content restructuring         :r1, 2024-01-01, 3d
+    Implementation of the DITA XML chain     :r2, 2024-01-01, 3d`} />
 **FrameMaker content restructuring and DITA XML chain implementation**
 
 This harmonization work can be carried out in parallel with updating and publishing the FrameMaker document. The quality of this document will be all the better for it. Simultaneously with reorganizing your content, you can implement the complete DITA XML creation, management, and publication chain on a sample of your content:
@@ -157,7 +195,18 @@ Once the FrameMaker files are ready for migration and the DITA XML chain has bee
 
 You should now be able to archive the FrameMaker files and then switch over completely to DITA XML.
 
-![Apply conversion table from FrameMaker to DITA XML](/assets/en/dita-migration.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+graph LR
+    accTitle: Application of a conversion table from FrameMaker to DITA XML
+    accDescr: Diagram showing FrameMaker content converted to DITA XML by applying a conversion table.
+
+    A[FrameMaker] -->|conversion table| B[DITA XML]
+
+    classDef step fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class A,B step
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **Application of a conversion table from FrameMaker to DITA XML**
 
 Of course, you'll need to apply this process to a small set of documents - one that is not, if possible, of critical importance. After this initial success, you can apply the process to other document sets.
