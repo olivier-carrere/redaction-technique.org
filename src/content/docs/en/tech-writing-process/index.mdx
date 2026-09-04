@@ -3,11 +3,37 @@ lastUpdated: false
 title: "Technical writing: an industrial process"
 description: "Explore the complete technical writing process: project definition, information gathering, content creation, validation, translation, and delivery to end users."
 ---
+
+import Mermaid from '../../../../components/Mermaid.astro';
+
 Technical writing is based on rational processes. Too often associated with a strong literary aspect, it is frequently left to the improvisation and inspiration of the technical writer. Technical writers, like other company employees, must meet their objectives in a predictable and reproducible manner.
 
 This process is based on a rigorous methodology and a reliable production chain.
 
-![Technical writing process](/assets/en/processus.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
+graph LR
+    accTitle: Technical writing process
+    accDescr: Diagram showing the methodology row, project definition, information gathering, content development, validation with translation branching off it, and delivery, connected to the production line row, source format, repository, and target format, with content development feeding source format and target format feeding delivery.
+
+    subgraph methodology["Methodology"]
+        direction LR
+        PD[Project definition] --> IG[Information gathering] --> CD[Content development] --> V[Validation] --> DE[Delivery]
+    end
+
+    subgraph production["Production line"]
+        direction LR
+        SF[Source format] --> R[Repository] --> TF[Target format]
+    end
+
+    V --> T[Translation]
+    CD --> SF
+    TF --> DE
+
+    classDef step fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class PD,IG,CD,V,DE,SF,R,TF,T step
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **Technical writing process**
 
 To create and promote content with high added value for the company, technical writers are in constant dialogue not only with all internal stakeholders, but also with the company's ecosystem: partners, journalists, users, etc. In this way, they provide different audiences with the information they need. This strengthens the company's brand image, improves customer satisfaction, and makes it easier for prospects to perceive the product's benefits. Technical writers rely on a production chain that is as automated as possible. By implementing an industrial and reproducible process, they reduce production costs and provide a consistent level of quality that is tailored to the company's goals.

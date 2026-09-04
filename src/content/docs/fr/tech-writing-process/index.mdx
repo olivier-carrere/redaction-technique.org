@@ -3,11 +3,37 @@ lastUpdated: false
 title: "Rédaction technique : un processus industriel"
 description: "Découvrez le processus complet de rédaction technique : définition du projet, collecte d'information, création de contenu, validation, traduction et livraison."
 ---
+
+import Mermaid from '../../../../components/Mermaid.astro';
+
 La rédaction technique repose sur des processus rationnels. Trop souvent associée à un fort aspect littéraire, elle est fréquemment laissée à l'improvisation et à l'inspiration du rédacteur technique. Le rédacteur technique, comme les autres intervenants de l'entreprise, doit répondre à ses objectifs de manière prévisible et reproductible.
 
 Ce processus repose sur une méthodologie rigoureuse et une chaîne de production fiable.
 
-![Processus de rédaction technique](/assets/processus.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
+graph LR
+    accTitle: Processus de rédaction technique
+    accDescr: Schéma montrant la ligne méthodologie, définition du projet, collecte de l'information, création du contenu, validation d'où part la traduction, et livraison, reliée à la ligne chaîne de production, format source, référentiel et format cible, la création du contenu alimentant le format source et le format cible alimentant la livraison.
+
+    subgraph methodology["Méthodologie"]
+        direction LR
+        PD["Définition du projet"] --> IG["Collecte de l'information"] --> CD["Création du contenu"] --> V[Validation] --> DE[Livraison]
+    end
+
+    subgraph production["Chaîne de production"]
+        direction LR
+        SF["Format source"] --> R["Référentiel"] --> TF["Format cible"]
+    end
+
+    V --> T[Traduction]
+    CD --> SF
+    TF --> DE
+
+    classDef step fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class PD,IG,CD,V,DE,SF,R,TF,T step
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **Processus de rédaction technique**
 
 Pour créer et valoriser un contenu à forte valeur ajoutée pour l'entreprise, le rédacteur technique dialogue constamment non seulement avec tous les acteurs internes de la société, mais aussi avec son écosystème : partenaires, journalistes, utilisateurs, etc. Il fournit ainsi aux différents publics l'information dont ils ont besoin. Ceci renforce l'image de marque de la société, améliore la satisfaction client et facilite la perception des avantages produit par les prospects. Le rédacteur technique s'appuie sur une chaîne de production aussi automatisée que possible. En mettant en place un processus industriel et reproductible, il diminue les coûts de production et fournit un niveau de qualité constant, adapté aux buts de l'entreprise.
