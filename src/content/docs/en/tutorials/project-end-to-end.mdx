@@ -112,6 +112,20 @@ I first copied the Piwigo server directory to a local disk and initialized a Git
 
 This allows any member of the non-profit to create a GitLab account and, after obtaining the password, clone the backup copy.
 
+<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "archEdgeColor": "{{lineColor}}", "archEdgeArrowColor": "{{lineColor}}", "archGroupBorderColor": "{{childStroke}}"}}}%%
+architecture-beta
+    service piwigo(server)[Piwigo server]
+    service db(database)[Database]
+    service disk(disk)[Local Git LFS copy]
+    service gitlab(cloud)[GitLab]
+    service members(internet)[Non-profit members]
+
+    piwigo:B -- T:db
+    piwigo:R -- L:disk
+    disk:R --> L:gitlab
+    gitlab:R --> L:members`} />
+**Centralized hosting, decentralized backup.**
+
 :::note[Cloning the GitLab Repository]
 *The following procedure was included in an early version of the LaTeX brochure. It is therefore minimalist, partly due to space considerations in the printed version. I later removed it from the leaflet, as it might have intimidated its predominantly technophobic readership.*
 :::

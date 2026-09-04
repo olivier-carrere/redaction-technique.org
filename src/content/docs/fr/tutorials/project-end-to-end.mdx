@@ -113,6 +113,20 @@ J'ai tout d'abord fait une copie du répertoire Piwigo du serveur sur un disque 
 
 Ainsi, tout membre de l'association peut créer un compte Gitlab, puis, après avoir reçu le mot de passe, cloner la copie de sauvegarde.
 
+<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "archEdgeColor": "{{lineColor}}", "archEdgeArrowColor": "{{lineColor}}", "archGroupBorderColor": "{{childStroke}}"}}}%%
+architecture-beta
+    service piwigo(server)[Serveur Piwigo]
+    service db(database)[Base de données]
+    service disque(disk)[Copie locale Git LFS]
+    service gitlab(cloud)[GitLab]
+    service membres(internet)[Membres de l'association]
+
+    piwigo:B -- T:db
+    piwigo:R -- L:disque
+    disque:R --> L:gitlab
+    gitlab:R --> L:membres`} />
+**Hébergement centralisé, sauvegarde décentralisée.**
+
 :::note[Clonage du dépôt Gitlab]
 *La procédure suivante était incluse dans une première version du dépliant LaTeX. Elle est donc minimaliste, ne serait-ce que pour des raisons d'espace disponible sur la version imprimée. Je l'ai par la suite supprimée du dépliant, car elle risquait plutôt d'effrayer son lectorat, majoritairement technophobe.*
 :::
