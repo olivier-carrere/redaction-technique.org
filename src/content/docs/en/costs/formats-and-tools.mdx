@@ -4,12 +4,29 @@ description: "When industrializing technical writing, the format matters more th
 tags: [dita-xml, structured-authoring, technical-writing]
 ---
 
+import Mermaid from '../../../../components/Mermaid.astro';
 
 When a company sets out to industrialize **technical writing**, the question of tools comes up immediately. The real issue, though, is the [underlying format](../../formats/structured-vs-unstructured-formats/), not the tool.
 
 Many vendors have built proprietary formats that only their own software can edit, locking in a captive market that has to keep paying for upgrades. An **MS Word** or **FrameMaker** file, for example, can only be edited in the tool that created it. Committing to such a format narrows a company's options and can get expensive: every user needs a license — technical writer, occasional contributor, and translator alike.
 
-![A standard format leaves the choice of tool open](/assets/en/format-standard.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+graph TD
+    accTitle: A standard format leaves the choice of tool open
+    accDescr: Diagram showing four different tool types, a text editor, open-source software, a graphical tool, and proprietary software, all able to edit the same standard DITA XML format.
+
+    A[Text editor] --> E[DITA XML]
+    B[Open-source software] --> E
+    C[Graphical tool] --> E
+    D[Proprietary software] --> E
+
+    classDef parent fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
+    classDef child fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class E parent
+    class A,B,C,D child
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 *A standard format leaves the choice of tool open.*
 
 Focusing on the format instead opens the door to scalable solutions. An open format — OpenDocument, or **DITA XML** (the only one of the two designed as an industrial format for technical writing) — isn't tied to any single tool, so it can be edited and processed by many. And because the [source format](../../tech-writing-process/source-format/) shapes the entire production chain, that choice carries more weight than any tool decision. Structured formats such as **DocBook** and **DITA XML**, governed by a standard XSD schema, can be handled from authoring through publication by a wide range of software, from free text editors to proprietary graphics suites.
