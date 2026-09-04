@@ -67,7 +67,25 @@ Since the primary goal was to make photos available for print media, I initially
 
 Because the files were spread over numerous sub-directories, I used the following command in Bash:
 
-![Bash find command listing photo files across subdirectories filtered by size](/assets/en/find-command.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+graph TD
+    accTitle: Bash find command listing photo files across subdirectories filtered by size
+    accDescr: Breakdown of the command "find . -size +1M -exec mv ./directory-over-1mb/ {} \\;" token by token, explaining each part.
+
+    A["$: Command prompt"] --> B["find: Searches for files in a directory hierarchy"]
+    B --> C[".: Current dir"]
+    C --> D["-size +1M: Only considers files that are at least 1 MB"]
+    D --> E["-exec: Runs the following command"]
+    E --> F["mv: Moves files"]
+    F --> G["./directory-over-1mb/: Target dir"]
+    G --> H["{}: Replaced with filenames"]
+    H --> I["\\;: Terminates command"]
+
+    classDef node fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class A,B,C,D,E,F,G,H,I node
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 
 Next, I reviewed approximately 3,000 photos over 1 MB in size using the *gThumb* viewer, deleting any photos of poor quality or unsuitable subjects for a communication medium. This process took about 3 hours, resulting in 500 photos being retained.
 
