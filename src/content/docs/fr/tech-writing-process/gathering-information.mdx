@@ -21,22 +21,20 @@ Une fois le projet de rédaction technique clairement défini, le rédacteur tec
 -   lecture de la presse spécialisée.
 
 
-<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-graph TD
-    accTitle: Processus de collecte de l'information
-    accDescr: Schéma montrant que la collecte de l'information repose sur trois activités : l'interview, la manipulation du produit et l'analyse des sources écrites.
-
-    A["Collecte de l'information"] --> B["&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interview&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"]
-    A --> C["Manipulation du produit"]
-    A --> D["Analyse des sources écrites"]
-
-    classDef parent fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
-    classDef child fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
-
-    class A parent
-    class B,C,D child
-
-    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
+<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "git0": "{{parentFill}}", "gitBranchLabel0": "{{parentText}}", "cScale1": "{{childFill}}", "cScaleLabel1": "{{childText}}", "cScaleInv1": "{{childStroke}}", "cScale2": "{{childFill}}", "cScaleLabel2": "{{childText}}", "cScaleInv2": "{{childStroke}}", "cScale3": "{{childFill}}", "cScaleLabel3": "{{childText}}", "cScaleInv3": "{{childStroke}}", "cScale4": "{{childFill}}", "cScaleLabel4": "{{childText}}", "cScaleInv4": "{{childStroke}}"}}}%%
+mindmap
+    root(("Collecte de l'information"))
+        Interview
+            Service R&D
+            Service marketing
+            Clients
+        Test du produit
+            Manipulation du produit
+            Observation des utilisateurs sur leur lieu de travail
+        Analyse des sources écrites
+            "Spécifications, Intranet, tickets Jira"
+            Analyse de la concurrence
+            Presse spécialisée`} />
 **Collecte de l'information**
 
 Les informations doivent être recoupées pour minimiser le risque de transmettre des informations erronées ou obsolètes. Le rédacteur technique doit se livrer à un véritable travail d'enquête. En se mettant à la place de l'utilisateur, il vérifie chaque information et fait le tri entre les données pertinentes et celles qui ne seront que du bruit perturbant le message.

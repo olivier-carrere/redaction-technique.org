@@ -22,22 +22,20 @@ Once the [technical writing project has been clearly defined](../project-definit
 - Reading trade publications.
 
 
-<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-graph TD
-    accTitle: Gathering information process
-    accDescr: Diagram showing that gathering information relies on three activities: interviews, product manipulation, and written source analysis.
-
-    A[Gathering information] --> B["&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interview&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"]
-    A --> C[Product manipulation]
-    A --> D[Written source analysis]
-
-    classDef parent fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
-    classDef child fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
-
-    class A parent
-    class B,C,D child
-
-    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
+<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "git0": "{{parentFill}}", "gitBranchLabel0": "{{parentText}}", "cScale1": "{{childFill}}", "cScaleLabel1": "{{childText}}", "cScaleInv1": "{{childStroke}}", "cScale2": "{{childFill}}", "cScaleLabel2": "{{childText}}", "cScaleInv2": "{{childStroke}}", "cScale3": "{{childFill}}", "cScaleLabel3": "{{childText}}", "cScaleInv3": "{{childStroke}}", "cScale4": "{{childFill}}", "cScaleLabel4": "{{childText}}", "cScaleInv4": "{{childStroke}}"}}}%%
+mindmap
+    root((Gathering information))
+        Interviews
+            R&D department
+            Marketing department
+            Customers
+        Product testing
+            Product handling
+            Observing users in their environment
+        Written source analysis
+            "Specs, Intranet, Jira issues"
+            Competitor analysis
+            Trade publications`} />
 **Information Gathering**
 
 Information must be cross-checked to minimize the risk of transmitting incorrect or outdated information. The technical writer must perform diligent investigative work. By putting themselves in the user's shoes, they check each piece of information and differentiate relevant data from noise that could disrupt the message.
