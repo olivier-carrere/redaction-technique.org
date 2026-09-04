@@ -2,13 +2,34 @@
 title: "Intégrer la documentation aux processus de développement"
 description: "Découvrez pourquoi la documentation technique doit être livrée, versionnée et contrôlée en même temps que le produit, grâce aux formats texte comme DocBook, DITA XML et reStructuredText."
 ---
+import Mermaid from '../../../../components/Mermaid.astro';
+
 La documentation fait partie du logiciel. Fournie avec le produit, elle doit :
 
 -   sortir en même temps,
 -   suivre les mêmes cycles de vie, et
 -   faire l'objet des mêmes processus de production et de contrôle qualité.
 
-![Sources de documentation modulaires au format texte](/assets/integration-doc-dev.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+graph TD
+    accTitle: Intégration de la documentation modulaire dans le pipeline de développement
+    accDescr: Schéma montrant les sources de documentation modulaires alimentées par la gestion de bugs, reliées à la gestion des versions, et profilées vers les formats PDF, HTML, JavaHelp et ePUB.
+
+    A[Gestion de bugs] --> B["Sources de documentation modulaires"]
+    B --> C["Gestion des versions"]
+    B --> D[Profilage]
+    D --> E[PDF]
+    D --> F[HTML]
+    D --> G[JavaHelp]
+    D --> H[ePUB]
+
+    classDef hub fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
+    classDef node fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class B hub
+    class A,C,D,E,F,G,H node
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **Sources de documentation modulaires au format texte**
 
 Elle doit répondre idéalement aux critères suivants :

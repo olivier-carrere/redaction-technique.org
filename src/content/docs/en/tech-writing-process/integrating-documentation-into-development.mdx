@@ -4,7 +4,7 @@ description: "Learn why technical documentation should be released, versioned, a
 tags: [git, docs-as-code]
 ---
 
-
+import Mermaid from '../../../../components/Mermaid.astro';
 
 Documentation is part of the software. Supplied with the product, it must:
 
@@ -12,7 +12,26 @@ Documentation is part of the software. Supplied with the product, it must:
 - follow the same life cycles, and
 - be subject to the same production and quality control processes.
 
-![Modular documentation sources in text format](/assets/en/integration-doc-dev.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+graph TD
+    accTitle: Integrating modular documentation into the development pipeline
+    accDescr: Flowchart showing modular documentation sources fed by bug tracking, connected to version control, and profiled into PDF, HTML, JavaHelp, and ePUB outputs.
+
+    A[Bug tracking] --> B[Modular documentation sources]
+    B --> C[Version control]
+    B --> D[Profiling]
+    D --> E[PDF]
+    D --> F[HTML]
+    D --> G[JavaHelp]
+    D --> H[ePUB]
+
+    classDef hub fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
+    classDef node fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class B hub
+    class A,C,D,E,F,G,H node
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **Modular documentation sources in text format**
 
 Ideally, it should meet the following criteria:
