@@ -4,6 +4,7 @@ description: "NuFirewall's documentation, praised by the press as a product stre
 tags: [dita-xml]
 ---
 
+import Mermaid from '../../../../components/Mermaid.astro';
 
 NuFirewall's documentation, praised by the press as a notable strength of the product, was developed using [DITA XML](../).
 
@@ -15,12 +16,44 @@ When a technical writer needs to reuse specific DITA XML information blocks smal
 
 The *conref* principle is straightforward: when a *conref* is specified at a particular XML node, the content of the target node is replaced by the content of the source node.
 
-![Sharing of large information blocks between ditamaps](/assets/en/ditamap.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+graph LR
+    accTitle: Sharing information blocks between ditamaps
+    accDescr: Diagram showing ditamap A referencing 1.dita and 2.dita, and ditamap B referencing 2.dita and 3.dita, with 2.dita shared between both maps.
+
+    A[A.ditamap] --> D1[1.dita]
+    A --> D2[2.dita]
+    B[B.ditamap] --> D2
+    B --> D3[3.dita]
+
+    classDef map fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
+    classDef file fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+    classDef shared fill:{{childFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{childText}},font-weight:600
+
+    class A,B map
+    class D1,D3 file
+    class D2 shared
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **Sharing of broad granularity information blocks between ditamaps**
 
 A key difference between the *conref* mechanism and the XML xinclude mechanism is that the source node must comply with the XSD schema of both the source and target files. This formal rigor, while sometimes less flexible, enhances *conref* readability compared to *xinclude*, thereby encouraging its use.
 
-![Sharing fine-grained information blocks between DITA XML sections](/assets/en/conref.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+graph TD
+    accTitle: Sharing fine-grained information blocks with conref
+    accDescr: Diagram showing shared.dita as the conref source, referenced by dita-1.dita and dita-2.dita as conref targets.
+
+    S[shared.dita] -->|conref| T1[dita-1.dita]
+    S -->|conref| T2[dita-2.dita]
+
+    classDef source fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
+    classDef target fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class S source
+    class T1,T2 target
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **Sharing of fine-grain information blocks between DITA XML sections**
 
 ### Centralize conrefs in a single file
@@ -32,12 +65,39 @@ To promote and simplify conref usage within a team of technical writers, central
 
 While initially easier to reuse content by referencing existing DITA XML files without extracting them, one core content reuse principle is decontextualization. Extracting and placing reused content into a dedicated conref source file ultimately proves more efficient. It's easier to locate source elements in one repository than searching across numerous files.
 
-![Decentralized conref management is inefficient](/assets/en/conref-non-centralises.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+graph LR
+    accTitle: Decentralized conref management
+    accDescr: Diagram showing three DITA files referencing each other in a circular pattern, with no central source file.
+
+    D1[dita-1.dita] --> D2[dita-2.dita]
+    D2 --> D3[dita-3.dita]
+    D3 --> D1
+
+    classDef file fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class D1,D2,D3 file
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **Managing conrefs in a decentralized way is inefficient.**
 
 Conrefs are resolved at compile time even if source files are not referenced in the ditamap file generating the deliverable. Thus, conref sources can reside in higher-level directories than the ditamap.
 
-![Good conref management](/assets/en/conref.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+graph TD
+    accTitle: Good conref management
+    accDescr: Diagram showing shared.dita as the conref source, referenced by dita-1.dita and dita-2.dita as conref targets.
+
+    S[shared.dita] -->|conref| T1[dita-1.dita]
+    S -->|conref| T2[dita-2.dita]
+
+    classDef source fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
+    classDef target fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class S source
+    class T1,T2 target
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **Good conref management**
 
 Content files in ditamap structures contain only target conref values, while a central file consolidates all source conref values, potentially with internal references to certain target values.
@@ -52,7 +112,18 @@ The technical writer should use the lowest-level DITA XML node containing the in
 
 Given *conref*'s design for managing small information blocks, using the smallest XML structure encapsulating the information is logical, even if compatibility with the DITA XML section's XSD schema necessitates inclusion in larger structures.
 
-![Conref placed on lowest-level XML node](/assets/en/conref-bas-niveau.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+graph LR
+    accTitle: Conref on the lowest-level XML node
+    accDescr: Diagram showing a conref placed on a low-level cmd node, referencing another cmd node.
+
+    A["cmd node (source)"] -->|conref| B["cmd node (target)"]
+
+    classDef node fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class A,B node
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **Placement on the lowest-level XML node.**
 
 For instance, to reuse "Click OK," ensure your source *conref* file is structured as:
@@ -97,7 +168,18 @@ instead of:
 
 In the first method, *conref* usage is possible even if the top node (`<step>`) includes nodes beyond `<step>`, such as `<info>`.
 
-![Conref placed on highest-level XML node](/assets/en/conref-haut-niveau.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+graph LR
+    accTitle: Conref on the highest-level XML node
+    accDescr: Diagram showing a conref placed on a high-level step node, referencing another step node and replacing all of its content.
+
+    A["step node (source)"] -->|conref| B["step node (target)"]
+
+    classDef node fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class A,B node
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **Placement on top-level XML node.**
 
 In the second scenario, the entire `<step>` node content is replaced by the source *conref*. Thus, the following code will omit node content in deliverables:
@@ -279,7 +361,24 @@ Consider a scenario where a file with confidential information requires translat
 
 What can be done? The *ditaval* mechanism filters out information from the deliverables but not from the source files. Must you create separate source files for confidential and non-confidential information? That negates single-sourcing and content reuse - the very reasons for choosing DITA XML!
 
-![Hide confidential information from translators](/assets/en/confidentiel.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+graph LR
+    accTitle: Hiding confidential information from translators
+    accDescr: Diagram showing a confidential source in language A split by translation into two branches, each filtered through ditaval, producing a language A deliverable that keeps the confidential information and a language B deliverable that excludes it.
+
+    S["Confidential source (Language A)"] --> Tr[Translation]
+    Tr --> A1["Language A sources without confidential info"]
+    Tr --> B1["Language B sources without confidential info"]
+    A1 -->|ditaval A| A2["Deliverable A with confidential info"]
+    B1 -->|ditaval B| B2["Deliverable B without confidential info"]
+
+    classDef hub fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
+    classDef step fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class S hub
+    class Tr,A1,B1,A2,B2 step
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **Hide confidential information from translators**
 
 By placing confidential content in a separate file (e.g., `confidential.dita`) and setting conref with a filter key in the translatable file, you manage access. The translator processes only non-confidential text, and deliverables in the target language exclude confidential content, marked as conditional and explicitly excluded via the *ditaval* file during compilation.
@@ -290,7 +389,22 @@ A ditaval file operates like 3D glasses: one lens masks one half of the informat
 
 The information recipients have glasses showing either only left or right lens content. Though they see less, they access what they need without noise. This adheres to the minimalist principle "less is more."
 
-![Conditional text with DITA XML](/assets/en/ditaval.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+graph LR
+    accTitle: Conditional text filtering with ditaval
+    accDescr: Diagram showing a source filtered by ditaval into two distinct targets, each receiving only the content selected for it.
+
+    S[Source] --> F[ditaval filter]
+    F --> T1[Target 1]
+    F --> T2[Target 2]
+
+    classDef hub fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
+    classDef leaf fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class F hub
+    class S,T1,T2 leaf
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **Conditional text with DITA XML**
 
 The ditaval mechanism is based on binary logic: mark a block with an attribute and value, then include or exclude it in deliverables via a compile-time operand (default is inclusion without operand). This constitutes conditional text.
