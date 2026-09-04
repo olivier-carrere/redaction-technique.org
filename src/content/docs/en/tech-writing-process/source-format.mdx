@@ -99,12 +99,46 @@ The source format can be based on either monolithic files or clusters of modular
 
 Monolithic files (e.g., MS Word, LibreOffice, or FrameMaker) centralize all content in a single, easily manageable file, but limit content sharing; this increases the risk of inconsistent or duplicate information.
 
-![Monolithic technical writing source format](/assets/en/monolithique.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
+graph LR
+    accTitle: Monolithic technical writing source format
+    accDescr: Diagram showing two self-contained monolithic documents with no shared content between them.
+
+    subgraph mono["Monolithic files"]
+        direction LR
+        A[Document A]
+        B[Document B]
+    end
+
+    classDef doc fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class A,B doc`} />
 **Monolithic technical writing source format**
 
 Clusters of modular files (e.g., DITA XML) aggregate the content of multiple files, facilitating content sharing and reuse. This approach is challenging to implement company-wide but should be standard for a technical writing team.
 
-![Modular technical writing source format](/assets/en/grappe.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
+graph LR
+    accTitle: Modular technical writing source format
+    accDescr: Diagram showing modular file clusters reused across two documents, Document A and Document B, sharing content instead of duplicating it.
+
+    subgraph cluster["Modular file clusters"]
+        direction LR
+        M1[Module]
+        M2[Module]
+        M3[Module]
+    end
+
+    M1 --> A[Document A]
+    M3 --> B[Document B]
+
+    classDef mod fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+    classDef doc fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
+
+    class M1,M2,M3 mod
+    class A,B doc
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **Modular technical writing source format**
 
 Some word processors can handle modular documents, though not effectively. Conversely, a DocBook or DITA XML document can be monolithic, but then loses its flexibility.

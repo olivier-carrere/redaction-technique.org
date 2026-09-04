@@ -98,12 +98,46 @@ Le format source peut reposer sur des fichiers monolithiques ou sur des grappes 
 
 Les fichiers monolithiques (par exemple MS Word, LibreOffice ou FrameMaker) centralisent tout le contenu dans un seul fichier, facile à manier, mais qui limite le partage du contenu ; le risque de disposer d'informations incohérentes ou en doublon est alors important.
 
-![Format source de rédaction technique monolithique](/assets/monolithique.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
+graph LR
+    accTitle: Format source de rédaction technique monolithique
+    accDescr: Schéma montrant deux documents monolithiques autonomes, sans contenu partagé entre eux.
+
+    subgraph mono["Fichiers monolithiques"]
+        direction LR
+        A["Document A"]
+        B["Document B"]
+    end
+
+    classDef doc fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class A,B doc`} />
 **Format source de rédaction technique monolithique**
 
 Les grappes de fichiers modulaires (par exemple DITA XML) agrègent le contenu de multiples fichiers, ce qui favorise le partage et la réutilisation de blocs de contenu. Un tel système est difficile à mettre en place au niveau de toute l'entreprise, mais devrait être la norme pour une équipe de rédaction technique.
 
-![Format source de rédaction technique modulaire](/assets/grappe.svg)
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
+graph LR
+    accTitle: Format source de rédaction technique modulaire
+    accDescr: Schéma montrant des grappes de fichiers modulaires réutilisées entre deux documents, Document A et Document B, qui partagent du contenu au lieu de le dupliquer.
+
+    subgraph cluster["Grappes de fichiers modulaires"]
+        direction LR
+        M1[Module]
+        M2[Module]
+        M3[Module]
+    end
+
+    M1 --> A["Document A"]
+    M3 --> B["Document B"]
+
+    classDef mod fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+    classDef doc fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
+
+    class M1,M2,M3 mod
+    class A,B doc
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **Format source de rédaction technique modulaire**
 
 Certains traitements de texte proposent de gérer des documents modulaires, mais ils le font mal. Inversement, un document DocBook ou DITA XML, par exemple, peut être monolithique, mais perd alors de sa souplesse.
