@@ -3,6 +3,8 @@ title: "Source format"
 description: "Word processors have unaccustomed us to distinguishing between form and content. But confusing the two leads to many errors and wasted time."
 tags: [technical-writing, structured-authoring]
 ---
+import Mermaid from '../../../../components/Mermaid.astro';
+
 The content of a technical writing project is created in a source format, distinct from the format of the deliverables, or the [target format](../target-format/). To use an analogy often found in software development, the source format is the recipe, while the target format is the dish. In photography, the source format is the RAW format produced by the camera, preferred by professional photographers for retouching, and the target format is the JPEG format.
 
 Word processors have moved us away from distinguishing between form and content. However, confusing the two leads to numerous errors and wasted time.
@@ -31,7 +33,20 @@ When layout is less critical than content, or when it needs to be consistent, as
 
 In a FrameMaker file, the separation between content and form is significant, though not complete: content and layout reside in the same file. FrameMaker applies a consistent page layout to an entire file but allows manual addition of layout elements. The same layout can be duplicated for the entire document, or different layouts can be used for each file comprising the document.
 
-![Source formats: degree of modularity and format](/assets/en/modulaire-texte-monolithique-binaire.svg)
+<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "quadrant1Fill": "{{childFill}}", "quadrant2Fill": "{{childFill}}", "quadrant3Fill": "{{childFill}}", "quadrant4Fill": "{{childFill}}", "quadrant1TextFill": "{{lineColor}}", "quadrant2TextFill": "{{lineColor}}", "quadrant3TextFill": "{{lineColor}}", "quadrant4TextFill": "{{lineColor}}", "quadrantPointFill": "{{parentStroke}}", "quadrantPointTextFill": "{{childText}}", "quadrantXAxisTextFill": "{{childText}}", "quadrantYAxisTextFill": "{{childText}}", "quadrantInternalBorderStrokeFill": "{{lineColor}}", "quadrantExternalBorderStrokeFill": "{{lineColor}}", "quadrantTitleFill": "{{childText}}"}}}%%
+quadrantChart
+    accTitle: Source formats by modularity and format
+    accDescr: Quadrant chart plotting FrameMaker, DocBook, and DITA XML by degree of modularity (monolithic to modular) and file format (binary to text). FrameMaker is binary and monolithic; DocBook is text-based and moderately modular; DITA XML is text-based and highly modular.
+    title Source formats: degree of modularity and format
+    x-axis Monolithic --> Modular
+    y-axis Binary --> Text
+    quadrant-1 Modular text formats
+    quadrant-2 Monolithic text formats
+    quadrant-3 Monolithic binary formats
+    quadrant-4 Modular binary formats
+    FrameMaker: [0.26, 0.27]
+    DocBook: [0.26, 0.76]
+    DITA XML: [0.80, 0.79]`} />
 **Source formats: degree of modularity and format**
 
 Source formats can be classified by their degree of modularity and file format.

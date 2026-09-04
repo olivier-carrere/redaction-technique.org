@@ -2,6 +2,8 @@
 title: "Format source"
 description: "Les traitements de texte nous ont déshabitués à distinguer le fond de la forme. Mais confondre les deux entraîne beaucoup d'erreurs et de perte de temps."
 ---
+import Mermaid from '../../../../components/Mermaid.astro';
+
 Le contenu d'un projet de rédaction technique est créé dans un format source, différent du format des livrables, le format cible. Pour reprendre une image fréquemment utilisée en développement logiciel, le format source est la recette de cuisine, le format cible, le plat. En photographie, le format source est le format RAW, qui est généré par l'appareil photo, et sur lequel les photographes professionnels préféreront apporter les retouches, et le format cible, le format JPEG.
 
 Les traitements de texte nous ont déshabitués à distinguer le fond de la forme. Mais confondre les deux entraîne beaucoup d'erreurs et de perte de temps.
@@ -30,7 +32,20 @@ Lorsque la mise en page a une importance moindre que celle du contenu, ou lorsqu
 
 Dans un fichier FrameMaker, la séparation du fond et de la forme est élevée mais pas totale : le contenu et la mise en page sont placés dans le même fichier. FrameMaker applique une maquette de page homogène à tout un fichier, mais autorise l'ajout manuel d'éléments de mise en page. La même maquette peut être dupliquée pour tout le document, ou une maquette différente peut être utilisée pour chaque fichier qui compose ce dernier.
 
-![Formats sources : degré de modularité et format](/assets/modulaire-texte-monolithique-binaire.svg)
+<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "quadrant1Fill": "{{childFill}}", "quadrant2Fill": "{{childFill}}", "quadrant3Fill": "{{childFill}}", "quadrant4Fill": "{{childFill}}", "quadrant1TextFill": "{{lineColor}}", "quadrant2TextFill": "{{lineColor}}", "quadrant3TextFill": "{{lineColor}}", "quadrant4TextFill": "{{lineColor}}", "quadrantPointFill": "{{parentStroke}}", "quadrantPointTextFill": "{{childText}}", "quadrantXAxisTextFill": "{{childText}}", "quadrantYAxisTextFill": "{{childText}}", "quadrantInternalBorderStrokeFill": "{{lineColor}}", "quadrantExternalBorderStrokeFill": "{{lineColor}}", "quadrantTitleFill": "{{childText}}"}}}%%
+quadrantChart
+    accTitle: Formats sources selon la modularité et le format
+    accDescr: Diagramme en quadrants positionnant FrameMaker, DocBook et DITA XML selon leur degré de modularité (monolithique à modulaire) et leur format de fichier (binaire à texte). FrameMaker est binaire et monolithique ; DocBook est un format texte moyennement modulaire ; DITA XML est un format texte fortement modulaire.
+    title Formats sources : degré de modularité et format
+    x-axis Monolithique --> Modulaire
+    y-axis Binaire --> Texte
+    quadrant-1 Formats texte modulaires
+    quadrant-2 Formats texte monolithiques
+    quadrant-3 Formats binaires monolithiques
+    quadrant-4 Formats binaires modulaires
+    FrameMaker: [0.26, 0.27]
+    DocBook: [0.26, 0.76]
+    DITA XML: [0.80, 0.79]`} />
 **Formats sources : degré de modularité et format**
 
 Les formats sources peuvent être classés selon leur degré de modularité et leur format de fichier.
