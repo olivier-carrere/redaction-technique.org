@@ -2,9 +2,24 @@
 title: "Une architecture documentaire trop complexe ?"
 description: "DITA XML permet des gains de productivité en réduisant le volume source que le rédacteur technique crée, traduit et maintient, au prix d'une plus grande complexité."
 ---
+import Mermaid from '../../../../components/Mermaid.astro';
+
 DITA XML permet des gains de productivité importants par la réduction du volume source que le rédacteur technique crée, traduit et maintient. Ce gain de productivité se fait au prix d'une plus grande complexité.
 
 Si les projets DITA XML sont plus *complexes*, ils sont cependant moins *compliqués* que des projets reposant sur des formats plus traditionnels de type FrameMaker. En effet, DITA XML est une architecture rationnelle. Le rédacteur technique se trouve donc face à un comportement prédictible des outils qu'il utilise, loin des *trucs et astuces* destinés à contourner les bugs ou les fonctionnements erratiques des outils plus lourds.
+
+<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "cynefin": {"labelColor": "{{childText}}", "textColor": "{{childText}}", "boundaryColor": "{{lineColor}}", "arrowColor": "{{lineColor}}"}}}}%%
+cynefin-beta
+title Complexe mais prévisible, ou compliqué et erratique ?
+accTitle: DITA XML est complexe mais prévisible, les formats traditionnels sont compliqués et erratiques
+accDescr: Diagramme du cadre Cynefin plaçant DITA XML dans le domaine complexe, car son comportement est rationnel et prévisible malgré sa complexité, et les formats traditionnels comme FrameMaker dans le domaine compliqué, en raison de leur comportement erratique nécessitant contournements et astuces.
+
+complex
+"DITA XML"
+
+complicated
+"FrameMaker et formats traditionnels"`} />
+**DITA XML est complexe mais prévisible ; les formats traditionnels sont compliqués et erratiques.**
 
 Le tableau suivant présente les différents niveaux de complexité induits par DITA XML et les solutions qui permettent au rédacteur technique de les maîtriser plus facilement :
 

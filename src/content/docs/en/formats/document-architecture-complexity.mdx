@@ -3,11 +3,25 @@ title: "A document architecture that's too complex?"
 description: "DITA XML enables productivity gains by reducing the source volume that the technical writer creates, translates and maintains, at the cost of greater complexity."
 tags: [dita-xml, structured-authoring]
 ---
+import Mermaid from '../../../../components/Mermaid.astro';
 
 
 DITA XML enables significant productivity gains by reducing the volume of content that the technical writer creates, translates, and maintains. However, this productivity gain involves increased complexity, as explored in [structured and unstructured formats](../structured-vs-unstructured-formats/).
 
 While DITA XML projects are more *complex*, they are still less *complicated* than projects based on more traditional formats like FrameMaker. This is because DITA XML follows a logical architecture. As a result, the technical writer can rely on the predictable behavior of the tools used, avoiding the *tricks and hacks* needed to work around bugs or the erratic behavior of more cumbersome tools.
+
+<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "cynefin": {"labelColor": "{{childText}}", "textColor": "{{childText}}", "boundaryColor": "{{lineColor}}", "arrowColor": "{{lineColor}}"}}}}%%
+cynefin-beta
+title Complex but predictable, or complicated and erratic?
+accTitle: DITA XML is complex but predictable, traditional formats are complicated and erratic
+accDescr: Cynefin framework diagram placing DITA XML in the complex domain, since its behavior is rational and predictable despite its complexity, and traditional formats like FrameMaker in the complicated domain, due to their erratic behavior requiring workarounds and hacks.
+
+complex
+"DITA XML"
+
+complicated
+"FrameMaker and traditional formats"`} />
+**DITA XML is complex but predictable; traditional formats are complicated and erratic.**
 
 The following table presents the different levels of complexity introduced by DITA XML and the solutions that help the technical writer manage them more effectively:
 
