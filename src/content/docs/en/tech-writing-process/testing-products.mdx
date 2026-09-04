@@ -12,7 +12,7 @@ The technical writer cannot create useful documentation for the company's custom
 
 An old Indian parable tells of a group of blind men encountering an elephant. Each had a different perception: one who held a leg thought it was a tree, another who held the trunk mistook it for a snake, a third who held a tusk saw it as a spear, and the one who touched an ear considered it a fan.
 
-<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
 flowchart TB
     accTitle: Understanding a product
     accDescr: Flowchart showing two paths for understanding a product - gathering stakeholder perspectives and investigating independently - and comparing them to create useful documentation.
@@ -51,9 +51,13 @@ flowchart TB
     DOC --> FEEDBACK["Customer feedback<br/>+ product reviews"]
     FEEDBACK -. "validates & improves" .-> USE
 
-    style START stroke-width:3px
-    style COMPARE stroke-width:3px
-    style DOC stroke-width:3px`} />
+    classDef hub fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
+    classDef node fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class START,COMPARE,DOC hub
+    class DEV,MKT,SUPPORT,PARTIAL,ENV,USE,OBS,FILTER,PRESENT,FEEDBACK node
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **Understanding a product**
 
 When a technical writer asks stakeholders in the company what a product is for and how it works, they might find themselves in the position of someone asking the blind men what an elephant looks like. For R&D, it's a piece of well-crafted code; for marketing, it's a product to outshine competitors; for technical support, it's an executable with bugs to fix, and so forth.

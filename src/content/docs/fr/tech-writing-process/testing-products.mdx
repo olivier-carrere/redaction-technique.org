@@ -8,7 +8,7 @@ Le rédacteur technique ne peut fournir une documentation utile aux clients de l
 
 Un conte indien narre comment des aveugles se sont retrouvés confrontés à un éléphant. Aucun d'entre eux, et pour cause, n'ayant une perception globale de l'animal, chacun en eut une image différente : celui qui en tenait une patte le prenait pour un arbre, celui qui en étreignait la trompe le confondait avec un serpent, celui qui avait empoigné une défense l'identifiait à une lance, et celui qui s'agrippait à une de ses oreilles croyait qu'il s'agissait d'un éventail.
 
-<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
 flowchart TB
     accTitle: Comprendre un produit
     accDescr: Schéma montrant deux voies pour comprendre un produit - recueillir les avis des parties prenantes et enquêter de manière indépendante - puis les confronter pour créer une documentation utile.
@@ -47,9 +47,13 @@ flowchart TB
     DOC --> FEEDBACK["Retours clients<br/>+ tests dans la presse"]
     FEEDBACK -. "valide et améliore" .-> USE
 
-    style START stroke-width:3px
-    style COMPARE stroke-width:3px
-    style DOC stroke-width:3px`} />
+    classDef hub fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
+    classDef node fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+
+    class START,COMPARE,DOC hub
+    class DEV,MKT,SUPPORT,PARTIAL,ENV,USE,OBS,FILTER,PRESENT,FEEDBACK node
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **Comprendre un produit**
 
 Le rédacteur technique qui demande aux différents intervenants de l'entreprise à quoi sert le produit dont il doit créer la documentation et comment il fonctionne se retrouve comme celui qui demande aux aveugles à quoi ressemble un éléphant : pour la R&D, il s'agit de code élégamment rédigé, pour le marketing, d'une offre à positionner face à la concurrence sur son marché, pour le support technique, d'un exécutable dont il faut corriger les bugs, etc.
