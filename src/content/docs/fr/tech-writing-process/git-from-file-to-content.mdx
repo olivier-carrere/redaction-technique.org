@@ -2,6 +2,8 @@
 title: "Git : du fichier au contenu"
 description: "Pensez contenu plutôt que fichiers avec Git : branches, commits et diffs pour la documentation technique simplifient la collaboration et la gestion des versions."
 ---
+import Mermaid from '../../../../components/Mermaid.astro';
+
 :::note
 
 Vous êtes habitué à manipuler des fichiers ? Git vous invite à penser autrement. Avantage : vous avez une maîtrise beaucoup plus grande de votre contenu.
@@ -84,7 +86,15 @@ Les contraintes de production vous obligeront souvent à scinder ces deux lots d
 
 Vous *committez* chaque sous-lot à chaque fois qu'il est achevé. Votre historique de *commit* ressemble alors au schéma suivant :
 
-![Historique Git](/assets/git-rebase-commits.svg)
+<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "git0": "{{parentStroke}}", "commitLabelColor": "{{childText}}", "commitLabelBackground": "{{childFill}}", "tagLabelBackground": "{{parentFill}}", "tagLabelBorder": "{{parentStroke}}", "tagLabelColor": "{{parentText}}"}}}%%
+gitGraph
+    accTitle: Historique de commits entrelacés avant le rebase
+    accDescr: Historique Git montrant cinq commits alternant entre corrections de texte et modifications de synopsis, avant leur réorganisation par rebase.
+    commit id: "Texte 1"
+    commit id: "Synopsis 1"
+    commit id: "Texte 2"
+    commit id: "Synopsis 2"
+    commit id: "Texte 3"`} />
 **Historique Git**
 
 Lorsque vous placerez vos *commits* sur le dépôt central, certains *commits* représenteront une étape intermédiaire de l'une des tâches. Votre historique et vos branches seront donc plus difficiles à exploiter. D'autant plus que les tâches inachevées alternent. Pour en récupérer une seule, il faudra donc choisir soigneusement les *commits* via la commande `git cherry-pick`.
@@ -97,7 +107,12 @@ La commande `rebase` est potentiellement destructive ; veillez à sauvegarder v
 
 Vous pouvez alors réécrire l'histoire pour proposer à vos collaborateurs un *commit* pour chaque tâche réalisée en son entier, comme sur le schéma suivant :
 
-![Historique Git](/assets/git-rebase-commits-2.svg)
+<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "git0": "{{parentStroke}}", "commitLabelColor": "{{childText}}", "commitLabelBackground": "{{childFill}}", "tagLabelBackground": "{{parentFill}}", "tagLabelBorder": "{{parentStroke}}", "tagLabelColor": "{{parentText}}"}}}%%
+gitGraph
+    accTitle: Historique de commits regroupés après le rebase
+    accDescr: Historique Git montrant deux commits après rebase, l'un regroupant toutes les corrections de texte et l'autre tous les changements de synopsis.
+    commit id: "Texte"
+    commit id: "Synopsis"`} />
 **Historique Git**
 
 Les *commits* ont tout d'abord été regroupés par type sur la *flèche du temps* de Git, puis fusionnés.

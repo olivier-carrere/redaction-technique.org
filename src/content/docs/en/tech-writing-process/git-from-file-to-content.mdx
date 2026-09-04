@@ -4,6 +4,7 @@ description: "Think content rather than files with Git: branches, commits, and d
 tags: [git, version-control, docs-as-code]
 ---
 
+import Mermaid from '../../../../components/Mermaid.astro';
 
 :::note
 Are you used to handling files? Git invites you to think differently. The advantage: you have much greater control over your content.
@@ -89,7 +90,15 @@ Production constraints may force you to further split these batches into sub-bat
 
 You *commit* each sub-batch upon completion. Your *commit* history will then resemble the following diagram:
 
-![Git commit history with interleaved synopsis and text correction commits before rebase reorganization](/assets/en/git-rebase-commits.svg)
+<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "git0": "{{parentStroke}}", "commitLabelColor": "{{childText}}", "commitLabelBackground": "{{childFill}}", "tagLabelBackground": "{{parentFill}}", "tagLabelBorder": "{{parentStroke}}", "tagLabelColor": "{{parentText}}"}}}%%
+gitGraph
+    accTitle: Interleaved commit history before rebase
+    accDescr: Git history showing five commits alternating between text correction and synopsis changes, before reorganizing them with rebase.
+    commit id: "Text 1"
+    commit id: "Synopsis 1"
+    commit id: "Text 2"
+    commit id: "Synopsis 2"
+    commit id: "Text 3"`} />
 **Git history**
 
 When placing your *commits* on the central repository, some will represent interim steps in a task. Your history and branches may be harder to manage as unfinished tasks alternate. To retrieve a single task, you'll need to carefully select the *commits* using the `git cherry-pick` command.
@@ -102,7 +111,12 @@ The *rebase* command is potentially destructive; ensure you back up your workspa
 
 You can then rewrite history to offer your collaborators a *commit* for each completed task, as shown in the following diagram:
 
-![Git commit history after rebase grouping synopsis commits and text correction commits by type](/assets/en/git-rebase-commits-2.svg)
+<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "git0": "{{parentStroke}}", "commitLabelColor": "{{childText}}", "commitLabelBackground": "{{childFill}}", "tagLabelBackground": "{{parentFill}}", "tagLabelBorder": "{{parentStroke}}", "tagLabelColor": "{{parentText}}"}}}%%
+gitGraph
+    accTitle: Grouped commit history after rebase
+    accDescr: Git history showing two commits after rebase, one grouping all text correction changes and one grouping all synopsis changes.
+    commit id: "Text"
+    commit id: "Synopsis"`} />
 **Git history**
 
 The *commits* are first grouped by type on Git’s *time arrow*, then merged.
