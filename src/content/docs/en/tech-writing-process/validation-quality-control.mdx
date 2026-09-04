@@ -21,12 +21,12 @@ gantt
     dateFormat YYYY-MM-DD
     axisFormat %d
     section Serial process
-    Writing               :s1, 2024-01-01, 3d
-    Validation            :s2, after s1, 2d
+    Writing               :s1, 2024-01-01, 2d
+    Validation            :s2, after s1, 1d
     Publication           :s3, after s2, 1d
     section Parallel process
-    Writing               :p1, 2024-01-01, 3d
-    Continuous validation :p2, 2024-01-01, 3d
+    Writing               :p1, 2024-01-01, 2d
+    Continuous validation :p2, 2024-01-01, 2d
     Publication           :p3, after p1, 1d`} />
 **Validating in parallel with writing shortens the publication timeline.**
 
