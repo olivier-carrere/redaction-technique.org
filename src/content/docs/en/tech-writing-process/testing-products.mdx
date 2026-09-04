@@ -5,12 +5,56 @@ tags: [technical-writing]
 ---
 
 
+import Mermaid from '../../../../components/Mermaid.astro';
+
+
 The technical writer cannot create useful documentation for the company's customers by merely [compiling information from various stakeholders](../gathering-information/). Playing Candide once again, the writer is the users' first representative and must test products in conditions similar to those they encounter.
 
 An old Indian parable tells of a group of blind men encountering an elephant. Each had a different perception: one who held a leg thought it was a tree, another who held the trunk mistook it for a snake, a third who held a tusk saw it as a spear, and the one who touched an ear considered it a fan.
 
-![Tale of the Blind Men and the Elephant](/assets/hanabusa-itcho.jpg)
-**Tale of the Blind Men and the Elephant**
+<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+flowchart TB
+    accTitle: Understanding a product
+    accDescr: Flowchart showing two paths for understanding a product - gathering stakeholder perspectives and investigating independently - and comparing them to create useful documentation.
+
+    START["Understanding a product"]
+
+    START --> A
+    START --> B
+
+    subgraph A["1. Gather stakeholder perspectives"]
+        DEV["Developer<br/>How it is designed"]
+        MKT["Marketing<br/>What it promises"]
+        SUPPORT["Support<br/>What goes wrong"]
+
+        DEV --> PARTIAL["Partial & potentially conflicting views"]
+        MKT --> PARTIAL
+        SUPPORT --> PARTIAL
+    end
+
+    subgraph B["2. Investigate independently"]
+        ENV["Set up a realistic<br/>test environment"]
+        USE["Use the product<br/>as a customer would"]
+        OBS["Observe actual<br/>behavior"]
+
+        ENV --> USE
+        USE --> OBS
+    end
+
+    PARTIAL --> COMPARE["Compare<br/>reported behavior ↔ observed behavior"]
+    OBS --> COMPARE
+
+    COMPARE --> FILTER["Filter & organize<br/>what users actually need"]
+    FILTER --> PRESENT["Present according to<br/>audience + medium"]
+    PRESENT --> DOC["Useful user documentation"]
+
+    DOC --> FEEDBACK["Customer feedback<br/>+ product reviews"]
+    FEEDBACK -. "validates & improves" .-> USE
+
+    style START stroke-width:3px
+    style COMPARE stroke-width:3px
+    style DOC stroke-width:3px`} />
+**Understanding a product**
 
 When a technical writer asks stakeholders in the company what a product is for and how it works, they might find themselves in the position of someone asking the blind men what an elephant looks like. For R&D, it's a piece of well-crafted code; for marketing, it's a product to outshine competitors; for technical support, it's an executable with bugs to fix, and so forth.
 

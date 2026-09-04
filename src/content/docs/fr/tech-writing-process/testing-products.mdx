@@ -2,12 +2,55 @@
 title: "Tester les produits pour les documenter"
 description: "Le rédacteur technique doit tester le produit dans des conditions proches de celles de l'utilisateur avant de le documenter, plutôt que de compiler les avis partiels des acteurs de l'entreprise - source d'erreurs et de déperdition d'information."
 ---
+import Mermaid from '../../../../components/Mermaid.astro';
+
 Le rédacteur technique ne peut fournir une documentation utile aux clients de l'entreprise s'il se contente de mettre en forme des informations glanées auprès des différents acteurs de la société. Jouant le rôle de Candide, il est le premier représentant des utilisateurs et se doit de tester les produits dans des conditions proches des leurs.
 
 Un conte indien narre comment des aveugles se sont retrouvés confrontés à un éléphant. Aucun d'entre eux, et pour cause, n'ayant une perception globale de l'animal, chacun en eut une image différente : celui qui en tenait une patte le prenait pour un arbre, celui qui en étreignait la trompe le confondait avec un serpent, celui qui avait empoigné une défense l'identifiait à une lance, et celui qui s'agrippait à une de ses oreilles croyait qu'il s'agissait d'un éventail.
 
-![Conte des aveugles et de l'éléphant](/assets/hanabusa-itcho.jpg)
-**Conte des aveugles et de l'éléphant**
+<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+flowchart TB
+    accTitle: Comprendre un produit
+    accDescr: Schéma montrant deux voies pour comprendre un produit - recueillir les avis des parties prenantes et enquêter de manière indépendante - puis les confronter pour créer une documentation utile.
+
+    START["Comprendre un produit"]
+
+    START --> A
+    START --> B
+
+    subgraph A["1. Recueillir les avis des parties prenantes"]
+        DEV["Développeur<br/>Comment il est conçu"]
+        MKT["Marketing<br/>Ce qu'il promet"]
+        SUPPORT["Support<br/>Ce qui ne va pas"]
+
+        DEV --> PARTIAL["Visions partielles et<br/>potentiellement contradictoires"]
+        MKT --> PARTIAL
+        SUPPORT --> PARTIAL
+    end
+
+    subgraph B["2. Enquêter de manière indépendante"]
+        ENV["Mettre en place un<br/>environnement de test réaliste"]
+        USE["Utiliser le produit<br/>comme un client"]
+        OBS["Observer le<br/>comportement réel"]
+
+        ENV --> USE
+        USE --> OBS
+    end
+
+    PARTIAL --> COMPARE["Comparer<br/>comportement rapporté ↔ observé"]
+    OBS --> COMPARE
+
+    COMPARE --> FILTER["Filtrer et organiser<br/>ce dont les utilisateurs ont besoin"]
+    FILTER --> PRESENT["Présenter selon<br/>le public + le support"]
+    PRESENT --> DOC["Documentation utilisateur utile"]
+
+    DOC --> FEEDBACK["Retours clients<br/>+ tests dans la presse"]
+    FEEDBACK -. "valide et améliore" .-> USE
+
+    style START stroke-width:3px
+    style COMPARE stroke-width:3px
+    style DOC stroke-width:3px`} />
+**Comprendre un produit**
 
 Le rédacteur technique qui demande aux différents intervenants de l'entreprise à quoi sert le produit dont il doit créer la documentation et comment il fonctionne se retrouve comme celui qui demande aux aveugles à quoi ressemble un éléphant : pour la R&D, il s'agit de code élégamment rédigé, pour le marketing, d'une offre à positionner face à la concurrence sur son marché, pour le support technique, d'un exécutable dont il faut corriger les bugs, etc.
 
