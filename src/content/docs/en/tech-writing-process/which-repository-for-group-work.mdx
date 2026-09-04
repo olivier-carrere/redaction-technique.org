@@ -3,6 +3,7 @@ title: "Which repository for group work?"
 description: "Why folders and shared network drives fall short for collaborative technical writing: concurrent edits overwrite one another and file locking blocks batch changes - problems that version-control systems solve reliably."
 tags: [version-control]
 ---
+import Mermaid from '../../../../components/Mermaid.astro';
 
 
 The most commonly used repository for storing computer files is the folder, or directory. While this is perfectly suited for managing files by a single user on their local hard drive, it quickly shows limitations for collaborative work — as detailed in [shared network directories](../shared-network-directories/).
@@ -10,6 +11,23 @@ The most commonly used repository for storing computer files is the folder, or d
 To work on a file, the technical writer uses an application that reads the file from their hard drive and loads a copy into RAM. Modifications are made on this copy. When the technical writer saves their changes, the program overwrites the previous version of the file on the hard drive. The previous version is therefore permanently deleted unless the program has created a backup copy or the technical writer uses the *Save As* function, not *Save*, to create a new version of the file. In the first case, there are only two versions of the file at any given time: version n and version n-1. In the second case, the technical writer can create as many versions as needed, for example by adding the suffix -1, -2, etc., to the file name.
 
 However, the programs do not support concurrent modification of the same file by multiple technical writers. In the case of a file available on a network drive, let's imagine that Alice and Bob open the same version of this file in a text editor. They each make different changes to the copy loaded in RAM, then save their work. Alice saves her changes first, then Bob. The next time the file is opened, only Bob's changes will appear in the file.
+
+<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "actorBkg": "{{parentFill}}", "actorBorder": "{{parentStroke}}", "actorTextColor": "{{parentText}}", "actorLineColor": "{{lineColor}}", "signalColor": "{{lineColor}}", "signalTextColor": "{{childText}}", "noteBkgColor": "{{childFill}}", "noteBorderColor": "{{childStroke}}", "noteTextColor": "{{childText}}"}}}%%
+sequenceDiagram
+    accTitle: Concurrent edits to a file on a shared network drive
+    accDescr: Sequence diagram showing Alice and Bob opening the same version of a file, each editing their own copy, then saving one after the other: Alice's changes, saved first, are overwritten by Bob's.
+    participant Alice
+    participant File as File on the network drive
+    participant Bob
+
+    Alice->>File: Open (copy loaded into RAM)
+    Bob->>File: Open (copy loaded into RAM)
+    Note over Alice: Edits her copy
+    Note over Bob: Edits his copy
+    Alice->>File: Save
+    Bob->>File: Save
+    Note over File: Only Bob's changes are kept`} />
+**Concurrent edits: Bob's changes overwrite Alice's.**
 
 To prevent this, many programs lock open files. This means they are only available for reading as long as the user modifying them has a copy open in RAM (i.e., until they close it). It is therefore not possible with this system to allow multiple users to work on the same file and make batch modifications across files, such as changing the path of all images.
 
