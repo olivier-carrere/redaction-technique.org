@@ -83,6 +83,19 @@ L'organisation de l'information sous DITA XML n'est pas figée. Les briques peuv
 | Quickstart                | Procédures pas à pas                                                 |
 | Manuel de référence      | Informations de référence                                            |
 
+<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "treeView": {"labelColor": "{{childText}}", "lineColor": "{{lineColor}}", "descriptionColor": "{{lineColor}}"}}}}%%
+treeView-beta
+    accTitle: Une ditamap organise les topics en arborescence
+    accDescr: Arborescence de la ditamap du guide de l'utilisateur : un topic concept de présentation, un sous-groupe Installation contenant un concept de prérequis et une tâche d'installation, puis un topic de dépannage.
+
+    "Guide de l'utilisateur (ditamap)/"
+        "Présentation du produit" ## concept
+        "Installation/"
+            "Prérequis" ## concept
+            "Procédure d'installation" ## task
+        "Dépannage courant" ## task`} />
+**Une *ditamap* organise les topics en arborescence.**
+
 Pour ce faire, le rédacteur technique prendra soin de placer les éléments liés à un contexte particulier dans les structures *ditamap* et non dans les fichiers de contenu DITA XML. En particulier, les références croisées doivent être indiquées dans une *reltable* placée dans la *ditamap* : si le document *A* doit renvoyer au document *B* dans la *ditamap* *1*, il doit pouvoir être également utilisé sans modification dans la *ditamap* *2*, où le document *B* n'est pas inclus.
 
 L'organisation des répertoires de travail doit également permettre l'utilisation de liens relatifs, notamment vers les images, qui ne seront jamais cassés.

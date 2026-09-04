@@ -83,6 +83,19 @@ The organization of information in DITA XML is flexible. Building blocks can be 
 | Quick start guide      | Step-by-step procedures              |
 | Reference manual       | Reference information                |
 
+<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "treeView": {"labelColor": "{{childText}}", "lineColor": "{{lineColor}}", "descriptionColor": "{{lineColor}}"}}}}%%
+treeView-beta
+    accTitle: A ditamap organizes topics into a tree
+    accDescr: Tree structure of the user guide ditamap, a concept topic for the product overview, an Installation group containing a prerequisites concept and an installation task, and a troubleshooting topic.
+
+    "User guide (ditamap)/"
+        "Product overview" ## concept
+        "Installation/"
+            "Prerequisites" ## concept
+            "Installation procedure" ## task
+        "Troubleshooting" ## task`} />
+**A *ditamap* organizes topics into a tree.**
+
 To achieve this, the technical writer must place context-specific elements in *ditamap* structures rather than in DITA XML content files. Specifically, cross-references should be indicated in a *reltable* within the *ditamap*: if document *A* refers to document *B* in *ditamap* *1*, it should also be usable without modification in *ditamap* *2*, where document *B* is not included.
 
 The organization of working directories must also facilitate the use of relative links, particularly to images, to prevent broken links.
