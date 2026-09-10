@@ -86,7 +86,7 @@ export class GeminiProvider implements LLMProvider {
       config: {
         systemInstruction: SYSTEM_PROMPT,
         temperature: 0.1,
-        maxOutputTokens: 1024,
+        maxOutputTokens: 512,
       },
     });
 
