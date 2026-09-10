@@ -10,7 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/markdown-remark": "^7.2.4",
+    "@astrojs/markdown-remark": "^7.3.1",
     "@astrojs/mdx": "^7.0.7",
     "@astrojs/sitemap": "^3.7.3",
     "@astrojs/starlight": "^0.41.7",
@@ -19,9 +19,9 @@
     "@fontsource/ibm-plex-mono": "^5.2.7",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^2.0.0",
-    "astro": "^7.2.4",
+    "astro": "^7.2.8",
     "mermaid": "^11.17.2",
-    "sharp": "^0.35.3"
+    "sharp": "^0.35.4"
   },
   "overrides": {
     "path-to-regexp": "^6.3.0"
