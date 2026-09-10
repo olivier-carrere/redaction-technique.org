@@ -27,17 +27,29 @@ const ui = {
     answerHeading:  'Answer',
     sourcesHeading: 'Sources',
     fallback:       'An unexpected error occurred.',
+    examplesLabel:  'Try an example:',
+    examples: [
+      'What is DITA XML?',
+      'How does docs-as-code work?',
+      'When should I use structured documentation?',
+    ],
   },
   fr: {
     formLabel:      'Interroger la documentation',
     inputLabel:     'Posez une question sur la documentation',
-    placeholder:    'Qu’est-ce que DITA XML\u00a0?',
+    placeholder:    'Qu\u2019est-ce que DITA XML\u00a0?',
     submitBtn:      'Interroger',
     hint:           "L\u2019assistant r\u00e9pond uniquement \u00e0 partir de la documentation disponible sur ce site. Il ne fait pas appel \u00e0 des connaissances g\u00e9n\u00e9rales.",
     loading:        'Recherche dans la documentation\u2026',
     answerHeading:  'R\u00e9ponse',
     sourcesHeading: 'Sources',
     fallback:       'Une erreur inattendue s\u2019est produite.',
+    examplesLabel:  'Exemples\u00a0:',
+    examples: [
+      'Qu\u2019est-ce que DITA XML\u00a0?',
+      'Comment fonctionne le docs-as-code\u00a0?',
+      'Quand utiliser une documentation structur\u00e9e\u00a0?',
+    ],
   },
 } as const;
 
@@ -68,6 +80,22 @@ const t = ui[lang];
       {t.hint}
     </p>
   </form>
+
+  <div class="ask-examples" aria-label={t.examplesLabel}>
+    <span class="ask-examples-label">{t.examplesLabel}</span>
+    <div class="ask-examples-list">
+      {t.examples.map((ex) => (
+        <button
+          type="button"
+          class="ask-example-btn"
+          data-question={ex}
+          aria-label={`${t.examplesLabel} ${ex}`}
+        >
+          {ex}
+        </button>
+      ))}
+    </div>
+  </div>
 
   <div id="ask-loading" class="ask-loading" hidden>
     <span class="ask-spinner" aria-hidden="true"></span>
@@ -277,6 +305,53 @@ const t = ui[lang];
     text-decoration: underline;
   }
 
+  /* Example prompts */
+  .ask-examples {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+
+  .ask-examples-label {
+    font-size: 0.8125rem;
+    color: var(--sl-color-gray-3);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .ask-examples-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .ask-example-btn {
+    font-family: inherit;
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    padding: 0.25rem 0.65rem;
+    border-radius: 2rem;
+    border: 1px solid var(--sl-color-accent);
+    background: var(--sl-color-accent-low);
+    color: var(--sl-color-accent-high);
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    text-align: left;
+  }
+
+  .ask-example-btn:hover {
+    background: var(--sl-color-accent);
+    border-color: var(--sl-color-accent);
+    color: var(--sl-color-white);
+  }
+
+  .ask-example-btn:focus-visible {
+    outline: 2px solid var(--sl-color-accent);
+    outline-offset: 2px;
+  }
+
   /* Responsive */
   @media (max-width: 30rem) {
     .ask-input-row {
@@ -285,6 +360,17 @@ const t = ui[lang];
 
     .ask-button {
       align-self: flex-end;
+    }
+
+    .ask-examples {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ask-example-btn {
+      transition: none !important;
     }
   }
 </style>
@@ -307,6 +393,16 @@ const t = ui[lang];
   const submit   = document.getElementById('ask-submit') as HTMLButtonElement;
   const loading  = document.getElementById('ask-loading') as HTMLDivElement;
   const errorEl  = document.getElementById('ask-error') as HTMLDivElement;
+
+  // Wire example prompt buttons: click fills input and focuses it.
+  document.querySelectorAll<HTMLButtonElement>('.ask-example-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      if (!input) return;
+      input.value = btn.dataset.question ?? '';
+      input.focus();
+    });
+  });
+
   const resultEl = document.getElementById('ask-result') as HTMLDivElement;
   const answerEl = document.getElementById('ask-answer') as HTMLDivElement;
   const srcSect  = document.getElementById('ask-sources-section') as HTMLDivElement;

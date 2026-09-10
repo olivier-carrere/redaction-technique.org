@@ -20,16 +20,16 @@ const sections = isFr ? [
 ];
 ---
 
-<section class="browse-all-panel not-content" aria-labelledby="browse-all-heading">
+<section class="browse-all-panel not-content" id="browse-all" aria-labelledby="browse-all-heading">
   <div class="browse-all-header">
-    <span class="browse-all-kicker">{isFr ? 'Explorer' : 'Browse All'}</span>
+    <span class="browse-all-kicker">{isFr ? 'Parcourir la documentation' : 'Browse All'}</span>
     <h2 id="browse-all-heading" class="browse-all-title">
-      {isFr ? 'Toutes les sections du manuel' : 'Browse the full documentation manual'}
+      {isFr ? 'Parcourir toute la documentation' : 'Browse all documentation'}
     </h2>
     <p class="browse-all-desc">
       {isFr
-        ? '40 articles couvrant l’ensemble de la pratique documentaire, des fondements stratégiques aux scripts d’automatisation.'
-        : '40 articles covering the full spectrum of technical communication, from foundational strategy to automated publishing pipelines.'}
+        ? 'Vous savez ce que vous cherchez\u00a0? Accédez directement à l\u2019une des quatre sections\u00a0: 40\u00a0articles couvrant l\u2019ensemble de la pratique documentaire.'
+        : 'Already know what you\u2019re looking for? Jump directly to any of the four sections\u00a0\u2014 40 articles covering the full spectrum of technical documentation.'}
     </p>
   </div>
 

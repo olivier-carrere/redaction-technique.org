@@ -939,12 +939,13 @@ footer .meta time {
   padding: 1.75rem 2rem;
   background: var(--sl-color-gray-6);
   border: 1px solid var(--sl-color-gray-5);
+  border-left: 4px solid var(--sl-color-accent);
   border-radius: 0.75rem;
   box-shadow: var(--sl-shadow-sm);
 }
 
 .ask-homepage-header {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .ask-homepage-kicker {
@@ -955,7 +956,10 @@ footer .meta time {
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--sl-color-accent-high);
-  margin-bottom: 0.35rem;
+  background: var(--sl-color-accent-low);
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .ask-homepage-title {
@@ -968,13 +972,26 @@ footer .meta time {
 
 .ask-homepage-desc {
   font-size: var(--sl-text-sm);
-  color: var(--sl-color-gray-3);
-  line-height: 1.5;
+  color: var(--sl-color-gray-2);
+  line-height: 1.55;
   margin: 0;
+  max-width: 56ch;
 }
 
 .ask-homepage-panel .ask-assistant {
   max-width: 100%;
 }
 
+@media (max-width: 40rem) {
+  .ask-homepage-panel {
+    padding: 1.25rem 1rem;
+  }
+}
+
+/* ===================================================
+   BROWSE ALL — experienced-user framing
+   =================================================== */
+.browse-all-panel {
+  scroll-margin-top: 4rem;
+}
 
