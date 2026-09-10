@@ -6,6 +6,7 @@ dist/
 .vercel/
 
 # Local-only working artifacts, never committed
+.env
 .claude/
 *.zip
 veille/

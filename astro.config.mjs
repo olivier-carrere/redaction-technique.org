@@ -19,6 +19,11 @@ export const locales = {
 export default defineConfig({
   site,
   trailingSlash: 'always',
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
   markdown: {
     // Astro 7 defaults to the Sätteri engine, which escapes the raw-HTML icon
     // injected into Starlight asides. Keep the remark/rehype pipeline instead.
@@ -240,14 +245,13 @@ export default defineConfig({
           },
           items: [{ autogenerate: { directory: 'costs' } }],
         },
+        {
+          label: '🤖 Ask the documentation',
+          slug: 'ask',
+        },
       ],
     }),
     mdx(),
     sitemap(),
-    vercel({
-      webAnalytics: {
-        enabled: true,
-      },
-    }),
   ],
 });

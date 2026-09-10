@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build && node scripts/fix-redirect-trailing-slash.mjs",
+    "build": "node scripts/build-search-index.mjs && astro build && node scripts/fix-redirect-trailing-slash.mjs",
+    "build:index": "node scripts/build-search-index.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -17,6 +18,7 @@
     "@astrojs/vercel": "^11.0.7",
     "@fontsource-variable/ibm-plex-sans": "^5.2.8",
     "@fontsource/ibm-plex-mono": "^5.2.7",
+    "@mistralai/mistralai": "^2.7.0",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^2.0.0",
     "astro": "^7.2.8",

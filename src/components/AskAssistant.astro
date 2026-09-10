@@ -1,0 +1,278 @@
+---
+/**
+ * AskAssistant.astro
+ *
+ * Client-side UI for the "Ask the documentation" AI assistant.
+ * Renders a question form, sends the question to /api/ask,
+ * and displays the answer with source links.
+ */
+---
+
+<div class="ask-assistant" id="ask-assistant">
+  <form id="ask-form" class="ask-form" aria-label="Ask the documentation">
+    <label for="ask-input" class="ask-label">
+      Ask a question about the documentation
+    </label>
+    <div class="ask-input-row">
+      <input
+        type="text"
+        id="ask-input"
+        name="question"
+        class="ask-input"
+        placeholder="How do I structure a DITA topic?"
+        maxlength="500"
+        autocomplete="off"
+        required
+      />
+      <button type="submit" id="ask-submit" class="ask-button">
+        Ask
+      </button>
+    </div>
+    <p class="ask-hint">
+      The assistant answers from the site's documentation only.
+      It does not use general knowledge.
+    </p>
+  </form>
+
+  <div id="ask-loading" class="ask-loading" hidden>
+    <span class="ask-spinner" aria-hidden="true"></span>
+    Searching the documentation…
+  </div>
+
+  <div id="ask-error" class="ask-error" role="alert" hidden></div>
+
+  <div id="ask-result" class="ask-result" hidden>
+    <h2 class="ask-result-heading">Answer</h2>
+    <div id="ask-answer" class="ask-answer"></div>
+
+    <div id="ask-sources-section" hidden>
+      <h3 class="ask-sources-heading">Sources</h3>
+      <ul id="ask-sources" class="ask-sources"></ul>
+    </div>
+  </div>
+</div>
+
+<style>
+  .ask-assistant {
+    max-width: 42rem;
+  }
+
+  .ask-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .ask-input-row {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .ask-input {
+    flex: 1;
+    padding: 0.6rem 0.75rem;
+    font-size: 1rem;
+    font-family: inherit;
+    border: 1px solid var(--sl-color-gray-4);
+    border-radius: 0.375rem;
+    background: var(--sl-color-bg);
+    color: var(--sl-color-text);
+    transition: border-color 0.15s;
+  }
+
+  .ask-input:focus {
+    outline: 2px solid var(--sl-color-accent);
+    outline-offset: -1px;
+    border-color: var(--sl-color-accent);
+  }
+
+  .ask-button {
+    padding: 0.6rem 1.25rem;
+    font-size: 1rem;
+    font-family: inherit;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.375rem;
+    background: var(--sl-color-accent);
+    color: var(--sl-color-accent-text, #fff);
+    cursor: pointer;
+    transition: opacity 0.15s;
+    white-space: nowrap;
+  }
+
+  .ask-button:hover {
+    opacity: 0.85;
+  }
+
+  .ask-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .ask-hint {
+    margin-top: 0.5rem;
+    font-size: 0.8125rem;
+    color: var(--sl-color-gray-3);
+  }
+
+  /* Loading state */
+  .ask-loading {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+    color: var(--sl-color-gray-2);
+    font-size: 0.9375rem;
+  }
+
+  .ask-spinner {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid var(--sl-color-gray-4);
+    border-top-color: var(--sl-color-accent);
+    border-radius: 50%;
+    animation: ask-spin 0.7s linear infinite;
+  }
+
+  @keyframes ask-spin {
+    to { transform: rotate(360deg); }
+  }
+
+  /* Error */
+  .ask-error {
+    margin-top: 1.25rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.375rem;
+    background: var(--sl-color-red-low, #fef2f2);
+    color: var(--sl-color-red-high, #b91c1c);
+    border: 1px solid var(--sl-color-red, #fca5a5);
+    font-size: 0.9375rem;
+  }
+
+  /* Result */
+  .ask-result {
+    margin-top: 1.5rem;
+  }
+
+  .ask-result-heading {
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .ask-answer {
+    line-height: 1.7;
+    white-space: pre-wrap;
+  }
+
+  .ask-sources-heading {
+    font-size: 1rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .ask-sources {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .ask-sources li {
+    padding: 0.25rem 0;
+  }
+
+  .ask-sources a {
+    color: var(--sl-color-accent);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .ask-sources a::before {
+    content: '→ ';
+    color: var(--sl-color-gray-3);
+  }
+
+  .ask-sources a:hover {
+    text-decoration: underline;
+  }
+
+  /* Responsive */
+  @media (max-width: 30rem) {
+    .ask-input-row {
+      flex-direction: column;
+    }
+
+    .ask-button {
+      align-self: flex-end;
+    }
+  }
+</style>
+
+<script>
+  const form     = document.getElementById('ask-form') as HTMLFormElement;
+  const input    = document.getElementById('ask-input') as HTMLInputElement;
+  const submit   = document.getElementById('ask-submit') as HTMLButtonElement;
+  const loading  = document.getElementById('ask-loading') as HTMLDivElement;
+  const errorEl  = document.getElementById('ask-error') as HTMLDivElement;
+  const resultEl = document.getElementById('ask-result') as HTMLDivElement;
+  const answerEl = document.getElementById('ask-answer') as HTMLDivElement;
+  const srcSect  = document.getElementById('ask-sources-section') as HTMLDivElement;
+  const srcList  = document.getElementById('ask-sources') as HTMLUListElement;
+
+  function hide(el: HTMLElement) { el.hidden = true; }
+  function show(el: HTMLElement) { el.hidden = false; }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const question = input.value.trim();
+    if (!question) return;
+
+    // Reset UI
+    hide(errorEl);
+    hide(resultEl);
+    show(loading);
+    submit.disabled = true;
+
+    try {
+      const res = await fetch('/api/ask/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error ?? `Server error (${res.status})`);
+      }
+
+      // Display answer
+      answerEl.textContent = data.answer ?? '';
+      show(resultEl);
+
+      // Display sources
+      srcList.innerHTML = '';
+      const sources: Array<{ title: string; url: string }> = data.sources ?? [];
+      if (sources.length > 0) {
+        for (const src of sources) {
+          const li = document.createElement('li');
+          const a  = document.createElement('a');
+          a.href = src.url;
+          a.textContent = src.title;
+          li.appendChild(a);
+          srcList.appendChild(li);
+        }
+        show(srcSect);
+      } else {
+        hide(srcSect);
+      }
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'An unexpected error occurred.';
+      errorEl.textContent = message;
+      show(errorEl);
+    } finally {
+      hide(loading);
+      submit.disabled = false;
+    }
+  });
+</script>
