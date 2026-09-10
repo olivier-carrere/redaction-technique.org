@@ -5,13 +5,49 @@
  * Client-side UI for the "Ask the documentation" AI assistant.
  * Renders a question form, sends the question to /api/ask,
  * and displays the answer with source links.
+ *
+ * Props:
+ *   lang – 'en' (default) | 'fr'
  */
+
+interface Props {
+  lang?: 'en' | 'fr';
+}
+
+const { lang = 'en' } = Astro.props;
+
+const ui = {
+  en: {
+    formLabel:      'Ask the documentation',
+    inputLabel:     'Ask a question about the documentation',
+    placeholder:    'How do I structure a DITA topic?',
+    submitBtn:      'Ask',
+    hint:           "The assistant answers from the site's documentation only. It does not use general knowledge.",
+    loading:        'Searching the documentation\u2026',
+    answerHeading:  'Answer',
+    sourcesHeading: 'Sources',
+    fallback:       'An unexpected error occurred.',
+  },
+  fr: {
+    formLabel:      'Interroger la documentation',
+    inputLabel:     'Posez une question sur la documentation',
+    placeholder:    'Comment structurer un topic DITA\u00a0?',
+    submitBtn:      'Interroger',
+    hint:           "L\u2019assistant r\u00e9pond uniquement \u00e0 partir de la documentation disponible sur ce site. Il ne fait pas appel \u00e0 des connaissances g\u00e9n\u00e9rales.",
+    loading:        'Recherche dans la documentation\u2026',
+    answerHeading:  'R\u00e9ponse',
+    sourcesHeading: 'Sources',
+    fallback:       'Une erreur inattendue s\u2019est produite.',
+  },
+} as const;
+
+const t = ui[lang];
 ---
 
-<div class="ask-assistant" id="ask-assistant">
-  <form id="ask-form" class="ask-form" aria-label="Ask the documentation">
+<div class="ask-assistant" id="ask-assistant" data-lang={lang} data-fallback={t.fallback}>
+  <form id="ask-form" class="ask-form" aria-label={t.formLabel}>
     <label for="ask-input" class="ask-label">
-      Ask a question about the documentation
+      {t.inputLabel}
     </label>
     <div class="ask-input-row">
       <input
@@ -19,34 +55,33 @@
         id="ask-input"
         name="question"
         class="ask-input"
-        placeholder="How do I structure a DITA topic?"
+        placeholder={t.placeholder}
         maxlength="500"
         autocomplete="off"
         required
       />
       <button type="submit" id="ask-submit" class="ask-button">
-        Ask
+        {t.submitBtn}
       </button>
     </div>
     <p class="ask-hint">
-      The assistant answers from the site's documentation only.
-      It does not use general knowledge.
+      {t.hint}
     </p>
   </form>
 
   <div id="ask-loading" class="ask-loading" hidden>
     <span class="ask-spinner" aria-hidden="true"></span>
-    Searching the documentation…
+    {t.loading}
   </div>
 
   <div id="ask-error" class="ask-error" role="alert" hidden></div>
 
   <div id="ask-result" class="ask-result" hidden>
-    <h2 class="ask-result-heading">Answer</h2>
+    <h2 class="ask-result-heading">{t.answerHeading}</h2>
     <div id="ask-answer" class="ask-answer"></div>
 
     <div id="ask-sources-section" hidden>
-      <h3 class="ask-sources-heading">Sources</h3>
+      <h3 class="ask-sources-heading">{t.sourcesHeading}</h3>
       <ul id="ask-sources" class="ask-sources"></ul>
     </div>
   </div>
@@ -162,7 +197,53 @@
 
   .ask-answer {
     line-height: 1.7;
-    white-space: pre-wrap;
+  }
+
+  /* Markdown-rendered answer content */
+  .ask-answer p {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+
+  .ask-answer p:last-child {
+    margin-bottom: 0;
+  }
+
+  .ask-answer ul,
+  .ask-answer ol {
+    margin-top: 0.25rem;
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+  }
+
+  .ask-answer li {
+    margin-bottom: 0.25rem;
+  }
+
+  .ask-answer code {
+    font-family: var(--sl-font-mono, monospace);
+    font-size: 0.875em;
+    background: var(--sl-color-gray-6, #f3f4f6);
+    color: var(--sl-color-text, inherit);
+    padding: 0.125em 0.35em;
+    border-radius: 0.25rem;
+  }
+
+  .ask-answer strong {
+    font-weight: 700;
+  }
+
+  .ask-answer em {
+    font-style: italic;
+  }
+
+  .ask-answer a {
+    color: var(--sl-color-accent);
+    text-decoration: underline;
+  }
+
+  .ask-answer a:hover {
+    text-decoration: none;
   }
 
   .ask-sources-heading {
@@ -209,6 +290,18 @@
 </style>
 
 <script>
+  import { marked } from 'marked';
+  import DOMPurify from 'dompurify';
+
+  // Configure marked: use synchronous mode, no async extensions.
+  // gfm: GitHub-Flavored Markdown (tables, task lists, etc.)
+  // breaks: treat single newlines as <br> (mirrors Gemini's line-break convention)
+  marked.setOptions({ gfm: true, breaks: false });
+
+  const container = document.getElementById('ask-assistant') as HTMLDivElement;
+  const lang      = container?.dataset.lang ?? 'en';
+  const fallback  = container?.dataset.fallback ?? 'An unexpected error occurred.';
+
   const form     = document.getElementById('ask-form') as HTMLFormElement;
   const input    = document.getElementById('ask-input') as HTMLInputElement;
   const submit   = document.getElementById('ask-submit') as HTMLButtonElement;
@@ -221,6 +314,27 @@
 
   function hide(el: HTMLElement) { el.hidden = true; }
   function show(el: HTMLElement) { el.hidden = false; }
+
+  /**
+   * Render Markdown text to safe HTML.
+   * marked converts Markdown → HTML; DOMPurify strips executable content.
+   */
+  function renderMarkdown(text: string): string {
+    const rawHtml = marked.parse(text) as string;
+    return DOMPurify.sanitize(rawHtml, {
+      // Allow only safe presentational/structural elements.
+      ALLOWED_TAGS: [
+        'p', 'br', 'strong', 'em', 'b', 'i', 'code', 'pre',
+        'ul', 'ol', 'li', 'blockquote',
+        'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+        'a', 'hr',
+      ],
+      ALLOWED_ATTR: ['href', 'title', 'target', 'rel'],
+      // Force all links to be safe: no javascript: or data: URIs.
+      ALLOW_DATA_ATTR: false,
+      FORCE_BODY: false,
+    });
+  }
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -237,7 +351,7 @@
       const res = await fetch('/api/ask/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ question }),
+        body: JSON.stringify({ question, language: lang }),
       });
 
       const data = await res.json();
@@ -249,11 +363,12 @@
         throw new Error(data.error ?? `Server error (${res.status})`);
       }
 
-      // Display answer
-      answerEl.textContent = data.answer ?? '';
+      // Display answer — render Markdown, then sanitize before injecting.
+      const rawAnswer = data.answer ?? '';
+      answerEl.innerHTML = renderMarkdown(rawAnswer);
       show(resultEl);
 
-      // Display sources
+      // Display sources — built via safe DOM APIs, not innerHTML.
       srcList.innerHTML = '';
       const sources: Array<{ title: string; url: string }> = data.sources ?? [];
       if (sources.length > 0) {
@@ -270,7 +385,7 @@
         hide(srcSect);
       }
     } catch (err) {
-      const message = err instanceof Error ? err.message : 'An unexpected error occurred.';
+      const message = err instanceof Error ? err.message : fallback;
       errorEl.textContent = message;
       show(errorEl);
     } finally {
@@ -279,3 +394,4 @@
     }
   });
 </script>
+

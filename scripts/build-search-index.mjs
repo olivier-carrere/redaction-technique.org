@@ -7,16 +7,17 @@
  * Output: src/data/search-index.json
  */
 
-import { readFileSync, writeFileSync, mkdirSync, readdirSync, statSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
 
-const DOCS_DIR = join(process.cwd(), 'src', 'content', 'docs', 'en');
-const OUT_DIR  = join(process.cwd(), 'src', 'data');
-const OUT_FILE = join(OUT_DIR, 'search-index.json');
+const DOCS_DIR_EN = join(process.cwd(), 'src', 'content', 'docs', 'en');
+const DOCS_DIR_FR = join(process.cwd(), 'src', 'content', 'docs', 'fr');
+const OUT_DIR     = join(process.cwd(), 'src', 'data');
 const MAX_CONTENT_LENGTH = 3000;
 
 /** Recursively collect all .mdx files under `dir`. */
 function collectMdxFiles(dir) {
+  if (!existsSync(dir)) return [];
   const results = [];
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
     const full = join(dir, entry.name);
@@ -48,7 +49,7 @@ function cleanBody(raw) {
   // Remove import statements
   text = text.replace(/^import\s+.*$/gm, '');
 
-  // Remove Mermaid component blocks (entire <Mermaid ... /> including code={`...`})
+  // Remove Mermaid component blocks
   text = text.replace(/<Mermaid[\s\S]*?\/>/g, '');
 
   // Remove self-closing JSX/HTML components (<Component ... />)
@@ -69,7 +70,7 @@ function cleanBody(raw) {
   // Remove fenced code blocks with mermaid
   text = text.replace(/```mermaid[\s\S]*?```/g, '');
 
-  // Remove Starlight admonition markers (:::tip, :::note, etc.) but keep content
+  // Remove Starlight admonition markers
   text = text.replace(/^:::\w+\s*$/gm, '');
   text = text.replace(/^:::\s*$/gm, '');
 
@@ -94,31 +95,43 @@ function cleanBody(raw) {
   return text;
 }
 
+function buildIndexForLang(docsDir, langPrefix) {
+  const files = collectMdxFiles(docsDir);
+  return files.map((filePath) => {
+    const raw = readFileSync(filePath, 'utf-8');
+
+    const slug = relative(docsDir, filePath)
+      .replace(/\.mdx$/, '')
+      .split(sep)
+      .join('/');
+
+    const url   = `/${langPrefix}/${slug}/`;
+    const title = frontmatterValue(raw, 'title');
+    const description = frontmatterValue(raw, 'description');
+
+    let content = cleanBody(raw);
+    if (content.length > MAX_CONTENT_LENGTH) {
+      content = content.slice(0, MAX_CONTENT_LENGTH);
+    }
+
+    return { title, description, slug, url, content };
+  });
+}
+
 // ── Main ──────────────────────────────────────────────────────────────────────
 
-const files = collectMdxFiles(DOCS_DIR);
-
-const index = files.map((filePath) => {
-  const raw = readFileSync(filePath, 'utf-8');
-
-  const slug = relative(DOCS_DIR, filePath)
-    .replace(/\.mdx$/, '')
-    .split(sep)
-    .join('/');
-
-  const url   = `/en/${slug}/`;
-  const title = frontmatterValue(raw, 'title');
-  const description = frontmatterValue(raw, 'description');
-
-  let content = cleanBody(raw);
-  if (content.length > MAX_CONTENT_LENGTH) {
-    content = content.slice(0, MAX_CONTENT_LENGTH);
-  }
-
-  return { title, description, slug, url, content };
-});
-
 mkdirSync(OUT_DIR, { recursive: true });
-writeFileSync(OUT_FILE, JSON.stringify(index, null, 2), 'utf-8');
 
-console.log(`✔ Search index built: ${index.length} pages → ${OUT_FILE}`);
+const indexEn = buildIndexForLang(DOCS_DIR_EN, 'en');
+const indexFr = buildIndexForLang(DOCS_DIR_FR, 'fr');
+
+const outFileEn = join(OUT_DIR, 'search-index-en.json');
+const outFileFr = join(OUT_DIR, 'search-index-fr.json');
+const outFileLegacy = join(OUT_DIR, 'search-index.json');
+
+writeFileSync(outFileEn, JSON.stringify(indexEn, null, 2), 'utf-8');
+writeFileSync(outFileFr, JSON.stringify(indexFr, null, 2), 'utf-8');
+writeFileSync(outFileLegacy, JSON.stringify(indexEn, null, 2), 'utf-8');
+
+console.log(`✔ Search index built (EN): ${indexEn.length} pages → ${outFileEn}`);
+console.log(`✔ Search index built (FR): ${indexFr.length} pages → ${outFileFr}`);

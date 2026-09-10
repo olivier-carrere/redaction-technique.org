@@ -247,6 +247,9 @@ export default defineConfig({
         },
         {
           label: '🤖 Ask the documentation',
+          translations: {
+            fr: '🤖 Interroger la documentation',
+          },
           slug: 'ask',
         },
       ],

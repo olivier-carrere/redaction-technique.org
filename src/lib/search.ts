@@ -6,7 +6,8 @@
  * replaced with a vector/embedding index when the corpus grows.
  */
 
-import indexData from '../data/search-index.json';
+import indexDataEn from '../data/search-index-en.json';
+import indexDataFr from '../data/search-index-fr.json';
 
 export interface DocEntry {
   title: string;
@@ -23,7 +24,8 @@ export interface SearchResult {
   score: number;
 }
 
-const docs: DocEntry[] = indexData as DocEntry[];
+const docsEn: DocEntry[] = indexDataEn as DocEntry[];
+const docsFr: DocEntry[] = indexDataFr as DocEntry[];
 
 /** Normalise a string for comparison: lowercase, strip punctuation. */
 function normalise(text: string): string {
@@ -36,14 +38,24 @@ const ENGLISH_STOP_WORDS = new Set([
   'to', 'what', 'which', 'who', 'will', 'with', 'you', 'your', 'this', 'that'
 ]);
 
+const FRENCH_STOP_WORDS = new Set([
+  'au', 'aux', 'avec', 'ce', 'ces', 'cet', 'cette', 'dans', 'de', 'des', 'du',
+  'elle', 'elles', 'en', 'et', 'eux', 'il', 'ils', 'je', 'la', 'le', 'les',
+  'leur', 'leurs', 'lui', 'ma', 'mais', 'me', 'même', 'mes', 'mon', 'ni', 'nos',
+  'notre', 'nous', 'on', 'ou', 'où', 'par', 'pas', 'pour', 'qu', 'que', 'qui',
+  'sa', 'se', 'si', 'son', 'sur', 'ta', 'te', 'tes', 'ton', 'tu', 'un', 'une',
+  'vos', 'votre', 'vous', 'y'
+]);
+
 /** Tokenise a string into unique meaningful words (≥ 2 chars). */
-function tokenise(text: string): string[] {
+function tokenise(text: string, lang: 'en' | 'fr' = 'en'): string[] {
+  const stopWords = lang === 'fr' ? FRENCH_STOP_WORDS : ENGLISH_STOP_WORDS;
   const allTokens = [...new Set(
     normalise(text)
       .split(/\s+/)
       .filter((w) => w.length >= 2),
   )];
-  const contentTokens = allTokens.filter((w) => !ENGLISH_STOP_WORDS.has(w));
+  const contentTokens = allTokens.filter((w) => !stopWords.has(w));
   return contentTokens.length > 0 ? contentTokens : allTokens;
 }
 
@@ -96,11 +108,13 @@ function extractExcerpt(content: string, terms: string[], maxLen = 500): string 
 /**
  * Search the documentation index and return the top results.
  *
- * @param query  – the user's natural-language question
+ * @param query      – the user's natural-language question
  * @param maxResults – maximum results to return (default 5)
+ * @param lang       – which language index to search ('en' or 'fr', default 'en')
  */
-export function searchDocs(query: string, maxResults = 5): SearchResult[] {
-  const terms = tokenise(query);
+export function searchDocs(query: string, maxResults = 5, lang: 'en' | 'fr' = 'en'): SearchResult[] {
+  const docs = lang === 'fr' ? docsFr : docsEn;
+  const terms = tokenise(query, lang);
   if (terms.length === 0) return [];
 
   const scored = docs.map((doc) => {

@@ -23,6 +23,7 @@ export interface LLMProvider {
   generateAnswer(
     question: string,
     sources: SourceInfo[],
+    lang?: 'en' | 'fr',
   ): Promise<LLMResponse>;
 }
 
@@ -30,15 +31,17 @@ export interface LLMErrorInfo {
   statusCode: number;
   message: string;
   code?: string;
+  isQuotaExceeded?: boolean;
+  isRateLimitExceeded?: boolean;
 }
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
 export const GEMINI_MODEL = 'gemini-3.5-flash-lite';
 
-// ── System prompt ─────────────────────────────────────────────────────────────
+// ── System prompts ────────────────────────────────────────────────────────────
 
-const SYSTEM_PROMPT = `You are the documentation assistant for redaction-technique.org.
+const SYSTEM_PROMPT_EN = `You are the documentation assistant for redaction-technique.org.
 
 Answer questions using ONLY the documentation excerpts provided below.
 
@@ -49,7 +52,20 @@ Rules:
 - Do not invent APIs, features, configuration values, commands, examples, or technical terminology.
 - Keep answers concise and technically precise.
 - When referencing a documentation page, mention its title.
-- Answer in the same language as the question.`;
+- Answer in English.`;
+
+const SYSTEM_PROMPT_FR = `Tu es l'assistant de documentation de redaction-technique.org.
+
+Réponds aux questions en utilisant UNIQUEMENT les extraits de documentation fournis ci-dessous.
+
+Règles :
+- N'invente aucune information.
+- Ne comble pas les lacunes avec des connaissances générales ou extérieures.
+- Si la documentation ne contient pas suffisamment d'informations pour répondre à la question, dis-le explicitement (par exemple : « La documentation ne contient pas suffisamment d'informations pour répondre à cette question. »).
+- N'invente pas d'API, de fonctionnalités, de valeurs de configuration, de commandes, d'exemples ni de terminologie technique.
+- Sois concis et techniquement précis.
+- Lorsque tu fais référence à une page de documentation, mentionne son titre.
+- Réponds en français.`;
 
 // ── User message builder ──────────────────────────────────────────────────────
 
@@ -78,13 +94,15 @@ export class GeminiProvider implements LLMProvider {
   async generateAnswer(
     question: string,
     sources: SourceInfo[],
+    lang: 'en' | 'fr' = 'en',
   ): Promise<LLMResponse> {
+    const systemInstruction = lang === 'fr' ? SYSTEM_PROMPT_FR : SYSTEM_PROMPT_EN;
     const prompt = buildUserMessage(question, sources);
     const response = await this.ai.models.generateContent({
       model: this.model,
       contents: prompt,
       config: {
-        systemInstruction: SYSTEM_PROMPT,
+        systemInstruction,
         temperature: 0.1,
         maxOutputTokens: 512,
       },
