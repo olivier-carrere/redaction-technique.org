@@ -8,7 +8,7 @@
 
 import type { APIRoute } from 'astro';
 import { searchDocs } from '../../lib/search';
-import { createLLMProvider } from '../../lib/llm';
+import { createLLMProvider, getGeminiApiKey, GEMINI_MODEL, parseGeminiError } from '../../lib/llm';
 import type { SourceInfo } from '../../lib/llm';
 
 // This route must be server-rendered (not pre-rendered at build time).
@@ -109,12 +109,18 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
   }
 
   // ── Prepare LLM context ───────────────────────────────────────────────────
+  const apiKey = getGeminiApiKey();
   const provider = createLLMProvider();
 
   if (!provider) {
+    console.error('[/api/ask] Provider creation failed: GEMINI_API_KEY missing.', {
+      provider: 'gemini',
+      model: GEMINI_MODEL,
+      apiKeyPresent: false,
+    });
     return new Response(
       JSON.stringify({
-        error: 'The AI assistant is not configured. The MISTRAL_API_KEY environment variable is missing.',
+        error: 'The AI assistant is not configured. The GEMINI_API_KEY environment variable is missing.',
       }),
       { status: 503, headers: { 'Content-Type': 'application/json' } },
     );
@@ -148,19 +154,43 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
       { status: 200, headers: { 'Content-Type': 'application/json' } },
     );
   } catch (err) {
-    const message = err instanceof Error ? err.message : 'Unknown error';
-    console.error('[/api/ask] LLM error:', message);
+    const errorInfo = parseGeminiError(err);
 
-    // Detect upstream rate-limit (Mistral 429) to give the user a clearer message
-    const isRateLimit = message.includes('429') || message.toLowerCase().includes('rate limit');
+    // Diagnostic logging containing no secret API keys
+    console.error('[/api/ask] Gemini API error diagnostic:', {
+      provider: 'gemini',
+      model: GEMINI_MODEL,
+      apiKeyPresent: Boolean(apiKey),
+      statusCode: errorInfo.statusCode,
+      errorMessage: errorInfo.message,
+    });
+
+    let httpStatus = 502;
+    let userMessage = 'AI service temporarily unavailable. Please try again later.';
+
+    if (errorInfo.statusCode === 401 || errorInfo.statusCode === 403 || errorInfo.statusCode === 400) {
+      httpStatus = errorInfo.statusCode === 400 ? 401 : errorInfo.statusCode;
+      userMessage = 'AI service authentication error. Please check configuration.';
+    } else if (errorInfo.statusCode === 402) {
+      httpStatus = 402;
+      userMessage = 'AI service quota or billing limit reached. Please check your Gemini account.';
+    } else if (errorInfo.statusCode === 429) {
+      httpStatus = 429;
+      userMessage = 'The AI service is temporarily busy due to rate limits. Please try again in a moment.';
+    }
+
+    const isDev = import.meta.env.DEV || process.env.NODE_ENV !== 'production';
+    const responsePayload: Record<string, unknown> = {
+      error: userMessage,
+    };
+
+    if (isDev) {
+      responsePayload.devDetails = `[DEV ONLY] Status ${errorInfo.statusCode}: ${errorInfo.message}${errorInfo.code ? ` (code: ${errorInfo.code})` : ''}`;
+    }
 
     return new Response(
-      JSON.stringify({
-        error: isRateLimit
-          ? 'The AI service is temporarily busy. Please wait a moment and try again.'
-          : 'An error occurred while generating the answer. Please try again.',
-      }),
-      { status: isRateLimit ? 429 : 502, headers: { 'Content-Type': 'application/json' } },
+      JSON.stringify(responsePayload),
+      { status: httpStatus, headers: { 'Content-Type': 'application/json' } },
     );
   }
 };

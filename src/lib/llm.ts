@@ -1,11 +1,10 @@
 /**
- * LLM provider abstraction.
+ * LLM provider abstraction using Google's official @google/genai SDK.
  *
- * Isolates the Mistral integration so it can be swapped for another
- * provider without redesigning the application.
+ * Isolates the Gemini integration for the documentation assistant.
  */
 
-import { Mistral } from '@mistralai/mistralai';
+import { GoogleGenAI } from '@google/genai';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -27,6 +26,16 @@ export interface LLMProvider {
   ): Promise<LLMResponse>;
 }
 
+export interface LLMErrorInfo {
+  statusCode: number;
+  message: string;
+  code?: string;
+}
+
+// ── Constants ─────────────────────────────────────────────────────────────────
+
+export const GEMINI_MODEL = 'gemini-2.5-flash-lite';
+
 // ── System prompt ─────────────────────────────────────────────────────────────
 
 const SYSTEM_PROMPT = `You are the documentation assistant for redaction-technique.org.
@@ -35,9 +44,10 @@ Answer questions using ONLY the documentation excerpts provided below.
 
 Rules:
 - Do not invent information.
-- Do not rely on general knowledge when the supplied documentation does not answer the question.
-- If the documentation does not contain enough information to answer the question, say so clearly. For example: "The documentation does not contain enough information to answer this question."
-- Prefer concise, technically precise answers.
+- Do not rely on general or outside knowledge to fill gaps.
+- If the documentation does not contain enough information to answer the question, explicitly say so (for example: "The documentation does not contain enough information to answer this question.").
+- Do not invent APIs, features, configuration values, commands, examples, or technical terminology.
+- Keep answers concise and technically precise.
 - When referencing a documentation page, mention its title.
 - Answer in the same language as the question.`;
 
@@ -54,16 +64,14 @@ function buildUserMessage(question: string, sources: SourceInfo[]): string {
   return `Question: ${question}\n\nDocumentation excerpts:\n\n${sourcesBlock}`;
 }
 
-// ── Mistral provider ──────────────────────────────────────────────────────────
+// ── Gemini provider ───────────────────────────────────────────────────────────
 
-const MISTRAL_MODEL = 'mistral-small-latest';
-
-export class MistralProvider implements LLMProvider {
-  private client: Mistral;
+export class GeminiProvider implements LLMProvider {
+  private ai: GoogleGenAI;
   private model: string;
 
-  constructor(apiKey: string, model = MISTRAL_MODEL) {
-    this.client = new Mistral({ apiKey });
+  constructor(apiKey: string, model = GEMINI_MODEL) {
+    this.ai = new GoogleGenAI({ apiKey });
     this.model = model;
   }
 
@@ -71,37 +79,103 @@ export class MistralProvider implements LLMProvider {
     question: string,
     sources: SourceInfo[],
   ): Promise<LLMResponse> {
-    const result = await this.client.chat.complete({
+    const prompt = buildUserMessage(question, sources);
+    const response = await this.ai.models.generateContent({
       model: this.model,
-      messages: [
-        { role: 'system', content: SYSTEM_PROMPT },
-        { role: 'user', content: buildUserMessage(question, sources) },
-      ],
-      maxTokens: 1024,
-      temperature: 0.1,
+      contents: prompt,
+      config: {
+        systemInstruction: SYSTEM_PROMPT,
+        temperature: 0.1,
+        maxOutputTokens: 1024,
+      },
     });
 
-    const answer = result.choices?.[0]?.message?.content;
-    const text = typeof answer === 'string' ? answer.trim() : '';
-
-    return { answer: text, model: result.model ?? this.model };
+    const text = response.text ? response.text.trim() : '';
+    return { answer: text, model: this.model };
   }
 }
 
-// ── Factory ───────────────────────────────────────────────────────────────────
+// ── Factory & Helpers ─────────────────────────────────────────────────────────
+
+/** Safely fetch the Gemini API key from environment without exposing its value. */
+export function getGeminiApiKey(): string {
+  return (
+    import.meta.env?.GEMINI_API_KEY ??
+    process.env.GEMINI_API_KEY ??
+    ''
+  ).trim();
+}
 
 /**
  * Create an LLM provider from the current environment.
  * Returns null when the API key is not configured.
  */
 export function createLLMProvider(): LLMProvider | null {
-  // Server-side: try Astro's import.meta.env first, then process.env (Vercel runtime)
-  const apiKey =
-    import.meta.env?.MISTRAL_API_KEY ??
-    process.env.MISTRAL_API_KEY ??
-    '';
-
+  const apiKey = getGeminiApiKey();
   if (!apiKey) return null;
+  return new GeminiProvider(apiKey);
+}
 
-  return new MistralProvider(apiKey);
+// ── Error Parser ──────────────────────────────────────────────────────────────
+
+/**
+ * Parses errors thrown by `@google/genai` SDK or HTTP requests,
+ * extracting status code, error message, and error code safely.
+ */
+export function parseGeminiError(err: unknown): LLMErrorInfo {
+  let statusCode = 500;
+  let message = 'Unknown error';
+  let code: string | undefined;
+
+  if (typeof err === 'object' && err !== null) {
+    const record = err as Record<string, unknown>;
+
+    if (typeof record.status === 'number') {
+      statusCode = record.status;
+    } else if (typeof record.statusCode === 'number') {
+      statusCode = record.statusCode;
+    }
+
+    if (typeof record.code === 'string' || typeof record.code === 'number') {
+      code = String(record.code);
+    }
+
+    if (typeof record.message === 'string') {
+      try {
+        const parsed = JSON.parse(record.message) as Record<string, unknown>;
+        if (parsed?.error && typeof parsed.error === 'object') {
+          const errObj = parsed.error as Record<string, unknown>;
+          if (typeof errObj.code === 'number' || typeof errObj.code === 'string') {
+            statusCode = Number(errObj.code) || statusCode;
+          }
+          if (typeof errObj.message === 'string') {
+            message = errObj.message;
+          }
+          if (typeof errObj.status === 'string') {
+            code = errObj.status;
+          }
+        }
+      } catch {
+        message = record.message;
+      }
+    }
+
+    // Fallback status code matching if statusCode is still default 500
+    if (statusCode === 500) {
+      const lower = message.toLowerCase();
+      if (lower.includes('api key not valid') || lower.includes('invalid_argument') || lower.includes('unauthorized') || lower.includes('401')) {
+        statusCode = 401;
+      } else if (lower.includes('permission_denied') || lower.includes('forbidden') || lower.includes('403')) {
+        statusCode = 403;
+      } else if (lower.includes('quota') || lower.includes('billing') || lower.includes('402')) {
+        statusCode = 402;
+      } else if (lower.includes('resource_exhausted') || lower.includes('rate limit') || lower.includes('429')) {
+        statusCode = 429;
+      }
+    }
+  } else if (typeof err === 'string') {
+    message = err;
+  }
+
+  return { statusCode, message, code };
 }

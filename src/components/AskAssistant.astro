@@ -243,6 +243,9 @@
       const data = await res.json();
 
       if (!res.ok) {
+        if (data.devDetails) {
+          console.warn('[AskAssistant DEV]', data.devDetails);
+        }
         throw new Error(data.error ?? `Server error (${res.status})`);
       }
 
