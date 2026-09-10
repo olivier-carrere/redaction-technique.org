@@ -120,12 +120,15 @@ export function createLLMProvider(): LLMProvider | null {
 
 /**
  * Parses errors thrown by `@google/genai` SDK or HTTP requests,
- * extracting status code, error message, and error code safely.
+ * extracting status code, error message, and distinguishing daily quota exhaustion
+ * from short-term rate limits safely.
  */
 export function parseGeminiError(err: unknown): LLMErrorInfo {
   let statusCode = 500;
   let message = 'Unknown error';
   let code: string | undefined;
+  let rawBody = '';
+  let reason = '';
 
   if (typeof err === 'object' && err !== null) {
     const record = err as Record<string, unknown>;
@@ -141,6 +144,7 @@ export function parseGeminiError(err: unknown): LLMErrorInfo {
     }
 
     if (typeof record.message === 'string') {
+      rawBody = record.message;
       try {
         const parsed = JSON.parse(record.message) as Record<string, unknown>;
         if (parsed?.error && typeof parsed.error === 'object') {
@@ -154,28 +158,57 @@ export function parseGeminiError(err: unknown): LLMErrorInfo {
           if (typeof errObj.status === 'string') {
             code = errObj.status;
           }
+          if (Array.isArray(errObj.details)) {
+            for (const d of errObj.details) {
+              if (d && typeof d === 'object' && typeof (d as any).reason === 'string') {
+                reason += ' ' + (d as any).reason;
+              }
+            }
+          }
         }
       } catch {
         message = record.message;
       }
     }
 
+    if (typeof record.status === 'string' && !code) {
+      code = record.status;
+    }
+
     // Fallback status code matching if statusCode is still default 500
     if (statusCode === 500) {
-      const lower = message.toLowerCase();
+      const lower = (message + ' ' + rawBody + ' ' + (code ?? '')).toLowerCase();
       if (lower.includes('api key not valid') || lower.includes('invalid_argument') || lower.includes('unauthorized') || lower.includes('401')) {
         statusCode = 401;
       } else if (lower.includes('permission_denied') || lower.includes('forbidden') || lower.includes('403')) {
         statusCode = 403;
       } else if (lower.includes('quota') || lower.includes('billing') || lower.includes('402')) {
         statusCode = 402;
-      } else if (lower.includes('resource_exhausted') || lower.includes('rate limit') || lower.includes('429')) {
+      } else if (lower.includes('resource_exhausted') || lower.includes('rate limit') || lower.includes('quota_exceeded') || lower.includes('429')) {
         statusCode = 429;
       }
     }
   } else if (typeof err === 'string') {
     message = err;
+    rawBody = err;
   }
 
-  return { statusCode, message, code };
+  const combinedText = (message + ' ' + rawBody + ' ' + reason + ' ' + (code ?? '')).toLowerCase();
+
+  // Daily / project quota detection
+  const isQuotaExceeded =
+    statusCode === 429 &&
+    (combinedText.includes('quota_exceeded') ||
+      combinedText.includes('daily') ||
+      combinedText.includes('per_day') ||
+      combinedText.includes('per day') ||
+      combinedText.includes('free_tier_quota') ||
+      combinedText.includes('requests per day') ||
+      combinedText.includes('tokens per day') ||
+      combinedText.includes('day'));
+
+  // Short-term rate limit detection (when 429 but not daily quota)
+  const isRateLimitExceeded = statusCode === 429 && !isQuotaExceeded;
+
+  return { statusCode, message, code, isQuotaExceeded, isRateLimitExceeded };
 }

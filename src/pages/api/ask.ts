@@ -156,13 +156,14 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
   } catch (err) {
     const errorInfo = parseGeminiError(err);
 
-    // Diagnostic logging containing no secret API keys
+    // Diagnostic logging containing no secret API keys or internal details
     console.error('[/api/ask] Gemini API error diagnostic:', {
       provider: 'gemini',
       model: GEMINI_MODEL,
       apiKeyPresent: Boolean(apiKey),
       statusCode: errorInfo.statusCode,
-      errorMessage: errorInfo.message,
+      isQuotaExceeded: errorInfo.isQuotaExceeded,
+      isRateLimitExceeded: errorInfo.isRateLimitExceeded,
     });
 
     let httpStatus = 502;
@@ -174,9 +175,12 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
     } else if (errorInfo.statusCode === 402) {
       httpStatus = 402;
       userMessage = 'AI service quota or billing limit reached. Please check your Gemini account.';
-    } else if (errorInfo.statusCode === 429) {
+    } else if (errorInfo.isQuotaExceeded) {
       httpStatus = 429;
-      userMessage = 'The AI service is temporarily busy due to rate limits. Please try again in a moment.';
+      userMessage = 'The documentation assistant has reached its daily usage limit. Please try again tomorrow.';
+    } else if (errorInfo.isRateLimitExceeded || errorInfo.statusCode === 429) {
+      httpStatus = 429;
+      userMessage = 'The documentation assistant is busy right now. Please wait a moment and try again.';
     }
 
     const isDev = import.meta.env.DEV || process.env.NODE_ENV !== 'production';
