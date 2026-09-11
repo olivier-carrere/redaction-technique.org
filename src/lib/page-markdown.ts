@@ -356,3 +356,5 @@ export function getPageMarkdown(
 
   return result;
 }
+
+export * from './document-resource.ts';

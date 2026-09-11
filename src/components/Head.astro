@@ -147,6 +147,22 @@ const schema = { '@context': 'https://schema.org', '@graph': graphNodes };
   />
 )}
 
+<!-- Machine-readable document index discovery (JSON) -->
+<link
+  rel="alternate"
+  type="application/json"
+  title={lang === 'fr' ? 'Index documentaire machine-readable (JSON)' : 'Machine-readable document index (JSON)'}
+  href={lang === 'fr' ? `${siteUrl}/fr/index.json` : `${siteUrl}/en/index.json`}
+/>
+
+<!-- LLM documentation index (llms.txt) -->
+<link
+  rel="alternate"
+  type="text/plain"
+  title="LLM documentation table of contents (llms.txt)"
+  href={`${siteUrl}/llms.txt`}
+/>
+
 <!-- og:description: ensure it's always populated with the page-specific value -->
 <meta property="og:description" content={pageDescription} />
 

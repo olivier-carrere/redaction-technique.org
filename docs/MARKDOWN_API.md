@@ -1,0 +1,202 @@
+# Static Documentation API for LLMs and AI Agents
+
+`docs.redaction-technique.org` provides a zero-runtime, edge-cached static API that exposes the entire technical writing documentation corpus for automated discovery, LLM ingestion, and pair-programming agents.
+
+---
+
+## 1. Architectural Overview
+
+The core design principle is:
+> **A single source of truth for documentation content and all its LLM representations.**
+
+```text
+               src/content/docs/**/*.{md,mdx}
+                             │
+                             ▼
+                   getCollection('docs')
+                             │
+                             ▼
+                 toDocumentResource(doc)
+                             │
+            ┌────────────────┼────────────────┐
+            ▼                ▼                ▼
+     HTML Documentation   getPageMarkdown()  Document Metadata
+            │                │                │
+     ┌──────┴──────┐         ├──────────────┐ ├─────────────┐
+     ▼             ▼         ▼              ▼ ▼             ▼
+Copy for LLM  View as .md  page.md    llms-full.txt     index.json
+                                            │               │
+                                     ┌──────┴──────┐ ┌──────┴──────┐
+                                     ▼             ▼ ▼             ▼
+                                  llms.txt    sitemap.md      locale indexes
+```
+
+All endpoints are statically pre-rendered during `astro build` into `dist/client/`. They require zero server-side databases or lambda functions and are served directly from the Vercel CDN edge.
+
+---
+
+## 2. Endpoint Inventory & URL Conventions
+
+### A. Root & Global Discovery Endpoints
+
+| Route | Content-Type | Purpose |
+| ----- | ------------ | ------- |
+| `/llms.txt` | `text/plain; charset=utf-8` | Concise LLM table of contents conforming to the [llms.txt](https://llmstxt.org/) standard |
+| `/llms-full.txt` | `text/plain; charset=utf-8` | Consolidated bilingual documentation corpus (EN + FR) |
+| `/llms-full-en.txt` | `text/plain; charset=utf-8` | Consolidated English documentation corpus |
+| `/llms-full-fr.txt` | `text/plain; charset=utf-8` | Consolidated French documentation corpus |
+| `/index.json` | `application/json; charset=utf-8` | Global machine-readable document index and endpoint registry |
+| `/sitemap.md` | `text/markdown; charset=utf-8` | Global human- and agent-readable Markdown sitemap |
+
+### B. English Locale Endpoints (`/en/`)
+
+| Route | Content-Type | Purpose |
+| ----- | ------------ | ------- |
+| `/en/index.json` | `application/json; charset=utf-8` | English machine-readable document index (49 docs) |
+| `/en/sitemap.md` | `text/markdown; charset=utf-8` | Hierarchical English Markdown sitemap grouped by section |
+| `/en/llms-full.txt` | `text/plain; charset=utf-8` | Complete English documentation corpus (alias to `/llms-full-en.txt`) |
+| `/en.md` | `text/markdown; charset=utf-8` | Clean Markdown representation of the English homepage |
+| `/en/<slug>.md` | `text/markdown; charset=utf-8` | Clean Markdown representation of each English documentation page |
+
+### C. French Locale Endpoints (`/fr/`)
+
+| Route | Content-Type | Purpose |
+| ----- | ------------ | ------- |
+| `/fr/index.json` | `application/json; charset=utf-8` | French machine-readable document index (47 docs) |
+| `/fr/sitemap.md` | `text/markdown; charset=utf-8` | Hierarchical French Markdown sitemap grouped by section |
+| `/fr/llms-full.txt` | `text/plain; charset=utf-8` | Complete French documentation corpus (alias to `/llms-full-fr.txt`) |
+| `/fr.md` | `text/markdown; charset=utf-8` | Clean Markdown representation of the French homepage |
+| `/fr/<slug>.md` | `text/markdown; charset=utf-8` | Clean Markdown representation of each French documentation page |
+
+---
+
+## 3. Machine-Readable JSON Format
+
+Each document resource is structured according to the canonical `DocumentResource` schema:
+
+```json
+{
+  "title": "About this blog",
+  "description": "A technical writing blog specializing in DITA XML, docs-as-code...",
+  "url": "https://docs.redaction-technique.org/en/about-this-blog/",
+  "markdown": "https://docs.redaction-technique.org/en/about-this-blog.md",
+  "locale": "en",
+  "wordCount": 780,
+  "headings": [
+    { "level": 2, "text": "Free your information from its silos", "slug": "free-your-information-from-its-silos" },
+    { "level": 2, "text": "This blog's sources are managed under Git", "slug": "this-blogs-sources-are-managed-under-git" }
+  ],
+  "keywords": ["dita-xml", "docs-as-code"],
+  "tags": ["dita-xml", "docs-as-code"]
+}
+```
+
+The locale indexes (`/en/index.json` and `/fr/index.json`) expose:
+```json
+{
+  "version": "1.0",
+  "site": "https://docs.redaction-technique.org",
+  "locale": "en",
+  "count": 49,
+  "documents": [ ... ]
+}
+```
+
+The global index (`/index.json`) aggregates both locales and links to all API discovery endpoints.
+
+---
+
+## 4. Role of `llms.txt`
+
+The `/llms.txt` file acts as the primary navigational entry point for AI models and search systems.
+- Conforms strictly to the [llms.txt](https://llmstxt.org/) specification.
+- Exposes quick links to the machine-readable indexes, Markdown sitemaps, and full corpus files.
+- Provides a curated, section-organized table of contents with brief one-line descriptions and canonical URLs.
+- Contains zero heavy body text, ensuring fast token-efficient ingestion.
+
+---
+
+## 5. Role of `llms-full.txt` & Language Variants
+
+When an agent needs to read or embed the entire corpus without making dozens of individual HTTP requests:
+- `/llms-full.txt`: Consolidated file containing all 96 documentation pages (~547 KB uncompressed, ~160 KB gzipped).
+- `/en/llms-full.txt` / `/llms-full-en.txt`: English-only corpus (~270 KB).
+- `/fr/llms-full.txt` / `/llms-full-fr.txt`: French-only corpus (~276 KB).
+
+### Document Boundary Format & Pipeline Identity
+Every document in `llms-full.txt` is enclosed in a standard separator:
+
+```markdown
+---
+
+## Document: <Title>
+
+Source: <HTML Canonical URL>
+Markdown: <Markdown URL>
+
+<Clean Markdown generated by getPageMarkdown()>
+```
+
+**Guaranteed Identity:** The content under `Markdown: <URL>\n\n` is byte-for-byte identical to the output of `getPageMarkdown(doc)` served at the individual `.md` endpoint. Automated test `tests/api-layer.test.mjs` verifies this invariant across 100% of documents on every build.
+
+---
+
+## 6. Relationship Between HTML, `.md`, and Client Actions
+
+On every documentation page:
+1. **HTML `<head>` Discovery:**
+   ```html
+   <link rel="alternate" type="text/markdown" title="Markdown representation for LLM" href="https://docs.redaction-technique.org/en/about-this-blog.md">
+   <link rel="alternate" type="application/json" title="Machine-readable document index (JSON)" href="https://docs.redaction-technique.org/en/index.json">
+   <link rel="alternate" type="text/plain" title="LLM documentation table of contents (llms.txt)" href="https://docs.redaction-technique.org/llms.txt">
+   ```
+2. **"Copy for LLM" Button:**
+   - Pre-fetches the page's `.md` file on hover/focus (`{ once: true }`).
+   - Writes the exact Markdown into `navigator.clipboard`.
+   - Accessible live-region announcement and debounced feedback state.
+3. **"View as Markdown" Link:**
+   - Standard HTML `<a>` link pointing to `/<slug>.md`.
+   - 100% operational with JavaScript disabled.
+
+---
+
+## 7. How to Add a New Documentation Page
+
+No manual updates to endpoints, sitemaps, or JSON indexes are ever required:
+1. Create a new `.md` or `.mdx` file inside `src/content/docs/en/` or `src/content/docs/fr/`.
+2. Add title, description, and optional tags in the frontmatter:
+   ```yaml
+   ---
+   title: "New Article Title"
+   description: "Brief summary of article."
+   tags: [dita-xml, automation]
+   ---
+   ```
+3. Run `npm run build`:
+   - Astro's Content Layer automatically indexes the new entry.
+   - The `.md` endpoint is generated at `/en/<slug>.md`.
+   - The article is categorized into its section in `/en/index.json`, `/en/sitemap.md`, `/llms.txt`, and `/llms-full.txt`.
+   - HTML discovery tags and "Copy for LLM" actions are bound automatically.
+
+---
+
+## 8. HTTP Headers and Vercel Deployment
+
+Configured via `vercel.json` and static Astro `APIRoute` headers:
+
+```http
+# .md files
+Content-Type: text/markdown; charset=utf-8
+X-Robots-Tag: noindex
+Access-Control-Allow-Origin: *
+
+# .json files
+Content-Type: application/json; charset=utf-8
+X-Robots-Tag: noindex
+Access-Control-Allow-Origin: *
+
+# llms *.txt files
+Content-Type: text/plain; charset=utf-8
+X-Robots-Tag: noindex
+Access-Control-Allow-Origin: *
+```
