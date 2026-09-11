@@ -1,5 +1,6 @@
 ---
 import Default from '@astrojs/starlight/components/Head.astro';
+import { ClientRouter } from 'astro:transitions';
 import SpeedInsights from '@vercel/speed-insights/astro';
 import type { Props } from '@astrojs/starlight/props';
 import { getMarkdownUrl } from '../lib/page-markdown';
@@ -120,6 +121,7 @@ if (isHomepage) {
 const schema = { '@context': 'https://schema.org', '@graph': graphNodes };
 ---
 
+<ClientRouter />
 <Default {...Astro.props} />
 
 <!-- og:image - not emitted by Starlight's default head -->

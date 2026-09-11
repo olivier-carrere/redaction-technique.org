@@ -384,110 +384,120 @@ const t = ui[lang];
   // breaks: treat single newlines as <br> (mirrors Gemini's line-break convention)
   marked.setOptions({ gfm: true, breaks: false });
 
-  const container = document.getElementById('ask-assistant') as HTMLDivElement;
-  const lang      = container?.dataset.lang ?? 'en';
-  const fallback  = container?.dataset.fallback ?? 'An unexpected error occurred.';
+  function setupAskAssistant() {
+    const container = document.getElementById('ask-assistant') as HTMLDivElement;
+    if (!container || container.dataset.initialized === 'true') return;
+    container.dataset.initialized = 'true';
 
-  const form     = document.getElementById('ask-form') as HTMLFormElement;
-  const input    = document.getElementById('ask-input') as HTMLInputElement;
-  const submit   = document.getElementById('ask-submit') as HTMLButtonElement;
-  const loading  = document.getElementById('ask-loading') as HTMLDivElement;
-  const errorEl  = document.getElementById('ask-error') as HTMLDivElement;
+    const lang      = container.dataset.lang ?? 'en';
+    const fallback  = container.dataset.fallback ?? 'An unexpected error occurred.';
 
-  // Wire example prompt buttons: click fills input and focuses it.
-  document.querySelectorAll<HTMLButtonElement>('.ask-example-btn').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      if (!input) return;
-      input.value = btn.dataset.question ?? '';
-      input.focus();
+    const form     = container.querySelector('#ask-form') as HTMLFormElement;
+    const input    = container.querySelector('#ask-input') as HTMLInputElement;
+    const submit   = container.querySelector('#ask-submit') as HTMLButtonElement;
+    const loading  = container.querySelector('#ask-loading') as HTMLDivElement;
+    const errorEl  = container.querySelector('#ask-error') as HTMLDivElement;
+
+    // Wire example prompt buttons: click fills input and focuses it.
+    container.querySelectorAll<HTMLButtonElement>('.ask-example-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        if (!input) return;
+        input.value = btn.dataset.question ?? '';
+        input.focus();
+      });
     });
-  });
 
-  const resultEl = document.getElementById('ask-result') as HTMLDivElement;
-  const answerEl = document.getElementById('ask-answer') as HTMLDivElement;
-  const srcSect  = document.getElementById('ask-sources-section') as HTMLDivElement;
-  const srcList  = document.getElementById('ask-sources') as HTMLUListElement;
+    const resultEl = container.querySelector('#ask-result') as HTMLDivElement;
+    const answerEl = container.querySelector('#ask-answer') as HTMLDivElement;
+    const srcSect  = container.querySelector('#ask-sources-section') as HTMLDivElement;
+    const srcList  = container.querySelector('#ask-sources') as HTMLUListElement;
 
-  function hide(el: HTMLElement) { el.hidden = true; }
-  function show(el: HTMLElement) { el.hidden = false; }
+    function hide(el: HTMLElement) { el.hidden = true; }
+    function show(el: HTMLElement) { el.hidden = false; }
 
-  /**
-   * Render Markdown text to safe HTML.
-   * marked converts Markdown → HTML; DOMPurify strips executable content.
-   */
-  function renderMarkdown(text: string): string {
-    const rawHtml = marked.parse(text) as string;
-    return DOMPurify.sanitize(rawHtml, {
-      // Allow only safe presentational/structural elements.
-      ALLOWED_TAGS: [
-        'p', 'br', 'strong', 'em', 'b', 'i', 'code', 'pre',
-        'ul', 'ol', 'li', 'blockquote',
-        'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
-        'a', 'hr',
-      ],
-      ALLOWED_ATTR: ['href', 'title', 'target', 'rel'],
-      // Force all links to be safe: no javascript: or data: URIs.
-      ALLOW_DATA_ATTR: false,
-      FORCE_BODY: false,
-    });
+    /**
+     * Render Markdown text to safe HTML.
+     * marked converts Markdown → HTML; DOMPurify strips executable content.
+     */
+    function renderMarkdown(text: string): string {
+      const rawHtml = marked.parse(text) as string;
+      return DOMPurify.sanitize(rawHtml, {
+        // Allow only safe presentational/structural elements.
+        ALLOWED_TAGS: [
+          'p', 'br', 'strong', 'em', 'b', 'i', 'code', 'pre',
+          'ul', 'ol', 'li', 'blockquote',
+          'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+          'a', 'hr',
+        ],
+        ALLOWED_ATTR: ['href', 'title', 'target', 'rel'],
+        // Force all links to be safe: no javascript: or data: URIs.
+        ALLOW_DATA_ATTR: false,
+        FORCE_BODY: false,
+      });
+    }
+
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const question = input.value.trim();
+        if (!question) return;
+
+        // Reset UI
+        hide(errorEl);
+        hide(resultEl);
+        show(loading);
+        submit.disabled = true;
+
+        try {
+          const res = await fetch('/api/ask/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ question, language: lang }),
+          });
+
+          const data = await res.json();
+
+          if (!res.ok) {
+            if (data.devDetails) {
+              console.warn('[AskAssistant DEV]', data.devDetails);
+            }
+            throw new Error(data.error ?? `Server error (${res.status})`);
+          }
+
+          // Display answer — render Markdown, then sanitize before injecting.
+          const rawAnswer = data.answer ?? '';
+          answerEl.innerHTML = renderMarkdown(rawAnswer);
+          show(resultEl);
+
+          // Display sources — built via safe DOM APIs, not innerHTML.
+          srcList.innerHTML = '';
+          const sources: Array<{ title: string; url: string }> = data.sources ?? [];
+          if (sources.length > 0) {
+            for (const src of sources) {
+              const li = document.createElement('li');
+              const a  = document.createElement('a');
+              a.href = src.url;
+              a.textContent = src.title;
+              li.appendChild(a);
+              srcList.appendChild(li);
+            }
+            show(srcSect);
+          } else {
+            hide(srcSect);
+          }
+        } catch (err) {
+          const message = err instanceof Error ? err.message : fallback;
+          errorEl.textContent = message;
+          show(errorEl);
+        } finally {
+          hide(loading);
+          submit.disabled = false;
+        }
+      });
+    }
   }
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const question = input.value.trim();
-    if (!question) return;
-
-    // Reset UI
-    hide(errorEl);
-    hide(resultEl);
-    show(loading);
-    submit.disabled = true;
-
-    try {
-      const res = await fetch('/api/ask/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ question, language: lang }),
-      });
-
-      const data = await res.json();
-
-      if (!res.ok) {
-        if (data.devDetails) {
-          console.warn('[AskAssistant DEV]', data.devDetails);
-        }
-        throw new Error(data.error ?? `Server error (${res.status})`);
-      }
-
-      // Display answer — render Markdown, then sanitize before injecting.
-      const rawAnswer = data.answer ?? '';
-      answerEl.innerHTML = renderMarkdown(rawAnswer);
-      show(resultEl);
-
-      // Display sources — built via safe DOM APIs, not innerHTML.
-      srcList.innerHTML = '';
-      const sources: Array<{ title: string; url: string }> = data.sources ?? [];
-      if (sources.length > 0) {
-        for (const src of sources) {
-          const li = document.createElement('li');
-          const a  = document.createElement('a');
-          a.href = src.url;
-          a.textContent = src.title;
-          li.appendChild(a);
-          srcList.appendChild(li);
-        }
-        show(srcSect);
-      } else {
-        hide(srcSect);
-      }
-    } catch (err) {
-      const message = err instanceof Error ? err.message : fallback;
-      errorEl.textContent = message;
-      show(errorEl);
-    } finally {
-      hide(loading);
-      submit.disabled = false;
-    }
-  });
+  setupAskAssistant();
+  document.addEventListener('astro:page-load', setupAskAssistant);
 </script>
 
