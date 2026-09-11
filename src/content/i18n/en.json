@@ -1,3 +1,10 @@
 {
-  "search.label": "Search documentation..."
+  "search.label": "Search documentation...",
+  "llm.copy": "Copy for LLM",
+  "llm.copied": "Copied!",
+  "llm.view": "View as Markdown",
+  "llm.copyAria": "Copy page content as Markdown for LLM",
+  "llm.copiedAnnounce": "Page content copied to clipboard as Markdown",
+  "llm.copyFailed": "Failed to copy",
+  "llm.viewAria": "View raw Markdown representation of this page (opens in new tab)"
 }

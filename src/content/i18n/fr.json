@@ -1,3 +1,10 @@
 {
-  "search.label": "Rechercher dans la documentation..."
+  "search.label": "Rechercher dans la documentation...",
+  "llm.copy": "Copier pour le LLM",
+  "llm.copied": "Copié !",
+  "llm.view": "Voir en Markdown",
+  "llm.copyAria": "Copier le contenu de la page en Markdown pour les LLM",
+  "llm.copiedAnnounce": "Contenu de la page copié dans le presse-papier au format Markdown",
+  "llm.copyFailed": "Échec de la copie",
+  "llm.viewAria": "Voir la représentation Markdown brute de cette page (ouvre un nouvel onglet)"
 }

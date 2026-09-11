@@ -1,12 +1,17 @@
 ---
 import Default from '@astrojs/starlight/components/PageTitle.astro';
+import DocActions from './DocActions.astro';
+import { getMarkdownUrl } from '../lib/page-markdown';
 
 const pathname = Astro.url.pathname;
 const isHomepage = pathname === '/' || /^\/(en|fr)\/?$/.test(pathname);
 const isTagPage = pathname.startsWith('/tag/');
-const routeLang = (Astro.locals as Record<string, any>)?.starlightRoute?.lang;
+const starlightRoute = (Astro.locals as Record<string, any>)?.starlightRoute;
+const entryId = starlightRoute?.entry?.id;
+const routeLang = starlightRoute?.lang;
 const lang = routeLang ?? (pathname.startsWith('/fr') ? 'fr' : 'en');
 const isFr = lang === 'fr';
+const markdownUrl = entryId ? getMarkdownUrl(entryId) : null;
 ---
 
 <Default {...Astro.props} />
@@ -18,4 +23,7 @@ const isFr = lang === 'fr';
       <span>By <a href="https://www.linkedin.com/in/carrereolivier/" rel="author noopener" target="_blank">Olivier Carrère</a>, technical writer</span>
     )}
   </p>
+)}
+{!isTagPage && markdownUrl && (
+  <DocActions markdownUrl={markdownUrl} lang={lang} />
 )}

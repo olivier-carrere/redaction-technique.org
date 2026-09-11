@@ -179,6 +179,7 @@ export default defineConfig({
         Head: './src/components/Head.astro',
         PageTitle: './src/components/PageTitle.astro',
         Pagination: './src/components/Pagination.astro',
+        Hero: './src/components/Hero.astro',
       },
       lastUpdated: true,
       defaultLocale: 'en',

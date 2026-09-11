@@ -1,0 +1,284 @@
+---
+interface Props {
+  markdownUrl: string;
+  lang?: string;
+}
+
+const { markdownUrl, lang } = Astro.props;
+const starlightRoute = (Astro.locals as Record<string, any>)?.starlightRoute;
+const activeLang = lang ?? starlightRoute?.lang ?? 'en';
+const isFr = activeLang === 'fr';
+const t = (Astro.locals as Record<string, any>)?.t;
+
+const copyLabel = (t && t('llm.copy')) || (isFr ? 'Copier pour le LLM' : 'Copy for LLM');
+const copiedLabel = (t && t('llm.copied')) || (isFr ? 'Copié !' : 'Copied!');
+const viewLabel = (t && t('llm.view')) || (isFr ? 'Voir en Markdown' : 'View as Markdown');
+const copyAria = (t && t('llm.copyAria')) || (isFr ? 'Copier le contenu de la page en Markdown pour les LLM' : 'Copy page content as Markdown for LLM');
+const copiedAnnounce = (t && t('llm.copiedAnnounce')) || (isFr ? 'Contenu de la page copié dans le presse-papier au format Markdown' : 'Page content copied to clipboard as Markdown');
+const copyFailed = (t && t('llm.copyFailed')) || (isFr ? 'Échec de la copie' : 'Failed to copy');
+const viewAria = (t && t('llm.viewAria')) || (isFr ? 'Voir la représentation Markdown brute de cette page (ouvre un nouvel onglet)' : 'View raw Markdown representation of this page (opens in new tab)');
+---
+
+<div class="doc-actions not-content">
+  <button
+    type="button"
+    class="doc-action-btn copy-llm-btn"
+    data-markdown-url={markdownUrl}
+    data-label-copy={copyLabel}
+    data-label-copied={copiedLabel}
+    data-announce-copied={copiedAnnounce}
+    data-announce-failed={copyFailed}
+    aria-label={copyAria}
+    title={copyAria}
+  >
+    <span class="btn-icon icon-copy" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+      </svg>
+    </span>
+    <span class="btn-icon icon-check" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </span>
+    <span class="btn-text">{copyLabel}</span>
+  </button>
+
+  <a
+    href={markdownUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="doc-action-btn view-md-btn"
+    aria-label={viewAria}
+    title={viewAria}
+  >
+    <span class="btn-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+        <polyline points="14 2 14 8 20 8"></polyline>
+        <line x1="16" y1="13" x2="8" y2="13"></line>
+        <line x1="16" y1="17" x2="8" y2="17"></line>
+        <polyline points="10 9 9 9 8 9"></polyline>
+      </svg>
+    </span>
+    <span class="btn-text">{viewLabel}</span>
+    <span class="btn-icon external-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+        <polyline points="15 3 21 3 21 9"></polyline>
+        <line x1="10" y1="14" x2="21" y2="3"></line>
+      </svg>
+    </span>
+  </a>
+
+  <div class="sr-only" aria-live="polite" data-status-announcer></div>
+</div>
+
+<script>
+  function setupCopyButtons() {
+    const buttons = document.querySelectorAll<HTMLButtonElement>('.copy-llm-btn:not([data-initialized])');
+
+    buttons.forEach((btn) => {
+      btn.setAttribute('data-initialized', 'true');
+      const url = btn.getAttribute('data-markdown-url');
+      if (!url) return;
+
+      const labelCopy = btn.getAttribute('data-label-copy') || 'Copy for LLM';
+      const labelCopied = btn.getAttribute('data-label-copied') || 'Copied!';
+      const announceCopied = btn.getAttribute('data-announce-copied') || 'Content copied to clipboard';
+      const announceFailed = btn.getAttribute('data-announce-failed') || 'Failed to copy';
+
+      const textSpan = btn.querySelector<HTMLElement>('.btn-text');
+      const announcer = btn.parentElement?.querySelector<HTMLElement>('[data-status-announcer]');
+
+      let cachedMarkdown: string | null = null;
+      let isFetching = false;
+      let timeoutId: number | null = null;
+
+      async function fetchMarkdown(): Promise<string> {
+        if (cachedMarkdown) return cachedMarkdown;
+        if (isFetching) {
+          while (isFetching) {
+            await new Promise((r) => setTimeout(r, 50));
+          }
+          return cachedMarkdown || '';
+        }
+        isFetching = true;
+        try {
+          const res = await fetch(url);
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          cachedMarkdown = await res.text();
+          return cachedMarkdown;
+        } finally {
+          isFetching = false;
+        }
+      }
+
+      // Prefetch on pointer hover or focus
+      btn.addEventListener('pointerenter', () => {
+        fetchMarkdown().catch(() => {});
+      }, { once: true });
+      btn.addEventListener('focus', () => {
+        fetchMarkdown().catch(() => {});
+      }, { once: true });
+
+      btn.addEventListener('click', async () => {
+        if (timeoutId) {
+          window.clearTimeout(timeoutId);
+          timeoutId = null;
+        }
+
+        try {
+          btn.setAttribute('aria-busy', 'true');
+          const markdown = await fetchMarkdown();
+          if (!markdown) throw new Error('Empty markdown');
+
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(markdown);
+          } else {
+            // Fallback for non-secure contexts or older browsers
+            const textarea = document.createElement('textarea');
+            textarea.value = markdown;
+            textarea.style.position = 'fixed';
+            textarea.style.left = '-9999px';
+            textarea.style.top = '0';
+            textarea.setAttribute('readonly', 'true');
+            document.body.appendChild(textarea);
+            textarea.focus();
+            textarea.select();
+            const success = document.execCommand('copy');
+            document.body.removeChild(textarea);
+            if (!success) throw new Error('execCommand copy failed');
+          }
+
+          btn.classList.add('is-copied');
+          if (textSpan) textSpan.textContent = labelCopied;
+          if (announcer) announcer.textContent = announceCopied;
+
+          timeoutId = window.setTimeout(() => {
+            btn.classList.remove('is-copied');
+            if (textSpan) textSpan.textContent = labelCopy;
+            btn.removeAttribute('aria-busy');
+            timeoutId = null;
+          }, 2000);
+        } catch (err) {
+          console.error('[doc-actions] copy failed:', err);
+          btn.classList.add('is-error');
+          if (textSpan) textSpan.textContent = announceFailed;
+          if (announcer) announcer.textContent = announceFailed;
+
+          timeoutId = window.setTimeout(() => {
+            btn.classList.remove('is-error');
+            if (textSpan) textSpan.textContent = labelCopy;
+            btn.removeAttribute('aria-busy');
+            timeoutId = null;
+          }, 2000);
+        }
+      });
+    });
+  }
+
+  setupCopyButtons();
+  document.addEventListener('astro:page-load', setupCopyButtons);
+</script>
+
+<style>
+  .doc-actions {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-block: 0.75rem 1.25rem;
+  }
+
+  .doc-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.75rem;
+    min-height: 2rem;
+    font-size: var(--sl-text-xs, 0.8125rem);
+    font-weight: 500;
+    line-height: 1;
+    color: var(--sl-color-gray-2);
+    background-color: var(--sl-color-gray-6, rgba(255, 255, 255, 0.05));
+    border: 1px solid var(--sl-color-gray-5, rgba(255, 255, 255, 0.12));
+    border-radius: 0.375rem;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+  }
+
+  .doc-action-btn:hover {
+    color: var(--sl-color-white);
+    background-color: var(--sl-color-gray-5, rgba(255, 255, 255, 0.1));
+    border-color: var(--sl-color-gray-4, rgba(255, 255, 255, 0.25));
+  }
+
+  .doc-action-btn:focus-visible {
+    outline: 2px solid var(--sl-color-accent);
+    outline-offset: 2px;
+  }
+
+  .doc-action-btn:active {
+    transform: scale(0.98);
+  }
+
+  .btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .external-icon {
+    opacity: 0.65;
+    margin-left: -0.1rem;
+  }
+
+  .icon-check {
+    display: none;
+    color: var(--sl-color-green, #10b981);
+  }
+
+  .copy-llm-btn.is-copied {
+    color: var(--sl-color-green, #10b981);
+    border-color: var(--sl-color-green, #10b981);
+    background-color: rgba(16, 185, 129, 0.12);
+  }
+
+  .copy-llm-btn.is-copied .icon-copy {
+    display: none;
+  }
+
+  .copy-llm-btn.is-copied .icon-check {
+    display: inline-flex;
+  }
+
+  .copy-llm-btn.is-error {
+    color: var(--sl-color-red, #ef4444);
+    border-color: var(--sl-color-red, #ef4444);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .doc-action-btn {
+      transition: none;
+      transform: none !important;
+    }
+  }
+
+  @media (max-width: 35rem) {
+    .doc-actions {
+      width: 100%;
+    }
+    .doc-action-btn {
+      flex: 1 1 auto;
+      justify-content: center;
+      min-height: 2.375rem;
+      padding: 0.45rem 0.75rem;
+    }
+  }
+</style>

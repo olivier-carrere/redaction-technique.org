@@ -1,0 +1,31 @@
+---
+import Default from '@astrojs/starlight/components/Hero.astro';
+import DocActions from './DocActions.astro';
+import { getMarkdownUrl } from '../lib/page-markdown';
+
+const starlightRoute = (Astro.locals as Record<string, any>)?.starlightRoute;
+const entryId = starlightRoute?.entry?.id;
+const lang = starlightRoute?.lang ?? 'en';
+const markdownUrl = entryId ? getMarkdownUrl(entryId) : (lang === 'fr' ? '/fr.md' : '/en.md');
+---
+
+<Default {...Astro.props} />
+{markdownUrl && (
+  <div class="hero-actions-wrapper not-content">
+    <DocActions markdownUrl={markdownUrl} lang={lang} />
+  </div>
+)}
+
+<style>
+  .hero-actions-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: -0.25rem;
+    margin-bottom: 1.5rem;
+  }
+  @media (max-width: 50rem) {
+    .hero-actions-wrapper {
+      justify-content: center;
+    }
+  }
+</style>

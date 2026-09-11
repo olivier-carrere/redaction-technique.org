@@ -2,6 +2,7 @@
 import Default from '@astrojs/starlight/components/Head.astro';
 import SpeedInsights from '@vercel/speed-insights/astro';
 import type { Props } from '@astrojs/starlight/props';
+import { getMarkdownUrl } from '../lib/page-markdown';
 
 // Starlight v0.35+: use Astro.locals.starlightRoute (Astro.props is deprecated)
 const { entry, lang } = Astro.locals.starlightRoute;
@@ -24,6 +25,11 @@ if (pathname === '/') {
     frHref = `${siteUrl}/fr${restPath}`;
   }
 }
+
+const markdownUrl = entry?.id
+  ? getMarkdownUrl(entry.id)
+  : (isHomepage ? (lang === 'fr' ? '/fr.md' : '/en.md') : null);
+const markdownHref = markdownUrl ? `${siteUrl}${markdownUrl}` : null;
 
 const siteName = 'Redaction-technique.org';
 const defaultImage = `${siteUrl}/assets/opengraph.jpg`;
@@ -130,6 +136,16 @@ const schema = { '@context': 'https://schema.org', '@graph': graphNodes };
 
 <!-- x-default points to EN; en/fr alternates already emitted by Starlight -->
 {enHref && <link rel="alternate" hreflang="x-default" href={enHref} />}
+
+<!-- Alternate Markdown representation for LLMs and automated tools -->
+{markdownHref && (
+  <link
+    rel="alternate"
+    type="text/markdown"
+    title={lang === 'fr' ? 'Représentation Markdown pour LLM' : 'Markdown representation for LLM'}
+    href={markdownHref}
+  />
+)}
 
 <!-- og:description: ensure it's always populated with the page-specific value -->
 <meta property="og:description" content={pageDescription} />
