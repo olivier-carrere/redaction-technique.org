@@ -9,26 +9,26 @@
 The core design principle is:
 > **A single source of truth for documentation content and all its LLM representations.**
 
-```text
-               src/content/docs/**/*.{md,mdx}
-                             │
-                             ▼
-                   getCollection('docs')
-                             │
-                             ▼
-                 toDocumentResource(doc)
-                             │
-            ┌────────────────┼────────────────┐
-            ▼                ▼                ▼
-     HTML Documentation   getPageMarkdown()  Document Metadata
-            │                │                │
-     ┌──────┴──────┐         ├──────────────┐ ├─────────────┐
-     ▼             ▼         ▼              ▼ ▼             ▼
-Copy for LLM  View as .md  page.md    llms-full.txt     index.json
-                                            │               │
-                                     ┌──────┴──────┐ ┌──────┴──────┐
-                                     ▼             ▼ ▼             ▼
-                                  llms.txt    sitemap.md      locale indexes
+```mermaid
+flowchart TD
+    SRC["src/content/docs/**/*.{md,mdx}"] --> COLL["getCollection('docs')"]
+    COLL --> RES["toDocumentResource(doc)"]
+
+    RES --> HTML["HTML Documentation"]
+    RES --> GPM["getPageMarkdown()"]
+    RES --> META["Document Metadata"]
+
+    HTML --> COPY["Copy for LLM"]
+    HTML --> VIEW["View as .md"]
+
+    GPM --> PAGE["page.md"]
+    GPM --> FULL["llms-full.txt"]
+
+    FULL --> LLMS["llms.txt"]
+    FULL --> SITEMAP["sitemap.md"]
+
+    META --> IDX["index.json"]
+    IDX --> LOCALE["locale indexes"]
 ```
 
 All endpoints are statically pre-rendered during `astro build` into `dist/client/`. They require zero server-side databases or lambda functions and are served directly from the Vercel CDN edge.
@@ -155,18 +155,13 @@ A standalone static endpoint (`/schema.json`) returns the complete API contract 
 
 The canonical retrieval pipeline follows four distinct steps:
 
-```text
-GET /schema.json
-        ↓
-Discover endpoints, filters & taxonomy
-        ↓
-GET /en/index.json?contentType=task&fields=title,url,markdown,contentType
-        ↓
-Select target document ("tutorials/auto-insert-data-dita-xml/")
-        ↓
-Read advertised `markdown` URL
-        ↓
-GET /en/tutorials/auto-insert-data-dita-xml.md
+```mermaid
+flowchart TD
+    A["GET /schema.json"] --> B["Discover endpoints, filters & taxonomy"]
+    B --> C["GET /en/index.json?contentType=task&fields=title,url,markdown,contentType"]
+    C --> D["Select target document ('tutorials/auto-insert-data-dita-xml/')"]
+    D --> E["Read advertised markdown URL"]
+    E --> F["GET /en/tutorials/auto-insert-data-dita-xml.md"]
 ```
 
 ### Ready-to-Use `curl` Examples

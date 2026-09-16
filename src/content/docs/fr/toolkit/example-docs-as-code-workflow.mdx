@@ -5,6 +5,8 @@ goal: [toolkit]
 contentType: task
 ---
 
+import Mermaid from '../../../../components/Mermaid.astro';
+
 :::note[Exemple abouti]
 Ceci est un **exemple abouti à étudier**, pas un modèle. Pour la version check-list, voir [adoption du docs-as-code](../docs-as-code-adoption-checklist/).
 :::
@@ -14,6 +16,26 @@ Ceci est un **exemple abouti à étudier**, pas un modèle. Pour la version chec
 Un ticket de support révèle que le guide d'installation ne mentionne pas un port de pare-feu requis. Un rédacteur corrige le problème.
 
 ## Le workflow
+
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+flowchart TD
+    accTitle: Workflow docs-as-code basique
+    accDescr: Progression étape par étape d'un changement documentaire, de la création de branche au déploiement en production.
+
+    A["1. Créer une branche<br/>(Branche thématique à but unique)"] --> B["2. Modifier et committer<br/>(Contenu structuré et messages clairs)"]
+    B --> C["3. Pousser et ouvrir une PR<br/>(Contexte et lien avec le ticket)"]
+    C --> D["4. CI automatisée<br/>(Build, vérification de liens et prévisualisation)"]
+    D --> E["5. Revue par les pairs et technique<br/>(Contrôle d'exactitude sur check-list)"]
+    E --> F["6. Fusionner dans main<br/>(Validation et feu vert CI)"]
+    F --> G["7. Déploiement automatisé<br/>(Publication en production par le pipeline)"]
+
+    classDef stage fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+    classDef gate fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:1.5px,color:{{parentText}},font-weight:600
+
+    class A,B,C,F stage
+    class D,E,G gate
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 
 1. **Créer une branche.**
 

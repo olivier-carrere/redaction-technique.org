@@ -5,6 +5,8 @@ goal: [toolkit]
 contentType: task
 ---
 
+import Mermaid from '../../../../components/Mermaid.astro';
+
 :::note[Worked example]
 This is a **finished illustration to study**, not a template. For the checklist version, see [docs-as-code adoption](../docs-as-code-adoption-checklist/).
 :::
@@ -14,6 +16,26 @@ This is a **finished illustration to study**, not a template. For the checklist 
 A support ticket reveals that the installation guide is missing a required firewall port. One writer fixes it.
 
 ## The workflow
+
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+flowchart TD
+    accTitle: Basic Docs-as-Code Workflow
+    accDescr: Sequential progression of a documentation change from branch creation to production deployment.
+
+    A["1. Branch<br/>(Single-purpose topic branch)"] --> B["2. Edit and commit<br/>(Structured content & explicit messages)"]
+    B --> C["3. Push and open PR<br/>(Context & issue linking)"]
+    C --> D["4. Automated CI<br/>(Build, link check & preview deploy)"]
+    D --> E["5. Technical & peer review<br/>(Accuracy check against checklist)"]
+    E --> F["6. Merge to main<br/>(Approval & green CI gates)"]
+    F --> G["7. Automated deployment<br/>(Production publish via pipeline)"]
+
+    classDef stage fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+    classDef gate fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:1.5px,color:{{parentText}},font-weight:600
+
+    class A,B,C,F stage
+    class D,E,G gate
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 
 1. **Branch.**
 
