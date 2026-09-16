@@ -9,9 +9,9 @@ import { CardGrid, Card } from '@astrojs/starlight/components';
 
 ## Definition
 
-**Information typing** is the practice of categorizing technical communication according to the reader's immediate goal and cognitive mode, rather than by product feature or arbitrary document chapter.
+**Information typing** is the practice of categorizing technical communication according to the reader's primary goal and cognitive mode, rather than by product feature or arbitrary document chapter.
 
-Instead of writing monolithic manuals that mix background theory, step-by-step instructions, and syntax tables into an undifferentiated narrative, information typing separates content into three fundamental, functional types:
+Instead of writing monolithic manuals that mix background theory, step-by-step instructions, and syntax tables into an undifferentiated narrative, information typing separates content into three fundamental, functional archetypes:
 
 <CardGrid stagger>
   <Card title="Concept" icon="information">
@@ -31,155 +31,167 @@ Instead of writing monolithic manuals that mix background theory, step-by-step i
   </Card>
 </CardGrid>
 
-These are **functional distinctions**, not rigid literary categories. Every piece of technical content exists to serve a user need: understanding a system, performing an operation, or looking up exact values.
+These are **functional distinctions based on reader intent**, not rigid literary categories. Every piece of technical content exists to serve a user need: understanding a system, performing an operation, or looking up exact values.
 
 ### The three types in practice
 
-To see how the three types operate on the same subject, consider documentation for an authentication feature:
+To see how the three types operate on the same subject, consider documentation for an API integration:
 
-| Information type | Main question | Typical purpose | Concrete example |
+| Information type | Main question | Primary reader intent | Concrete example |
 | --- | --- | --- | --- |
-| **Concept** | What is it? | Explain ideas, principles, architecture, background | *"What is OAuth 2.0 and how does token delegation work?"* |
-| **Task** | How do I do it? | Explain procedures, workflows, and actionable steps | *"Configure OAuth 2.0 authentication in your web client"* |
-| **Reference** | What are the details? | Provide precise, structured specifications and tables | *"OAuth 2.0 token endpoint parameters and error codes"* |
+| **Concept** | What is it? | Understand principles, architecture, or domain rules | *"What is idempotency and why does retry logic require it?"* |
+| **Task** | How do I do it? | Complete a goal through sequential, actionable steps | *"How do I authenticate and make my first API request?"* |
+| **Reference** | What are the details? | Look up exact syntax, parameters, schemas, or codes | *`POST /users` — parameters, request schema, response schema, status codes* |
 
-Mixing these purposes creates confusing "Franken-topics" — procedures interrupted by three paragraphs of architecture, or conceptual overviews cluttered with configuration tables. Keeping them distinct ensures readers find exactly what they need without cognitive friction.
+### Primary intent and content boundaries
+
+Structuring content by information type does not mean information types are mutually exclusive under all circumstances:
+
+- A **Concept** topic can include a small code snippet or architecture diagram to ground an abstract principle.
+- A **Task** topic can include brief conceptual context in its objective or prerequisites to explain why a step is necessary.
+- A **Reference** topic routinely contains concrete syntax examples to clarify parameter usage.
+
+The guiding rule is: **keep the primary information type clear**. Supporting information may appear when necessary, but substantial content serving another reader intent should normally be moved to a dedicated topic of that type and linked. This prevents "Franken-topics" — procedures overwhelmed by pages of architectural theory, or conceptual articles cluttered with exhaustive parameter tables.
 
 ---
 
-## Core distinctions: terminology and concepts
+## Core distinctions: terminology hierarchy
 
-Technical writers often encounter overlapping terms. To keep authoring rigorous, this site distinguishes between five distinct levels:
+Technical writers encounter terms that are frequently conflated. To keep authoring and architecture rigorous, this site distinguishes between five distinct concepts:
 
-- **Information type:** The functional role of the content based on reader intent (Concept, Task, Reference).
-- **Topic:** A discrete, self-contained unit of information addressing a single subject and structured around one information type.
-- **Article:** The published web page or reading unit delivered to the user (e.g., an individual Markdown/MDX page on this site).
-- **Template:** A practical authoring blueprint outlining expected sections and headings for a given information type.
-- **Document format:** The underlying file encoding or syntax (e.g., Markdown, DITA XML, OpenAPI YAML, AsciiDoc).
+- **Information type:** The communicative purpose and primary reader intent of the content (Concept, Task, Reference).
+- **Topic:** A discrete, modular unit of information about a particular subject, structured around a single primary information type. In general technical writing and docs-as-code, "topic" simply denotes an atomic unit of content. (In DITA, by contrast, "topic" carries a formal architectural meaning with strict XML element constraints and inheritance rules.)
+- **Article / Page:** The published content or presentation unit delivered to the reader (for example, an individual Markdown/MDX page on this site).
+- **Template:** An authoring aid or blueprint outlining recommended sections, headings, and structure for a given information type.
+- **Document format / syntax:** The underlying serialization or file markup (such as Markdown, MDX, HTML, XML, or YAML).
 
-An author applies an **information type** by following an authoring **template** to produce a self-contained **topic**, which is committed in a lightweight **document format** (such as Markdown) and published as an **article**.
+In a docs-as-code workflow, an author addresses an **information type** by adapting an authoring **template** to draft a self-contained **topic**, stored in a lightweight **document format** (such as Markdown) and published as an **article**.
 
 ---
 
 ## Information typing and DITA
 
-Information typing has a long pedigree in technical communication. It was formalized and popularized by the **DITA (Darwin Information Typing Architecture)** OASIS standard:
+Information typing has a rich history in technical communication, drawing on research such as John Carroll's minimalism and Robert Horn's Information Mapping.
 
-- **Concept** corresponds directly to the DITA `<concept>` topic type.
-- **Task** corresponds directly to the DITA `<task>` topic type.
-- **Reference** corresponds directly to the DITA `<reference>` topic type.
+Later, **DITA (Darwin Information Typing Architecture)** provided a formal XML-based architecture for information typing, defining standardized Concept, Task, and Reference topic types:
 
-However, a crucial architectural distinction must be understood:
+- Concept corresponds functionally to the DITA `<concept>` topic type.
+- Task corresponds functionally to the DITA `<task>` topic type.
+- Reference corresponds functionally to the DITA `<reference>` topic type.
+
+However, a fundamental architectural distinction must be understood:
 
 :::note[Core distinction]
-**This documentation site uses information typing as an authoring and information-architecture principle. It does not use DITA XML.**
+**The site applies the same broad information-typing principle used by DITA, but implements it through lightweight Markdown/Astro authoring conventions rather than DITA XML schemas.**
 :::
 
-The relationship is: **same underlying information-architecture principle, different implementation and level of formalization.**
+Our Markdown templates are practical authoring blueprints, not formal DITA XML schemas, and they do not enforce DITA DTD/XSD validation rules.
 
-### How DITA formalizes information typing
+### Engineering trade-offs: DITA and docs-as-code
 
-In DITA, the three types are enforced mechanically by schemas:
+Neither DITA nor Markdown/Astro is universally superior; they represent different engineering trade-offs tailored to different organizational needs:
 
-- **Strict grammar:** A `<task>` requires a `<taskbody>`, which permits only specific XML child elements (`<prereq>`, `<context>`, `<steps>`, `<result>`). You cannot arbitrarily insert a heading or place a paragraph between steps where the schema forbids it.
-- **Semantic XML markup:** DITA tags content at a fine-grained semantic level (`<cmd>`, `<info>`, `<stepxmp>`, `<varname>`, `<filepath>`).
-- **Validation:** Build pipelines validate files against DTD or XML Schema definitions before compilation. Invalid tag sequences fail the build.
-- **Specialization:** Teams can extend base types into domain-specific types (e.g., specializing `<task>` into `<troubleshooting>` or `<machineryTask>`).
-- **Heavy publishing toolchain:** Rendering requires the DITA Open Toolkit (DITA-OT), processing XML catalogs, XSLT, and XSL-FO.
+- **DITA XML architecture:**
+  - **Formal semantic model:** Fine-grained semantic tagging (`<cmd>`, `<stepxmp>`, `<varname>`, `<filepath>`).
+  - **Schema validation:** Enforces strict structural grammars via DTD, XML Schema, or RELAX NG. Invalid element order fails the build.
+  - **Specialization & reuse:** Sophisticated specialization hierarchies and transclusion mechanisms (`<conref>`).
+  - **Structured publishing:** Workflows powered by the DITA Open Toolkit (DITA-OT), processing XML catalogs, XSLT, and XSL-FO.
+  - **Best suited for:** Organizations requiring formal structured authoring, complex product variant matrices, multi-channel PDF/HTML delivery, and centralized enterprise translation workflows.
 
-### How this site applies information typing
+- **Markdown/Astro docs-as-code:**
+  - **Simpler authoring environment:** Content is authored in plain Markdown and MDX that any contributor can read and edit directly.
+  - **Git-native collaboration:** Changes go through standard version-control branching, code reviews, and pull requests.
+  - **Low tooling overhead:** Uses standard web tooling (Node.js, Astro, Starlight) rather than XML processing pipelines.
+  - **Broad developer participation:** Engineers, product managers, and technical writers collaborate within the same repositories.
+  - **Lightweight structural control:** Editorial discipline is guided by practical Markdown templates ([Concept](../concept-article-template/), [Task](../task-article-template/), [Reference](../reference-article-template/)) and frontmatter metadata validation (`contentType: concept | task | reference`) rather than rigid XML schema parsers.
+  - **Best suited for:** Fast-moving software projects, developer platforms, and teams seeking seamless integration with modern engineering workflows.
 
-This site adopts the structural discipline of DITA without the XML toolchain overhead:
-
-- **Lightweight authoring format:** Content is written in human-readable Markdown and MDX.
-- **Authoring templates:** Editorial discipline is guided by practical Markdown templates ([Concept template](../concept-article-template/), [Task template](../task-article-template/), [Reference template](../reference-article-template/)) rather than XML validation engines.
-- **Metadata classification:** Each article declares its type in frontmatter (`contentType: concept | task | reference`), validated by an Astro content collection schema.
-- **Docs-as-code toolchain:** Fast builds using Astro and Starlight, standard Git workflows, and automated linters and unit tests in Node.js.
-
-For an in-depth exploration of DITA XML and its structural trade-offs, see [Structured and unstructured formats](../../formats/structured-vs-unstructured-formats/) and [From document to modular document base](../../formats/modular-documentation/).
+For an in-depth analysis of structured formats and modular architectures, see [Structured and unstructured formats](../../formats/structured-vs-unstructured-formats/) and [From document to modular document base](../../formats/modular-documentation/).
 
 ---
 
 ## A practical comparison
 
-Different documentation systems implement information typing and semantic validation at different levels:
+Different documentation paradigms implement information typing and semantic validation at different levels of formalization:
 
-| Approach | Semantic typing | Validation | Format | Typical use |
+| Approach | Semantic typing | Structural validation | Format | Typical use |
 | --- | --- | --- | --- | --- |
-| **Markdown template** | Editorial convention | Limited / manual review | Markdown | Lightweight documentation, informal wikis |
-| **This site** | Explicit information types + templates + frontmatter | Schema-validated (`contentType`), build checks, tests | Markdown/MDX | Modern docs-as-code, technical blogs and portals |
-| **DITA** | Formal semantic types, specialization hierarchy | Schema-based (DTD, XSD, RELAX NG) | XML | Enterprise multi-channel publishing, global translation |
-| **OpenAPI** | Formal API contract model | Schema/linter validation (Spectral, OpenAPI tools) | YAML / JSON | Machine-readable HTTP API descriptions & interactive reference |
+| **Markdown template** | Editorial convention | Informal / peer review | Markdown | Team wikis, lightweight project notes |
+| **This site (docs-as-code)** | Explicit information types + templates + frontmatter | Schema-validated metadata (`contentType`), build checks, tests | Markdown/MDX | Modern docs-as-code, technical guides and portals |
+| **DITA** | Formal semantic topic types, specialization hierarchies | Schema-enforced (DTD, XSD, RELAX NG) | XML | Enterprise multi-channel documentation, hardware manufacturing |
+| **OpenAPI** | Formal API contract model | Schema validation (JSON Schema, Spectral) | YAML / JSON | Machine-readable HTTP API descriptions, generated references |
 
-### DITA vs. OpenAPI
+### DITA and OpenAPI in context
 
-Notice the complementary distinction between DITA and OpenAPI:
+DITA and OpenAPI serve distinct, complementary purposes:
 
-- **DITA** addresses *human-authored documentation across the entire enterprise corpus*. Its schemas structure prose, procedures, and manuals across hardware, software, and industrial products.
-- **OpenAPI** addresses *machine-readable HTTP API contracts*. It models endpoints, HTTP methods, status codes, query parameters, and JSON payloads with mathematical precision.
+- **DITA** provides an architectural model for *human-oriented prose across broad enterprise documentation* (hardware, software, user guides, operating manuals).
+- **OpenAPI** provides a machine-readable model for *HTTP API contracts*. It precisely describes endpoints, operations, parameters, request payloads, and response status codes.
 
-OpenAPI does not aim to structure prose guides or tutorials; DITA does not aim to generate API client SDKs or interactive Swagger UI sandboxes.
+OpenAPI is not a general documentation authoring framework for prose, and DITA is not a protocol description language for generating interactive API consoles.
 
 ---
 
 ## Information typing and API documentation
 
-API documentation is a prime example of how the three information types must work together rather than in isolation. A comprehensive developer portal weaves all three types into a coherent user journey:
+API documentation offers a clear demonstration of how the three complementary information types interact with machine-readable contracts:
 
 ```
 Developer Journey
 ┌────────────────────────────────────────────────────────┐
-│ 1. Concept: "What is this API?"                        │
+│ 1. Concept: "What is idempotency?"                     │
 │    Architecture, auth model, core domain objects       │
 └───────────────────────────┬────────────────────────────┘
                             │
 ┌───────────────────────────▼────────────────────────────┐
-│ 2. Task: "How do I make my first call?"                │
+│ 2. Task: "How do I make my first API request?"         │
 │    Prerequisites, token exchange, copyable curl steps  │
 └───────────────────────────┬────────────────────────────┘
                             │
 ┌───────────────────────────▼────────────────────────────┐
-│ 3. Reference: "GET /api/v1/orders/{id}"                │
-│    OpenAPI spec, path params, schema models, errors    │
+│ 3. Reference: "POST /users — parameters & schemas"     │
+│    HTTP verb, endpoint path, request/response models   │
 └────────────────────────────────────────────────────────┘
 ```
 
-### 1. Concept in API docs
+### The three types in API portals
 
-- **Main question:** *"What is this API and how is it architected?"*
-- **Content:** Overview of business capabilities, security model (OAuth scopes, API keys), webhook event lifecycles, idempotency guarantees, and rate-limiting policies.
-- **Role:** Gives developers the conceptual foundation needed to design their integration properly.
+1. **Concept ("What is it?"):**
+   - *Example:* *"What is idempotency and how does the API handle retry tokens?"*
+   - *Scope:* Architectural overview, security principles (OAuth token lifecycle, scopes), rate-limiting policies, and webhook delivery guarantees.
+   - *Role:* Supplies the conceptual foundation developers need to design a reliable integration.
 
-### 2. Task in API docs
+2. **Task ("How do I do it?"):**
+   - *Example:* *"How do I authenticate and make my first API request?"*
+   - *Scope:* Linear tutorials with explicit prerequisites, credentials configuration, executable `curl` commands, and expected response validation.
+   - *Role:* Guides developers through practical workflows to achieve a concrete, working outcome.
 
-- **Main question:** *"How do I authenticate / create a resource / handle a webhook?"*
-- **Content:** Step-by-step procedures with real prerequisites, environment setup, reproducible `curl` commands, and expected JSON responses.
-- **Role:** Guides developers through concrete implementation workflows with verifiable outcomes.
+3. **Reference ("What are the exact details?"):**
+   - *Example:* *`POST /users` — parameters, request schema, response schema, status codes*
+   - *Scope:* Exact HTTP methods, endpoints, query parameters, header requirements, JSON payload schemas, status codes, and error payloads.
+   - *Role:* Provides rapid, scannable lookup during coding and debugging.
 
-### 3. Reference in API docs
+### OpenAPI and the reference layer
 
-- **Main question:** *"What are the exact parameters and schemas for `POST /v1/payments`?"*
-- **Content:** Exact HTTP verb, endpoint path, required headers, query parameters, request payload schema, successful response schema, error status codes, and error payloads.
-- **Role:** Provides fast, authoritative lookup when coding or debugging.
+OpenAPI describes an API contract in a machine-readable format. It can underpin or generate much of the reference layer of API documentation (such as interactive consoles, parameter listings, and SDK type definitions).
 
-### Why OpenAPI shines at the reference layer
+However, OpenAPI itself is not a substitute for complete documentation:
 
-OpenAPI is uniquely suited to the **reference** layer of API documentation:
+- **OpenAPI** provides the machine-readable API description and contract.
+- **Reference documentation** presents human-oriented lookup information about endpoints, parameters, schemas, and error codes.
+- **Concept and Task content** still explains the conceptual models, architectural constraints, and step-by-step developer workflows that an API contract description alone cannot adequately communicate.
 
-- It provides a standardized, machine-readable description of operations, query parameters, and JSON schemas.
-- It automatically generates interactive consoles, mock servers, and type definitions.
+A comprehensive API documentation portal successfully combines all three: machine-readable OpenAPI contracts feeding generated reference pages, accompanied by thoughtfully authored Concept articles and Task tutorials.
 
-However, OpenAPI cannot replace the other two layers. Conceptual understanding (architecture, mental models) and procedural guidance (tutorials, workflows, troubleshooting) still require thoughtfully authored **concept** and **task** documentation surrounding the OpenAPI reference.
-
-To start writing API endpoint reference pages, see the [API documentation template](../api-documentation-template/) and explore [About this manual's API](/en/about-the-api/).
+To start drafting endpoint reference pages, see the [API documentation template](../api-documentation-template/) and explore [About this manual's API](/en/about-the-api/).
 
 ---
 
 ## Related toolkit resources
 
-- [Concept article template](../concept-article-template/) — The practical Markdown template for conceptual articles.
-- [Task article template](../task-article-template/) — The practical Markdown template for procedural, step-by-step articles.
-- [Reference article template](../reference-article-template/) — The practical Markdown template for lookup specifications.
+- [Concept article template](../concept-article-template/) — Practical Markdown authoring template for conceptual articles.
+- [Task article template](../task-article-template/) — Practical Markdown authoring template for procedural, step-by-step guides.
+- [Reference article template](../reference-article-template/) — Practical Markdown authoring template for lookup specifications.
 - [API documentation template](../api-documentation-template/) — Specialized reference template for REST API endpoints.
 - [Example: a well-structured Markdown page](../example-markdown-page/) — An annotated worked example of a concept article.
 - [Structured and unstructured formats](../../formats/structured-vs-unstructured-formats/) — In-depth comparison of DITA XML and unstructured publishing.

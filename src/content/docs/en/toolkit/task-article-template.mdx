@@ -13,7 +13,11 @@ import InformationType from '../../../../components/InformationType.astro';
 This is a **starting point to copy and adapt**, not a worked example. For a filled-in version, see the [example docs-as-code workflow](../example-docs-as-code-workflow/). To learn how tasks fit into information architecture, read [Information types](../information-types/).
 :::
 
-Use this structure when the reader needs to **do** something with a concrete, checkable outcome — not for background explanation (use the [concept template](../concept-article-template/)) or lookup specifications (use the [reference template](../reference-article-template/)).
+Use this structure when the reader's primary intent is to **do** something with a concrete, verifiable outcome.
+
+Keep the primary information type clear: a task article may include a sentence or two of conceptual context in its objective or prerequisites to explain why a step matters, but substantial architectural explanations belong in a dedicated [concept article](../concept-article-template/), and exhaustive parameter catalogs belong in a [reference article](../reference-article-template/).
+
+The structure below is a **practical authoring template** for lightweight Markdown/Astro workflows, applying the task information-typing principle without DITA XML schemas or DTD validation:
 
 ```markdown
 ---

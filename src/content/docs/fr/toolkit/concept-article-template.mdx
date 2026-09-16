@@ -38,21 +38,21 @@ Rédigez un article concept lorsque l'objectif premier du lecteur est de **compr
 
 ---
 
-## Quand NE PAS utiliser un Concept
+## Maîtriser les frontières de contenu
 
-Ne transformez pas un article concept en manuel de procédures ni en catalogue exhaustif d'options de configuration. Dès que l'intention du lecteur change, choisissez le bon type d'information :
+Gardez le type d'information principal clair. Un article conceptuel peut intégrer un court extrait de code, une bribe de configuration ou un diagramme pour ancrer un principe abstrait. En revanche, les éléments d'appui ne doivent pas submerger l'intention première :
 
-- **« Comment configurer X ? »** → Utilisez le [Modèle : article tâche](../task-article-template/). Une tâche fournit des prérequis, des étapes linéaires numérotées et un résultat vérifiable.
-- **« Quels sont les paramètres de configuration de X ? »** → Utilisez le [Modèle : article référence](../reference-article-template/). Une référence est une table de consultation structurée conçue pour un balayage visuel rapide.
-- **« Qu'est-ce que X et pourquoi cela existe-t-il ? »** → Utilisez ce **Modèle : article concept**.
+- **Une illustration concise est bienvenue :** un extrait bref montrant le concept en action renforce la compréhension.
+- **Les procédures substantielles relèvent d'une Tâche :** si vous développez des instructions séquentielles pas-à-pas (*« Comment configurer X ? »*), déplacez-les dans un [article tâche](../task-article-template/) et créez un lien.
+- **Les paramètres exhaustifs relèvent d'une Référence :** si vous énumérez un catalogue complet d'options ou de variables (*« Quels sont les paramètres de X ? »*), déplacez-les dans un [article référence](../reference-article-template/) et créez un lien.
 
-Mélanger ces modes au sein d'une même page produit une documentation confuse où l'utilisateur cherchant à exécuter une tâche urgente doit faire défiler de longs paragraphes de théorie architecturale.
+Maintenir l'attention sur l'intention première du lecteur garantit que celui venu assimiler une règle architecturale n'est pas distrait par des tables interminables, tandis que l'utilisateur cherchant à réaliser une procédure urgente n'a pas à lire de longs paragraphes de théorie.
 
 ---
 
 ## Structure recommandée
 
-La structure ci-dessous est un **modèle de rédaction pratique** conçu pour un flux Markdown / Astro léger, et non une spécification DITA XML rigide. Elle ordonne logiquement le contenu, de la définition immédiate à l'illustration concrète :
+La structure ci-dessous est un **modèle de rédaction pratique** conçu pour un flux Markdown / Astro léger, appliquant le principe de typologie de l'information sans schémas DITA XML ni validation DTD. Elle ordonne logiquement le contenu, de la définition immédiate à l'illustration concrète :
 
 1. **Définition :** définition en langage clair répondant à « Qu'est-ce que c'est ? » en une ou deux phrases.
 2. **Contexte (Pourquoi c'est important) :** les conséquences pratiques — ce qui dysfonctionne, coûte plus cher ou échoue sans la maîtrise de ce concept.

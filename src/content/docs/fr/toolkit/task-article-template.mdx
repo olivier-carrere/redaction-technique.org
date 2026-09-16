@@ -13,7 +13,11 @@ import InformationType from '../../../../components/InformationType.astro';
 Ceci est un **point de départ à copier et adapter**, pas un exemple abouti. Pour une version remplie, voir [l'exemple de workflow docs-as-code](../example-docs-as-code-workflow/). Pour comprendre comment la tâche s'intègre dans l'architecture documentaire, lisez [Typologie de l'information](../information-types/).
 :::
 
-Utilisez cette structure quand le lecteur doit **faire** quelque chose avec un résultat concret et vérifiable — pas pour une explication de fond (utilisez le [modèle concept](../concept-article-template/)) ni pour une consultation de spécifications (utilisez le [modèle référence](../reference-article-template/)).
+Utilisez cette structure quand l'intention première du lecteur est de **faire** quelque chose avec un résultat concret et vérifiable.
+
+Gardez le type d'information principal clair : un article tâche peut intégrer une ou deux phrases de rappel conceptuel dans son objectif ou ses prérequis pour expliciter l'intérêt d'une étape, mais les développements architecturaux substantiels doivent être placés dans un [article concept](../concept-article-template/), et les listes exhaustives de paramètres dans un [article référence](../reference-article-template/).
+
+La structure ci-dessous est un **modèle de rédaction pratique** conçu pour un flux Markdown / Astro léger, appliquant le principe de typologie de l'information sans schémas DITA XML ni contraintes DTD :
 
 ```markdown
 ---

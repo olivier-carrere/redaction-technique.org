@@ -13,7 +13,11 @@ import InformationType from '../../../../components/InformationType.astro';
 This is a **starting point to copy and adapt**, not a worked example. For a filled-in version, see the [API documentation template](../api-documentation-template/), which is a specialized case of this pattern. To understand how reference material relates to other documentation modes, read [Information types](../information-types/).
 :::
 
-Use this structure for **lookup material** — the reader already knows what they're trying to do and needs exact syntax, parameters, or specifications. Unlike a concept or task article, nobody reads a reference article start to finish; they scan for the one detail they need.
+Use this structure when the reader's primary intent is **lookup** — they already understand what they want to achieve and need exact syntax, parameters, commands, or configuration specifications. Unlike a concept or task article, nobody reads a reference article start to finish; they scan for the one detail they need.
+
+Keep the primary information type clear: a reference article routinely includes concrete syntax examples to illustrate options, but multi-step procedural tutorials belong in a [task article](../task-article-template/), and overarching architectural rationales belong in a [concept article](../concept-article-template/).
+
+The structure below is a **practical authoring template** for lightweight Markdown/Astro workflows, applying the reference information-typing principle without DITA XML schemas or DTD validation:
 
 ```markdown
 ---

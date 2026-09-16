@@ -38,21 +38,21 @@ Write a Concept article when the reader's primary goal is to **understand**:
 
 ---
 
-## When NOT to use a Concept
+## Managing content boundaries
 
-Do not stretch a Concept article into a manual of procedures or a catalog of configuration options. When reader intent shifts, use the appropriate information type:
+Keep the primary information type clear. A Concept article can include a small code snippet, configuration excerpt, or diagram to anchor an abstract principle. However, supporting material should not overwhelm the primary intent:
 
-- **"How do I configure X?"** → Use the [Task article template](../task-article-template/). A task provides prerequisites, numbered linear steps, and a verifiable outcome.
-- **"What are the configuration parameters of X?"** → Use the [Reference article template](../reference-article-template/). A reference article is a structured lookup table designed for rapid scanning.
-- **"What is X and why does it exist?"** → Use this **Concept article template**.
+- **Brief illustration is welcome:** A short snippet demonstrating a concept in action reinforces understanding.
+- **Substantial procedures belong in a Task:** If you find yourself writing sequential, multi-step instructions (*"How do I configure X?"*), move them to a [Task article](../task-article-template/) and link to it.
+- **Exhaustive parameters belong in a Reference:** If you find yourself compiling a comprehensive catalog of configuration options (*"What are the parameters of X?"*), move them to a [Reference article](../reference-article-template/) and link to it.
 
-Mixing these modes within a single page creates unfocused documentation where users struggling to complete a task must scroll past paragraphs of architectural theory.
+Keeping the primary reader intent focused ensures users arriving to understand an architectural principle aren't bogged down by exhaustive catalogs, while users trying to complete an urgent procedure aren't forced to parse through background theory.
 
 ---
 
 ## Recommended structure
 
-The structure below is a **practical authoring template** for lightweight Markdown/Astro workflows, not a rigid DITA XML specification. It organizes content logically from immediate definition to concrete demonstration:
+The structure below is a **practical authoring template** for lightweight Markdown/Astro workflows, applying the concept information-typing principle without DITA XML schemas or DTD validation. It organizes content logically from immediate definition to concrete demonstration:
 
 1. **Definition:** Plain-language definition answering "What is it?" in one or two sentences.
 2. **Context (Why it matters):** The practical consequence — what breaks, costs more, or fails without understanding this concept.

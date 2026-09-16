@@ -13,7 +13,11 @@ import InformationType from '../../../../components/InformationType.astro';
 Ceci est un **point de départ à copier et adapter**, pas un exemple abouti. Pour une version remplie, voir le [modèle de documentation d'API](../api-documentation-template/), un cas particulier de ce patron. Pour comprendre comment le contenu de référence s'intègre dans l'architecture documentaire, lisez [Typologie de l'information](../information-types/).
 :::
 
-Utilisez cette structure pour du **contenu de consultation** — le lecteur sait déjà ce qu'il veut faire et a besoin de la syntaxe exacte, des paramètres ou des spécifications. Contrairement à un article concept ou tâche, personne ne lit un article référence de bout en bout ; on le parcourt pour trouver un seul détail.
+Utilisez cette structure quand l'intention première du lecteur est la **consultation** — il sait déjà ce qu'il cherche à accomplir et a besoin de la syntaxe exacte, des paramètres, des commandes ou des spécifications. Contrairement à un article concept ou tâche, personne ne lit un article référence de bout en bout ; on le parcourt pour trouver un seul détail.
+
+Gardez le type d'information principal clair : un article référence intègre couramment des exemples de syntaxe concrets pour illustrer des options, mais les tutoriels pas-à-pas relèvent d'un [article tâche](../task-article-template/) et les explications d'architecture d'un [article concept](../concept-article-template/).
+
+La structure ci-dessous est un **modèle de rédaction pratique** conçu pour un flux Markdown / Astro léger, appliquant le principe de typologie de l'information sans schémas DITA XML ni contraintes DTD :
 
 ```markdown
 ---

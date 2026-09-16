@@ -11,7 +11,7 @@ import { CardGrid, Card } from '@astrojs/starlight/components';
 
 La **typologie de l'information** (*information typing*) est la pratique consistant à catégoriser les contenus techniques en fonction de l'objectif immédiat et du mode cognitif du lecteur, plutôt que selon les fonctionnalités du produit ou un découpage arbitraire en chapitres.
 
-Au lieu de rédiger des manuels monolithiques mélangeant théorie, instructions pas-à-pas et tableaux d'options dans un récit indifférencié, la typologie de l'information sépare le contenu en trois types fonctionnels fondamentaux :
+Au lieu de rédiger des manuels monolithiques mélangeant théorie, instructions pas-à-pas et tableaux d'options dans un récit indifférencié, la typologie de l'information sépare le contenu en trois archétypes fonctionnels fondamentaux :
 
 <CardGrid stagger>
   <Card title="Concept" icon="information">
@@ -27,159 +27,171 @@ Au lieu de rédiger des manuels monolithiques mélangeant théorie, instructions
   <Card title="Référence" icon="open-book">
     **« Quels sont les détails ? »**
 
-    Fournit des données structurées, des paramètres de configuration, une syntaxe exacte et des aide-mémoire. Destiné à une consultation rapide par un lecteur qui sait déjà ce qu'il cherche.
+    Fournit des données structurées, des paramètres de configuration, une syntaxe exacte et des tables de consultation. Destiné à un balayage visuel rapide par un lecteur qui sait déjà ce qu'il cherche.
   </Card>
 </CardGrid>
 
-Il s'agit de **distinctions fonctionnelles** et non de catégories littéraires rigides. Chaque unité documentaire existe pour répondre à un besoin utilisateur concret : comprendre un système, exécuter une manipulation ou vérifier une valeur précise.
+Il s'agit de **distinctions fonctionnelles fondées sur l'intention du lecteur** et non de catégories littéraires rigides. Chaque unité documentaire existe pour répondre à un besoin utilisateur concret : comprendre un système, exécuter une manipulation ou vérifier une valeur précise.
 
 ### Les trois types en pratique
 
-Pour observer comment ces trois types s'articulent sur un même sujet, prenons l'exemple d'un mécanisme d'authentification :
+Pour observer comment ces trois types s'articulent sur un même sujet, prenons l'exemple d'une intégration d'API :
 
-| Type d'information | Question principale | Rôle typique | Exemple concret |
+| Type d'information | Question principale | Intention première du lecteur | Exemple concret |
 | --- | --- | --- | --- |
-| **Concept** | Qu'est-ce que c'est ? | Expliquer les idées, principes, l'architecture et le contexte | *« Qu'est-ce qu'OAuth 2.0 et comment fonctionne la délégation de jeton ? »* |
-| **Tâche** | Comment faire ? | Décrire les procédures, flux de travail et étapes concrètes | *« Configurer l'authentification OAuth 2.0 dans votre client web »* |
-| **Référence** | Quels sont les détails ? | Fournir des spécifications précises, syntaxes et tableaux | *« Paramètres de l'endpoint de jeton OAuth 2.0 et codes d'erreur »* |
+| **Concept** | Qu'est-ce que c'est ? | Comprendre des principes, l'architecture ou des règles métier | *« Qu'est-ce que l'idempotence et pourquoi la logique de réessai l'exige-t-elle ? »* |
+| **Tâche** | Comment faire ? | Accomplir un objectif par des étapes séquentielles et concrètes | *« Comment s'authentifier et effectuer sa première requête d'API ? »* |
+| **Référence** | Quels sont les détails ? | Consulter la syntaxe exacte, des paramètres, des schémas ou des codes | *`POST /utilisateurs` — paramètres, schéma de requête, schéma de réponse, codes d'état* |
 
-Mélanger ces intentions engendre des « sujets hybrides » confus — une procédure interrompue par trois paragraphes d'architecture, ou une présentation générale alourdie par des listes d'options de configuration. Les distinguer permet au lecteur d'accéder directement à l'information utile sans friction cognitive.
+### Intention principale et frontières de contenu
+
+Structurer les contenus par type d'information ne signifie pas que les types soient mutuellement exclusifs en toutes circonstances :
+
+- Un sujet de type **Concept** peut intégrer un court extrait de code ou un schéma d'architecture pour illustrer un principe abstrait.
+- Un sujet de type **Tâche** peut inclure un bref rappel conceptuel dans ses prérequis ou son objectif pour expliquer la nécessité d'une étape.
+- Un sujet de type **Référence** intègre couramment des exemples concrets de syntaxe pour expliciter l'usage d'un paramètre.
+
+La règle directrice est : **garder le type d'information principal clair**. Des éléments d'appui peuvent apparaître lorsque c'est nécessaire, mais tout contenu substantiel servant une autre intention du lecteur doit normalement être déplacé vers un sujet dédié de ce type et lié par hypertexte. Cela évite les « sujets hybrides » confus — des procédures submergées par des pages de théorie architecturale, ou des articles conceptuels encombrés de catalogues exhaustifs de paramètres.
 
 ---
 
-## Distinctions clés : terminologie et notions
+## Distinctions clés : hiérarchie terminologique
 
-Les rédacteurs techniques rencontrent régulièrement des notions voisines. Pour maintenir une rigueur éditoriale, ce site distingue cinq niveaux bien précis :
+Les rédacteurs techniques rencontrent fréquemment des termes qui sont parfois confondus. Pour maintenir une rigueur conceptuelle, ce site distingue cinq notions précises :
 
-- **Type d'information (*information type*) :** Le rôle fonctionnel du contenu selon l'intention du lecteur (Concept, Tâche, Référence).
-- **Sujet (*topic*) :** Une unité discrète et autonome d'information traitant d'un sujet unique et structurée selon un seul type d'information.
-- **Article :** L'unité de publication ou page web effectivement délivrée au lecteur (par exemple, une page Markdown/MDX sur ce site).
-- **Modèle (*template*) :** Le schéma directeur de rédaction précisant les sections et niveaux de titre attendus pour un type d'information donné.
-- **Format de document :** La syntaxe de sérialisation ou d'encodage du fichier source (par exemple Markdown, DITA XML, YAML OpenAPI, AsciiDoc).
+- **Type d'information (*information type*) :** L'objectif communicatif et l'intention première du lecteur (Concept, Tâche, Référence).
+- **Sujet (*topic*) :** Une unité d'information modulaire et autonome traitant d'un sujet précis et structurée autour d'un seul type d'information principal. Dans la rédaction technique générale et le docs-as-code, « sujet » (*topic*) désigne simplement une unité atomique de contenu. (Dans DITA, au contraire, le terme possède une définition architecturale formelle encadrée par des contraintes strictes d'éléments XML et de règles d'héritage.)
+- **Article / Page :** L'unité de publication ou de présentation web effectivement délivrée au lecteur (par exemple, une page Markdown/MDX sur ce site).
+- **Modèle (*template*) :** Le guide de rédaction pratique précisant la structure recommandée, les sections et les niveaux de titre pour un type donné.
+- **Format de document / syntaxe :** La syntaxe de balisage ou de sérialisation du fichier source (comme Markdown, MDX, HTML, XML ou YAML).
 
-Un auteur applique ainsi un **type d'information** en suivant un **modèle** de rédaction pour produire un **sujet** autonome, enregistré dans un **format de document** léger (comme Markdown) et publié sous forme d'**article**.
+Dans une approche docs-as-code, un auteur répond à un **type d'information** en adaptant un **modèle** de rédaction pour concevoir un **sujet** autonome, enregistré dans un **format de document** léger (comme Markdown) et publié sous la forme d'un **article**.
 
 ---
 
 ## Typologie de l'information et DITA
 
-La typologie de l'information possède une histoire bien établie en communication technique. Elle a été formalisée et popularisée par la norme OASIS **DITA (Darwin Information Typing Architecture)** :
+La typologie de l'information s'appuie sur une tradition établie en communication technique, issue de travaux tels que le minimalisme de John Carroll et l'Information Mapping de Robert Horn.
 
-- Le **Concept** correspond directement au type de sujet DITA `<concept>`.
-- La **Tâche** correspond directement au type de sujet DITA `<task>`.
-- La **Référence** correspond directement au type de sujet DITA `<reference>`.
+Plus tard, la norme **DITA (Darwin Information Typing Architecture)** a formalisé une architecture XML pour la typologie de l'information, en définissant des types de sujets standardisés : Concept, Tâche et Référence :
+
+- Le Concept correspond fonctionnellement au type de sujet DITA `<concept>`.
+- La Tâche correspond fonctionnellement au type de sujet DITA `<task>`.
+- La Référence correspond fonctionnellement au type de sujet DITA `<reference>`.
 
 Cependant, une distinction architecturale essentielle doit être posée :
 
 :::note[Distinction fondamentale]
-**Ce site documentaire utilise la typologie de l'information comme principe de rédaction et d'architecture de l'information. Il n'utilise pas DITA XML.**
+**Le site applique le même principe général de typologie de l'information que DITA, mais le met en œuvre au moyen de conventions de rédaction légères en Markdown / Astro plutôt que par des schémas DITA XML.**
 :::
 
-La relation se résume ainsi : **même principe sous-jacent d'architecture de l'information, mise en œuvre et niveau de formalisation différents.**
+Nos modèles Markdown sont des canevas de rédaction pratiques et non des schémas DITA XML formels, et ils ne reposent pas sur des mécanismes de validation DTD/XSD.
 
-### Comment DITA formalise la typologie de l'information
+### Compromis d'ingénierie : DITA et le docs-as-code
 
-Dans DITA, les trois types sont imposés mécaniquement par des schémas :
+Ni DITA ni Markdown / Astro ne sont universellement supérieurs ; ils répondent à des compromis d'ingénierie distincts adaptés à des contextes d'organisation différents :
 
-- **Grammaire stricte :** Une `<task>` requiert obligatoirement un `<taskbody>`, qui n'autorise que des balises XML enfants bien définies (`<prereq>`, `<context>`, `<steps>`, `<result>`). Il est impossible d'insérer arbitrairement un titre ou un paragraphe entre deux étapes là où le schéma l'interdit.
-- **Balisage sémantique XML :** DITA qualifie l'information avec une granularité fine (`<cmd>`, `<info>`, `<stepxmp>`, `<varname>`, `<filepath>`).
-- **Validation :** Les chaînes de compilation valident les fichiers contre des définitions DTD ou XML Schema. Toute anomalie de balisage bloque la génération.
-- **Spécialisation :** Les équipes peuvent dériver les types de base vers des types métier spécialisés (par exemple spécialiser `<task>` en `<troubleshooting>` ou `<machineryTask>`).
-- **Chaîne de publication lourde :** Le rendu nécessite le DITA Open Toolkit (DITA-OT), avec gestion de catalogues XML, scripts XSLT et moteurs XSL-FO.
+- **Architecture DITA XML :**
+  - **Modèle sémantique formel :** Balisage sémantique à granularité fine (`<cmd>`, `<stepxmp>`, `<varname>`, `<filepath>`).
+  - **Validation par schéma :** Application stricte de règles grammaticales via DTD, XML Schema ou RELAX NG. Tout élément mal positionné interrompt la compilation.
+  - **Spécialisation et réutilisation :** Hiérarchies de spécialisation puissantes et mécanismes d'inclusion fine par référence (`<conref>`).
+  - **Chaîne de publication structurée :** Traitement multicanal industriel via le DITA Open Toolkit (DITA-OT), avec catalogues XML, scripts XSLT et moteurs XSL-FO.
+  - **Idéal pour :** Les organisations exigeant une rédaction structurée formelle, la gestion de matrices complexes de variantes produits, la publication multisupport (PDF haute fidélité, aide en ligne) et des circuits de traduction globale centralisés.
 
-### Comment ce site applique la typologie de l'information
+- **Docs-as-code en Markdown / Astro :**
+  - **Environnement de rédaction simplifié :** Contenus rédigés en Markdown et MDX lisibles et modifiables par tout intervenant.
+  - **Collaboration Git-native :** Revue de contenu intégrée aux pull requests et aux branches de développement.
+  - **Faible surcharge d'outillage :** Utilisation d'outils web modernes (Node.js, Astro, Starlight) sans chaîne de transformation XML complexe.
+  - **Participation élargie :** Ingénieurs, chefs de produit et rédacteurs collaborent au sein des mêmes dépôts de code.
+  - **Discipline structurelle agile :** La cohérence repose sur des modèles de rédaction pratiques ([modèle concept](../concept-article-template/), [modèle tâche](../task-article-template/), [modèle référence](../reference-article-template/)) et sur la validation de métadonnées frontmatter (`contentType: concept | task | reference`) plutôt que sur des parseurs XML contraignants.
+  - **Idéal pour :** Les projets logiciels à cycle court, les plateformes pour développeurs et les équipes souhaitant aligner la documentation sur les processus d'ingénierie logicielle.
 
-Ce site retient la discipline structurelle de DITA sans s'encombrer de la complexité de l'outillage XML :
-
-- **Format de rédaction léger :** Les contenus sont rédigés en Markdown et MDX lisibles directement.
-- **Modèles de rédaction :** La discipline éditoriale s'appuie sur des modèles pratiques ([modèle concept](../concept-article-template/), [modèle tâche](../task-article-template/), [modèle référence](../reference-article-template/)) plutôt que sur des parseurs XML contraignants.
-- **Classification par métadonnées :** Chaque article déclare son type dans son frontmatter (`contentType: concept | task | reference`), vérifié par le schéma des collections de contenu d'Astro.
-- **Chaîne docs-as-code moderne :** Génération rapide via Astro et Starlight, flux de travail Git standardisés, et validation automatisée par linters et tests unitaires en Node.js.
-
-Pour approfondir les enjeux de DITA XML et ses compromis, voir [Formats structurés et non structurés](../../formats/structured-vs-unstructured-formats/) ainsi que [Du document à la base documentaire modulaire](../../formats/modular-documentation/).
+Pour approfondir les enjeux des formats structurés et des bases modulaires, voir [Formats structurés et non structurés](../../formats/structured-vs-unstructured-formats/) ainsi que [Du document à la base documentaire modulaire](../../formats/modular-documentation/).
 
 ---
 
 ## Comparatif pratique
 
-Les différentes approches documentaires appliquent la typologie sémantique et la validation à des degrés variables :
+Les différentes approches documentaires appliquent la typologie de l'information et le contrôle structurel à des niveaux de formalisation distincts :
 
-| Approche | Typage sémantique | Validation | Format source | Cas d'usage type |
+| Approche | Typage sémantique | Contrôle structurel | Format source | Cas d'usage type |
 | --- | --- | --- | --- | --- |
-| **Modèle Markdown libre** | Convention éditoriale | Limitée / revue manuelle | Markdown | Documentation légère, wikis informels |
-| **Ce site** | Types explicites + modèles + frontmatter | Schéma typé (`contentType`), tests de build, linters | Markdown/MDX | Docs-as-code moderne, portails et guides techniques |
-| **DITA** | Types sémantiques formels, hiérarchie de spécialisation | Schémas stricts (DTD, XSD, RELAX NG) | XML | Publication multicanale industrielle, traduction globale |
-| **OpenAPI** | Modèle de contrat d'API formel | Outils et linters de schéma (Spectral, parseurs) | YAML / JSON | Description d'API HTTP lisible par machine et consoles interactives |
+| **Modèle Markdown libre** | Convention éditoriale | Informel / relecture par les pairs | Markdown | Wikis d'équipe, notes de projet légères |
+| **Ce site (docs-as-code)** | Types explicites + modèles + frontmatter | Schéma de métadonnées validé (`contentType`), tests de build | Markdown/MDX | Docs-as-code moderne, portails et manuels techniques |
+| **DITA** | Types de sujets formels, hiérarchie de spécialisation | Schémas stricts (DTD, XSD, RELAX NG) | XML | Documentation industrielle multicanale, fabrication matérielle |
+| **OpenAPI** | Modèle de contrat d'API formel | Schémas et linters (JSON Schema, Spectral) | YAML / JSON | Description d'API HTTP lisible par machine, références générées |
 
-### DITA face à OpenAPI
+### DITA et OpenAPI en perspective
 
-La complémentarité entre DITA et OpenAPI est manifeste :
+DITA et OpenAPI répondent à des finalités complémentaires bien distinctes :
 
-- **DITA** s'adresse à la *documentation rédigée par des humains sur l'ensemble du corpus d'entreprise*. Ses schémas structurent la prose, les guides d'utilisation et les manuels techniques (logiciel, matériel, industrie).
-- **OpenAPI** s'adresse aux *contrats d'API HTTP lisibles par machine*. Il modélise avec une rigueur mathématique les routes, méthodes HTTP, codes de retour, paramètres et schémas JSON.
+- **DITA** fournit une architecture pour la *prose documentaire rédigée par des humains à l'échelle de l'entreprise* (manuels matériels, logiciels, guides d'exploitation).
+- **OpenAPI** modélise un *contrat d'API HTTP lisible par machine*. Il décrit avec exactitude les routes, verbes HTTP, paramètres de requête, corps JSON et codes d'état.
 
-OpenAPI n'a pas vocation à rédiger des guides conceptuels ou des tutoriels pas-à-pas ; DITA n'a pas vocation à générer des SDK clients ou des consoles interactives Swagger UI.
+OpenAPI n'est pas un système de rédaction pour la prose ou les tutoriels, et DITA n'est pas un format de description de protocole conçu pour générer des consoles d'API interactives.
 
 ---
 
 ## Typologie de l'information et documentation d'API
 
-La documentation d'API illustre parfaitement comment les trois types d'information doivent collaborer au sein d'une expérience unifiée :
+La documentation d'API illustre concrètement l'articulation entre les trois types d'information complémentaires et les contrats lisibles par machine :
 
 ```
 Parcours du développeur
 ┌────────────────────────────────────────────────────────┐
-│ 1. Concept : « Qu'est-ce que cette API ? »             │
-│    Architecture, modèle de sécurité, objets du domaine │
+│ 1. Concept : « Qu'est-ce que l'idempotence ? »         │
+│    Architecture, modèle d'authentification, objets clés│
 └───────────────────────────┬────────────────────────────┘
                             │
 ┌───────────────────────────▼────────────────────────────┐
-│ 2. Tâche : « Comment effectuer un premier appel ? »    │
-│    Prérequis, obtention du jeton, commandes curl       │
+│ 2. Tâche : « Comment faire un premier appel ? »        │
+│    Prérequis, échange de jeton, commandes curl         │
 └───────────────────────────┬────────────────────────────┘
                             │
 ┌───────────────────────────▼────────────────────────────┐
-│ 3. Référence : « GET /api/v1/commandes/{id} »          │
-│    Spécification OpenAPI, paramètres, schémas, erreurs │
+│ 3. Référence : « POST /utilisateurs — paramètres »     │
+│    Verbe HTTP, chemin d'endpoint, modèles JSON         │
 └────────────────────────────────────────────────────────┘
 ```
 
-### 1. Le Concept dans la documentation d'API
+### Les trois types dans les portails d'API
 
-- **Question clé :** *« Quelle est cette API et comment est-elle conçue ? »*
-- **Contenu :** Périmètre fonctionnel, modèle de sécurité (scopes OAuth, clés d'API), cycle de vie des webhooks, garanties d'idempotence et politiques de limitation de débit (*rate limiting*).
-- **Rôle :** Fournit les fondations théoriques nécessaires pour concevoir une intégration pérenne.
+1. **Concept (« Qu'est-ce que c'est ? ») :**
+   - *Exemple :* *« Qu'est-ce que l'idempotence et comment l'API traite-t-elle les clés de relecture ? »*
+   - *Périmètre :* Vue d'ensemble de l'architecture, principes de sécurité (cycle de vie des jetons OAuth, scopes), quotas de débit et garanties de distribution des webhooks.
+   - *Rôle :* Apporte aux développeurs les bases conceptuelles indispensables pour concevoir une intégration robuste.
 
-### 2. La Tâche dans la documentation d'API
+2. **Tâche (« Comment faire ? ») :**
+   - *Exemple :* *« Comment s'authentifier et exécuter un premier appel d'API ? »*
+   - *Périmètre :* Tutoriels linéaires avec prérequis explicites, configuration des identifiants, commandes `curl` exécutables et validation des réponses attendues.
+   - *Rôle :* Guide pas-à-pas le développeur vers un résultat opérationnel vérifiable.
 
-- **Question clé :** *« Comment s'authentifier / créer une ressource / traiter un webhook ? »*
-- **Contenu :** Procédures linéaires avec prérequis concrets, configuration d'environnement, commandes `curl` reproductibles et réponses JSON attendues.
-- **Rôle :** Guide pas-à-pas le développeur vers un résultat opérationnel vérifiable.
+3. **Référence (« Quels sont les détails exacts ? ») :**
+   - *Exemple :* *`POST /utilisateurs` — paramètres, schéma de requête, schéma de réponse, codes d'état*
+   - *Périmètre :* Verbes HTTP précis, routes, paramètres d'URL, en-têtes requis, schémas de payload JSON, codes de statut et formats d'erreur.
+   - *Rôle :* Permet une consultation rapide et faisant autorité pendant les phases de développement et de diagnostic.
 
-### 3. La Référence dans la documentation d'API
+### OpenAPI et la couche de référence
 
-- **Question clé :** *« Quels sont les paramètres exacts et le schéma de `POST /v1/paiements` ? »*
-- **Contenu :** Verbe HTTP, chemin d'endpoint, en-têtes obligatoires, paramètres d'URL, schéma du corps de requête, schéma de réponse de succès, statuts HTTP et codes d'erreur.
-- **Rôle :** Permet une consultation rapide et faisant autorité pendant le codage ou le débogage.
+OpenAPI décrit un contrat d'API dans un format exploitable par machine. Il peut étayer ou générer une grande partie de la couche de référence de la documentation d'API (comme les consoles interactives, les catalogues de paramètres et les définitions de types pour SDK).
 
-### Pourquoi OpenAPI excelle au niveau de la référence
+Pour autant, la spécification OpenAPI ne se substitue pas à une documentation complète :
 
-OpenAPI est l'outil privilégié de la couche de **référence** :
+- **OpenAPI** fournit la description et le contrat d'API exploitables par machine.
+- **La documentation de référence** présente ces informations de consultation sous une forme adaptée à la lecture humaine.
+- **Les contenus Concept et Tâche** explicitent les modèles mentaux, les contraintes architecturales et les flux d'intégration pas-à-pas qu'une description d'API seule ne peut communiquer de manière adéquate.
 
-- Il offre une description standardisée et exploitable par programme des opérations et des schémas JSON.
-- Il permet de générer automatiquement des consoles interactives, des simulateurs d'appels et des bibliothèques clientes.
+Un portail documentaire d'API réussi combine harmonieusement ces trois éléments : un contrat OpenAPI exploitable par machine alimentant la référence générée, enrichi d'articles Concept et de tutoriels Tâche rédigés par des auteurs techniques.
 
-Cependant, OpenAPI ne peut pas se substituer aux deux autres couches. La compréhension conceptuelle (architecture, logique métier) et l'accompagnement pas-à-pas (tutoriels, parcours d'intégration, résolution de problèmes) nécessitent toujours des contenus de type **concept** et **tâche** rédigés par des auteurs techniques autour du contrat OpenAPI.
-
-Pour rédiger des pages de référence d'endpoints, consultez le [modèle de documentation d'API](../api-documentation-template/) et découvrez [l'API propre à ce manuel](/fr/about-the-api/).
+Pour concevoir des pages de référence d'endpoints, consultez le [modèle de documentation d'API](../api-documentation-template/) et explorez [l'API propre à ce manuel](/fr/about-the-api/).
 
 ---
 
 ## Ressources connexes de la boîte à outils
 
-- [Modèle d'article concept](../concept-article-template/) — Le modèle Markdown pratique pour les articles conceptuels.
-- [Modèle d'article tâche](../task-article-template/) — Le modèle Markdown pratique pour les procédures séquentielles.
-- [Modèle d'article référence](../reference-article-template/) — Le modèle Markdown pratique pour les données de consultation.
+- [Modèle d'article concept](../concept-article-template/) — Canevas Markdown pratique pour les articles conceptuels.
+- [Modèle d'article tâche](../task-article-template/) — Canevas Markdown pratique pour les procédures séquentielles.
+- [Modèle d'article référence](../reference-article-template/) — Canevas Markdown pratique pour les données de consultation.
 - [Modèle de documentation d'API](../api-documentation-template/) — Déclinaison de référence dédiée aux endpoints d'API REST.
-- [Exemple : une page Markdown bien structurée](../example-markdown-page/) — Un exemple concret d'article concept commenté.
-- [Formats structurés et non structurés](../../formats/structured-vs-unstructured-formats/) — Comparatif approfondi entre DITA XML et la publication non structurée.
+- [Exemple : une page Markdown bien structurée](../example-markdown-page/) — Exemple annoté illustrant la mise en œuvre d'un article concept.
+- [Formats structurés et non structurés](../../formats/structured-vs-unstructured-formats/) — Analyse comparative approfondie entre DITA XML et la publication non structurée.
