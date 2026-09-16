@@ -21,11 +21,53 @@ Le HTML rendu est conçu pour les navigateurs : habillage de navigation, CSS, in
 | --- | --- | --- |
 | `/llms.txt` | Texte brut | Une table des matières concise conforme à la convention [llms.txt](https://llmstxt.org/) — le point d'entrée pour un agent qui veut savoir ce qui existe ici avant de récupérer quelque chose de plus volumineux. |
 | `/llms-full.txt`, `/llms-full-en.txt`, `/llms-full-fr.txt` | Texte brut | Le corpus entier (bilingue, ou une seule langue) concaténé en un seul fichier, pour un agent qui veut tout ingérer en une seule requête plutôt qu'une par page. |
-| `/index.json`, `/en/index.json`, `/fr/index.json` | JSON | Un index de documents consultable par machine : titre, description, URL, nombre de mots, titres et tags pour chaque page. |
+| `/index.json`, `/en/index.json`, `/fr/index.json` | JSON | Un index de documents consultable par machine : titre, description, URL, nombre de mots, titres, tags, `pageType` et `contentType` pour chaque page, avec prise en charge du filtrage par paramètres d'URL. |
 | `/sitemap.md`, `/en/sitemap.md`, `/fr/sitemap.md` | Markdown | Un plan de site hiérarchique regroupé par section, dans un format qu'un LLM peut lire directement plutôt que d'analyser un sitemap XML. |
 | `/en/<page>.md`, `/fr/<page>.md` | Markdown | Un miroir Markdown propre d'une page — le même contenu textuel que la version HTML, sans la mise en page ni le balisage de navigation. |
 
 Le contenu de l'endpoint `.md` de chaque page est garanti identique octet pour octet à la section correspondante dans `llms-full.txt` — un test automatisé de ce dépôt vérifie cet invariant à chaque build, sur l'ensemble des documents, pas seulement par sondage.
+
+## Métadonnées des documents et typage de l'information
+
+Chaque notice documentaire de l'index JSON expose deux dimensions de classification complémentaires :
+
+- **`pageType`** : décrit le rôle structurel d'une page au sein du site documentaire (`topic`, `index`, `landing`, `overview`, `utility`).
+- **`contentType`** : décrit le type d'information principal et l'intention du lecteur (`concept`, `task`, `reference`), ou `null` pour les pages délibérément non typées.
+
+### Distinction sémantique
+
+> `pageType` décrit le rôle structurel d'une page dans le site documentaire. `contentType` décrit le type d'information principal et l'intention du lecteur.
+
+Par exemple, une notice comportant :
+
+```json
+{
+  "pageType": "topic",
+  "contentType": "task"
+}
+```
+
+représente un sujet documentaire opérationnel et orienté tâche (comme un didacticiel ou un guide de procédure étape par étape).
+
+### Pages délibérément non typées
+
+Les pages d'organisation et de navigation — telles que les vues d'ensemble de section, les index de répertoires, les pages de renvoi (*landing pages*) et les utilitaires de recherche — possèdent un `pageType` structurel explicite (par exemple `landing`, `overview`, `utility`), mais ont `contentType: null`. Elles ne sont pas artificiellement rattachées aux archétypes Concept, Tâche ou Référence.
+
+### Filtrage par paramètres d'URL
+
+L'index de documentation JSON prend en charge le filtrage par paramètres de requête via une opération logique ET (AND) :
+
+| Filtre | Exemple | Description |
+| --- | --- | --- |
+| Type d'information | `?contentType=concept` | Renvoie uniquement les explications conceptuelles |
+| | `?contentType=task` | Renvoie uniquement les articles de tâches pas à pas |
+| | `?contentType=reference` | Renvoie uniquement les rubriques de référence |
+| Type structurel de page | `?pageType=topic` | Renvoie uniquement les sujets documentaires standard |
+| | `?pageType=overview` | Renvoie les pages de vue d'ensemble de section |
+| Filtre combiné | `?pageType=topic&contentType=task` | Renvoie les sujets documentaires orientés tâche satisfaisant les deux conditions |
+| Filtre de langue | `?lang=fr&contentType=concept` | Renvoie les pages de concepts en français avec stricte isolation linguistique |
+
+Les valeurs de paramètres non valides (comme `?contentType=tutorial` ou une casse non conforme comme `?contentType=Concept`) renvoient une réponse `HTTP 400` accompagnée d'un objet d'erreur détaillant les valeurs canoniques autorisées.
 
 ## Comment chaque page l'expose
 

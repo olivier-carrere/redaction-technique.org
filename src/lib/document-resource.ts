@@ -5,6 +5,15 @@ import {
   SITE_URL,
   type DocPage,
 } from './page-markdown.ts';
+import {
+  CONTENT_TYPES,
+  PAGE_TYPES,
+  type ContentType,
+  type PageType,
+  isTypedTopic,
+} from './content-types.ts';
+
+export { CONTENT_TYPES, PAGE_TYPES, type ContentType, type PageType };
 
 export interface DocumentHeading {
   level: number;
@@ -28,6 +37,8 @@ export interface DocumentResource {
   sourcePath?: string;
   section?: string;
   order?: number;
+  pageType: PageType;
+  contentType: ContentType | null;
 }
 
 export const SECTION_METADATA = {
@@ -134,6 +145,9 @@ export function toDocumentResource(
       tags?: string[];
       lastUpdated?: Date | string;
       draft?: boolean;
+      contentType?: string;
+      pageType?: string;
+      template?: string;
       [key: string]: any;
     };
     body?: string;
@@ -180,6 +194,25 @@ export function toDocumentResource(
     }
   }
 
+  const typed = isTypedTopic(doc.data, doc.filePath || doc.id);
+  let pageType: PageType;
+  if (doc.data?.pageType && (PAGE_TYPES as readonly string[]).includes(doc.data.pageType)) {
+    pageType = doc.data.pageType as PageType;
+  } else if (typed) {
+    pageType = 'topic';
+  } else if (doc.data?.template === 'splash' || doc.id === 'en' || doc.id === 'fr') {
+    pageType = 'landing';
+  } else if (doc.id.endsWith('/index')) {
+    pageType = 'index';
+  } else {
+    pageType = 'overview';
+  }
+
+  const contentType: ContentType | null =
+    pageType === 'topic' && doc.data?.contentType && (CONTENT_TYPES as readonly string[]).includes(doc.data.contentType)
+      ? (doc.data.contentType as ContentType)
+      : null;
+
   const headings = doc.body ? extractHeadings(doc.body) : [];
   const wordCount = doc.body ? computeWordCount(doc.body) : undefined;
   const sourcePath = doc.filePath || `src/content/docs/${doc.id}.mdx`;
@@ -190,6 +223,8 @@ export function toDocumentResource(
     url,
     markdownUrl,
     title,
+    pageType,
+    contentType,
     ...(description ? { description } : {}),
     ...(headings.length > 0 ? { headings } : {}),
     ...(tags ? { tags } : {}),
@@ -243,6 +278,8 @@ export function toDocumentJsonEntry(res: DocumentResource) {
     url: res.url,
     markdown: res.markdownUrl,
     locale: res.locale,
+    pageType: res.pageType,
+    contentType: res.contentType,
     ...(res.wordCount !== undefined ? { wordCount: res.wordCount } : {}),
     headings: res.headings ?? [],
     keywords: res.tags ?? [],
@@ -268,6 +305,10 @@ export function generateLocaleIndexJson(
     site: siteUrl,
     locale,
     count: filtered.length,
+    filters: {
+      contentType: [...CONTENT_TYPES],
+      pageType: [...PAGE_TYPES],
+    },
     documents: filtered.map(toDocumentJsonEntry),
   };
 }
@@ -309,8 +350,206 @@ export function generateGlobalIndexJson(
       en: enDocs.length,
       fr: frDocs.length,
     },
+    filters: {
+      contentType: [...CONTENT_TYPES],
+      pageType: [...PAGE_TYPES],
+    },
     documents: sorted.map(toDocumentJsonEntry),
   };
+}
+
+export interface QueryResultSuccess {
+  status: 200;
+  body: Record<string, any>;
+}
+
+export interface QueryResultError {
+  status: 400;
+  body: {
+    error: string;
+    allowed: readonly string[];
+  };
+}
+
+export type QueryResult = QueryResultSuccess | QueryResultError;
+
+/**
+ * Filters and validates documentation resources according to query parameters.
+ * Supports ?contentType=..., ?pageType=..., and ?lang=... (AND combination).
+ * Returns HTTP 400 with allowed values for invalid parameter values.
+ */
+export function handleIndexQuery(
+  resources: DocumentResource[],
+  searchParams?: URLSearchParams | Record<string, string> | string,
+  options?: {
+    locale?: 'en' | 'fr';
+    siteUrl?: string;
+  }
+): QueryResult {
+  const siteUrl = options?.siteUrl || SITE_URL;
+  const scopeLocale = options?.locale;
+
+  let params: URLSearchParams;
+  if (!searchParams) {
+    params = new URLSearchParams();
+  } else if (searchParams instanceof URLSearchParams) {
+    params = searchParams;
+  } else if (typeof searchParams === 'string') {
+    params = new URLSearchParams(searchParams.startsWith('?') ? searchParams.slice(1) : searchParams);
+  } else {
+    params = new URLSearchParams(searchParams);
+  }
+
+  // 1. Validate contentType
+  const rawContentType = params.get('contentType');
+  if (rawContentType !== null) {
+    if (!(CONTENT_TYPES as readonly string[]).includes(rawContentType)) {
+      return {
+        status: 400,
+        body: {
+          error: 'Invalid contentType',
+          allowed: [...CONTENT_TYPES],
+        },
+      };
+    }
+  }
+
+  // 2. Validate pageType
+  const rawPageType = params.get('pageType');
+  if (rawPageType !== null) {
+    if (!(PAGE_TYPES as readonly string[]).includes(rawPageType)) {
+      return {
+        status: 400,
+        body: {
+          error: 'Invalid pageType',
+          allowed: [...PAGE_TYPES],
+        },
+      };
+    }
+  }
+
+  // 3. Validate lang
+  const rawLang = params.get('lang');
+  if (rawLang !== null) {
+    if (scopeLocale) {
+      if (rawLang !== scopeLocale) {
+        return {
+          status: 400,
+          body: {
+            error: `Invalid lang for ${scopeLocale.toUpperCase()} endpoint`,
+            allowed: [scopeLocale],
+          },
+        };
+      }
+    } else if (!['en', 'fr'].includes(rawLang)) {
+      return {
+        status: 400,
+        body: {
+          error: 'Invalid lang',
+          allowed: ['en', 'fr'],
+        },
+      };
+    }
+  }
+
+  // Filter documents (AND operation across all specified filters)
+  let targetDocs = resources;
+  if (scopeLocale) {
+    targetDocs = targetDocs.filter((d) => d.locale === scopeLocale);
+  } else if (rawLang) {
+    targetDocs = targetDocs.filter((d) => d.locale === rawLang);
+  }
+
+  if (rawPageType) {
+    targetDocs = targetDocs.filter((d) => d.pageType === rawPageType);
+  }
+
+  if (rawContentType) {
+    targetDocs = targetDocs.filter((d) => d.contentType === rawContentType);
+  }
+
+  const sorted = sortDocuments(targetDocs);
+
+  if (scopeLocale) {
+    return {
+      status: 200,
+      body: {
+        version: '1.0',
+        site: siteUrl,
+        locale: scopeLocale,
+        count: sorted.length,
+        filters: {
+          contentType: [...CONTENT_TYPES],
+          pageType: [...PAGE_TYPES],
+        },
+        documents: sorted.map(toDocumentJsonEntry),
+      },
+    };
+  }
+
+  const enDocs = sorted.filter((d) => d.locale === 'en');
+  const frDocs = sorted.filter((d) => d.locale === 'fr');
+
+  return {
+    status: 200,
+    body: {
+      version: '1.0',
+      site: siteUrl,
+      locales: ['en', 'fr'],
+      endpoints: {
+        en: {
+          index: `${siteUrl}/en/index.json`,
+          sitemap: `${siteUrl}/en/sitemap.md`,
+          llmsFull: `${siteUrl}/en/llms-full.txt`,
+        },
+        fr: {
+          index: `${siteUrl}/fr/index.json`,
+          sitemap: `${siteUrl}/fr/sitemap.md`,
+          llmsFull: `${siteUrl}/fr/llms-full.txt`,
+        },
+        global: {
+          sitemap: `${siteUrl}/sitemap.md`,
+          llms: `${siteUrl}/llms.txt`,
+          llmsFull: `${siteUrl}/llms-full.txt`,
+        },
+      },
+      count: sorted.length,
+      counts: {
+        en: enDocs.length,
+        fr: frDocs.length,
+      },
+      filters: {
+        contentType: [...CONTENT_TYPES],
+        pageType: [...PAGE_TYPES],
+      },
+      documents: sorted.map(toDocumentJsonEntry),
+    },
+  };
+}
+
+/**
+ * Handles API route requests returning standard Web Response objects.
+ */
+export function handleIndexQueryResponse(
+  resources: DocumentResource[],
+  searchParams?: URLSearchParams | Record<string, string> | string,
+  options?: {
+    locale?: 'en' | 'fr';
+    siteUrl?: string;
+  }
+): Response {
+  const result = handleIndexQuery(resources, searchParams, options);
+  return new Response(JSON.stringify(result.body, null, 2), {
+    status: result.status,
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+      'X-Robots-Tag': 'noindex',
+      'Access-Control-Allow-Origin': '*',
+      ...(result.status === 200
+        ? { 'Cache-Control': 'public, max-age=3600, s-maxage=86400' }
+        : { 'Cache-Control': 'no-store' }),
+    },
+  });
 }
 
 /**

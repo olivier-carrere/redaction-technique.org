@@ -70,7 +70,7 @@ All endpoints are statically pre-rendered during `astro build` into `dist/client
 
 ---
 
-## 3. Machine-Readable JSON Format
+## 3. Machine-Readable JSON Format & Query Filtering
 
 Each document resource is structured according to the canonical `DocumentResource` schema:
 
@@ -81,6 +81,8 @@ Each document resource is structured according to the canonical `DocumentResourc
   "url": "https://docs.redaction-technique.org/en/about-this-blog/",
   "markdown": "https://docs.redaction-technique.org/en/about-this-blog.md",
   "locale": "en",
+  "pageType": "utility",
+  "contentType": null,
   "wordCount": 780,
   "headings": [
     { "level": 2, "text": "Free your information from its silos", "slug": "free-your-information-from-its-silos" },
@@ -97,12 +99,24 @@ The locale indexes (`/en/index.json` and `/fr/index.json`) expose:
   "version": "1.0",
   "site": "https://docs.redaction-technique.org",
   "locale": "en",
-  "count": 49,
+  "count": 74,
+  "filters": {
+    "contentType": ["concept", "task", "reference"],
+    "pageType": ["topic", "index", "landing", "overview", "utility"]
+  },
   "documents": [ ... ]
 }
 ```
 
-The global index (`/index.json`) aggregates both locales and links to all API discovery endpoints.
+The global index (`/index.json`) aggregates both locales, includes discovery endpoints, and supports filtering via query parameters:
+
+### Supported Query Filters (AND operation)
+- `?contentType=concept | task | reference`
+- `?pageType=topic | index | landing | overview | utility`
+- `?lang=en | fr` (global index)
+- Combined: `?pageType=topic&contentType=task`
+
+Invalid parameter values return `HTTP 400` with allowed canonical classifications.
 
 ---
 

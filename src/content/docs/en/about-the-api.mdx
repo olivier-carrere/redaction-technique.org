@@ -21,11 +21,53 @@ Rendered HTML is built for browsers: navigation chrome, CSS, client-side interac
 | --- | --- | --- |
 | `/llms.txt` | Plain text | A concise table of contents conforming to the [llms.txt](https://llmstxt.org/) convention — the entry point for an agent that wants to know what's here before fetching anything larger. |
 | `/llms-full.txt`, `/llms-full-en.txt`, `/llms-full-fr.txt` | Plain text | The entire corpus (bilingual, or one locale) concatenated into a single file, for an agent that wants to ingest everything in one request instead of one per page. |
-| `/index.json`, `/en/index.json`, `/fr/index.json` | JSON | A machine-readable document index: title, description, URL, word count, headings, and tags for every page. |
+| `/index.json`, `/en/index.json`, `/fr/index.json` | JSON | A machine-readable document index: title, description, URL, word count, headings, tags, `pageType`, and `contentType` for every page, with support for query filtering. |
 | `/sitemap.md`, `/en/sitemap.md`, `/fr/sitemap.md` | Markdown | A hierarchical sitemap grouped by section, in a format an LLM can read directly rather than parsing an XML sitemap. |
 | `/en/<page>.md`, `/fr/<page>.md` | Markdown | A clean Markdown mirror of one page — the same text content as the HTML version, without layout or navigation markup. |
 
 The content under each page's `.md` endpoint is guaranteed byte-for-byte identical to that page's section inside `llms-full.txt` — an automated test in this repository checks that invariant on every build, across every document, not just spot checks.
+
+## Document metadata and information typing
+
+Every documentation record in the JSON index exposes two complementary classification dimensions:
+
+- **`pageType`**: Describes the structural role of a page in the documentation site (`topic`, `index`, `landing`, `overview`, `utility`).
+- **`contentType`**: Describes the primary information type and reader intent (`concept`, `task`, `reference`), or `null` for intentionally untyped pages.
+
+### Semantic distinction
+
+> `pageType` describes the structural role of a page in the documentation site. `contentType` describes the primary information type and reader intent.
+
+For example, a record with:
+
+```json
+{
+  "pageType": "topic",
+  "contentType": "task"
+}
+```
+
+represents an actionable, task-oriented documentation topic (such as a step-by-step tutorial or procedure).
+
+### Intentionally untyped pages
+
+Organizational and navigational pages — such as section overviews, directory indexes, landing pages, and search utilities — have an explicit structural `pageType` (e.g. `landing`, `overview`, `utility`) but have `contentType: null`. They are intentionally untyped and not forced into Concept, Task, or Reference archetypes.
+
+### Query filtering
+
+The JSON documentation index supports query parameter filtering using an AND operation across dimensions:
+
+| Filter | Example | Description |
+| --- | --- | --- |
+| Information type | `?contentType=concept` | Returns only conceptual explanations |
+| | `?contentType=task` | Returns only step-by-step task articles |
+| | `?contentType=reference` | Returns only reference topics |
+| Structural page type | `?pageType=topic` | Returns only standard documentation topics |
+| | `?pageType=overview` | Returns section overview pages |
+| Combined filter | `?pageType=topic&contentType=task` | Returns task-oriented documentation topics satisfying both conditions |
+| Locale filter | `?lang=en&contentType=concept` | Returns English concept pages with strict locale isolation |
+
+Invalid parameter values (such as `?contentType=tutorial` or case-mismatched `?contentType=Concept`) return HTTP 400 with a machine-readable payload detailing the allowed canonical values.
 
 ## How each page exposes this
 
