@@ -5,16 +5,21 @@ goal: [toolkit]
 contentType: reference
 ---
 
+import InformationType from '../../../../components/InformationType.astro';
+
+<InformationType type="task" />
+
 :::tip[Template]
-This is a **starting point to copy and adapt**, not a worked example. For a filled-in version, see the [example docs-as-code workflow](../example-docs-as-code-workflow/).
+This is a **starting point to copy and adapt**, not a worked example. For a filled-in version, see the [example docs-as-code workflow](../example-docs-as-code-workflow/). To learn how tasks fit into information architecture, read [Information types](../information-types/).
 :::
 
-Use this structure when the reader needs to **do** something with a concrete, checkable outcome — not for background explanation (use the [concept template](../concept-article-template/)).
+Use this structure when the reader needs to **do** something with a concrete, checkable outcome — not for background explanation (use the [concept template](../concept-article-template/)) or lookup specifications (use the [reference template](../reference-article-template/)).
 
 ```markdown
 ---
 title: "<Verb-first task title, e.g. 'Configure X' or 'Migrate Y to Z'>"
 description: "<One sentence: what the reader accomplishes>"
+contentType: task
 ---
 
 ## Objective

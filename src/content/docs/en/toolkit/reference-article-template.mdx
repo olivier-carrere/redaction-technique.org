@@ -5,8 +5,12 @@ goal: [toolkit]
 contentType: reference
 ---
 
+import InformationType from '../../../../components/InformationType.astro';
+
+<InformationType type="reference" />
+
 :::tip[Template]
-This is a **starting point to copy and adapt**, not a worked example. For a filled-in version, see the [API documentation template](../api-documentation-template/), which is a specialized case of this pattern.
+This is a **starting point to copy and adapt**, not a worked example. For a filled-in version, see the [API documentation template](../api-documentation-template/), which is a specialized case of this pattern. To understand how reference material relates to other documentation modes, read [Information types](../information-types/).
 :::
 
 Use this structure for **lookup material** — the reader already knows what they're trying to do and needs exact syntax, parameters, or specifications. Unlike a concept or task article, nobody reads a reference article start to finish; they scan for the one detail they need.
@@ -15,6 +19,7 @@ Use this structure for **lookup material** — the reader already knows what the
 ---
 title: "<Command, option, or item name>"
 description: "<One sentence: what this is a reference for>"
+contentType: reference
 ---
 
 ## Overview

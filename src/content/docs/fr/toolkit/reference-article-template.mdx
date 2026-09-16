@@ -5,8 +5,12 @@ goal: [toolkit]
 contentType: reference
 ---
 
+import InformationType from '../../../../components/InformationType.astro';
+
+<InformationType type="reference" />
+
 :::tip[Modèle]
-Ceci est un **point de départ à copier et adapter**, pas un exemple abouti. Pour une version remplie, voir le [modèle de documentation d'API](../api-documentation-template/), un cas particulier de ce patron.
+Ceci est un **point de départ à copier et adapter**, pas un exemple abouti. Pour une version remplie, voir le [modèle de documentation d'API](../api-documentation-template/), un cas particulier de ce patron. Pour comprendre comment le contenu de référence s'intègre dans l'architecture documentaire, lisez [Typologie de l'information](../information-types/).
 :::
 
 Utilisez cette structure pour du **contenu de consultation** — le lecteur sait déjà ce qu'il veut faire et a besoin de la syntaxe exacte, des paramètres ou des spécifications. Contrairement à un article concept ou tâche, personne ne lit un article référence de bout en bout ; on le parcourt pour trouver un seul détail.
@@ -15,6 +19,7 @@ Utilisez cette structure pour du **contenu de consultation** — le lecteur sait
 ---
 title: "<Nom de la commande, option ou élément>"
 description: "<Une phrase : de quoi ceci est la référence>"
+contentType: reference
 ---
 
 ## Aperçu

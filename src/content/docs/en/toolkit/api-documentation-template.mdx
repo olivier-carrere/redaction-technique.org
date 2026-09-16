@@ -5,8 +5,12 @@ goal: [toolkit]
 contentType: reference
 ---
 
+import InformationType from '../../../../components/InformationType.astro';
+
+<InformationType type="reference" />
+
 :::tip[Template]
-This is a **starting point to copy and adapt**, not a worked example. It's a specialized instance of the [reference article template](../reference-article-template/), shaped for one API endpoint per page.
+This is a **starting point to copy and adapt**, not a worked example. It's a specialized instance of the [reference article template](../reference-article-template/), shaped for one API endpoint per page. For details on how reference documentation relates to OpenAPI specs and procedural guides, see [Information types and API documentation](../information-types/#information-typing-and-api-documentation).
 :::
 
 Use one copy of this template per endpoint (or per closely related group of endpoints, such as `GET`/`POST` on the same resource). Don't try to document an entire API on a single page — it stops being scannable past a handful of endpoints.
@@ -15,6 +19,7 @@ Use one copy of this template per endpoint (or per closely related group of endp
 ---
 title: "<HTTP method> <path>"
 description: "<One sentence: what this endpoint does>"
+contentType: reference
 ---
 
 ## Overview

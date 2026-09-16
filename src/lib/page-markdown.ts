@@ -315,6 +315,19 @@ export function getPageMarkdown(
   text = text.replace(/<StartHere[^>]*\/?>/gi, '');
   text = text.replace(/<section\s+class=["']ask-homepage-panel[^"']*["'][^>]*>[\s\S]*?<\/section>/gi, '');
 
+  // 15b. Transform <InformationType type="..." />
+  text = text.replace(/<InformationType\s+type=["']([^"']*)["'][^>]*\/?>/gi, (_, type) => {
+    const t = (type || 'concept').toLowerCase();
+    const typeLabel = t === 'task' ? (lang === 'fr' ? 'Tâche' : 'Task')
+      : t === 'reference' ? (lang === 'fr' ? 'Référence' : 'Reference')
+      : 'Concept';
+    const linkUrl = lang === 'fr'
+      ? `${siteUrl}/fr/toolkit/information-types/`
+      : `${siteUrl}/en/toolkit/information-types/`;
+    const label = lang === 'fr' ? "Type d'information :" : "Information type:";
+    return `\n**${label}** [${typeLabel}](${linkUrl})\n`;
+  });
+
   // 16. Convert <abbr title="...">ABBR</abbr> to ABBR (Meaning)
   text = text.replace(/<abbr\s+title=["']([^"']*)["']>([^<]*)<\/abbr>/gi, '$2 ($1)');
 

@@ -1,20 +1,71 @@
 ---
 title: "Template: concept article"
-description: "A ready-to-copy Markdown template for writing a concept article, following the Definition / Why it matters / Key principles / Examples / Trade-offs / Related concepts structure."
+description: "A practical authoring template for writing a concept article — an information type answering 'What is it?' with definitions, context, principles, and examples."
 goal: [toolkit]
 contentType: reference
 ---
 
+import InformationType from '../../../../components/InformationType.astro';
+
+<InformationType type="concept" />
+
 :::tip[Template]
-This is a **starting point to copy and adapt**, not a worked example. Delete any section that doesn't apply — see [Standardized page layouts](/en/toolkit/) for when to skip a section entirely.
+This is a **starting point to copy and adapt**, not a worked example. For a complete annotated illustration of this pattern, see [Example: a well-structured Markdown page](../example-markdown-page/). To understand where Concept fits into documentation architecture, read [Information types](../information-types/).
 :::
 
-Use this structure for an article that explains **what something is** and **why it matters** — not how to do something (use the [task template](../task-article-template/)) and not a lookup table of options (use the [reference template](../reference-article-template/)).
+## What is a Concept?
+
+A Concept is an **information type**, not merely a writing style or decorative introduction. Its purpose is to answer one central question: **"What is it?"**
+
+A Concept article:
+
+- **Builds understanding:** It supplies the definitions, background, context, and mental models readers need before they can work with a system effectively.
+- **Maps relationships:** It explains how components, ideas, or architectural layers relate to one another.
+- **Does not instruct:** It normally does not give sequential, step-by-step procedural instructions (which belong in a [task article](../task-article-template/)).
+- **Prepares for action:** Readers typically turn to concept articles when onboarding, evaluating an approach, or diagnosing an unfamiliar system state before carrying out tasks.
+
+---
+
+## When to use a Concept
+
+Write a Concept article when the reader's primary goal is to **understand**:
+
+- **What something is:** Defining a technology, pattern, or domain entity (e.g., *"What is an idempotency key?"*).
+- **How it works conceptually:** High-level mechanisms, workflows, or data lifecycles (e.g., *"How Git handles snapshots vs. deltas"*).
+- **Why it exists:** The rationale, business justification, or engineering problem it solves.
+- **How concepts relate to each other:** System boundaries, dependency hierarchies, or mental models.
+- **Terminology and foundational principles:** Establishing vocabulary and core constraints.
+
+---
+
+## When NOT to use a Concept
+
+Do not stretch a Concept article into a manual of procedures or a catalog of configuration options. When reader intent shifts, use the appropriate information type:
+
+- **"How do I configure X?"** → Use the [Task article template](../task-article-template/). A task provides prerequisites, numbered linear steps, and a verifiable outcome.
+- **"What are the configuration parameters of X?"** → Use the [Reference article template](../reference-article-template/). A reference article is a structured lookup table designed for rapid scanning.
+- **"What is X and why does it exist?"** → Use this **Concept article template**.
+
+Mixing these modes within a single page creates unfocused documentation where users struggling to complete a task must scroll past paragraphs of architectural theory.
+
+---
+
+## Recommended structure
+
+The structure below is a **practical authoring template** for lightweight Markdown/Astro workflows, not a rigid DITA XML specification. It organizes content logically from immediate definition to concrete demonstration:
+
+1. **Definition:** Plain-language definition answering "What is it?" in one or two sentences.
+2. **Context (Why it matters):** The practical consequence — what breaks, costs more, or fails without understanding this concept.
+3. **How it works (Key principles):** The core ideas or mechanics that constitute the concept.
+4. **Key characteristics (Trade-offs):** Boundaries, constraints, or alternatives when a deliberate choice is involved.
+5. **Examples:** At least one concrete, real-world example illustrating the concept in practice.
+6. **Related concepts:** Contextual links to parent, sibling, or downstream task topics.
 
 ```markdown
 ---
 title: "<Concept name>"
 description: "<One sentence: what the reader will understand after reading this>"
+contentType: concept
 ---
 
 ## Definition
@@ -45,12 +96,15 @@ would someone deliberately choose NOT to apply this concept?>
 
 ## Related concepts
 
-- [<Related article 1>](<link>)
-- [<Related article 2>](<link>)
+- [<Related concept 1>](<link>)
+- [<Related concept 2>](<link>)
+- [<Downstream task>](<link>)
 ```
+
+---
 
 ## When to skip a section
 
-- No genuine trade-off exists → drop **Trade-offs** entirely rather than inventing a weak one.
-- The concept is simple enough that "why it matters" is obvious from the definition → merge the two.
-- Never skip **Definition** or **Examples** — they're what make a concept article usable rather than just impressive-sounding.
+- **Trade-offs:** Omit entirely if no genuine dilemma exists, rather than inventing an artificial trade-off.
+- **Why it matters:** If the concept is straightforward and its value is completely self-evident from the definition, merge the two.
+- **Never skip Definition or Examples:** A concept topic without a clear definition leaves the reader guessing; a concept topic without a concrete example remains abstract and ungrounded.

@@ -199,6 +199,30 @@ test('getPageMarkdown transforms Starlight components (CardGrid, LinkCard, Tabs,
   assert.match(md, /```mermaid\ngraph TD\n    A\[Start\] --> B\[End\]\n```/);
 });
 
+test('getPageMarkdown transforms InformationType component', () => {
+  const enDoc = {
+    id: 'en/test-info-type',
+    data: { title: 'Information Type Test' },
+    body: `
+<InformationType type="concept" />
+Content follows.
+    `.trim(),
+  };
+  const enMd = getPageMarkdown(enDoc);
+  assert.match(enMd, /\*\*Information type:\*\* \[Concept\]\(https:\/\/docs\.redaction-technique\.org\/en\/toolkit\/information-types\/\)/);
+
+  const frDoc = {
+    id: 'fr/test-info-type',
+    data: { title: 'Test Typologie' },
+    body: `
+<InformationType type="task" />
+Le contenu suit.
+    `.trim(),
+  };
+  const frMd = getPageMarkdown(frDoc);
+  assert.match(frMd, /\*\*Type d'information :\*\* \[Tâche\]\(https:\/\/docs\.redaction-technique\.org\/fr\/toolkit\/information-types\/\)/);
+});
+
 test('getPageMarkdown preserves French accents and special characters', () => {
   const doc = {
     id: 'fr/test-accents',

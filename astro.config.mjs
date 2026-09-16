@@ -164,6 +164,7 @@ export default defineConfig({
     '/fr/tutorials/sed-text-modification/':                                                                                  '/fr/tutorials/sed-text-editing/',
     '/en/tutorials/dita-xml-xslfo-tutorials/':                                                                               '/en/tutorials/dita-xml-xsl-fo-tutorials/',
     '/fr/tutorials/dita-xml-xslfo-tutorials/':                                                                               '/fr/tutorials/dita-xml-xsl-fo-tutorials/',
+    '/fr/toolkit/types-d-information/':                                                                                       '/fr/toolkit/information-types/',
   },
   integrations: [
     starlight({
@@ -281,7 +282,45 @@ export default defineConfig({
           label: '🧰 Use the practical toolkit',
           collapsed: true,
           translations: { fr: '🧰 Utiliser la boîte à outils' },
-          items: [{ autogenerate: { directory: 'toolkit' } }],
+          items: [
+            { slug: 'toolkit' },
+            { slug: 'toolkit/information-types' },
+            {
+              label: 'Authoring templates',
+              translations: { fr: 'Modèles de rédaction' },
+              items: [
+                { slug: 'toolkit/concept-article-template' },
+                { slug: 'toolkit/task-article-template' },
+                { slug: 'toolkit/reference-article-template' },
+                { slug: 'toolkit/api-documentation-template' },
+                { slug: 'toolkit/documentation-project-plan-template' },
+                { slug: 'toolkit/documentation-review-request-template' },
+              ],
+            },
+            {
+              label: 'Checklists',
+              translations: { fr: 'Check-lists' },
+              items: [
+                { slug: 'toolkit/documentation-quality-checklist' },
+                { slug: 'toolkit/technical-review-checklist' },
+                { slug: 'toolkit/release-readiness-checklist' },
+                { slug: 'toolkit/documentation-migration-checklist' },
+                { slug: 'toolkit/docs-as-code-adoption-checklist' },
+                { slug: 'toolkit/documentation-audit-checklist' },
+              ],
+            },
+            {
+              label: 'Worked examples',
+              translations: { fr: 'Exemples concrets' },
+              items: [
+                { slug: 'toolkit/example-markdown-page' },
+                { slug: 'toolkit/example-repository-structure' },
+                { slug: 'toolkit/example-docs-as-code-workflow' },
+                { slug: 'toolkit/example-review-workflow' },
+                { slug: 'toolkit/example-cicd-pipeline' },
+              ],
+            },
+          ],
         },
         {
           label: '📖 Explore the reference',

@@ -1,0 +1,152 @@
+---
+interface Props {
+  type: 'concept' | 'task' | 'reference';
+}
+
+const { type } = Astro.props;
+const pathname = Astro.url.pathname;
+const isFr = pathname.startsWith('/fr');
+
+const typeData = {
+  concept: {
+    nameEn: 'Concept',
+    nameFr: 'Concept',
+    questionEn: 'What is it?',
+    questionFr: "Qu'est-ce que c'est ?",
+    descEn: 'Understanding, background, definitions, and mental models',
+    descFr: 'Compréhension, contexte, définitions et modèles conceptuels',
+  },
+  task: {
+    nameEn: 'Task',
+    nameFr: 'Tâche',
+    questionEn: 'How do I do it?',
+    questionFr: 'Comment faire ?',
+    descEn: 'Step-by-step procedural workflow toward a verifiable outcome',
+    descFr: 'Procédure étape par étape orientée vers un résultat vérifiable',
+  },
+  reference: {
+    nameEn: 'Reference',
+    nameFr: 'Référence',
+    questionEn: 'What are the details?',
+    questionFr: 'Quels sont les détails ?',
+    descEn: 'Structured lookup data, exact syntax, parameters, and constraints',
+    descFr: 'Données de référence, syntaxe exacte, paramètres et contraintes',
+  },
+};
+
+const current = typeData[type] || typeData.concept;
+const href = isFr ? '/fr/toolkit/information-types/' : '/en/toolkit/information-types/';
+const prefix = isFr ? "Type d'information :" : 'Information type:';
+const typeName = isFr ? current.nameFr : current.nameEn;
+const question = isFr ? current.questionFr : current.questionEn;
+const description = isFr ? current.descFr : current.descEn;
+---
+
+<aside class="information-type-callout not-content" aria-label={prefix}>
+  <div class="it-header">
+    <span class="it-prefix">{prefix}</span>
+    <a href={href} class={`it-badge it-badge-${type}`} title={isFr ? "En savoir plus sur la typologie de l'information" : "Learn more about information typing"}>
+      <span class="it-badge-name">{typeName}</span>
+      <span class="it-badge-dot" aria-hidden="true">•</span>
+      <span class="it-badge-question">"{question}"</span>
+    </a>
+  </div>
+  <p class="it-desc">{description}</p>
+</aside>
+
+<style>
+  .information-type-callout {
+    margin: 1.25rem 0 1.75rem;
+    padding: 0.75rem 1rem;
+    background: var(--sl-color-gray-6);
+    border: 1px solid var(--sl-color-gray-5);
+    border-left: 3px solid var(--sl-color-accent);
+    border-radius: 4px;
+    font-size: var(--sl-text-sm);
+  }
+
+  .it-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 0.75rem;
+  }
+
+  .it-prefix {
+    font-weight: 600;
+    color: var(--sl-color-white);
+  }
+
+  :root[data-theme='light'] .it-prefix {
+    color: var(--sl-color-black);
+  }
+
+  .it-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.15rem 0.6rem;
+    border-radius: 9999px;
+    font-size: var(--sl-text-xs);
+    font-weight: 600;
+    text-decoration: none;
+    line-height: 1.4;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .it-badge:hover {
+    text-decoration: underline;
+  }
+
+  .it-badge-dot {
+    opacity: 0.6;
+  }
+
+  .it-badge-question {
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  /* Concept palette (Blue) */
+  .it-badge-concept {
+    background: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    color: #93c5fd;
+  }
+  :root[data-theme='light'] .it-badge-concept {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    color: #1d4ed8;
+  }
+
+  /* Task palette (Green) */
+  .it-badge-task {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    color: #6ee7b7;
+  }
+  :root[data-theme='light'] .it-badge-task {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #15803d;
+  }
+
+  /* Reference palette (Purple) */
+  .it-badge-reference {
+    background: rgba(168, 85, 247, 0.15);
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    color: #d8b4fe;
+  }
+  :root[data-theme='light'] .it-badge-reference {
+    background: #faf5ff;
+    border: 1px solid #e9d5ff;
+    color: #7e22ce;
+  }
+
+  .it-desc {
+    margin: 0.35rem 0 0 0 !important;
+    color: var(--sl-color-gray-3);
+    font-size: var(--sl-text-xs);
+    line-height: 1.4;
+  }
+</style>

@@ -1,20 +1,71 @@
 ---
 title: "Modèle : article concept"
-description: "Un modèle Markdown prêt à copier pour rédiger un article concept, selon la structure Définition / Pourquoi c'est important / Principes clés / Exemples / Compromis / Concepts connexes."
+description: "Un modèle de rédaction prêt à l'emploi pour concevoir un article concept — un type d'information répondant à « Qu'est-ce que c'est ? » avec définitions, contexte, principes et exemples."
 goal: [toolkit]
 contentType: reference
 ---
 
+import InformationType from '../../../../components/InformationType.astro';
+
+<InformationType type="concept" />
+
 :::tip[Modèle]
-Ceci est un **point de départ à copier et adapter**, pas un exemple abouti. Supprimez toute section qui ne s'applique pas — voir [Standardiser les mises en page](/fr/toolkit/) pour savoir quand omettre entièrement une section.
+Ceci est un **point de départ à copier et adapter**, pas un exemple abouti. Pour une illustration complète et commentée de ce modèle, consultez [Exemple : une page Markdown bien structurée](../example-markdown-page/). Pour comprendre comment le concept s'intègre dans l'architecture documentaire, lisez [Typologie de l'information](../information-types/).
 :::
 
-Utilisez cette structure pour un article qui explique **ce qu'est quelque chose** et **pourquoi cela compte** — pas comment faire quelque chose (utilisez le [modèle tâche](../task-article-template/)) et pas une table de référence d'options (utilisez le [modèle référence](../reference-article-template/)).
+## Qu'est-ce qu'un Concept ?
+
+Un concept est un **type d'information**, et non un simple style rédactionnel ou une introduction décorative. Son rôle est de répondre à une question centrale : **« Qu'est-ce que c'est ? »**
+
+Un article de type concept :
+
+- **Construit la compréhension :** il fournit les définitions, le contexte et les modèles mentaux nécessaires au lecteur avant qu'il ne puisse manipuler efficacement un système.
+- **Explicite les relations :** il explique comment les composants, idées ou couches architecturales s'articulent entre eux.
+- **Ne donne pas de directives :** il ne comporte généralement pas d'instructions séquentielles pas-à-pas (qui relèvent d'un [article tâche](../task-article-template/)).
+- **Prépare à l'action :** les lecteurs se tournent vers les concepts lors de l'intégration (*onboarding*), de l'évaluation d'une approche ou du diagnostic d'un système avant de passer aux tâches pratiques.
+
+---
+
+## Quand utiliser un Concept
+
+Rédigez un article concept lorsque l'objectif premier du lecteur est de **comprendre** :
+
+- **Ce qu'est un élément :** définir une technologie, un patron de conception ou une entité métier (ex. : *« Qu'est-ce qu'une clé d'idempotence ? »*).
+- **Son fonctionnement conceptuel :** mécanismes d'ensemble, cycles de vie de données ou flux de traitement (ex. : *« Comment Git gère les instantanés (snapshots) vs les deltas »*).
+- **Pourquoi il existe :** la justification métier, technique ou le problème d'ingénierie résolu.
+- **Les relations entre concepts :** frontières système, hiérarchies de dépendance ou modèles conceptuels.
+- **La terminologie et les principes fondateurs :** poser le vocabulaire et les règles fondamentales.
+
+---
+
+## Quand NE PAS utiliser un Concept
+
+Ne transformez pas un article concept en manuel de procédures ni en catalogue exhaustif d'options de configuration. Dès que l'intention du lecteur change, choisissez le bon type d'information :
+
+- **« Comment configurer X ? »** → Utilisez le [Modèle : article tâche](../task-article-template/). Une tâche fournit des prérequis, des étapes linéaires numérotées et un résultat vérifiable.
+- **« Quels sont les paramètres de configuration de X ? »** → Utilisez le [Modèle : article référence](../reference-article-template/). Une référence est une table de consultation structurée conçue pour un balayage visuel rapide.
+- **« Qu'est-ce que X et pourquoi cela existe-t-il ? »** → Utilisez ce **Modèle : article concept**.
+
+Mélanger ces modes au sein d'une même page produit une documentation confuse où l'utilisateur cherchant à exécuter une tâche urgente doit faire défiler de longs paragraphes de théorie architecturale.
+
+---
+
+## Structure recommandée
+
+La structure ci-dessous est un **modèle de rédaction pratique** conçu pour un flux Markdown / Astro léger, et non une spécification DITA XML rigide. Elle ordonne logiquement le contenu, de la définition immédiate à l'illustration concrète :
+
+1. **Définition :** définition en langage clair répondant à « Qu'est-ce que c'est ? » en une ou deux phrases.
+2. **Contexte (Pourquoi c'est important) :** les conséquences pratiques — ce qui dysfonctionne, coûte plus cher ou échoue sans la maîtrise de ce concept.
+3. **Fonctionnement (Principes clés) :** les idées directrices ou mécanismes constitutifs du concept.
+4. **Caractéristiques clés (Compromis) :** limites, contraintes ou arbitrages délibérés lorsqu'un choix réel existe.
+5. **Exemples :** au moins un exemple concret ancré dans la pratique.
+6. **Concepts connexes :** liens contextuels vers les concepts parents, voisins ou les tâches associées.
 
 ```markdown
 ---
 title: "<Nom du concept>"
 description: "<Une phrase : ce que le lecteur comprendra après lecture>"
+contentType: concept
 ---
 
 ## Définition
@@ -46,12 +97,15 @@ concept ?>
 
 ## Concepts connexes
 
-- [<Article connexe 1>](<lien>)
-- [<Article connexe 2>](<lien>)
+- [<Concept connexe 1>](<lien>)
+- [<Concept connexe 2>](<lien>)
+- [<Tâche associée>](<lien>)
 ```
+
+---
 
 ## Quand omettre une section
 
-- Aucun vrai compromis n'existe → supprimez **Compromis** entièrement plutôt que d'en inventer un faible.
-- Le concept est assez simple pour que « pourquoi c'est important » soit évident depuis la définition → fusionnez les deux.
-- Ne jamais omettre **Définition** ni **Exemples** — c'est ce qui rend un article concept réellement utilisable, pas seulement impressionnant.
+- **Compromis :** supprimez cette section s'il n'existe aucun véritable dilemme, plutôt que d'inventer un compromis artificiel.
+- **Pourquoi c'est important :** si le concept est simple et que sa valeur découle immédiatement de la définition, fusionnez les deux.
+- **Ne jamais omettre Définition ni Exemples :** un article concept sans définition claire laisse le lecteur dans le flou ; un article concept sans exemple concret reste abstrait et désincarné.

@@ -5,16 +5,21 @@ goal: [toolkit]
 contentType: reference
 ---
 
+import InformationType from '../../../../components/InformationType.astro';
+
+<InformationType type="task" />
+
 :::tip[Modèle]
-Ceci est un **point de départ à copier et adapter**, pas un exemple abouti. Pour une version remplie, voir [l'exemple de workflow docs-as-code](../example-docs-as-code-workflow/).
+Ceci est un **point de départ à copier et adapter**, pas un exemple abouti. Pour une version remplie, voir [l'exemple de workflow docs-as-code](../example-docs-as-code-workflow/). Pour comprendre comment la tâche s'intègre dans l'architecture documentaire, lisez [Typologie de l'information](../information-types/).
 :::
 
-Utilisez cette structure quand le lecteur doit **faire** quelque chose avec un résultat concret et vérifiable — pas pour une explication de fond (utilisez le [modèle concept](../concept-article-template/)).
+Utilisez cette structure quand le lecteur doit **faire** quelque chose avec un résultat concret et vérifiable — pas pour une explication de fond (utilisez le [modèle concept](../concept-article-template/)) ni pour une consultation de spécifications (utilisez le [modèle référence](../reference-article-template/)).
 
 ```markdown
 ---
-title: "<Titre à l'impératif, ex. 'Configurer X' ou 'Migrer Y vers Z'>"
+title: "<Titre à l'infinitif ou à l'impératif, ex. 'Configurer X' ou 'Migrer Y vers Z'>"
 description: "<Une phrase : ce que le lecteur accomplit>"
+contentType: task
 ---
 
 ## Objectif
