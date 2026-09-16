@@ -2,9 +2,13 @@
 title: "Integrating documentation into development processes"
 description: "Learn why technical documentation should be released, versioned, and quality-controlled alongside the product, using text formats like DocBook, DITA XML, and reStructuredText."
 tags: [git, docs-as-code]
+goal: [docs-as-code]
+contentType: concept
 ---
 
 import Mermaid from '../../../../components/Mermaid.astro';
+
+## Definition
 
 Documentation is part of the software. Supplied with the product, it must:
 
@@ -34,11 +38,15 @@ graph TD
     linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **Modular documentation sources in text format**
 
+## Key principles
+
 Ideally, it should meet the following criteria:
 
 - no *vendor lock-in* (independence of format and content editor),
 - free and open publishing channels,
 - fully automated layout.
+
+## Why it matters
 
 Until a few years ago, the only tools available to deliver quality deliverables in PDF or HTML relied on binary and proprietary formats that didn't integrate well with development teams' [version control systems](../version-control-systems/).
 

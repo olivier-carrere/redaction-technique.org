@@ -1,10 +1,16 @@
 ---
 title: "Traduction"
 description: "Planifiez la traduction dès le début du projet documentaire : anticipez-la pour réduire coûts et délais, traduisez le contenu modulaire en parallèle de la rédaction, et organisez le référentiel source par langue."
+goal: [process]
+contentType: concept
 ---
 import Mermaid from '../../../../components/Mermaid.astro';
 
+## Définition
+
 Les contraintes de traduction doivent être prises en compte en amont du processus rédactionnel. Elles ont des implications autant sur le style rédactionnel que sur l'organisation du référentiel.
+
+## Pourquoi c'est important
 
 Il n'y a pas de recette miracle : la livraison d'informations dans plusieurs langues demande un suivi constant. Mais la prise en compte des contraintes en amont et l'utilisation d'une méthodologie appropriée permettent d'améliorer la qualité et de diminuer les coûts et les délais de livraison des versions multilingues. La traduction doit être intégrée au workflow documentaire. Il faut également faire communiquer avec les traducteurs les différents acteurs : rédacteurs techniques, mais également ingénieurs, experts et concepteurs.
 
@@ -31,6 +37,8 @@ gantt
     Validations partielles :p5, after p4, 1d
     Livraison              :p6, after p5, 1d`} />
 **Parallélisation de la rédaction et de la traduction**
+
+## Principes clés
 
 En ce qui concerne le référentiel des fichiers sources, vaut-il mieux placer les répertoires de langue en amont ou en aval des répertoires de projets documentaires ? Autrement dit, vaut-il mieux adopter la structure suivante :
 

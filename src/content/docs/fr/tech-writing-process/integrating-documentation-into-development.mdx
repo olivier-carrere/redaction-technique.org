@@ -1,8 +1,12 @@
 ---
 title: "Intégrer la documentation aux processus de développement"
 description: "Découvrez pourquoi la documentation technique doit être livrée, versionnée et contrôlée en même temps que le produit, grâce aux formats texte comme DocBook, DITA XML et reStructuredText."
+goal: [docs-as-code]
+contentType: concept
 ---
 import Mermaid from '../../../../components/Mermaid.astro';
+
+## Définition
 
 La documentation fait partie du logiciel. Fournie avec le produit, elle doit :
 
@@ -32,11 +36,15 @@ graph TD
     linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **Sources de documentation modulaires au format texte**
 
+## Principes clés
+
 Elle doit répondre idéalement aux critères suivants :
 
 -   pas de *vendor lock-in* (indépendance du format et de l'éditeur de contenu),
 -   chaînes de publication libres et gratuites,
 -   mise en page totalement automatisée.
+
+## Pourquoi c'est important
 
 Il y a quelques années encore, les seuls outils permettant de fournir des livrables de qualité au format PDF ou HTML reposaient sur des formats binaires et propriétaires qui s'intégraient mal aux systèmes de gestion de versions des équipes de développement.
 

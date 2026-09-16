@@ -2,9 +2,13 @@
 title: "A single repository?"
 description: "A single Git repository for all technical documentation content maximizes reuse, consistency, and quality while simplifying collaboration across writing and dev teams."
 tags: [git, version-control]
+goal: [docs-as-code]
+contentType: concept
 ---
 
 import Mermaid from '../../../../components/Mermaid.astro';
+
+## Definition
 
 Ideally, all content should be placed in a single repository, such as Git version control software. This maximizes reuse, consistency, and quality. If the content is in [DITA XML](../../formats/modular-documentation/) or DocBook format, for example, the *single-sourcing* capabilities of these formats can be fully exploited to publish the content in the appropriate form.
 
@@ -30,6 +34,8 @@ graph TD
 
     linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
 **Single Repository**
+
+## Trade-offs
 
 In practice, it appears that very few companies have taken this step. It is true that until structured formats are taught in secondary education, it seems unrealistic to expect all team members within a company to adopt them, especially if employee turnover is high. A [CMS](../cms-workflow-and-reliability/) can help bridge the gap, but its reliability must be carefully evaluated.
 

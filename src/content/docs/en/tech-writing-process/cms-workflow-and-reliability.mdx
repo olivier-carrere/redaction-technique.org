@@ -2,10 +2,15 @@
 title: "CMS: workflow as a bonus, but reliability to be tested"
 description: "A CMS like SharePoint or Alfresco adds workflow and file-locking to technical writing, and some (DocZone, Componize) even handle DITA XML - but their reliability for archiving source files must be tested and backed by a solid backup strategy."
 tags: [version-control]
+goal: [docs-as-code]
+contentType: concept
 ---
 
+## Definition
 
 The <abbr title="Content Management System">CMS</abbr>, often termed this way for marketing purposes but more accurately described by the acronym <abbr title="Electronic Document Management System">EDMS</abbr>, introduces workflow and link management features that are invaluable for handling modular documents.
+
+## Key principles
 
 When using monolithic formats such as FrameMaker, technical writers can employ a CMS like SharePoint, Alfresco, or similar systems (as an alternative to a [single Git repository](../single-repository/)) to:
 
@@ -16,6 +21,8 @@ When using monolithic formats such as FrameMaker, technical writers can employ a
 This approach is more efficient than using a simple file server, primarily because file transfers over the network are less frequent. However, it remains necessary to lock files being modified, a task managed by the CMS.
 
 While originally designed for monolithic documents, many CMS solutions now accommodate the modularization of technical documentation. Systems such as DocZone or Componize, the latter built on Alfresco, are specifically designed to manage [modular documentation](../../formats/modular-documentation/) using the DITA XML architecture.
+
+## Trade-offs
 
 How can we be sure that solutions updated this often — frequently for commercial rather than technical reasons — stay consistently reliable?
 
