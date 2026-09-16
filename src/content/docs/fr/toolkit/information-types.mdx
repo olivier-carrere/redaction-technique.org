@@ -69,6 +69,25 @@ Dans une approche docs-as-code, un auteur répond à un **type d'information** e
 
 ---
 
+## Métadonnées frontmatter : contentType
+
+Pour rendre l'architecture de l'information lisible par machine et garantir sa cohérence au fil des contributions, chaque page de documentation déclare son type d'information dans ses métadonnées frontmatter :
+
+```yaml
+---
+title: "<Titre de l'article>"
+description: "<Résumé en une phrase>"
+contentType: concept # concept | task | reference
+---
+```
+
+- **Quand est-il requis ?** Tout sujet documentaire standard (un article expliquant un concept, détaillant une tâche ou fournissant des données de référence) doit obligatoirement renseigner `contentType`.
+- **Valeurs acceptées :** Strictement en minuscules : `concept`, `task` ou `reference`.
+- **Pages volontairement non typées :** Les index de section (`index.mdx`), les pages d'orientation ou de paliers (`/learn`, `/process` avec `pageType: landing`), les pages utilitaires (`/ask`, `/about-this-blog` avec `pageType: utility`) ou les synthèses d'architecture (`pageType: overview`) restent valides sans `contentType`.
+- **Pourquoi ces métadonnées ?** Elles permettent aux suites de tests automatisés (CI) et aux flux de l'API de vérifier la cohérence structurelle du corpus sans reposer sur des heuristiques de chemins fragiles.
+
+---
+
 ## Typologie de l'information et DITA
 
 La typologie de l'information s'appuie sur une tradition établie en communication technique, issue de travaux tels que le minimalisme de John Carroll et l'Information Mapping de Robert Horn.

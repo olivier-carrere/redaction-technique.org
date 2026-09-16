@@ -1,6 +1,8 @@
 ---
+import type { ContentType } from '../lib/content-types.ts';
+
 interface Props {
-  type: 'concept' | 'task' | 'reference';
+  type: ContentType;
 }
 
 const { type } = Astro.props;

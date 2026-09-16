@@ -69,6 +69,25 @@ In a docs-as-code workflow, an author addresses an **information type** by adapt
 
 ---
 
+## Frontmatter metadata: contentType
+
+To keep the information architecture machine-readable and consistent across builds, API feeds, and automated checks, documentation pages declare their information type in frontmatter:
+
+```yaml
+---
+title: "<Article Title>"
+description: "<One-sentence summary>"
+contentType: concept # concept | task | reference
+---
+```
+
+- **When it is required:** Every standard documentation topic (an article explaining a concept, guiding a task, or documenting reference lookup specifications) must specify `contentType`.
+- **Accepted values:** Strictly lowercase `concept`, `task`, or `reference`.
+- **Intentionally untyped pages:** Section indexes (`index.mdx`), landing/navigation pages (such as `/learn` or `/process` with `pageType: landing`), utility pages (`/ask`, `/about-this-blog` with `pageType: utility`), or architectural overviews (`pageType: overview`) remain valid without `contentType`.
+- **Why it exists:** Frontmatter metadata enables automated CI validation tests and machine feeds to verify structural consistency without relying on brittle path conventions.
+
+---
+
 ## Information typing and DITA
 
 Information typing has a rich history in technical communication, drawing on research such as John Carroll's minimalism and Robert Horn's Information Mapping.
