@@ -218,6 +218,15 @@ const markdown = await fetch(doc.markdown)
 console.log(`Fetched "${doc.title}" (${markdown.length} bytes)`);
 ```
 
+### Interactive Documentation Explorer
+
+An interactive, in-browser Documentation Explorer is embedded directly within the Documentation API page ([`/en/about-the-api/`](https://docs.redaction-technique.org/en/about-the-api/) and [`/fr/about-the-api/`](https://docs.redaction-technique.org/fr/about-the-api/)):
+- **Real-time search**: Instant client-side search across titles, descriptions, headings, and tags without server-side dependencies.
+- **Canonical taxonomy filtering**: Filter by information type (`concept`, `task`, `reference`), structural page role (`topic`, `index`, `landing`, `overview`, `utility`), and language locale (`en`, `fr`).
+- **Dual-retrieval model**: Every card provides direct links to the rendered HTML documentation and the pre-rendered Markdown mirror.
+- **One-click clipboard actions**: Copy Markdown URLs or generate equivalent public API query URLs (`Copy API query`) on demand.
+- **Shareable state**: Filter and search queries are synchronized via URL parameters (`?q=...&contentType=...&pageType=...&lang=...`).
+
 ---
 
 ## 5. API Stability Principles and Contract Guarantees

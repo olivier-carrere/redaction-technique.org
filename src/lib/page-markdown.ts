@@ -310,6 +310,7 @@ export function getPageMarkdown(
   text = text.replace(/<PyScriptMoliere[^>]*\/?>/gi, '');
   text = text.replace(/<DitaRenameBox[^>]*\/?>/gi, '');
   text = text.replace(/<AskAssistant[^>]*\/?>/gi, '');
+  text = text.replace(/<DocumentationExplorer[^>]*\/?>/gi, '');
   text = text.replace(/<BrowseAll[^>]*\/?>/gi, '');
   text = text.replace(/<SiteOrientation[^>]*\/?>/gi, '');
   text = text.replace(/<StartHere[^>]*\/?>/gi, '');

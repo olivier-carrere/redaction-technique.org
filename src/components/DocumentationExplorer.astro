@@ -1,0 +1,1070 @@
+---
+/**
+ * DocumentationExplorer.astro
+ *
+ * Lightweight, interactive, client-side Documentation Explorer built on top of the
+ * public static documentation API.
+ *
+ * Provides: Discover → Filter → Inspect → Retrieve
+ *
+ * - Instant in-browser search across title, description, headings, keywords, and tags
+ * - Canonical taxonomy filters (contentType, pageType, language)
+ * - HTML and Markdown dual-retrieval model
+ * - Accessible "Copy Markdown URL" action
+ * - "Copy API query" action reflecting current filter state
+ * - Shareable URL state (?q=...&contentType=...&pageType=...&lang=...)
+ * - Zero external dependencies, pure vanilla JS and native CSS
+ */
+import { CONTENT_TYPES, PAGE_TYPES } from '../lib/content-types';
+
+interface Props {
+  lang?: 'en' | 'fr';
+}
+
+const { lang = 'en' } = Astro.props;
+const isFr = lang === 'fr';
+
+const t = {
+  en: {
+    title: 'Documentation Explorer',
+    searchLabel: 'Search documentation topics',
+    searchPlaceholder: 'Search by keyword, concept, task, tool (e.g. DITA, Git, regex)…',
+    clearSearch: 'Clear search',
+    filtersHeading: 'Filters',
+    langLabel: 'Language',
+    allLangs: 'All languages',
+    enLang: 'English',
+    frLang: 'Français',
+    contentTypeLabel: 'Information type',
+    allContentTypes: 'All information types',
+    conceptType: 'Concept',
+    taskType: 'Task',
+    referenceType: 'Reference',
+    pageTypeLabel: 'Structural role',
+    allPageTypes: 'All page roles',
+    topicPage: 'Topic',
+    indexPage: 'Index',
+    landingPage: 'Landing page',
+    overviewPage: 'Overview',
+    utilityPage: 'Utility',
+    showingResults: 'Showing {count} of {total} documents',
+    resetFilters: 'Reset filters',
+    copyApiQuery: 'Copy API query',
+    copiedApiQuery: '✓ Query URL copied',
+    readDoc: 'Read documentation →',
+    viewMarkdown: 'Markdown ↗',
+    copyMarkdownUrl: 'Copy Markdown URL',
+    copiedMarkdownUrl: '✓ Markdown URL copied',
+    noResultsTitle: 'No documentation matches your filters.',
+    noResultsSuggestion: 'Try clearing your search terms or relaxing the information type and role filters.',
+    loading: 'Loading documentation index…',
+  },
+  fr: {
+    title: 'Explorateur de documentation',
+    searchLabel: 'Rechercher dans les rubriques documentaires',
+    searchPlaceholder: 'Rechercher par mot-clé, concept, tâche, outil (ex. DITA, Git, regex)…',
+    clearSearch: 'Effacer la recherche',
+    filtersHeading: 'Filtres',
+    langLabel: 'Langue',
+    allLangs: 'Toutes les langues',
+    enLang: 'English',
+    frLang: 'Français',
+    contentTypeLabel: "Type d'information",
+    allContentTypes: "Tous les types d'information",
+    conceptType: 'Concept',
+    taskType: 'Tâche',
+    referenceType: 'Référence',
+    pageTypeLabel: 'Rôle structurel',
+    allPageTypes: 'Tous les rôles',
+    topicPage: 'Sujet (Topic)',
+    indexPage: 'Index',
+    landingPage: 'Page de renvoi (Landing)',
+    overviewPage: "Vue d'ensemble (Overview)",
+    utilityPage: 'Utilitaire (Utility)',
+    showingResults: 'Affichage de {count} sur {total} documents',
+    resetFilters: 'Réinitialiser les filtres',
+    copyApiQuery: "Copier la requête d'API",
+    copiedApiQuery: '✓ Requête URL copiée',
+    readDoc: 'Consulter la documentation →',
+    viewMarkdown: 'Markdown ↗',
+    copyMarkdownUrl: "Copier l'URL Markdown",
+    copiedMarkdownUrl: '✓ URL Markdown copiée',
+    noResultsTitle: 'Aucun document ne correspond à vos critères.',
+    noResultsSuggestion: 'Essayez d’élargir vos termes de recherche ou de réinitialiser les filtres de type et de rôle.',
+    loading: 'Chargement de l’index documentaire…',
+  },
+}[isFr ? 'fr' : 'en'];
+---
+
+<div
+  class="doc-explorer not-content"
+  id="doc-explorer"
+  data-lang={lang}
+  data-site-url="https://docs.redaction-technique.org"
+>
+  <!-- Search and Toolbar -->
+  <div class="doc-explorer-panel">
+    <div class="doc-explorer-search-row" role="search" aria-label={t.title}>
+      <label for="doc-explorer-search" class="sr-only">{t.searchLabel}</label>
+      <div class="doc-explorer-search-wrapper">
+        <svg class="doc-explorer-search-icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input
+          type="search"
+          id="doc-explorer-search"
+          class="doc-explorer-input"
+          placeholder={t.searchPlaceholder}
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button
+          type="button"
+          id="doc-explorer-clear"
+          class="doc-explorer-clear-btn"
+          aria-label={t.clearSearch}
+          hidden
+        >
+          ✕
+        </button>
+      </div>
+    </div>
+
+    <!-- Filters Row -->
+    <div class="doc-explorer-filters-row">
+      <!-- Language Filter -->
+      <div class="doc-explorer-filter-group">
+        <label for="doc-explorer-filter-lang" class="doc-explorer-label">{t.langLabel}</label>
+        <select id="doc-explorer-filter-lang" class="doc-explorer-select">
+          <option value="en" selected={lang === 'en'}>{t.enLang}</option>
+          <option value="fr" selected={lang === 'fr'}>{t.frLang}</option>
+          <option value="all">{t.allLangs}</option>
+        </select>
+      </div>
+
+      <!-- Information Type Filter -->
+      <div class="doc-explorer-filter-group">
+        <label for="doc-explorer-filter-content-type" class="doc-explorer-label">{t.contentTypeLabel}</label>
+        <select id="doc-explorer-filter-content-type" class="doc-explorer-select">
+          <option value="all">{t.allContentTypes}</option>
+          {CONTENT_TYPES.map((ct) => (
+            <option value={ct}>
+              {ct === 'concept' ? t.conceptType : ct === 'task' ? t.taskType : t.referenceType}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <!-- Page Role Filter -->
+      <div class="doc-explorer-filter-group">
+        <label for="doc-explorer-filter-page-type" class="doc-explorer-label">{t.pageTypeLabel}</label>
+        <select id="doc-explorer-filter-page-type" class="doc-explorer-select">
+          <option value="all">{t.allPageTypes}</option>
+          {PAGE_TYPES.map((pt) => (
+            <option value={pt}>
+              {pt === 'topic' ? t.topicPage : pt === 'index' ? t.indexPage : pt === 'landing' ? t.landingPage : pt === 'overview' ? t.overviewPage : t.utilityPage}
+            </option>
+          ))}
+        </select>
+      </div>
+    </div>
+
+    <!-- Summary / Actions Bar -->
+    <div class="doc-explorer-status-bar">
+      <span id="doc-explorer-count" class="doc-explorer-count" aria-live="polite">
+        {t.loading}
+      </span>
+      <div class="doc-explorer-actions">
+        <button
+          type="button"
+          id="doc-explorer-reset-btn"
+          class="doc-explorer-btn doc-explorer-btn-ghost"
+          hidden
+        >
+          {t.resetFilters}
+        </button>
+        <button
+          type="button"
+          id="doc-explorer-copy-query-btn"
+          class="doc-explorer-btn doc-explorer-btn-outline"
+          title="Copy the public API query URL corresponding to current filters"
+        >
+          <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <span class="btn-text">{t.copyApiQuery}</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Live region for global clipboard feedback -->
+  <div id="doc-explorer-feedback" class="sr-only" aria-live="assertive"></div>
+
+  <!-- Results List -->
+  <div id="doc-explorer-results" class="doc-explorer-results" aria-live="polite"></div>
+
+  <!-- Empty State -->
+  <div id="doc-explorer-empty" class="doc-explorer-empty" hidden>
+    <div class="doc-explorer-empty-icon" aria-hidden="true">🔍</div>
+    <h3 class="doc-explorer-empty-title">{t.noResultsTitle}</h3>
+    <p class="doc-explorer-empty-desc">{t.noResultsSuggestion}</p>
+    <button type="button" id="doc-explorer-empty-reset" class="doc-explorer-btn doc-explorer-btn-primary">
+      {t.resetFilters}
+    </button>
+  </div>
+</div>
+
+<script>
+  /**
+   * Documentation Explorer Client Controller
+   */
+  interface DocumentResource {
+    title: string;
+    description?: string;
+    url: string;
+    markdown: string;
+    locale: 'en' | 'fr';
+    pageType: string;
+    contentType: string | null;
+    wordCount?: number;
+    headings?: Array<{ level: number; text: string; slug?: string }>;
+    keywords?: string[];
+    tags?: string[];
+  }
+
+  interface CatalogIndex {
+    count: number;
+    documents: DocumentResource[];
+  }
+
+  const catalogCache = new Map<string, DocumentResource[]>();
+
+  function initDocExplorer() {
+    const root = document.getElementById('doc-explorer');
+    if (!root) return;
+
+    const defaultLang = root.dataset.lang === 'fr' ? 'fr' : 'en';
+    const siteUrl = root.dataset.siteUrl || window.location.origin;
+
+    // UI elements
+    const searchInput = document.getElementById('doc-explorer-search') as HTMLInputElement | null;
+    const clearBtn = document.getElementById('doc-explorer-clear') as HTMLButtonElement | null;
+    const langSelect = document.getElementById('doc-explorer-filter-lang') as HTMLSelectElement | null;
+    const ctSelect = document.getElementById('doc-explorer-filter-content-type') as HTMLSelectElement | null;
+    const ptSelect = document.getElementById('doc-explorer-filter-page-type') as HTMLSelectElement | null;
+    const countEl = document.getElementById('doc-explorer-count');
+    const resetBtn = document.getElementById('doc-explorer-reset-btn') as HTMLButtonElement | null;
+    const copyQueryBtn = document.getElementById('doc-explorer-copy-query-btn') as HTMLButtonElement | null;
+    const resultsContainer = document.getElementById('doc-explorer-results');
+    const emptyState = document.getElementById('doc-explorer-empty');
+    const emptyResetBtn = document.getElementById('doc-explorer-empty-reset');
+    const feedbackEl = document.getElementById('doc-explorer-feedback');
+
+    if (!searchInput || !langSelect || !ctSelect || !ptSelect || !resultsContainer || !emptyState) {
+      return;
+    }
+
+    const isFrUi = defaultLang === 'fr';
+    const strings = {
+      readDoc: isFrUi ? 'Consulter la documentation →' : 'Read documentation →',
+      viewMarkdown: 'Markdown ↗',
+      copyMarkdownUrl: isFrUi ? "Copier l'URL Markdown" : 'Copy Markdown URL',
+      copiedMarkdownUrl: isFrUi ? '✓ URL Markdown copiée' : '✓ Markdown URL copied',
+      copyApiQuery: isFrUi ? "Copier la requête d'API" : 'Copy API query',
+      copiedApiQuery: isFrUi ? '✓ Requête URL copiée' : '✓ Query URL copied',
+      showingResults: isFrUi
+        ? 'Affichage de {count} sur {total} documents'
+        : 'Showing {count} of {total} documents',
+    };
+
+    // Parse URL Search Parameters for shareable initial state
+    const initialParams = new URLSearchParams(window.location.search);
+    if (initialParams.has('q')) searchInput.value = initialParams.get('q') || '';
+    if (initialParams.has('lang')) {
+      const qLang = initialParams.get('lang');
+      if (['en', 'fr', 'all'].includes(qLang || '')) langSelect.value = qLang!;
+    }
+    if (initialParams.has('contentType')) {
+      const qCt = initialParams.get('contentType');
+      if (['concept', 'task', 'reference', 'all'].includes(qCt || '')) ctSelect.value = qCt!;
+    }
+    if (initialParams.has('pageType')) {
+      const qPt = initialParams.get('pageType');
+      if (['topic', 'index', 'landing', 'overview', 'utility', 'all'].includes(qPt || '')) ptSelect.value = qPt!;
+    }
+
+    // Toggle clear search button visibility
+    function updateClearBtn() {
+      if (clearBtn) clearBtn.hidden = !searchInput!.value;
+    }
+
+    // Fetch documents for the required catalog
+    async function fetchCatalog(langVal: string): Promise<DocumentResource[]> {
+      const endpoint =
+        langVal === 'en'
+          ? '/en/index.json'
+          : langVal === 'fr'
+            ? '/fr/index.json'
+            : '/index.json';
+
+      if (catalogCache.has(endpoint)) {
+        return catalogCache.get(endpoint)!;
+      }
+
+      try {
+        const res = await fetch(endpoint);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data: CatalogIndex = await res.json();
+        catalogCache.set(endpoint, data.documents || []);
+        return data.documents || [];
+      } catch (err) {
+        console.error(`[DocExplorer] Failed to load ${endpoint}:`, err);
+        return [];
+      }
+    }
+
+    // Diacritic & Case normalization for robust text search
+    function normalizeStr(str: string): string {
+      return (str || '')
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .trim();
+    }
+
+    // Update query string in URL without page reload
+    function syncUrlState() {
+      const params = new URLSearchParams();
+      const qVal = searchInput!.value.trim();
+      const langVal = langSelect!.value;
+      const ctVal = ctSelect!.value;
+      const ptVal = ptSelect!.value;
+
+      if (qVal) params.set('q', qVal);
+      if (langVal !== defaultLang) params.set('lang', langVal);
+      if (ctVal !== 'all') params.set('contentType', ctVal);
+      if (ptVal !== 'all') params.set('pageType', ptVal);
+
+      const qs = params.toString();
+      const newUrl = qs
+        ? `${window.location.pathname}?${qs}${window.location.hash || ''}`
+        : `${window.location.pathname}${window.location.hash || ''}`;
+
+      window.history.replaceState(null, '', newUrl);
+    }
+
+    // Compute the equivalent public API query URL
+    function getEquivalentApiQueryUrl(): string {
+      const langVal = langSelect!.value;
+      const ctVal = ctSelect!.value;
+      const ptVal = ptSelect!.value;
+
+      let baseEndpoint = `${siteUrl}/index.json`;
+      const queryParams = new URLSearchParams();
+
+      if (langVal === 'en') {
+        baseEndpoint = `${siteUrl}/en/index.json`;
+      } else if (langVal === 'fr') {
+        baseEndpoint = `${siteUrl}/fr/index.json`;
+      }
+
+      if (ctVal !== 'all') queryParams.set('contentType', ctVal);
+      if (ptVal !== 'all') queryParams.set('pageType', ptVal);
+      queryParams.set('fields', 'title,url,markdown,contentType');
+
+      const qs = queryParams.toString();
+      return qs ? `${baseEndpoint}?${qs}` : baseEndpoint;
+    }
+
+    // Announce to assistive tech
+    function announce(msg: string) {
+      if (feedbackEl) {
+        feedbackEl.textContent = msg;
+      }
+    }
+
+    // Main render function
+    async function applyFilters() {
+      updateClearBtn();
+      syncUrlState();
+
+      const langVal = langSelect!.value;
+      const ctVal = ctSelect!.value;
+      const ptVal = ptSelect!.value;
+      const queryTokens = normalizeStr(searchInput!.value)
+        .split(/\s+/)
+        .filter(Boolean);
+
+      const isModified =
+        searchInput!.value.trim() !== '' ||
+        langVal !== defaultLang ||
+        ctVal !== 'all' ||
+        ptVal !== 'all';
+
+      if (resetBtn) resetBtn.hidden = !isModified;
+
+      const docs = await fetchCatalog(langVal);
+
+      const filtered = docs.filter((doc) => {
+        // ContentType filter
+        if (ctVal !== 'all' && doc.contentType !== ctVal) return false;
+
+        // PageType filter
+        if (ptVal !== 'all' && doc.pageType !== ptVal) return false;
+
+        // Text Search
+        if (queryTokens.length > 0) {
+          const docTitle = normalizeStr(doc.title);
+          const docDesc = normalizeStr(doc.description || '');
+          const docHeadings = (doc.headings || []).map((h) => normalizeStr(h.text)).join(' ');
+          const docTags = (doc.tags || []).map(normalizeStr).join(' ');
+          const docKeywords = (doc.keywords || []).map(normalizeStr).join(' ');
+          const docSlug = normalizeStr(doc.url);
+
+          const fullSearchable = `${docTitle} ${docDesc} ${docHeadings} ${docTags} ${docKeywords} ${docSlug}`;
+
+          const allTokensMatch = queryTokens.every((token) => fullSearchable.includes(token));
+          if (!allTokensMatch) return false;
+        }
+
+        return true;
+      });
+
+      // Update count
+      if (countEl) {
+        countEl.textContent = strings.showingResults
+          .replace('{count}', String(filtered.length))
+          .replace('{total}', String(docs.length));
+      }
+
+      // Empty state
+      if (filtered.length === 0) {
+        resultsContainer!.innerHTML = '';
+        emptyState!.hidden = false;
+        return;
+      }
+
+      emptyState!.hidden = true;
+
+      // Render cards
+      resultsContainer!.innerHTML = filtered
+        .map((doc) => {
+          const ctLabel = doc.contentType
+            ? doc.contentType === 'task'
+              ? isFrUi ? 'Tâche' : 'Task'
+              : doc.contentType === 'concept'
+                ? 'Concept'
+                : isFrUi ? 'Référence' : 'Reference'
+            : null;
+
+          const ptLabel =
+            doc.pageType === 'topic'
+              ? isFrUi ? 'Sujet' : 'Topic'
+              : doc.pageType === 'landing'
+                ? isFrUi ? 'Renvoi' : 'Landing'
+                : doc.pageType === 'overview'
+                  ? isFrUi ? 'Aperçu' : 'Overview'
+                  : doc.pageType === 'index'
+                    ? 'Index'
+                    : 'Utility';
+
+          const ctBadge = ctLabel
+            ? `<span class="doc-card-badge doc-card-badge-${doc.contentType}">${ctLabel}</span>`
+            : '';
+          const ptBadge = `<span class="doc-card-badge doc-card-badge-role">${ptLabel}</span>`;
+          const langBadge = `<span class="doc-card-badge doc-card-badge-lang">${doc.locale.toUpperCase()}</span>`;
+
+          const descHtml = doc.description
+            ? `<p class="doc-card-desc">${escapeHtml(doc.description)}</p>`
+            : '';
+
+          return `
+            <article class="doc-card">
+              <div class="doc-card-header">
+                <div class="doc-card-badges">
+                  ${ctBadge}
+                  ${ptBadge}
+                  ${langBadge}
+                </div>
+                <h3 class="doc-card-title">
+                  <a href="${escapeHtml(doc.url)}" class="doc-card-title-link">${escapeHtml(doc.title)}</a>
+                </h3>
+              </div>
+              ${descHtml}
+              <div class="doc-card-actions">
+                <a href="${escapeHtml(doc.url)}" class="doc-card-btn doc-card-btn-primary">
+                  ${strings.readDoc}
+                </a>
+                <a href="${escapeHtml(doc.markdown)}" class="doc-card-btn doc-card-btn-secondary" title="${strings.viewMarkdown}">
+                  ${strings.viewMarkdown}
+                </a>
+                <button
+                  type="button"
+                  class="doc-card-btn doc-card-btn-copy js-copy-md"
+                  data-markdown-url="${escapeHtml(doc.markdown)}"
+                  aria-label="${strings.copyMarkdownUrl}: ${escapeHtml(doc.title)}"
+                >
+                  <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  <span class="btn-text">${strings.copyMarkdownUrl}</span>
+                </button>
+              </div>
+            </article>
+          `;
+        })
+        .join('');
+    }
+
+    function escapeHtml(str: string): string {
+      return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    // Event listeners
+    let debounceTimer: ReturnType<typeof setTimeout> | null = null;
+    searchInput.addEventListener('input', () => {
+      if (debounceTimer) clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(applyFilters, 120);
+    });
+
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        searchInput.focus();
+        applyFilters();
+      });
+    }
+
+    langSelect.addEventListener('change', applyFilters);
+    ctSelect.addEventListener('change', applyFilters);
+    ptSelect.addEventListener('change', applyFilters);
+
+    function resetAllFilters() {
+      searchInput!.value = '';
+      langSelect!.value = defaultLang;
+      ctSelect!.value = 'all';
+      ptSelect!.value = 'all';
+      searchInput!.focus();
+      applyFilters();
+    }
+
+    if (resetBtn) resetBtn.addEventListener('click', resetAllFilters);
+    if (emptyResetBtn) emptyResetBtn.addEventListener('click', resetAllFilters);
+
+    // Copy API query URL button
+    if (copyQueryBtn) {
+      copyQueryBtn.addEventListener('click', async () => {
+        const queryUrl = getEquivalentApiQueryUrl();
+        try {
+          await navigator.clipboard.writeText(queryUrl);
+          const textSpan = copyQueryBtn.querySelector('.btn-text');
+          if (textSpan) textSpan.textContent = strings.copiedApiQuery;
+          copyQueryBtn.classList.add('doc-explorer-btn-copied');
+          announce(strings.copiedApiQuery);
+          setTimeout(() => {
+            if (textSpan) textSpan.textContent = strings.copyApiQuery;
+            copyQueryBtn.classList.remove('doc-explorer-btn-copied');
+          }, 2000);
+        } catch (err) {
+          console.error('[DocExplorer] Clipboard access denied:', err);
+        }
+      });
+    }
+
+    // Delegated click event for card "Copy Markdown URL" buttons
+    resultsContainer.addEventListener('click', async (e) => {
+      const target = (e.target as HTMLElement).closest('.js-copy-md') as HTMLButtonElement | null;
+      if (!target) return;
+
+      const mdUrl = target.dataset.markdownUrl;
+      if (!mdUrl) return;
+
+      try {
+        await navigator.clipboard.writeText(mdUrl);
+        const textSpan = target.querySelector('.btn-text');
+        if (textSpan) textSpan.textContent = strings.copiedMarkdownUrl;
+        target.classList.add('doc-card-btn-copied');
+        announce(strings.copiedMarkdownUrl);
+
+        setTimeout(() => {
+          if (textSpan) textSpan.textContent = strings.copyMarkdownUrl;
+          target.classList.remove('doc-card-btn-copied');
+        }, 2000);
+      } catch (err) {
+        console.error('[DocExplorer] Clipboard write failed:', err);
+      }
+    });
+
+    // Initial load
+    applyFilters();
+  }
+
+  // Initialize on page load and Astro view transitions
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDocExplorer);
+  } else {
+    initDocExplorer();
+  }
+  document.addEventListener('astro:page-load', initDocExplorer);
+</script>
+
+<style>
+  .doc-explorer {
+    margin: 2rem 0 3rem;
+    font-family: var(--sl-font);
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .doc-explorer-panel {
+    background: var(--sl-color-gray-6);
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 8px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Search row */
+  .doc-explorer-search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .doc-explorer-search-icon {
+    position: absolute;
+    left: 0.85rem;
+    color: var(--sl-color-gray-3);
+    pointer-events: none;
+  }
+
+  .doc-explorer-input {
+    width: 100%;
+    padding: 0.65rem 2.5rem 0.65rem 2.6rem;
+    font-size: var(--sl-text-base);
+    color: var(--sl-color-white);
+    background: var(--sl-color-gray-7, #131418);
+    border: 1px solid var(--sl-color-gray-4);
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  :root[data-theme='light'] .doc-explorer-input {
+    color: var(--sl-color-black);
+    background: #ffffff;
+    border-color: var(--sl-color-gray-4);
+  }
+
+  .doc-explorer-input:focus {
+    border-color: var(--sl-color-accent);
+    box-shadow: 0 0 0 2px var(--sl-color-accent-low);
+  }
+
+  .doc-explorer-clear-btn {
+    position: absolute;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    color: var(--sl-color-gray-3);
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .doc-explorer-clear-btn:hover {
+    color: var(--sl-color-white);
+    background: var(--sl-color-gray-5);
+  }
+
+  :root[data-theme='light'] .doc-explorer-clear-btn:hover {
+    color: var(--sl-color-black);
+  }
+
+  /* Filters row */
+  .doc-explorer-filters-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .doc-explorer-filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .doc-explorer-label {
+    font-size: var(--sl-text-xs);
+    font-weight: 600;
+    color: var(--sl-color-gray-2);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .doc-explorer-select {
+    padding: 0.45rem 0.65rem;
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-white);
+    background: var(--sl-color-gray-7, #131418);
+    border: 1px solid var(--sl-color-gray-4);
+    border-radius: 6px;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.15s ease;
+  }
+
+  :root[data-theme='light'] .doc-explorer-select {
+    color: var(--sl-color-black);
+    background: #ffffff;
+  }
+
+  .doc-explorer-select:focus {
+    border-color: var(--sl-color-accent);
+    box-shadow: 0 0 0 2px var(--sl-color-accent-low);
+  }
+
+  /* Status Bar */
+  .doc-explorer-status-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--sl-color-gray-5);
+  }
+
+  .doc-explorer-count {
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-gray-2);
+    font-weight: 500;
+  }
+
+  .doc-explorer-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .doc-explorer-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.75rem;
+    font-size: var(--sl-text-xs);
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+
+  .doc-explorer-btn-primary {
+    background: var(--sl-color-accent);
+    color: var(--sl-color-black);
+    border: 1px solid var(--sl-color-accent);
+  }
+
+  .doc-explorer-btn-primary:hover {
+    background: var(--sl-color-accent-high);
+  }
+
+  .doc-explorer-btn-outline {
+    background: transparent;
+    color: var(--sl-color-text-accent, var(--sl-color-accent));
+    border: 1px solid var(--sl-color-gray-4);
+  }
+
+  .doc-explorer-btn-outline:hover {
+    background: var(--sl-color-gray-5);
+    border-color: var(--sl-color-gray-3);
+  }
+
+  .doc-explorer-btn-ghost {
+    background: transparent;
+    color: var(--sl-color-gray-3);
+    border: none;
+  }
+
+  .doc-explorer-btn-ghost:hover {
+    color: var(--sl-color-white);
+    text-decoration: underline;
+  }
+
+  .doc-explorer-btn-copied {
+    border-color: #10b981 !important;
+    color: #10b981 !important;
+  }
+
+  /* Results List */
+  .doc-explorer-results {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .doc-card {
+    background: var(--sl-color-gray-6);
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 8px;
+    padding: 1.15rem 1.25rem;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .doc-card:hover {
+    border-color: var(--sl-color-gray-4);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .doc-card-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .doc-card-badges {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .doc-card-badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.12rem 0.5rem;
+    border-radius: 9999px;
+    line-height: 1.4;
+  }
+
+  /* Concept Blue */
+  .doc-card-badge-concept {
+    background: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    color: #93c5fd;
+  }
+  :root[data-theme='light'] .doc-card-badge-concept {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+    color: #1d4ed8;
+  }
+
+  /* Task Green */
+  .doc-card-badge-task {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    color: #6ee7b7;
+  }
+  :root[data-theme='light'] .doc-card-badge-task {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+    color: #15803d;
+  }
+
+  /* Reference Purple */
+  .doc-card-badge-reference {
+    background: rgba(168, 85, 247, 0.15);
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    color: #d8b4fe;
+  }
+  :root[data-theme='light'] .doc-card-badge-reference {
+    background: #faf5ff;
+    border-color: #e9d5ff;
+    color: #7e22ce;
+  }
+
+  /* Role Badge Neutral */
+  .doc-card-badge-role {
+    background: var(--sl-color-gray-5);
+    color: var(--sl-color-gray-2);
+    border: 1px solid var(--sl-color-gray-4);
+  }
+
+  /* Language Badge */
+  .doc-card-badge-lang {
+    background: var(--sl-color-gray-5);
+    color: var(--sl-color-gray-2);
+    border: 1px solid var(--sl-color-gray-4);
+    font-family: var(--sl-font-mono);
+  }
+
+  .doc-card-title {
+    margin: 0.15rem 0 0 !important;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  .doc-card-title-link {
+    color: var(--sl-color-white);
+    text-decoration: none;
+  }
+
+  :root[data-theme='light'] .doc-card-title-link {
+    color: var(--sl-color-black);
+  }
+
+  .doc-card-title-link:hover {
+    color: var(--sl-color-accent);
+    text-decoration: underline;
+  }
+
+  .doc-card-desc {
+    margin: 0 !important;
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-gray-2);
+    line-height: 1.5;
+  }
+
+  .doc-card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.4rem;
+    padding-top: 0.65rem;
+    border-top: 1px solid var(--sl-color-gray-5);
+  }
+
+  .doc-card-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: var(--sl-text-xs);
+    font-weight: 600;
+    padding: 0.35rem 0.65rem;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .doc-card-btn-primary {
+    background: var(--sl-color-accent-low);
+    color: var(--sl-color-accent-high);
+    border: 1px solid var(--sl-color-accent);
+  }
+
+  .doc-card-btn-primary:hover {
+    background: var(--sl-color-accent);
+    color: var(--sl-color-black);
+  }
+
+  .doc-card-btn-secondary {
+    background: transparent;
+    color: var(--sl-color-gray-2);
+    border: 1px solid var(--sl-color-gray-4);
+  }
+
+  .doc-card-btn-secondary:hover {
+    color: var(--sl-color-white);
+    border-color: var(--sl-color-gray-3);
+  }
+
+  :root[data-theme='light'] .doc-card-btn-secondary:hover {
+    color: var(--sl-color-black);
+  }
+
+  .doc-card-btn-copy {
+    background: transparent;
+    color: var(--sl-color-gray-3);
+    border: 1px solid transparent;
+  }
+
+  .doc-card-btn-copy:hover {
+    color: var(--sl-color-white);
+    background: var(--sl-color-gray-5);
+  }
+
+  :root[data-theme='light'] .doc-card-btn-copy:hover {
+    color: var(--sl-color-black);
+  }
+
+  .doc-card-btn-copied {
+    color: #10b981 !important;
+    background: rgba(16, 185, 129, 0.1) !important;
+    border-color: rgba(16, 185, 129, 0.3) !important;
+  }
+
+  /* Empty state */
+  .doc-explorer-empty {
+    margin-top: 2rem;
+    text-align: center;
+    padding: 3rem 1.5rem;
+    background: var(--sl-color-gray-6);
+    border: 1px dashed var(--sl-color-gray-4);
+    border-radius: 8px;
+  }
+
+  .doc-explorer-empty-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .doc-explorer-empty-title {
+    font-size: 1.25rem;
+    margin: 0 0 0.5rem !important;
+    color: var(--sl-color-white);
+  }
+
+  :root[data-theme='light'] .doc-explorer-empty-title {
+    color: var(--sl-color-black);
+  }
+
+  .doc-explorer-empty-desc {
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-gray-3);
+    max-width: 480px;
+    margin: 0 auto 1.25rem !important;
+  }
+
+  @media (max-width: 640px) {
+    .doc-explorer-panel {
+      padding: 1rem;
+    }
+    .doc-explorer-filters-row {
+      grid-template-columns: 1fr;
+    }
+    .doc-card-actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .doc-card-btn {
+      justify-content: center;
+    }
+  }
+</style>
