@@ -15,23 +15,46 @@ Tout ce qui suit est généré au moment du build à partir des mêmes sources M
 
 Le HTML rendu est conçu pour les navigateurs : habillage de navigation, CSS, interactivité côté client. Un LLM ou un agent qui n'a besoin que du texte de l'article doit retirer tout cela, et peut s'y mal prendre. Cette API évite l'aller-retour : elle sert directement le même contenu que les agents reconstruiraient autrement, sous forme de Markdown propre et de JSON structuré.
 
+import Mermaid from '../../../components/Mermaid.astro';
+
 ## Flux de travail rapide (Quick start)
 
 L'API s'articule autour d'un pipeline de récupération séquentiel en quatre étapes :
 
-```text
-GET /schema.json
-        ↓
-Découverte des endpoints, des filtres et de la taxonomie
-        ↓
-GET /fr/index.json?contentType=task&fields=title,url,markdown,contentType
-        ↓
-Sélection du document cible (ex. « tutorials/auto-insert-data-dita-xml/ »)
-        ↓
-Lecture de l'URL `markdown` annoncée
-        ↓
-GET /fr/tutorials/auto-insert-data-dita-xml.md
-```
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+flowchart TD
+    accTitle: Pipeline de récupération de l'API
+    accDescr: Pipeline de récupération séquentiel en quatre étapes : découverte du contrat, interrogation de l'index, sélection du document et récupération du Markdown.
+
+    A["GET /schema.json"] --> B["Découverte des endpoints, filtres et taxonomie"]
+    B --> C["Interroger l'index des documents"]
+    C --> D["Sélectionner le document cible"]
+    D --> E["Suivre l'URL markdown annoncée"]
+    E --> F["Récupérer le document Markdown"]
+
+    classDef stage fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+    classDef endpoint fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:1.5px,color:{{parentText}},font-weight:600
+
+    class A,C,F endpoint
+    class B,D,E stage
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
+
+Les quatre étapes de récupération avec leurs requêtes HTTP correspondantes :
+
+1. **Découvrir** : récupérer le contrat de découverte pour explorer les endpoints, la taxonomie et les paramètres de requête disponibles :
+   ```bash
+   GET /schema.json
+   ```
+2. **Filtrer** : interroger l'index avec les filtres et projections de champs souhaités :
+   ```bash
+   GET /fr/index.json?contentType=task&fields=title,url,markdown,contentType
+   ```
+3. **Sélectionner** : identifier le document cible parmi les résultats (ex. « tutorials/auto-insert-data-dita-xml/ ») et lire sa propriété `markdown` annoncée.
+4. **Récupérer** : suivre l'URL annoncée pour télécharger le Markdown source propre :
+   ```bash
+   GET /fr/tutorials/auto-insert-data-dita-xml.md
+   ```
 
 **Découvrir → Filtrer → Sélectionner → Récupérer** : les consommateurs découvrent les capacités depuis `/schema.json`, interrogent l'index pour filtrer les rubriques pertinentes, identifient l'URL Markdown associée et téléchargent directement le texte source propre.
 

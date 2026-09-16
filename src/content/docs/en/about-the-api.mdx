@@ -15,23 +15,46 @@ Everything below is generated at build time from the same Markdown source as the
 
 Rendered HTML is built for browsers: navigation chrome, CSS, client-side interactivity. An LLM or agent that just needs the article text has to strip all of that back out, and can get it wrong. This API skips the round-trip: it serves the same content agents would otherwise reconstruct, as clean Markdown and structured JSON, directly.
 
+import Mermaid from '../../../components/Mermaid.astro';
+
 ## Quick start workflow
 
 The API follows a straightforward, four-stage retrieval pipeline:
 
-```text
-GET /schema.json
-        ↓
-Discover endpoints, filters & taxonomy
-        ↓
-GET /en/index.json?contentType=task&fields=title,url,markdown,contentType
-        ↓
-Select document (e.g. "tutorials/auto-insert-data-dita-xml/")
-        ↓
-Read advertised `markdown` URL
-        ↓
-GET /en/tutorials/auto-insert-data-dita-xml.md
-```
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
+flowchart TD
+    accTitle: API Retrieval Pipeline
+    accDescr: Sequential four-stage retrieval pipeline: discover contract, query index, select document, and retrieve Markdown.
+
+    A["GET /schema.json"] --> B["Discover endpoints, filters & taxonomy"]
+    B --> C["Query document index"]
+    C --> D["Select target document"]
+    D --> E["Follow advertised markdown URL"]
+    E --> F["Retrieve Markdown document"]
+
+    classDef stage fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
+    classDef endpoint fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:1.5px,color:{{parentText}},font-weight:600
+
+    class A,C,F endpoint
+    class B,D,E stage
+
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
+
+The four retrieval stages with their corresponding HTTP requests:
+
+1. **Discover**: Fetch the discovery contract to inspect available endpoints, taxonomy, and query parameters:
+   ```bash
+   GET /schema.json
+   ```
+2. **Filter**: Query the index with desired filters and projected fields:
+   ```bash
+   GET /en/index.json?contentType=task&fields=title,url,markdown,contentType
+   ```
+3. **Select**: Identify the target document from the results (e.g. `tutorials/auto-insert-data-dita-xml/`) and read its advertised `markdown` property.
+4. **Retrieve**: Follow the advertised URL to fetch the clean Markdown source:
+   ```bash
+   GET /en/tutorials/auto-insert-data-dita-xml.md
+   ```
 
 **Discover → Filter → Select → Retrieve**: Consumers discover available capabilities from `/schema.json`, query the index for matching topics, read the advertised Markdown URL, and fetch the clean source text.
 

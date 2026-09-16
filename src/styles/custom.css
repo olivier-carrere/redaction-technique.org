@@ -572,6 +572,15 @@
   color: var(--sl-color-accent);
 }
 
+/* Expand touch hit area for heading anchors on mobile viewports and touch pointers (>= 44px) */
+@media (max-width: 50rem), (pointer: coarse) {
+  .sl-markdown-content .sl-anchor-link::after {
+    inset-block: -0.5rem;
+    inset-inline-start: -0.25rem;
+    inset-inline-end: -1.25rem;
+  }
+}
+
 /* 4. Left Sidebar Scanability */
 .sidebar-content summary .group-label .large {
   font-size: var(--sl-text-xs) !important;
