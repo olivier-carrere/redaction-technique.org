@@ -15,18 +15,53 @@ Everything below is generated at build time from the same Markdown source as the
 
 Rendered HTML is built for browsers: navigation chrome, CSS, client-side interactivity. An LLM or agent that just needs the article text has to strip all of that back out, and can get it wrong. This API skips the round-trip: it serves the same content agents would otherwise reconstruct, as clean Markdown and structured JSON, directly.
 
+## Quick start workflow
+
+The API follows a straightforward, four-stage retrieval pipeline:
+
+```text
+GET /schema.json
+        ↓
+Discover endpoints, filters & taxonomy
+        ↓
+GET /en/index.json?contentType=task&fields=title,url,markdown,contentType
+        ↓
+Select document (e.g. "tutorials/auto-insert-data-dita-xml/")
+        ↓
+Read advertised `markdown` URL
+        ↓
+GET /en/tutorials/auto-insert-data-dita-xml.md
+```
+
+**Discover → Filter → Select → Retrieve**: Consumers discover available capabilities from `/schema.json`, query the index for matching topics, read the advertised Markdown URL, and fetch the clean source text.
+
 ## Endpoints
 
 | Endpoint | Format | What it's for |
 | --- | --- | --- |
+| `/schema.json` | JSON | Machine-readable API discovery contract defining endpoints, query parameters, document schema, and self-describing taxonomy. |
 | `/llms.txt` | Plain text | A concise table of contents conforming to the [llms.txt](https://llmstxt.org/) convention — the entry point for an agent that wants to know what's here before fetching anything larger. |
 | `/llms-full.txt`, `/llms-full-en.txt`, `/llms-full-fr.txt` | Plain text | The entire corpus (bilingual, or one locale) concatenated into a single file, for an agent that wants to ingest everything in one request instead of one per page. |
 | `/index.json`, `/en/index.json`, `/fr/index.json` | JSON | A machine-readable document index: title, description, URL, word count, headings, tags, `pageType`, `contentType`, and taxonomy definitions for every page, with support for query filtering. |
-| `/schema.json` | JSON | Standalone machine-readable schema and self-describing taxonomy defining `pageType` and `contentType` classifications and descriptions. |
 | `/sitemap.md`, `/en/sitemap.md`, `/fr/sitemap.md` | Markdown | A hierarchical sitemap grouped by section, in a format an LLM can read directly rather than parsing an XML sitemap. |
 | `/en/<page>.md`, `/fr/<page>.md` | Markdown | A clean Markdown mirror of one page — the same text content as the HTML version, without layout or navigation markup. |
 
 The content under each page's `.md` endpoint is guaranteed byte-for-byte identical to that page's section inside `llms-full.txt` — an automated test in this repository checks that invariant on every build, across every document, not just spot checks.
+
+## Machine discovery via `/schema.json`
+
+Clients, search tools, and LLM/RAG pipelines do not need to hard-code endpoint URLs, query parameters, or classification taxonomies. The `/schema.json` endpoint acts as a **machine-readable API discovery contract**.
+
+From `/schema.json`, an external consumer can discover:
+
+- **Available endpoints**: Global, English, and French index URLs and resource locations (`schema.endpoints`).
+- **Supported locales**: `en` and `fr` (`schema.filters.lang`).
+- **Information types**: Canonical `contentType` values (`concept`, `task`, `reference`) and human-readable definitions (`schema.taxonomy.contentType`).
+- **Structural page types**: Canonical `pageType` values (`topic`, `index`, `landing`, `overview`, `utility`) and definitions (`schema.taxonomy.pageType`).
+- **Query parameters**: Supported query keys (`contentType`, `pageType`, `lang`, `fields`, `page`, `limit`), type definitions, defaults, and bounds (`schema.queryParameters`).
+- **Document properties**: Canonical record structure (`title`, `url`, `markdown`, `locale`, `pageType`, `contentType`, `wordCount`, `headings`, `keywords`, `tags`) and required fields (`schema.document`).
+- **Retrieval model**: Canonical identifier definition (`url`) and representation links (`schema.retrieval`).
+- **Pagination rules**: Minimum page (1), limit range (1–100, default 20), and boundary error behavior (`schema.queryParameters`).
 
 ## Document metadata and information typing
 
@@ -70,50 +105,98 @@ The JSON documentation index supports query parameter filtering using an AND ope
 
 Invalid parameter values (such as `?contentType=tutorial` or case-mismatched `?contentType=Concept`) return HTTP 400 with a machine-readable payload detailing the allowed canonical values.
 
-### Programmatic discovery: self-describing taxonomy
+## LLM and agent usage
 
-API clients, search tools, and LLM/RAG systems do not need to scrape human-facing articles or hard-code classification lists. The API makes its taxonomy self-describing in two ways:
+Automated agents, code assistants, and RAG pipelines can consume the site systematically without scraping or heuristic HTML parsing:
 
-1. **Embedded taxonomy metadata**: Every `/index.json`, `/en/index.json`, and `/fr/index.json` includes a top-level `taxonomy` object with labels, descriptions, and allowed values:
-   - `taxonomy.contentType`: Descriptions and definitions for `concept`, `task`, and `reference`.
-   - `taxonomy.pageType`: Descriptions and definitions for `topic`, `index`, `landing`, `overview`, and `utility`.
-2. **Dedicated discovery endpoint (`/schema.json`)**: Clients that only need the schema and classification definitions without downloading the 148-document catalog can fetch `/schema.json` directly.
-
-This allows agents to answer questions like *"What document types does this API expose?"* and *"What does contentType=task mean?"* dynamically from structured metadata.
-
-### Document retrieval and API ergonomics
-
-To streamline consumption by AI agents and automated retrieval pipelines:
-
-- **Stable document identifier**: The canonical `url` (e.g. `https://docs.redaction-technique.org/en/toolkit/task-article-template/`) serves as the unique, deterministic, and build-stable identifier for every document.
-- **Explicit Markdown relation**: Every indexed document advertises its corresponding clean Markdown mirror via the `markdown` property (e.g. `https://docs.redaction-technique.org/en/toolkit/task-article-template.md`). Clients retrieve clean content directly without guessing URL conventions.
-- **Field selection (`?fields=...`)**: Query parameters support field projection (e.g. `?fields=title,url,markdown,contentType`) to minimize payload size and context token usage.
-- **Deterministic pagination (`?page=1&limit=20`)**: Opt-in pagination supports bounded retrieval with strict bounds validation and predictable sorting.
-
-## Example: retrieve task documentation
-
-Here is a realistic end-to-end workflow for an agent or RAG pipeline retrieving actionable documentation:
-
-```text
-1. GET /schema.json
-   └── Discover capabilities: endpoints, parameters, document schema, and contentType=task.
-
-2. GET /index.json?lang=en&contentType=task&fields=title,url,markdown,contentType
-   └── Query index: retrieve English task topics with projected fields.
-
-3. Select target document
-   └── e.g. "Auto-insert data into a DITA XML file" at https://docs.redaction-technique.org/en/tutorials/auto-insert-data-dita-xml/
-
-4. GET https://docs.redaction-technique.org/en/tutorials/auto-insert-data-dita-xml.md
-   └── Retrieve clean Markdown representation directly.
-
-5. Feed clean Markdown into LLM context
-   └── Immediate access to structured task instructions without HTML navigation chrome.
-```
+1. **Discover capabilities**: Fetch `/schema.json` to inspect endpoints, taxonomy dimensions, and allowed query parameters.
+2. **Inspect taxonomy & filters**: Identify appropriate classification keys (e.g. `contentType=task` for procedures, `contentType=concept` for background explanations).
+3. **Query index with field projection**: Fetch an index with `fields=title,url,markdown,contentType` to minimize payload size and context token consumption.
+4. **Select relevant documents**: Choose documents by URL or title based on the user's inquiry.
+5. **Retrieve clean Markdown**: Follow the advertised `markdown` property to retrieve the clean Markdown document.
+6. **Ground LLM responses**: Use the unmodified Markdown directly as context.
 
 ### Why Markdown for LLM consumers?
 
-Rendered HTML documentation contains navigation bars, footers, sidebar links, and script tags that consume LLM context window tokens and introduce distracting layout artifacts. The pre-rendered Markdown mirror preserves headings, code blocks, lists, admonitions, and tables in clean, standard syntax — identical byte-for-byte to the document's entry in `llms-full.txt`.
+- **Clean document representation**: No HTML navigation bars, headers, footers, or client-side script tags polluting the context window.
+- **Token efficiency**: Eliminates HTML boilerplate, reserving context window budget for substantive content.
+- **Directly consumable**: Headings, lists, code snippets, and tables remain in standard Markdown format.
+- **Stable retrieval URL**: Every document advertises its exact Markdown mirror URL in the index metadata.
+
+## Copy-paste `curl` examples
+
+### 1. Discover API and capabilities
+
+```bash
+curl https://docs.redaction-technique.org/schema.json
+```
+
+### 2. List task documentation
+
+```bash
+curl 'https://docs.redaction-technique.org/en/index.json?contentType=task'
+```
+
+### 3. Reduce returned fields (token-efficient projection)
+
+```bash
+curl 'https://docs.redaction-technique.org/en/index.json?contentType=task&fields=title,url,markdown,contentType'
+```
+
+### 4. Retrieve a Markdown document
+
+```bash
+curl https://docs.redaction-technique.org/en/tutorials/auto-insert-data-dita-xml.md
+```
+
+### 5. Paginate through index records
+
+```bash
+curl 'https://docs.redaction-technique.org/en/index.json?contentType=task&page=1&limit=10'
+```
+
+## JavaScript consumer example
+
+Here is a minimal, complete example showing how an external consumer or tool can discover, filter, and retrieve content using only the standard `fetch` API:
+
+```javascript
+// 1. Fetch the machine-readable discovery contract
+const schema = await fetch('https://docs.redaction-technique.org/schema.json')
+  .then((res) => res.json());
+
+// 2. Discover the English index endpoint
+const enIndexUrl = schema.endpoints.en.index;
+
+// 3. Retrieve English task topics with projected fields
+const params = new URLSearchParams({
+  contentType: 'task',
+  fields: 'title,url,markdown,contentType',
+});
+const index = await fetch(`${enIndexUrl}?${params}`)
+  .then((res) => res.json());
+
+// 4. Select a specific task document
+const taskDoc = index.documents.find((doc) =>
+  doc.url.includes('auto-insert-data-dita-xml')
+);
+
+// 5. Retrieve the clean Markdown representation
+const markdown = await fetch(taskDoc.markdown)
+  .then((res) => res.text());
+
+console.log(`Retrieved "${taskDoc.title}" (${markdown.length} bytes):`);
+console.log(markdown.slice(0, 160));
+```
+
+## API stability principles and contract guarantees
+
+The API is treated as stable documentation infrastructure:
+
+- **Canonical `url` as identifier**: The canonical `url` (e.g. `https://docs.redaction-technique.org/en/tutorials/auto-insert-data-dita-xml/`) is the unique, deterministic, and build-stable identifier for every document.
+- **Direct Markdown representation**: The `markdown` property always provides the direct, unmodified Markdown mirror for the document, identical byte-for-byte to its section in `llms-full.txt`.
+- **Backward compatibility**: Existing unparameterized index responses (`/index.json`, `/en/index.json`, `/fr/index.json`) remain stable and backward-compatible.
+- **Canonical taxonomy**: Taxonomy values (`contentType` and `pageType`) are strictly validated against canonical sets. New types are added conservatively and documented symmetrically.
+- **Synchronized schema and contract testing**: Any changes to endpoints, taxonomy, or query parameters must update both `/schema.json` and the black-box contract tests (`tests/api-contract.test.mjs`).
 
 ## How each page exposes this
 

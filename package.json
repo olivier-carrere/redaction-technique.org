@@ -8,6 +8,7 @@
     "build": "node scripts/build-search-index.mjs && astro build && node scripts/fix-redirect-trailing-slash.mjs",
     "build:index": "node scripts/build-search-index.mjs",
     "test": "node --test tests/*.test.mjs",
+    "test:api-contract": "node --test tests/api-contract.test.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },

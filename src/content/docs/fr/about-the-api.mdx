@@ -1,6 +1,6 @@
 ---
 title: "À propos de l'API de ce manuel"
-description: "Ce manuel expose l'intégralité de son corpus sous forme d'API statique, sans exécution serveur, pour les LLM et agents IA - llms.txt, miroirs Markdown par page et index JSON. À quoi ça sert et comment l'utiliser."
+description: "Ce manuel expose l'intégralité de son corpus sous forme d'API statique, sans exécution serveur, pour les LLM et agents IA — llms.txt, miroirs Markdown par page et index JSON. À quoi ça sert et comment l'utiliser."
 goal: [reference]
 contentType: reference
 ---
@@ -15,18 +15,53 @@ Tout ce qui suit est généré au moment du build à partir des mêmes sources M
 
 Le HTML rendu est conçu pour les navigateurs : habillage de navigation, CSS, interactivité côté client. Un LLM ou un agent qui n'a besoin que du texte de l'article doit retirer tout cela, et peut s'y mal prendre. Cette API évite l'aller-retour : elle sert directement le même contenu que les agents reconstruiraient autrement, sous forme de Markdown propre et de JSON structuré.
 
+## Flux de travail rapide (Quick start)
+
+L'API s'articule autour d'un pipeline de récupération séquentiel en quatre étapes :
+
+```text
+GET /schema.json
+        ↓
+Découverte des endpoints, des filtres et de la taxonomie
+        ↓
+GET /fr/index.json?contentType=task&fields=title,url,markdown,contentType
+        ↓
+Sélection du document cible (ex. « tutorials/auto-insert-data-dita-xml/ »)
+        ↓
+Lecture de l'URL `markdown` annoncée
+        ↓
+GET /fr/tutorials/auto-insert-data-dita-xml.md
+```
+
+**Découvrir → Filtrer → Sélectionner → Récupérer** : les consommateurs découvrent les capacités depuis `/schema.json`, interrogent l'index pour filtrer les rubriques pertinentes, identifient l'URL Markdown associée et téléchargent directement le texte source propre.
+
 ## Endpoints
 
 | Endpoint | Format | À quoi il sert |
 | --- | --- | --- |
+| `/schema.json` | JSON | Contrat de découverte d'API consultable par machine définissant les endpoints, les paramètres de requête, le schéma de document et la taxonomie auto-descriptive. |
 | `/llms.txt` | Texte brut | Une table des matières concise conforme à la convention [llms.txt](https://llmstxt.org/) — le point d'entrée pour un agent qui veut savoir ce qui existe ici avant de récupérer quelque chose de plus volumineux. |
-| `/llms-full.txt`, `/llms-full-en.txt`, `/llms-full-fr.txt` | Texte brut | Le corpus entier (bilingue, ou une seule langue) concaténé en un seul fichier, pour un agent qui veut tout ingérer en une seule requête plutôt qu'une par page. |
+| `/llms-full.txt`, `/llms-full-en.txt`, `/llms-full-fr.txt` | Texte brut | Le corpus entier (bilingual, ou une seule langue) concaténé en un seul fichier, pour un agent qui veut tout ingérer en une seule requête plutôt qu'une par page. |
 | `/index.json`, `/en/index.json`, `/fr/index.json` | JSON | Un index de documents consultable par machine : titre, description, URL, nombre de mots, titres, tags, `pageType`, `contentType` et définitions de taxonomie pour chaque page, avec prise en charge du filtrage par paramètres d'URL. |
-| `/schema.json` | JSON | Schéma consultable par machine autonome et taxonomie auto-descriptive définissant les classifications et descriptions de `pageType` et `contentType`. |
 | `/sitemap.md`, `/en/sitemap.md`, `/fr/sitemap.md` | Markdown | Un plan de site hiérarchique regroupé par section, dans un format qu'un LLM peut lire directement plutôt que d'analyser un sitemap XML. |
 | `/en/<page>.md`, `/fr/<page>.md` | Markdown | Un miroir Markdown propre d'une page — le même contenu textuel que la version HTML, sans la mise en page ni le balisage de navigation. |
 
 Le contenu de l'endpoint `.md` de chaque page est garanti identique octet pour octet à la section correspondante dans `llms-full.txt` — un test automatisé de ce dépôt vérifie cet invariant à chaque build, sur l'ensemble des documents, pas seulement par sondage.
+
+## Découverte automatique via `/schema.json`
+
+Les clients d'API, outils de recherche et pipelines LLM/RAG n'ont pas besoin de coder en dur des listes d'URL ou de classifications. L'endpoint `/schema.json` fait office de **contrat de découverte d'API consultable par machine**.
+
+À partir de `/schema.json`, un consommateur externe peut découvrir :
+
+- **Endpoints disponibles** : URL des index globaux, anglais et français, et localisation des ressources (`schema.endpoints`).
+- **Langues prises en charge** : `en` et `fr` (`schema.filters.lang`).
+- **Types d'information** : valeurs canoniques de `contentType` (`concept`, `task`, `reference`) et définitions explicites (`schema.taxonomy.contentType`).
+- **Types structurels de page** : valeurs canoniques de `pageType` (`topic`, `index`, `landing`, `overview`, `utility`) et descriptions (`schema.taxonomy.pageType`).
+- **Paramètres de requête** : clés acceptées (`contentType`, `pageType`, `lang`, `fields`, `page`, `limit`), types, valeurs par défaut et limites autorisées (`schema.queryParameters`).
+- **Propriétés de document** : structure canonique d'une notice (`title`, `url`, `markdown`, `locale`, `pageType`, `contentType`, `wordCount`, `headings`, `keywords`, `tags`) et champs obligatoires (`schema.document`).
+- **Modèle d'accès et d'identité** : identifiant canonique (`url`) et formats de représentation (`schema.retrieval`).
+- **Règles de pagination** : page minimale (1), limites (1 à 100, valeur par défaut 20) et gestion stricte des dépassements (`schema.queryParameters`).
 
 ## Métadonnées des documents et typage de l'information
 
@@ -70,50 +105,98 @@ L'index de documentation JSON prend en charge le filtrage par paramètres de req
 
 Les valeurs de paramètres non valides (comme `?contentType=tutorial` ou une casse non conforme comme `?contentType=Concept`) renvoient une réponse `HTTP 400` accompagnée d'un objet d'erreur détaillant les valeurs canoniques autorisées.
 
-### Découverte programmatique : taxonomie auto-descriptive
+## Utilisation par les LLM et agents IA
 
-Les clients d'API, outils de recherche et pipelines LLM/RAG n'ont pas besoin d'extraire les articles pour humains ou de coder en dur des listes de classification. L'API rend sa taxonomie auto-descriptive de deux manières :
+Les agents automatisés, assistants de code et systèmes RAG peuvent consommer le site de manière systématique sans parsing heuristique de HTML :
 
-1. **Métadonnées de taxonomie intégrées** : chaque réponse de `/index.json`, `/en/index.json` et `/fr/index.json` inclut un objet `taxonomy` racine décrivant les étiquettes, descriptions et valeurs autorisées :
-   - `taxonomy.contentType` : descriptions et définitions pour `concept`, `task` et `reference`.
-   - `taxonomy.pageType` : descriptions et définitions pour `topic`, `index`, `landing`, `overview` et `utility`.
-2. **Endpoint de découverte dédié (`/schema.json`)** : les clients qui souhaitent uniquement inspecter le schéma et les définitions de classification sans télécharger le catalogue de 148 documents peuvent interroger directement `/schema.json`.
-
-Cela permet aux agents automatisés de répondre dynamiquement et à partir de métadonnées structurées à des questions telles que *"Quels types de documents cette API expose-t-elle ?"* et *"Que signifie contentType=task ?"*.
-
-### Récupération des documents et ergonomie de l'API
-
-Pour faciliter l'intégration par les agents IA et les pipelines de recherche :
-
-- **Identifiant stable de document** : l'URL canonique `url` (par exemple `https://docs.redaction-technique.org/fr/toolkit/task-article-template/`) sert d'identifiant unique, déterministe et stable entre les builds pour chaque document.
-- **Relation Markdown explicite** : chaque notice documentaire indexée annonce directement son miroir Markdown propre via la propriété `markdown` (par exemple `https://docs.redaction-technique.org/fr/toolkit/task-article-template.md`). Les clients récupèrent le contenu sans avoir à deviner les conventions d'URL.
-- **Sélection de champs (`?fields=...`)** : les paramètres de requête permettent de restreindre la réponse aux champs souhaités (par exemple `?fields=title,url,markdown,contentType`) afin de réduire la charge utile et la consommation de jetons de contexte.
-- **Pagination déterministe (`?page=1&limit=20`)** : la pagination à la demande permet des requêtes bornées avec validation stricte des limites et ordre de tri prévisible.
-
-## Exemple : récupérer la documentation d'une tâche
-
-Voici un flux de travail concret pour un agent ou un pipeline RAG récupérant de la documentation actionnable :
-
-```text
-1. GET /schema.json
-   └── Découverte des capacités : endpoints, paramètres, schéma de document et contentType=task.
-
-2. GET /fr/index.json?contentType=task&fields=title,url,markdown,contentType
-   └── Requête d'index : sélection des rubriques de tâches en français avec projection de champs.
-
-3. Sélection du document cible
-   └── ex. « Insérer automatiquement des données dans un fichier DITA XML » à l'adresse https://docs.redaction-technique.org/fr/tutorials/auto-insert-data-dita-xml/
-
-4. GET https://docs.redaction-technique.org/fr/tutorials/auto-insert-data-dita-xml.md
-   └── Récupération directe de la représentation Markdown propre.
-
-5. Transmission du Markdown au contexte du LLM
-   └── Accès immédiat aux instructions structurées, sans bruit de navigation HTML.
-```
+1. **Découvrir les capacités** : interroger `/schema.json` pour connaître les endpoints, dimensions taxonomiques et paramètres acceptés.
+2. **Inspecter la taxonomie et les filtres** : identifier les clés adéquates (par exemple `contentType=task` pour les procédures, `contentType=concept` pour les explications de fond).
+3. **Interroger l'index avec projection de champs** : exécuter une requête avec `fields=title,url,markdown,contentType` pour minimiser la taille du payload et économiser les jetons de contexte.
+4. **Sélectionner les documents cibles** : identifier les documents pertinents par titre ou URL d'après la question posée.
+5. **Récupérer le Markdown propre** : suivre l'URL renseignée dans la propriété `markdown` pour obtenir le document source.
+6. **Alimenter le contexte du modèle** : intégrer le Markdown épuré directement comme source de vérité.
 
 ### Pourquoi le Markdown pour les consommateurs LLM ?
 
-La documentation HTML rendue comporte des barres de navigation, des pieds de page, des barres latérales et des balises de script qui consomment inutilement les jetons de contexte du modèle et introduisent des artefacts visuels parasites. Le miroir Markdown pré-rendu conserve les titres, les blocs de code, les listes, les encarts et les tableaux dans une syntaxe standard et épurée — strictement identique octet pour octet à l'entrée correspondante dans `llms-full.txt`.
+- **Représentation textuelle pure** : aucune barre de navigation, pied de page ni script client ne vient polluer la fenêtre de contexte.
+- **Efficience des jetons** : supprime le balisage HTML inutile et réserve le budget de contexte au contenu substantiel.
+- **Directement exploitable** : titres, listes, extraits de code et tableaux restent dans une syntaxe Markdown claire et standardisée.
+- **URL d'accès stable** : chaque document annonce directement l'URL de son miroir Markdown dans ses métadonnées d'index.
+
+## Exemples `curl` prêts à l'emploi
+
+### 1. Découvrir l'API et ses capacités
+
+```bash
+curl https://docs.redaction-technique.org/schema.json
+```
+
+### 2. Lister les documents de tâches
+
+```bash
+curl 'https://docs.redaction-technique.org/fr/index.json?contentType=task'
+```
+
+### 3. Réduire les champs renvoyés (projection économe en jetons)
+
+```bash
+curl 'https://docs.redaction-technique.org/fr/index.json?contentType=task&fields=title,url,markdown,contentType'
+```
+
+### 4. Récupérer un document Markdown propre
+
+```bash
+curl https://docs.redaction-technique.org/fr/tutorials/auto-insert-data-dita-xml.md
+```
+
+### 5. Paginer les résultats d'index
+
+```bash
+curl 'https://docs.redaction-technique.org/fr/index.json?contentType=task&page=1&limit=10'
+```
+
+## Exemple consommateur en JavaScript
+
+Voici un exemple minimal et complet montrant comment un outil externe peut découvrir, filtrer et récupérer du contenu en utilisant uniquement l'API standard `fetch` :
+
+```javascript
+// 1. Récupération du contrat de découverte
+const schema = await fetch('https://docs.redaction-technique.org/schema.json')
+  .then((res) => res.json());
+
+// 2. Découverte de l'endpoint de l'index français
+const frIndexUrl = schema.endpoints.fr.index;
+
+// 3. Récupération des sujets de tâches avec projection de champs
+const params = new URLSearchParams({
+  contentType: 'task',
+  fields: 'title,url,markdown,contentType',
+});
+const index = await fetch(`${frIndexUrl}?${params}`)
+  .then((res) => res.json());
+
+// 4. Sélection d'un document de tâche spécifique
+const taskDoc = index.documents.find((doc) =>
+  doc.url.includes('auto-insert-data-dita-xml')
+);
+
+// 5. Récupération de la version Markdown propre
+const markdown = await fetch(taskDoc.markdown)
+  .then((res) => res.text());
+
+console.log(`Récupéré : "${taskDoc.title}" (${markdown.length} octets) :`);
+console.log(markdown.slice(0, 160));
+```
+
+## Principes de stabilité de l'API et garanties contractuelles
+
+Cette API est traitée comme une infrastructure documentaire pérenne :
+
+- **L'identifiant stable est l'`url` canonique** : l'URL canonique (ex. `https://docs.redaction-technique.org/fr/tutorials/auto-insert-data-dita-xml/`) constitue l'identifiant unique, déterministe et garanti stable entre les builds pour chaque document.
+- **Représentation Markdown directe** : la propriété `markdown` renvoie toujours vers le miroir Markdown propre, strictement identique octet pour octet à sa section dans `llms-full.txt`.
+- **Rétrocompatibilité** : les réponses d'index sans paramètres (`/index.json`, `/en/index.json`, `/fr/index.json`) conservent leur schéma et leur compatibilité ascendante.
+- **Taxonomie canonique** : les valeurs de taxonomie (`contentType` et `pageType`) sont validées contre des référentiels stricts. Tout ajout est réalisé de façon concertée et symétrique.
+- **Schéma synchronisé et tests de contrat** : toute évolution des endpoints, de la taxonomie ou des filtres met à jour simultanément `/schema.json` et la suite de tests de contrat en boîte noire (`tests/api-contract.test.mjs`).
 
 ## Comment chaque page l'expose
 

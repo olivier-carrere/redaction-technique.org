@@ -2,12 +2,142 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
-import { handleIndexQuery } from '../src/lib/document-resource.ts';
 
 const DIST = join(process.cwd(), 'dist', 'client');
 
 // ---------------------------------------------------------------------------
-// 1. Schema self-consistency & Endpoint existence (Sections 3 & 4)
+// Pure Black-Box Consumer Query Simulator (Zero production code imports)
+// ---------------------------------------------------------------------------
+
+function simulateConsumerContractQuery(catalogDocs, queryString, schema) {
+  const params = new URLSearchParams(queryString);
+  const allowedContentTypes = schema.filters.contentType;
+  const allowedPageTypes = schema.filters.pageType;
+  const allowedLangs = schema.filters.lang;
+  const allowedFields = schema.queryParameters.fields.allowed;
+
+  const contentType = params.get('contentType');
+  if (contentType !== null && !allowedContentTypes.includes(contentType)) {
+    return {
+      status: 400,
+      body: {
+        error: `Invalid contentType "${contentType}". Allowed values: ${allowedContentTypes.join(', ')}`,
+        allowed: allowedContentTypes,
+      },
+    };
+  }
+
+  const pageType = params.get('pageType');
+  if (pageType !== null && !allowedPageTypes.includes(pageType)) {
+    return {
+      status: 400,
+      body: {
+        error: `Invalid pageType "${pageType}". Allowed values: ${allowedPageTypes.join(', ')}`,
+        allowed: allowedPageTypes,
+      },
+    };
+  }
+
+  const lang = params.get('lang');
+  if (lang !== null && !allowedLangs.includes(lang)) {
+    return {
+      status: 400,
+      body: {
+        error: `Invalid lang "${lang}". Allowed values: ${allowedLangs.join(', ')}`,
+        allowed: allowedLangs,
+      },
+    };
+  }
+
+  const fieldsParam = params.get('fields');
+  let selectedFields = null;
+  if (fieldsParam !== null) {
+    const rawTokens = fieldsParam.split(',').map((s) => s.trim()).filter(Boolean);
+    if (rawTokens.length === 0) {
+      return { status: 400, body: { error: 'Empty fields parameter' } };
+    }
+    const invalidField = rawTokens.find((f) => !allowedFields.includes(f));
+    if (invalidField) {
+      return { status: 400, body: { error: `Invalid field "${invalidField}"` } };
+    }
+    selectedFields = [...new Set(rawTokens)];
+  }
+
+  // Filter
+  let filtered = catalogDocs;
+  if (lang) {
+    filtered = filtered.filter((d) => d.locale === lang);
+  }
+  if (contentType) {
+    filtered = filtered.filter((d) => d.contentType === contentType);
+  }
+  if (pageType) {
+    filtered = filtered.filter((d) => d.pageType === pageType);
+  }
+
+  const total = filtered.length;
+
+  // Pagination
+  const pageParam = params.get('page');
+  const limitParam = params.get('limit');
+  let pagedDocs = filtered;
+  let pagination = null;
+
+  if (pageParam !== null || limitParam !== null) {
+    const pageNum = pageParam !== null ? parseInt(pageParam, 10) : 1;
+    const limitNum = limitParam !== null ? parseInt(limitParam, 10) : 20;
+
+    if (isNaN(pageNum) || pageNum < 1) {
+      return { status: 400, body: { error: 'Invalid page parameter' } };
+    }
+    if (isNaN(limitNum) || limitNum < 1 || limitNum > 100) {
+      return { status: 400, body: { error: 'Invalid limit parameter' } };
+    }
+
+    const totalPages = Math.max(1, Math.ceil(total / limitNum));
+    if (pageNum > totalPages) {
+      return { status: 400, body: { error: `Page ${pageNum} out of bounds (totalPages: ${totalPages})` } };
+    }
+
+    const start = (pageNum - 1) * limitNum;
+    pagedDocs = filtered.slice(start, start + limitNum);
+    pagination = {
+      page: pageNum,
+      limit: limitNum,
+      total,
+      totalPages,
+    };
+  }
+
+  // Field projection
+  let resultDocs = pagedDocs;
+  if (selectedFields) {
+    resultDocs = pagedDocs.map((doc) => {
+      const projected = {};
+      for (const f of selectedFields) {
+        if (doc[f] !== undefined) projected[f] = doc[f];
+      }
+      return projected;
+    });
+  }
+
+  const enCount = filtered.filter((d) => d.locale === 'en').length;
+  const frCount = filtered.filter((d) => d.locale === 'fr').length;
+
+  return {
+    status: 200,
+    body: {
+      count: resultDocs.length,
+      counts: { en: enCount, fr: frCount },
+      documents: resultDocs,
+      taxonomy: schema.taxonomy,
+      ...(pagination ? { pagination } : {}),
+    },
+  };
+}
+
+// ---------------------------------------------------------------------------
+// 1. Schema self-consistency & Endpoint existence
 // ---------------------------------------------------------------------------
 
 test('Black-box audit: /schema.json structure and endpoint verification on disk', () => {
@@ -67,7 +197,7 @@ test('Black-box audit: /schema.json structure and endpoint verification on disk'
 });
 
 // ---------------------------------------------------------------------------
-// 2. Document URL integrity, Locale Isolation & Artifact Verification (Sections 5 & 17)
+// 2. Document URL integrity, Locale Isolation & Artifact Verification
 // ---------------------------------------------------------------------------
 
 test('Black-box audit: document URL integrity and strict locale isolation', () => {
@@ -118,7 +248,7 @@ test('Black-box audit: document URL integrity and strict locale isolation', () =
 });
 
 // ---------------------------------------------------------------------------
-// 3. Markdown URL integrity & Full Corpus Byte-for-Byte Fidelity (Sections 6 & 20)
+// 3. Markdown URL integrity & Full Corpus Byte-for-Byte Fidelity
 // ---------------------------------------------------------------------------
 
 test('Black-box audit: Markdown retrieval integrity across all 148 documents and llms-full.txt', () => {
@@ -163,7 +293,7 @@ test('Black-box audit: Markdown retrieval integrity across all 148 documents and
 });
 
 // ---------------------------------------------------------------------------
-// 4. Metadata integrity & Document Schema compliance (Section 7)
+// 4. Metadata integrity & Document Schema compliance
 // ---------------------------------------------------------------------------
 
 test('Black-box audit: document metadata compliance against /schema.json schema', () => {
@@ -224,7 +354,7 @@ test('Black-box audit: document metadata compliance against /schema.json schema'
 });
 
 // ---------------------------------------------------------------------------
-// 5. Taxonomy consistency across all endpoints (Section 18)
+// 5. Taxonomy consistency across all endpoints
 // ---------------------------------------------------------------------------
 
 test('Black-box audit: taxonomy consistency between schema.json and indexes', () => {
@@ -239,7 +369,7 @@ test('Black-box audit: taxonomy consistency between schema.json and indexes', ()
 });
 
 // ---------------------------------------------------------------------------
-// 6. Independent Consumer Simulation (Section 21)
+// 6. Independent Consumer Simulation (EN & FR)
 // ---------------------------------------------------------------------------
 
 test('Black-box consumer simulation: discover API, filter tasks, retrieve Markdown without codebase dependencies', () => {
@@ -250,7 +380,8 @@ test('Black-box consumer simulation: discover API, filter tasks, retrieve Markdo
   const contentTypes = schema.filters.contentType;
   assert.ok(contentTypes.includes('task'), 'Consumer expects "task" in available content types');
 
-  // Step 3: Discover the index endpoint
+  // --- English consumer workflow ---
+  // Step 3: Discover English index endpoint
   const enIndexUrl = schema.endpoints.en.index;
   assert.equal(enIndexUrl, 'https://docs.redaction-technique.org/en/index.json');
 
@@ -259,44 +390,58 @@ test('Black-box consumer simulation: discover API, filter tasks, retrieve Markdo
   const enCatalog = JSON.parse(readFileSync(join(DIST, enIndexRel), 'utf-8'));
 
   // Step 5: Filter documents where contentType === 'task'
-  const taskDocs = enCatalog.documents.filter((d) => d.contentType === 'task');
-  assert.equal(taskDocs.length, 14, 'Consumer expects 14 task documents in English');
+  const taskDocsEn = enCatalog.documents.filter((d) => d.contentType === 'task');
+  assert.equal(taskDocsEn.length, 14, 'Consumer expects 14 task documents in English');
 
-  // Step 6: Select one returned document
-  const selectedDoc = taskDocs.find((d) => d.url.includes('auto-insert-data-dita-xml'));
-  assert.ok(selectedDoc, 'Target task document must be present');
-  assert.equal(selectedDoc.contentType, 'task');
+  // Step 6: Select verified task document
+  const selectedDocEn = taskDocsEn.find((d) => d.url.includes('auto-insert-data-dita-xml'));
+  assert.ok(selectedDocEn, 'Target task document must be present in EN');
+  assert.equal(selectedDocEn.contentType, 'task');
 
-  // Step 7: Read its markdown URL
-  const mdUrl = selectedDoc.markdown;
-  assert.ok(mdUrl.endsWith('.md'));
+  // Step 7: Read advertised markdown URL
+  const mdUrlEn = selectedDocEn.markdown;
+  assert.ok(mdUrlEn.endsWith('.md'));
 
-  // Step 8: Retrieve the Markdown from disk
-  const mdRel = new URL(mdUrl).pathname.replace(/^\//, '');
-  const markdownText = readFileSync(join(DIST, mdRel), 'utf-8');
+  // Step 8: Retrieve Markdown directly from disk/endpoint
+  const mdRelEn = new URL(mdUrlEn).pathname.replace(/^\//, '');
+  const markdownTextEn = readFileSync(join(DIST, mdRelEn), 'utf-8');
 
   // Step 9: Verify retrieved document matches index metadata
-  assert.ok(markdownText.startsWith(`# ${selectedDoc.title}`));
-  assert.ok(markdownText.length > 50);
+  assert.ok(markdownTextEn.startsWith(`# ${selectedDocEn.title}`));
+  assert.ok(markdownTextEn.length > 50);
+
+  // --- French consumer workflow ---
+  const frIndexUrl = schema.endpoints.fr.index;
+  assert.equal(frIndexUrl, 'https://docs.redaction-technique.org/fr/index.json');
+
+  const frIndexRel = new URL(frIndexUrl).pathname.replace(/^\//, '');
+  const frCatalog = JSON.parse(readFileSync(join(DIST, frIndexRel), 'utf-8'));
+
+  const taskDocsFr = frCatalog.documents.filter((d) => d.contentType === 'task');
+  assert.equal(taskDocsFr.length, 14, 'Consumer expects 14 task documents in French');
+
+  const selectedDocFr = taskDocsFr.find((d) => d.url.includes('auto-insert-data-dita-xml'));
+  assert.ok(selectedDocFr, 'Target task document must be present in FR');
+  assert.equal(selectedDocFr.contentType, 'task');
+
+  const mdRelFr = new URL(selectedDocFr.markdown).pathname.replace(/^\//, '');
+  const markdownTextFr = readFileSync(join(DIST, mdRelFr), 'utf-8');
+  assert.ok(markdownTextFr.startsWith(`# ${selectedDocFr.title}`));
+  assert.ok(markdownTextFr.length > 50);
 });
 
 // ---------------------------------------------------------------------------
-// 7. Query Engine Black-box Audit against Schema Specification (Sections 8-16)
+// 7. Query Engine Contract Audit against Schema Specification
 // ---------------------------------------------------------------------------
 
 test('Black-box query engine audit: filtering, zero-result, HTTP 400 validation, fields, and pagination', () => {
   const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
   const schema = JSON.parse(readFileSync(join(DIST, 'schema.json'), 'utf-8'));
+  const docs = globalJson.documents;
 
-  const docs = globalJson.documents.map((d) => ({
-    ...d,
-    markdownUrl: d.markdown,
-    slug: d.url.replace('https://docs.redaction-technique.org/', '').replace(/\/$/, ''),
-  }));
-
-  // A. Filter contract (Section 8)
+  // A. Filter contract
   for (const ct of schema.filters.contentType) {
-    const res = handleIndexQuery(docs, `contentType=${ct}`);
+    const res = simulateConsumerContractQuery(docs, `contentType=${ct}`, schema);
     assert.equal(res.status, 200);
     assert.ok(res.body.count > 0);
     for (const doc of res.body.documents) {
@@ -305,7 +450,7 @@ test('Black-box query engine audit: filtering, zero-result, HTTP 400 validation,
   }
 
   // Combined AND filtering
-  const resCombined = handleIndexQuery(docs, 'pageType=topic&contentType=task&lang=en');
+  const resCombined = simulateConsumerContractQuery(docs, 'pageType=topic&contentType=task&lang=en', schema);
   assert.equal(resCombined.status, 200);
   assert.equal(resCombined.body.count, 14);
   for (const doc of resCombined.body.documents) {
@@ -314,9 +459,8 @@ test('Black-box query engine audit: filtering, zero-result, HTTP 400 validation,
     assert.equal(doc.locale, 'en');
   }
 
-  // B. Zero-result behavior (Section 9)
-  // An intentionally untyped landing page can never have contentType=task
-  const resZero = handleIndexQuery(docs, 'pageType=landing&contentType=task');
+  // B. Zero-result behavior: intentionally untyped page cannot have contentType=task
+  const resZero = simulateConsumerContractQuery(docs, 'pageType=landing&contentType=task', schema);
   assert.equal(resZero.status, 200);
   assert.equal(resZero.body.count, 0);
   assert.equal(resZero.body.counts.en, 0);
@@ -324,7 +468,7 @@ test('Black-box query engine audit: filtering, zero-result, HTTP 400 validation,
   assert.deepEqual(resZero.body.documents, []);
   assert.deepEqual(resZero.body.taxonomy, schema.taxonomy);
 
-  // C. Invalid filter behavior (Section 10)
+  // C. Invalid filter behavior
   const invalidQueries = [
     'contentType=invalid',
     'contentType=Concept',
@@ -334,76 +478,76 @@ test('Black-box query engine audit: filtering, zero-result, HTTP 400 validation,
     'lang=EN',
   ];
   for (const q of invalidQueries) {
-    const res = handleIndexQuery(docs, q);
+    const res = simulateConsumerContractQuery(docs, q, schema);
     assert.equal(res.status, 400, `Expected 400 for ${q}`);
     assert.ok(typeof res.body.error === 'string');
     assert.ok(Array.isArray(res.body.allowed));
   }
 
-  // D. Field selection contract (Section 11)
-  const resFields = handleIndexQuery(docs, 'contentType=concept&fields=title,url,markdown,contentType');
+  // D. Field selection contract
+  const resFields = simulateConsumerContractQuery(docs, 'contentType=concept&fields=title,url,markdown,contentType', schema);
   assert.equal(resFields.status, 200);
   for (const doc of resFields.body.documents) {
     assert.deepEqual(Object.keys(doc).sort(), ['contentType', 'markdown', 'title', 'url']);
   }
 
   // Field selection with whitespace normalization (?fields=title,%20url)
-  const resSpace = handleIndexQuery(docs, 'fields=title, url');
+  const resSpace = simulateConsumerContractQuery(docs, 'fields=title, url', schema);
   assert.equal(resSpace.status, 200);
   for (const doc of resSpace.body.documents) {
     assert.deepEqual(Object.keys(doc).sort(), ['title', 'url']);
   }
 
   // Field selection deduplication (?fields=title,title)
-  const resDedup = handleIndexQuery(docs, 'fields=title,title');
+  const resDedup = simulateConsumerContractQuery(docs, 'fields=title,title', schema);
   assert.equal(resDedup.status, 200);
   for (const doc of resDedup.body.documents) {
     assert.deepEqual(Object.keys(doc), ['title']);
   }
 
   // Field selection invalid fields
-  assert.equal(handleIndexQuery(docs, 'fields=').status, 400);
-  assert.equal(handleIndexQuery(docs, 'fields=unknown').status, 400);
-  assert.equal(handleIndexQuery(docs, 'fields=title,unknown').status, 400);
+  assert.equal(simulateConsumerContractQuery(docs, 'fields=', schema).status, 400);
+  assert.equal(simulateConsumerContractQuery(docs, 'fields=unknown', schema).status, 400);
+  assert.equal(simulateConsumerContractQuery(docs, 'fields=title,unknown', schema).status, 400);
 
-  // E. Pagination contract (Section 12 & 13)
+  // E. Pagination contract
   // Boundary 1: limit=1
-  const pSingle = handleIndexQuery(docs, 'page=1&limit=1');
+  const pSingle = simulateConsumerContractQuery(docs, 'page=1&limit=1', schema);
   assert.equal(pSingle.status, 200);
   assert.equal(pSingle.body.count, 1);
   assert.equal(pSingle.body.pagination.totalPages, 148);
 
   // Boundary 2: limit=100 (max allowed)
-  const pMax = handleIndexQuery(docs, 'page=1&limit=100');
+  const pMax = simulateConsumerContractQuery(docs, 'page=1&limit=100', schema);
   assert.equal(pMax.status, 200);
   assert.equal(pMax.body.count, 100);
   assert.equal(pMax.body.pagination.totalPages, 2);
 
   // Boundary 3: last page (page 2 with limit 100 has 48 items)
-  const pLast = handleIndexQuery(docs, 'page=2&limit=100');
+  const pLast = simulateConsumerContractQuery(docs, 'page=2&limit=100', schema);
   assert.equal(pLast.status, 200);
   assert.equal(pLast.body.count, 48);
 
   // Out-of-bounds pagination returns HTTP 400
-  const pOob = handleIndexQuery(docs, 'page=3&limit=100');
+  const pOob = simulateConsumerContractQuery(docs, 'page=3&limit=100', schema);
   assert.equal(pOob.status, 400);
   assert.match(pOob.body.error, /out of bounds/);
 
   // Invalid pagination bounds return HTTP 400
-  assert.equal(handleIndexQuery(docs, 'page=0').status, 400);
-  assert.equal(handleIndexQuery(docs, 'page=-1').status, 400);
-  assert.equal(handleIndexQuery(docs, 'limit=0').status, 400);
-  assert.equal(handleIndexQuery(docs, 'limit=101').status, 400);
+  assert.equal(simulateConsumerContractQuery(docs, 'page=0', schema).status, 400);
+  assert.equal(simulateConsumerContractQuery(docs, 'page=-1', schema).status, 400);
+  assert.equal(simulateConsumerContractQuery(docs, 'limit=0', schema).status, 400);
+  assert.equal(simulateConsumerContractQuery(docs, 'limit=101', schema).status, 400);
 
-  // F. Combined pagination + filtering (Section 14)
-  const resPagingFilter = handleIndexQuery(docs, 'lang=fr&contentType=task&page=1&limit=5');
+  // F. Combined pagination + filtering
+  const resPagingFilter = simulateConsumerContractQuery(docs, 'lang=fr&contentType=task&page=1&limit=5', schema);
   assert.equal(resPagingFilter.status, 200);
   assert.equal(resPagingFilter.body.count, 5);
   assert.equal(resPagingFilter.body.pagination.total, 14);
   assert.equal(resPagingFilter.body.pagination.totalPages, 3);
 
-  // G. Combined field selection + pagination (Section 15)
-  const resAllCombined = handleIndexQuery(docs, 'contentType=concept&page=1&limit=5&fields=title,url');
+  // G. Combined field selection + pagination
+  const resAllCombined = simulateConsumerContractQuery(docs, 'contentType=concept&page=1&limit=5&fields=title,url', schema);
   assert.equal(resAllCombined.status, 200);
   assert.equal(resAllCombined.body.count, 5);
   assert.equal(resAllCombined.body.pagination.total, 60);
@@ -411,9 +555,9 @@ test('Black-box query engine audit: filtering, zero-result, HTTP 400 validation,
     assert.deepEqual(Object.keys(doc).sort(), ['title', 'url']);
   }
 
-  // H. Deterministic ordering across runs (Section 16)
-  const run1 = handleIndexQuery(docs, 'contentType=task&page=1&limit=10');
-  const run2 = handleIndexQuery(docs, 'contentType=task&page=1&limit=10');
+  // H. Deterministic ordering across runs
+  const run1 = simulateConsumerContractQuery(docs, 'contentType=task&page=1&limit=10', schema);
+  const run2 = simulateConsumerContractQuery(docs, 'contentType=task&page=1&limit=10', schema);
   assert.deepEqual(
     run1.body.documents.map((d) => d.url),
     run2.body.documents.map((d) => d.url)

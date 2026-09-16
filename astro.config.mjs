@@ -328,8 +328,14 @@ export default defineConfig({
           translations: { fr: '📖 Explorer la référence' },
           items: [
             { autogenerate: { directory: 'reference' } },
-            { slug: 'about-the-api' },
           ],
+        },
+        {
+          label: '🔌 Documentation API',
+          translations: {
+            fr: '🔌 API de documentation',
+          },
+          slug: 'about-the-api',
         },
         {
           label: '🤖 Ask the documentation',

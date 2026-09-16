@@ -151,30 +151,88 @@ A standalone static endpoint (`/schema.json`) returns the complete API contract 
 
 ---
 
-## 4. Example: Retrieve Task Documentation
+## 4. Quick Start: Discover → Filter → Select → Retrieve
 
-A typical workflow for an automated agent, CLI tool, or RAG ingestion pipeline:
+The canonical retrieval pipeline follows four distinct steps:
 
 ```text
-1. GET /schema.json
-   └── Read machine-readable capabilities, discovering supported contentType values and query parameters.
+GET /schema.json
+        ↓
+Discover endpoints, filters & taxonomy
+        ↓
+GET /en/index.json?contentType=task&fields=title,url,markdown,contentType
+        ↓
+Select target document ("tutorials/auto-insert-data-dita-xml/")
+        ↓
+Read advertised `markdown` URL
+        ↓
+GET /en/tutorials/auto-insert-data-dita-xml.md
+```
 
-2. GET /index.json?lang=en&contentType=task&fields=title,url,markdown,contentType
-   └── Retrieve English task documents with projected fields.
+### Ready-to-Use `curl` Examples
 
-3. Select target document
-   └── e.g. "Auto-insert data into a DITA XML file" (url: "https://docs.redaction-technique.org/en/tutorials/auto-insert-data-dita-xml/")
+```bash
+# 1. Discover API capabilities & taxonomy
+curl https://docs.redaction-technique.org/schema.json
 
-4. GET https://docs.redaction-technique.org/en/tutorials/auto-insert-data-dita-xml.md
-   └── Fetch the advertised Markdown representation directly without guessing URLs.
+# 2. Query task topics
+curl 'https://docs.redaction-technique.org/en/index.json?contentType=task'
 
-5. Ingest into Agent Context
-   └── Clean Markdown with structured headings, code blocks, and steps, without layout markup.
+# 3. Project fields to optimize token usage
+curl 'https://docs.redaction-technique.org/en/index.json?contentType=task&fields=title,url,markdown,contentType'
+
+# 4. Fetch the advertised Markdown mirror
+curl https://docs.redaction-technique.org/en/tutorials/auto-insert-data-dita-xml.md
+
+# 5. Paginate through results
+curl 'https://docs.redaction-technique.org/en/index.json?contentType=task&page=1&limit=10'
+```
+
+### Minimal JavaScript Consumer Example
+
+```javascript
+// 1. Discover capabilities from public contract
+const schema = await fetch('https://docs.redaction-technique.org/schema.json')
+  .then((res) => res.json());
+
+// 2. Discover English index endpoint
+const enIndexUrl = schema.endpoints.en.index;
+
+// 3. Query task documents with projected fields
+const params = new URLSearchParams({
+  contentType: 'task',
+  fields: 'title,url,markdown,contentType',
+});
+const index = await fetch(`${enIndexUrl}?${params}`)
+  .then((res) => res.json());
+
+// 4. Select target document
+const doc = index.documents.find((d) =>
+  d.url.includes('auto-insert-data-dita-xml')
+);
+
+// 5. Fetch clean Markdown representation
+const markdown = await fetch(doc.markdown)
+  .then((res) => res.text());
+
+console.log(`Fetched "${doc.title}" (${markdown.length} bytes)`);
 ```
 
 ---
 
-## 5. Role of `llms.txt`
+## 5. API Stability Principles and Contract Guarantees
+
+The documentation API is treated as stable documentation infrastructure:
+
+1. **Canonical `url` is the stable identifier**: The canonical `url` serves as the unique, deterministic, build-stable identifier for every document.
+2. **Direct Markdown representation**: The advertised `markdown` property always provides the direct, unmodified Markdown mirror, guaranteed byte-for-byte identical to `llms-full.txt`.
+3. **Backward compatibility**: Existing unparameterized responses (`/index.json`, `/en/index.json`, `/fr/index.json`) remain stable.
+4. **Canonical taxonomy**: Classification taxonomy (`contentType` and `pageType`) is validated strictly against canonical definitions.
+5. **Contract testing & synchronized schema**: All endpoint routes, parameters, and taxonomy definitions are kept synchronized with `/schema.json` and verified by independent black-box contract tests (`tests/api-contract.test.mjs`).
+
+---
+
+## 6. Role of `llms.txt`
 
 The `/llms.txt` file acts as the primary navigational entry point for AI models and search systems.
 - Conforms strictly to the [llms.txt](https://llmstxt.org/) specification.
@@ -184,7 +242,7 @@ The `/llms.txt` file acts as the primary navigational entry point for AI models 
 
 ---
 
-## 6. Role of `llms-full.txt` & Language Variants
+## 7. Role of `llms-full.txt` & Language Variants
 
 When an agent needs to read or embed the entire corpus without making dozens of individual HTTP requests:
 - `/llms-full.txt`: Consolidated file containing all 148 documentation pages (74 English + 74 French).
@@ -209,7 +267,7 @@ Markdown: <Markdown URL>
 
 ---
 
-## 7. Relationship Between HTML, `.md`, and Client Actions
+## 8. Relationship Between HTML, `.md`, and Client Actions
 
 On every documentation page:
 1. **HTML `<head>` Discovery:**
@@ -228,7 +286,7 @@ On every documentation page:
 
 ---
 
-## 8. How to Add a New Documentation Page
+## 9. How to Add a New Documentation Page
 
 No manual updates to endpoints, sitemaps, or JSON indexes are ever required:
 1. Create a new `.md` or `.mdx` file inside `src/content/docs/en/` or `src/content/docs/fr/`.
@@ -248,7 +306,7 @@ No manual updates to endpoints, sitemaps, or JSON indexes are ever required:
 
 ---
 
-## 9. HTTP Headers and Vercel Deployment
+## 10. HTTP Headers and Vercel Deployment
 
 Configured via `vercel.json` and static Astro `APIRoute` headers:
 
