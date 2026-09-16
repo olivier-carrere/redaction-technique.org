@@ -74,7 +74,7 @@ export const SECTION_METADATA = {
     tutorials: { title: 'Tutorials', order: 4 },
     formats: { title: 'Structured DITA XML format', order: 5 },
     costs: { title: 'Reduce costs, increase customer satisfaction', order: 6 },
-    ask: { title: '🤖 Ask the documentation', order: 7 },
+    ask: { title: 'Ask the documentation', order: 7 },
     general: { title: 'General & Other', order: 8 },
   },
   fr: {
@@ -84,7 +84,7 @@ export const SECTION_METADATA = {
     tutorials: { title: 'Didacticiels', order: 4 },
     formats: { title: 'Format structuré DITA XML', order: 5 },
     costs: { title: 'Diminuer les coûts, augmenter la satisfaction client', order: 6 },
-    ask: { title: '🤖 Interroger la documentation', order: 7 },
+    ask: { title: 'Interroger la documentation', order: 7 },
     general: { title: 'Général & Autre', order: 8 },
   },
 } as const;

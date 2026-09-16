@@ -196,7 +196,7 @@ export default defineConfig({
       // "Use structured authoring").
       sidebar: [
         {
-          label: '✍ Blog - redaction-technique.org',
+          label: 'Blog - redaction-technique.org',
           link: 'https://redaction-technique.org/',
           attrs: { target: '_blank', rel: 'noopener' },
         },
@@ -282,9 +282,9 @@ export default defineConfig({
           ],
         },
         {
-          label: '🧰 Use the practical toolkit',
+          label: 'Use the practical toolkit',
           collapsed: true,
-          translations: { fr: '🧰 Utiliser la boîte à outils' },
+          translations: { fr: 'Utiliser la boîte à outils' },
           items: [
             { slug: 'toolkit' },
             { slug: 'toolkit/information-types' },
@@ -326,24 +326,24 @@ export default defineConfig({
           ],
         },
         {
-          label: '📖 Explore the reference',
+          label: 'Explore the reference',
           collapsed: true,
-          translations: { fr: '📖 Explorer la référence' },
+          translations: { fr: 'Explorer la référence' },
           items: [
             { autogenerate: { directory: 'reference' } },
           ],
         },
         {
-          label: '🔌 Documentation API',
+          label: 'Documentation API',
           translations: {
-            fr: '🔌 API de documentation',
+            fr: 'API de documentation',
           },
           slug: 'about-the-api',
         },
         {
-          label: '🤖 Ask the documentation',
+          label: 'Ask the documentation',
           translations: {
-            fr: '🤖 Interroger la documentation',
+            fr: 'Interroger la documentation',
           },
           slug: 'ask',
         },
