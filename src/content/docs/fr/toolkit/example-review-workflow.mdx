@@ -1,0 +1,32 @@
+---
+title: "Exemple : un workflow de revue documentaire"
+description: "Un exemple abouti d'acheminement d'un changement documentaire à travers une revue technique puis éditoriale avant publication, avec des responsabilités clairement séparées."
+goal: [toolkit]
+contentType: task
+---
+
+:::note[Exemple abouti]
+Ceci est un **exemple abouti à étudier**, pas un modèle. Il utilise le [modèle de demande de revue](../documentation-review-request-template/) et la [check-list de revue technique](../technical-review-checklist/) comme outils réels.
+:::
+
+## Le scénario
+
+Une nouvelle fonctionnalité sort. Le rédacteur a rédigé un nouvel article tâche pour la documenter, et il doit sortir avec la version.
+
+## Le workflow
+
+1. **Auto-relecture d'abord.** Le rédacteur applique la [check-list de qualité documentaire](../documentation-quality-checklist/) à son propre brouillon avant de demander à quiconque de le regarder — corriger les problèmes évidents ici coûte moins cher qu'un relecteur qui les détecte.
+
+2. **Revue technique.** Le rédacteur envoie une [demande de revue](../documentation-review-request-template/) à l'ingénieur qui a développé la fonctionnalité, cadrée explicitement : *« Confirmez que les étapes correspondent toujours à l'interface livrée — je ne demande pas d'avis sur la formulation. »* L'ingénieur suit la [check-list de revue technique](../technical-review-checklist/) et ne laisse des commentaires bloquants que sur de vraies inexactitudes.
+
+3. **L'auteur traite les retours.** Chaque commentaire bloquant reçoit une correction ou une réponse expliquant pourquoi il ne s'applique pas. Les suggestions non bloquantes sont triées — certaines retenues, d'autres explicitement refusées avec justification.
+
+4. **Passe éditoriale.** Un second relecteur — ou le même rédacteur, après avoir pris du recul sur le brouillon — vérifie la structure, le ton et la cohérence avec le reste du site. Cette passe ne remet explicitement *pas* en cause l'exactitude technique ; c'était le rôle de l'étape 2.
+
+5. **Contrôle de préparation à la mise en production.** Avant que la fonctionnalité ne sorte, la [check-list de préparation à la mise en production](../release-readiness-checklist/) confirme que le nouvel article est relié depuis la navigation, se génère proprement et, le cas échéant, dispose d'un plan de traduction.
+
+6. **Publier en même temps que la fonctionnalité**, pas après — voir [intégrer la documentation aux processus de développement](/fr/tech-writing-process/integrating-documentation-into-development/).
+
+## Pourquoi la revue est scindée en deux passes
+
+La revue technique et la revue éditoriale posent des questions fondamentalement différentes — « est-ce vrai ? » contre « est-ce clair ? » — et demander à un seul relecteur de porter les deux casquettes à la fois tend à produire une revue qui ne fait ni l'un ni l'autre correctement. Scinder les passes évite aussi que les retours ne se télescopent : une correction technique d'un ingénieur ne se perd pas parmi une douzaine de remarques de formulation, et inversement.

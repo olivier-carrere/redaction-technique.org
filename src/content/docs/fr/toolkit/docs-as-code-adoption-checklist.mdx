@@ -1,0 +1,37 @@
+---
+title: "Check-list : adoption du docs-as-code"
+description: "Une check-list pour faire migrer une équipe documentaire vers un workflow docs-as-code - gestion de versions, formats texte, CI/CD et préparation de l'équipe."
+goal: [toolkit]
+contentType: reference
+---
+
+:::tip[Check-list]
+À associer à [adopter le docs-as-code](/fr/docs-as-code/) pour la version narrative de chaque étape ci-dessous.
+:::
+
+## Format
+
+- [ ] Le contenu est (ou sera) stocké dans un format texte, non binaire — voir [format source](/fr/tech-writing-process/source-format/). Les formats binaires (Word, FrameMaker) ne peuvent pas être comparés ou fusionnés de manière significative.
+- [ ] Le format choisi correspond aux besoins réels de l'équipe : Markdown pour la simplicité, DITA XML si la réutilisation de contenu et le single-sourcing sont réellement requis — voir [formats et outils](/fr/costs/formats-and-tools/).
+
+## Gestion de versions
+
+- [ ] Un référentiel existe et sa structure a été décidée délibérément — voir [le référentiel](/fr/tech-writing-process/repository/) et [un référentiel unique ?](/fr/tech-writing-process/single-repository/).
+- [ ] Les rédacteurs qui ne sont pas encore à l'aise avec Git disposent d'un chemin d'apprentissage — binôme avec un développeur, atelier interne court, ou commandes courantes documentées. Ne présumez pas d'une maîtrise de Git par défaut.
+- [ ] Une stratégie de branches est décidée avant d'en avoir besoin sous la pression d'une échéance — voir [utiliser les branches](/fr/tech-writing-process/using-branches/).
+
+## CI/CD
+
+- [ ] La documentation se génère automatiquement à chaque changement, de la même manière que le code — voir [intégrer la documentation aux processus de développement](/fr/tech-writing-process/integrating-documentation-into-development/).
+- [ ] Un échec de build bloque la fusion de la même manière qu'un test qui échoue — une documentation cassée ne devrait pas partir en production silencieusement.
+- [ ] Des builds de prévisualisation permettent aux relecteurs de voir le rendu final, pas seulement le diff du texte source.
+
+## Processus de revue
+
+- [ ] Les changements documentaires suivent le même flux de revue par pull request que le code, pas un processus séparé et plus laxiste.
+- [ ] La [check-list de revue technique](../technical-review-checklist/) est utilisée de manière cohérente, pas de façon improvisée selon le relecteur.
+
+## Préparation de l'équipe
+
+- [ ] Les rédacteurs disposent d'environnements locaux fonctionnels (éditeur, client Git, outillage de build) avant la date de migration, pas le jour même.
+- [ ] Un plan de retour arrière vers l'ancien processus existe, au cas où le nouveau nécessiterait un temps de mise au point avant d'être digne de confiance pour de vraies livraisons.

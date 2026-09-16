@@ -1,0 +1,85 @@
+---
+title: "Example: a well-structured Markdown page"
+description: "A worked example of a concept article in Markdown, annotated to show why each structural choice was made."
+goal: [toolkit]
+contentType: task
+---
+
+:::note[Worked example]
+This is a **finished illustration to study**, not a template. For the blank structure, see the [concept article template](../concept-article-template/).
+:::
+
+## The source
+
+````markdown
+---
+title: "Idempotency"
+description: "What it means for an operation to be idempotent, and why it matters for retry logic in distributed systems."
+---
+
+## Definition
+
+An operation is **idempotent** if performing it multiple times has the
+same effect as performing it once. `PUT /users/42 {"name": "Alice"}`
+is idempotent — running it five times leaves the same end state as
+running it once. `POST /users {"name": "Alice"}`, which creates a new
+user each time, is not.
+
+## Why it matters
+
+Networks fail. A client that doesn't receive a response can't tell
+whether the request succeeded before the connection dropped. If the
+operation is idempotent, the client can safely retry. If it isn't, a
+retry risks a duplicate side effect — a second user record, a second
+charge.
+
+## Key principles
+
+- Idempotency is a property of the *operation*, not the transport —
+  retrying at the HTTP layer doesn't make a non-idempotent operation
+  safe.
+- `GET`, `PUT`, and `DELETE` are idempotent by HTTP convention;
+  `POST` and `PATCH` generally are not, unless the API explicitly
+  guarantees it (often via a client-supplied idempotency key).
+- An idempotency key lets a client make an inherently non-idempotent
+  operation (like `POST`) safe to retry, by having the server
+  deduplicate requests that carry the same key.
+
+## Examples
+
+Safe to retry without a key:
+
+```http
+PUT /users/42
+{"name": "Alice"}
+```
+
+Not safe to retry without a key — a dropped response could result in
+two users named Alice:
+
+```http
+POST /users
+{"name": "Alice"}
+```
+
+## Trade-offs
+
+Idempotency keys add server-side state (the server must remember
+which keys it has already processed, for some retention window) and
+a small amount of client complexity (generating and storing the key).
+For low-stakes, rarely-retried operations, this cost may not be worth
+it.
+
+## Related concepts
+
+- [Retry logic](#)
+- [At-least-once vs. exactly-once delivery](#)
+````
+
+## Why this page is structured this way
+
+- **The description does real work.** It's specific enough to tell a search result apart from a dozen other API articles, and short enough to read in one glance.
+- **Definition leads with the positive example, then the negative one** — showing the boundary of the concept is often clearer than defining it in the abstract.
+- **Why it matters comes before Key principles.** A reader who doesn't yet care about idempotency won't get far enough to learn the principles; motivate first.
+- **Trade-offs is genuinely earned here** — idempotency keys have a real cost (server-side state), so the section isn't padding. Compare this to a concept with no real trade-off, where the [template](../concept-article-template/) says to drop the section entirely.
+- **Related concepts links to real adjacent ideas**, not a generic "see also" — each link should be something the reader plausibly needs next.

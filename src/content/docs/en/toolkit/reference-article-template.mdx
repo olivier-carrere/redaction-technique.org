@@ -1,0 +1,54 @@
+---
+title: "Template: reference article"
+description: "A ready-to-copy Markdown template for writing a reference article, following the Overview / Syntax / Parameters / Examples / Limitations structure."
+goal: [toolkit]
+contentType: reference
+---
+
+:::tip[Template]
+This is a **starting point to copy and adapt**, not a worked example. For a filled-in version, see the [API documentation template](../api-documentation-template/), which is a specialized case of this pattern.
+:::
+
+Use this structure for **lookup material** — the reader already knows what they're trying to do and needs exact syntax, parameters, or specifications. Unlike a concept or task article, nobody reads a reference article start to finish; they scan for the one detail they need.
+
+```markdown
+---
+title: "<Command, option, or item name>"
+description: "<One sentence: what this is a reference for>"
+---
+
+## Overview
+
+<One or two sentences of context — enough for someone who lands here
+from search to know they're in the right place.>
+
+## Syntax
+
+<The exact, literal syntax. A code block, not prose.>
+
+## Parameters
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `<name>` | `<type>` | Yes/No | <what it does> |
+
+## Examples
+
+<At least one complete, runnable example — not a fragment.>
+
+## Limitations
+
+<Known constraints, unsupported combinations, or edge cases. Omit if
+none exist; don't invent caveats to fill the section.>
+
+## Related references
+
+- [<Related reference 1>](<link>)
+- [<Related reference 2>](<link>)
+```
+
+## When to skip a section
+
+- **Limitations**: only if genuine ones exist.
+- **Parameters**: if the item being documented takes no parameters, replace the table with a one-line note saying so — don't delete the heading silently, since its absence should be obvious, not implied.
+- Never skip **Syntax** or **Examples** — a reference article without a literal, copyable form isn't doing its job.

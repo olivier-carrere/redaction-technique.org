@@ -1,0 +1,55 @@
+---
+title: "Modèle : article référence"
+description: "Un modèle Markdown prêt à copier pour rédiger un article référence, selon la structure Aperçu / Syntaxe / Paramètres / Exemples / Limitations."
+goal: [toolkit]
+contentType: reference
+---
+
+:::tip[Modèle]
+Ceci est un **point de départ à copier et adapter**, pas un exemple abouti. Pour une version remplie, voir le [modèle de documentation d'API](../api-documentation-template/), un cas particulier de ce patron.
+:::
+
+Utilisez cette structure pour du **contenu de consultation** — le lecteur sait déjà ce qu'il veut faire et a besoin de la syntaxe exacte, des paramètres ou des spécifications. Contrairement à un article concept ou tâche, personne ne lit un article référence de bout en bout ; on le parcourt pour trouver un seul détail.
+
+```markdown
+---
+title: "<Nom de la commande, option ou élément>"
+description: "<Une phrase : de quoi ceci est la référence>"
+---
+
+## Aperçu
+
+<Une ou deux phrases de contexte — de quoi permettre à quelqu'un qui
+arrive ici depuis une recherche de savoir qu'il est au bon endroit.>
+
+## Syntaxe
+
+<La syntaxe exacte et littérale. Un bloc de code, pas de la prose.>
+
+## Paramètres
+
+| Paramètre | Type | Obligatoire | Description |
+| --- | --- | --- | --- |
+| `<nom>` | `<type>` | Oui/Non | <ce qu'il fait> |
+
+## Exemples
+
+<Au moins un exemple complet et exécutable — pas un fragment.>
+
+## Limitations
+
+<Contraintes connues, combinaisons non prises en charge ou cas
+limites. Omettez si aucune n'existe ; n'inventez pas de mises en
+garde pour remplir la section.>
+
+## Références connexes
+
+- [<Référence connexe 1>](<lien>)
+- [<Référence connexe 2>](<lien>)
+```
+
+## Quand omettre une section
+
+- **Limitations** : uniquement si de vraies limitations existent.
+- **Paramètres** : si l'élément documenté ne prend aucun paramètre, remplacez le tableau par une note d'une ligne le précisant — ne supprimez pas le titre en silence, son absence doit être explicite, pas implicite.
+- Ne jamais omettre **Syntaxe** ni **Exemples** — un article référence sans forme littérale et copiable ne remplit pas son rôle.

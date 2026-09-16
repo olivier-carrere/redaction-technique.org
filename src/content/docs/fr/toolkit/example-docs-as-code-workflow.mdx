@@ -1,0 +1,56 @@
+---
+title: "Exemple : un workflow docs-as-code basique"
+description: "Un exemple abouti d'un changement documentaire unique, de la branche à la fusion, sous un workflow docs-as-code calqué sur une revue de code standard."
+goal: [toolkit]
+contentType: task
+---
+
+:::note[Exemple abouti]
+Ceci est un **exemple abouti à étudier**, pas un modèle. Pour la version check-list, voir [adoption du docs-as-code](../docs-as-code-adoption-checklist/).
+:::
+
+## Le scénario
+
+Un ticket de support révèle que le guide d'installation ne mentionne pas un port de pare-feu requis. Un rédacteur corrige le problème.
+
+## Le workflow
+
+1. **Créer une branche.**
+
+   ```bash
+   git checkout -b docs/ajout-port-pare-feu
+   ```
+
+   Voir [utiliser les branches](/fr/tech-writing-process/using-branches/) — une branche petite et à but unique comme celle-ci est exactement ce à quoi servent les branches.
+
+2. **Modifier et committer.**
+
+   ```bash
+   # modifier installation.md
+   git add installation.md
+   git commit -m "docs: ajouter le port de pare-feu requis 8443 au guide d'installation"
+   ```
+
+   Le message de commit indique ce qui a changé et, implicitement, pourquoi — un futur lecteur de `git blame` ne devrait pas avoir à deviner.
+
+3. **Pousser et ouvrir une pull request.**
+
+   ```bash
+   git push -u origin docs/ajout-port-pare-feu
+   ```
+
+   La description de la PR relie le ticket de support à l'origine du correctif.
+
+4. **La CI s'exécute automatiquement.** Le build compile le site depuis cette branche, un vérificateur de liens s'exécute sur la sortie, et un déploiement de prévisualisation est généré — voir [intégrer la documentation aux processus de développement](/fr/tech-writing-process/integrating-documentation-into-development/).
+
+5. **Revue.** Un collègue ayant accès à la configuration réelle du pare-feu confirme le numéro de port selon la [check-list de revue technique](../technical-review-checklist/) — pas selon sa mémoire de ce qu'il « devrait » être.
+
+6. **Fusion.** Une fois la CI passée et la revue approuvée, la branche est fusionnée dans `main`.
+
+7. **Déploiement.** Le même pipeline qui a construit la prévisualisation construit désormais et publie le site en production — pas d'étape de publication manuelle séparée.
+
+## Pourquoi cela fonctionne
+
+- Chaque étape automatisable (build, vérification de liens, prévisualisation, déploiement) l'est — un humain ne fait que les parties qui nécessitent un jugement : corriger et relire l'exactitude.
+- La PR est l'endroit unique où le changement, sa justification, ses résultats de CI et sa conversation de revue vivent ensemble — un historique utile pour quiconque demande dans un an « pourquoi le guide mentionne-t-il le port 8443 ? ».
+- Rien n'est parti en production sans que la CI ne passe — la même garantie que pour les changements de code.

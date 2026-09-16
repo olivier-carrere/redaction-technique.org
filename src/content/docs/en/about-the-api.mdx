@@ -1,0 +1,45 @@
+---
+title: "About this manual's API"
+description: "This manual exposes its entire corpus as a static, zero-runtime API for LLMs and AI agents — llms.txt, per-page Markdown mirrors, and JSON indexes. What it's for and how to use it."
+goal: [reference]
+contentType: reference
+---
+
+## Overview
+
+This manual isn't just an OpenAPI demo somewhere else in the redaction-technique.org family — this site's *own* API is real, and it's already running under every page you're reading. It's a static, zero-runtime endpoint set that mirrors the entire documentation corpus in machine-readable form, for LLMs, AI coding agents, and automated tooling to consume directly, instead of scraping rendered HTML.
+
+Everything below is generated at build time from the same Markdown source as the HTML pages — there's no separate content to keep in sync, and no server-side database or function call involved. It's served as static files from the CDN edge, same as any other asset on this site.
+
+## Why it exists
+
+Rendered HTML is built for browsers: navigation chrome, CSS, client-side interactivity. An LLM or agent that just needs the article text has to strip all of that back out, and can get it wrong. This API skips the round-trip: it serves the same content agents would otherwise reconstruct, as clean Markdown and structured JSON, directly.
+
+## Endpoints
+
+| Endpoint | Format | What it's for |
+| --- | --- | --- |
+| `/llms.txt` | Plain text | A concise table of contents conforming to the [llms.txt](https://llmstxt.org/) convention — the entry point for an agent that wants to know what's here before fetching anything larger. |
+| `/llms-full.txt`, `/llms-full-en.txt`, `/llms-full-fr.txt` | Plain text | The entire corpus (bilingual, or one locale) concatenated into a single file, for an agent that wants to ingest everything in one request instead of one per page. |
+| `/index.json`, `/en/index.json`, `/fr/index.json` | JSON | A machine-readable document index: title, description, URL, word count, headings, and tags for every page. |
+| `/sitemap.md`, `/en/sitemap.md`, `/fr/sitemap.md` | Markdown | A hierarchical sitemap grouped by section, in a format an LLM can read directly rather than parsing an XML sitemap. |
+| `/en/<page>.md`, `/fr/<page>.md` | Markdown | A clean Markdown mirror of one page — the same text content as the HTML version, without layout or navigation markup. |
+
+The content under each page's `.md` endpoint is guaranteed byte-for-byte identical to that page's section inside `llms-full.txt` — an automated test in this repository checks that invariant on every build, across every document, not just spot checks.
+
+## How each page exposes this
+
+You don't need to know these URLs by hand — every page links to its own machine-readable form:
+
+- **`<link rel="alternate">` tags** in the page `<head>` point to the page's `.md` file, the relevant locale index, and `/llms.txt` — discoverable by any tool that reads HTML head metadata, without JavaScript.
+- **The "Copy for LLM" button** (visible near the top of every page) copies that page's clean Markdown straight to your clipboard — useful for pasting a page directly into a chat with an AI assistant.
+- **The "View as Markdown" link** is a plain `<a>` tag to the `.md` file — works with JavaScript disabled, and is exactly what an agent following the discovery tag would fetch.
+
+## This vs. "Ask the documentation"
+
+This API and the [AI assistant on the homepage](/en/) solve different problems. The API is for *your own* tools and agents to pull this manual's content into *their* context — a coding agent that wants the docs-as-code article inline while it works, for instance. The homepage assistant is the reverse: it's this site answering a question *for you*, grounded in its own content, with no API key or integration required on your side.
+
+## Related references
+
+- [Explore the reference](/en/reference/)
+- [Glossary](/en/reference/glossary/)

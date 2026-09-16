@@ -1,0 +1,48 @@
+---
+title: "Exemple : une architecture de dépôt documentaire"
+description: "Un exemple abouti d'organisation d'un dépôt docs-as-code - contenu par type d'information, langue en premier niveau pour un site traduit, et séparation nette de l'outillage."
+goal: [toolkit]
+contentType: reference
+---
+
+:::note[Exemple abouti]
+Ceci est un **exemple abouti à étudier**, pas un modèle — les besoins exacts de chaque dépôt diffèrent. Pour la décision sous-jacente, voir [le référentiel](/fr/tech-writing-process/repository/) et [un référentiel unique ?](/fr/tech-writing-process/single-repository/).
+:::
+
+## L'arborescence
+
+```text
+depot-docs/
+├── src/
+│   ├── content/
+│   │   ├── en/
+│   │   │   ├── demarrage/
+│   │   │   │   ├── index.md
+│   │   │   │   ├── installation.md
+│   │   │   │   └── premier-projet.md
+│   │   │   ├── guides/
+│   │   │   │   └── ...
+│   │   │   └── reference/
+│   │   │       └── ...
+│   │   └── fr/
+│   │       └── <reproduit l'arborescence en/>
+│   ├── components/         # composants de page réutilisables
+│   └── assets/              # images référencées depuis le contenu
+├── scripts/                  # automatisation au moment du build (redirections, index de recherche, etc.)
+├── tests/                    # vérifications automatisées sur la sortie du build
+├── fichier-de-configuration   # configuration du site/build
+└── manifeste-du-paquet
+```
+
+## Pourquoi cette forme
+
+- **La langue est la division de premier niveau**, pas un suffixe sur chaque nom de fichier (`installation.md` / `installation.fr.md`). Cela maintient chaque langue comme une arborescence complète et navigable indépendamment — voir [traduction](/fr/tech-writing-process/translation/) sur la façon dont une organisation langue-en-premier simplifie la gestion de branches pour un travail de traduction en parallèle.
+- **Le contenu est regroupé par intention du lecteur** (`demarrage/`, `guides/`, `reference/`), pas par structure d'équipe interne ni par équipe produit propriétaire d'une page. Les lecteurs naviguent selon ce qu'ils essaient de faire, pas selon votre organigramme.
+- **`scripts/` et `tests/` sont séparés de `content/`.** Un contributeur qui corrige une coquille n'a jamais besoin de regarder l'outillage de build, et un contributeur qui modifie le build ne touche pas la prose par accident.
+- **Les assets vivent à proximité de l'arborescence de contenu**, pas dans un unique dossier `images/` plat avec des milliers de fichiers — cela rend évident quelles images sont encore référencées quand une page est supprimée.
+
+## Ce qui n'a pas sa place dans ce dépôt
+
+- La sortie générée (HTML compilé, PDF) — régénérez-la en CI, ne la committez pas. Une entrée `.gitignore`, pas un dossier, est le bon emplacement pour les artefacts de build.
+- Les secrets ou identifiants pour tout service touché par le build (clés d'analytics, tokens de déploiement) — cela appartient au gestionnaire de secrets de la plateforme CI/CD, jamais à des fichiers suivis.
+- Les fichiers source binaires (voir [format source](/fr/tech-writing-process/source-format/)) — si un asset ancien doit absolument rester binaire, gardez-le petit et traitez-le comme une exception, pas comme un modèle à reproduire.

@@ -1,0 +1,36 @@
+---
+title: "Checklist: documentation release readiness"
+description: "A gate checklist for whether documentation is ready to ship alongside a product release - coverage, accuracy, translation, and delivery."
+goal: [toolkit]
+contentType: reference
+---
+
+:::tip[Checklist]
+Run this as a release gate — documentation follows the same release discipline as the product it documents. See [integrating documentation into development](/en/tech-writing-process/integrating-documentation-into-development/).
+:::
+
+## Coverage
+
+- [ ] Every new or changed feature in this release has corresponding documentation.
+- [ ] Every removed or deprecated feature has its documentation removed or marked deprecated — stale docs for a dead feature are worse than no docs.
+- [ ] Breaking changes are called out explicitly, not buried in a changelog nobody reads.
+
+## Accuracy
+
+- [ ] Documentation has been tested against a release-candidate build, not an earlier dev build.
+- [ ] Version numbers, compatibility tables, and system requirements reflect this release.
+
+## Translation
+
+- [ ] Translated versions are either updated for this release or explicitly flagged as pending — see [translation](/en/tech-writing-process/translation/). Don't ship an English-only update silently under a page that claims to be translated.
+
+## Delivery
+
+- [ ] Target formats generate cleanly with no build errors — see [target format](/en/tech-writing-process/target-format/).
+- [ ] Links (internal and to the product itself, e.g. a UI path) have been checked against the release-candidate build.
+- [ ] The delivery channel (site, PDF download, in-product help) is updated, not just the source.
+
+## Sign-off
+
+- [ ] Technical review is complete (see the [technical review checklist](../technical-review-checklist/)).
+- [ ] A named owner has confirmed documentation is ready — a checklist with no accountable sign-off tends not to get run.

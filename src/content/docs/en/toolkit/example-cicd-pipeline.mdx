@@ -1,0 +1,60 @@
+---
+title: "Example: a practical CI/CD pipeline for documentation"
+description: "A worked example of a documentation CI/CD pipeline - build, link check, search index, and deploy - annotated stage by stage."
+goal: [toolkit]
+contentType: task
+---
+
+:::note[Worked example]
+This is a **finished illustration to study**, not a template — adapt the specific commands to your own static-site generator and hosting platform. For the underlying reasoning, see [integrating documentation into development](/en/tech-writing-process/integrating-documentation-into-development/).
+:::
+
+## The pipeline
+
+```yaml
+name: docs
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run automated tests
+        run: npm test
+
+      - name: Build the site
+        run: npm run build
+
+      - name: Check for broken links
+        run: npm run check-links
+
+      - name: Deploy preview (pull requests only)
+        if: github.event_name == 'pull_request'
+        run: npm run deploy:preview
+
+      - name: Deploy to production (main only)
+        if: github.ref == 'refs/heads/main'
+        run: npm run deploy:production
+```
+
+## What each stage catches, and why it's in this order
+
+1. **Automated tests run before the build**, not after — a test failure means something is already structurally broken (a malformed redirect table, a schema violation), and there's no point spending build time on content that won't be correct anyway.
+2. **The build itself is the second gate.** A build failure (a broken code sample in a fenced block that the site validates, a missing required frontmatter field) blocks everything downstream automatically.
+3. **The link checker runs against the *built* output**, not the source Markdown — link-checking source files misses everything the build pipeline itself generates or rewrites (redirects, generated index pages).
+4. **Preview deploys only on pull requests.** A reviewer gets a real, clickable URL to check the actual rendered result — reviewing a diff of Markdown text alone misses rendering issues a diff can't show.
+5. **Production deploy is gated on branch**, not on manual approval to trigger — once something merges to `main`, it has already passed review, so the deploy step is mechanical, not a second decision point.
+
+## What this pipeline deliberately doesn't do
+
+- It doesn't gate on a subjective "does this read well" check — that's what [technical and editorial review](../example-review-workflow/) are for, done by humans before the PR reaches CI, not encoded as an automated rule.
+- It doesn't skip tests on the `main` branch push — the same gate applies whether the trigger is a PR or a direct merge, so nothing reaches production that hasn't been checked.

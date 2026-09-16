@@ -1,0 +1,89 @@
+---
+title: "Exemple : une page Markdown bien structurée"
+description: "Un exemple abouti d'article concept en Markdown, annoté pour expliquer pourquoi chaque choix structurel a été fait."
+goal: [toolkit]
+contentType: task
+---
+
+:::note[Exemple abouti]
+Ceci est un **exemple abouti à étudier**, pas un modèle. Pour la structure vierge, voir le [modèle d'article concept](../concept-article-template/).
+:::
+
+## La source
+
+````markdown
+---
+title: "Idempotence"
+description: "Ce que signifie l'idempotence d'une opération, et pourquoi cela compte pour la logique de nouvelle tentative dans les systèmes distribués."
+---
+
+## Définition
+
+Une opération est **idempotente** si l'exécuter plusieurs fois produit
+le même effet que l'exécuter une seule fois. `PUT /users/42
+{"name": "Alice"}` est idempotente — l'exécuter cinq fois laisse le
+même état final que l'exécuter une fois. `POST /users
+{"name": "Alice"}`, qui crée un nouvel utilisateur à chaque appel, ne
+l'est pas.
+
+## Pourquoi c'est important
+
+Les réseaux échouent. Un client qui ne reçoit pas de réponse ne peut
+pas savoir si la requête a réussi avant la coupure de connexion. Si
+l'opération est idempotente, le client peut retenter en toute
+sécurité. Si elle ne l'est pas, une nouvelle tentative risque un
+effet de bord dupliqué — un second enregistrement utilisateur, un
+second débit.
+
+## Principes clés
+
+- L'idempotence est une propriété de l'*opération*, pas du transport
+  — retenter au niveau HTTP ne rend pas sûre une opération non
+  idempotente.
+- `GET`, `PUT` et `DELETE` sont idempotentes par convention HTTP ;
+  `POST` et `PATCH` ne le sont généralement pas, sauf si l'API le
+  garantit explicitement (souvent via une clé d'idempotence fournie
+  par le client).
+- Une clé d'idempotence permet de rendre sûre à retenter une
+  opération intrinsèquement non idempotente (comme `POST`), en
+  faisant dédupliquer par le serveur les requêtes portant la même
+  clé.
+
+## Exemples
+
+Sûr à retenter sans clé :
+
+```http
+PUT /users/42
+{"name": "Alice"}
+```
+
+Pas sûr à retenter sans clé — une réponse perdue pourrait créer deux
+utilisateurs nommés Alice :
+
+```http
+POST /users
+{"name": "Alice"}
+```
+
+## Compromis
+
+Les clés d'idempotence ajoutent un état côté serveur (le serveur doit
+se souvenir des clés déjà traitées, pendant une certaine durée de
+rétention) et une légère complexité côté client (générer et stocker
+la clé). Pour des opérations peu risquées et rarement retentées, ce
+coût peut ne pas en valoir la peine.
+
+## Concepts connexes
+
+- [Logique de nouvelle tentative](#)
+- [Livraison au moins une fois vs exactement une fois](#)
+````
+
+## Pourquoi cette page est structurée ainsi
+
+- **La description fait un vrai travail.** Elle est assez précise pour distinguer un résultat de recherche parmi une dizaine d'autres articles d'API, et assez courte pour se lire d'un coup d'œil.
+- **La définition part de l'exemple positif, puis du négatif** — montrer la limite du concept est souvent plus clair que le définir dans l'abstrait.
+- **« Pourquoi c'est important » vient avant « Principes clés ».** Un lecteur qui ne se soucie pas encore de l'idempotence n'ira pas assez loin pour lire les principes ; motivez d'abord.
+- **« Compromis » est ici réellement mérité** — les clés d'idempotence ont un vrai coût (état côté serveur), donc la section n'est pas du remplissage. À comparer à un concept sans vrai compromis, où le [modèle](../concept-article-template/) dit de supprimer la section entièrement.
+- **« Concepts connexes » relie à de vraies idées adjacentes**, pas un « voir aussi » générique — chaque lien devrait être quelque chose dont le lecteur a plausiblement besoin ensuite.

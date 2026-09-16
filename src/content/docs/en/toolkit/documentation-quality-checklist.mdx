@@ -1,0 +1,39 @@
+---
+title: "Checklist: documentation quality"
+description: "A pre-publication checklist covering accuracy, structure, and accessibility for a single documentation page - run it before merging any content change."
+goal: [toolkit]
+contentType: reference
+---
+
+:::tip[Checklist]
+Run this before merging any documentation change — it's deliberately generic enough to apply to a single-paragraph fix or a new article.
+:::
+
+## Accuracy
+
+- [ ] Every command, code sample, and screenshot has been tested against the current version of the product — not the version it originally documented.
+- [ ] Every factual claim traces to something verifiable (source code, a tested command, a person with authority on the subject) — see [testing products](/en/tech-writing-process/testing-products/).
+- [ ] No claim is stronger than the evidence for it (a single test run doesn't support "always").
+
+## Structure
+
+- [ ] The page follows one of the standard structures (concept, task, or reference — see the [toolkit templates](../concept-article-template/)) or has a clear reason not to.
+- [ ] Headings form a logical hierarchy with no skipped levels (H2 → H4 without an H3).
+- [ ] The page is reachable from navigation or search — no orphans (see the [documentation audit checklist](../documentation-audit-checklist/)).
+
+## Writing
+
+- [ ] Sentences are as simple as the content allows — see the [KISS principle](/en/costs/kiss-principle/).
+- [ ] Terminology is consistent with the rest of the site (not "folder" here and "directory" there for the same thing).
+- [ ] UI actions are named specifically ("select Save", not "click here").
+
+## Accessibility
+
+- [ ] Images have alt text that conveys their actual content, not just "screenshot."
+- [ ] Links describe their destination ("see the migration checklist", not "click here").
+- [ ] Tables have header rows; they aren't used for layout.
+
+## Before merging
+
+- [ ] A second person has read the change — even a quick pass catches things the author can't see in their own writing.
+- [ ] Any linked article that this page references still exists and still says what this page assumes it says.

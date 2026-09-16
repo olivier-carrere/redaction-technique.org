@@ -1,0 +1,56 @@
+---
+title: "Example: a basic docs-as-code workflow"
+description: "A worked example of a single documentation change moving from branch to merge under a docs-as-code workflow, mirroring a standard code review flow."
+goal: [toolkit]
+contentType: task
+---
+
+:::note[Worked example]
+This is a **finished illustration to study**, not a template. For the checklist version, see [docs-as-code adoption](../docs-as-code-adoption-checklist/).
+:::
+
+## The scenario
+
+A support ticket reveals that the installation guide is missing a required firewall port. One writer fixes it.
+
+## The workflow
+
+1. **Branch.**
+
+   ```bash
+   git checkout -b docs/add-firewall-port
+   ```
+
+   See [using branches](/en/tech-writing-process/using-branches/) — a small, single-purpose branch like this one is exactly what branching is for.
+
+2. **Edit and commit.**
+
+   ```bash
+   # edit installation.md
+   git add installation.md
+   git commit -m "docs: add required firewall port 8443 to installation guide"
+   ```
+
+   The commit message states what changed and, implicitly, why — a future reader of `git blame` shouldn't have to guess.
+
+3. **Push and open a pull request.**
+
+   ```bash
+   git push -u origin docs/add-firewall-port
+   ```
+
+   The PR description links the support ticket that prompted the fix.
+
+4. **CI runs automatically.** The build compiles the site from this branch, a link checker runs against the output, and a preview deployment is generated — see [integrating documentation into development](/en/tech-writing-process/integrating-documentation-into-development/).
+
+5. **Review.** A teammate with access to the actual firewall configuration confirms the port number against [the technical review checklist](../technical-review-checklist/) — not against their memory of what it "should" be.
+
+6. **Merge.** Once CI passes and review approves, the branch merges to `main`.
+
+7. **Deploy.** The same pipeline that built the preview now builds and publishes the production site — no separate manual publish step.
+
+## Why this works
+
+- Every step that can be automated (build, link check, preview, deploy) is — a human only does the parts that need judgment: writing the fix and reviewing its accuracy.
+- The PR is the single place where the change, its justification, its CI results, and its review conversation all live together — useful history for anyone who asks "why does the guide say port 8443?" a year from now.
+- Nothing shipped without CI passing — the same guarantee code changes get.

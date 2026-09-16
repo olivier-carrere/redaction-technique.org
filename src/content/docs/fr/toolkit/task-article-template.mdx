@@ -1,0 +1,71 @@
+---
+title: "Modèle : article tâche"
+description: "Un modèle Markdown prêt à copier pour rédiger un article tâche/didacticiel, selon la structure Objectif / Prérequis / Étapes / Résultat attendu / Dépannage."
+goal: [toolkit]
+contentType: reference
+---
+
+:::tip[Modèle]
+Ceci est un **point de départ à copier et adapter**, pas un exemple abouti. Pour une version remplie, voir [l'exemple de workflow docs-as-code](../example-docs-as-code-workflow/).
+:::
+
+Utilisez cette structure quand le lecteur doit **faire** quelque chose avec un résultat concret et vérifiable — pas pour une explication de fond (utilisez le [modèle concept](../concept-article-template/)).
+
+```markdown
+---
+title: "<Titre à l'impératif, ex. 'Configurer X' ou 'Migrer Y vers Z'>"
+description: "<Une phrase : ce que le lecteur accomplit>"
+---
+
+## Objectif
+
+<Une phrase : ce que le lecteur aura en place/accompli à la fin.>
+
+## Prérequis
+
+- <Accès, outil ou connaissance préalable requis>
+- <Accès, outil ou connaissance préalable requis>
+
+<Omettez entièrement cette section s'il n'y en a vraiment aucun —
+ne la remplissez pas avec « un ordinateur » ou d'autres
+non-prérequis.>
+
+## Temps estimé
+
+<À inclure uniquement si vous pouvez l'appuyer sur un chiffre réel —
+un nombre de mots divisé par une vitesse de lecture, ou un
+chronométrage réel. Ne devinez jamais.>
+
+## Étapes
+
+1. <Action. Limitez chaque étape à une seule action que le lecteur
+   peut accomplir avant de passer à la suivante.>
+2. <Action.>
+3. <Action.>
+
+## Résultat attendu
+
+<Ce que le lecteur doit voir si les étapes ont fonctionné. Concret
+et vérifiable — une capture d'écran, une sortie de commande, une URL
+qui répond désormais.>
+
+## Dépannage
+
+| Symptôme | Cause probable | Solution |
+| --- | --- | --- |
+| <Ce qui ne va pas> | <Pourquoi> | <Que faire> |
+
+<Omettez si vous n'avez pas de vrais cas d'échec à documenter — un
+tableau de dépannage inventé est pire que son absence.>
+
+## Ressources connexes
+
+- [<Article connexe 1>](<lien>)
+- [<Article connexe 2>](<lien>)
+```
+
+## Quand omettre une section
+
+- **Temps estimé** : uniquement si vous avez une vraie base pour ce chiffre (voir ci-dessus).
+- **Dépannage** : documentez uniquement les cas d'échec réellement observés ou raisonnés concrètement — ce tableau se dégrade vite s'il est rempli de suppositions.
+- Ne jamais omettre **Objectif**, **Étapes** ou **Résultat attendu** — un article tâche sans résultat vérifiable n'en est pas un.

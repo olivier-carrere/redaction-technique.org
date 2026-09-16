@@ -1,0 +1,72 @@
+---
+title: "Modèle : documentation d'API"
+description: "Un modèle Markdown prêt à copier pour documenter un endpoint d'API REST - aperçu, méthode, paramètres, exemples de requête/réponse et codes d'erreur."
+goal: [toolkit]
+contentType: reference
+---
+
+:::tip[Modèle]
+Ceci est un **point de départ à copier et adapter**, pas un exemple abouti. C'est une instance spécialisée du [modèle d'article référence](../reference-article-template/), adaptée à un endpoint d'API par page.
+:::
+
+Utilisez une copie de ce modèle par endpoint (ou par groupe d'endpoints étroitement liés, comme `GET`/`POST` sur la même ressource). N'essayez pas de documenter une API entière sur une seule page — elle cesse d'être consultable au-delà de quelques endpoints.
+
+````markdown
+---
+title: "<Méthode HTTP> <chemin>"
+description: "<Une phrase : ce que fait cet endpoint>"
+---
+
+## Aperçu
+
+<Une ou deux phrases : à quoi sert cet endpoint et quand l'appeler.>
+
+## Endpoint
+
+```
+<MÉTHODE> <chemin>
+```
+
+## Authentification
+
+<Schéma d'authentification requis, ou « Aucune » si l'endpoint est public.>
+
+## Paramètres
+
+| Nom | Emplacement | Type | Obligatoire | Description |
+| --- | --- | --- | --- | --- |
+| `<nom>` | chemin / requête / corps | `<type>` | Oui/Non | <ce qu'il fait> |
+
+## Exemple de requête
+
+```bash
+curl -X <MÉTHODE> https://api.exemple.com/<chemin> \
+  -H "Content-Type: application/json" \
+  -d '{ "<champ>": "<valeur>" }'
+```
+
+## Exemple de réponse
+
+```json
+{
+  "<champ>": "<valeur>"
+}
+```
+
+## Codes d'erreur
+
+| Statut HTTP | Code | Signification |
+| --- | --- | --- |
+| 400 | `INVALID_REQUEST` | <quand cela se produit> |
+| 404 | `NOT_FOUND` | <quand cela se produit> |
+
+## Endpoints connexes
+
+- [<Endpoint connexe>](<lien>)
+````
+
+## Notes de remplissage
+
+- **Chaque champ des tableaux doit provenir du contrat réel de l'API** — le schéma, le code de validation, ou une requête/réponse réellement capturée. N'inventez jamais un paramètre ou un code d'erreur plausible ; c'est pire qu'une absence de documentation, car le lecteur s'y fiera.
+- Gardez les exemples de requête/réponse exécutables tels quels — un lecteur doit pouvoir copier-coller la commande `curl` et obtenir la réponse indiquée (en masquant uniquement les vrais secrets).
+- Si l'API dispose d'un schéma consultable par machine (OpenAPI, JSON Schema), pointez vers lui plutôt que de dupliquer manuellement chaque champ qu'il définit déjà — les deux finiraient par diverger.

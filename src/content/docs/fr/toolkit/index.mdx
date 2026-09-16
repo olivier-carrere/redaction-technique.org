@@ -1,0 +1,45 @@
+---
+lastUpdated: false
+tableOfContents: false
+prev: false
+next: false
+title: "Utiliser la boîte à outils"
+description: "Modèles, check-lists et exemples concrets prêts à l'emploi pour la documentation technique — copiez-les pour partir d'une base fonctionnelle plutôt que d'une page blanche."
+goal: [toolkit]
+contentType: reference
+---
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Des modèles, check-lists et exemples à copier directement dans votre propre projet. Chaque élément est clairement identifié comme **modèle** (un point de départ à adapter) ou **exemple concret** (une illustration aboutie à étudier).
+
+## Modèles
+
+<CardGrid>
+  <LinkCard title="Modèle d'article concept" href="concept-article-template/" description="Définition, pourquoi c'est important, principes clés, exemples, compromis." />
+  <LinkCard title="Modèle d'article tâche" href="task-article-template/" description="Objectif, prérequis, étapes, résultat attendu, dépannage." />
+  <LinkCard title="Modèle d'article référence" href="reference-article-template/" description="Aperçu, syntaxe, paramètres, exemples, limitations." />
+  <LinkCard title="Modèle de documentation d'API" href="api-documentation-template/" description="Un endpoint par page : méthode, paramètres, requête/réponse, codes d'erreur." />
+  <LinkCard title="Plan de projet documentaire" href="documentation-project-plan-template/" description="Objectif, public, périmètre, format, critères de succès, calendrier." />
+  <LinkCard title="Demande de revue documentaire" href="documentation-review-request-template/" description="Cadrer une revue pour qu'elle soit réellement effectuée." />
+</CardGrid>
+
+## Check-lists
+
+<CardGrid>
+  <LinkCard title="Qualité documentaire" href="documentation-quality-checklist/" description="À exécuter avant de fusionner tout changement documentaire." />
+  <LinkCard title="Revue technique" href="technical-review-checklist/" description="Ce qu'un relecteur expert métier doit et ne doit pas vérifier." />
+  <LinkCard title="Préparation à la mise en production" href="release-readiness-checklist/" description="Un jalon pour livrer la documentation avec une version du produit." />
+  <LinkCard title="Migration documentaire" href="documentation-migration-checklist/" description="Changer de format ou de plateforme sans perdre de contenu ni d'URL." />
+  <LinkCard title="Adoption du docs-as-code" href="docs-as-code-adoption-checklist/" description="Format, gestion de versions, CI/CD et préparation de l'équipe." />
+  <LinkCard title="Audit documentaire" href="documentation-audit-checklist/" description="Repérer les pages orphelines, doublons et contenus obsolètes." />
+</CardGrid>
+
+## Exemples
+
+<CardGrid>
+  <LinkCard title="Une page Markdown bien structurée" href="example-markdown-page/" description="Un article concept annoté, expliquant chaque choix structurel." />
+  <LinkCard title="Une architecture de dépôt documentaire" href="example-repository-structure/" description="Contenu langue-en-premier, séparé de l'outillage et des assets." />
+  <LinkCard title="Un workflow docs-as-code basique" href="example-docs-as-code-workflow/" description="Un changement, de la branche à la production, annoté étape par étape." />
+  <LinkCard title="Un workflow de revue documentaire" href="example-review-workflow/" description="Scinder revue technique et revue éditoriale, et pourquoi." />
+  <LinkCard title="Un pipeline CI/CD concret" href="example-cicd-pipeline/" description="Build, tests, vérification de liens, prévisualisation, déploiement — annoté étape par étape." />
+</CardGrid>

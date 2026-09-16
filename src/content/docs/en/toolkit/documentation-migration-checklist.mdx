@@ -1,0 +1,34 @@
+---
+title: "Checklist: documentation migration"
+description: "A checklist for migrating documentation between formats or platforms without losing content, breaking URLs, or degrading structure - based on a real DITA XML migration."
+goal: [toolkit]
+contentType: reference
+---
+
+:::tip[Checklist]
+Written for a format migration (e.g. FrameMaker to DITA XML, or one static-site generator to another) — see [migrating from FrameMaker to DITA XML](/en/formats/structured-vs-unstructured-formats/) for the source pattern this generalizes from.
+:::
+
+## Before migrating
+
+- [ ] The old and new formats' semantic capabilities are understood — migrating to a richer format (e.g. unstructured to DITA XML) costs more upfront than migrating to a poorer one, but pays back on content already in the richer format. See [structured and unstructured formats](/en/formats/structured-vs-unstructured-formats/).
+- [ ] A small, non-critical content set is chosen as a pilot — not the whole corpus on the first attempt.
+- [ ] URLs of existing pages are inventoried before anything moves, so redirects can be built from a complete list rather than reconstructed from memory afterward.
+
+## During migration
+
+- [ ] Automated conversion (style-to-tag mapping, format conversion scripts) handles what it reliably can; manual restructuring is budgeted separately for what it can't — don't expect one pass to do both.
+- [ ] Content is re-typed into its actual information type (concept, task, reference) during migration, not just reformatted — splitting files without reclassifying them doesn't produce genuinely modular content. See [source format](/en/tech-writing-process/source-format/).
+- [ ] A redirect is created for every URL that changes, old → new, before the old URL goes offline.
+
+## After migrating
+
+- [ ] Every migrated page has been spot-checked against its original for lost content — diagrams, footnotes, and cross-references are the most common casualties.
+- [ ] Old-format source files are archived, not deleted, until the new pipeline has been in production long enough to trust.
+- [ ] Redirects are tested — not just written — by actually requesting a sample of the old URLs.
+- [ ] Search indexes (full-text search, any AI-assistant index) are rebuilt against the migrated content, not left pointing at stale data.
+
+## Rollout
+
+- [ ] The pilot set is validated end-to-end (create, update, publish) before migrating the rest of the corpus.
+- [ ] Remaining content is migrated in batches small enough to review, not as one undifferentiated cutover.

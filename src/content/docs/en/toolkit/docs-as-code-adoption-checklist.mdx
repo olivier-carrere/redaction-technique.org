@@ -1,0 +1,37 @@
+---
+title: "Checklist: docs-as-code adoption"
+description: "A checklist for moving a documentation team onto a docs-as-code workflow - version control, text-based formats, CI/CD, and team readiness."
+goal: [toolkit]
+contentType: reference
+---
+
+:::tip[Checklist]
+Pairs with [adopt docs-as-code](/en/docs-as-code/) for the narrative version of each step below.
+:::
+
+## Format
+
+- [ ] Content is (or will be) stored in a text-based, non-binary format — see [source format](/en/tech-writing-process/source-format/). Binary formats (Word, FrameMaker) can't be meaningfully diffed or merged.
+- [ ] The chosen format matches the team's actual needs: Markdown for simplicity, DITA XML if genuine content reuse and single-sourcing are required — see [formats and tools](/en/costs/formats-and-tools/).
+
+## Version control
+
+- [ ] A repository exists and its structure has been decided deliberately — see [the repository](/en/tech-writing-process/repository/) and [a single repository?](/en/tech-writing-process/single-repository/).
+- [ ] Writers who aren't already comfortable with Git have a path to learn it — pairing with a developer, a short internal workshop, or documented common commands. Don't assume Git fluency by default.
+- [ ] A branching approach is agreed on before it's needed under deadline pressure — see [using branches](/en/tech-writing-process/using-branches/).
+
+## CI/CD
+
+- [ ] Documentation builds automatically on every change, the same way code does — see [integrating documentation into development](/en/tech-writing-process/integrating-documentation-into-development/).
+- [ ] A build failure blocks merge the same way a failing test would — broken docs shouldn't ship silently.
+- [ ] Preview builds let reviewers see rendered output, not just raw source diffs.
+
+## Review process
+
+- [ ] Documentation changes go through the same pull-request review flow as code, not a separate, looser process.
+- [ ] The [technical review checklist](../technical-review-checklist/) is used consistently, not ad hoc per reviewer.
+
+## Team readiness
+
+- [ ] Writers have working local environments (editor, Git client, build tooling) before the migration date, not on it.
+- [ ] A rollback plan exists for the old process, in case the new one needs debugging time before it's trusted for real releases.

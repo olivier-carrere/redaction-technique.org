@@ -1,0 +1,36 @@
+---
+title: "Check-list : préparation à la mise en production"
+description: "Une check-list de contrôle pour savoir si la documentation est prête à sortir avec une version du produit - couverture, exactitude, traduction et livraison."
+goal: [toolkit]
+contentType: reference
+---
+
+:::tip[Check-list]
+À exécuter comme un jalon de sortie — la documentation suit la même discipline de release que le produit qu'elle documente. Voir [intégrer la documentation aux processus de développement](/fr/tech-writing-process/integrating-documentation-into-development/).
+:::
+
+## Couverture
+
+- [ ] Chaque fonctionnalité nouvelle ou modifiée de cette version dispose d'une documentation correspondante.
+- [ ] Chaque fonctionnalité supprimée ou dépréciée voit sa documentation supprimée ou marquée comme dépréciée — une documentation obsolète pour une fonctionnalité morte est pire que son absence.
+- [ ] Les changements incompatibles sont signalés explicitement, pas seulement enfouis dans un changelog que personne ne lit.
+
+## Exactitude
+
+- [ ] La documentation a été testée sur une version candidate à la release, pas sur une ancienne version de développement.
+- [ ] Les numéros de version, tableaux de compatibilité et prérequis système reflètent cette version.
+
+## Traduction
+
+- [ ] Les versions traduites sont soit mises à jour pour cette version, soit explicitement signalées comme en attente — voir [traduction](/fr/tech-writing-process/translation/). Ne publiez pas silencieusement une mise à jour anglais uniquement sous une page qui se prétend traduite.
+
+## Livraison
+
+- [ ] Les formats cibles se génèrent proprement, sans erreur de build — voir [format cible](/fr/tech-writing-process/target-format/).
+- [ ] Les liens (internes et vers le produit lui-même, ex. un chemin dans l'interface) ont été vérifiés sur la version candidate.
+- [ ] Le canal de diffusion (site, téléchargement PDF, aide intégrée) est mis à jour, pas seulement la source.
+
+## Validation finale
+
+- [ ] La revue technique est terminée (voir la [check-list de revue technique](../technical-review-checklist/)).
+- [ ] Un responsable nommé a confirmé que la documentation est prête — une check-list sans validation responsabilisée a tendance à ne pas être suivie.

@@ -1,0 +1,34 @@
+---
+title: "Check-list : migration documentaire"
+description: "Une check-list pour migrer une documentation entre formats ou plateformes sans perdre de contenu, casser d'URL ou dégrader la structure - basée sur une vraie migration DITA XML."
+goal: [toolkit]
+contentType: reference
+---
+
+:::tip[Check-list]
+Rédigée pour une migration de format (ex. de FrameMaker vers DITA XML, ou d'un générateur de site statique vers un autre) — voir [formats structurés et non structurés](/fr/formats/structured-vs-unstructured-formats/) pour le cas source dont cette check-list généralise le principe.
+:::
+
+## Avant de migrer
+
+- [ ] Les capacités sémantiques des formats source et cible sont comprises — migrer vers un format plus riche (ex. non structuré vers DITA XML) coûte plus cher en amont mais se rentabilise sur le contenu déjà dans le format riche. Voir [formats structurés et non structurés](/fr/formats/structured-vs-unstructured-formats/).
+- [ ] Un jeu de contenu restreint et non critique est choisi comme pilote — pas l'ensemble du corpus dès la première tentative.
+- [ ] Les URL des pages existantes sont inventoriées avant tout déplacement, afin de construire les redirections à partir d'une liste complète plutôt que de les reconstituer de mémoire après coup.
+
+## Pendant la migration
+
+- [ ] La conversion automatisée (correspondance styles-vers-balises, scripts de conversion de format) traite ce qu'elle peut faire de manière fiable ; la restructuration manuelle est budgétée séparément pour le reste — ne comptez pas sur une seule passe pour faire les deux.
+- [ ] Le contenu est retypé selon son type d'information réel (concept, tâche, référence) pendant la migration, pas seulement reformaté — scinder des fichiers sans les reclasser ne produit pas un contenu réellement modulaire. Voir [format source](/fr/tech-writing-process/source-format/).
+- [ ] Une redirection est créée pour chaque URL qui change, ancienne vers nouvelle, avant que l'ancienne URL ne soit mise hors ligne.
+
+## Après la migration
+
+- [ ] Chaque page migrée a été comparée ponctuellement à son original à la recherche de contenu perdu — les schémas, notes de bas de page et références croisées sont les victimes les plus fréquentes.
+- [ ] Les fichiers sources de l'ancien format sont archivés, pas supprimés, jusqu'à ce que le nouveau pipeline ait fonctionné en production assez longtemps pour être digne de confiance.
+- [ ] Les redirections sont testées — pas seulement écrites — en interrogeant réellement un échantillon des anciennes URL.
+- [ ] Les index de recherche (recherche plein texte, tout index d'assistant IA) sont reconstruits à partir du contenu migré, pas laissés pointer vers des données obsolètes.
+
+## Déploiement
+
+- [ ] Le jeu pilote est validé de bout en bout (création, mise à jour, publication) avant de migrer le reste du corpus.
+- [ ] Le contenu restant est migré par lots suffisamment petits pour être revus, pas en une bascule indifférenciée.

@@ -1,0 +1,68 @@
+---
+title: "Glossary"
+description: "Definitions of technical-writing and structured-authoring terms used throughout this manual, each linked to the article that covers it in depth."
+goal: [reference]
+contentType: reference
+---
+
+## Overview
+
+Quick definitions for terms used across this manual. Each entry links to the article that covers the concept in depth — this page is for lookup, not for learning a topic from scratch.
+
+## Terms
+
+**CMS (Content Management System)**
+: A tool that adds workflow and file-locking to content management, at the cost of reliability trade-offs compared to plain version control. See [CMS: workflow as a bonus, but reliability to be tested](/en/tech-writing-process/cms-workflow-and-reliability/).
+
+**Concept, task, reference**
+: DITA XML's three base information types: a concept introduces or explains an idea, a task is a numbered procedure, and a reference is lookup material like a parameter list. This manual's own articles are tagged with the same three types. See [structured and unstructured formats](/en/formats/structured-vs-unstructured-formats/).
+
+**Conref**
+: A DITA XML mechanism for reusing a block of content by reference: the content of a target node is replaced by the content of a source node at compile time. See [reusing information blocks with conrefs](/en/formats/nufirewall-case-study/).
+
+**Ditamap**
+: An external table-of-contents file that assembles DITA XML topics into a document, without the topics themselves needing to know their position in that document. See [on-demand DITA content assembly with ditamaps](/en/formats/modular-documentation/).
+
+**Ditaval**
+: A DITA XML filter file that includes or excludes content marked with matching attributes at compile time — the mechanism behind DITA's conditional text. See [provide targeted information with ditaval conditional text](/en/formats/nufirewall-case-study/).
+
+**Docs-as-code**
+: Treating documentation like source code: text-based formats, version control, code review, and CI/CD, rather than a separate publishing process. See [adopt docs-as-code](/en/docs-as-code/).
+
+**DITA XML**
+: A structured, modular XML authoring architecture built around the concept/task/reference typology and content reuse via conrefs and ditamaps. See [structured DITA XML format](/en/structured-authoring/).
+
+**Information typing**
+: The discipline of classifying content by its communicative purpose (concept, task, reference) rather than writing undifferentiated prose. See [structured and unstructured formats](/en/formats/structured-vs-unstructured-formats/).
+
+**Minimalism (minimalist writing)**
+: A task section contains only what's needed to complete the task — prerequisites, steps, and a few closely related elements — with conceptual and reference material placed elsewhere. See [structured and unstructured formats](/en/formats/structured-vs-unstructured-formats/).
+
+**Modular documentation**
+: Content built from small, reusable, standalone units (topics or modules) assembled on demand, rather than authored as monolithic documents. See [from document to modular document base](/en/formats/modular-documentation/).
+
+**Single-sourcing**
+: Generating multiple deliverables (PDF, HTML, help formats) from one source, rather than maintaining a separate source per output format. See [target format](/en/tech-writing-process/target-format/).
+
+**Source format**
+: The format content is authored in, as distinct from the [target format](#target-format-1) it's published to — the recipe versus the dish. See [source format](/en/tech-writing-process/source-format/).
+
+**Structured authoring**
+: Writing content whose markup encodes meaning (this is a warning, this is a step) rather than just visual appearance — enabling automated processing, reuse, and consistency checks that unstructured formats can't support. See [structured and unstructured formats](/en/formats/structured-vs-unstructured-formats/).
+
+**Target format**
+: The format a reader actually consumes — PDF, HTML, compiled help — generated from the source format. See [target format](/en/tech-writing-process/target-format/).
+
+**Technical communication**
+: The broader discipline that spans the entire product life cycle and reaches general audiences, prospects, and journalists — as distinct from technical writing, which produces user-facing product documentation after a sale. See [from technical writing to technical communication](/en/costs/copywriting-to-technical-communication/).
+
+**Topic**
+: The smallest autonomous, titled unit of information in DITA XML, typed as concept, task, or reference and assembled into documents via ditamaps. See [topics: basic DITA XML information modules](/en/formats/modular-documentation/).
+
+**XSL-FO**
+: A stylesheet language for transforming and laying out XML content for print/PDF output, commonly paired with DITA XML publishing pipelines. See [DITA XML and XSL-FO tutorials](/en/tutorials/dita-xml-xsl-fo-tutorials/).
+
+## Related references
+
+- [Use structured authoring](/en/structured-authoring/)
+- [Explore the reference](/en/reference/)

@@ -1,0 +1,45 @@
+---
+title: "À propos de l'API de ce manuel"
+description: "Ce manuel expose l'intégralité de son corpus sous forme d'API statique, sans exécution serveur, pour les LLM et agents IA - llms.txt, miroirs Markdown par page et index JSON. À quoi ça sert et comment l'utiliser."
+goal: [reference]
+contentType: reference
+---
+
+## Aperçu
+
+Ce manuel n'est pas seulement une démo OpenAPI hébergée ailleurs dans la famille redaction-technique.org — l'API *propre* à ce site est bien réelle, et elle fonctionne déjà sous chaque page que vous lisez. C'est un ensemble d'endpoints statiques, sans exécution serveur, qui reproduit l'intégralité du corpus documentaire sous une forme consultable par machine, destinée aux LLM, aux agents de codage IA et à l'outillage automatisé, pour être consommée directement plutôt que par extraction du HTML rendu.
+
+Tout ce qui suit est généré au moment du build à partir des mêmes sources Markdown que les pages HTML — il n'y a pas de contenu séparé à synchroniser, ni de base de données ou de fonction serveur impliquée. C'est servi comme des fichiers statiques depuis le CDN en périphérie, comme n'importe quel autre asset de ce site.
+
+## Pourquoi elle existe
+
+Le HTML rendu est conçu pour les navigateurs : habillage de navigation, CSS, interactivité côté client. Un LLM ou un agent qui n'a besoin que du texte de l'article doit retirer tout cela, et peut s'y mal prendre. Cette API évite l'aller-retour : elle sert directement le même contenu que les agents reconstruiraient autrement, sous forme de Markdown propre et de JSON structuré.
+
+## Endpoints
+
+| Endpoint | Format | À quoi il sert |
+| --- | --- | --- |
+| `/llms.txt` | Texte brut | Une table des matières concise conforme à la convention [llms.txt](https://llmstxt.org/) — le point d'entrée pour un agent qui veut savoir ce qui existe ici avant de récupérer quelque chose de plus volumineux. |
+| `/llms-full.txt`, `/llms-full-en.txt`, `/llms-full-fr.txt` | Texte brut | Le corpus entier (bilingue, ou une seule langue) concaténé en un seul fichier, pour un agent qui veut tout ingérer en une seule requête plutôt qu'une par page. |
+| `/index.json`, `/en/index.json`, `/fr/index.json` | JSON | Un index de documents consultable par machine : titre, description, URL, nombre de mots, titres et tags pour chaque page. |
+| `/sitemap.md`, `/en/sitemap.md`, `/fr/sitemap.md` | Markdown | Un plan de site hiérarchique regroupé par section, dans un format qu'un LLM peut lire directement plutôt que d'analyser un sitemap XML. |
+| `/en/<page>.md`, `/fr/<page>.md` | Markdown | Un miroir Markdown propre d'une page — le même contenu textuel que la version HTML, sans la mise en page ni le balisage de navigation. |
+
+Le contenu de l'endpoint `.md` de chaque page est garanti identique octet pour octet à la section correspondante dans `llms-full.txt` — un test automatisé de ce dépôt vérifie cet invariant à chaque build, sur l'ensemble des documents, pas seulement par sondage.
+
+## Comment chaque page l'expose
+
+Vous n'avez pas besoin de connaître ces URL par cœur — chaque page renvoie vers sa propre forme consultable par machine :
+
+- **Des balises `<link rel="alternate">`** dans le `<head>` de la page pointent vers le fichier `.md` de la page, l'index de la langue concernée et `/llms.txt` — détectables par tout outil qui lit les métadonnées d'en-tête HTML, sans JavaScript.
+- **Le bouton « Copy for LLM »** (visible en haut de chaque page) copie le Markdown propre de cette page directement dans le presse-papiers — utile pour coller une page directement dans une conversation avec un assistant IA.
+- **Le lien « View as Markdown »** est une simple balise `<a>` vers le fichier `.md` — fonctionne avec JavaScript désactivé, et correspond exactement à ce qu'un agent suivant la balise de découverte récupérerait.
+
+## Par rapport à « Interroger la documentation »
+
+Cette API et l'[assistant IA de la page d'accueil](/fr/) résolvent des problèmes différents. L'API sert à ce que *vos propres* outils et agents importent le contenu de ce manuel dans *leur* contexte — un agent de codage qui veut l'article docs-as-code directement dans son flux de travail, par exemple. L'assistant de la page d'accueil, c'est l'inverse : c'est ce site qui répond à une question *pour vous*, fondée sur son propre contenu, sans clé d'API ni intégration nécessaire de votre côté.
+
+## Références connexes
+
+- [Explorer la référence](/fr/reference/)
+- [Glossaire](/fr/reference/glossary/)

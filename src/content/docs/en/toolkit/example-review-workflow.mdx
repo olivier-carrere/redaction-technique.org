@@ -1,0 +1,32 @@
+---
+title: "Example: a documentation review workflow"
+description: "A worked example of routing a documentation change through technical and editorial review before publication, with clear, separated responsibilities."
+goal: [toolkit]
+contentType: task
+---
+
+:::note[Worked example]
+This is a **finished illustration to study**, not a template. It uses the [review request template](../documentation-review-request-template/) and [technical review checklist](../technical-review-checklist/) as its actual tools.
+:::
+
+## The scenario
+
+A new feature ships. The writer has drafted a new task article documenting it, and it needs to go out with the release.
+
+## The workflow
+
+1. **Self-review first.** The writer runs the [documentation quality checklist](../documentation-quality-checklist/) against their own draft before asking anyone else to look at it — catching the obvious issues here is cheaper than a reviewer catching them.
+
+2. **Technical review.** The writer sends a [review request](../documentation-review-request-template/) to the engineer who built the feature, scoped explicitly: *"Confirm the steps still match the shipped UI — I'm not asking about wording."* The engineer works through the [technical review checklist](../technical-review-checklist/) and leaves blocking comments only on genuine inaccuracies.
+
+3. **Author addresses feedback.** Every blocking comment gets a fix or a reply explaining why it doesn't apply. Non-blocking suggestions are triaged — some taken, some explicitly declined with a reason.
+
+4. **Editorial pass.** A second reviewer — or the same writer, after time away from the draft — checks structure, tone, and consistency with the rest of the site. This pass explicitly does *not* re-litigate technical accuracy; that was step 2's job.
+
+5. **Release-readiness check.** Before the feature ships, the [release readiness checklist](../release-readiness-checklist/) confirms the new article is linked from navigation, builds cleanly, and (if applicable) has a translation plan.
+
+6. **Publish alongside the feature**, not after it — see [integrating documentation into development](/en/tech-writing-process/integrating-documentation-into-development/).
+
+## Why the review is split into two passes
+
+Technical review and editorial review ask fundamentally different questions — "is this true?" versus "is this clear?" — and asking one reviewer to hold both hats at once tends to produce a review that does neither well. Splitting the passes also means feedback doesn't collide: an engineer's technical correction won't get lost among a dozen wording nitpicks, and vice versa.

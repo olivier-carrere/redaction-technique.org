@@ -1,0 +1,45 @@
+---
+title: "Modèle : demande de revue documentaire"
+description: "Un modèle de demande prêt à copier pour solliciter la revue d'un expert métier ou d'un relecteur technique, avec un périmètre et une échéance clairs."
+goal: [toolkit]
+contentType: reference
+---
+
+:::tip[Modèle]
+Ceci est un **point de départ à copier et adapter**, pas un exemple abouti. À associer à la [check-list de revue technique](../technical-review-checklist/), que le relecteur suit.
+:::
+
+Une demande de revue qui ne précise pas ce qui a changé, pourquoi, ni pour quand, a tendance à rester sans réponse. Ce modèle vise à rendre la tâche du relecteur assez rapide pour qu'il la fasse réellement.
+
+```markdown
+## Demande de revue documentaire : <titre>
+
+**Ce qui a changé :** <une ou deux phrases — nouvelle page,
+restructuration, correction de précision, etc.>
+
+**Pourquoi :** <ce qui a motivé ce changement — une sortie produit,
+un motif de support récurrent, une inexactitude signalée>
+
+**Diff / PR :** <lien>
+
+**Points nécessitant votre attention particulière :**
+- <ex. « Section 3 — confirmer que les valeurs par défaut des
+  paramètres sont toujours correctes en v2.4 »>
+- <ex. « Le nouveau tableau de dépannage — signaler ce qui manque »>
+
+**Ne fait pas partie de cette demande :** <ex. « le style et la mise
+en forme — déjà passés en revue éditoriale »>
+
+**Échéance :** <date, avec suffisamment de marge pour qu'un retard
+ne bloque pas la livraison>
+
+**Comment transmettre vos retours :** <commentaires en ligne sur la
+PR / un document dédié / une réunion — choisissez-en un, ne laissez
+pas le relecteur deviner>
+```
+
+## Notes de remplissage
+
+- **Cadrez la demande.** Un relecteur à qui l'on confie le document entier le parcourra superficiellement ou ne le relira pas du tout — nommer les deux ou trois sections qui nécessitent réellement son regard donne une meilleure revue en moins de temps.
+- **Ancrez l'échéance sur quelque chose de réel** — une date de sortie, un gel des livraisons — pas seulement « bientôt ». Une échéance vague est la raison la plus fréquente pour laquelle les demandes de revue s'enlisent.
+- Réutilisez ce modèle pour l'étape « assigner des responsables » de la [check-list d'audit documentaire](../documentation-audit-checklist/) lorsqu'un constat d'audit nécessite un relecteur.

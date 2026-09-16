@@ -1,0 +1,68 @@
+---
+title: "Glossaire"
+description: "Définitions des termes de rédaction technique et de rédaction structurée utilisés dans ce manuel, chacun relié à l'article qui l'approfondit."
+goal: [reference]
+contentType: reference
+---
+
+## Aperçu
+
+Des définitions rapides pour les termes utilisés dans ce manuel. Chaque entrée est reliée à l'article qui approfondit le concept — cette page est faite pour la consultation, pas pour l'apprentissage d'un sujet depuis le début.
+
+## Termes
+
+**CMS (Content Management System)**
+: Un outil qui ajoute workflow et verrouillage des fichiers à la gestion de contenu, au prix de compromis de fiabilité par rapport à une gestion de versions simple. Voir [les CMS : le workflow en prime, mais une fiabilité à tester](/fr/tech-writing-process/cms-workflow-and-reliability/).
+
+**Concept, tâche, référence**
+: Les trois types d'information de base de DITA XML : un concept introduit ou explique une idée, une tâche est une procédure numérotée, une référence est un contenu de consultation comme une liste de paramètres. Les articles de ce manuel sont eux-mêmes étiquetés selon ces trois types. Voir [formats structurés et non structurés](/fr/formats/structured-vs-unstructured-formats/).
+
+**Conref**
+: Un mécanisme DITA XML de réutilisation d'un bloc de contenu par référence : le contenu d'un nœud cible est remplacé par le contenu d'un nœud source à la compilation. Voir [partager des blocs d'information atomiques avec les conref](/fr/formats/nufirewall-case-study/).
+
+**Ditamap**
+: Un fichier externe de table des matières qui assemble des topics DITA XML en document, sans que les topics eux-mêmes aient besoin de connaître leur position dans ce document.
+
+**Ditaval**
+: Un fichier de filtre DITA XML qui inclut ou exclut du contenu marqué avec des attributs correspondants au moment de la compilation — le mécanisme derrière le texte conditionnel de DITA.
+
+**Docs-as-code**
+: Traiter la documentation comme du code source : formats texte, gestion de versions, revue de code et CI/CD, plutôt qu'un processus de publication séparé. Voir [adopter le docs-as-code](/fr/docs-as-code/).
+
+**DITA XML**
+: Une architecture de rédaction structurée et modulaire, construite autour de la typologie concept/tâche/référence et de la réutilisation de contenu via conrefs et ditamaps. Voir [format structuré DITA XML](/fr/structured-authoring/).
+
+**Typage de l'information**
+: La discipline consistant à classer le contenu selon son objectif communicatif (concept, tâche, référence) plutôt que de rédiger une prose indifférenciée. Voir [formats structurés et non structurés](/fr/formats/structured-vs-unstructured-formats/).
+
+**Minimalisme (rédaction minimaliste)**
+: Une section tâche ne contient que ce qui est nécessaire pour accomplir la tâche — prérequis, étapes et quelques éléments étroitement liés — le contenu conceptuel et de référence étant placé ailleurs. Voir [formats structurés et non structurés](/fr/formats/structured-vs-unstructured-formats/).
+
+**Documentation modulaire**
+: Un contenu construit à partir de petites unités réutilisables et autonomes (topics ou modules) assemblées à la demande, plutôt que rédigé sous forme de documents monolithiques. Voir [du document à la base documentaire modulaire](/fr/formats/modular-documentation/).
+
+**Single-sourcing**
+: Générer plusieurs livrables (PDF, HTML, formats d'aide) à partir d'une source unique, plutôt que de maintenir une source séparée par format de sortie. Voir [format cible](/fr/tech-writing-process/target-format/).
+
+**Format source**
+: Le format dans lequel le contenu est rédigé, par distinction avec le [format cible](#format-cible-1) vers lequel il est publié — la recette contre le plat. Voir [format source](/fr/tech-writing-process/source-format/).
+
+**Rédaction structurée**
+: Rédiger un contenu dont le balisage encode le sens (ceci est un avertissement, ceci est une étape) plutôt que la seule apparence visuelle — permettant un traitement automatisé, une réutilisation et des contrôles de cohérence que les formats non structurés ne permettent pas. Voir [formats structurés et non structurés](/fr/formats/structured-vs-unstructured-formats/).
+
+**Format cible**
+: Le format réellement consommé par le lecteur — PDF, HTML, aide compilée — généré à partir du format source. Voir [format cible](/fr/tech-writing-process/target-format/).
+
+**Communication technique**
+: La discipline plus large qui couvre tout le cycle de vie du produit et touche le grand public, les prospects et les journalistes — par distinction avec la rédaction technique, qui produit la documentation produit destinée aux utilisateurs après la vente. Voir [de la rédaction à la communication technique](/fr/costs/copywriting-to-technical-communication/).
+
+**Topic**
+: La plus petite unité d'information autonome et titrée en DITA XML, typée comme concept, tâche ou référence et assemblée en documents via des ditamaps.
+
+**XSL-FO**
+: Un langage de feuilles de style pour transformer et mettre en page du contenu XML pour une sortie impression/PDF, couramment associé aux pipelines de publication DITA XML. Voir [didacticiels DITA XML et XSL-FO](/fr/tutorials/dita-xml-xsl-fo-tutorials/).
+
+## Références connexes
+
+- [Utiliser la rédaction structurée](/fr/structured-authoring/)
+- [Explorer la référence](/fr/reference/)

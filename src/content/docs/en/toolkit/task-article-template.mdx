@@ -1,0 +1,68 @@
+---
+title: "Template: task article"
+description: "A ready-to-copy Markdown template for writing a task/tutorial article, following the Objective / Prerequisites / Steps / Expected result / Troubleshooting structure."
+goal: [toolkit]
+contentType: reference
+---
+
+:::tip[Template]
+This is a **starting point to copy and adapt**, not a worked example. For a filled-in version, see the [example docs-as-code workflow](../example-docs-as-code-workflow/).
+:::
+
+Use this structure when the reader needs to **do** something with a concrete, checkable outcome — not for background explanation (use the [concept template](../concept-article-template/)).
+
+```markdown
+---
+title: "<Verb-first task title, e.g. 'Configure X' or 'Migrate Y to Z'>"
+description: "<One sentence: what the reader accomplishes>"
+---
+
+## Objective
+
+<One sentence: what the reader will have working/done by the end.>
+
+## Prerequisites
+
+- <Required access, tool, or prior knowledge>
+- <Required access, tool, or prior knowledge>
+
+<Omit this section entirely if there truly are none — don't pad it
+with "a computer" or other non-prerequisites.>
+
+## Estimated time
+
+<Only include if you can back it with a real number — a word count
+divided by reading speed, or an actual timed run-through. Never guess.>
+
+## Steps
+
+1. <Action. Keep each step to one action a reader can complete
+   before moving on.>
+2. <Action.>
+3. <Action.>
+
+## Expected result
+
+<What the reader should see if the steps worked. Concrete and
+verifiable — a screenshot, a command output, a URL that now resolves.>
+
+## Troubleshooting
+
+| Symptom | Likely cause | Fix |
+| --- | --- | --- |
+| <What goes wrong> | <Why> | <What to do> |
+
+<Omit if you don't have real failure modes to document — a fabricated
+troubleshooting table is worse than none.>
+
+## Related resources
+
+- [<Related article 1>](<link>)
+- [<Related article 2>](<link>)
+```
+
+## When to skip a section
+
+- **Estimated time**: only if you have a real basis for the number (see above).
+- **Troubleshooting**: only document failure modes you've actually seen or can reason about concretely — this table degrades fast when padded with guesses.
+- Never skip **Objective**, **Steps**, or **Expected result** — a task article without a verifiable outcome isn't a task article.

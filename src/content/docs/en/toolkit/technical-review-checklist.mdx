@@ -1,0 +1,34 @@
+---
+title: "Checklist: technical review"
+description: "A checklist for the subject-matter expert reviewing a documentation change for technical accuracy - what to check, and what's explicitly not their job."
+goal: [toolkit]
+contentType: reference
+---
+
+:::tip[Checklist]
+Give this to the reviewer alongside a [review request](../documentation-review-request-template/) — it scopes what they're actually being asked to check.
+:::
+
+## What you're checking
+
+- [ ] Every command, parameter, and default value is correct for the version being documented.
+- [ ] Every claim about behavior matches what the product actually does — not what it was designed to do or what an older version did.
+- [ ] Nothing has been omitted that would cause a reader to do something unsafe or destructive without warning.
+- [ ] Edge cases and error conditions mentioned in the text are real, not hypothetical.
+
+## What's explicitly not your job
+
+- [ ] Wording, tone, and grammar — that's an editorial pass, not a technical one.
+- [ ] Whether the structure follows house conventions — that's a documentation-quality pass.
+- [ ] Whether this is the right thing to document at all (scope) — raise it separately if you disagree, but it's not a reason to block this specific review.
+
+## How to leave feedback
+
+- Flag inaccuracies as **blocking** — the page shouldn't publish with them.
+- Flag things that are technically correct but potentially confusing as **non-blocking suggestions** — the author decides whether to act on them.
+- If you're not sure whether something is accurate, say so explicitly rather than approving by default. "I don't know" is a valid and useful review comment.
+
+## After the review
+
+- [ ] The author has addressed every blocking comment, or explained why it doesn't apply.
+- [ ] You've re-checked the specific sections you flagged, not just taken the author's word that they're fixed.

@@ -1,0 +1,34 @@
+---
+title: "Check-list : revue technique"
+description: "Une check-list pour l'expert métier qui relit un changement documentaire pour en vérifier l'exactitude technique - ce qu'il faut vérifier, et ce qui n'est explicitement pas son rôle."
+goal: [toolkit]
+contentType: reference
+---
+
+:::tip[Check-list]
+À donner au relecteur avec une [demande de revue](../documentation-review-request-template/) — elle cadre ce qu'on lui demande réellement de vérifier.
+:::
+
+## Ce que vous vérifiez
+
+- [ ] Chaque commande, paramètre et valeur par défaut est correct pour la version documentée.
+- [ ] Chaque affirmation sur le comportement correspond à ce que le produit fait réellement — pas à ce qu'il était censé faire, ni à ce qu'une ancienne version faisait.
+- [ ] Rien n'a été omis qui amènerait un lecteur à faire quelque chose de dangereux ou destructeur sans avertissement.
+- [ ] Les cas limites et conditions d'erreur mentionnés dans le texte sont réels, pas hypothétiques.
+
+## Ce qui n'est explicitement pas votre rôle
+
+- [ ] Le style, le ton et la grammaire — c'est une relecture éditoriale, pas technique.
+- [ ] La conformité de la structure aux conventions internes — c'est une revue qualité documentaire.
+- [ ] La pertinence même de documenter ce sujet (périmètre) — signalez-le séparément si vous n'êtes pas d'accord, mais ce n'est pas une raison de bloquer cette revue précise.
+
+## Comment transmettre vos retours
+
+- Signalez les inexactitudes comme **bloquantes** — la page ne doit pas être publiée avec elles.
+- Signalez ce qui est techniquement correct mais potentiellement source de confusion comme **suggestion non bloquante** — l'auteur décide d'y donner suite ou non.
+- Si vous n'êtes pas sûr de l'exactitude d'un point, dites-le explicitement plutôt que d'approuver par défaut. « Je ne sais pas » est un commentaire de revue valide et utile.
+
+## Après la revue
+
+- [ ] L'auteur a traité chaque commentaire bloquant, ou a expliqué pourquoi il ne s'applique pas.
+- [ ] Vous avez revérifié les sections précises que vous aviez signalées, pas simplement fait confiance à l'auteur sur leur correction.

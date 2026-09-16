@@ -1,0 +1,56 @@
+---
+title: "Template: concept article"
+description: "A ready-to-copy Markdown template for writing a concept article, following the Definition / Why it matters / Key principles / Examples / Trade-offs / Related concepts structure."
+goal: [toolkit]
+contentType: reference
+---
+
+:::tip[Template]
+This is a **starting point to copy and adapt**, not a worked example. Delete any section that doesn't apply — see [Standardized page layouts](/en/toolkit/) for when to skip a section entirely.
+:::
+
+Use this structure for an article that explains **what something is** and **why it matters** — not how to do something (use the [task template](../task-article-template/)) and not a lookup table of options (use the [reference template](../reference-article-template/)).
+
+```markdown
+---
+title: "<Concept name>"
+description: "<One sentence: what the reader will understand after reading this>"
+---
+
+## Definition
+
+<One or two sentences defining the concept in plain language. A reader
+skimming only this paragraph should walk away with a correct, if
+incomplete, understanding.>
+
+## Why it matters
+
+<The consequence of understanding — or not understanding — this concept.
+What breaks, costs more, or gets confusing without it?>
+
+## Key principles
+
+<The two to four ideas that make up the concept. A bulleted list or a
+short table both work well here.>
+
+## Examples
+
+<At least one concrete example. Abstract concepts without an example
+are the single most common cause of reader confusion.>
+
+## Trade-offs
+
+<Optional. Include only if the concept involves a real choice — when
+would someone deliberately choose NOT to apply this concept?>
+
+## Related concepts
+
+- [<Related article 1>](<link>)
+- [<Related article 2>](<link>)
+```
+
+## When to skip a section
+
+- No genuine trade-off exists → drop **Trade-offs** entirely rather than inventing a weak one.
+- The concept is simple enough that "why it matters" is obvious from the definition → merge the two.
+- Never skip **Definition** or **Examples** — they're what make a concept article usable rather than just impressive-sounding.

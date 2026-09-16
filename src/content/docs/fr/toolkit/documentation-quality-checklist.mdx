@@ -1,0 +1,39 @@
+---
+title: "Check-list : qualité documentaire"
+description: "Une check-list de pré-publication couvrant l'exactitude, la structure et l'accessibilité pour une page documentaire - à exécuter avant de fusionner tout changement de contenu."
+goal: [toolkit]
+contentType: reference
+---
+
+:::tip[Check-list]
+À exécuter avant de fusionner tout changement documentaire — volontairement assez générique pour s'appliquer à une simple correction d'un paragraphe comme à un nouvel article.
+:::
+
+## Exactitude
+
+- [ ] Chaque commande, exemple de code et capture d'écran a été testé sur la version actuelle du produit — pas celle qu'il documentait à l'origine.
+- [ ] Chaque affirmation factuelle est traçable à quelque chose de vérifiable (code source, commande testée, personne faisant autorité sur le sujet) — voir [tester les produits](/fr/tech-writing-process/testing-products/).
+- [ ] Aucune affirmation n'est plus forte que les preuves qui la soutiennent (un seul test ne justifie pas « toujours »).
+
+## Structure
+
+- [ ] La page suit l'une des structures standard (concept, tâche ou référence — voir les [modèles de la boîte à outils](../concept-article-template/)) ou a une raison claire de ne pas le faire.
+- [ ] Les titres forment une hiérarchie logique sans saut de niveau (H2 → H4 sans H3).
+- [ ] La page est accessible depuis la navigation ou la recherche — pas de page orpheline (voir la [check-list d'audit documentaire](../documentation-audit-checklist/)).
+
+## Rédaction
+
+- [ ] Les phrases sont aussi simples que le contenu le permet — voir le [principe KISS](/fr/costs/kiss-principle/).
+- [ ] La terminologie est cohérente avec le reste du site (pas « dossier » ici et « répertoire » là pour la même chose).
+- [ ] Les actions d'interface sont nommées précisément (« sélectionnez Enregistrer », pas « cliquez ici »).
+
+## Accessibilité
+
+- [ ] Les images ont un texte alternatif qui décrit leur contenu réel, pas juste « capture d'écran ».
+- [ ] Les liens décrivent leur destination (« voir la check-list de migration », pas « cliquez ici »).
+- [ ] Les tableaux ont des lignes d'en-tête ; ils ne sont pas utilisés pour la mise en page.
+
+## Avant de fusionner
+
+- [ ] Une deuxième personne a lu le changement — même une relecture rapide détecte ce que l'auteur ne peut pas voir dans son propre texte.
+- [ ] Tout article lié référencé par cette page existe toujours et dit toujours ce que cette page suppose.

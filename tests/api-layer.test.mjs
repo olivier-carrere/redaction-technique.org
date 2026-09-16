@@ -36,22 +36,22 @@ test('JSON index schema and document count', () => {
 
   // Global index checks
   assert.equal(globalJson.version, '1.0');
-  assert.equal(globalJson.count, 96);
-  assert.equal(globalJson.counts.en, 49);
-  assert.equal(globalJson.counts.fr, 47);
-  assert.equal(globalJson.documents.length, 96);
+  assert.equal(globalJson.count, 146);
+  assert.equal(globalJson.counts.en, 73);
+  assert.equal(globalJson.counts.fr, 73);
+  assert.equal(globalJson.documents.length, 146);
 
   // EN index checks
   assert.equal(enJson.version, '1.0');
   assert.equal(enJson.locale, 'en');
-  assert.equal(enJson.count, 49);
-  assert.equal(enJson.documents.length, 49);
+  assert.equal(enJson.count, 73);
+  assert.equal(enJson.documents.length, 73);
 
   // FR index checks
   assert.equal(frJson.version, '1.0');
   assert.equal(frJson.locale, 'fr');
-  assert.equal(frJson.count, 47);
-  assert.equal(frJson.documents.length, 47);
+  assert.equal(frJson.count, 73);
+  assert.equal(frJson.documents.length, 73);
 
   // Validate document properties
   for (const doc of globalJson.documents) {
@@ -106,11 +106,11 @@ test('llms.txt format and structure', () => {
 
 test('Essential integrity test: llms-full.txt matches individual page.md byte-for-byte', () => {
   const corpora = [
-    { file: 'llms-full.txt', expectedCount: 96 },
-    { file: 'llms-full-en.txt', expectedCount: 49 },
-    { file: 'llms-full-fr.txt', expectedCount: 47 },
-    { file: 'en/llms-full.txt', expectedCount: 49 },
-    { file: 'fr/llms-full.txt', expectedCount: 47 },
+    { file: 'llms-full.txt', expectedCount: 146 },
+    { file: 'llms-full-en.txt', expectedCount: 73 },
+    { file: 'llms-full-fr.txt', expectedCount: 73 },
+    { file: 'en/llms-full.txt', expectedCount: 73 },
+    { file: 'fr/llms-full.txt', expectedCount: 73 },
   ];
 
   for (const { file, expectedCount } of corpora) {

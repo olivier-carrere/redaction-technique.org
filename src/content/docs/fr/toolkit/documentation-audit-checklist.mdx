@@ -1,0 +1,41 @@
+---
+title: "Check-list : audit documentaire"
+description: "Une check-list pour auditer un ensemble documentaire existant - repérer les pages orphelines, le contenu en doublon, les liens cassés et une architecture d'information obsolète."
+goal: [toolkit]
+contentType: reference
+---
+
+:::tip[Check-list]
+À exécuter périodiquement sur un ensemble documentaire mature, ou une fois avant un projet de restructuration plus large — la [refonte de l'architecture d'information](/fr/reference/) de ce manuel a elle-même commencé par un audit de ce type.
+:::
+
+## Accessibilité
+
+- [ ] Chaque page publiée est reliée depuis la navigation, une page d'atterrissage ou des liens internes — une page sans aucun lien entrant est effectivement invisible, même si elle est techniquement en ligne. Vérifiez directement la sortie de build ou le sitemap de votre site par rapport à votre configuration de navigation ; ne vous fiez pas à votre mémoire.
+- [ ] Chaque entrée de navigation pointe vers une page qui existe toujours et correspond toujours à son libellé.
+
+## Doublons
+
+- [ ] Aucune page ne couvre le même sujet avec la même intention qu'une autre — si c'est le cas, décidez laquelle est canonique et redirigez ou fusionnez l'autre.
+- [ ] Les pages qui se chevauchent mais servent des publics réellement différents (un démarrage rapide vs. une référence complète) sont reliées entre elles, pour qu'un lecteur arrivé sur la mauvaise puisse trouver la bonne en un clic.
+
+## Fraîcheur
+
+- [ ] Les pages référençant une version spécifique de produit, d'outil ou de service externe ont été vérifiées par rapport à la réalité actuelle.
+- [ ] Les captures d'écran et sorties de commande reflètent l'interface ou le CLI actuels, pas un ancien.
+- [ ] Les mises en garde datées (« à partir de la version X... », « ceci est temporaire jusqu'à... ») sont revues — soit résolues, soit reconfirmées comme toujours pertinentes.
+
+## Structure
+
+- [ ] Les titres de page sont compréhensibles hors contexte (un lecteur arrivant depuis une recherche voit le titre avant tout le reste).
+- [ ] La hiérarchie des titres est cohérente entre les pages de même type.
+- [ ] Les métadonnées de type de contenu (concept/tâche/référence) sont présentes et exactes, si votre plateforme les prend en charge.
+
+## Liens
+
+- [ ] Les liens internes se résolvent (un vérificateur de liens cassés exécuté sur un build complet du site détecte mécaniquement la plupart d'entre eux).
+- [ ] Les liens externes pointent toujours où ils le prétendent — le pourrissement de lien sur les références externes est facile à manquer sans vérification.
+
+## Résultat
+
+- [ ] Les constats sont consignés avec une action concrète par élément (rediriger, fusionner, mettre à jour, supprimer, ou « revu, aucune action nécessaire ») — un audit qui se termine par une liste de problèmes sans responsable a tendance à se répéter à l'identique l'année suivante.

@@ -1,0 +1,44 @@
+---
+title: "Template: documentation review request"
+description: "A ready-to-copy request template for asking a subject-matter expert or technical reviewer to review documentation changes, with a clear scope and deadline."
+goal: [toolkit]
+contentType: reference
+---
+
+:::tip[Template]
+This is a **starting point to copy and adapt**, not a worked example. Pair it with the [technical review checklist](../technical-review-checklist/), which the reviewer works through.
+:::
+
+A review request that doesn't say what changed, why, or by when tends to sit unread. This template exists to make a reviewer's job fast enough that they actually do it.
+
+```markdown
+## Documentation review request: <title>
+
+**What changed:** <one or two sentences — new page, restructure,
+accuracy fix, etc.>
+
+**Why:** <what prompted this change — a product release, a support
+pattern, a reported inaccuracy>
+
+**Diff / PR:** <link>
+
+**Areas that need your specific attention:**
+- <e.g. "Section 3 — confirm the parameter defaults are still correct
+  in v2.4">
+- <e.g. "The new troubleshooting table — flag anything missing">
+
+**Not asking you to review:** <e.g. "wording and formatting — that's
+already been through editorial">
+
+**Deadline:** <date, with enough lead time that a delay doesn't block
+release>
+
+**How to leave feedback:** <inline PR comments / a specific doc /
+a meeting — pick one, don't make the reviewer guess>
+```
+
+## Notes on filling this in
+
+- **Scope the ask.** A reviewer given the whole document will either skim everything shallowly or review nothing — naming the two or three sections that actually need their eyes gets a better review in less of their time.
+- **State the deadline against something real** — a release date, a freeze — not just "soon." A vague deadline is the most common reason review requests stall.
+- Reuse this template for the [documentation audit checklist](../documentation-audit-checklist/)'s "assign owners" step when an audit finding needs a reviewer.

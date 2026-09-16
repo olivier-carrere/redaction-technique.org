@@ -1,0 +1,41 @@
+---
+title: "Checklist: documentation audit"
+description: "A checklist for auditing an existing documentation set - finding orphaned pages, duplicate content, broken links, and stale information architecture."
+goal: [toolkit]
+contentType: reference
+---
+
+:::tip[Checklist]
+Run this periodically on a mature documentation set, or once before a larger restructuring project — this manual's own [information architecture redesign](/en/reference/) started with an audit like this one.
+:::
+
+## Reachability
+
+- [ ] Every published page is linked from navigation, a landing page, or internal cross-links — a page with zero inbound links is effectively invisible, even if it's technically online. Check your site's build output or sitemap against your navigation config directly; don't rely on memory.
+- [ ] Every navigation entry points to a page that still exists and still matches its label.
+
+## Duplication
+
+- [ ] No two pages cover the same topic with the same intent — if they do, decide which is canonical and redirect or fold the other into it.
+- [ ] Overlapping pages that serve genuinely different audiences (a quick-start vs. a full reference) are cross-linked, so a reader who lands on the wrong one can find the right one in one click.
+
+## Freshness
+
+- [ ] Pages referencing a specific product version, tool version, or external service have been checked against the current reality.
+- [ ] Screenshots and command output reflect the current UI/CLI, not an old one.
+- [ ] Dated caveats ("as of version X...", "this is temporary until...") are revisited — either resolved or reconfirmed as still relevant.
+
+## Structure
+
+- [ ] Page titles are meaningful out of context (a reader arriving from search sees the title before anything else).
+- [ ] Heading hierarchy is consistent across similar page types.
+- [ ] Content-type metadata (concept/task/reference) is present and accurate, if your platform supports it.
+
+## Links
+
+- [ ] Internal links resolve (a broken-link checker run against a full site build catches most of these mechanically).
+- [ ] External links still point where they claim to — link rot on external references is easy to miss without checking.
+
+## Output
+
+- [ ] Findings are written down with a concrete next action per item (redirect, merge, update, delete, or "reviewed, no action needed") — an audit that ends in a list of problems with no owner tends to repeat itself next year unchanged.

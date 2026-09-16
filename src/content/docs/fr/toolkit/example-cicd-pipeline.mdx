@@ -1,0 +1,60 @@
+---
+title: "Exemple : un pipeline CI/CD concret pour la documentation"
+description: "Un exemple abouti de pipeline CI/CD documentaire - build, vérification de liens, index de recherche et déploiement - annoté étape par étape."
+goal: [toolkit]
+contentType: task
+---
+
+:::note[Exemple abouti]
+Ceci est un **exemple abouti à étudier**, pas un modèle — adaptez les commandes précises à votre propre générateur de site statique et plateforme d'hébergement. Pour le raisonnement sous-jacent, voir [intégrer la documentation aux processus de développement](/fr/tech-writing-process/integrating-documentation-into-development/).
+:::
+
+## Le pipeline
+
+```yaml
+name: docs
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Installer les dépendances
+        run: npm ci
+
+      - name: Lancer les tests automatisés
+        run: npm test
+
+      - name: Construire le site
+        run: npm run build
+
+      - name: Vérifier les liens cassés
+        run: npm run check-links
+
+      - name: Déployer la prévisualisation (pull requests uniquement)
+        if: github.event_name == 'pull_request'
+        run: npm run deploy:preview
+
+      - name: Déployer en production (main uniquement)
+        if: github.ref == 'refs/heads/main'
+        run: npm run deploy:production
+```
+
+## Ce que chaque étape détecte, et pourquoi cet ordre
+
+1. **Les tests automatisés s'exécutent avant le build**, pas après — un test qui échoue signifie que quelque chose est déjà structurellement cassé (une table de redirection malformée, une violation de schéma), et il est inutile de passer du temps de build sur un contenu qui ne sera de toute façon pas correct.
+2. **Le build lui-même est la deuxième barrière.** Un échec de build (un exemple de code malformé dans un bloc que le site valide, un champ de frontmatter requis manquant) bloque automatiquement tout ce qui suit.
+3. **Le vérificateur de liens s'exécute sur la sortie *construite***, pas sur le Markdown source — vérifier les liens du code source passe à côté de tout ce que le pipeline de build lui-même génère ou réécrit (redirections, pages d'index générées).
+4. **Les prévisualisations ne se déploient que sur les pull requests.** Un relecteur obtient une URL réelle et cliquable pour vérifier le résultat rendu — relire un diff de texte Markdown seul passe à côté des problèmes de rendu qu'un diff ne peut pas montrer.
+5. **Le déploiement en production est conditionné à la branche**, pas à une approbation manuelle pour le déclencher — une fois qu'un changement est fusionné dans `main`, il a déjà passé la revue, donc l'étape de déploiement est mécanique, pas un second point de décision.
+
+## Ce que ce pipeline ne fait délibérément pas
+
+- Il ne conditionne rien à un contrôle subjectif de type « est-ce que ça se lit bien » — c'est le rôle de la [revue technique et éditoriale](../example-review-workflow/), effectuée par des humains avant que la PR n'atteigne la CI, pas encodée comme une règle automatisée.
+- Il ne saute pas les tests sur un push vers `main` — la même barrière s'applique que le déclencheur soit une PR ou une fusion directe, afin que rien n'atteigne la production sans avoir été vérifié.

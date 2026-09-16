@@ -1,0 +1,48 @@
+---
+title: "Example: a documentation repository structure"
+description: "A worked example of how to organize a docs-as-code repository - content by information type, locale-first for translated sites, and a clear separation from tooling."
+goal: [toolkit]
+contentType: reference
+---
+
+:::note[Worked example]
+This is a **finished illustration to study**, not a template — every repository's exact needs differ. For the underlying decision, see [the repository](/en/tech-writing-process/repository/) and [a single repository?](/en/tech-writing-process/single-repository/).
+:::
+
+## Layout
+
+```text
+docs-repo/
+├── src/
+│   ├── content/
+│   │   ├── en/
+│   │   │   ├── getting-started/
+│   │   │   │   ├── index.md
+│   │   │   │   ├── installation.md
+│   │   │   │   └── first-project.md
+│   │   │   ├── guides/
+│   │   │   │   └── ...
+│   │   │   └── reference/
+│   │   │       └── ...
+│   │   └── fr/
+│   │       └── <mirrors the en/ tree>
+│   ├── components/         # reusable page components
+│   └── assets/              # images referenced from content
+├── scripts/                  # build-time automation (redirects, search index, etc.)
+├── tests/                    # automated checks on the built output
+├── config-file               # site/build configuration
+└── package-manifest
+```
+
+## Why this shape
+
+- **Locale is the top-level split**, not a suffix on each filename (`installation.md` / `installation.fr.md`). This keeps each language a complete, independently navigable tree — see [translation](/en/tech-writing-process/translation/) on why language-first organization simplifies branching for parallel translation work.
+- **Content is grouped by reader intent** (`getting-started/`, `guides/`, `reference/`), not by internal team structure or by which product team owns a page. Readers navigate by what they're trying to do, not by your org chart.
+- **`scripts/` and `tests/` are separated from `content/`.** A contributor fixing a typo never needs to look at build tooling, and a contributor changing the build never touches prose by accident.
+- **Assets live near the content tree**, not in a single flat `images/` folder with thousands of files — makes it obvious which images are still referenced when a page is deleted.
+
+## What doesn't belong in this repository
+
+- Generated output (built HTML, PDFs) — regenerate it in CI, don't commit it. A `.gitignore` entry, not a folder, is the right home for build artifacts.
+- Secrets or credentials for any service the build touches (analytics keys, deploy tokens) — those belong in the CI/CD platform's secret store, never in tracked files.
+- Binary source files (see [source format](/en/tech-writing-process/source-format/)) — if a legacy asset must ship as binary, keep it small and treat it as an exception, not a pattern to repeat.
