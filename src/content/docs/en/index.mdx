@@ -47,75 +47,93 @@ import AskAssistant from '../../../components/AskAssistant.astro';
 
 <StartHere lang="en" />
 
-## Technical writing: an industrial process
+## Learn technical writing
 
 <p class="section-lead">
-  How to approach technical writing as an engineering discipline &mdash; from project definition to version control, automated testing, quality validation, and delivery.
+  Foundational principles, terminology, and audience-first thinking &mdash; start here if you're new to the practice, or want a refresher.
 </p>
 
 <CardGrid>
-  <LinkCard title="Project definition" href="tech-writing-process/project-definition/" description="Define audience, scope, and deliverables before writing - five project parameters every technical writing engagement needs." />
-  <LinkCard title="Integrating documentation into development" href="tech-writing-process/integrating-documentation-into-development/" description="Treat docs like code: same release cadence, same version control, same review process." />
-  <LinkCard title="Git: from file to content" href="tech-writing-process/git-from-file-to-content/" description="Git stores content blobs, not filenames - understanding that model makes branching and diffing documentation much simpler." />
+  <LinkCard title="The three levels of technical documentation" href="learn/" description="Locate where your organization's documentation practice sits today - from ad-hoc drafting to structured DITA." />
+  <LinkCard title="The KISS principle" href="learn/" description="Why the simplest solution that solves the problem beats the cleverest one." />
+  <LinkCard title="Structured and unstructured formats" href="learn/" description="The foundational format choice that determines reuse, translation cost, and tooling." />
 </CardGrid>
 
 <p class="section-more not-content">
-  <a href="tech-writing-process/" class="section-more-link">
-    View all 19 process articles <span class="arrow" aria-hidden="true">&rarr;</span>
+  <a href="learn/" class="section-more-link">
+    Learn technical writing <span class="arrow" aria-hidden="true">&rarr;</span>
   </a>
 </p>
 
-## Structured DITA XML format
+## Build a documentation process
+
+<p class="section-lead">
+  How to approach technical writing as an engineering discipline &mdash; from project definition to quality validation and delivery.
+</p>
+
+<CardGrid>
+  <LinkCard title="Project definition" href="process/" description="Define audience, scope, and deliverables before writing - five project parameters every technical writing engagement needs." />
+  <LinkCard title="Content creation" href="process/" description="Turning gathered information into structured, usable content." />
+  <LinkCard title="Delivery" href="process/" description="Getting finished documentation to the people who need it, in the format they need it in." />
+</CardGrid>
+
+<p class="section-more not-content">
+  <a href="process/" class="section-more-link">
+    Build a documentation process <span class="arrow" aria-hidden="true">&rarr;</span>
+  </a>
+</p>
+
+## Adopt docs-as-code
+
+<p class="section-lead">
+  Treat docs like code &mdash; same release cadence, same version control, same review process, same CI/CD pipeline.
+</p>
+
+<CardGrid>
+  <LinkCard title="Integrating documentation into development" href="docs-as-code/" description="Aligning release cadence, version control, automated testing, and CI/CD pipelines." />
+  <LinkCard title="Git: from file to content" href="docs-as-code/" description="Git stores content blobs, not filenames - understanding that model makes branching and diffing documentation much simpler." />
+  <LinkCard title="sed: modify your text without opening your files" href="docs-as-code/" description="Batch find-and-replace across hundreds of files in one command." />
+</CardGrid>
+
+<p class="section-more not-content">
+  <a href="docs-as-code/" class="section-more-link">
+    Adopt docs-as-code <span class="arrow" aria-hidden="true">&rarr;</span>
+  </a>
+</p>
+
+## Use structured authoring
 
 <p class="section-lead">
   How structured and unstructured documentation differ &mdash; topic-based authoring, single-sourcing, and modular document architecture without vendor lock-in.
 </p>
 
 <CardGrid>
-  <LinkCard title="Case study: NuFirewall documentation" href="formats/nufirewall-case-study/" description="Press reviewers cited the documentation as a product strength, not a supplement. A detailed look at the DITA XML techniques that made it possible." />
-  <LinkCard title="Structured and unstructured formats" href="formats/structured-vs-unstructured-formats/" description="DITA's three topic types - concept, task, reference - enforce structure that makes content reusable, translatable, and consistent." />
-  <LinkCard title="From document to modular document base" href="formats/modular-documentation/" description="Replace monolithic manuals with reusable topic modules: lower translation costs, parallel reviews, multiple output formats from one source pool." />
+  <LinkCard title="Case study: NuFirewall documentation" href="structured-authoring/" description="Press reviewers cited the documentation as a product strength, not a supplement. A detailed look at the DITA XML techniques that made it possible." />
+  <LinkCard title="Structured and unstructured formats" href="structured-authoring/" description="DITA's three topic types - concept, task, reference - enforce structure that makes content reusable, translatable, and consistent." />
+  <LinkCard title="From document to modular document base" href="structured-authoring/" description="Replace monolithic manuals with reusable topic modules: lower translation costs, parallel reviews, multiple output formats from one source pool." />
 </CardGrid>
 
 <p class="section-more not-content">
-  <a href="formats/" class="section-more-link">
-    View all 5 formats articles <span class="arrow" aria-hidden="true">&rarr;</span>
+  <a href="structured-authoring/" class="section-more-link">
+    Use structured authoring <span class="arrow" aria-hidden="true">&rarr;</span>
   </a>
 </p>
 
-## The business case for structured documentation
+## Choose tools and formats
 
 <p class="section-lead">
-  Why documentation architecture matters to an organization &mdash; maturity models, long-term maintenance costs, and technical communication economics.
+  The decisions that shape everything else &mdash; source format, target format, and which tools actually pay for themselves.
 </p>
 
 <CardGrid>
-  <LinkCard title="From technical writing to technical communication" href="costs/copywriting-to-technical-communication/" description="Technical communication starts before the sale - why the role spans marketing, journalism, and product documentation." />
-  <LinkCard title="The three levels of technical documentation" href="costs/three-levels-of-documentation/" description="A three-tier maturity model - wasteland, topic-based, structured DITA - to locate where your organization sits and what the next level costs." />
-  <LinkCard title="Formats and tools" href="costs/formats-and-tools/" description="Choose your source format before your tool - the format determines vendor lock-in, automation options, and long-term costs." />
+  <LinkCard title="Source format" href="tools-and-formats/" description="Choosing what you write in - the decision that determines your entire toolchain." />
+  <LinkCard title="Formats and tools" href="tools-and-formats/" description="Choose your source format before your tool - the format determines vendor lock-in, automation options, and long-term costs." />
+  <LinkCard title="Is an index useful in a PDF?" href="tools-and-formats/" description="A concrete example of a format-driven trade-off decision." />
 </CardGrid>
 
 <p class="section-more not-content">
-  <a href="costs/" class="section-more-link">
-    View all 5 strategy & economics articles <span class="arrow" aria-hidden="true">&rarr;</span>
-  </a>
-</p>
-
-## Tutorials
-
-<p class="section-lead">
-  Practical implementation guides and tooling &mdash; step-by-step instructions for DITA-OT, XSL-FO, Sphinx, Python regular expressions, and automation scripts.
-</p>
-
-<CardGrid>
-  <LinkCard title="DITA XML and XSL-FO tutorials" href="tutorials/dita-xml-xsl-fo-tutorials/" description="Set up the DITA XML to PDF publishing chain with XSL-FO - step-by-step from source authoring to styled output." />
-  <LinkCard title="Conditional text with Sphinx" href="tutorials/conditional-text-sphinx-rest/" description="Generate document variants from the same ReST sources with Sphinx conditional text." />
-  <LinkCard title="Regular expressions in Python" href="tutorials/python-regular-expressions/" description="Python's regular expression library helps you manipulate text, especially if you're not familiar with sed or awk." />
-</CardGrid>
-
-<p class="section-more not-content">
-  <a href="tutorials/" class="section-more-link">
-    View all 11 tutorials <span class="arrow" aria-hidden="true">&rarr;</span>
+  <a href="tools-and-formats/" class="section-more-link">
+    Choose tools and formats <span class="arrow" aria-hidden="true">&rarr;</span>
   </a>
 </p>
 

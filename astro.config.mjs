@@ -184,6 +184,12 @@ export default defineConfig({
       lastUpdated: true,
       defaultLocale: 'en',
       locales,
+      // Goal-based groups (section 3 of the docs-manual redesign brief). Items
+      // reference existing slugs directly rather than moving files between
+      // content folders, so no new redirects are needed — a page can appear
+      // in more than one group where it genuinely serves more than one goal
+      // (e.g. structured-vs-unstructured-formats anchors both "Learn" and
+      // "Use structured authoring").
       sidebar: [
         {
           label: '✍ Blog - redaction-technique.org',
@@ -191,22 +197,39 @@ export default defineConfig({
           attrs: { target: '_blank', rel: 'noopener' },
         },
         {
-          label: 'Technical writing: An industrial process',
-          collapsed: true,
-          translations: {
-            fr: 'Rédaction technique : un processus industriel',
-          },
-          // Explicit process order (define → gather → format → create →
-          // version/collaborate → validate → translate → deliver) instead of
-          // alphabetical autogenerate. Labels are derived per-locale from each
-          // page's frontmatter title.
+          label: 'Learn technical writing',
+          collapsed: false,
+          translations: { fr: 'Apprendre la rédaction technique' },
           items: [
+            { slug: 'costs' },
+            { slug: 'costs/three-levels-of-documentation' },
+            { slug: 'costs/kiss-principle' },
+            { slug: 'formats/structured-vs-unstructured-formats' },
+          ],
+        },
+        {
+          label: 'Build a documentation process',
+          collapsed: true,
+          translations: { fr: 'Construire un processus documentaire' },
+          // Explicit order: define → gather → test → author → validate →
+          // translate → deliver.
+          items: [
+            { slug: 'tech-writing-process' },
             { slug: 'tech-writing-process/project-definition' },
             { slug: 'tech-writing-process/gathering-information' },
             { slug: 'tech-writing-process/testing-products' },
-            { slug: 'tech-writing-process/source-format' },
-            { slug: 'tech-writing-process/target-format' },
             { slug: 'tech-writing-process/content-creation' },
+            { slug: 'tech-writing-process/validation-quality-control' },
+            { slug: 'tech-writing-process/translation' },
+            { slug: 'tech-writing-process/delivery' },
+            { slug: 'costs/copywriting-to-technical-communication' },
+          ],
+        },
+        {
+          label: 'Adopt docs-as-code',
+          collapsed: true,
+          translations: { fr: 'Adopter le docs-as-code' },
+          items: [
             { slug: 'tech-writing-process/integrating-documentation-into-development' },
             { slug: 'tech-writing-process/version-control-systems' },
             { slug: 'tech-writing-process/git-from-file-to-content' },
@@ -217,34 +240,57 @@ export default defineConfig({
             { slug: 'tech-writing-process/shared-network-directories' },
             { slug: 'tech-writing-process/sql-database' },
             { slug: 'tech-writing-process/cms-workflow-and-reliability' },
-            { slug: 'tech-writing-process/validation-quality-control' },
-            { slug: 'tech-writing-process/translation' },
-            { slug: 'tech-writing-process/delivery' },
+            { slug: 'tutorials' },
+            { slug: 'tutorials/sed-text-editing' },
+            { slug: 'tutorials/python-regular-expressions' },
+            { slug: 'tutorials/raspberry-pi-documentation-platform' },
+            { slug: 'tutorials/project-end-to-end' },
           ],
         },
         {
-          label: 'Tutorials',
+          label: 'Use structured authoring',
           collapsed: true,
-          translations: {
-            fr: 'Didacticiels',
-          },
-          items: [{ autogenerate: { directory: 'tutorials' } }],
+          translations: { fr: 'Utiliser la rédaction structurée' },
+          items: [
+            { slug: 'formats' },
+            { slug: 'formats/dita-xml-case-studies' },
+            { slug: 'formats/document-architecture-complexity' },
+            { slug: 'formats/modular-documentation' },
+            { slug: 'formats/nufirewall-case-study' },
+            { slug: 'tutorials/auto-insert-data-dita-xml' },
+            { slug: 'tutorials/dita-xml-xsl-fo-tutorials' },
+            { slug: 'tutorials/conditional-text-jinja' },
+            { slug: 'tutorials/conditional-text-jinja-object-method' },
+            { slug: 'tutorials/conditional-text-sphinx-rest' },
+            { slug: 'tutorials/auto-insert-data-restructuredtext' },
+            { slug: 'tutorials/auto-insert-sql-data-restructuredtext' },
+          ],
         },
         {
-          label: 'Structured DITA XML format',
+          label: 'Choose tools and formats',
           collapsed: true,
-          translations: {
-            fr: 'Format structuré DITA XML',
-          },
-          items: [{ autogenerate: { directory: 'formats' } }],
+          translations: { fr: 'Choisir outils et formats' },
+          items: [
+            { slug: 'tech-writing-process/source-format' },
+            { slug: 'tech-writing-process/target-format' },
+            { slug: 'costs/formats-and-tools' },
+            { slug: 'costs/index-in-pdf' },
+          ],
         },
         {
-          label: 'Reduce costs, increase customer satisfaction',
+          label: '🧰 Use the practical toolkit',
           collapsed: true,
-          translations: {
-            fr: 'Diminuer les coûts, augmenter la satisfaction client',
-          },
-          items: [{ autogenerate: { directory: 'costs' } }],
+          translations: { fr: '🧰 Utiliser la boîte à outils' },
+          items: [{ autogenerate: { directory: 'toolkit' } }],
+        },
+        {
+          label: '📖 Explore the reference',
+          collapsed: true,
+          translations: { fr: '📖 Explorer la référence' },
+          items: [
+            { autogenerate: { directory: 'reference' } },
+            { slug: 'about-the-api' },
+          ],
         },
         {
           label: '🤖 Ask the documentation',
