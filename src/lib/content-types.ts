@@ -9,6 +9,73 @@ export type ContentType = (typeof CONTENT_TYPES)[number];
 export const PAGE_TYPES = ['topic', 'index', 'landing', 'overview', 'utility'] as const;
 export type PageType = (typeof PAGE_TYPES)[number];
 
+export interface ClassificationMetadata {
+  label: string;
+  description: string;
+}
+
+export const CONTENT_TYPE_METADATA: Record<ContentType, ClassificationMetadata> = {
+  concept: {
+    label: 'Concept',
+    description: 'Explains ideas, architecture, principles, background, and relationships to build mental models.',
+  },
+  task: {
+    label: 'Task',
+    description: 'Provides sequential, step-by-step procedures to accomplish a specific goal with a verifiable outcome.',
+  },
+  reference: {
+    label: 'Reference',
+    description: 'Provides structured lookup facts, specifications, syntax, configuration options, parameters, and constraints.',
+  },
+} as const;
+
+export const PAGE_TYPE_METADATA: Record<PageType, ClassificationMetadata> = {
+  topic: {
+    label: 'Topic',
+    description: 'A modular documentation article structured around a primary information type (concept, task, or reference).',
+  },
+  index: {
+    label: 'Index',
+    description: 'A navigational directory page organizing and listing documentation topics within a section.',
+  },
+  landing: {
+    label: 'Landing page',
+    description: 'A curated entry point introducing a documentation area or guiding readers by intent.',
+  },
+  overview: {
+    label: 'Overview',
+    description: 'A high-level orientation or architectural summary introducing a section.',
+  },
+  utility: {
+    label: 'Utility',
+    description: 'A supporting functional page such as an interactive assistant or site information page.',
+  },
+} as const;
+
+export interface DimensionTaxonomy<T extends string> {
+  description: string;
+  values: readonly T[];
+  items: Record<T, ClassificationMetadata>;
+}
+
+export interface ApiTaxonomy {
+  contentType: DimensionTaxonomy<ContentType>;
+  pageType: DimensionTaxonomy<PageType>;
+}
+
+export const API_TAXONOMY: ApiTaxonomy = {
+  contentType: {
+    description: 'Primary information type and reader intent of substantive documentation.',
+    values: CONTENT_TYPES,
+    items: CONTENT_TYPE_METADATA,
+  },
+  pageType: {
+    description: 'Structural role of the page within the documentation site.',
+    values: PAGE_TYPES,
+    items: PAGE_TYPE_METADATA,
+  },
+} as const;
+
 export interface PageMetadata {
   title?: string;
   description?: string;

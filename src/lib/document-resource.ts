@@ -11,9 +11,26 @@ import {
   type ContentType,
   type PageType,
   isTypedTopic,
+  API_TAXONOMY,
+  CONTENT_TYPE_METADATA,
+  PAGE_TYPE_METADATA,
+  type ClassificationMetadata,
+  type DimensionTaxonomy,
+  type ApiTaxonomy,
 } from './content-types.ts';
 
-export { CONTENT_TYPES, PAGE_TYPES, type ContentType, type PageType };
+export {
+  CONTENT_TYPES,
+  PAGE_TYPES,
+  type ContentType,
+  type PageType,
+  API_TAXONOMY,
+  CONTENT_TYPE_METADATA,
+  PAGE_TYPE_METADATA,
+  type ClassificationMetadata,
+  type DimensionTaxonomy,
+  type ApiTaxonomy,
+};
 
 export interface DocumentHeading {
   level: number;
@@ -309,6 +326,7 @@ export function generateLocaleIndexJson(
       contentType: [...CONTENT_TYPES],
       pageType: [...PAGE_TYPES],
     },
+    taxonomy: API_TAXONOMY,
     documents: filtered.map(toDocumentJsonEntry),
   };
 }
@@ -343,6 +361,7 @@ export function generateGlobalIndexJson(
         sitemap: `${siteUrl}/sitemap.md`,
         llms: `${siteUrl}/llms.txt`,
         llmsFull: `${siteUrl}/llms-full.txt`,
+        schema: `${siteUrl}/schema.json`,
       },
     },
     count: sorted.length,
@@ -354,6 +373,7 @@ export function generateGlobalIndexJson(
       contentType: [...CONTENT_TYPES],
       pageType: [...PAGE_TYPES],
     },
+    taxonomy: API_TAXONOMY,
     documents: sorted.map(toDocumentJsonEntry),
   };
 }
@@ -482,6 +502,7 @@ export function handleIndexQuery(
           contentType: [...CONTENT_TYPES],
           pageType: [...PAGE_TYPES],
         },
+        taxonomy: API_TAXONOMY,
         documents: sorted.map(toDocumentJsonEntry),
       },
     };
@@ -511,6 +532,7 @@ export function handleIndexQuery(
           sitemap: `${siteUrl}/sitemap.md`,
           llms: `${siteUrl}/llms.txt`,
           llmsFull: `${siteUrl}/llms-full.txt`,
+          schema: `${siteUrl}/schema.json`,
         },
       },
       count: sorted.length,
@@ -522,6 +544,7 @@ export function handleIndexQuery(
         contentType: [...CONTENT_TYPES],
         pageType: [...PAGE_TYPES],
       },
+      taxonomy: API_TAXONOMY,
       documents: sorted.map(toDocumentJsonEntry),
     },
   };

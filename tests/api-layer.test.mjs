@@ -2,7 +2,13 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
-import { CONTENT_TYPES, PAGE_TYPES } from '../src/lib/content-types.ts';
+import {
+  CONTENT_TYPES,
+  PAGE_TYPES,
+  CONTENT_TYPE_METADATA,
+  PAGE_TYPE_METADATA,
+  API_TAXONOMY,
+} from '../src/lib/content-types.ts';
 import { handleIndexQuery } from '../src/lib/document-resource.ts';
 
 const DIST = join(process.cwd(), 'dist', 'client');
@@ -12,6 +18,7 @@ test('API endpoints existence in dist/client', () => {
     'index.json',
     'en/index.json',
     'fr/index.json',
+    'schema.json',
     'sitemap.md',
     'en/sitemap.md',
     'fr/sitemap.md',
@@ -62,6 +69,14 @@ test('JSON index schema and document count', () => {
   assert.deepEqual(enJson.filters.pageType, [...PAGE_TYPES]);
   assert.deepEqual(frJson.filters.contentType, [...CONTENT_TYPES]);
   assert.deepEqual(frJson.filters.pageType, [...PAGE_TYPES]);
+
+  // Validate self-describing taxonomy metadata
+  assert.deepEqual(globalJson.taxonomy, API_TAXONOMY);
+  assert.deepEqual(enJson.taxonomy, API_TAXONOMY);
+  assert.deepEqual(frJson.taxonomy, API_TAXONOMY);
+
+  // Validate global discovery endpoint registry includes schema.json
+  assert.equal(globalJson.endpoints.global.schema, 'https://docs.redaction-technique.org/schema.json');
 
   // Validate document properties
   for (const doc of globalJson.documents) {
@@ -445,4 +460,92 @@ test('Invariant test: API query filtering is bound to canonical content types an
   assert.equal(errPt.status, 400);
   assert.deepEqual(errPt.body.allowed, [...PAGE_TYPES]);
 });
+
+test('Taxonomy completeness and consistency across definitions', () => {
+  // 1. Content type metadata completeness
+  assert.equal(
+    Object.keys(CONTENT_TYPE_METADATA).length,
+    CONTENT_TYPES.length,
+    'CONTENT_TYPE_METADATA must contain exactly the canonical CONTENT_TYPES'
+  );
+  for (const ct of CONTENT_TYPES) {
+    const meta = CONTENT_TYPE_METADATA[ct];
+    assert.ok(meta, `Missing metadata for canonical contentType: ${ct}`);
+    assert.ok(typeof meta.label === 'string' && meta.label.length > 0, `Missing label for contentType: ${ct}`);
+    assert.ok(typeof meta.description === 'string' && meta.description.length > 0, `Missing description for contentType: ${ct}`);
+  }
+
+  // 2. Page type metadata completeness
+  assert.equal(
+    Object.keys(PAGE_TYPE_METADATA).length,
+    PAGE_TYPES.length,
+    'PAGE_TYPE_METADATA must contain exactly the canonical PAGE_TYPES'
+  );
+  for (const pt of PAGE_TYPES) {
+    const meta = PAGE_TYPE_METADATA[pt];
+    assert.ok(meta, `Missing metadata for canonical pageType: ${pt}`);
+    assert.ok(typeof meta.label === 'string' && meta.label.length > 0, `Missing label for pageType: ${pt}`);
+    assert.ok(typeof meta.description === 'string' && meta.description.length > 0, `Missing description for pageType: ${pt}`);
+  }
+
+  // 3. API_TAXONOMY consistency
+  assert.deepEqual(API_TAXONOMY.contentType.values, CONTENT_TYPES);
+  assert.deepEqual(API_TAXONOMY.contentType.items, CONTENT_TYPE_METADATA);
+  assert.ok(API_TAXONOMY.contentType.description.length > 0);
+
+  assert.deepEqual(API_TAXONOMY.pageType.values, PAGE_TYPES);
+  assert.deepEqual(API_TAXONOMY.pageType.items, PAGE_TYPE_METADATA);
+  assert.ok(API_TAXONOMY.pageType.description.length > 0);
+
+  // 4. Distinct semantic descriptions for the two dimensions
+  assert.notEqual(
+    API_TAXONOMY.contentType.description,
+    API_TAXONOMY.pageType.description,
+    'pageType and contentType must have distinct semantic descriptions'
+  );
+});
+
+test('Dedicated schema discovery endpoint (/schema.json)', () => {
+  const schemaPath = join(DIST, 'schema.json');
+  assert.ok(existsSync(schemaPath), 'Expected dist/client/schema.json to exist');
+
+  const schema = JSON.parse(readFileSync(schemaPath, 'utf-8'));
+  assert.equal(schema.version, '1.0');
+  assert.equal(schema.site, 'https://docs.redaction-technique.org');
+  assert.ok(typeof schema.description === 'string' && schema.description.length > 0);
+
+  // Taxonomy verification
+  assert.deepEqual(schema.taxonomy, API_TAXONOMY);
+  assert.deepEqual(schema.filters.contentType, [...CONTENT_TYPES]);
+  assert.deepEqual(schema.filters.pageType, [...PAGE_TYPES]);
+
+  // Verify no undocumented values
+  assert.deepEqual(Object.keys(schema.taxonomy.contentType.items).sort(), [...CONTENT_TYPES].sort());
+  assert.deepEqual(Object.keys(schema.taxonomy.pageType.items).sort(), [...PAGE_TYPES].sort());
+});
+
+test('Taxonomy preservation during API query filtering', () => {
+  const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
+  const docs = globalJson.documents.map((d) => ({
+    ...d,
+    markdownUrl: d.markdown,
+    slug: d.url.replace('https://docs.redaction-technique.org/', '').replace(/\/$/, ''),
+  }));
+
+  // Global filtered query retains taxonomy and filters
+  const resFiltered = handleIndexQuery(docs, 'pageType=topic&contentType=task');
+  assert.equal(resFiltered.status, 200);
+  assert.deepEqual(resFiltered.body.taxonomy, API_TAXONOMY);
+  assert.deepEqual(resFiltered.body.filters.contentType, [...CONTENT_TYPES]);
+  assert.deepEqual(resFiltered.body.filters.pageType, [...PAGE_TYPES]);
+  assert.equal(resFiltered.body.endpoints.global.schema, 'https://docs.redaction-technique.org/schema.json');
+
+  // Locale-scoped filtered query retains taxonomy and filters
+  const resEn = handleIndexQuery(docs, 'contentType=concept', { locale: 'en' });
+  assert.equal(resEn.status, 200);
+  assert.deepEqual(resEn.body.taxonomy, API_TAXONOMY);
+  assert.deepEqual(resEn.body.filters.contentType, [...CONTENT_TYPES]);
+  assert.deepEqual(resEn.body.filters.pageType, [...PAGE_TYPES]);
+});
+
 

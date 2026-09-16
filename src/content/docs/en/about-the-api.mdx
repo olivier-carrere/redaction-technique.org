@@ -21,7 +21,8 @@ Rendered HTML is built for browsers: navigation chrome, CSS, client-side interac
 | --- | --- | --- |
 | `/llms.txt` | Plain text | A concise table of contents conforming to the [llms.txt](https://llmstxt.org/) convention — the entry point for an agent that wants to know what's here before fetching anything larger. |
 | `/llms-full.txt`, `/llms-full-en.txt`, `/llms-full-fr.txt` | Plain text | The entire corpus (bilingual, or one locale) concatenated into a single file, for an agent that wants to ingest everything in one request instead of one per page. |
-| `/index.json`, `/en/index.json`, `/fr/index.json` | JSON | A machine-readable document index: title, description, URL, word count, headings, tags, `pageType`, and `contentType` for every page, with support for query filtering. |
+| `/index.json`, `/en/index.json`, `/fr/index.json` | JSON | A machine-readable document index: title, description, URL, word count, headings, tags, `pageType`, `contentType`, and taxonomy definitions for every page, with support for query filtering. |
+| `/schema.json` | JSON | Standalone machine-readable schema and self-describing taxonomy defining `pageType` and `contentType` classifications and descriptions. |
 | `/sitemap.md`, `/en/sitemap.md`, `/fr/sitemap.md` | Markdown | A hierarchical sitemap grouped by section, in a format an LLM can read directly rather than parsing an XML sitemap. |
 | `/en/<page>.md`, `/fr/<page>.md` | Markdown | A clean Markdown mirror of one page — the same text content as the HTML version, without layout or navigation markup. |
 
@@ -68,6 +69,17 @@ The JSON documentation index supports query parameter filtering using an AND ope
 | Locale filter | `?lang=en&contentType=concept` | Returns English concept pages with strict locale isolation |
 
 Invalid parameter values (such as `?contentType=tutorial` or case-mismatched `?contentType=Concept`) return HTTP 400 with a machine-readable payload detailing the allowed canonical values.
+
+### Programmatic discovery: self-describing taxonomy
+
+API clients, search tools, and LLM/RAG systems do not need to scrape human-facing articles or hard-code classification lists. The API makes its taxonomy self-describing in two ways:
+
+1. **Embedded taxonomy metadata**: Every `/index.json`, `/en/index.json`, and `/fr/index.json` includes a top-level `taxonomy` object with labels, descriptions, and allowed values:
+   - `taxonomy.contentType`: Descriptions and definitions for `concept`, `task`, and `reference`.
+   - `taxonomy.pageType`: Descriptions and definitions for `topic`, `index`, `landing`, `overview`, and `utility`.
+2. **Dedicated discovery endpoint (`/schema.json`)**: Clients that only need the schema and classification definitions without downloading the 148-document catalog can fetch `/schema.json` directly.
+
+This allows agents to answer questions like *"What document types does this API expose?"* and *"What does contentType=task mean?"* dynamically from structured metadata.
 
 ## How each page exposes this
 

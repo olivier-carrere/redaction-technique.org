@@ -46,13 +46,14 @@ All endpoints are statically pre-rendered during `astro build` into `dist/client
 | `/llms-full-en.txt` | `text/plain; charset=utf-8` | Consolidated English documentation corpus |
 | `/llms-full-fr.txt` | `text/plain; charset=utf-8` | Consolidated French documentation corpus |
 | `/index.json` | `application/json; charset=utf-8` | Global machine-readable document index and endpoint registry |
+| `/schema.json` | `application/json; charset=utf-8` | Standalone machine-readable schema and self-describing taxonomy |
 | `/sitemap.md` | `text/markdown; charset=utf-8` | Global human- and agent-readable Markdown sitemap |
 
 ### B. English Locale Endpoints (`/en/`)
 
 | Route | Content-Type | Purpose |
 | ----- | ------------ | ------- |
-| `/en/index.json` | `application/json; charset=utf-8` | English machine-readable document index (49 docs) |
+| `/en/index.json` | `application/json; charset=utf-8` | English machine-readable document index (74 docs) |
 | `/en/sitemap.md` | `text/markdown; charset=utf-8` | Hierarchical English Markdown sitemap grouped by section |
 | `/en/llms-full.txt` | `text/plain; charset=utf-8` | Complete English documentation corpus (alias to `/llms-full-en.txt`) |
 | `/en.md` | `text/markdown; charset=utf-8` | Clean Markdown representation of the English homepage |
@@ -62,7 +63,7 @@ All endpoints are statically pre-rendered during `astro build` into `dist/client
 
 | Route | Content-Type | Purpose |
 | ----- | ------------ | ------- |
-| `/fr/index.json` | `application/json; charset=utf-8` | French machine-readable document index (47 docs) |
+| `/fr/index.json` | `application/json; charset=utf-8` | French machine-readable document index (74 docs) |
 | `/fr/sitemap.md` | `text/markdown; charset=utf-8` | Hierarchical French Markdown sitemap grouped by section |
 | `/fr/llms-full.txt` | `text/plain; charset=utf-8` | Complete French documentation corpus (alias to `/llms-full-fr.txt`) |
 | `/fr.md` | `text/markdown; charset=utf-8` | Clean Markdown representation of the French homepage |
@@ -104,11 +105,33 @@ The locale indexes (`/en/index.json` and `/fr/index.json`) expose:
     "contentType": ["concept", "task", "reference"],
     "pageType": ["topic", "index", "landing", "overview", "utility"]
   },
+  "taxonomy": {
+    "contentType": {
+      "description": "Primary information type and reader intent of substantive documentation.",
+      "values": ["concept", "task", "reference"],
+      "items": {
+        "concept": { "label": "Concept", "description": "..." },
+        "task": { "label": "Task", "description": "..." },
+        "reference": { "label": "Reference", "description": "..." }
+      }
+    },
+    "pageType": {
+      "description": "Structural role of the page within the documentation site.",
+      "values": ["topic", "index", "landing", "overview", "utility"],
+      "items": {
+        "topic": { "label": "Topic", "description": "..." },
+        "index": { "label": "Index", "description": "..." },
+        "landing": { "label": "Landing page", "description": "..." },
+        "overview": { "label": "Overview", "description": "..." },
+        "utility": { "label": "Utility", "description": "..." }
+      }
+    }
+  },
   "documents": [ ... ]
 }
 ```
 
-The global index (`/index.json`) aggregates both locales, includes discovery endpoints, and supports filtering via query parameters:
+The global index (`/index.json`) aggregates both locales, includes discovery endpoints (including `/schema.json`), exposes the complete `taxonomy`, and supports filtering via query parameters:
 
 ### Supported Query Filters (AND operation)
 - `?contentType=concept | task | reference`
@@ -117,6 +140,9 @@ The global index (`/index.json`) aggregates both locales, includes discovery end
 - Combined: `?pageType=topic&contentType=task`
 
 Invalid parameter values return `HTTP 400` with allowed canonical classifications.
+
+### Dedicated Schema Endpoint (`/schema.json`)
+A standalone static endpoint (`/schema.json`) returns the taxonomy and filter metadata without the document catalog, ideal for fast schema discovery by automated agents.
 
 ---
 
