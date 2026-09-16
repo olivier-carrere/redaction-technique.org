@@ -6,6 +6,7 @@ contentType: concept
 ---
 
 import { CardGrid, Card } from '@astrojs/starlight/components';
+import Mermaid from '../../../../components/Mermaid.astro';
 
 ## Definition
 
@@ -155,23 +156,31 @@ OpenAPI is not a general documentation authoring framework for prose, and DITA i
 
 API documentation offers a clear demonstration of how the three complementary information types interact with machine-readable contracts:
 
-```
-Developer Journey
-┌────────────────────────────────────────────────────────┐
-│ 1. Concept: "What is idempotency?"                     │
-│    Architecture, auth model, core domain objects       │
-└───────────────────────────┬────────────────────────────┘
-                            │
-┌───────────────────────────▼────────────────────────────┐
-│ 2. Task: "How do I make my first API request?"         │
-│    Prerequisites, token exchange, copyable curl steps  │
-└───────────────────────────┬────────────────────────────┘
-                            │
-┌───────────────────────────▼────────────────────────────┐
-│ 3. Reference: "POST /users — parameters & schemas"     │
-│    HTTP verb, endpoint path, request/response models   │
-└────────────────────────────────────────────────────────┘
-```
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
+flowchart TD
+    accTitle: Developer Journey Across Information Types
+    accDescr: Sequential progression across documentation types, from domain concepts to task execution and reference lookup.
+
+    subgraph S1["1. Concept — Understand the domain"]
+        C1["What is idempotency?<br/>Architecture, auth model, core domain objects"]
+    end
+
+    subgraph S2["2. Task — Perform an operation"]
+        T1["How do I make my first API request?<br/>Prerequisites, token exchange, copyable curl steps"]
+    end
+
+    subgraph S3["3. Reference — Consult exact details"]
+        R1["POST /users — parameters & schemas<br/>HTTP verb, endpoint path, request/response models"]
+    end
+
+    S1 --> S2 --> S3
+
+    classDef stage fill:{{parentFill}},stroke:{{parentStroke}},color:{{parentText}},stroke-width:1.5px,font-weight:600
+    classDef step fill:{{childFill}},stroke:{{childStroke}},color:{{childText}},stroke-width:1.5px
+    class S1,S2,S3 stage
+    class C1,T1,R1 step
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
+**Developer journey across information types: Concept, Task, and Reference.**
 
 ### The three types in API portals
 

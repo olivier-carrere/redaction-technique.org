@@ -6,6 +6,7 @@ contentType: concept
 ---
 
 import { CardGrid, Card } from '@astrojs/starlight/components';
+import Mermaid from '../../../../components/Mermaid.astro';
 
 ## Définition
 
@@ -155,23 +156,31 @@ OpenAPI n'est pas un système de rédaction pour la prose ou les tutoriels, et D
 
 La documentation d'API illustre concrètement l'articulation entre les trois types d'information complémentaires et les contrats lisibles par machine :
 
-```
-Parcours du développeur
-┌────────────────────────────────────────────────────────┐
-│ 1. Concept : « Qu'est-ce que l'idempotence ? »         │
-│    Architecture, modèle d'authentification, objets clés│
-└───────────────────────────┬────────────────────────────┘
-                            │
-┌───────────────────────────▼────────────────────────────┐
-│ 2. Tâche : « Comment faire un premier appel ? »        │
-│    Prérequis, échange de jeton, commandes curl         │
-└───────────────────────────┬────────────────────────────┘
-                            │
-┌───────────────────────────▼────────────────────────────┐
-│ 3. Référence : « POST /utilisateurs — paramètres »     │
-│    Verbe HTTP, chemin d'endpoint, modèles JSON         │
-└────────────────────────────────────────────────────────┘
-```
+<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
+flowchart TD
+    accTitle: Parcours du développeur à travers les types d'information
+    accDescr: Progression séquentielle à travers les trois types d'information, de la compréhension des concepts à la réalisation d'une tâche puis à la consultation des spécifications.
+
+    subgraph S1["1. Concept — Comprendre le domaine"]
+        C1["Qu'est-ce que l'idempotence ?<br/>Architecture, modèle d'authentification, objets clés"]
+    end
+
+    subgraph S2["2. Tâche — Accomplir une procédure"]
+        T1["Comment faire un premier appel ?<br/>Prérequis, échange de jeton, commandes curl"]
+    end
+
+    subgraph S3["3. Référence — Consulter les détails"]
+        R1["POST /users — paramètres et schémas<br/>Verbe HTTP, chemin d'endpoint, modèles JSON"]
+    end
+
+    S1 --> S2 --> S3
+
+    classDef stage fill:{{parentFill}},stroke:{{parentStroke}},color:{{parentText}},stroke-width:1.5px,font-weight:600
+    classDef step fill:{{childFill}},stroke:{{childStroke}},color:{{childText}},stroke-width:1.5px
+    class S1,S2,S3 stage
+    class C1,T1,R1 step
+    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
+**Parcours du développeur à travers les types d'information : Concept, Tâche et Référence.**
 
 ### Les trois types dans les portails d'API
 
