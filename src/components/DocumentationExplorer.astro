@@ -9,10 +9,11 @@
  *
  * - Instant in-browser search across title, description, headings, keywords, and tags
  * - Canonical taxonomy filters (contentType, pageType, language)
- * - HTML and Markdown dual-retrieval model
- * - Accessible "Copy Markdown URL" action
+ * - HTML and Markdown dual-retrieval model with clear Human vs LLM affordances
+ * - Accessible "Copy Markdown URL" action with visible & screen-reader feedback
  * - "Copy API query" action reflecting current filter state
- * - Shareable URL state (?q=...&contentType=...&pageType=...&lang=...)
+ * - Shareable URL state (?q=...&contentType=...&pageType=...&lang=...) with popstate support
+ * - Touch-friendly responsive targets (min 44px on mobile)
  * - Zero external dependencies, pure vanilla JS and native CSS
  */
 import { CONTENT_TYPES, PAGE_TYPES } from '../lib/content-types';
@@ -47,7 +48,10 @@ const t = {
     landingPage: 'Landing page',
     overviewPage: 'Overview',
     utilityPage: 'Utility',
-    showingResults: 'Showing {count} of {total} documents',
+    countAll: '{total} documents',
+    countFiltered: '{count} of {total} documents',
+    countSingle: '1 document',
+    countZero: '0 documents',
     resetFilters: 'Reset filters',
     copyApiQuery: 'Copy API query',
     copiedApiQuery: '✓ Query URL copied',
@@ -55,8 +59,8 @@ const t = {
     viewMarkdown: 'Markdown ↗',
     copyMarkdownUrl: 'Copy Markdown URL',
     copiedMarkdownUrl: '✓ Markdown URL copied',
-    noResultsTitle: 'No documentation matches your filters.',
-    noResultsSuggestion: 'Try clearing your search terms or relaxing the information type and role filters.',
+    noResultsTitle: 'No documentation matches your query',
+    noResultsSuggestion: 'No articles match the current search term and filters. Try relaxing your filters or clearing search terms to browse all documents.',
     loading: 'Loading documentation index…',
   },
   fr: {
@@ -81,7 +85,10 @@ const t = {
     landingPage: 'Page de renvoi (Landing)',
     overviewPage: "Vue d'ensemble (Overview)",
     utilityPage: 'Utilitaire (Utility)',
-    showingResults: 'Affichage de {count} sur {total} documents',
+    countAll: '{total} documents',
+    countFiltered: '{count} sur {total} documents',
+    countSingle: '1 document',
+    countZero: '0 document',
     resetFilters: 'Réinitialiser les filtres',
     copyApiQuery: "Copier la requête d'API",
     copiedApiQuery: '✓ Requête URL copiée',
@@ -89,8 +96,8 @@ const t = {
     viewMarkdown: 'Markdown ↗',
     copyMarkdownUrl: "Copier l'URL Markdown",
     copiedMarkdownUrl: '✓ URL Markdown copiée',
-    noResultsTitle: 'Aucun document ne correspond à vos critères.',
-    noResultsSuggestion: 'Essayez d’élargir vos termes de recherche ou de réinitialiser les filtres de type et de rôle.',
+    noResultsTitle: 'Aucun document correspondant',
+    noResultsSuggestion: 'Aucune rubrique ne correspond à vos termes de recherche et filtres actuels. Essayez d’élargir votre recherche ou de réinitialiser les filtres pour parcourir l’ensemble du corpus.',
     loading: 'Chargement de l’index documentaire…',
   },
 }[isFr ? 'fr' : 'en'];
@@ -102,12 +109,13 @@ const t = {
   data-lang={lang}
   data-site-url="https://docs.redaction-technique.org"
 >
-  <!-- Search and Toolbar -->
+  <!-- Search and Controls Panel -->
   <div class="doc-explorer-panel">
+    <!-- Search Bar (Visually Dominant) -->
     <div class="doc-explorer-search-row" role="search" aria-label={t.title}>
       <label for="doc-explorer-search" class="sr-only">{t.searchLabel}</label>
       <div class="doc-explorer-search-wrapper">
-        <svg class="doc-explorer-search-icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="doc-explorer-search-icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
@@ -131,7 +139,7 @@ const t = {
       </div>
     </div>
 
-    <!-- Filters Row -->
+    <!-- Filters Row (Secondary Hierarchy) -->
     <div class="doc-explorer-filters-row">
       <!-- Language Filter -->
       <div class="doc-explorer-filter-group">
@@ -170,7 +178,7 @@ const t = {
       </div>
     </div>
 
-    <!-- Summary / Actions Bar -->
+    <!-- Status Bar / Actions -->
     <div class="doc-explorer-status-bar">
       <span id="doc-explorer-count" class="doc-explorer-count" aria-live="polite">
         {t.loading}
@@ -275,26 +283,31 @@ const t = {
       copiedMarkdownUrl: isFrUi ? '✓ URL Markdown copiée' : '✓ Markdown URL copied',
       copyApiQuery: isFrUi ? "Copier la requête d'API" : 'Copy API query',
       copiedApiQuery: isFrUi ? '✓ Requête URL copiée' : '✓ Query URL copied',
-      showingResults: isFrUi
-        ? 'Affichage de {count} sur {total} documents'
-        : 'Showing {count} of {total} documents',
+      countAll: isFrUi ? '{total} documents' : '{total} documents',
+      countFiltered: isFrUi ? '{count} sur {total} documents' : '{count} of {total} documents',
+      countSingle: isFrUi ? '1 document' : '1 document',
+      countZero: isFrUi ? '0 document' : '0 documents',
     };
 
     // Parse URL Search Parameters for shareable initial state
-    const initialParams = new URLSearchParams(window.location.search);
-    if (initialParams.has('q')) searchInput.value = initialParams.get('q') || '';
-    if (initialParams.has('lang')) {
-      const qLang = initialParams.get('lang');
-      if (['en', 'fr', 'all'].includes(qLang || '')) langSelect.value = qLang!;
+    function loadStateFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      if (params.has('q')) searchInput!.value = params.get('q') || '';
+      if (params.has('lang')) {
+        const qLang = params.get('lang');
+        if (['en', 'fr', 'all'].includes(qLang || '')) langSelect!.value = qLang!;
+      }
+      if (params.has('contentType')) {
+        const qCt = params.get('contentType');
+        if (['concept', 'task', 'reference', 'all'].includes(qCt || '')) ctSelect!.value = qCt!;
+      }
+      if (params.has('pageType')) {
+        const qPt = params.get('pageType');
+        if (['topic', 'index', 'landing', 'overview', 'utility', 'all'].includes(qPt || '')) ptSelect!.value = qPt!;
+      }
     }
-    if (initialParams.has('contentType')) {
-      const qCt = initialParams.get('contentType');
-      if (['concept', 'task', 'reference', 'all'].includes(qCt || '')) ctSelect.value = qCt!;
-    }
-    if (initialParams.has('pageType')) {
-      const qPt = initialParams.get('pageType');
-      if (['topic', 'index', 'landing', 'overview', 'utility', 'all'].includes(qPt || '')) ptSelect.value = qPt!;
-    }
+
+    loadStateFromUrl();
 
     // Toggle clear search button visibility
     function updateClearBtn() {
@@ -335,7 +348,7 @@ const t = {
         .trim();
     }
 
-    // Update query string in URL without page reload
+    // Update query string in URL without full page reload
     function syncUrlState() {
       const params = new URLSearchParams();
       const qVal = searchInput!.value.trim();
@@ -433,11 +446,21 @@ const t = {
         return true;
       });
 
-      // Update count
+      // Concise, intuitive result count wording
       if (countEl) {
-        countEl.textContent = strings.showingResults
-          .replace('{count}', String(filtered.length))
-          .replace('{total}', String(docs.length));
+        if (filtered.length === docs.length) {
+          countEl.textContent = strings.countAll.replace('{total}', String(docs.length));
+        } else if (filtered.length === 0) {
+          countEl.textContent = strings.countZero;
+        } else if (filtered.length === 1 && docs.length > 1) {
+          countEl.textContent = strings.countFiltered
+            .replace('{count}', '1')
+            .replace('{total}', String(docs.length));
+        } else {
+          countEl.textContent = strings.countFiltered
+            .replace('{count}', String(filtered.length))
+            .replace('{total}', String(docs.length));
+        }
       }
 
       // Empty state
@@ -449,7 +472,7 @@ const t = {
 
       emptyState!.hidden = true;
 
-      // Render cards
+      // Render cards: Title first -> Badges -> Description -> Action buttons
       resultsContainer!.innerHTML = filtered
         .map((doc) => {
           const ctLabel = doc.contentType
@@ -484,22 +507,26 @@ const t = {
           return `
             <article class="doc-card">
               <div class="doc-card-header">
+                <h3 class="doc-card-title">
+                  <a href="${escapeHtml(doc.url)}" class="doc-card-title-link">${escapeHtml(doc.title)}</a>
+                </h3>
                 <div class="doc-card-badges">
                   ${ctBadge}
                   ${ptBadge}
                   ${langBadge}
                 </div>
-                <h3 class="doc-card-title">
-                  <a href="${escapeHtml(doc.url)}" class="doc-card-title-link">${escapeHtml(doc.title)}</a>
-                </h3>
               </div>
               ${descHtml}
               <div class="doc-card-actions">
                 <a href="${escapeHtml(doc.url)}" class="doc-card-btn doc-card-btn-primary">
                   ${strings.readDoc}
                 </a>
-                <a href="${escapeHtml(doc.markdown)}" class="doc-card-btn doc-card-btn-secondary" title="${strings.viewMarkdown}">
-                  ${strings.viewMarkdown}
+                <a href="${escapeHtml(doc.markdown)}" class="doc-card-btn doc-card-btn-markdown" title="${strings.viewMarkdown}">
+                  <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                  <span>${strings.viewMarkdown}</span>
                 </a>
                 <button
                   type="button"
@@ -536,6 +563,15 @@ const t = {
       debounceTimer = setTimeout(applyFilters, 120);
     });
 
+    // Enter key triggers immediate search update
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        if (debounceTimer) clearTimeout(debounceTimer);
+        applyFilters();
+      }
+    });
+
     if (clearBtn) {
       clearBtn.addEventListener('click', () => {
         searchInput.value = '';
@@ -559,6 +595,12 @@ const t = {
 
     if (resetBtn) resetBtn.addEventListener('click', resetAllFilters);
     if (emptyResetBtn) emptyResetBtn.addEventListener('click', resetAllFilters);
+
+    // Browser Back / Forward popstate handler
+    window.addEventListener('popstate', () => {
+      loadStateFromUrl();
+      applyFilters();
+    });
 
     // Copy API query URL button
     if (copyQueryBtn) {
@@ -635,6 +677,7 @@ const t = {
     border: 0;
   }
 
+  /* Control Panel */
   .doc-explorer-panel {
     background: var(--sl-color-gray-6);
     border: 1px solid var(--sl-color-gray-5);
@@ -642,11 +685,11 @@ const t = {
     padding: 1.25rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.1rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   }
 
-  /* Search row */
+  /* Search row - Visually Prominent */
   .doc-explorer-search-wrapper {
     position: relative;
     display: flex;
@@ -656,15 +699,16 @@ const t = {
 
   .doc-explorer-search-icon {
     position: absolute;
-    left: 0.85rem;
+    left: 1rem;
     color: var(--sl-color-gray-3);
     pointer-events: none;
   }
 
   .doc-explorer-input {
     width: 100%;
-    padding: 0.65rem 2.5rem 0.65rem 2.6rem;
-    font-size: var(--sl-text-base);
+    padding: 0.75rem 2.5rem 0.75rem 2.85rem;
+    font-size: 1.05rem;
+    font-weight: 400;
     color: var(--sl-color-white);
     background: var(--sl-color-gray-7, #131418);
     border: 1px solid var(--sl-color-gray-4);
@@ -681,22 +725,23 @@ const t = {
 
   .doc-explorer-input:focus {
     border-color: var(--sl-color-accent);
-    box-shadow: 0 0 0 2px var(--sl-color-accent-low);
+    box-shadow: 0 0 0 3px var(--sl-color-accent-low);
   }
 
   .doc-explorer-clear-btn {
     position: absolute;
-    right: 0.75rem;
+    right: 0.85rem;
     background: none;
     border: none;
     color: var(--sl-color-gray-3);
     cursor: pointer;
-    font-size: 0.9rem;
-    padding: 0.3rem 0.5rem;
+    font-size: 1rem;
+    padding: 0.35rem 0.6rem;
     border-radius: 4px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    transition: color 0.15s ease, background-color 0.15s ease;
   }
 
   .doc-explorer-clear-btn:hover {
@@ -708,25 +753,25 @@ const t = {
     color: var(--sl-color-black);
   }
 
-  /* Filters row */
+  /* Filters row - Compact and Secondary */
   .doc-explorer-filters-row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
     gap: 0.75rem;
   }
 
   .doc-explorer-filter-group {
     display: flex;
     flex-direction: column;
-    gap: 0.35rem;
+    gap: 0.3rem;
   }
 
   .doc-explorer-label {
-    font-size: var(--sl-text-xs);
+    font-size: 0.75rem;
     font-weight: 600;
-    color: var(--sl-color-gray-2);
+    color: var(--sl-color-gray-3);
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.05em;
   }
 
   .doc-explorer-select {
@@ -758,7 +803,7 @@ const t = {
     align-items: center;
     justify-content: space-between;
     gap: 0.75rem;
-    padding-top: 0.5rem;
+    padding-top: 0.65rem;
     border-top: 1px solid var(--sl-color-gray-5);
   }
 
@@ -812,6 +857,7 @@ const t = {
     background: transparent;
     color: var(--sl-color-gray-3);
     border: none;
+    font-size: var(--sl-text-xs);
   }
 
   .doc-explorer-btn-ghost:hover {
@@ -829,7 +875,7 @@ const t = {
     margin-top: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.85rem;
   }
 
   .doc-card {
@@ -840,7 +886,7 @@ const t = {
     transition: border-color 0.15s ease, box-shadow 0.15s ease;
     display: flex;
     flex-direction: column;
-    gap: 0.65rem;
+    gap: 0.6rem;
   }
 
   .doc-card:hover {
@@ -851,7 +897,28 @@ const t = {
   .doc-card-header {
     display: flex;
     flex-direction: column;
-    gap: 0.35rem;
+    gap: 0.4rem;
+  }
+
+  .doc-card-title {
+    margin: 0 !important;
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  .doc-card-title-link {
+    color: var(--sl-color-white);
+    text-decoration: none;
+  }
+
+  :root[data-theme='light'] .doc-card-title-link {
+    color: var(--sl-color-black);
+  }
+
+  .doc-card-title-link:hover {
+    color: var(--sl-color-accent);
+    text-decoration: underline;
   }
 
   .doc-card-badges {
@@ -922,27 +989,6 @@ const t = {
     font-family: var(--sl-font-mono);
   }
 
-  .doc-card-title {
-    margin: 0.15rem 0 0 !important;
-    font-size: 1.125rem;
-    font-weight: 600;
-    line-height: 1.35;
-  }
-
-  .doc-card-title-link {
-    color: var(--sl-color-white);
-    text-decoration: none;
-  }
-
-  :root[data-theme='light'] .doc-card-title-link {
-    color: var(--sl-color-black);
-  }
-
-  .doc-card-title-link:hover {
-    color: var(--sl-color-accent);
-    text-decoration: underline;
-  }
-
   .doc-card-desc {
     margin: 0 !important;
     font-size: var(--sl-text-sm);
@@ -950,12 +996,13 @@ const t = {
     line-height: 1.5;
   }
 
+  /* Distinct Actions: Human vs Machine */
   .doc-card-actions {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 0.5rem;
-    margin-top: 0.4rem;
+    margin-top: 0.35rem;
     padding-top: 0.65rem;
     border-top: 1px solid var(--sl-color-gray-5);
   }
@@ -966,13 +1013,14 @@ const t = {
     gap: 0.35rem;
     font-size: var(--sl-text-xs);
     font-weight: 600;
-    padding: 0.35rem 0.65rem;
-    border-radius: 4px;
+    padding: 0.4rem 0.75rem;
+    border-radius: 5px;
     text-decoration: none;
     cursor: pointer;
     transition: all 0.15s ease;
   }
 
+  /* Primary Human reading action */
   .doc-card-btn-primary {
     background: var(--sl-color-accent-low);
     color: var(--sl-color-accent-high);
@@ -984,21 +1032,27 @@ const t = {
     color: var(--sl-color-black);
   }
 
-  .doc-card-btn-secondary {
-    background: transparent;
-    color: var(--sl-color-gray-2);
-    border: 1px solid var(--sl-color-gray-4);
-  }
-
-  .doc-card-btn-secondary:hover {
+  /* Distinct Machine / Markdown action */
+  .doc-card-btn-markdown {
+    background: var(--sl-color-gray-5);
     color: var(--sl-color-white);
-    border-color: var(--sl-color-gray-3);
+    border: 1px solid var(--sl-color-gray-4);
+    font-family: var(--sl-font-mono);
+    font-size: 0.72rem;
   }
 
-  :root[data-theme='light'] .doc-card-btn-secondary:hover {
+  :root[data-theme='light'] .doc-card-btn-markdown {
     color: var(--sl-color-black);
+    background: #f1f5f9;
+    border-color: #cbd5e1;
   }
 
+  .doc-card-btn-markdown:hover {
+    color: var(--sl-color-accent);
+    border-color: var(--sl-color-accent);
+  }
+
+  /* Copy Markdown URL action */
   .doc-card-btn-copy {
     background: transparent;
     color: var(--sl-color-gray-3);
@@ -1052,9 +1106,18 @@ const t = {
     margin: 0 auto 1.25rem !important;
   }
 
+  /* Responsive Design & Mobile Touch Targets (min 44px) */
   @media (max-width: 640px) {
     .doc-explorer-panel {
       padding: 1rem;
+    }
+    .doc-explorer-input {
+      padding: 0.85rem 2.5rem 0.85rem 2.85rem;
+      min-height: 44px;
+    }
+    .doc-explorer-select {
+      min-height: 44px;
+      padding: 0.6rem 0.75rem;
     }
     .doc-explorer-filters-row {
       grid-template-columns: 1fr;
@@ -1064,6 +1127,7 @@ const t = {
       align-items: stretch;
     }
     .doc-card-btn {
+      min-height: 44px;
       justify-content: center;
     }
   }
