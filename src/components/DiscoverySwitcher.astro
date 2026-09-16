@@ -1,0 +1,198 @@
+---
+/**
+ * DiscoverySwitcher.astro
+ *
+ * Compact, unobtrusive navigation switcher between the two complementary
+ * documentation discovery experiences:
+ *   - Documentation Explorer (Search, filter, and retrieve)
+ *   - Ask Assistant (Conversational question-answering)
+ */
+
+interface Props {
+  active: 'explorer' | 'ask';
+  lang?: 'en' | 'fr';
+}
+
+const { active, lang = 'en' } = Astro.props;
+const isFr = lang === 'fr';
+
+const explorerUrl = isFr ? '/fr/about-the-api/' : '/en/about-the-api/';
+const askUrl = isFr ? '/fr/ask/' : '/en/ask/';
+
+const t = isFr
+  ? {
+      navLabel: 'Modes de découverte de la documentation',
+      explorerTitle: 'Explorer la documentation',
+      explorerDesc: 'Rechercher et filtrer la documentation',
+      askTitle: 'Poser une question',
+      askDesc: 'Obtenir une réponse fondée sur la documentation',
+    }
+  : {
+      navLabel: 'Documentation discovery modes',
+      explorerTitle: 'Explore documentation',
+      explorerDesc: 'Search and filter the documentation',
+      askTitle: 'Ask a question',
+      askDesc: 'Get an answer from the documentation',
+    };
+---
+
+<nav class="discovery-switcher not-content" aria-label={t.navLabel}>
+  <a
+    href={explorerUrl}
+    class:list={['discovery-switcher-tab', { 'is-active': active === 'explorer' }]}
+    aria-current={active === 'explorer' ? 'page' : undefined}
+  >
+    <span class="discovery-switcher-icon" aria-hidden="true">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+    </span>
+    <span class="discovery-switcher-text">
+      <span class="discovery-switcher-title">{t.explorerTitle}</span>
+      <span class="discovery-switcher-desc">{t.explorerDesc}</span>
+    </span>
+  </a>
+
+  <a
+    href={askUrl}
+    class:list={['discovery-switcher-tab', { 'is-active': active === 'ask' }]}
+    aria-current={active === 'ask' ? 'page' : undefined}
+  >
+    <span class="discovery-switcher-icon" aria-hidden="true">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+      </svg>
+    </span>
+    <span class="discovery-switcher-text">
+      <span class="discovery-switcher-title">{t.askTitle}</span>
+      <span class="discovery-switcher-desc">{t.askDesc}</span>
+    </span>
+  </a>
+</nav>
+
+<style>
+  .discovery-switcher {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .discovery-switcher-tab {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    background: var(--sl-color-gray-6);
+    border: 1px solid var(--sl-color-gray-5);
+    text-decoration: none;
+    color: var(--sl-color-gray-2);
+    min-height: 52px;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .discovery-switcher-tab:hover {
+    background: var(--sl-color-gray-5);
+    border-color: var(--sl-color-gray-4);
+    color: var(--sl-color-white);
+  }
+
+  :root[data-theme='light'] .discovery-switcher-tab {
+    background: #f8fafc;
+    border-color: #e2e8f0;
+    color: #475569;
+  }
+
+  :root[data-theme='light'] .discovery-switcher-tab:hover {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+    color: #0f172a;
+  }
+
+  .discovery-switcher-tab.is-active {
+    background: var(--sl-color-accent-low);
+    border: 2px solid var(--sl-color-accent);
+    color: var(--sl-color-white);
+  }
+
+  :root[data-theme='light'] .discovery-switcher-tab.is-active {
+    background: #eff6ff;
+    border-color: #2563eb;
+    color: #1e3a8a;
+  }
+
+  .discovery-switcher-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--sl-color-gray-3);
+  }
+
+  .discovery-switcher-tab.is-active .discovery-switcher-icon {
+    color: var(--sl-color-accent-high);
+  }
+
+  :root[data-theme='light'] .discovery-switcher-tab.is-active .discovery-switcher-icon {
+    color: #2563eb;
+  }
+
+  .discovery-switcher-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 0;
+  }
+
+  .discovery-switcher-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: inherit;
+  }
+
+  .discovery-switcher-tab.is-active .discovery-switcher-title {
+    color: var(--sl-color-white);
+  }
+
+  :root[data-theme='light'] .discovery-switcher-tab.is-active .discovery-switcher-title {
+    color: #0f172a;
+  }
+
+  .discovery-switcher-desc {
+    font-size: 0.775rem;
+    line-height: 1.3;
+    color: var(--sl-color-gray-3);
+  }
+
+  :root[data-theme='light'] .discovery-switcher-desc {
+    color: #64748b;
+  }
+
+  .discovery-switcher-tab.is-active .discovery-switcher-desc {
+    color: var(--sl-color-gray-2);
+  }
+
+  :root[data-theme='light'] .discovery-switcher-tab.is-active .discovery-switcher-desc {
+    color: #334155;
+  }
+
+  .discovery-switcher-tab:focus-visible {
+    outline: 2px solid var(--sl-color-accent);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 640px) {
+    .discovery-switcher {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+
+    .discovery-switcher-tab {
+      padding: 0.7rem 0.85rem;
+      min-height: 48px;
+    }
+  }
+</style>

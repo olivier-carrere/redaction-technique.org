@@ -16,7 +16,8 @@
  * - Touch-friendly responsive targets (min 44px on mobile)
  * - Zero external dependencies, pure vanilla JS and native CSS
  */
-import { CONTENT_TYPES, PAGE_TYPES } from '../lib/content-types';
+import { CONTENT_TYPES, PAGE_TYPES, type ContentType, type PageType } from '../lib/content-types';
+import DiscoverySwitcher from './DiscoverySwitcher.astro';
 
 interface Props {
   lang?: 'en' | 'fr';
@@ -59,6 +60,7 @@ const t = {
     viewMarkdown: 'Markdown ↗',
     copyMarkdownUrl: 'Copy Markdown URL',
     copiedMarkdownUrl: '✓ Markdown URL copied',
+    askAboutDoc: 'Ask about this',
     noResultsTitle: 'No documentation matches your query',
     noResultsSuggestion: 'No articles match the current search term and filters. Try relaxing your filters or clearing search terms to browse all documents.',
     loading: 'Loading documentation index…',
@@ -96,6 +98,7 @@ const t = {
     viewMarkdown: 'Markdown ↗',
     copyMarkdownUrl: "Copier l'URL Markdown",
     copiedMarkdownUrl: '✓ URL Markdown copiée',
+    askAboutDoc: 'Poser une question sur ce document',
     noResultsTitle: 'Aucun document correspondant',
     noResultsSuggestion: 'Aucune rubrique ne correspond à vos termes de recherche et filtres actuels. Essayez d’élargir votre recherche ou de réinitialiser les filtres pour parcourir l’ensemble du corpus.',
     loading: 'Chargement de l’index documentaire…',
@@ -109,6 +112,8 @@ const t = {
   data-lang={lang}
   data-site-url="https://docs.redaction-technique.org"
 >
+  <!-- Contextual discovery switcher: Explorer vs Ask -->
+  <DiscoverySwitcher active="explorer" lang={lang} />
   <!-- Search and Controls Panel -->
   <div class="doc-explorer-panel">
     <!-- Search Bar (Visually Dominant) -->
@@ -287,6 +292,7 @@ const t = {
       countFiltered: isFrUi ? '{count} sur {total} documents' : '{count} of {total} documents',
       countSingle: isFrUi ? '1 document' : '1 document',
       countZero: isFrUi ? '0 document' : '0 documents',
+      askAboutDoc: isFrUi ? 'Poser une question sur ce document' : 'Ask about this',
     };
 
     // Parse URL Search Parameters for shareable initial state
@@ -527,6 +533,16 @@ const t = {
                     <polyline points="8 6 2 12 8 18"></polyline>
                   </svg>
                   <span>${strings.viewMarkdown}</span>
+                </a>
+                <a
+                  href="/${doc.locale}/ask/?doc=${encodeURIComponent(doc.url)}&title=${encodeURIComponent(doc.title)}"
+                  class="doc-card-btn doc-card-btn-ask"
+                  title="${strings.askAboutDoc}"
+                >
+                  <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                  <span>${strings.askAboutDoc}</span>
                 </a>
                 <button
                   type="button"
@@ -1050,6 +1066,31 @@ const t = {
   .doc-card-btn-markdown:hover {
     color: var(--sl-color-accent);
     border-color: var(--sl-color-accent);
+  }
+
+  /* Ask about this action */
+  .doc-card-btn-ask {
+    background: var(--sl-color-gray-6);
+    color: var(--sl-color-gray-2);
+    border: 1px solid var(--sl-color-gray-4);
+  }
+
+  :root[data-theme='light'] .doc-card-btn-ask {
+    color: var(--sl-color-black);
+    background: #f8fafc;
+    border-color: #cbd5e1;
+  }
+
+  .doc-card-btn-ask:hover {
+    color: var(--sl-color-white);
+    background: var(--sl-color-gray-5);
+    border-color: var(--sl-color-accent);
+  }
+
+  :root[data-theme='light'] .doc-card-btn-ask:hover {
+    color: #1e3a8a;
+    background: #eff6ff;
+    border-color: #2563eb;
   }
 
   /* Copy Markdown URL action */

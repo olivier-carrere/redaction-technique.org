@@ -10,7 +10,7 @@
  */
 
 import type { APIRoute } from 'astro';
-import { searchDocs } from '../../lib/search';
+import { searchDocs, getDocByUrl } from '../../lib/search';
 import { createLLMProvider, getGeminiApiKey, GEMINI_MODEL, parseGeminiError } from '../../lib/llm';
 import type { SourceInfo } from '../../lib/llm';
 
@@ -136,7 +136,28 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
   }
 
   // ── Search documentation ──────────────────────────────────────────────────
-  const results = searchDocs(question, MAX_SEARCH_RESULTS, lang);
+  const contextUrl = typeof body.contextUrl === 'string' ? body.contextUrl.trim() : null;
+  let results = searchDocs(question, MAX_SEARCH_RESULTS, lang);
+
+  if (contextUrl) {
+    const contextDoc = getDocByUrl(contextUrl, lang);
+    if (contextDoc) {
+      const alreadyIn = results.findIndex((r) => r.url === contextDoc.url);
+      const contextResult = {
+        title: contextDoc.title,
+        url: contextDoc.url,
+        excerpt: contextDoc.description || contextDoc.content.slice(0, 150) + '…',
+        score: 9999,
+      };
+      if (alreadyIn > -1) {
+        results.splice(alreadyIn, 1);
+      }
+      results.unshift(contextResult);
+      if (results.length > MAX_SEARCH_RESULTS) {
+        results = results.slice(0, MAX_SEARCH_RESULTS);
+      }
+    }
+  }
 
   if (results.length === 0) {
     return new Response(

@@ -15,7 +15,7 @@
   },
   {
     "title": "Interroger la documentation",
-    "description": "Posez une question sur la documentation et obtenez une réponse fondée sur son contenu.",
+    "description": "Décrivez votre besoin avec vos propres mots et obtenez une réponse fondée sur la documentation de ce site.",
     "slug": "ask",
     "url": "/fr/ask/",
     "content": ""

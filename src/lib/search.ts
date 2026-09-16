@@ -137,3 +137,15 @@ export function searchDocs(query: string, maxResults = 5, lang: 'en' | 'fr' = 'e
     .sort((a, b) => b.score - a.score)
     .slice(0, maxResults);
 }
+
+/**
+ * Retrieve a specific document from the search index by URL.
+ */
+export function getDocByUrl(url: string, lang: 'en' | 'fr' = 'en'): DocEntry | undefined {
+  const docs = lang === 'fr' ? docsFr : docsEn;
+  const cleanUrl = url.replace(/\/+$/, '');
+  return docs.find((d) => {
+    const docClean = d.url.replace(/\/+$/, '');
+    return docClean === cleanUrl || docClean.endsWith(cleanUrl) || cleanUrl.endsWith(docClean);
+  });
+}

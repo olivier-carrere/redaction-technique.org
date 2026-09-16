@@ -85,7 +85,25 @@ if (typeof frontmatterNext === 'string' && next) {
     next = { type: 'link', href: frontmatterNext.link, label: frontmatterNext.label, isCurrent: false, badge: undefined, attrs: {} };
   }
 }
+
+const isTopic = entry?.data?.pageType === 'topic' || Boolean(entry?.data?.contentType);
+const docTitle = entry?.data?.title || '';
+const docUrl = Astro.url.pathname;
+const askUrl = `/${lang}/ask/?doc=${encodeURIComponent(docUrl)}&title=${encodeURIComponent(docTitle)}`;
 ---
+
+{ isTopic && (
+  <aside class="doc-ask-prompt not-content" aria-label={isFr ? "Poser une question sur cette documentation" : "Ask about this documentation"}>
+    <div class="doc-ask-prompt-inner">
+      <span class="doc-ask-prompt-text">
+        <strong>{isFr ? 'Une question sur cette documentation ?' : 'Have a question about this documentation?'}</strong>
+      </span>
+      <a href={askUrl} class="doc-ask-prompt-link">
+        {isFr ? 'Poser une question →' : 'Ask →'}
+      </a>
+    </div>
+  </aside>
+)}
 
 { (prev || next) && (
   <nav class="pagination-nav print:hidden" aria-label={isFr ? 'Navigation dans la section' : 'Section navigation'} dir={dir}>
@@ -118,6 +136,77 @@ if (typeof frontmatterNext === 'string' && next) {
 )}
 
 <style>
+  .doc-ask-prompt {
+    margin-top: 2.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .doc-ask-prompt-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.85rem 1.15rem;
+    background: var(--sl-color-gray-6);
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.5rem;
+  }
+
+  :root[data-theme='light'] .doc-ask-prompt-inner {
+    background: #f8fafc;
+    border-color: #e2e8f0;
+  }
+
+  .doc-ask-prompt-text {
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-white);
+  }
+
+  :root[data-theme='light'] .doc-ask-prompt-text {
+    color: #0f172a;
+  }
+
+  .doc-ask-prompt-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: var(--sl-text-sm);
+    font-weight: 600;
+    color: var(--sl-color-accent-high);
+    background: var(--sl-color-accent-low);
+    border: 1px solid var(--sl-color-accent);
+    padding: 0.4rem 0.85rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+  }
+
+  :root[data-theme='light'] .doc-ask-prompt-link {
+    color: #1d4ed8;
+    background: #eff6ff;
+    border-color: #93c5fd;
+  }
+
+  .doc-ask-prompt-link:hover {
+    background: var(--sl-color-accent);
+    color: var(--sl-color-black);
+  }
+
+  @media (max-width: 640px) {
+    .doc-ask-prompt-inner {
+      flex-direction: column;
+      align-items: stretch;
+      text-align: center;
+      gap: 0.75rem;
+    }
+
+    .doc-ask-prompt-link {
+      min-height: 44px;
+      justify-content: center;
+    }
+  }
+
   .pagination-nav {
     margin-top: 1.5rem;
   }

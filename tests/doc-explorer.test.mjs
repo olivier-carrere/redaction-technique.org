@@ -210,3 +210,69 @@ test('Documentation Explorer: equivalent API query URL generation matches schema
     'https://docs.redaction-technique.org/index.json?fields=title%2Curl%2Cmarkdown%2CcontentType'
   );
 });
+
+// ---------------------------------------------------------------------------
+// 6. Discovery Switcher (Explorer ↔ Ask)
+// ---------------------------------------------------------------------------
+
+test('Discovery Switcher: presence, active state, and reciprocal navigation', () => {
+  const enExpHtml = readFileSync(join(DIST, 'en', 'about-the-api', 'index.html'), 'utf-8');
+  const frExpHtml = readFileSync(join(DIST, 'fr', 'about-the-api', 'index.html'), 'utf-8');
+  const enAskHtml = readFileSync(join(DIST, 'en', 'ask', 'index.html'), 'utf-8');
+  const frAskHtml = readFileSync(join(DIST, 'fr', 'ask', 'index.html'), 'utf-8');
+
+  // Explorer pages: switcher present, Explore tab active
+  for (const [html, lang] of [[enExpHtml, 'en'], [frExpHtml, 'fr']]) {
+    assert.ok(html.includes('discovery-switcher'), `${lang} Explorer must contain discovery switcher`);
+    assert.ok(html.includes(`href="/${lang}/about-the-api/"`) && html.includes('is-active'), `${lang} Explorer must highlight Explore tab`);
+    assert.ok(html.includes(`href="/${lang}/ask/"`), `${lang} Explorer must link to Ask`);
+  }
+
+  // Ask pages: switcher present, Ask tab active
+  for (const [html, lang] of [[enAskHtml, 'en'], [frAskHtml, 'fr']]) {
+    assert.ok(html.includes('discovery-switcher'), `${lang} Ask must contain discovery switcher`);
+    assert.ok(html.includes(`href="/${lang}/ask/"`) && html.includes('is-active'), `${lang} Ask must highlight Ask tab`);
+    assert.ok(html.includes(`href="/${lang}/about-the-api/"`), `${lang} Ask must link to Explorer`);
+  }
+});
+
+// ---------------------------------------------------------------------------
+// 7. Ask Context Banner & Actionable Sources
+// ---------------------------------------------------------------------------
+
+test('Ask Assistant: context banner and source action affordances', () => {
+  const enAskHtml = readFileSync(join(DIST, 'en', 'ask', 'index.html'), 'utf-8');
+  const frAskHtml = readFileSync(join(DIST, 'fr', 'ask', 'index.html'), 'utf-8');
+
+  for (const [html, lang] of [[enAskHtml, 'en'], [frAskHtml, 'fr']]) {
+    assert.ok(html.includes('id="ask-context-banner"'), `${lang} Ask must render context banner element`);
+    assert.ok(html.includes('id="ask-context-remove"'), `${lang} Ask must render remove context button`);
+    assert.ok(html.includes('id="ask-context-title"'), `${lang} Ask must render context title element`);
+    assert.ok(html.includes('id="ask-context-doc-link"'), `${lang} Ask must render context document link`);
+  }
+});
+
+// ---------------------------------------------------------------------------
+// 8. Document-Level Continuity (Topics vs. Landing/Utility pages)
+// ---------------------------------------------------------------------------
+
+test('Document continuity: question prompt rendered on topics and excluded from non-topics', () => {
+  // Topics: must have prompt
+  const enTopicHtml = readFileSync(join(DIST, 'en', 'tutorials', 'auto-insert-data-dita-xml', 'index.html'), 'utf-8');
+  const frTopicHtml = readFileSync(join(DIST, 'fr', 'tutorials', 'auto-insert-data-dita-xml', 'index.html'), 'utf-8');
+
+  assert.ok(enTopicHtml.includes('doc-ask-prompt'), 'EN topic must render doc-ask-prompt');
+  assert.ok(enTopicHtml.includes('/en/ask/?doc='), 'EN topic prompt must link to /en/ask/ with doc param');
+  assert.ok(enTopicHtml.includes('Have a question about this documentation?'), 'EN topic prompt must have question text');
+
+  assert.ok(frTopicHtml.includes('doc-ask-prompt'), 'FR topic must render doc-ask-prompt');
+  assert.ok(frTopicHtml.includes('/fr/ask/?doc='), 'FR topic prompt must link to /fr/ask/ with doc param');
+  assert.ok(frTopicHtml.includes('Une question sur cette documentation ?'), 'FR topic prompt must have question text');
+
+  // Landing / Index / Utility pages: must NOT have prompt
+  const enLandingHtml = readFileSync(join(DIST, 'en', 'learn', 'index.html'), 'utf-8');
+  const frLandingHtml = readFileSync(join(DIST, 'fr', 'learn', 'index.html'), 'utf-8');
+  assert.ok(!enLandingHtml.includes('doc-ask-prompt'), 'EN landing page must not render doc-ask-prompt');
+  assert.ok(!frLandingHtml.includes('doc-ask-prompt'), 'FR landing page must not render doc-ask-prompt');
+});
+

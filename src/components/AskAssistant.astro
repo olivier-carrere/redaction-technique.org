@@ -4,30 +4,43 @@
  *
  * Client-side UI for the "Ask the documentation" AI assistant.
  * Renders a question form, sends the question to /api/ask,
- * and displays the answer with source links.
+ * and displays the answer with actionable source links and Explorer integration.
  *
  * Props:
  *   lang – 'en' (default) | 'fr'
+ *   showSwitcher – boolean (defaults to true on /ask/ routes)
  */
+
+import DiscoverySwitcher from './DiscoverySwitcher.astro';
 
 interface Props {
   lang?: 'en' | 'fr';
+  showSwitcher?: boolean;
 }
 
-const { lang = 'en' } = Astro.props;
+const { lang = 'en', showSwitcher = false } = Astro.props;
+const pathname = Astro.url.pathname;
+const isAskPage = pathname.includes('/ask');
+const displaySwitcher = showSwitcher || isAskPage;
 
 const ui = {
   en: {
-    formLabel:      'Ask the documentation',
-    inputLabel:     'Ask a question about the documentation',
-    placeholder:    'What is DITA XML?',
-    submitBtn:      'Ask',
-    hint:           "The assistant answers from the site's documentation only. It does not use general knowledge.",
-    loading:        'Searching the documentation\u2026',
-    answerHeading:  'Answer',
-    sourcesHeading: 'Sources',
-    fallback:       'An unexpected error occurred.',
-    examplesLabel:  'Try an example:',
+    formLabel:          'Ask the documentation',
+    inputLabel:         'Ask a question about the documentation',
+    placeholder:        'What is DITA XML?',
+    contextPlaceholder: 'Ask a question about this document…',
+    submitBtn:          'Ask',
+    hint:               "The assistant answers from the site's documentation only. It does not use general knowledge.",
+    loading:            'Searching the documentation\u2026',
+    answerHeading:      'Answer',
+    sourcesHeading:     'Sources & Further Reading',
+    fallback:           'An unexpected error occurred.',
+    examplesLabel:      'Try an example:',
+    askingAbout:        'Asking about:',
+    removeContext:      'Remove context',
+    viewDoc:            'Read document',
+    readDoc:            'Read documentation',
+    openInExplorer:     'Open in Explorer',
     examples: [
       'What is DITA XML?',
       'How does docs-as-code work?',
@@ -35,16 +48,22 @@ const ui = {
     ],
   },
   fr: {
-    formLabel:      'Interroger la documentation',
-    inputLabel:     'Posez une question sur la documentation',
-    placeholder:    'Qu\u2019est-ce que DITA XML\u00a0?',
-    submitBtn:      'Interroger',
-    hint:           "L\u2019assistant r\u00e9pond uniquement \u00e0 partir de la documentation disponible sur ce site. Il ne fait pas appel \u00e0 des connaissances g\u00e9n\u00e9rales.",
-    loading:        'Recherche dans la documentation\u2026',
-    answerHeading:  'R\u00e9ponse',
-    sourcesHeading: 'Sources',
-    fallback:       'Une erreur inattendue s\u2019est produite.',
-    examplesLabel:  'Exemples\u00a0:',
+    formLabel:          'Interroger la documentation',
+    inputLabel:         'Posez une question sur la documentation',
+    placeholder:        'Qu\u2019est-ce que DITA XML\u00a0?',
+    contextPlaceholder: 'Posez une question sur ce document…',
+    submitBtn:          'Interroger',
+    hint:               "L\u2019assistant r\u00e9pond uniquement \u00e0 partir de la documentation disponible sur ce site. Il ne fait pas appel \u00e0 des connaissances g\u00e9n\u00e9rales.",
+    loading:            'Recherche dans la documentation\u2026',
+    answerHeading:      'R\u00e9ponse',
+    sourcesHeading:     'Sources et approfondissement',
+    fallback:           'Une erreur inattendue s\u2019est produite.',
+    examplesLabel:      'Exemples\u00a0:',
+    askingAbout:        'Porte sur le document\u00a0:',
+    removeContext:      'Retirer le contexte',
+    viewDoc:            'Consulter le document',
+    readDoc:            'Lire la documentation',
+    openInExplorer:     'Ouvrir dans l’explorateur',
     examples: [
       'Qu\u2019est-ce que DITA XML\u00a0?',
       'Comment fonctionne le docs-as-code\u00a0?',
@@ -56,7 +75,45 @@ const ui = {
 const t = ui[lang];
 ---
 
-<div class="ask-assistant" id="ask-assistant" data-lang={lang} data-fallback={t.fallback}>
+<div
+  class="ask-assistant"
+  id="ask-assistant"
+  data-lang={lang}
+  data-fallback={t.fallback}
+  data-default-placeholder={t.placeholder}
+  data-context-placeholder={t.contextPlaceholder}
+  data-read-doc={t.readDoc}
+  data-open-explorer={t.openInExplorer}
+>
+  {displaySwitcher && (
+    <DiscoverySwitcher active="ask" lang={lang} />
+  )}
+
+  <!-- Contextual Document Banner (shown when navigated from Explorer or topic) -->
+  <div id="ask-context-banner" class="ask-context-banner not-content" hidden>
+    <div class="ask-context-main">
+      <span class="ask-context-badge">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        <span>{t.askingAbout}</span>
+      </span>
+      <span id="ask-context-title" class="ask-context-title"></span>
+    </div>
+    <div class="ask-context-actions">
+      <a id="ask-context-doc-link" href="#" class="ask-context-link" target="_blank" rel="noopener">
+        {t.viewDoc} →
+      </a>
+      <button type="button" id="ask-context-remove" class="ask-context-remove-btn" aria-label={t.removeContext}>
+        ✕ {t.removeContext}
+      </button>
+    </div>
+  </div>
+
   <form id="ask-form" class="ask-form" aria-label={t.formLabel}>
     <label for="ask-input" class="ask-label">
       {t.inputLabel}
@@ -108,7 +165,7 @@ const t = ui[lang];
     <h2 class="ask-result-heading">{t.answerHeading}</h2>
     <div id="ask-answer" class="ask-answer"></div>
 
-    <div id="ask-sources-section" hidden>
+    <div id="ask-sources-section" class="ask-sources-section" hidden>
       <h3 class="ask-sources-heading">{t.sourcesHeading}</h3>
       <ul id="ask-sources" class="ask-sources"></ul>
     </div>
@@ -117,9 +174,103 @@ const t = ui[lang];
 
 <style>
   .ask-assistant {
-    max-width: 42rem;
+    max-width: 48rem;
   }
 
+  /* Contextual Banner */
+  .ask-context-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 0.85rem 1.15rem;
+    border-radius: 8px;
+    background: var(--sl-color-accent-low);
+    border: 1px solid var(--sl-color-accent);
+    margin-bottom: 1.25rem;
+  }
+
+  :root[data-theme='light'] .ask-context-banner {
+    background: #eff6ff;
+    border-color: #93c5fd;
+  }
+
+  .ask-context-main {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    min-width: 0;
+  }
+
+  .ask-context-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--sl-color-accent-high);
+  }
+
+  :root[data-theme='light'] .ask-context-badge {
+    color: #1e40af;
+  }
+
+  .ask-context-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--sl-color-white);
+  }
+
+  :root[data-theme='light'] .ask-context-title {
+    color: #0f172a;
+  }
+
+  .ask-context-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .ask-context-link {
+    font-size: 0.825rem;
+    font-weight: 600;
+    color: var(--sl-color-accent-high);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  :root[data-theme='light'] .ask-context-link {
+    color: #1d4ed8;
+  }
+
+  .ask-context-remove-btn {
+    background: transparent;
+    border: 1px solid var(--sl-color-accent);
+    color: var(--sl-color-accent-high);
+    font-size: 0.775rem;
+    font-weight: 600;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  :root[data-theme='light'] .ask-context-remove-btn {
+    color: #1e40af;
+    border-color: #93c5fd;
+  }
+
+  .ask-context-remove-btn:hover {
+    background: var(--sl-color-accent);
+    color: var(--sl-color-black);
+  }
+
+  /* Form */
   .ask-label {
     display: block;
     font-weight: 600;
@@ -133,7 +284,7 @@ const t = ui[lang];
 
   .ask-input {
     flex: 1;
-    padding: 0.6rem 0.75rem;
+    padding: 0.75rem 0.85rem;
     font-size: 1rem;
     font-family: inherit;
     border: 1px solid var(--sl-color-gray-4);
@@ -161,6 +312,7 @@ const t = ui[lang];
     cursor: pointer;
     transition: opacity 0.15s;
     white-space: nowrap;
+    min-height: 44px;
   }
 
   .ask-button:hover {
@@ -215,11 +367,14 @@ const t = ui[lang];
 
   /* Result */
   .ask-result {
-    margin-top: 1.5rem;
+    margin-top: 1.75rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--sl-color-gray-5);
   }
 
   .ask-result-heading {
-    font-size: 1.125rem;
+    font-size: 1.2rem;
+    font-weight: 600;
     margin-bottom: 0.75rem;
   }
 
@@ -274,35 +429,135 @@ const t = ui[lang];
     text-decoration: none;
   }
 
+  /* Sources section & cards */
+  .ask-sources-section {
+    margin-top: 1.75rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--sl-color-gray-5);
+  }
+
   .ask-sources-heading {
-    font-size: 1rem;
-    margin-top: 1.25rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.85rem;
   }
 
   .ask-sources {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
   }
 
-  .ask-sources li {
-    padding: 0.25rem 0;
+  /* Enhanced source card */
+  :global(.ask-source-card) {
+    background: var(--sl-color-gray-6);
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 6px;
+    padding: 0.85rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    transition: border-color 0.15s ease;
   }
 
-  .ask-sources a {
-    color: var(--sl-color-accent);
-    text-decoration: none;
-    font-weight: 500;
+  :root[data-theme='light'] :global(.ask-source-card) {
+    background: #f8fafc;
+    border-color: #e2e8f0;
   }
 
-  .ask-sources a::before {
-    content: '→ ';
+  :global(.ask-source-card:hover) {
+    border-color: var(--sl-color-gray-4);
+  }
+
+  :global(.ask-source-header) {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  :global(.ask-source-title) {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--sl-color-white);
+  }
+
+  :root[data-theme='light'] :global(.ask-source-title) {
+    color: #0f172a;
+  }
+
+  :global(.ask-source-excerpt) {
+    font-size: 0.825rem;
+    line-height: 1.5;
     color: var(--sl-color-gray-3);
+    margin: 0 !important;
   }
 
-  .ask-sources a:hover {
-    text-decoration: underline;
+  :root[data-theme='light'] :global(.ask-source-excerpt) {
+    color: #475569;
+  }
+
+  :global(.ask-source-actions) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+    padding-top: 0.45rem;
+    border-top: 1px solid var(--sl-color-gray-5);
+  }
+
+  :root[data-theme='light'] :global(.ask-source-actions) {
+    border-top-color: #e2e8f0;
+  }
+
+  :global(.ask-source-btn) {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.775rem;
+    font-weight: 600;
+    padding: 0.35rem 0.7rem;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  :global(.ask-source-btn-primary) {
+    background: var(--sl-color-accent-low);
+    color: var(--sl-color-accent-high);
+    border: 1px solid var(--sl-color-accent);
+  }
+
+  :global(.ask-source-btn-primary:hover) {
+    background: var(--sl-color-accent);
+    color: var(--sl-color-black);
+  }
+
+  :global(.ask-source-btn-secondary) {
+    background: transparent;
+    color: var(--sl-color-gray-2);
+    border: 1px solid var(--sl-color-gray-4);
+  }
+
+  :root[data-theme='light'] :global(.ask-source-btn-secondary) {
+    color: #334155;
+    border-color: #cbd5e1;
+    background: #fff;
+  }
+
+  :global(.ask-source-btn-secondary:hover) {
+    color: var(--sl-color-white);
+    background: var(--sl-color-gray-5);
+    border-color: var(--sl-color-gray-3);
+  }
+
+  :root[data-theme='light'] :global(.ask-source-btn-secondary:hover) {
+    color: #0f172a;
+    background: #f1f5f9;
   }
 
   /* Example prompts */
@@ -352,14 +607,42 @@ const t = ui[lang];
     outline-offset: 2px;
   }
 
-  /* Responsive */
-  @media (max-width: 30rem) {
+  /* Responsive & Touch Targets */
+  @media (max-width: 640px) {
     .ask-input-row {
       flex-direction: column;
     }
 
+    .ask-input {
+      min-height: 44px;
+    }
+
     .ask-button {
-      align-self: flex-end;
+      align-self: stretch;
+      min-height: 44px;
+    }
+
+    .ask-context-banner {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .ask-context-actions {
+      justify-content: space-between;
+    }
+
+    .ask-context-remove-btn {
+      min-height: 44px;
+    }
+
+    :global(.ask-source-actions) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    :global(.ask-source-btn) {
+      min-height: 44px;
+      justify-content: center;
     }
 
     .ask-examples {
@@ -379,9 +662,6 @@ const t = ui[lang];
   import { marked } from 'marked';
   import DOMPurify from 'dompurify';
 
-  // Configure marked: use synchronous mode, no async extensions.
-  // gfm: GitHub-Flavored Markdown (tables, task lists, etc.)
-  // breaks: treat single newlines as <br> (mirrors Gemini's line-break convention)
   marked.setOptions({ gfm: true, breaks: false });
 
   function setupAskAssistant() {
@@ -389,16 +669,79 @@ const t = ui[lang];
     if (!container || container.dataset.initialized === 'true') return;
     container.dataset.initialized = 'true';
 
-    const lang      = container.dataset.lang ?? 'en';
-    const fallback  = container.dataset.fallback ?? 'An unexpected error occurred.';
+    const lang                  = container.dataset.lang ?? 'en';
+    const fallback              = container.dataset.fallback ?? 'An unexpected error occurred.';
+    const defaultPlaceholder   = container.dataset.defaultPlaceholder ?? 'What is DITA XML?';
+    const contextPlaceholder   = container.dataset.contextPlaceholder ?? 'Ask a question about this document…';
+    const readDocLabel          = container.dataset.readDoc ?? 'Read documentation';
+    const openInExplorerLabel   = container.dataset.openExplorer ?? 'Open in Explorer';
 
-    const form     = container.querySelector('#ask-form') as HTMLFormElement;
-    const input    = container.querySelector('#ask-input') as HTMLInputElement;
-    const submit   = container.querySelector('#ask-submit') as HTMLButtonElement;
-    const loading  = container.querySelector('#ask-loading') as HTMLDivElement;
-    const errorEl  = container.querySelector('#ask-error') as HTMLDivElement;
+    const form              = container.querySelector('#ask-form') as HTMLFormElement;
+    const input             = container.querySelector('#ask-input') as HTMLInputElement;
+    const submit            = container.querySelector('#ask-submit') as HTMLButtonElement;
+    const loading           = container.querySelector('#ask-loading') as HTMLDivElement;
+    const errorEl           = container.querySelector('#ask-error') as HTMLDivElement;
+    const contextBanner     = container.querySelector('#ask-context-banner') as HTMLDivElement;
+    const contextTitleEl    = container.querySelector('#ask-context-title') as HTMLElement;
+    const contextDocLink    = container.querySelector('#ask-context-doc-link') as HTMLAnchorElement;
+    const contextRemoveBtn  = container.querySelector('#ask-context-remove') as HTMLButtonElement;
 
-    // Wire example prompt buttons: click fills input and focuses it.
+    let activeContextUrl: string | null = null;
+    let activeContextTitle: string | null = null;
+
+    function hide(el: HTMLElement | null) { if (el) el.hidden = true; }
+    function show(el: HTMLElement | null) { if (el) el.hidden = false; }
+
+    function escapeHtml(str: string): string {
+      return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    // Inspect URL for contextual document parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const docParam = urlParams.get('doc') || urlParams.get('context');
+    const titleParam = urlParams.get('title');
+    const qParam = urlParams.get('q') || urlParams.get('question');
+
+    if (docParam) {
+      activeContextUrl = docParam;
+      activeContextTitle = titleParam || docParam.split('/').filter(Boolean).pop() || docParam;
+      if (contextTitleEl) contextTitleEl.textContent = activeContextTitle;
+      if (contextDocLink) contextDocLink.href = docParam;
+      if (contextBanner) show(contextBanner);
+      if (input) input.placeholder = contextPlaceholder;
+    }
+
+    if (qParam && input) {
+      input.value = qParam;
+    }
+
+    if (contextRemoveBtn) {
+      contextRemoveBtn.addEventListener('click', () => {
+        activeContextUrl = null;
+        activeContextTitle = null;
+        hide(contextBanner);
+        if (input) {
+          input.placeholder = defaultPlaceholder;
+          input.focus();
+        }
+
+        // Clean query parameters from URL without page reload
+        const nextParams = new URLSearchParams(window.location.search);
+        nextParams.delete('doc');
+        nextParams.delete('context');
+        nextParams.delete('title');
+        const qs = nextParams.toString();
+        const cleanUrl = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
+        window.history.replaceState(null, '', cleanUrl);
+      });
+    }
+
+    // Wire example prompt buttons
     container.querySelectorAll<HTMLButtonElement>('.ask-example-btn').forEach((btn) => {
       btn.addEventListener('click', () => {
         if (!input) return;
@@ -412,17 +755,9 @@ const t = ui[lang];
     const srcSect  = container.querySelector('#ask-sources-section') as HTMLDivElement;
     const srcList  = container.querySelector('#ask-sources') as HTMLUListElement;
 
-    function hide(el: HTMLElement) { el.hidden = true; }
-    function show(el: HTMLElement) { el.hidden = false; }
-
-    /**
-     * Render Markdown text to safe HTML.
-     * marked converts Markdown → HTML; DOMPurify strips executable content.
-     */
     function renderMarkdown(text: string): string {
       const rawHtml = marked.parse(text) as string;
       return DOMPurify.sanitize(rawHtml, {
-        // Allow only safe presentational/structural elements.
         ALLOWED_TAGS: [
           'p', 'br', 'strong', 'em', 'b', 'i', 'code', 'pre',
           'ul', 'ol', 'li', 'blockquote',
@@ -430,7 +765,6 @@ const t = ui[lang];
           'a', 'hr',
         ],
         ALLOWED_ATTR: ['href', 'title', 'target', 'rel'],
-        // Force all links to be safe: no javascript: or data: URIs.
         ALLOW_DATA_ATTR: false,
         FORCE_BODY: false,
       });
@@ -449,10 +783,16 @@ const t = ui[lang];
         submit.disabled = true;
 
         try {
+          const payload: Record<string, unknown> = { question, language: lang };
+          if (activeContextUrl) {
+            payload.contextUrl = activeContextUrl;
+            if (activeContextTitle) payload.contextTitle = activeContextTitle;
+          }
+
           const res = await fetch('/api/ask/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ question, language: lang }),
+            body: JSON.stringify(payload),
           });
 
           const data = await res.json();
@@ -464,21 +804,52 @@ const t = ui[lang];
             throw new Error(data.error ?? `Server error (${res.status})`);
           }
 
-          // Display answer — render Markdown, then sanitize before injecting.
+          // Display answer
           const rawAnswer = data.answer ?? '';
           answerEl.innerHTML = renderMarkdown(rawAnswer);
           show(resultEl);
 
-          // Display sources — built via safe DOM APIs, not innerHTML.
+          // Display sources with rich actionable cards
           srcList.innerHTML = '';
-          const sources: Array<{ title: string; url: string }> = data.sources ?? [];
+          const sources: Array<{ title: string; url: string; excerpt?: string }> = data.sources ?? [];
           if (sources.length > 0) {
             for (const src of sources) {
               const li = document.createElement('li');
-              const a  = document.createElement('a');
-              a.href = src.url;
-              a.textContent = src.title;
-              li.appendChild(a);
+              li.className = 'ask-source-card';
+
+              const headerDiv = document.createElement('div');
+              headerDiv.className = 'ask-source-header';
+
+              const titleSpan = document.createElement('span');
+              titleSpan.className = 'ask-source-title';
+              titleSpan.textContent = src.title;
+              headerDiv.appendChild(titleSpan);
+              li.appendChild(headerDiv);
+
+              if (src.excerpt) {
+                const excerptP = document.createElement('p');
+                excerptP.className = 'ask-source-excerpt';
+                excerptP.textContent = src.excerpt;
+                li.appendChild(excerptP);
+              }
+
+              const actionsDiv = document.createElement('div');
+              actionsDiv.className = 'ask-source-actions';
+
+              const readA = document.createElement('a');
+              readA.href = src.url;
+              readA.className = 'ask-source-btn ask-source-btn-primary';
+              readA.textContent = `${readDocLabel} →`;
+              actionsDiv.appendChild(readA);
+
+              const explorerA = document.createElement('a');
+              const explorerBase = lang === 'fr' ? '/fr/about-the-api/' : '/en/about-the-api/';
+              explorerA.href = `${explorerBase}?q=${encodeURIComponent(src.title)}`;
+              explorerA.className = 'ask-source-btn ask-source-btn-secondary';
+              explorerA.textContent = openInExplorerLabel;
+              actionsDiv.appendChild(explorerA);
+
+              li.appendChild(actionsDiv);
               srcList.appendChild(li);
             }
             show(srcSect);
@@ -500,4 +871,3 @@ const t = ui[lang];
   setupAskAssistant();
   document.addEventListener('astro:page-load', setupAskAssistant);
 </script>
-
