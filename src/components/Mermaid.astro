@@ -58,14 +58,30 @@ const uid = "mermaid-" + Math.random().toString(36).slice(2, 10);
     return code.replace(/\{\{(\w+)\}\}/g, (match, key) => palette[key] ?? match);
   }
 
-  async function renderOne(el) {
-    const raw = el.dataset.code;
-    if (!raw) return;
-    const theme = currentTheme();
-    const code = applyPalette(raw, theme);
-    mermaid.initialize({ startOnLoad: false, theme, securityLevel: "strict" });
-    const { svg } = await mermaid.render(el.id + "-svg", code);
-    el.innerHTML = svg;
+  // mermaid.render() isn't safe to call concurrently - overlapping calls
+  // (even for different diagrams) can silently clobber each other with an
+  // empty result. Two things create overlap here: astro:page-load fires on
+  // the initial page load as well as on client-side transitions, so the
+  // top-level renderAll() call below and the listener both fire for a first
+  // visit; and a page with several diagrams fires one renderOne per element
+  // with no serialization between them. Route every render through a single
+  // promise chain so only one mermaid.render() call is ever in flight, and
+  // skip a diagram already rendered for the current theme.
+  const renderedTheme = new WeakMap();
+  let queue = Promise.resolve();
+
+  function renderOne(el) {
+    queue = queue.then(async () => {
+      const raw = el.dataset.code;
+      if (!raw) return;
+      const theme = currentTheme();
+      if (renderedTheme.get(el) === theme) return;
+      renderedTheme.set(el, theme);
+      const code = applyPalette(raw, theme);
+      mermaid.initialize({ startOnLoad: false, theme, securityLevel: "strict" });
+      const { svg } = await mermaid.render(el.id + "-svg", code);
+      el.innerHTML = svg;
+    });
   }
 
   function renderAll() {
