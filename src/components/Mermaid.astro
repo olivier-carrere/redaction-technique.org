@@ -72,15 +72,19 @@ const uid = "mermaid-" + Math.random().toString(36).slice(2, 10);
 
   function renderOne(el) {
     queue = queue.then(async () => {
-      const raw = el.dataset.code;
-      if (!raw) return;
-      const theme = currentTheme();
-      if (renderedTheme.get(el) === theme) return;
-      renderedTheme.set(el, theme);
-      const code = applyPalette(raw, theme);
-      mermaid.initialize({ startOnLoad: false, theme, securityLevel: "strict" });
-      const { svg } = await mermaid.render(el.id + "-svg", code);
-      el.innerHTML = svg;
+      try {
+        const raw = el.dataset.code;
+        if (!raw) return;
+        const theme = currentTheme();
+        if (renderedTheme.get(el) === theme) return;
+        const code = applyPalette(raw, theme);
+        mermaid.initialize({ startOnLoad: false, theme, securityLevel: "strict" });
+        const { svg } = await mermaid.render(el.id + "-svg", code);
+        renderedTheme.set(el, theme);
+        el.innerHTML = svg;
+      } catch (err) {
+        console.error(`[Mermaid] Failed to render diagram (${el.id}):`, err);
+      }
     });
   }
 
