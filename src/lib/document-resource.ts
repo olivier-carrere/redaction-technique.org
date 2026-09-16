@@ -17,6 +17,10 @@ import {
   type ClassificationMetadata,
   type DimensionTaxonomy,
   type ApiTaxonomy,
+  ALLOWED_DOCUMENT_FIELDS,
+  type DocumentField,
+  DOCUMENT_PROPERTY_SCHEMA,
+  API_QUERY_PARAMETERS,
 } from './content-types.ts';
 
 export {
@@ -30,6 +34,10 @@ export {
   type ClassificationMetadata,
   type DimensionTaxonomy,
   type ApiTaxonomy,
+  ALLOWED_DOCUMENT_FIELDS,
+  type DocumentField,
+  DOCUMENT_PROPERTY_SCHEMA,
+  API_QUERY_PARAMETERS,
 };
 
 export interface DocumentHeading {
@@ -150,6 +158,42 @@ export function computeWordCount(body: string): number {
   return text.trim().split(/\s+/).filter(Boolean).length;
 }
 
+
+/**
+ * Derives the section key and sort weight from a doc id or url.
+ */
+export function getDocSectionAndOrder(idOrUrl: string): { section: string; order: number } {
+  const clean = idOrUrl
+    .replace(/^https?:\/\/[^/]+\//, '')
+    .replace(/^\/+|\/+$/g, '');
+  const parts = clean.split('/');
+
+  let section = 'general';
+  let order = 100;
+
+  if (clean === 'en' || clean === 'fr') {
+    section = 'home';
+    order = 1;
+  } else if (parts.length === 2 && parts[1] === 'about-this-blog') {
+    section = 'about-this-blog';
+    order = 2;
+  } else if (parts.length === 2 && parts[1] === 'ask') {
+    section = 'ask';
+    order = 99;
+  } else if (parts.length >= 2) {
+    section = parts[1];
+    if (section === 'tech-writing-process') {
+      const pageSlug = parts[2] || '';
+      const idx = TECH_WRITING_PROCESS_ORDER.indexOf(pageSlug);
+      order = idx !== -1 ? 10 + idx : 50;
+    } else {
+      order = 100;
+    }
+  }
+
+  return { section, order };
+}
+
 /**
  * Normalizes an Astro collection document into a canonical DocumentResource.
  */
@@ -187,29 +231,7 @@ export function toDocumentResource(
   }
 
   // Derive section and sort weight
-  let section = 'general';
-  let order = 100;
-  const parts = doc.id.replace(/^\/+|\/+$/g, '').split('/');
-
-  if (doc.id === 'en' || doc.id === 'fr') {
-    section = 'home';
-    order = 1;
-  } else if (parts.length === 2 && parts[1] === 'about-this-blog') {
-    section = 'about-this-blog';
-    order = 2;
-  } else if (parts.length === 2 && parts[1] === 'ask') {
-    section = 'ask';
-    order = 99;
-  } else if (parts.length >= 2) {
-    section = parts[1];
-    if (section === 'tech-writing-process') {
-      const pageSlug = parts[2] || '';
-      const idx = TECH_WRITING_PROCESS_ORDER.indexOf(pageSlug);
-      order = idx !== -1 ? 10 + idx : 50;
-    } else {
-      order = 100;
-    }
-  }
+  const { section, order } = getDocSectionAndOrder(doc.id);
 
   const typed = isTypedTopic(doc.data, doc.filePath || doc.id);
   let pageType: PageType;
@@ -266,18 +288,19 @@ export function sortDocuments(docs: DocumentResource[]): DocumentResource[] {
       return a.locale.localeCompare(b.locale);
     }
 
+    const secMetaA = a.section ? { section: a.section, order: a.order ?? 100 } : getDocSectionAndOrder(a.slug || a.url);
+    const secMetaB = b.section ? { section: b.section, order: b.order ?? 100 } : getDocSectionAndOrder(b.slug || b.url);
+
     // 2. Section order
-    const metaA = SECTION_METADATA[a.locale]?.[a.section as keyof typeof SECTION_METADATA['en']]?.order ?? 99;
-    const metaB = SECTION_METADATA[b.locale]?.[b.section as keyof typeof SECTION_METADATA['en']]?.order ?? 99;
+    const metaA = SECTION_METADATA[a.locale]?.[secMetaA.section as keyof typeof SECTION_METADATA['en']]?.order ?? 99;
+    const metaB = SECTION_METADATA[b.locale]?.[secMetaB.section as keyof typeof SECTION_METADATA['en']]?.order ?? 99;
     if (metaA !== metaB) {
       return metaA - metaB;
     }
 
     // 3. Item order within section
-    const orderA = a.order ?? 100;
-    const orderB = b.order ?? 100;
-    if (orderA !== orderB) {
-      return orderA - orderB;
+    if (secMetaA.order !== secMetaB.order) {
+      return secMetaA.order - secMetaB.order;
     }
 
     // 4. Alphabetical by title
@@ -387,16 +410,40 @@ export interface QueryResultError {
   status: 400;
   body: {
     error: string;
-    allowed: readonly string[];
+    allowed?: readonly string[];
   };
 }
 
 export type QueryResult = QueryResultSuccess | QueryResultError;
 
 /**
- * Filters and validates documentation resources according to query parameters.
- * Supports ?contentType=..., ?pageType=..., and ?lang=... (AND combination).
- * Returns HTTP 400 with allowed values for invalid parameter values.
+ * Projects only requested fields on a document JSON entry.
+ * If fields is null, all document fields are preserved.
+ */
+export function projectDocumentEntry(
+  entry: Record<string, any>,
+  fields: Set<DocumentField> | null
+): Record<string, any> {
+  if (!fields) return entry;
+  const projected: Record<string, any> = {};
+  for (const key of Object.keys(entry)) {
+    if (fields.has(key as DocumentField)) {
+      projected[key] = entry[key];
+    }
+  }
+  return projected;
+}
+
+/**
+ * Filters, paginates, projects fields, and validates documentation resources
+ * according to query parameters.
+ * Supports:
+ * - ?contentType=... (canonical information type)
+ * - ?pageType=... (structural page role)
+ * - ?lang=... (language isolation)
+ * - ?fields=... (comma-separated field selection)
+ * - ?page=... & ?limit=... (opt-in deterministic pagination)
+ * Returns HTTP 400 for invalid parameter values or out-of-bounds pages.
  */
 export function handleIndexQuery(
   resources: DocumentResource[],
@@ -472,6 +519,71 @@ export function handleIndexQuery(
     }
   }
 
+  // 4. Validate fields parameter (comma-separated list of ALLOWED_DOCUMENT_FIELDS)
+  const rawFields = params.get('fields');
+  let selectedFields: Set<DocumentField> | null = null;
+  if (rawFields !== null) {
+    const fieldTokens = rawFields
+      .split(',')
+      .map((f) => f.trim())
+      .filter(Boolean);
+    if (fieldTokens.length === 0) {
+      return {
+        status: 400,
+        body: {
+          error: 'Invalid fields parameter: must specify at least one field',
+          allowed: [...ALLOWED_DOCUMENT_FIELDS],
+        },
+      };
+    }
+    for (const token of fieldTokens) {
+      if (!(ALLOWED_DOCUMENT_FIELDS as readonly string[]).includes(token)) {
+        return {
+          status: 400,
+          body: {
+            error: `Invalid field: "${token}"`,
+            allowed: [...ALLOWED_DOCUMENT_FIELDS],
+          },
+        };
+      }
+    }
+    selectedFields = new Set(fieldTokens as DocumentField[]);
+  }
+
+  // 5. Validate pagination parameters (page, limit)
+  const rawPage = params.get('page');
+  const rawLimit = params.get('limit');
+  const isPaginated = rawPage !== null || rawLimit !== null;
+
+  let page = 1;
+  let limit = 20;
+
+  if (rawPage !== null) {
+    const parsedPage = Number(rawPage);
+    if (!Number.isInteger(parsedPage) || parsedPage < 1) {
+      return {
+        status: 400,
+        body: {
+          error: 'Invalid page parameter: must be a positive integer (>= 1)',
+        },
+      };
+    }
+    page = parsedPage;
+  }
+
+  if (rawLimit !== null) {
+    const parsedLimit = Number(rawLimit);
+    if (!Number.isInteger(parsedLimit) || parsedLimit < 1 || parsedLimit > 100) {
+      return {
+        status: 400,
+        body: {
+          error: 'Invalid limit parameter: must be an integer between 1 and 100',
+        },
+      };
+    }
+    limit = parsedLimit;
+  }
+
   // Filter documents (AND operation across all specified filters)
   let targetDocs = resources;
   if (scopeLocale) {
@@ -489,6 +601,28 @@ export function handleIndexQuery(
   }
 
   const sorted = sortDocuments(targetDocs);
+  const total = sorted.length;
+
+  let pageDocs = sorted;
+  let totalPages = 1;
+
+  if (isPaginated) {
+    totalPages = total > 0 ? Math.ceil(total / limit) : 1;
+    if (page > totalPages) {
+      return {
+        status: 400,
+        body: {
+          error: `Page ${page} out of bounds (totalPages: ${totalPages})`,
+        },
+      };
+    }
+    const startIndex = (page - 1) * limit;
+    pageDocs = sorted.slice(startIndex, startIndex + limit);
+  }
+
+  const projectedDocs = pageDocs.map((d) =>
+    projectDocumentEntry(toDocumentJsonEntry(d), selectedFields)
+  );
 
   if (scopeLocale) {
     return {
@@ -497,13 +631,14 @@ export function handleIndexQuery(
         version: '1.0',
         site: siteUrl,
         locale: scopeLocale,
-        count: sorted.length,
+        count: isPaginated ? pageDocs.length : sorted.length,
+        ...(isPaginated ? { pagination: { page, limit, total, totalPages } } : {}),
         filters: {
           contentType: [...CONTENT_TYPES],
           pageType: [...PAGE_TYPES],
         },
         taxonomy: API_TAXONOMY,
-        documents: sorted.map(toDocumentJsonEntry),
+        documents: projectedDocs,
       },
     };
   }
@@ -535,17 +670,18 @@ export function handleIndexQuery(
           schema: `${siteUrl}/schema.json`,
         },
       },
-      count: sorted.length,
+      count: isPaginated ? pageDocs.length : sorted.length,
       counts: {
         en: enDocs.length,
         fr: frDocs.length,
       },
+      ...(isPaginated ? { pagination: { page, limit, total, totalPages } } : {}),
       filters: {
         contentType: [...CONTENT_TYPES],
         pageType: [...PAGE_TYPES],
       },
       taxonomy: API_TAXONOMY,
-      documents: sorted.map(toDocumentJsonEntry),
+      documents: projectedDocs,
     },
   };
 }

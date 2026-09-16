@@ -76,6 +76,121 @@ export const API_TAXONOMY: ApiTaxonomy = {
   },
 } as const;
 
+export const ALLOWED_DOCUMENT_FIELDS = [
+  'title',
+  'description',
+  'url',
+  'markdown',
+  'locale',
+  'pageType',
+  'contentType',
+  'wordCount',
+  'headings',
+  'keywords',
+  'tags',
+  'lastUpdated',
+] as const;
+export type DocumentField = (typeof ALLOWED_DOCUMENT_FIELDS)[number];
+
+export const DOCUMENT_PROPERTY_SCHEMA = {
+  title: {
+    type: 'string',
+    description: 'Document title',
+  },
+  description: {
+    type: 'string',
+    description: 'Concise summary or abstract of the document',
+  },
+  url: {
+    type: 'string',
+    description: 'Canonical HTML URL and stable document identifier',
+  },
+  markdown: {
+    type: 'string',
+    description: 'Direct URL to the clean, pre-rendered Markdown representation',
+  },
+  locale: {
+    type: 'string',
+    enum: ['en', 'fr'],
+    description: 'Document language code (en or fr)',
+  },
+  pageType: {
+    type: 'string',
+    enum: PAGE_TYPES,
+    description: 'Structural role of the page within the documentation site',
+  },
+  contentType: {
+    type: ['string', 'null'],
+    enum: [...CONTENT_TYPES, null],
+    description: 'Primary information type for topics, or null for intentionally untyped pages',
+  },
+  wordCount: {
+    type: 'integer',
+    description: 'Approximate readable word count excluding markup',
+  },
+  headings: {
+    type: 'array',
+    description: 'List of document section headings with level, text, and slug',
+    items: {
+      type: 'object',
+      properties: {
+        level: { type: 'integer' },
+        text: { type: 'string' },
+        slug: { type: 'string' },
+      },
+    },
+  },
+  keywords: {
+    type: 'array',
+    items: { type: 'string' },
+    description: 'Keywords associated with the document',
+  },
+  tags: {
+    type: 'array',
+    items: { type: 'string' },
+    description: 'Taxonomy tags associated with the document',
+  },
+  lastUpdated: {
+    type: 'string',
+    description: 'ISO 8601 date string of last modification (YYYY-MM-DD)',
+  },
+} as const;
+
+export const API_QUERY_PARAMETERS = {
+  contentType: {
+    type: 'string',
+    description: 'Filter by canonical information type (concept, task, reference)',
+    allowed: CONTENT_TYPES,
+  },
+  pageType: {
+    type: 'string',
+    description: 'Filter by structural page role (topic, index, landing, overview, utility)',
+    allowed: PAGE_TYPES,
+  },
+  lang: {
+    type: 'string',
+    description: 'Filter by language code (en, fr) on global index',
+    allowed: ['en', 'fr'] as const,
+  },
+  fields: {
+    type: 'string',
+    description: 'Comma-separated list of document fields to project in the response',
+    allowed: ALLOWED_DOCUMENT_FIELDS,
+    example: 'title,url,markdown,contentType',
+  },
+  page: {
+    type: 'integer',
+    description: '1-based page number for paginated results (default: 1)',
+    minimum: 1,
+  },
+  limit: {
+    type: 'integer',
+    description: 'Number of documents per page (default: 20, maximum: 100)',
+    minimum: 1,
+    maximum: 100,
+  },
+} as const;
+
 export interface PageMetadata {
   title?: string;
   description?: string;

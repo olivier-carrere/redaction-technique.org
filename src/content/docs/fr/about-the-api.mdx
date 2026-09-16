@@ -81,6 +81,40 @@ Les clients d'API, outils de recherche et pipelines LLM/RAG n'ont pas besoin d'e
 
 Cela permet aux agents automatisés de répondre dynamiquement et à partir de métadonnées structurées à des questions telles que *"Quels types de documents cette API expose-t-elle ?"* et *"Que signifie contentType=task ?"*.
 
+### Récupération des documents et ergonomie de l'API
+
+Pour faciliter l'intégration par les agents IA et les pipelines de recherche :
+
+- **Identifiant stable de document** : l'URL canonique `url` (par exemple `https://docs.redaction-technique.org/fr/toolkit/task-article-template/`) sert d'identifiant unique, déterministe et stable entre les builds pour chaque document.
+- **Relation Markdown explicite** : chaque notice documentaire indexée annonce directement son miroir Markdown propre via la propriété `markdown` (par exemple `https://docs.redaction-technique.org/fr/toolkit/task-article-template.md`). Les clients récupèrent le contenu sans avoir à deviner les conventions d'URL.
+- **Sélection de champs (`?fields=...`)** : les paramètres de requête permettent de restreindre la réponse aux champs souhaités (par exemple `?fields=title,url,markdown,contentType`) afin de réduire la charge utile et la consommation de jetons de contexte.
+- **Pagination déterministe (`?page=1&limit=20`)** : la pagination à la demande permet des requêtes bornées avec validation stricte des limites et ordre de tri prévisible.
+
+## Exemple : récupérer la documentation d'une tâche
+
+Voici un flux de travail concret pour un agent ou un pipeline RAG récupérant de la documentation actionnable :
+
+```text
+1. GET /schema.json
+   └── Découverte des capacités : endpoints, paramètres, schéma de document et contentType=task.
+
+2. GET /fr/index.json?contentType=task&fields=title,url,markdown,contentType
+   └── Requête d'index : sélection des rubriques de tâches en français avec projection de champs.
+
+3. Sélection du document cible
+   └── ex. « Modèle d'article de tâche » à l'adresse https://docs.redaction-technique.org/fr/toolkit/task-article-template/
+
+4. GET https://docs.redaction-technique.org/fr/toolkit/task-article-template.md
+   └── Récupération directe de la représentation Markdown propre.
+
+5. Transmission du Markdown au contexte du LLM
+   └── Accès immédiat aux instructions structurées, sans bruit de navigation HTML.
+```
+
+### Pourquoi le Markdown pour les consommateurs LLM ?
+
+La documentation HTML rendue comporte des barres de navigation, des pieds de page, des barres latérales et des balises de script qui consomment inutilement les jetons de contexte du modèle et introduisent des artefacts visuels parasites. Le miroir Markdown pré-rendu conserve les titres, les blocs de code, les listes, les encarts et les tableaux dans une syntaxe standard et épurée — strictement identique octet pour octet à l'entrée correspondante dans `llms-full.txt`.
+
 ## Comment chaque page l'expose
 
 Vous n'avez pas besoin de connaître ces URL par cœur — chaque page renvoie vers sa propre forme consultable par machine :

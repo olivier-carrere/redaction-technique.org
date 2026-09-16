@@ -131,18 +131,46 @@ The locale indexes (`/en/index.json` and `/fr/index.json`) expose:
 }
 ```
 
-The global index (`/index.json`) aggregates both locales, includes discovery endpoints (including `/schema.json`), exposes the complete `taxonomy`, and supports filtering via query parameters:
+### Supported Query Filters & Parameters
+- `?contentType=concept | task | reference` — Filter by canonical information type
+- `?pageType=topic | index | landing | overview | utility` — Filter by structural page role
+- `?lang=en | fr` — Filter by language (global index)
+- `?fields=title,url,markdown,contentType,...` — Select specific document properties to minimize payload and token usage
+- `?page=1&limit=20` — Deterministic, bounded pagination (preserves stable section sort order)
+- Combined: `?lang=en&contentType=task&page=1&limit=5&fields=title,url,markdown,contentType`
 
-### Supported Query Filters (AND operation)
-- `?contentType=concept | task | reference`
-- `?pageType=topic | index | landing | overview | utility`
-- `?lang=en | fr` (global index)
-- Combined: `?pageType=topic&contentType=task`
+Invalid parameter values or out-of-bounds pages return `HTTP 400` with clear allowed parameter lists or bounds descriptions.
 
-Invalid parameter values return `HTTP 400` with allowed canonical classifications.
+### Dedicated Schema & Capability Discovery (`/schema.json`)
+A standalone static endpoint (`/schema.json`) returns the complete API contract without the document catalog:
+- Canonical classification taxonomy (`taxonomy.contentType` and `taxonomy.pageType`)
+- Global endpoint registry (`endpoints`)
+- Stable retrieval model (`retrieval.identifier` and `retrieval.representations`)
+- Complete query parameter definitions and allowed values (`queryParameters`)
+- Machine-readable document property schema (`document.properties`)
 
-### Dedicated Schema Endpoint (`/schema.json`)
-A standalone static endpoint (`/schema.json`) returns the taxonomy and filter metadata without the document catalog, ideal for fast schema discovery by automated agents.
+---
+
+## 4. Example: Retrieve Task Documentation
+
+A typical workflow for an automated agent, CLI tool, or RAG ingestion pipeline:
+
+```text
+1. GET /schema.json
+   └── Read machine-readable capabilities, discovering supported contentType values and query parameters.
+
+2. GET /index.json?lang=en&contentType=task&fields=title,url,markdown,contentType
+   └── Retrieve English task documents with projected fields.
+
+3. Select target document
+   └── e.g. "Task article template" (url: "https://docs.redaction-technique.org/en/toolkit/task-article-template/")
+
+4. GET https://docs.redaction-technique.org/en/toolkit/task-article-template.md
+   └── Fetch the advertised Markdown representation directly without guessing URLs.
+
+5. Ingest into Agent Context
+   └── Clean Markdown with structured headings, code blocks, and steps, without layout markup.
+```
 
 ---
 

@@ -81,6 +81,40 @@ API clients, search tools, and LLM/RAG systems do not need to scrape human-facin
 
 This allows agents to answer questions like *"What document types does this API expose?"* and *"What does contentType=task mean?"* dynamically from structured metadata.
 
+### Document retrieval and API ergonomics
+
+To streamline consumption by AI agents and automated retrieval pipelines:
+
+- **Stable document identifier**: The canonical `url` (e.g. `https://docs.redaction-technique.org/en/toolkit/task-article-template/`) serves as the unique, deterministic, and build-stable identifier for every document.
+- **Explicit Markdown relation**: Every indexed document advertises its corresponding clean Markdown mirror via the `markdown` property (e.g. `https://docs.redaction-technique.org/en/toolkit/task-article-template.md`). Clients retrieve clean content directly without guessing URL conventions.
+- **Field selection (`?fields=...`)**: Query parameters support field projection (e.g. `?fields=title,url,markdown,contentType`) to minimize payload size and context token usage.
+- **Deterministic pagination (`?page=1&limit=20`)**: Opt-in pagination supports bounded retrieval with strict bounds validation and predictable sorting.
+
+## Example: retrieve task documentation
+
+Here is a realistic end-to-end workflow for an agent or RAG pipeline retrieving actionable documentation:
+
+```text
+1. GET /schema.json
+   └── Discover capabilities: endpoints, parameters, document schema, and contentType=task.
+
+2. GET /index.json?lang=en&contentType=task&fields=title,url,markdown,contentType
+   └── Query index: retrieve English task topics with projected fields.
+
+3. Select target document
+   └── e.g. "Task article template" at https://docs.redaction-technique.org/en/toolkit/task-article-template/
+
+4. GET https://docs.redaction-technique.org/en/toolkit/task-article-template.md
+   └── Retrieve clean Markdown representation directly.
+
+5. Feed clean Markdown into LLM context
+   └── Immediate access to structured task instructions without HTML navigation chrome.
+```
+
+### Why Markdown for LLM consumers?
+
+Rendered HTML documentation contains navigation bars, footers, sidebar links, and script tags that consume LLM context window tokens and introduce distracting layout artifacts. The pre-rendered Markdown mirror preserves headings, code blocks, lists, admonitions, and tables in clean, standard syntax — identical byte-for-byte to the document's entry in `llms-full.txt`.
+
 ## How each page exposes this
 
 You don't need to know these URLs by hand — every page links to its own machine-readable form:

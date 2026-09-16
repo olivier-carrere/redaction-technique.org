@@ -8,6 +8,9 @@ import {
   CONTENT_TYPE_METADATA,
   PAGE_TYPE_METADATA,
   API_TAXONOMY,
+  ALLOWED_DOCUMENT_FIELDS,
+  DOCUMENT_PROPERTY_SCHEMA,
+  API_QUERY_PARAMETERS,
 } from '../src/lib/content-types.ts';
 import { handleIndexQuery } from '../src/lib/document-resource.ts';
 
@@ -547,5 +550,324 @@ test('Taxonomy preservation during API query filtering', () => {
   assert.deepEqual(resEn.body.filters.contentType, [...CONTENT_TYPES]);
   assert.deepEqual(resEn.body.filters.pageType, [...PAGE_TYPES]);
 });
+
+test('Stable document identity and deterministic retrieval mapping', () => {
+  const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
+  const urls = new Set();
+  const markdowns = new Set();
+
+  for (const doc of globalJson.documents) {
+    // URL format: https://docs.redaction-technique.org/.../
+    assert.match(
+      doc.url,
+      /^https:\/\/docs\.redaction-technique\.org\/(en|fr)\/(.*\/)?$/,
+      `Invalid canonical URL: ${doc.url}`
+    );
+    assert.ok(!urls.has(doc.url), `Duplicate canonical URL detected: ${doc.url}`);
+    urls.add(doc.url);
+
+    // Markdown format: https://docs.redaction-technique.org/...md
+    assert.match(
+      doc.markdown,
+      /^https:\/\/docs\.redaction-technique\.org\/(en|fr)(\/.*)?\.md$/,
+      `Invalid Markdown URL: ${doc.markdown}`
+    );
+    assert.ok(!markdowns.has(doc.markdown), `Duplicate markdown URL detected: ${doc.markdown}`);
+    markdowns.add(doc.markdown);
+
+    // Direct deterministic derivation between url and markdown
+    const expectedMdFromUrl = doc.url
+      .replace(/\/$/, '')
+      .concat('.md');
+    assert.equal(
+      doc.markdown,
+      expectedMdFromUrl,
+      `Markdown URL must match canonical URL stem: ${doc.markdown} vs ${expectedMdFromUrl}`
+    );
+  }
+
+  assert.equal(urls.size, 148, 'Must have exactly 148 unique stable canonical URLs');
+  assert.equal(markdowns.size, 148, 'Must have exactly 148 unique markdown retrieval URLs');
+});
+
+test('Direct document Markdown retrieval from disk matches index specification', () => {
+  const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
+
+  // Sample documents representing both languages and all content types
+  const sampleUrls = [
+    'https://docs.redaction-technique.org/en/toolkit/task-article-template/',
+    'https://docs.redaction-technique.org/en/toolkit/concept-article-template/',
+    'https://docs.redaction-technique.org/en/toolkit/reference-article-template/',
+    'https://docs.redaction-technique.org/fr/toolkit/task-article-template/',
+    'https://docs.redaction-technique.org/fr/toolkit/concept-article-template/',
+    'https://docs.redaction-technique.org/fr/toolkit/reference-article-template/',
+    'https://docs.redaction-technique.org/en/about-this-blog/',
+    'https://docs.redaction-technique.org/fr/about-this-blog/',
+  ];
+
+  for (const url of sampleUrls) {
+    const doc = globalJson.documents.find((d) => d.url === url);
+    assert.ok(doc, `Sample document not found in index: ${url}`);
+
+    const relativeMdPath = new URL(doc.markdown).pathname.replace(/^\//, '');
+    const diskPath = join(DIST, relativeMdPath);
+    assert.ok(existsSync(diskPath), `Advertised markdown file missing from disk: ${diskPath}`);
+
+    const content = readFileSync(diskPath, 'utf-8');
+    assert.ok(content.length > 0, `Markdown file is empty: ${diskPath}`);
+    assert.ok(
+      content.startsWith(`# ${doc.title}`),
+      `Markdown file does not start with title: expected "# ${doc.title}"`
+    );
+  }
+});
+
+test('Filter and retrieval composition: discover task topics and retrieve markdown', () => {
+  const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
+  const docs = globalJson.documents.map((d) => ({
+    ...d,
+    markdownUrl: d.markdown,
+    slug: d.url.replace('https://docs.redaction-technique.org/', '').replace(/\/$/, ''),
+  }));
+
+  // Step 1: Filter by task
+  const res = handleIndexQuery(docs, 'contentType=task&lang=en');
+  assert.equal(res.status, 200);
+  assert.equal(res.body.count, 14);
+
+  // Step 2: For every retrieved task topic, verify advertised markdown exists and contains instructions/steps
+  for (const doc of res.body.documents) {
+    assert.equal(doc.contentType, 'task');
+    assert.equal(doc.locale, 'en');
+
+    const relativeMdPath = new URL(doc.markdown).pathname.replace(/^\//, '');
+    const diskPath = join(DIST, relativeMdPath);
+    assert.ok(existsSync(diskPath), `Task markdown not found on disk: ${diskPath}`);
+
+    const content = readFileSync(diskPath, 'utf-8');
+    assert.ok(content.length > 100, `Task content unexpectedly short: ${diskPath}`);
+  }
+});
+
+test('Field selection query projection (?fields=...)', () => {
+  const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
+  const docs = globalJson.documents.map((d) => ({
+    ...d,
+    markdownUrl: d.markdown,
+    slug: d.url.replace('https://docs.redaction-technique.org/', '').replace(/\/$/, ''),
+  }));
+
+  // 1. Project 4 fields: title, url, markdown, contentType
+  const res = handleIndexQuery(docs, 'contentType=task&fields=title,url,markdown,contentType');
+  assert.equal(res.status, 200);
+  assert.equal(res.body.count, 28);
+
+  for (const doc of res.body.documents) {
+    const keys = Object.keys(doc).sort();
+    assert.deepEqual(keys, ['contentType', 'markdown', 'title', 'url']);
+    assert.equal(doc.contentType, 'task');
+  }
+
+  // 2. Minimal projection: title, url
+  const resMinimal = handleIndexQuery(docs, 'fields=title,url');
+  assert.equal(resMinimal.status, 200);
+  assert.equal(resMinimal.body.count, 148);
+
+  for (const doc of resMinimal.body.documents) {
+    assert.deepEqual(Object.keys(doc).sort(), ['title', 'url']);
+  }
+
+  // 3. Omitted fields parameter preserves all default fields
+  const resDefault = handleIndexQuery(docs, 'contentType=concept');
+  assert.equal(resDefault.status, 200);
+  for (const doc of resDefault.body.documents) {
+    assert.ok(doc.title);
+    assert.ok(doc.url);
+    assert.ok(doc.markdown);
+    assert.ok(doc.locale);
+    assert.ok(doc.pageType);
+    assert.ok(Array.isArray(doc.headings));
+  }
+});
+
+test('Field selection HTTP 400 validation on invalid fields', () => {
+  const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
+  const docs = globalJson.documents.map((d) => ({
+    ...d,
+    markdownUrl: d.markdown,
+    slug: d.url.replace('https://docs.redaction-technique.org/', '').replace(/\/$/, ''),
+  }));
+
+  // Unknown field: foo
+  const resUnknown = handleIndexQuery(docs, 'fields=title,foo');
+  assert.equal(resUnknown.status, 400);
+  assert.equal(resUnknown.body.error, 'Invalid field: "foo"');
+  assert.deepEqual(resUnknown.body.allowed, [...ALLOWED_DOCUMENT_FIELDS]);
+
+  // Empty fields parameter
+  const resEmpty = handleIndexQuery(docs, 'fields=');
+  assert.equal(resEmpty.status, 400);
+  assert.equal(resEmpty.body.error, 'Invalid fields parameter: must specify at least one field');
+  assert.deepEqual(resEmpty.body.allowed, [...ALLOWED_DOCUMENT_FIELDS]);
+});
+
+test('Deterministic pagination (?page=...&limit=...)', () => {
+  const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
+  const docs = globalJson.documents.map((d) => ({
+    ...d,
+    markdownUrl: d.markdown,
+    slug: d.url.replace('https://docs.redaction-technique.org/', '').replace(/\/$/, ''),
+  }));
+
+  // Page 1 with limit 10
+  const p1 = handleIndexQuery(docs, 'page=1&limit=10');
+  assert.equal(p1.status, 200);
+  assert.equal(p1.body.count, 10);
+  assert.equal(p1.body.documents.length, 10);
+  assert.deepEqual(p1.body.pagination, {
+    page: 1,
+    limit: 10,
+    total: 148,
+    totalPages: 15,
+  });
+
+  // Page 2 with limit 10
+  const p2 = handleIndexQuery(docs, 'page=2&limit=10');
+  assert.equal(p2.status, 200);
+  assert.equal(p2.body.count, 10);
+  assert.equal(p2.body.documents.length, 10);
+  assert.deepEqual(p2.body.pagination, {
+    page: 2,
+    limit: 10,
+    total: 148,
+    totalPages: 15,
+  });
+
+  // Deterministic ordering: Page 1 and Page 2 must not overlap and match global ordering
+  const p1Urls = p1.body.documents.map((d) => d.url);
+  const p2Urls = p2.body.documents.map((d) => d.url);
+  const allUrls = globalJson.documents.map((d) => d.url);
+
+  assert.deepEqual(p1Urls, allUrls.slice(0, 10));
+  assert.deepEqual(p2Urls, allUrls.slice(10, 20));
+
+  // Last page (Page 15, should have 8 documents: 148 - 14*10 = 8)
+  const p15 = handleIndexQuery(docs, 'page=15&limit=10');
+  assert.equal(p15.status, 200);
+  assert.equal(p15.body.count, 8);
+  assert.equal(p15.body.documents.length, 8);
+  assert.deepEqual(p15.body.documents.map((d) => d.url), allUrls.slice(140, 148));
+});
+
+test('Pagination HTTP 400 validation on out-of-bounds or invalid bounds', () => {
+  const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
+  const docs = globalJson.documents.map((d) => ({
+    ...d,
+    markdownUrl: d.markdown,
+    slug: d.url.replace('https://docs.redaction-technique.org/', '').replace(/\/$/, ''),
+  }));
+
+  // Page out of bounds
+  const resOob = handleIndexQuery(docs, 'page=16&limit=10');
+  assert.equal(resOob.status, 400);
+  assert.match(resOob.body.error, /out of bounds/);
+
+  // Invalid page: 0
+  const resPageZero = handleIndexQuery(docs, 'page=0');
+  assert.equal(resPageZero.status, 400);
+  assert.match(resPageZero.body.error, /Invalid page parameter/);
+
+  // Invalid page: negative
+  const resPageNeg = handleIndexQuery(docs, 'page=-1');
+  assert.equal(resPageNeg.status, 400);
+  assert.match(resPageNeg.body.error, /Invalid page parameter/);
+
+  // Invalid page: non-integer
+  const resPageStr = handleIndexQuery(docs, 'page=foo');
+  assert.equal(resPageStr.status, 400);
+  assert.match(resPageStr.body.error, /Invalid page parameter/);
+
+  // Invalid limit: 0
+  const resLimitZero = handleIndexQuery(docs, 'limit=0');
+  assert.equal(resLimitZero.status, 400);
+  assert.match(resLimitZero.body.error, /Invalid limit parameter/);
+
+  // Invalid limit: excessive (> 100)
+  const resLimitHigh = handleIndexQuery(docs, 'limit=101');
+  assert.equal(resLimitHigh.status, 400);
+  assert.match(resLimitHigh.body.error, /Invalid limit parameter/);
+});
+
+test('Combined filtering, pagination, and field selection', () => {
+  const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
+  const docs = globalJson.documents.map((d) => ({
+    ...d,
+    markdownUrl: d.markdown,
+    slug: d.url.replace('https://docs.redaction-technique.org/', '').replace(/\/$/, ''),
+  }));
+
+  // Filter contentType=task + lang=en + page=1 + limit=5 + fields=title,url,markdown
+  const res = handleIndexQuery(
+    docs,
+    'contentType=task&lang=en&page=1&limit=5&fields=title,url,markdown'
+  );
+  assert.equal(res.status, 200);
+  assert.equal(res.body.count, 5);
+  assert.deepEqual(res.body.pagination, {
+    page: 1,
+    limit: 5,
+    total: 14,
+    totalPages: 3,
+  });
+
+  for (const doc of res.body.documents) {
+    assert.deepEqual(Object.keys(doc).sort(), ['markdown', 'title', 'url']);
+    assert.ok(doc.url.startsWith('https://docs.redaction-technique.org/en/'));
+  }
+
+  // Page 3 has 4 remaining docs (14 total: 5 + 5 + 4)
+  const resP3 = handleIndexQuery(
+    docs,
+    'contentType=task&lang=en&page=3&limit=5&fields=title,url,markdown'
+  );
+  assert.equal(resP3.status, 200);
+  assert.equal(resP3.body.count, 4);
+});
+
+test('Extended /schema.json capability and document schema contract', () => {
+  const schemaPath = join(DIST, 'schema.json');
+  assert.ok(existsSync(schemaPath));
+  const schema = JSON.parse(readFileSync(schemaPath, 'utf-8'));
+
+  // 1. Endpoints discovery
+  assert.ok(schema.endpoints.global.index);
+  assert.ok(schema.endpoints.global.schema);
+  assert.ok(schema.endpoints.global.llms);
+  assert.ok(schema.endpoints.global.llmsFull);
+  assert.ok(schema.endpoints.en.index);
+  assert.ok(schema.endpoints.fr.index);
+
+  // 2. Retrieval model
+  assert.equal(schema.retrieval.identifier, 'url');
+  assert.ok(schema.retrieval.representations.html);
+  assert.ok(schema.retrieval.representations.markdown);
+
+  // 3. Query parameters description
+  assert.ok(schema.queryParameters.contentType);
+  assert.ok(schema.queryParameters.pageType);
+  assert.ok(schema.queryParameters.lang);
+  assert.ok(schema.queryParameters.fields);
+  assert.ok(schema.queryParameters.page);
+  assert.ok(schema.queryParameters.limit);
+  assert.deepEqual(schema.queryParameters.fields.allowed, [...ALLOWED_DOCUMENT_FIELDS]);
+
+  // 4. Machine-readable document schema
+  assert.equal(schema.document.type, 'object');
+  assert.deepEqual(
+    Object.keys(schema.document.properties).sort(),
+    [...ALLOWED_DOCUMENT_FIELDS].sort()
+  );
+});
+
 
 
