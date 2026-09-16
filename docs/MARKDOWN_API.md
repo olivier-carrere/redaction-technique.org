@@ -11,24 +11,30 @@ The core design principle is:
 
 ```mermaid
 flowchart TD
-    SRC["src/content/docs/**/*.{md,mdx}"] --> COLL["getCollection('docs')"]
-    COLL --> RES["toDocumentResource(doc)"]
+    SRC["Source Docs<br/><code>src/content/docs/**/*.{md,mdx}</code>"] --> COLL["Astro Loader<br/><code>getCollection('docs')</code>"]
+    COLL --> RES["Resource Normalizer<br/><code>toDocumentResource(doc)</code>"]
 
-    RES --> HTML["HTML Documentation"]
-    RES --> GPM["getPageMarkdown()"]
-    RES --> META["Document Metadata"]
+    subgraph RENDER["Presentation Layer"]
+        HTML["HTML Documentation Pages"]
+        HTML --> COPY["'Copy for LLM' Button"]
+        HTML --> VIEW["'View as Markdown' Link"]
+    end
 
-    HTML --> COPY["Copy for LLM"]
-    HTML --> VIEW["View as .md"]
+    subgraph MD["Markdown & Full Text API"]
+        GPM["Markdown Generator<br/><code>getPageMarkdown()</code>"]
+        GPM --> PAGE["Per-Page Mirrors<br/><code>/en/&lt;slug&gt;.md</code>, <code>/fr/&lt;slug&gt;.md</code>"]
+        GPM --> FULL["Consolidated Text<br/><code>/llms-full.txt</code> (+ locale variants)"]
+    end
 
-    GPM --> PAGE["page.md"]
-    GPM --> FULL["llms-full.txt"]
+    subgraph DISCOVERY["Metadata & Discovery API"]
+        META["Metadata & Taxonomy<br/><code>schema.json</code>"]
+        META --> IDX["JSON Indexes<br/><code>/index.json</code>, <code>/en/index.json</code>, <code>/fr/index.json</code>"]
+        META --> NAV["Navigation Endpoints<br/><code>/llms.txt</code>, <code>/sitemap.md</code>"]
+    end
 
-    FULL --> LLMS["llms.txt"]
-    FULL --> SITEMAP["sitemap.md"]
-
-    META --> IDX["index.json"]
-    IDX --> LOCALE["locale indexes"]
+    RES --> HTML
+    RES --> GPM
+    RES --> META
 ```
 
 All endpoints are statically pre-rendered during `astro build` into `dist/client/`. They require zero server-side databases or lambda functions and are served directly from the Vercel CDN edge.
