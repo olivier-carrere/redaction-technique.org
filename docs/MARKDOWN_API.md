@@ -163,9 +163,9 @@ A typical workflow for an automated agent, CLI tool, or RAG ingestion pipeline:
    └── Retrieve English task documents with projected fields.
 
 3. Select target document
-   └── e.g. "Task article template" (url: "https://docs.redaction-technique.org/en/toolkit/task-article-template/")
+   └── e.g. "Auto-insert data into a DITA XML file" (url: "https://docs.redaction-technique.org/en/tutorials/auto-insert-data-dita-xml/")
 
-4. GET https://docs.redaction-technique.org/en/toolkit/task-article-template.md
+4. GET https://docs.redaction-technique.org/en/tutorials/auto-insert-data-dita-xml.md
    └── Fetch the advertised Markdown representation directly without guessing URLs.
 
 5. Ingest into Agent Context
@@ -174,7 +174,7 @@ A typical workflow for an automated agent, CLI tool, or RAG ingestion pipeline:
 
 ---
 
-## 4. Role of `llms.txt`
+## 5. Role of `llms.txt`
 
 The `/llms.txt` file acts as the primary navigational entry point for AI models and search systems.
 - Conforms strictly to the [llms.txt](https://llmstxt.org/) specification.
@@ -184,12 +184,12 @@ The `/llms.txt` file acts as the primary navigational entry point for AI models 
 
 ---
 
-## 5. Role of `llms-full.txt` & Language Variants
+## 6. Role of `llms-full.txt` & Language Variants
 
 When an agent needs to read or embed the entire corpus without making dozens of individual HTTP requests:
-- `/llms-full.txt`: Consolidated file containing all 96 documentation pages (~547 KB uncompressed, ~160 KB gzipped).
-- `/en/llms-full.txt` / `/llms-full-en.txt`: English-only corpus (~270 KB).
-- `/fr/llms-full.txt` / `/llms-full-fr.txt`: French-only corpus (~276 KB).
+- `/llms-full.txt`: Consolidated file containing all 148 documentation pages (74 English + 74 French).
+- `/en/llms-full.txt` / `/llms-full-en.txt`: English-only corpus (74 pages).
+- `/fr/llms-full.txt` / `/llms-full-fr.txt`: French-only corpus (74 pages).
 
 ### Document Boundary Format & Pipeline Identity
 Every document in `llms-full.txt` is enclosed in a standard separator:
@@ -209,7 +209,7 @@ Markdown: <Markdown URL>
 
 ---
 
-## 6. Relationship Between HTML, `.md`, and Client Actions
+## 7. Relationship Between HTML, `.md`, and Client Actions
 
 On every documentation page:
 1. **HTML `<head>` Discovery:**
@@ -228,7 +228,7 @@ On every documentation page:
 
 ---
 
-## 7. How to Add a New Documentation Page
+## 8. How to Add a New Documentation Page
 
 No manual updates to endpoints, sitemaps, or JSON indexes are ever required:
 1. Create a new `.md` or `.mdx` file inside `src/content/docs/en/` or `src/content/docs/fr/`.
@@ -248,7 +248,7 @@ No manual updates to endpoints, sitemaps, or JSON indexes are ever required:
 
 ---
 
-## 8. HTTP Headers and Vercel Deployment
+## 9. HTTP Headers and Vercel Deployment
 
 Configured via `vercel.json` and static Astro `APIRoute` headers:
 

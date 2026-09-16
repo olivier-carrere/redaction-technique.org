@@ -381,6 +381,7 @@ export function generateGlobalIndexJson(
         llmsFull: `${siteUrl}/fr/llms-full.txt`,
       },
       global: {
+        index: `${siteUrl}/index.json`,
         sitemap: `${siteUrl}/sitemap.md`,
         llms: `${siteUrl}/llms.txt`,
         llmsFull: `${siteUrl}/llms-full.txt`,
@@ -664,6 +665,7 @@ export function handleIndexQuery(
           llmsFull: `${siteUrl}/fr/llms-full.txt`,
         },
         global: {
+          index: `${siteUrl}/index.json`,
           sitemap: `${siteUrl}/sitemap.md`,
           llms: `${siteUrl}/llms.txt`,
           llmsFull: `${siteUrl}/llms-full.txt`,
