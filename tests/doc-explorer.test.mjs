@@ -1,9 +1,23 @@
-import test from 'node:test';
+import test, { after } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
+import { startAstroDevServer } from './helpers/astro-server.mjs';
 
 const DIST = join(process.cwd(), 'dist', 'client');
+
+// index.json, en/index.json, and fr/index.json are rendered on demand
+// (prerender = false — see src/pages/{,en/,fr/}index.json.ts) so their
+// unfiltered baseline is no longer a static file in dist/client. Fetch it
+// once from a real dev server and reuse it below.
+const devServer = await startAstroDevServer();
+const globalCatalog = await fetch(`${devServer.baseUrl}/index.json`).then((r) => r.json());
+const enCatalog = await fetch(`${devServer.baseUrl}/en/index.json`).then((r) => r.json());
+const frCatalog = await fetch(`${devServer.baseUrl}/fr/index.json`).then((r) => r.json());
+
+after(async () => {
+  await devServer.stop();
+});
 
 // Normalization helper matching DocumentationExplorer client logic
 function normalizeStr(str) {
@@ -92,7 +106,6 @@ test('Documentation Explorer: filter options match canonical taxonomy definition
 // ---------------------------------------------------------------------------
 
 test('Documentation Explorer: search and filtering logic matches document corpus', () => {
-  const enCatalog = JSON.parse(readFileSync(join(DIST, 'en', 'index.json'), 'utf-8'));
   const docs = enCatalog.documents;
 
   // A. Text search for "dita"
@@ -108,7 +121,6 @@ test('Documentation Explorer: search and filtering logic matches document corpus
   assert.ok(ditaTask.markdown.endsWith('.md'));
 
   // B. Diacritic-insensitive matching: "redaction" vs "rédaction"
-  const frCatalog = JSON.parse(readFileSync(join(DIST, 'fr', 'index.json'), 'utf-8'));
   const frDocs = frCatalog.documents;
   const diacriticQuery = ['redaction'];
   const diacriticMatches = frDocs.filter((d) => {
@@ -146,8 +158,6 @@ test('Documentation Explorer: search and filtering logic matches document corpus
 // ---------------------------------------------------------------------------
 
 test('Documentation Explorer: every returned record provides valid HTML and Markdown endpoints', () => {
-  const globalCatalog = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
-
   for (const doc of globalCatalog.documents) {
     // HTML URL
     assert.ok(doc.url.startsWith('https://docs.redaction-technique.org/'));

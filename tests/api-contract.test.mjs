@@ -1,9 +1,23 @@
-import test from 'node:test';
+import test, { after } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
+import { startAstroDevServer } from './helpers/astro-server.mjs';
 
 const DIST = join(process.cwd(), 'dist', 'client');
+
+// index.json, en/index.json, and fr/index.json are rendered on demand
+// (prerender = false — see src/pages/{,en/,fr/}index.json.ts) so their
+// unfiltered baseline is no longer a static file in dist/client. Fetch it
+// once from a real dev server and reuse it below.
+const devServer = await startAstroDevServer();
+const globalJson = await fetch(`${devServer.baseUrl}/index.json`).then((r) => r.json());
+const enJson = await fetch(`${devServer.baseUrl}/en/index.json`).then((r) => r.json());
+const frJson = await fetch(`${devServer.baseUrl}/fr/index.json`).then((r) => r.json());
+
+after(async () => {
+  await devServer.stop();
+});
 
 // ---------------------------------------------------------------------------
 // Pure Black-Box Consumer Query Simulator (Zero production code imports)
@@ -140,7 +154,7 @@ function simulateConsumerContractQuery(catalogDocs, queryString, schema) {
 // 1. Schema self-consistency & Endpoint existence
 // ---------------------------------------------------------------------------
 
-test('Black-box audit: /schema.json structure and endpoint verification on disk', () => {
+test('Black-box audit: /schema.json structure and endpoint verification on disk', async () => {
   const schemaPath = join(DIST, 'schema.json');
   assert.ok(existsSync(schemaPath), 'dist/client/schema.json must exist');
 
@@ -157,11 +171,23 @@ test('Black-box audit: /schema.json structure and endpoint verification on disk'
   assert.ok(schema.endpoints.en, 'schema.endpoints.en must be present');
   assert.ok(schema.endpoints.fr, 'schema.endpoints.fr must be present');
 
-  // Verify that EVERY advertised endpoint exists on disk and is non-empty
+  // Verify that EVERY advertised endpoint exists and is non-empty.
+  // `index` endpoints are rendered on demand (prerender = false — see
+  // src/pages/{,en/,fr/}index.json.ts) so they are intentionally absent
+  // from dist/client; verify those live instead of on disk.
   for (const [locale, epGroup] of Object.entries(schema.endpoints)) {
     for (const [name, url] of Object.entries(epGroup)) {
       assert.ok(url.startsWith('https://docs.redaction-technique.org/'), `URL must have production origin: ${url}`);
       const relativePath = new URL(url).pathname.replace(/^\//, '');
+
+      if (name === 'index') {
+        const res = await fetch(`${devServer.baseUrl}/${relativePath}`);
+        assert.equal(res.status, 200, `Advertised endpoint [${locale}.${name}] ${url} did not respond 200`);
+        const body = await res.text();
+        assert.ok(body.length > 0, `Advertised endpoint [${locale}.${name}] is empty`);
+        continue;
+      }
+
       const diskPath = join(DIST, relativePath);
       assert.ok(existsSync(diskPath), `Advertised endpoint [${locale}.${name}] ${url} does not exist at ${diskPath}`);
       const size = readFileSync(diskPath).length;
@@ -201,10 +227,6 @@ test('Black-box audit: /schema.json structure and endpoint verification on disk'
 // ---------------------------------------------------------------------------
 
 test('Black-box audit: document URL integrity and strict locale isolation', () => {
-  const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
-  const enJson = JSON.parse(readFileSync(join(DIST, 'en/index.json'), 'utf-8'));
-  const frJson = JSON.parse(readFileSync(join(DIST, 'fr/index.json'), 'utf-8'));
-
   assert.equal(globalJson.count, 148);
   assert.equal(globalJson.counts.en, 74);
   assert.equal(globalJson.counts.fr, 74);
@@ -252,7 +274,6 @@ test('Black-box audit: document URL integrity and strict locale isolation', () =
 // ---------------------------------------------------------------------------
 
 test('Black-box audit: Markdown retrieval integrity across all 148 documents and llms-full.txt', () => {
-  const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
   const fullText = readFileSync(join(DIST, 'llms-full.txt'), 'utf-8');
   const sections = fullText.split(/\n---\n\n## Document: /);
 
@@ -298,8 +319,6 @@ test('Black-box audit: Markdown retrieval integrity across all 148 documents and
 
 test('Black-box audit: document metadata compliance against /schema.json schema', () => {
   const schema = JSON.parse(readFileSync(join(DIST, 'schema.json'), 'utf-8'));
-  const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
-
   const allowedContentTypes = schema.filters.contentType;
   const allowedPageTypes = schema.filters.pageType;
 
@@ -359,10 +378,6 @@ test('Black-box audit: document metadata compliance against /schema.json schema'
 
 test('Black-box audit: taxonomy consistency between schema.json and indexes', () => {
   const schema = JSON.parse(readFileSync(join(DIST, 'schema.json'), 'utf-8'));
-  const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
-  const enJson = JSON.parse(readFileSync(join(DIST, 'en/index.json'), 'utf-8'));
-  const frJson = JSON.parse(readFileSync(join(DIST, 'fr/index.json'), 'utf-8'));
-
   assert.deepEqual(globalJson.taxonomy, schema.taxonomy);
   assert.deepEqual(enJson.taxonomy, schema.taxonomy);
   assert.deepEqual(frJson.taxonomy, schema.taxonomy);
@@ -385,9 +400,10 @@ test('Black-box consumer simulation: discover API, filter tasks, retrieve Markdo
   const enIndexUrl = schema.endpoints.en.index;
   assert.equal(enIndexUrl, 'https://docs.redaction-technique.org/en/index.json');
 
-  // Step 4: Fetch /en/index.json
-  const enIndexRel = new URL(enIndexUrl).pathname.replace(/^\//, '');
-  const enCatalog = JSON.parse(readFileSync(join(DIST, enIndexRel), 'utf-8'));
+  // Step 4: Fetch /en/index.json (rendered on demand; the module-level
+  // `enJson` fixture is this exact endpoint, fetched live at the top of
+  // this file — see the comment near the top for why it's not a disk read)
+  const enCatalog = enJson;
 
   // Step 5: Filter documents where contentType === 'task'
   const taskDocsEn = enCatalog.documents.filter((d) => d.contentType === 'task');
@@ -414,8 +430,8 @@ test('Black-box consumer simulation: discover API, filter tasks, retrieve Markdo
   const frIndexUrl = schema.endpoints.fr.index;
   assert.equal(frIndexUrl, 'https://docs.redaction-technique.org/fr/index.json');
 
-  const frIndexRel = new URL(frIndexUrl).pathname.replace(/^\//, '');
-  const frCatalog = JSON.parse(readFileSync(join(DIST, frIndexRel), 'utf-8'));
+  // Fetch /fr/index.json (rendered on demand — same `frJson` fixture as above)
+  const frCatalog = frJson;
 
   const taskDocsFr = frCatalog.documents.filter((d) => d.contentType === 'task');
   assert.equal(taskDocsFr.length, 14, 'Consumer expects 14 task documents in French');
@@ -435,7 +451,6 @@ test('Black-box consumer simulation: discover API, filter tasks, retrieve Markdo
 // ---------------------------------------------------------------------------
 
 test('Black-box query engine audit: filtering, zero-result, HTTP 400 validation, fields, and pagination', () => {
-  const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
   const schema = JSON.parse(readFileSync(join(DIST, 'schema.json'), 'utf-8'));
   const docs = globalJson.documents;
 

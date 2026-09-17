@@ -6,7 +6,7 @@ import {
 } from '../../lib/document-resource';
 import { SITE_URL } from '../../lib/page-markdown';
 
-export const prerender = true;
+export const prerender = false;
 
 export const GET: APIRoute = async ({ url }) => {
   const docs = await getCollection('docs', ({ data }) => !data.draft);

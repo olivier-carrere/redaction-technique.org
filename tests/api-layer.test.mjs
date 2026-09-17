@@ -1,4 +1,4 @@
-import test from 'node:test';
+import test, { after } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
@@ -13,14 +13,31 @@ import {
   API_QUERY_PARAMETERS,
 } from '../src/lib/content-types.ts';
 import { handleIndexQuery } from '../src/lib/document-resource.ts';
+import { startAstroDevServer } from './helpers/astro-server.mjs';
 
 const DIST = join(process.cwd(), 'dist', 'client');
 
+// index.json, en/index.json, and fr/index.json are rendered on demand
+// (prerender = false — see src/pages/{,en/,fr/}index.json.ts) so their
+// unfiltered baseline is no longer a static file in dist/client. Fetch it
+// once from a real dev server and reuse it below, instead of re-reading a
+// build artifact that no longer exists for these three routes.
+const devServer = await startAstroDevServer();
+const globalJson = await fetch(`${devServer.baseUrl}/index.json`).then((r) => r.json());
+const enJson = await fetch(`${devServer.baseUrl}/en/index.json`).then((r) => r.json());
+const frJson = await fetch(`${devServer.baseUrl}/fr/index.json`).then((r) => r.json());
+const docs = globalJson.documents.map((d) => ({
+  ...d,
+  markdownUrl: d.markdown,
+  slug: d.url.replace('https://docs.redaction-technique.org/', '').replace(/\/$/, ''),
+}));
+
+after(async () => {
+  await devServer.stop();
+});
+
 test('API endpoints existence in dist/client', () => {
   const files = [
-    'index.json',
-    'en/index.json',
-    'fr/index.json',
     'schema.json',
     'sitemap.md',
     'en/sitemap.md',
@@ -39,13 +56,25 @@ test('API endpoints existence in dist/client', () => {
     const size = readFileSync(fullPath).length;
     assert.ok(size > 0, `Expected ${file} to be non-empty`);
   }
+
+  // index.json, en/index.json, and fr/index.json are rendered on demand
+  // (prerender = false), so they are intentionally NOT static build output.
+  // Their "exists and non-empty" check goes through the live fixtures
+  // fetched at the top of this file. The specific guarantee that they are
+  // NOT static artifacts is asserted in tests/api-index-endpoint.test.mjs.
+  for (const [label, json] of [
+    ['index.json', globalJson],
+    ['en/index.json', enJson],
+    ['fr/index.json', frJson],
+  ]) {
+    assert.ok(
+      json && Array.isArray(json.documents) && json.documents.length > 0,
+      `Expected ${label} to be non-empty`
+    );
+  }
 });
 
 test('JSON index schema and document count', () => {
-  const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
-  const enJson = JSON.parse(readFileSync(join(DIST, 'en/index.json'), 'utf-8'));
-  const frJson = JSON.parse(readFileSync(join(DIST, 'fr/index.json'), 'utf-8'));
-
   // Global index checks
   assert.equal(globalJson.version, '1.0');
   assert.equal(globalJson.count, 148);
@@ -100,9 +129,6 @@ test('JSON index schema and document count', () => {
 });
 
 test('Strict locale isolation in JSON indexes and sitemaps', () => {
-  const enJson = JSON.parse(readFileSync(join(DIST, 'en/index.json'), 'utf-8'));
-  const frJson = JSON.parse(readFileSync(join(DIST, 'fr/index.json'), 'utf-8'));
-
   // No FR docs in EN index
   for (const doc of enJson.documents) {
     assert.equal(doc.locale, 'en');
@@ -184,13 +210,6 @@ test('HTML alternate discovery tags', () => {
 });
 
 test('API filtering by contentType on documentation records', () => {
-  const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
-  const docs = globalJson.documents.map((d) => ({
-    ...d,
-    markdownUrl: d.markdown,
-    slug: d.url.replace('https://docs.redaction-technique.org/', '').replace(/\/$/, ''),
-  }));
-
   // 1. Concept filter: ?contentType=concept returns only Concept pages
   const resConcept = handleIndexQuery(docs, 'contentType=concept');
   assert.equal(resConcept.status, 200);
@@ -229,13 +248,6 @@ test('API filtering by contentType on documentation records', () => {
 });
 
 test('API filtering by pageType on documentation records', () => {
-  const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
-  const docs = globalJson.documents.map((d) => ({
-    ...d,
-    markdownUrl: d.markdown,
-    slug: d.url.replace('https://docs.redaction-technique.org/', '').replace(/\/$/, ''),
-  }));
-
   // ?pageType=topic returns only topics (120 total: 60 EN + 60 FR)
   const resTopic = handleIndexQuery(docs, 'pageType=topic');
   assert.equal(resTopic.status, 200);
@@ -286,13 +298,6 @@ test('API filtering by pageType on documentation records', () => {
 });
 
 test('Combined filter AND operation: ?pageType=topic&contentType=task', () => {
-  const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
-  const docs = globalJson.documents.map((d) => ({
-    ...d,
-    markdownUrl: d.markdown,
-    slug: d.url.replace('https://docs.redaction-technique.org/', '').replace(/\/$/, ''),
-  }));
-
   const res = handleIndexQuery(docs, 'pageType=topic&contentType=task');
   assert.equal(res.status, 200);
   assert.equal(res.body.count, 28);
@@ -307,13 +312,6 @@ test('Combined filter AND operation: ?pageType=topic&contentType=task', () => {
 });
 
 test('HTTP 400 validation on invalid query parameters', () => {
-  const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
-  const docs = globalJson.documents.map((d) => ({
-    ...d,
-    markdownUrl: d.markdown,
-    slug: d.url.replace('https://docs.redaction-technique.org/', '').replace(/\/$/, ''),
-  }));
-
   // Invalid content type: tutorial
   const resTutorial = handleIndexQuery(docs, 'contentType=tutorial');
   assert.equal(resTutorial.status, 400);
@@ -346,13 +344,6 @@ test('HTTP 400 validation on invalid query parameters', () => {
 });
 
 test('Strict locale isolation with filtering', () => {
-  const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
-  const docs = globalJson.documents.map((d) => ({
-    ...d,
-    markdownUrl: d.markdown,
-    slug: d.url.replace('https://docs.redaction-technique.org/', '').replace(/\/$/, ''),
-  }));
-
   // ?lang=en&contentType=concept contains ONLY EN pages
   const resEn = handleIndexQuery(docs, 'lang=en&contentType=concept');
   assert.equal(resEn.status, 200);
@@ -403,8 +394,6 @@ test('Strict locale isolation with filtering', () => {
 });
 
 test('Intentionally untyped pages integrity: never classified as Concept, Task, or Reference', () => {
-  const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
-
   const untyped = globalJson.documents.filter((d) => d.pageType !== 'topic');
   assert.equal(untyped.length, 28, 'Must have exactly 28 untyped pages');
 
@@ -417,12 +406,6 @@ test('Intentionally untyped pages integrity: never classified as Concept, Task, 
   }
 
   // Also verify that filtering by contentType=concept, task, reference never includes an untyped page
-  const docs = globalJson.documents.map((d) => ({
-    ...d,
-    markdownUrl: d.markdown,
-    slug: d.url.replace('https://docs.redaction-technique.org/', '').replace(/\/$/, ''),
-  }));
-
   for (const ct of CONTENT_TYPES) {
     const res = handleIndexQuery(docs, `contentType=${ct}`);
     for (const doc of res.body.documents) {
@@ -434,13 +417,6 @@ test('Intentionally untyped pages integrity: never classified as Concept, Task, 
 });
 
 test('Invariant test: API query filtering is bound to canonical content types and page types', () => {
-  const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
-  const docs = globalJson.documents.map((d) => ({
-    ...d,
-    markdownUrl: d.markdown,
-    slug: d.url.replace('https://docs.redaction-technique.org/', '').replace(/\/$/, ''),
-  }));
-
   // 1. Every canonical content type must be accepted and return HTTP 200
   for (const ct of CONTENT_TYPES) {
     const res = handleIndexQuery(docs, `contentType=${ct}`);
@@ -528,13 +504,6 @@ test('Dedicated schema discovery endpoint (/schema.json)', () => {
 });
 
 test('Taxonomy preservation during API query filtering', () => {
-  const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
-  const docs = globalJson.documents.map((d) => ({
-    ...d,
-    markdownUrl: d.markdown,
-    slug: d.url.replace('https://docs.redaction-technique.org/', '').replace(/\/$/, ''),
-  }));
-
   // Global filtered query retains taxonomy and filters
   const resFiltered = handleIndexQuery(docs, 'pageType=topic&contentType=task');
   assert.equal(resFiltered.status, 200);
@@ -552,7 +521,6 @@ test('Taxonomy preservation during API query filtering', () => {
 });
 
 test('Stable document identity and deterministic retrieval mapping', () => {
-  const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
   const urls = new Set();
   const markdowns = new Set();
 
@@ -591,8 +559,6 @@ test('Stable document identity and deterministic retrieval mapping', () => {
 });
 
 test('Direct document Markdown retrieval from disk matches index specification', () => {
-  const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
-
   // Sample documents representing both languages and all content types
   const sampleUrls = [
     'https://docs.redaction-technique.org/en/toolkit/task-article-template/',
@@ -623,13 +589,6 @@ test('Direct document Markdown retrieval from disk matches index specification',
 });
 
 test('Filter and retrieval composition: discover task topics and retrieve markdown', () => {
-  const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
-  const docs = globalJson.documents.map((d) => ({
-    ...d,
-    markdownUrl: d.markdown,
-    slug: d.url.replace('https://docs.redaction-technique.org/', '').replace(/\/$/, ''),
-  }));
-
   // Step 1: Filter by task
   const res = handleIndexQuery(docs, 'contentType=task&lang=en');
   assert.equal(res.status, 200);
@@ -650,13 +609,6 @@ test('Filter and retrieval composition: discover task topics and retrieve markdo
 });
 
 test('Field selection query projection (?fields=...)', () => {
-  const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
-  const docs = globalJson.documents.map((d) => ({
-    ...d,
-    markdownUrl: d.markdown,
-    slug: d.url.replace('https://docs.redaction-technique.org/', '').replace(/\/$/, ''),
-  }));
-
   // 1. Project 4 fields: title, url, markdown, contentType
   const res = handleIndexQuery(docs, 'contentType=task&fields=title,url,markdown,contentType');
   assert.equal(res.status, 200);
@@ -691,13 +643,6 @@ test('Field selection query projection (?fields=...)', () => {
 });
 
 test('Field selection HTTP 400 validation on invalid fields', () => {
-  const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
-  const docs = globalJson.documents.map((d) => ({
-    ...d,
-    markdownUrl: d.markdown,
-    slug: d.url.replace('https://docs.redaction-technique.org/', '').replace(/\/$/, ''),
-  }));
-
   // Unknown field: foo
   const resUnknown = handleIndexQuery(docs, 'fields=title,foo');
   assert.equal(resUnknown.status, 400);
@@ -712,13 +657,6 @@ test('Field selection HTTP 400 validation on invalid fields', () => {
 });
 
 test('Deterministic pagination (?page=...&limit=...)', () => {
-  const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
-  const docs = globalJson.documents.map((d) => ({
-    ...d,
-    markdownUrl: d.markdown,
-    slug: d.url.replace('https://docs.redaction-technique.org/', '').replace(/\/$/, ''),
-  }));
-
   // Page 1 with limit 10
   const p1 = handleIndexQuery(docs, 'page=1&limit=10');
   assert.equal(p1.status, 200);
@@ -760,13 +698,6 @@ test('Deterministic pagination (?page=...&limit=...)', () => {
 });
 
 test('Pagination HTTP 400 validation on out-of-bounds or invalid bounds', () => {
-  const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
-  const docs = globalJson.documents.map((d) => ({
-    ...d,
-    markdownUrl: d.markdown,
-    slug: d.url.replace('https://docs.redaction-technique.org/', '').replace(/\/$/, ''),
-  }));
-
   // Page out of bounds
   const resOob = handleIndexQuery(docs, 'page=16&limit=10');
   assert.equal(resOob.status, 400);
@@ -799,13 +730,6 @@ test('Pagination HTTP 400 validation on out-of-bounds or invalid bounds', () => 
 });
 
 test('Combined filtering, pagination, and field selection', () => {
-  const globalJson = JSON.parse(readFileSync(join(DIST, 'index.json'), 'utf-8'));
-  const docs = globalJson.documents.map((d) => ({
-    ...d,
-    markdownUrl: d.markdown,
-    slug: d.url.replace('https://docs.redaction-technique.org/', '').replace(/\/$/, ''),
-  }));
-
   // Filter contentType=task + lang=en + page=1 + limit=5 + fields=title,url,markdown
   const res = handleIndexQuery(
     docs,
