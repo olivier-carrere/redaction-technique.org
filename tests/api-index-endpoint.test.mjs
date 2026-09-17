@@ -141,3 +141,66 @@ for (const { path, label } of ENDPOINTS) {
     );
   });
 }
+
+// ---------------------------------------------------------------------------
+// 3. Pagination and field selection
+// ---------------------------------------------------------------------------
+//
+// Scoped to /en/index.json only: the filtering tests above already prove
+// all three locale endpoints share the same query-handling code path
+// (handleIndexQuery in src/lib/document-resource.ts), so pagination and
+// field selection don't need re-testing per locale to catch a regression.
+
+test('/en/index.json?limit=5 returns exactly 5 documents and reflects the limit in pagination metadata', async () => {
+  const unfiltered = await getJson('en/index.json');
+  const { status, body } = await getJson('en/index.json?limit=5');
+
+  assert.equal(status, 200);
+  assert.equal(body.documents.length, 5, 'limit=5 must return exactly 5 documents');
+  assert.equal(body.count, 5);
+  assert.ok(body.pagination, 'a paginated request must include pagination metadata');
+  assert.equal(body.pagination.limit, 5, 'pagination.limit must reflect the requested limit');
+  assert.equal(body.pagination.page, 1, 'page defaults to 1 when only limit is given');
+  assert.equal(
+    body.pagination.total,
+    unfiltered.body.documents.length,
+    'pagination.total must match the full corpus size'
+  );
+});
+
+test('/en/index.json?page=2&limit=5 returns a different document sequence than page 1', async () => {
+  const page1 = await getJson('en/index.json?page=1&limit=5');
+  const page2 = await getJson('en/index.json?page=2&limit=5');
+
+  assert.equal(page1.status, 200);
+  assert.equal(page2.status, 200);
+  assert.equal(page2.body.documents.length, 5);
+  assert.equal(page2.body.pagination.page, 2);
+  assert.equal(page2.body.pagination.limit, 5);
+
+  const page1Urls = page1.body.documents.map((d) => d.url);
+  const page2Urls = page2.body.documents.map((d) => d.url);
+
+  assert.notDeepEqual(page2Urls, page1Urls, 'page 2 must not return the same document sequence as page 1');
+  assert.equal(
+    page1Urls.filter((u) => page2Urls.includes(u)).length,
+    0,
+    'page 1 and page 2 must not share any documents (not just a reorder)'
+  );
+});
+
+test('/en/index.json?fields=title,url projects only the requested fields', async () => {
+  const { status, body } = await getJson('en/index.json?fields=title,url');
+
+  assert.equal(status, 200);
+  assert.ok(body.documents.length > 0);
+  for (const doc of body.documents) {
+    assert.deepEqual(
+      Object.keys(doc).sort(),
+      ['title', 'url'],
+      `projected document must contain only the requested fields, got: ${JSON.stringify(Object.keys(doc))}`
+    );
+    assert.equal(typeof doc.title, 'string');
+    assert.equal(typeof doc.url, 'string');
+  }
+});
