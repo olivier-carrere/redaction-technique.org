@@ -60,10 +60,10 @@ const description = isFr ? current.descFr : current.descEn;
   .information-type-callout {
     margin: 1.25rem 0 1.75rem;
     padding: 0.75rem 1rem;
-    background: var(--sl-color-gray-6);
-    border: 1px solid var(--sl-color-gray-5);
-    border-left: 3px solid var(--sl-color-accent);
-    border-radius: 4px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-accent);
+    border-radius: var(--radius-sm);
     font-size: var(--sl-text-sm);
   }
 
@@ -76,11 +76,7 @@ const description = isFr ? current.descFr : current.descEn;
 
   .it-prefix {
     font-weight: 600;
-    color: var(--sl-color-white);
-  }
-
-  :root[data-theme='light'] .it-prefix {
-    color: var(--sl-color-black);
+    color: var(--color-text);
   }
 
   .it-badge {
@@ -88,7 +84,7 @@ const description = isFr ? current.descFr : current.descEn;
     align-items: center;
     gap: 0.4rem;
     padding: 0.15rem 0.6rem;
-    border-radius: 9999px;
+    border-radius: var(--radius-sm);
     font-size: var(--sl-text-xs);
     font-weight: 600;
     text-decoration: none;
@@ -109,45 +105,30 @@ const description = isFr ? current.descFr : current.descEn;
     font-style: italic;
   }
 
-  /* Concept palette (Blue) */
+  /* Concept palette */
   .it-badge-concept {
-    background: rgba(59, 130, 246, 0.15);
-    border: 1px solid rgba(59, 130, 246, 0.4);
-    color: #93c5fd;
-  }
-  :root[data-theme='light'] .it-badge-concept {
-    background: #eff6ff;
-    border: 1px solid #bfdbfe;
-    color: #1d4ed8;
+    background: var(--color-accent-soft);
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
   }
 
-  /* Task palette (Green) */
+  /* Task palette (Success) */
   .it-badge-task {
-    background: rgba(16, 185, 129, 0.15);
-    border: 1px solid rgba(16, 185, 129, 0.4);
-    color: #6ee7b7;
-  }
-  :root[data-theme='light'] .it-badge-task {
-    background: #f0fdf4;
-    border: 1px solid #bbf7d0;
-    color: #15803d;
+    background: rgba(71, 116, 92, 0.12);
+    border: 1px solid var(--color-success);
+    color: var(--color-success);
   }
 
-  /* Reference palette (Purple) */
+  /* Reference palette (Warning) */
   .it-badge-reference {
-    background: rgba(168, 85, 247, 0.15);
-    border: 1px solid rgba(168, 85, 247, 0.4);
-    color: #d8b4fe;
-  }
-  :root[data-theme='light'] .it-badge-reference {
-    background: #faf5ff;
-    border: 1px solid #e9d5ff;
-    color: #7e22ce;
+    background: rgba(163, 106, 50, 0.12);
+    border: 1px solid var(--color-warning);
+    color: var(--color-warning);
   }
 
   .it-desc {
     margin: 0.35rem 0 0 0 !important;
-    color: var(--sl-color-gray-3);
+    color: var(--color-text-muted);
     font-size: var(--sl-text-xs);
     line-height: 1.4;
   }

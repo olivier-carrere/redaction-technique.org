@@ -184,16 +184,11 @@ const t = ui[lang];
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 0.75rem;
-    padding: 0.85rem 1.15rem;
-    border-radius: 8px;
-    background: var(--sl-color-accent-low);
-    border: 1px solid var(--sl-color-accent);
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-md);
+    background: var(--color-accent-soft);
+    border: 1px solid var(--color-accent);
     margin-bottom: 1.25rem;
-  }
-
-  :root[data-theme='light'] .ask-context-banner {
-    background: #eff6ff;
-    border-color: #93c5fd;
   }
 
   .ask-context-main {
@@ -208,25 +203,17 @@ const t = ui[lang];
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--sl-color-accent-high);
-  }
-
-  :root[data-theme='light'] .ask-context-badge {
-    color: #1e40af;
+    letter-spacing: 0.05em;
+    color: var(--color-accent);
   }
 
   .ask-context-title {
-    font-size: 0.95rem;
+    font-size: 0.875rem;
     font-weight: 600;
-    color: var(--sl-color-white);
-  }
-
-  :root[data-theme='light'] .ask-context-title {
-    color: #0f172a;
+    color: var(--color-text);
   }
 
   .ask-context-actions {
@@ -237,37 +224,28 @@ const t = ui[lang];
   }
 
   .ask-context-link {
-    font-size: 0.825rem;
+    font-size: 0.8125rem;
     font-weight: 600;
-    color: var(--sl-color-accent-high);
+    color: var(--color-accent);
     text-decoration: underline;
     text-underline-offset: 2px;
   }
 
-  :root[data-theme='light'] .ask-context-link {
-    color: #1d4ed8;
-  }
-
   .ask-context-remove-btn {
     background: transparent;
-    border: 1px solid var(--sl-color-accent);
-    color: var(--sl-color-accent-high);
-    font-size: 0.775rem;
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    font-size: 0.75rem;
     font-weight: 600;
-    padding: 0.3rem 0.6rem;
-    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
     cursor: pointer;
     transition: all 0.15s ease;
   }
 
-  :root[data-theme='light'] .ask-context-remove-btn {
-    color: #1e40af;
-    border-color: #93c5fd;
-  }
-
   .ask-context-remove-btn:hover {
-    background: var(--sl-color-accent);
-    color: var(--sl-color-black);
+    background: var(--color-accent);
+    color: #fff;
   }
 
   /* Form */
@@ -275,6 +253,7 @@ const t = ui[lang];
     display: block;
     font-weight: 600;
     margin-bottom: 0.5rem;
+    color: var(--color-text);
   }
 
   .ask-input-row {
@@ -284,31 +263,31 @@ const t = ui[lang];
 
   .ask-input {
     flex: 1;
-    padding: 0.75rem 0.85rem;
-    font-size: 1rem;
+    padding: 0.7rem 0.85rem;
+    font-size: 0.9375rem;
     font-family: inherit;
-    border: 1px solid var(--sl-color-gray-4);
-    border-radius: 0.375rem;
-    background: var(--sl-color-bg);
-    color: var(--sl-color-text);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg);
+    color: var(--color-text);
     transition: border-color 0.15s;
   }
 
   .ask-input:focus {
-    outline: 2px solid var(--sl-color-accent);
+    outline: 2px solid var(--color-accent);
     outline-offset: -1px;
-    border-color: var(--sl-color-accent);
+    border-color: var(--color-accent);
   }
 
   .ask-button {
     padding: 0.6rem 1.25rem;
-    font-size: 1rem;
+    font-size: 0.9375rem;
     font-family: inherit;
     font-weight: 600;
-    border: none;
-    border-radius: 0.375rem;
-    background: var(--sl-color-accent);
-    color: var(--sl-color-accent-text, #fff);
+    border: 1px solid var(--color-accent);
+    border-radius: var(--radius-sm);
+    background: var(--color-accent);
+    color: #fff;
     cursor: pointer;
     transition: opacity 0.15s;
     white-space: nowrap;
@@ -316,7 +295,7 @@ const t = ui[lang];
   }
 
   .ask-button:hover {
-    opacity: 0.85;
+    opacity: 0.88;
   }
 
   .ask-button:disabled {
@@ -327,7 +306,7 @@ const t = ui[lang];
   .ask-hint {
     margin-top: 0.5rem;
     font-size: 0.8125rem;
-    color: var(--sl-color-gray-3);
+    color: var(--color-text-muted);
   }
 
   /* Loading state */
@@ -336,16 +315,16 @@ const t = ui[lang];
     align-items: center;
     gap: 0.5rem;
     margin-top: 1.25rem;
-    color: var(--sl-color-gray-2);
-    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
   }
 
   .ask-spinner {
     display: inline-block;
     width: 1rem;
     height: 1rem;
-    border: 2px solid var(--sl-color-gray-4);
-    border-top-color: var(--sl-color-accent);
+    border: 2px solid var(--color-border);
+    border-top-color: var(--color-accent);
     border-radius: 50%;
     animation: ask-spin 0.7s linear infinite;
   }
@@ -358,28 +337,30 @@ const t = ui[lang];
   .ask-error {
     margin-top: 1.25rem;
     padding: 0.75rem 1rem;
-    border-radius: 0.375rem;
-    background: var(--sl-color-red-low, #fef2f2);
-    color: var(--sl-color-red-high, #b91c1c);
-    border: 1px solid var(--sl-color-red, #fca5a5);
-    font-size: 0.9375rem;
+    border-radius: var(--radius-sm);
+    background: var(--color-surface);
+    color: var(--color-danger);
+    border: 1px solid var(--color-danger);
+    font-size: 0.875rem;
   }
 
   /* Result */
   .ask-result {
     margin-top: 1.75rem;
     padding-top: 1.25rem;
-    border-top: 1px solid var(--sl-color-gray-5);
+    border-top: 1px solid var(--color-border);
   }
 
   .ask-result-heading {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-weight: 600;
+    color: var(--color-text);
     margin-bottom: 0.75rem;
   }
 
   .ask-answer {
-    line-height: 1.7;
+    line-height: 1.65;
+    color: var(--color-text);
   }
 
   /* Markdown-rendered answer content */
@@ -404,16 +385,18 @@ const t = ui[lang];
   }
 
   .ask-answer code {
-    font-family: var(--sl-font-mono, monospace);
+    font-family: var(--font-mono);
     font-size: 0.875em;
-    background: var(--sl-color-gray-6, #f3f4f6);
-    color: var(--sl-color-text, inherit);
+    background: var(--color-code-bg);
+    color: var(--color-text);
     padding: 0.125em 0.35em;
-    border-radius: 0.25rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
   }
 
   .ask-answer strong {
-    font-weight: 700;
+    font-weight: 600;
+    color: var(--color-text);
   }
 
   .ask-answer em {
@@ -421,24 +404,26 @@ const t = ui[lang];
   }
 
   .ask-answer a {
-    color: var(--sl-color-accent);
+    color: var(--color-accent);
     text-decoration: underline;
+    text-underline-offset: 2px;
   }
 
   .ask-answer a:hover {
-    text-decoration: none;
+    color: var(--color-text);
   }
 
   /* Sources section & cards */
   .ask-sources-section {
     margin-top: 1.75rem;
     padding-top: 1.25rem;
-    border-top: 1px solid var(--sl-color-gray-5);
+    border-top: 1px solid var(--color-border);
   }
 
   .ask-sources-heading {
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-weight: 600;
+    color: var(--color-text);
     margin-bottom: 0.85rem;
   }
 
@@ -451,11 +436,10 @@ const t = ui[lang];
     gap: 0.75rem;
   }
 
-  /* Enhanced source card */
   :global(.ask-source-card) {
-    background: var(--sl-color-gray-6);
-    border: 1px solid var(--sl-color-gray-5);
-    border-radius: 6px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
     padding: 0.85rem 1rem;
     display: flex;
     flex-direction: column;
@@ -463,13 +447,8 @@ const t = ui[lang];
     transition: border-color 0.15s ease;
   }
 
-  :root[data-theme='light'] :global(.ask-source-card) {
-    background: #f8fafc;
-    border-color: #e2e8f0;
-  }
-
   :global(.ask-source-card:hover) {
-    border-color: var(--sl-color-gray-4);
+    border-color: var(--color-accent);
   }
 
   :global(.ask-source-header) {
@@ -479,24 +458,16 @@ const t = ui[lang];
   }
 
   :global(.ask-source-title) {
-    font-size: 0.95rem;
+    font-size: 0.9375rem;
     font-weight: 600;
-    color: var(--sl-color-white);
-  }
-
-  :root[data-theme='light'] :global(.ask-source-title) {
-    color: #0f172a;
+    color: var(--color-text);
   }
 
   :global(.ask-source-excerpt) {
-    font-size: 0.825rem;
+    font-size: 0.8125rem;
     line-height: 1.5;
-    color: var(--sl-color-gray-3);
+    color: var(--color-text-muted);
     margin: 0 !important;
-  }
-
-  :root[data-theme='light'] :global(.ask-source-excerpt) {
-    color: #475569;
   }
 
   :global(.ask-source-actions) {
@@ -506,58 +477,42 @@ const t = ui[lang];
     gap: 0.5rem;
     margin-top: 0.25rem;
     padding-top: 0.45rem;
-    border-top: 1px solid var(--sl-color-gray-5);
-  }
-
-  :root[data-theme='light'] :global(.ask-source-actions) {
-    border-top-color: #e2e8f0;
+    border-top: 1px solid var(--color-border);
   }
 
   :global(.ask-source-btn) {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    font-size: 0.775rem;
+    font-size: 0.75rem;
     font-weight: 600;
-    padding: 0.35rem 0.7rem;
-    border-radius: 4px;
+    padding: 0.3rem 0.65rem;
+    border-radius: var(--radius-sm);
     text-decoration: none;
     cursor: pointer;
     transition: all 0.15s ease;
   }
 
   :global(.ask-source-btn-primary) {
-    background: var(--sl-color-accent-low);
-    color: var(--sl-color-accent-high);
-    border: 1px solid var(--sl-color-accent);
+    background: var(--color-accent-soft);
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
   }
 
   :global(.ask-source-btn-primary:hover) {
-    background: var(--sl-color-accent);
-    color: var(--sl-color-black);
+    background: var(--color-accent);
+    color: #fff;
   }
 
   :global(.ask-source-btn-secondary) {
     background: transparent;
-    color: var(--sl-color-gray-2);
-    border: 1px solid var(--sl-color-gray-4);
-  }
-
-  :root[data-theme='light'] :global(.ask-source-btn-secondary) {
-    color: #334155;
-    border-color: #cbd5e1;
-    background: #fff;
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
   }
 
   :global(.ask-source-btn-secondary:hover) {
-    color: var(--sl-color-white);
-    background: var(--sl-color-gray-5);
-    border-color: var(--sl-color-gray-3);
-  }
-
-  :root[data-theme='light'] :global(.ask-source-btn-secondary:hover) {
-    color: #0f172a;
-    background: #f1f5f9;
+    color: var(--color-text);
+    border-color: var(--color-text-muted);
   }
 
   /* Example prompts */
@@ -571,7 +526,7 @@ const t = ui[lang];
 
   .ask-examples-label {
     font-size: 0.8125rem;
-    color: var(--sl-color-gray-3);
+    color: var(--color-text-muted);
     white-space: nowrap;
     flex-shrink: 0;
   }
@@ -587,23 +542,23 @@ const t = ui[lang];
     font-size: 0.8125rem;
     line-height: 1.4;
     padding: 0.25rem 0.65rem;
-    border-radius: 2rem;
-    border: 1px solid var(--sl-color-accent);
-    background: var(--sl-color-accent-low);
-    color: var(--sl-color-accent-high);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-text);
     cursor: pointer;
     transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
     text-align: left;
   }
 
   .ask-example-btn:hover {
-    background: var(--sl-color-accent);
-    border-color: var(--sl-color-accent);
-    color: var(--sl-color-white);
+    background: var(--color-accent-soft);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
   }
 
   .ask-example-btn:focus-visible {
-    outline: 2px solid var(--sl-color-accent);
+    outline: 2px solid var(--color-accent);
     outline-offset: 2px;
   }
 

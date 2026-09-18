@@ -1,0 +1,101 @@
+---
+interface Props {
+  lang?: string;
+}
+
+const routeLang = (Astro.locals as Record<string, any>)?.starlightRoute?.lang;
+const lang = Astro.props.lang || routeLang || 'en';
+const isFr = lang === 'fr';
+const explorerUrl = isFr ? '/fr/about-the-api/' : '/en/about-the-api/';
+---
+
+<aside class="explore-doc-card not-content" aria-labelledby="explore-doc-title">
+  <div class="explore-doc-header">
+    <span class="explore-doc-kicker">{isFr ? 'EXPLORER LA DOCUMENTATION' : 'EXPLORE DOCUMENTATION'}</span>
+    <h3 id="explore-doc-title" class="explore-doc-title">
+      {isFr ? 'Rechercher et filtrer la documentation' : 'Search and filter the documentation'}
+    </h3>
+  </div>
+  <p class="explore-doc-desc">
+    {isFr
+      ? 'Explorez l’ensemble des rubriques par concept, tâche, format ou outil dans l’explorateur interactif.'
+      : 'Explore all documentation topics by concept, task, format, or tool using the interactive explorer.'}
+  </p>
+  <div class="explore-doc-actions">
+    <a href={explorerUrl} class="explore-doc-btn">
+      {isFr ? 'Parcourir la documentation →' : 'Browse documentation →'}
+    </a>
+  </div>
+</aside>
+
+<style>
+  .explore-doc-card {
+    margin-block: 2.5rem;
+    padding: 1.5rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-accent);
+    border-radius: var(--radius-md);
+  }
+
+  .explore-doc-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .explore-doc-kicker {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-accent);
+  }
+
+  .explore-doc-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .explore-doc-desc {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--color-text-muted);
+    margin: 0 0 1rem 0;
+    max-width: 55ch;
+  }
+
+  .explore-doc-actions {
+    display: flex;
+  }
+
+  .explore-doc-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.45rem 0.9rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    background: var(--color-accent-soft);
+    border: 1px solid var(--color-accent);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+
+  .explore-doc-btn:hover {
+    background: var(--color-accent);
+    color: #fff;
+  }
+
+  .explore-doc-btn:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+</style>

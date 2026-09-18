@@ -1,5 +1,6 @@
 ---
 import Default from '@astrojs/starlight/components/PageTitle.astro';
+import Breadcrumbs from './Breadcrumbs.astro';
 import DocActions from './DocActions.astro';
 import { getMarkdownUrl } from '../lib/page-markdown';
 
@@ -7,14 +8,22 @@ const pathname = Astro.url.pathname;
 const isHomepage = pathname === '/' || /^\/(en|fr)\/?$/.test(pathname);
 const isTagPage = pathname.startsWith('/tag/');
 const starlightRoute = (Astro.locals as Record<string, any>)?.starlightRoute;
-const entryId = starlightRoute?.entry?.id;
+const entry = starlightRoute?.entry;
+const entryId = entry?.id;
 const routeLang = starlightRoute?.lang;
 const lang = routeLang ?? (pathname.startsWith('/fr') ? 'fr' : 'en');
 const isFr = lang === 'fr';
 const markdownUrl = entryId ? getMarkdownUrl(entryId) : null;
+const description = entry?.data?.description;
 ---
 
+{!isHomepage && !isTagPage && (
+  <Breadcrumbs />
+)}
 <Default {...Astro.props} />
+{!isHomepage && !isTagPage && description && (
+  <p class="page-intro-description not-content">{description}</p>
+)}
 {!isHomepage && !isTagPage && (
   <p class="sl-byline not-content">
     {isFr ? (
@@ -27,3 +36,14 @@ const markdownUrl = entryId ? getMarkdownUrl(entryId) : null;
 {!isTagPage && markdownUrl && (
   <DocActions markdownUrl={markdownUrl} lang={lang} />
 )}
+
+<style>
+  .page-intro-description {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    margin-top: 0.35rem;
+    margin-bottom: 0.75rem;
+    max-width: 46rem;
+  }
+</style>

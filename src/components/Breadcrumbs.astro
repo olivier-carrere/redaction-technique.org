@@ -1,0 +1,143 @@
+---
+import type { SidebarEntry, SidebarGroup, SidebarLink } from '@astrojs/starlight/utils/routing/types';
+
+const route = (Astro.locals as Record<string, any>)?.starlightRoute;
+const { sidebar, entry, lang = 'en' } = route || {};
+const isFr = lang === 'fr';
+
+interface TrailItem {
+  label: string;
+  href?: string;
+  isCurrent?: boolean;
+}
+
+const trail: TrailItem[] = [];
+
+function findFirstLink(entries: SidebarEntry[]): SidebarLink | undefined {
+  if (!entries) return undefined;
+  for (const item of entries) {
+    if (item.type === 'link') return item;
+    if (item.type === 'group') {
+      const found = findFirstLink(item.entries);
+      if (found) return found;
+    }
+  }
+  return undefined;
+}
+
+function findTrailInSidebar(entries: SidebarEntry[], currentPath: TrailItem[] = []): boolean {
+  if (!entries) return false;
+  for (const item of entries) {
+    if (item.type === 'link') {
+      if (item.isCurrent) {
+        trail.push(...currentPath, { label: item.label, href: item.href, isCurrent: true });
+        return true;
+      }
+    } else if (item.type === 'group') {
+      const firstLink = findFirstLink(item.entries);
+      const groupItem: TrailItem = { label: item.label, href: firstLink?.href };
+      if (findTrailInSidebar(item.entries, [...currentPath, groupItem])) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+const found = findTrailInSidebar(sidebar || []);
+
+if (!found) {
+  const pathname = Astro.url.pathname;
+  const segments = pathname.replace(/^\/+|\/+$/g, '').split('/').filter(Boolean);
+  const contentSegments = (segments[0] === 'en' || segments[0] === 'fr') ? segments.slice(1) : segments;
+
+  if (contentSegments.length > 0) {
+    let cumPath = (segments[0] === 'en' || segments[0] === 'fr') ? `/${segments[0]}` : '';
+    contentSegments.forEach((seg, idx) => {
+      cumPath += `/${seg}/`;
+      const isLast = idx === contentSegments.length - 1;
+      const label = isLast && entry?.data?.title
+        ? entry.data.title
+        : seg.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+      trail.push({
+        label,
+        href: isLast ? undefined : cumPath,
+        isCurrent: isLast,
+      });
+    });
+  }
+}
+---
+
+{trail.length > 0 && (
+  <nav class="editorial-breadcrumbs not-content" aria-label={isFr ? "Fil d'Ariane" : "Breadcrumbs"}>
+    <ol class="breadcrumb-list">
+      {trail.map((item, index) => (
+        <li class="breadcrumb-item">
+          {index > 0 && <span class="breadcrumb-separator" aria-hidden="true">›</span>}
+          {item.isCurrent ? (
+            <span class="breadcrumb-current" aria-current="page">{item.label}</span>
+          ) : item.href ? (
+            <a href={item.href} class="breadcrumb-link">{item.label}</a>
+          ) : (
+            <span class="breadcrumb-label">{item.label}</span>
+          )}
+        </li>
+      ))}
+    </ol>
+  </nav>
+)}
+
+<style>
+  .editorial-breadcrumbs {
+    margin-bottom: 0.75rem;
+  }
+
+  .breadcrumb-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--color-text-muted);
+  }
+
+  .breadcrumb-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .breadcrumb-link {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .breadcrumb-link:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .breadcrumb-separator {
+    color: var(--color-border);
+    user-select: none;
+    font-size: 12px;
+  }
+
+  .breadcrumb-label,
+  .breadcrumb-current {
+    color: var(--color-text-muted);
+  }
+
+  .breadcrumb-current {
+    font-weight: 500;
+  }
+</style>

@@ -44,10 +44,10 @@ const isFr = lang === 'fr';
   .site-orientation {
     margin: 0 0 2.5rem 0;
     padding: 1.25rem 1.5rem;
-    background: var(--sl-color-gray-6);
-    border: 1px solid var(--sl-color-gray-5);
-    border-left: 4px solid var(--sl-color-accent);
-    border-radius: 0.5rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-accent);
+    border-radius: var(--radius-md);
   }
 
   .orientation-header {
@@ -58,41 +58,41 @@ const isFr = lang === 'fr';
     gap: 0.75rem;
     padding-bottom: 0.85rem;
     margin-bottom: 0.85rem;
-    border-bottom: 1px solid var(--sl-color-gray-5);
+    border-bottom: 1px solid var(--color-border);
   }
 
   .orientation-badge {
     display: inline-flex;
     align-items: center;
-    font-family: var(--sl-font-mono);
-    font-size: var(--sl-text-xs);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: var(--sl-color-accent-high);
-    background: var(--sl-color-accent-low);
-    padding: 0.2rem 0.6rem;
-    border-radius: 0.25rem;
+    color: var(--color-accent);
+    background: var(--color-accent-soft);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm);
   }
 
   .orientation-byline {
-    font-size: var(--sl-text-sm);
-    color: var(--sl-color-gray-3);
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
     margin: 0;
   }
 
   .orientation-byline a {
-    color: var(--sl-color-white);
+    color: var(--color-text);
     text-decoration: underline;
     text-underline-offset: 2px;
   }
 
   .orientation-byline a:hover {
-    color: var(--sl-color-text-accent);
+    color: var(--color-accent);
   }
 
   .blog-pill {
-    color: var(--sl-color-accent-high) !important;
+    color: var(--color-accent) !important;
     font-weight: 500;
   }
 
@@ -103,9 +103,9 @@ const isFr = lang === 'fr';
   }
 
   .orientation-mission {
-    font-size: var(--sl-text-base);
+    font-size: 0.9375rem;
     line-height: 1.55;
-    color: var(--sl-color-white);
+    color: var(--color-text);
     margin: 0;
   }
 
@@ -114,15 +114,15 @@ const isFr = lang === 'fr';
   }
 
   .orientation-mission a {
-    color: var(--sl-color-accent-high);
+    color: var(--color-accent);
     text-decoration: underline;
     text-underline-offset: 2px;
   }
 
   .orientation-context {
-    font-size: var(--sl-text-sm);
+    font-size: 0.875rem;
     line-height: 1.55;
-    color: var(--sl-color-gray-2);
+    color: var(--color-text-muted);
     margin: 0;
   }
 

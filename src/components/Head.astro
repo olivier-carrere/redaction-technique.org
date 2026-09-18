@@ -121,6 +121,14 @@ if (isHomepage) {
 const schema = { '@context': 'https://schema.org', '@graph': graphNodes };
 ---
 
+<script is:inline>
+  (function () {
+    const stored = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme');
+    if (!stored) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+</script>
 <ClientRouter />
 <Default {...Astro.props} />
 
