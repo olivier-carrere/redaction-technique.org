@@ -165,8 +165,20 @@ function parseDefListParagraph(pNode) {
   const children = pNode.children;
   if (!children || children.length === 0) return null;
 
-  const hasDefMarker = children.some((c) => {
-    return c.type === 'text' && /(?:^|\n)[ \t]*:[ \t]+/.test(c.value);
+  // A definition marker is a colon at the start of a *source line*. The
+  // start of a text node only counts as a line start when that node opens
+  // the paragraph or follows a line break: a text node that follows inline
+  // content (`*term*: …`, `` `code`: … ``, `**bold**: …`) is mid-line prose.
+  const lineStart = children.map((c, idx) => {
+    if (idx === 0) return true;
+    const prev = children[idx - 1];
+    if (prev.type === 'text') return prev.value.endsWith('\n');
+    return prev.type === 'element' && prev.tagName === 'br';
+  });
+  const markerRegex = (idx) => (lineStart[idx] ? /(^|\n)[ \t]*:[ \t]+/g : /(\n)[ \t]*:[ \t]+/g);
+
+  const hasDefMarker = children.some((c, idx) => {
+    return c.type === 'text' && markerRegex(idx).test(c.value);
   });
 
   if (!hasDefMarker) return null;
@@ -189,7 +201,7 @@ function parseDefListParagraph(pNode) {
     }
 
     const text = child.value;
-    const regex = /(^|\n)[ \t]*:[ \t]+/g;
+    const regex = markerRegex(cIdx);
     let lastIndex = 0;
     let match;
     let matchedInText = false;
