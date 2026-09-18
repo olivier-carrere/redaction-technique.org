@@ -1,34 +1,86 @@
 ---
 title: "Intégrer la documentation aux processus de développement"
 description: "Découvrez pourquoi la documentation technique doit être livrée, versionnée et contrôlée en même temps que le produit, grâce aux formats texte comme DocBook, DITA XML et reStructuredText."
+tags: [git, docs-as-code]
 goal: [docs-as-code]
 contentType: concept
 ---
+
 import DevPipelineIntegrationDiagram from '../../../../components/diagrams/DevPipelineIntegrationDiagram.astro';
+
+:::note
+Gérer la documentation comme du code logiciel — en la rédigeant au format texte, en la suivant en gestion de versions et en la publiant par des pipelines automatisés — permet de livrer une documentation synchronisée avec le produit et soumise aux mêmes exigences de qualité.
+
+Cet article détaille les trois critères d'intégration de la documentation au développement, présente le [pipeline d'intégration](#le-pipeline-dintégration) et propose des ressources concrètes pour [passer à la pratique](#mettre-lintégration-en-pratique).
+:::
 
 ## Définition
 
 La documentation fait partie du logiciel. Fournie avec le produit, elle doit :
 
--   sortir en même temps,
--   suivre les mêmes cycles de vie, et
--   faire l'objet des mêmes processus de production et de contrôle qualité.
+- **sortir en même temps** que chaque version logicielle, pour éviter les guides obsolètes au lancement ;
+- **suivre les mêmes cycles de vie**, des spécifications initiales des fonctionnalités jusqu'aux tags de publication ;
+- **faire l'objet des mêmes processus de production et de contrôle qualité**, incluant tests automatisés, relectures par les pairs et intégration continue.
+
+## Le pipeline d'intégration
+
+L'intégration de la documentation à l'ingénierie repose sur une chaîne d'outils interconnectée où le contenu traverse les mêmes étapes que le code source :
 
 <DevPipelineIntegrationDiagram />
 **Sources de documentation modulaires au format texte**
 
+Ce pipeline articule quatre grandes étapes :
+
+1. **Gestion des tickets et des bugs :** les besoins documentaires, les manques signalés et les correctifs sont consignés dans le même outil que les anomalies logicielles, alignant ainsi les rédacteurs sur le backlog des développeurs.
+2. **Sources modulaires au format texte :** les contenus sont rédigés dans des formats texte (Markdown, DocBook, [DITA XML](../../formats/structured-vs-unstructured-formats/) ou reStructuredText), découpés en modules réutilisables plutôt qu'en documents monolithiques.
+3. **Gestion des versions :** les fichiers sources sont suivis dans un gestionnaire de versions comme [Git](../git-from-file-to-content/) ou Subversion, ce qui autorise le travail sur des branches parallèles, la comparaison fine des modifications (*diffs*) et le retour en arrière sécurisé.
+4. **Profilage et publication automatisée :** les moteurs de génération appliquent un filtrage conditionnel (profilage) pour produire des livrables adaptés sous différents formats — HTML, PDF, JavaHelp ou ePUB — à partir d'une source unique.
+
+## Documentation traditionnelle et documentation intégrée
+
+Le passage de la publication bureautique isolée à un pipeline intégré résout des blocages historiques de synchronisation et de qualité :
+
+| Dimension | Documentation traditionnelle | Documentation intégrée (docs-as-code) |
+|---|---|---|
+| **Format de stockage** | Fichiers binaires propriétaires (Word, InDesign, FrameMaker) | Fichiers texte brut (Markdown, XML, reStructuredText) |
+| **Gestion des versions** | Répertoires partagés ou renommage manuel de fichiers | Systèmes de gestion de versions ([Git](../version-control-systems/), Subversion) |
+| **Collaboration** | Verrouillage exclusif des fichiers, écrasements fréquents | Branches concurrentes, requêtes de fusion (*pull requests*) et relectures |
+| **Publication** | Mise en page manuelle, exports manuels par livrable | Pipelines CI/CD automatisés et profilage programmatique |
+| **Synchronisation des sorties** | Décalée de plusieurs semaines ou mois par rapport au logiciel | Synchronisée et livrée simultanément avec le produit |
+
 ## Principes clés
 
-Elle doit répondre idéalement aux critères suivants :
+Pour inscrire une documentation intégrée dans la durée, le dispositif doit idéalement répondre à trois critères :
 
--   pas de *vendor lock-in* (indépendance du format et de l'éditeur de contenu),
--   chaînes de publication libres et gratuites,
--   mise en page totalement automatisée.
+- **Pas de *vendor lock-in* :** indépendance du format et de l'éditeur de contenu. Les sources étant en texte brut, les rédacteurs peuvent travailler avec n'importe quel outil — du simple éditeur de texte aux <abbr title="Integrated Development Environment">IDE</abbr> complets — sans dépendance envers un logiciel propriétaire.
+- **Chaînes de publication libres et gratuites :** s'appuyer sur des standards ouverts et des compilateurs libres garantit que la documentation peut être compilée partout, notamment sur des serveurs d'intégration continue sans interface graphique.
+- **Mise en page totalement automatisée :** séparation stricte du fond et de la forme. Les règles de présentation sont gérées de manière centralisée par des feuilles de style et des scripts de compilation, sans intervention manuelle répétée.
 
-## Pourquoi c'est important
+## Pourquoi les formats texte ont changé la donne
 
-Il y a quelques années encore, les seuls outils permettant de fournir des livrables de qualité au format PDF ou HTML reposaient sur des formats binaires et propriétaires qui s'intégraient mal aux systèmes de gestion de versions des équipes de développement.
+Il y a quelques années encore, les seuls outils permettant de fournir des livrables de qualité au format PDF ou HTML reposaient sur des formats binaires et propriétaires qui s'intégraient mal aux [systèmes de gestion de versions](../version-control-systems/) des équipes de développement.
 
 Résultat : réalisée à part, la documentation technique répondait difficilement aux mêmes exigences de qualité et de délai de mise sur le marché que les produits.
 
-DocBook, puis DITA XML et reStructuredText ont changé la donne : ces formats texte peuvent être modifiés avec tout type de programme, du simple éditeur de texte à l'<abbr title="Integrated Development Environment">IDE</abbr> graphique, et s'intègrent parfaitement sous Subversion, Git ou tout autre système de gestion de versions.
+DocBook, puis [DITA XML](../../formats/structured-vs-unstructured-formats/) et reStructuredText ont changé la donne : ces formats texte peuvent être modifiés avec tout type de programme, du simple éditeur de texte à l'<abbr title="Integrated Development Environment">IDE</abbr> graphique, et s'intègrent parfaitement sous Subversion, [Git](../git-from-file-to-content/) ou tout autre système de gestion de versions.
+
+## Mettre l'intégration en pratique
+
+Pour passer du concept à la mise en œuvre pratique, appuyez-vous sur les ressources suivantes de la boîte à outils :
+
+- **Évaluer la maturité et préparer la migration :** suivez la [check-list d'adoption du docs-as-code](../../toolkit/docs-as-code-adoption-checklist/) pour valider formats, outillage et compétences d'équipe.
+- **Automatiser le pipeline :** découvrez l'[exemple concret de pipeline CI/CD](../../toolkit/example-cicd-pipeline/) illustrant les tests automatisés, la vérification des liens et le déploiement de prévisualisations.
+- **Structurer le flux de travail :** explorez l'[exemple de workflow docs-as-code](../../toolkit/example-docs-as-code-workflow/) pour voir comment branches, requêtes de fusion et revues documentaires s'articulent au quotidien.
+
+## Articles connexes
+
+- [Les systèmes de gestion de versions - rustiques mais fiables](../version-control-systems/)
+- [Git : du fichier au contenu](../git-from-file-to-content/)
+- [Utiliser les branches des systèmes de gestion de sources](../using-branches/)
+- [Un référentiel unique ?](../single-repository/)
+- [Du document à la base documentaire modulaire](../../formats/modular-documentation/)
+
+## Lectures complémentaires
+
+- [A web journey: from HTML to Git-based Markdown workflows](https://redaction-technique.org/blog/web-journey-html-to-git-markdown) — intégrer la documentation dans le flux de développement (en anglais).
+- [Why hand-maintained InDesign files rot - and what docs-as-code does instead](https://redaction-technique.org/blog/indesign-vs-docs-as-code) — le docs-as-code au sein du pipeline d'ingénierie (en anglais).

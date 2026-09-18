@@ -8,26 +8,55 @@ contentType: concept
 
 import DevPipelineIntegrationDiagram from '../../../../components/diagrams/DevPipelineIntegrationDiagram.astro';
 
+:::note
+Managing documentation like software code—authoring in plain-text formats, tracking in version control, and building through automated pipelines—ensures that documentation ships simultaneously with the product and meets the same quality standards.
+
+This article defines the three requirements for integrating documentation into development, explains the [integration pipeline](#the-integration-pipeline), and links to [practical implementation tools](#putting-integration-into-practice).
+:::
+
 ## Definition
 
 Documentation is part of the software. Supplied with the product, it must:
 
-- be released simultaneously,
-- follow the same life cycles, and
-- be subject to the same production and quality control processes.
+- **be released simultaneously** with each software version, avoiding outdated guides at launch;
+- **follow the same life cycles**, from initial feature design to staging, tagging, and release;
+- **be subject to the same production and quality control processes**, including automated linting, peer review, and continuous integration.
+
+## The integration pipeline
+
+Integrating documentation into development requires a connected pipeline where content moves through the same stages as application code:
 
 <DevPipelineIntegrationDiagram />
 **Modular documentation sources in text format**
 
+The pipeline links four main stages:
+
+1. **Issue and bug tracking:** Documentation tasks, missing topics, and error reports are logged in the same issue tracker as code changes, aligning technical writers with the engineering backlog.
+2. **Modular text sources:** Content is authored in plain-text formats (such as Markdown, DocBook, [DITA XML](../../formats/structured-vs-unstructured-formats/), or reStructuredText) and split into modular topics rather than monolithic documents.
+3. **Version control:** Source files reside in a version control system like [Git](../git-from-file-to-content/) or Subversion, enabling parallel branch development, diff reviews, and safe rollbacks.
+4. **Profiling and automated delivery:** Build engines apply conditional filtering (profiling) to compile targeted deliverables across multiple formats—such as HTML, PDF, JavaHelp, or ePUB—from a single source base.
+
+## Traditional vs. integrated documentation
+
+The shift from isolated desktop publishing to an integrated pipeline resolves longstanding synchronization and quality bottlenecks:
+
+| Dimension | Traditional documentation | Integrated documentation (docs-as-code) |
+|---|---|---|
+| **Storage format** | Proprietary binary files (Word, FrameMaker, InDesign) | Plain-text formats (Markdown, XML, reStructuredText) |
+| **Version control** | Shared network drives or manual file copies | Version control systems ([Git](../version-control-systems/), Subversion) |
+| **Collaboration** | Sequential file locks, prone to overwritten edits | Concurrent branches, pull requests, and peer reviews |
+| **Publishing** | Manual formatting, manual export per deliverable | Automated CI/CD pipelines and programmatic profiling |
+| **Release cadence** | Frequently delayed weeks or months behind the code | Synchronized and released alongside the product build |
+
 ## Key principles
 
-Ideally, it should meet the following criteria:
+Ideally, an integrated documentation workflow should meet three core criteria:
 
-- no *vendor lock-in* (independence of format and content editor),
-- free and open publishing channels,
-- fully automated layout.
+- **No vendor lock-in:** Independence of format and content editor. Because sources are plain text, writers can edit them with any tool—from simple text editors to full-featured <abbr title="Integrated Development Environment">IDEs</abbr>—without proprietary software dependencies.
+- **Free and open publishing channels:** Toolchains built on open standards and open-source compilers ensure that documentation builds can run anywhere, including automated CI/CD servers.
+- **Fully automated layout:** Separation of content from presentation. Formatting rules are defined centrally in stylesheets and templates, eliminating manual desktop publishing adjustments.
 
-## Why it matters
+## Why text formats make integration possible
 
 Until a few years ago, the only tools available to deliver quality deliverables in PDF or HTML relied on binary and proprietary formats that didn't integrate well with development teams' [version control systems](../version-control-systems/).
 
@@ -35,8 +64,18 @@ As a result, technical documentation could not meet the same quality and time-to
 
 DocBook, then [DITA XML](../../formats/structured-vs-unstructured-formats/), and reStructuredText have changed all that: these text formats can be edited with any type of program, from a simple text editor to a graphical <abbr title="Integrated Development Environment">IDE</abbr>, integrating perfectly with Subversion, [Git](../git-from-file-to-content/), or any other version control system.
 
+## Putting integration into practice
+
+To apply these principles in production, consult the following resources from the practical toolkit:
+
+- **Audit and migration readiness:** Follow the [docs-as-code adoption checklist](../../toolkit/docs-as-code-adoption-checklist/) to assess format, tooling, and team prerequisites.
+- **Automated validation:** Review the [practical CI/CD pipeline example](../../toolkit/example-cicd-pipeline/) to see build gates, link checking, and preview deployments in action.
+- **Review workflow:** Study the [basic docs-as-code workflow](../../toolkit/example-docs-as-code-workflow/) to see how documentation branches, pull requests, and peer reviews mirror software development.
+
 ## Related articles
 
+- [Version management systems - rustic but reliable](../version-control-systems/)
+- [Git: from file to content](../git-from-file-to-content/)
 - [Using branches in source management systems](../using-branches/)
 - [A single repository?](../single-repository/)
 - [From document to modular document base](../../formats/modular-documentation/)
