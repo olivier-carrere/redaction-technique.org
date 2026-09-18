@@ -12,17 +12,17 @@ const lang = (Astro.locals as Record<string, any>)?.starlightRoute?.lang ?? 'en'
 <style>
   .author-byline {
     font-size: var(--sl-text-sm);
-    color: var(--sl-color-gray-3);
+    color: var(--color-text-muted);
     margin: 0 0 1.5rem;
   }
 
   .author-byline a {
-    color: var(--sl-color-gray-3);
+    color: var(--color-text-muted);
     text-decoration: underline;
     text-underline-offset: 2px;
   }
 
   .author-byline a:hover {
-    color: var(--sl-color-text-accent);
+    color: var(--color-accent);
   }
 </style>

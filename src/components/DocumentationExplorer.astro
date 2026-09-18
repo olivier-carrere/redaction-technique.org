@@ -695,14 +695,14 @@ const t = {
 
   /* Control Panel */
   .doc-explorer-panel {
-    background: var(--sl-color-gray-6);
-    border: 1px solid var(--sl-color-gray-5);
-    border-radius: 8px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
     padding: 1.25rem;
     display: flex;
     flex-direction: column;
     gap: 1.1rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    box-shadow: none;
   }
 
   /* Search row - Visually Prominent */
@@ -716,7 +716,7 @@ const t = {
   .doc-explorer-search-icon {
     position: absolute;
     left: 1rem;
-    color: var(--sl-color-gray-3);
+    color: var(--color-text-muted);
     pointer-events: none;
   }
 
@@ -725,23 +725,18 @@ const t = {
     padding: 0.75rem 2.5rem 0.75rem 2.85rem;
     font-size: 1.05rem;
     font-weight: 400;
-    color: var(--sl-color-white);
-    background: var(--sl-color-gray-7, #131418);
-    border: 1px solid var(--sl-color-gray-4);
-    border-radius: 6px;
+    color: var(--color-text);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
     outline: none;
-    transition: border-color 0.15s ease, box-shadow 0.15s ease;
-  }
-
-  :root[data-theme='light'] .doc-explorer-input {
-    color: var(--sl-color-black);
-    background: #ffffff;
-    border-color: var(--sl-color-gray-4);
+    transition: border-color 0.15s ease;
   }
 
   .doc-explorer-input:focus {
-    border-color: var(--sl-color-accent);
-    box-shadow: 0 0 0 3px var(--sl-color-accent-low);
+    border-color: var(--color-accent);
+    outline: 2px solid var(--color-accent);
+    outline-offset: -1px;
   }
 
   .doc-explorer-clear-btn {
@@ -749,11 +744,11 @@ const t = {
     right: 0.85rem;
     background: none;
     border: none;
-    color: var(--sl-color-gray-3);
+    color: var(--color-text-muted);
     cursor: pointer;
     font-size: 1rem;
     padding: 0.35rem 0.6rem;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -761,12 +756,8 @@ const t = {
   }
 
   .doc-explorer-clear-btn:hover {
-    color: var(--sl-color-white);
-    background: var(--sl-color-gray-5);
-  }
-
-  :root[data-theme='light'] .doc-explorer-clear-btn:hover {
-    color: var(--sl-color-black);
+    color: var(--color-text);
+    background: var(--color-surface);
   }
 
   /* Filters row - Compact and Secondary */
@@ -785,7 +776,7 @@ const t = {
   .doc-explorer-label {
     font-size: 0.75rem;
     font-weight: 600;
-    color: var(--sl-color-gray-3);
+    color: var(--color-text-muted);
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
@@ -793,23 +784,19 @@ const t = {
   .doc-explorer-select {
     padding: 0.45rem 0.65rem;
     font-size: var(--sl-text-sm);
-    color: var(--sl-color-white);
-    background: var(--sl-color-gray-7, #131418);
-    border: 1px solid var(--sl-color-gray-4);
-    border-radius: 6px;
+    color: var(--color-text);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
     outline: none;
     cursor: pointer;
     transition: border-color 0.15s ease;
   }
 
-  :root[data-theme='light'] .doc-explorer-select {
-    color: var(--sl-color-black);
-    background: #ffffff;
-  }
-
   .doc-explorer-select:focus {
-    border-color: var(--sl-color-accent);
-    box-shadow: 0 0 0 2px var(--sl-color-accent-low);
+    border-color: var(--color-accent);
+    outline: 2px solid var(--color-accent);
+    outline-offset: -1px;
   }
 
   /* Status Bar */
@@ -820,12 +807,12 @@ const t = {
     justify-content: space-between;
     gap: 0.75rem;
     padding-top: 0.65rem;
-    border-top: 1px solid var(--sl-color-gray-5);
+    border-top: 1px solid var(--color-border);
   }
 
   .doc-explorer-count {
     font-size: var(--sl-text-sm);
-    color: var(--sl-color-gray-2);
+    color: var(--color-text-muted);
     font-weight: 500;
   }
 
@@ -842,48 +829,48 @@ const t = {
     padding: 0.35rem 0.75rem;
     font-size: var(--sl-text-xs);
     font-weight: 600;
-    border-radius: 5px;
+    border-radius: var(--radius-sm);
     cursor: pointer;
     text-decoration: none;
     transition: all 0.15s ease;
   }
 
   .doc-explorer-btn-primary {
-    background: var(--sl-color-accent);
-    color: var(--sl-color-black);
-    border: 1px solid var(--sl-color-accent);
+    background: var(--color-accent);
+    color: #fff;
+    border: 1px solid var(--color-accent);
   }
 
   .doc-explorer-btn-primary:hover {
-    background: var(--sl-color-accent-high);
+    opacity: 0.88;
   }
 
   .doc-explorer-btn-outline {
     background: transparent;
-    color: var(--sl-color-text-accent, var(--sl-color-accent));
-    border: 1px solid var(--sl-color-gray-4);
+    color: var(--color-accent);
+    border: 1px solid var(--color-border);
   }
 
   .doc-explorer-btn-outline:hover {
-    background: var(--sl-color-gray-5);
-    border-color: var(--sl-color-gray-3);
+    background: var(--color-accent-soft);
+    border-color: var(--color-accent);
   }
 
   .doc-explorer-btn-ghost {
     background: transparent;
-    color: var(--sl-color-gray-3);
+    color: var(--color-text-muted);
     border: none;
     font-size: var(--sl-text-xs);
   }
 
   .doc-explorer-btn-ghost:hover {
-    color: var(--sl-color-white);
+    color: var(--color-text);
     text-decoration: underline;
   }
 
   .doc-explorer-btn-copied {
-    border-color: #10b981 !important;
-    color: #10b981 !important;
+    border-color: var(--color-success) !important;
+    color: var(--color-success) !important;
   }
 
   /* Results List */
@@ -895,19 +882,19 @@ const t = {
   }
 
   .doc-card {
-    background: var(--sl-color-gray-6);
-    border: 1px solid var(--sl-color-gray-5);
-    border-radius: 8px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
     padding: 1.15rem 1.25rem;
-    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    transition: border-color 0.15s ease;
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
+    box-shadow: none;
   }
 
   .doc-card:hover {
-    border-color: var(--sl-color-gray-4);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-color: var(--color-accent);
   }
 
   .doc-card-header {
@@ -924,16 +911,12 @@ const t = {
   }
 
   .doc-card-title-link {
-    color: var(--sl-color-white);
+    color: var(--color-text);
     text-decoration: none;
   }
 
-  :root[data-theme='light'] .doc-card-title-link {
-    color: var(--sl-color-black);
-  }
-
   .doc-card-title-link:hover {
-    color: var(--sl-color-accent);
+    color: var(--color-accent);
     text-decoration: underline;
   }
 
@@ -977,14 +960,14 @@ const t = {
 
   /* Role Badge Neutral */
   .doc-card-badge-role {
-    background: var(--color-surface);
+    background: var(--color-bg);
     color: var(--color-text-muted);
     border: 1px solid var(--color-border);
   }
 
   /* Language Badge */
   .doc-card-badge-lang {
-    background: var(--color-surface);
+    background: var(--color-bg);
     color: var(--color-text-muted);
     border: 1px solid var(--color-border);
     font-family: var(--font-mono);
@@ -993,7 +976,7 @@ const t = {
   .doc-card-desc {
     margin: 0 !important;
     font-size: var(--sl-text-sm);
-    color: var(--sl-color-gray-2);
+    color: var(--color-text-muted);
     line-height: 1.5;
   }
 
@@ -1005,7 +988,7 @@ const t = {
     gap: 0.5rem;
     margin-top: 0.35rem;
     padding-top: 0.65rem;
-    border-top: 1px solid var(--sl-color-gray-5);
+    border-top: 1px solid var(--color-border);
   }
 
   .doc-card-btn {
@@ -1015,7 +998,7 @@ const t = {
     font-size: var(--sl-text-xs);
     font-weight: 600;
     padding: 0.4rem 0.75rem;
-    border-radius: 5px;
+    border-radius: var(--radius-sm);
     text-decoration: none;
     cursor: pointer;
     transition: all 0.15s ease;
@@ -1023,81 +1006,60 @@ const t = {
 
   /* Primary Human reading action */
   .doc-card-btn-primary {
-    background: var(--sl-color-accent-low);
-    color: var(--sl-color-accent-high);
-    border: 1px solid var(--sl-color-accent);
+    background: var(--color-accent-soft);
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
   }
 
   .doc-card-btn-primary:hover {
-    background: var(--sl-color-accent);
-    color: var(--sl-color-black);
+    background: var(--color-accent);
+    color: #fff;
   }
 
   /* Distinct Machine / Markdown action */
   .doc-card-btn-markdown {
-    background: var(--sl-color-gray-5);
-    color: var(--sl-color-white);
-    border: 1px solid var(--sl-color-gray-4);
-    font-family: var(--sl-font-mono);
+    background: transparent;
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+    font-family: var(--font-mono);
     font-size: 0.72rem;
   }
 
-  :root[data-theme='light'] .doc-card-btn-markdown {
-    color: var(--sl-color-black);
-    background: #f1f5f9;
-    border-color: #cbd5e1;
-  }
-
   .doc-card-btn-markdown:hover {
-    color: var(--sl-color-accent);
-    border-color: var(--sl-color-accent);
+    color: var(--color-accent);
+    border-color: var(--color-accent);
   }
 
   /* Ask about this action */
   .doc-card-btn-ask {
-    background: var(--sl-color-gray-6);
-    color: var(--sl-color-gray-2);
-    border: 1px solid var(--sl-color-gray-4);
-  }
-
-  :root[data-theme='light'] .doc-card-btn-ask {
-    color: var(--sl-color-black);
-    background: #f8fafc;
-    border-color: #cbd5e1;
+    background: transparent;
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
   }
 
   .doc-card-btn-ask:hover {
-    color: var(--sl-color-white);
-    background: var(--sl-color-gray-5);
-    border-color: var(--sl-color-accent);
-  }
-
-  :root[data-theme='light'] .doc-card-btn-ask:hover {
-    color: #1e3a8a;
-    background: #eff6ff;
-    border-color: #2563eb;
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+    background: var(--color-accent-soft);
   }
 
   /* Copy Markdown URL action */
   .doc-card-btn-copy {
     background: transparent;
-    color: var(--sl-color-gray-3);
+    color: var(--color-text-muted);
     border: 1px solid transparent;
   }
 
   .doc-card-btn-copy:hover {
-    color: var(--sl-color-white);
-    background: var(--sl-color-gray-5);
-  }
-
-  :root[data-theme='light'] .doc-card-btn-copy:hover {
-    color: var(--sl-color-black);
+    color: var(--color-text);
+    background: var(--color-surface);
+    border-color: var(--color-border);
   }
 
   .doc-card-btn-copied {
-    color: #10b981 !important;
-    background: rgba(16, 185, 129, 0.1) !important;
-    border-color: rgba(16, 185, 129, 0.3) !important;
+    color: var(--color-success) !important;
+    background: rgba(71, 116, 92, 0.12) !important;
+    border-color: var(--color-success) !important;
   }
 
   /* Empty state */
@@ -1105,9 +1067,9 @@ const t = {
     margin-top: 2rem;
     text-align: center;
     padding: 3rem 1.5rem;
-    background: var(--sl-color-gray-6);
-    border: 1px dashed var(--sl-color-gray-4);
-    border-radius: 8px;
+    background: var(--color-surface);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-md);
   }
 
   .doc-explorer-empty-icon {
@@ -1118,18 +1080,40 @@ const t = {
   .doc-explorer-empty-title {
     font-size: 1.25rem;
     margin: 0 0 0.5rem !important;
-    color: var(--sl-color-white);
-  }
-
-  :root[data-theme='light'] .doc-explorer-empty-title {
-    color: var(--sl-color-black);
+    color: var(--color-text);
   }
 
   .doc-explorer-empty-desc {
     font-size: var(--sl-text-sm);
-    color: var(--sl-color-gray-3);
+    color: var(--color-text-muted);
     max-width: 480px;
     margin: 0 auto 1.25rem !important;
+  }
+
+  /* Responsive Design & Mobile Touch Targets (min 44px) */
+  @media (max-width: 640px) {
+    .doc-explorer-panel {
+      padding: 1rem;
+    }
+    .doc-explorer-input {
+      padding: 0.85rem 2.5rem 0.85rem 2.85rem;
+      min-height: 44px;
+    }
+    .doc-explorer-select {
+      min-height: 44px;
+      padding: 0.6rem 0.75rem;
+    }
+    .doc-explorer-filters-row {
+      grid-template-columns: 1fr;
+    }
+    .doc-card-actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .doc-card-btn {
+      min-height: 44px;
+      justify-content: center;
+    }
   }
 
   /* Responsive Design & Mobile Touch Targets (min 44px) */

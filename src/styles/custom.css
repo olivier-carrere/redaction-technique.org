@@ -8,7 +8,8 @@
    Authoritative Design Tokens Layer
    =================================================== */
 
-:root {
+:root,
+:root[data-theme='light'] {
   /* Core Palette (Default / Light) */
   --color-bg: #fcfbf8;
   --color-surface: #f4f1ec;
@@ -85,6 +86,17 @@
   --sl-color-red: var(--color-danger);
   --sl-color-red-high: var(--color-danger);
   --sl-color-red-low: rgba(167, 77, 77, 0.12);
+
+  /* Expressive Code Mapping (Light) */
+  --ec-codeFont: var(--font-mono);
+  --ec-codeFontSize: 0.9rem;
+  --ec-codeLineHt: 1.55;
+  --ec-frm-edBg: var(--color-code-bg);
+  --ec-frm-trmBg: var(--color-code-bg);
+  --ec-brdCol: var(--color-border);
+  --ec-brdRad: var(--radius-sm);
+  --ec-uiFont: var(--font-mono);
+  --ec-uiFontSize: 0.75rem;
 }
 
 /* ===================================================
@@ -139,6 +151,17 @@
   --sl-color-red: var(--color-danger);
   --sl-color-red-high: var(--color-danger);
   --sl-color-red-low: rgba(190, 91, 91, 0.2);
+
+  /* Expressive Code Mapping (Dark) */
+  --ec-codeFont: var(--font-mono);
+  --ec-codeFontSize: 0.9rem;
+  --ec-codeLineHt: 1.55;
+  --ec-frm-edBg: var(--color-code-bg);
+  --ec-frm-trmBg: var(--color-code-bg);
+  --ec-brdCol: var(--color-border);
+  --ec-brdRad: var(--radius-sm);
+  --ec-uiFont: var(--font-mono);
+  --ec-uiFontSize: 0.75rem;
 }
 
 /* ===================================================
@@ -165,6 +188,18 @@ body {
   max-width: var(--content-width);
 }
 
+@media (min-width: 72rem) {
+  .right-sidebar-container {
+    width: max(var(--toc-width), calc(var(--toc-width) + (100% - var(--sl-content-width) - var(--toc-width)) / 2)) !important;
+  }
+  .right-sidebar {
+    width: var(--toc-width) !important;
+  }
+  [data-has-sidebar][data-has-toc] .main-pane {
+    width: min(calc(100% - var(--toc-width)), calc(var(--sl-content-width) + (100% - var(--sl-content-width) - var(--toc-width)) / 2)) !important;
+  }
+}
+
 /* ===================================================
    HEADER (Step 6)
    =================================================== */
@@ -188,15 +223,27 @@ header.header {
   color: var(--color-accent) !important;
 }
 
-starlight-theme-select select,
-starlight-lang-select select {
-  font-family: var(--font-sans) !important;
-  font-size: 0.8125rem !important;
+starlight-theme-select label,
+starlight-lang-select label {
   background-color: var(--color-surface) !important;
   border: 1px solid var(--color-border) !important;
   border-radius: var(--radius-sm) !important;
   color: var(--color-text) !important;
-  padding: 0.25rem 0.65rem !important;
+  transition: border-color 0.15s ease !important;
+}
+
+starlight-theme-select label:hover,
+starlight-lang-select label:hover {
+  border-color: var(--color-accent) !important;
+}
+
+starlight-theme-select select,
+starlight-lang-select select {
+  font-family: var(--font-sans) !important;
+  font-size: 0.8125rem !important;
+  background: transparent !important;
+  border: none !important;
+  color: var(--color-text) !important;
 }
 
 starlight-theme-select select:focus-visible,
@@ -280,7 +327,7 @@ starlight-lang-select select:focus-visible {
   font-weight: 600 !important;
   color: var(--color-accent) !important;
   background: var(--color-accent-soft) !important;
-  border-left: 3px solid var(--color-accent) !important;
+  border-inline-start: 3px solid var(--color-accent) !important;
   border-radius: 0 !important;
   padding-inline-start: calc(var(--sl-sidebar-item-padding-inline, 0.5rem) - 3px) !important;
 }
@@ -419,7 +466,7 @@ starlight-toc nav ul ul a[aria-current='true'] {
 .sl-markdown-content > :first-child h2:not(:where(.not-content *)) {
   border-top: none !important;
   padding-top: 0 !important;
-  margin-top: 2rem !important;
+  margin-top: 3rem !important; /* 48px: intro -> first H2 */
 }
 
 .sl-markdown-content h3:not(:where(.not-content *)) {
@@ -541,17 +588,48 @@ starlight-toc nav ul ul a[aria-current='true'] {
 }
 
 .sl-markdown-content .expressive-code {
-  margin-block: 1rem 1.5rem !important;
+  margin-top: 1.25rem !important; /* 20px: body -> code block */
+  margin-bottom: 1.5rem !important; /* 24px: code block -> body */
   max-width: 100% !important;
+}
+
+.expressive-code .frame {
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-sm) !important;
+  box-shadow: none !important;
+  background: var(--color-code-bg) !important;
+}
+
+.expressive-code .frame .header {
+  background: var(--color-surface) !important;
+  border-bottom: 1px solid var(--color-border) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: var(--color-text-muted) !important;
 }
 
 .sl-markdown-content .expressive-code pre {
   padding: 0.85rem 1.15rem !important;
   font-size: 0.9em !important;
   line-height: 1.55 !important;
-  border: 1px solid var(--color-border) !important;
   border-radius: var(--radius-sm) !important;
   background: var(--color-code-bg) !important;
+}
+
+.expressive-code .copy button {
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-sm) !important;
+  background: var(--color-surface) !important;
+  color: var(--color-text-muted) !important;
+  opacity: 0.85 !important;
+  transition: opacity 0.15s ease, border-color 0.15s ease, color 0.15s ease !important;
+}
+
+.expressive-code .copy button:hover {
+  opacity: 1 !important;
+  border-color: var(--color-accent) !important;
+  color: var(--color-accent) !important;
 }
 
 .expressive-code .shell-prompt {
@@ -660,7 +738,7 @@ starlight-toc nav ul ul a[aria-current='true'] {
   padding: 0.75rem 1rem !important;
   border-radius: var(--radius-sm) !important;
   border: 1px solid var(--color-border) !important;
-  border-left: 3px solid var(--color-accent) !important;
+  border-inline-start: 3px solid var(--color-accent) !important;
   background-color: var(--color-surface) !important;
   box-shadow: none !important;
 }
@@ -690,31 +768,42 @@ starlight-toc nav ul ul a[aria-current='true'] {
 }
 
 .sl-markdown-content .starlight-aside--note {
-  border-left-color: var(--color-accent) !important;
+  border-inline-start-color: var(--color-accent) !important;
 }
 .sl-markdown-content .starlight-aside--note .starlight-aside__title {
   color: var(--color-accent) !important;
 }
 
 .sl-markdown-content .starlight-aside--tip {
-  border-left-color: var(--color-success) !important;
+  border-inline-start-color: var(--color-success) !important;
 }
 .sl-markdown-content .starlight-aside--tip .starlight-aside__title {
   color: var(--color-success) !important;
 }
 
-.sl-markdown-content .starlight-aside--caution {
-  border-left-color: var(--color-warning) !important;
+.sl-markdown-content .starlight-aside--caution,
+.sl-markdown-content .starlight-aside--warning {
+  border-inline-start-color: var(--color-warning) !important;
 }
-.sl-markdown-content .starlight-aside--caution .starlight-aside__title {
+.sl-markdown-content .starlight-aside--caution .starlight-aside__title,
+.sl-markdown-content .starlight-aside--warning .starlight-aside__title {
   color: var(--color-warning) !important;
 }
 
-.sl-markdown-content .starlight-aside--danger {
-  border-left-color: var(--color-danger) !important;
+.sl-markdown-content .starlight-aside--danger,
+.sl-markdown-content .starlight-aside--error {
+  border-inline-start-color: var(--color-danger) !important;
 }
-.sl-markdown-content .starlight-aside--danger .starlight-aside__title {
+.sl-markdown-content .starlight-aside--danger .starlight-aside__title,
+.sl-markdown-content .starlight-aside--error .starlight-aside__title {
   color: var(--color-danger) !important;
+}
+
+.sl-markdown-content .starlight-aside--important {
+  border-inline-start-color: var(--color-accent) !important;
+}
+.sl-markdown-content .starlight-aside--important .starlight-aside__title {
+  color: var(--color-accent) !important;
 }
 
 /* ===================================================
@@ -776,6 +865,23 @@ button[data-open-modal] kbd {
 .pagefind-ui__result-excerpt mark {
   background-color: var(--color-accent-soft) !important;
   color: var(--color-accent) !important;
+}
+
+site-search dialog {
+  background-color: var(--color-bg) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+  max-width: 42rem !important;
+}
+
+site-search dialog::backdrop {
+  background: rgba(36, 35, 33, 0.4) !important;
+  backdrop-filter: blur(2px);
+}
+
+:root[data-theme='dark'] site-search dialog::backdrop {
+  background: rgba(0, 0, 0, 0.65) !important;
 }
 
 /* ===================================================
