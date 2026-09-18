@@ -6,15 +6,27 @@ goal: [learn]
 contentType: concept
 ---
 
+import { CardGrid, Card } from '@astrojs/starlight/components';
+
 ## Definition
 
 Technical communication is like a light bulb. An energy-efficient bulb costs more up front, then quickly becomes cheaper to run — and an industrial documentation process behaves the same way. For a comparable, or only slightly higher, initial investment, it lowers costs, shortens time to market, and improves quality.
 
-| Concept                | Key points                                                                                                         |
-|------------------------|--------------------------------------------------------------------------------------------------------------------|
-| Lower cost             | less volume to create<br />elimination of repetitive updates<br />less volume to translate |
-| Reduced time to market | maximum reuse of content<br />zero risk of data loss                                     |
-| Improved quality       | easily optimizable information blocks<br />perfect consistency of corporate content       |
+<CardGrid>
+  <Card title='<span role="heading" aria-level="3">Lower cost</span>'>
+    - less volume to create
+    - elimination of repetitive updates
+    - less volume to translate
+  </Card>
+  <Card title='<span role="heading" aria-level="3">Reduced time to market</span>'>
+    - maximum reuse of content
+    - zero risk of data loss
+  </Card>
+  <Card title='<span role="heading" aria-level="3">Improved quality</span>'>
+    - easily optimizable information blocks
+    - perfect consistency of corporate content
+  </Card>
+</CardGrid>
 
 ## Key principles
 

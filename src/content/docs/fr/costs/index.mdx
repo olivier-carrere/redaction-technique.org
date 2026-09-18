@@ -6,15 +6,27 @@ goal: [learn]
 contentType: concept
 ---
 
+import { CardGrid, Card } from '@astrojs/starlight/components';
+
 ## Définition
 
 La communication technique, c'est comme une ampoule : une ampoule basse consommation demande un investissement plus important en début de cycle de vie, mais devient vite plus économique à l'usage — et un processus documentaire industriel fonctionne de la même façon. À coût initial comparable, voire légèrement supérieur, il diminue les coûts, réduit le *time to market* et améliore la qualité.
 
-| Concept                 | Points clés |
-|-------------------------|-------------|
-| Coût moindre            | moins de volume à créer<br />suppression des mises à jour répétitives<br />moins de volume à traduire |
-| *Time to market* réduit | réutilisation maximale du contenu<br />risque zéro de perte de données |
-| Qualité améliorée       | briques d'information facilement optimisables<br />cohérence parfaite du contenu d'entreprise |
+<CardGrid>
+  <Card title='<span role="heading" aria-level="3">Coût moindre</span>'>
+    - moins de volume à créer
+    - suppression des mises à jour répétitives
+    - moins de volume à traduire
+  </Card>
+  <Card title='<span role="heading" aria-level="3"><em>Time to market</em> réduit</span>'>
+    - réutilisation maximale du contenu
+    - risque zéro de perte de données
+  </Card>
+  <Card title='<span role="heading" aria-level="3">Qualité améliorée</span>'>
+    - briques d'information facilement optimisables
+    - cohérence parfaite du contenu d'entreprise
+  </Card>
+</CardGrid>
 
 ## Principes clés
 
