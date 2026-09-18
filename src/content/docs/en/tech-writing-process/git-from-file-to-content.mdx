@@ -44,34 +44,139 @@ The history of your project is not necessarily linear: you can have it follow se
 
 You can only create branches from a *commit*. Think of *commits* as roundabouts (with the road being your project's history) from which you can, if you wish, take your project in a different direction.
 
-If you create a branch, let's say *test*, while changes in your workspace have not been *committed* in your *master* branch, the changes you make will apply to the non-*committed* files in your workspace. If you make a mistake, you won't be able to restore the *status quo ante* of your files by returning to the *master* branch.
+A branch only contains *commits*. If you create a branch, let's say *test*, while your workspace contains uncommitted changes, these changes are not moved to *test*: they remain in your workspace and follow you when you switch branches. If you make a mistake, you won't be able to restore the *status quo ante* of your files by returning to the *master* branch.
 
 To save your work progressively, allowing you to return to a previous state at any time, you need to *commit* regularly and back up your workspace, including the *.git* directory, e.g., using rsync. When you decide to share your work, you can move, merge, or delete your *commits* before sending them as patches or storing them in a central repository.
 
 ## Overcoming documentation bottlenecks with Git branches
 
-Git branches make it easy to perform several unrelated tasks in parallel:
+Git branches make it easy to perform several unrelated tasks in parallel.
 
 Let's imagine the following work scenario:
 
-- You are asked to migrate a section from one document to another.
+- You are asked to migrate a section from one document to another (Task 1).
 - You send your proposal for validation.
-- Validation is slow, and you have to move on to other parts of the documents.
+- Validation is slow, and you have to move on to other parts of the documents (Task 2).
 
-How do you overcome this bottleneck? It's relatively simple:
+Rather than following a long sequence of commands, think in terms of situations: at each step, ask yourself *where the work lives* and *what state it is in*.
 
-1. By default, you work on the *master* branch. Your workspace contains modifications that you don't want to *commit* before validation.
-2. Create a new branch: `git checkout -b my-branch`.
-3. *Commit* your changes to the new branch: `git add my-files`, `git commit -m "my commit message"`.
-4. Return to the master branch: `git checkout master` and move on to your second task.
+### Park the first task
 
-   If your first task is not validated: return to the provisional branch (`git checkout my-branch`) and make a new commit, which you can merge with the previous one(s) after validation.
+You are on the *master* branch. Your workspace contains Task 1 modifications that you don't want to *commit* to *master* before validation. Create a branch from the current *commit*, then *commit* Task 1 to it:
 
-5. When you receive validation for the first task, put your work in progress aside: `git stash`.
-6. Merge the provisional branch with the master branch: `git merge my-branch`.
-7. Retrieve your work in progress: `git stash pop`.
+```bash
+git checkout -b my-branch
+git add my-files
+git commit -m "my commit message"
+```
 
-If you don’t need to run two tasks in parallel, you can simply work in your local workspace. To revert changes, use the `git reset --hard HEAD` command to overwrite your non-*committed* files in the local directory with those from the last *commit*.
+Creating the branch alone does not isolate anything: your uncommitted changes stay in the workspace. It is the *commit* that stores Task 1 in the history of *my-branch*. Task 1 is now safely stored in *my-branch*.
+
+### Work on another task
+
+Return to the *master* branch:
+
+```bash
+git checkout master
+```
+
+Your workspace now reflects *master*, without Task 1. Task 1 remains on its branch while Task 2 progresses on *master*:
+
+```text
+master      A          ← Task 2 in progress (workspace)
+             \
+my-branch     B        ← Task 1 (committed, awaiting validation)
+```
+
+### Resume or integrate the first task
+
+The next action depends on the state of Task 1.
+
+#### Task 1 needs changes
+
+Return to the branch, make the requested changes, and *commit* them:
+
+```bash
+git checkout my-branch
+
+# make changes
+
+git add my-files
+git commit -m "address validation feedback"
+```
+
+Repeat as often as necessary, then return to *master* with `git checkout master`. You can merge these *commits* into a single one after validation (see [Organizing your history with git rebase](#organizing-your-history-with-git-rebase)).
+
+If Task 2 has uncommitted changes, set them aside with `git stash` before switching branches, and retrieve them with `git stash pop` once you are back on *master*. Otherwise, they follow you to *my-branch*, or Git refuses to switch.
+
+#### Task 1 is validated
+
+Merge *my-branch* into *master*. If Task 2 has uncommitted changes, put them aside first:
+
+```bash
+git stash
+git merge my-branch
+git stash pop
+```
+
+The stash is needed because Task 2 exists only in your workspace, not in a *commit*. Git refuses to merge if the merge would overwrite files you are modifying, and mixing a merge with work in progress makes both harder to check. `git stash` gives you a clean workspace for the merge, and `git stash pop` puts Task 2 back on top of the result:
+
+```text
+master      A───B      ← Task 1 integrated
+                       ← Task 2 restored in the workspace (git stash pop)
+```
+
+Keep this distinction in mind: the branch contains the history of the task, while the workspace contains whatever you are currently editing.
+
+### Working on two branches simultaneously
+
+Switching branches in a single workspace is fine when you move from one task to the other occasionally. If you genuinely need to work on two branches simultaneously, use `git worktree`: it associates an additional working directory with a branch of the same repository.
+
+```bash
+git worktree add ../task-1 my-branch
+```
+
+You now have two working directories side by side, each with its own branch and its own work in progress:
+
+```text
+project/    → master    → Task 2
+task-1/     → my-branch → Task 1
+```
+
+You edit and *commit* Task 1 in *task-1/*, and Task 2 in *project/*. There is no need to stash Task 2 simply to switch branches: you change directories instead.
+
+When Task 1 is validated, merge it from the main working directory:
+
+```bash
+cd project
+git merge my-branch
+```
+
+The *commits* made in *task-1/* are already visible from *project/*, as both directories share the same repository. If the merge touches files that Task 2 is still modifying, *commit* or stash Task 2 first. You can then delete the additional working directory with `git worktree remove ../task-1`.
+
+:::tip
+Use a branch when you need to isolate a task. Use `git worktree` when you need to work on two branches simultaneously in separate directories.
+:::
+
+### Discarding uncommitted changes
+
+If you don't need to run two tasks in parallel, you can simply work in your local workspace. To discard your uncommitted changes to tracked files, restore them from Git:
+
+```bash
+git restore .
+```
+
+or, for a single file:
+
+```bash
+git restore path/to/my-file
+```
+
+These commands discard the unstaged changes to the specified tracked files. Changes already added to the index with `git add` are kept; untracked files are not affected.
+
+:::caution
+`git reset --hard HEAD` is more destructive: it resets both the index and the working tree to `HEAD`. It can permanently discard all uncommitted changes to tracked files, staged or not.
+:::
 
 ## Organizing your history with git rebase
 
@@ -105,7 +210,7 @@ When placing your *commits* on the central repository, some will represent inter
 Fortunately, Git facilitates reorganizing your *commits* before sharing them. Use the `git rebase -i HEAD~5` command to reorganize your *commits* from the current version to the previous five, for example.
 
 :::caution
-The *rebase* command is potentially destructive; ensure you back up your workspace, including the *.git* directory, before running it, or risk losing data. You can also create a temporary backup branch.
+The *rebase* command is potentially destructive; ensure you back up your workspace, including the *.git* directory, before running it, or risk losing data. You can also create a temporary backup branch. Because *rebase* rewrites history, only reorganize *commits* you haven't shared yet: rebasing history that others have already retrieved forces them to reconcile diverging versions.
 :::
 
 You can then rewrite history to offer your collaborators a *commit* for each completed task, as shown in the following diagram:
