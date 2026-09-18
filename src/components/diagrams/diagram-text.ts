@@ -295,6 +295,18 @@ export const DIAGRAM_TEXT: Record<string, Record<"en" | "fr", DiagramText>> = {
         "Diagramme en quadrants positionnant six supports de communication selon leur niveau technique et leur valeur marketing. L'animation est peu technique et à forte valeur marketing. Le guide de l'utilisateur est très technique et à faible valeur marketing. Le livre blanc est élevé sur les deux axes. Le magazine d'entreprise est faible sur les deux. La plaquette et le site web se situent au milieu.",
     },
   },
+  MergedTaskHistoryDiagram: {
+    en: {
+      title: "master after merging Task 1",
+      description:
+        "Git history of the master branch: commit A followed by commit B, where Task 1 is now integrated.",
+    },
+    fr: {
+      title: "master après la fusion de la tâche 1",
+      description:
+        "Historique Git de la branche master : le commit A suivi du commit B, où la tâche 1 est désormais intégrée.",
+    },
+  },
   ModularConrefBlocksDiagram: {
     en: {
       title: "Conrefs modularize small information blocks",
@@ -349,6 +361,18 @@ export const DIAGRAM_TEXT: Record<string, Record<"en" | "fr", DiagramText>> = {
       title: "Imbriquer les conref sur plusieurs niveaux est risqué",
       description:
         "Schéma montrant trois niveaux d'imbrication de conref, un conref pointant vers un conref pointant vers un autre conref.",
+    },
+  },
+  ParkedTaskBranchDiagram: {
+    en: {
+      title: "Task 1 parked on its branch while Task 2 progresses on master",
+      description:
+        "Git history with two branches: master points to commit A, with Task 2 in progress in the workspace; my-branch forks from commit A and points to commit B, where Task 1 is committed.",
+    },
+    fr: {
+      title: "La tâche 1 mise de côté sur sa branche pendant que la tâche 2 avance sur master",
+      description:
+        "Historique Git à deux branches : master pointe sur le commit A, avec la tâche 2 en cours dans l'espace de travail ; ma-branche part du commit A et pointe sur le commit B, où la tâche 1 est commitée.",
     },
   },
   PhotoWorkflowDiagram: {

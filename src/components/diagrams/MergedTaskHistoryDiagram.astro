@@ -1,0 +1,19 @@
+---
+// Replaces the text diagram in "Task 1 is validated":
+// src/content/docs/{en,fr}/tech-writing-process/git-from-file-to-content.mdx
+import GitGraphDiagram from './GitGraphDiagram.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.MergedTaskHistoryDiagram[lang];
+
+const copy = {
+  en: { branches: [{ name: 'master', note: 'Task 1 integrated' }] },
+  fr: { branches: [{ name: 'master', note: 'tâche 1 intégrée' }] },
+}[lang];
+
+const commits = [{ id: 'A' }, { id: 'B' }];
+---
+
+<GitGraphDiagram title={text.title} description={text.description} branches={copy.branches} commits={commits} />

@@ -6,6 +6,8 @@ contentType: concept
 ---
 import InterleavedCommitHistoryDiagram from '../../../../components/diagrams/InterleavedCommitHistoryDiagram.astro';
 import GroupedCommitHistoryDiagram from '../../../../components/diagrams/GroupedCommitHistoryDiagram.astro';
+import ParkedTaskBranchDiagram from '../../../../components/diagrams/ParkedTaskBranchDiagram.astro';
+import MergedTaskHistoryDiagram from '../../../../components/diagrams/MergedTaskHistoryDiagram.astro';
 
 :::note
 
@@ -76,11 +78,7 @@ git checkout master
 
 Votre espace de travail reflète maintenant *master*, sans la tâche 1. La tâche 1 reste sur sa branche pendant que la tâche 2 avance sur *master* :
 
-```text
-master      A   tâche 2 (espace de travail)
-             \
-ma-branche    B  tâche 1 (commitée)
-```
+<ParkedTaskBranchDiagram />
 
 ### Reprendre ou intégrer la première tâche
 
@@ -119,9 +117,7 @@ git stash pop
 
 Le *stash* est nécessaire, car la tâche 2 n'existe que dans votre espace de travail, et non dans un *commit*. Git refuse la fusion si elle risque d'écraser des fichiers que vous êtes en train de modifier, et mêler une fusion à un travail en cours rend l'un et l'autre plus difficiles à vérifier. `git stash` vous donne un espace de travail propre pour la fusion, et `git stash pop` rétablit la tâche 2 dans l'espace de travail, par-dessus le résultat :
 
-```text
-master      A───B   tâche 1 intégrée
-```
+<MergedTaskHistoryDiagram />
 
 Si `git stash pop` signale un conflit, les tâches 1 et 2 ont modifié les mêmes lignes. Résolvez le conflit dans les fichiers indiqués, puis supprimez l'entrée de *stash*, que Git conserve au cas où vous en auriez encore besoin, avec `git stash drop`.
 

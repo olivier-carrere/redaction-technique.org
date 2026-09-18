@@ -8,6 +8,8 @@ contentType: concept
 
 import InterleavedCommitHistoryDiagram from '../../../../components/diagrams/InterleavedCommitHistoryDiagram.astro';
 import GroupedCommitHistoryDiagram from '../../../../components/diagrams/GroupedCommitHistoryDiagram.astro';
+import ParkedTaskBranchDiagram from '../../../../components/diagrams/ParkedTaskBranchDiagram.astro';
+import MergedTaskHistoryDiagram from '../../../../components/diagrams/MergedTaskHistoryDiagram.astro';
 
 :::note
 Are you used to handling files? Git invites you to think differently. The advantage: you have much greater control over your content.
@@ -77,11 +79,7 @@ git checkout master
 
 Your workspace now reflects *master*, without Task 1. Task 1 remains on its branch while Task 2 progresses on *master*:
 
-```text
-master      A   Task 2 (workspace)
-             \
-my-branch     B  Task 1 (committed)
-```
+<ParkedTaskBranchDiagram />
 
 ### Resume or integrate the first task
 
@@ -120,9 +118,7 @@ git stash pop
 
 The stash is needed because Task 2 exists only in your workspace, not in a *commit*. Git refuses to merge if the merge would overwrite files you are modifying, and mixing a merge with work in progress makes both harder to check. `git stash` gives you a clean workspace for the merge, and `git stash pop` puts Task 2 back in the workspace, on top of the result:
 
-```text
-master      A───B   Task 1 integrated
-```
+<MergedTaskHistoryDiagram />
 
 If `git stash pop` reports a conflict, Task 1 and Task 2 changed the same lines. Resolve the conflict in the files listed, then delete the stash entry, which Git keeps in case you need it again, with `git stash drop`.
 

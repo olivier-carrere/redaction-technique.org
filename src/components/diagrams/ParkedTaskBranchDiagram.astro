@@ -1,0 +1,32 @@
+---
+// Replaces the text diagram in "Work on another task":
+// src/content/docs/{en,fr}/tech-writing-process/git-from-file-to-content.mdx
+import GitGraphDiagram from './GitGraphDiagram.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.ParkedTaskBranchDiagram[lang];
+
+const copy = {
+  en: {
+    branches: [
+      { name: 'master', note: 'Task 2 (workspace)' },
+      { name: 'my-branch', note: 'Task 1 (committed)' },
+    ],
+  },
+  fr: {
+    branches: [
+      { name: 'master', note: 'tâche 2 (espace de travail)' },
+      { name: 'ma-branche', note: 'tâche 1 (commitée)' },
+    ],
+  },
+}[lang];
+
+const commits = [
+  { id: 'A', branch: 0 },
+  { id: 'B', branch: 1 },
+];
+---
+
+<GitGraphDiagram title={text.title} description={text.description} branches={copy.branches} commits={commits} />
