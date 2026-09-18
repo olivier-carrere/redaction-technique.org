@@ -6,6 +6,7 @@ goal: [structured-authoring]
 contentType: concept
 ---
 import ComplexVsComplicatedDiagram from '../../../../components/diagrams/ComplexVsComplicatedDiagram.astro';
+import { CardGrid, Card } from '@astrojs/starlight/components';
 
 ## Definition
 
@@ -20,13 +21,19 @@ While DITA XML projects are more *complex*, they are still less *complicated* th
 
 ## Examples
 
-The following table presents the different levels of complexity introduced by DITA XML and the solutions that help the technical writer manage them more effectively:
+The following overview presents the different levels of complexity introduced by DITA XML and the solutions that help the technical writer manage them more effectively:
 
-| Complexity                                                | Solution                                                                           |
-|-----------------------------------------------------------|------------------------------------------------------------------------------------|
-| DITA XML syntax                                           | <abbr title="Integrated Development Environment">IDE</abbr> such as XMetaL or nXML |
-| Relationship management between atomic information building blocks | A dedicated <abbr title="Content Management System">CMS</abbr> such as Componize or DocZone    |
-| XSLT stylesheet syntax                                    | Graphical stylesheet creation software                                             |
+<CardGrid>
+  <Card title='<span role="heading" aria-level="3">DITA XML syntax</span>'>
+    **Solution:** <abbr title="Integrated Development Environment">IDE</abbr> such as XMetaL or nXML
+  </Card>
+  <Card title='<span role="heading" aria-level="3">Relationship management between atomic information building blocks</span>'>
+    **Solution:** A dedicated <abbr title="Content Management System">CMS</abbr> such as Componize or DocZone
+  </Card>
+  <Card title='<span role="heading" aria-level="3">XSLT stylesheet syntax</span>'>
+    **Solution:** Graphical stylesheet creation software
+  </Card>
+</CardGrid>
 
 For a small technical writing team, the primary challenge will be applying the company's visual identity to the output. Other aspects can be managed without specialized tools, through effective communication and a series of best practices — one of the most important being the [KISS principle of simplicity](../../costs/kiss-principle/).
 

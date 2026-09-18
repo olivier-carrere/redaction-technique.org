@@ -5,6 +5,7 @@ goal: [structured-authoring]
 contentType: concept
 ---
 import ComplexVsComplicatedDiagram from '../../../../components/diagrams/ComplexVsComplicatedDiagram.astro';
+import { CardGrid, Card } from '@astrojs/starlight/components';
 
 ## Définition
 
@@ -19,12 +20,18 @@ Si les projets DITA XML sont plus *complexes*, ils sont cependant moins *compliq
 
 ## Exemples
 
-Le tableau suivant présente les différents niveaux de complexité induits par DITA XML et les solutions qui permettent au rédacteur technique de les maîtriser plus facilement :
+La présentation suivante expose les différents niveaux de complexité induits par DITA XML et les solutions qui permettent au rédacteur technique de les maîtriser plus facilement :
 
-| Complexité | Solution |
-| --- | --- |
-| Syntaxe DITA XML | <abbr title="Integrated Development Environment">IDE</abbr> tel que XMetaL ou nXML |
-| Gestion des relations entre des briques d'information atomiques | <abbr title="Content Management System">CMS</abbr> dédié tel que Componize ou DocZone |
-| Syntaxe de la feuille de style XSLT | Logiciel graphique de création de feuilles de style |
+<CardGrid>
+  <Card title='<span role="heading" aria-level="3">Syntaxe DITA XML</span>'>
+    **Solution :** <abbr title="Integrated Development Environment">IDE</abbr> tel que XMetaL ou nXML
+  </Card>
+  <Card title='<span role="heading" aria-level="3">Gestion des relations entre des briques d&apos;information atomiques</span>'>
+    **Solution :** <abbr title="Content Management System">CMS</abbr> dédié tel que Componize ou DocZone
+  </Card>
+  <Card title='<span role="heading" aria-level="3">Syntaxe de la feuille de style XSLT</span>'>
+    **Solution :** Logiciel graphique de création de feuilles de style
+  </Card>
+</CardGrid>
 
 Pour une petite équipe de rédaction technique, l'écueil principal sera la nécessité de mettre en œuvre la charte graphique de l'entreprise. Les autres aspects peuvent être gérés sans outil spécialisé, avec une bonne communication et une série de bonnes pratiques.

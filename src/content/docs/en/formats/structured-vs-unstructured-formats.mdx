@@ -6,6 +6,7 @@ goal: [structured-authoring, learn]
 contentType: concept
 ---
 
+import { CardGrid, Card } from '@astrojs/starlight/components';
 import DitaRenameBox from '../../../../components/DitaRenameBox.astro';
 import StructuredVsUnstructuredDiagram from '../../../../components/diagrams/StructuredVsUnstructuredDiagram.astro';
 import RawToJpegChainDiagram from '../../../../components/diagrams/RawToJpegChainDiagram.astro';
@@ -23,11 +24,17 @@ Structured formats promote the creation of minimalist, complete, and coherent do
 
 The information contained in a technical document can be categorized according to its meaning. By default, [DITA XML](../dita-xml-case-studies/) offers three basic types:
 
-| Type      | Description                                                         |
-|-----------|---------------------------------------------------------------------|
-| concept   | Introduction or presentation of a concept.                          |
-| task      | Sequential, numbered, step-by-step procedure for performing a task. |
-| reference | Reference information on a list of items, such as program options.  |
+<CardGrid>
+  <Card title='<span role="heading" aria-level="3">concept</span>'>
+    Introduction or presentation of a concept.
+  </Card>
+  <Card title='<span role="heading" aria-level="3">task</span>'>
+    Sequential, numbered, step-by-step procedure for performing a task.
+  </Card>
+  <Card title='<span role="heading" aria-level="3">reference</span>'>
+    Reference information on a list of items, such as program options.
+  </Card>
+</CardGrid>
 
 <StructuredVsUnstructuredDiagram />
 **Structured and unstructured formats**
@@ -54,11 +61,17 @@ High-level information types such as task are divided into lower-level types, fo
 
 Syntax rules prohibit the technical writer from including a step-by-step procedure in a section of any type other than task. This provides the technical writer with a real writing model to help them present information:
 
-| Characteristic | Description                                                                                                                                                             |
-|----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Minimalist     | A task section contains only prerequisites, a procedure, and a few other specific elements. All conceptual or reference information is placed in separate sections.     |
-| Comprehensive  | A task section without a procedure is not a valid DITA XML section and cannot be published. It is possible to implement a mechanism to automatically check for the presence of mandatory information blocks as defined by the DITA XML XSD schema. |
-| Consistent     | Information of the same type is presented in the same order and with the same layout; identical blocks of information repeated in different places, such as a remark, come from the same source and are therefore strictly identical.                |
+<CardGrid>
+  <Card title='<span role="heading" aria-level="3">Minimalist</span>'>
+    A task section contains only prerequisites, a procedure, and a few other specific elements. All conceptual or reference information is placed in separate sections.
+  </Card>
+  <Card title='<span role="heading" aria-level="3">Comprehensive</span>'>
+    A task section without a procedure is not a valid DITA XML section and cannot be published. It is possible to implement a mechanism to automatically check for the presence of mandatory information blocks as defined by the DITA XML XSD schema.
+  </Card>
+  <Card title='<span role="heading" aria-level="3">Consistent</span>'>
+    Information of the same type is presented in the same order and with the same layout; identical blocks of information repeated in different places, such as a remark, come from the same source and are therefore strictly identical.
+  </Card>
+</CardGrid>
 
 ## DocBook vs DITA XML: choosing a structured authoring format
 

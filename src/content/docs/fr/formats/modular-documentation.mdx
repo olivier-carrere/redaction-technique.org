@@ -7,6 +7,7 @@ contentType: concept
 import MonolithicVsModularDiagram from '../../../../components/diagrams/MonolithicVsModularDiagram.astro';
 import DitamapTreeDiagram from '../../../../components/diagrams/DitamapTreeDiagram.astro';
 import SingleSourceMultipleTargetsDiagram from '../../../../components/diagrams/SingleSourceMultipleTargetsDiagram.astro';
+import { CardGrid, Card } from '@astrojs/starlight/components';
 
 ## Définition
 
@@ -29,10 +30,14 @@ Si votre entreprise fournit à ses clients une documentation technique au format
 
 Avec un format texte tel que DITA XML, le rédacteur technique et le lecteur disposent de supports largement différents :
 
-| Rôle                | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-|---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Rédacteur technique | Le rédacteur technique manipule des fichiers sources ; il utilise les balises pour construire le document en marquant les éléments d'information qu'il crée ou réutilise. Les balises sont imbriquées comme des poupées russes organisées selon une syntaxe rigoureuse. Le fichier source n'est pas au format WYSIWYG : la mise en page sera appliquée lors de la transformation des fichiers sources en fichiers cibles (autrement dit, lors de la génération des livrables). Certains logiciels graphiques tels que XMetaL, Oxygen ou FrameMaker structuré proposent le format <abbr title="what you see is what you mean">WYSIWYM</abbr>, où les balises sont remplacées à l'écran par une mise en forme générique, différente de l'aspect final du document. L'intérêt d'un langage à balises est de voir exactement ce que l'on fait en manipulant soi-même les balises sans déléguer l'interprétation à un logiciel graphique. |
-| Utilisateur         | Seul le contenu est présenté au lecteur dans le fichier cible ; le texte marqué par des balises dans les fichiers sources a une mise en valeur typographique dont le sens est explicité dans la section Conventions typographiques du document final.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+<CardGrid>
+  <Card title='<span role="heading" aria-level="3">Rédacteur technique</span>'>
+    Le rédacteur technique manipule des fichiers sources ; il utilise les balises pour construire le document en marquant les éléments d'information qu'il crée ou réutilise. Les balises sont imbriquées comme des poupées russes organisées selon une syntaxe rigoureuse. Le fichier source n'est pas au format WYSIWYG : la mise en page sera appliquée lors de la transformation des fichiers sources en fichiers cibles (autrement dit, lors de la génération des livrables). Certains logiciels graphiques tels que XMetaL, Oxygen ou FrameMaker structuré proposent le format <abbr title="what you see is what you mean">WYSIWYM</abbr>, où les balises sont remplacées à l'écran par une mise en forme générique, différente de l'aspect final du document. L'intérêt d'un langage à balises est de voir exactement ce que l'on fait en manipulant soi-même les balises sans déléguer l'interprétation à un logiciel graphique.
+  </Card>
+  <Card title='<span role="heading" aria-level="3">Utilisateur</span>'>
+    Seul le contenu est présenté au lecteur dans le fichier cible ; le texte marqué par des balises dans les fichiers sources a une mise en valeur typographique dont le sens est explicité dans la section Conventions typographiques du document final.
+  </Card>
+</CardGrid>
 
 
 Un fichier source DITA XML mélange du texte et des balises, délimitées par les signes < et >. Le texte proprement dit est encapsulé dans un jeu de balises ouvrantes de type <balise> et de balises fermantes de type </balise> selon le schéma <balise>texte</balise>. Tout texte entré hors d'une balise ouvrante et fermante est incorrect et produit un fichier non valide.
@@ -60,12 +65,20 @@ Les briques d'information peuvent être assemblées à la demande dans des struc
 
 L'organisation de l'information sous DITA XML n'est pas figée. Les briques peuvent être organisées dans différentes structures hiérarchiques, selon l'évolution des besoins. Si le rédacteur technique a pris soin de construire des briques d'information atomiques et génériques, il peut, à l'instar d'un constructeur automobile proposant sans cesse de nouveaux modèles par assemblage d'éléments standardisés, proposer par exemple les documents suivants :
 
-| Document                 | Contenu                                                              |
-|--------------------------|----------------------------------------------------------------------|
-| Guide de l'utilisateur   | Thèmes systématiquement organisés en concept et procédures pas à pas |
-| Document de présentation | Concepts                                                             |
-| Quickstart                | Procédures pas à pas                                                 |
-| Manuel de référence      | Informations de référence                                            |
+<CardGrid>
+  <Card title='<span role="heading" aria-level="3">Guide de l&apos;utilisateur</span>'>
+    **Contenu :** Thèmes systématiquement organisés en concept et procédures pas à pas
+  </Card>
+  <Card title='<span role="heading" aria-level="3">Document de présentation</span>'>
+    **Contenu :** Concepts
+  </Card>
+  <Card title='<span role="heading" aria-level="3">Quickstart</span>'>
+    **Contenu :** Procédures pas à pas
+  </Card>
+  <Card title='<span role="heading" aria-level="3">Manuel de référence</span>'>
+    **Contenu :** Informations de référence
+  </Card>
+</CardGrid>
 
 <DitamapTreeDiagram />
 **Une *ditamap* organise les topics en arborescence.**

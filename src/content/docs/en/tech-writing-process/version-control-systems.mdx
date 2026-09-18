@@ -6,6 +6,7 @@ goal: [docs-as-code]
 contentType: concept
 ---
 
+import { CardGrid, Card } from '@astrojs/starlight/components';
 import TrunkVersionHistoryDiagram from '../../../../components/diagrams/TrunkVersionHistoryDiagram.astro';
 
 ## Definition
@@ -34,11 +35,17 @@ Graphical user interfaces now allow these tools, initially designed for command-
 
 Source management systems use the following concepts:
 
-| Element | Description                                                                                                                             |
-|---------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| Trunk   | Main repository holding all versions of files submitted over time by the technical writer (or more frequently, the developer).       |
-| Branch  | Secondary repository created from the main version of the source code.                                                                  |
-| Tag     | A snapshot of the trunk or branch at a given time, allowing you to easily freeze a version, such as the published version, and create an archive. |
+<CardGrid>
+  <Card title='<span role="heading" aria-level="3">Trunk</span>'>
+    Main repository holding all versions of files submitted over time by the technical writer (or more frequently, the developer).
+  </Card>
+  <Card title='<span role="heading" aria-level="3">Branch</span>'>
+    Secondary repository created from the main version of the source code.
+  </Card>
+  <Card title='<span role="heading" aria-level="3">Tag</span>'>
+    A snapshot of the trunk or branch at a given time, allowing you to easily freeze a version, such as the published version, and create an archive.
+  </Card>
+</CardGrid>
 
 Improper use of version management systems can result in data loss, but with the appropriate level of effort and skill, the risk is significantly lower if the technical writer handles text files under a version manager rather than binary files on a shared directory.
 

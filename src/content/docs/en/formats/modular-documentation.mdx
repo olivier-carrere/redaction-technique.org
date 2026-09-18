@@ -9,6 +9,7 @@ contentType: concept
 import MonolithicVsModularDiagram from '../../../../components/diagrams/MonolithicVsModularDiagram.astro';
 import DitamapTreeDiagram from '../../../../components/diagrams/DitamapTreeDiagram.astro';
 import SingleSourceMultipleTargetsDiagram from '../../../../components/diagrams/SingleSourceMultipleTargetsDiagram.astro';
+import { CardGrid, Card } from '@astrojs/starlight/components';
 
 ## Definition
 
@@ -31,10 +32,14 @@ If your company provides customers with technical documentation in MS Word forma
 
 With a text format like DITA XML, the technical writer and reader have very different media at their disposal:
 
-| Role             | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Technical writer | The technical writer manipulates source files using tags to construct the document, marking the information elements they create or reuse. Tags are nested like Russian dolls, according to a rigorous syntax. The source file is not in WYSIWYG format; the layout is applied when the source files are transformed into target files, i.e., when the deliverables are generated. Some graphics software, such as XMetaL, Oxygen, or structured FrameMaker, offer the <abbr title="What You See Is What You Mean">WYSIWYM</abbr> format, where tags are replaced on screen by a generic layout, different from the document's final appearance. The advantage of a markup language is that you can see exactly what you're doing by manipulating the markup yourself, without delegating interpretation to graphics software. |
-| User             | Only content is presented to the reader in the target file; text marked with tags in source files has a typographical emphasis, the meaning of which is explained in the Typographical Conventions section of the final document.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+<CardGrid>
+  <Card title='<span role="heading" aria-level="3">Technical writer</span>'>
+    The technical writer manipulates source files using tags to construct the document, marking the information elements they create or reuse. Tags are nested like Russian dolls, according to a rigorous syntax. The source file is not in WYSIWYG format; the layout is applied when the source files are transformed into target files, i.e., when the deliverables are generated. Some graphics software, such as XMetaL, Oxygen, or structured FrameMaker, offer the <abbr title="What You See Is What You Mean">WYSIWYM</abbr> format, where tags are replaced on screen by a generic layout, different from the document's final appearance. The advantage of a markup language is that you can see exactly what you're doing by manipulating the markup yourself, without delegating interpretation to graphics software.
+  </Card>
+  <Card title='<span role="heading" aria-level="3">User</span>'>
+    Only content is presented to the reader in the target file; text marked with tags in source files has a typographical emphasis, the meaning of which is explained in the Typographical Conventions section of the final document.
+  </Card>
+</CardGrid>
 
 A DITA XML source file is a mixture of text and tags, delimited by the `<` and `>` signs. The text itself is encapsulated in a set of opening tags of type `<tag>` and closing tags of type `</tag>` according to the `<tag>text</tag>` scheme. Any text entered outside an opening and closing tag is incorrect and produces an invalid file.
 
@@ -60,12 +65,20 @@ Information building blocks can be assembled on demand in external table of cont
 
 The organization of information in DITA XML is flexible. Building blocks can be organized in different hierarchical structures according to changing needs. If the technical writer carefully builds atomic and generic information building blocks, they can, similar to a car manufacturer constantly proposing new models by assembling standardized elements, create the following documents:
 
-| Document               | Content it assembles                 |
-|------------------------|--------------------------------------|
-| User guide             | Concepts and step-by-step procedures |
-| Presentation document  | Concepts                             |
-| Quick start guide      | Step-by-step procedures              |
-| Reference manual       | Reference information                |
+<CardGrid>
+  <Card title='<span role="heading" aria-level="3">User guide</span>'>
+    **Content it assembles:** Concepts and step-by-step procedures
+  </Card>
+  <Card title='<span role="heading" aria-level="3">Presentation document</span>'>
+    **Content it assembles:** Concepts
+  </Card>
+  <Card title='<span role="heading" aria-level="3">Quick start guide</span>'>
+    **Content it assembles:** Step-by-step procedures
+  </Card>
+  <Card title='<span role="heading" aria-level="3">Reference manual</span>'>
+    **Content it assembles:** Reference information
+  </Card>
+</CardGrid>
 
 <DitamapTreeDiagram />
 **A *ditamap* organizes topics into a tree.**
