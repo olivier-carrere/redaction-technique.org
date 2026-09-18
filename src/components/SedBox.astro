@@ -358,19 +358,19 @@ const editable = variants.editable === true;
 
 <style is:global>
   .sedbox {
-    --sb-surface: #ffffff;
-    --sb-ink: #15223b;
-    --sb-muted: #5a6a84;
-    --sb-accent: #2f6fed;
-    --sb-line: #d5dce7;
+    --sb-surface: var(--color-bg);
+    --sb-ink: var(--color-text);
+    --sb-muted: var(--color-text-muted);
+    --sb-accent: var(--color-accent);
+    --sb-line: var(--color-border);
 
-    background: #e7ebf1;
+    background: var(--color-surface);
     color: var(--sb-ink);
-    font-family: var(--sl-font);
+    font-family: var(--font-sans);
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
     border: 1px solid var(--sb-line);
-    border-radius: 14px;
+    border-radius: var(--radius-md);
     padding: 20px 20px 22px;
     margin: 1.6rem 0;
   }
@@ -379,7 +379,7 @@ const editable = variants.editable === true;
   }
   .sedbox label {
     display: block;
-    font-family: var(--sl-font-mono);
+    font-family: var(--font-mono);
     font-size: 11px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -392,10 +392,11 @@ const editable = variants.editable === true;
   .sedbox .cmd {
     margin: 0 0 6px;
     padding: 10px 12px;
-    background: #0f1b2d;
-    color: #e6ecf5;
-    border-radius: 8px;
-    font-family: var(--sl-font-mono);
+    background: var(--color-code-bg);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
     font-size: 12.5px;
     line-height: 1.6;
     white-space: pre-wrap;
@@ -408,11 +409,11 @@ const editable = variants.editable === true;
     width: 100%;
     resize: vertical;
     padding: 10px 12px;
-    background: #0f1b2d;
-    color: #e6ecf5;
+    background: var(--color-code-bg);
+    color: var(--color-text);
     border: 1px solid var(--sb-line);
-    border-radius: 8px;
-    font-family: var(--sl-font-mono);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
     font-size: 12.5px;
     line-height: 1.6;
     white-space: pre;
@@ -425,19 +426,19 @@ const editable = variants.editable === true;
   }
   .sedbox .cmd::before {
     content: "$\00a0";
-    color: #5fd08b;
+    color: var(--color-accent);
   }
   .sedbox textarea {
     width: 100%;
     min-height: 72px;
     resize: vertical;
     padding: 11px 13px;
-    font-family: var(--sl-font-mono);
+    font-family: var(--font-mono);
     font-size: 14px;
     color: var(--sb-ink);
     border: 1px solid var(--sb-line);
-    border-radius: 9px;
-    background: #fbfcfe;
+    border-radius: var(--radius-sm);
+    background: var(--color-bg);
     line-height: 1.7;
   }
   .sedbox textarea:focus {
@@ -447,13 +448,13 @@ const editable = variants.editable === true;
   }
   .sedbox button {
     margin: 12px 0 18px;
-    font-family: var(--sl-font);
+    font-family: var(--font-sans);
     font-weight: 500;
     font-size: 14px;
     color: #fff;
     background: var(--sb-accent);
     border: none;
-    border-radius: 9px;
+    border-radius: var(--radius-sm);
     padding: 9px 20px;
     cursor: pointer;
     transition:
@@ -461,33 +462,34 @@ const editable = variants.editable === true;
       background 0.15s ease;
   }
   .sedbox button:hover {
-    background: #235ed1;
+    background: var(--color-link);
   }
   .sedbox button:active {
     transform: translateY(1px);
   }
   .sedbox button:disabled {
-    background: #9fb3d6;
+    background: var(--color-border);
+    color: var(--color-text-muted);
     cursor: not-allowed;
   }
   .sedbox button:focus-visible {
-    outline: 2px solid var(--sb-ink);
+    outline: 2px solid var(--sb-accent);
     outline-offset: 2px;
   }
   .sedbox .sb-output {
     min-height: 24px;
     background: var(--sb-surface);
     border: 1px solid var(--sb-line);
-    border-radius: 9px;
+    border-radius: var(--radius-sm);
     padding: 12px 13px;
   }
   .sedbox .sb-output .empty {
-    font-family: var(--sl-font-mono);
+    font-family: var(--font-mono);
     font-size: 13px;
     color: var(--sb-muted);
   }
   .sedbox .line {
-    font-family: var(--sl-font-mono);
+    font-family: var(--font-mono);
     font-size: 14px;
     line-height: 1.8;
     color: var(--sb-ink);

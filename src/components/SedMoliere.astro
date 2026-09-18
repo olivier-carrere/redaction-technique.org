@@ -172,21 +172,21 @@ const { strings } = config;
 
 <style is:global>
   .sedd {
-    --sedd-surface: #ffffff;
-    --sedd-ink: #15223b;
-    --sedd-muted: #5a6a84;
-    --sedd-accent: #2f6fed;
-    --sedd-live: #e0a800;
-    --sedd-line: #d5dce7;
-    --sedd-flag: #b26a00;
+    --sedd-surface: var(--color-bg);
+    --sedd-ink: var(--color-text);
+    --sedd-muted: var(--color-text-muted);
+    --sedd-accent: var(--color-accent);
+    --sedd-live: var(--sl-color-orange-high);
+    --sedd-line: var(--color-border);
+    --sedd-flag: var(--sl-color-orange-high);
 
-    background: #e7ebf1;
+    background: var(--color-surface);
     color: var(--sedd-ink);
-    font-family: var(--sl-font);
+    font-family: var(--font-sans);
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
     border: 1px solid var(--sedd-line);
-    border-radius: 16px;
+    border-radius: var(--radius-md);
     padding: 28px 24px 32px;
     margin: 2rem 0;
   }
@@ -198,7 +198,7 @@ const { strings } = config;
     align-items: center;
     gap: 9px;
     margin: 0 0 18px;
-    font-family: var(--sl-font-mono);
+    font-family: var(--font-mono);
     font-size: 13px;
     color: var(--sedd-muted);
   }
@@ -211,7 +211,7 @@ const { strings } = config;
     animation: sedd-pulse 1.6s infinite;
   }
   .sedd .dot.ready {
-    background: #1fa971;
+    background: var(--sl-color-green-high);
     animation: none;
     box-shadow: none;
   }
@@ -229,13 +229,13 @@ const { strings } = config;
   .sedd .card {
     background: var(--sedd-surface);
     border: 1px solid var(--sedd-line);
-    border-radius: 14px;
+    border-radius: var(--radius-md);
     padding: 22px;
     margin-top: 18px;
   }
   .sedd label {
     display: block;
-    font-family: var(--sl-font-mono);
+    font-family: var(--font-mono);
     font-size: 12px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -247,12 +247,12 @@ const { strings } = config;
     min-height: 96px;
     resize: vertical;
     padding: 12px 14px;
-    font-family: var(--sl-font-mono);
+    font-family: var(--font-mono);
     font-size: 14px;
     color: var(--sedd-ink);
     border: 1px solid var(--sedd-line);
-    border-radius: 9px;
-    background: #fbfcfe;
+    border-radius: var(--radius-sm);
+    background: var(--color-bg);
     line-height: 1.7;
   }
   .sedd textarea:focus {
@@ -262,13 +262,13 @@ const { strings } = config;
   }
   .sedd button {
     margin-top: 14px;
-    font-family: var(--sl-font);
+    font-family: var(--font-sans);
     font-weight: 500;
     font-size: 15px;
     color: #fff;
     background: var(--sedd-accent);
     border: none;
-    border-radius: 9px;
+    border-radius: var(--radius-sm);
     padding: 11px 22px;
     cursor: pointer;
     transition:
@@ -276,24 +276,25 @@ const { strings } = config;
       background 0.15s ease;
   }
   .sedd button:hover {
-    background: #235ed1;
+    background: var(--color-link);
   }
   .sedd button:active {
     transform: translateY(1px);
   }
   .sedd button:disabled {
-    background: #9fb3d6;
+    background: var(--color-border);
+    color: var(--color-text-muted);
     cursor: not-allowed;
   }
   .sedd button:focus-visible {
-    outline: 2px solid var(--sedd-ink);
+    outline: 2px solid var(--sedd-accent);
     outline-offset: 2px;
   }
   .sedd #sedd-output {
     min-height: 24px;
   }
   .sedd #sedd-output .empty {
-    font-family: var(--sl-font-mono);
+    font-family: var(--font-mono);
     font-size: 14px;
     color: var(--sedd-muted);
   }
@@ -306,7 +307,7 @@ const { strings } = config;
     padding-top: 0;
   }
   .sedd .src {
-    font-family: var(--sl-font-mono);
+    font-family: var(--font-mono);
     font-size: 12px;
     color: var(--sedd-muted);
     margin-bottom: 9px;
@@ -316,16 +317,16 @@ const { strings } = config;
     color: var(--sedd-accent);
   }
   .sedd .line {
-    font-family: var(--sl-font-mono);
+    font-family: var(--font-mono);
     font-size: 14px;
     line-height: 1.85;
     color: var(--sedd-ink);
   }
   .sedd .block.bad .src {
-    color: #9aa6ba;
+    color: var(--sedd-muted);
   }
   .sedd .flag {
-    font-family: var(--sl-font-mono);
+    font-family: var(--font-mono);
     font-size: 12px;
     color: var(--sedd-flag);
   }

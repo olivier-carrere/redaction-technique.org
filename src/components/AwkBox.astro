@@ -142,19 +142,19 @@ const program = variants.program;
 
 <style is:global>
   .awkbox {
-    --ab-surface: #ffffff;
-    --ab-ink: #15223b;
-    --ab-muted: #5a6a84;
-    --ab-accent: #2f6fed;
-    --ab-line: #d5dce7;
+    --ab-surface: var(--color-bg);
+    --ab-ink: var(--color-text);
+    --ab-muted: var(--color-text-muted);
+    --ab-accent: var(--color-accent);
+    --ab-line: var(--color-border);
 
-    background: #e7ebf1;
+    background: var(--color-surface);
     color: var(--ab-ink);
-    font-family: var(--sl-font);
+    font-family: var(--font-sans);
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
     border: 1px solid var(--ab-line);
-    border-radius: 14px;
+    border-radius: var(--radius-md);
     padding: 20px 20px 22px;
     margin: 1.6rem 0;
   }
@@ -163,7 +163,7 @@ const program = variants.program;
   }
   .awkbox label {
     display: block;
-    font-family: var(--sl-font-mono);
+    font-family: var(--font-mono);
     font-size: 11px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -176,10 +176,11 @@ const program = variants.program;
   .awkbox .cmd {
     margin: 0 0 6px;
     padding: 10px 12px;
-    background: #0f1b2d;
-    color: #e6ecf5;
-    border-radius: 8px;
-    font-family: var(--sl-font-mono);
+    background: var(--color-code-bg);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
     font-size: 12.5px;
     line-height: 1.6;
     white-space: pre-wrap;
@@ -190,19 +191,19 @@ const program = variants.program;
   }
   .awkbox .cmd::before {
     content: "$\00a0";
-    color: #5fd08b;
+    color: var(--color-accent);
   }
   .awkbox textarea {
     width: 100%;
     min-height: 72px;
     resize: vertical;
     padding: 11px 13px;
-    font-family: var(--sl-font-mono);
+    font-family: var(--font-mono);
     font-size: 14px;
     color: var(--ab-ink);
     border: 1px solid var(--ab-line);
-    border-radius: 9px;
-    background: #fbfcfe;
+    border-radius: var(--radius-sm);
+    background: var(--color-bg);
     line-height: 1.7;
   }
   .awkbox textarea:focus {
@@ -212,13 +213,13 @@ const program = variants.program;
   }
   .awkbox button {
     margin: 12px 0 18px;
-    font-family: var(--sl-font);
+    font-family: var(--font-sans);
     font-weight: 500;
     font-size: 14px;
     color: #fff;
     background: var(--ab-accent);
     border: none;
-    border-radius: 9px;
+    border-radius: var(--radius-sm);
     padding: 9px 20px;
     cursor: pointer;
     transition:
@@ -226,33 +227,34 @@ const program = variants.program;
       background 0.15s ease;
   }
   .awkbox button:hover {
-    background: #235ed1;
+    background: var(--color-link);
   }
   .awkbox button:active {
     transform: translateY(1px);
   }
   .awkbox button:disabled {
-    background: #9fb3d6;
+    background: var(--color-border);
+    color: var(--color-text-muted);
     cursor: not-allowed;
   }
   .awkbox button:focus-visible {
-    outline: 2px solid var(--ab-ink);
+    outline: 2px solid var(--ab-accent);
     outline-offset: 2px;
   }
   .awkbox .ab-output {
     min-height: 24px;
     background: var(--ab-surface);
     border: 1px solid var(--ab-line);
-    border-radius: 9px;
+    border-radius: var(--radius-sm);
     padding: 12px 13px;
   }
   .awkbox .ab-output .empty {
-    font-family: var(--sl-font-mono);
+    font-family: var(--font-mono);
     font-size: 13px;
     color: var(--ab-muted);
   }
   .awkbox .line {
-    font-family: var(--sl-font-mono);
+    font-family: var(--font-mono);
     font-size: 14px;
     line-height: 1.8;
     color: var(--ab-ink);

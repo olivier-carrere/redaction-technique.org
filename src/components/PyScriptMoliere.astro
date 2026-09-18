@@ -177,21 +177,21 @@ def run(event):
 
 <style is:global>
   .pysd {
-    --pysd-surface: #ffffff;
-    --pysd-ink: #15223b;
-    --pysd-muted: #5a6a84;
-    --pysd-accent: #2f6fed;
-    --pysd-live: #e0a800;
-    --pysd-line: #d5dce7;
-    --pysd-flag: #b26a00;
+    --pysd-surface: var(--color-bg);
+    --pysd-ink: var(--color-text);
+    --pysd-muted: var(--color-text-muted);
+    --pysd-accent: var(--color-accent);
+    --pysd-live: var(--sl-color-orange-high);
+    --pysd-line: var(--color-border);
+    --pysd-flag: var(--sl-color-orange-high);
 
-    background: #e7ebf1;
+    background: var(--color-surface);
     color: var(--pysd-ink);
-    font-family: var(--sl-font);
+    font-family: var(--font-sans);
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
     border: 1px solid var(--pysd-line);
-    border-radius: 16px;
+    border-radius: var(--radius-md);
     padding: 28px 24px 32px;
     margin: 2rem 0;
   }
@@ -199,7 +199,7 @@ def run(event):
     box-sizing: border-box;
   }
   .pysd .eyebrow {
-    font-family: var(--sl-font-mono);
+    font-family: var(--font-mono);
     font-size: 12px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -207,7 +207,7 @@ def run(event):
     margin: 0 0 10px;
   }
   .pysd .pysd-title {
-    font-family: var(--sl-font);
+    font-family: var(--font-sans);
     font-weight: 700;
     font-size: clamp(24px, 4vw, 34px);
     line-height: 1.05;
@@ -221,7 +221,7 @@ def run(event):
     max-width: 60ch;
   }
   .pysd .sub code {
-    font-family: var(--sl-font-mono);
+    font-family: var(--font-mono);
     font-size: 0.9em;
   }
   .pysd .gloss {
@@ -235,7 +235,7 @@ def run(event):
     font-style: italic;
   }
   .pysd .gloss code {
-    font-family: var(--sl-font-mono);
+    font-family: var(--font-mono);
     font-size: 0.9em;
   }
   .pysd .gloss cite {
@@ -250,7 +250,7 @@ def run(event):
     align-items: center;
     gap: 9px;
     margin-top: 18px;
-    font-family: var(--sl-font-mono);
+    font-family: var(--font-mono);
     font-size: 13px;
     color: var(--pysd-muted);
   }
@@ -276,7 +276,7 @@ def run(event):
   .pysd .card {
     background: var(--pysd-surface);
     border: 1px solid var(--pysd-line);
-    border-radius: 14px;
+    border-radius: var(--radius-md);
     padding: 22px;
     margin-top: 18px;
   }
@@ -285,7 +285,7 @@ def run(event):
   }
   .pysd label {
     display: block;
-    font-family: var(--sl-font-mono);
+    font-family: var(--font-mono);
     font-size: 12px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -297,12 +297,12 @@ def run(event):
     min-height: 128px;
     resize: vertical;
     padding: 12px 14px;
-    font-family: var(--sl-font-mono);
+    font-family: var(--font-mono);
     font-size: 14px;
     color: var(--pysd-ink);
     border: 1px solid var(--pysd-line);
-    border-radius: 9px;
-    background: #fbfcfe;
+    border-radius: var(--radius-sm);
+    background: var(--color-bg);
     line-height: 1.7;
   }
   .pysd textarea:focus {
@@ -312,13 +312,13 @@ def run(event):
   }
   .pysd button {
     margin-top: 14px;
-    font-family: var(--sl-font);
+    font-family: var(--font-sans);
     font-weight: 500;
     font-size: 15px;
     color: #fff;
     background: var(--pysd-accent);
     border: none;
-    border-radius: 9px;
+    border-radius: var(--radius-sm);
     padding: 11px 22px;
     cursor: pointer;
     transition:
@@ -326,20 +326,20 @@ def run(event):
       background 0.15s ease;
   }
   .pysd button:hover {
-    background: #235ed1;
+    background: var(--color-link);
   }
   .pysd button:active {
     transform: translateY(1px);
   }
   .pysd button:focus-visible {
-    outline: 2px solid var(--pysd-ink);
+    outline: 2px solid var(--pysd-accent);
     outline-offset: 2px;
   }
   .pysd #output {
     min-height: 24px;
   }
   .pysd #output .empty {
-    font-family: var(--sl-font-mono);
+    font-family: var(--font-mono);
     font-size: 14px;
     color: var(--pysd-muted);
   }
@@ -352,7 +352,7 @@ def run(event):
     padding-top: 0;
   }
   .pysd .src {
-    font-family: var(--sl-font-mono);
+    font-family: var(--font-mono);
     font-size: 12px;
     color: var(--pysd-muted);
     margin-bottom: 9px;
@@ -362,16 +362,16 @@ def run(event):
     color: var(--pysd-accent);
   }
   .pysd .line {
-    font-family: var(--sl-font-mono);
+    font-family: var(--font-mono);
     font-size: 14px;
     line-height: 1.85;
     color: var(--pysd-ink);
   }
   .pysd .block.bad .src {
-    color: #9aa6ba;
+    color: var(--pysd-muted);
   }
   .pysd .flag {
-    font-family: var(--sl-font-mono);
+    font-family: var(--font-mono);
     font-size: 12px;
     color: var(--pysd-flag);
   }
@@ -382,11 +382,11 @@ def run(event):
     color: var(--pysd-muted);
   }
   .pysd .foot code {
-    font-family: var(--sl-font-mono);
-    background: #fff;
+    font-family: var(--font-mono);
+    background: var(--color-code-bg);
     border: 1px solid var(--pysd-line);
     padding: 1px 6px;
-    border-radius: 5px;
+    border-radius: var(--radius-sm);
   }
   @media (prefers-reduced-motion: reduce) {
     .pysd .dot {
