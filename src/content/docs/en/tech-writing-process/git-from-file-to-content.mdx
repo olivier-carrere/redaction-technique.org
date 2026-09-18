@@ -87,7 +87,9 @@ The next action depends on the state of Task 1.
 
 #### Task 1 needs changes
 
-Return to the branch, make the requested changes, and *commit* them:
+If Task 2 has uncommitted changes, set them aside first with `git stash`. Otherwise, they follow you to *my-branch*, or Git refuses to switch.
+
+Then return to the branch, make the requested changes, and *commit* them:
 
 ```bash
 git checkout my-branch
@@ -98,9 +100,7 @@ git add my-files
 git commit -m "address validation feedback"
 ```
 
-Repeat as often as necessary, then return to *master* with `git checkout master`. You can merge these *commits* into a single one after validation (see [Organizing your history with git rebase](#organizing-your-history-with-git-rebase)).
-
-If Task 2 has uncommitted changes, set them aside with `git stash` before switching branches, and retrieve them with `git stash pop` once you are back on *master*. Otherwise, they follow you to *my-branch*, or Git refuses to switch.
+Repeat as often as necessary, then return to *master* with `git checkout master`, and retrieve Task 2 with `git stash pop` if you set it aside. You can merge these *commits* into a single one after validation (see [Organizing your history with git rebase](#organizing-your-history-with-git-rebase)).
 
 :::tip[If Git refuses to switch branches or to merge]
 Git stops with `Your local changes to the following files would be overwritten by checkout` (or `by merge`) and lists the files concerned. Nothing has been changed yet: *commit* or stash your changes, then run the command again.

@@ -86,7 +86,9 @@ La suite dépend de l'état de la tâche 1.
 
 #### La tâche 1 doit être modifiée
 
-Repassez sur la branche, apportez les modifications demandées et *committez-les* :
+Si la tâche 2 comporte des modifications non *commitées*, mettez-les d'abord de côté avec `git stash`. Sinon, elles vous suivent sur *ma-branche*, ou Git refuse de changer de branche.
+
+Repassez ensuite sur la branche, apportez les modifications demandées et *committez-les* :
 
 ```bash
 git checkout ma-branche
@@ -97,9 +99,7 @@ git add mes-fichiers
 git commit -m "prise en compte des retours de validation"
 ```
 
-Recommencez autant de fois que nécessaire, puis repassez sur *master* avec `git checkout master`. Vous pourrez fusionner ces *commits* en un seul après validation (voir [Organiser son historique avec Git rebase](#organiser-son-historique-avec-git-rebase)).
-
-Si la tâche 2 comporte des modifications non *commitées*, mettez-les de côté avec `git stash` avant de changer de branche, et récupérez-les avec `git stash pop` une fois revenu sur *master*. Sinon, elles vous suivent sur *ma-branche*, ou Git refuse de changer de branche.
+Recommencez autant de fois que nécessaire, puis repassez sur *master* avec `git checkout master` et récupérez la tâche 2 avec `git stash pop` si vous l'aviez mise de côté. Vous pourrez fusionner ces *commits* en un seul après validation (voir [Organiser son historique avec Git rebase](#organiser-son-historique-avec-git-rebase)).
 
 :::tip[Si Git refuse de changer de branche ou de fusionner]
 Git s'arrête sur le message `Your local changes to the following files would be overwritten by checkout` (ou `by merge`) et liste les fichiers concernés. Rien n'a encore été modifié : *committez* ou mettez de côté vos modifications, puis relancez la commande.
