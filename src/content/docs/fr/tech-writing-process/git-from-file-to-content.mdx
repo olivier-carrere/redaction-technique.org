@@ -10,6 +10,8 @@ import GroupedCommitHistoryDiagram from '../../../../components/diagrams/Grouped
 :::note
 
 Vous êtes habitué à manipuler des fichiers ? Git vous invite à penser autrement. Avantage : vous avez une maîtrise beaucoup plus grande de votre contenu.
+
+Cet article explique comment Git stocke le contenu, comment [utiliser les branches pour contourner les goulets d'étranglement de la validation](#faire-sauter-les-goulets-détranglement-avec-les-branches) et comment [mettre de l'ordre dans votre historique avec git rebase](#organiser-son-historique-avec-git-rebase) avant de le partager.
 :::
 
 ## Définition
@@ -23,19 +25,12 @@ Si vous donnez un fichier à Git, il le scinde directement en deux choses :
 - un contenu (suite de bits, ou *blob*),
 - un arbre (lien entre le nom de fichier et le contenu).
 
-Il le stocke ensuite dans l'une des deux zones suivantes :
+Il les stocke ensuite dans deux zones, l'index (zone temporaire) et la base de données d'objets (zone persistante) :
 
-- l'index (zone temporaire),
-- la base de données d'objets (zone persistante).
-
-Lorsque vous ajoutez un fichier (`git add <fichier>`) :
-
-- l'arbre est placé dans l'index,
-- le contenu est placé dans la base d'objets.
-
-Lorsque vous *commitez* un fichier (`git commit`) :
-
-- l'arbre est placé dans la base d'objets.
+| Action | Index | Base d'objets |
+| --- | --- | --- |
+| Ajouter un fichier (`git add <fichier>`) | Arbre | Contenu |
+| *Commiter* le fichier (`git commit`) | — | Arbre, stocké de façon permanente |
 
 Git ne compare jamais deux fichiers entre eux. Il compare leur résumé, qui est un nombre unique calculé à partir de leur contenu. Si le résumé de deux fichiers est identique, le contenu de ces fichiers est identique (au bit près).
 
@@ -43,7 +38,7 @@ L'historique de votre projet n'est pas forcément linéaire : vous pouvez lui f
 
 Vous ne pouvez créer des branches qu'à partir d'un *commit*. Il faut voir les *commits* comme des ronds-points (la route étant l'historique de votre projet) à partir desquels vous pouvez, si vous le souhaitez, prendre une autre direction dans votre projet.
 
-Une branche ne contient que des *commits*. Si vous créez une branche, disons *test*, alors que votre espace de travail contient des modifications non *commitées*, ces modifications ne sont pas transférées sur *test* : elles restent dans votre espace de travail et vous suivent lorsque vous changez de branche. Seul un *commit* les ajoute à l'historique d'une branche ; changer de branche peut donc vous obliger à *committer* ou à mettre de côté (`git stash`) vos modifications au préalable. Si vous faites une erreur, vous ne pourrez pas retrouver le *statu quo ante* de vos fichiers en revenant à la branche *master*.
+Une branche ne contient que des *commits*. Si vous créez une branche, disons *test*, alors que votre espace de travail contient des modifications non *commitées*, ces modifications ne sont pas transférées sur *test*. Elles restent dans votre espace de travail et vous suivent lorsque vous changez de branche. Seul un *commit* les ajoute à l'historique d'une branche ; changer de branche peut donc vous obliger à *committer* ou à mettre de côté (`git stash`) vos modifications au préalable. Si vous faites une erreur, vous ne pourrez pas retrouver le *statu quo ante* de vos fichiers en revenant à la branche *master*.
 
 Si vous voulez enregistrer votre travail au fil de l'eau afin de pouvoir revenir à tout moment à un état antérieur, il vous faut donc *committer* régulièrement et sauvegarder votre espace de travail, répertoire *.git* y compris, par exemple *via* rsync. Lorsque vous déciderez de partager votre travail, vous pourrez déplacer, fusionner ou supprimer vos *commits* avant de les envoyer sous forme de patchs ou de les déposer sur un dépôt central.
 
@@ -51,17 +46,17 @@ Si vous voulez enregistrer votre travail au fil de l'eau afin de pouvoir revenir
 
 Les branches *Git* permettent de facilement effectuer en parallèle plusieurs tâches non liées.
 
-Imaginons le scénario de travail suivant :
+Imaginons le scénario de travail suivant :
 
 -   On vous demande de migrer une section d'un document à un autre (tâche 1).
 -   Vous envoyez votre proposition pour validation.
 -   La validation se fait attendre et vous devez avancer sur d'autres parties des documents (tâche 2).
 
-Plutôt que de suivre une longue suite de commandes, raisonnez par situations : à chaque étape, demandez-vous *où se trouve le travail* et *dans quel état il est*.
+Plutôt que de suivre une longue suite de commandes, raisonnez par situations : à chaque étape, demandez-vous *où se trouve le travail* et *dans quel état il est*.
 
 ### Mettre la première tâche de côté
 
-Vous êtes sur la branche *master*. Votre espace de travail contient les modifications de la tâche 1, que vous ne souhaitez pas *committer* sur *master* avant validation. Créez une branche à partir du *commit* courant, puis *committez-y* la tâche 1 :
+Vous êtes sur la branche *master*. Votre espace de travail contient les modifications de la tâche 1, que vous ne souhaitez pas *committer* sur *master* avant validation. Créez une branche à partir du *commit* courant, puis *committez-y* la tâche 1 :
 
 ```bash
 git checkout -b ma-branche
@@ -69,22 +64,22 @@ git add mes-fichiers
 git commit -m "mon message de commit"
 ```
 
-La création de la branche n'isole rien à elle seule : vos modifications non *commitées* restent dans l'espace de travail. C'est le *commit* qui enregistre la tâche 1 dans l'historique de *ma-branche*. La tâche 1 est désormais en sécurité dans *ma-branche*.
+La création de la branche n'isole rien à elle seule : vos modifications non *commitées* restent dans l'espace de travail. C'est le *commit* qui enregistre la tâche 1 dans l'historique de *ma-branche*. La tâche 1 est désormais en sécurité dans *ma-branche*.
 
 ### Passer à une autre tâche
 
-Repassez sur la branche *master* :
+Repassez sur la branche *master* :
 
 ```bash
 git checkout master
 ```
 
-Votre espace de travail reflète maintenant *master*, sans la tâche 1. La tâche 1 reste sur sa branche pendant que la tâche 2 avance sur *master* :
+Votre espace de travail reflète maintenant *master*, sans la tâche 1. La tâche 1 reste sur sa branche pendant que la tâche 2 avance sur *master* :
 
 ```text
-master      A          ← tâche 2 en cours (espace de travail)
+master      A   tâche 2 (espace de travail)
              \
-ma-branche    B        ← tâche 1 (commitée, en attente de validation)
+ma-branche    B  tâche 1 (commitée)
 ```
 
 ### Reprendre ou intégrer la première tâche
@@ -93,7 +88,7 @@ La suite dépend de l'état de la tâche 1.
 
 #### La tâche 1 doit être modifiée
 
-Repassez sur la branche, apportez les modifications demandées et *committez-les* :
+Repassez sur la branche, apportez les modifications demandées et *committez-les* :
 
 ```bash
 git checkout ma-branche
@@ -108,9 +103,13 @@ Recommencez autant de fois que nécessaire, puis repassez sur *master* avec `git
 
 Si la tâche 2 comporte des modifications non *commitées*, mettez-les de côté avec `git stash` avant de changer de branche, et récupérez-les avec `git stash pop` une fois revenu sur *master*. Sinon, elles vous suivent sur *ma-branche*, ou Git refuse de changer de branche.
 
+:::tip[Si Git refuse de changer de branche ou de fusionner]
+Git s'arrête sur le message `Your local changes to the following files would be overwritten by checkout` (ou `by merge`) et liste les fichiers concernés. Rien n'a encore été modifié : *committez* ou mettez de côté vos modifications, puis relancez la commande.
+:::
+
 #### La tâche 1 est validée
 
-Fusionnez *ma-branche* dans *master*. Si la tâche 2 comporte des modifications non *commitées*, mettez-les d'abord de côté :
+Fusionnez *ma-branche* dans *master*. Si la tâche 2 comporte des modifications non *commitées*, mettez-les d'abord de côté :
 
 ```bash
 git stash
@@ -118,35 +117,36 @@ git merge ma-branche
 git stash pop
 ```
 
-Le *stash* est nécessaire, car la tâche 2 n'existe que dans votre espace de travail, et non dans un *commit*. Git refuse la fusion si elle risque d'écraser des fichiers que vous êtes en train de modifier, et mêler une fusion à un travail en cours rend l'un et l'autre plus difficiles à vérifier. `git stash` vous donne un espace de travail propre pour la fusion, et `git stash pop` réapplique la tâche 2 sur le résultat :
+Le *stash* est nécessaire, car la tâche 2 n'existe que dans votre espace de travail, et non dans un *commit*. Git refuse la fusion si elle risque d'écraser des fichiers que vous êtes en train de modifier, et mêler une fusion à un travail en cours rend l'un et l'autre plus difficiles à vérifier. `git stash` vous donne un espace de travail propre pour la fusion, et `git stash pop` rétablit la tâche 2 dans l'espace de travail, par-dessus le résultat :
 
 ```text
-master      A───B      ← tâche 1 intégrée
-                       ← tâche 2 restaurée dans l'espace de travail (git stash pop)
+master      A───B   tâche 1 intégrée
 ```
 
-Retenez cette distinction : la branche contient l'historique de la tâche, tandis que l'espace de travail contient ce que vous êtes en train de modifier.
+Si `git stash pop` signale un conflit, les tâches 1 et 2 ont modifié les mêmes lignes. Résolvez le conflit dans les fichiers indiqués, puis supprimez l'entrée de *stash*, que Git conserve au cas où vous en auriez encore besoin, avec `git stash drop`.
+
+Retenez cette distinction : la branche contient l'historique de la tâche, tandis que l'espace de travail contient ce que vous êtes en train de modifier.
 
 ### Travailler simultanément sur deux branches
 
-Changer de branche dans un même espace de travail convient lorsque vous passez occasionnellement d'une tâche à l'autre. Si vous devez réellement travailler simultanément sur deux branches, utilisez `git worktree` : cette commande associe un répertoire de travail supplémentaire à une branche du même dépôt.
+Changer de branche dans un même espace de travail convient lorsque vous passez occasionnellement d'une tâche à l'autre. Si vous devez réellement travailler simultanément sur deux branches, utilisez `git worktree`, qui associe un répertoire de travail supplémentaire à une branche du même dépôt.
 
-Depuis *projet/*, votre répertoire de travail principal, lancez :
+Depuis *projet/*, votre répertoire de travail principal, lancez :
 
 ```bash
 git worktree add ../tache-1 ma-branche
 ```
 
-Cette commande crée *tache-1/*, un répertoire de travail distinct à côté de *projet/*, sur lequel *ma-branche* est extraite. Vous disposez maintenant de deux répertoires voisins, chacun associé à sa propre branche et à son propre travail en cours :
+Cette commande crée *tache-1/*, un répertoire de travail distinct à côté de *projet/*, sur lequel *ma-branche* est extraite. Vous disposez maintenant de deux répertoires voisins, chacun associé à sa propre branche et à son propre travail en cours :
 
 ```text
-projet/     → master     → tâche 2   (répertoire de travail principal)
-tache-1/    → ma-branche → tâche 1   (créé par git worktree)
+projet/    master      tâche 2
+tache-1/   ma-branche  tâche 1
 ```
 
-Vous modifiez et *committez* la tâche 1 dans *tache-1/*, et la tâche 2 dans *projet/*. Inutile de mettre la tâche 2 de côté simplement pour changer de branche : *projet/* reste sur *master*, et vous changez de répertoire.
+Vous modifiez et *committez* la tâche 1 dans *tache-1/*, et la tâche 2 dans *projet/*. Inutile de mettre la tâche 2 de côté simplement pour changer de branche : *projet/* reste sur *master*, et vous changez de répertoire.
 
-Lorsque la tâche 1 est validée, fusionnez-la depuis le répertoire de travail principal :
+Lorsque la tâche 1 est validée, fusionnez-la depuis le répertoire de travail principal :
 
 ```bash
 cd projet
@@ -161,22 +161,22 @@ Utilisez une branche pour isoler une tâche. Utilisez `git worktree` pour travai
 
 ### Annuler des modifications non commitées
 
-Si vous n'avez pas besoin d'effectuer deux lots de tâches en parallèle, vous pouvez sans problème travailler dans votre espace local. Pour annuler vos modifications non *commitées* de fichiers suivis, restaurez-les depuis Git :
+Si vous n'avez pas besoin d'effectuer deux lots de tâches en parallèle, vous pouvez sans problème travailler dans votre espace local. Pour annuler vos modifications non *commitées* de fichiers suivis, restaurez-les depuis Git :
 
 ```bash
 git restore .
 ```
 
-ou, pour un seul fichier :
+ou, pour un seul fichier :
 
 ```bash
 git restore chemin/vers/mon-fichier
 ```
 
-Sans l'option `--staged`, ces commandes n'annulent que les modifications *non indexées* des fichiers suivis spécifiés : les modifications déjà indexées avec `git add` sont conservées, et les fichiers non suivis ne sont pas concernés.
+Sans l'option `--staged`, ces commandes n'annulent que les modifications *non indexées* des fichiers suivis spécifiés : les modifications déjà indexées avec `git add` sont conservées, et les fichiers non suivis ne sont pas concernés.
 
 :::caution[Attention]
-`git reset --hard HEAD` est plus destructive : elle réinitialise à la fois l'index et l'espace de travail sur `HEAD`. Elle peut effacer définitivement toutes les modifications non *commitées* des fichiers suivis, indexées ou non.
+`git reset --hard HEAD` est plus destructive : elle réinitialise à la fois l'index et l'espace de travail sur `HEAD`. Elle peut effacer définitivement toutes les modifications non *commitées* des fichiers suivis, indexées ou non.
 :::
 
 ## Organiser son historique avec Git rebase
@@ -204,22 +204,33 @@ Les contraintes de production vous obligeront souvent à scinder ces deux lots d
 Vous *committez* chaque sous-lot à chaque fois qu'il est achevé. Votre historique de *commit* ressemble alors au schéma suivant :
 
 <InterleavedCommitHistoryDiagram />
-**Historique Git**
+**Historique Git avant le rebase**
 
 Lorsque vous placerez vos *commits* sur le dépôt central, certains *commits* représenteront une étape intermédiaire de l'une des tâches. Votre historique et vos branches seront donc plus difficiles à exploiter. D'autant plus que les tâches inachevées alternent. Pour en récupérer une seule, il faudra donc choisir soigneusement les *commits* via la commande `git cherry-pick`.
 
-Heureusement, Git vous permet de réorganiser facilement vos *commits* avant de les partager. Lancez la commande `git rebase -i HEAD~5` pour réorganiser les *commits*, de la version en cours aux cinq précédentes, par exemple.
+Heureusement, Git vous permet de réorganiser facilement vos *commits* avant de les partager.
 
 :::caution[Attention]
-La commande `rebase` est potentiellement destructive ; veillez à sauvegarder votre espace de travail, répertoire *.git* compris, avant de l'exécuter, sous risque de perdre des données ; vous pouvez également créer une branche de sauvegarde provisoire. Comme `rebase` réécrit l'historique, ne réorganisez que des *commits* que vous n'avez pas encore partagés : réécrire un historique déjà récupéré par d'autres les oblige à réconcilier des versions divergentes.
+La commande `rebase` est potentiellement destructive ; veillez à sauvegarder votre espace de travail, répertoire *.git* compris, avant de l'exécuter, sous risque de perdre des données. Comme `rebase` réécrit l'historique, ne réorganisez que des *commits* que vous n'avez pas encore partagés : réécrire un historique déjà récupéré par d'autres les oblige à réconcilier des versions divergentes.
 :::
 
-Vous pouvez alors réécrire l'histoire pour proposer à vos collaborateurs un *commit* pour chaque tâche réalisée en son entier, comme sur le schéma suivant :
+Pour réorganiser vos *commits* :
+
+1. Créez une branche de sauvegarde provisoire, afin de pouvoir revenir à tout moment à l'historique actuel : `git branch sauvegarde`.
+2. Lancez la commande `git rebase -i HEAD~5` pour réorganiser les *commits*, de la version en cours aux cinq précédentes, par exemple.
+3. Dans l'éditeur qui s'ouvre, réordonnez les lignes pour regrouper les *commits* par tâche, et remplacez `pick` par `squash` sur chaque *commit* à fusionner avec celui qui le précède.
+4. Enregistrez et fermez l'éditeur. Git réécrit l'historique, puis vous invite à modifier les messages des *commits* fusionnés.
+
+Vous pouvez alors proposer à vos collaborateurs un *commit* pour chaque tâche réalisée en son entier, comme sur le schéma suivant :
 
 <GroupedCommitHistoryDiagram />
-**Historique Git**
+**Historique Git après le rebase**
 
 Les *commits* ont tout d'abord été regroupés par type sur la *flèche du temps* de Git, puis fusionnés.
+
+:::tip[Si le rebase tourne mal]
+Tant que le rebase est en cours, par exemple lorsqu'il s'arrête sur un conflit, `git rebase --abort` rétablit l'historique tel qu'il était auparavant. Une fois le rebase terminé, `git reset --hard sauvegarde` ramène votre branche à la branche de sauvegarde ; comme tout `git reset --hard`, cette commande efface les modifications non *commitées*.
+:::
 
 :::note[Note]
 Si vous avez effectué simultanément les deux tâches sur un ou plusieurs fichiers, pas de panique : grâce à la commande `git add -p` vous pouvez répartir vos modifications imbriquées sur les *commits* idoines. Lorsque vous lancez `git status`, vous vous apercevez alors que vos fichiers sont à la fois prêts et non prêts à être *commités* : il y a deux états des fichiers, chaque état représentant un stade partiel de votre travail et la somme des deux représentant la totalité des modifications que vous avez apportées.
