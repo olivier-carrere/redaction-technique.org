@@ -1,0 +1,61 @@
+---
+// Converted from the Mermaid `timeline` in:
+// src/content/docs/{en,fr}/costs/three-levels-of-documentation.mdx
+import DiagramFrame from './DiagramFrame.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.ThreeMaturityLevelsTimeline[lang];
+
+const copy = {
+  en: {
+    stages: [
+      { label: 'Level 1 – The wasteland', items: ['No documentation process', 'No dedicated team', 'Unsuitable formats or inconsistent use'] },
+      { label: 'Level 2 – The English garden', items: ['Reliable documentation process', 'Dedicated team', 'Suitable but unstructured formats'] },
+      { label: 'Level 3 – The French garden', items: ['Reliable documentation process', 'Dedicated team', 'Structured formats'] },
+    ],
+  },
+  fr: {
+    stages: [
+      { label: 'Niveau 1 – La friche', items: ['Aucun processus documentaire', 'Aucune équipe dédiée', 'Formats inadaptés ou usage incohérent'] },
+      { label: 'Niveau 2 – Le jardin anglais', items: ['Processus documentaire fiable', 'Équipe dédiée', 'Formats adaptés mais non structurés'] },
+      { label: 'Niveau 3 – Le jardin français', items: ['Processus documentaire fiable', 'Équipe dédiée', 'Formats structurés'] },
+    ],
+  },
+}[lang];
+
+const CARD_WIDTH = 264;
+const GAP = 20;
+const PAD = 12;
+const LINE_Y = 34;
+const CARD_TOP = 56;
+const LINE_HEIGHT = 17;
+
+const cardHeights = copy.stages.map((s) => 30 + s.items.length * LINE_HEIGHT + 14);
+const viewWidth = copy.stages.length * CARD_WIDTH + (copy.stages.length - 1) * GAP + PAD * 2;
+const viewHeight = CARD_TOP + Math.max(...cardHeights) + PAD;
+---
+
+<DiagramFrame title={text.title} width={viewWidth} height={viewHeight}>
+  <line x1={PAD + CARD_WIDTH / 2} y1={LINE_Y} x2={viewWidth - PAD - CARD_WIDTH / 2} y2={LINE_Y} class="diagram-git-trunk" />
+  {copy.stages.map((stage, i) => {
+    const x = PAD + i * (CARD_WIDTH + GAP);
+    const cx = x + CARD_WIDTH / 2;
+    const h = cardHeights[i];
+    return (
+      <g>
+        <circle cx={cx} cy={LINE_Y} r="7" class="diagram-git-commit" />
+        <rect x={x} y={CARD_TOP} width={CARD_WIDTH} height={h} rx="3" class="diagram-node" />
+        <text x={x + 12} y={CARD_TOP + 22} class="diagram-node-label diagram-node-label--accent">
+          {stage.label}
+        </text>
+        {stage.items.map((item, j) => (
+          <text x={x + 12} y={CARD_TOP + 44 + j * LINE_HEIGHT} class="diagram-timeline-item">
+            {'– ' + item}
+          </text>
+        ))}
+      </g>
+    );
+  })}
+</DiagramFrame>

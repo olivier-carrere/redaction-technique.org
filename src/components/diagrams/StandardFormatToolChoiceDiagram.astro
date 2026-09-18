@@ -1,0 +1,44 @@
+---
+// Converted from the Mermaid `graph TD` in:
+// src/content/docs/{en,fr}/costs/formats-and-tools.mdx
+import Flowchart from './Flowchart.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.StandardFormatToolChoiceDiagram[lang];
+
+const copy = {
+  en: {
+    a: 'Text editor',
+    b: 'Open-source software',
+    c: 'Graphical tool',
+    d: 'Proprietary software',
+    e: 'DITA XML',
+  },
+  fr: {
+    a: 'Éditeur de texte',
+    b: 'Logiciel open-source',
+    c: 'Outil graphique',
+    d: 'Logiciel propriétaire',
+    e: 'DITA XML',
+  },
+}[lang];
+
+const nodes = [
+  { id: 'A', label: copy.a },
+  { id: 'B', label: copy.b },
+  { id: 'C', label: copy.c },
+  { id: 'D', label: copy.d },
+  { id: 'E', label: copy.e, variant: 'accent' as const },
+];
+
+const edges = [
+  { from: 'A', to: 'E' },
+  { from: 'B', to: 'E' },
+  { from: 'C', to: 'E' },
+  { from: 'D', to: 'E' },
+];
+---
+
+<Flowchart title={text.title} description={text.description} direction="TB" nodes={nodes} edges={edges} />

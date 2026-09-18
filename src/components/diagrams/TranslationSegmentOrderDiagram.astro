@@ -1,0 +1,52 @@
+---
+// Converted from the Mermaid `graph TB` in:
+// src/content/docs/{en,fr}/formats/nufirewall-case-study.mdx (diagram #6)
+import Flowchart from './Flowchart.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.TranslationSegmentOrderDiagram[lang];
+
+const copy = {
+  en: {
+    groupA: 'Language A',
+    groupB: 'Language B',
+    a: 'conref A',
+    b: 'conref B',
+    c: 'conref C',
+    e: 'conref E',
+  },
+  fr: {
+    groupA: 'Langue A',
+    groupB: 'Langue B',
+    a: 'conref A',
+    b: 'conref B',
+    c: 'conref C',
+    e: 'conref E',
+  },
+}[lang];
+
+const nodes = [
+  { id: 'A1', label: copy.a },
+  { id: 'A2', label: copy.b },
+  { id: 'A3', label: copy.c },
+  { id: 'B1', label: copy.b },
+  { id: 'B2', label: copy.e },
+  { id: 'B3', label: copy.a },
+];
+
+const edges = [
+  { from: 'A1', to: 'A2' },
+  { from: 'A2', to: 'A3' },
+  { from: 'B1', to: 'B2' },
+  { from: 'B2', to: 'B3' },
+];
+
+const groups = [
+  { id: 'langA', label: copy.groupA, members: ['A1', 'A2', 'A3'], direction: 'LR' as const },
+  { id: 'langB', label: copy.groupB, members: ['B1', 'B2', 'B3'], direction: 'LR' as const },
+];
+---
+
+<Flowchart title={text.title} description={text.description} direction="TB" nodes={nodes} edges={edges} groups={groups} />

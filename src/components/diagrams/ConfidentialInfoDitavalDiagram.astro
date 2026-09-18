@@ -1,0 +1,52 @@
+---
+// Converted from the Mermaid `graph TD` in:
+// src/content/docs/{en,fr}/formats/nufirewall-case-study.mdx (diagram #9)
+import Flowchart from './Flowchart.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.ConfidentialInfoDitavalDiagram[lang];
+
+const copy = {
+  en: {
+    source: 'Confidential source (Language A)',
+    translation: 'Translation',
+    a1: 'Language A sources without confidential info',
+    b1: 'Language B sources without confidential info',
+    a2: 'Deliverable A with confidential info',
+    b2: 'Deliverable B without confidential info',
+    ditavalA: 'ditaval A',
+    ditavalB: 'ditaval B',
+  },
+  fr: {
+    source: 'Source confidentielle (langue A)',
+    translation: 'Traduction',
+    a1: 'Sources langue A sans informations confidentielles',
+    b1: 'Sources langue B sans informations confidentielles',
+    a2: 'Livrable A avec informations confidentielles',
+    b2: 'Livrable B sans informations confidentielles',
+    ditavalA: 'ditaval A',
+    ditavalB: 'ditaval B',
+  },
+}[lang];
+
+const nodes = [
+  { id: 'S', label: copy.source, variant: 'accent' as const },
+  { id: 'Tr', label: copy.translation },
+  { id: 'A1', label: copy.a1 },
+  { id: 'B1', label: copy.b1 },
+  { id: 'A2', label: copy.a2 },
+  { id: 'B2', label: copy.b2 },
+];
+
+const edges = [
+  { from: 'S', to: 'Tr' },
+  { from: 'Tr', to: 'A1' },
+  { from: 'Tr', to: 'B1' },
+  { from: 'A1', to: 'A2', label: copy.ditavalA },
+  { from: 'B1', to: 'B2', label: copy.ditavalB },
+];
+---
+
+<Flowchart title={text.title} description={text.description} direction="TB" nodes={nodes} edges={edges} />

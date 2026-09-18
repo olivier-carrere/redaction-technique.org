@@ -4,7 +4,9 @@ description: "DITA XML permet de passer du livre monolithique à la base documen
 goal: [structured-authoring]
 contentType: concept
 ---
-import Mermaid from '../../../../components/Mermaid.astro';
+import MonolithicVsModularDiagram from '../../../../components/diagrams/MonolithicVsModularDiagram.astro';
+import DitamapTreeDiagram from '../../../../components/diagrams/DitamapTreeDiagram.astro';
+import SingleSourceMultipleTargetsDiagram from '../../../../components/diagrams/SingleSourceMultipleTargetsDiagram.astro';
 
 ## Définition
 
@@ -12,29 +14,7 @@ Le modèle du livre est encore prédominant pour créer et gérer l'information.
 
 Le format de rédaction structurée DITA XML propose de passer du modèle du livre à celui de la base documentaire modulaire. Le contenu d'entreprise repose sur des briques uniques, qui peuvent être assemblées dynamiquement, à la demande, pour produire des documents sous différents formats cibles.
 
-<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
-graph TD
-    accTitle: Une documentation modulaire offre une souplesse inégalée
-    accDescr: Schéma opposant la documentation monolithique, un bloc unique et indivisible, à la documentation modulaire, assemblée à la demande à partir de plusieurs blocs.
-
-    subgraph mono["Monolithique"]
-        M[Documentation]
-    end
-
-    subgraph mod["Modulaire"]
-        direction TB
-        B1[Bloc] --> D[Documentation]
-        B2[Bloc] --> D
-        B3[Bloc] --> D
-    end
-
-    classDef doc fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
-    classDef block fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
-
-    class M,D doc
-    class B1,B2,B3 block
-
-    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
+<MonolithicVsModularDiagram />
 **Une documentation modulaire offre une souplesse inégalée.**
 
 Le volume de contenu source est minimisé, ce qui diminue les coûts de création, mise à jour et traduction du contenu d'entreprise. De plus, le rédacteur technique peut gérer les processus de rédaction, validation et traduction module par module. Les workflows peuvent ainsi être parallélisés, ce qui réduit les délais de mise sur le marché.
@@ -87,17 +67,7 @@ L'organisation de l'information sous DITA XML n'est pas figée. Les briques peuv
 | Quickstart                | Procédures pas à pas                                                 |
 | Manuel de référence      | Informations de référence                                            |
 
-<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "treeView": {"labelColor": "{{childText}}", "lineColor": "{{lineColor}}", "descriptionColor": "{{lineColor}}"}}}}%%
-treeView-beta
-    accTitle: Une ditamap organise les topics en arborescence
-    accDescr: Arborescence de la ditamap du guide de l'utilisateur : un topic concept de présentation, un sous-groupe Installation contenant un concept de prérequis et une tâche d'installation, puis un topic de dépannage.
-
-    "Guide de l'utilisateur (ditamap)/"
-        "Présentation du produit" ## concept
-        "Installation/"
-            "Prérequis" ## concept
-            "Procédure d'installation" ## task
-        "Dépannage courant" ## task`} />
+<DitamapTreeDiagram />
 **Une *ditamap* organise les topics en arborescence.**
 
 Pour ce faire, le rédacteur technique prendra soin de placer les éléments liés à un contexte particulier dans les structures *ditamap* et non dans les fichiers de contenu DITA XML. En particulier, les références croisées doivent être indiquées dans une *reltable* placée dans la *ditamap* : si le document *A* doit renvoyer au document *B* dans la *ditamap* *1*, il doit pouvoir être également utilisé sans modification dans la *ditamap* *2*, où le document *B* n'est pas inclus.
@@ -111,24 +81,7 @@ Le *single-sourcing* est un sujet qui a longtemps divisé les rédacteurs techni
 
 Les contraintes de productivité et la réduction des coûts aidant, le débat a été tranché en faveur du *single-sourcing*. Le gain qualitatif, discutable, ne compense pas le coût de créer, maintenir et traduire une version source différente pour chaque version cible.
 
-<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-graph TD
-    accTitle: Un seul jeu d'informations, une multiplicité de formats de sortie
-    accDescr: Schéma montrant DITA XML comme point central alimentant cinq formats de sortie, PDF, site web, traitement de texte, JavaHelp et aide Windows.
-
-    A["DITA XML"] --> B[PDF]
-    A --> C["Site web"]
-    A --> D["Traitement de texte"]
-    A --> E[JavaHelp]
-    A --> F["Aide Windows"]
-
-    classDef hub fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
-    classDef leaf fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
-
-    class A hub
-    class B,C,D,E,F leaf
-
-    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
+<SingleSourceMultipleTargetsDiagram />
 **Un seul jeu d'informations, une multiplicité de formats de sortie**
 
 Si le rédacteur technique pratique le *single-sourcing*, il doit cependant sélectionner en début de projet le paradigme sur lequel il se base : le livre ou l'aide en ligne. Pendant longtemps, les outils proposés reposaient soit sur un document de type livre (MS Word, ou FrameMaker, essentiellement) qui pouvait être exporté au format d'aide en ligne, soit sur un fichier source (RTF) d'aide Windows, pour générer un PDF. Une forte perte d'information de navigation (index, références croisées, liens, etc.) intervenait souvent lors de l'exportation.

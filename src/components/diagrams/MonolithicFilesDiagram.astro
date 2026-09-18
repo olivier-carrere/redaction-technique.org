@@ -1,0 +1,31 @@
+---
+// Converted from the first Mermaid `graph TD` (subgraph, no edges) in:
+// src/content/docs/{en,fr}/tech-writing-process/source-format.mdx
+import Flowchart from './Flowchart.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.MonolithicFilesDiagram[lang];
+
+const copy = {
+  en: {
+    group: 'Monolithic files',
+    docA: 'Document A',
+    docB: 'Document B',
+  },
+  fr: {
+    group: 'Fichiers monolithiques',
+    docA: 'Document A',
+    docB: 'Document B',
+  },
+}[lang];
+
+const nodes = [
+  { id: 'A', label: copy.docA },
+  { id: 'B', label: copy.docB },
+];
+const groups = [{ id: 'mono', label: copy.group, members: ['A', 'B'], direction: 'LR' as const }];
+---
+
+<Flowchart title={text.title} description={text.description} direction="TB" nodes={nodes} edges={[]} groups={groups} />

@@ -15,30 +15,13 @@ Tout ce qui suit est généré au moment du build à partir des mêmes sources M
 
 Le HTML rendu est conçu pour les navigateurs : habillage de navigation, CSS, interactivité côté client. Un LLM ou un agent qui n'a besoin que du texte de l'article doit retirer tout cela, et peut s'y mal prendre. Cette API évite l'aller-retour : elle sert directement le même contenu que les agents reconstruiraient autrement, sous forme de Markdown propre et de JSON structuré.
 
-import Mermaid from '../../../components/Mermaid.astro';
+import ApiRetrievalPipelineDiagram from '../../../components/diagrams/ApiRetrievalPipelineDiagram.astro';
 
 ## Flux de travail rapide (Quick start)
 
 L'API s'articule autour d'un pipeline de récupération séquentiel en quatre étapes :
 
-<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-flowchart TD
-    accTitle: Pipeline de récupération de l'API
-    accDescr: Pipeline de récupération séquentiel en quatre étapes : découverte du contrat, interrogation de l'index, sélection du document et récupération du Markdown.
-
-    A["GET /schema.json"] --> B["Découverte des endpoints, filtres et taxonomie"]
-    B --> C["Interroger l'index des documents"]
-    C --> D["Sélectionner le document cible"]
-    D --> E["Suivre l'URL markdown annoncée"]
-    E --> F["Récupérer le document Markdown"]
-
-    classDef stage fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
-    classDef endpoint fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:1.5px,color:{{parentText}},font-weight:600
-
-    class A,C,F endpoint
-    class B,D,E stage
-
-    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
+<ApiRetrievalPipelineDiagram />
 
 Les quatre étapes de récupération avec leurs requêtes HTTP correspondantes :
 

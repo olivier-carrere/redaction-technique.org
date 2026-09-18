@@ -1,0 +1,25 @@
+---
+// Converted from the Mermaid `gitGraph` in:
+// src/content/docs/{en,fr}/tech-writing-process/version-control-systems.mdx
+import GitGraphDiagram from './GitGraphDiagram.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.TrunkVersionHistoryDiagram[lang];
+
+const copy = {
+  en: {
+    tag1: 'version 1',
+    tag2: 'version 2',
+  },
+  fr: {
+    tag1: 'version 1',
+    tag2: 'version 2',
+  },
+}[lang];
+
+const commits = [{ tag: copy.tag1 }, {}, { tag: copy.tag2 }, {}];
+---
+
+<GitGraphDiagram title={text.title} description={text.description} commits={commits} />

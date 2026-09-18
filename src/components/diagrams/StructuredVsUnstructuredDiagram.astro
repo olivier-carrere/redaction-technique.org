@@ -1,0 +1,60 @@
+---
+// Converted from the Mermaid `graph TD` in:
+// src/content/docs/{en,fr}/formats/structured-vs-unstructured-formats.mdx (diagram #0)
+import Flowchart from './Flowchart.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.StructuredVsUnstructuredDiagram[lang];
+
+const copy = {
+  en: {
+    unGroup: 'Unstructured',
+    strGroup: 'Structured',
+    section1: 'Section 1',
+    section2: 'Section 2',
+    concept: 'concept',
+    task: 'task',
+    reference: 'reference',
+  },
+  fr: {
+    unGroup: 'Non structuré',
+    strGroup: 'Structuré',
+    section1: 'Section 1',
+    section2: 'Section 2',
+    concept: 'concept',
+    task: 'task',
+    reference: 'reference',
+  },
+}[lang];
+
+const nodes = [
+  { id: 'U1', label: copy.section1, variant: 'accent' as const },
+  { id: 'U2', label: copy.section2, variant: 'accent' as const },
+  { id: 'S1', label: copy.section1, variant: 'accent' as const },
+  { id: 'S2', label: copy.section2, variant: 'accent' as const },
+  { id: 'C1', label: copy.concept },
+  { id: 'T1', label: copy.task },
+  { id: 'R1', label: copy.reference },
+  { id: 'C2', label: copy.concept },
+  { id: 'T2', label: copy.task },
+  { id: 'R2', label: copy.reference },
+];
+
+const edges = [
+  { from: 'S1', to: 'C1' },
+  { from: 'S1', to: 'T1' },
+  { from: 'S1', to: 'R1' },
+  { from: 'S2', to: 'C2' },
+  { from: 'S2', to: 'T2' },
+  { from: 'S2', to: 'R2' },
+];
+
+const groups = [
+  { id: 'un', label: copy.unGroup, members: ['U1', 'U2'], direction: 'TB' as const },
+  { id: 'str', label: copy.strGroup, members: ['S1', 'S2', 'C1', 'T1', 'R1', 'C2', 'T2', 'R2'], direction: 'TB' as const },
+];
+---
+
+<Flowchart title={text.title} description={text.description} direction="TB" nodes={nodes} edges={edges} groups={groups} />

@@ -1,0 +1,48 @@
+---
+// Converted from the Mermaid `flowchart TD` in:
+// src/content/docs/{en,fr}/about-the-api.mdx
+import Flowchart from './Flowchart.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.ApiRetrievalPipelineDiagram[lang];
+
+const copy = {
+  en: {
+    a: 'GET /schema.json',
+    b: 'Discover endpoints, filters & taxonomy',
+    c: 'Query document index',
+    d: 'Select target document',
+    e: 'Follow advertised markdown URL',
+    f: 'Retrieve Markdown document',
+  },
+  fr: {
+    a: 'GET /schema.json',
+    b: 'Découverte des endpoints, filtres et taxonomie',
+    c: "Interroger l'index des documents",
+    d: 'Sélectionner le document cible',
+    e: "Suivre l'URL markdown annoncée",
+    f: 'Récupérer le document Markdown',
+  },
+}[lang];
+
+const nodes = [
+  { id: 'A', label: copy.a, variant: 'accent' as const },
+  { id: 'B', label: copy.b },
+  { id: 'C', label: copy.c, variant: 'accent' as const },
+  { id: 'D', label: copy.d },
+  { id: 'E', label: copy.e },
+  { id: 'F', label: copy.f, variant: 'accent' as const },
+];
+
+const edges = [
+  { from: 'A', to: 'B' },
+  { from: 'B', to: 'C' },
+  { from: 'C', to: 'D' },
+  { from: 'D', to: 'E' },
+  { from: 'E', to: 'F' },
+];
+---
+
+<Flowchart title={text.title} description={text.description} direction="TB" nodes={nodes} edges={edges} />

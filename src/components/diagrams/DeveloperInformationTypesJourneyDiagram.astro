@@ -1,0 +1,48 @@
+---
+// Converted from the Mermaid `flowchart TD` in:
+// src/content/docs/{en,fr}/toolkit/information-types.mdx
+import Flowchart from './Flowchart.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.DeveloperInformationTypesJourneyDiagram[lang];
+
+const copy = {
+  en: {
+    s1: '1. Concept — Understand the domain',
+    c1: 'What is idempotency?\nArchitecture, auth model, core domain objects',
+    s2: '2. Task — Perform an operation',
+    t1: 'How do I make my first API request?\nPrerequisites, token exchange, copyable curl steps',
+    s3: '3. Reference — Consult exact details',
+    r1: 'POST /users — parameters & schemas\nHTTP verb, endpoint path, request/response models',
+  },
+  fr: {
+    s1: '1. Concept — Comprendre le domaine',
+    c1: "Qu'est-ce que l'idempotence ?\nArchitecture, modèle d'authentification, objets clés",
+    s2: '2. Tâche — Accomplir une procédure',
+    t1: 'Comment faire un premier appel ?\nPrérequis, échange de jeton, commandes curl',
+    s3: '3. Référence — Consulter les détails',
+    r1: 'POST /users — paramètres et schémas\nVerbe HTTP, chemin d’endpoint, modèles JSON',
+  },
+}[lang];
+
+const nodes = [
+  { id: 'C1', label: copy.c1 },
+  { id: 'T1', label: copy.t1 },
+  { id: 'R1', label: copy.r1 },
+];
+
+const edges = [
+  { from: 'S1', to: 'S2' },
+  { from: 'S2', to: 'S3' },
+];
+
+const groups = [
+  { id: 'S1', label: copy.s1, members: ['C1'], direction: 'TB' as const },
+  { id: 'S2', label: copy.s2, members: ['T1'], direction: 'TB' as const },
+  { id: 'S3', label: copy.s3, members: ['R1'], direction: 'TB' as const },
+];
+---
+
+<Flowchart title={text.title} description={text.description} direction="TB" nodes={nodes} edges={edges} groups={groups} />

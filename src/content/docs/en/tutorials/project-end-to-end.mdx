@@ -6,7 +6,9 @@ goal: [docs-as-code]
 contentType: concept
 ---
 
-import Mermaid from '../../../../components/Mermaid.astro';
+import PhotoWorkflowDiagram from '../../../../components/diagrams/PhotoWorkflowDiagram.astro';
+import IncrementalBackupArchitectureDiagram from '../../../../components/diagrams/IncrementalBackupArchitectureDiagram.astro';
+import PhotoWorkflowRolesSwimlaneDiagram from '../../../../components/diagrams/PhotoWorkflowRolesSwimlaneDiagram.astro';
 
 ## Overview
 
@@ -35,25 +37,7 @@ Here’s what I did:
 
 Here is the overall solution diagram:
 
-<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-graph TD
-    accTitle: Photo gallery workflow diagram
-    accDescr: Diagram showing photographers uploading and iconographers selecting, classifying, and indexing photos into Piwigo, which feeds a Git repository backed up locally and cloned by non-profit members, and lets graphic designers search and download photos.
-
-    Photographer -->|Upload| Piwigo
-    Iconographer -->|Selection, classification, indexing| Piwigo
-    Piwigo --> Git[Git repository]
-    Git --> Backup[Local backup]
-    Git -->|Clone| Member["Non-profit member"]
-    Piwigo -->|Search, download| Designer["Graphic designer"]
-
-    classDef hub fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
-    classDef node fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
-
-    class Piwigo hub
-    class Photographer,Iconographer,Git,Backup,Member,Designer node
-
-    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
+<PhotoWorkflowDiagram />
 
 Everything was developed using *Linux*.
 
@@ -116,18 +100,7 @@ I first copied the Piwigo server directory to a local disk and initialized a Git
 
 This allows any member of the non-profit to create a GitLab account and, after obtaining the password, clone the backup copy.
 
-<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "archEdgeColor": "{{lineColor}}", "archEdgeArrowColor": "{{lineColor}}", "archGroupBorderColor": "{{childStroke}}"}}}%%
-architecture-beta
-    service piwigo(server)[Piwigo server]
-    service db(database)[Database]
-    service disk(disk)[Local Git LFS copy]
-    service gitlab(cloud)[GitLab]
-    service members(internet)[Non-profit members]
-
-    piwigo:B -- T:db
-    piwigo:R -- L:disk
-    disk:R --> L:gitlab
-    gitlab:R --> L:members`} />
+<IncrementalBackupArchitectureDiagram />
 **Centralized hosting, decentralized backup.**
 
 :::note[Cloning the GitLab Repository]
@@ -205,37 +178,7 @@ While the same person can alternate between these roles, it is crucial for effec
 
 Though the first two roles are familiar to non-profit members, the role of the iconographer is new to many. I queried whether to use this lesser-known term, but concluded I should emphasize it since it is crucial to the project's long-term success.
 
-<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
-swimlane-beta
-    accTitle: Piwigo photo management workflow by role
-    accDescr: Three lanes for the photographer, the iconographer, and the graphic designer. The photographer shoots, edits, and uploads the photo; the iconographer selects, classifies, and adds keywords; the graphic designer views, downloads, and publishes the photos.
-
-    subgraph photographer["Photographer"]
-        shooting["Shooting"]
-        editing["Editing"]
-        upload["Upload"]
-        shooting --> editing --> upload
-    end
-
-    subgraph iconographer["Iconographer"]
-        selection["Selection and classification"]
-        keywords["Adding keywords"]
-        selection --> keywords
-    end
-
-    subgraph designer["Graphic designer"]
-        viewing["Viewing and downloading"]
-        publishing["Publishing"]
-        viewing --> publishing
-    end
-
-    upload --> selection
-    keywords --> viewing
-
-    classDef step fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:1.5px,color:{{parentText}},font-weight:500
-    class shooting,editing,upload,selection,keywords,viewing,publishing step
-
-    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
+<PhotoWorkflowRolesSwimlaneDiagram />
 
 Indeed, the non-profit has functioned for years without a photo gallery and can continue to do so, though not optimally. Members will continue to take photos and create posters. However, the gallery's purpose is to centralize as many photos as possible and facilitate quick access. It will only be used if its indexing is of high quality.
 

@@ -4,7 +4,7 @@ description: "Gérez la documentation technique avec Git ou Subversion comme du 
 goal: [docs-as-code]
 contentType: concept
 ---
-import Mermaid from '../../../../components/Mermaid.astro';
+import TrunkVersionHistoryDiagram from '../../../../components/diagrams/TrunkVersionHistoryDiagram.astro';
 
 ## Définition
 
@@ -25,14 +25,7 @@ Sur des fichiers texte, et non binaires, un système de gestion de version offre
 - non-verrouillage des fichiers par les membres de l'équipe qui les ont ouverts,
 - possibilité de restauration très fine et dans le temps (depuis le dernier dépôt du fichier sur le référentiel) et en termes de quantité de travail.
 
-<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "git0": "{{parentStroke}}", "commitLabelColor": "{{childText}}", "commitLabelBackground": "{{childFill}}", "tagLabelBackground": "{{parentFill}}", "tagLabelBorder": "{{parentStroke}}", "tagLabelColor": "{{parentText}}"}}}%%
-gitGraph
-    accTitle: Historique des versions sur le tronc
-    accDescr: Graphe de type Git représentant le tronc sous forme d'une suite de commits, dont deux sont marqués par un tag correspondant à une version publiée.
-    commit tag: "version 1"
-    commit
-    commit tag: "version 2"
-    commit`} />
+<TrunkVersionHistoryDiagram />
 **Le système de gestion de versions conserve l'historique des modifications.**
 
 Des interfaces graphiques permettent d'utiliser directement sous les gestionnaires de fichiers ces outils originellement conçus pour être utilisés en ligne de commande. Cependant, le paradigme sur lequel ils reposent est parfois difficile à appréhender pour les publics les moins technophiles.

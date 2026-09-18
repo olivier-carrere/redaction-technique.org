@@ -1,0 +1,61 @@
+---
+// Converted from the Mermaid `graph TD` in:
+// src/content/docs/{en,fr}/tech-writing-process/index.mdx
+import Flowchart from './Flowchart.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.TechWritingProcessOverviewDiagram[lang];
+
+const copy = {
+  en: {
+    pd: 'Project definition (methodology)',
+    ig: 'Information gathering (methodology)',
+    cd: 'Content development (methodology)',
+    v: 'Validation (methodology)',
+    de: 'Delivery (methodology)',
+    t: 'Translation (methodology)',
+    sf: 'Source format (production line)',
+    r: 'Repository (production line)',
+    tf: 'Target format (production line)',
+  },
+  fr: {
+    pd: 'Définition du projet (méthodologie)',
+    ig: "Collecte de l'information (méthodologie)",
+    cd: 'Création du contenu (méthodologie)',
+    v: 'Validation (méthodologie)',
+    de: 'Livraison (méthodologie)',
+    t: 'Traduction (méthodologie)',
+    sf: 'Format source (chaîne de production)',
+    r: 'Référentiel (chaîne de production)',
+    tf: 'Format cible (chaîne de production)',
+  },
+}[lang];
+
+const nodes = [
+  { id: 'PD', label: copy.pd },
+  { id: 'IG', label: copy.ig },
+  { id: 'CD', label: copy.cd },
+  { id: 'V', label: copy.v },
+  { id: 'DE', label: copy.de },
+  { id: 'T', label: copy.t },
+  { id: 'SF', label: copy.sf },
+  { id: 'R', label: copy.r },
+  { id: 'TF', label: copy.tf },
+];
+
+const edges = [
+  { from: 'PD', to: 'IG' },
+  { from: 'IG', to: 'CD' },
+  { from: 'CD', to: 'V' },
+  { from: 'V', to: 'DE' },
+  { from: 'V', to: 'T' },
+  { from: 'CD', to: 'SF' },
+  { from: 'SF', to: 'R' },
+  { from: 'R', to: 'TF' },
+  { from: 'TF', to: 'DE' },
+];
+---
+
+<Flowchart title={text.title} description={text.description} direction="TB" nodes={nodes} edges={edges} />

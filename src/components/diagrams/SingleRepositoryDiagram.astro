@@ -1,0 +1,29 @@
+---
+// Converted from the Mermaid `graph TD` in:
+// src/content/docs/{en,fr}/tech-writing-process/single-repository.mdx
+import Flowchart from './Flowchart.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.SingleRepositoryDiagram[lang];
+
+const copy = {
+  en: {
+    repo: 'Single repository',
+    items: ['Brochure', 'Website', 'Corporate magazine', 'White paper', 'User guide', 'Animation'],
+  },
+  fr: {
+    repo: 'Référentiel unique',
+    items: ['Brochure', 'Site web', "Magazine d'entreprise", 'Livre blanc', 'Guide utilisateur', 'Animation'],
+  },
+}[lang];
+
+const nodes = [
+  { id: 'A', label: copy.repo, variant: 'accent' as const },
+  ...copy.items.map((label, i) => ({ id: `I${i}`, label })),
+];
+const edges = copy.items.map((_, i) => ({ from: 'A', to: `I${i}` }));
+---
+
+<Flowchart title={text.title} description={text.description} direction="TB" nodes={nodes} edges={edges} />

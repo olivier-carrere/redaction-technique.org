@@ -6,7 +6,9 @@ goal: [structured-authoring]
 contentType: concept
 ---
 
-import Mermaid from '../../../../components/Mermaid.astro';
+import MonolithicVsModularDiagram from '../../../../components/diagrams/MonolithicVsModularDiagram.astro';
+import DitamapTreeDiagram from '../../../../components/diagrams/DitamapTreeDiagram.astro';
+import SingleSourceMultipleTargetsDiagram from '../../../../components/diagrams/SingleSourceMultipleTargetsDiagram.astro';
 
 ## Definition
 
@@ -14,29 +16,7 @@ The book model remains predominant for creating and managing information. Howeve
 
 The DITA XML structured authoring format offers a transition from the book model to a modular document base. Enterprise content is composed of single building blocks that can be dynamically assembled on demand to create documents in different [target formats](../../tech-writing-process/target-format/).
 
-<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
-graph TD
-    accTitle: Modular documentation offers unparalleled flexibility
-    accDescr: Diagram contrasting monolithic documentation, a single undivided block, with modular documentation, assembled on demand from multiple blocks.
-
-    subgraph mono["Monolithic"]
-        M[Documentation]
-    end
-
-    subgraph mod["Modular"]
-        direction TB
-        B1[Block] --> D[Documentation]
-        B2[Block] --> D
-        B3[Block] --> D
-    end
-
-    classDef doc fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
-    classDef block fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
-
-    class M,D doc
-    class B1,B2,B3 block
-
-    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
+<MonolithicVsModularDiagram />
 **Modular documentation offers unparalleled flexibility**
 
 The volume of source content is minimized, reducing the costs of creating, updating, and translating corporate content. Additionally, the technical writer can manage the writing, validation, and translation processes module by module. Workflows can thus be parallelized, reducing time-to-market.
@@ -87,17 +67,7 @@ The organization of information in DITA XML is flexible. Building blocks can be 
 | Quick start guide      | Step-by-step procedures              |
 | Reference manual       | Reference information                |
 
-<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "treeView": {"labelColor": "{{childText}}", "lineColor": "{{lineColor}}", "descriptionColor": "{{lineColor}}"}}}}%%
-treeView-beta
-    accTitle: A ditamap organizes topics into a tree
-    accDescr: Tree structure of the user guide ditamap, a concept topic for the product overview, an Installation group containing a prerequisites concept and an installation task, and a troubleshooting topic.
-
-    "User guide (ditamap)/"
-        "Product overview" ## concept
-        "Installation/"
-            "Prerequisites" ## concept
-            "Installation procedure" ## task
-        "Troubleshooting" ## task`} />
+<DitamapTreeDiagram />
 **A *ditamap* organizes topics into a tree.**
 
 To achieve this, the technical writer must place context-specific elements in *ditamap* structures rather than in DITA XML content files. Specifically, cross-references should be indicated in a *reltable* within the *ditamap*: if document *A* refers to document *B* in *ditamap* *1*, it should also be usable without modification in *ditamap* *2*, where document *B* is not included.
@@ -110,24 +80,7 @@ Single-sourcing has long been a contentious issue among technical writers: shoul
 
 Productivity constraints and cost-cutting have driven the debate in favor of *single-sourcing*. While the qualitative gain is debatable, it does not outweigh the cost of creating, maintaining, and translating a distinct source version for each target version.
 
-<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-graph TD
-    accTitle: One set of information, multiple output formats
-    accDescr: Diagram showing DITA XML as a hub feeding five output formats, PDF, website, Word processor, JavaHelp, and Windows help.
-
-    A[DITA XML] --> B[PDF]
-    A --> C[Website]
-    A --> D[Word processor]
-    A --> E[JavaHelp]
-    A --> F[Windows help]
-
-    classDef hub fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
-    classDef leaf fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
-
-    class A hub
-    class B,C,D,E,F leaf
-
-    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
+<SingleSourceMultipleTargetsDiagram />
 **One set of information, multiple output formats**
 
 If the technical writer employs *single-sourcing*, they must select the paradigm - book or online help - at the project's outset. Traditionally, tools were based on either a book-like document (MS Word or FrameMaker) exportable to online help format or a Windows help source file (RTF), exportable to PDF. A significant loss of navigation information (indexes, cross-references, links, etc.) often occurred during this process.

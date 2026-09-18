@@ -5,7 +5,7 @@ goal: [toolkit]
 contentType: task
 ---
 
-import Mermaid from '../../../../components/Mermaid.astro';
+import TwoPassReviewWorkflowDiagram from '../../../../components/diagrams/TwoPassReviewWorkflowDiagram.astro';
 
 :::note[Exemple abouti]
 Ceci est un **exemple abouti à étudier**, pas un modèle. Il utilise le [modèle de demande de revue](../documentation-review-request-template/) et la [check-list de revue technique](../technical-review-checklist/) comme outils réels.
@@ -17,24 +17,7 @@ Une nouvelle fonctionnalité sort. Le rédacteur a rédigé un nouvel article t�
 
 ## Le workflow
 
-<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-flowchart TD
-    accTitle: Workflow de revue documentaire en deux passes
-    accDescr: Progression structurée montrant la séparation entre passe technique et passe éditoriale avant publication.
-
-    A["1. Auto-relecture<br/>(Check-list qualité auteur)"] --> B["2. Revue technique<br/>(Ingénieur : Est-ce exact ?)"]
-    B --> C["3. Traitement des retours<br/>(Résolution des blocages)"]
-    C --> D["4. Passe éditoriale<br/>(Relecteur : Est-ce clair et cohérent ?)"]
-    D --> E["5. Contrôle de préparation<br/>(Navigation, build et traduction)"]
-    E --> F["6. Publication avec la fonctionnalité"]
-
-    classDef step fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
-    classDef pass fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:1.5px,color:{{parentText}},font-weight:600
-
-    class A,C,E step
-    class B,D,F pass
-
-    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
+<TwoPassReviewWorkflowDiagram />
 
 1. **Auto-relecture d'abord.** Le rédacteur applique la [check-list de qualité documentaire](../documentation-quality-checklist/) à son propre brouillon avant de demander à quiconque de le regarder — corriger les problèmes évidents ici coûte moins cher qu'un relecteur qui les détecte.
 

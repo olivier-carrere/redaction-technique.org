@@ -1,0 +1,64 @@
+---
+// Converted from the Mermaid `swimlane-beta` in:
+// src/content/docs/{en,fr}/tutorials/project-end-to-end.mdx (diagram #2)
+import Flowchart from './Flowchart.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.PhotoWorkflowRolesSwimlaneDiagram[lang];
+
+const copy = {
+  en: {
+    photographer: 'Photographer',
+    shooting: 'Shooting',
+    editing: 'Editing',
+    upload: 'Upload',
+    iconographer: 'Iconographer',
+    selection: 'Selection and classification',
+    keywords: 'Adding keywords',
+    designer: 'Graphic designer',
+    viewing: 'Viewing and downloading',
+    publishing: 'Publishing',
+  },
+  fr: {
+    photographer: 'Photographe',
+    shooting: 'Prise de vue',
+    editing: 'Retouche',
+    upload: 'Upload',
+    iconographer: 'Iconographe',
+    selection: 'Sélection et classement',
+    keywords: 'Ajout de mots-clés',
+    designer: 'Graphiste',
+    viewing: 'Consultation et téléchargement',
+    publishing: 'Publication',
+  },
+}[lang];
+
+const nodes = [
+  { id: 'SHOOTING', label: copy.shooting },
+  { id: 'EDITING', label: copy.editing },
+  { id: 'UPLOAD', label: copy.upload },
+  { id: 'SELECTION', label: copy.selection },
+  { id: 'KEYWORDS', label: copy.keywords },
+  { id: 'VIEWING', label: copy.viewing },
+  { id: 'PUBLISHING', label: copy.publishing },
+];
+
+const edges = [
+  { from: 'SHOOTING', to: 'EDITING' },
+  { from: 'EDITING', to: 'UPLOAD' },
+  { from: 'SELECTION', to: 'KEYWORDS' },
+  { from: 'VIEWING', to: 'PUBLISHING' },
+  { from: 'UPLOAD', to: 'SELECTION' },
+  { from: 'KEYWORDS', to: 'VIEWING' },
+];
+
+const groups = [
+  { id: 'PHOTOGRAPHER', label: copy.photographer, members: ['SHOOTING', 'EDITING', 'UPLOAD'], direction: 'TB' as const },
+  { id: 'ICONOGRAPHER', label: copy.iconographer, members: ['SELECTION', 'KEYWORDS'], direction: 'TB' as const },
+  { id: 'DESIGNER', label: copy.designer, members: ['VIEWING', 'PUBLISHING'], direction: 'TB' as const },
+];
+---
+
+<Flowchart title={text.title} description={text.description} direction="LR" nodes={nodes} edges={edges} groups={groups} />

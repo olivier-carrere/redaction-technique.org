@@ -1,0 +1,75 @@
+---
+// Shared canvas for every native SVG diagram on the site (replaces the
+// former client-side Mermaid.astro renderer). Owns the accessible SVG root
+// (role="img" named by <title>, described by <desc>), the responsive
+// scroll viewport, and the figure frame. Renderers pass only geometry and
+// draw inside the slot; visual treatment comes only from the tokens in
+// src/styles/custom.css, never from a per-diagram component.
+interface Props {
+  /** Accessible name of the diagram. */
+  title: string;
+  /** Longer text alternative for complex diagrams. */
+  description?: string;
+  /** SVG user-space size; the diagram scales down to fit the column. */
+  width: number;
+  height: number;
+}
+
+const { title, description, width, height } = Astro.props;
+const rid = `diagram-${Math.random().toString(36).slice(2, 10)}`;
+const titleId = `${rid}-title`;
+const descId = description ? `${rid}-desc` : undefined;
+// Diagrams scale down to fit the column, but never below this fraction of
+// their natural size (11px labels stay at or above ~9px). Past that point
+// the viewport scrolls horizontally instead of shrinking text further.
+const MIN_SCALE = 0.8;
+---
+
+<figure class="diagram-figure not-content">
+  <div class="diagram-viewport">
+    <svg
+      viewBox={`0 0 ${width} ${height}`}
+      width={width}
+      role="img"
+      aria-labelledby={titleId}
+      aria-describedby={descId}
+      style={`min-width: ${Math.round(width * MIN_SCALE)}px`}
+    >
+      <title id={titleId}>{title}</title>
+      {description && <desc id={descId}>{description}</desc>}
+      <slot />
+    </svg>
+  </div>
+</figure>
+
+<style>
+  .diagram-figure {
+    margin-block: 1.75rem;
+    padding: var(--space-4);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+  }
+
+  .diagram-viewport {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .diagram-viewport svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 640px) {
+    .diagram-figure {
+      padding: var(--space-3) var(--space-2);
+      margin-block: 1.25rem;
+    }
+  }
+</style>

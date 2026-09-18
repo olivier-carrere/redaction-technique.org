@@ -1,0 +1,89 @@
+---
+// Converted from the Mermaid `flowchart TB` in:
+// src/content/docs/{en,fr}/tech-writing-process/testing-products.mdx
+import Flowchart from './Flowchart.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.UnderstandingProductDiagram[lang];
+
+const copy = {
+  en: {
+    start: 'Understanding a product',
+    groupA: '1. Gather stakeholder perspectives',
+    dev: 'Developer\nHow it is designed',
+    mkt: 'Marketing\nWhat it promises',
+    support: 'Support\nWhat goes wrong',
+    partial: 'Partial & potentially conflicting views',
+    groupB: '2. Investigate independently',
+    env: 'Set up a realistic\ntest environment',
+    use: 'Use the product\nas a customer would',
+    obs: 'Observe actual\nbehavior',
+    compare: 'Compare\nreported behavior vs observed behavior',
+    filter: 'Filter & organize\nwhat users actually need',
+    present: 'Present according to\naudience + medium',
+    doc: 'Useful user documentation',
+    feedback: 'Customer feedback\n+ product reviews',
+    feedbackLabel: 'validates & improves',
+  },
+  fr: {
+    start: 'Comprendre un produit',
+    groupA: '1. Recueillir les avis des parties prenantes',
+    dev: 'Développeur\nComment il est conçu',
+    mkt: "Marketing\nCe qu'il promet",
+    support: 'Support\nCe qui ne va pas',
+    partial: 'Visions partielles et\npotentiellement contradictoires',
+    groupB: '2. Enquêter de manière indépendante',
+    env: "Mettre en place un\nenvironnement de test réaliste",
+    use: 'Utiliser le produit\ncomme un client',
+    obs: 'Observer le\ncomportement réel',
+    compare: 'Comparer\ncomportement rapporté ↔ observé',
+    filter: 'Filtrer et organiser\nce dont les utilisateurs ont besoin',
+    present: 'Présenter selon\nle public + le support',
+    doc: 'Documentation utilisateur utile',
+    feedback: 'Retours clients\n+ tests dans la presse',
+    feedbackLabel: 'valide et améliore',
+  },
+}[lang];
+
+const nodes = [
+  { id: 'START', label: copy.start, variant: 'accent' as const },
+  { id: 'DEV', label: copy.dev },
+  { id: 'MKT', label: copy.mkt },
+  { id: 'SUPPORT', label: copy.support },
+  { id: 'PARTIAL', label: copy.partial },
+  { id: 'ENV', label: copy.env },
+  { id: 'USE', label: copy.use },
+  { id: 'OBS', label: copy.obs },
+  { id: 'COMPARE', label: copy.compare, variant: 'accent' as const },
+  { id: 'FILTER', label: copy.filter },
+  { id: 'PRESENT', label: copy.present },
+  { id: 'DOC', label: copy.doc, variant: 'accent' as const },
+  { id: 'FEEDBACK', label: copy.feedback },
+];
+
+const edges = [
+  { from: 'START', to: 'A' },
+  { from: 'START', to: 'B' },
+  { from: 'DEV', to: 'PARTIAL' },
+  { from: 'MKT', to: 'PARTIAL' },
+  { from: 'SUPPORT', to: 'PARTIAL' },
+  { from: 'ENV', to: 'USE' },
+  { from: 'USE', to: 'OBS' },
+  { from: 'PARTIAL', to: 'COMPARE' },
+  { from: 'OBS', to: 'COMPARE' },
+  { from: 'COMPARE', to: 'FILTER' },
+  { from: 'FILTER', to: 'PRESENT' },
+  { from: 'PRESENT', to: 'DOC' },
+  { from: 'DOC', to: 'FEEDBACK' },
+  { from: 'FEEDBACK', to: 'USE', style: 'dashed' as const, label: copy.feedbackLabel, constraint: false },
+];
+
+const groups = [
+  { id: 'A', label: copy.groupA, members: ['DEV', 'MKT', 'SUPPORT', 'PARTIAL'], direction: 'TB' as const },
+  { id: 'B', label: copy.groupB, members: ['ENV', 'USE', 'OBS'], direction: 'TB' as const },
+];
+---
+
+<Flowchart title={text.title} description={text.description} direction="TB" nodes={nodes} edges={edges} groups={groups} />

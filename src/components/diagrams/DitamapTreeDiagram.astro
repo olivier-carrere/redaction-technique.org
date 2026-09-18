@@ -1,0 +1,52 @@
+---
+// Converted from the Mermaid `treeView-beta` in:
+// src/content/docs/{en,fr}/formats/modular-documentation.mdx (diagram #1)
+// A ditamap tree is a hierarchy — children point into their parent — so it
+// reuses the Flowchart engine, the same way UnreliableProcessCausesDiagram
+// turns a fishbone's cause hierarchy into nodes+edges.
+import Flowchart from './Flowchart.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.DitamapTreeDiagram[lang];
+
+const copy = {
+  en: {
+    root: 'User guide (ditamap)',
+    overview: 'Product overview (concept)',
+    installation: 'Installation',
+    prerequisites: 'Prerequisites (concept)',
+    installProcedure: 'Installation procedure (task)',
+    troubleshooting: 'Troubleshooting (task)',
+  },
+  fr: {
+    root: "Guide de l'utilisateur (ditamap)",
+    overview: 'Présentation du produit (concept)',
+    installation: 'Installation',
+    prerequisites: 'Prérequis (concept)',
+    installProcedure: "Procédure d'installation (task)",
+    troubleshooting: 'Dépannage courant (task)',
+  },
+}[lang];
+
+const nodes = [
+  { id: 'ROOT', label: copy.root, variant: 'accent' as const },
+  { id: 'OVERVIEW', label: copy.overview },
+  { id: 'INSTALL', label: copy.installation },
+  { id: 'PREREQ', label: copy.prerequisites },
+  { id: 'PROCEDURE', label: copy.installProcedure },
+  { id: 'TROUBLE', label: copy.troubleshooting },
+];
+
+// A ditamap is a containment tree: plain connectors, no arrowheads.
+const edges = [
+  { from: 'ROOT', to: 'OVERVIEW', arrow: false },
+  { from: 'ROOT', to: 'INSTALL', arrow: false },
+  { from: 'ROOT', to: 'TROUBLE', arrow: false },
+  { from: 'INSTALL', to: 'PREREQ', arrow: false },
+  { from: 'INSTALL', to: 'PROCEDURE', arrow: false },
+];
+---
+
+<Flowchart title={text.title} description={text.description} direction="LR" nodes={nodes} edges={edges} />

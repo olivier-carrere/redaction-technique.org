@@ -5,7 +5,7 @@ tags: [dita-xml, structured-authoring]
 goal: [structured-authoring]
 contentType: concept
 ---
-import Mermaid from '../../../../components/Mermaid.astro';
+import ComplexVsComplicatedDiagram from '../../../../components/diagrams/ComplexVsComplicatedDiagram.astro';
 
 ## Definition
 
@@ -15,17 +15,7 @@ DITA XML enables significant productivity gains by reducing the volume of conten
 
 While DITA XML projects are more *complex*, they are still less *complicated* than projects based on more traditional formats like FrameMaker. This is because DITA XML follows a logical architecture. As a result, the technical writer can rely on the predictable behavior of the tools used, avoiding the *tricks and hacks* needed to work around bugs or the erratic behavior of more cumbersome tools.
 
-<Mermaid background="#F8FAFC" code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "cynefin": {"labelColor": "#1E293B", "textColor": "#1E293B", "boundaryColor": "#64748B", "arrowColor": "#94A3B8", "cliffColor": "#64748B", "complexBg": "#FFFBEB", "complicatedBg": "#EFF6FF", "clearBg": "#F8FAFC", "chaoticBg": "#F8FAFC", "confusionBg": "#F0FDFA"}}}}%%
-cynefin-beta
-title Complex but predictable, or complicated and erratic?
-accTitle: DITA XML is complex but predictable, traditional formats are complicated and erratic
-accDescr: Cynefin framework diagram placing DITA XML in the complex domain, since its behavior is rational and predictable despite its complexity, and traditional formats like FrameMaker in the complicated domain, due to their erratic behavior requiring workarounds and hacks.
-
-complex
-"DITA XML"
-
-complicated
-"FrameMaker and traditional formats"`} />
+<ComplexVsComplicatedDiagram />
 **DITA XML is complex but predictable; traditional formats are complicated and erratic.**
 
 ## Examples

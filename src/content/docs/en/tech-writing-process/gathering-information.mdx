@@ -6,7 +6,7 @@ goal: [process]
 contentType: concept
 ---
 
-import Mermaid from '../../../../components/Mermaid.astro';
+import GatheringInformationMindmap from '../../../../components/diagrams/GatheringInformationMindmap.astro';
 
 <a id="information-gathering"></a>
 
@@ -26,20 +26,7 @@ Once the [technical writing project has been clearly defined](../project-definit
 - Reading trade publications.
 
 
-<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "git0": "{{parentFill}}", "gitBranchLabel0": "{{parentText}}", "cScale1": "{{childFill}}", "cScaleLabel1": "{{childText}}", "cScaleInv1": "{{childStroke}}", "cScale2": "{{childFill}}", "cScaleLabel2": "{{childText}}", "cScaleInv2": "{{childStroke}}", "cScale3": "{{childFill}}", "cScaleLabel3": "{{childText}}", "cScaleInv3": "{{childStroke}}", "cScale4": "{{childFill}}", "cScaleLabel4": "{{childText}}", "cScaleInv4": "{{childStroke}}"}}}%%
-mindmap
-    root((Gathering information))
-        Interviews
-            R&D department
-            Marketing department
-            Customers
-        Product testing
-            Product handling
-            Observing users in their environment
-        Written source analysis
-            Specs, Intranet, Jira issues
-            Competitor analysis
-            Trade publications`} />
+<GatheringInformationMindmap />
 **Information Gathering**
 
 ## Why it matters

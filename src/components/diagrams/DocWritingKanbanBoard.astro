@@ -1,0 +1,101 @@
+---
+// Converted from the Mermaid `kanban` diagram in:
+// src/content/docs/{en,fr}/tech-writing-process/validation-quality-control.mdx
+import DiagramFrame from './DiagramFrame.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.DocWritingKanbanBoard[lang];
+
+type Card = { title: string; ticket: string; assigned?: string; priority?: string };
+type Column = { name: string; card: Card };
+
+const copy: { columns: Column[] } = {
+  columns:
+    lang === 'fr'
+      ? [
+          { name: 'Créé', card: { title: 'Nouvelle fonctionnalité à documenter', ticket: 'DOC-142', assigned: 'Développeur', priority: 'High' } },
+          { name: 'Rédaction en cours', card: { title: "Mise à jour du guide d'installation", ticket: 'DOC-138', assigned: 'Rédacteur technique', priority: 'Very High' } },
+          { name: 'Fermé', card: { title: "Ajout d'un exemple de configuration", ticket: 'DOC-121', assigned: 'Rédacteur technique' } },
+          { name: 'Publié', card: { title: 'Refonte de la section dépannage', ticket: 'DOC-098' } },
+        ]
+      : [
+          { name: 'Created', card: { title: 'New feature to document', ticket: 'DOC-142', assigned: 'Developer', priority: 'High' } },
+          { name: 'Writing in progress', card: { title: 'Update the installation guide', ticket: 'DOC-138', assigned: 'Technical writer', priority: 'Very High' } },
+          { name: 'Closed', card: { title: 'Add a configuration example', ticket: 'DOC-121', assigned: 'Technical writer' } },
+          { name: 'Published', card: { title: 'Rework the troubleshooting section', ticket: 'DOC-098' } },
+        ],
+};
+
+const COL_WIDTH = 190;
+const GAP = 16;
+const PAD = 16;
+const COL_HEADER_H = 26;
+const CARD_PAD = 10;
+const LINE_H = 15;
+
+function wrap(label: string, maxChars: number) {
+  const words = label.split(' ');
+  const lines: string[] = [];
+  let cur = '';
+  for (const w of words) {
+    const candidate = cur ? `${cur} ${w}` : w;
+    if (candidate.length > maxChars && cur) {
+      lines.push(cur);
+      cur = w;
+    } else {
+      cur = candidate;
+    }
+  }
+  if (cur) lines.push(cur);
+  return lines;
+}
+
+const cardLines = copy.columns.map((col) => wrap(col.card.title, 22));
+const metaLineCount = copy.columns.map((col) => [col.card.ticket, col.card.assigned, col.card.priority].filter(Boolean).length);
+const cardHeights = copy.columns.map((_, i) => CARD_PAD * 2 + cardLines[i].length * LINE_H + metaLineCount[i] * LINE_H + 6);
+
+const viewWidth = copy.columns.length * COL_WIDTH + (copy.columns.length - 1) * GAP + PAD * 2;
+const viewHeight = COL_HEADER_H + Math.max(...cardHeights) + PAD * 2 + 10;
+---
+
+<DiagramFrame title={text.title} width={viewWidth} height={viewHeight}>
+  {copy.columns.map((col, i) => {
+    const x = PAD + i * (COL_WIDTH + GAP);
+    const cardY = PAD + COL_HEADER_H;
+    const cardH = cardHeights[i];
+    return (
+      <g>
+        <rect x={x} y={PAD} width={COL_WIDTH} height={COL_HEADER_H} rx="3" class="diagram-kanban-header" />
+        <text x={x + 10} y={PAD + 17} class="diagram-kanban-header-label">{col.name}</text>
+
+        <rect x={x} y={cardY} width={COL_WIDTH} height={cardH} rx="3" class="diagram-node" />
+        {cardLines[i].map((line, j) => (
+          <text x={x + CARD_PAD} y={cardY + CARD_PAD + 12 + j * LINE_H} class="diagram-kanban-card-title">{line}</text>
+        ))}
+        {col.card.ticket && (
+          <text x={x + CARD_PAD} y={cardY + CARD_PAD + 12 + cardLines[i].length * LINE_H} class="diagram-kanban-meta">{col.card.ticket}</text>
+        )}
+        {col.card.assigned && (
+          <text
+            x={x + CARD_PAD}
+            y={cardY + CARD_PAD + 12 + (cardLines[i].length + 1) * LINE_H}
+            class="diagram-kanban-meta"
+          >
+            {col.card.assigned}
+          </text>
+        )}
+        {col.card.priority && (
+          <text
+            x={x + CARD_PAD}
+            y={cardY + CARD_PAD + 12 + (cardLines[i].length + 2) * LINE_H}
+            class="diagram-kanban-meta"
+          >
+            {col.card.priority}
+          </text>
+        )}
+      </g>
+    );
+  })}
+</DiagramFrame>

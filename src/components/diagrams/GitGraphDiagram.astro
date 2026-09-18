@@ -1,0 +1,50 @@
+---
+// Generic renderer for Mermaid `gitGraph` diagrams on this site. Every
+// source diagram is a single linear commit sequence (no branch/merge), so
+// this renders a simple commit trunk rather than a full branch-graph engine.
+import DiagramFrame from './DiagramFrame.astro';
+
+export type GitCommit = { id?: string; tag?: string };
+
+interface Props {
+  title: string;
+  description?: string;
+  commits: GitCommit[];
+}
+
+const { title, description, commits } = Astro.props;
+
+const SPACING = 130;
+const PAD = 24;
+const TRUNK_Y = 70;
+const DOT_R = 7;
+
+const viewWidth = (commits.length - 1) * SPACING + PAD * 2 + 40;
+const viewHeight = 130;
+---
+
+<DiagramFrame title={title} description={description} width={viewWidth} height={viewHeight}>
+  <line x1={PAD + 20} y1={TRUNK_Y} x2={viewWidth - PAD - 20} y2={TRUNK_Y} class="diagram-git-trunk" />
+  {commits.map((c, i) => {
+    const x = PAD + 20 + i * SPACING;
+    return (
+      <g>
+        {c.tag && (
+          <g>
+            <rect x={x - 34} y={TRUNK_Y - 44} width="68" height="22" rx="3" class="diagram-git-tag" />
+            <text x={x} y={TRUNK_Y - 29} text-anchor="middle" class="diagram-git-tag-label">
+              {c.tag}
+            </text>
+            <line x1={x} y1={TRUNK_Y - 22} x2={x} y2={TRUNK_Y - DOT_R} class="diagram-git-tag-stem" />
+          </g>
+        )}
+        <circle cx={x} cy={TRUNK_Y} r={DOT_R} class="diagram-git-commit" />
+        {c.id && (
+          <text x={x} y={TRUNK_Y + 30} text-anchor="middle" class="diagram-git-commit-label">
+            {c.id}
+          </text>
+        )}
+      </g>
+    );
+  })}
+</DiagramFrame>

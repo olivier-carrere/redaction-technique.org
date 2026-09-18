@@ -1,0 +1,63 @@
+---
+// Converted from the Mermaid `quadrantChart` in:
+// src/content/docs/{en,fr}/costs/copywriting-to-technical-communication.mdx
+import QuadrantChart from './QuadrantChart.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.MarketingTechnicalMediaQuadrantChart[lang];
+
+const copy = {
+  en: {
+    xLow: 'Low Technical level',
+    xHigh: 'High Technical level',
+    yLow: 'Low Marketing value',
+    yHigh: 'High Marketing value',
+    topLeft: 'High marketing, low technical',
+    topRight: 'High marketing, high technical',
+    bottomLeft: 'Low marketing, low technical',
+    bottomRight: 'Low marketing, high technical',
+    animation: 'Animation',
+    magazine: 'Corporate magazine',
+    brochure: 'Brochure',
+    website: 'Website',
+    whitePaper: 'White paper',
+    userGuide: 'User guide',
+  },
+  fr: {
+    xLow: 'Niveau technique faible',
+    xHigh: 'Niveau technique élevé',
+    yLow: 'Valeur marketing faible',
+    yHigh: 'Valeur marketing élevée',
+    topLeft: 'Marketing élevé, technique faible',
+    topRight: 'Marketing et technique élevés',
+    bottomLeft: 'Marketing et technique faibles',
+    bottomRight: 'Marketing faible, technique élevé',
+    animation: 'Animation',
+    magazine: "Magazine d'entreprise",
+    brochure: 'Plaquette',
+    website: 'Site web',
+    whitePaper: 'Livre blanc',
+    userGuide: "Guide de l'utilisateur",
+  },
+}[lang];
+
+const points = [
+  { label: copy.animation, x: 0.1, y: 0.73 },
+  { label: copy.magazine, x: 0.25, y: 0.31, labelPosition: 'below' as const },
+  { label: copy.brochure, x: 0.48, y: 0.42 },
+  { label: copy.website, x: 0.64, y: 0.61 },
+  { label: copy.whitePaper, x: 0.93, y: 0.57 },
+  { label: copy.userGuide, x: 0.81, y: 0.11 },
+];
+---
+
+<QuadrantChart
+  title={text.title}
+  description={text.description}
+  xAxis={{ low: copy.xLow, high: copy.xHigh }}
+  yAxis={{ low: copy.yLow, high: copy.yHigh }}
+  quadrantLabels={{ topLeft: copy.topLeft, topRight: copy.topRight, bottomLeft: copy.bottomLeft, bottomRight: copy.bottomRight }}
+  points={points}
+/>

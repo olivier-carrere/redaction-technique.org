@@ -1,0 +1,35 @@
+---
+// Converted from the Mermaid `gantt` in:
+// src/content/docs/{en,fr}/formats/structured-vs-unstructured-formats.mdx (diagram #4)
+import GanttChart from './GanttChart.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.FrameMakerRestructuringGanttDiagram[lang];
+
+const copy = {
+  en: {
+    section: 'Restructuring',
+    task1: 'FrameMaker content restructuring',
+    task2: 'Implementation of the DITA XML chain',
+  },
+  fr: {
+    section: 'Restructuration',
+    task1: 'Restructuration du contenu FrameMaker',
+    task2: 'Mise en place de la chaîne DITA XML',
+  },
+}[lang];
+
+const sections = [
+  {
+    name: copy.section,
+    tasks: [
+      { label: copy.task1, start: 0, duration: 3 },
+      { label: copy.task2, start: 0, duration: 3 },
+    ],
+  },
+];
+---
+
+<GanttChart title={text.title} description={text.description} sections={sections} />

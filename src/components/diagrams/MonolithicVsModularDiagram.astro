@@ -1,0 +1,46 @@
+---
+// Converted from the Mermaid `graph TD` in:
+// src/content/docs/{en,fr}/formats/modular-documentation.mdx (diagram #0)
+import Flowchart from './Flowchart.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.MonolithicVsModularDiagram[lang];
+
+const copy = {
+  en: {
+    monoGroup: 'Monolithic',
+    modGroup: 'Modular',
+    doc: 'Documentation',
+    block: 'Block',
+  },
+  fr: {
+    monoGroup: 'Monolithique',
+    modGroup: 'Modulaire',
+    doc: 'Documentation',
+    block: 'Bloc',
+  },
+}[lang];
+
+const nodes = [
+  { id: 'M', label: copy.doc },
+  { id: 'B1', label: copy.block },
+  { id: 'B2', label: copy.block },
+  { id: 'B3', label: copy.block },
+  { id: 'D', label: copy.doc },
+];
+
+const edges = [
+  { from: 'B1', to: 'D' },
+  { from: 'B2', to: 'D' },
+  { from: 'B3', to: 'D' },
+];
+
+const groups = [
+  { id: 'mono', label: copy.monoGroup, members: ['M'], direction: 'TB' as const },
+  { id: 'mod', label: copy.modGroup, members: ['B1', 'B2', 'B3', 'D'], direction: 'TB' as const },
+];
+---
+
+<Flowchart title={text.title} description={text.description} direction="TB" nodes={nodes} edges={edges} groups={groups} />

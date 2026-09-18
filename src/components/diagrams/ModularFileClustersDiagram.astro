@@ -1,0 +1,40 @@
+---
+// Converted from the second Mermaid `graph TD` (subgraph feeding two docs) in:
+// src/content/docs/{en,fr}/tech-writing-process/source-format.mdx
+import Flowchart from './Flowchart.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.ModularFileClustersDiagram[lang];
+
+const copy = {
+  en: {
+    group: 'Modular file clusters',
+    module: 'Module',
+    docA: 'Document A',
+    docB: 'Document B',
+  },
+  fr: {
+    group: 'Grappes de fichiers modulaires',
+    module: 'Module',
+    docA: 'Document A',
+    docB: 'Document B',
+  },
+}[lang];
+
+const nodes = [
+  { id: 'M1', label: copy.module },
+  { id: 'M2', label: copy.module },
+  { id: 'M3', label: copy.module },
+  { id: 'A', label: copy.docA, variant: 'accent' as const },
+  { id: 'B', label: copy.docB, variant: 'accent' as const },
+];
+const edges = [
+  { from: 'M1', to: 'A' },
+  { from: 'M3', to: 'B' },
+];
+const groups = [{ id: 'cluster', label: copy.group, members: ['M1', 'M2', 'M3'], direction: 'LR' as const }];
+---
+
+<Flowchart title={text.title} description={text.description} direction="TB" nodes={nodes} edges={edges} groups={groups} />

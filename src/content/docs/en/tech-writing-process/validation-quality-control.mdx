@@ -5,7 +5,9 @@ tags: [technical-writing]
 goal: [process]
 contentType: concept
 ---
-import Mermaid from '../../../../components/Mermaid.astro';
+import SerialVsParallelValidationGantt from '../../../../components/diagrams/SerialVsParallelValidationGantt.astro';
+import UnreliableProcessCausesDiagram from '../../../../components/diagrams/UnreliableProcessCausesDiagram.astro';
+import DocWritingKanbanBoard from '../../../../components/diagrams/DocWritingKanbanBoard.astro';
 
 
 
@@ -18,21 +20,7 @@ Technical writing materials must undergo rigorous quality control before being s
 
 Content must be validated before [delivery](../delivery/). This may seem obvious, but it requires the involvement of the people in charge of validation from the outset. Ideally, the validation phase takes place in parallel with the creation phase: early modifications are less costly.
 
-<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "taskBkgColor": "{{childFill}}", "taskBorderColor": "{{childStroke}}", "taskTextColor": "{{childText}}", "taskTextOutsideColor": "{{childText}}", "taskTextLightColor": "{{childText}}", "taskTextDarkColor": "{{childText}}", "sectionBkgColor": "{{parentFill}}", "sectionBkgColor2": "{{childFill}}", "gridColor": "{{lineColor}}"}}}%%
-gantt
-    accTitle: Serial or parallel validation of the writing phase
-    accDescr: Gantt chart comparing a serial process, where validation only starts once writing is complete, and a parallel process, where validation starts as soon as the first modules are written, shortening the publication timeline.
-    dateFormat YYYY-MM-DD
-    axisFormat %d
-    tickInterval 1day
-    section Serial process
-    Writing               :s1, 2024-01-01, 1d
-    Validation            :s2, after s1, 1d
-    Publication           :s3, after s2, 1d
-    section Parallel process
-    Writing               :p1, 2024-01-01, 1d
-    Continuous validation :p2, 2024-01-01, 1d
-    Publication           :p3, after p1, 1d`} />
+<SerialVsParallelValidationGantt />
 **Validating in parallel with writing shortens the publication timeline.**
 
 ## Trade-offs
@@ -43,18 +31,7 @@ An enterprise content management tool such as Alfresco may seem like an attracti
 
 A process for [creating](../content-creation/) and updating technical documentation that relies solely on human memory is unreliable. A technical writer may be tired, unwell, on vacation, overwhelmed with information, or may have left the company. Communication between two people can also fail or be misunderstood. Humans have created tools to compensate for these weaknesses, although they remain creative, unlike machines.
 
-<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "lineColor": "{{childStroke}}", "mainBkg": "{{childFill}}", "textColor": "{{childText}}"}}}%%
-ishikawa
-    Unreliable documentation process
-        Writer
-            Fatigue
-            Illness
-            Vacation
-            Forgetting through information overload
-            Leaving the company
-        Communication
-            Poor information flow
-            Being misunderstood`} />
+<UnreliableProcessCausesDiagram />
 **A process based on human memory is unreliable.**
 
 Given this situation, we need an information management system for the evolution of documentation that is tolerant of human error. This means either:
@@ -66,16 +43,7 @@ Given this situation, we need an information management system for the evolution
   - closure of the ticket by the ticket creator,
   - publication of documentation when all critical tickets have been closed.
 
-<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "cScale1": "{{parentFill}}", "cScaleLabel1": "{{parentText}}", "cScaleInv1": "{{parentStroke}}", "cScale2": "{{parentFill}}", "cScaleLabel2": "{{parentText}}", "cScaleInv2": "{{parentStroke}}", "cScale3": "{{parentFill}}", "cScaleLabel3": "{{parentText}}", "cScaleInv3": "{{parentStroke}}", "cScale4": "{{parentFill}}", "cScaleLabel4": "{{parentText}}", "cScaleInv4": "{{parentStroke}}", "cScale5": "{{parentFill}}", "cScaleLabel5": "{{parentText}}", "cScaleInv5": "{{parentStroke}}"}, "kanban": {"sectionWidth": 260}}}%%
-kanban
-    created[Created]
-        t1[New feature to document]@{ ticket: 'DOC-142', assigned: 'Developer', priority: 'High' }
-    inprogress[Writing in progress]
-        t2[Update the installation guide]@{ ticket: 'DOC-138', assigned: 'Technical writer', priority: 'Very High' }
-    closed[Closed]
-        t3[Add a configuration example]@{ ticket: 'DOC-121', assigned: 'Technical writer' }
-    published[Published]
-        t4[Rework the troubleshooting section]@{ ticket: 'DOC-098' }`} />
+<DocWritingKanbanBoard />
 **The ticket workflow moves each request through to publication.**
 
 The main functions of a CMS are as follows:

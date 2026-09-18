@@ -5,7 +5,9 @@ goal: [docs-as-code]
 contentType: concept
 ---
 
-import Mermaid from '../../../../components/Mermaid.astro';
+import PhotoWorkflowDiagram from '../../../../components/diagrams/PhotoWorkflowDiagram.astro';
+import IncrementalBackupArchitectureDiagram from '../../../../components/diagrams/IncrementalBackupArchitectureDiagram.astro';
+import PhotoWorkflowRolesSwimlaneDiagram from '../../../../components/diagrams/PhotoWorkflowRolesSwimlaneDiagram.astro';
 
 ## Aperçu
 
@@ -36,25 +38,7 @@ J'ai donc :
 
 Voici le schéma global de la solution :
 
-<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-graph TD
-    accTitle: Schéma du flux de travail de la galerie photo
-    accDescr: Schéma montrant les photographes téléversant et les iconographes sélectionnant, classant et indexant les photos dans Piwigo, qui alimente un dépôt Git sauvegardé localement et cloné par les membres de l'association, et permettant aux graphistes de rechercher et télécharger des photos.
-
-    Photographe -->|Upload| Piwigo
-    Iconographe -->|Sélection, classement, indexation| Piwigo
-    Piwigo --> Git["Dépôt Git"]
-    Git --> Sauvegarde["Sauvegarde locale"]
-    Git -->|Clone| Membre["Membre de l'association"]
-    Piwigo -->|Recherche, téléchargement| Graphiste
-
-    classDef hub fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
-    classDef node fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
-
-    class Piwigo hub
-    class Photographe,Iconographe,Git,Sauvegarde,Membre,Graphiste node
-
-    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
+<PhotoWorkflowDiagram />
 
 Tout a été réalisé sous *Linux*.
 
@@ -117,18 +101,7 @@ J'ai tout d'abord fait une copie du répertoire Piwigo du serveur sur un disque 
 
 Ainsi, tout membre de l'association peut créer un compte Gitlab, puis, après avoir reçu le mot de passe, cloner la copie de sauvegarde.
 
-<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "archEdgeColor": "{{lineColor}}", "archEdgeArrowColor": "{{lineColor}}", "archGroupBorderColor": "{{childStroke}}"}}}%%
-architecture-beta
-    service piwigo(server)[Serveur Piwigo]
-    service db(database)[Base de données]
-    service disque(disk)[Copie locale Git LFS]
-    service gitlab(cloud)[GitLab]
-    service membres(internet)[Membres de l'association]
-
-    piwigo:B -- T:db
-    piwigo:R -- L:disque
-    disque:R --> L:gitlab
-    gitlab:R --> L:membres`} />
+<IncrementalBackupArchitectureDiagram />
 **Hébergement centralisé, sauvegarde décentralisée.**
 
 :::note[Clonage du dépôt Gitlab]
@@ -206,37 +179,7 @@ La chaîne de production graphique s'appuie sur 3 rôles :
 
 Si les deux premiers sont familiers aux membres de l'association, celui d'iconographe est nouveau pour beaucoup. Je me suis tout d'abord demandé si je devais utiliser ce mot peu usité. J'ai conclu que oui : il me fallait même insister sur ce sujet qui est la clé de la réussite à long terme du projet.
 
-<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
-swimlane-beta
-    accTitle: Flux de gestion des photos Piwigo par rôle
-    accDescr: Trois couloirs représentant le photographe, l'iconographe et le graphiste. Le photographe prend la photo, la retouche et la téléverse ; l'iconographe sélectionne, classe et ajoute des mots-clés ; le graphiste consulte, télécharge et publie les photos.
-
-    subgraph photographe["Photographe"]
-        prise["Prise de vue"]
-        retouche["Retouche"]
-        upload["Upload"]
-        prise --> retouche --> upload
-    end
-
-    subgraph iconographe["Iconographe"]
-        selection["Sélection et classement"]
-        motscles["Ajout de mots-clés"]
-        selection --> motscles
-    end
-
-    subgraph graphiste["Graphiste"]
-        consultation["Consultation et téléchargement"]
-        publication["Publication"]
-        consultation --> publication
-    end
-
-    upload --> selection
-    motscles --> consultation
-
-    classDef step fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:1.5px,color:{{parentText}},font-weight:500
-    class prise,retouche,upload,selection,motscles,consultation,publication step
-
-    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
+<PhotoWorkflowRolesSwimlaneDiagram />
 
 En effet, l'association a vécu des années sans galerie photo et pourra continuer à le faire, même si ce n'est pas de manière optimale. Les membres continueront à prendre des photos et à créer des affiches. En revanche, l'intérêt de la galerie est de centraliser le maximum de photos et d'y donner un accès rapide. Elle ne sera utilisée que si son indexation est de qualité.
 

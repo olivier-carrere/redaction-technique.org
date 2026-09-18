@@ -1,0 +1,77 @@
+---
+// Converted from the Mermaid `radar-beta` in:
+// src/content/docs/{en,fr}/tech-writing-process/source-format.mdx
+import DiagramFrame from './DiagramFrame.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.SourceFormatRadarChart[lang];
+
+const copy = {
+  en: {
+    axes: ['Modularity', 'Text format', 'Structuring'],
+    curves: [
+      { label: 'FrameMaker', values: [0.26, 0.27, 0.05], colorClass: 'diagram-radar-curve--muted' },
+      { label: 'DocBook', values: [0.26, 0.76, 1], colorClass: 'diagram-radar-curve--success' },
+      { label: 'DITA XML', values: [0.8, 0.79, 1], colorClass: 'diagram-radar-curve--accent' },
+    ],
+  },
+  fr: {
+    axes: ['Modularité', 'Format texte', 'Structuration'],
+    curves: [
+      { label: 'FrameMaker', values: [0.26, 0.27, 0.05], colorClass: 'diagram-radar-curve--muted' },
+      { label: 'DocBook', values: [0.26, 0.76, 1], colorClass: 'diagram-radar-curve--success' },
+      { label: 'DITA XML', values: [0.8, 0.79, 1], colorClass: 'diagram-radar-curve--accent' },
+    ],
+  },
+}[lang];
+
+const R = 130;
+const CX = 200;
+const CY = 170;
+const N = copy.axes.length;
+const angleFor = (i: number) => -Math.PI / 2 + (i * 2 * Math.PI) / N;
+const pointFor = (i: number, value: number) => {
+  const a = angleFor(i);
+  return { x: CX + Math.cos(a) * R * value, y: CY + Math.sin(a) * R * value };
+};
+
+const rings = [0.25, 0.5, 0.75, 1];
+const ringPoints = (fraction: number) =>
+  Array.from({ length: N }, (_, i) => pointFor(i, fraction)).map((p) => `${p.x},${p.y}`).join(' ');
+
+const axisEnds = Array.from({ length: N }, (_, i) => pointFor(i, 1));
+const labelPoints = Array.from({ length: N }, (_, i) => pointFor(i, 1.18));
+
+const viewWidth = 400;
+const viewHeight = 400;
+---
+
+<DiagramFrame title={text.title} description={text.description} width={viewWidth} height={viewHeight}>
+  {rings.map((r) => (
+    <polygon points={ringPoints(r)} class="diagram-radar-grid" />
+  ))}
+  {axisEnds.map((p) => (
+    <line x1={CX} y1={CY} x2={p.x} y2={p.y} class="diagram-radar-axis" />
+  ))}
+  {copy.axes.map((label, i) => (
+    <text x={labelPoints[i].x} y={labelPoints[i].y} text-anchor="middle" dominant-baseline="middle" class="diagram-axis-label">
+      {label}
+    </text>
+  ))}
+
+  {copy.curves.map((curve) => {
+    const pts = curve.values.map((v, i) => pointFor(i, v)).map((p) => `${p.x},${p.y}`).join(' ');
+    return <polygon points={pts} class={`diagram-radar-curve ${curve.colorClass}`} />;
+  })}
+
+  <g transform={`translate(${viewWidth / 2 - (copy.curves.length * 110) / 2}, ${viewHeight - 18})`}>
+    {copy.curves.map((curve, i) => (
+      <g transform={`translate(${i * 110}, 0)`}>
+        <rect width="10" height="10" rx="3" class={`diagram-radar-swatch ${curve.colorClass}`} />
+        <text x="16" y="9" class="diagram-legend-label">{curve.label}</text>
+      </g>
+    ))}
+  </g>
+</DiagramFrame>

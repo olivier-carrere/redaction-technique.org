@@ -4,7 +4,9 @@ description: "Les traitements de texte nous ont déshabitués à distinguer le f
 goal: [tools-and-formats]
 contentType: concept
 ---
-import Mermaid from '../../../../components/Mermaid.astro';
+import SourceFormatRadarChart from '../../../../components/diagrams/SourceFormatRadarChart.astro';
+import MonolithicFilesDiagram from '../../../../components/diagrams/MonolithicFilesDiagram.astro';
+import ModularFileClustersDiagram from '../../../../components/diagrams/ModularFileClustersDiagram.astro';
 
 ## Définition
 
@@ -40,18 +42,7 @@ Lorsque la mise en page a une importance moindre que celle du contenu, ou lorsqu
 
 Dans un fichier FrameMaker, la séparation du fond et de la forme est élevée mais pas totale : le contenu et la mise en page sont placés dans le même fichier. FrameMaker applique une maquette de page homogène à tout un fichier, mais autorise l'ajout manuel d'éléments de mise en page. La même maquette peut être dupliquée pour tout le document, ou une maquette différente peut être utilisée pour chaque fichier qui compose ce dernier.
 
-<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "titleColor": "{{childText}}", "cScale0": "#f59e0b", "cScale1": "#10b981", "cScale2": "{{parentStroke}}", "radar": {"axisColor": "{{lineColor}}", "graticuleColor": "{{lineColor}}", "graticuleOpacity": 0.3, "curveOpacity": 0.3}}}}%%
-radar-beta
-    title Formats sources : modularité, format et structuration
-    accTitle: Formats sources selon la modularité, le format et la structuration sémantique
-    accDescr: Diagramme radar comparant FrameMaker, DocBook et DITA XML sur trois axes : modularité, format texte et structuration sémantique. FrameMaker est peu modulaire, binaire et non structuré. DocBook est peu modulaire, mais textuel et structuré. DITA XML est fortement modulaire, textuel et structuré.
-    axis modularite["Modularité"], texte["Format texte"], structuration["Structuration"]
-    curve framemaker["FrameMaker"]{0.26, 0.27, 0.05}
-    curve docbook["DocBook"]{0.26, 0.76, 1}
-    curve dita["DITA XML"]{0.80, 0.79, 1}
-    max 1
-    min 0
-    showLegend true`} />
+<SourceFormatRadarChart />
 **Formats sources : modularité, format et structuration sémantique.**
 
 Les formats sources peuvent être classés selon leur degré de modularité, leur format de fichier et leur structuration sémantique.
@@ -98,46 +89,12 @@ Le format source peut reposer sur des fichiers monolithiques ou sur des grappes 
 
 Les fichiers monolithiques (par exemple MS Word, LibreOffice ou FrameMaker) centralisent tout le contenu dans un seul fichier, facile à manier, mais qui limite le partage du contenu ; le risque de disposer d'informations incohérentes ou en doublon est alors important.
 
-<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
-graph TD
-    accTitle: Format source de rédaction technique monolithique
-    accDescr: Schéma montrant deux documents monolithiques autonomes, sans contenu partagé entre eux.
-
-    subgraph mono["Fichiers monolithiques"]
-        direction LR
-        A["Document A"]
-        B["Document B"]
-    end
-
-    classDef doc fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
-
-    class A,B doc`} />
+<MonolithicFilesDiagram />
 **Format source de rédaction technique monolithique**
 
 Les grappes de fichiers modulaires (par exemple DITA XML) agrègent le contenu de multiples fichiers, ce qui favorise le partage et la réutilisation de blocs de contenu. Un tel système est difficile à mettre en place au niveau de toute l'entreprise, mais devrait être la norme pour une équipe de rédaction technique.
 
-<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
-graph TD
-    accTitle: Format source de rédaction technique modulaire
-    accDescr: Schéma montrant des grappes de fichiers modulaires réutilisées entre deux documents, Document A et Document B, qui partagent du contenu au lieu de le dupliquer.
-
-    subgraph cluster["Grappes de fichiers modulaires"]
-        direction LR
-        M1[Module]
-        M2[Module]
-        M3[Module]
-    end
-
-    M1 --> A["Document A"]
-    M3 --> B["Document B"]
-
-    classDef mod fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
-    classDef doc fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
-
-    class M1,M2,M3 mod
-    class A,B doc
-
-    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
+<ModularFileClustersDiagram />
 **Format source de rédaction technique modulaire**
 
 Certains traitements de texte proposent de gérer des documents modulaires, mais ils le font mal. Inversement, un document DocBook ou DITA XML, par exemple, peut être monolithique, mais perd alors de sa souplesse.

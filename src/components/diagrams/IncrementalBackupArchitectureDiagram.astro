@@ -1,0 +1,47 @@
+---
+// Converted from the Mermaid `architecture-beta` in:
+// src/content/docs/{en,fr}/tutorials/project-end-to-end.mdx (diagram #1)
+// Compass port syntax (:B/:T/:R/:L) is a layout hint specific to Mermaid's
+// architecture diagram renderer; it carries no extra meaning here, so this
+// renders as an ordinary small flowchart.
+import Flowchart from './Flowchart.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.IncrementalBackupArchitectureDiagram[lang];
+
+const copy = {
+  en: {
+    piwigo: 'Piwigo server',
+    db: 'Database',
+    disk: 'Local Git LFS copy',
+    gitlab: 'GitLab',
+    members: 'Non-profit members',
+  },
+  fr: {
+    piwigo: 'Serveur Piwigo',
+    db: 'Base de données',
+    disk: 'Copie locale Git LFS',
+    gitlab: 'GitLab',
+    members: "Membres de l'association",
+  },
+}[lang];
+
+const nodes = [
+  { id: 'PIWIGO', label: copy.piwigo, variant: 'accent' as const },
+  { id: 'DB', label: copy.db },
+  { id: 'DISK', label: copy.disk },
+  { id: 'GITLAB', label: copy.gitlab },
+  { id: 'MEMBERS', label: copy.members },
+];
+
+const edges = [
+  { from: 'PIWIGO', to: 'DB', arrow: false },
+  { from: 'PIWIGO', to: 'DISK', arrow: false },
+  { from: 'DISK', to: 'GITLAB' },
+  { from: 'GITLAB', to: 'MEMBERS' },
+];
+---
+
+<Flowchart title={text.title} direction="LR" nodes={nodes} edges={edges} />

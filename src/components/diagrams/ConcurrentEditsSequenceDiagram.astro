@@ -1,0 +1,51 @@
+---
+// Converted from the Mermaid `sequenceDiagram` in:
+// src/content/docs/{en,fr}/tech-writing-process/which-repository-for-group-work.mdx
+import SequenceDiagram from './SequenceDiagram.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.ConcurrentEditsSequenceDiagram[lang];
+
+const copy = {
+  en: {
+    p1: 'Alice',
+    p2: 'File on the network drive',
+    p3: 'Bob',
+    open: 'Open (copy loaded into RAM)',
+    editsHer: 'Edits her copy',
+    editsHis: 'Edits his copy',
+    save: 'Save',
+    kept: "Only Bob's changes are kept",
+  },
+  fr: {
+    p1: 'Arsène',
+    p2: 'Fichier sur le dossier réseau',
+    p3: 'Louise',
+    open: 'Ouverture (copie chargée en mémoire)',
+    editsHer: 'Modifie sa copie',
+    editsHis: 'Modifie sa copie',
+    save: 'Enregistrement',
+    kept: 'Seules les modifications de Louise sont conservées',
+  },
+}[lang];
+
+const participants = [
+  { id: 'A', label: copy.p1 },
+  { id: 'F', label: copy.p2 },
+  { id: 'B', label: copy.p3 },
+];
+
+const events = [
+  { type: 'message' as const, from: 'A', to: 'F', label: copy.open },
+  { type: 'message' as const, from: 'B', to: 'F', label: copy.open },
+  { type: 'note' as const, over: ['A'], label: copy.editsHer },
+  { type: 'note' as const, over: ['B'], label: copy.editsHis },
+  { type: 'message' as const, from: 'A', to: 'F', label: copy.save },
+  { type: 'message' as const, from: 'B', to: 'F', label: copy.save },
+  { type: 'note' as const, over: ['F'], label: copy.kept },
+];
+---
+
+<SequenceDiagram title={text.title} description={text.description} participants={participants} events={events} />

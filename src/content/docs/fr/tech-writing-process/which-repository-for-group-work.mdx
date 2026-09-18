@@ -4,7 +4,7 @@ description: "Pourquoi les dossiers et disques réseau partagés montrent leurs 
 goal: [docs-as-code]
 contentType: concept
 ---
-import Mermaid from '../../../../components/Mermaid.astro';
+import ConcurrentEditsSequenceDiagram from '../../../../components/diagrams/ConcurrentEditsSequenceDiagram.astro';
 
 ## Définition
 
@@ -16,21 +16,7 @@ Pour travailler sur un fichier, le rédacteur technique utilise un programme qui
 
 Les programmes ne gèrent cependant pas la modification concurrente d'un même fichier par plusieurs rédacteurs techniques. Dans le cas d'un fichier disponible sur un disque réseau, imaginons qu'Arsène et Louise ouvrent la même version de ce fichier sous un éditeur de texte. Chacun apporte des modifications différentes dans sa copie chargée en mémoire vive, puis enregistre son travail. Arsène enregistre tout d'abord ses modifications, puis Louise. À la prochaine ouverture du fichier, seules les modifications de Louise figureront dans le fichier.
 
-<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "actorBkg": "{{parentFill}}", "actorBorder": "{{parentStroke}}", "actorTextColor": "{{parentText}}", "actorLineColor": "{{lineColor}}", "signalColor": "{{lineColor}}", "signalTextColor": "{{childText}}", "noteBkgColor": "{{childFill}}", "noteBorderColor": "{{childStroke}}", "noteTextColor": "{{childText}}"}}}%%
-sequenceDiagram
-    accTitle: Modification concurrente d'un fichier sur un dossier réseau partagé
-    accDescr: Diagramme de séquence montrant Arsène et Louise ouvrant la même version d'un fichier, le modifiant chacun de leur côté, puis l'enregistrant l'un après l'autre : les modifications d'Arsène, enregistrées en premier, sont écrasées par celles de Louise.
-    participant Arsène
-    participant Fichier as Fichier sur le dossier réseau
-    participant Louise
-
-    Arsène->>Fichier: Ouverture (copie chargée en mémoire)
-    Louise->>Fichier: Ouverture (copie chargée en mémoire)
-    Note over Arsène: Modifie sa copie
-    Note over Louise: Modifie sa copie
-    Arsène->>Fichier: Enregistrement
-    Louise->>Fichier: Enregistrement
-    Note over Fichier: Seules les modifications de Louise sont conservées`} />
+<ConcurrentEditsSequenceDiagram />
 **Modification concurrente : les changements de Louise écrasent ceux d'Arsène.**
 
 ## Compromis

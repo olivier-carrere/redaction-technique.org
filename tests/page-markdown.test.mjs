@@ -147,7 +147,7 @@ Zone sensible.
   assert.match(mdFr, /> \*\*Attention\*\*\n>\n> Zone sensible\./);
 });
 
-test('getPageMarkdown transforms Starlight components (CardGrid, LinkCard, Tabs, Steps, Mermaid)', () => {
+test('getPageMarkdown transforms Starlight components (CardGrid, LinkCard, Tabs, Steps, diagrams)', () => {
   const doc = {
     id: 'en/test-components',
     data: { title: 'Components Test' },
@@ -175,8 +175,8 @@ test('getPageMarkdown transforms Starlight components (CardGrid, LinkCard, Tabs,
   </TabItem>
 </Tabs>
 
-<Mermaid code={\`graph TD
-    A[Start] --> B[End]\`} />
+<SingleRepositoryDiagram />
+**Single Repository**
     `.trim(),
   };
 
@@ -195,8 +195,14 @@ test('getPageMarkdown transforms Starlight components (CardGrid, LinkCard, Tabs,
   assert.match(md, /#### Tab: NPM/);
   assert.match(md, /#### Tab: PNPM/);
 
-  // Mermaid converted to fenced code block
-  assert.match(md, /```mermaid\ngraph TD\n    A\[Start\] --> B\[End\]\n```/);
+  // Native SVG diagram replaced by its accessible text alternative; the
+  // caption line that follows stays outside the blockquote.
+  assert.doesNotMatch(md, /<SingleRepositoryDiagram/);
+  assert.match(md, /> \*\*Diagram: Single repository feeding multiple deliverables\*\*\n>\n> Diagram showing a single documentation repository feeding six deliverable formats/);
+  assert.match(md, /deliverable formats: [^\n]*animation\.\n\n\*\*Single Repository\*\*/);
+
+  const mdFr = getPageMarkdown({ ...doc, id: 'fr/test-components' });
+  assert.match(mdFr, /> \*\*Schéma: Un référentiel unique alimentant plusieurs livrables\*\*/);
 });
 
 test('getPageMarkdown transforms InformationType component', () => {

@@ -167,7 +167,8 @@ The following Astro components constitute the frozen component library. They mus
 * [`src/components/StartHere.astro`](src/components/StartHere.astro) — Curated 4-step sequence panel
 * [`src/components/SiteOrientation.astro`](src/components/SiteOrientation.astro) — Documentation manual orientation header
 * [`src/components/CardGridSection.astro`](src/components/CardGridSection.astro) — Multi-card navigation grid
-* [`src/components/Mermaid.astro`](src/components/Mermaid.astro) — Theme-aware warm neutral flowchart engine
+* [`src/components/diagrams/DiagramFrame.astro`](src/components/diagrams/DiagramFrame.astro) — Accessible figure frame and responsive viewport for every native SVG diagram
+* [`src/components/diagrams/Flowchart.astro`](src/components/diagrams/Flowchart.astro), [`GanttChart.astro`](src/components/diagrams/GanttChart.astro), [`GitGraphDiagram.astro`](src/components/diagrams/GitGraphDiagram.astro), [`QuadrantChart.astro`](src/components/diagrams/QuadrantChart.astro), [`SequenceDiagram.astro`](src/components/diagrams/SequenceDiagram.astro) — Build-time SVG diagram renderers (replaced the client-side `Mermaid.astro` engine; see §7)
 * [`src/components/AwkBox.astro`](src/components/AwkBox.astro) — Interactive Awk tutorial sandbox
 * [`src/components/SedBox.astro`](src/components/SedBox.astro) — Interactive Sed tutorial sandbox
 * [`src/components/DitaRenameBox.astro`](src/components/DitaRenameBox.astro) — Interactive DITA rename sandbox
@@ -187,7 +188,7 @@ The following Astro components constitute the frozen component library. They mus
 Before any commit is pushed to the repository, the baseline must be verified using the automated test suite and static build:
 
 ```bash
-# Run unit & contract tests (78 tests across API, schema, taxonomy, explorer, markdown)
+# Run unit & contract tests (81 tests across API, schema, taxonomy, explorer, markdown, diagrams)
 node --test --test-concurrency=1 tests/*.test.mjs
 
 # Run full production static build (158 static pages + Pagefind index)
@@ -195,3 +196,16 @@ npm run build
 ```
 
 Both commands must pass with zero failures and zero regressions.
+
+---
+
+## 7. Authorized Amendments
+
+### 7.1 Native SVG diagrams (September 2026)
+
+Authorized by the repository maintainer. The client-side `Mermaid.astro` renderer and the `mermaid` dependency were removed. All 50 diagrams (EN and FR) are now static SVG, rendered at build time by the components in `src/components/diagrams/`, with no client-side JavaScript.
+
+* **Tokens**: Diagram styling lives in the "Diagram Design System" section of `src/styles/custom.css`. It uses only the frozen tokens in §2.2 (`--color-*`, `--font-*`), so light and dark themes need no separate override. No new color, font, or radius was introduced.
+* **Geometry**: Nodes use `--radius-sm` (3px). Figure frames and groups use `--radius-md` (6px).
+* **Accessibility**: Each diagram is a `<figure>` with an accessible name. The `<svg role="img">` has a `<title>`. Complex diagrams also have a screen-reader description. `src/components/diagrams/diagram-text.ts` is the single source for this text. The Markdown API (`*.md`, `llms-full.txt`) emits the same text in place of each diagram.
+* **Bilingual parity**: Each diagram is one component that selects EN or FR labels from the page locale.

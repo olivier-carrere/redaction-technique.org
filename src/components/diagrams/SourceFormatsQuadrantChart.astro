@@ -1,0 +1,54 @@
+---
+// Converted from the Mermaid `quadrantChart` in:
+// src/content/docs/{en,fr}/about-this-blog.mdx
+import QuadrantChart from './QuadrantChart.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.SourceFormatsQuadrantChart[lang];
+
+const copy = {
+  en: {
+    xLow: 'Low complexity',
+    xHigh: 'High complexity',
+    yLow: 'Low features',
+    yHigh: 'High features',
+    topLeft: 'Simple, feature-rich',
+    topRight: 'Complex, feature-rich',
+    bottomLeft: 'Simple, limited features',
+    bottomRight: 'Complex, limited features',
+    p1: 'reStructuredText',
+    p2: 'DocBook',
+    p3: 'DITA XML',
+  },
+  fr: {
+    xLow: 'Complexité faible',
+    xHigh: 'Complexité élevée',
+    yLow: 'Fonctionnalités faibles',
+    yHigh: 'Fonctionnalités élevées',
+    topLeft: 'Simple et riche',
+    topRight: 'Complexe et riche',
+    bottomLeft: 'Simple et limité',
+    bottomRight: 'Complexe et limité',
+    p1: 'reStructuredText',
+    p2: 'DocBook',
+    p3: 'DITA XML',
+  },
+}[lang];
+
+const points = [
+  { label: copy.p1, x: 0.15, y: 0.25 },
+  { label: copy.p2, x: 0.65, y: 0.25 },
+  { label: copy.p3, x: 0.65, y: 0.75 },
+];
+---
+
+<QuadrantChart
+  title={text.title}
+  description={text.description}
+  xAxis={{ low: copy.xLow, high: copy.xHigh }}
+  yAxis={{ low: copy.yLow, high: copy.yHigh }}
+  quadrantLabels={{ topLeft: copy.topLeft, topRight: copy.topRight, bottomLeft: copy.bottomLeft, bottomRight: copy.bottomRight }}
+  points={points}
+/>

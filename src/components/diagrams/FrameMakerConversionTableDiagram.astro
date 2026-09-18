@@ -1,0 +1,36 @@
+---
+// Converted from the Mermaid `graph TD` in:
+// src/content/docs/{en,fr}/formats/structured-vs-unstructured-formats.mdx (diagram #5)
+import Flowchart from './Flowchart.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.FrameMakerConversionTableDiagram[lang];
+
+const copy = {
+  en: {
+    a: 'FrameMaker',
+    b: 'DITA XML',
+    edgeLabel: 'conversion table',
+  },
+  fr: {
+    a: 'FrameMaker',
+    b: 'DITA XML',
+    edgeLabel: 'table de conversion',
+  },
+}[lang];
+
+const nodes = [
+  { id: 'A', label: copy.a },
+  { id: 'B', label: copy.b },
+];
+---
+
+<Flowchart
+  title={text.title}
+  description={text.description}
+  direction="TB"
+  nodes={nodes}
+  edges={[{ from: 'A', to: 'B', label: copy.edgeLabel }]}
+/>

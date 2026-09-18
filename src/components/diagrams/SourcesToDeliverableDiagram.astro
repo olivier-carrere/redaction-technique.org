@@ -1,0 +1,28 @@
+---
+// Converted from the Mermaid `graph TD` in:
+// src/content/docs/{en,fr}/formats/index.mdx (diagram #1)
+import Flowchart from './Flowchart.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.SourcesToDeliverableDiagram[lang];
+
+const copy = {
+  en: {
+    sources: 'Sources',
+    pdf: 'PDF',
+  },
+  fr: {
+    sources: 'Sources',
+    pdf: 'PDF',
+  },
+}[lang];
+
+const nodes = [
+  { id: 'A', label: copy.sources },
+  { id: 'B', label: copy.pdf },
+];
+---
+
+<Flowchart title={text.title} description={text.description} direction="TB" nodes={nodes} edges={[{ from: 'A', to: 'B' }]} />

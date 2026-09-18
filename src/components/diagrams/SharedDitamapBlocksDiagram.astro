@@ -1,0 +1,44 @@
+---
+// Converted from the Mermaid `graph TD` in:
+// src/content/docs/{en,fr}/formats/nufirewall-case-study.mdx (diagram #0)
+import Flowchart from './Flowchart.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.SharedDitamapBlocksDiagram[lang];
+
+const copy = {
+  en: {
+    a: 'A.ditamap',
+    b: 'B.ditamap',
+    d1: '1.dita',
+    d2: '2.dita',
+    d3: '3.dita',
+  },
+  fr: {
+    a: 'A.ditamap',
+    b: 'B.ditamap',
+    d1: '1.dita',
+    d2: '2.dita',
+    d3: '3.dita',
+  },
+}[lang];
+
+const nodes = [
+  { id: 'A', label: copy.a, variant: 'accent' as const },
+  { id: 'B', label: copy.b, variant: 'accent' as const },
+  { id: 'D1', label: copy.d1 },
+  { id: 'D2', label: copy.d2, variant: 'accent' as const },
+  { id: 'D3', label: copy.d3 },
+];
+
+const edges = [
+  { from: 'A', to: 'D1' },
+  { from: 'A', to: 'D2' },
+  { from: 'B', to: 'D2' },
+  { from: 'B', to: 'D3' },
+];
+---
+
+<Flowchart title={text.title} description={text.description} direction="TB" nodes={nodes} edges={edges} />

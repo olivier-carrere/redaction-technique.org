@@ -4,7 +4,7 @@ pageType: utility
 description: "Blog de rédaction technique spécialisé en DITA XML, docs-as-code, automatisation de la documentation et communication technique, par Olivier Carrère, rédacteur technique."
 ---
 
-import Mermaid from '../../../components/Mermaid.astro';
+import SourceFormatsQuadrantChart from '../../../components/diagrams/SourceFormatsQuadrantChart.astro';
 
 Ce blog est conçu et réalisé par un **rédacteur technique** spécialisé dans l'informatique.
 
@@ -57,20 +57,7 @@ Toutes les versions de ce blog sont gérées sous le logiciel de gestion de vers
 
 Ce blog est disponible en trois formats, basés sur la version 1.1. Ces formats présentent des niveaux de fonctionnalités et de complexité différents.
 
-<Mermaid code={`%%{init: {"quadrantChart": {"chartWidth": 550, "chartHeight": 550}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "quadrant1Fill": "{{childFill}}", "quadrant2Fill": "{{childFill}}", "quadrant3Fill": "{{childFill}}", "quadrant4Fill": "{{childFill}}", "quadrant1TextFill": "{{lineColor}}", "quadrant2TextFill": "{{lineColor}}", "quadrant3TextFill": "{{lineColor}}", "quadrant4TextFill": "{{lineColor}}", "quadrantPointFill": "{{parentStroke}}", "quadrantPointTextFill": "{{childText}}", "quadrantXAxisTextFill": "{{childText}}", "quadrantYAxisTextFill": "{{childText}}", "quadrantInternalBorderStrokeFill": "{{lineColor}}", "quadrantExternalBorderStrokeFill": "{{lineColor}}", "quadrantTitleFill": "{{childText}}"}}}%%
-quadrantChart
-    accTitle: Niveau de fonctionnalités et de complexité des formats texte
-    accDescr: Diagramme en quadrants positionnant reStructuredText, DocBook et DITA XML selon leur complexité et leurs fonctionnalités. reStructuredText est faible sur les deux axes. DocBook est plus complexe mais reste limité en fonctionnalités. DITA XML est à la fois complexe et riche en fonctionnalités.
-    title Fonctionnalités et complexité
-    x-axis Complexité faible --> Complexité élevée
-    y-axis Fonctionnalités faibles --> Fonctionnalités élevées
-    quadrant-1 Complexe et riche
-    quadrant-2 Simple et riche
-    quadrant-3 Simple et limité
-    quadrant-4 Complexe et limité
-    "reStructuredText": [0.15, 0.25]
-    DocBook: [0.65, 0.25]
-    "DITA XML": [0.65, 0.75]`} />
+<SourceFormatsQuadrantChart />
 *Niveau de fonctionnalités et de complexité des formats texte*
 
 reStructuredText

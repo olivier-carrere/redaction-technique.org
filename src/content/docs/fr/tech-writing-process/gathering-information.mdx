@@ -5,7 +5,7 @@ goal: [process]
 contentType: concept
 ---
 
-import Mermaid from '../../../../components/Mermaid.astro';
+import GatheringInformationMindmap from '../../../../components/diagrams/GatheringInformationMindmap.astro';
 
 <a id="collecte-de-l-information"></a>
 
@@ -25,20 +25,7 @@ Une fois le projet de rédaction technique clairement défini, le rédacteur tec
 -   lecture de la presse spécialisée.
 
 
-<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "git0": "{{parentFill}}", "gitBranchLabel0": "{{parentText}}", "cScale1": "{{childFill}}", "cScaleLabel1": "{{childText}}", "cScaleInv1": "{{childStroke}}", "cScale2": "{{childFill}}", "cScaleLabel2": "{{childText}}", "cScaleInv2": "{{childStroke}}", "cScale3": "{{childFill}}", "cScaleLabel3": "{{childText}}", "cScaleInv3": "{{childStroke}}", "cScale4": "{{childFill}}", "cScaleLabel4": "{{childText}}", "cScaleInv4": "{{childStroke}}"}}}%%
-mindmap
-    root(("Collecte de l'information"))
-        Interview
-            Service R&D
-            Service marketing
-            Clients
-        Test du produit
-            Manipulation du produit
-            Observation des utilisateurs sur leur lieu de travail
-        Analyse des sources écrites
-            "Spécifications, Intranet, tickets Jira"
-            Analyse de la concurrence
-            Presse spécialisée`} />
+<GatheringInformationMindmap />
 **Collecte de l'information**
 
 ## Pourquoi c'est important

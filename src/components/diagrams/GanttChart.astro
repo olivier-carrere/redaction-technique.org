@@ -1,0 +1,85 @@
+---
+// Generic renderer for Mermaid `gantt` diagrams on this site. All source
+// diagrams use day-granularity relative scheduling ("after <task>"), so
+// each task is pre-resolved to a simple {start, duration} in days rather
+// than re-implementing Mermaid's date-reference resolver here.
+import DiagramFrame from './DiagramFrame.astro';
+
+export type GanttTask = { label: string; start: number; duration: number };
+export type GanttSection = { name: string; tasks: GanttTask[] };
+
+interface Props {
+  title: string;
+  description?: string;
+  sections: GanttSection[];
+}
+
+const { title, description, sections } = Astro.props;
+
+// Task label column: as wide as the longest label (12px Inter), not wider.
+const LABEL_WIDTH = Math.max(...sections.flatMap((s) => [s.name, ...s.tasks.map((t) => t.label)]).map((l) => l.length * 6.6)) + 24;
+const DAY_WIDTH = 64;
+const BAR_HEIGHT = 26;
+const ROW_GAP = 10;
+const SECTION_GAP = 22;
+const SECTION_LABEL_HEIGHT = 22;
+const PAD = 16;
+const AXIS_HEIGHT = 24;
+
+const maxDay = Math.max(1, ...sections.flatMap((s) => s.tasks.map((t) => t.start + t.duration)));
+const chartWidth = LABEL_WIDTH + maxDay * DAY_WIDTH;
+
+let cursorY = 0;
+const rows: { label: string; x: number; y: number; width: number; isSection?: boolean }[] = [];
+for (const section of sections) {
+  rows.push({ label: section.name, x: 0, y: cursorY, width: 0, isSection: true });
+  cursorY += SECTION_LABEL_HEIGHT;
+  for (const task of section.tasks) {
+    rows.push({
+      label: task.label,
+      x: LABEL_WIDTH + task.start * DAY_WIDTH,
+      y: cursorY,
+      width: Math.max(task.duration * DAY_WIDTH - 4, 18),
+    });
+    cursorY += BAR_HEIGHT + ROW_GAP;
+  }
+  cursorY += SECTION_GAP - ROW_GAP;
+}
+const chartHeight = cursorY;
+
+const dayTicks = Array.from({ length: maxDay + 1 }, (_, i) => i);
+const viewWidth = chartWidth + PAD * 2;
+const viewHeight = chartHeight + AXIS_HEIGHT + PAD * 2;
+---
+
+<DiagramFrame title={title} description={description} width={viewWidth} height={viewHeight}>
+  {dayTicks.map((d) => (
+    <g>
+      <line
+        x1={LABEL_WIDTH + d * DAY_WIDTH + PAD}
+        y1={PAD}
+        x2={LABEL_WIDTH + d * DAY_WIDTH + PAD}
+        y2={chartHeight + PAD}
+        class="diagram-gantt-gridline"
+      />
+      <text x={LABEL_WIDTH + d * DAY_WIDTH + PAD} y={chartHeight + PAD + 17} text-anchor="middle" class="diagram-gantt-axis-label">
+        {d}
+      </text>
+    </g>
+  ))}
+
+  {rows.map((row) =>
+    row.isSection ? (
+      <text x={PAD} y={row.y + PAD + 15} class="diagram-gantt-section-label">
+        {row.label}
+      </text>
+    ) : (
+      <g>
+        <rect x={row.x + PAD} y={row.y + PAD} width={row.width} height={BAR_HEIGHT} rx="3" class="diagram-node" />
+        <text x={PAD} y={row.y + PAD + BAR_HEIGHT / 2 + 4} class="diagram-gantt-task-label">
+          {row.label}
+        </text>
+      </g>
+    ),
+  )}
+</DiagramFrame>

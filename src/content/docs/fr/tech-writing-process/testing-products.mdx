@@ -4,7 +4,7 @@ description: "Le rédacteur technique doit tester le produit dans des conditions
 goal: [process]
 contentType: concept
 ---
-import Mermaid from '../../../../components/Mermaid.astro';
+import UnderstandingProductDiagram from '../../../../components/diagrams/UnderstandingProductDiagram.astro';
 
 ## Définition
 
@@ -14,52 +14,7 @@ Le rédacteur technique ne peut fournir une documentation utile aux clients de l
 
 Un conte indien narre comment des aveugles se sont retrouvés confrontés à un éléphant. Aucun d'entre eux, et pour cause, n'ayant une perception globale de l'animal, chacun en eut une image différente : celui qui en tenait une patte le prenait pour un arbre, celui qui en étreignait la trompe le confondait avec un serpent, celui qui avait empoigné une défense l'identifiait à une lance, et celui qui s'agrippait à une de ses oreilles croyait qu'il s'agissait d'un éventail.
 
-<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
-flowchart TB
-    accTitle: Comprendre un produit
-    accDescr: Schéma montrant deux voies pour comprendre un produit - recueillir les avis des parties prenantes et enquêter de manière indépendante - puis les confronter pour créer une documentation utile.
-
-    START["Comprendre un produit"]
-
-    START --> A
-    START --> B
-
-    subgraph A["1. Recueillir les avis des parties prenantes"]
-        DEV["Développeur<br/>Comment il est conçu"]
-        MKT["Marketing<br/>Ce qu'il promet"]
-        SUPPORT["Support<br/>Ce qui ne va pas"]
-
-        DEV --> PARTIAL["Visions partielles et<br/>potentiellement contradictoires"]
-        MKT --> PARTIAL
-        SUPPORT --> PARTIAL
-    end
-
-    subgraph B["2. Enquêter de manière indépendante"]
-        ENV["Mettre en place un<br/>environnement de test réaliste"]
-        USE["Utiliser le produit<br/>comme un client"]
-        OBS["Observer le<br/>comportement réel"]
-
-        ENV --> USE
-        USE --> OBS
-    end
-
-    PARTIAL --> COMPARE["Comparer<br/>comportement rapporté ↔ observé"]
-    OBS --> COMPARE
-
-    COMPARE --> FILTER["Filtrer et organiser<br/>ce dont les utilisateurs ont besoin"]
-    FILTER --> PRESENT["Présenter selon<br/>le public + le support"]
-    PRESENT --> DOC["Documentation utilisateur utile"]
-
-    DOC --> FEEDBACK["Retours clients<br/>+ tests dans la presse"]
-    FEEDBACK -. "valide et améliore" .-> USE
-
-    classDef hub fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
-    classDef node fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
-
-    class START,COMPARE,DOC hub
-    class DEV,MKT,SUPPORT,PARTIAL,ENV,USE,OBS,FILTER,PRESENT,FEEDBACK node
-
-    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
+<UnderstandingProductDiagram />
 **Comprendre un produit**
 
 ## Principes clés

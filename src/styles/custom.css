@@ -1277,3 +1277,264 @@ site-search dialog::backdrop {
     scroll-behavior: auto !important;
   }
 }
+
+/* ===================================================
+   DIAGRAM DESIGN SYSTEM
+   Shared visual theme for every native SVG diagram under
+   src/components/diagrams/. One source of truth: individual diagram
+   components declare structure only (nodes, edges, variants) and never
+   their own colors, fonts, or radii. Diagrams are static server-rendered
+   SVG — every value below is a var(--color-*)/var(--font-*) token, so
+   dark mode is automatic and requires no separate override block here.
+   Text drawn on --color-surface uses --color-text: --color-text-muted
+   on --color-surface is 4.09:1 in the light theme, below WCAG AA.
+   =================================================== */
+
+.diagram-figure svg text {
+  font-family: var(--font-sans);
+}
+
+.diagram-node {
+  fill: var(--color-surface);
+  stroke: var(--color-border);
+  stroke-width: 1.5px;
+}
+
+.diagram-node--accent {
+  fill: var(--color-accent-soft);
+  stroke: var(--color-accent);
+  stroke-width: 2px;
+}
+
+.diagram-node-label {
+  fill: var(--color-text);
+  font-size: 12.5px;
+  font-weight: 500;
+}
+
+.diagram-node-label--accent {
+  font-weight: 600;
+}
+
+.diagram-group {
+  fill: none;
+  stroke: var(--color-border);
+  stroke-width: 1px;
+  stroke-dasharray: 3, 3;
+}
+
+.diagram-group-label {
+  fill: var(--color-text-muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.diagram-edge {
+  stroke: var(--color-text-muted);
+  stroke-width: 1.5px;
+  fill: none;
+}
+
+.diagram-edge--dashed {
+  stroke-dasharray: 4, 3;
+}
+
+.diagram-arrowhead {
+  fill: var(--color-text-muted);
+}
+
+.diagram-edge-label-bg {
+  fill: var(--color-bg);
+}
+
+.diagram-edge-label {
+  fill: var(--color-text-muted);
+  font-size: 11px;
+}
+
+.diagram-gantt-gridline {
+  stroke: var(--color-border);
+  stroke-width: 1px;
+}
+
+.diagram-gantt-axis-label {
+  fill: var(--color-text-muted);
+  font-size: 11px;
+}
+
+.diagram-gantt-section-label {
+  fill: var(--color-text);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.diagram-gantt-task-label {
+  fill: var(--color-text);
+  font-size: 12px;
+}
+
+.diagram-git-trunk {
+  stroke: var(--color-border);
+  stroke-width: 2px;
+}
+
+.diagram-git-commit {
+  fill: var(--color-accent-soft);
+  stroke: var(--color-accent);
+  stroke-width: 2px;
+}
+
+.diagram-git-commit-label {
+  fill: var(--color-text);
+  font-size: 11.5px;
+  font-family: var(--font-mono);
+}
+
+.diagram-git-tag {
+  fill: var(--color-surface);
+  stroke: var(--color-border);
+  stroke-width: 1px;
+}
+
+.diagram-git-tag-label {
+  fill: var(--color-text);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.diagram-git-tag-stem {
+  stroke: var(--color-border);
+  stroke-width: 1px;
+}
+
+.diagram-quadrant-frame {
+  fill: none;
+  stroke: var(--color-border);
+  stroke-width: 1px;
+}
+
+.diagram-quadrant-divider {
+  stroke: var(--color-border);
+  stroke-width: 1px;
+}
+
+.diagram-quadrant-label {
+  fill: var(--color-text-muted);
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.diagram-axis-label {
+  fill: var(--color-text-muted);
+  font-size: 11.5px;
+}
+
+.diagram-quadrant-point {
+  fill: var(--color-accent);
+  stroke: var(--color-bg);
+  stroke-width: 1.5px;
+}
+
+.diagram-quadrant-point-label {
+  fill: var(--color-text);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.diagram-timeline-item {
+  fill: var(--color-text);
+  font-size: 11.5px;
+}
+
+.diagram-radar-grid {
+  fill: none;
+  stroke: var(--color-border);
+  stroke-width: 1px;
+}
+
+.diagram-radar-axis {
+  stroke: var(--color-border);
+  stroke-width: 1px;
+}
+
+.diagram-radar-curve {
+  fill-opacity: 0.18;
+  stroke-width: 2px;
+}
+
+.diagram-radar-curve--accent {
+  fill: var(--color-accent);
+  stroke: var(--color-accent);
+}
+
+.diagram-radar-curve--success {
+  fill: var(--color-success);
+  stroke: var(--color-success);
+}
+
+.diagram-radar-curve--muted {
+  fill: var(--color-text-muted);
+  stroke: var(--color-text-muted);
+}
+
+.diagram-radar-swatch {
+  fill-opacity: 0.5;
+  stroke-width: 1.5px;
+}
+
+.diagram-legend-label {
+  fill: var(--color-text-muted);
+  font-size: 11.5px;
+}
+
+.diagram-kanban-header {
+  fill: var(--color-surface);
+  stroke: var(--color-border);
+  stroke-width: 1px;
+}
+
+.diagram-kanban-header-label {
+  fill: var(--color-text);
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.diagram-kanban-card-title {
+  fill: var(--color-text);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.diagram-kanban-meta {
+  fill: var(--color-text);
+  font-size: 11px;
+  font-family: var(--font-mono);
+}
+
+.diagram-seq-lifeline {
+  stroke: var(--color-border);
+  stroke-width: 1.5px;
+}
+
+.diagram-seq-message {
+  stroke: var(--color-text-muted);
+  stroke-width: 1.5px;
+}
+
+.diagram-seq-message-label {
+  fill: var(--color-text);
+  font-size: 11.5px;
+}
+
+.diagram-seq-note {
+  fill: var(--color-surface);
+  stroke: var(--color-border);
+  stroke-width: 1px;
+}
+
+.diagram-seq-note-label {
+  fill: var(--color-text);
+  font-size: 11px;
+  font-style: italic;
+}

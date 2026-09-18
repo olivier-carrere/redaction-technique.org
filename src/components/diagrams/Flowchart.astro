@@ -1,0 +1,110 @@
+---
+// Generic auto-layout renderer for DAG-shaped diagrams: flowcharts, trees,
+// hub-and-spoke diagrams, and small process graphs with optional grouped
+// "subgraph" regions. Positions are computed at build time in
+// lib/flowLayout.js (a small longest-path layered layout) — the result is
+// plain, static SVG with zero client-side JS and zero Mermaid runtime.
+//
+// Node/edge colors reference this site's live CSS custom properties
+// (var(--color-*)), so the diagram repaints automatically for dark mode —
+// no theme prop, no re-render.
+import DiagramFrame from './DiagramFrame.astro';
+import { layoutFlowchart } from './lib/flowLayout.js';
+
+export type FlowNode = { id: string; label: string; variant?: 'default' | 'accent' };
+export type FlowEdge = {
+  from: string;
+  to: string;
+  label?: string;
+  style?: 'solid' | 'dashed';
+  arrow?: boolean;
+  constraint?: boolean;
+};
+export type FlowGroup = { id: string; label: string; members: string[]; direction?: 'TB' | 'LR' };
+
+interface Props {
+  title: string;
+  description?: string;
+  direction?: 'TB' | 'LR';
+  nodes: FlowNode[];
+  edges: FlowEdge[];
+  groups?: FlowGroup[];
+}
+
+const { title, description, direction = 'TB', nodes, edges, groups } = Astro.props;
+
+const PAD = 14;
+const layout = layoutFlowchart({ nodes, edges, groups, direction });
+const viewWidth = layout.width + PAD * 2;
+const viewHeight = layout.height + PAD * 2;
+// Marker ids must be unique per page: several diagrams can share one.
+const markerId = `flow-arrow-${Math.random().toString(36).slice(2, 10)}`;
+---
+
+<DiagramFrame title={title} description={description} width={viewWidth} height={viewHeight}>
+  <defs>
+    <marker id={markerId} viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" class="diagram-arrowhead" />
+    </marker>
+  </defs>
+
+  <g transform={`translate(${PAD} ${PAD})`}>
+    {layout.groups.map((g) => (
+      <g>
+        <rect x={g.x} y={g.y} width={g.width} height={g.height} rx="6" class="diagram-group" />
+        <text x={g.x + 10} y={g.y + 18} class="diagram-group-label">{g.label}</text>
+      </g>
+    ))}
+
+    {layout.edges.map((e) => (
+      <path
+        d={e.d}
+        class={`diagram-edge ${e.style === 'dashed' ? 'diagram-edge--dashed' : ''}`}
+        marker-end={e.arrow === false ? undefined : `url(#${markerId})`}
+      />
+    ))}
+
+    {layout.edges.map((e) =>
+      e.labelBox && (
+        <g>
+          <rect x={e.labelBox.x} y={e.labelBox.y} width={e.labelBox.width} height={e.labelBox.height} class="diagram-edge-label-bg" />
+          <text
+            x={e.labelBox.x + e.labelBox.width / 2}
+            y={e.labelBox.y + e.labelBox.height / 2}
+            text-anchor="middle"
+            dominant-baseline="central"
+            class="diagram-edge-label"
+          >
+            {e.label}
+          </text>
+        </g>
+      ),
+    )}
+
+    {layout.nodes.map((n) => (
+      <g>
+        <rect
+          x={n.x}
+          y={n.y}
+          width={n.width}
+          height={n.height}
+          rx="3"
+          class={`diagram-node ${n.variant === 'accent' ? 'diagram-node--accent' : ''}`}
+        />
+        <text
+          x={n.x + n.width / 2}
+          y={n.y + n.height / 2 - ((n.lines.length - 1) * 16) / 2}
+          text-anchor="middle"
+          dominant-baseline="central"
+          class={`diagram-node-label ${n.variant === 'accent' ? 'diagram-node-label--accent' : ''}`}
+        >
+          {n.lines.map((line, i) => (
+            <tspan x={n.x + n.width / 2} dy={i === 0 ? 0 : 16}>
+              {line}
+            </tspan>
+          ))}
+        </text>
+      </g>
+    ))}
+  </g>
+</DiagramFrame>

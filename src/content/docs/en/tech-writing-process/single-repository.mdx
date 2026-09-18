@@ -6,7 +6,7 @@ goal: [docs-as-code]
 contentType: concept
 ---
 
-import Mermaid from '../../../../components/Mermaid.astro';
+import SingleRepositoryDiagram from '../../../../components/diagrams/SingleRepositoryDiagram.astro';
 
 ## Definition
 
@@ -14,25 +14,7 @@ Ideally, all content should be placed in a single repository, such as Git versio
 
 Content becomes a network of information modules, and the relationships within this network need to be managed, particularly during updates.
 
-<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-graph TD
-    accTitle: Single repository feeding multiple deliverables
-    accDescr: Diagram showing a single documentation repository feeding six deliverable formats: brochure, website, corporate magazine, white paper, user guide, and animation.
-
-    A[Single repository] --> B[Brochure]
-    A --> C[Website]
-    A --> D[Corporate magazine]
-    A --> E[White paper]
-    A --> F[User guide]
-    A --> G[Animation]
-
-    classDef parent fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
-    classDef child fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
-
-    class A parent
-    class B,C,D,E,F,G child
-
-    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
+<SingleRepositoryDiagram />
 **Single Repository**
 
 ## Trade-offs

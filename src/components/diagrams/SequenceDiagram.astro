@@ -1,0 +1,84 @@
+---
+// Generic renderer for Mermaid `sequenceDiagram` diagrams on this site
+// (participant lifelines + ordered messages/notes). Used once today, for
+// the shared-network-drive concurrent-edit example.
+import DiagramFrame from './DiagramFrame.astro';
+
+export type Participant = { id: string; label: string };
+export type SeqEvent =
+  | { type: 'message'; from: string; to: string; label: string }
+  | { type: 'note'; over: string[]; label: string };
+
+interface Props {
+  title: string;
+  description?: string;
+  participants: Participant[];
+  events: SeqEvent[];
+}
+
+const { title, description, participants, events } = Astro.props;
+
+const PAD = 20;
+const HEADER_H = 38;
+const ROW_H = 48;
+// Approximate advance widths: 12.5px semibold header, 11.5px message label.
+const HEADER_WIDTH = Math.max(150, ...participants.map((p) => p.label.length * 7.2 + 28));
+const longestMessage = Math.max(0, ...events.filter((e) => e.type === 'message').map((e) => e.label.length * 6.4));
+const LANE_GAP = Math.max(HEADER_WIDTH + 32, longestMessage + 40);
+
+const laneX = new Map(participants.map((p, i) => [p.id, PAD + HEADER_WIDTH / 2 + i * LANE_GAP]));
+const viewWidth = PAD * 2 + HEADER_WIDTH / 2 * 2 + (participants.length - 1) * LANE_GAP;
+const bottomY = PAD + HEADER_H + events.length * ROW_H + 16;
+const viewHeight = bottomY + PAD;
+// Marker ids must be unique per page: several diagrams can share one.
+const markerId = `seq-arrow-${Math.random().toString(36).slice(2, 10)}`;
+---
+
+<DiagramFrame title={title} description={description} width={viewWidth} height={viewHeight}>
+  {participants.map((p) => {
+    const x = laneX.get(p.id)!;
+    return <line x1={x} y1={PAD + HEADER_H} x2={x} y2={bottomY} class="diagram-seq-lifeline" />;
+  })}
+
+  {events.map((e, i) => {
+    const y = PAD + HEADER_H + i * ROW_H + ROW_H / 2;
+    if (e.type === 'message') {
+      const x1 = laneX.get(e.from)!;
+      const x2 = laneX.get(e.to)!;
+      const midX = (x1 + x2) / 2;
+      return (
+        <g>
+          <line x1={x1} y1={y} x2={x2} y2={y} class="diagram-seq-message" marker-end={`url(#${markerId})`} />
+          <text x={midX} y={y - 8} text-anchor="middle" class="diagram-seq-message-label">{e.label}</text>
+        </g>
+      );
+    }
+    const xs = e.over.map((id) => laneX.get(id)!);
+    const minX = Math.min(...xs);
+    const maxX = Math.max(...xs);
+    const boxWidth = Math.max(maxX - minX + 140, e.label.length * 6.4 + 24);
+    const boxX = (minX + maxX) / 2 - boxWidth / 2;
+    return (
+      <g>
+        <rect x={boxX} y={y - 12} width={boxWidth} height="24" rx="3" class="diagram-seq-note" />
+        <text x={boxX + boxWidth / 2} y={y} text-anchor="middle" dominant-baseline="central" class="diagram-seq-note-label">{e.label}</text>
+      </g>
+    );
+  })}
+
+  {participants.map((p) => {
+    const x = laneX.get(p.id)!;
+    return (
+      <g>
+        <rect x={x - HEADER_WIDTH / 2} y={PAD} width={HEADER_WIDTH} height={HEADER_H} rx="3" class="diagram-node diagram-node--accent" />
+        <text x={x} y={PAD + HEADER_H / 2} text-anchor="middle" dominant-baseline="central" class="diagram-node-label diagram-node-label--accent">{p.label}</text>
+      </g>
+    );
+  })}
+
+  <defs>
+    <marker id={markerId} viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" class="diagram-arrowhead" />
+    </marker>
+  </defs>
+</DiagramFrame>

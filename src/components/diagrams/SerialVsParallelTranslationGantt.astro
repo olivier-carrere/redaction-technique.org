@@ -1,0 +1,60 @@
+---
+// Converted from the Mermaid `gantt` in:
+// src/content/docs/{en,fr}/tech-writing-process/translation.mdx
+import GanttChart from './GanttChart.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.SerialVsParallelTranslationGantt[lang];
+
+const copy = {
+  en: {
+    serial: 'Serial process',
+    parallel: 'Parallel process',
+    monolithicDoc: 'Monolithic document',
+    globalValidation: 'Global validation',
+    delivery: 'Delivery',
+    translation: 'Translation',
+    modularDoc: 'Modular document',
+    partialValidations: 'Partial validations',
+  },
+  fr: {
+    serial: 'Processus sériel',
+    parallel: 'Processus parallèle',
+    monolithicDoc: 'Document monolithique',
+    globalValidation: 'Validation globale',
+    delivery: 'Livraison',
+    translation: 'Traduction',
+    modularDoc: 'Document modulaire',
+    partialValidations: 'Validations partielles',
+  },
+}[lang];
+
+const sections = [
+  {
+    name: copy.serial,
+    tasks: [
+      { label: copy.monolithicDoc, start: 0, duration: 1 },
+      { label: copy.globalValidation, start: 1, duration: 1 },
+      { label: copy.delivery, start: 2, duration: 1 },
+      { label: copy.translation, start: 3, duration: 1 },
+      { label: copy.globalValidation, start: 4, duration: 1 },
+      { label: copy.delivery, start: 5, duration: 1 },
+    ],
+  },
+  {
+    name: copy.parallel,
+    tasks: [
+      { label: copy.modularDoc, start: 0, duration: 1 },
+      { label: copy.partialValidations, start: 1, duration: 1 },
+      { label: copy.delivery, start: 2, duration: 1 },
+      { label: copy.translation, start: 1, duration: 1 },
+      { label: copy.partialValidations, start: 2, duration: 1 },
+      { label: copy.delivery, start: 3, duration: 1 },
+    ],
+  },
+];
+---
+
+<GanttChart title={text.title} description={text.description} sections={sections} />

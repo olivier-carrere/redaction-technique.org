@@ -1,0 +1,43 @@
+---
+// Converted from the Mermaid `mindmap` in:
+// src/content/docs/{en,fr}/tech-writing-process/gathering-information.mdx
+import Flowchart from './Flowchart.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.GatheringInformationMindmap[lang];
+
+const copy = {
+  en: {
+    root: 'Gathering information',
+    branches: [
+      { label: 'Interviews', leaves: ['R&D department', 'Marketing department', 'Customers'] },
+      { label: 'Product testing', leaves: ['Product handling', 'Observing users in their environment'] },
+      { label: 'Written source analysis', leaves: ['Specs, Intranet, Jira issues', 'Competitor analysis', 'Trade publications'] },
+    ],
+  },
+  fr: {
+    root: "Collecte de l'information",
+    branches: [
+      { label: 'Interview', leaves: ['Service R&D', 'Service marketing', 'Clients'] },
+      { label: 'Test du produit', leaves: ['Manipulation du produit', 'Observation des utilisateurs sur leur lieu de travail'] },
+      { label: 'Analyse des sources écrites', leaves: ['Spécifications, Intranet, tickets Jira', 'Analyse de la concurrence', 'Presse spécialisée'] },
+    ],
+  },
+}[lang];
+
+const nodes = [
+  { id: 'ROOT', label: copy.root, variant: 'accent' as const },
+  ...copy.branches.map((b, bi) => ({ id: `B${bi}`, label: b.label })),
+  ...copy.branches.flatMap((b, bi) => b.leaves.map((leaf, li) => ({ id: `B${bi}L${li}`, label: leaf }))),
+];
+
+// A mindmap is a hierarchy, not a flow: plain connectors, no arrowheads.
+const edges = [
+  ...copy.branches.map((_, bi) => ({ from: 'ROOT', to: `B${bi}`, arrow: false })),
+  ...copy.branches.flatMap((b, bi) => b.leaves.map((_, li) => ({ from: `B${bi}`, to: `B${bi}L${li}`, arrow: false }))),
+];
+---
+
+<Flowchart title={text.title} direction="LR" nodes={nodes} edges={edges} />

@@ -15,30 +15,13 @@ Everything below is generated at build time from the same Markdown source as the
 
 Rendered HTML is built for browsers: navigation chrome, CSS, client-side interactivity. An LLM or agent that just needs the article text has to strip all of that back out, and can get it wrong. This API skips the round-trip: it serves the same content agents would otherwise reconstruct, as clean Markdown and structured JSON, directly.
 
-import Mermaid from '../../../components/Mermaid.astro';
+import ApiRetrievalPipelineDiagram from '../../../components/diagrams/ApiRetrievalPipelineDiagram.astro';
 
 ## Quick start workflow
 
 The API follows a straightforward, four-stage retrieval pipeline:
 
-<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-flowchart TD
-    accTitle: API Retrieval Pipeline
-    accDescr: Sequential four-stage retrieval pipeline: discover contract, query index, select document, and retrieve Markdown.
-
-    A["GET /schema.json"] --> B["Discover endpoints, filters & taxonomy"]
-    B --> C["Query document index"]
-    C --> D["Select target document"]
-    D --> E["Follow advertised markdown URL"]
-    E --> F["Retrieve Markdown document"]
-
-    classDef stage fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
-    classDef endpoint fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:1.5px,color:{{parentText}},font-weight:600
-
-    class A,C,F endpoint
-    class B,D,E stage
-
-    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
+<ApiRetrievalPipelineDiagram />
 
 The four retrieval stages with their corresponding HTTP requests:
 

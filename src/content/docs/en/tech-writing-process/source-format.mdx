@@ -5,7 +5,9 @@ tags: [technical-writing, structured-authoring]
 goal: [tools-and-formats]
 contentType: concept
 ---
-import Mermaid from '../../../../components/Mermaid.astro';
+import SourceFormatRadarChart from '../../../../components/diagrams/SourceFormatRadarChart.astro';
+import MonolithicFilesDiagram from '../../../../components/diagrams/MonolithicFilesDiagram.astro';
+import ModularFileClustersDiagram from '../../../../components/diagrams/ModularFileClustersDiagram.astro';
 
 ## Definition
 
@@ -41,18 +43,7 @@ When layout is less critical than content, or when it needs to be consistent, as
 
 In a FrameMaker file, the separation between content and form is significant, though not complete: content and layout reside in the same file. FrameMaker applies a consistent page layout to an entire file but allows manual addition of layout elements. The same layout can be duplicated for the entire document, or different layouts can be used for each file comprising the document.
 
-<Mermaid code={`%%{init: {"themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "titleColor": "{{childText}}", "cScale0": "#f59e0b", "cScale1": "#10b981", "cScale2": "{{parentStroke}}", "radar": {"axisColor": "{{lineColor}}", "graticuleColor": "{{lineColor}}", "graticuleOpacity": 0.3, "curveOpacity": 0.3}}}}%%
-radar-beta
-    title Source formats: modularity, format and structuring
-    accTitle: Source formats by modularity, format, and semantic structuring
-    accDescr: Radar chart comparing FrameMaker, DocBook, and DITA XML across three axes: modularity, text format, and semantic structuring. FrameMaker is low on modularity, binary, and unstructured. DocBook is low on modularity but text-based and structured. DITA XML is highly modular, text-based, and structured.
-    axis modularity["Modularity"], text["Text format"], structuring["Structuring"]
-    curve framemaker["FrameMaker"]{0.26, 0.27, 0.05}
-    curve docbook["DocBook"]{0.26, 0.76, 1}
-    curve dita["DITA XML"]{0.80, 0.79, 1}
-    max 1
-    min 0
-    showLegend true`} />
+<SourceFormatRadarChart />
 **Source formats: modularity, format, and semantic structuring.**
 
 Source formats can be classified by their degree of modularity, file format, and semantic structuring.
@@ -99,46 +90,12 @@ The source format can be based on either monolithic files or clusters of modular
 
 Monolithic files (e.g., MS Word, LibreOffice, or FrameMaker) centralize all content in a single, easily manageable file, but limit content sharing; this increases the risk of inconsistent or duplicate information.
 
-<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
-graph TD
-    accTitle: Monolithic technical writing source format
-    accDescr: Diagram showing two self-contained monolithic documents with no shared content between them.
-
-    subgraph mono["Monolithic files"]
-        direction LR
-        A[Document A]
-        B[Document B]
-    end
-
-    classDef doc fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
-
-    class A,B doc`} />
+<MonolithicFilesDiagram />
 **Monolithic technical writing source format**
 
 Clusters of modular files (e.g., DITA XML) aggregate the content of multiple files, facilitating content sharing and reuse. This approach is challenging to implement company-wide but should be standard for a technical writing team.
 
-<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif", "clusterBkg": "{{childFill}}", "clusterBorder": "{{childStroke}}"}}}%%
-graph TD
-    accTitle: Modular technical writing source format
-    accDescr: Diagram showing modular file clusters reused across two documents, Document A and Document B, sharing content instead of duplicating it.
-
-    subgraph cluster["Modular file clusters"]
-        direction LR
-        M1[Module]
-        M2[Module]
-        M3[Module]
-    end
-
-    M1 --> A[Document A]
-    M3 --> B[Document B]
-
-    classDef mod fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
-    classDef doc fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
-
-    class M1,M2,M3 mod
-    class A,B doc
-
-    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
+<ModularFileClustersDiagram />
 **Modular technical writing source format**
 
 Some word processors can handle modular documents, though not effectively. Conversely, a DocBook or DITA XML document can be monolithic, but then loses its flexibility.

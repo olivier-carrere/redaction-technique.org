@@ -1,0 +1,48 @@
+---
+// Converted from the Mermaid `flowchart TD` in:
+// src/content/docs/{en,fr}/toolkit/example-review-workflow.mdx
+import Flowchart from './Flowchart.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.TwoPassReviewWorkflowDiagram[lang];
+
+const copy = {
+  en: {
+    a: '1. Self-review\n(Author quality checklist)',
+    b: '2. Technical review\n(Engineer: Is it accurate?)',
+    c: '3. Author addresses feedback\n(Resolve blocking comments)',
+    d: '4. Editorial pass\n(Editor: Is it clear & consistent?)',
+    e: '5. Release-readiness check\n(Navigation, build & translation)',
+    f: '6. Publish alongside feature',
+  },
+  fr: {
+    a: '1. Auto-relecture\n(Check-list qualité auteur)',
+    b: '2. Revue technique\n(Ingénieur : Est-ce exact ?)',
+    c: '3. Traitement des retours\n(Résolution des blocages)',
+    d: '4. Passe éditoriale\n(Relecteur : Est-ce clair et cohérent ?)',
+    e: '5. Contrôle de préparation\n(Navigation, build et traduction)',
+    f: '6. Publication avec la fonctionnalité',
+  },
+}[lang];
+
+const nodes = [
+  { id: 'A', label: copy.a },
+  { id: 'B', label: copy.b, variant: 'accent' as const },
+  { id: 'C', label: copy.c },
+  { id: 'D', label: copy.d, variant: 'accent' as const },
+  { id: 'E', label: copy.e },
+  { id: 'F', label: copy.f, variant: 'accent' as const },
+];
+
+const edges = [
+  { from: 'A', to: 'B' },
+  { from: 'B', to: 'C' },
+  { from: 'C', to: 'D' },
+  { from: 'D', to: 'E' },
+  { from: 'E', to: 'F' },
+];
+---
+
+<Flowchart title={text.title} description={text.description} direction="TB" nodes={nodes} edges={edges} />

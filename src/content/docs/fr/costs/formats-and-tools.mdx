@@ -4,7 +4,7 @@ description: "Pour industrialiser la rédaction technique, le format importe plu
 goal: [tools-and-formats]
 contentType: concept
 ---
-import Mermaid from '../../../../components/Mermaid.astro';
+import StandardFormatToolChoiceDiagram from '../../../../components/diagrams/StandardFormatToolChoiceDiagram.astro';
 
 ## Définition
 
@@ -12,23 +12,7 @@ Lorsqu'une entreprise décide d'industrialiser la rédaction technique, elle se 
 
 La plupart des éditeurs, afin de disposer d'un marché captif obligé de régulièrement payer des mises à jour de leurs produits, ont en effet développé des formats propriétaires que seuls leurs logiciels sont à même de modifier. Un fichier MS Word ou un fichier FrameMaker ne peuvent ainsi être modifiés que *via* les outils éponymes. Choisir un tel format risque donc de limiter les choix ultérieurs de l'entreprise et de se révéler coûteux : il faut une licence par utilisateur, qu'il soit rédacteur technique, contributeur occasionnel ou traducteur.
 
-<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-graph TD
-    accTitle: Un format standard laisse le choix de l'outil
-    accDescr: Schéma montrant quatre types d'outils, un éditeur de texte, un logiciel open-source, un outil graphique et un logiciel propriétaire, capables de modifier le même format standard DITA XML.
-
-    A["Éditeur de texte"] --> E["DITA XML"]
-    B["Logiciel open-source"] --> E
-    C["Outil graphique"] --> E
-    D["Logiciel propriétaire"] --> E
-
-    classDef parent fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
-    classDef child fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
-
-    class E parent
-    class A,B,C,D child
-
-    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
+<StandardFormatToolChoiceDiagram />
 **Un format standard laisse le choix de l'outil.**
 
 ## Principes clés

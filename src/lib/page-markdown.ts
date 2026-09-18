@@ -3,6 +3,8 @@
  * of documentation pages for "Copy for LLM" and "View as Markdown".
  */
 
+import { DIAGRAM_TEXT } from '../components/diagrams/diagram-text.ts';
+
 export interface DocPage {
   id: string;
   data: {
@@ -164,21 +166,14 @@ export function getPageMarkdown(
     return `\n\uE000CB_${idx}\uE001\n`;
   });
 
-  // 3. Transform Mermaid components BEFORE inline code protection (since Mermaid code contains backticks)
-  text = text.replace(/<Mermaid[\s\S]*?code=\{`([\s\S]*?)`\}[\s\S]*?\/>/g, (_, code) => {
-    const cleanCode = code
-      .replace(/\{\{childFill\}\}/g, '#f1f5f9')
-      .replace(/\{\{childStroke\}\}/g, '#64748b')
-      .replace(/\{\{childText\}\}/g, '#0f172a')
-      .replace(/\{\{parentFill\}\}/g, '#e2e8f0')
-      .replace(/\{\{parentStroke\}\}/g, '#3b82f6')
-      .replace(/\{\{parentText\}\}/g, '#1e293b')
-      .replace(/\{\{lineColor\}\}/g, '#64748b')
-      .trim();
-    const mermaidBlock = `\`\`\`mermaid\n${cleanCode}\n\`\`\``;
-    const idx = codeBlocks.length;
-    codeBlocks.push(mermaidBlock);
-    return `\n\uE000CB_${idx}\uE001\n`;
+  // 3. Replace native SVG diagram components with their text alternative \u2014
+  // the same accessible name and description the rendered figure exposes.
+  text = text.replace(/<([A-Z]\w*)\s*\/>/g, (match, name: string) => {
+    const entry = DIAGRAM_TEXT[name]?.[lang];
+    if (!entry) return match;
+    const label = lang === 'fr' ? 'Sch\u00E9ma' : 'Diagram';
+    const body = entry.description ? `\n>\n> ${entry.description}` : '';
+    return `\n\n> **${label}: ${entry.title}**${body}\n\n`;
   });
 
   // 4. Transform <SedBox lang="..." variant="..." /> BEFORE inline code protection

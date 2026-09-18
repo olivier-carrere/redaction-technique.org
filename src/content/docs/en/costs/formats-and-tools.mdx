@@ -6,7 +6,7 @@ goal: [tools-and-formats]
 contentType: concept
 ---
 
-import Mermaid from '../../../../components/Mermaid.astro';
+import StandardFormatToolChoiceDiagram from '../../../../components/diagrams/StandardFormatToolChoiceDiagram.astro';
 
 ## Definition
 
@@ -14,23 +14,7 @@ When a company sets out to industrialize **technical writing**, the question of 
 
 Many vendors have built proprietary formats that only their own software can edit, locking in a captive market that has to keep paying for upgrades. An **MS Word** or **FrameMaker** file, for example, can only be edited in the tool that created it. Committing to such a format narrows a company's options and can get expensive: every user needs a license — technical writer, occasional contributor, and translator alike.
 
-<Mermaid code={`%%{init: {"flowchart": {"curve": "basis"}, "themeVariables": {"fontFamily": "IBM Plex Sans Variable, sans-serif"}}}%%
-graph TD
-    accTitle: A standard format leaves the choice of tool open
-    accDescr: Diagram showing four different tool types, a text editor, open-source software, a graphical tool, and proprietary software, all able to edit the same standard DITA XML format.
-
-    A[Text editor] --> E[DITA XML]
-    B[Open-source software] --> E
-    C[Graphical tool] --> E
-    D[Proprietary software] --> E
-
-    classDef parent fill:{{parentFill}},stroke:{{parentStroke}},stroke-width:2px,color:{{parentText}},font-weight:600
-    classDef child fill:{{childFill}},stroke:{{childStroke}},stroke-width:1.5px,color:{{childText}},font-weight:500
-
-    class E parent
-    class A,B,C,D child
-
-    linkStyle default stroke:{{lineColor}},stroke-width:1.5px`} />
+<StandardFormatToolChoiceDiagram />
 *A standard format leaves the choice of tool open.*
 
 ## Key principles

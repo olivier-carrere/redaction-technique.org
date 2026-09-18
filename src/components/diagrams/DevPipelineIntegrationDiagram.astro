@@ -1,0 +1,44 @@
+---
+// Converted from the Mermaid `graph TD` in:
+// src/content/docs/{en,fr}/tech-writing-process/integrating-documentation-into-development.mdx
+import Flowchart from './Flowchart.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.DevPipelineIntegrationDiagram[lang];
+
+const copy = {
+  en: {
+    bugTracking: 'Bug tracking',
+    sources: 'Modular documentation sources',
+    versionControl: 'Version control',
+    profiling: 'Profiling',
+    outputs: ['PDF', 'HTML', 'JavaHelp', 'ePUB'],
+  },
+  fr: {
+    bugTracking: 'Gestion de bugs',
+    sources: 'Sources de documentation modulaires',
+    versionControl: 'Gestion des versions',
+    profiling: 'Profilage',
+    outputs: ['PDF', 'HTML', 'JavaHelp', 'ePUB'],
+  },
+}[lang];
+
+const nodes = [
+  { id: 'A', label: copy.bugTracking },
+  { id: 'B', label: copy.sources, variant: 'accent' as const },
+  { id: 'C', label: copy.versionControl },
+  { id: 'D', label: copy.profiling },
+  ...copy.outputs.map((label, i) => ({ id: `O${i}`, label })),
+];
+
+const edges = [
+  { from: 'A', to: 'B' },
+  { from: 'B', to: 'C' },
+  { from: 'B', to: 'D' },
+  ...copy.outputs.map((_, i) => ({ from: 'D', to: `O${i}` })),
+];
+---
+
+<Flowchart title={text.title} description={text.description} direction="TB" nodes={nodes} edges={edges} />

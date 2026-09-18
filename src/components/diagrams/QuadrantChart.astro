@@ -1,0 +1,61 @@
+---
+// Generic renderer for Mermaid `quadrantChart` diagrams on this site.
+// Points use the same [0,1] coordinate convention as Mermaid: x grows
+// right (low → high), y grows up (low → high), origin at bottom-left.
+import DiagramFrame from './DiagramFrame.astro';
+
+export type QuadrantPoint = { label: string; x: number; y: number; labelPosition?: 'above' | 'below' };
+
+interface Props {
+  title: string;
+  description?: string;
+  xAxis: { low: string; high: string };
+  yAxis: { low: string; high: string };
+  quadrantLabels: { topLeft: string; topRight: string; bottomLeft: string; bottomRight: string };
+  points: QuadrantPoint[];
+}
+
+const { title, description, xAxis, yAxis, quadrantLabels, points } = Astro.props;
+
+const PLOT = 380;
+const PAD_LEFT = 44;
+const PAD_TOP = 30;
+const PAD_RIGHT = 30;
+const PAD_BOTTOM = 60;
+
+const toX = (x: number) => PAD_LEFT + x * PLOT;
+const toY = (y: number) => PAD_TOP + (1 - y) * PLOT;
+
+const viewWidth = PAD_LEFT + PLOT + PAD_RIGHT;
+const viewHeight = PAD_TOP + PLOT + PAD_BOTTOM;
+---
+
+<DiagramFrame title={title} description={description} width={viewWidth} height={viewHeight}>
+  <rect x={PAD_LEFT} y={PAD_TOP} width={PLOT} height={PLOT} class="diagram-quadrant-frame" />
+  <line x1={PAD_LEFT + PLOT / 2} y1={PAD_TOP} x2={PAD_LEFT + PLOT / 2} y2={PAD_TOP + PLOT} class="diagram-quadrant-divider" />
+  <line x1={PAD_LEFT} y1={PAD_TOP + PLOT / 2} x2={PAD_LEFT + PLOT} y2={PAD_TOP + PLOT / 2} class="diagram-quadrant-divider" />
+
+  <text x={PAD_LEFT + PLOT * 0.25} y={PAD_TOP + 20} text-anchor="middle" class="diagram-quadrant-label">{quadrantLabels.topLeft}</text>
+  <text x={PAD_LEFT + PLOT * 0.75} y={PAD_TOP + 20} text-anchor="middle" class="diagram-quadrant-label">{quadrantLabels.topRight}</text>
+  <text x={PAD_LEFT + PLOT * 0.25} y={PAD_TOP + PLOT - 10} text-anchor="middle" class="diagram-quadrant-label">{quadrantLabels.bottomLeft}</text>
+  <text x={PAD_LEFT + PLOT * 0.75} y={PAD_TOP + PLOT - 10} text-anchor="middle" class="diagram-quadrant-label">{quadrantLabels.bottomRight}</text>
+
+  <text x={PAD_LEFT} y={PAD_TOP + PLOT + 24} class="diagram-axis-label">{xAxis.low}</text>
+  <text x={PAD_LEFT + PLOT} y={PAD_TOP + PLOT + 24} text-anchor="end" class="diagram-axis-label">{xAxis.high}</text>
+  <text transform={`translate(${PAD_LEFT - 12} ${PAD_TOP + PLOT}) rotate(-90)`} class="diagram-axis-label">{yAxis.low}</text>
+  <text transform={`translate(${PAD_LEFT - 12} ${PAD_TOP}) rotate(-90)`} text-anchor="end" class="diagram-axis-label">{yAxis.high}</text>
+
+  {points.map((p) => {
+    const cx = toX(p.x);
+    const cy = toY(p.y);
+    const above = p.labelPosition !== 'below';
+    return (
+      <g>
+        <circle cx={cx} cy={cy} r="5" class="diagram-quadrant-point" />
+        <text x={cx} y={above ? cy - 11 : cy + 20} text-anchor="middle" class="diagram-quadrant-point-label">
+          {p.label}
+        </text>
+      </g>
+    );
+  })}
+</DiagramFrame>

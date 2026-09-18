@@ -1,0 +1,47 @@
+---
+// Converted from the Mermaid `ishikawa` (fishbone) diagram in:
+// src/content/docs/{en,fr}/tech-writing-process/validation-quality-control.mdx
+// A fishbone diagram is semantically a converging tree — causes feed a
+// category, categories feed the effect — so it reuses the Flowchart engine
+// instead of bespoke diagonal-bone geometry.
+import Flowchart from './Flowchart.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.UnreliableProcessCausesDiagram[lang];
+
+const copy = {
+  en: {
+    effect: 'Unreliable documentation process',
+    writer: 'Writer',
+    writerCauses: ['Fatigue', 'Illness', 'Vacation', 'Forgetting through information overload', 'Leaving the company'],
+    communication: 'Communication',
+    communicationCauses: ['Poor information flow', 'Being misunderstood'],
+  },
+  fr: {
+    effect: 'Processus documentaire peu fiable',
+    writer: 'Rédacteur',
+    writerCauses: ['Fatigue', 'Maladie', 'Congés', 'Oubli par saturation d’informations', 'Départ de l’entreprise'],
+    communication: 'Communication',
+    communicationCauses: ['Mauvaise circulation de l’information', 'Mauvaise compréhension'],
+  },
+}[lang];
+
+const nodes = [
+  { id: 'EFFECT', label: copy.effect, variant: 'accent' as const },
+  { id: 'WRITER', label: copy.writer, variant: 'accent' as const },
+  { id: 'COMM', label: copy.communication, variant: 'accent' as const },
+  ...copy.writerCauses.map((label, i) => ({ id: `W${i}`, label })),
+  ...copy.communicationCauses.map((label, i) => ({ id: `C${i}`, label })),
+];
+
+const edges = [
+  { from: 'WRITER', to: 'EFFECT' },
+  { from: 'COMM', to: 'EFFECT' },
+  ...copy.writerCauses.map((_, i) => ({ from: `W${i}`, to: 'WRITER' })),
+  ...copy.communicationCauses.map((_, i) => ({ from: `C${i}`, to: 'COMM' })),
+];
+---
+
+<Flowchart title={text.title} direction="LR" nodes={nodes} edges={edges} />

@@ -1,0 +1,23 @@
+---
+// Converted from the first Mermaid `gitGraph` in:
+// src/content/docs/{en,fr}/tech-writing-process/git-from-file-to-content.mdx
+import GitGraphDiagram from './GitGraphDiagram.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.InterleavedCommitHistoryDiagram[lang];
+
+const copy = {
+  en: {
+    commits: ['Text 1', 'Synopsis 1', 'Text 2', 'Synopsis 2', 'Text 3'],
+  },
+  fr: {
+    commits: ['Texte 1', 'Synopsis 1', 'Texte 2', 'Synopsis 2', 'Texte 3'],
+  },
+}[lang];
+
+const commits = copy.commits.map((id) => ({ id }));
+---
+
+<GitGraphDiagram title={text.title} description={text.description} commits={commits} />

@@ -1,0 +1,28 @@
+---
+// Converted from the Mermaid `cynefin-beta` in:
+// src/content/docs/{en,fr}/formats/document-architecture-complexity.mdx
+import Flowchart from './Flowchart.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.ComplexVsComplicatedDiagram[lang];
+
+const copy = {
+  en: {
+    complex: 'Complex\nDITA XML',
+    complicated: 'Complicated\nFrameMaker and traditional formats',
+  },
+  fr: {
+    complex: 'Complexe\nDITA XML',
+    complicated: 'Compliqué\nFrameMaker et formats traditionnels',
+  },
+}[lang];
+
+const nodes = [
+  { id: 'complex', label: copy.complex, variant: 'accent' as const },
+  { id: 'complicated', label: copy.complicated },
+];
+---
+
+<Flowchart title={text.title} description={text.description} direction="TB" nodes={nodes} edges={[]} />

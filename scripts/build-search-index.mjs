@@ -49,9 +49,6 @@ function cleanBody(raw) {
   // Remove import statements
   text = text.replace(/^import\s+.*$/gm, '');
 
-  // Remove Mermaid component blocks
-  text = text.replace(/<Mermaid[\s\S]*?\/>/g, '');
-
   // Remove self-closing JSX/HTML components (<Component ... />)
   text = text.replace(/<[A-Z][A-Za-z]*[^>]*\/>/g, '');
 
@@ -66,9 +63,6 @@ function cleanBody(raw) {
 
   // Simplify Markdown links: [text](url) → text
   text = text.replace(/\[([^\]]*)\]\([^)]*\)/g, '$1');
-
-  // Remove fenced code blocks with mermaid
-  text = text.replace(/```mermaid[\s\S]*?```/g, '');
 
   // Remove Starlight admonition markers
   text = text.replace(/^:::\w+\s*$/gm, '');

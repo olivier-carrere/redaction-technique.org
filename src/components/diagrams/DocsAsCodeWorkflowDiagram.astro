@@ -1,0 +1,52 @@
+---
+// Converted from the Mermaid `flowchart TD` in:
+// src/content/docs/{en,fr}/toolkit/example-docs-as-code-workflow.mdx
+import Flowchart from './Flowchart.astro';
+import { DIAGRAM_TEXT } from './diagram-text.ts';
+
+const lang = Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en';
+
+const text = DIAGRAM_TEXT.DocsAsCodeWorkflowDiagram[lang];
+
+const copy = {
+  en: {
+    a: '1. Branch\n(Single-purpose topic branch)',
+    b: '2. Edit and commit\n(Structured content & explicit messages)',
+    c: '3. Push and open PR\n(Context & issue linking)',
+    d: '4. Automated CI\n(Build, link check & preview deploy)',
+    e: '5. Technical & peer review\n(Accuracy check against checklist)',
+    f: '6. Merge to main\n(Approval & green CI gates)',
+    g: '7. Automated deployment\n(Production publish via pipeline)',
+  },
+  fr: {
+    a: '1. Créer une branche\n(Branche thématique à but unique)',
+    b: '2. Modifier et committer\n(Contenu structuré et messages clairs)',
+    c: '3. Pousser et ouvrir une PR\n(Contexte et lien avec le ticket)',
+    d: '4. CI automatisée\n(Build, vérification de liens et prévisualisation)',
+    e: '5. Revue par les pairs et technique\n(Contrôle d’exactitude sur check-list)',
+    f: '6. Fusionner dans main\n(Validation et feu vert CI)',
+    g: '7. Déploiement automatisé\n(Publication en production par le pipeline)',
+  },
+}[lang];
+
+const nodes = [
+  { id: 'A', label: copy.a },
+  { id: 'B', label: copy.b },
+  { id: 'C', label: copy.c },
+  { id: 'D', label: copy.d, variant: 'accent' as const },
+  { id: 'E', label: copy.e, variant: 'accent' as const },
+  { id: 'F', label: copy.f },
+  { id: 'G', label: copy.g, variant: 'accent' as const },
+];
+
+const edges = [
+  { from: 'A', to: 'B' },
+  { from: 'B', to: 'C' },
+  { from: 'C', to: 'D' },
+  { from: 'D', to: 'E' },
+  { from: 'E', to: 'F' },
+  { from: 'F', to: 'G' },
+];
+---
+
+<Flowchart title={text.title} description={text.description} direction="TB" nodes={nodes} edges={edges} />
