@@ -1,0 +1,45 @@
+---
+// Availability line from the shared AVAILABILITY data (src/lib/expertise.ts):
+// the short label in the homepage hero, the statement on the About page.
+import { AVAILABILITY } from '../lib/expertise';
+
+interface Props {
+  variant?: 'label' | 'statement';
+  lang?: string;
+}
+
+const routeLang = (Astro.locals as Record<string, any>)?.starlightRoute?.lang;
+const lang = (Astro.props.lang || routeLang) === 'fr' ? 'fr' : 'en';
+const { variant = 'label' } = Astro.props;
+---
+
+{variant === 'label' ? (
+  <p class="availability-label not-content">
+    <span class="availability-dot" aria-hidden="true"></span>
+    {AVAILABILITY.label[lang]}
+  </p>
+) : (
+  <p>{AVAILABILITY.statement[lang]}</p>
+)}
+
+<style>
+  .availability-label {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin: 0;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    text-wrap: balance;
+  }
+
+  .availability-dot {
+    flex-shrink: 0;
+    width: 0.375rem;
+    height: 0.375rem;
+    border-radius: 50%;
+    background: var(--color-accent);
+    transform: translateY(-0.1rem);
+  }
+</style>

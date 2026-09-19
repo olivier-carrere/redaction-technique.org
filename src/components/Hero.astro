@@ -1,6 +1,7 @@
 ---
 import Default from '@astrojs/starlight/components/Hero.astro';
 import DocActions from './DocActions.astro';
+import Availability from './Availability.astro';
 import { getMarkdownUrl, hasMarkdownUrl } from '../lib/page-markdown';
 
 const starlightRoute = (Astro.locals as Record<string, any>)?.starlightRoute;
@@ -9,9 +10,16 @@ const lang = starlightRoute?.lang ?? 'en';
 const markdownUrl = hasMarkdownUrl(entryId)
   ? getMarkdownUrl(entryId)
   : (entryId ? null : (lang === 'fr' ? '/fr.md' : '/en.md'));
+// The homepage hero carries the availability line, below the hero actions.
+const isHome = !entryId || /^(en|fr)(\/index)?$/.test(entryId);
 ---
 
 <Default {...Astro.props} />
+{isHome && (
+  <div class="hero-availability-wrapper not-content">
+    <Availability lang={lang} />
+  </div>
+)}
 {markdownUrl && (
   <div class="hero-actions-wrapper not-content">
     <DocActions markdownUrl={markdownUrl} lang={lang} />
@@ -19,6 +27,12 @@ const markdownUrl = hasMarkdownUrl(entryId)
 )}
 
 <style>
+  .hero-availability-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+  }
   .hero-actions-wrapper {
     display: flex;
     justify-content: flex-start;
@@ -26,6 +40,7 @@ const markdownUrl = hasMarkdownUrl(entryId)
     margin-bottom: 1.5rem;
   }
   @media (max-width: 50rem) {
+    .hero-availability-wrapper,
     .hero-actions-wrapper {
       justify-content: center;
     }

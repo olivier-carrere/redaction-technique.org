@@ -4,6 +4,7 @@
  */
 
 import { DIAGRAM_TEXT } from '../components/diagrams/diagram-text.ts';
+import { AVAILABILITY } from './expertise.ts';
 
 export interface DocPage {
   id: string;
@@ -183,6 +184,11 @@ export function getPageMarkdown(
     const body = entry.description ? `\n>\n> ${entry.description}` : '';
     return `\n\n> **${label}: ${entry.title}**${body}\n\n`;
   });
+
+  // 3b. Replace <Availability /> with the text it renders.
+  text = text.replace(/<Availability\b([^>]*?)\/>/g, (_, attrsStr: string) =>
+    /variant=["']statement["']/.test(attrsStr) ? AVAILABILITY.statement[lang] : AVAILABILITY.label[lang]
+  );
 
   // 4. Transform <SedBox lang="..." variant="..." /> BEFORE inline code protection
   text = text.replace(/<SedBox\s+([^>]*?)\/?>/gi, (_, attrsStr) => {

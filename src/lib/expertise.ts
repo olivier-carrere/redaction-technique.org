@@ -15,7 +15,30 @@
  * order are the shared taxonomy: keep them identical to EXPERTISE_AREAS in
  * src/lib/profile.ts (redaction-technique.org). Each evidence slug belongs to
  * one area only. Only list areas the existing content genuinely supports.
+ *
+ * Also holds AVAILABILITY, the professional status shared with
+ * redaction-technique.org (AVAILABILITY in src/lib/profile.ts there).
  */
+
+/**
+ * Availability: a professional status shown after the identity, never in
+ * place of it (homepage hero, About page), via Availability.astro. Update
+ * or remove it when the status changes; keep the wording in sync with
+ * redaction-technique.org.
+ */
+export const AVAILABILITY = {
+  availableFrom: '2026-10-01',
+  /** Homepage hero. */
+  label: {
+    en: 'Available for a new opportunity from October 2026',
+    fr: 'Disponible pour une nouvelle opportunité à partir d’octobre 2026',
+  },
+  /** About page, in the first person like the rest of that page. */
+  statement: {
+    en: 'My current Senior Technical Writer contract at Unity ends on October 1, 2026. I am open to new opportunities from October 2026.',
+    fr: 'Mon contrat actuel de rédacteur technique senior chez Unity se termine le 1er octobre 2026. Je suis ouvert à de nouvelles opportunités à partir d’octobre 2026.',
+  },
+};
 
 export interface ExpertiseArea {
   id: string;
