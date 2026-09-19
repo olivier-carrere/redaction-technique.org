@@ -1,21 +1,21 @@
 ---
 lastUpdated: false
-title: "Olivier Carrère - Rédacteur technique senior"
-description: "Rédacteur technique senior : documentation développeur, docs-as-code, rédaction structurée DITA et architecture documentaire, avec études de cas et exemples."
+title: "Portfolio documentaire d'Olivier Carrère, rédacteur technique senior"
+description: "Le portfolio documentaire d'Olivier Carrère : expertise détaillée, méthodes, études de cas et preuves techniques sur le docs-as-code, la rédaction structurée DITA, l'architecture documentaire, la documentation développeur et l'automatisation."
 template: splash
 tableOfContents: false
 hero:
-  title: '<span class="hero-name">Olivier Carrère<span class="sr-only">,</span></span> Rédacteur technique senior'
-  tagline: '<p class="hero-focus">Documentation développeur · Docs-as-code · CI/CD · Rédaction structurée · DITA</p><p>Je conçois et maintiens la documentation technique des équipes d''ingénierie, de l''architecture de l''information et de la rédaction structurée aux workflows Git et à la publication automatisée. Ce manuel documente ma façon de travailler.</p>'
+  title: '<span class="hero-name">Olivier Carrère · Rédacteur technique senior<span class="sr-only"> :</span></span> Portfolio documentaire'
+  tagline: '<p class="hero-focus">Docs-as-code · DITA et rédaction structurée · Architecture documentaire · Documentation développeur et d''API · Automatisation et CI/CD</p><p>Expertise détaillée, méthodes, études de cas et preuves techniques issues de mon travail de rédacteur technique senior. Pour le profil professionnel, les travaux choisis et le contact, voir <a href="https://redaction-technique.org/" hreflang="en">redaction-technique.org</a> (en anglais).</p>'
   actions:
-    - text: Expertise
+    - text: Expertise et preuves
       link: /fr/expertise/
       icon: right-arrow
       variant: primary
-    - text: À propos et contact
-      link: /fr/about-this-blog/
+    - text: Profil professionnel ↗
+      link: https://redaction-technique.org/
       variant: secondary
-    - text: Lire le manuel
+    - text: Explorer la documentation
       link: '#six-paths'
       variant: minimal
 head:
@@ -33,28 +33,32 @@ import SiteOrientation from '../../../components/SiteOrientation.astro';
 
 <CardGridSection
   id="expertise"
-  kicker="Domaines d’expertise"
-  title="Ce que je documente, preuves à l’appui"
+  kicker="Expertise et preuves"
+  title="Domaines d’expertise"
   desc="Chaque domaine renvoie aux articles, études de cas et exemples concrets qui en témoignent."
   compact
   cards={[
-    { title: 'Rédaction structurée et DITA', href: '/fr/expertise/#rédaction-structurée-et-dita', desc: 'DITA XML orienté topics, réutilisation du contenu par conref et texte conditionnel, avec une étude de cas produit.', linkText: 'Voir les preuves →' },
     { title: 'Docs-as-code', href: '/fr/expertise/#docs-as-code', desc: 'La documentation sous Git à côté du produit : branches, revue par pull request et conception du référentiel.', linkText: 'Voir les preuves →' },
-    { title: 'Automatisation documentaire et CI/CD', href: '/fr/expertise/#automatisation-documentaire-et-cicd', desc: 'Pipelines de compilation, de vérification et de publication, et contenu généré à partir des données avec Python et Jinja.', linkText: 'Voir les preuves →' },
-    { title: 'Documentation développeur et d’API', href: '/fr/expertise/#documentation-développeur-et-dapi', desc: 'Modèles de référence d’API, une API documentaire lisible par les machines et la revue technique avec les ingénieurs.', linkText: 'Voir les preuves →' },
+    { title: 'DITA et rédaction structurée', href: '/fr/expertise/#rédaction-structurée-et-dita', desc: 'DITA XML orienté topics, réutilisation du contenu par conref et texte conditionnel, avec une étude de cas produit.', linkText: 'Voir les preuves →' },
     { title: 'Architecture documentaire', href: '/fr/expertise/#architecture-documentaire-et-de-linformation', desc: 'Typologie de l’information, contenu modulaire, structure du dépôt et modèles d’articles cohérents.', linkText: 'Voir les preuves →' },
-    { title: 'Processus documentaire et qualité', href: '/fr/expertise/#processus-documentaire-et-qualité', desc: 'De la définition du projet à la livraison, avec des étapes de revue, de qualité et de mise en production.', linkText: 'Voir les preuves →' },
+    { title: 'Documentation développeur et d’API', href: '/fr/expertise/#documentation-développeur-et-dapi', desc: 'Modèles de référence d’API, une API documentaire lisible par les machines et la revue technique avec les ingénieurs.', linkText: 'Voir les preuves →' },
+    { title: 'Automatisation et CI/CD', href: '/fr/expertise/#automatisation-documentaire-et-cicd', desc: 'Pipelines de compilation, de vérification et de publication, et contenu généré à partir des données avec Python et Jinja.', linkText: 'Voir les preuves →' },
+    { title: 'Documentation assistée par l’IA', href: '/fr/expertise/#documentation-assistée-par-lia', desc: 'Les LLM avec un humain dans la boucle : traduction assistée par l’IA, assistant documentaire fondé sur les sources et documentation servie aux agents IA.', linkText: 'Voir les preuves →' },
   ]}
-/>
+>
+
+Aussi : [Processus documentaire et qualité](/fr/expertise/#processus-documentaire-et-qualité) · [Documentation multilingue](/fr/expertise/#documentation-multilingue)
+
+</CardGridSection>
 
 <CardGridSection
   id="selected-work"
-  kicker="Preuves"
-  title="Travaux choisis"
+  kicker="Travaux choisis"
+  title="Études de cas et projets"
   compact
   cards={[
     { title: 'Documentation de NuFirewall', href: '/fr/formats/nufirewall-case-study/', desc: 'Documentation d’un produit logiciel en DITA XML, citée par la presse comme un point fort du produit.', linkText: 'Lire l’étude de cas →' },
-    { title: 'Ce manuel, un projet docs-as-code', href: '/fr/about-this-blog/#comment-ce-site-est-construit', desc: 'Une documentation bilingue maintenue sous Git depuis 2014 et compilée en CI à chaque modification.', linkText: 'Voir comment il est construit →' },
+    { title: 'Ce portfolio, un projet docs-as-code', href: '/fr/about-this-blog/#comment-ce-site-est-construit', desc: 'Une documentation bilingue maintenue sous Git depuis 2014 et compilée en CI à chaque modification.', linkText: 'Voir comment il est construit →' },
     { title: 'Une API documentaire lisible par les machines', href: '/fr/about-the-api/', desc: 'Les mêmes sources servies aux scripts et agents IA sous forme de llms.txt, Markdown et JSON.', linkText: 'Explorer l’API →' },
   ]}
 />
@@ -91,10 +95,10 @@ import SiteOrientation from '../../../components/SiteOrientation.astro';
 
 <section class="ask-homepage-panel not-content" id="ask" aria-labelledby="ask-homepage-heading">
   <div class="ask-homepage-header">
-    <p class="ask-homepage-kicker">Assistant IA</p>
-    <h2 id="ask-homepage-heading" class="ask-homepage-title">Interroger la documentation</h2>
+    <p class="ask-homepage-kicker">Assistant documentaire IA</p>
+    <h2 id="ask-homepage-heading" class="ask-homepage-title">Explorer la documentation</h2>
     <p class="ask-homepage-desc">
-      Vous ne trouvez pas ce que vous cherchez&nbsp;? Décrivez votre besoin avec vos propres mots. Les réponses sont générées à partir du contenu de ce manuel, avec des liens vers les pages utilisées. Pour exploiter ce contenu dans vos propres outils ou agents, voir <a href="/fr/about-the-api/">l’API de ce manuel</a>.
+      Décrivez votre besoin avec vos propres mots. Les réponses sont générées uniquement à partir du contenu de ce portfolio, avec des liens vers les pages utilisées. Pour exploiter ce contenu dans vos propres outils ou agents, voir <a href="/fr/about-the-api/">l’API documentaire</a>.
     </p>
   </div>
   <AskAssistant lang="fr" headingLevel={3} />

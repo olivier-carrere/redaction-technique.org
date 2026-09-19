@@ -15,23 +15,23 @@ const headingId = 'author-box-heading';
   <h2 id={headingId} class="author-box-title">{isFr ? 'À propos de l’auteur' : 'About the author'}</h2>
   <p class="author-box-text">
     {isFr
-      ? 'Olivier Carrère est rédacteur technique senior, spécialisé dans la documentation développeur, le docs-as-code, la rédaction structurée et l’architecture documentaire.'
-      : 'Olivier Carrère is a senior technical writer specializing in developer documentation, docs-as-code, structured authoring, and documentation architecture.'}
+      ? 'Olivier Carrère est rédacteur technique senior, spécialisé dans la documentation développeur, le docs-as-code, la rédaction structurée et l’architecture documentaire. Ce site est son portfolio documentaire.'
+      : 'Olivier Carrère is a senior technical writer specializing in developer documentation, docs-as-code, structured authoring, and documentation architecture. This site is his documentation portfolio.'}
   </p>
   <ul class="author-box-links">
     {area && (
       <li>
         <a href={`/${lang}/expertise/#${expertiseAnchor(area, lang)}`}>
-          {isFr ? 'Expertise associée : ' : 'Related expertise: '}{area.label[lang]}
+          {isFr ? 'Expertise et preuves : ' : 'Expertise & evidence: '}{area.label[lang]}
         </a>
       </li>
     )}
-    <li><a href={`/${lang}/about-this-blog/`}>{isFr ? 'À propos et contact' : 'About and contact'}</a></li>
     <li>
-      <a href="https://redaction-technique.org/about" hreflang="en">
+      <a href="https://redaction-technique.org/" hreflang="en">
         {isFr ? 'Profil professionnel (en anglais)' : 'Professional profile'}&nbsp;↗
       </a>
     </li>
+    <li><a href={`/${lang}/about-this-blog/`}>{isFr ? 'À propos et contact' : 'About and contact'}</a></li>
   </ul>
 </aside>
 

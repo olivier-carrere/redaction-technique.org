@@ -11,13 +11,13 @@ const isFr = lang === 'fr';
 <div class="site-orientation not-content">
   <div class="orientation-header">
     <span class="orientation-badge">
-      {isFr ? 'Manuel de référence' : 'Documentation Manual'}
+      {isFr ? 'Portfolio documentaire' : 'Documentation portfolio'}
     </span>
     <p class="orientation-byline">
       {isFr ? (
-        <span>Par <a href="/fr/about-this-blog/" rel="author">Olivier Carrère</a>, rédacteur technique senior &middot; <a href="https://redaction-technique.org/" target="_blank" rel="noopener noreferrer" class="blog-pill">Blog d'essais ↗</a></span>
+        <span>Par <a href="/fr/about-this-blog/" rel="author">Olivier Carrère</a>, rédacteur technique senior &middot; <a href="https://redaction-technique.org/" hreflang="en" class="blog-pill">Profil professionnel ↗</a></span>
       ) : (
-        <span>By <a href="/en/about-this-blog/" rel="author">Olivier Carrère</a>, Senior Technical Writer &middot; <a href="https://redaction-technique.org/" target="_blank" rel="noopener noreferrer" class="blog-pill">Opinion Blog ↗</a></span>
+        <span>By <a href="/en/about-this-blog/" rel="author">Olivier Carrère</a>, Senior Technical Writer &middot; <a href="https://redaction-technique.org/" class="blog-pill">Professional profile ↗</a></span>
       )}
     </p>
   </div>
@@ -25,9 +25,9 @@ const isFr = lang === 'fr';
   <div class="orientation-body">
     <p class="orientation-mission">
       {isFr ? (
-        <span><strong>Ce site est le manuel technique</strong> : le guide de référence du processus docs-as-code, de la définition du projet à la livraison. Le <a href="https://redaction-technique.org/" target="_blank" rel="noopener noreferrer">blog compagnon</a> réunit quant à lui réflexions, essais et analyses d'opinion.</span>
+        <span><strong>Ce site est le portfolio documentaire d'Olivier Carrère</strong> : l'expertise détaillée, les méthodes, les études de cas et les preuves techniques, de la définition du projet à la livraison. Le <a href="https://redaction-technique.org/" hreflang="en">profil professionnel</a> (en anglais) présente son parcours, ses travaux choisis et ses articles.</span>
       ) : (
-        <span><strong>This site is the technical manual</strong>: a practical guide to the docs-as-code process, from project definition to delivery. The companion <a href="https://redaction-technique.org/" target="_blank" rel="noopener noreferrer">blog</a> publishes in-depth essays, analysis, and opinion.</span>
+        <span><strong>This site is Olivier Carrère's documentation portfolio</strong>: detailed expertise, methods, case studies, and technical evidence, from project definition to delivery. His <a href="https://redaction-technique.org/">professional profile</a> presents his background, selected work, and articles.</span>
       )}
     </p>
     <p class="orientation-context">

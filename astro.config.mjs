@@ -189,6 +189,7 @@ export default defineConfig({
         Pagination: './src/components/Pagination.astro',
         Hero: './src/components/Hero.astro',
         SocialIcons: './src/components/SocialIcons.astro',
+        SiteTitle: './src/components/SiteTitle.astro',
       },
       social: [
         { icon: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/carrereolivier/' },
@@ -434,7 +435,9 @@ export default defineConfig({
           ],
         },
         {
-          label: 'Blog - redaction-technique.org',
+          // The other half of the portfolio: profile, selected work, articles.
+          label: 'Professional profile ↗',
+          translations: { fr: 'Profil professionnel ↗' },
           link: 'https://redaction-technique.org/',
           attrs: { target: '_blank', rel: 'noopener' },
         },

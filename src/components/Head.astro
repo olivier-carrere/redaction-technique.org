@@ -34,8 +34,8 @@ const defaultImage = `${siteUrl}/assets/opengraph.jpg`;
 // Starlight already emits og:title, og:description, og:type, og:url, og:locale,
 // og:site_name, and twitter:card - read data from the correct source for our additions.
 const siteDefaultDescription = lang === 'fr'
-  ? 'Manuel de rédaction technique par Olivier Carrère, rédacteur technique senior : processus documentaire, docs-as-code, DITA XML et rédaction structurée, automatisation documentaire.'
-  : 'A technical writing manual by Olivier Carrère, senior technical writer: documentation process, docs-as-code, DITA XML and structured authoring, and documentation automation.';
+  ? 'Portfolio documentaire d’Olivier Carrère, rédacteur technique senior : expertise détaillée, méthodes, études de cas et preuves techniques (docs-as-code, DITA XML et rédaction structurée, architecture documentaire, automatisation).'
+  : 'Documentation portfolio of Olivier Carrère, Senior Technical Writer: detailed expertise, methods, case studies, and technical evidence (docs-as-code, DITA XML and structured authoring, documentation architecture, automation).';
 const pageTitle = entry?.data?.title ?? siteName;
 const pageDescription = entry?.data?.description || siteDefaultDescription;
 
@@ -65,6 +65,7 @@ const personEntity = {
     'Documentation automation',
     'Continuous integration',
     'Localization',
+    'AI-assisted documentation',
   ],
   sameAs: [
     'https://www.linkedin.com/in/carrereolivier/',
@@ -109,7 +110,19 @@ let graphNodes: SchemaNode[];
 
 if (isHomepage) {
   graphNodes = [
-    { '@type': 'WebSite', '@id': `${siteUrl}/#website`, url: siteUrl, name: siteName, author: { '@id': personId } },
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}/#website`,
+      url: siteUrl,
+      name: siteName,
+      alternateName: lang === 'fr' ? 'Portfolio documentaire d’Olivier Carrère' : 'Olivier Carrère — Documentation portfolio',
+      description: siteDefaultDescription,
+      inLanguage: lang,
+      author: { '@id': personId },
+      about: { '@id': personId },
+      // The professional profile: the other half of the same portfolio.
+      isPartOf: { '@id': 'https://redaction-technique.org/#website' },
+    },
     personEntity,
   ];
 } else if (entryId && /^(en|fr)\/about-this-blog$/.test(entryId)) {

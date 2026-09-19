@@ -833,6 +833,14 @@ button[data-open-modal]:focus-visible {
   outline-offset: 2px !important;
 }
 
+/* Keep the placeholder on one line when the header is crowded. */
+button[data-open-modal] > span {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 button[data-open-modal] kbd {
   font-family: var(--font-mono) !important;
   background: var(--color-bg) !important;
@@ -1029,6 +1037,11 @@ site-search dialog::backdrop {
 
 .hero .tagline p + p {
   margin-top: 0.75rem;
+}
+
+.hero .tagline a {
+  color: var(--color-link);
+  text-underline-offset: 2px;
 }
 
 .hero .tagline .hero-focus {

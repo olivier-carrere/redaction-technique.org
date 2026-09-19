@@ -1,6 +1,10 @@
 /**
  * Areas of professional expertise and the existing pages that evidence them.
  *
+ * Shared taxonomy: redaction-technique.org (src/lib/profile.ts in the
+ * techwriterblog repository) lists the same areas and links to their
+ * sections here, so keep labels and anchors in sync with it.
+ *
  * Single source for:
  * - the article footer author box (AuthorBio.astro), which links a page to
  *   the first area that lists it, and
@@ -119,6 +123,15 @@ export const EXPERTISE_AREAS: ExpertiseArea[] = [
     label: { en: 'Multilingual documentation', fr: 'Documentation multilingue' },
     evidence: [
       'tech-writing-process/translation',
+    ],
+  },
+  {
+    // Most of the evidence is in articles on redaction-technique.org, which the
+    // expertise page links directly; the grounded assistant is the in-site demo.
+    id: 'ai-assisted-documentation',
+    label: { en: 'AI-assisted documentation', fr: "Documentation assistée par l'IA" },
+    evidence: [
+      'ask',
     ],
   },
 ];

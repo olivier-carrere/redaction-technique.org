@@ -5,7 +5,8 @@
 // Each card is a list item with a native heading; the heading's link is
 // stretched over the card so the whole card is clickable while the link
 // text stays just the card title. The visible action label repeats the
-// link and is hidden from assistive technology.
+// link and is hidden from assistive technology. Optional slot content is
+// rendered below the grid (for example, a line of secondary links).
 interface Card {
   title: string;
   href: string;
@@ -45,9 +46,26 @@ const { kicker, title, desc, cards, id, compact = false } = Astro.props;
       </li>
     ))}
   </ul>
+  {Astro.slots.has('default') && <div class="card-grid-footer"><slot /></div>}
 </section>
 
 <style>
+  .card-grid-footer {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--color-text-muted);
+  }
+
+  .card-grid-footer :global(p) {
+    margin: 0;
+  }
+
+  .card-grid-footer :global(a) {
+    color: var(--color-link);
+    font-weight: 500;
+  }
+
   .card-grid-panel {
     margin: 3.5rem 0 2rem 0;
     padding: 1.75rem;

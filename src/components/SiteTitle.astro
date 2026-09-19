@@ -1,0 +1,46 @@
+---
+// Header identity shared with redaction-technique.org: the author's name,
+// then what this site is. The <title> suffix still comes from Starlight's
+// `title` option, so page titles stay "Page | Redaction-technique.org" on
+// both domains.
+const { siteTitleHref, lang } = Astro.locals.starlightRoute;
+const label = lang === 'fr' ? 'Portfolio documentaire' : 'Documentation portfolio';
+---
+
+<a href={siteTitleHref} class="site-title sl-flex">
+  <span class="site-title-name" translate="no">Olivier Carrère</span>
+  <span class="site-title-label">{label}</span>
+</a>
+
+<style>
+  @layer starlight.core {
+    .site-title {
+      align-items: baseline;
+      gap: 0.5rem;
+      font-size: var(--sl-text-h4);
+      font-weight: 600;
+      color: var(--sl-color-text-accent);
+      text-decoration: none;
+      white-space: nowrap;
+      min-width: 0;
+    }
+    span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .site-title-label {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--color-text-muted);
+  }
+
+  /* The name alone where the header is crowded: narrow phones, and desktop
+     widths where search and the profile links share the bar. */
+  @media (max-width: 30rem), (min-width: 50rem) and (max-width: 90rem) {
+    .site-title-label {
+      display: none;
+    }
+  }
+</style>
