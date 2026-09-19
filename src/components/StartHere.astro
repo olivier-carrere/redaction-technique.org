@@ -7,112 +7,49 @@ const routeLang = (Astro.locals as Record<string, any>)?.starlightRoute?.lang;
 const lang = Astro.props.lang || routeLang || 'en';
 const isFr = lang === 'fr';
 
+// The six sections of the manual, in reading order: topic → purpose → action.
 const steps = isFr ? [
-  {
-    num: '01',
-    title: 'Comprendre la documentation',
-    href: '/fr/learn/',
-    desc: 'Valeur de la documentation, maturité documentaire, rédaction et communication technique, typologie de l’information.',
-  },
-  {
-    num: '02',
-    title: 'Construire un processus documentaire',
-    href: '/fr/process/',
-    desc: 'Définir, collecter, tester, rédiger, valider, traduire et livrer — dans l’ordre où le travail se déroule.',
-  },
-  {
-    num: '03',
-    title: 'Adopter le docs-as-code',
-    href: '/fr/docs-as-code/',
-    desc: 'Traiter la documentation comme du code : cadence de livraison, contrôle de versions et intégration continue.',
-  },
-  {
-    num: '04',
-    title: 'Choisir un modèle de rédaction',
-    href: '/fr/tools-and-formats/',
-    desc: 'Markdown, rédaction structurée, DITA, réutilisation de contenu, formats source et cible.',
-  },
-  {
-    num: '05',
-    title: 'Constituer votre boîte à outils',
-    href: '/fr/toolkit/',
-    desc: 'Modèles, check-lists, exemples concrets et documentation d’API.',
-  },
-  {
-    num: '06',
-    title: 'Automatisation et techniques spécialisées',
-    href: '/fr/tutorials/',
-    desc: 'Jinja, Python, sed, Sphinx/ReST, XSL-FO et Raspberry Pi : techniques spécialisées ou historiques.',
-  },
+  { title: 'Comprendre la documentation', href: '/fr/learn/', desc: 'Pourquoi l’architecture documentaire compte : valeur, maturité, types d’information.', action: 'Lire les fondamentaux' },
+  { title: 'Construire un processus documentaire', href: '/fr/process/', desc: 'Le processus étape par étape, de la définition du projet à la livraison.', action: 'Suivre le processus' },
+  { title: 'Adopter le docs-as-code', href: '/fr/docs-as-code/', desc: 'Git, conception du référentiel, branches, CI/CD et contrôles automatisés.', action: 'Découvrir le workflow' },
+  { title: 'Choisir un modèle de rédaction', href: '/fr/tools-and-formats/', desc: 'Rédaction structurée, DITA, Markdown, réutilisation du contenu et formats.', action: 'Comparer les modèles' },
+  { title: 'Constituer votre boîte à outils', href: '/fr/toolkit/', desc: 'Modèles, check-lists et exemples concrets à réutiliser.', action: 'Ouvrir la boîte à outils' },
+  { title: 'Automatisation et techniques spécialisées', href: '/fr/tutorials/', desc: 'Jinja, Python, sed, Sphinx/ReST, XSL-FO : techniques spécialisées et historiques.', action: 'Explorer les techniques' },
 ] : [
-  {
-    num: '01',
-    title: 'Understand documentation',
-    href: '/en/learn/',
-    desc: 'The value of documentation, documentation maturity, technical writing vs technical communication, and information types.',
-  },
-  {
-    num: '02',
-    title: 'Build a documentation process',
-    href: '/en/process/',
-    desc: 'Define, gather, test, create, review, translate, and publish — in the order the work actually happens.',
-  },
-  {
-    num: '03',
-    title: 'Adopt docs-as-code',
-    href: '/en/docs-as-code/',
-    desc: 'Treating documentation like code: aligning release cadence, version control, automated testing, and CI/CD pipelines.',
-  },
-  {
-    num: '04',
-    title: 'Choose an authoring model',
-    href: '/en/tools-and-formats/',
-    desc: 'Markdown, structured authoring, DITA, content reuse, and source vs target formats.',
-  },
-  {
-    num: '05',
-    title: 'Build your toolkit',
-    href: '/en/toolkit/',
-    desc: 'Templates, checklists, worked examples, and API documentation.',
-  },
-  {
-    num: '06',
-    title: 'Automation & legacy techniques',
-    href: '/en/tutorials/',
-    desc: 'Jinja, Python, sed, Sphinx/ReST, XSL-FO, and Raspberry Pi: specialist or historical techniques.',
-  },
+  { title: 'Understand documentation', href: '/en/learn/', desc: 'Why documentation architecture matters: value, maturity, information types.', action: 'Read the foundations' },
+  { title: 'Build a documentation process', href: '/en/process/', desc: 'The workflow step by step, from project definition to delivery.', action: 'Follow the process' },
+  { title: 'Adopt docs-as-code', href: '/en/docs-as-code/', desc: 'Git, repository design, branches, CI/CD, and automated checks.', action: 'Learn the workflow' },
+  { title: 'Choose an authoring model', href: '/en/tools-and-formats/', desc: 'Structured authoring, DITA, Markdown, content reuse, and formats.', action: 'Compare the models' },
+  { title: 'Build your toolkit', href: '/en/toolkit/', desc: 'Templates, checklists, and worked examples to reuse.', action: 'Open the toolkit' },
+  { title: 'Automation & legacy techniques', href: '/en/tutorials/', desc: 'Jinja, Python, sed, Sphinx/ReST, XSL-FO: specialist and historical techniques.', action: 'Explore the techniques' },
 ];
 ---
 
-<section class="start-here-panel not-content" aria-labelledby="start-here-heading">
+<section class="start-here-panel not-content" id="six-paths" aria-labelledby="six-paths-heading">
   <div class="start-here-header">
-    <span class="start-here-kicker">{isFr ? 'Commencez ici' : 'Start Here'}</span>
-    <h2 id="start-here-heading" class="start-here-title">
-      {isFr ? 'Six parcours à travers la documentation technique' : 'Six paths through technical documentation'}
+    <p class="start-here-kicker">{isFr ? 'Parcours guidé' : 'Guided reading'}</p>
+    <h2 id="six-paths-heading" class="start-here-title">
+      {isFr ? 'Six parcours dans le manuel' : 'Six paths through the manual'}
     </h2>
     <p class="start-here-desc">
       {isFr
-        ? 'Si vous découvrez ce site ou repensez votre architecture documentaire, suivez ces six sections dans l’ordre :'
-        : 'New to the site or re-evaluating your documentation architecture? Follow the six sections in order:'}
+        ? 'Lisez-les dans l’ordre pour une méthode complète, ou allez directement au parcours dont vous avez besoin.'
+        : 'Read them in order for a complete method, or go straight to the path you need.'}
     </p>
   </div>
 
-  <div class="start-here-sequence" role="list">
-    {steps.map((step) => (
-      <div class="start-here-item" role="listitem">
-        <a href={step.href} class="start-here-link">
-          <span class="start-here-num" aria-hidden="true">{step.num}</span>
-          <div class="start-here-content">
-            <span class="start-here-step-title">{step.title}</span>
-            <span class="start-here-step-desc">{step.desc}</span>
-          </div>
-          <svg class="start-here-arrow" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/>
-          </svg>
-        </a>
-      </div>
+  <ol class="start-here-sequence">
+    {steps.map((step, index) => (
+      <li class="start-here-item">
+        <span class="start-here-num" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+        <div class="start-here-content">
+          <h3 class="start-here-step-title"><a href={step.href}>{step.title}</a></h3>
+          <p class="start-here-step-desc">{step.desc}</p>
+        </div>
+        <span class="start-here-action" aria-hidden="true">{step.action} →</span>
+      </li>
     ))}
-  </div>
+  </ol>
 </section>
 
 <style>
@@ -129,14 +66,13 @@ const steps = isFr ? [
   }
 
   .start-here-kicker {
-    display: inline-block;
     font-family: var(--font-mono);
     font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: var(--color-accent);
-    margin-bottom: 0.35rem;
+    color: var(--color-link);
+    margin: 0 0 0.35rem 0;
   }
 
   .start-here-title {
@@ -158,46 +94,49 @@ const steps = isFr ? [
     display: flex;
     flex-direction: column;
     gap: 0.65rem;
-  }
-
-  .start-here-item {
+    list-style: none;
     margin: 0;
+    padding: 0;
   }
 
-  .start-here-link {
+  /* Each row is a list item; the title link is stretched over the row. */
+  .start-here-item {
+    position: relative;
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
     gap: 1.25rem;
+    margin: 0;
     padding: 0.85rem 1.15rem;
     background: var(--color-bg);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-sm);
-    text-decoration: none;
-    transition: background 0.15s ease, border-color 0.15s ease;
-    position: relative;
+    transition: border-color 0.15s ease;
   }
 
-  .start-here-link:hover {
+  .start-here-item:hover {
     border-color: var(--color-accent);
   }
 
-  .start-here-link:focus-visible {
+  .start-here-item:has(a:focus-visible) {
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
+  }
+
+  .start-here-step-title a:focus-visible {
+    outline: none;
   }
 
   .start-here-num {
     font-family: var(--font-mono);
     font-size: 0.75rem;
     font-weight: 600;
-    color: var(--color-accent);
+    color: var(--color-link);
     background: var(--color-accent-soft);
     border: 1px solid var(--color-accent);
     padding: 0.15rem 0.45rem;
     border-radius: var(--radius-sm);
     letter-spacing: 0.05em;
-    align-self: center;
   }
 
   .start-here-content {
@@ -210,51 +149,62 @@ const steps = isFr ? [
   .start-here-step-title {
     font-size: 0.9375rem;
     font-weight: 600;
-    color: var(--color-text);
     line-height: 1.35;
+    margin: 0;
   }
 
-  .start-here-link:hover .start-here-step-title {
-    color: var(--color-accent);
+  .start-here-step-title a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .start-here-step-title a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+  }
+
+  .start-here-item:hover .start-here-step-title a {
+    color: var(--color-link);
   }
 
   .start-here-step-desc {
     font-size: 0.8125rem;
     color: var(--color-text-muted);
     line-height: 1.45;
+    margin: 0;
   }
 
-  .start-here-arrow {
-    color: var(--color-text-muted);
-    flex-shrink: 0;
-    transition: transform 0.2s ease, color 0.2s ease;
-  }
-
-  .start-here-link:hover .start-here-arrow {
-    color: var(--color-accent);
-    transform: translateX(3px);
+  .start-here-action {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-link);
+    white-space: nowrap;
   }
 
   @media (max-width: 40rem) {
     .start-here-panel {
       padding: 1.25rem 1rem;
     }
-    .start-here-link {
-      grid-template-columns: auto 1fr auto;
-      gap: 0.75rem;
+    .start-here-item {
+      grid-template-columns: auto 1fr;
+      gap: 0.35rem 0.75rem;
       padding: 0.75rem;
     }
     .start-here-num {
-      align-self: flex-start;
-      margin-top: 0.15rem;
+      align-self: start;
+      margin-top: 0.1rem;
+    }
+    .start-here-action {
+      grid-column: 2;
+      white-space: normal;
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .start-here-link,
-    .start-here-arrow {
+    .start-here-item {
       transition: none !important;
-      transform: none !important;
     }
   }
 </style>

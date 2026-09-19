@@ -1,43 +1,178 @@
 ---
-import CardGridSection from './CardGridSection.astro';
+// Homepage "Browse all documentation" section: a reference index of every
+// page, grouped exactly as in the sidebar. It reads Starlight's localized
+// sidebar for the current page, so labels and links always match the
+// navigation. Top-level links (the homepage itself, the external blog) are
+// not repeated here.
+import type { SidebarEntry } from '@astrojs/starlight/utils/routing/types';
 
 interface Props {
   lang?: string;
 }
 
-const routeLang = (Astro.locals as Record<string, any>)?.starlightRoute?.lang;
-const lang = Astro.props.lang || routeLang || 'en';
+const route = (Astro.locals as Record<string, any>)?.starlightRoute;
+const lang = Astro.props.lang || route?.lang || 'en';
 const isFr = lang === 'fr';
-const base = isFr ? '/fr' : '/en';
+const sidebar: SidebarEntry[] = route?.sidebar ?? [];
 
-const cards = isFr ? [
-  { title: '1. Comprendre la documentation', href: `${base}/learn/`, desc: 'Valeur, maturité documentaire, communication technique et typologie de l’information.', linkText: 'Découvrir →' },
-  { title: '2. Construire un processus documentaire', href: `${base}/process/`, desc: 'Planification, rédaction, révision, gouvernance et maintenance.', linkText: 'Découvrir →' },
-  { title: '3. Adopter le docs-as-code', href: `${base}/docs-as-code/`, desc: 'Git, Markdown, pull requests, CI/CD et publication statique.', linkText: 'Découvrir →' },
-  { title: '4. Choisir un modèle de rédaction', href: `${base}/tools-and-formats/`, desc: 'Markdown, rédaction structurée, DITA, réutilisation, formats source et cible.', linkText: 'Découvrir →' },
-  { title: '5. Constituer votre boîte à outils', href: `${base}/toolkit/`, desc: 'Modèles, check-lists, exemples et workflows réutilisables.', linkText: 'Découvrir →' },
-  { title: '6. Automatisation et techniques spécialisées', href: `${base}/tutorials/`, desc: 'Jinja, Python, sed, Sphinx/ReST, XSL-FO et Raspberry Pi.', linkText: 'Découvrir →' },
-  { title: 'Explorer la référence', href: `${base}/reference/`, desc: 'Glossaire, concepts, commandes et détails techniques.', linkText: 'Découvrir →' },
-  { title: 'API documentaire et IA', href: `${base}/about-the-api/`, desc: 'Contenu lisible par machine (Markdown, JSON, llms.txt) et assistant documentaire.', linkText: 'Découvrir →' },
-] : [
-  { title: '1. Understand documentation', href: `${base}/learn/`, desc: 'Value, documentation maturity, technical communication, and information types.', linkText: 'Explore →' },
-  { title: '2. Build a documentation process', href: `${base}/process/`, desc: 'Planning, authoring, review, governance, and maintenance.', linkText: 'Explore →' },
-  { title: '3. Adopt docs-as-code', href: `${base}/docs-as-code/`, desc: 'Git, Markdown, pull requests, CI/CD, and static publishing.', linkText: 'Explore →' },
-  { title: '4. Choose an authoring model', href: `${base}/tools-and-formats/`, desc: 'Markdown, structured authoring, DITA, reuse, and source vs target formats.', linkText: 'Explore →' },
-  { title: '5. Build your toolkit', href: `${base}/toolkit/`, desc: 'Templates, checklists, examples, and reusable workflows.', linkText: 'Explore →' },
-  { title: '6. Automation & legacy techniques', href: `${base}/tutorials/`, desc: 'Jinja, Python, sed, Sphinx/ReST, XSL-FO, and Raspberry Pi.', linkText: 'Explore →' },
-  { title: 'Explore the reference', href: `${base}/reference/`, desc: 'Glossary, concepts, commands, and technical details.', linkText: 'Explore →' },
-  { title: 'Documentation API & AI', href: `${base}/about-the-api/`, desc: 'Machine-readable content (Markdown, JSON, llms.txt) and the documentation assistant.', linkText: 'Explore →' },
-];
+const groups = sidebar.filter((entry) => entry.type === 'group');
+
+function countLinks(entries: SidebarEntry[]): number {
+  return entries.reduce(
+    (total, entry) => total + (entry.type === 'group' ? countLinks(entry.entries) : 1),
+    0,
+  );
+}
+
+// "page"/"pages" is spelled the same in English and French.
+const pagesLabel = (count: number) => `${count} page${count > 1 ? 's' : ''}`;
 ---
 
-<CardGridSection
-  id="browse-all"
-  kicker={isFr ? 'Parcourir la documentation' : 'Browse All'}
-  title={isFr ? 'Parcourir toute la documentation' : 'Browse all documentation'}
-  desc={isFr
-    ? 'Vous savez ce que vous cherchez ? Six sections couvrent l’ensemble de la pratique documentaire, des fondamentaux aux techniques spécialisées, complétées par la référence et l’API documentaire.'
-    : 'Already know what you’re looking for? Six sections cover the full spectrum of technical documentation, from foundations to legacy techniques, plus the reference and the documentation API.'}
-  cards={cards}
-  compact
-/>
+<section class="browse-all-panel not-content" id="browse-all" aria-labelledby="browse-all-heading">
+  <div class="browse-all-header">
+    <p class="browse-all-kicker">{isFr ? 'Référence' : 'Reference'}</p>
+    <h2 id="browse-all-heading" class="browse-all-title">
+      {isFr ? 'Parcourir toute la documentation' : 'Browse all documentation'}
+    </h2>
+    <p class="browse-all-desc">
+      {isFr
+        ? 'Toutes les pages du manuel, regroupées comme dans le menu de navigation.'
+        : 'Every page in the manual, grouped as in the navigation menu.'}
+    </p>
+  </div>
+
+  <div class="browse-all-groups">
+    {groups.map((group) => (
+      <details class="browse-all-group">
+        <summary>
+          <span class="browse-all-group-label">{group.label}</span>
+          <span class="browse-all-group-count">{pagesLabel(countLinks(group.entries))}</span>
+        </summary>
+        <ul class="browse-all-list">
+          {group.entries.map((entry) =>
+            entry.type === 'link' ? (
+              <li><a href={entry.href} {...entry.attrs}>{entry.label}</a></li>
+            ) : (
+              <li class="browse-all-subgroup">
+                <span class="browse-all-subgroup-label">{entry.label}</span>
+                <ul class="browse-all-list">
+                  {entry.entries.map((sub) =>
+                    sub.type === 'link' && <li><a href={sub.href} {...sub.attrs}>{sub.label}</a></li>
+                  )}
+                </ul>
+              </li>
+            ),
+          )}
+        </ul>
+      </details>
+    ))}
+  </div>
+</section>
+
+<style>
+  .browse-all-panel {
+    margin: 3.5rem 0 2rem 0;
+    padding: 1.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+  }
+
+  .browse-all-header {
+    margin-bottom: 1rem;
+  }
+
+  .browse-all-kicker {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    margin: 0 0 0.35rem 0;
+  }
+
+  .browse-all-title {
+    font-size: clamp(1.25rem, calc(1rem + 1vw), 1.6rem);
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.25;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .browse-all-desc {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .browse-all-groups {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .browse-all-group {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .browse-all-group summary {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 0.25rem;
+    min-height: 2.75rem;
+    cursor: pointer;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .browse-all-group summary:hover .browse-all-group-label {
+    color: var(--color-link);
+  }
+
+  .browse-all-group summary:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  .browse-all-group-count {
+    font-size: 0.8125rem;
+    font-weight: 400;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+  }
+
+  .browse-all-list {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0.75rem 1rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .browse-all-list .browse-all-list {
+    padding-bottom: 0.25rem;
+  }
+
+  .browse-all-list li {
+    margin: 0.3rem 0;
+  }
+
+  .browse-all-list a {
+    color: var(--color-link);
+  }
+
+  .browse-all-subgroup-label {
+    display: block;
+    margin-top: 0.5rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+  }
+
+  @media (max-width: 40rem) {
+    .browse-all-panel {
+      padding: 1.25rem 1rem;
+    }
+  }
+</style>

@@ -6,19 +6,15 @@ template: splash
 tableOfContents: false
 hero:
   title: "Rédaction technique : processus, formats et outils"
-  tagline: "Une approche d'ingénierie pour concevoir, rédiger, maintenir et publier la documentation technique."
+  tagline: "Un manuel pratique pour planifier, rédiger, relire et publier la documentation technique comme un processus d'ingénierie, de la définition du projet au docs-as-code et à l'automatisation."
   actions:
-    - text: Découvrir le processus
-      link: /fr/tech-writing-process/project-definition/
+    - text: Commencer par le processus
+      link: /fr/process/
       icon: right-arrow
       variant: primary
-    - text: Parcourir la documentation
+    - text: Parcourir toute la documentation
       link: '#browse-all'
       variant: secondary
-    - text: Me contacter
-      link: https://www.linkedin.com/in/carrereolivier/
-      icon: external
-      variant: minimal
 head:
   - tag: meta
     attrs:
@@ -26,109 +22,53 @@ head:
       content: website
 ---
 
-import { CardGrid, LinkCard } from '@astrojs/starlight/components';
-import SiteOrientation from '../../../components/SiteOrientation.astro';
+import CardGridSection from '../../../components/CardGridSection.astro';
 import StartHere from '../../../components/StartHere.astro';
 import BrowseAll from '../../../components/BrowseAll.astro';
 import AskAssistant from '../../../components/AskAssistant.astro';
+import SiteOrientation from '../../../components/SiteOrientation.astro';
 
-<SiteOrientation lang="fr" />
+<CardGridSection
+  id="tasks"
+  kicker="Partir de votre objectif"
+  title="Que cherchez-vous à faire ?"
+  compact
+  cards={[
+    { title: 'Démarrer un projet documentaire', href: '/fr/tech-writing-process/project-definition/', desc: 'Définir l’audience, le périmètre et les livrables avant d’écrire le moindre mot.', linkText: 'Définir le projet →' },
+    { title: 'Construire un processus documentaire', href: '/fr/tech-writing-process/', desc: 'Voir toute la chaîne de production, de la collecte d’information à la livraison.', linkText: 'Voir le processus →' },
+    { title: 'Adopter le docs-as-code', href: '/fr/tech-writing-process/integrating-documentation-into-development/', desc: 'Gérer la documentation comme du code : gestion de versions, revue et CI/CD.', linkText: 'Intégrer au développement →' },
+    { title: 'Choisir un modèle de rédaction', href: '/fr/tools-and-formats/', desc: 'Déterminer le degré de structure dont votre contenu a besoin, du Markdown à DITA.', linkText: 'Comparer les options →' },
+    { title: 'Améliorer un système documentaire existant', href: '/fr/toolkit/documentation-audit-checklist/', desc: 'Auditer l’existant : pages orphelines, doublons et contenus obsolètes.', linkText: 'Lancer un audit →' },
+    { title: 'Automatiser la documentation', href: '/fr/toolkit/example-cicd-pipeline/', desc: 'Générer, vérifier et publier la documentation automatiquement à chaque modification.', linkText: 'Voir un pipeline CI/CD →' },
+  ]}
+/>
 
-<section class="ask-homepage-panel not-content" aria-labelledby="ask-homepage-heading">
+<StartHere lang="fr" />
+
+<CardGridSection
+  id="practical-resources"
+  kicker="Prêt à l’emploi"
+  title="Ressources pratiques"
+  desc="Modèles, check-lists et exemples concrets à reprendre dans votre propre projet."
+  cards={[
+    { title: 'Check-list de qualité documentaire', href: '/fr/toolkit/documentation-quality-checklist/', desc: 'À exécuter avant de fusionner tout changement documentaire.', linkText: 'Ouvrir la check-list →' },
+    { title: 'Exemple de workflow docs-as-code', href: '/fr/toolkit/example-docs-as-code-workflow/', desc: 'Un changement, de la branche à la production, annoté étape par étape.', linkText: 'Étudier l’exemple →' },
+    { title: 'Modèle de documentation d’API', href: '/fr/toolkit/api-documentation-template/', desc: 'Un endpoint par page : méthode, paramètres, requête/réponse, codes d’erreur.', linkText: 'Utiliser le modèle →' },
+    { title: 'Modèle de plan de projet documentaire', href: '/fr/toolkit/documentation-project-plan-template/', desc: 'Objectif, public, périmètre, format, critères de succès, calendrier.', linkText: 'Utiliser le modèle →' },
+  ]}
+/>
+
+<section class="ask-homepage-panel not-content" id="ask" aria-labelledby="ask-homepage-heading">
   <div class="ask-homepage-header">
-    <span class="ask-homepage-kicker">Assistant IA</span>
+    <p class="ask-homepage-kicker">Assistant IA</p>
     <h2 id="ask-homepage-heading" class="ask-homepage-title">Interroger la documentation</h2>
     <p class="ask-homepage-desc">
-      Vous avez une question précise sur la rédaction technique, DITA XML, la réutilisation de contenu ou le contrôle de versions&nbsp;? Posez-la à notre assistant IA, fondé strictement sur la documentation de ce site.
+      Vous ne trouvez pas ce que vous cherchez&nbsp;? Décrivez votre besoin avec vos propres mots. Les réponses sont générées à partir du contenu de ce manuel, avec des liens vers les pages utilisées. Pour exploiter ce contenu dans vos propres outils ou agents, voir <a href="/fr/about-the-api/">l’API de ce manuel</a>.
     </p>
   </div>
   <AskAssistant lang="fr" />
 </section>
 
-<StartHere lang="fr" />
-
-## Comprendre la documentation
-
-<p class="section-lead">Principes fondamentaux, terminologie et approche centrée sur l'audience &mdash; commencez ici si vous débutez, ou pour revenir aux bases.</p>
-
-<CardGrid>
-  <LinkCard title="Les trois niveaux de la documentation technique" href="/fr/costs/three-levels-of-documentation/" description="Situez où se trouve aujourd'hui la pratique documentaire de votre organisation - de la friche au DITA structuré." />
-  <LinkCard title="De la rédaction à la communication technique" href="/fr/costs/copywriting-to-technical-communication/" description="En quoi cette discipline diffère du marketing et de la rédaction générale, et pourquoi cette distinction compte pour la conception du processus." />
-  <LinkCard title="Le principe KISS" href="/fr/costs/kiss-principle/" description="Pourquoi la solution la plus simple qui résout le problème l'emporte sur la plus astucieuse." />
-</CardGrid>
-
-<p class="section-more not-content"><a href="/fr/learn/" class="section-more-link">Comprendre la documentation <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
-
-## Construire un processus documentaire
-
-<p class="section-lead">Aborder la rédaction technique comme une discipline d'ingénierie &mdash; définition du périmètre, contrôle qualité et livraison.</p>
-
-<CardGrid>
-  <LinkCard title="Définition du projet" href="/fr/tech-writing-process/project-definition/" description="Définissez audience, périmètre et livrables avant d'écrire - les cinq paramètres que tout projet de rédaction technique doit fixer." />
-  <LinkCard title="Création du contenu" href="/fr/tech-writing-process/content-creation/" description="Transformer l'information collectée en contenu structuré et exploitable." />
-  <LinkCard title="Livraison" href="/fr/tech-writing-process/delivery/" description="Faire parvenir la documentation finalisée à ceux qui en ont besoin, dans le format requis." />
-</CardGrid>
-
-<p class="section-more not-content"><a href="/fr/process/" class="section-more-link">Construire un processus documentaire <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
-
-## Adopter le docs-as-code
-
-<p class="section-lead">Traitez la documentation comme du code &mdash; même cadence de livraison, même contrôle de versions, même processus de revue, même pipeline CI/CD.</p>
-
-<CardGrid>
-  <LinkCard title="Intégrer la documentation aux processus de développement" href="/fr/tech-writing-process/integrating-documentation-into-development/" description="Aligner cadence de livraison, contrôle de versions, tests automatisés et pipelines CI/CD." />
-  <LinkCard title="Git : du fichier au contenu" href="/fr/tech-writing-process/git-from-file-to-content/" description="Git stocke des blobs de contenu, pas des noms de fichiers - comprendre ce modèle simplifie la gestion des branches et des diffs documentaires." />
-  <LinkCard title="Utiliser les branches" href="/fr/tech-writing-process/using-branches/" description="Stratégies de branches pour le travail documentaire en parallèle." />
-</CardGrid>
-
-<p class="section-more not-content"><a href="/fr/docs-as-code/" class="section-more-link">Adopter le docs-as-code <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
-
-## Choisir un modèle de rédaction
-
-<p class="section-lead">Les décisions qui conditionnent tout le reste &mdash; formats structurés ou non, réutilisation modulaire et format source de rédaction.</p>
-
-<CardGrid>
-  <LinkCard title="Formats structurés et non structurés" href="/fr/formats/structured-vs-unstructured-formats/" description="Les trois types de topics DITA - concept, tâche, référence - imposent une structure qui rend le contenu réutilisable, traduisible et cohérent." />
-  <LinkCard title="Du document à la base documentaire modulaire" href="/fr/formats/modular-documentation/" description="Remplacez les manuels monolithiques par des modules de topics réutilisables : traductions moins coûteuses, revues parallèles, plusieurs formats de sortie." />
-  <LinkCard title="Format source" href="/fr/tech-writing-process/source-format/" description="Choisir dans quoi vous rédigez - la décision qui détermine toute votre chaîne d'outils." />
-</CardGrid>
-
-<p class="section-more not-content"><a href="/fr/tools-and-formats/" class="section-more-link">Choisir un modèle de rédaction <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
-
-## Constituer votre boîte à outils
-
-<p class="section-lead">Modèles, check-lists et exemples concrets prêts à l'emploi &mdash; partez d'une base fonctionnelle plutôt que d'une page blanche.</p>
-
-<CardGrid>
-  <LinkCard title="Qualité documentaire" href="/fr/toolkit/documentation-quality-checklist/" description="À exécuter avant de fusionner tout changement documentaire." />
-  <LinkCard title="Un workflow docs-as-code basique" href="/fr/toolkit/example-docs-as-code-workflow/" description="Un changement, de la branche à la production, annoté étape par étape." />
-  <LinkCard title="Modèle de documentation d'API" href="/fr/toolkit/api-documentation-template/" description="Un endpoint par page : méthode, paramètres, requête/réponse, codes d'erreur." />
-</CardGrid>
-
-<p class="section-more not-content"><a href="/fr/toolkit/" class="section-more-link">Constituer votre boîte à outils <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
-
-## Automatisation et techniques spécialisées
-
-<p class="section-lead">Techniques de mise en œuvre spécialisées ou historiques &mdash; utiles dans leur contexte, mais pas des choix recommandés par défaut pour un nouveau projet documentaire.</p>
-
-<CardGrid>
-  <LinkCard title="Créer des documents différents à partir des mêmes sources via Jinja" href="/fr/tutorials/conditional-text-jinja/" description="Un script Python de preprocessing qui utilise des templates Jinja pour inclure ou supprimer des sections de contenu avant de passer les sources à votre générateur de documentation." />
-  <LinkCard title="Expressions régulières en Python" href="/fr/tutorials/python-regular-expressions/" description="La bibliothèque d’expressions régulières de Python aide à manipuler du texte, notamment si vous n’êtes pas familier avec sed ou awk." />
-  <LinkCard title="sed : modifiez votre texte sans ouvrir vos fichiers" href="/fr/tutorials/sed-text-editing/" description="Rechercher-remplacer en masse sur des centaines de fichiers en une seule commande." />
-</CardGrid>
-
-<p class="section-more not-content"><a href="/fr/tutorials/" class="section-more-link">Automatisation et techniques spécialisées <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
-
-## API documentaire et IA
-
-<p class="section-lead">Ce manuel est aussi publié sous une forme lisible par machine &mdash; Markdown par page, index JSON et <code>llms.txt</code> &mdash; pour des scripts, des outils de recherche et des assistants IA, et pas seulement pour les navigateurs.</p>
-
-<CardGrid>
-  <LinkCard title="À propos de l'API de ce manuel" href="/fr/about-the-api/" description="Le système llms.txt et les copies Markdown qui fonctionnent sous chaque page : à quoi ils servent et comment les utiliser." />
-  <LinkCard title="Interroger la documentation" href="/fr/ask/" description="Posez une question avec vos propres mots et obtenez une réponse fondée sur ce manuel, avec les liens vers les pages utilisées." />
-</CardGrid>
-
-<p class="section-more not-content"><a href="/fr/about-the-api/" class="section-more-link">API documentaire et IA <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
-
 <BrowseAll lang="fr" />
 
+<SiteOrientation lang="fr" />

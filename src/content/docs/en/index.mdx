@@ -6,19 +6,15 @@ template: splash
 tableOfContents: false
 hero:
   title: "Technical writing: process, formats, and tooling"
-  tagline: "An engineering approach to designing, writing, maintaining, and publishing technical documentation."
+  tagline: "A practical manual for planning, writing, reviewing, and publishing technical documentation as an engineering process, from project definition to docs-as-code and automation."
   actions:
     - text: Start with the process
-      link: /en/tech-writing-process/project-definition/
+      link: /en/process/
       icon: right-arrow
       variant: primary
     - text: Browse all documentation
       link: '#browse-all'
       variant: secondary
-    - text: Get in touch
-      link: https://www.linkedin.com/in/carrereolivier/
-      icon: external
-      variant: minimal
 head:
   - tag: meta
     attrs:
@@ -26,109 +22,53 @@ head:
       content: website
 ---
 
-import { CardGrid, LinkCard } from '@astrojs/starlight/components';
-import SiteOrientation from '../../../components/SiteOrientation.astro';
+import CardGridSection from '../../../components/CardGridSection.astro';
 import StartHere from '../../../components/StartHere.astro';
 import BrowseAll from '../../../components/BrowseAll.astro';
 import AskAssistant from '../../../components/AskAssistant.astro';
+import SiteOrientation from '../../../components/SiteOrientation.astro';
 
-<SiteOrientation lang="en" />
+<CardGridSection
+  id="tasks"
+  kicker="Start from your goal"
+  title="What are you trying to do?"
+  compact
+  cards={[
+    { title: 'Start a documentation project', href: '/en/tech-writing-process/project-definition/', desc: 'Define audience, scope, and deliverables before writing a single word.', linkText: 'Define the project →' },
+    { title: 'Build a documentation process', href: '/en/tech-writing-process/', desc: 'See the whole production chain, from information gathering to delivery.', linkText: 'See the process →' },
+    { title: 'Adopt docs-as-code', href: '/en/tech-writing-process/integrating-documentation-into-development/', desc: 'Manage documentation like code: version control, review, and CI/CD.', linkText: 'Integrate docs with development →' },
+    { title: 'Choose an authoring model', href: '/en/tools-and-formats/', desc: 'Decide how much structure your content needs, from Markdown to DITA.', linkText: 'Compare the options →' },
+    { title: 'Improve an existing documentation system', href: '/en/toolkit/documentation-audit-checklist/', desc: 'Audit what you have: orphaned pages, duplicates, and stale content.', linkText: 'Run an audit →' },
+    { title: 'Automate documentation', href: '/en/toolkit/example-cicd-pipeline/', desc: 'Build, check, and publish documentation automatically on every change.', linkText: 'See a CI/CD pipeline →' },
+  ]}
+/>
 
-<section class="ask-homepage-panel not-content" aria-labelledby="ask-homepage-heading">
+<StartHere lang="en" />
+
+<CardGridSection
+  id="practical-resources"
+  kicker="Ready to use"
+  title="Practical resources"
+  desc="Templates, checklists, and worked examples you can copy into your own project."
+  cards={[
+    { title: 'Documentation quality checklist', href: '/en/toolkit/documentation-quality-checklist/', desc: 'Run before merging any documentation change.', linkText: 'Open the checklist →' },
+    { title: 'Docs-as-code workflow example', href: '/en/toolkit/example-docs-as-code-workflow/', desc: 'One change, from branch to production, annotated step by step.', linkText: 'Study the example →' },
+    { title: 'API documentation template', href: '/en/toolkit/api-documentation-template/', desc: 'One endpoint per page: method, parameters, request/response, error codes.', linkText: 'Use the template →' },
+    { title: 'Documentation project plan template', href: '/en/toolkit/documentation-project-plan-template/', desc: 'Goal, audience, scope, format, success criteria, timeline.', linkText: 'Use the template →' },
+  ]}
+/>
+
+<section class="ask-homepage-panel not-content" id="ask" aria-labelledby="ask-homepage-heading">
   <div class="ask-homepage-header">
-    <span class="ask-homepage-kicker">AI Assistant</span>
+    <p class="ask-homepage-kicker">AI assistant</p>
     <h2 id="ask-homepage-heading" class="ask-homepage-title">Ask the documentation</h2>
     <p class="ask-homepage-desc">
-      Have a specific question about technical writing, DITA XML, content reuse, or version control? Ask our AI assistant, grounded strictly in this site's documentation.
+      Can't find what you're looking for? Describe what you need in your own words. Answers are generated from this manual's content, with links to the pages they drew on. To use the content in your own tools or agents, see <a href="/en/about-the-api/">this manual's API</a>.
     </p>
   </div>
   <AskAssistant />
 </section>
 
-<StartHere lang="en" />
-
-## Understand documentation
-
-<p class="section-lead">Foundational principles, terminology, and audience-first thinking &mdash; start here if you're new to the practice, or want a refresher.</p>
-
-<CardGrid>
-  <LinkCard title="The three levels of technical documentation" href="/en/costs/three-levels-of-documentation/" description="Locate where your organization's documentation practice sits today - from ad-hoc drafting to structured DITA." />
-  <LinkCard title="From technical writing to technical communication" href="/en/costs/copywriting-to-technical-communication/" description="How the discipline differs from marketing and general copywriting, and why that distinction matters for process design." />
-  <LinkCard title="The KISS principle" href="/en/costs/kiss-principle/" description="Why the simplest solution that solves the problem beats the cleverest one." />
-</CardGrid>
-
-<p class="section-more not-content"><a href="/en/learn/" class="section-more-link">Understand documentation <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
-
-## Build a documentation process
-
-<p class="section-lead">How to approach technical writing as an engineering discipline &mdash; from project definition to quality validation and delivery.</p>
-
-<CardGrid>
-  <LinkCard title="Project definition" href="/en/tech-writing-process/project-definition/" description="Define audience, scope, and deliverables before writing - five project parameters every technical writing engagement needs." />
-  <LinkCard title="Content creation" href="/en/tech-writing-process/content-creation/" description="Turning gathered information into structured, usable content." />
-  <LinkCard title="Delivery" href="/en/tech-writing-process/delivery/" description="Getting finished documentation to the people who need it, in the format they need it in." />
-</CardGrid>
-
-<p class="section-more not-content"><a href="/en/process/" class="section-more-link">Build a documentation process <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
-
-## Adopt docs-as-code
-
-<p class="section-lead">Treat docs like code &mdash; same release cadence, same version control, same review process, same CI/CD pipeline.</p>
-
-<CardGrid>
-  <LinkCard title="Integrating documentation into development" href="/en/tech-writing-process/integrating-documentation-into-development/" description="Aligning release cadence, version control, automated testing, and CI/CD pipelines." />
-  <LinkCard title="Git: from file to content" href="/en/tech-writing-process/git-from-file-to-content/" description="Git stores content blobs, not filenames - understanding that model makes branching and diffing documentation much simpler." />
-  <LinkCard title="Using branches" href="/en/tech-writing-process/using-branches/" description="Branching strategies for parallel documentation work." />
-</CardGrid>
-
-<p class="section-more not-content"><a href="/en/docs-as-code/" class="section-more-link">Adopt docs-as-code <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
-
-## Choose an authoring model
-
-<p class="section-lead">The decisions that shape everything else &mdash; structured or unstructured formats, modular reuse, and the source format you write in.</p>
-
-<CardGrid>
-  <LinkCard title="Structured and unstructured formats" href="/en/formats/structured-vs-unstructured-formats/" description="DITA's three topic types - concept, task, reference - enforce structure that makes content reusable, translatable, and consistent." />
-  <LinkCard title="From document to modular document base" href="/en/formats/modular-documentation/" description="Replace monolithic manuals with reusable topic modules: lower translation costs, parallel reviews, multiple output formats from one source pool." />
-  <LinkCard title="Source format" href="/en/tech-writing-process/source-format/" description="Choosing what you write in - the decision that determines your entire toolchain." />
-</CardGrid>
-
-<p class="section-more not-content"><a href="/en/tools-and-formats/" class="section-more-link">Choose an authoring model <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
-
-## Build your toolkit
-
-<p class="section-lead">Ready-to-adapt templates, checklists, and worked examples &mdash; start from a working baseline instead of a blank page.</p>
-
-<CardGrid>
-  <LinkCard title="Documentation quality" href="/en/toolkit/documentation-quality-checklist/" description="Run before merging any documentation change." />
-  <LinkCard title="A basic docs-as-code workflow" href="/en/toolkit/example-docs-as-code-workflow/" description="One change, branch to production, annotated step by step." />
-  <LinkCard title="API documentation template" href="/en/toolkit/api-documentation-template/" description="One endpoint per page: method, parameters, request/response, error codes." />
-</CardGrid>
-
-<p class="section-more not-content"><a href="/en/toolkit/" class="section-more-link">Build your toolkit <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
-
-## Automation & legacy techniques
-
-<p class="section-lead">Specialist or historical implementation techniques &mdash; useful in context, not recommended defaults for new documentation projects.</p>
-
-<CardGrid>
-  <LinkCard title="Create different documents from the same sources using Jinja" href="/en/tutorials/conditional-text-jinja/" description="A Python preprocessing script that uses Jinja templates to include or strip content sections before passing sources to your doc generator." />
-  <LinkCard title="Regular expressions in Python" href="/en/tutorials/python-regular-expressions/" description="Python's regular expression library helps you manipulate text, especially if you're not familiar with sed or awk." />
-  <LinkCard title="sed: modify your text without opening your files" href="/en/tutorials/sed-text-editing/" description="Batch find-and-replace across hundreds of files in one command." />
-</CardGrid>
-
-<p class="section-more not-content"><a href="/en/tutorials/" class="section-more-link">Automation & legacy techniques <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
-
-## Documentation API & AI
-
-<p class="section-lead">This manual is also published in machine-readable form &mdash; per-page Markdown, JSON indexes, and <code>llms.txt</code> &mdash; for scripts, search tools, and AI assistants, not only for browsers.</p>
-
-<CardGrid>
-  <LinkCard title="About this manual's API" href="/en/about-the-api/" description="The real llms.txt and Markdown-mirror system running under every page — what it's for and how to use it." />
-  <LinkCard title="Ask the documentation" href="/en/ask/" description="Ask a question in your own words and get an answer grounded in this manual, with links to the pages it drew on." />
-</CardGrid>
-
-<p class="section-more not-content"><a href="/en/about-the-api/" class="section-more-link">Documentation API & AI <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
-
 <BrowseAll lang="en" />
 
+<SiteOrientation lang="en" />

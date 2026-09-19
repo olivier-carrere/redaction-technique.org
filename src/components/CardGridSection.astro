@@ -1,8 +1,11 @@
 ---
-// Shared card-grid section used by the homepage BrowseAll summary and by
-// each of the 7 goal-based landing pages, so both share one visual system
-// instead of two hand-rolled grids. Styling lifted from the original
-// BrowseAll.astro (--sl-* tokens only, no new design tokens).
+// Shared card-grid section used on the homepage (task chooser, practical
+// resources). Styling uses existing design tokens only.
+//
+// Each card is a list item with a native heading; the heading's link is
+// stretched over the card so the whole card is clickable while the link
+// text stays just the card title. The visible action label repeats the
+// link and is hidden from assistive technology.
 interface Card {
   title: string;
   href: string;
@@ -25,23 +28,23 @@ const { kicker, title, desc, cards, id, compact = false } = Astro.props;
 
 <section class="card-grid-panel not-content" id={id} aria-labelledby={id ? `${id}-heading` : undefined}>
   <div class="card-grid-header">
-    <span class="card-grid-kicker">{kicker}</span>
+    <p class="card-grid-kicker">{kicker}</p>
     <h2 id={id ? `${id}-heading` : undefined} class="card-grid-title">{title}</h2>
     {desc && <p class="card-grid-desc">{desc}</p>}
   </div>
 
-  <div class:list={['card-grid-grid', { compact }]}>
+  <ul class:list={['card-grid-grid', { compact }]}>
     {cards.map((card) => (
-      <a href={card.href} class="card-grid-card">
+      <li class="card-grid-card">
         <div class="card-grid-card-top">
-          <span class="card-grid-card-title">{card.title}</span>
+          <h3 class="card-grid-card-title"><a href={card.href}>{card.title}</a></h3>
           {card.count && <span class="card-grid-card-count">{card.count}</span>}
         </div>
         <p class="card-grid-card-desc">{card.desc}</p>
-        <span class="card-grid-card-link-text">{card.linkText}</span>
-      </a>
+        <span class="card-grid-card-link-text" aria-hidden="true">{card.linkText}</span>
+      </li>
     ))}
-  </div>
+  </ul>
 </section>
 
 <style>
@@ -58,14 +61,14 @@ const { kicker, title, desc, cards, id, compact = false } = Astro.props;
   }
 
   .card-grid-kicker {
-    display: inline-block;
+    display: block;
     font-family: var(--font-mono);
     font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--color-accent);
-    margin-bottom: 0.35rem;
+    margin: 0 0 0.35rem 0;
   }
 
   .card-grid-title {
@@ -87,18 +90,26 @@ const { kicker, title, desc, cards, id, compact = false } = Astro.props;
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
   @media (min-width: 48rem) {
     .card-grid-grid {
       grid-template-columns: 1fr 1fr;
     }
+  }
+
+  @media (min-width: 64rem) {
     .card-grid-grid.compact {
       grid-template-columns: 1fr 1fr 1fr;
     }
   }
 
   .card-grid-card {
+    position: relative;
+    margin: 0;
     display: flex;
     flex-direction: column;
     padding: 1rem 1.15rem;
@@ -113,9 +124,13 @@ const { kicker, title, desc, cards, id, compact = false } = Astro.props;
     border-color: var(--color-accent);
   }
 
-  .card-grid-card:focus-visible {
+  .card-grid-card:has(a:focus-visible) {
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
+  }
+
+  .card-grid-card-title a:focus-visible {
+    outline: none;
   }
 
   .card-grid-card-top {
@@ -129,11 +144,25 @@ const { kicker, title, desc, cards, id, compact = false } = Astro.props;
   .card-grid-card-title {
     font-size: 0.9375rem;
     font-weight: 600;
-    color: var(--color-text);
+    line-height: 1.35;
+    margin: 0;
   }
 
-  .card-grid-card:hover .card-grid-card-title {
-    color: var(--color-accent);
+  .card-grid-card-title a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  /* Stretch the title link over the whole card. */
+  .card-grid-card-title a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+  }
+
+  .card-grid-card:hover .card-grid-card-title a {
+    color: var(--color-link);
   }
 
   .card-grid-card-count {
@@ -156,9 +185,9 @@ const { kicker, title, desc, cards, id, compact = false } = Astro.props;
   }
 
   .card-grid-card-link-text {
-    font-size: 0.75rem;
+    font-size: 0.8125rem;
     font-weight: 600;
-    color: var(--color-accent);
+    color: var(--color-link);
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
