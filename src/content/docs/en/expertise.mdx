@@ -1,0 +1,119 @@
+---
+title: "Technical writing expertise"
+description: "Structured authoring, docs-as-code, CI/CD automation, and developer documentation, each linked to the articles and case studies that demonstrate it."
+pageType: landing
+prev: false
+next: false
+---
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+This page groups the manual's articles by area of expertise, so you can go straight from a skill to the work that shows it. For background and contact details, see [About](/en/about-this-blog/).
+
+## Selected work
+
+<CardGrid>
+  <LinkCard title="NuFirewall documentation (DITA XML)" href="/en/formats/nufirewall-case-study/" description="Software product documentation cited by the press as a strength of the product: conref reuse strategy, conditional text, and a translation-ready source." />
+  <LinkCard title="This manual, as a docs-as-code project" href="/en/about-this-blog/#how-this-site-is-built" description="Bilingual EN/FR documentation in Git since 2014: reStructuredText and DITA XML, now Astro and Starlight, built by CI on every change." />
+  <LinkCard title="A machine-readable documentation API" href="/en/about-the-api/" description="The same Markdown sources served to scripts and AI agents as llms.txt, Markdown mirrors, and JSON indexes, generated at build time." />
+  <LinkCard title="DITA XML on multilingual projects" href="/en/formats/dita-xml-case-studies/" description="Solutions and tips from daily use of DITA XML on multilingual technical documentation." />
+</CardGrid>
+
+## Structured authoring and DITA
+
+Choosing how much structure content needs, then building modular, reusable sources in DITA XML: topic typing, conrefs, ditamaps, conditional text, and XSL-FO publishing.
+
+- [Case study: NuFirewall documentation](/en/formats/nufirewall-case-study/): reuse and translation strategy on a software product.
+- [Case studies in using DITA XML](/en/formats/dita-xml-case-studies/)
+- [Structured and unstructured formats](/en/formats/structured-vs-unstructured-formats/)
+- [Structured DITA XML format](/en/formats/)
+- [Too complex a document architecture?](/en/formats/document-architecture-complexity/)
+- [Formats and tools](/en/costs/formats-and-tools/)
+- [Source format](/en/tech-writing-process/source-format/)
+- [DITA XML and XSL-FO tutorials](/en/tutorials/dita-xml-xsl-fo-tutorials/)
+
+## Docs-as-code
+
+Managing documentation with the same tools and lifecycle as the product: Git, branches, pull-request review, and shared repositories.
+
+- [Integrating documentation into development processes](/en/tech-writing-process/integrating-documentation-into-development/)
+- [Version management systems - rustic but reliable](/en/tech-writing-process/version-control-systems/)
+- [Git: from file to content](/en/tech-writing-process/git-from-file-to-content/)
+- [Using branches in source management systems](/en/tech-writing-process/using-branches/)
+- [A single repository?](/en/tech-writing-process/single-repository/)
+- [Repository](/en/tech-writing-process/repository/)
+- [Which repository for group work?](/en/tech-writing-process/which-repository-for-group-work/)
+- [Example: a basic docs-as-code workflow](/en/toolkit/example-docs-as-code-workflow/)
+- [Example: a documentation review workflow](/en/toolkit/example-review-workflow/)
+- [Checklist: docs-as-code adoption](/en/toolkit/docs-as-code-adoption-checklist/)
+
+## Documentation automation and CI/CD
+
+Building, checking, and publishing documentation automatically, and generating content from data instead of copying it by hand.
+
+- [Example: a practical CI/CD pipeline for documentation](/en/toolkit/example-cicd-pipeline/)
+- [Auto-insert data into a DITA XML file](/en/tutorials/auto-insert-data-dita-xml/)
+- [Automatically insert SQL data into a reStructuredText file](/en/tutorials/auto-insert-sql-data-restructuredtext/)
+- [Automatically insert data into a reStructuredText file](/en/tutorials/auto-insert-data-restructuredtext/)
+- [Create different documents from the same sources using Jinja](/en/tutorials/conditional-text-jinja/) and [with the object method](/en/tutorials/conditional-text-jinja-object-method/)
+- [Create different documents from the same ReST sources (conditional text)](/en/tutorials/conditional-text-sphinx-rest/)
+- [Regular expressions in Python](/en/tutorials/python-regular-expressions/)
+- [sed: modify your text without opening your files](/en/tutorials/sed-text-editing/)
+- [The Raspberry Pi 3 as a documentation platform](/en/tutorials/raspberry-pi-documentation-platform/)
+- [Managing a project from start to finish](/en/tutorials/project-end-to-end/)
+- [Target format](/en/tech-writing-process/target-format/): single-source publishing to PDF, HTML, and EPUB.
+
+## Developer and API documentation
+
+Documentation for people who build on a product: API reference, documentation served to programs, and the product testing and engineering review that keep it accurate.
+
+- [Template: API documentation](/en/toolkit/api-documentation-template/)
+- [About this manual's API](/en/about-the-api/): a working, static documentation API for scripts and AI agents.
+- [Testing products to document them](/en/tech-writing-process/testing-products/)
+- [Gathering information](/en/tech-writing-process/gathering-information/): working with engineers and other subject-matter experts.
+- [Checklist: technical review](/en/toolkit/technical-review-checklist/)
+- [Template: documentation review request](/en/toolkit/documentation-review-request-template/)
+
+## Documentation and information architecture
+
+Structuring a documentation set so it scales: information typing, modular content, repository layout, and consistent article templates.
+
+- [Information types](/en/toolkit/information-types/)
+- [From document to modular document base](/en/formats/modular-documentation/)
+- [The three levels of technical documentation](/en/costs/three-levels-of-documentation/)
+- [Example: a documentation repository structure](/en/toolkit/example-repository-structure/)
+- Templates: [concept](/en/toolkit/concept-article-template/), [task](/en/toolkit/task-article-template/), and [reference](/en/toolkit/reference-article-template/) articles
+- [Example: a well-structured Markdown page](/en/toolkit/example-markdown-page/)
+- [Glossary](/en/reference/glossary/)
+
+## Documentation process and quality
+
+An explicit, repeatable process, from project definition to delivery, with quality gates at each step.
+
+- [Technical writing: an industrial process](/en/tech-writing-process/)
+- [Project definition](/en/tech-writing-process/project-definition/) and the [project plan template](/en/toolkit/documentation-project-plan-template/)
+- [Content creation](/en/tech-writing-process/content-creation/)
+- [Validation and quality control](/en/tech-writing-process/validation-quality-control/)
+- [Delivery](/en/tech-writing-process/delivery/)
+- Checklists: [documentation quality](/en/toolkit/documentation-quality-checklist/), [release readiness](/en/toolkit/release-readiness-checklist/), [documentation audit](/en/toolkit/documentation-audit-checklist/), and [documentation migration](/en/toolkit/documentation-migration-checklist/)
+- [Technical documentation: reduce costs, improve customer satisfaction](/en/costs/)
+- [From technical writing to technical communication](/en/costs/copywriting-to-technical-communication/)
+- [KISS Principle of Simplicity](/en/costs/kiss-principle/)
+
+## Multilingual documentation
+
+Planning translation from the start of a project, and structuring sources so that translation stays affordable. I'm a translation school graduate with several years of technical translation experience.
+
+- [Translation](/en/tech-writing-process/translation/)
+- [Using branches in source management systems](/en/tech-writing-process/using-branches/): parallel language branches.
+- [Case study: NuFirewall documentation](/en/formats/nufirewall-case-study/): translating conref-based DITA XML content.
+
+## Tools and formats
+
+Tools and formats covered in these articles, or used to build this site:
+
+Git · GitHub Actions · Markdown and MDX · Astro and Starlight · reStructuredText and Sphinx · DITA XML · DocBook · XSLT · XSL-FO · LaTeX · Python · Jinja · SQLite · Bash · sed · awk · regular expressions · Makefile
+
+## Get in touch
+
+To discuss a technical writing role or project, contact me on [LinkedIn](https://www.linkedin.com/in/carrereolivier/). More background is on the [About](/en/about-this-blog/) page.

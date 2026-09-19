@@ -268,8 +268,8 @@ test('Generated static build verification', () => {
   const frMd = readFileSync(frPageMdPath, 'utf8');
 
   // Verify title and source
-  assert.ok(enMd.startsWith('# About this blog'));
-  assert.ok(frMd.startsWith('# À propos de ce blog'));
+  assert.ok(enMd.startsWith('# About Olivier Carrère'));
+  assert.ok(frMd.startsWith('# À propos d\'Olivier Carrère'));
   assert.ok(enMd.includes('Source: https://docs.redaction-technique.org/en/about-this-blog/'));
   assert.ok(frMd.includes('Source: https://docs.redaction-technique.org/fr/about-this-blog/'));
 

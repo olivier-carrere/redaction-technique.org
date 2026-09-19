@@ -1,17 +1,106 @@
 ---
-title: "About this blog"
+title: "About Olivier Carrère"
 pageType: utility
-description: "A technical writing blog specializing in DITA XML, docs-as-code, documentation automation, and technical communication, by Olivier Carrère, technical writer."
+description: "Senior technical writer specializing in developer documentation, docs-as-code, and DITA structured authoring: background, approach, and how this site is built."
+prev: false
+next: false
 ---
 
 import SourceFormatsQuadrantChart from '../../../components/diagrams/SourceFormatsQuadrantChart.astro';
 import DevPipelineIntegrationDiagram from '../../../components/diagrams/DevPipelineIntegrationDiagram.astro';
 
-This blog is designed and produced by a technical writer specializing in software.
+I write documentation for software products and the engineering teams that build them. This manual, which I maintain as a docs-as-code project, documents how I work.
 
-Since it deals with technical writing processes and formats, its content is, however, less relevant than its history and its [Git](https://github.com/olivier-carrere/redaction-technique.org/) branches.
+## Profile
+
+- **Software product documentation.** I wrote the [NuFirewall documentation](/en/formats/nufirewall-case-study/) in DITA XML; the press cited it as a notable strength of the product.
+- **Structured authoring.** I've used [DITA XML daily on multilingual projects](/en/formats/dita-xml-case-studies/): topic typing, content reuse with conrefs, conditional text, and translation-ready sources.
+- **Docs-as-code.** This manual has been written, versioned, and published from [Git](https://github.com/olivier-carrere/redaction-technique.org/) since 2014, through several source formats and toolchains.
+- **Translation.** I'm a translation school graduate with several years of technical translation experience, which shapes how I structure content for localization.
+
+## How I approach documentation in engineering teams
+
+- Documentation ships with the product, follows the same lifecycle, and goes through the same quality control: see [integrating documentation into development processes](/en/tech-writing-process/integrating-documentation-into-development/).
+- I test the product in real user conditions before documenting it, rather than compiling what I'm told: see [testing products to document them](/en/tech-writing-process/testing-products/).
+- I gather information from engineers and other subject-matter experts, and ask for targeted technical reviews: see [gathering information](/en/tech-writing-process/gathering-information/) and the [technical review checklist](/en/toolkit/technical-review-checklist/).
+- Documentation changes go through branches and pull-request review, with technical and editorial review kept separate: see the [documentation review workflow](/en/toolkit/example-review-workflow/).
+
+## Areas of expertise
+
+The [Expertise](/en/expertise/) page links each area to the articles that demonstrate it:
+
+- [Structured authoring and DITA](/en/expertise/#structured-authoring-and-dita)
+- [Docs-as-code](/en/expertise/#docs-as-code)
+- [Documentation automation and CI/CD](/en/expertise/#documentation-automation-and-cicd)
+- [Developer and API documentation](/en/expertise/#developer-and-api-documentation)
+- [Documentation and information architecture](/en/expertise/#documentation-and-information-architecture)
+- [Documentation process and quality](/en/expertise/#documentation-process-and-quality)
+- [Multilingual documentation](/en/expertise/#multilingual-documentation)
+
+## Get in touch
+
+{/* No CV or résumé is published yet. When one is, link it here and in src/components/SocialIcons.astro. */}
+
+- **LinkedIn:** [linkedin.com/in/carrereolivier](https://www.linkedin.com/in/carrereolivier/). The best way to contact me about a technical writing role or project.
+- **Source code of this site:** [github.com/olivier-carrere/redaction-technique.org](https://github.com/olivier-carrere/redaction-technique.org/)
+- **Essays and opinion:** the companion [redaction-technique.org blog](https://redaction-technique.org/)
+
+## How this site is built
+
+This site deals with technical writing processes and formats, so its [history and Git branches](https://github.com/olivier-carrere/redaction-technique.org/) are as relevant as its content.
 
 It covers the following formats, tools, and tasks: reStructuredText, DITA XML, Bash scripts, awk, sed, regular expressions, Python, version control, Git, compilation, Makefile, Ant, XSLT, layout, HTML, CSS, PDF, LaTeX, XSL-FO.
+
+Today, the manual is written in MDX and built with Astro and Starlight. GitHub Actions builds it on every push and pull request, a test suite checks its content and API, and it is published in English and French. The same sources also feed a [machine-readable API](/en/about-the-api/) and a grounded [documentation assistant](/en/ask/).
+
+### This site's sources are managed under Git
+
+This site was initially developed under WordPress. The inability to make cross-cutting changes or to have precise tracking of the content lifecycle under this <abbr title="Content Management System">CMS</abbr> led to a migration to the lightweight markup format reStructuredText.
+
+![](/assets/documentation-life-cycle-framework.webp)
+
+All versions of this site are managed under the decentralized version control software Git. Content, structure, or layout changes can now be:
+
+- grouped into coherent batches,
+- linked to a ticket in an issue tracker such as *Bugzilla* or *Jira*,
+- validated by peers,
+- shared between different versions of the documentation project,
+- undone in a single operation, etc.
+
+### Source formats
+
+Version 1.1 of this site was available in three source formats, with different levels of features and complexity.
+
+<SourceFormatsQuadrantChart />
+**Feature and complexity levels of text formats**
+
+reStructuredText
+
+: reStructuredText is a lightweight wiki- or Markdown-style markup language that, combined with the Sphinx documentation generator, offers a good level of features.
+
+DITA XML
+
+: DITA XML is a complex, semantic, modular XML document architecture that delivers significant productivity gains through extensive content reuse.
+
+DocBook
+
+: DocBook is a semantic XML markup language whose feature-to-complexity ratio is today of limited interest.
+
+### Target formats
+
+The Sphinx version compiled to the following formats:
+
+- PDF,
+- EPUB,
+- HTML.
+
+These different versions were generated from exactly the same sources. They present slight variations, however, implemented through a conditional text mechanism. For example, the following term varies according to the target format:
+
+| Target format | Term         |
+|---------------|--------------|
+| PDF           | document     |
+| EPUB          | e-book       |
+| HTML          | site         |
 
 ## Free your information from its silos
 
@@ -39,52 +128,3 @@ Not so long ago, the only tools capable of delivering quality PDF or HTML output
 As a result, technical documentation was produced separately and struggled to meet the same quality and time-to-market requirements as the products themselves.
 
 DocBook, then DITA XML and reStructuredText changed the game: these text formats can be edited with any type of program, from a simple text editor to a graphical <abbr title="Integrated Development Environment">IDE</abbr>, and integrate perfectly with Subversion, Git, or any other version control system.
-
-### This blog’s sources are managed under Git
-
-This blog was initially developed under WordPress. The inability to make cross-cutting changes or to have precise tracking of the content lifecycle under this <abbr title="Content Management System">CMS</abbr> led to a migration to the lightweight markup format reStructuredText.
-
-![](/assets/documentation-life-cycle-framework.webp)
-
-All versions of this blog are managed under the decentralized version control software Git. Content, structure, or layout changes can now be:
-
-- grouped into coherent batches,
-- linked to a ticket in an issue tracker such as *Bugzilla* or *Jira*,
-- validated by peers,
-- shared between different versions of the documentation project,
-- undone in a single operation, etc.
-
-### Source formats
-
-This blog is available in three formats, based on version 1.1. These formats have different levels of features and complexity.
-
-<SourceFormatsQuadrantChart />
-**Feature and complexity levels of text formats**
-
-reStructuredText
-
-: reStructuredText is a lightweight wiki- or Markdown-style markup language that, combined with the Sphinx documentation generator, offers a good level of features.
-
-DITA XML
-
-: DITA XML is a complex, semantic, modular XML document architecture that delivers significant productivity gains through extensive content reuse.
-
-DocBook
-
-: DocBook is a semantic XML markup language whose feature-to-complexity ratio is today of limited interest.
-
-### Target formats
-
-You can compile this blog with *Python Sphinx* to the following formats:
-
-- PDF,
-- EPUB,
-- HTML.
-
-These different versions are generated from exactly the same sources. They present slight variations, however, implemented through a conditional text mechanism. For example, the following term varies according to the target format:
-
-| Target format | Term         |
-|---------------|--------------|
-| PDF           | document     |
-| EPUB          | e-book       |
-| HTML          | site         |

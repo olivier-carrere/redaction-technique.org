@@ -1,0 +1,73 @@
+---
+// Header profile links. Starlight renders SocialIcons in the desktop header
+// and in the mobile menu footer, so overriding it keeps "Expertise" and
+// "About" reachable at every viewport without adding a second nav bar.
+// The manual itself stays in the sidebar.
+import Default from '@astrojs/starlight/components/SocialIcons.astro';
+
+const route = (Astro.locals as Record<string, any>)?.starlightRoute;
+const lang = route?.lang === 'fr' ? 'fr' : 'en';
+const isFr = lang === 'fr';
+const pathname = Astro.url.pathname;
+
+const links = [
+  { href: `/${lang}/expertise/`, label: 'Expertise' },
+  { href: `/${lang}/about-this-blog/`, label: isFr ? 'À propos' : 'About' },
+];
+---
+
+<nav class="profile-nav" aria-label={isFr ? 'Profil de l’auteur' : 'Author profile'}>
+  <ul>
+    {links.map(({ href, label }) => (
+      <li>
+        <a href={href} aria-current={pathname === href ? 'page' : undefined}>{label}</a>
+      </li>
+    ))}
+  </ul>
+</nav>
+<Default />
+
+<style>
+  .profile-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .profile-nav a {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .profile-nav a:hover,
+  .profile-nav a[aria-current='page'] {
+    color: var(--color-text);
+  }
+
+  .profile-nav a[aria-current='page'] {
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent);
+    text-underline-offset: 4px;
+  }
+
+  .profile-nav a:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  /* Between Starlight's desktop breakpoint (50rem) and 60rem the header has
+     no room for the text links: they would push the language picker off
+     screen. Articles still link to Expertise and About from the byline and
+     the author box; the mobile menu footer (.mobile-preferences) keeps them. */
+  @media (min-width: 50rem) and (max-width: 60rem) {
+    :global(.right-group) .profile-nav {
+      display: none;
+    }
+  }
+</style>

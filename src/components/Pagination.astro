@@ -1,5 +1,6 @@
 ---
 import type { SidebarEntry, SidebarLink, SidebarGroup } from '@astrojs/starlight/utils/routing/types';
+import AuthorBio from './AuthorBio.astro';
 
 const route = Astro.locals.starlightRoute;
 const { dir, lang, sidebar, entry } = route;
@@ -91,6 +92,8 @@ const docTitle = entry?.data?.title || '';
 const docUrl = Astro.url.pathname;
 const askUrl = `/${lang}/ask/?doc=${encodeURIComponent(docUrl)}&title=${encodeURIComponent(docTitle)}`;
 ---
+
+{ isTopic && <AuthorBio /> }
 
 { isTopic && (
   <aside class="doc-ask-prompt not-content" aria-label={isFr ? "Poser une question sur cette documentation" : "Ask about this documentation"}>

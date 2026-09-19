@@ -34,8 +34,8 @@ const defaultImage = `${siteUrl}/assets/opengraph.jpg`;
 // Starlight already emits og:title, og:description, og:type, og:url, og:locale,
 // og:site_name, and twitter:card - read data from the correct source for our additions.
 const siteDefaultDescription = lang === 'fr'
-  ? 'Guides experts en rédaction technique, DITA XML, Markdown, docs-as-code et automatisation de contenu pour communicants techniques.'
-  : 'Expert guides on technical writing, DITA XML, Markdown, docs-as-code, and content automation for technical communicators.';
+  ? 'Manuel de rédaction technique par Olivier Carrère, rédacteur technique senior : processus documentaire, docs-as-code, DITA XML et rédaction structurée, automatisation documentaire.'
+  : 'A technical writing manual by Olivier Carrère, senior technical writer: documentation process, docs-as-code, DITA XML and structured authoring, and documentation automation.';
 const pageTitle = entry?.data?.title ?? siteName;
 const pageDescription = entry?.data?.description || siteDefaultDescription;
 
@@ -45,13 +45,32 @@ const dateStr = entry?.data?.lastUpdated instanceof Date
 
 const personId = `${siteUrl}/#olivier-carrere`;
 
+const aboutUrl = `${siteUrl}/${lang === 'fr' ? 'fr' : 'en'}/about-this-blog/`;
+
 const personEntity = {
   '@type': 'Person',
   '@id': personId,
   name: 'Olivier Carrère',
-  url: 'https://redaction-technique.org',
-  jobTitle: lang === 'fr' ? 'Rédacteur technique' : 'Technical Writer',
-  sameAs: ['https://www.linkedin.com/in/carrereolivier/'],
+  url: aboutUrl,
+  jobTitle: lang === 'fr' ? 'Rédacteur technique senior' : 'Senior Technical Writer',
+  // Areas evidenced by the /expertise/ page (src/lib/expertise.ts).
+  knowsAbout: [
+    'Technical writing',
+    'Developer documentation',
+    'API documentation',
+    'Docs as code',
+    'DITA',
+    'Structured authoring',
+    'Information architecture',
+    'Documentation automation',
+    'Continuous integration',
+    'Localization',
+  ],
+  sameAs: [
+    'https://www.linkedin.com/in/carrereolivier/',
+    'https://github.com/olivier-carrere',
+    'https://redaction-technique.org/',
+  ],
 };
 
 const articleAbout = {
@@ -93,6 +112,31 @@ if (isHomepage) {
     { '@type': 'WebSite', '@id': `${siteUrl}/#website`, url: siteUrl, name: siteName, author: { '@id': personId } },
     personEntity,
   ];
+} else if (entryId && /^(en|fr)\/about-this-blog$/.test(entryId)) {
+  graphNodes = [
+    {
+      '@type': 'ProfilePage',
+      name: pageTitle,
+      description: pageDescription,
+      url: currentUrl,
+      inLanguage: lang,
+      mainEntity: { '@id': personId },
+    },
+    personEntity,
+  ];
+} else if (entryId && /^(en|fr)\/expertise$/.test(entryId)) {
+  graphNodes = [
+    {
+      '@type': 'CollectionPage',
+      name: pageTitle,
+      description: pageDescription,
+      url: currentUrl,
+      inLanguage: lang,
+      about: { '@id': personId },
+      author: { '@id': personId },
+    },
+    personEntity,
+  ];
 } else {
   const articleNode: SchemaNode = {
     '@type': 'TechArticle',
@@ -110,9 +154,11 @@ if (isHomepage) {
     articleNode.dateModified = dateStr;
   }
   graphNodes = [articleNode, personEntity];
-  if (breadcrumbItems.length > 0) {
-    graphNodes.push({ '@type': 'BreadcrumbList', itemListElement: breadcrumbItems });
-  }
+}
+
+// breadcrumbItems is empty on the homepage.
+if (breadcrumbItems.length > 0) {
+  graphNodes.push({ '@type': 'BreadcrumbList', itemListElement: breadcrumbItems });
 }
 
 const schema = { '@context': 'https://schema.org', '@graph': graphNodes };
@@ -167,8 +213,9 @@ const schema = { '@context': 'https://schema.org', '@graph': graphNodes };
   href={`${siteUrl}/llms.txt`}
 />
 
-<!-- og:description: ensure it's always populated with the page-specific value -->
-<meta property="og:description" content={pageDescription} />
+<!-- og:description: Starlight emits it only when the page has a description;
+     fall back to the site default otherwise, without duplicating the tag. -->
+{!entry?.data?.description && <meta property="og:description" content={pageDescription} />}
 
 <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 

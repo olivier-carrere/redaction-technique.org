@@ -200,10 +200,10 @@ test('Intentionally untyped pages remain valid without contentType', () => {
   assert.ok(resIndexWithInvalidType.errors.some(e => e.includes('Invalid contentType "invalid-type"')));
 });
 
-test('Live repository content validation across all 146 documentation pages', () => {
+test('Live repository content validation across all 148 documentation pages', () => {
   const docsRoot = join(process.cwd(), 'src', 'content', 'docs');
   const allDocs = walkDocs(docsRoot);
-  assert.equal(allDocs.length, 146, 'Must validate exactly 146 documentation pages');
+  assert.equal(allDocs.length, 148, 'Must validate exactly 148 documentation pages');
 
   const failureList = [];
   let typedCount = 0;

@@ -188,7 +188,12 @@ export default defineConfig({
         PageTitle: './src/components/PageTitle.astro',
         Pagination: './src/components/Pagination.astro',
         Hero: './src/components/Hero.astro',
+        SocialIcons: './src/components/SocialIcons.astro',
       },
+      social: [
+        { icon: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/carrereolivier/' },
+        { icon: 'github', label: 'GitHub', href: 'https://github.com/olivier-carrere/redaction-technique.org' },
+      ],
       lastUpdated: true,
       defaultLocale: 'en',
       locales,

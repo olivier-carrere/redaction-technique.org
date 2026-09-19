@@ -1,20 +1,23 @@
 ---
 lastUpdated: false
-title: "Technical Writing, Step by Step - Olivier Carrère"
-description: "Expert guides on technical writing, DITA XML, Markdown, docs-as-code, and content automation for technical communicators and documentation engineering teams."
+title: "Olivier Carrère - Senior Technical Writer"
+description: "Senior technical writer: developer documentation, docs-as-code, DITA structured authoring, and documentation architecture, with case studies and worked examples."
 template: splash
 tableOfContents: false
 hero:
-  title: "Technical writing: process, formats, and tooling"
-  tagline: "A practical manual for planning, writing, reviewing, and publishing technical documentation as an engineering process, from project definition to docs-as-code and automation."
+  title: '<span class="hero-name">Olivier Carrère<span class="sr-only">,</span></span> Senior Technical Writer'
+  tagline: '<p class="hero-focus">Developer documentation · Docs-as-code · CI/CD · Structured authoring · DITA</p><p>I design and maintain technical documentation for engineering teams, from information architecture and structured authoring to Git-based workflows and automated publishing. This manual is where I document how I work.</p>'
   actions:
-    - text: Start with the process
-      link: /en/process/
+    - text: Expertise and evidence
+      link: /en/expertise/
       icon: right-arrow
       variant: primary
-    - text: Browse all documentation
-      link: '#browse-all'
+    - text: About and contact
+      link: /en/about-this-blog/
       variant: secondary
+    - text: Read the manual
+      link: '#six-paths'
+      variant: minimal
 head:
   - tag: meta
     attrs:
@@ -27,6 +30,34 @@ import StartHere from '../../../components/StartHere.astro';
 import BrowseAll from '../../../components/BrowseAll.astro';
 import AskAssistant from '../../../components/AskAssistant.astro';
 import SiteOrientation from '../../../components/SiteOrientation.astro';
+
+<CardGridSection
+  id="expertise"
+  kicker="Areas of expertise"
+  title="What I document, with the evidence"
+  desc="Each area links to the articles, case studies, and worked examples that demonstrate it."
+  compact
+  cards={[
+    { title: 'Structured authoring and DITA', href: '/en/expertise/#structured-authoring-and-dita', desc: 'Topic-based DITA XML, content reuse with conrefs, and conditional text, including a product case study.', linkText: 'See the evidence →' },
+    { title: 'Docs-as-code', href: '/en/expertise/#docs-as-code', desc: 'Documentation in Git next to the product: branches, pull-request review, and repository design.', linkText: 'See the evidence →' },
+    { title: 'Documentation automation and CI/CD', href: '/en/expertise/#documentation-automation-and-cicd', desc: 'Build, check, and publish pipelines, and content generated from data with Python and Jinja.', linkText: 'See the evidence →' },
+    { title: 'Developer and API documentation', href: '/en/expertise/#developer-and-api-documentation', desc: 'API reference templates, a machine-readable documentation API, and technical review with engineers.', linkText: 'See the evidence →' },
+    { title: 'Documentation architecture', href: '/en/expertise/#documentation-and-information-architecture', desc: 'Information typing, modular content, repository structure, and consistent article templates.', linkText: 'See the evidence →' },
+    { title: 'Documentation process and quality', href: '/en/expertise/#documentation-process-and-quality', desc: 'From project definition to delivery, with review, quality, and release-readiness gates.', linkText: 'See the evidence →' },
+  ]}
+/>
+
+<CardGridSection
+  id="selected-work"
+  kicker="Evidence"
+  title="Selected work"
+  compact
+  cards={[
+    { title: 'NuFirewall documentation', href: '/en/formats/nufirewall-case-study/', desc: 'Software product documentation in DITA XML, cited by the press as a strength of the product.', linkText: 'Read the case study →' },
+    { title: 'This manual, as a docs-as-code project', href: '/en/about-this-blog/#how-this-site-is-built', desc: 'Bilingual documentation maintained in Git since 2014 and built by CI on every change.', linkText: 'See how it is built →' },
+    { title: 'A machine-readable documentation API', href: '/en/about-the-api/', desc: 'The same sources served to scripts and AI agents as llms.txt, Markdown, and JSON.', linkText: 'Explore the API →' },
+  ]}
+/>
 
 <CardGridSection
   id="tasks"

@@ -49,7 +49,7 @@ The visual identity should be based on warm off-white backgrounds, black typogra
 | `--color-text` | `#242321` | Main text |
 | `--color-text-muted` | `#6F6B65` | Metadata and secondary text |
 | `--color-border` | `#DDD8D0` | Rules and borders |
-| `--color-accent` | `#C9684F` | Links and active states |
+| `--color-accent` | `#A44932` | Links and active states |
 | `--color-accent-soft` | `#F3DED7` | Highlight backgrounds |
 | `--color-code-bg` | `#F0EFEC` | Code blocks |
 | `--color-success` | `#47745C` | Success |
@@ -608,7 +608,7 @@ Implement the design system as CSS custom properties rather than scattering valu
   --color-text-muted: #6f6b65;
   --color-border: #ddd8d0;
 
-  --color-accent: #c9684f;
+  --color-accent: #a44932;
   --color-accent-soft: #f3ded7;
 
   --color-code-bg: #f0efec;

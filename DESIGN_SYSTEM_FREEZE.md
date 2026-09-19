@@ -56,7 +56,7 @@ All values recorded below are derived directly from the authoritative stylesheet
 | `--color-text` | `#242321` | Deep warm black body ink |
 | `--color-text-muted` | `#6f6b65` | Secondary text, captions, and metadata |
 | `--color-border` | `#ddd8d0` | Dividing lines, rules, and component borders |
-| `--color-accent` | `#c9684f` | Terracotta brand accent |
+| `--color-accent` | `#a44932` | Terracotta brand accent (AA 4.5:1 as text on all light backgrounds, including `--color-accent-soft`) |
 | `--color-accent-soft` | `#f3ded7` | Soft terracotta badge & active item background |
 | `--color-link` | `#b8553c` | WCAG AA 4.5:1 compliant terracotta link color |
 | `--color-code-bg` | `#f0efec` | Warm neutral code frame background |

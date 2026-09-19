@@ -17,7 +17,10 @@
   --color-text-muted: #6f6b65;
   --color-border: #ddd8d0;
 
-  --color-accent: #c9684f;
+  /* Same hue and saturation as the original #c9684f, lightness lowered so
+     accent-colored text (kickers, badges, aside titles, active items) meets
+     WCAG AA 4.5:1 on bg, surface, code, and accent-soft backgrounds. */
+  --color-accent: #a44932;
   --color-accent-soft: #f3ded7;
 
   --color-code-bg: #f0efec;
@@ -1005,6 +1008,34 @@ site-search dialog::backdrop {
   font-weight: 400 !important;
   color: var(--color-text-muted) !important;
   max-width: 54ch !important;
+}
+
+/* Homepage hero: author name above the role (both inside the h1), then the
+   specialization line and the positioning statement inside the tagline. */
+.hero h1 .hero-name {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.hero .tagline p {
+  margin: 0;
+}
+
+.hero .tagline p + p {
+  margin-top: 0.75rem;
+}
+
+.hero .tagline .hero-focus {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--color-text);
 }
 
 /* Hero primary action (Starlight renders hero actions as

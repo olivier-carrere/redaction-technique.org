@@ -236,6 +236,9 @@ export function getPageMarkdown(
   text = text.replace(/^import\s+[\s\S]*?;\s*$/gm, '');
   text = text.replace(/^import\s+['"][^'"]+['"]\s*;?\s*$/gm, '');
 
+  // 7b. Strip MDX comments ({/* ... */}): author notes, never rendered
+  text = text.replace(/\{\/\*[\s\S]*?\*\/\}\n?/g, '');
+
   // 8. Transform Starlight Admonitions (:::note[Title] ... :::)
   text = text.replace(/(^|\n):::([a-z]+)(?:\[([^\]]*)\])?\s*\n([\s\S]*?)\n:::(?=\n|$)/gi, (_, prefix, type, title, content) => {
     const typeKey = (type || '').toLowerCase();
