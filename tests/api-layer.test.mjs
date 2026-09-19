@@ -77,22 +77,22 @@ test('API endpoints existence in dist/client', () => {
 test('JSON index schema and document count', () => {
   // Global index checks
   assert.equal(globalJson.version, '1.0');
-  assert.equal(globalJson.count, 148);
-  assert.equal(globalJson.counts.en, 74);
-  assert.equal(globalJson.counts.fr, 74);
-  assert.equal(globalJson.documents.length, 148);
+  assert.equal(globalJson.count, 146);
+  assert.equal(globalJson.counts.en, 73);
+  assert.equal(globalJson.counts.fr, 73);
+  assert.equal(globalJson.documents.length, 146);
 
   // EN index checks
   assert.equal(enJson.version, '1.0');
   assert.equal(enJson.locale, 'en');
-  assert.equal(enJson.count, 74);
-  assert.equal(enJson.documents.length, 74);
+  assert.equal(enJson.count, 73);
+  assert.equal(enJson.documents.length, 73);
 
   // FR index checks
   assert.equal(frJson.version, '1.0');
   assert.equal(frJson.locale, 'fr');
-  assert.equal(frJson.count, 74);
-  assert.equal(frJson.documents.length, 74);
+  assert.equal(frJson.count, 73);
+  assert.equal(frJson.documents.length, 73);
 
   // Validate filter metadata exposing canonical classifications
   assert.deepEqual(globalJson.filters.contentType, [...CONTENT_TYPES]);
@@ -166,11 +166,11 @@ test('llms.txt format and structure', () => {
 
 test('Essential integrity test: llms-full.txt matches individual page.md byte-for-byte', () => {
   const corpora = [
-    { file: 'llms-full.txt', expectedCount: 148 },
-    { file: 'llms-full-en.txt', expectedCount: 74 },
-    { file: 'llms-full-fr.txt', expectedCount: 74 },
-    { file: 'en/llms-full.txt', expectedCount: 74 },
-    { file: 'fr/llms-full.txt', expectedCount: 74 },
+    { file: 'llms-full.txt', expectedCount: 146 },
+    { file: 'llms-full-en.txt', expectedCount: 73 },
+    { file: 'llms-full-fr.txt', expectedCount: 73 },
+    { file: 'en/llms-full.txt', expectedCount: 73 },
+    { file: 'fr/llms-full.txt', expectedCount: 73 },
   ];
 
   for (const { file, expectedCount } of corpora) {
@@ -213,9 +213,9 @@ test('API filtering by contentType on documentation records', () => {
   // 1. Concept filter: ?contentType=concept returns only Concept pages
   const resConcept = handleIndexQuery(docs, 'contentType=concept');
   assert.equal(resConcept.status, 200);
-  assert.equal(resConcept.body.count, 60);
-  assert.equal(resConcept.body.counts.en, 30);
-  assert.equal(resConcept.body.counts.fr, 30);
+  assert.equal(resConcept.body.count, 58);
+  assert.equal(resConcept.body.counts.en, 29);
+  assert.equal(resConcept.body.counts.fr, 29);
   assert.ok(resConcept.body.documents.length > 0);
   for (const doc of resConcept.body.documents) {
     assert.equal(doc.contentType, 'concept', `Expected concept, got ${doc.contentType} for ${doc.url}`);
@@ -248,12 +248,12 @@ test('API filtering by contentType on documentation records', () => {
 });
 
 test('API filtering by pageType on documentation records', () => {
-  // ?pageType=topic returns only topics (120 total: 60 EN + 60 FR)
+  // ?pageType=topic returns only topics (118 total: 59 EN + 59 FR)
   const resTopic = handleIndexQuery(docs, 'pageType=topic');
   assert.equal(resTopic.status, 200);
-  assert.equal(resTopic.body.count, 120);
-  assert.equal(resTopic.body.counts.en, 60);
-  assert.equal(resTopic.body.counts.fr, 60);
+  assert.equal(resTopic.body.count, 118);
+  assert.equal(resTopic.body.counts.en, 59);
+  assert.equal(resTopic.body.counts.fr, 59);
   for (const doc of resTopic.body.documents) {
     assert.equal(doc.pageType, 'topic');
     assert.ok(CONTENT_TYPES.includes(doc.contentType));
@@ -347,8 +347,8 @@ test('Strict locale isolation with filtering', () => {
   // ?lang=en&contentType=concept contains ONLY EN pages
   const resEn = handleIndexQuery(docs, 'lang=en&contentType=concept');
   assert.equal(resEn.status, 200);
-  assert.equal(resEn.body.count, 30);
-  assert.equal(resEn.body.counts.en, 30);
+  assert.equal(resEn.body.count, 29);
+  assert.equal(resEn.body.counts.en, 29);
   assert.equal(resEn.body.counts.fr, 0);
   for (const doc of resEn.body.documents) {
     assert.equal(doc.locale, 'en');
@@ -359,9 +359,9 @@ test('Strict locale isolation with filtering', () => {
   // ?lang=fr&contentType=concept contains ONLY FR pages
   const resFr = handleIndexQuery(docs, 'lang=fr&contentType=concept');
   assert.equal(resFr.status, 200);
-  assert.equal(resFr.body.count, 30);
+  assert.equal(resFr.body.count, 29);
   assert.equal(resFr.body.counts.en, 0);
-  assert.equal(resFr.body.counts.fr, 30);
+  assert.equal(resFr.body.counts.fr, 29);
   for (const doc of resFr.body.documents) {
     assert.equal(doc.locale, 'fr');
     assert.equal(doc.contentType, 'concept');
@@ -554,8 +554,8 @@ test('Stable document identity and deterministic retrieval mapping', () => {
     );
   }
 
-  assert.equal(urls.size, 148, 'Must have exactly 148 unique stable canonical URLs');
-  assert.equal(markdowns.size, 148, 'Must have exactly 148 unique markdown retrieval URLs');
+  assert.equal(urls.size, 146, 'Must have exactly 146 unique stable canonical URLs');
+  assert.equal(markdowns.size, 146, 'Must have exactly 146 unique markdown retrieval URLs');
 });
 
 test('Direct document Markdown retrieval from disk matches index specification', () => {
@@ -623,7 +623,7 @@ test('Field selection query projection (?fields=...)', () => {
   // 2. Minimal projection: title, url
   const resMinimal = handleIndexQuery(docs, 'fields=title,url');
   assert.equal(resMinimal.status, 200);
-  assert.equal(resMinimal.body.count, 148);
+  assert.equal(resMinimal.body.count, 146);
 
   for (const doc of resMinimal.body.documents) {
     assert.deepEqual(Object.keys(doc).sort(), ['title', 'url']);
@@ -665,7 +665,7 @@ test('Deterministic pagination (?page=...&limit=...)', () => {
   assert.deepEqual(p1.body.pagination, {
     page: 1,
     limit: 10,
-    total: 148,
+    total: 146,
     totalPages: 15,
   });
 
@@ -677,7 +677,7 @@ test('Deterministic pagination (?page=...&limit=...)', () => {
   assert.deepEqual(p2.body.pagination, {
     page: 2,
     limit: 10,
-    total: 148,
+    total: 146,
     totalPages: 15,
   });
 
@@ -689,12 +689,12 @@ test('Deterministic pagination (?page=...&limit=...)', () => {
   assert.deepEqual(p1Urls, allUrls.slice(0, 10));
   assert.deepEqual(p2Urls, allUrls.slice(10, 20));
 
-  // Last page (Page 15, should have 8 documents: 148 - 14*10 = 8)
+  // Last page (Page 15, should have 6 documents: 146 - 14*10 = 6)
   const p15 = handleIndexQuery(docs, 'page=15&limit=10');
   assert.equal(p15.status, 200);
-  assert.equal(p15.body.count, 8);
-  assert.equal(p15.body.documents.length, 8);
-  assert.deepEqual(p15.body.documents.map((d) => d.url), allUrls.slice(140, 148));
+  assert.equal(p15.body.count, 6);
+  assert.equal(p15.body.documents.length, 6);
+  assert.deepEqual(p15.body.documents.map((d) => d.url), allUrls.slice(140, 146));
 });
 
 test('Pagination HTTP 400 validation on out-of-bounds or invalid bounds', () => {

@@ -135,7 +135,7 @@ test('Documentation Explorer: search and filtering logic matches document corpus
 
   // D. Filtering by pageType=topic & contentType=concept
   const conceptTopics = docs.filter((d) => d.pageType === 'topic' && d.contentType === 'concept');
-  assert.equal(conceptTopics.length, 30, 'English concept topics count must equal 30');
+  assert.equal(conceptTopics.length, 29, 'English concept topics count must equal 29');
 
   // E. Untyped pages filtering (pageType=landing & contentType=null)
   const landingPages = docs.filter((d) => d.pageType === 'landing');

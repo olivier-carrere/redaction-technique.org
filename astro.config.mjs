@@ -93,13 +93,15 @@ export default defineConfig({
     '/en/costs/formats-et-outils/':                                                                                           '/en/costs/formats-and-tools/',
     '/en/costs/les-trois-niveaux-de-la-documentation-technique/':                                                             '/en/costs/three-levels-of-documentation/',
     '/en/costs/principe-de-simplicite-kiss/':                                                                                 '/en/costs/kiss-principle/',
-    '/en/costs/un-index-est-il-utile-dans-un-pdf/':                                                                          '/en/costs/index-in-pdf/',
+    '/en/costs/un-index-est-il-utile-dans-un-pdf/':                                                                          '/en/costs/',
+    '/en/costs/index-in-pdf/':                                                                                               '/en/costs/',
     // costs — FR old slugs
     '/fr/costs/de-la-redaction-a-la-communication-technique/':                                                                '/fr/costs/copywriting-to-technical-communication/',
     '/fr/costs/formats-et-outils/':                                                                                           '/fr/costs/formats-and-tools/',
     '/fr/costs/les-trois-niveaux-de-la-documentation-technique/':                                                             '/fr/costs/three-levels-of-documentation/',
     '/fr/costs/principe-de-simplicite-kiss/':                                                                                 '/fr/costs/kiss-principle/',
-    '/fr/costs/un-index-est-il-utile-dans-un-pdf/':                                                                          '/fr/costs/index-in-pdf/',
+    '/fr/costs/un-index-est-il-utile-dans-un-pdf/':                                                                          '/fr/costs/',
+    '/fr/costs/index-in-pdf/':                                                                                               '/fr/costs/',
     // veille — EN old slugs
     '/en/veille/creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-objet-texte-conditionnel/': '/en/tutorials/conditional-text-jinja-object-method/',
     '/en/veille/creer-des-documents-differents-a-partir-des-memes-sources-restructuredtext-jinja-texte-conditionnel/':      '/en/tutorials/conditional-text-jinja/',
@@ -278,7 +280,6 @@ export default defineConfig({
             { slug: 'tech-writing-process/source-format' },
             { slug: 'tech-writing-process/target-format' },
             { slug: 'costs/formats-and-tools' },
-            { slug: 'costs/index-in-pdf' },
           ],
         },
         {

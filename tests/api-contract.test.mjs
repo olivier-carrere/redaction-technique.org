@@ -227,11 +227,11 @@ test('Black-box audit: /schema.json structure and endpoint verification on disk'
 // ---------------------------------------------------------------------------
 
 test('Black-box audit: document URL integrity and strict locale isolation', () => {
-  assert.equal(globalJson.count, 148);
-  assert.equal(globalJson.counts.en, 74);
-  assert.equal(globalJson.counts.fr, 74);
-  assert.equal(enJson.count, 74);
-  assert.equal(frJson.count, 74);
+  assert.equal(globalJson.count, 146);
+  assert.equal(globalJson.counts.en, 73);
+  assert.equal(globalJson.counts.fr, 73);
+  assert.equal(enJson.count, 73);
+  assert.equal(frJson.count, 73);
 
   const seenUrls = new Set();
 
@@ -273,11 +273,11 @@ test('Black-box audit: document URL integrity and strict locale isolation', () =
 // 3. Markdown URL integrity & Full Corpus Byte-for-Byte Fidelity
 // ---------------------------------------------------------------------------
 
-test('Black-box audit: Markdown retrieval integrity across all 148 documents and llms-full.txt', () => {
+test('Black-box audit: Markdown retrieval integrity across all 146 documents and llms-full.txt', () => {
   const fullText = readFileSync(join(DIST, 'llms-full.txt'), 'utf-8');
   const sections = fullText.split(/\n---\n\n## Document: /);
 
-  assert.equal(sections.length - 1, 148, 'llms-full.txt must contain all 148 documents');
+  assert.equal(sections.length - 1, 146, 'llms-full.txt must contain all 146 documents');
 
   for (let i = 1; i < sections.length; i++) {
     const sec = sections[i];
@@ -368,7 +368,7 @@ test('Black-box audit: document metadata compliance against /schema.json schema'
     assert.ok(Array.isArray(doc.tags));
   }
 
-  assert.equal(topicCount, 120, 'Corpus must contain exactly 120 typed topics');
+  assert.equal(topicCount, 118, 'Corpus must contain exactly 118 typed topics');
   assert.equal(untypedCount, 28, 'Corpus must contain exactly 28 intentionally untyped pages');
 });
 
@@ -530,7 +530,7 @@ test('Black-box query engine audit: filtering, zero-result, HTTP 400 validation,
   const pSingle = simulateConsumerContractQuery(docs, 'page=1&limit=1', schema);
   assert.equal(pSingle.status, 200);
   assert.equal(pSingle.body.count, 1);
-  assert.equal(pSingle.body.pagination.totalPages, 148);
+  assert.equal(pSingle.body.pagination.totalPages, 146);
 
   // Boundary 2: limit=100 (max allowed)
   const pMax = simulateConsumerContractQuery(docs, 'page=1&limit=100', schema);
@@ -538,10 +538,10 @@ test('Black-box query engine audit: filtering, zero-result, HTTP 400 validation,
   assert.equal(pMax.body.count, 100);
   assert.equal(pMax.body.pagination.totalPages, 2);
 
-  // Boundary 3: last page (page 2 with limit 100 has 48 items)
+  // Boundary 3: last page (page 2 with limit 100 has 46 items)
   const pLast = simulateConsumerContractQuery(docs, 'page=2&limit=100', schema);
   assert.equal(pLast.status, 200);
-  assert.equal(pLast.body.count, 48);
+  assert.equal(pLast.body.count, 46);
 
   // Out-of-bounds pagination returns HTTP 400
   const pOob = simulateConsumerContractQuery(docs, 'page=3&limit=100', schema);
@@ -565,7 +565,7 @@ test('Black-box query engine audit: filtering, zero-result, HTTP 400 validation,
   const resAllCombined = simulateConsumerContractQuery(docs, 'contentType=concept&page=1&limit=5&fields=title,url', schema);
   assert.equal(resAllCombined.status, 200);
   assert.equal(resAllCombined.body.count, 5);
-  assert.equal(resAllCombined.body.pagination.total, 60);
+  assert.equal(resAllCombined.body.pagination.total, 58);
   for (const doc of resAllCombined.body.documents) {
     assert.deepEqual(Object.keys(doc).sort(), ['title', 'url']);
   }
