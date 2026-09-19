@@ -43,15 +43,15 @@ const dateStr = entry?.data?.lastUpdated instanceof Date
   ? entry.data.lastUpdated.toISOString().slice(0, 10)
   : undefined;
 
-const personId = `${siteUrl}/#olivier-carrere`;
-
-const aboutUrl = `${siteUrl}/${lang === 'fr' ? 'fr' : 'en'}/about-this-blog/`;
+// Same @id and profile URL as redaction-technique.org, the author's
+// professional site, so both sites describe one Person entity.
+const personId = 'https://redaction-technique.org/#olivier-carrere';
 
 const personEntity = {
   '@type': 'Person',
   '@id': personId,
   name: 'Olivier Carrère',
-  url: aboutUrl,
+  url: 'https://redaction-technique.org/about',
   jobTitle: lang === 'fr' ? 'Rédacteur technique senior' : 'Senior Technical Writer',
   // Areas evidenced by the /expertise/ page (src/lib/expertise.ts).
   knowsAbout: [
