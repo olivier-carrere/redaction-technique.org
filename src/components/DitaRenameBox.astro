@@ -1,7 +1,7 @@
 ---
 // A live, in-browser demo of the DITA batch-rename pipeline. It reuses the
-// GNU sed 4.9 WebAssembly binary (public/sed/sed.js + sed.wasm) via the
-// window.__sedReady loader. The real one-liner starts with
+// GNU sed 4.9 WebAssembly binary (public/sed/sed.js + sed.wasm) shared with
+// SedBox via the window.__sedReady loader. The real one-liner starts with
 // `ack "<title>" *.dita` (a Perl grep) and pipes through `tr`; neither can run
 // in the browser, so the input textarea stands in for the ack output and `tr`
 // is rewritten as sed's `\L`. The remaining stages are the genuine sed scripts
@@ -83,7 +83,7 @@ const cmdLines = stages.map((s) => s.display);
   const inputEl = root.querySelector(".db-input");
   const outBox = root.querySelector(".db-output");
 
-  // Load the sed binary exactly once per page.
+  // Load the sed binary exactly once per page, shared with SedBox.
   window.__sedReady =
     window.__sedReady ||
     new Promise((resolve) => {

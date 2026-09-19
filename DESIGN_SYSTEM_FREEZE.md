@@ -169,7 +169,11 @@ The following Astro components constitute the frozen component library. They mus
 * [`src/components/CardGridSection.astro`](src/components/CardGridSection.astro) — Multi-card navigation grid
 * [`src/components/diagrams/DiagramFrame.astro`](src/components/diagrams/DiagramFrame.astro) — Accessible figure frame and responsive viewport for every native SVG diagram
 * [`src/components/diagrams/Flowchart.astro`](src/components/diagrams/Flowchart.astro), [`GanttChart.astro`](src/components/diagrams/GanttChart.astro), [`GitGraphDiagram.astro`](src/components/diagrams/GitGraphDiagram.astro), [`QuadrantChart.astro`](src/components/diagrams/QuadrantChart.astro), [`SequenceDiagram.astro`](src/components/diagrams/SequenceDiagram.astro) — Build-time SVG diagram renderers (replaced the client-side `Mermaid.astro` engine; see §7)
+* [`src/components/AwkBox.astro`](src/components/AwkBox.astro) — Interactive Awk tutorial sandbox
+* [`src/components/SedBox.astro`](src/components/SedBox.astro) — Interactive Sed tutorial sandbox
 * [`src/components/DitaRenameBox.astro`](src/components/DitaRenameBox.astro) — Interactive DITA rename sandbox
+* [`src/components/PyScriptMoliere.astro`](src/components/PyScriptMoliere.astro) — Interactive Python regex terminal
+* [`src/components/SedMoliere.astro`](src/components/SedMoliere.astro) — Interactive Sed stream editor terminal
 * [`src/components/BrowseAll.astro`](src/components/BrowseAll.astro) — Homepage taxonomy browser
 * [`src/components/Hero.astro`](src/components/Hero.astro) — Editorial hero wrapper
 * [`src/components/DocActions.astro`](src/components/DocActions.astro) — Markdown copy & view controls
