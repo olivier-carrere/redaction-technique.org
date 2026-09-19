@@ -23,21 +23,6 @@ if (!/^\/(en|fr)(\/|$)/.test(pathname) && pathname !== '/') {
   );
 }
 
-// hreflang: derive alternate-locale URLs from current pathname
-let enHref: string | null = null;
-let frHref: string | null = null;
-if (pathname === '/') {
-  enHref = `${siteUrl}/en/`;
-  frHref = `${siteUrl}/fr/`;
-} else {
-  const localeMatch = pathname.match(/^\/(en|fr)(\/.*)?$/);
-  if (localeMatch) {
-    const restPath = localeMatch[2] ?? '/';
-    enHref = `${siteUrl}/en${restPath}`;
-    frHref = `${siteUrl}/fr${restPath}`;
-  }
-}
-
 const entryId = entry?.id;
 const markdownUrl = hasMarkdownUrl(entryId)
   ? getMarkdownUrl(entryId)
@@ -155,9 +140,6 @@ const schema = { '@context': 'https://schema.org', '@graph': graphNodes };
 <meta name="twitter:description" content={pageDescription} />
 <meta name="twitter:image" content={defaultImage} />
 <meta name="twitter:image:alt" content={pageTitle} />
-
-<!-- x-default points to EN; en/fr alternates already emitted by Starlight -->
-{enHref && <link rel="alternate" hreflang="x-default" href={enHref} />}
 
 <!-- Alternate Markdown representation for LLMs and automated tools -->
 {markdownHref && (

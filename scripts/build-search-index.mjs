@@ -99,7 +99,10 @@ function buildIndexForLang(docsDir, langPrefix) {
       .split(sep)
       .join('/');
 
-    const url   = `/${langPrefix}/${slug}/`;
+    // `index.mdx` files are served at their directory's URL (`toolkit/index`
+    // → `/en/toolkit/`, root `index` → `/en/`), not at `/index/`.
+    const routePath = slug.replace(/(^|\/)index$/, '');
+    const url   = routePath ? `/${langPrefix}/${routePath}/` : `/${langPrefix}/`;
     const title = frontmatterValue(raw, 'title');
     const description = frontmatterValue(raw, 'description');
 
