@@ -111,7 +111,7 @@ const t = ui[lang];
       <span id="ask-context-title" class="ask-context-title"></span>
     </div>
     <div class="ask-context-actions">
-      <a id="ask-context-doc-link" href="#" class="ask-context-link" target="_blank" rel="noopener">
+      <a id="ask-context-doc-link" class="ask-context-link" target="_blank" rel="noopener">
         {t.viewDoc} →
       </a>
       <button type="button" id="ask-context-remove" class="ask-context-remove-btn" aria-label={t.removeContext}>
@@ -635,6 +635,7 @@ const t = ui[lang];
 <script>
   import { marked } from 'marked';
   import DOMPurify from 'dompurify';
+  import { safeDocPath } from '../lib/doc-context';
 
   marked.setOptions({ gfm: true, breaks: false });
 
@@ -677,15 +678,17 @@ const t = ui[lang];
 
     // Inspect URL for contextual document parameters
     const urlParams = new URLSearchParams(window.location.search);
-    const docParam = urlParams.get('doc') || urlParams.get('context');
+    // Only an internal documentation path is accepted; anything else is
+    // ignored and the context banner stays hidden.
+    const docPath = safeDocPath(urlParams.get('doc') || urlParams.get('context'), window.location.origin);
     const titleParam = urlParams.get('title');
     const qParam = urlParams.get('q') || urlParams.get('question');
 
-    if (docParam) {
-      activeContextUrl = docParam;
-      activeContextTitle = titleParam || docParam.split('/').filter(Boolean).pop() || docParam;
+    if (docPath) {
+      activeContextUrl = docPath;
+      activeContextTitle = titleParam || docPath.split('/').filter(Boolean).pop() || docPath;
       if (contextTitleEl) contextTitleEl.textContent = activeContextTitle;
-      if (contextDocLink) contextDocLink.href = docParam;
+      if (contextDocLink) contextDocLink.href = docPath;
       if (contextBanner) show(contextBanner);
       if (input) input.placeholder = contextPlaceholder;
     }
