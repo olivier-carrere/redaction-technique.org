@@ -3,7 +3,7 @@ import Default from '@astrojs/starlight/components/Head.astro';
 import { ClientRouter } from 'astro:transitions';
 import SpeedInsights from '@vercel/speed-insights/astro';
 import type { Props } from '@astrojs/starlight/props';
-import { getMarkdownUrl } from '../lib/page-markdown';
+import { getMarkdownUrl, hasMarkdownUrl } from '../lib/page-markdown';
 
 // Starlight v0.35+: use Astro.locals.starlightRoute (Astro.props is deprecated)
 const { entry, lang } = Astro.locals.starlightRoute;
@@ -11,6 +11,17 @@ const siteUrl = 'https://docs.redaction-technique.org';
 const currentUrl = new URL(Astro.url.pathname, siteUrl).href;
 const pathname = Astro.url.pathname;
 const isHomepage = pathname === '/' || /^\/(en|fr)\/?$/.test(pathname);
+
+// Root-only pages (404, /tag/*) have no /en/ or /fr/ counterpart: drop the
+// hreflang alternates Starlight derives for them, which would 404. The 404
+// page also gets no canonical, since /404/ is not a real route.
+if (!/^\/(en|fr)(\/|$)/.test(pathname) && pathname !== '/') {
+  const is404 = /^\/404(\.html|\/)?$/.test(pathname);
+  Astro.locals.starlightRoute.head = Astro.locals.starlightRoute.head.filter(
+    ({ tag, attrs }) =>
+      !(tag === 'link' && (attrs?.hreflang || (is404 && attrs?.rel === 'canonical'))),
+  );
+}
 
 // hreflang: derive alternate-locale URLs from current pathname
 let enHref: string | null = null;
@@ -27,8 +38,9 @@ if (pathname === '/') {
   }
 }
 
-const markdownUrl = entry?.id
-  ? getMarkdownUrl(entry.id)
+const entryId = entry?.id;
+const markdownUrl = hasMarkdownUrl(entryId)
+  ? getMarkdownUrl(entryId)
   : (isHomepage ? (lang === 'fr' ? '/fr.md' : '/en.md') : null);
 const markdownHref = markdownUrl ? `${siteUrl}${markdownUrl}` : null;
 

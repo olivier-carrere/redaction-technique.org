@@ -1,12 +1,14 @@
 ---
 import Default from '@astrojs/starlight/components/Hero.astro';
 import DocActions from './DocActions.astro';
-import { getMarkdownUrl } from '../lib/page-markdown';
+import { getMarkdownUrl, hasMarkdownUrl } from '../lib/page-markdown';
 
 const starlightRoute = (Astro.locals as Record<string, any>)?.starlightRoute;
 const entryId = starlightRoute?.entry?.id;
 const lang = starlightRoute?.lang ?? 'en';
-const markdownUrl = entryId ? getMarkdownUrl(entryId) : (lang === 'fr' ? '/fr.md' : '/en.md');
+const markdownUrl = hasMarkdownUrl(entryId)
+  ? getMarkdownUrl(entryId)
+  : (entryId ? null : (lang === 'fr' ? '/fr.md' : '/en.md'));
 ---
 
 <Default {...Astro.props} />

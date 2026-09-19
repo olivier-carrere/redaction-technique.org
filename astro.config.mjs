@@ -110,7 +110,7 @@ export default defineConfig({
     '/en/veille/expressions-regulieres-python/':                                                                             '/en/tutorials/python-regular-expressions/',
     '/en/veille/inserer-automatiquement-des-donnees-dans-un-fichier-restructuredtext/':                                      '/en/tutorials/auto-insert-data-restructuredtext/',
     '/en/veille/inserer-automatiquement-des-donnees-sql-dans-un-fichier-restructuredtext/':                                  '/en/tutorials/auto-insert-sql-data-restructuredtext/',
-    '/en/veille/jourdainisation-en-ligne-python/':                                                                           '/en/tutorials/word-shuffling-python/',
+    '/en/veille/jourdainisation-en-ligne-python/':                                                                           '/en/tutorials/',
     '/en/veille/mener-un-projet-de-bout-en-bout/':                                                                          '/en/tutorials/project-end-to-end/',
     '/en/veille/raspberry-pi-plateforme-documentation/':                                                                     '/en/tutorials/raspberry-pi-documentation-platform/',
     '/en/veille/sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers/':                                                        '/en/tutorials/sed-text-editing/',
@@ -124,7 +124,7 @@ export default defineConfig({
     '/fr/veille/expressions-regulieres-python/':                                                                             '/fr/tutorials/python-regular-expressions/',
     '/fr/veille/inserer-automatiquement-des-donnees-dans-un-fichier-restructuredtext/':                                      '/fr/tutorials/auto-insert-data-restructuredtext/',
     '/fr/veille/inserer-automatiquement-des-donnees-sql-dans-un-fichier-restructuredtext/':                                  '/fr/tutorials/auto-insert-sql-data-restructuredtext/',
-    '/fr/veille/jourdainisation-en-ligne-python/':                                                                           '/fr/tutorials/word-shuffling-python/',
+    '/fr/veille/jourdainisation-en-ligne-python/':                                                                           '/fr/tutorials/',
     '/fr/veille/mener-un-projet-de-bout-en-bout/':                                                                          '/fr/tutorials/project-end-to-end/',
     '/fr/veille/raspberry-pi-plateforme-documentation/':                                                                     '/fr/tutorials/raspberry-pi-documentation-platform/',
     '/fr/veille/sed-modifiez-votre-texte-sans-ouvrir-vos-fichiers/':                                                        '/fr/tutorials/sed-text-editing/',
@@ -142,7 +142,8 @@ export default defineConfig({
     '/en/veille/python-regular-expressions/':                                                                                                              '/en/tutorials/python-regular-expressions/',
     '/en/veille/raspberry-pi-documentation-platform/':                                                                                                              '/en/tutorials/raspberry-pi-documentation-platform/',
     '/en/veille/sed-text-editing/':                                                                                                              '/en/tutorials/sed-text-editing/',
-    '/en/veille/word-shuffling-python/':                                                                                                              '/en/tutorials/word-shuffling-python/',
+    '/en/veille/word-shuffling-python/':                                                                                                              '/en/tutorials/',
+    '/en/tutorials/word-shuffling-python/':                                                                                                           '/en/tutorials/',
     // veille → tutorials — FR canonical
     '/fr/veille/':                                                                                                                    '/fr/tutorials/',
     '/fr/veille/auto-insert-data-dita-xml/':                                                                                                              '/fr/tutorials/auto-insert-data-dita-xml/',
@@ -156,7 +157,8 @@ export default defineConfig({
     '/fr/veille/python-regular-expressions/':                                                                                                              '/fr/tutorials/python-regular-expressions/',
     '/fr/veille/raspberry-pi-documentation-platform/':                                                                                                              '/fr/tutorials/raspberry-pi-documentation-platform/',
     '/fr/veille/sed-text-editing/':                                                                                                              '/fr/tutorials/sed-text-editing/',
-    '/fr/veille/word-shuffling-python/':                                                                                                              '/fr/tutorials/word-shuffling-python/',
+    '/fr/veille/word-shuffling-python/':                                                                                                              '/fr/tutorials/',
+    '/fr/tutorials/word-shuffling-python/':                                                                                                           '/fr/tutorials/',
 
     // 2026-06 English-slug renames — old (previously live) slug → new slug
     '/en/tech-writing-process/version-management-systems/':                                                                   '/en/tech-writing-process/version-control-systems/',

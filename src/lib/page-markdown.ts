@@ -45,6 +45,14 @@ export function getMarkdownUrl(docId: string): string {
 }
 
 /**
+ * Whether a .md endpoint is generated for this entry ID. Only localized docs
+ * entries have one; Starlight's 404 and virtual pages such as /tag/* do not.
+ */
+export function hasMarkdownUrl(docId: string | undefined): docId is string {
+  return !!docId && /^(en|fr)(\/|$)/.test(docId);
+}
+
+/**
  * Helper to resolve internal links against the page's canonical URL and language context.
  */
 export function resolveLink(
