@@ -1,0 +1,46 @@
+---
+// One expertise section's body after its description: the technologies and
+// methods it involves, then the documentation that demonstrates it (the
+// Markdown list passed as the slot, so tests/expertise.test.mjs still finds
+// every evidence link in the section source).
+import Tags from './Tags.astro';
+
+interface Props {
+  tools?: string[];
+  lang?: 'en' | 'fr';
+}
+
+const { tools, lang = 'en' } = Astro.props;
+const t = lang === 'fr'
+  ? { tools: 'Technologies et méthodes clés', docs: 'Documentation sélectionnée' }
+  : { tools: 'Key technologies and methods', docs: 'Selected documentation' };
+---
+
+<div class="expertise-evidence">
+  {tools && tools.length > 0 && <Tags items={tools} label={t.tools} />}
+  <p class="expertise-evidence-label not-content">{t.docs}</p>
+  <slot />
+</div>
+
+<style>
+  .expertise-evidence {
+    max-width: var(--content-width);
+  }
+
+  .expertise-evidence :global(.expertise-tags) {
+    margin-block-end: 1.25rem;
+  }
+
+  .expertise-evidence-label {
+    margin: 0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+
+  .expertise-evidence > :global(ul) {
+    margin-block-start: 0.375rem;
+  }
+</style>

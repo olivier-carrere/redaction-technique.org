@@ -1,27 +1,61 @@
 ---
-title: "Expertise et preuves"
-description: "Les domaines d'expertise d'Olivier Carrère, rédacteur technique senior (rédaction structurée et DITA, docs-as-code, automatisation CI/CD, documentation développeur), chacun relié aux études de cas et articles qui en témoignent."
+title: "Expertise"
+description: "L'expertise d'Olivier Carrère, rédacteur technique senior (docs-as-code, DITA et rédaction structurée, architecture documentaire, documentation développeur et automatisation CI/CD), démontrée par une sélection de projets documentaires, d'études de cas et de travaux techniques."
 pageType: landing
+tableOfContents: false
 prev: false
 next: false
 ---
 
-import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+import AreaNav from '../../../components/expertise/AreaNav.astro';
+import Evidence from '../../../components/expertise/Evidence.astro';
+import HireCta from '../../../components/expertise/HireCta.astro';
+import SelectedWork from '../../../components/expertise/SelectedWork.astro';
+import Tags from '../../../components/expertise/Tags.astro';
 
-Cette page regroupe les articles du portfolio documentaire par domaine d'expertise : vous passez directement d'une compétence aux travaux qui la démontrent. Pour le profil professionnel (parcours, travaux choisis et contact), voir [redaction-technique.org](https://redaction-technique.org/) ↗ (en anglais).
+<AreaNav lang="fr" />
 
 ## Travaux choisis
 
-<CardGrid>
-  <LinkCard title="Documentation de NuFirewall (DITA XML)" href="/fr/formats/nufirewall-case-study/" description="Documentation d'un produit logiciel citée par la presse comme un point fort du produit : stratégie de réutilisation par conref, texte conditionnel, sources prêtes pour la traduction." />
-  <LinkCard title="Ce manuel, un projet docs-as-code" href="/fr/about-this-blog/#comment-ce-site-est-construit" description="Documentation bilingue FR/EN sous Git depuis 2014 : reStructuredText et DITA XML, aujourd'hui Astro et Starlight, compilée en CI à chaque modification." />
-  <LinkCard title="Une API documentaire lisible par les machines" href="/fr/about-the-api/" description="Les mêmes sources Markdown servies aux scripts et agents IA (llms.txt, miroirs Markdown, index JSON), générées à la compilation." />
-  <LinkCard title="DITA XML sur des projets multilingues" href="/fr/formats/dita-xml-case-studies/" description="Solutions et astuces issues de l'usage quotidien de DITA XML sur des projets de documentation technique multilingues." />
-</CardGrid>
+Projets documentaires qui démontrent les domaines d'expertise ci-dessous.
+
+<SelectedWork
+  lang="fr"
+  items={[
+    {
+      "title": "Documentation de NuFirewall (DITA XML)",
+      "href": "/fr/formats/nufirewall-case-study/",
+      "desc": "Documentation d'un produit logiciel citée par la presse comme un point fort du produit : stratégie de réutilisation par conref, texte conditionnel, sources prêtes pour la traduction.",
+      "demonstrates": ["DITA XML", "Réutilisation de contenu", "Texte conditionnel", "Traduction"]
+    },
+    {
+      "title": "Ce portfolio, un projet docs-as-code",
+      "href": "/fr/about-this-blog/#comment-ce-site-est-construit",
+      "desc": "Documentation bilingue FR/EN sous Git depuis 2014 : reStructuredText et DITA XML, aujourd'hui Astro et Starlight, compilée en CI à chaque modification.",
+      "demonstrates": ["Docs-as-code", "Git", "CI/CD", "Astro et Starlight"]
+    },
+    {
+      "title": "Une API documentaire lisible par les machines",
+      "href": "/fr/about-the-api/",
+      "desc": "Les mêmes sources Markdown servies aux scripts et agents IA (llms.txt, miroirs Markdown, index JSON), générées à la compilation.",
+      "demonstrates": ["Documentation développeur", "llms.txt", "JSON", "Automatisation"]
+    },
+    {
+      "title": "DITA XML sur des projets multilingues",
+      "href": "/fr/formats/dita-xml-case-studies/",
+      "desc": "Solutions et astuces issues de l'usage quotidien de DITA XML sur des projets de documentation technique multilingues.",
+      "demonstrates": ["DITA XML", "Documentation multilingue"]
+    }
+  ]}
+/>
+
+<HireCta lang="fr" />
 
 ## Docs-as-code
 
-Gérer la documentation avec les mêmes outils et le même cycle de vie que le produit : Git, branches, revue par pull request et référentiels partagés.
+Intégrer la documentation aux workflows d'ingénierie, avec les mêmes outils et le même cycle de vie que le produit.
+
+<Evidence lang="fr" tools={["Git", "Branches", "Revue par pull request", "Référentiels partagés", "Markdown et MDX"]}>
 
 - [Intégrer la documentation aux processus de développement](/fr/tech-writing-process/integrating-documentation-into-development/)
 - [Les systèmes de gestion de versions - rustiques mais fiables](/fr/tech-writing-process/version-control-systems/)
@@ -34,11 +68,15 @@ Gérer la documentation avec les mêmes outils et le même cycle de vie que le p
 - [Exemple : un workflow de revue documentaire](/fr/toolkit/example-review-workflow/)
 - [Check-list : adoption du docs-as-code](/fr/toolkit/docs-as-code-adoption-checklist/)
 
+</Evidence>
+
 <span id="rédaction-structurée-et-dita"></span>
 
 ## DITA et rédaction structurée
 
-Déterminer le degré de structure dont le contenu a besoin, puis construire des sources modulaires et réutilisables en DITA XML : typage des topics, conrefs, ditamaps, texte conditionnel et publication XSL-FO.
+Déterminer le degré de structure dont le contenu a besoin, puis construire des sources modulaires et réutilisables en DITA XML.
+
+<Evidence lang="fr" tools={["DITA XML", "Typage des topics", "Conrefs", "Ditamaps", "Texte conditionnel", "DITA-OT", "XSLT", "XSL-FO", "DocBook"]}>
 
 - [Cas concret : documentation de NuFirewall](/fr/formats/nufirewall-case-study/) : stratégie de réutilisation et de traduction sur un produit logiciel.
 - [Cas concrets d’utilisation de DITA XML](/fr/formats/dita-xml-case-studies/)
@@ -49,11 +87,15 @@ Déterminer le degré de structure dont le contenu a besoin, puis construire des
 - [Format source](/fr/tech-writing-process/source-format/)
 - [Didacticiels DITA XML et XSL-FO](/fr/tutorials/dita-xml-xsl-fo-tutorials/)
 
+</Evidence>
+
 <span id="architecture-documentaire-et-de-linformation"></span>
 
 ## Architecture documentaire
 
-Structurer un ensemble documentaire pour qu'il passe à l'échelle : typologie de l'information, contenu modulaire, organisation du dépôt et modèles d'articles cohérents.
+Structurer des ensembles documentaires pour qu'ils passent à l'échelle et restent cohérents en grandissant.
+
+<Evidence lang="fr" tools={["Typologie de l'information", "Concept / tâche / référence", "Contenu modulaire", "Organisation du dépôt", "Modèles d'articles"]}>
 
 - [Typologie de l'information](/fr/toolkit/information-types/)
 - [Du document à la base documentaire modulaire](/fr/formats/modular-documentation/)
@@ -63,9 +105,13 @@ Structurer un ensemble documentaire pour qu'il passe à l'échelle : typologie 
 - [Exemple : une page Markdown bien structurée](/fr/toolkit/example-markdown-page/)
 - [Glossaire](/fr/reference/glossary/)
 
+</Evidence>
+
 ## Documentation développeur et d'API
 
-La documentation destinée à ceux qui construisent sur un produit : référence d'API, documentation servie aux programmes, et les tests produit et revues techniques qui la maintiennent exacte.
+La documentation destinée à ceux qui construisent sur un produit, maintenue exacte par les tests produit et les revues techniques.
+
+<Evidence lang="fr" tools={["Référence d'API", "llms.txt", "Miroirs Markdown", "Index JSON", "Revue technique"]}>
 
 - [Modèle : documentation d'API](/fr/toolkit/api-documentation-template/)
 - [À propos de l'API de ce manuel](/fr/about-the-api/) : une API documentaire statique et opérationnelle pour les scripts et agents IA.
@@ -74,11 +120,15 @@ La documentation destinée à ceux qui construisent sur un produit : référenc
 - [Check-list : revue technique](/fr/toolkit/technical-review-checklist/)
 - [Modèle : demande de revue documentaire](/fr/toolkit/documentation-review-request-template/)
 
+</Evidence>
+
 <span id="automatisation-documentaire-et-cicd"></span>
 
 ## Automatisation et CI/CD
 
 Compiler, vérifier et publier la documentation automatiquement, et générer le contenu à partir des données plutôt que de le recopier à la main.
+
+<Evidence lang="fr" tools={["Pipelines CI/CD", "Publication multiformat", "Python", "Jinja", "SQLite", "Bash", "sed", "Expressions rationnelles", "reStructuredText et Sphinx"]}>
 
 - [Exemple : un pipeline CI/CD concret pour la documentation](/fr/toolkit/example-cicd-pipeline/)
 - [Insérer automatiquement des données dans un fichier DITA XML](/fr/tutorials/auto-insert-data-dita-xml/)
@@ -92,9 +142,13 @@ Compiler, vérifier et publier la documentation automatiquement, et générer le
 - [Mener un projet de bout en bout](/fr/tutorials/project-end-to-end/)
 - [Format cible](/fr/tech-writing-process/target-format/) : publication multiformat (PDF, HTML, EPUB) à partir d'une source unique.
 
+</Evidence>
+
 ## Documentation assistée par l'IA
 
-Une composante du workflow documentaire, toujours avec une relecture humaine : traduction assistée par l'IA, assistant documentaire fondé sur les pages de ce portfolio et API documentaire lisible par les scripts et les agents IA.
+Utiliser l'IA dans une composante du workflow documentaire, toujours avec une relecture humaine : traduction, assistant documentaire fondé sur les pages de ce portfolio et API documentaire lisible par les scripts et les agents IA.
+
+<Evidence lang="fr" tools={["DeepL", "GPT-4o", "Claude", "llms.txt", "Relecture humaine"]}>
 
 - [Interroger la documentation](/fr/ask/) : un assistant qui répond uniquement à partir des pages de ce portfolio, et cite les pages utilisées.
 - [L'API documentaire](/fr/about-the-api/) : llms.txt, miroirs Markdown et index JSON générés à la compilation pour les scripts et les agents IA.
@@ -102,9 +156,13 @@ Une composante du workflow documentaire, toujours avec une relecture humaine : 
 - [Reliability vs. latency: running Claude through the CLI](https://redaction-technique.org/reliability-vs-latency-claude-cli) (en anglais) : boucler la boucle de rétroaction pour que le modèle corrige ses propres erreurs de compilation.
 - [Persona prompting: check this before printing](https://redaction-technique.org/persona-prompting-typographer) (en anglais) : une revue technique structurée obtenue par un prompt ciblé.
 
+</Evidence>
+
 ## Processus documentaire et qualité
 
-Un processus explicite et reproductible, de la définition du projet à la livraison, avec des contrôles qualité à chaque étape.
+Mener la documentation comme un processus explicite et reproductible, de la définition du projet à la livraison, avec des contrôles qualité à chaque étape.
+
+<Evidence lang="fr" tools={["Planification de projet", "Contrôles qualité", "Check-lists", "Préparation à la mise en production", "Audits documentaires"]}>
 
 - [Rédaction technique : un processus industriel](/fr/tech-writing-process/)
 - [Définition du projet](/fr/tech-writing-process/project-definition/) et le [modèle de plan de projet](/fr/toolkit/documentation-project-plan-template/)
@@ -116,19 +174,25 @@ Un processus explicite et reproductible, de la définition du projet à la livra
 - [De la rédaction à la communication technique](/fr/costs/copywriting-to-technical-communication/)
 - [Principe de simplicité KISS](/fr/costs/kiss-principle/)
 
+</Evidence>
+
 ## Documentation multilingue
 
 Planifier la traduction dès le début du projet, et structurer les sources pour que la traduction reste abordable. Je suis diplômé d'une école de traduction et j'ai plusieurs années d'expérience en traduction technique.
+
+<Evidence lang="fr" tools={["Planification de la traduction", "Branches linguistiques", "DITA XML fondé sur les conrefs", "FR/EN"]}>
 
 - [Traduction](/fr/tech-writing-process/translation/)
 - [Utiliser les branches des systèmes de gestion de sources](/fr/tech-writing-process/using-branches/) : branches linguistiques parallèles.
 - [Cas concret : documentation de NuFirewall](/fr/formats/nufirewall-case-study/) : traduire du contenu DITA XML fondé sur les conrefs.
 
+</Evidence>
+
 ## Outils et formats
 
 Outils et formats abordés dans ces articles, ou utilisés pour construire ce site :
 
-Git · GitHub Actions · Markdown et MDX · Astro et Starlight · reStructuredText et Sphinx · DITA XML · DocBook · XSLT · XSL-FO · LaTeX · Python · Jinja · SQLite · Bash · sed · awk · expressions rationnelles · Makefile
+<Tags items={["Git", "GitHub Actions", "Markdown et MDX", "Astro et Starlight", "reStructuredText et Sphinx", "DITA XML", "DocBook", "XSLT", "XSL-FO", "LaTeX", "Python", "Jinja", "SQLite", "Bash", "sed", "awk", "expressions rationnelles", "Makefile"]} />
 
 ## Me contacter
 

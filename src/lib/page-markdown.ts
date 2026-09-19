@@ -190,6 +190,28 @@ export function getPageMarkdown(
     /variant=["']statement["']/.test(attrsStr) ? AVAILABILITY.statement[lang] : AVAILABILITY.label[lang]
   );
 
+  // 3c. Expertise page components (src/components/expertise/). Their props are
+  // JSON literals, so the text they render can be rebuilt here.
+  const expertiseLabels = lang === 'fr'
+    ? { tools: 'Technologies et méthodes clés', docs: 'Documentation sélectionnée', demonstrates: 'Démontre', colon: '\u00A0:' }
+    : { tools: 'Key technologies and methods', docs: 'Selected documentation', demonstrates: 'Demonstrates', colon: ':' };
+  text = text.replace(/<SelectedWork\b[^>]*?\bitems=\{(\[[\s\S]*?\])\}\s*\/>/g, (_, json: string) => {
+    const items = JSON.parse(json) as { title: string; href: string; desc: string; demonstrates: string[] }[];
+    return items
+      .map((item) => `- [**${item.title}**](${item.href}): ${item.desc} ${expertiseLabels.demonstrates}${expertiseLabels.colon} ${item.demonstrates.join(', ')}.`)
+      .join('\n');
+  });
+  text = text.replace(/<Evidence\b([^>]*)>/g, (_, attrs: string) => {
+    const json = attrs.match(/\btools=\{(\[[^}]*\])\}/)?.[1];
+    const tools: string[] = json ? JSON.parse(json) : [];
+    const toolsLine = tools.length ? `**${expertiseLabels.tools}${expertiseLabels.colon}** ${tools.join(', ')}\n\n` : '';
+    return `${toolsLine}**${expertiseLabels.docs}${expertiseLabels.colon}**`;
+  });
+  text = text.replace(/<\/Evidence>/g, '');
+  text = text.replace(/<Tags\s+items=\{(\[[^}]*\])\}\s*\/>/g, (_, json: string) =>
+    (JSON.parse(json) as string[]).join(', ')
+  );
+
   // 4. Transform <SedBox lang="..." variant="..." /> BEFORE inline code protection
   text = text.replace(/<SedBox\s+([^>]*?)\/?>/gi, (_, attrsStr) => {
     const getAttr = (name: string) => {

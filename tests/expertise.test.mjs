@@ -73,9 +73,12 @@ test('each expertise page section links all of its evidence', () => {
 });
 
 test('links to expertise sections use existing anchors', () => {
-  const anchors = new Set(
-    LANGS.flatMap((lang) => EXPERTISE_AREAS.map((area) => `/${lang}/expertise/#${expertiseAnchor(area, lang)}`)),
-  );
+  const anchors = new Set([
+    ...LANGS.flatMap((lang) => EXPERTISE_AREAS.map((area) => `/${lang}/expertise/#${expertiseAnchor(area, lang)}`)),
+    // The "Selected work" section heading, linked from the homepages.
+    '/en/expertise/#selected-work',
+    '/fr/expertise/#travaux-choisis',
+  ]);
   for (const file of walk(docsRoot)) {
     const links = readFileSync(file, 'utf8').match(/\/(?:en|fr)\/expertise\/#[^)'"\s]+/g) ?? [];
     for (const link of links) {

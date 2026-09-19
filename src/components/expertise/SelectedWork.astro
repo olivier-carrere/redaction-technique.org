@@ -1,0 +1,113 @@
+---
+// Selected work on the expertise page: the projects that prove the areas
+// below. Each item is a list entry with a native heading whose link is
+// stretched over the item (same pattern as CardGridSection), a one-line
+// summary, and the expertise it demonstrates.
+import Tags from './Tags.astro';
+
+interface Item {
+  title: string;
+  href: string;
+  desc: string;
+  demonstrates: string[];
+}
+
+interface Props {
+  items: Item[];
+  lang?: 'en' | 'fr';
+}
+
+const { items, lang = 'en' } = Astro.props;
+const label = lang === 'fr' ? 'Démontre' : 'Demonstrates';
+---
+
+<div class="not-content">
+<ul class="selected-work">
+  {items.map((item) => (
+    <li>
+      <h3><a href={item.href}>{item.title}</a></h3>
+      <p>{item.desc}</p>
+      <Tags items={item.demonstrates} label={label} />
+    </li>
+  ))}
+</ul>
+</div>
+
+<style>
+  .selected-work {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    max-width: var(--content-width);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  @media (min-width: 50rem) {
+    .selected-work {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  li {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 1rem 1.125rem 0.25rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: border-color 0.15s ease;
+  }
+
+  li:hover {
+    border-color: var(--color-accent);
+  }
+
+  li:has(a:focus-visible) {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  h3 a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  h3 a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+
+  h3 a:focus-visible {
+    outline: none;
+  }
+
+  li:hover h3 a {
+    color: var(--color-accent);
+  }
+
+  p {
+    flex-grow: 1;
+    margin: 0.25rem 0 0.75rem;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: var(--color-text-muted);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    li {
+      transition: none;
+    }
+  }
+</style>

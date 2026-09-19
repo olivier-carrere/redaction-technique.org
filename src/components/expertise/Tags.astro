@@ -1,0 +1,57 @@
+---
+// Compact, non-interactive list of technologies or methods on the expertise
+// page. Neutral badge style (same as the explorer's role badge), frozen
+// tokens only. The visible label introduces the list for all readers, so
+// nothing relies on color.
+interface Props {
+  items: string[];
+  label?: string;
+}
+
+const { items, label } = Astro.props;
+---
+
+<div class="expertise-tags not-content">
+  {label && <p class="expertise-tags-label">{label}</p>}
+  <ul>
+    {items.map((item) => <li>{item}</li>)}
+  </ul>
+</div>
+
+<style>
+  .expertise-tags {
+    max-width: var(--content-width);
+    margin-block: 0 0.75rem;
+  }
+
+  .expertise-tags-label {
+    margin: 0 0 0.375rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    margin: 0;
+    padding: 0.12rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--color-text-muted);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    overflow-wrap: anywhere;
+  }
+</style>

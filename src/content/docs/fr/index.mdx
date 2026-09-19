@@ -5,19 +5,21 @@ description: "Le portfolio documentaire d'Olivier Carrère : expertise détaill
 template: splash
 tableOfContents: false
 hero:
-  title: '<span class="hero-name">Olivier Carrère · Rédacteur technique senior<span class="sr-only"> :</span></span> Portfolio documentaire'
-  tagline: '<p class="hero-focus">Docs-as-code · DITA et rédaction structurée · Architecture documentaire · Documentation développeur et d''API · Automatisation et CI/CD</p><p>Expertise détaillée, méthodes, études de cas et preuves techniques issues de mon travail de rédacteur technique senior. Pour le profil professionnel, les travaux choisis et le contact, voir <a href="https://redaction-technique.org/" hreflang="en">redaction-technique.org</a> (en anglais).</p>'
+  title: '<span class="hero-name">Portfolio documentaire<span class="sr-only"> :</span></span> Olivier Carrère · Rédacteur technique senior'
+  tagline: '<p class="hero-focus">Docs-as-code · DITA et rédaction structurée · Architecture documentaire · Documentation développeur et d''API · Automatisation et CI/CD</p><p>Je rédige la documentation de produits logiciels et des équipes d''ingénierie qui les construisent.</p>'
   actions:
-    - text: Expertise et preuves
+    - text: Voir l'expertise
       link: /fr/expertise/
       icon: right-arrow
       variant: primary
-    - text: Profil professionnel ↗
-      link: https://redaction-technique.org/
+    - text: Travaux choisis
+      link: '#selected-work'
       variant: secondary
-    - text: Explorer la documentation
-      link: '#six-paths'
+    - text: Profil professionnel (en anglais) ↗
+      link: https://redaction-technique.org/
       variant: minimal
+      attrs:
+        hreflang: en
 head:
   - tag: meta
     attrs:
@@ -33,7 +35,7 @@ import SiteOrientation from '../../../components/SiteOrientation.astro';
 
 <CardGridSection
   id="expertise"
-  kicker="Expertise et preuves"
+  kicker="Expertise"
   title="Domaines d’expertise"
   desc="Chaque domaine renvoie aux articles, études de cas et exemples concrets qui en témoignent."
   compact
@@ -61,7 +63,11 @@ Aussi : [Processus documentaire et qualité](/fr/expertise/#processus-documenta
     { title: 'Ce portfolio, un projet docs-as-code', href: '/fr/about-this-blog/#comment-ce-site-est-construit', desc: 'Une documentation bilingue maintenue sous Git depuis 2014 et compilée en CI à chaque modification.', linkText: 'Voir comment il est construit →' },
     { title: 'Une API documentaire lisible par les machines', href: '/fr/about-the-api/', desc: 'Les mêmes sources servies aux scripts et agents IA sous forme de llms.txt, Markdown et JSON.', linkText: 'Explorer l’API →' },
   ]}
-/>
+>
+
+Tous les travaux choisis, avec l'expertise que chaque projet démontre, sont sur la page [Expertise](/fr/expertise/#travaux-choisis). Pour échanger sur un poste ou un projet de rédaction technique, contactez-moi sur [LinkedIn](https://www.linkedin.com/in/carrereolivier/) ou consultez mon [profil professionnel](https://redaction-technique.org/) ↗ (en anglais).
+
+</CardGridSection>
 
 <CardGridSection
   id="tasks"

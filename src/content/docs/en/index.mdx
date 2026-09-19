@@ -5,18 +5,18 @@ description: "Olivier Carrère's documentation portfolio: detailed expertise, me
 template: splash
 tableOfContents: false
 hero:
-  title: '<span class="hero-name">Olivier Carrère · Senior Technical Writer<span class="sr-only">:</span></span> Documentation portfolio'
-  tagline: '<p class="hero-focus">Docs-as-code · DITA & structured authoring · Documentation architecture · Developer & API documentation · Automation & CI/CD</p><p>Detailed expertise, methods, case studies, and technical evidence from my work as a senior technical writer. For the professional profile, selected work, and contact, see <a href="https://redaction-technique.org/">redaction-technique.org</a>.</p>'
+  title: '<span class="hero-name">Documentation portfolio<span class="sr-only">:</span></span> Olivier Carrère · Senior Technical Writer'
+  tagline: '<p class="hero-focus">Docs-as-code · DITA & structured authoring · Documentation architecture · Developer & API documentation · Automation & CI/CD</p><p>I write documentation for software products and the engineering teams that build them.</p>'
   actions:
-    - text: Expertise & evidence
+    - text: View expertise
       link: /en/expertise/
       icon: right-arrow
       variant: primary
+    - text: Selected work
+      link: '#selected-work'
+      variant: secondary
     - text: Professional profile ↗
       link: https://redaction-technique.org/
-      variant: secondary
-    - text: Explore the documentation
-      link: '#six-paths'
       variant: minimal
 head:
   - tag: meta
@@ -33,7 +33,7 @@ import SiteOrientation from '../../../components/SiteOrientation.astro';
 
 <CardGridSection
   id="expertise"
-  kicker="Expertise & evidence"
+  kicker="Expertise"
   title="Areas of expertise"
   desc="Each area links to the articles, case studies, and worked examples that demonstrate it."
   compact
@@ -61,7 +61,11 @@ Also: [Documentation process & quality](/en/expertise/#documentation-process--qu
     { title: 'This portfolio, as a docs-as-code project', href: '/en/about-this-blog/#how-this-site-is-built', desc: 'Bilingual documentation maintained in Git since 2014 and built by CI on every change.', linkText: 'See how it is built →' },
     { title: 'A machine-readable documentation API', href: '/en/about-the-api/', desc: 'The same sources served to scripts and AI agents as llms.txt, Markdown, and JSON.', linkText: 'Explore the API →' },
   ]}
-/>
+>
+
+All selected work, with the expertise each project demonstrates, is on the [Expertise](/en/expertise/#selected-work) page. To discuss a technical writing role or project, contact me on [LinkedIn](https://www.linkedin.com/in/carrereolivier/) or see my [professional profile](https://redaction-technique.org/) ↗.
+
+</CardGridSection>
 
 <CardGridSection
   id="tasks"

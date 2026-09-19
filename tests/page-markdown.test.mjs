@@ -229,6 +229,66 @@ Le contenu suit.
   assert.match(frMd, /\*\*Type d'information :\*\* \[Tâche\]\(https:\/\/docs\.redaction-technique\.org\/fr\/toolkit\/information-types\/\)/);
 });
 
+test('getPageMarkdown transforms expertise page components', () => {
+  const doc = {
+    id: 'en/expertise',
+    data: { title: 'Expertise' },
+    body: `
+<AreaNav />
+
+<SelectedWork
+  items={[
+    {
+      "title": "A project",
+      "href": "/en/about-the-api/",
+      "desc": "What it is.",
+      "demonstrates": ["DITA XML", "Git"]
+    }
+  ]}
+/>
+
+<HireCta />
+
+<Evidence tools={["Python", "Jinja"]}>
+
+- [An article](/en/formats/)
+
+</Evidence>
+
+<Tags items={["Git", "Bash"]} />
+    `.trim(),
+  };
+  const md = getPageMarkdown(doc);
+  assert.match(md, /- \[\*\*A project\*\*\]\(https:\/\/docs\.redaction-technique\.org\/en\/about-the-api\/\): What it is\. Demonstrates: DITA XML, Git\./);
+  assert.match(md, /\*\*Key technologies and methods:\*\* Python, Jinja\n\n\*\*Selected documentation:\*\*\n\n- \[An article\]/);
+  assert.match(md, /^Git, Bash$/m);
+  assert.doesNotMatch(md, /<\/?[A-Z]/);
+
+  const frMd = getPageMarkdown({
+    id: 'fr/expertise',
+    data: { title: 'Expertise' },
+    body: `
+<AreaNav lang="fr" />
+
+<SelectedWork
+  lang="fr"
+  items={[{ "title": "Un projet", "href": "/fr/about-the-api/", "desc": "Ce que c'est.", "demonstrates": ["DITA XML"] }]}
+/>
+
+<HireCta lang="fr" />
+
+<Evidence lang="fr" tools={["Python"]}>
+
+- [Un article](/fr/formats/)
+
+</Evidence>
+    `.trim(),
+  });
+  assert.match(frMd, /- \[\*\*Un projet\*\*\]\(https:\/\/docs\.redaction-technique\.org\/fr\/about-the-api\/\): Ce que c'est\. Démontre : DITA XML\./);
+  assert.match(frMd, /\*\*Technologies et méthodes clés :\*\* Python\n\n\*\*Documentation sélectionnée :\*\*/);
+  assert.doesNotMatch(frMd, /<\/?[A-Z]/);
+});
+
 test('getPageMarkdown preserves French accents and special characters', () => {
   const doc = {
     id: 'fr/test-accents',
