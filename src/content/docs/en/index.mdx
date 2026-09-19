@@ -47,17 +47,17 @@ import AskAssistant from '../../../components/AskAssistant.astro';
 
 <StartHere lang="en" />
 
-## Learn technical writing
+## Understand documentation
 
 <p class="section-lead">Foundational principles, terminology, and audience-first thinking &mdash; start here if you're new to the practice, or want a refresher.</p>
 
 <CardGrid>
   <LinkCard title="The three levels of technical documentation" href="/en/costs/three-levels-of-documentation/" description="Locate where your organization's documentation practice sits today - from ad-hoc drafting to structured DITA." />
+  <LinkCard title="From technical writing to technical communication" href="/en/costs/copywriting-to-technical-communication/" description="How the discipline differs from marketing and general copywriting, and why that distinction matters for process design." />
   <LinkCard title="The KISS principle" href="/en/costs/kiss-principle/" description="Why the simplest solution that solves the problem beats the cleverest one." />
-  <LinkCard title="Structured and unstructured formats" href="/en/formats/structured-vs-unstructured-formats/" description="The foundational format choice that determines reuse, translation cost, and tooling." />
 </CardGrid>
 
-<p class="section-more not-content"><a href="/en/learn/" class="section-more-link">Learn technical writing <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+<p class="section-more not-content"><a href="/en/learn/" class="section-more-link">Understand documentation <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
 
 ## Build a documentation process
 
@@ -78,33 +78,46 @@ import AskAssistant from '../../../components/AskAssistant.astro';
 <CardGrid>
   <LinkCard title="Integrating documentation into development" href="/en/tech-writing-process/integrating-documentation-into-development/" description="Aligning release cadence, version control, automated testing, and CI/CD pipelines." />
   <LinkCard title="Git: from file to content" href="/en/tech-writing-process/git-from-file-to-content/" description="Git stores content blobs, not filenames - understanding that model makes branching and diffing documentation much simpler." />
-  <LinkCard title="sed: modify your text without opening your files" href="/en/tutorials/sed-text-editing/" description="Batch find-and-replace across hundreds of files in one command." />
+  <LinkCard title="Using branches" href="/en/tech-writing-process/using-branches/" description="Branching strategies for parallel documentation work." />
 </CardGrid>
 
 <p class="section-more not-content"><a href="/en/docs-as-code/" class="section-more-link">Adopt docs-as-code <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
 
-## Use structured authoring
+## Choose an authoring model
 
-<p class="section-lead">How structured and unstructured documentation differ &mdash; topic-based authoring, single-sourcing, and modular document architecture without vendor lock-in.</p>
+<p class="section-lead">The decisions that shape everything else &mdash; structured or unstructured formats, modular reuse, and the source format you write in.</p>
 
 <CardGrid>
-  <LinkCard title="Case study: NuFirewall documentation" href="/en/formats/nufirewall-case-study/" description="Press reviewers cited the documentation as a product strength, not a supplement. A detailed look at the DITA XML techniques that made it possible." />
   <LinkCard title="Structured and unstructured formats" href="/en/formats/structured-vs-unstructured-formats/" description="DITA's three topic types - concept, task, reference - enforce structure that makes content reusable, translatable, and consistent." />
   <LinkCard title="From document to modular document base" href="/en/formats/modular-documentation/" description="Replace monolithic manuals with reusable topic modules: lower translation costs, parallel reviews, multiple output formats from one source pool." />
+  <LinkCard title="Source format" href="/en/tech-writing-process/source-format/" description="Choosing what you write in - the decision that determines your entire toolchain." />
 </CardGrid>
 
-<p class="section-more not-content"><a href="/en/structured-authoring/" class="section-more-link">Use structured authoring <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+<p class="section-more not-content"><a href="/en/tools-and-formats/" class="section-more-link">Choose an authoring model <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
 
-## Choose tools and formats
+## Build your toolkit
 
-<p class="section-lead">The decisions that shape everything else &mdash; source format, target format, and which tools actually pay for themselves.</p>
+<p class="section-lead">Ready-to-adapt templates, checklists, and worked examples &mdash; start from a working baseline instead of a blank page.</p>
 
 <CardGrid>
-  <LinkCard title="Source format" href="/en/tech-writing-process/source-format/" description="Choosing what you write in - the decision that determines your entire toolchain." />
-  <LinkCard title="Formats and tools" href="/en/costs/formats-and-tools/" description="Choose your source format before your tool - the format determines vendor lock-in, automation options, and long-term costs." />
+  <LinkCard title="Documentation quality" href="/en/toolkit/documentation-quality-checklist/" description="Run before merging any documentation change." />
+  <LinkCard title="A basic docs-as-code workflow" href="/en/toolkit/example-docs-as-code-workflow/" description="One change, branch to production, annotated step by step." />
+  <LinkCard title="API documentation template" href="/en/toolkit/api-documentation-template/" description="One endpoint per page: method, parameters, request/response, error codes." />
 </CardGrid>
 
-<p class="section-more not-content"><a href="/en/tools-and-formats/" class="section-more-link">Choose tools and formats <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+<p class="section-more not-content"><a href="/en/toolkit/" class="section-more-link">Build your toolkit <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
+
+## Automation & legacy techniques
+
+<p class="section-lead">Specialist or historical implementation techniques &mdash; useful in context, not recommended defaults for new documentation projects.</p>
+
+<CardGrid>
+  <LinkCard title="Create different documents from the same sources using Jinja" href="/en/tutorials/conditional-text-jinja/" description="A Python preprocessing script that uses Jinja templates to include or strip content sections before passing sources to your doc generator." />
+  <LinkCard title="Regular expressions in Python" href="/en/tutorials/python-regular-expressions/" description="Python's regular expression library helps you manipulate text, especially if you're not familiar with sed or awk." />
+  <LinkCard title="sed: modify your text without opening your files" href="/en/tutorials/sed-text-editing/" description="Batch find-and-replace across hundreds of files in one command." />
+</CardGrid>
+
+<p class="section-more not-content"><a href="/en/tutorials/" class="section-more-link">Automation & legacy techniques <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
 
 <BrowseAll lang="en" />
 

@@ -4,12 +4,42 @@ tableOfContents: false
 prev: false
 next: false
 pageType: landing
-title: "Choose tools and formats"
+title: "Choose an authoring model"
 description: "Tools, formats, trade-offs, and selection criteria for technical documentation."
 ---
 import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-The decisions that shape everything else: which source format to write in, which target formats to publish to, and which tools actually pay for themselves.
+The decisions that shape everything else: whether to write in lightweight Markdown or a structured format, which structured model fits (DITA XML is one option among several), how to reuse content, which source format to write in, and which target formats to publish to.
+
+## Markdown
+
+<CardGrid>
+  <LinkCard title="A well-structured Markdown page" href="/en/toolkit/example-markdown-page/" description="An annotated concept article, explaining each structural choice." />
+</CardGrid>
+
+## Structured authoring
+
+<CardGrid>
+  <LinkCard title="Use structured authoring" href="/en/structured-authoring/" description="DITA XML, information typing, content reuse, and modular content models — with real-world case studies." />
+  <LinkCard title="Structured vs. unstructured formats" href="/en/formats/structured-vs-unstructured-formats/" description="The foundational choice that determines reuse, translation cost, and tooling." />
+</CardGrid>
+
+## DITA
+
+<CardGrid>
+  <LinkCard title="Structured DITA XML format" href="/en/formats/" description="Reduce production costs and delivery time in technical documentation by choosing the right format, structured authoring approach, and modular content reuse strategies." />
+  <LinkCard title="DITA XML case studies" href="/en/formats/dita-xml-case-studies/" description="Real-world structured-authoring solutions." />
+  <LinkCard title="Document architecture complexity" href="/en/formats/document-architecture-complexity/" description="When a documentation architecture becomes too complex — and how to recognize it." />
+  <LinkCard title="Case study: NuFirewall documentation" href="/en/formats/nufirewall-case-study/" description="Structured authoring in production, from a press-validated open-source project." />
+</CardGrid>
+
+## Content reuse
+
+<CardGrid>
+  <LinkCard title="From document to modular documentation" href="/en/formats/modular-documentation/" description="Moving from monolithic documents to a modular, reusable content base." />
+</CardGrid>
+
+## Source vs target formats
 
 <CardGrid>
   <LinkCard title="Source format" href="/en/tech-writing-process/source-format/" description="Choosing what you write in — the decision that determines your entire toolchain." />
@@ -17,4 +47,4 @@ The decisions that shape everything else: which source format to write in, which
   <LinkCard title="Formats and tools" href="/en/costs/formats-and-tools/" description="Why the format matters more than the tool — and how to evaluate tooling costs." />
 </CardGrid>
 
-Ready to commit to DITA and structured authoring? See [structured authoring](/en/structured-authoring/). Comparing docs-as-code toolchains? See [adopting docs-as-code](/en/docs-as-code/).
+Comparing docs-as-code toolchains? See [adopting docs-as-code](/en/docs-as-code/). Looking for Jinja, Sphinx/ReST, or XSL-FO tutorials? See [automation & legacy techniques](/en/tutorials/).

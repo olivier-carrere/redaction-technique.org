@@ -192,36 +192,44 @@ export default defineConfig({
       lastUpdated: true,
       defaultLocale: 'en',
       locales,
-      // Goal-based groups (section 3 of the docs-manual redesign brief). Items
-      // reference existing slugs directly rather than moving files between
-      // content folders, so no new redirects are needed — a page can appear
-      // in more than one group where it genuinely serves more than one goal
-      // (e.g. structured-vs-unstructured-formats anchors both "Learn" and
-      // "Use structured authoring").
+      // 2026 information architecture: START HERE, then six sections in a
+      // fixed, intentional order (do not alphabetize). Items reference existing
+      // slugs directly rather than moving files between content folders, so a
+      // page can change section without changing URL and no redirects are
+      // needed. Each page appears exactly once. The EN and FR trees share the
+      // same slugs; only labels differ (via `translations`). Topics of the
+      // target IA with no existing page are content gaps and have no entry.
       sidebar: [
         {
-          label: 'Blog - redaction-technique.org',
-          link: 'https://redaction-technique.org/',
-          attrs: { target: '_blank', rel: 'noopener' },
+          slug: 'index',
+          label: 'Start here',
+          translations: { fr: 'Commencer ici' },
         },
         {
-          label: 'Learn technical writing',
+          label: '1. Understand documentation',
           collapsed: false,
-          translations: { fr: 'Apprendre la rédaction technique' },
+          translations: { fr: '1. Comprendre la documentation' },
           items: [
+            { slug: 'learn', label: 'Overview', translations: { fr: "Vue d'ensemble" } },
+            // What makes technical documentation valuable?
             { slug: 'costs' },
+            // Documentation maturity
             { slug: 'costs/three-levels-of-documentation' },
+            // Technical writing vs technical communication
+            { slug: 'costs/copywriting-to-technical-communication' },
+            // Information types
+            { slug: 'toolkit/information-types' },
             { slug: 'costs/kiss-principle' },
-            { slug: 'formats/structured-vs-unstructured-formats' },
           ],
         },
         {
-          label: 'Build a documentation process',
+          label: '2. Build a documentation process',
           collapsed: true,
-          translations: { fr: 'Construire un processus documentaire' },
-          // Explicit order: define → gather → test → author → validate →
-          // translate → deliver.
+          translations: { fr: '2. Construire un processus documentaire' },
+          // Workflow order: define → gather → test → create → review →
+          // translate → publish.
           items: [
+            { slug: 'process', label: 'Overview', translations: { fr: "Vue d'ensemble" } },
             { slug: 'tech-writing-process' },
             { slug: 'tech-writing-process/project-definition' },
             { slug: 'tech-writing-process/gathering-information' },
@@ -230,75 +238,94 @@ export default defineConfig({
             { slug: 'tech-writing-process/validation-quality-control' },
             { slug: 'tech-writing-process/translation' },
             { slug: 'tech-writing-process/delivery' },
-            { slug: 'costs/copywriting-to-technical-communication' },
-          ],
-        },
-        {
-          label: 'Adopt docs-as-code',
-          collapsed: true,
-          translations: { fr: 'Adopter le docs-as-code' },
-          items: [
-            { slug: 'tech-writing-process/integrating-documentation-into-development' },
-            { slug: 'tech-writing-process/version-control-systems' },
-            { slug: 'tech-writing-process/git-from-file-to-content' },
-            { slug: 'tech-writing-process/using-branches' },
-            { slug: 'tech-writing-process/repository' },
-            { slug: 'tech-writing-process/single-repository' },
-            { slug: 'tech-writing-process/which-repository-for-group-work' },
-            { slug: 'tech-writing-process/shared-network-directories' },
-            { slug: 'tech-writing-process/sql-database' },
-            { slug: 'tech-writing-process/cms-workflow-and-reliability' },
-            { slug: 'tutorials' },
-            { slug: 'tutorials/sed-text-editing' },
-            { slug: 'tutorials/python-regular-expressions' },
-            { slug: 'tutorials/raspberry-pi-documentation-platform' },
             { slug: 'tutorials/project-end-to-end' },
           ],
         },
         {
-          label: 'Use structured authoring',
+          label: '3. Adopt docs-as-code',
           collapsed: true,
-          translations: { fr: 'Utiliser la rédaction structurée' },
+          translations: { fr: '3. Adopter le docs-as-code' },
+          // CI/CD and documentation review: no dedicated article yet (content
+          // gaps); the section overview links to the toolkit examples instead.
           items: [
-            { slug: 'formats' },
-            { slug: 'formats/dita-xml-case-studies' },
-            { slug: 'formats/document-architecture-complexity' },
-            { slug: 'formats/modular-documentation' },
-            { slug: 'formats/nufirewall-case-study' },
-            { slug: 'tutorials/auto-insert-data-dita-xml' },
-            { slug: 'tutorials/dita-xml-xsl-fo-tutorials' },
-            { slug: 'tutorials/conditional-text-jinja' },
-            { slug: 'tutorials/conditional-text-jinja-object-method' },
-            { slug: 'tutorials/conditional-text-sphinx-rest' },
-            { slug: 'tutorials/auto-insert-data-restructuredtext' },
-            { slug: 'tutorials/auto-insert-sql-data-restructuredtext' },
-          ],
-        },
-        {
-          label: 'Choose tools and formats',
-          collapsed: true,
-          translations: { fr: 'Choisir outils et formats' },
-          items: [
-            { slug: 'tech-writing-process/source-format' },
-            { slug: 'tech-writing-process/target-format' },
-            { slug: 'costs/formats-and-tools' },
-          ],
-        },
-        {
-          label: 'Use the practical toolkit',
-          collapsed: true,
-          translations: { fr: 'Utiliser la boîte à outils' },
-          items: [
-            { slug: 'toolkit' },
-            { slug: 'toolkit/information-types' },
+            { slug: 'docs-as-code', label: 'Overview', translations: { fr: "Vue d'ensemble" } },
+            // Why docs-as-code?
+            { slug: 'tech-writing-process/integrating-documentation-into-development' },
             {
-              label: 'Authoring templates',
-              translations: { fr: 'Modèles de rédaction' },
+              label: 'Git',
+              items: [
+                { slug: 'tech-writing-process/version-control-systems' },
+                { slug: 'tech-writing-process/git-from-file-to-content' },
+              ],
+            },
+            {
+              label: 'Repository design',
+              translations: { fr: 'Conception du référentiel' },
+              items: [
+                { slug: 'tech-writing-process/repository' },
+                { slug: 'tech-writing-process/single-repository' },
+                { slug: 'tech-writing-process/which-repository-for-group-work' },
+                { slug: 'tech-writing-process/shared-network-directories' },
+                { slug: 'tech-writing-process/sql-database' },
+                { slug: 'tech-writing-process/cms-workflow-and-reliability' },
+              ],
+            },
+            // Branches
+            { slug: 'tech-writing-process/using-branches' },
+          ],
+        },
+        {
+          label: '4. Choose an authoring model',
+          collapsed: true,
+          translations: { fr: '4. Choisir un modèle de rédaction' },
+          // Markdown: no dedicated article yet (content gap); the section
+          // overview links to the Markdown worked example in the toolkit.
+          // DITA is presented as one structured-authoring model, not the default.
+          items: [
+            { slug: 'tools-and-formats', label: 'Overview', translations: { fr: "Vue d'ensemble" } },
+            {
+              label: 'Structured authoring',
+              translations: { fr: 'Rédaction structurée' },
+              items: [
+                { slug: 'structured-authoring' },
+                { slug: 'formats/structured-vs-unstructured-formats' },
+              ],
+            },
+            {
+              label: 'DITA',
+              items: [
+                { slug: 'formats' },
+                { slug: 'formats/dita-xml-case-studies' },
+                { slug: 'formats/document-architecture-complexity' },
+                { slug: 'formats/nufirewall-case-study' },
+              ],
+            },
+            // Content reuse
+            { slug: 'formats/modular-documentation' },
+            {
+              label: 'Source vs target formats',
+              translations: { fr: 'Formats source et cible' },
+              items: [
+                { slug: 'tech-writing-process/source-format' },
+                { slug: 'tech-writing-process/target-format' },
+                { slug: 'costs/formats-and-tools' },
+              ],
+            },
+          ],
+        },
+        {
+          label: '5. Build your toolkit',
+          collapsed: true,
+          translations: { fr: '5. Constituer votre boîte à outils' },
+          items: [
+            { slug: 'toolkit', label: 'Overview', translations: { fr: "Vue d'ensemble" } },
+            {
+              label: 'Templates',
+              translations: { fr: 'Modèles' },
               items: [
                 { slug: 'toolkit/concept-article-template' },
                 { slug: 'toolkit/task-article-template' },
                 { slug: 'toolkit/reference-article-template' },
-                { slug: 'toolkit/api-documentation-template' },
                 { slug: 'toolkit/documentation-project-plan-template' },
                 { slug: 'toolkit/documentation-review-request-template' },
               ],
@@ -326,6 +353,48 @@ export default defineConfig({
                 { slug: 'toolkit/example-cicd-pipeline' },
               ],
             },
+            {
+              // Kept as its own group so API documentation stays prominent.
+              label: 'API documentation',
+              translations: { fr: "Documentation d'API" },
+              items: [
+                { slug: 'toolkit/api-documentation-template' },
+              ],
+            },
+          ],
+        },
+        {
+          label: '6. Automation & legacy techniques',
+          collapsed: true,
+          translations: { fr: '6. Automatisation et techniques héritées' },
+          // Specialist or historical implementation techniques — not
+          // recommended defaults for new documentation projects.
+          items: [
+            { slug: 'tutorials', label: 'Overview', translations: { fr: "Vue d'ensemble" } },
+            {
+              label: 'Jinja',
+              items: [
+                { slug: 'tutorials/conditional-text-jinja' },
+                { slug: 'tutorials/conditional-text-jinja-object-method' },
+                { slug: 'tutorials/auto-insert-data-restructuredtext' },
+              ],
+            },
+            {
+              label: 'Python',
+              items: [
+                { slug: 'tutorials/python-regular-expressions' },
+                { slug: 'tutorials/auto-insert-data-dita-xml' },
+                { slug: 'tutorials/auto-insert-sql-data-restructuredtext' },
+              ],
+            },
+            // sed
+            { slug: 'tutorials/sed-text-editing' },
+            // Sphinx/ReST
+            { slug: 'tutorials/conditional-text-sphinx-rest' },
+            // XSL-FO
+            { slug: 'tutorials/dita-xml-xsl-fo-tutorials' },
+            // Raspberry Pi
+            { slug: 'tutorials/raspberry-pi-documentation-platform' },
           ],
         },
         {
@@ -349,6 +418,11 @@ export default defineConfig({
             fr: 'Interroger la documentation',
           },
           slug: 'ask',
+        },
+        {
+          label: 'Blog - redaction-technique.org',
+          link: 'https://redaction-technique.org/',
+          attrs: { target: '_blank', rel: 'noopener' },
         },
       ],
     }),

@@ -9,15 +9,24 @@ description: "Traiter la documentation comme du code : Git, Markdown, pull reque
 ---
 import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-Gestion de versions, branches et intégration continue appliquées à la documentation — accompagnées des didacticiels pratiques pour l'outillage de traitement de texte et d'automatisation dont ce workflow dépend.
+Gestion de versions, branches et intégration continue appliquées à la documentation — dans l'ordre où vous les adopterez : pourquoi, Git, conception du référentiel, branches, puis CI/CD et revue.
 
-## Processus et outillage
+## Pourquoi le docs-as-code ?
 
 <CardGrid>
   <LinkCard title="Intégrer la documentation aux processus de développement" href="/fr/tech-writing-process/integrating-documentation-into-development/" description="Aligner cadence de livraison, gestion de versions, tests automatisés et pipelines CI/CD." />
+</CardGrid>
+
+## Git
+
+<CardGrid>
   <LinkCard title="Les systèmes de gestion de versions" href="/fr/tech-writing-process/version-control-systems/" description="Pourquoi la gestion de versions compte aussi pour la documentation, pas seulement pour le code." />
   <LinkCard title="Git : du fichier au contenu" href="/fr/tech-writing-process/git-from-file-to-content/" description="Penser Git comme un historique de contenu, pas seulement de fichiers." />
-  <LinkCard title="Utiliser les branches" href="/fr/tech-writing-process/using-branches/" description="Stratégies de branches pour le travail documentaire en parallèle." />
+</CardGrid>
+
+## Conception du référentiel
+
+<CardGrid>
   <LinkCard title="Le référentiel" href="/fr/tech-writing-process/repository/" description="Ce qui doit figurer dans un référentiel documentaire, et comment le structurer." />
   <LinkCard title="Un référentiel unique" href="/fr/tech-writing-process/single-repository/" description="L'argument en faveur d'un référentiel commun pour la documentation et le code." />
   <LinkCard title="Quel référentiel pour le travail de groupe" href="/fr/tech-writing-process/which-repository-for-group-work/" description="Choisir un modèle de référentiel quand plusieurs rédacteurs collaborent." />
@@ -26,13 +35,18 @@ Gestion de versions, branches et intégration continue appliquées à la documen
   <LinkCard title="Workflow CMS et fiabilité" href="/fr/tech-writing-process/cms-workflow-and-reliability/" description="Les bénéfices d'un CMS en termes de workflow, mis en balance avec ses compromis de fiabilité." />
 </CardGrid>
 
-## Didacticiels pratiques
+## Branches
 
 <CardGrid>
-  <LinkCard title="sed : modifiez votre texte sans ouvrir vos fichiers" href="/fr/tutorials/sed-text-editing/" description="Rechercher-remplacer en masse sur des centaines de fichiers en une seule commande." />
-  <LinkCard title="Expressions régulières en Python" href="/fr/tutorials/python-regular-expressions/" description="Manipulation de texte pour les scripts d'automatisation documentaire." />
-  <LinkCard title="Le Raspberry Pi 3 comme plateforme de documentation" href="/fr/tutorials/raspberry-pi-documentation-platform/" description="Un pipeline de publication minimal et à faible coût." />
-  <LinkCard title="Mener un projet de bout en bout" href="/fr/tutorials/project-end-to-end/" description="Un projet suivi de la prise en charge jusqu'à la livraison." />
+  <LinkCard title="Utiliser les branches" href="/fr/tech-writing-process/using-branches/" description="Stratégies de branches pour le travail documentaire en parallèle." />
 </CardGrid>
 
-Vous travaillez avec DITA XML ou le single-sourcing ? Voir [la rédaction structurée](/fr/structured-authoring/).
+## CI/CD et revue documentaire
+
+<CardGrid>
+  <LinkCard title="Un pipeline CI/CD concret" href="/fr/toolkit/example-cicd-pipeline/" description="Build, tests, vérification de liens, prévisualisation, déploiement — annoté étape par étape." />
+  <LinkCard title="Un workflow de revue documentaire" href="/fr/toolkit/example-review-workflow/" description="Scinder revue technique et revue éditoriale, et pourquoi." />
+  <LinkCard title="Adoption du docs-as-code" href="/fr/toolkit/docs-as-code-adoption-checklist/" description="Format, gestion de versions, CI/CD et préparation de l'équipe." />
+</CardGrid>
+
+Vous travaillez avec DITA XML ou le single-sourcing ? Voir [choisir un modèle de rédaction](/fr/tools-and-formats/). Vous cherchez les didacticiels de traitement de texte et d'automatisation ? Voir [automatisation et techniques héritées](/fr/tutorials/).

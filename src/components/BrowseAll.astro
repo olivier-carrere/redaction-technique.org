@@ -11,20 +11,20 @@ const isFr = lang === 'fr';
 const base = isFr ? '/fr' : '/en';
 
 const cards = isFr ? [
-  { title: 'Apprendre la rédaction technique', href: `${base}/learn/`, desc: 'Principes, terminologie, analyse d’audience et rédaction orientée tâche.', linkText: 'Découvrir →' },
-  { title: 'Construire un processus documentaire', href: `${base}/process/`, desc: 'Planification, rédaction, révision, gouvernance et maintenance.', linkText: 'Découvrir →' },
-  { title: 'Adopter le docs-as-code', href: `${base}/docs-as-code/`, desc: 'Git, Markdown, pull requests, CI/CD et publication statique.', linkText: 'Découvrir →' },
-  { title: 'Utiliser la rédaction structurée', href: `${base}/structured-authoring/`, desc: 'DITA, typage de l’information, réutilisation et modèles de contenu.', linkText: 'Découvrir →' },
-  { title: 'Choisir outils et formats', href: `${base}/tools-and-formats/`, desc: 'Outils, formats, compromis et critères de sélection.', linkText: 'Découvrir →' },
-  { title: 'Utiliser la boîte à outils', href: `${base}/toolkit/`, desc: 'Modèles, check-lists, exemples et workflows réutilisables.', linkText: 'Découvrir →' },
+  { title: '1. Comprendre la documentation', href: `${base}/learn/`, desc: 'Valeur, maturité documentaire, communication technique et typologie de l’information.', linkText: 'Découvrir →' },
+  { title: '2. Construire un processus documentaire', href: `${base}/process/`, desc: 'Planification, rédaction, révision, gouvernance et maintenance.', linkText: 'Découvrir →' },
+  { title: '3. Adopter le docs-as-code', href: `${base}/docs-as-code/`, desc: 'Git, Markdown, pull requests, CI/CD et publication statique.', linkText: 'Découvrir →' },
+  { title: '4. Choisir un modèle de rédaction', href: `${base}/tools-and-formats/`, desc: 'Markdown, rédaction structurée, DITA, réutilisation, formats source et cible.', linkText: 'Découvrir →' },
+  { title: '5. Constituer votre boîte à outils', href: `${base}/toolkit/`, desc: 'Modèles, check-lists, exemples et workflows réutilisables.', linkText: 'Découvrir →' },
+  { title: '6. Automatisation et techniques héritées', href: `${base}/tutorials/`, desc: 'Jinja, Python, sed, Sphinx/ReST, XSL-FO et Raspberry Pi.', linkText: 'Découvrir →' },
   { title: 'Explorer la référence', href: `${base}/reference/`, desc: 'Glossaire, concepts, commandes et détails techniques.', linkText: 'Découvrir →' },
 ] : [
-  { title: 'Learn technical writing', href: `${base}/learn/`, desc: 'Principles, terminology, audience analysis, and task-based writing.', linkText: 'Explore →' },
-  { title: 'Build a documentation process', href: `${base}/process/`, desc: 'Planning, authoring, review, governance, and maintenance.', linkText: 'Explore →' },
-  { title: 'Adopt docs-as-code', href: `${base}/docs-as-code/`, desc: 'Git, Markdown, pull requests, CI/CD, and static publishing.', linkText: 'Explore →' },
-  { title: 'Use structured authoring', href: `${base}/structured-authoring/`, desc: 'DITA, information typing, reuse, and content models.', linkText: 'Explore →' },
-  { title: 'Choose tools and formats', href: `${base}/tools-and-formats/`, desc: 'Tools, formats, trade-offs, and selection criteria.', linkText: 'Explore →' },
-  { title: 'Use the practical toolkit', href: `${base}/toolkit/`, desc: 'Templates, checklists, examples, and reusable workflows.', linkText: 'Explore →' },
+  { title: '1. Understand documentation', href: `${base}/learn/`, desc: 'Value, documentation maturity, technical communication, and information types.', linkText: 'Explore →' },
+  { title: '2. Build a documentation process', href: `${base}/process/`, desc: 'Planning, authoring, review, governance, and maintenance.', linkText: 'Explore →' },
+  { title: '3. Adopt docs-as-code', href: `${base}/docs-as-code/`, desc: 'Git, Markdown, pull requests, CI/CD, and static publishing.', linkText: 'Explore →' },
+  { title: '4. Choose an authoring model', href: `${base}/tools-and-formats/`, desc: 'Markdown, structured authoring, DITA, reuse, and source vs target formats.', linkText: 'Explore →' },
+  { title: '5. Build your toolkit', href: `${base}/toolkit/`, desc: 'Templates, checklists, examples, and reusable workflows.', linkText: 'Explore →' },
+  { title: '6. Automation & legacy techniques', href: `${base}/tutorials/`, desc: 'Jinja, Python, sed, Sphinx/ReST, XSL-FO, and Raspberry Pi.', linkText: 'Explore →' },
   { title: 'Explore the reference', href: `${base}/reference/`, desc: 'Glossary, concepts, commands, and technical details.', linkText: 'Explore →' },
 ];
 ---
@@ -34,8 +34,8 @@ const cards = isFr ? [
   kicker={isFr ? 'Parcourir la documentation' : 'Browse All'}
   title={isFr ? 'Parcourir toute la documentation' : 'Browse all documentation'}
   desc={isFr
-    ? 'Vous savez ce que vous cherchez ? Sept parcours couvrent l’ensemble de la pratique documentaire, de l’apprentissage à la boîte à outils.'
-    : 'Already know what you’re looking for? Seven goal-based paths cover the full spectrum of technical documentation, from foundations to a ready-to-use toolkit.'}
+    ? 'Vous savez ce que vous cherchez ? Six sections couvrent l’ensemble de la pratique documentaire, des fondamentaux aux techniques héritées, complétées par la référence.'
+    : 'Already know what you’re looking for? Six sections cover the full spectrum of technical documentation, from foundations to legacy techniques, plus the reference.'}
   cards={cards}
   compact
 />

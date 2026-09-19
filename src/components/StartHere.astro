@@ -10,52 +10,76 @@ const isFr = lang === 'fr';
 const steps = isFr ? [
   {
     num: '01',
-    title: 'Les trois niveaux de la documentation technique',
-    href: '/fr/costs/three-levels-of-documentation/',
-    desc: "Situez où se trouve aujourd'hui la pratique documentaire de votre organisation — de la friche au DITA structuré.",
+    title: 'Comprendre la documentation',
+    href: '/fr/learn/',
+    desc: 'Valeur de la documentation, maturité documentaire, rédaction et communication technique, typologie de l’information.',
   },
   {
     num: '02',
-    title: 'Formats structurés et non structurés',
-    href: '/fr/formats/structured-vs-unstructured-formats/',
-    desc: 'Le choix de format fondamental qui détermine tout le reste : réutilisation, coûts de traduction et outillage.',
+    title: 'Construire un processus documentaire',
+    href: '/fr/process/',
+    desc: 'Définir, collecter, tester, rédiger, valider, traduire et livrer — dans l’ordre où le travail se déroule.',
   },
   {
     num: '03',
-    title: 'Cas concret : documentation de NuFirewall',
-    href: '/fr/formats/nufirewall-case-study/',
-    desc: 'La rédaction structurée en production — analyse détaillée des techniques DITA XML saluées par la presse spécialisée.',
+    title: 'Adopter le docs-as-code',
+    href: '/fr/docs-as-code/',
+    desc: 'Traiter la documentation comme du code : cadence de livraison, contrôle de versions et intégration continue.',
   },
   {
     num: '04',
-    title: 'Intégrer la documentation aux processus de développement',
-    href: '/fr/tech-writing-process/integrating-documentation-into-development/',
-    desc: 'Traiter la documentation comme du code : cadence de livraison, contrôle de versions et intégration continue.',
+    title: 'Choisir un modèle de rédaction',
+    href: '/fr/tools-and-formats/',
+    desc: 'Markdown, rédaction structurée, DITA, réutilisation de contenu, formats source et cible.',
+  },
+  {
+    num: '05',
+    title: 'Constituer votre boîte à outils',
+    href: '/fr/toolkit/',
+    desc: 'Modèles, check-lists, exemples concrets et documentation d’API.',
+  },
+  {
+    num: '06',
+    title: 'Automatisation et techniques héritées',
+    href: '/fr/tutorials/',
+    desc: 'Jinja, Python, sed, Sphinx/ReST, XSL-FO et Raspberry Pi : techniques spécialisées ou historiques.',
   },
 ] : [
   {
     num: '01',
-    title: 'The three levels of technical documentation',
-    href: '/en/costs/three-levels-of-documentation/',
-    desc: "Locate where your organization's documentation practice sits today — from ad-hoc drafting to structured DITA.",
+    title: 'Understand documentation',
+    href: '/en/learn/',
+    desc: 'The value of documentation, documentation maturity, technical writing vs technical communication, and information types.',
   },
   {
     num: '02',
-    title: 'Structured and unstructured formats',
-    href: '/en/formats/structured-vs-unstructured-formats/',
-    desc: 'The foundational format choice that determines everything downstream: content reuse, translation cost, and tooling.',
+    title: 'Build a documentation process',
+    href: '/en/process/',
+    desc: 'Define, gather, test, create, review, translate, and publish — in the order the work actually happens.',
   },
   {
     num: '03',
-    title: 'Case study: NuFirewall documentation',
-    href: '/en/formats/nufirewall-case-study/',
-    desc: 'Structured authoring in production — a detailed look at the DITA XML techniques that earned press-validated documentation.',
+    title: 'Adopt docs-as-code',
+    href: '/en/docs-as-code/',
+    desc: 'Treating documentation like code: aligning release cadence, version control, automated testing, and CI/CD pipelines.',
   },
   {
     num: '04',
-    title: 'Integrating documentation into development',
-    href: '/en/tech-writing-process/integrating-documentation-into-development/',
-    desc: 'Treating documentation like code: aligning release cadence, version control, automated testing, and CI/CD pipelines.',
+    title: 'Choose an authoring model',
+    href: '/en/tools-and-formats/',
+    desc: 'Markdown, structured authoring, DITA, content reuse, and source vs target formats.',
+  },
+  {
+    num: '05',
+    title: 'Build your toolkit',
+    href: '/en/toolkit/',
+    desc: 'Templates, checklists, worked examples, and API documentation.',
+  },
+  {
+    num: '06',
+    title: 'Automation & legacy techniques',
+    href: '/en/tutorials/',
+    desc: 'Jinja, Python, sed, Sphinx/ReST, XSL-FO, and Raspberry Pi: specialist or historical techniques.',
   },
 ];
 ---
@@ -64,12 +88,12 @@ const steps = isFr ? [
   <div class="start-here-header">
     <span class="start-here-kicker">{isFr ? 'Commencez ici' : 'Start Here'}</span>
     <h2 id="start-here-heading" class="start-here-title">
-      {isFr ? 'Un parcours méthodique en quatre étapes' : 'A practical path through technical documentation'}
+      {isFr ? 'Six parcours à travers la documentation technique' : 'Six paths through technical documentation'}
     </h2>
     <p class="start-here-desc">
       {isFr
-        ? 'Si vous découvrez ce site ou repensez votre architecture documentaire, suivez cette séquence recommandée :'
-        : 'New to the site or re-evaluating your documentation architecture? Follow this curated sequential path:'}
+        ? 'Si vous découvrez ce site ou repensez votre architecture documentaire, suivez ces six sections dans l’ordre :'
+        : 'New to the site or re-evaluating your documentation architecture? Follow the six sections in order:'}
     </p>
   </div>
 

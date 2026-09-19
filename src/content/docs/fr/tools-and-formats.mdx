@@ -4,12 +4,42 @@ tableOfContents: false
 prev: false
 next: false
 pageType: landing
-title: "Choisir outils et formats"
+title: "Choisir un modèle de rédaction"
 description: "Outils, formats, compromis et critères de sélection pour la documentation technique."
 ---
 import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-Les décisions qui conditionnent tout le reste : dans quel format source rédiger, vers quels formats cibles publier, et quels outils sont réellement rentables.
+Les décisions qui conditionnent tout le reste : rédiger en Markdown ou dans un format structuré, quel modèle structuré retenir (DITA XML n'est qu'une option parmi d'autres), comment réutiliser le contenu, dans quel format source rédiger et vers quels formats cibles publier.
+
+## Markdown
+
+<CardGrid>
+  <LinkCard title="Une page Markdown bien structurée" href="/fr/toolkit/example-markdown-page/" description="Un article concept annoté, expliquant chaque choix structurel." />
+</CardGrid>
+
+## Rédaction structurée
+
+<CardGrid>
+  <LinkCard title="Utiliser la rédaction structurée" href="/fr/structured-authoring/" description="DITA XML, typage de l'information, réutilisation de contenu et modèles de contenu modulaires — avec des études de cas réelles." />
+  <LinkCard title="Formats structurés et non structurés" href="/fr/formats/structured-vs-unstructured-formats/" description="Le choix fondamental qui détermine réutilisation, coûts de traduction et outillage." />
+</CardGrid>
+
+## DITA
+
+<CardGrid>
+  <LinkCard title="Format structuré DITA XML" href="/fr/formats/" description="Réduisez les coûts et délais en rédaction technique en choisissant le bon format d'authoring structuré et en optimisant la réutilisation du contenu documentaire." />
+  <LinkCard title="Cas concrets d'utilisation de DITA XML" href="/fr/formats/dita-xml-case-studies/" description="Des solutions de rédaction structurée en conditions réelles." />
+  <LinkCard title="Complexité de l'architecture documentaire" href="/fr/formats/document-architecture-complexity/" description="Quand une architecture documentaire devient trop complexe — et comment le reconnaître." />
+  <LinkCard title="Cas concret : documentation de NuFirewall" href="/fr/formats/nufirewall-case-study/" description="La rédaction structurée en production, issue d'un projet open source salué par la presse." />
+</CardGrid>
+
+## Réutilisation de contenu
+
+<CardGrid>
+  <LinkCard title="Du document à la base documentaire modulaire" href="/fr/formats/modular-documentation/" description="Passer de documents monolithiques à une base de contenu modulaire et réutilisable." />
+</CardGrid>
+
+## Formats source et cible
 
 <CardGrid>
   <LinkCard title="Format source" href="/fr/tech-writing-process/source-format/" description="Choisir dans quoi vous rédigez — la décision qui détermine toute votre chaîne d'outils." />
@@ -17,4 +47,4 @@ Les décisions qui conditionnent tout le reste : dans quel format source rédige
   <LinkCard title="Formats et outils" href="/fr/costs/formats-and-tools/" description="Pourquoi le format compte plus que l'outil — et comment évaluer le coût de l'outillage." />
 </CardGrid>
 
-Prêt à vous engager sur DITA et la rédaction structurée ? Voir [la rédaction structurée](/fr/structured-authoring/). Vous comparez des chaînes docs-as-code ? Voir [adopter le docs-as-code](/fr/docs-as-code/).
+Vous comparez des chaînes docs-as-code ? Voir [adopter le docs-as-code](/fr/docs-as-code/). Vous cherchez les didacticiels Jinja, Sphinx/ReST ou XSL-FO ? Voir [automatisation et techniques héritées](/fr/tutorials/).

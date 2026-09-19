@@ -4,7 +4,7 @@ tableOfContents: false
 prev: false
 next: false
 pageType: landing
-title: "Use the practical toolkit"
+title: "Build your toolkit"
 description: "Ready-to-adapt templates, checklists, and worked examples for technical documentation — copy them and start from a working baseline instead of a blank page."
 goal: [toolkit]
 contentType: reference
@@ -13,11 +13,7 @@ import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
 Templates, checklists, and examples you can copy directly into your own project. Each item is clearly labeled as either a **template** (a starting point you adapt) or a **worked example** (a finished illustration you study).
 
-## Foundation
-
-<CardGrid>
-  <LinkCard title="Information types" href="information-types/" description="The architectural foundation: Concepts, Tasks, and References, their relationship to DITA, and how they shape our authoring templates." />
-</CardGrid>
+The templates below build on [information types](information-types/): Concepts, Tasks, and References.
 
 ## Templates
 
@@ -25,7 +21,6 @@ Templates, checklists, and examples you can copy directly into your own project.
   <LinkCard title="Concept article template" href="concept-article-template/" description="Definition, why it matters, key principles, examples, trade-offs." />
   <LinkCard title="Task article template" href="task-article-template/" description="Objective, prerequisites, steps, expected result, troubleshooting." />
   <LinkCard title="Reference article template" href="reference-article-template/" description="Overview, syntax, parameters, examples, limitations." />
-  <LinkCard title="API documentation template" href="api-documentation-template/" description="One endpoint per page: method, parameters, request/response, error codes." />
   <LinkCard title="Documentation project plan" href="documentation-project-plan-template/" description="Goal, audience, scope, format, success criteria, timeline." />
   <LinkCard title="Documentation review request" href="documentation-review-request-template/" description="Scope a review so it actually gets done." />
 </CardGrid>
@@ -41,7 +36,7 @@ Templates, checklists, and examples you can copy directly into your own project.
   <LinkCard title="Documentation audit" href="documentation-audit-checklist/" description="Find orphaned pages, duplicates, and stale content." />
 </CardGrid>
 
-## Examples
+## Worked examples
 
 <CardGrid>
   <LinkCard title="A well-structured Markdown page" href="example-markdown-page/" description="An annotated concept article, explaining each structural choice." />
@@ -49,4 +44,10 @@ Templates, checklists, and examples you can copy directly into your own project.
   <LinkCard title="A basic docs-as-code workflow" href="example-docs-as-code-workflow/" description="One change, branch to production, annotated step by step." />
   <LinkCard title="A documentation review workflow" href="example-review-workflow/" description="Splitting technical review from editorial review, and why." />
   <LinkCard title="A practical CI/CD pipeline" href="example-cicd-pipeline/" description="Build, test, link-check, preview, deploy — annotated stage by stage." />
+</CardGrid>
+
+## API documentation
+
+<CardGrid>
+  <LinkCard title="API documentation template" href="api-documentation-template/" description="One endpoint per page: method, parameters, request/response, error codes." />
 </CardGrid>

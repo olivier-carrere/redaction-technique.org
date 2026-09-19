@@ -4,7 +4,7 @@ tableOfContents: false
 prev: false
 next: false
 pageType: landing
-title: "Utiliser la boîte à outils"
+title: "Constituer votre boîte à outils"
 description: "Modèles, check-lists et exemples concrets prêts à l'emploi pour la documentation technique — copiez-les pour partir d'une base fonctionnelle plutôt que d'une page blanche."
 goal: [toolkit]
 contentType: reference
@@ -13,11 +13,7 @@ import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
 Des modèles, check-lists et exemples à copier directement dans votre propre projet. Chaque élément est clairement identifié comme **modèle** (un point de départ à adapter) ou **exemple concret** (une illustration aboutie à étudier).
 
-## Socle méthodologique
-
-<CardGrid>
-  <LinkCard title="Typologie de l'information" href="information-types/" description="Le socle architectural : Concepts, Tâches et Références, leur articulation avec DITA, et leur application dans nos modèles de rédaction." />
-</CardGrid>
+Les modèles ci-dessous s'appuient sur la [typologie de l'information](information-types/) : Concepts, Tâches et Références.
 
 ## Modèles
 
@@ -25,7 +21,6 @@ Des modèles, check-lists et exemples à copier directement dans votre propre pr
   <LinkCard title="Modèle d'article concept" href="concept-article-template/" description="Définition, pourquoi c'est important, principes clés, exemples, compromis." />
   <LinkCard title="Modèle d'article tâche" href="task-article-template/" description="Objectif, prérequis, étapes, résultat attendu, dépannage." />
   <LinkCard title="Modèle d'article référence" href="reference-article-template/" description="Aperçu, syntaxe, paramètres, exemples, limitations." />
-  <LinkCard title="Modèle de documentation d'API" href="api-documentation-template/" description="Un endpoint par page : méthode, paramètres, requête/réponse, codes d'erreur." />
   <LinkCard title="Plan de projet documentaire" href="documentation-project-plan-template/" description="Objectif, public, périmètre, format, critères de succès, calendrier." />
   <LinkCard title="Demande de revue documentaire" href="documentation-review-request-template/" description="Cadrer une revue pour qu'elle soit réellement effectuée." />
 </CardGrid>
@@ -41,7 +36,7 @@ Des modèles, check-lists et exemples à copier directement dans votre propre pr
   <LinkCard title="Audit documentaire" href="documentation-audit-checklist/" description="Repérer les pages orphelines, doublons et contenus obsolètes." />
 </CardGrid>
 
-## Exemples
+## Exemples concrets
 
 <CardGrid>
   <LinkCard title="Une page Markdown bien structurée" href="example-markdown-page/" description="Un article concept annoté, expliquant chaque choix structurel." />
@@ -49,4 +44,10 @@ Des modèles, check-lists et exemples à copier directement dans votre propre pr
   <LinkCard title="Un workflow docs-as-code basique" href="example-docs-as-code-workflow/" description="Un changement, de la branche à la production, annoté étape par étape." />
   <LinkCard title="Un workflow de revue documentaire" href="example-review-workflow/" description="Scinder revue technique et revue éditoriale, et pourquoi." />
   <LinkCard title="Un pipeline CI/CD concret" href="example-cicd-pipeline/" description="Build, tests, vérification de liens, prévisualisation, déploiement — annoté étape par étape." />
+</CardGrid>
+
+## Documentation d'API
+
+<CardGrid>
+  <LinkCard title="Modèle de documentation d'API" href="api-documentation-template/" description="Un endpoint par page : méthode, paramètres, requête/réponse, codes d'erreur." />
 </CardGrid>
