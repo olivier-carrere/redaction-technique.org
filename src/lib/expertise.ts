@@ -11,9 +11,10 @@
  * - tests/expertise.test.mjs, which checks that every evidence slug exists in
  *   both locales and is linked from the matching /en|fr/expertise/ section.
  *
- * Slugs are locale-less entry IDs (EN and FR trees share slugs). Order
- * matters: when a page evidences several areas, the first area wins in the
- * author box. Only list areas the existing content genuinely supports.
+ * Slugs are locale-less entry IDs (EN and FR trees share slugs). Labels and
+ * order are the shared taxonomy: keep them identical to EXPERTISE_AREAS in
+ * src/lib/profile.ts (redaction-technique.org). Each evidence slug belongs to
+ * one area only. Only list areas the existing content genuinely supports.
  */
 
 export interface ExpertiseArea {
@@ -24,20 +25,6 @@ export interface ExpertiseArea {
 }
 
 export const EXPERTISE_AREAS: ExpertiseArea[] = [
-  {
-    id: 'structured-authoring',
-    label: { en: 'Structured authoring and DITA', fr: 'Rédaction structurée et DITA' },
-    evidence: [
-      'formats/nufirewall-case-study',
-      'formats/dita-xml-case-studies',
-      'formats/structured-vs-unstructured-formats',
-      'formats',
-      'formats/document-architecture-complexity',
-      'costs/formats-and-tools',
-      'tech-writing-process/source-format',
-      'tutorials/dita-xml-xsl-fo-tutorials',
-    ],
-  },
   {
     id: 'docs-as-code',
     label: { en: 'Docs-as-code', fr: 'Docs-as-code' },
@@ -55,8 +42,49 @@ export const EXPERTISE_AREAS: ExpertiseArea[] = [
     ],
   },
   {
+    id: 'structured-authoring',
+    label: { en: 'DITA & structured authoring', fr: 'DITA et rédaction structurée' },
+    evidence: [
+      'formats/nufirewall-case-study',
+      'formats/dita-xml-case-studies',
+      'formats/structured-vs-unstructured-formats',
+      'formats',
+      'formats/document-architecture-complexity',
+      'costs/formats-and-tools',
+      'tech-writing-process/source-format',
+      'tutorials/dita-xml-xsl-fo-tutorials',
+    ],
+  },
+  {
+    id: 'documentation-architecture',
+    label: { en: 'Documentation architecture', fr: 'Architecture documentaire' },
+    evidence: [
+      'toolkit/information-types',
+      'formats/modular-documentation',
+      'costs/three-levels-of-documentation',
+      'toolkit/example-repository-structure',
+      'toolkit/concept-article-template',
+      'toolkit/task-article-template',
+      'toolkit/reference-article-template',
+      'toolkit/example-markdown-page',
+      'reference/glossary',
+    ],
+  },
+  {
+    id: 'developer-documentation',
+    label: { en: 'Developer & API documentation', fr: "Documentation développeur et d'API" },
+    evidence: [
+      'toolkit/api-documentation-template',
+      'about-the-api',
+      'tech-writing-process/testing-products',
+      'tech-writing-process/gathering-information',
+      'toolkit/technical-review-checklist',
+      'toolkit/documentation-review-request-template',
+    ],
+  },
+  {
     id: 'automation',
-    label: { en: 'Documentation automation and CI/CD', fr: 'Automatisation documentaire et CI/CD' },
+    label: { en: 'Automation & CI/CD', fr: 'Automatisation et CI/CD' },
     evidence: [
       'toolkit/example-cicd-pipeline',
       'tutorials/auto-insert-data-dita-xml',
@@ -73,35 +101,17 @@ export const EXPERTISE_AREAS: ExpertiseArea[] = [
     ],
   },
   {
-    id: 'developer-documentation',
-    label: { en: 'Developer and API documentation', fr: "Documentation développeur et d'API" },
+    // Most of the evidence is in articles on redaction-technique.org, which the
+    // expertise page links directly; the grounded assistant is the in-site demo.
+    id: 'ai-assisted-documentation',
+    label: { en: 'AI-assisted documentation', fr: "Documentation assistée par l'IA" },
     evidence: [
-      'toolkit/api-documentation-template',
-      'about-the-api',
-      'tech-writing-process/testing-products',
-      'tech-writing-process/gathering-information',
-      'toolkit/technical-review-checklist',
-      'toolkit/documentation-review-request-template',
-    ],
-  },
-  {
-    id: 'documentation-architecture',
-    label: { en: 'Documentation and information architecture', fr: "Architecture documentaire et de l'information" },
-    evidence: [
-      'toolkit/information-types',
-      'formats/modular-documentation',
-      'costs/three-levels-of-documentation',
-      'toolkit/example-repository-structure',
-      'toolkit/concept-article-template',
-      'toolkit/task-article-template',
-      'toolkit/reference-article-template',
-      'toolkit/example-markdown-page',
-      'reference/glossary',
+      'ask',
     ],
   },
   {
     id: 'documentation-process',
-    label: { en: 'Documentation process and quality', fr: 'Processus documentaire et qualité' },
+    label: { en: 'Documentation process & quality', fr: 'Processus documentaire et qualité' },
     evidence: [
       'tech-writing-process',
       'tech-writing-process/project-definition',
@@ -123,15 +133,6 @@ export const EXPERTISE_AREAS: ExpertiseArea[] = [
     label: { en: 'Multilingual documentation', fr: 'Documentation multilingue' },
     evidence: [
       'tech-writing-process/translation',
-    ],
-  },
-  {
-    // Most of the evidence is in articles on redaction-technique.org, which the
-    // expertise page links directly; the grounded assistant is the in-site demo.
-    id: 'ai-assisted-documentation',
-    label: { en: 'AI-assisted documentation', fr: "Documentation assistée par l'IA" },
-    evidence: [
-      'ask',
     ],
   },
 ];

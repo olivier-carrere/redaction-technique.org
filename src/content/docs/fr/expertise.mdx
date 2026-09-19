@@ -19,19 +19,6 @@ Cette page regroupe les articles du portfolio documentaire par domaine d'experti
   <LinkCard title="DITA XML sur des projets multilingues" href="/fr/formats/dita-xml-case-studies/" description="Solutions et astuces issues de l'usage quotidien de DITA XML sur des projets de documentation technique multilingues." />
 </CardGrid>
 
-## Rédaction structurée et DITA
-
-Déterminer le degré de structure dont le contenu a besoin, puis construire des sources modulaires et réutilisables en DITA XML : typage des topics, conrefs, ditamaps, texte conditionnel et publication XSL-FO.
-
-- [Cas concret : documentation de NuFirewall](/fr/formats/nufirewall-case-study/) : stratégie de réutilisation et de traduction sur un produit logiciel.
-- [Cas concrets d’utilisation de DITA XML](/fr/formats/dita-xml-case-studies/)
-- [Formats structurés et non structurés](/fr/formats/structured-vs-unstructured-formats/)
-- [Format structuré DITA XML](/fr/formats/)
-- [Une architecture documentaire trop complexe ?](/fr/formats/document-architecture-complexity/)
-- [Formats et outils](/fr/costs/formats-and-tools/)
-- [Format source](/fr/tech-writing-process/source-format/)
-- [Didacticiels DITA XML et XSL-FO](/fr/tutorials/dita-xml-xsl-fo-tutorials/)
-
 ## Docs-as-code
 
 Gérer la documentation avec les mêmes outils et le même cycle de vie que le produit : Git, branches, revue par pull request et référentiels partagés.
@@ -47,7 +34,49 @@ Gérer la documentation avec les mêmes outils et le même cycle de vie que le p
 - [Exemple : un workflow de revue documentaire](/fr/toolkit/example-review-workflow/)
 - [Check-list : adoption du docs-as-code](/fr/toolkit/docs-as-code-adoption-checklist/)
 
-## Automatisation documentaire et CI/CD
+<span id="rédaction-structurée-et-dita"></span>
+
+## DITA et rédaction structurée
+
+Déterminer le degré de structure dont le contenu a besoin, puis construire des sources modulaires et réutilisables en DITA XML : typage des topics, conrefs, ditamaps, texte conditionnel et publication XSL-FO.
+
+- [Cas concret : documentation de NuFirewall](/fr/formats/nufirewall-case-study/) : stratégie de réutilisation et de traduction sur un produit logiciel.
+- [Cas concrets d’utilisation de DITA XML](/fr/formats/dita-xml-case-studies/)
+- [Formats structurés et non structurés](/fr/formats/structured-vs-unstructured-formats/)
+- [Format structuré DITA XML](/fr/formats/)
+- [Une architecture documentaire trop complexe ?](/fr/formats/document-architecture-complexity/)
+- [Formats et outils](/fr/costs/formats-and-tools/)
+- [Format source](/fr/tech-writing-process/source-format/)
+- [Didacticiels DITA XML et XSL-FO](/fr/tutorials/dita-xml-xsl-fo-tutorials/)
+
+<span id="architecture-documentaire-et-de-linformation"></span>
+
+## Architecture documentaire
+
+Structurer un ensemble documentaire pour qu'il passe à l'échelle : typologie de l'information, contenu modulaire, organisation du dépôt et modèles d'articles cohérents.
+
+- [Typologie de l'information](/fr/toolkit/information-types/)
+- [Du document à la base documentaire modulaire](/fr/formats/modular-documentation/)
+- [Les trois niveaux de la documentation technique](/fr/costs/three-levels-of-documentation/)
+- [Exemple : une architecture de dépôt documentaire](/fr/toolkit/example-repository-structure/)
+- Modèles d'articles : [concept](/fr/toolkit/concept-article-template/), [tâche](/fr/toolkit/task-article-template/) et [référence](/fr/toolkit/reference-article-template/)
+- [Exemple : une page Markdown bien structurée](/fr/toolkit/example-markdown-page/)
+- [Glossaire](/fr/reference/glossary/)
+
+## Documentation développeur et d'API
+
+La documentation destinée à ceux qui construisent sur un produit : référence d'API, documentation servie aux programmes, et les tests produit et revues techniques qui la maintiennent exacte.
+
+- [Modèle : documentation d'API](/fr/toolkit/api-documentation-template/)
+- [À propos de l'API de ce manuel](/fr/about-the-api/) : une API documentaire statique et opérationnelle pour les scripts et agents IA.
+- [Tester les produits pour les documenter](/fr/tech-writing-process/testing-products/)
+- [Collecte de l’information](/fr/tech-writing-process/gathering-information/) : travailler avec les ingénieurs et autres experts métier.
+- [Check-list : revue technique](/fr/toolkit/technical-review-checklist/)
+- [Modèle : demande de revue documentaire](/fr/toolkit/documentation-review-request-template/)
+
+<span id="automatisation-documentaire-et-cicd"></span>
+
+## Automatisation et CI/CD
 
 Compiler, vérifier et publier la documentation automatiquement, et générer le contenu à partir des données plutôt que de le recopier à la main.
 
@@ -63,28 +92,15 @@ Compiler, vérifier et publier la documentation automatiquement, et générer le
 - [Mener un projet de bout en bout](/fr/tutorials/project-end-to-end/)
 - [Format cible](/fr/tech-writing-process/target-format/) : publication multiformat (PDF, HTML, EPUB) à partir d'une source unique.
 
-## Documentation développeur et d'API
+## Documentation assistée par l'IA
 
-La documentation destinée à ceux qui construisent sur un produit : référence d'API, documentation servie aux programmes, et les tests produit et revues techniques qui la maintiennent exacte.
+Une composante du workflow documentaire, toujours avec une relecture humaine : traduction assistée par l'IA, assistant documentaire fondé sur les pages de ce portfolio et API documentaire lisible par les scripts et les agents IA.
 
-- [Modèle : documentation d'API](/fr/toolkit/api-documentation-template/)
-- [À propos de l'API de ce manuel](/fr/about-the-api/) : une API documentaire statique et opérationnelle pour les scripts et agents IA.
-- [Tester les produits pour les documenter](/fr/tech-writing-process/testing-products/)
-- [Collecte de l’information](/fr/tech-writing-process/gathering-information/) : travailler avec les ingénieurs et autres experts métier.
-- [Check-list : revue technique](/fr/toolkit/technical-review-checklist/)
-- [Modèle : demande de revue documentaire](/fr/toolkit/documentation-review-request-template/)
-
-## Architecture documentaire et de l'information
-
-Structurer un ensemble documentaire pour qu'il passe à l'échelle : typologie de l'information, contenu modulaire, organisation du dépôt et modèles d'articles cohérents.
-
-- [Typologie de l'information](/fr/toolkit/information-types/)
-- [Du document à la base documentaire modulaire](/fr/formats/modular-documentation/)
-- [Les trois niveaux de la documentation technique](/fr/costs/three-levels-of-documentation/)
-- [Exemple : une architecture de dépôt documentaire](/fr/toolkit/example-repository-structure/)
-- Modèles d'articles : [concept](/fr/toolkit/concept-article-template/), [tâche](/fr/toolkit/task-article-template/) et [référence](/fr/toolkit/reference-article-template/)
-- [Exemple : une page Markdown bien structurée](/fr/toolkit/example-markdown-page/)
-- [Glossaire](/fr/reference/glossary/)
+- [Interroger la documentation](/fr/ask/) : un assistant qui répond uniquement à partir des pages de ce portfolio, et cite les pages utilisées.
+- [L'API documentaire](/fr/about-the-api/) : llms.txt, miroirs Markdown et index JSON générés à la compilation pour les scripts et les agents IA.
+- [Translating legacy French docs to English with DeepL and GPT-4o](https://redaction-technique.org/ai-translation-legacy-technical-docs) (en anglais) : le workflow utilisé pour traduire ce portfolio, avec les diffs Git comme filet de sécurité.
+- [Reliability vs. latency: running Claude through the CLI](https://redaction-technique.org/reliability-vs-latency-claude-cli) (en anglais) : boucler la boucle de rétroaction pour que le modèle corrige ses propres erreurs de compilation.
+- [Persona prompting: check this before printing](https://redaction-technique.org/persona-prompting-typographer) (en anglais) : une revue technique structurée obtenue par un prompt ciblé.
 
 ## Processus documentaire et qualité
 
@@ -107,16 +123,6 @@ Planifier la traduction dès le début du projet, et structurer les sources pour
 - [Traduction](/fr/tech-writing-process/translation/)
 - [Utiliser les branches des systèmes de gestion de sources](/fr/tech-writing-process/using-branches/) : branches linguistiques parallèles.
 - [Cas concret : documentation de NuFirewall](/fr/formats/nufirewall-case-study/) : traduire du contenu DITA XML fondé sur les conrefs.
-
-## Documentation assistée par l'IA
-
-Utiliser les LLM là où ils suppriment le travail mécanique, avec un humain dans la boucle et chaque modification relue sous Git : traduction, réponses fondées sur un corpus documentaire, et documentation exploitable par les programmes et les agents IA.
-
-- [Interroger la documentation](/fr/ask/) : un assistant qui répond uniquement à partir des pages de ce portfolio, et cite les pages utilisées.
-- [L'API documentaire](/fr/about-the-api/) : llms.txt, miroirs Markdown et index JSON générés à la compilation pour les scripts et les agents IA.
-- [Translating legacy French docs to English with DeepL and GPT-4o](https://redaction-technique.org/ai-translation-legacy-technical-docs) (en anglais) : le workflow utilisé pour traduire ce portfolio, avec les diffs Git comme filet de sécurité.
-- [Reliability vs. latency: running Claude through the CLI](https://redaction-technique.org/reliability-vs-latency-claude-cli) (en anglais) : boucler la boucle de rétroaction pour que le modèle corrige ses propres erreurs de compilation.
-- [Persona prompting: check this before printing](https://redaction-technique.org/persona-prompting-typographer) (en anglais) : une revue technique structurée obtenue par un prompt ciblé.
 
 ## Outils et formats
 
