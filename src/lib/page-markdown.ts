@@ -95,63 +95,6 @@ export function resolveLink(
 }
 
 /**
- * SedBox shell command lookup to reconstruct command examples in tutorials.
- */
-const SED_CONFIG = {
-  w: "\\(\\<.*\\>\\)",
-  m: "\\(\\<.*\\>\\) \\(\\<.*\\>\\), \\(\\<.*\\>\\) \\(\\<.*\\>\\) \\(\\<.*\\>\\) \\(\\<.*\\>\\) \\(\\<.*\\>\\) \\(\\<.*\\>\\)",
-  rBase: "\\9 \\8 \\6 \\7, \\1 \\2, \\3 \\4 \\5",
-  en: {
-    two: "\\(\\<.*\\> \\<.*\\>\\)",
-    single: "Fair Marchioness, your beautiful eyes make me die of love.",
-    reps: {
-      m1: "\\u\\9 \\8 \\6 \\7, \\l\\1 \\2, \\3 \\4 \\5",
-      m2: "\\u\\3 \\4 \\5 \\9 \\6 \\7, \\l\\1 \\2, \\8",
-      m3: "\\u\\8 \\9 \\3 \\4 \\5, \\l\\1 \\2, \\6 \\7",
-      m4: "\\u\\7 \\6 \\3 \\4 \\5 \\8, \\l\\1 \\2, \\9",
-    },
-  },
-  fr: {
-    two: "\\(d'\\<.*\\>\\)",
-    single: "Belle marquise, vos beaux yeux me font mourir d'amour.",
-    reps: {
-      m1: "\\u\\9 \\8 \\6 \\7, \\l\\1 \\2, \\3 \\4 \\5",
-      m2: "\\u\\3 \\5 \\4 \\9 \\6 \\7, \\l\\1 \\2, \\8",
-      m3: "\\u\\8 \\3 \\4 \\5, \\l\\1 \\2, \\9 \\6 \\7",
-      m4: "\\u\\6 \\7 \\3 \\5 \\4 \\8, \\l\\1 \\2, \\9",
-    },
-  },
-};
-
-function getSedCommand(lang: 'en' | 'fr', variant: string): string | null {
-  const conf = SED_CONFIG[lang] || SED_CONFIG.en;
-  const { m, rBase } = SED_CONFIG;
-  const two = conf.two;
-  const reps = conf.reps as Record<string, string>;
-
-  if (variant in reps) {
-    return `sed "s/${m} ${two}/${reps[variant]}/"`;
-  }
-  if (variant === 'echoSentence') {
-    return `echo "${conf.single}"`;
-  }
-  if (variant === 'echoDeclaration') {
-    return `export declaration="${conf.single}"\necho $declaration`;
-  }
-  if (variant === 'literal') {
-    return `sed "s/PATTERN/${rBase}/"`;
-  }
-  if (variant === 'loop') {
-    return `for (( i=1; i<5; i++ )); do\n   while read s;\n    do echo "$s" |\n     sed -f moliere$i.sed ;\n    done < variations.txt\n   done`;
-  }
-  if (variant === 'p' || variant.startsWith('geek')) {
-    const rep = reps[variant] || reps.m1;
-    return `export p="${m} ${two}"\nsed "s/$p/${rep}/"`;
-  }
-  return null;
-}
-
-/**
  * Converts the canonical documentation entry into clean, LLM-friendly Markdown.
  */
 export function getPageMarkdown(
@@ -182,46 +125,6 @@ export function getPageMarkdown(
     const label = lang === 'fr' ? 'Sch\u00E9ma' : 'Diagram';
     const body = entry.description ? `\n>\n> ${entry.description}` : '';
     return `\n\n> **${label}: ${entry.title}**${body}\n\n`;
-  });
-
-  // 4. Transform <SedBox lang="..." variant="..." /> BEFORE inline code protection
-  text = text.replace(/<SedBox\s+([^>]*?)\/?>/gi, (_, attrsStr) => {
-    const getAttr = (name: string) => {
-      const m = attrsStr.match(new RegExp(`${name}=["']([^"']*)["']`));
-      return m ? m[1] : '';
-    };
-    const boxLang = (getAttr('lang') || lang) as 'en' | 'fr';
-    const variant = getAttr('variant');
-    const cmd = getSedCommand(boxLang, variant);
-    if (cmd) {
-      const bashBlock = `\`\`\`bash\n${cmd}\n\`\`\``;
-      const idx = codeBlocks.length;
-      codeBlocks.push(bashBlock);
-      return `\n\uE000CB_${idx}\uE001\n`;
-    }
-    return '';
-  });
-
-  // 5. Transform <AwkBox lang="..." variant="..." /> BEFORE inline code protection
-  text = text.replace(/<AwkBox\s+([^>]*?)\/?>/gi, (_, attrsStr) => {
-    const getAttr = (name: string) => {
-      const m = attrsStr.match(new RegExp(`${name}=["']([^"']*)["']`));
-      return m ? m[1] : '';
-    };
-    const boxLang = (getAttr('lang') || lang) as 'en' | 'fr';
-    const variant = getAttr('variant');
-    let bashBlock = '';
-    if (variant === 'awk') {
-      const prog = boxLang === 'fr'
-        ? `{print $9" "$8" "$6" "$7" "$1" "$2" "$3" "$4" "$5}`
-        : `{print $9" "$10" "$8" "$6" "$7" "$1" "$2" "$3" "$4" "$5}`;
-      bashBlock = `\`\`\`bash\nawk '${prog}'\n\`\`\``;
-    } else {
-      bashBlock = `\`\`\`bash\nawk '1'\n\`\`\``;
-    }
-    const idx = codeBlocks.length;
-    codeBlocks.push(bashBlock);
-    return `\n\uE000CB_${idx}\uE001\n`;
   });
 
   // 6. Protect inline code
@@ -309,8 +212,6 @@ export function getPageMarkdown(
   });
 
   // 15. Clean interactive demos / widgets that cannot be rendered statically
-  text = text.replace(/<SedMoliere[^>]*\/?>/gi, '');
-  text = text.replace(/<PyScriptMoliere[^>]*\/?>/gi, '');
   text = text.replace(/<DitaRenameBox[^>]*\/?>/gi, '');
   text = text.replace(/<AskAssistant[^>]*\/?>/gi, '');
   text = text.replace(/<DocumentationExplorer[^>]*\/?>/gi, '');
