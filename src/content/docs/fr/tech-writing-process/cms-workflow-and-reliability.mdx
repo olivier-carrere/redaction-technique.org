@@ -28,6 +28,12 @@ Mais comment croire que ces solutions, qui sont fréquemment disponibles sous de
 
 J’aurais quelques scrupules, et quelques inquiétudes, sur le fait de leur confier entièrement la gestion et l’archivage des fichiers sources de la documentation. Une sélection rigoureuse de la solution s’impose, associée à une procédure de sauvegarde et de restauration éprouvée.
 
+## L'alternative docs-as-code
+
+Avec des formats source texte, un système de gestion de versions apporte l'essentiel de ce que l'on attend d'un workflow de CMS, sans verrouillage de fichiers : les branches permettent à plusieurs rédacteurs de travailler en parallèle, les pull requests portent les étapes de relecture et d'approbation, et l'historique enregistre qui a modifié quoi et quand. Chaque clone d'un dépôt Git contient en outre tout son historique, ce qui répond en partie à la question de l'archivage. Voir [intégrer la documentation aux processus de développement](../integrating-documentation-into-development/) et l'[exemple de workflow de revue](../../toolkit/example-review-workflow/).
+
+Un CMS reste pertinent lorsque les contributeurs ne peuvent pas travailler avec des fichiers texte et un gestionnaire de versions, ou lorsque l'organisation l'utilise déjà pour d'autres contenus.
+
 ## Articles connexes
 
 - [Les systèmes de gestion de versions - rustiques mais fiables](../version-control-systems/)

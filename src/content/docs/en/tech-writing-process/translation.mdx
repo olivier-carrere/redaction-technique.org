@@ -45,6 +45,12 @@ In most situations, it is advisable to distinguish languages as early as possibl
 
 Once translation is completed, changes to either the source or translated version cannot be automatically mirrored. Continuing with software terminology, the new branch is a fork: modifications in one cannot be automatically reflected in the other. Therefore, to offer the same information in different languages, it is essential to effectively track updates to the original version.
 
+## Continuous localization
+
+Version control makes this tracking concrete. When sources are text files in Git, the commit history shows exactly which source files changed since the last translation, so translators receive only the changes instead of a full document set, and translation can follow each release rather than lag behind it. A locale-first repository layout (see the [repository structure example](../../toolkit/example-repository-structure/)) keeps each language a complete tree that can be built and checked on its own.
+
+Machine translation and AI-assisted translation can reduce the effort per update, but their output still needs review by someone who knows both the language and the product.
+
 ## Related articles
 
 - [Content creation](../content-creation/)

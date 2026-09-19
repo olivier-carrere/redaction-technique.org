@@ -12,7 +12,9 @@ In the case of a content management system (CMS) such as Drupal, Joomla, or Word
 
 ## Trade-offs
 
-This may justify choosing to manage the underlying content of the CMS in the form of text files. For an example of querying an SQL database to populate documentation automatically, see [automatically insert SQL data into a reStructuredText file](../../tutorials/auto-insert-sql-data-restructuredtext/).
+This may justify choosing to manage the underlying content of the CMS in the form of text files. Static site generators work this way: content lives as text files in a [Git repository](../git-from-file-to-content/), the published site is a build product, and search-and-replace across all content is an ordinary operation on files.
+
+A database can still be the right *source of data* for documentation, for example product names and versions, as long as the text itself stays in files. For an example of querying an SQL database to populate documentation automatically, see [automatically insert SQL data into a reStructuredText file](../../tutorials/auto-insert-sql-data-restructuredtext/).
 
 ## Related articles
 

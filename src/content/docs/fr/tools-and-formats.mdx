@@ -9,11 +9,14 @@ description: "Outils, formats, compromis et critères de sélection pour la docu
 ---
 import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-Les décisions qui conditionnent tout le reste : rédiger en Markdown ou dans un format structuré, quel modèle structuré retenir (DITA XML n'est qu'une option parmi d'autres), comment réutiliser le contenu, dans quel format source rédiger et vers quels formats cibles publier.
+Les décisions qui conditionnent tout le reste : le degré de structure formelle dont votre contenu a besoin, la manière de le réutiliser, le format source dans lequel rédiger et les formats cibles vers lesquels publier.
+
+Les principes du contenu structuré (séparer le fond de la forme, typer l'information selon l'intention du lecteur, rédiger des modules réutilisables) s'appliquent à presque tous les projets documentaires. Ce qui varie, c'est la rigueur avec laquelle ils sont imposés. DITA XML les impose par un schéma et une chaîne d'outils dédiée ; le Markdown, dans un workflow docs-as-code, les applique par convention, par des modèles et par des contrôles automatisés. Aucune des deux approches n'est obsolète, et aucune n'est supérieure dans l'absolu : chaque projet appelle un niveau de structure formelle différent.
 
 ## Markdown
 
 <CardGrid>
+  <LinkCard title="Le Markdown comme format source" href="/fr/tech-writing-process/source-format/#le-markdown-comme-format-source" description="Un format source léger et versionnable, à mi-chemin entre le traitement de texte et le XML structuré." />
   <LinkCard title="Une page Markdown bien structurée" href="/fr/toolkit/example-markdown-page/" description="Un article concept annoté, expliquant chaque choix structurel." />
 </CardGrid>
 
@@ -47,4 +50,4 @@ Les décisions qui conditionnent tout le reste : rédiger en Markdown ou dans un
   <LinkCard title="Formats et outils" href="/fr/costs/formats-and-tools/" description="Pourquoi le format compte plus que l'outil — et comment évaluer le coût de l'outillage." />
 </CardGrid>
 
-Vous comparez des chaînes docs-as-code ? Voir [adopter le docs-as-code](/fr/docs-as-code/). Vous cherchez les didacticiels Jinja, Sphinx/ReST ou XSL-FO ? Voir [automatisation et techniques héritées](/fr/tutorials/).
+Vous comparez des chaînes docs-as-code ? Voir [adopter le docs-as-code](/fr/docs-as-code/). Vous cherchez les didacticiels Jinja, Sphinx/ReST ou XSL-FO ? Voir [automatisation et techniques spécialisées](/fr/tutorials/).

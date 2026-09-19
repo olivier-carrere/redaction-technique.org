@@ -42,3 +42,15 @@ ou la suivante :
 Dans la plupart des cas, il est préférable de placer la distinction entre les langues le plus en amont possible. Pour reprendre une terminologie utilisée dans le développement logiciel, créer une traduction d'un ensemble d'informations équivaut à créer une branche de cet ensemble. Comme il est plus facile de manipuler une branche par sa racine que par ses ramifications, à l'usage, il est beaucoup plus facile de manipuler des répertoires complets, ne serait-ce que pour les fournir aux traducteurs, qu'un ensemble de sous-répertoires.
 
 Une fois la traduction réalisée, les modifications apportées à la version source ou à la version traduite ne peuvent être appliquées automatiquement à l'autre version. Pour continuer dans la terminologie du monde logiciel, la nouvelle branche est un fork : il devient impossible d'appliquer automatiquement à l'une les modifications apportées à l'autre. Pour fournir les mêmes informations dans les différentes langues, il est donc crucial de suivre efficacement les mises à jour de la version d'origine.
+
+## Localisation continue
+
+La gestion de versions rend ce suivi concret. Lorsque les sources sont des fichiers texte dans Git, l'historique des commits indique précisément quels fichiers source ont changé depuis la dernière traduction : les traducteurs ne reçoivent que les modifications, et la traduction peut suivre chaque version au lieu d'accuser un retard. Une arborescence organisée d'abord par langue (voir l'[exemple d'architecture de dépôt](../../toolkit/example-repository-structure/)) fait de chaque langue une arborescence complète, qui peut être générée et vérifiée indépendamment.
+
+La traduction automatique ou assistée par IA peut réduire l'effort à chaque mise à jour, mais son résultat doit toujours être relu par une personne qui connaît à la fois la langue et le produit.
+
+## Articles connexes
+
+- [Création du contenu](../content-creation/)
+- [Git : du fichier au contenu](../git-from-file-to-content/)
+- [Formats et outils](../../costs/formats-and-tools/)

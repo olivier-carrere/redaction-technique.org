@@ -46,3 +46,7 @@ depot-docs/
 - La sortie générée (HTML compilé, PDF) — régénérez-la en CI, ne la committez pas. Une entrée `.gitignore`, pas un dossier, est le bon emplacement pour les artefacts de build.
 - Les secrets ou identifiants pour tout service touché par le build (clés d'analytics, tokens de déploiement) — cela appartient au gestionnaire de secrets de la plateforme CI/CD, jamais à des fichiers suivis.
 - Les fichiers source binaires (voir [format source](/fr/tech-writing-process/source-format/)) — si un asset ancien doit absolument rester binaire, gardez-le petit et traitez-le comme une exception, pas comme un modèle à reproduire.
+
+## Étape suivante
+
+Pour voir comment une modification traverse un dépôt comme celui-ci, de la branche à la page publiée, voir l'[exemple de workflow docs-as-code](../example-docs-as-code-workflow/).

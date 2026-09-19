@@ -20,8 +20,15 @@ The same source can surface as several different deliverables, for example:
 - Updated website content
 - Documents posted online as PDFs or distributed as printed guides, etc.
 
+## Continuous publishing
+
+In a [docs-as-code](/en/docs-as-code/) workflow, delivery is automated: once a change is merged, a CI/CD pipeline rebuilds the deliverables and publishes them, so publication stops being a separate manual step (see the [CI/CD pipeline example](../../toolkit/example-cicd-pipeline/)). What still needs a deliberate decision is *when* documentation ships alongside a product release; the [release readiness checklist](../../toolkit/release-readiness-checklist/) covers that gate.
+
+The same sources can also be delivered in machine-readable form, for scripts, search systems, or AI assistants rather than human readers. This manual does this itself: see [about this manual's API](/en/about-the-api/).
+
 ## Related articles
 
 - [Validation and quality control](../validation-quality-control/)
 - [Target format](../target-format/)
 - [Project definition](../project-definition/)
+- [Checklist: documentation release readiness](../../toolkit/release-readiness-checklist/)

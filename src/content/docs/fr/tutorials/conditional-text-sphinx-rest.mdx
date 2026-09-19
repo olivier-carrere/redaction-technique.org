@@ -5,6 +5,10 @@ goal: [structured-authoring]
 contentType: task
 ---
 
+:::note[Technique spécialisée]
+Ce didacticiel est propre à la chaîne Sphinx et reStructuredText. Il est surtout utile si vous maintenez une documentation Sphinx ; le principe sous-jacent, le contenu conditionnel à partir d'une source unique, est aussi mis en œuvre par le mécanisme ditaval de DITA XML (voir le [cas concret NuFirewall](/fr/formats/nufirewall-case-study/#fournir-une-information-ciblée-avec-le-texte-conditionnel-ditaval)).
+:::
+
 ## Objectif
 
 1.  Installez *Sphinx*, et *make* :
@@ -53,3 +57,9 @@ contentType: task
     ```
 
 6.  Ouvrez le fichier `_build/html/index.html` sous un navigateur pour visualiser votre contenu.
+
+## Articles connexes
+
+- [Créer des documents différents à partir des mêmes sources via Jinja (méthode objet)](../conditional-text-jinja-object-method/)
+- [Insérer automatiquement des données dans un fichier reStructuredText](../auto-insert-data-restructuredtext/)
+- [Expressions régulières en Python](../python-regular-expressions/)

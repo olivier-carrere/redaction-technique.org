@@ -6,6 +6,10 @@ goal: [structured-authoring]
 contentType: task
 ---
 
+:::note[Specialist technique]
+This tutorial applies build-time conditional text (profiling) to a reStructuredText toolchain, using a Python preprocessing script. The principle, generating several document variants from one source, applies to other formats; for DITA XML's equivalent, see the [NuFirewall case study](/en/formats/nufirewall-case-study/).
+:::
+
 ## Objective
 
 The `profiling.py` Python script below allows you to profile content in *preprocessing* using the powerful Jinja template engine. For a more complex variant using object-oriented classes, see [creating different documents via Jinja (object method)](../conditional-text-jinja-object-method/). You can also generate documents [directly from ReST conditional text](../conditional-text-sphinx-rest/) without a separate preprocessing step.

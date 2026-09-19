@@ -58,3 +58,7 @@ jobs:
 
 - Il ne conditionne rien à un contrôle subjectif de type « est-ce que ça se lit bien » — c'est le rôle de la [revue technique et éditoriale](../example-review-workflow/), effectuée par des humains avant que la PR n'atteigne la CI, pas encodée comme une règle automatisée.
 - Il ne saute pas les tests sur un push vers `main` — la même barrière s'applique que le déclencheur soit une PR ou une fusion directe, afin que rien n'atteigne la production sans avoir été vérifié.
+
+## Étape suivante
+
+Un pipeline au vert montre que le site se génère et que ses liens se résolvent ; il ne montre pas que la documentation est prête à être livrée avec une version du produit. Utilisez la [check-list de préparation à la mise en production](../release-readiness-checklist/) comme jalon de livraison.

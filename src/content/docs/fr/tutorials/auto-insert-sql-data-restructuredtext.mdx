@@ -5,6 +5,10 @@ goal: [structured-authoring]
 contentType: task
 ---
 
+:::note[Technique spécialisée]
+La génération à partir de données SQL conserve les données produit dans une base et génère le texte correspondant au moment de la génération. La chaîne utilisée ici (Python, SQLite, Jinja et reStructuredText) n'est qu'une mise en œuvre de ce principe ; voir [base de données SQL](/fr/tech-writing-process/sql-database/) pour comprendre pourquoi le texte lui-même a intérêt à rester dans des fichiers.
+:::
+
 ## Objectif
 
 Nous allons créer une base de données de produits avec leurs versions, puis mettre en forme ces informations dans un fichier reStructuredText. Elles pourront donc facilement être mises en forme et publiées au format PDF, HTML ou autre.
@@ -158,3 +162,9 @@ Nous allons créer une base de données de produits avec leurs versions, puis me
 
     - 2.7
     ```
+
+## Articles connexes
+
+- [Créer des documents différents à partir des mêmes sources via Jinja](../conditional-text-jinja/)
+- [Expressions régulières en Python](../python-regular-expressions/)
+- [sed : modifiez votre texte sans ouvrir vos fichiers](../sed-text-editing/)

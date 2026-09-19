@@ -6,6 +6,10 @@ goal: [structured-authoring]
 contentType: task
 ---
 
+:::note[Specialist technique]
+SQL-driven generation keeps product data in a database and generates the corresponding text at build time. The toolchain used here (Python, SQLite, Jinja, and reStructuredText) is one implementation of that idea; see [SQL database](/en/tech-writing-process/sql-database/) for why the text itself is better kept in files.
+:::
+
 ## Objective
 
 We're going to create a database of products with their versions, then format this information in a reStructuredText file. This information can then be easily formatted and published in PDF, HTML, or other formats. For a simpler variant that reads data from Python lists rather than a database, see [automatically insert data into a reStructuredText file](../auto-insert-data-restructuredtext/).

@@ -9,11 +9,14 @@ description: "Tools, formats, trade-offs, and selection criteria for technical d
 ---
 import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-The decisions that shape everything else: whether to write in lightweight Markdown or a structured format, which structured model fits (DITA XML is one option among several), how to reuse content, which source format to write in, and which target formats to publish to.
+The decisions that shape everything else: how much formal structure your content needs, how to reuse it, which source format to write in, and which target formats to publish to.
+
+Structured content principles (separating content from presentation, typing information by reader intent, writing reusable modules) apply to almost every documentation project. What varies is how strictly they are enforced. DITA XML enforces them through a schema and a dedicated toolchain; Markdown in a docs-as-code workflow applies them by convention, templates, and automated checks. Neither is obsolete: different projects need different levels of formal structure.
 
 ## Markdown
 
 <CardGrid>
+  <LinkCard title="Markdown as a source format" href="/en/tech-writing-process/source-format/#markdown-as-a-source-format" description="A lightweight, versionable source format that sits between word processing and structured XML." />
   <LinkCard title="A well-structured Markdown page" href="/en/toolkit/example-markdown-page/" description="An annotated concept article, explaining each structural choice." />
 </CardGrid>
 

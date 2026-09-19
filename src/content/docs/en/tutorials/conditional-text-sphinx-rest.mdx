@@ -6,6 +6,10 @@ goal: [structured-authoring]
 contentType: task
 ---
 
+:::note[Specialist technique]
+This tutorial is specific to the Sphinx and reStructuredText toolchain. It is most useful if you maintain Sphinx-based documentation; the underlying idea, conditional content from a single source, is also implemented by DITA XML's ditaval mechanism (see the [NuFirewall case study](/en/formats/nufirewall-case-study/#provide-targeted-information-with-ditaval-conditional-text)).
+:::
+
 ## Objective
 
 This approach uses Sphinx's built-in `only` directive rather than a [Jinja preprocessing script](../conditional-text-jinja/), which makes the workflow simpler for straightforward cases.

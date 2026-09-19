@@ -9,7 +9,7 @@ description: "Treat documentation like code: Git, Markdown, pull requests, CI/CD
 ---
 import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-Version control, branching, and continuous integration applied to documentation — in the order you'd adopt them: why, Git, repository design, branches, then CI/CD and review.
+Docs-as-code is not just storing documentation in Git. It is an engineering workflow: documentation is written in text-based source formats, kept in version control next to the product, changed on branches, reviewed through pull requests, checked automatically, and published by a pipeline. This section follows the order in which a team usually adopts it: why, Git, repository design, branches, then CI/CD and review.
 
 ## Why docs-as-code?
 
@@ -41,6 +41,13 @@ Version control, branching, and continuous integration applied to documentation 
   <LinkCard title="Using branches" href="/en/tech-writing-process/using-branches/" description="Branching strategies for parallel documentation work." />
 </CardGrid>
 
+## Source formats and publishing
+
+<CardGrid>
+  <LinkCard title="Source format" href="/en/tech-writing-process/source-format/" description="Choosing what you write in — the decision that determines your entire toolchain." />
+  <LinkCard title="Delivery" href="/en/tech-writing-process/delivery/" description="Getting finished documentation to the people who need it, in the format they need it in." />
+</CardGrid>
+
 ## CI/CD and documentation review
 
 <CardGrid>
@@ -49,4 +56,4 @@ Version control, branching, and continuous integration applied to documentation 
   <LinkCard title="Docs-as-code adoption" href="/en/toolkit/docs-as-code-adoption-checklist/" description="Format, version control, CI/CD, and team readiness." />
 </CardGrid>
 
-Working with DITA XML or single-sourcing instead? See [choosing an authoring model](/en/tools-and-formats/). Looking for the text-processing and automation tutorials? See [automation & legacy techniques](/en/tutorials/).
+Working with DITA XML or single-sourcing instead? See [choosing an authoring model](/en/tools-and-formats/). Looking for the text-processing and automation tutorials? See [automation & legacy techniques](/en/tutorials/). To see how a docs-as-code site can also serve its content to scripts and AI assistants, see [about this manual's API](/en/about-the-api/).

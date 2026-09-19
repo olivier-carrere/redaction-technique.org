@@ -9,7 +9,7 @@ description: "Traiter la documentation comme du code : Git, Markdown, pull reque
 ---
 import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-Gestion de versions, branches et intégration continue appliquées à la documentation — dans l'ordre où vous les adopterez : pourquoi, Git, conception du référentiel, branches, puis CI/CD et revue.
+Le docs-as-code ne se résume pas à stocker la documentation dans Git. C'est un workflow d'ingénierie : la documentation est rédigée dans des formats source texte, conservée sous gestion de versions à côté du produit, modifiée dans des branches, relue par pull request, vérifiée automatiquement et publiée par un pipeline. Cette section suit l'ordre dans lequel une équipe l'adopte généralement : pourquoi, Git, conception du référentiel, branches, puis CI/CD et revue.
 
 ## Pourquoi le docs-as-code ?
 
@@ -41,6 +41,13 @@ Gestion de versions, branches et intégration continue appliquées à la documen
   <LinkCard title="Utiliser les branches" href="/fr/tech-writing-process/using-branches/" description="Stratégies de branches pour le travail documentaire en parallèle." />
 </CardGrid>
 
+## Formats source et publication
+
+<CardGrid>
+  <LinkCard title="Format source" href="/fr/tech-writing-process/source-format/" description="Choisir dans quoi vous rédigez — la décision qui détermine toute votre chaîne d'outils." />
+  <LinkCard title="Livraison" href="/fr/tech-writing-process/delivery/" description="Faire parvenir la documentation finalisée à ceux qui en ont besoin, dans le format requis." />
+</CardGrid>
+
 ## CI/CD et revue documentaire
 
 <CardGrid>
@@ -49,4 +56,4 @@ Gestion de versions, branches et intégration continue appliquées à la documen
   <LinkCard title="Adoption du docs-as-code" href="/fr/toolkit/docs-as-code-adoption-checklist/" description="Format, gestion de versions, CI/CD et préparation de l'équipe." />
 </CardGrid>
 
-Vous travaillez avec DITA XML ou le single-sourcing ? Voir [choisir un modèle de rédaction](/fr/tools-and-formats/). Vous cherchez les didacticiels de traitement de texte et d'automatisation ? Voir [automatisation et techniques héritées](/fr/tutorials/).
+Vous travaillez avec DITA XML ou le single-sourcing ? Voir [choisir un modèle de rédaction](/fr/tools-and-formats/). Vous cherchez les didacticiels de traitement de texte et d'automatisation ? Voir [automatisation et techniques spécialisées](/fr/tutorials/). Pour voir comment un site docs-as-code peut aussi servir son contenu à des scripts et à des assistants IA, voir [l'API de ce manuel](/fr/about-the-api/).

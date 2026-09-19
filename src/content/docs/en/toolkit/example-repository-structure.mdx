@@ -46,3 +46,7 @@ docs-repo/
 - Generated output (built HTML, PDFs) — regenerate it in CI, don't commit it. A `.gitignore` entry, not a folder, is the right home for build artifacts.
 - Secrets or credentials for any service the build touches (analytics keys, deploy tokens) — those belong in the CI/CD platform's secret store, never in tracked files.
 - Binary source files (see [source format](/en/tech-writing-process/source-format/)) — if a legacy asset must ship as binary, keep it small and treat it as an exception, not a pattern to repeat.
+
+## Next step
+
+To see how a change moves through a repository like this one, from branch to published page, see the [docs-as-code workflow example](../example-docs-as-code-workflow/).

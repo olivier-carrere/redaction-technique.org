@@ -58,6 +58,15 @@ This system must be unique and exhaustive: it must centralize all requests for c
 
 If the document is available in several languages, each ticket must be duplicated for each language or, in the case of a CMS, each language must correspond to a separate *workflow*.
 
+## Pull requests and automated checks
+
+When documentation sources are text files in Git, the pull request provides the traceability described above (what changed, who changed it, when, and who approved it) and version comparison becomes a plain `git diff`, rather than an export to a word processor. Validation then splits into two complementary layers:
+
+- **Automated checks** run on every change before it is merged: the build itself, link checking, metadata and structure validation. They catch mechanical errors consistently and cheaply. See the [CI/CD pipeline example](../../toolkit/example-cicd-pipeline/).
+- **Human review** covers what no tool can check: technical accuracy against the product, and editorial quality. See the [review workflow example](../../toolkit/example-review-workflow/), the [technical review checklist](../../toolkit/technical-review-checklist/), and the [documentation quality checklist](../../toolkit/documentation-quality-checklist/).
+
+Content drafted with AI assistance goes through the same two layers; it does not need a separate process, but it does need the human review.
+
 ## Related articles
 
 - [Project definition](../project-definition/)

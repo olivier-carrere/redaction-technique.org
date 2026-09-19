@@ -11,4 +11,12 @@ Dans le cas d'un <abbr title="Content Management System">CMS</abbr> de type Drup
 
 ## Compromis
 
-Cela peut justifier le choix de gérer le contenu sous-jacent du CMS sous forme de fichiers texte.
+Cela peut justifier le choix de gérer le contenu sous-jacent du CMS sous forme de fichiers texte. C'est le fonctionnement des générateurs de sites statiques : le contenu est stocké sous forme de fichiers texte dans un [dépôt Git](../git-from-file-to-content/), le site publié est un produit de la génération, et la recherche-remplacement sur l'ensemble du contenu devient une opération ordinaire sur des fichiers.
+
+Une base de données peut toutefois rester la bonne *source de données* pour la documentation (noms et versions de produits, par exemple), tant que le texte lui-même reste dans des fichiers. Pour un exemple d'interrogation d'une base SQL alimentant automatiquement la documentation, voir [insérer automatiquement des données SQL dans un fichier reStructuredText](../../tutorials/auto-insert-sql-data-restructuredtext/).
+
+## Articles connexes
+
+- [Référentiel](../repository/)
+- [Un référentiel unique ?](../single-repository/)
+- [Les CMS : le workflow en prime, mais une fiabilité à tester](../cms-workflow-and-reliability/)

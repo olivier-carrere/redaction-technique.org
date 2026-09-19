@@ -9,6 +9,8 @@ contentType: reference
 
 Ce manuel n'est pas seulement une démo OpenAPI hébergée ailleurs dans la famille redaction-technique.org — l'API *propre* à ce site est bien réelle, et elle fonctionne déjà sous chaque page que vous lisez. C'est un ensemble d'endpoints statiques, sans exécution serveur, qui reproduit l'intégralité du corpus documentaire sous une forme consultable par machine, destinée aux LLM, aux agents de codage IA et à l'outillage automatisé, pour être consommée directement plutôt que par extraction du HTML rendu.
 
+Cette page s'adresse aux développeurs de scripts, d'outils de recherche ou d'agents IA. Elle illustre la dernière étape de la progression décrite dans ce manuel : un contenu [structuré](/fr/tools-and-formats/) et [versionné](/fr/docs-as-code/) peut être servi à des programmes (Markdown, JSON, llms.txt) aussi bien qu'à des personnes.
+
 Tout ce qui suit est généré au moment du build à partir des mêmes sources Markdown que les pages HTML — il n'y a pas de contenu séparé à synchroniser, ni de base de données ou de fonction serveur impliquée. C'est servi comme des fichiers statiques depuis le CDN en périphérie, comme n'importe quel autre asset de ce site.
 
 ## Pourquoi elle existe
@@ -55,7 +57,7 @@ import DocumentationExplorer from '../../../components/DocumentationExplorer.ast
 | --- | --- | --- |
 | `/schema.json` | JSON | Contrat de découverte d'API consultable par machine définissant les endpoints, les paramètres de requête, le schéma de document et la taxonomie auto-descriptive. |
 | `/llms.txt` | Texte brut | Une table des matières concise conforme à la convention [llms.txt](https://llmstxt.org/) — le point d'entrée pour un agent qui veut savoir ce qui existe ici avant de récupérer quelque chose de plus volumineux. |
-| `/llms-full.txt`, `/llms-full-en.txt`, `/llms-full-fr.txt` | Texte brut | Le corpus entier (bilingual, ou une seule langue) concaténé en un seul fichier, pour un agent qui veut tout ingérer en une seule requête plutôt qu'une par page. |
+| `/llms-full.txt`, `/llms-full-en.txt`, `/llms-full-fr.txt` | Texte brut | Le corpus entier (bilingue, ou une seule langue) concaténé en un seul fichier, pour un agent qui veut tout ingérer en une seule requête plutôt qu'une par page. |
 | `/index.json`, `/en/index.json`, `/fr/index.json` | JSON | Un index de documents consultable par machine : titre, description, URL, nombre de mots, titres, tags, `pageType`, `contentType` et définitions de taxonomie pour chaque page, avec prise en charge du filtrage par paramètres d'URL. |
 | `/sitemap.md`, `/en/sitemap.md`, `/fr/sitemap.md` | Markdown | Un plan de site hiérarchique regroupé par section, dans un format qu'un LLM peut lire directement plutôt que d'analyser un sitemap XML. |
 | `/en/<page>.md`, `/fr/<page>.md` | Markdown | Un miroir Markdown propre d'une page — le même contenu textuel que la version HTML, sans la mise en page ni le balisage de navigation. |
@@ -222,9 +224,10 @@ Vous n'avez pas besoin de connaître ces URL par cœur — chaque page renvoie v
 
 ## Par rapport à « Interroger la documentation »
 
-Cette API et l'[assistant IA de la page d'accueil](/fr/) résolvent des problèmes différents. L'API sert à ce que *vos propres* outils et agents importent le contenu de ce manuel dans *leur* contexte — un agent de codage qui veut l'article docs-as-code directement dans son flux de travail, par exemple. L'assistant de la page d'accueil, c'est l'inverse : c'est ce site qui répond à une question *pour vous*, fondée sur son propre contenu, sans clé d'API ni intégration nécessaire de votre côté.
+Cette API et l'assistant IA ([Interroger la documentation](/fr/ask/), également intégré à la [page d'accueil](/fr/)) résolvent des problèmes différents. L'API sert à ce que *vos propres* outils et agents importent le contenu de ce manuel dans *leur* contexte — un agent de codage qui veut l'article docs-as-code directement dans son flux de travail, par exemple. L'assistant de la page d'accueil, c'est l'inverse : c'est ce site qui répond à une question *pour vous*, fondée sur son propre contenu, sans clé d'API ni intégration nécessaire de votre côté.
 
 ## Références connexes
 
+- [Interroger la documentation](/fr/ask/)
 - [Explorer la référence](/fr/reference/)
 - [Glossaire](/fr/reference/glossary/)

@@ -28,6 +28,12 @@ How can we be sure that solutions updated this often — frequently for commerci
 
 It's prudent to exercise caution when relying entirely on them for managing and archiving documentation source files. A careful selection of the solution is essential, paired with a robust backup and restore strategy.
 
+## The docs-as-code alternative
+
+With text-based source formats, a version control system provides most of what a CMS workflow is chosen for, without file locking: branches let several writers work in parallel, pull requests carry the review and approval steps, and the history records who changed what and when. Every clone of a Git repository is also a full copy of its history, which addresses part of the archiving concern. See [integrating documentation into development processes](../integrating-documentation-into-development/) and the [review workflow example](../../toolkit/example-review-workflow/).
+
+A CMS remains relevant when contributors cannot work with text files and version control, or when the organization already relies on one for other content.
+
 ## Related articles
 
 - [Version management systems - rustic but reliable](../version-control-systems/)

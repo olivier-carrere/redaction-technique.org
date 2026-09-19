@@ -9,6 +9,8 @@ contentType: reference
 
 This manual isn't just an OpenAPI demo somewhere else in the redaction-technique.org family — this site's *own* API is real, and it's already running under every page you're reading. It's a static, zero-runtime endpoint set that mirrors the entire documentation corpus in machine-readable form, for LLMs, AI coding agents, and automated tooling to consume directly, instead of scraping rendered HTML.
 
+Read this page if you build scripts, search tools, or AI agents that consume documentation, or if you want a working example of publishing documentation in machine-readable form alongside the rendered site. It is the last step of the progression this manual describes: once content is [structured](/en/tools-and-formats/), kept as text in [version control](/en/docs-as-code/), and built by a pipeline, the same sources can be served to programs as well as to people.
+
 Everything below is generated at build time from the same Markdown source as the HTML pages — there's no separate content to keep in sync, and no server-side database or function call involved. It's served as static files from the CDN edge, same as any other asset on this site.
 
 ## Why it exists
@@ -222,9 +224,10 @@ You don't need to know these URLs by hand — every page links to its own machin
 
 ## This vs. "Ask the documentation"
 
-This API and the [AI assistant on the homepage](/en/) solve different problems. The API is for *your own* tools and agents to pull this manual's content into *their* context — a coding agent that wants the docs-as-code article inline while it works, for instance. The homepage assistant is the reverse: it's this site answering a question *for you*, grounded in its own content, with no API key or integration required on your side.
+This API and the AI assistant ([Ask the documentation](/en/ask/), also embedded on the [homepage](/en/)) solve different problems. The API is for *your own* tools and agents to pull this manual's content into *their* context — a coding agent that wants the docs-as-code article inline while it works, for instance. The homepage assistant is the reverse: it's this site answering a question *for you*, grounded in its own content, with no API key or integration required on your side.
 
 ## Related references
 
+- [Ask the documentation](/en/ask/)
 - [Explore the reference](/en/reference/)
 - [Glossary](/en/reference/glossary/)

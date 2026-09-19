@@ -5,6 +5,10 @@ goal: [structured-authoring]
 contentType: task
 ---
 
+:::note[Technique spécialisée]
+Ce didacticiel applique le texte conditionnel (profilage) au moment de la génération à une chaîne reStructuredText, au moyen d'un script Python de prétraitement. Le principe, générer plusieurs variantes d'un document à partir d'une source unique, vaut pour d'autres formats ; pour l'équivalent DITA XML, voir le [cas concret NuFirewall](/fr/formats/nufirewall-case-study/).
+:::
+
 ## Objectif
 
 Le script Python `profiling.py` ci-dessous permet de profiler du contenu en *preprocessing* à l'aide du puissant moteur de modèle Jinja :
@@ -56,3 +60,9 @@ $ ./profiling.py electrician
 ```
 
 Il suffit maintenant d'appeler le script avant compilation *via* Sphinx dans le `Makefile`.
+
+## Articles connexes
+
+- [Insérer automatiquement des données dans un fichier reStructuredText](../auto-insert-data-restructuredtext/)
+- [Expressions régulières en Python](../python-regular-expressions/)
+- [sed : modifiez votre texte sans ouvrir vos fichiers](../sed-text-editing/)

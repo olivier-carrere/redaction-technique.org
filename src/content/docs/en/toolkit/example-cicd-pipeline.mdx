@@ -58,3 +58,7 @@ jobs:
 
 - It doesn't gate on a subjective "does this read well" check — that's what [technical and editorial review](../example-review-workflow/) are for, done by humans before the PR reaches CI, not encoded as an automated rule.
 - It doesn't skip tests on the `main` branch push — the same gate applies whether the trigger is a PR or a direct merge, so nothing reaches production that hasn't been checked.
+
+## Next step
+
+A green pipeline shows that the site builds and its links resolve; it does not show that the documentation is ready to ship with a product release. Use the [release readiness checklist](../release-readiness-checklist/) as the release gate.

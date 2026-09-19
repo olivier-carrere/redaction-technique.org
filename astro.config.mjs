@@ -366,7 +366,7 @@ export default defineConfig({
         {
           label: '6. Automation & legacy techniques',
           collapsed: true,
-          translations: { fr: '6. Automatisation et techniques héritées' },
+          translations: { fr: '6. Automatisation et techniques spécialisées' },
           // Specialist or historical implementation techniques — not
           // recommended defaults for new documentation projects.
           items: [
@@ -406,18 +406,27 @@ export default defineConfig({
           ],
         },
         {
-          label: 'Documentation API',
-          translations: {
-            fr: 'API de documentation',
-          },
-          slug: 'about-the-api',
-        },
-        {
-          label: 'Ask the documentation',
-          translations: {
-            fr: 'Interroger la documentation',
-          },
-          slug: 'ask',
+          // Machine-readable access to this manual: the static API (llms.txt,
+          // Markdown mirrors, JSON indexes) and the grounded AI assistant.
+          label: 'Documentation API & AI',
+          collapsed: false,
+          translations: { fr: 'API documentaire et IA' },
+          items: [
+            {
+              label: 'Documentation API',
+              translations: {
+                fr: 'API documentaire',
+              },
+              slug: 'about-the-api',
+            },
+            {
+              label: 'Ask the documentation',
+              translations: {
+                fr: 'Interroger la documentation',
+              },
+              slug: 'ask',
+            },
+          ],
         },
         {
           label: 'Blog - redaction-technique.org',

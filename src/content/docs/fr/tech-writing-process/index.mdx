@@ -17,5 +17,10 @@ Ce processus repose sur une méthodologie rigoureuse et une chaîne de productio
 
 Pour créer et valoriser un contenu à forte valeur ajoutée pour l'entreprise, le rédacteur technique dialogue constamment non seulement avec tous les acteurs internes de la société, mais aussi avec son écosystème : partenaires, journalistes, utilisateurs, etc. Il fournit ainsi aux différents publics l'information dont ils ont besoin. Ceci renforce l'image de marque de la société, améliore la satisfaction client et facilite la perception des avantages produit par les prospects. Le rédacteur technique s'appuie sur une chaîne de production aussi automatisée que possible. En mettant en place un processus industriel et reproductible, il diminue les coûts de production et fournit un niveau de qualité constant, adapté aux buts de l'entreprise.
 
-Ce processus comprend notamment : la [définition du projet](project-definition/), la [collecte d'information](gathering-information/), la [création de contenu](content-creation/), la [validation et le contrôle qualité](validation-quality-control/), la [traduction](translation/) et la [livraison](delivery/).
+Ce processus comprend notamment : la [définition du projet](project-definition/), la [collecte d'information](gathering-information/), le [test des produits](testing-products/), la [création de contenu](content-creation/), la [validation et le contrôle qualité](validation-quality-control/), la [traduction](translation/) et la [livraison](delivery/).
 
+## La chaîne de production aujourd'hui
+
+Avec une approche [docs-as-code](/fr/docs-as-code/), cette chaîne de production devient très concrète : les sources sont des fichiers texte dans un dépôt Git, chaque modification est relue sous forme de pull request, des contrôles automatisés (génération, liens, métadonnées) s'exécutent avant toute fusion, et un pipeline CI/CD publie le résultat. Les étapes ci-dessus restent les mêmes ; ce qui change, c'est la part du suivi que la machine peut prendre en charge. La rédaction assistée par IA s'insère dans la même chaîne : c'est une contribution de plus, soumise à la même relecture et à la même validation que les autres.
+
+Pour suivre une modification unique tout au long de cette chaîne, voir l'[exemple de workflow docs-as-code](/fr/toolkit/example-docs-as-code-workflow/).
