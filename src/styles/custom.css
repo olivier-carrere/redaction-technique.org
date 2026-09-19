@@ -1007,23 +1007,14 @@ site-search dialog::backdrop {
   max-width: 54ch !important;
 }
 
-.hero .action.primary {
-  background: var(--color-accent) !important;
-  border-color: var(--color-accent) !important;
-  color: #fff !important;
-  border-radius: var(--radius-sm) !important;
-}
-
-.hero .action.secondary {
-  background: var(--color-surface) !important;
-  border-color: var(--color-border) !important;
-  color: var(--color-text) !important;
-  border-radius: var(--radius-sm) !important;
-}
-
-.hero .action.secondary:hover {
-  border-color: var(--color-accent) !important;
-  color: var(--color-accent) !important;
+/* Hero primary action (Starlight renders hero actions as
+   .sl-link-button.primary). In light mode the default accent background
+   gives only 3.64:1 against the 16px regular button text; the darker
+   accent-high token gives 4.61:1 (WCAG AA). Dark mode already passes
+   (6.23:1) and keeps Starlight's default. */
+:root:not([data-theme='dark']) .hero .sl-link-button.primary {
+  background-color: var(--sl-color-accent-high);
+  border-color: var(--sl-color-accent-high);
 }
 
 .section-lead {

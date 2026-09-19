@@ -9,6 +9,9 @@
  * Props:
  *   lang – 'en' (default) | 'fr'
  *   showSwitcher – boolean (defaults to true on /ask/ routes)
+ *   headingLevel – level of the "Answer" heading (default 2, for the /ask
+ *                  page under its h1); pass 3 when embedded under an h2.
+ *                  The sources heading is one level below it.
  */
 
 import DiscoverySwitcher from './DiscoverySwitcher.astro';
@@ -16,9 +19,12 @@ import DiscoverySwitcher from './DiscoverySwitcher.astro';
 interface Props {
   lang?: 'en' | 'fr';
   showSwitcher?: boolean;
+  headingLevel?: 2 | 3;
 }
 
-const { lang = 'en', showSwitcher = false } = Astro.props;
+const { lang = 'en', showSwitcher = false, headingLevel = 2 } = Astro.props;
+const AnswerHeading = `h${headingLevel}`;
+const SourcesHeading = `h${headingLevel + 1}`;
 const pathname = Astro.url.pathname;
 const isAskPage = pathname.includes('/ask');
 const displaySwitcher = showSwitcher || isAskPage;
@@ -162,11 +168,11 @@ const t = ui[lang];
   <div id="ask-error" class="ask-error" role="alert" hidden></div>
 
   <div id="ask-result" class="ask-result" hidden>
-    <h2 class="ask-result-heading">{t.answerHeading}</h2>
+    <AnswerHeading id="ask-result-heading" class="ask-result-heading" tabindex="-1">{t.answerHeading}</AnswerHeading>
     <div id="ask-answer" class="ask-answer"></div>
 
     <div id="ask-sources-section" class="ask-sources-section" hidden>
-      <h3 class="ask-sources-heading">{t.sourcesHeading}</h3>
+      <SourcesHeading class="ask-sources-heading">{t.sourcesHeading}</SourcesHeading>
       <ul id="ask-sources" class="ask-sources"></ul>
     </div>
   </div>
@@ -363,6 +369,12 @@ const t = ui[lang];
     font-weight: 600;
     color: var(--color-text);
     margin-bottom: 0.75rem;
+  }
+
+  /* Focused by script only so the answer is announced; not interactive,
+     so no focus ring. */
+  .ask-result-heading:focus {
+    outline: none;
   }
 
   .ask-answer {
@@ -770,6 +782,10 @@ const t = ui[lang];
           const rawAnswer = data.answer ?? '';
           answerEl.innerHTML = renderMarkdown(rawAnswer);
           show(resultEl);
+          // Move focus to the answer heading so screen readers announce the
+          // answer and continue reading from it (tabindex="-1": focusable by
+          // script only, not added to the tab order).
+          container.querySelector<HTMLElement>('#ask-result-heading')?.focus();
 
           // Display sources with rich actionable cards
           srcList.innerHTML = '';
