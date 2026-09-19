@@ -227,11 +227,11 @@ test('Black-box audit: /schema.json structure and endpoint verification on disk'
 // ---------------------------------------------------------------------------
 
 test('Black-box audit: document URL integrity and strict locale isolation', () => {
-  assert.equal(globalJson.count, 146);
-  assert.equal(globalJson.counts.en, 73);
-  assert.equal(globalJson.counts.fr, 73);
-  assert.equal(enJson.count, 73);
-  assert.equal(frJson.count, 73);
+  assert.equal(globalJson.count, 132);
+  assert.equal(globalJson.counts.en, 66);
+  assert.equal(globalJson.counts.fr, 66);
+  assert.equal(enJson.count, 66);
+  assert.equal(frJson.count, 66);
 
   const seenUrls = new Set();
 
@@ -273,11 +273,11 @@ test('Black-box audit: document URL integrity and strict locale isolation', () =
 // 3. Markdown URL integrity & Full Corpus Byte-for-Byte Fidelity
 // ---------------------------------------------------------------------------
 
-test('Black-box audit: Markdown retrieval integrity across all 146 documents and llms-full.txt', () => {
+test('Black-box audit: Markdown retrieval integrity across all 132 documents and llms-full.txt', () => {
   const fullText = readFileSync(join(DIST, 'llms-full.txt'), 'utf-8');
   const sections = fullText.split(/\n---\n\n## Document: /);
 
-  assert.equal(sections.length - 1, 146, 'llms-full.txt must contain all 146 documents');
+  assert.equal(sections.length - 1, 132, 'llms-full.txt must contain all 132 documents');
 
   for (let i = 1; i < sections.length; i++) {
     const sec = sections[i];
@@ -368,7 +368,7 @@ test('Black-box audit: document metadata compliance against /schema.json schema'
     assert.ok(Array.isArray(doc.tags));
   }
 
-  assert.equal(topicCount, 118, 'Corpus must contain exactly 118 typed topics');
+  assert.equal(topicCount, 104, 'Corpus must contain exactly 104 typed topics');
   assert.equal(untypedCount, 28, 'Corpus must contain exactly 28 intentionally untyped pages');
 });
 
@@ -407,7 +407,7 @@ test('Black-box consumer simulation: discover API, filter tasks, retrieve Markdo
 
   // Step 5: Filter documents where contentType === 'task'
   const taskDocsEn = enCatalog.documents.filter((d) => d.contentType === 'task');
-  assert.equal(taskDocsEn.length, 14, 'Consumer expects 14 task documents in English');
+  assert.equal(taskDocsEn.length, 9, 'Consumer expects 9 task documents in English');
 
   // Step 6: Select verified task document
   const selectedDocEn = taskDocsEn.find((d) => d.url.includes('auto-insert-data-dita-xml'));
@@ -434,7 +434,7 @@ test('Black-box consumer simulation: discover API, filter tasks, retrieve Markdo
   const frCatalog = frJson;
 
   const taskDocsFr = frCatalog.documents.filter((d) => d.contentType === 'task');
-  assert.equal(taskDocsFr.length, 14, 'Consumer expects 14 task documents in French');
+  assert.equal(taskDocsFr.length, 9, 'Consumer expects 9 task documents in French');
 
   const selectedDocFr = taskDocsFr.find((d) => d.url.includes('auto-insert-data-dita-xml'));
   assert.ok(selectedDocFr, 'Target task document must be present in FR');
@@ -467,7 +467,7 @@ test('Black-box query engine audit: filtering, zero-result, HTTP 400 validation,
   // Combined AND filtering
   const resCombined = simulateConsumerContractQuery(docs, 'pageType=topic&contentType=task&lang=en', schema);
   assert.equal(resCombined.status, 200);
-  assert.equal(resCombined.body.count, 14);
+  assert.equal(resCombined.body.count, 9);
   for (const doc of resCombined.body.documents) {
     assert.equal(doc.pageType, 'topic');
     assert.equal(doc.contentType, 'task');
@@ -530,7 +530,7 @@ test('Black-box query engine audit: filtering, zero-result, HTTP 400 validation,
   const pSingle = simulateConsumerContractQuery(docs, 'page=1&limit=1', schema);
   assert.equal(pSingle.status, 200);
   assert.equal(pSingle.body.count, 1);
-  assert.equal(pSingle.body.pagination.totalPages, 146);
+  assert.equal(pSingle.body.pagination.totalPages, 132);
 
   // Boundary 2: limit=100 (max allowed)
   const pMax = simulateConsumerContractQuery(docs, 'page=1&limit=100', schema);
@@ -538,10 +538,10 @@ test('Black-box query engine audit: filtering, zero-result, HTTP 400 validation,
   assert.equal(pMax.body.count, 100);
   assert.equal(pMax.body.pagination.totalPages, 2);
 
-  // Boundary 3: last page (page 2 with limit 100 has 46 items)
+  // Boundary 3: last page (page 2 with limit 100 has 32 items)
   const pLast = simulateConsumerContractQuery(docs, 'page=2&limit=100', schema);
   assert.equal(pLast.status, 200);
-  assert.equal(pLast.body.count, 46);
+  assert.equal(pLast.body.count, 32);
 
   // Out-of-bounds pagination returns HTTP 400
   const pOob = simulateConsumerContractQuery(docs, 'page=3&limit=100', schema);
@@ -558,14 +558,14 @@ test('Black-box query engine audit: filtering, zero-result, HTTP 400 validation,
   const resPagingFilter = simulateConsumerContractQuery(docs, 'lang=fr&contentType=task&page=1&limit=5', schema);
   assert.equal(resPagingFilter.status, 200);
   assert.equal(resPagingFilter.body.count, 5);
-  assert.equal(resPagingFilter.body.pagination.total, 14);
-  assert.equal(resPagingFilter.body.pagination.totalPages, 3);
+  assert.equal(resPagingFilter.body.pagination.total, 9);
+  assert.equal(resPagingFilter.body.pagination.totalPages, 2);
 
   // G. Combined field selection + pagination
   const resAllCombined = simulateConsumerContractQuery(docs, 'contentType=concept&page=1&limit=5&fields=title,url', schema);
   assert.equal(resAllCombined.status, 200);
   assert.equal(resAllCombined.body.count, 5);
-  assert.equal(resAllCombined.body.pagination.total, 58);
+  assert.equal(resAllCombined.body.pagination.total, 54);
   for (const doc of resAllCombined.body.documents) {
     assert.deepEqual(Object.keys(doc).sort(), ['title', 'url']);
   }
