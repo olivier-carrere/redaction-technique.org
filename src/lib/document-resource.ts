@@ -106,6 +106,8 @@ const TECH_WRITING_PROCESS_ORDER = [
   'repository',
   'single-repository',
   'which-repository-for-group-work',
+  'shared-network-directories',
+  'sql-database',
   'cms-workflow-and-reliability',
   'validation-quality-control',
   'translation',

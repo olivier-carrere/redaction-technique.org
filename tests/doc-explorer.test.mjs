@@ -131,11 +131,11 @@ test('Documentation Explorer: search and filtering logic matches document corpus
 
   // C. Filtering by contentType=task
   const taskDocs = docs.filter((d) => d.contentType === 'task');
-  assert.equal(taskDocs.length, 9, 'English task topics count must equal 9');
+  assert.equal(taskDocs.length, 14, 'English task topics count must equal 14');
 
   // D. Filtering by pageType=topic & contentType=concept
   const conceptTopics = docs.filter((d) => d.pageType === 'topic' && d.contentType === 'concept');
-  assert.equal(conceptTopics.length, 27, 'English concept topics count must equal 27');
+  assert.equal(conceptTopics.length, 29, 'English concept topics count must equal 29');
 
   // E. Untyped pages filtering (pageType=landing & contentType=null)
   const landingPages = docs.filter((d) => d.pageType === 'landing');

@@ -1,0 +1,102 @@
+---
+title: "Automatically insert data into a reStructuredText file"
+description: "Automatically insert product data into reStructuredText documentation with Python - generate per-product version lists from structured data files."
+tags: [python, automation]
+goal: [structured-authoring]
+contentType: task
+---
+
+## Objective
+
+Suppose you need to present three products: *Dianthus*, *Geum*, and *Prunus*, each available in versions *1.0*, *1.5*, and *2.3*.
+
+Instead of manually entering data into the content file, you can automate this process using Jinja and Python — the same templating engine used for [conditional text profiling](../conditional-text-jinja/).
+
+1. Create the following `template.rst` file:
+
+    ```rst
+    Products and Versions
+    =====================
+    {% for prod in products %}
+    {{ prod | capitalize }}
+    {% for c in prod %}-{% endfor %}
+       {% for ver in versions %}
+    - {{ ver }}
+       {% endfor %}
+    {% endfor %}
+    ```
+
+2. Create the following Python script `populate.py`:
+
+    ```python
+    #!/usr/bin/python
+    # coding: utf-8
+    import jinja2
+    
+    env = jinja2.Environment(loader=jinja2.FileSystemLoader('./'), lstrip_blocks=True)
+    
+    template = env.get_template('template.rst')
+    
+    data = {
+        'products': ['dianthus', 'geum', 'prunus'],
+        'versions': ['1.0', '1.5', '2.3']
+    }
+    print(template.render(data))
+    ```
+
+3. Make the script executable, then run it:
+
+    ```bash
+    chmod +x populate.py
+    ./populate.py
+    ```
+
+    The following output is displayed:
+
+    ```md
+    Products and Versions
+    =====================
+
+    Dianthus
+    --------
+
+    - 1.0
+
+    - 1.5
+
+    - 2.3
+
+
+    Geum
+    ----
+
+    - 1.0
+
+    - 1.5
+
+    - 2.3
+
+
+    Prunus
+    ------
+
+    - 1.0
+
+    - 1.5
+
+    - 2.3
+    ```
+
+This approach minimizes the risk of errors and reduces the effort involved in updating.
+
+## Related articles
+
+- [Create different documents from the same sources via Jinja (object method)](../conditional-text-jinja-object-method/)
+- [Regular expressions in Python](../python-regular-expressions/)
+- [The Raspberry Pi 3 as a documentation platform](../raspberry-pi-documentation-platform/)
+- [Auto-insert data into a DITA XML file](../auto-insert-data-dita-xml/)
+- [Automatically insert SQL data into a reStructuredText file](../auto-insert-sql-data-restructuredtext/)
+
+## Related reading
+
+- [Boost documentation efficiency: how YAML outperforms XML, Markdown, and databases](https://redaction-technique.org/blog/scalable-maintainable-technical-docs-with-yaml) — driving documents from structured YAML data.
