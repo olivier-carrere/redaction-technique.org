@@ -1,0 +1,69 @@
+﻿id,page,quality,interest_2026,recommendation
+1,Documentation homepage,A,A,Keep / feature
+2,"Technical documentation: reduce costs, improve customer satisfaction",A,A,Keep / feature
+3,The three levels of technical documentation,A,A,Keep / feature
+4,KISS Principle of Simplicity,A,A,Keep
+5,Structured and unstructured formats,A,A,Keep / refresh
+6,Technical writing: an industrial process,A,A,Keep / feature
+7,Project definition,A,A,Keep
+8,Gathering information,A,A,Keep
+9,Testing products to document them,A,A,Keep / feature
+10,Content creation,A,A,Keep
+11,Validation and quality control,A,A,Keep / refresh
+12,Translation,B,A,Keep / modernize
+13,Delivery,A,A,Keep / refresh
+14,From technical writing to technical communication,A,A,Keep / feature
+15,Integrating documentation into development processes,A,A,Keep / feature
+16,Version management systems — rustic but reliable,B,B,Refresh
+17,Git: from file to content,A,A,Keep / feature
+18,Using branches in source management systems,B,B,Refresh
+19,Repository,B,B,Refresh / possibly merge
+20,A single repository?,B,B,Refresh / merge
+21,Which repository for group work?,B,B,Refresh / merge
+22,Shared network directories — unsuitable for group work,B,C,Archive / merge
+23,SQL database,B,C,Archive / merge
+24,"CMS: workflow as a bonus, but reliability to be tested",B,B,Refresh substantially
+25,Tutorials,B,B,Keep as index
+26,sed: modify your text without opening your files,B,C,Archive
+27,Regular expressions in Python,A,B,Keep / reposition
+28,The Raspberry Pi 3 as a documentation platform,B,C,Archive
+29,Managing a project from start to finish,A,B,Keep as case study
+30,Structured DITA XML format,A,A,Keep / feature
+31,Case studies in using DITA XML,A,A,Keep
+32,A document architecture that's too complex?,A,A,Keep / feature
+33,From document to modular document base,A,A,Keep / feature
+34,Case study: NuFirewall documentation,A,B,Keep as case study
+35,Auto-insert data into a DITA XML file,A,B,Keep / modernize
+36,DITA XML and XSL-FO tutorials,A,C/B,Archive or clearly mark legacy
+37,Create different documents from the same sources using Jinja,A,B,Keep / modernize
+38,Create different documents from the same sources via Jinja (object method),B,C,Merge with #37
+39,Create different documents from the same ReST sources (conditional text),A,C/B,Keep as legacy technique
+40,Automatically insert data into a reStructuredText file,B,C,Archive / merge
+41,Automatically insert SQL data into a reStructuredText file,B,C,Archive / merge
+42,Source format,A,A,Keep / feature
+43,Target format,A,A,Keep
+44,Formats and tools,A,A,Keep / refresh
+45,Is an index useful in a PDF?,B,C,Remove
+46,Use the practical toolkit,A,A,Keep / feature
+47,Information types,A,A,Keep / feature
+48,Template: concept article,A,A,Keep
+49,Template: task article,A,A,Keep
+50,Template: reference article,A,A,Keep
+51,Template: API documentation,A,A,Keep / feature
+52,Template: documentation project plan,A,A,Keep
+53,Template: documentation review request,A,A,Keep
+54,Checklist: documentation quality,A,A,Keep / feature
+55,Checklist: technical review,A,A,Keep
+56,Checklist: documentation release readiness,A,A,Keep
+57,Checklist: documentation migration,A,A,Keep / feature
+58,Checklist: docs-as-code adoption,A,A,Keep / feature
+59,Checklist: documentation audit,A,A,Keep / feature
+60,Example: a well-structured Markdown page,A,A,Keep / feature
+61,Example: a documentation repository structure,A,A,Keep
+62,Example: a basic docs-as-code workflow,A,A,Keep / feature
+63,Example: a documentation review workflow,A,A,Keep
+64,Example: a practical CI/CD pipeline for documentation,A,A,Keep / feature
+65,Explore the reference,A,A,Keep
+66,Glossary,A,A,Keep / expand
+67,About this manual's API,A,A,"Keep, but technical/reference only"
+68,Ask the documentation,A,A,Keep / feature
