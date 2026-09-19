@@ -178,6 +178,13 @@ const t = ui[lang];
   }
 
   /* Contextual Banner */
+  /* These elements set `display`, which would otherwise override the
+     `hidden` attribute and show them before the script needs them. */
+  .ask-context-banner[hidden],
+  .ask-loading[hidden] {
+    display: none;
+  }
+
   .ask-context-banner {
     display: flex;
     align-items: center;
